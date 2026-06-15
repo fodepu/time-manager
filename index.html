@@ -2466,8 +2466,8 @@
   <div id="freeMode" style="display:none;">
     <div class="free-prompt" id="freePrompt"></div>
     <textarea class="free-textarea" id="freeJournal" placeholder="자유롭게 기록하세요..."></textarea>
-    <button type="button" class="free-send-btn" id="freeSendBtn">📤 Claude에게 보낼 기록 복사</button>
-    <div class="free-send-hint">탭하면 오늘 메모와 블록 상태가 복사됩니다 → Claude 대화창에 붙여넣으면 시간표를 조정해 드립니다.</div>
+    <button type="button" class="free-send-btn" id="freeSendBtn">📤 Claude에게 전송</button>
+    <div class="free-send-hint">탭하면 오늘 메모·블록 상태가 저장소로 전송됩니다. 폰에서 적어두면, 데스크탑에서 "반영해" 한 마디로 Claude가 읽고 시간표를 고칩니다.</div>
   </div>
 
   <div class="history-section">
@@ -5040,6 +5040,43 @@ async function copyClaudeReport() {
   if (typeof showToast === 'function') showToast('기록 복사됨 — Claude 대화창에 붙여넣으세요');
 }
 
+// 기록을 time-manager 저장소 inbox/ 에 커밋 (Claude가 데스크탑에서 읽음)
+const TM_INBOX_REPO = 'kimjuham1120-gif/time-manager';
+async function sendClaudeReport() {
+  const text = buildClaudeReport();
+  let token = localStorage.getItem('tm_inbox_token');
+  if (!token) {
+    token = prompt('기록 전송용 GitHub 토큰을 붙여넣으세요 (time-manager 저장소 Contents: write 권한):');
+    if (!token) return;
+    token = token.trim();
+    localStorage.setItem('tm_inbox_token', token);
+  }
+  const now = new Date();
+  const p = n => String(n).padStart(2, '0');
+  const stamp = `${now.getFullYear()}-${p(now.getMonth()+1)}-${p(now.getDate())}_${p(now.getHours())}${p(now.getMinutes())}`;
+  const path = `inbox/record-${stamp}.json`;
+  const payload = JSON.stringify({ date: currentDate, createdAt: now.toISOString(), report: text }, null, 2);
+  const b64 = btoa(unescape(encodeURIComponent(payload)));
+  try {
+    const res = await fetch(`https://api.github.com/repos/${TM_INBOX_REPO}/contents/${path}`, {
+      method: 'PUT',
+      headers: { 'Authorization': 'Bearer ' + token, 'Accept': 'application/vnd.github+json' },
+      body: JSON.stringify({ message: 'TM record ' + stamp, content: b64 })
+    });
+    if (res.ok) {
+      if (typeof showToast === 'function') showToast('Claude에게 전송됨 ✓ — 데스크탑에서 "반영해"');
+    } else if (res.status === 401 || res.status === 403) {
+      localStorage.removeItem('tm_inbox_token');
+      if (typeof showToast === 'function') showToast('토큰 오류 — 다시 탭해서 새 토큰을 입력하세요');
+    } else {
+      if (typeof showToast === 'function') showToast('전송 실패(' + res.status + ') — 클립보드에 복사함');
+      try { await navigator.clipboard.writeText(text); } catch (e) {}
+    }
+  } catch (e) {
+    try { await navigator.clipboard.writeText(text); if (typeof showToast === 'function') showToast('네트워크 오류 — 클립보드에 복사함'); } catch (_) {}
+  }
+}
+
 // 3-state 토글: undefined(기본/카테고리 색) → true(완료/초록) → false(미완료/빨강) → undefined
 function cycleScheduleCheck(entryId) {
   const e = entries.find(x => x.id === entryId);
@@ -6585,7 +6622,7 @@ function bindEvents() {
 
   // 동기화 모달
   document.getElementById('syncBtn').addEventListener('click', openSyncModal);
-  { const _fsb = document.getElementById('freeSendBtn'); if (_fsb) _fsb.addEventListener('click', copyClaudeReport); }
+  { const _fsb = document.getElementById('freeSendBtn'); if (_fsb) _fsb.addEventListener('click', sendClaudeReport); }
   document.getElementById('syncModalClose').addEventListener('click', closeSyncModal);
   document.getElementById('syncCancel').addEventListener('click', closeSyncModal);
   document.getElementById('syncModal').addEventListener('click', e => {
