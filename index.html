@@ -2352,9 +2352,23 @@
     font-size: 11px; color: var(--text-soft); font-weight: 500;
     line-height: 1.45;
   }
+  .tm-auth-overlay{position:fixed;inset:0;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;z-index:99999;padding:24px;text-align:center}
+  .tm-auth-logo{font-size:24px;font-weight:900;letter-spacing:-.02em;color:var(--text)}
+  .tm-auth-sub{font-size:13.5px;color:var(--text-soft);max-width:300px;line-height:1.6}
+  .tm-login-btn{margin-top:8px;padding:12px 22px;border-radius:10px;border:1.5px solid var(--border-strong);background:var(--bg-elev);color:var(--text);font-family:inherit;font-size:14px;font-weight:700;cursor:pointer}
+  .tm-login-btn:hover{background:var(--bg-hover)}
+  .tm-auth-err{font-size:12px;color:var(--warn);min-height:16px;max-width:300px}
+  .tm-auth-hidden{display:none!important}
+  body.tm-locked .container{display:none}
 </style>
 </head>
-<body>
+<body class="tm-locked">
+<div class="tm-auth-overlay" id="tmAuthOverlay">
+  <div class="tm-auth-logo">🗓️ Time Manager</div>
+  <div class="tm-auth-sub">로그인하면 내 시간표가 내 계정에 저장되고, 모든 기기에서 동기화됩니다.</div>
+  <button type="button" class="tm-login-btn" id="tmLoginBtn">Google로 로그인</button>
+  <div class="tm-auth-err" id="tmAuthErr"></div>
+</div>
 
 <div class="container">
   <div class="header">
@@ -2364,6 +2378,7 @@
         <span>Time Manager</span>
       </div>
       <div class="header-actions">
+        <button class="icon-btn tm-auth-hidden" id="tmLogoutBtn" title="로그아웃" data-icon="logOut"></button>
         <button class="icon-btn" id="reloadBtn" title="새로고침 (PWA 캐시 우회)" data-icon="refresh"></button>
         <button class="icon-btn" id="syncBtn" title="동기화 / 로그인" data-icon="cloud">>
           <span class="sync-dot" id="syncDot"></span>
@@ -2962,74 +2977,36 @@ let showSchedulePast = false;  // 시간표 과거 블록 펼치기 (세션 한�
 // ============== 시간표 (Schedule) 템플릿 ==============
 // 평일/토요일/일요일 시간 블록. 카테고리: meal·read·toeic·app·alba·exercise·dopa·prep·journal
 const SCHEDULE_TEMPLATE = {
-  weekday: [  // 월~금 (1~5)
-    { start: '05:30', end: '05:50', label: '아침 (하루 할일 적기)', category: 'meal' },
-    { start: '05:50', end: '06:40', label: '인문 독서 1차',          category: 'read' },
-    { start: '06:40', end: '06:50', label: '휴식',                  category: 'dopa' },
-    { start: '06:50', end: '07:30', label: '인문 독서 2차',          category: 'read' },
-    { start: '07:30', end: '07:50', label: '외출 준비',              category: 'prep' },
-    { start: '07:50', end: '08:50', label: '출근 (차 수면)',         category: 'prep' },
-    { start: '08:50', end: '09:00', label: '도착 정리 / 휴식',       category: 'dopa' },
-    { start: '09:00', end: '11:00', label: 'TOEIC (월·수·금 실모)',  category: 'toeic' },
-    { start: '11:00', end: '14:00', label: '알바 (11시 바나나·쉐이크)', category: 'alba' },
-    { start: '14:00', end: '14:30', label: '점심 (휴게)',            category: 'meal' },
-    { start: '14:30', end: '15:00', label: '알바',                  category: 'alba', days: [1,2,3] },
-    { start: '15:00', end: '16:30', label: '자유·학습 (단어/복습/앱)', category: 'toeic', days: [1,2,3] },
-    { start: '14:30', end: '16:00', label: '알바',                  category: 'alba', days: [4,5] },
-    { start: '16:00', end: '16:30', label: '휴식 + 간식 + 단어',     category: 'meal', days: [4,5] },
-    { start: '16:30', end: '16:40', label: '걷기 (차로 이동)',       category: 'exercise' },
-    { start: '16:40', end: '17:40', label: '퇴근 (차 수면)',         category: 'prep' },
-    { start: '17:40', end: '18:00', label: '깨우기 + 운동 준비',     category: 'prep' },
-    { start: '18:00', end: '19:10', label: '운동',                  category: 'exercise' },
-    { start: '19:10', end: '19:40', label: '저녁',                  category: 'meal' },
-    { start: '19:40', end: '20:40', label: '자유 시간',              category: 'dopa' },
-    { start: '20:40', end: '21:00', label: '하루 회상',              category: 'journal' },
-    { start: '21:00', end: '21:40', label: '문학 독서 (와인다운)',   category: 'read' },
-    { start: '21:40', end: '22:00', label: '취침 준비',              category: 'prep' },
+  weekday: [
+    { start: '07:00', end: '07:30', label: '아침',          category: 'meal' },
+    { start: '07:30', end: '09:00', label: '오전 집중',      category: 'read' },
+    { start: '09:00', end: '12:00', label: '오전 일정',      category: 'toeic' },
+    { start: '12:00', end: '13:00', label: '점심',          category: 'meal' },
+    { start: '13:00', end: '17:00', label: '오후 일정',      category: 'app' },
+    { start: '17:00', end: '18:00', label: '운동',          category: 'exercise' },
+    { start: '18:00', end: '19:00', label: '저녁',          category: 'meal' },
+    { start: '19:00', end: '21:00', label: '자유 시간',      category: 'dopa' },
+    { start: '21:00', end: '21:30', label: '하루 회상',      category: 'journal' },
+    { start: '21:30', end: '22:00', label: '취침 준비',      category: 'prep' },
   ],
-  saturday: [  // 토 (6)
-    { start: '06:30', end: '07:00', label: '아침 (하루 할일 적기)', category: 'meal' },
-    { start: '07:00', end: '07:50', label: '인문 독서 1',            category: 'read' },
-    { start: '07:50', end: '08:00', label: '휴식',                  category: 'dopa' },
-    { start: '08:00', end: '08:50', label: '인문 독서 2',            category: 'read' },
-    { start: '08:50', end: '09:05', label: '테니스 코트 예약',       category: 'exercise' },
-    { start: '09:05', end: '09:40', label: '밥',                    category: 'meal' },
-    { start: '09:40', end: '11:40', label: '토익',                  category: 'toeic' },
-    { start: '11:40', end: '12:00', label: '외출 준비',              category: 'prep' },
-    { start: '12:00', end: '13:10', label: '카페 이동',              category: 'prep' },
-    { start: '13:10', end: '13:50', label: '점심 (카페)',            category: 'meal' },
-    { start: '13:50', end: '14:40', label: '학습 1 (카페)',          category: 'toeic' },
-    { start: '14:40', end: '14:50', label: '휴식',                  category: 'dopa' },
-    { start: '14:50', end: '15:40', label: '학습 2 (카페)',          category: 'toeic' },
-    { start: '15:40', end: '17:00', label: '자유 시간',             category: 'dopa' },
-    { start: '17:00', end: '18:00', label: '테니스 이동',            category: 'prep' },
-    { start: '18:00', end: '20:00', label: '테니스',                category: 'exercise' },
-    { start: '20:00', end: '21:00', label: '귀가 이동 (씻기)',       category: 'prep' },
-    { start: '21:00', end: '21:30', label: '저녁',                  category: 'meal' },
-    { start: '21:30', end: '21:45', label: '하루 회상',              category: 'journal' },
-    { start: '21:45', end: '22:00', label: '취침 준비',              category: 'prep' },
+  saturday: [
+    { start: '08:00', end: '09:00', label: '아침',          category: 'meal' },
+    { start: '09:00', end: '12:00', label: '오전 자유',      category: 'dopa' },
+    { start: '12:00', end: '13:00', label: '점심',          category: 'meal' },
+    { start: '13:00', end: '17:00', label: '오후 일정',      category: 'app' },
+    { start: '17:00', end: '18:00', label: '운동',          category: 'exercise' },
+    { start: '18:00', end: '19:00', label: '저녁',          category: 'meal' },
+    { start: '19:00', end: '21:30', label: '자유 시간',      category: 'dopa' },
+    { start: '21:30', end: '22:00', label: '취침 준비',      category: 'prep' },
   ],
-  sunday: [  // 일 (0)
-    { start: '06:30', end: '07:00', label: '아침 (하루 할일 적기)', category: 'meal' },
-    { start: '07:00', end: '08:30', label: '인문 독서 (분할)',       category: 'read' },
-    { start: '08:30', end: '08:50', label: '외출 준비',              category: 'prep' },
-    { start: '08:50', end: '09:05', label: '테니스 코트 예약',       category: 'exercise' },
-    { start: '09:05', end: '10:00', label: '이동',                  category: 'prep' },
-    { start: '10:00', end: '10:30', label: '도착 정리 + 간식',       category: 'meal' },
-    { start: '10:30', end: '12:30', label: 'TOEIC 실모',             category: 'toeic' },
-    { start: '12:30', end: '13:10', label: '점심',                  category: 'meal' },
-    { start: '13:10', end: '13:30', label: '단어 가볍게',            category: 'toeic' },
-    { start: '13:30', end: '13:50', label: '산책',                  category: 'exercise' },
-    { start: '13:50', end: '14:00', label: '교회 이동',              category: 'prep' },
-    { start: '14:00', end: '15:30', label: '예배',                  category: 'alba' },
-    { start: '15:30', end: '16:30', label: '순모임 (간식)',          category: 'alba' },
-    { start: '16:30', end: '17:00', label: '밥',                    category: 'meal' },
-    { start: '17:00', end: '17:50', label: '테니스 이동',            category: 'prep' },
-    { start: '17:50', end: '18:00', label: '코트 도착·준비',         category: 'prep' },
-    { start: '18:00', end: '20:00', label: '테니스',                category: 'exercise' },
-    { start: '20:00', end: '21:20', label: '귀가 이동 (씻기)',       category: 'prep' },
-    { start: '21:20', end: '21:40', label: '하루 회상 + 간식',       category: 'journal' },
-    { start: '21:40', end: '22:00', label: '취침 준비',              category: 'prep' },
+  sunday: [
+    { start: '08:00', end: '09:00', label: '아침',          category: 'meal' },
+    { start: '09:00', end: '12:00', label: '휴식·자유',      category: 'dopa' },
+    { start: '12:00', end: '13:00', label: '점심',          category: 'meal' },
+    { start: '13:00', end: '18:00', label: '자유 일정',      category: 'dopa' },
+    { start: '18:00', end: '19:00', label: '저녁',          category: 'meal' },
+    { start: '19:00', end: '21:30', label: '자유 시간',      category: 'dopa' },
+    { start: '21:30', end: '22:00', label: '취침 준비',      category: 'prep' },
   ],
 };
 
@@ -3946,6 +3923,7 @@ function persist() {
   }
   // 변경 시 자동 동기화 (디바운스)
   scheduleSyncPush();
+  if (window.tmOnChange) window.tmOnChange();
   return ok;
 }
 
@@ -7349,11 +7327,72 @@ function init() {
   }
 }
 
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', init);
-} else {
-  init();
-}
+// init()은 로그인 성공 후 Firebase 모듈(아래)이 호출한다.
+window.init = init;
+window.collectLocalDataForSync = collectLocalDataForSync;
+window.mergeRemoteData = mergeRemoteData;
+</script>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-app.js";
+import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-auth.js";
+import { getFirestore, doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBrX_BUDNZgDlbaRDk13rGW7UDa3JHFnxo",
+  authDomain: "time-manager-1e3d4.firebaseapp.com",
+  projectId: "time-manager-1e3d4",
+  storageBucket: "time-manager-1e3d4.firebasestorage.app",
+  messagingSenderId: "381631560157",
+  appId: "1:381631560157:web:8fd1f3346f3ebe72ec5e34",
+  measurementId: "G-VC8D7XF3GF"
+};
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+const provider = new GoogleAuthProvider();
+
+const PREFIX = 'tracker_';
+const KEEP = new Set(['tracker_theme','tracker_device_id','tracker_sync_config']);
+function clearTracker(){ const rm=[]; for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i); if(k && k.startsWith(PREFIX) && !KEEP.has(k)) rm.push(k);} rm.forEach(k=>{try{localStorage.removeItem(k);}catch(e){}}); }
+
+let started=false, uid=null, pushTimer=null;
+window.tmOnChange = function(){ if(!uid) return; if(pushTimer) clearTimeout(pushTimer); pushTimer=setTimeout(pushNow, 4000); };
+async function pushNow(){ if(!uid) return; try{ const payload = window.collectLocalDataForSync && window.collectLocalDataForSync(); if(!payload) return; await setDoc(doc(db,'users',uid), { payload, updatedAt: Date.now() }); }catch(e){ console.warn('cloud push', e&&e.message); } }
+
+function showApp(email){ document.body.classList.remove('tm-locked'); const o=document.getElementById('tmAuthOverlay'); if(o)o.classList.add('tm-auth-hidden'); const b=document.getElementById('tmLogoutBtn'); if(b){b.classList.remove('tm-auth-hidden'); b.title='로그아웃 ('+(email||'')+')';} }
+function showLogin(){ document.body.classList.add('tm-locked'); const o=document.getElementById('tmAuthOverlay'); if(o)o.classList.remove('tm-auth-hidden'); const b=document.getElementById('tmLogoutBtn'); if(b)b.classList.add('tm-auth-hidden'); }
+
+onAuthStateChanged(auth, async (user)=>{
+  if(user){
+    uid=user.uid;
+    let cloudHad=false;
+    try{
+      const snap=await getDoc(doc(db,'users',user.uid));
+      if(snap.exists() && snap.data() && snap.data().payload){
+        cloudHad=true;
+        clearTracker();
+        if(window.mergeRemoteData) window.mergeRemoteData(snap.data().payload, 'remote');
+      }
+    }catch(e){ console.warn('cloud pull', e&&e.message); }
+    if(!started){ started=true; if(window.init) window.init(); }
+    showApp(user.email);
+    if(!cloudHad) pushNow();
+  } else {
+    showLogin();
+  }
+});
+
+const loginBtn=document.getElementById('tmLoginBtn');
+if(loginBtn) loginBtn.addEventListener('click', async ()=>{
+  const err=document.getElementById('tmAuthErr'); if(err) err.textContent='';
+  try{ await signInWithPopup(auth, provider); }
+  catch(e){ if(err) err.textContent='로그인 실패: '+(e&&e.message||e); }
+});
+const logoutBtn=document.getElementById('tmLogoutBtn');
+if(logoutBtn) logoutBtn.addEventListener('click', async ()=>{
+  try{ clearTracker(); await signOut(auth); }catch(e){}
+  location.reload();
+});
 </script>
 </body>
 </html>
