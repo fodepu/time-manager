@@ -7470,8 +7470,9 @@ function tmInitGIS(){
       client_id: TM_WEB_CLIENT_ID,
       callback: async (resp)=>{
         tmShowErr('');
-        try{ await signInWithCredential(auth, GoogleAuthProvider.credential(resp.credential)); }
-        catch(e){ tmShowErr('로그인 실패: '+(e&&e.message||e)); }
+        if(!resp || !resp.credential){ alert('GIS: 토큰을 못 받음'); return; }
+        try{ await signInWithCredential(auth, GoogleAuthProvider.credential(resp.credential)); alert('로그인 성공!'); }
+        catch(e){ tmShowErr((e&&e.code)||'오류'); alert('Firebase 로그인 실패\ncode: '+(e&&e.code)+'\nmsg: '+(e&&e.message)); }
       }
     });
     const el=document.getElementById('gsiButton');
