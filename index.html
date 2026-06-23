@@ -2370,6 +2370,8 @@
   .settings-item.danger { color: var(--warn); }
   .ctl-hidden { display: none !important; }
   .identity-card { display: none !important; }
+  .dayrec-banner { display:flex; align-items:center; justify-content:space-between; gap:10px; background:var(--accent-soft); color:var(--accent-strong); border:1px solid var(--accent); border-radius:8px; padding:8px 12px; margin-bottom:10px; font-size:13px; font-weight:700; }
+  .dayrec-banner button { background:var(--bg); border:1px solid var(--accent); color:var(--accent-strong); border-radius:6px; padding:5px 10px; font-family:inherit; font-size:11.5px; font-weight:700; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
 </head>
@@ -2498,6 +2500,7 @@
   <div id="freeMode" style="display:none;">
     <div class="free-prompt" id="freePrompt"></div>
     <textarea class="free-textarea" id="freeJournal" placeholder="자유롭게 기록하세요..."></textarea>
+    <button type="button" class="free-send-btn" id="freeToTableBtn" style="background:var(--accent-soft);border-color:var(--accent);color:var(--accent-strong)">📋 이 기록으로 시간표 만들기</button>
     <button type="button" class="free-send-btn" id="freeSendBtn">📤 Claude에게 전송</button>
     <div class="free-send-hint">탭하면 오늘 메모·블록 상태가 저장소로 전송됩니다. 폰에서 적어두면, 데스크탑에서 "반영해" 한 마디로 Claude가 읽고 시간표를 고칩니다.</div>
   </div>
@@ -5148,6 +5151,13 @@ async function sendClaudeReport() {
 
 // 3-state 토글: undefined(기본/카테고리 색) → true(완료/초록) → false(미완료/빨강) → undefined
 function cycleScheduleCheck(entryId) {
+  if(entryId && entryId.indexOf('day_')===0){
+    const _a=lsGet(lsKey('dayblocks_'+currentDate)); const _i=parseInt(entryId.split('_').pop(),10);
+    if(!_a||!_a[_i]) return; const _v=_a[_i].values||{};
+    if(_v.check===undefined) _v.check=true; else if(_v.check===true) _v.check=false; else delete _v.check;
+    _a[_i].values=_v; lsSet(lsKey('dayblocks_'+currentDate),_a); if(window.tmOnChange) window.tmOnChange();
+    if(typeof refreshAll==='function') refreshAll(); return;
+  }
   const e = entries.find(x => x.id === entryId);
   if (!e) return;
   e.values = e.values || {};
@@ -5310,9 +5320,60 @@ function deleteScheduleBlock() {
   showToast('삭제되었습니다');
 }
 
+function parseDayMemo(raw){
+  let text=String(raw||'');
+  text=text.replace(/[–—〰〜～]/g,'~').replace(/(\d)\s*시/g,'$1').replace(/(\d)([가-힣])/g,'$1 $2').replace(/([\d:])\s*~\s*([\d:])/g,'$1~$2');
+  const tokens=text.split(/\s+/).filter(Boolean);
+  const isM=t=>/^~?\d{1,2}(?::\d{2})?(?:~\d{1,2}(?::\d{2})?)?$/.test(t);
+  const items=[]; let i=0;
+  while(i<tokens.length){ if(isM(tokens[i])){ const m=tokens[i]; i++; let l=[]; while(i<tokens.length&&!isM(tokens[i])){ l.push(tokens[i]); i++; } items.push({m,label:l.join(' ').trim()}); } else i++; }
+  let run=-1;
+  const st=s=>{ const p=s.split(':'); return {h:parseInt(p[0],10), m:p[1]?parseInt(p[1],10):0}; };
+  function ap(t){ let mins=t.h*60+t.m; while(mins<run&&t.h<12){ t.h+=12; mins=t.h*60+t.m; } if(mins>=run) run=mins; return ('0'+(Math.floor(mins/60)%24)).slice(-2)+':'+('0'+(mins%60)).slice(-2); }
+  function addMin(x,d){ let a=x.split(':').map(Number); let t=a[0]*60+a[1]+d; return ('0'+(Math.floor(t/60)%24)).slice(-2)+':'+('0'+(t%60)).slice(-2); }
+  const CAT=[[/(밥|점심|저녁|간식|아침|식사)/,'meal'],[/(테니스|운동|러닝|헬스|산책)/,'exercise'],[/(토익|공부|독서|발표|학습|단어|복습)/,'toeic'],[/(수면|취침|잠)/,'prep'],[/(이동|출근|퇴근|귀가)/,'prep'],[/(예배|교회|순모임)/,'alba'],[/(알바|근무)/,'alba'],[/(클로드|앱|작업|회의|토의)/,'app'],[/(자유|휴식|도파민|회상)/,'dopa']];
+  const cat=l=>{ for(const c of CAT) if(c[0].test(l)) return c[1]; return 'prep'; };
+  const blocks=[]; let prev=null;
+  for(const it of items){ let mm=it.m, open=mm[0]==='~'; if(open) mm=mm.slice(1); const p=mm.split('~'); let s,e;
+    if(open){ e=ap(st(p[0])); s=prev||e; } else if(p.length===2&&p[1]){ s=ap(st(p[0])); e=ap(st(p[1])); } else { s=ap(st(p[0])); e=null; }
+    blocks.push({start:s,end:e,label:it.label,category:cat(it.label)}); prev=e||s; }
+  const hm=x=>{ let a=x.split(':').map(Number); return a[0]*60+a[1]; };
+  for(let k=0;k<blocks.length;k++) if(!blocks[k].end) blocks[k].end=(k+1<blocks.length)?blocks[k+1].start:addMin(blocks[k].start,30);
+  blocks.forEach(b=>{ if(hm(b.end)<=hm(b.start)) b.end='23:59'; });
+  return blocks.filter(b=>b.start&&b.end&&b.label);
+}
+function convertJournalToTable(){
+  const ta=document.getElementById('freeJournal'); const txt=ta?ta.value:'';
+  const blocks=parseDayMemo(txt);
+  if(!blocks.length){ if(typeof showToast==='function') showToast('시간 구간을 못 찾았어요 (예: 9~11 공부)'); return; }
+  lsSet(lsKey('dayblocks_'+currentDate), blocks);
+  if(window.tmOnChange) window.tmOnChange();
+  const gt=document.querySelector('.tab[data-mode="growth"]'); if(gt) gt.click();
+  if(typeof showToast==='function') showToast(blocks.length+'개 블록으로 변환했어요');
+}
+window.tmConvertToTable=convertJournalToTable;
+function revertDayblocks(){
+  if(!confirm('이 날의 실제 기록을 지우고 기본 시간표로 되돌릴까요?')) return;
+  try{ localStorage.removeItem(lsKey('dayblocks_'+currentDate)); }catch(e){}
+  if(window.tmOnChange) window.tmOnChange();
+  if(typeof refreshAll==='function') refreshAll();
+}
+
 function renderItems() {
   const container = document.getElementById('items');
   container.innerHTML = '';
+  const _dayb=lsGet(lsKey('dayblocks_'+currentDate));
+  if(_dayb && Array.isArray(_dayb) && _dayb.length){
+    const _c=document.getElementById('itemCount'); if(_c) _c.textContent=_dayb.length+'개';
+    const _g=document.getElementById('growthCount'); if(_g) _g.textContent=_dayb.length;
+    const ban=document.createElement('div'); ban.className='dayrec-banner';
+    const sp=document.createElement('span'); sp.textContent='📝 이 날의 실제 기록'; ban.appendChild(sp);
+    const rb=document.createElement('button'); rb.type='button'; rb.textContent='기본 시간표로 되돌리기'; rb.onclick=revertDayblocks; ban.appendChild(rb);
+    container.appendChild(ban);
+    const synth=_dayb.map((b,idx)=>({ id:'day_'+currentDate+'_'+idx, label:b.label, start:b.start, end:b.end, category:b.category||'prep', types:['check'], values:b.values||{}, pinned:true }));
+    renderScheduleTable(synth, container);
+    return;
+  }
   // 시간표 블록만 표시 (자유 항목 entries는 숨김)
   const visible = entries
     .filter(e => !e.pinned || entryAppliesToDate(e, currentDate))
@@ -7441,6 +7502,9 @@ window.mergeRemoteData = mergeRemoteData;
   }
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', bind); else bind();
 })();
+</script>
+<script>
+(function(){ function b(){ var x=document.getElementById("freeToTableBtn"); if(x) x.addEventListener("click", function(){ if(window.tmConvertToTable) window.tmConvertToTable(); }); } if(document.readyState==="loading") document.addEventListener("DOMContentLoaded", b); else b(); })();
 </script>
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-app.js";
