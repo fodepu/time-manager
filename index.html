@@ -2424,7 +2424,7 @@
 
   <div id="growthMode">
     <!-- 정체성 선언 (Identity-based habits, Clear 2018) -->
-    <div class="identity-card" id="identityCard">
+    <div class="identity-card" id="identityCard" style="display:none">
       <div class="identity-label">✦ 이번 시즌의 나</div>
       <div class="identity-row">
         <span class="identity-prefix">나는</span>
@@ -7424,12 +7424,18 @@ window.mergeRemoteData = mergeRemoteData;
 </script>
 <script>
 (function(){
+  function updAlarm(){
+    var it=document.querySelector('.settings-item[data-proxy="alarmBtn"]');
+    if(!it) return;
+    var on=('Notification' in window)&&Notification.permission==='granted';
+    it.textContent= on?'알람 — 켜짐':'알람 — 꺼짐';
+  }
   function bind(){
     var btn=document.getElementById('settingsBtn'), menu=document.getElementById('settingsMenu');
     if(!btn||!menu) return;
-    btn.addEventListener('click', function(e){ e.stopPropagation(); menu.classList.toggle('open'); });
+    btn.addEventListener('click', function(e){ e.stopPropagation(); menu.classList.toggle('open'); if(menu.classList.contains('open')) updAlarm(); });
     var items=document.querySelectorAll('.settings-item');
-    for(var i=0;i<items.length;i++){ items[i].addEventListener('click', function(){ var t=document.getElementById(this.getAttribute('data-proxy')); menu.classList.remove('open'); if(t) t.click(); }); }
+    for(var i=0;i<items.length;i++){ items[i].addEventListener('click', function(){ var pid=this.getAttribute('data-proxy'); var t=document.getElementById(pid); menu.classList.remove('open'); if(t) t.click(); if(pid==='alarmBtn') setTimeout(updAlarm,800); }); }
     document.addEventListener('click', function(e){ if(!menu.contains(e.target) && !btn.contains(e.target)) menu.classList.remove('open'); });
   }
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', bind); else bind();
