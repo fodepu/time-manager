@@ -5122,7 +5122,7 @@ async function sendClaudeReport() {
   }
   const now = new Date();
   const p = n => String(n).padStart(2, '0');
-  const stamp = `${now.getFullYear()}-${p(now.getMonth()+1)}-${p(now.getDate())}_${p(now.getHours())}${p(now.getMinutes())}`;
+  const stamp = `${now.getFullYear()}-${p(now.getMonth()+1)}-${p(now.getDate())}_${p(now.getHours())}${p(now.getMinutes())}${p(now.getSeconds())}_${Math.random().toString(36).slice(2,6)}`;
   const path = `inbox/record-${stamp}.json`;
   const payload = JSON.stringify({ date: currentDate, createdAt: now.toISOString(), report: text }, null, 2);
   const b64 = btoa(unescape(encodeURIComponent(payload)));
