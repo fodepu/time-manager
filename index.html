@@ -2372,6 +2372,7 @@
   .identity-card { display: none !important; }
   .dayrec-banner { display:flex; align-items:center; justify-content:space-between; gap:10px; background:var(--accent-soft); color:var(--accent-strong); border:1px solid var(--accent); border-radius:8px; padding:8px 12px; margin-bottom:10px; font-size:13px; font-weight:700; }
   .dayrec-banner button { background:var(--bg); border:1px solid var(--accent); color:var(--accent-strong); border-radius:6px; padding:5px 10px; font-family:inherit; font-size:11.5px; font-weight:700; cursor:pointer; }
+  .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
 </head>
@@ -2381,6 +2382,7 @@
   <div class="tm-auth-sub">로그인하면 내 시간표가 내 계정에 저장되고, 모든 기기에서 동기화됩니다.</div>
   <div id="gsiButton"></div>
   <div class="tm-auth-err" id="tmAuthErr"></div>
+  <button type="button" class="tm-refresh-link" onclick="(function(){var u=new URL(location.href);u.searchParams.set('v',Date.now().toString());location.replace(u.toString());})()">↻ 최신 버전으로 새로고침</button>
 </div>
 
 <div class="container">
