@@ -2486,6 +2486,7 @@
       <div class="section-title" data-icon-before="clock">시간표</div>
       <button class="section-action-btn" id="addBtn" data-icon-before="plus">시간 블록 추가</button>
     </div>
+    <div id="sleepCard" style="display:none;"></div>
     <div class="items" id="items"></div>
     <!-- 숨겨진 호환용 (코드에서 참조됨) -->
     <span id="itemCount" style="display:none;">—</span>
@@ -2504,6 +2505,10 @@
     <textarea class="free-textarea" id="freeJournal" placeholder="자유롭게 기록하세요..."></textarea>
     <button type="button" class="free-send-btn" id="freeSendBtn">📤 클로드에게 보내기</button>
     <div class="free-send-hint">탭하면 ① 일기가 그대로 저장되고 ② 이 날짜의 시간표로 변환되고 ③ 클로드에게도 전송됩니다. 일기는 절대 지워지지 않습니다.</div>
+    <div style="margin-top:16px;padding-top:14px;border-top:1px solid rgba(0,0,0,.08)">
+      <label style="display:inline-block;background:#334155;color:#fff;padding:10px 16px;border-radius:10px;font-size:14px;cursor:pointer">🌙 슬립사이클 CSV 가져오기<input type="file" id="scFile" accept=".csv,text/csv" style="display:none"></label>
+      <div style="font-size:12px;color:#888;margin-top:8px;line-height:1.55">슬립사이클 앱 → 프로필 → More → Account → "Export Database to CSV"로 내보낸 파일을 선택하세요. 날짜별 실제 취침·기상·수면시간이 트래커 상단에 표시됩니다.</div>
+    </div>
   </div>
 
   <div class="history-section">
@@ -5725,6 +5730,7 @@ function refreshAll() {
   renderRestDay();
   renderGoals();
   renderItems();
+  if(typeof renderSleepCard==='function'){try{renderSleepCard();}catch(e){}}
   renderSummary();
   renderCumulative();
   renderDetailedStats();
@@ -7601,6 +7607,75 @@ if(logoutBtn) logoutBtn.addEventListener('click', async ()=>{
   try{ clearTracker(); await signOut(auth); }catch(e){}
   location.reload();
 });
+</script>
+<script>
+/* Sleep Cycle CSV import — maps each night to its wake date, stored as sc_<date> */
+(function(){
+  function pad(n){return ('0'+n).slice(-2);}
+  function num(x){var v=parseFloat(String(x||'').replace(',','.'));return isNaN(v)?0:v;}
+  function scParse(text){
+    var lines=String(text).split(/\r?\n/).filter(function(l){return l.trim();});
+    if(!lines.length) return 0;
+    var delim=lines[0].indexOf(';')>-1?';':',';
+    var startIdx=/start/i.test(lines[0])?1:0;
+    var n=0;
+    for(var i=startIdx;i<lines.length;i++){
+      var c=lines[i].split(delim);
+      if(c.length<3) continue;
+      var s=c[0].trim(), e=c[1].trim();
+      var de=e.slice(0,10), ds=s.slice(0,10);
+      var bed=s.slice(11,16), wake=e.slice(11,16);
+      if(!/^\d\d:\d\d$/.test(bed)||!/^\d\d:\d\d$/.test(wake)) continue;
+      if(!/^\d{4}-\d{2}-\d{2}$/.test(de)) continue;
+      var q=(c[2]||'').replace('%','').trim();
+      var rec={bed:bed,wake:wake,bedDate:ds,wakeDate:de,
+        q:q?parseInt(q,10):null,
+        asleepMin: c[16]!==undefined&&num(c[16])?Math.round(num(c[16])/60):null,
+        inBedMin: c[15]!==undefined&&num(c[15])?Math.round(num(c[15])/60):null,
+        deepMin: c[7]!==undefined&&num(c[7])?Math.round(num(c[7])/60):null,
+        lightMin: c[6]!==undefined&&num(c[6])?Math.round(num(c[6])/60):null};
+      lsSet(lsKey('sc_'+de), rec); n++;
+    }
+    return n;
+  }
+  window.tmImportSleepCSV=function(text){
+    var n=0; try{n=scParse(text);}catch(e){}
+    if(typeof showToast==='function') showToast(n?(n+'박치 수면 데이터를 가져왔어요 🌙'):'수면 데이터를 못 찾았어요 (CSV 형식 확인)');
+    try{renderSleepCard();}catch(e){}
+    if(window.tmOnChange) window.tmOnChange();
+    return n;
+  };
+  function dur(min){return Math.floor(min/60)+'h'+pad(min%60);}
+  function toMin(hm){var a=hm.split(':');return (+a[0])*60+(+a[1]);}
+  window.renderSleepCard=function(){
+    var host=document.getElementById('sleepCard');
+    if(!host) return;
+    var d=(typeof currentDate!=='undefined')?currentDate:null;
+    var rec=d?lsGet(lsKey('sc_'+d)):null;
+    if(!rec||!rec.wake){ host.innerHTML=''; host.style.display='none'; return; }
+    var planWake=330; // 05:30 weekday anchor
+    var wd=toMin(rec.wake)-planWake;
+    var wtxt = wd>0?('계획(05:30)보다 '+wd+'분 늦게 기상') : (wd<0?('계획(05:30)보다 '+(-wd)+'분 일찍 기상'):'계획대로 05:30 기상');
+    var dtxt = rec.asleepMin?(' · '+dur(rec.asleepMin)+' 수면'):'';
+    var qtxt = rec.q!=null?(' · 품질 '+rec.q+'%'):'';
+    var deepTxt = rec.deepMin?(' · 깊은잠 '+dur(rec.deepMin)):'';
+    host.style.display='block';
+    host.innerHTML='<div style="background:linear-gradient(135deg,#1e293b,#334155);color:#e2e8f0;border-radius:14px;padding:14px 16px;margin:12px 0;box-shadow:0 2px 8px rgba(0,0,0,.15)">'
+      +'<div style="font-size:12px;letter-spacing:.3px;opacity:.75;margin-bottom:5px">🌙 실제 수면 · 슬립사이클</div>'
+      +'<div style="font-size:16px;font-weight:600;line-height:1.4">'+rec.bed+' 취침 → '+rec.wake+' 기상'+dtxt+qtxt+'</div>'
+      +'<div style="font-size:12px;opacity:.72;margin-top:5px">'+wtxt+deepTxt+'</div>'
+      +'</div>';
+  };
+  function wire(){
+    var inp=document.getElementById('scFile');
+    if(inp&&!inp._wired){ inp._wired=1; inp.addEventListener('change',function(ev){
+      var fl=ev.target.files&&ev.target.files[0]; if(!fl) return;
+      var r=new FileReader(); r.onload=function(){ window.tmImportSleepCSV(String(r.result||'')); };
+      r.readAsText(fl); ev.target.value='';
+    });}
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',wire); else wire();
+})();
 </script>
 </body>
 </html>
