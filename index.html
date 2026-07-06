@@ -3175,7 +3175,7 @@ function scheduleMinutesBetween(start, end) {
 function tmSeedLastWeek(){
   try{
     if(!window.tmIsOwner) return;
-    if(localStorage.getItem(lsKey('lastweek_seed_v5'))) return;
+    if(localStorage.getItem(lsKey('lastweek_seed_v6'))) return;
     var seed={
       // 월 6/29 (근무 없음)
       '2026-06-29':[
@@ -3195,7 +3195,8 @@ function tmSeedLastWeek(){
         {start:'16:40',end:'17:40',label:'귀가',category:'prep'},
         {start:'17:40',end:'18:00',label:'휴식',category:'dopa'},
         {start:'18:00',end:'18:40',label:'저녁',category:'meal'},
-        {start:'18:40',end:'22:00',label:'휴식',category:'dopa'}
+        {start:'18:40',end:'22:00',label:'휴식',category:'dopa'},
+        {start:'22:00',end:'23:00',label:'러닝',category:'exercise'}
       ],
       // 화 6/30 (근무 08~14)
       '2026-06-30':[
@@ -3288,7 +3289,7 @@ function tmSeedLastWeek(){
     };
     // 소유자 재구성본 — 새 버전이면 해당 날짜를 덮어씀 (수동 편집 없음 전제)
     Object.keys(seed).forEach(function(d){ lsSet(lsKey('dayblocks_'+d), seed[d]); });
-    localStorage.setItem(lsKey('lastweek_seed_v5'),'1');
+    localStorage.setItem(lsKey('lastweek_seed_v6'),'1');
   }catch(e){}
 }
 
