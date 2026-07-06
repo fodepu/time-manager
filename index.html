@@ -2424,7 +2424,8 @@
 
   <div class="tabs">
     <button class="tab active" data-mode="growth" data-icon-before="target">트래커<span class="tab-count" id="growthCount">0</span></button>
-    <button class="tab" data-mode="free" data-icon-before="bookOpen">기록</button>
+    <button class="tab" data-mode="free" data-icon-before="bookOpen">기록 작성</button>
+    <button class="tab" data-mode="plan" data-icon-before="refresh">계획 수정</button>
   </div>
 
   <div id="growthMode">
@@ -2516,6 +2517,13 @@
       <button type="button" id="tmTokenClearBtn" style="background:none;border:1px solid #ccc;color:#999;padding:9px 14px;border-radius:9px;font-size:13px;cursor:pointer;margin-left:6px">지우기</button>
       <div style="font-size:12px;color:#aaa;margin-top:8px;line-height:1.55">만료 없는 <b>classic PAT</b>(repo 권한, No expiration)를 한 번만 넣으면 "📤 보내기"가 매번 토큰을 안 물어봐요. 토큰은 이 기기에 저장되고 클라우드로 동기화돼요.</div>
     </div>
+  </div>
+
+  <div id="planMode" style="display:none;">
+    <div class="free-prompt">📅 계획이 틀어졌을 때 무슨 일이 있었는지 적어주세요. 고정 앵커(알바·운동·수면 등)는 지키고 <b>남은 일정만</b> 다시 짜서 반영해요.</div>
+    <textarea class="free-textarea" id="planJournal" placeholder="예: 8시에 일어남, 알바 30분 늦어짐 → 오늘 남은 일정 조정해줘"></textarea>
+    <button type="button" class="free-send-btn" id="planSendBtn">📤 계획 수정 요청 보내기</button>
+    <div class="free-send-hint">이 날짜 기준으로 클로드에게 <b>일정 수정 요청</b>이 전송됩니다. 데스크탑에서 "반영해"라고 하면 남은 일정을 재배치해요. (여긴 실제 기록으로 저장되지 않아요)</div>
   </div>
 
   <div class="history-section">
@@ -5273,6 +5281,34 @@ async function copyClaudeReport() {
 
 // 기록을 time-manager 저장소 inbox/ 에 커밋 (Claude가 데스크탑에서 읽음)
 const TM_INBOX_REPO = 'fodepu/time-manager';
+async function tmCommitInbox(text, type){
+  let token = lsGet(lsKey('inbox_token')) || localStorage.getItem('tm_inbox_token');
+  if (!token) {
+    token = prompt('기록 전송용 GitHub 토큰을 붙여넣으세요 (한 번만 입력하면 모든 기기에 자동 저장됩니다):');
+    if (!token) return false;
+    token = token.trim();
+  }
+  if (lsGet(lsKey('inbox_token')) !== token) { lsSet(lsKey('inbox_token'), token); if (window.tmOnChange) window.tmOnChange(); if (window.tmRefreshTokenStatus) tmRefreshTokenStatus(); }
+  const now = new Date();
+  const p = n => String(n).padStart(2, '0');
+  const stamp = `${now.getFullYear()}-${p(now.getMonth()+1)}-${p(now.getDate())}_${p(now.getHours())}${p(now.getMinutes())}${p(now.getSeconds())}_${Math.random().toString(36).slice(2,6)}`;
+  const path = `inbox/record-${stamp}.json`;
+  const payload = JSON.stringify({ date: currentDate, type: type||'record', createdAt: now.toISOString(), report: text }, null, 2);
+  const b64 = btoa(unescape(encodeURIComponent(payload)));
+  try {
+    const res = await fetch(`https://api.github.com/repos/${TM_INBOX_REPO}/contents/${path}`, {
+      method: 'PUT',
+      headers: { 'Authorization': 'Bearer ' + token, 'Accept': 'application/vnd.github+json' },
+      body: JSON.stringify({ message: 'TM ' + (type||'record') + ' ' + stamp, content: b64 })
+    });
+    if (res.ok) { if (typeof showToast === 'function') showToast('Claude에게 전송됨 ✓ — 데스크탑에서 "반영해"'); return true; }
+    else if (res.status === 401 || res.status === 403) { try { localStorage.removeItem(lsKey('inbox_token')); localStorage.removeItem('tm_inbox_token'); } catch(e){} if (window.tmOnChange) window.tmOnChange(); if (window.tmRefreshTokenStatus) tmRefreshTokenStatus(); if (typeof showToast === 'function') showToast('토큰 오류 — 전송 토큰을 다시 설정하세요'); return false; }
+    else { if (typeof showToast === 'function') showToast('전송 실패(' + res.status + ') — 클립보드에 복사함'); try { await navigator.clipboard.writeText(text); } catch (e) {} return false; }
+  } catch (e) {
+    try { await navigator.clipboard.writeText(text); if (typeof showToast === 'function') showToast('네트워크 오류 — 클립보드에 복사함'); } catch (_) {}
+    return false;
+  }
+}
 async function sendClaudeReport() {
   const text = buildClaudeReport();
   try {
@@ -5286,41 +5322,14 @@ async function sendClaudeReport() {
       if (window.tmOnChange) window.tmOnChange();
     }
   } catch (e) {}
-  let token = lsGet(lsKey('inbox_token')) || localStorage.getItem('tm_inbox_token');
-  if (!token) {
-    token = prompt('기록 전송용 GitHub 토큰을 붙여넣으세요 (한 번만 입력하면 모든 기기에 자동 저장됩니다):');
-    if (!token) return;
-    token = token.trim();
-  }
-  if (lsGet(lsKey('inbox_token')) !== token) {
-    lsSet(lsKey('inbox_token'), token);
-    if (window.tmOnChange) window.tmOnChange();
-  }
-  const now = new Date();
-  const p = n => String(n).padStart(2, '0');
-  const stamp = `${now.getFullYear()}-${p(now.getMonth()+1)}-${p(now.getDate())}_${p(now.getHours())}${p(now.getMinutes())}${p(now.getSeconds())}_${Math.random().toString(36).slice(2,6)}`;
-  const path = `inbox/record-${stamp}.json`;
-  const payload = JSON.stringify({ date: currentDate, createdAt: now.toISOString(), report: text }, null, 2);
-  const b64 = btoa(unescape(encodeURIComponent(payload)));
-  try {
-    const res = await fetch(`https://api.github.com/repos/${TM_INBOX_REPO}/contents/${path}`, {
-      method: 'PUT',
-      headers: { 'Authorization': 'Bearer ' + token, 'Accept': 'application/vnd.github+json' },
-      body: JSON.stringify({ message: 'TM record ' + stamp, content: b64 })
-    });
-    if (res.ok) {
-      if (typeof showToast === 'function') showToast('Claude에게 전송됨 ✓ — 데스크탑에서 "반영해"');
-    } else if (res.status === 401 || res.status === 403) {
-      try { localStorage.removeItem(lsKey('inbox_token')); localStorage.removeItem('tm_inbox_token'); } catch(e){}
-      if (window.tmOnChange) window.tmOnChange();
-      if (typeof showToast === 'function') showToast('토큰 오류 — 다시 탭해서 새 토큰을 입력하세요');
-    } else {
-      if (typeof showToast === 'function') showToast('전송 실패(' + res.status + ') — 클립보드에 복사함');
-      try { await navigator.clipboard.writeText(text); } catch (e) {}
-    }
-  } catch (e) {
-    try { await navigator.clipboard.writeText(text); if (typeof showToast === 'function') showToast('네트워크 오류 — 클립보드에 복사함'); } catch (_) {}
-  }
+  await tmCommitInbox(text, 'record');
+}
+async function sendPlanReport() {
+  const ta = document.getElementById('planJournal');
+  const raw = ta ? ta.value.trim() : '';
+  if (!raw) { if (typeof showToast === 'function') showToast('수정 요청 내용을 적어주세요'); return; }
+  const text = '[이후 일정 수정 요청]\n기준일: ' + currentDate + '\n' + raw;
+  await tmCommitInbox(text, 'plan');
 }
 
 // 3-state 토글: undefined(기본/카테고리 색) → true(완료/초록) → false(미완료/빨강) → undefined
@@ -6928,6 +6937,7 @@ function bindEvents() {
   // 동기화 모달
   document.getElementById('syncBtn').addEventListener('click', openSyncModal);
   { const _fsb = document.getElementById('freeSendBtn'); if (_fsb) _fsb.addEventListener('click', sendClaudeReport); }
+  { const _psb = document.getElementById('planSendBtn'); if (_psb) _psb.addEventListener('click', sendPlanReport); }
   document.getElementById('syncModalClose').addEventListener('click', closeSyncModal);
   document.getElementById('syncCancel').addEventListener('click', closeSyncModal);
   document.getElementById('syncModal').addEventListener('click', e => {
@@ -7465,6 +7475,7 @@ function bindEvents() {
       document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.mode === mode));
       document.getElementById('growthMode').style.display = mode === 'growth' ? 'block' : 'none';
       document.getElementById('freeMode').style.display = mode === 'free' ? 'block' : 'none';
+      document.getElementById('planMode').style.display = mode === 'plan' ? 'block' : 'none';
     }
     loadDate(date);
   });
@@ -7582,6 +7593,7 @@ function switchMode(mode) {
   document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.mode === mode));
   document.getElementById('growthMode').style.display = mode === 'growth' ? 'block' : 'none';
   document.getElementById('freeMode').style.display = mode === 'free' ? 'block' : 'none';
+  document.getElementById('planMode').style.display = mode === 'plan' ? 'block' : 'none';
   loadDate(currentDate);
 }
 
