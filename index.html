@@ -3175,9 +3175,8 @@ function scheduleMinutesBetween(start, end) {
 function tmSeedLastWeek(){
   try{
     if(!window.tmIsOwner) return;
-    if(localStorage.getItem(lsKey('lastweek_seed_v6'))) return;
+    if(localStorage.getItem(lsKey('lastweek_seed_v7'))) return;
     var seed={
-      // 월 6/29 (근무 없음)
       '2026-06-29':[
         {start:'01:41',end:'07:25',label:'수면 (슬립사이클)',category:'prep'},
         {start:'07:25',end:'08:20',label:'출발 준비',category:'prep'},
@@ -3196,9 +3195,9 @@ function tmSeedLastWeek(){
         {start:'17:40',end:'18:00',label:'휴식',category:'dopa'},
         {start:'18:00',end:'18:40',label:'저녁',category:'meal'},
         {start:'18:40',end:'22:00',label:'휴식',category:'dopa'},
-        {start:'22:00',end:'23:00',label:'러닝',category:'exercise'}
+        {start:'22:00',end:'23:00',label:'러닝',category:'exercise'},
+        {start:'23:00',end:'23:59',label:'취침 준비',category:'prep'}
       ],
-      // 화 6/30 (근무 08~14)
       '2026-06-30':[
         {start:'00:42',end:'06:15',label:'수면 (슬립사이클)',category:'prep'},
         {start:'06:15',end:'06:40',label:'출발 준비',category:'prep'},
@@ -3216,10 +3215,9 @@ function tmSeedLastWeek(){
         {start:'20:10',end:'20:40',label:'운동',category:'exercise'},
         {start:'20:40',end:'21:40',label:'휴식',category:'dopa'},
         {start:'21:40',end:'22:30',label:'명상',category:'dopa'},
-        {start:'22:30',end:'23:00',label:'수면 정리',category:'prep'},
+        {start:'22:30',end:'23:05',label:'취침 준비',category:'prep'},
         {start:'23:05',end:'23:59',label:'취침 (슬립사이클)',category:'prep'}
       ],
-      // 수 7/1 (근무 08~15)
       '2026-07-01':[
         {start:'00:00',end:'06:30',label:'수면 (슬립사이클)',category:'prep'},
         {start:'06:30',end:'07:00',label:'출발 준비',category:'prep'},
@@ -3229,9 +3227,14 @@ function tmSeedLastWeek(){
         {start:'11:00',end:'12:00',label:'점심 (휴게)',category:'meal'},
         {start:'12:00',end:'15:00',label:'일',category:'alba'},
         {start:'15:00',end:'16:40',label:'공부',category:'app'},
-        {start:'16:40',end:'17:40',label:'퇴근',category:'prep'}
+        {start:'16:40',end:'17:40',label:'퇴근',category:'prep'},
+        {start:'17:40',end:'18:00',label:'휴식',category:'dopa'},
+        {start:'18:00',end:'18:40',label:'저녁',category:'meal'},
+        {start:'18:40',end:'20:40',label:'도파민',category:'dopa'},
+        {start:'20:40',end:'21:20',label:'명상',category:'dopa'},
+        {start:'21:20',end:'23:10',label:'통화',category:'dopa'},
+        {start:'23:10',end:'23:59',label:'취침 준비',category:'prep'}
       ],
-      // 목 7/2 (근무 08~15)
       '2026-07-02':[
         {start:'06:30',end:'07:00',label:'출발 준비',category:'prep'},
         {start:'07:00',end:'07:50',label:'통근',category:'prep'},
@@ -3243,9 +3246,12 @@ function tmSeedLastWeek(){
         {start:'15:00',end:'16:40',label:'공부',category:'app'},
         {start:'16:40',end:'17:40',label:'퇴근',category:'prep'},
         {start:'17:40',end:'18:00',label:'휴식',category:'dopa'},
-        {start:'18:00',end:'18:40',label:'저녁',category:'meal'}
+        {start:'18:00',end:'18:40',label:'저녁',category:'meal'},
+        {start:'18:40',end:'19:20',label:'명상',category:'dopa'},
+        {start:'19:20',end:'19:50',label:'클로드 작업',category:'app'},
+        {start:'19:50',end:'23:00',label:'도파민',category:'dopa'},
+        {start:'23:00',end:'23:59',label:'취침 준비',category:'prep'}
       ],
-      // 금 7/3 (근무 없음 · 공부 날)
       '2026-07-03':[
         {start:'07:30',end:'08:20',label:'출발 준비',category:'prep'},
         {start:'08:20',end:'09:00',label:'통근',category:'prep'},
@@ -3254,21 +3260,25 @@ function tmSeedLastWeek(){
         {start:'11:40',end:'15:00',label:'공부',category:'app'},
         {start:'15:00',end:'15:40',label:'밥',category:'meal'},
         {start:'15:40',end:'16:40',label:'공부',category:'app'},
-        {start:'16:40',end:'17:40',label:'퇴근',category:'prep'}
+        {start:'16:40',end:'17:40',label:'퇴근',category:'prep'},
+        {start:'17:40',end:'18:00',label:'휴식',category:'dopa'},
+        {start:'18:00',end:'18:40',label:'저녁',category:'meal'},
+        {start:'18:40',end:'19:20',label:'명상',category:'dopa'},
+        {start:'19:20',end:'19:50',label:'클로드 작업',category:'app'},
+        {start:'19:50',end:'23:00',label:'도파민',category:'dopa'},
+        {start:'23:00',end:'23:59',label:'취침 준비',category:'prep'}
       ],
-      // 토 7/4 (게임/휴식 데이)
       '2026-07-04':[
         {start:'10:40',end:'11:30',label:'아침',category:'meal'},
         {start:'11:30',end:'12:30',label:'명상',category:'dopa'},
         {start:'12:30',end:'14:00',label:'휴식',category:'dopa'},
-        {start:'14:00',end:'19:00',label:'게임 (점심 포함)',category:'dopa'},
+        {start:'14:00',end:'19:00',label:'도파민 (점심 포함)',category:'dopa'},
         {start:'19:00',end:'20:00',label:'저녁',category:'meal'},
         {start:'20:00',end:'21:00',label:'앱 작업',category:'app'},
-        {start:'21:00',end:'23:00',label:'게임',category:'dopa'},
+        {start:'21:00',end:'23:00',label:'도파민',category:'dopa'},
         {start:'23:00',end:'23:30',label:'명상',category:'dopa'},
         {start:'23:30',end:'23:59',label:'취침 준비',category:'prep'}
       ],
-      // 일 7/5 (일요일)
       '2026-07-05':[
         {start:'00:00',end:'08:30',label:'수면',category:'prep'},
         {start:'08:30',end:'09:00',label:'출발 준비',category:'prep'},
@@ -3284,12 +3294,12 @@ function tmSeedLastWeek(){
         {start:'15:30',end:'20:30',label:'순 아웃팅',category:'alba'},
         {start:'20:30',end:'21:30',label:'귀가',category:'prep'},
         {start:'21:30',end:'22:00',label:'귀가 정리',category:'prep'},
-        {start:'22:00',end:'23:59',label:'휴식 및 취침',category:'prep'}
+        {start:'22:00',end:'23:30',label:'휴식',category:'dopa'},
+        {start:'23:30',end:'23:59',label:'취침 준비',category:'prep'}
       ]
     };
-    // 소유자 재구성본 — 새 버전이면 해당 날짜를 덮어씀 (수동 편집 없음 전제)
     Object.keys(seed).forEach(function(d){ lsSet(lsKey('dayblocks_'+d), seed[d]); });
-    localStorage.setItem(lsKey('lastweek_seed_v6'),'1');
+    localStorage.setItem(lsKey('lastweek_seed_v7'),'1');
   }catch(e){}
 }
 
