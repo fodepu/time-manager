@@ -3006,7 +3006,6 @@ const SAMPLE_TEMPLATE = {
   weekday: [
     { start: '07:00', end: '07:30', label: '아침',          category: 'meal' },
     { start: '07:30', end: '09:00', label: '오전 집중',      category: 'read' },
-    { start: '09:00', end: '12:00', label: '오전 일정',      category: 'toeic' },
     { start: '12:00', end: '13:00', label: '점심',          category: 'meal' },
     { start: '13:00', end: '17:00', label: '오후 일정',      category: 'app' },
     { start: '17:00', end: '18:00', label: '운동',          category: 'exercise' },
@@ -3048,7 +3047,6 @@ const OWNER_TEMPLATE = {
     { start: '11:00', end: '14:00', label: '알바 (11시 바나나·쉐이크)', category: 'alba' },
     { start: '14:00', end: '14:30', label: '점심 (휴게)',            category: 'meal' },
     { start: '14:30', end: '15:00', label: '알바',                  category: 'alba', days: [1,2,3] },
-    { start: '15:00', end: '16:30', label: '자유·학습 (단어/복습/앱)', category: 'toeic', days: [1,2,3] },
     { start: '14:30', end: '16:00', label: '알바',                  category: 'alba', days: [4,5] },
     { start: '16:00', end: '16:30', label: '휴식 + 간식 + 단어',     category: 'meal', days: [4,5] },
     { start: '16:30', end: '16:40', label: '걷기 (차로 이동)',       category: 'exercise' },
@@ -3072,9 +3070,7 @@ const OWNER_TEMPLATE = {
     { start: '11:40', end: '12:00', label: '외출 준비',              category: 'prep' },
     { start: '12:00', end: '13:10', label: '카페 이동',              category: 'prep' },
     { start: '13:10', end: '13:50', label: '점심 (카페)',            category: 'meal' },
-    { start: '13:50', end: '14:40', label: '학습 1 (카페)',          category: 'toeic' },
     { start: '14:40', end: '14:50', label: '휴식',                  category: 'dopa' },
-    { start: '14:50', end: '15:40', label: '학습 2 (카페)',          category: 'toeic' },
     { start: '15:40', end: '17:00', label: '자유 시간',             category: 'dopa' },
     { start: '17:00', end: '18:00', label: '테니스 이동',            category: 'prep' },
     { start: '18:00', end: '20:00', label: '테니스',                category: 'exercise' },
@@ -3092,7 +3088,6 @@ const OWNER_TEMPLATE = {
     { start: '10:00', end: '10:30', label: '도착 정리 + 간식',       category: 'meal' },
     { start: '10:30', end: '12:30', label: '자유 학습',             category: 'app' },
     { start: '12:30', end: '13:10', label: '점심',                  category: 'meal' },
-    { start: '13:10', end: '13:30', label: '단어 가볍게',            category: 'toeic' },
     { start: '13:30', end: '13:50', label: '산책',                  category: 'exercise' },
     { start: '13:50', end: '14:00', label: '교회 이동',              category: 'prep' },
     { start: '14:00', end: '15:30', label: '예배',                  category: 'alba' },
@@ -3113,6 +3108,8 @@ window.tmUseOwnerTemplate = function(){ SCHEDULE_TEMPLATE = OWNER_TEMPLATE; };
 // 시간표 강제 동기화: SCHEDULE_TEMPLATE = 단일 진실원천
 // 누락된 블록은 추가, 기존 블록의 누락된 필드는 채워넣음 (사용자 편집은 보존)
 function syncScheduleEntries() {
+  // 1회 마이그레이션: 토익 계획 삭제 → 기존 시간표 항목 재생성 (토익 블록 제거)
+  try{ if(!localStorage.getItem('tm_sched_toeicfree')){ if(typeof entries!=='undefined'&&Array.isArray(entries)){ entries = entries.filter(function(e){ return !(e&&e.id&&String(e.id).indexOf('sched_')===0); }); } localStorage.setItem('tm_sched_toeicfree','1'); } }catch(e){}
   const dayMap = {
     weekday: [1, 2, 3, 4, 5],
     saturday: [6],
@@ -3171,6 +3168,110 @@ function scheduleMinutesBetween(start, end) {
   const [sh, sm] = start.split(':').map(Number);
   const [eh, em] = end.split(':').map(Number);
   return Math.max(0, (eh * 60 + em) - (sh * 60 + sm));
+}
+
+
+// 지난주(6/29~7/5) 확정 기록 시드 — 슬립사이클 CSV로 검증된 수면만. 데이터 없는 날/불확실한 항목은 비움.
+function tmSeedLastWeek(){
+  try{
+    if(localStorage.getItem(lsKey('lastweek_seed_v3'))) return;
+    var seed={
+      // 월 6/29 (근무 없음 · 공부/러닝 날)
+      '2026-06-29':[
+        {start:'01:41',end:'07:25',label:'수면 (슬립사이클)',category:'prep'},
+        {start:'08:20',end:'09:00',label:'통근',category:'prep'},
+        {start:'10:00',end:'10:50',label:'러닝',category:'exercise'},
+        {start:'10:50',end:'16:40',label:'공부',category:'app'},
+        {start:'16:40',end:'17:40',label:'퇴근',category:'prep'}
+      ],
+      // 화 6/30 (근무 08~14)
+      '2026-06-30':[
+        {start:'00:42',end:'06:15',label:'수면 (슬립사이클)',category:'prep'},
+        {start:'06:40',end:'07:40',label:'통근',category:'prep'},
+        {start:'08:00',end:'08:30',label:'아침 (밥)',category:'meal'},
+        {start:'08:30',end:'11:00',label:'일',category:'alba'},
+        {start:'11:00',end:'11:40',label:'밥 (휴게)',category:'meal'},
+        {start:'11:40',end:'12:30',label:'명상 (휴게)',category:'dopa'},
+        {start:'12:30',end:'14:00',label:'일',category:'alba'},
+        {start:'14:00',end:'15:30',label:'퇴근',category:'prep'},
+        {start:'15:30',end:'16:00',label:'도착 정리',category:'prep'},
+        {start:'16:00',end:'18:30',label:'낮잠',category:'prep'},
+        {start:'18:30',end:'19:10',label:'밥',category:'meal'},
+        {start:'19:10',end:'20:10',label:'휴식',category:'dopa'},
+        {start:'20:10',end:'20:40',label:'운동',category:'exercise'},
+        {start:'20:40',end:'21:40',label:'휴식',category:'dopa'},
+        {start:'21:40',end:'22:30',label:'명상',category:'dopa'},
+        {start:'22:30',end:'23:00',label:'수면 정리',category:'prep'},
+        {start:'23:05',end:'23:59',label:'취침 (슬립사이클)',category:'prep'}
+      ],
+      // 수 7/1 (근무 08~15)
+      '2026-07-01':[
+        {start:'00:00',end:'06:30',label:'수면 (슬립사이클)',category:'prep'},
+        {start:'07:00',end:'07:50',label:'통근',category:'prep'},
+        {start:'08:00',end:'08:30',label:'아침 (밥)',category:'meal'},
+        {start:'08:30',end:'11:00',label:'일',category:'alba'},
+        {start:'11:00',end:'12:00',label:'점심 (휴게)',category:'meal'},
+        {start:'12:00',end:'15:00',label:'일',category:'alba'},
+        {start:'15:00',end:'16:40',label:'공부',category:'app'},
+        {start:'16:40',end:'17:40',label:'퇴근',category:'prep'}
+      ],
+      // 목 7/2 (근무 08~15)
+      '2026-07-02':[
+        {start:'07:00',end:'07:50',label:'통근',category:'prep'},
+        {start:'08:00',end:'08:30',label:'아침 (밥)',category:'meal'},
+        {start:'08:30',end:'11:00',label:'일',category:'alba'},
+        {start:'11:00',end:'11:40',label:'밥 (휴게)',category:'meal'},
+        {start:'11:40',end:'12:30',label:'명상 (휴게)',category:'dopa'},
+        {start:'12:30',end:'15:00',label:'일',category:'alba'},
+        {start:'15:00',end:'16:40',label:'공부',category:'app'},
+        {start:'16:40',end:'17:40',label:'퇴근',category:'prep'}
+      ],
+      // 금 7/3 (근무 없음 · 공부 날, 밥 11:00·15:00)
+      '2026-07-03':[
+        {start:'08:20',end:'09:00',label:'통근',category:'prep'},
+        {start:'09:00',end:'11:00',label:'공부',category:'app'},
+        {start:'11:00',end:'11:40',label:'밥',category:'meal'},
+        {start:'11:40',end:'15:00',label:'공부',category:'app'},
+        {start:'15:00',end:'15:40',label:'밥',category:'meal'},
+        {start:'15:40',end:'16:40',label:'공부',category:'app'},
+        {start:'16:40',end:'17:40',label:'퇴근',category:'prep'}
+      ],
+      // 토 7/4 (게임/휴식 데이)
+      '2026-07-04':[
+        {start:'10:40',end:'11:30',label:'아침',category:'meal'},
+        {start:'11:30',end:'12:30',label:'명상',category:'dopa'},
+        {start:'12:30',end:'14:00',label:'휴식',category:'dopa'},
+        {start:'14:00',end:'19:00',label:'게임 (점심 포함)',category:'dopa'},
+        {start:'19:00',end:'20:00',label:'저녁',category:'meal'},
+        {start:'20:00',end:'21:00',label:'앱 작업',category:'app'},
+        {start:'21:00',end:'23:00',label:'게임',category:'dopa'},
+        {start:'23:00',end:'23:30',label:'명상',category:'dopa'},
+        {start:'23:30',end:'23:59',label:'취침 준비',category:'prep'}
+      ],
+      // 일 7/5 (일요일)
+      '2026-07-05':[
+        {start:'00:00',end:'08:30',label:'수면',category:'prep'},
+        {start:'09:00',end:'10:00',label:'이동',category:'prep'},
+        {start:'10:00',end:'10:40',label:'아침',category:'meal'},
+        {start:'10:40',end:'11:30',label:'명상',category:'dopa'},
+        {start:'11:30',end:'11:50',label:'휴식',category:'dopa'},
+        {start:'11:50',end:'12:20',label:'앱 작업',category:'app'},
+        {start:'12:20',end:'13:00',label:'명상',category:'dopa'},
+        {start:'13:00',end:'13:40',label:'밥',category:'meal'},
+        {start:'13:40',end:'13:50',label:'이동',category:'prep'},
+        {start:'13:50',end:'15:30',label:'예배',category:'alba'},
+        {start:'15:30',end:'20:30',label:'순 아웃팅',category:'alba'},
+        {start:'20:30',end:'21:30',label:'귀가',category:'prep'},
+        {start:'21:30',end:'22:00',label:'귀가 정리',category:'prep'},
+        {start:'22:00',end:'23:59',label:'휴식 및 취침',category:'prep'}
+      ]
+    };
+    Object.keys(seed).forEach(function(d){
+      var cur=lsGet(lsKey('dayblocks_'+d));
+      if(!cur || !Array.isArray(cur) || !cur.length){ lsSet(lsKey('dayblocks_'+d), seed[d]); }
+    });
+    localStorage.setItem(lsKey('lastweek_seed_v3'),'1');
+  }catch(e){}
 }
 
 // 시간표 강제 reset — 모든 sched_* entries 제거 후 SCHEDULE_TEMPLATE에서 새로
@@ -7468,6 +7569,7 @@ function init() {
   if (syncScheduleEntries()) {
     loadDate(currentDate);
   }
+  try{ tmSeedLastWeek(); }catch(e){}
   
   renderHistory();
   setInterval(checkAlarms, 30000);
