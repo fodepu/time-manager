@@ -2503,6 +2503,10 @@
 
   <div id="freeMode" style="display:none;">
     <div class="free-prompt" id="freePrompt"></div>
+    <div style="display:flex;align-items:center;gap:8px;margin:10px 0">
+      <label for="recordDate" style="font-size:13px;color:#888;white-space:nowrap">기록할 날짜</label>
+      <input type="date" id="recordDate" style="font-size:14px;padding:6px 8px;border:1px solid #ccc;border-radius:8px;flex:1">
+    </div>
     <textarea class="free-textarea" id="freeJournal" placeholder="자유롭게 기록하세요..."></textarea>
     <button type="button" class="free-send-btn" id="freeSendBtn">📤 클로드에게 보내기</button>
     <div class="free-send-hint">탭하면 ① 일기가 그대로 저장되고 ② 이 날짜의 시간표로 변환되고 ③ 클로드에게도 전송됩니다. 일기는 절대 지워지지 않습니다.</div>
@@ -5246,22 +5250,28 @@ function renderScheduleRow(entry, mode) {
 }
 
 // Claude에게 보낼 기록 텍스트 생성 (오늘 메모 + 블록 상태)
-function buildClaudeReport() {
-  const dateStr = currentDate;
+function buildClaudeReport(dateArg) {
+  const dateStr = dateArg || currentDate;
   const journalEl = document.getElementById('freeJournal');
   const note = (journalEl ? journalEl.value : '').trim();
-  const todays = entries
-    .filter(e => e.pinned && isScheduleBlock(e) && entryAppliesToDate(e, dateStr))
-    .sort((a, b) => scheduleTimeToMinutes(a.start) - scheduleTimeToMinutes(b.start));
-  const lines = todays.map(e => {
-    const v = e.values || {};
-    const st = v.check === true ? '✅완료' : v.check === false ? '❌미완료' : '⬜미정';
-    const n = (v.note || '').trim();
-    return `${e.start}~${e.end} ${e.label} ${st}${n ? ' / 메모: ' + n : ''}`;
-  });
+  let lines = [];
+  const db = lsGet(lsKey('dayblocks_' + dateStr));
+  if (db && Array.isArray(db) && db.length) {
+    lines = db.map(b => `${b.start}~${b.end} ${b.label}`);
+  } else {
+    const todays = entries
+      .filter(e => e.pinned && isScheduleBlock(e) && entryAppliesToDate(e, dateStr))
+      .sort((a, b) => scheduleTimeToMinutes(a.start) - scheduleTimeToMinutes(b.start));
+    lines = todays.map(e => {
+      const v = e.values || {};
+      const st = v.check === true ? '✅완료' : v.check === false ? '❌미완료' : '⬜미정';
+      const n = (v.note || '').trim();
+      return `${e.start}~${e.end} ${e.label} ${st}${n ? ' / 메모: ' + n : ''}`;
+    });
+  }
   let out = `[Time Manager 기록 — ${dateStr}]\n`;
-  if (note) out += `\n■ 오늘 메모/변동사항:\n${note}\n`;
-  out += `\n■ 오늘 블록 상태:\n${lines.join('\n')}\n`;
+  if (note) out += `\n■ 메모/변동사항:\n${note}\n`;
+  out += `\n■ 블록:\n${lines.join('\n')}\n`;
   out += `\n(고정: 일·출퇴근·운동·수면은 그대로, 유연 블록만 조정해줘)`;
   return out;
 }
@@ -5281,7 +5291,7 @@ async function copyClaudeReport() {
 
 // 기록을 time-manager 저장소 inbox/ 에 커밋 (Claude가 데스크탑에서 읽음)
 const TM_INBOX_REPO = 'fodepu/time-manager';
-async function tmCommitInbox(text, type){
+async function tmCommitInbox(text, type, dateArg){
   let token = lsGet(lsKey('inbox_token')) || localStorage.getItem('tm_inbox_token');
   if (!token) {
     token = prompt('기록 전송용 GitHub 토큰을 붙여넣으세요 (한 번만 입력하면 모든 기기에 자동 저장됩니다):');
@@ -5293,7 +5303,7 @@ async function tmCommitInbox(text, type){
   const p = n => String(n).padStart(2, '0');
   const stamp = `${now.getFullYear()}-${p(now.getMonth()+1)}-${p(now.getDate())}_${p(now.getHours())}${p(now.getMinutes())}${p(now.getSeconds())}_${Math.random().toString(36).slice(2,6)}`;
   const path = `inbox/record-${stamp}.json`;
-  const payload = JSON.stringify({ date: currentDate, type: type||'record', createdAt: now.toISOString(), report: text }, null, 2);
+  const payload = JSON.stringify({ date: dateArg||currentDate, type: type||'record', createdAt: now.toISOString(), report: text }, null, 2);
   const b64 = btoa(unescape(encodeURIComponent(payload)));
   try {
     const res = await fetch(`https://api.github.com/repos/${TM_INBOX_REPO}/contents/${path}`, {
@@ -5310,19 +5320,22 @@ async function tmCommitInbox(text, type){
   }
 }
 async function sendClaudeReport() {
-  const text = buildClaudeReport();
+  const rd = document.getElementById('recordDate');
+  const targetDate = (rd && rd.value) ? rd.value : currentDate;
+  const text = buildClaudeReport(targetDate);
   try {
     const _ta = document.getElementById('freeJournal');
     const _txt = _ta ? _ta.value : '';
     if (_txt && _txt.trim()) {
-      freeText = _txt;
-      saveFree(currentDate, { date: currentDate, freeText: _txt, savedAt: new Date().toISOString() });
+      saveFree(targetDate, { date: targetDate, freeText: _txt, savedAt: new Date().toISOString() });
       const _bl = parseDayMemo(_txt);
-      if (_bl.length) { lsSet(lsKey('dayblocks_' + currentDate), _bl); if (currentMode === 'growth' && typeof renderItems === 'function') renderItems(); }
+      if (_bl.length) { lsSet(lsKey('dayblocks_' + targetDate), _bl); }
+      if (targetDate === currentDate) { freeText = _txt; if (currentMode === 'growth' && typeof renderItems === 'function') renderItems(); }
       if (window.tmOnChange) window.tmOnChange();
     }
   } catch (e) {}
-  await tmCommitInbox(text, 'record');
+  const ok = await tmCommitInbox(text, 'record', targetDate);
+  if (ok && typeof showToast === 'function' && targetDate !== currentDate) showToast(targetDate + ' 기록으로 저장·전송됨 ✓');
 }
 async function sendPlanReport() {
   const ta = document.getElementById('planJournal');
@@ -6938,6 +6951,7 @@ function bindEvents() {
   document.getElementById('syncBtn').addEventListener('click', openSyncModal);
   { const _fsb = document.getElementById('freeSendBtn'); if (_fsb) _fsb.addEventListener('click', sendClaudeReport); }
   { const _psb = document.getElementById('planSendBtn'); if (_psb) _psb.addEventListener('click', sendPlanReport); }
+  { const _rd = document.getElementById('recordDate'); if (_rd) _rd.addEventListener('change', function(){ var d=_rd.value; if(!d) return; var data=(typeof loadFree==='function')?loadFree(d):null; var ta=document.getElementById('freeJournal'); if(ta) ta.value=(data&&data.freeText)?data.freeText:''; if(typeof renderFreePrompt==='function') renderFreePrompt(); }); }
   document.getElementById('syncModalClose').addEventListener('click', closeSyncModal);
   document.getElementById('syncCancel').addEventListener('click', closeSyncModal);
   document.getElementById('syncModal').addEventListener('click', e => {
@@ -7488,6 +7502,7 @@ function loadDate(date) {
     const data = loadFree(date);
     freeText = (data && data.freeText) ? data.freeText : '';
     document.getElementById('freeJournal').value = freeText;
+    const _rd = document.getElementById('recordDate'); if (_rd) _rd.value = date;
     renderFreePrompt();
   } else {
     const data = loadGrowth(date);
