@@ -3109,7 +3109,7 @@ window.tmUseOwnerTemplate = function(){ SCHEDULE_TEMPLATE = OWNER_TEMPLATE; };
 // 누락된 블록은 추가, 기존 블록의 누락된 필드는 채워넣음 (사용자 편집은 보존)
 function syncScheduleEntries() {
   // 1회 마이그레이션: 토익 계획 삭제 → 기존 시간표 항목 재생성 (토익 블록 제거)
-  try{ if(!localStorage.getItem('tm_sched_toeicfree')){ if(typeof entries!=='undefined'&&Array.isArray(entries)){ entries = entries.filter(function(e){ return !(e&&e.id&&String(e.id).indexOf('sched_')===0); }); } localStorage.setItem('tm_sched_toeicfree','1'); } }catch(e){}
+  try{ if(window.tmIsOwner && !localStorage.getItem('tm_sched_toeicfree')){ if(typeof entries!=='undefined'&&Array.isArray(entries)){ entries = entries.filter(function(e){ return !(e&&e.id&&String(e.id).indexOf('sched_')===0); }); } localStorage.setItem('tm_sched_toeicfree','1'); } }catch(e){}
   const dayMap = {
     weekday: [1, 2, 3, 4, 5],
     saturday: [6],
@@ -3174,6 +3174,7 @@ function scheduleMinutesBetween(start, end) {
 // 지난주(6/29~7/5) 확정 기록 시드 — 슬립사이클 CSV로 검증된 수면만. 데이터 없는 날/불확실한 항목은 비움.
 function tmSeedLastWeek(){
   try{
+    if(!window.tmIsOwner) return;
     if(localStorage.getItem(lsKey('lastweek_seed_v3'))) return;
     var seed={
       // 월 6/29 (근무 없음 · 공부/러닝 날)
@@ -7674,6 +7675,7 @@ onAuthStateChanged(auth, async (user)=>{
       }
     }catch(e){ console.warn('cloud pull', e&&e.message); }
     const OWNER='kimjuham1120@gmail.com';
+    window.tmIsOwner=(user.email===OWNER);
     if(user.email===OWNER && window.tmUseOwnerTemplate) window.tmUseOwnerTemplate();
     if(!started){ started=true; if(window.init) window.init(); }
     showApp(user.email);
