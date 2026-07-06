@@ -2509,6 +2509,13 @@
       <label style="display:inline-block;background:#334155;color:#fff;padding:10px 16px;border-radius:10px;font-size:14px;cursor:pointer">🌙 슬립사이클 CSV 가져오기<input type="file" id="scFile" accept=".csv,text/csv" style="display:none"></label>
       <div style="font-size:12px;color:#888;margin-top:8px;line-height:1.55">슬립사이클 앱 → 프로필 → More → Account → "Export Database to CSV"로 내보낸 파일을 선택하세요. 날짜별 실제 취침·기상·수면시간이 트래커 상단에 표시됩니다.</div>
     </div>
+    <div style="margin-top:16px;padding-top:14px;border-top:1px solid rgba(0,0,0,.08)">
+      <div style="font-size:14px;font-weight:600;margin-bottom:6px">🔑 클로드 전송 토큰</div>
+      <div id="tmTokenStatus" style="font-size:13px;margin-bottom:8px;color:#888">확인 중…</div>
+      <button type="button" id="tmTokenSetBtn" style="background:#334155;color:#fff;border:none;padding:9px 14px;border-radius:9px;font-size:13px;cursor:pointer">설정 / 변경</button>
+      <button type="button" id="tmTokenClearBtn" style="background:none;border:1px solid #ccc;color:#999;padding:9px 14px;border-radius:9px;font-size:13px;cursor:pointer;margin-left:6px">지우기</button>
+      <div style="font-size:12px;color:#aaa;margin-top:8px;line-height:1.55">만료 없는 <b>classic PAT</b>(repo 권한, No expiration)를 한 번만 넣으면 "📤 보내기"가 매번 토큰을 안 물어봐요. 토큰은 이 기기에 저장되고 클라우드로 동기화돼요.</div>
+    </div>
   </div>
 
   <div class="history-section">
@@ -7823,6 +7830,39 @@ if(logoutBtn) logoutBtn.addEventListener('click', async ()=>{
     });}
   }
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',wire); else wire();
+})();
+</script>
+<script>
+/* 클로드 전송 토큰 설정 UI */
+(function(){
+  function getTok(){ try{ return (typeof lsGet==='function' && lsGet(lsKey('inbox_token'))) || localStorage.getItem('tm_inbox_token') || ''; }catch(e){ return ''; } }
+  function mask(t){ return t && t.length>12 ? (t.slice(0,7)+'…'+t.slice(-4)) : (t||''); }
+  function updateStatus(){
+    var el=document.getElementById('tmTokenStatus'); if(!el) return;
+    var t=getTok();
+    if(t){ el.innerHTML='저장됨 ✓ <span style="opacity:.55">('+mask(t)+')</span>'; el.style.color='#16a34a'; }
+    else { el.textContent='미설정 — 아래 버튼으로 설정하세요'; el.style.color='#c026a3'; }
+  }
+  function setTok(){
+    var t=prompt('클로드 전송용 GitHub 토큰(ghp_...)을 붙여넣으세요:');
+    if(t===null) return; t=(''+t).trim(); if(!t) return;
+    try{ lsSet(lsKey('inbox_token'), t); localStorage.setItem('tm_inbox_token', t); if(window.tmOnChange) window.tmOnChange(); }catch(e){}
+    if(typeof showToast==='function') showToast('전송 토큰 저장됨 ✓');
+    updateStatus();
+  }
+  function clearTok(){
+    if(!confirm('전송 토큰을 이 기기에서 지울까요?')) return;
+    try{ localStorage.removeItem(lsKey('inbox_token')); localStorage.removeItem('tm_inbox_token'); if(window.tmOnChange) window.tmOnChange(); }catch(e){}
+    if(typeof showToast==='function') showToast('전송 토큰 삭제됨');
+    updateStatus();
+  }
+  function wire(){
+    var b=document.getElementById('tmTokenSetBtn'); if(b&&!b._w){ b._w=1; b.addEventListener('click',setTok); }
+    var c=document.getElementById('tmTokenClearBtn'); if(c&&!c._w){ c._w=1; c.addEventListener('click',clearTok); }
+    updateStatus();
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',wire); else wire();
+  window.tmRefreshTokenStatus=updateStatus;
 })();
 </script>
 </body>
