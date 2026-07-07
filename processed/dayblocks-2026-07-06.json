@@ -2,8 +2,9 @@
   "date": "2026-07-06",
   "blocks": [
     {"start":"07:30","end":"08:00","label":"기상","category":"prep","values":{"check":true}},
-    {"start":"08:00","end":"09:00","label":"출근","category":"prep","values":{"check":true}},
-    {"start":"09:00","end":"10:10","label":"클로드","category":"app","values":{"check":true}},
+    {"start":"08:00","end":"09:00","label":"이동·출근","category":"prep","values":{"check":true}},
+    {"start":"09:00","end":"09:15","label":"도착·아침","category":"meal","values":{"check":true}},
+    {"start":"09:15","end":"10:10","label":"클로드 작업","category":"app","values":{"check":true}},
     {"start":"10:10","end":"10:30","label":"휴식","category":"dopa","values":{"check":true}},
     {"start":"10:30","end":"11:00","label":"명상","category":"dopa","values":{"check":true}},
     {"start":"11:00","end":"11:40","label":"점심","category":"meal","values":{"check":true}},
@@ -12,16 +13,15 @@
     {"start":"12:45","end":"13:00","label":"명상","category":"dopa","values":{"check":true}},
     {"start":"13:00","end":"13:15","label":"산책","category":"exercise","values":{"check":true}},
     {"start":"13:15","end":"13:30","label":"클로드","category":"app","values":{"check":true}},
-    {"start":"13:30","end":"14:00","label":"독서","category":"app","values":{"check":true}},
+    {"start":"13:30","end":"13:55","label":"독서","category":"read","values":{"check":true}},
     {"start":"14:00","end":"16:30","label":"일","category":"alba","values":{"check":true}},
     {"start":"16:30","end":"17:40","label":"귀가","category":"prep","values":{"check":true}},
     {"start":"17:40","end":"18:00","label":"휴식","category":"dopa","values":{"check":true}},
     {"start":"18:00","end":"18:30","label":"저녁","category":"meal","values":{"check":true}},
     {"start":"18:30","end":"19:00","label":"휴식","category":"dopa","values":{"check":true}},
-    {"start":"19:00","end":"21:00","label":"클로드","category":"app","values":{"check":true}},
+    {"start":"19:00","end":"21:00","label":"클로드 작업","category":"app","values":{"check":true}},
     {"start":"21:00","end":"22:00","label":"휴식","category":"dopa","values":{"check":true}},
-    {"start":"22:00","end":"23:00","label":"클로드","category":"app","values":{"check":true}},
-    {"start":"23:00","end":"23:30","label":"휴식","category":"dopa","values":{"check":true}},
-    {"start":"23:30","end":"23:59","label":"취침준비","category":"prep","values":{"check":true}}
+    {"start":"22:00","end":"23:30","label":"클로드 작업","category":"app","values":{"check":true}},
+    {"start":"23:30","end":"23:59","label":"취침 준비","category":"prep","values":{"check":true}}
   ]
 }
