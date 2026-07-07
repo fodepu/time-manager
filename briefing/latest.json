@@ -1,0 +1,44 @@
+{
+  "date": "2026-07-07",
+  "generatedAt": "2026-07-07T19:00:53+09:00",
+  "urgent": {
+    "text": "Claude Fable 5, 7/1부터 전 세계 정식 오픈 (Claude.ai·API·Code·Cowork). 6/30 美 수출통제 해제로 접근 제한 풀림 — 오늘 바로 최신 모델로 갈아탈 수 있음.",
+    "source": "llm-stats.com"
+  },
+  "categories": [
+    {
+      "key": "model",
+      "title": "모델 릴리스",
+      "items": [
+        { "title": "OpenAI GPT-5.6 패밀리 프리뷰 (Sol·Terra·Luna)", "summary": "6/26 공개. API·Codex 한정, 신뢰기관 ~20곳만. 가격 Sol /0, Terra .50/5, Luna / (100만 토큰).", "source": "llm-stats.com", "url": "https://llm-stats.com/llm-updates" },
+        { "title": "Anthropic Claude Sonnet 5 출시", "summary": "6/30 출시. 역대 가장 '에이전트형' Sonnet으로 포지셔닝.", "source": "aiflashreport.com", "url": "https://aiflashreport.com/model-releases.html" },
+        { "title": "Google Gemini 3.5 Flash", "summary": "프로덕션용 고속·저비용 티어로 라인업에 합류.", "source": "llm-stats.com", "url": "https://llm-stats.com/llm-updates" }
+      ]
+    },
+    {
+      "key": "headline",
+      "title": "헤드라인",
+      "items": [
+        { "title": "Cursor, iOS 앱 퍼블릭 베타", "summary": "유료플랜 전원. 클라우드/원격 에이전트 실행, 음성 입력, 잠금화면 Live Activity, 폰에서 diff 리뷰·PR 머지.", "source": "theneuron.ai", "url": "https://www.theneuron.ai/explainer-articles/around-the-horn-digest-everything-that-happened-in-ai-today-friday-july-3-2026/" },
+        { "title": "X, 호스티드 MCP 서버 출시", "summary": "AI 어시스턴트·MCP 앱이 사용자 계정 권한으로 X 플랫폼에 연결 가능.", "source": "futuretools.io", "url": "https://futuretools.io/news" }
+      ]
+    },
+    {
+      "key": "tool",
+      "title": "도구",
+      "items": [
+        { "title": "Kimi Code — 코딩 에이전트 CLI", "summary": "Kimi K2.7 Code 기반. /goal 워크플로로 목표 자율 실행.", "source": "futuretools.io", "url": "https://futuretools.io/news" },
+        { "title": "Google Nano Banana 2 Lite", "summary": "1,000장당 bash.034 최저가 이미지 모델. 1초 내 text-to-image.", "source": "buildfastwithai.com", "url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-3-2026" },
+        { "title": "Context.dev — 크롤 API", "summary": "URL을 깔끔한 마크다운·HTML·구조화 데이터로 변환. JS 렌더링, 사이트 전체 크롤 지원.", "source": "futuretools.io", "url": "https://futuretools.io/news" }
+      ]
+    },
+    {
+      "key": "market",
+      "title": "정책·시장",
+      "items": [
+        { "title": "美 연방 AI 지출 급증", "summary": "의무지출 .2B (2024 대비 +966%), 잠재 계약 1.8B (+1,912%). AI Action Plan 3축(혁신·인프라·외교).", "source": "brookings.edu", "url": "https://www.brookings.edu/articles/where-does-federal-ai-spending-stand-in-2026/" },
+        { "title": "뉴욕주, 아동 챗봇 안전법 등 통과", "summary": "아동 챗봇 안전·AI 학습데이터 투명성법·FAIR News Act·데이터센터 모라토리엄 일괄 통과.", "source": "transparencycoalition.ai", "url": "https://www.transparencycoalition.ai/news/ai-legislative-update-july3-2026" }
+      ]
+    }
+  ]
+}
