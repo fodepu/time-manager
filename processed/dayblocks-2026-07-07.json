@@ -11,15 +11,16 @@
     {"start":"11:40","end":"12:30","label":"명상","category":"dopa","values":{"check":true}},
     {"start":"12:30","end":"14:00","label":"자유·준비","category":"dopa"},
     {"start":"14:00","end":"16:00","label":"일","category":"alba"},
-    {"start":"16:00","end":"16:40","label":"이동·귀가","category":"prep"},
-    {"start":"16:40","end":"17:20","label":"휴식·정리","category":"dopa"},
-    {"start":"17:20","end":"18:10","label":"저녁","category":"meal"},
-    {"start":"18:10","end":"18:30","label":"휴식","category":"dopa"},
-    {"start":"18:30","end":"20:30","label":"클로드 작업(집중)","category":"app"},
-    {"start":"20:30","end":"20:50","label":"휴식","category":"dopa"},
-    {"start":"20:50","end":"21:40","label":"독서·자기계발","category":"read"},
-    {"start":"21:40","end":"22:40","label":"자유 시간","category":"dopa"},
-    {"start":"22:40","end":"23:00","label":"하루 회상","category":"journal"},
-    {"start":"23:00","end":"23:30","label":"취침 준비","category":"prep"}
+    {"start":"16:00","end":"16:40","label":"이동·정리","category":"prep"},
+    {"start":"16:40","end":"17:40","label":"귀가","category":"prep"},
+    {"start":"17:40","end":"18:00","label":"휴식","category":"dopa"},
+    {"start":"18:00","end":"18:40","label":"저녁","category":"meal"},
+    {"start":"18:40","end":"19:00","label":"휴식","category":"dopa"},
+    {"start":"19:00","end":"21:00","label":"클로드 작업(집중)","category":"app"},
+    {"start":"21:00","end":"21:20","label":"휴식","category":"dopa"},
+    {"start":"21:20","end":"22:10","label":"독서·자기계발","category":"read"},
+    {"start":"22:10","end":"22:50","label":"자유 시간","category":"dopa"},
+    {"start":"22:50","end":"23:10","label":"하루 회상","category":"journal"},
+    {"start":"23:10","end":"23:40","label":"취침 준비","category":"prep"}
   ]
 }
