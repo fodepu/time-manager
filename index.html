@@ -5331,7 +5331,7 @@ async function sendClaudeReport() {
     if (_txt && _txt.trim()) {
       saveFree(targetDate, { date: targetDate, freeText: _txt, savedAt: new Date().toISOString() });
       const _bl = parseDayMemo(_txt);
-      if (_bl.length) { lsSet(lsKey('dayblocks_' + targetDate), _bl); }
+      if (_bl.length) { _bl.forEach(function(_b){ _b.values = Object.assign({}, _b.values || {}, { check: true }); }); lsSet(lsKey('dayblocks_' + targetDate), _bl); }
       if (targetDate === currentDate) { freeText = _txt; if (currentMode === 'growth' && typeof renderItems === 'function') renderItems(); }
       if (window.tmOnChange) window.tmOnChange();
     }
