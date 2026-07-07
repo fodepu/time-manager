@@ -5518,6 +5518,12 @@ function deleteScheduleBlock() {
   showToast('삭제되었습니다');
 }
 
+function tmCleanLabel(l){
+  l=String(l||'').replace(/\s+/g,' ').trim();
+  l=l.replace(/^(에|에서|로|으로|까지|부터|동안|분|초)\s+/,'');
+  l=l.replace(/(했고|하고|했어|했다|했음|하는|했는데|는데|하기|한|함|고|기|에서|에게|까지|부터|동안|지금|중|임|이고)$/,'');
+  return l.trim()||String(l||'').trim();
+}
 function parseDayMemo(raw){
   let text=String(raw||'');
   text=text.replace(/[–—〰〜～]/g,'~').replace(/(\d)\s*시/g,'$1').replace(/(\d)([가-힣])/g,'$1 $2').replace(/([\d:])\s*~\s*([\d:])/g,'$1~$2');
@@ -5534,7 +5540,7 @@ function parseDayMemo(raw){
   const blocks=[]; let prev=null;
   for(const it of items){ let mm=it.m, open=mm[0]==='~'; if(open) mm=mm.slice(1); const p=mm.split('~'); let s,e;
     if(open){ e=ap(st(p[0])); s=prev||e; } else if(p.length===2&&p[1]){ s=ap(st(p[0])); e=ap(st(p[1])); } else { s=ap(st(p[0])); e=null; }
-    blocks.push({start:s,end:e,label:it.label,category:cat(it.label)}); prev=e||s; }
+    blocks.push({start:s,end:e,label:tmCleanLabel(it.label),category:cat(it.label)}); prev=e||s; }
   const hm=x=>{ let a=x.split(':').map(Number); return a[0]*60+a[1]; };
   for(let k=0;k<blocks.length;k++) if(!blocks[k].end) blocks[k].end=(k+1<blocks.length)?blocks[k+1].start:addMin(blocks[k].start,30);
   blocks.forEach(b=>{ if(hm(b.end)<=hm(b.start)) b.end='23:59'; });
@@ -7775,6 +7781,7 @@ onAuthStateChanged(auth, async (user)=>{
     document.querySelectorAll('.owner-only').forEach(function(el){ el.style.display = isOwner ? '' : 'none'; });
     var _ftl=document.getElementById('freeTabLabel'); if(_ftl) _ftl.textContent = isOwner ? '기록 작성' : '일기';
     if(!isOwner && currentMode==='plan'){ if(window.switchMode) switchMode('free'); }
+    if(isOwner){ try{ if(window.tmPullProcessed) tmPullProcessed(); }catch(e){} }
     if(!cloudHad) pushNow();
   } else {
     showLogin();
@@ -7907,6 +7914,40 @@ if(logoutBtn) logoutBtn.addEventListener('click', async ()=>{
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',wire); else wire();
   window.tmRefreshTokenStatus=updateStatus;
 })();
+</script>
+<script>
+/* processed/ 수신부 — 클로드(예약작업)가 정리해 저장소에 올린 dayblocks를 앱에 반영 (owner 전용) */
+async function tmPullProcessed(){
+  if(!window.tmIsOwner) return;
+  var token = (typeof lsGet==='function' && lsGet(lsKey('inbox_token'))) || localStorage.getItem('tm_inbox_token');
+  if(!token) return;
+  var applied=0, repo='fodepu/time-manager';
+  try{
+    var listRes = await fetch('https://api.github.com/repos/'+repo+'/contents/processed', { headers:{ 'Authorization':'Bearer '+token, 'Accept':'application/vnd.github+json' } });
+    if(!listRes.ok) return;
+    var list = await listRes.json();
+    if(!Array.isArray(list)) return;
+    for(var i=0;i<list.length;i++){
+      var it=list[i];
+      if(!it || !it.name || !/\.json$/.test(it.name)) continue;
+      try{
+        var cRes = await fetch(it.download_url);
+        var data = await cRes.json();
+        var m = it.name.match(/(\d{4}-\d{2}-\d{2})/);
+        var date = data.date || (m?m[1]:null);
+        var blocks = data.blocks || (Array.isArray(data)?data:null);
+        if(date && Array.isArray(blocks) && blocks.length){ lsSet(lsKey('dayblocks_'+date), blocks); applied++; }
+        await fetch('https://api.github.com/repos/'+repo+'/contents/'+it.path, { method:'DELETE', headers:{ 'Authorization':'Bearer '+token, 'Accept':'application/vnd.github+json' }, body: JSON.stringify({ message:'consume processed '+it.name, sha: it.sha }) });
+      }catch(e){}
+    }
+  }catch(e){}
+  if(applied){
+    if(window.tmOnChange) window.tmOnChange();
+    if(typeof refreshAll==='function') refreshAll();
+    if(typeof showToast==='function') showToast(applied+'개 날짜가 클로드 정리본으로 업데이트됨 ✓');
+  }
+}
+window.tmPullProcessed=tmPullProcessed;
 </script>
 </body>
 </html>
