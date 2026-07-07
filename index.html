@@ -5313,7 +5313,7 @@ async function tmCommitInbox(text, type, dateArg){
       headers: { 'Authorization': 'Bearer ' + token, 'Accept': 'application/vnd.github+json' },
       body: JSON.stringify({ message: 'TM ' + (type||'record') + ' ' + stamp, content: b64 })
     });
-    if (res.ok) { if (typeof showToast === 'function') showToast('Claude에게 전송됨 ✓ — 데스크탑에서 "반영해"'); return true; }
+    if (res.ok) { if (typeof showToast === 'function') showToast('클로드에게 전송됨 ✓ — 정리되면 자동 반영됩니다'); return true; }
     else if (res.status === 401 || res.status === 403) { try { localStorage.removeItem(lsKey('inbox_token')); localStorage.removeItem('tm_inbox_token'); } catch(e){} if (window.tmOnChange) window.tmOnChange(); if (window.tmRefreshTokenStatus) tmRefreshTokenStatus(); if (typeof showToast === 'function') showToast('토큰 오류 — 전송 토큰을 다시 설정하세요'); return false; }
     else { if (typeof showToast === 'function') showToast('전송 실패(' + res.status + ') — 클립보드에 복사함'); try { await navigator.clipboard.writeText(text); } catch (e) {} return false; }
   } catch (e) {
@@ -5330,9 +5330,7 @@ async function sendClaudeReport() {
     const _txt = _ta ? _ta.value : '';
     if (_txt && _txt.trim()) {
       saveFree(targetDate, { date: targetDate, freeText: _txt, savedAt: new Date().toISOString() });
-      const _bl = parseDayMemo(_txt);
-      if (_bl.length) { _bl.forEach(function(_b){ _b.values = Object.assign({}, _b.values || {}, { check: true }); }); lsSet(lsKey('dayblocks_' + targetDate), _bl); }
-      if (targetDate === currentDate) { freeText = _txt; if (currentMode === 'growth' && typeof renderItems === 'function') renderItems(); }
+      if (targetDate === currentDate) freeText = _txt;
       if (window.tmOnChange) window.tmOnChange();
     }
   } catch (e) {}
@@ -7948,6 +7946,7 @@ async function tmPullProcessed(){
   }
 }
 window.tmPullProcessed=tmPullProcessed;
+document.addEventListener('visibilitychange', function(){ if(!document.hidden && window.tmIsOwner && window.tmPullProcessed) tmPullProcessed(); });
 </script>
 </body>
 </html>
