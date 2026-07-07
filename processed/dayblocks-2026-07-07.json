@@ -1,0 +1,25 @@
+{
+  "date": "2026-07-07",
+  "blocks": [
+    {"start":"05:30","end":"05:50","label":"아침 (하루 할일 적기)","category":"meal","values":{"check":true}},
+    {"start":"05:50","end":"06:40","label":"인문 독서 1차","category":"read","values":{"check":true}},
+    {"start":"06:40","end":"06:50","label":"휴식","category":"dopa","values":{"check":true}},
+    {"start":"06:50","end":"07:30","label":"인문 독서 2차","category":"read","values":{"check":true}},
+    {"start":"07:30","end":"07:50","label":"외출 준비","category":"prep","values":{"check":true}},
+    {"start":"07:50","end":"08:50","label":"출근 (차 수면)","category":"prep","values":{"check":true}},
+    {"start":"08:50","end":"09:00","label":"도착 정리 / 휴식","category":"dopa","values":{"check":true}},
+    {"start":"09:00","end":"11:00","label":"자유 학습","category":"app","values":{"check":true}},
+    {"start":"11:00","end":"14:00","label":"알바 (11시 바나나·쉐이크)","category":"alba","values":{"check":true}},
+    {"start":"14:00","end":"14:30","label":"점심 (휴게)","category":"meal","values":{}},
+    {"start":"14:30","end":"16:30","label":"알바","category":"alba","values":{}},
+    {"start":"16:30","end":"16:40","label":"걷기 (차로 이동)","category":"exercise","values":{}},
+    {"start":"16:40","end":"17:40","label":"귀가","category":"prep","values":{}},
+    {"start":"17:40","end":"18:00","label":"운동 준비","category":"prep","values":{}},
+    {"start":"18:00","end":"19:10","label":"러닝","category":"exercise","values":{}},
+    {"start":"19:10","end":"19:40","label":"저녁","category":"meal","values":{}},
+    {"start":"19:40","end":"20:40","label":"자유 시간","category":"dopa","values":{}},
+    {"start":"20:40","end":"21:00","label":"하루 회상","category":"journal","values":{}},
+    {"start":"21:00","end":"21:40","label":"문학 독서","category":"read","values":{}},
+    {"start":"21:40","end":"22:00","label":"취침 준비","category":"prep","values":{}}
+  ]
+}
