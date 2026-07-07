@@ -190,21 +190,22 @@
   }
   .tabs {
     display: flex; gap: 2px;
+    justify-content: space-between;
     border-bottom: 1px solid var(--border);
     margin-bottom: 24px;
     position: relative;
   }
   .tab {
     background: transparent; border: none;
-    padding: 10px 6px; font-family: inherit;
-    font-size: 13px; font-weight: 600; color: var(--text-soft);
+    padding: 10px 4px; font-family: inherit;
+    font-size: 12px; font-weight: 600; color: var(--text-soft);
     cursor: pointer;
     border-bottom: 2px solid transparent;
     margin-bottom: -1px;
-    display: flex; align-items: center; justify-content: center; gap: 6px;
+    display: flex; align-items: center; justify-content: center; gap: 5px;
     transition: color 0.15s;
     letter-spacing: -0.01em;
-    white-space: nowrap; flex: 1 1 0; min-width: 0;
+    white-space: nowrap; flex: 0 0 auto;
   }
   .tab:hover { color: var(--text); }
   .tab.active { color: var(--text); border-bottom-color: var(--text); font-weight: 700; }
