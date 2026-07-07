@@ -3011,6 +3011,7 @@ let currentMode = 'growth';
 let entries = [];
 let goals = []; // 장기 목표
 let freeText = '';
+let journalDate = null;
 let autoSaveTimer = null;
 
 // 인지 부하 관리: 한 번에 5개씩만 표시 (Miller 1956, Iyengar & Lepper 2000)
@@ -4181,7 +4182,8 @@ function listAllDates() {
 function persist() {
   let ok;
   if (currentMode === 'free') {
-    ok = saveFree(currentDate, { date: currentDate, freeText, savedAt: new Date().toISOString() });
+    const _jd = journalDate || currentDate;
+    ok = saveFree(_jd, { date: _jd, freeText, savedAt: new Date().toISOString() });
   } else {
     saveTemplate();
     ok = saveGrowth(currentDate, { date: currentDate, entries, savedAt: new Date().toISOString() });
@@ -6951,7 +6953,17 @@ function bindEvents() {
   document.getElementById('syncBtn').addEventListener('click', openSyncModal);
   { const _fsb = document.getElementById('freeSendBtn'); if (_fsb) _fsb.addEventListener('click', sendClaudeReport); }
   { const _psb = document.getElementById('planSendBtn'); if (_psb) _psb.addEventListener('click', sendPlanReport); }
-  { const _rd = document.getElementById('recordDate'); if (_rd) _rd.addEventListener('change', function(){ var d=_rd.value; if(!d) return; var data=(typeof loadFree==='function')?loadFree(d):null; var ta=document.getElementById('freeJournal'); if(ta) ta.value=(data&&data.freeText)?data.freeText:''; if(typeof renderFreePrompt==='function') renderFreePrompt(); }); }
+  { const _rd = document.getElementById('recordDate'); if (_rd) _rd.addEventListener('change', function(){
+    var d=_rd.value; if(!d) return;
+    clearTimeout(autoSaveTimer);
+    try { if (currentMode==='free' && typeof persist==='function') persist(); } catch(e){}
+    journalDate = d;
+    var data=(typeof loadFree==='function')?loadFree(d):null;
+    var val=(data&&data.freeText)?data.freeText:'';
+    var ta=document.getElementById('freeJournal'); if(ta) ta.value=val;
+    freeText=val;
+    if(typeof renderFreePrompt==='function') renderFreePrompt();
+  }); }
   document.getElementById('syncModalClose').addEventListener('click', closeSyncModal);
   document.getElementById('syncCancel').addEventListener('click', closeSyncModal);
   document.getElementById('syncModal').addEventListener('click', e => {
@@ -7502,6 +7514,7 @@ function loadDate(date) {
     const data = loadFree(date);
     freeText = (data && data.freeText) ? data.freeText : '';
     document.getElementById('freeJournal').value = freeText;
+    journalDate = date;
     const _rd = document.getElementById('recordDate'); if (_rd) _rd.value = date;
     renderFreePrompt();
   } else {
