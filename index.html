@@ -2538,6 +2538,10 @@
       <div class="brief-title" data-icon-before="sparkles">오늘의 브리핑</div>
       <div class="brief-metawrap"><span id="briefDate" class="brief-date">—</span><button type="button" id="briefRefreshBtn" class="brief-refresh" title="다시 불러오기" data-icon-before="refresh"></button></div>
     </div>
+    <div class="brief-subtabs">
+      <button type="button" class="brief-subtab active" data-feed="ai">AI<span class="brief-dot"></span></button>
+      <button type="button" class="brief-subtab" data-feed="btc">비트코인<span class="brief-dot"></span></button>
+    </div>
     <div id="briefUrgent" class="brief-urgent" style="display:none"></div>
     <div id="briefBody"><div class="brief-empty">불러오는 중…</div></div>
     <div id="briefFoot" class="brief-foot"></div>
@@ -7971,6 +7975,11 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   .brief-date{font-size:12px;color:#8a8a8a}
   .brief-refresh{background:none;border:1px solid rgba(128,128,128,.35);color:inherit;width:32px;height:32px;border-radius:9px;cursor:pointer;line-height:1;display:inline-flex;align-items:center;justify-content:center}
   .brief-refresh:active{transform:rotate(180deg)}
+  .brief-subtabs{display:flex;gap:8px;margin:0 0 14px}
+  .brief-subtab{position:relative;background:rgba(128,128,128,.08);border:1px solid rgba(128,128,128,.16);color:var(--text-soft);font-family:inherit;font-size:13px;font-weight:600;padding:7px 16px;border-radius:999px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;letter-spacing:-0.01em}
+  .brief-subtab.active{background:var(--text);color:var(--bg);border-color:var(--text)}
+  .brief-dot{width:7px;height:7px;border-radius:50%;background:#2563eb;display:none;flex:0 0 auto}
+  .brief-subtab.active .brief-dot{display:none !important}
   .brief-urgent{background:rgba(220,38,38,.10);border:1px solid rgba(220,38,38,.35);border-radius:12px;padding:12px 14px;margin-bottom:16px}
   .brief-urgent .bu-label{font-size:11px;font-weight:700;letter-spacing:.04em;color:#dc2626;margin-bottom:5px}
   .brief-urgent .bu-text{font-size:14px;line-height:1.55}
@@ -8002,7 +8011,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
 <script>
 /* AI 브리핑 렌더 — briefing/latest.json(예약작업이 매일 생성)을 owner 전용으로 표시 */
 (function(){
-  var CATS={model:['모델 릴리스','#6366f1'],headline:['헤드라인','#0ea5e9'],tool:['도구','#10b981'],market:['정책·시장','#f59e0b'],update:['업데이트','#8b5cf6'],claude:['Claude','#d97757'],grok:['Grok','#5b5b5b']};
+  var CATS={model:['모델 릴리스','#6366f1'],headline:['헤드라인','#0ea5e9'],tool:['도구','#10b981'],market:['정책·시장','#f59e0b'],update:['업데이트','#8b5cf6'],claude:['Claude','#d97757'],grok:['Grok','#5b5b5b'],price:['가격·동인','#f7931a'],mining:['채굴·원가','#b45309'],onchain:['온체인','#0ea5e9'],policy:['정책·기관','#10b981'],macro:['매크로','#6366f1']};
   function esc(t){return String(t==null?'':t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
   function md(t){return esc(t).replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>');}
   function todayStr(){return new Date(Date.now()+9*3600000).toISOString().slice(0,10);}
@@ -8049,20 +8058,41 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     body.innerHTML=html;
     foot.textContent=data.generatedAt?('생성: '+esc(data.generatedAt)):'';
   }
-  var loading=false;
-  function load(force){
-    if(loading) return; loading=true;
-    var body=document.getElementById('briefBody'); if(body) body.innerHTML='<div class="brief-empty">불러오는 중…</div>';
-    fetch('./briefing/latest.json?v='+Date.now(),{cache:'no-store'})
-      .then(function(r){ if(!r.ok) throw new Error('no file'); return r.json(); })
-      .then(function(d){ render(d); })
-      .catch(function(){ render(null); })
-      .then(function(){ loading=false; });
+  var FEEDS={ai:'./briefing/latest.json',btc:'./briefing/bitcoin.json'};
+  var feedData={}, curFeed='ai';
+  function seenKey(f){return 'tmbrief_seen_'+f;}
+  function getSeen(f){try{return localStorage.getItem(seenKey(f))||'';}catch(e){return '';}}
+  function setSeen(f,st){try{localStorage.setItem(seenKey(f),st||'');}catch(e){}}
+  function stampOf(d){return d?(d.generatedAt||d.date||''):'';}
+  function updateDots(){
+    ['ai','btc'].forEach(function(f){
+      var st=stampOf(feedData[f]);
+      var isNew=(st && st!==getSeen(f) && f!==curFeed);
+      var el=document.querySelector('.brief-subtab[data-feed="'+f+'"] .brief-dot');
+      if(el) el.style.display=isNew?'inline-block':'none';
+    });
   }
-  window.tmRenderBriefing=function(){ load(false); };
+  function setActiveTab(f){ document.querySelectorAll('.brief-subtab').forEach(function(b){ b.classList.toggle('active', b.dataset.feed===f); }); }
+  function fetchFeed(f){ return fetch(FEEDS[f]+'?v='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.json():null;}).catch(function(){return null;}); }
+  function showFeed(f){
+    curFeed=f; try{localStorage.setItem('tmbrief_feed',f);}catch(e){}
+    setActiveTab(f);
+    var body=document.getElementById('briefBody'); if(body) body.innerHTML='<div class="brief-empty">불러오는 중…</div>';
+    fetchFeed(f).then(function(d){ feedData[f]=d; setSeen(f,stampOf(d)); render(d); updateDots(); });
+  }
+  function refreshDots(){ ['ai','btc'].forEach(function(f){ fetchFeed(f).then(function(d){ feedData[f]=d; updateDots(); }); }); }
+  window.tmRenderBriefing=function(){
+    var f='ai'; try{ f=localStorage.getItem('tmbrief_feed')||'ai'; }catch(e){}
+    if(f!=='ai'&&f!=='btc') f='ai';
+    showFeed(f); refreshDots();
+  };
   document.addEventListener('DOMContentLoaded',function(){
-    var b=document.getElementById('briefRefreshBtn');
-    if(b&&!b._w){ b._w=1; b.addEventListener('click',function(){ load(true); }); }
+    var rb=document.getElementById('briefRefreshBtn');
+    if(rb&&!rb._w){ rb._w=1; rb.addEventListener('click',function(){ showFeed(curFeed); }); }
+    document.querySelectorAll('.brief-subtab').forEach(function(b){
+      if(b._w) return; b._w=1;
+      b.addEventListener('click',function(){ showFeed(b.dataset.feed); });
+    });
   });
 })();
 </script>

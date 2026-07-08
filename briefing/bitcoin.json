@@ -1,0 +1,48 @@
+{
+  "date": "2026-07-08",
+  "generatedAt": "2026-07-08T09:00:00+09:00",
+  "urgent": {
+    "text": "**BTC 약 $63,600, 주간 +6.3% 반등.** 지난주 저점 $57,735에서 회복 — 고용지표 부진발 금리인하 기대 + 4.5억달러 숏청산이 동력. 현재가는 채굴 전체원가(~$78k) **아래**로, 역사적으로 채굴자 압박 구간이다.",
+    "source": "yahoo finance"
+  },
+  "items": [
+    {
+      "cat": "price",
+      "title": "BTC 왜 올랐나 — 반등 3대 동인",
+      "lead": "BTC가 지난주 저점 $57,735에서 약 **$63,600**까지 반등(주간 +6.3%). 원인은 셋.",
+      "points": [
+        "**약한 미 고용지표** — 6월 신규고용 5.7만(예상 10만+ 하회) → **Fed 금리인상 기대 후퇴**, 위험자산에 우호.",
+        "**4.5억달러+ 숏청산** — $62,000 돌파 시 숏 포지션이 대거 강제청산되며 상승을 가속.",
+        "**ETF 자금 반전** — 7/2 현물 BTC ETF에 **+$2.22억 순유입**, 10일 연속 유출 종료."
+      ],
+      "note": "단, 6월엔 **-20.48%**로 2026년 최악의 월간 낙폭이었다. 다음 변수: 7/28~29 FOMC, ETF 유입 지속 여부.",
+      "source": "yahoo finance",
+      "url": "https://finance.yahoo.com/personal-finance/investing/article/bitcoin-and-ethereum-prices-today-tuesday-july-7-2026-another-strong-opening-for-btc-and-eth-prices-120355126.html"
+    },
+    {
+      "cat": "mining",
+      "title": "채굴원가 = 바닥? 지금은 원가 '아래'",
+      "lead": "'가격은 채굴원가 밑으론 잘 안 내려간다'는 통념의 근거와, 그게 지금 깨진 국면.",
+      "points": [
+        "**전체원가(JPMorgan) ~$78,000** — 전기+장비 감가+간접비 포함. 편차 큼: 값싼 수력지대 $38~55k, 미 가정용 전기 기준 ~$121k.",
+        "**현재가 $63.6k는 원가 밑** — JPMorgan 기준 손익분기 대비 **약 19% 아래**, 채굴 fleet의 **15~20%가 적자**(CoinShares Q1)."
+      ],
+      "forYou": "원가가 늘 '바닥'인 건 아니다 — 가격이 원가 아래로 5개월째 벌어진 지금은 **채굴자 항복(매도)·해시레이트 하락**이 나올 수 있는 구간. 그래서 '원가 숫자'보다 **해시레이트와 채굴자 매도량**을 관찰 포인트로 삼는 게 실전적이다.",
+      "source": "news.bitcoin.com",
+      "url": "https://news.bitcoin.com/bitcoin-production-cost-miners-break-even/"
+    },
+    {
+      "cat": "onchain",
+      "title": "고래는 사고, ETF는 판다 — 엇갈린 수급",
+      "lead": "하락장에서 **누가 사고 누가 팔았나**가 정반대로 갈렸다.",
+      "points": [
+        "**고래, 2주간 27만 BTC($16.7B) 매집** — 반면 6월 현물 ETF는 **사상 최대 -$40.6억 순유출**.",
+        "**장기보유자(155일+) 순매집 전환** — 과거 사이클 저점 부근에서 나온 패턴(기관 매도분을 장기보유자가 흡수)."
+      ],
+      "note": "단, 1만 BTC+ 초대형 고래군은 아직 중립(0.4~0.5) — 최대 큰손은 본격 매집 전.",
+      "forYou": "'누가 파는가'가 방향을 가른다 — ETF(기관 심리)와 장기보유자(확신 자본)가 반대로 움직일 때 어느 쪽이 이기는지가 저점 판단의 핵심. 지금은 **장기보유자 우세** 신호.",
+      "source": "coindesk.com",
+      "url": "https://www.coindesk.com/markets/2026/07/03/bitcoin-whales-bought-270-000-btc-in-two-weeks-even-as-etfs-bled-a-record-usd4-billion"
+    }
+  ]
+}
