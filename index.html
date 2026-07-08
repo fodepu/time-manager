@@ -2542,6 +2542,7 @@
       <button type="button" class="brief-subtab active" data-feed="ai">AI<span class="brief-dot"></span></button>
       <button type="button" class="brief-subtab" data-feed="btc">비트코인<span class="brief-dot"></span></button>
     </div>
+    <div class="brief-hint">제목을 탭하면 자세히 펼쳐져요</div>
     <div id="briefUrgent" class="brief-urgent" style="display:none"></div>
     <div id="briefBody"><div class="brief-empty">불러오는 중…</div></div>
     <div id="briefFoot" class="brief-foot"></div>
@@ -7975,7 +7976,8 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   .brief-date{font-size:12px;color:#8a8a8a}
   .brief-refresh{background:none;border:1px solid rgba(128,128,128,.35);color:inherit;width:32px;height:32px;border-radius:9px;cursor:pointer;line-height:1;display:inline-flex;align-items:center;justify-content:center}
   .brief-refresh:active{transform:rotate(180deg)}
-  .brief-subtabs{display:flex;gap:8px;margin:0 0 14px}
+  .brief-subtabs{display:flex;gap:8px;margin:0 0 8px}
+  .brief-hint{font-size:11px;color:#9aa0a6;margin:0 0 14px 2px}
   .brief-subtab{position:relative;background:rgba(128,128,128,.08);border:1px solid rgba(128,128,128,.16);color:var(--text-soft);font-family:inherit;font-size:13px;font-weight:600;padding:7px 16px;border-radius:999px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;letter-spacing:-0.01em}
   .brief-subtab.active{background:var(--text);color:var(--bg);border-color:var(--text)}
   .brief-dot{width:7px;height:7px;border-radius:50%;background:#2563eb;display:none;flex:0 0 auto}
@@ -7985,10 +7987,16 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   .brief-urgent .bu-text{font-size:14px;line-height:1.55}
   .brief-urgent .bu-src{font-size:11px;color:#8a8a8a;margin-top:6px}
   .brief-item{display:block;text-decoration:none;color:inherit;background:rgba(128,128,128,.06);border:1px solid rgba(128,128,128,.14);border-radius:12px;padding:12px 14px;margin-bottom:10px}
-  a.brief-item:hover{border-color:rgba(128,128,128,.3)}
-  .brief-item .bi-cat{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.02em;padding:2px 8px;border-radius:6px;margin-bottom:7px;background:rgba(128,128,128,.12)}
-  .brief-item .bi-title{font-size:15px;font-weight:700;line-height:1.4}
-  .brief-item .bi-lead{font-size:13px;color:#4b5563;line-height:1.6;margin-top:5px}
+  .brief-item:hover{border-color:rgba(128,128,128,.28)}
+  .brief-item .bi-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;cursor:pointer}
+  .brief-item .bi-hmain{min-width:0}
+  .brief-item .bi-chev{flex:0 0 auto;color:#9aa0a6;font-size:20px;line-height:1.2;transform:rotate(90deg);transition:transform .15s}
+  .brief-item.collapsed .bi-chev{transform:rotate(0deg)}
+  .brief-item .bi-body{margin-top:9px}
+  .brief-item.collapsed .bi-body{display:none}
+  .brief-item .bi-cat{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.02em;padding:2px 8px;border-radius:6px;margin:0 6px 0 0;vertical-align:1px;background:rgba(128,128,128,.12)}
+  .brief-item .bi-title{font-size:14.5px;font-weight:700;line-height:1.45}
+  .brief-item .bi-lead{font-size:13px;color:#4b5563;line-height:1.6;margin-top:0}
   .brief-item ol.bi-points{margin:7px 0 0;padding-left:18px}
   .brief-item ol.bi-points li{font-size:13px;color:#374151;line-height:1.6;margin:3px 0}
   .brief-item .bi-note{font-size:12px;color:#6b7280;line-height:1.55;margin-top:7px}
@@ -7997,7 +8005,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   .brief-item .bi-foryou .fy-text{font-size:12.5px;color:#374151;line-height:1.55}
   .brief-item .bi-foryou ul{margin:4px 0 0;padding-left:16px}
   .brief-item .bi-foryou li{font-size:12.5px;color:#374151;line-height:1.55;margin:2px 0}
-  .brief-item .bi-src{font-size:11px;color:#9aa0a6;margin-top:8px}
+  .brief-item .bi-src{font-size:11px;color:#9aa0a6;margin-top:8px;display:inline-block;text-decoration:none}
   .brief-item .bi-src .bi-arrow{opacity:.7}
   .brief-item strong{font-weight:700}
   .brief-empty{color:#9aa0a6;font-size:14px;text-align:center;padding:30px 0}
@@ -8025,18 +8033,18 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     return h+'</div>';
   }
   function itemHtml(it){
-    var cat=CATS[it.cat]||null, inner='';
-    if(cat) inner+='<span class="bi-cat" style="color:'+cat[1]+'">'+esc(cat[0])+'</span>';
-    inner+='<div class="bi-title">'+md(it.title||'')+'</div>';
-    if(it.lead) inner+='<div class="bi-lead">'+md(it.lead)+'</div>';
-    else if(it.summary) inner+='<div class="bi-lead">'+md(it.summary)+'</div>';
-    if(it.points&&it.points.length){ inner+='<ol class="bi-points">'; it.points.forEach(function(pt){inner+='<li>'+md(pt)+'</li>';}); inner+='</ol>'; }
-    if(it.note) inner+='<div class="bi-note">'+md(it.note)+'</div>';
-    if(it.forYou) inner+=forYouHtml(it.forYou,it.forYouLabel);
+    var cat=CATS[it.cat]||null;
+    var head='<div class="bi-head"><div class="bi-hmain">'+(cat?'<span class="bi-cat" style="color:'+cat[1]+'">'+esc(cat[0])+'</span>':'')+'<span class="bi-title">'+md(it.title||'')+'</span></div><span class="bi-chev">›</span></div>';
+    var b='';
+    if(it.lead) b+='<div class="bi-lead">'+md(it.lead)+'</div>';
+    else if(it.summary) b+='<div class="bi-lead">'+md(it.summary)+'</div>';
+    if(it.points&&it.points.length){ b+='<ol class="bi-points">'; it.points.forEach(function(pt){b+='<li>'+md(pt)+'</li>';}); b+='</ol>'; }
+    if(it.note) b+='<div class="bi-note">'+md(it.note)+'</div>';
+    if(it.forYou) b+=forYouHtml(it.forYou,it.forYouLabel);
     var srcTxt=esc(it.source||'');
-    if(it.url){ inner+='<div class="bi-src">'+srcTxt+' <span class="bi-arrow">↗</span></div>'; return '<a class="brief-item" href="'+esc(it.url)+'" target="_blank" rel="noopener">'+inner+'</a>'; }
-    if(srcTxt) inner+='<div class="bi-src">'+srcTxt+'</div>';
-    return '<div class="brief-item">'+inner+'</div>';
+    if(it.url) b+='<a class="bi-src" href="'+esc(it.url)+'" target="_blank" rel="noopener">'+srcTxt+' <span class="bi-arrow">↗</span></a>';
+    else if(srcTxt) b+='<div class="bi-src">'+srcTxt+'</div>';
+    return '<div class="brief-item collapsed">'+head+'<div class="bi-body">'+b+'</div></div>';
   }
   function render(data){
     var body=document.getElementById('briefBody'),urg=document.getElementById('briefUrgent'),dateEl=document.getElementById('briefDate'),foot=document.getElementById('briefFoot');
@@ -8093,6 +8101,8 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
       if(b._w) return; b._w=1;
       b.addEventListener('click',function(){ showFeed(b.dataset.feed); });
     });
+    var bb=document.getElementById('briefBody');
+    if(bb&&!bb._t){ bb._t=1; bb.addEventListener('click',function(e){ if(e.target.closest && e.target.closest('.bi-src')) return; var h=e.target.closest&&e.target.closest('.bi-head'); if(h){ var it=h.closest('.brief-item'); if(it) it.classList.toggle('collapsed'); } }); }
   });
 })();
 </script>
