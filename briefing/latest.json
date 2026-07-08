@@ -1,94 +1,81 @@
 {
   "date": "2026-07-08",
-  "generatedAt": "2026-07-08T07:16:00+09:00",
+  "generatedAt": "2026-07-08T09:00:00+09:00",
   "urgent": {
-    "text": "오늘(7/8)부터 Claude Fable 5 전 구독 티어 사용크레딧 과금 시작 — 입력 $10/출력 $50 per M토큰(Opus 4.8의 2배). claude-fable-5로 라우팅하는 워크플로 오늘 점검할 것.",
-    "source": "buildfastwithai.com"
+    "text": "**7/1부터 Claude Fable 5가 전 세계 정식 오픈.** 6/30 미 상무부의 수출통제 해제로 Claude.ai·API·Code·Cowork에서 누구나 사용 가능 — 외국인 접근 제한이 풀린 첫 사례다. 오늘 바로 최신 플래그십으로 갈아탈 수 있다.",
+    "source": "support.claude.com"
   },
-  "categories": [
+  "items": [
     {
-      "key": "model",
-      "title": "모델 릴리스",
-      "items": [
-        {
-          "title": "OpenAI GPT-5.6 (Sol·Terra·Luna) 광범위 출시 임박",
-          "summary": "여전히 정부검증 파트너 ~20곳 한정. 광범위 출시 7월 중순 유력. Terra $2.50/$15, Luna $1/$6 (per M토큰).",
-          "source": "buildfastwithai.com",
-          "url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-7-2026"
-        },
-        {
-          "title": "Z.ai ZCode 출시 (GLM-5.2 기반)",
-          "summary": "7/2 공개, 최초 오픈웨이트 프런티어 에이전트 코딩 환경. GLM-5.2 SWE-bench Pro 62.1%, API $1.40/$4.40, MIT 라이선스.",
-          "source": "buildfastwithai.com",
-          "url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-7-2026"
-        }
-      ]
+      "cat": "update",
+      "title": "Claude, Cowork 웹·모바일 확장 + M365 쓰기 도구",
+      "lead": "Anthropic이 7/7 앱 업데이트로 Cowork를 크게 확장했다.",
+      "points": [
+        "**Cowork 웹·모바일 확장** — 데스크탑뿐 아니라 웹·폰에서도 사용. 세션이 **원격으로 돌아 계정에 저장**돼 기기 넘나들며 이어지고, 노트북을 닫아도 작업이 계속되며 **예약작업이 기기 없이도 실행**된다. Chat과 Cowork가 한 집(프로젝트·아티팩트 공유)으로 통합(Max플랜부터 순차 롤아웃).",
+        "**Microsoft 365 쓰기 도구** — 검색을 넘어 이메일 초안·발송·정리, 캘린더 관리, OneDrive·SharePoint 파일 생성/수정까지 수행(Teams는 읽기 전용, 관리자 동의 필요)."
+      ],
+      "forYou": "Cowork 원격 세션은 지금 우리가 쓰는 바로 그 기능 — 폰에서도 이어지고 **기기가 꺼져 있어도 예약작업이 돈다.** TM 'AI 브리핑' 예약작업도 이 흐름의 수혜(디바이스 없이 아침에 자동 생성).",
+      "source": "support.claude.com",
+      "url": "https://support.claude.com/en/articles/12138966-release-notes"
     },
     {
-      "key": "headline",
-      "title": "헤드라인",
-      "items": [
-        {
-          "title": "Anthropic, OpenAI 매출 추월",
-          "summary": "연환산 $47B vs OpenAI $25~33B, 2026년 흑자 전망(1년 앞당김). 5월 기업구독서도 추월.",
-          "source": "fortune.com",
-          "url": "https://fortune.com/2026/07/02/sam-altman-new-world-order-ai-openai-google-anthropic/"
-        },
-        {
-          "title": "JADEPUFFER: 최초 자율 AI 랜섬웨어",
-          "summary": "Langflow RCE(CVE-2025-3248, CVSS 9.8) 악용. 에이전트가 600+ 페이로드로 정찰~암호화 전 과정 자율 실행.",
-          "source": "sysdig.com",
-          "url": "https://www.sysdig.com/blog/jadepuffer-agentic-ransomware-for-automated-database-extortion"
-        },
-        {
-          "title": "백악관 자발적 프런티어 모델 표준, 발표창 개시",
-          "summary": "7/7~11 발표 예상, 8/1 마감. 30일 사전검토 창 대상 모델 기준 등 포함. Google·OpenAI 협의 중.",
-          "source": "buildfastwithai.com",
-          "url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-7-2026"
-        }
-      ]
+      "cat": "model",
+      "title": "Anthropic, Claude Sonnet 5 출시",
+      "lead": "6/30 출시한 '역대 가장 에이전트형' Sonnet. **에이전트형** = 단계별 지시 없이 스스로 도구(브라우저·터미널)를 써 일을 끝내는 것.",
+      "points": [
+        "**SWE-bench Verified 72.7%** (이전 Sonnet 4.6은 62.3%) — 코딩",
+        "**Terminal-bench 76.1%** (+20.7p) — 터미널 작업"
+      ],
+      "note": "Opus 4.8급 성능을 **더 낮은 가격**에 — '에이전트를 싸게 돌리는' 선택지.",
+      "source": "anthropic.com",
+      "url": "https://www.anthropic.com/news/claude-sonnet-5"
     },
     {
-      "key": "tool",
-      "title": "도구",
-      "items": [
-        {
-          "title": "Meta Muse 이미지 생성 모델",
-          "summary": "7/7 Meta AI 통합 출시. 개인 사진 기반 복원·스타일 변환·룸 리스타일. Firefly·Imagen 대항.",
-          "source": "futuretools.io",
-          "url": "https://futuretools.io/news"
-        },
-        {
-          "title": "Claude Code 기본 권한 Manual 전환",
-          "summary": "파일수정·셸실행·외부API 등 민감작업마다 사람 승인 필수. CLI·VS Code·JetBrains 적용. JADEPUFFER류 대응.",
-          "source": "releasebot.io",
-          "url": "https://releasebot.io/updates/anthropic"
-        }
-      ]
+      "cat": "tool",
+      "title": "xAI, Grok Voice Agent Builder 베타 출시",
+      "lead": "xAI가 **노코드 음성 에이전트 제작 도구**를 베타 공개(7/3, 모델 Grok Voice). 코딩 없이 몇 분 만에 실사용 음성 에이전트를 만든다.",
+      "points": [
+        "전화 연결·지식검색·툴·가드레일·**MCP**·관측성을 한 곳에서",
+        "**음성 클로닝**·SIP·통화 리뷰 지원"
+      ],
+      "forYou": "음성 에이전트를 직접 만들어보기 가장 쉬운 진입점 — 노코드라 바로 실습 가능.",
+      "forYouLabel": "배워둘 것",
+      "source": "x.ai",
+      "url": "https://x.ai/news"
     },
     {
-      "key": "market",
-      "title": "정책·시장",
-      "items": [
-        {
-          "title": "Anthropic, TeraWulf와 $19B 데이터센터 리스",
-          "summary": "7/7 체결. 원자력·수력 무탄소 인프라. 10월 IPO 앞두고 12개+ 리스·1GW+ 용량 확보.",
-          "source": "siliconangle.com",
-          "url": "https://siliconangle.com/2026/07/07/anthropic-terawulf-19b-data-center-lease/"
-        },
-        {
-          "title": "SK하이닉스 $28B 美 IPO 추진",
-          "summary": "역대 최대급 반도체 상장. HBM3E는 모든 Nvidia Blackwell GPU 탑재, 상반기 HBM 매출 $10B 돌파.",
-          "source": "buildfastwithai.com",
-          "url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-7-2026"
-        },
-        {
-          "title": "Cloudflare, AI 학습 크롤러 분리 요구",
-          "summary": "9/15까지 검색용·AI학습용 크롤러 분리. 이후 광고 페이지에서 혼용 크롤러 기본 차단.",
-          "source": "futuretools.io",
-          "url": "https://futuretools.io/news"
-        }
-      ]
+      "cat": "model",
+      "title": "OpenAI, GPT-5.6 패밀리(Sol·Terra·Luna) 프리뷰",
+      "lead": "OpenAI가 차세대 모델 3종을 6/26 프리뷰 공개.",
+      "points": [
+        "**Sol** — 코딩·보안 연구용. **1.5M 토큰 컨텍스트**(GPT-5.5 Pro 대비 +43%), 더 오래 생각하는 **max reasoning**, 작업을 하위 에이전트로 쪼개는 **ultra mode**.",
+        "**Terra** — 대량 업무용.",
+        "**Luna** — 요약·초안 등 저비용 일상용."
+      ],
+      "note": "API·Codex로 신뢰 파트너 ~20곳 제한 공개(정식 출시 예정). Sol $5/$30, Terra $2.50/$15, Luna $1/$6.",
+      "source": "openai.com",
+      "url": "https://openai.com/index/previewing-gpt-5-6-sol/"
+    },
+    {
+      "cat": "tool",
+      "title": "Kimi Code — 오픈소스 코딩 에이전트 CLI",
+      "lead": "Moonshot AI의 코딩 에이전트 CLI(모델 K2.7 Code, CLI=명령줄 도구).",
+      "points": [
+        "터미널에서 **코드 편집·셸 실행·검색·웹 페치 자율 수행**",
+        "**coder·explore·plan 하위 에이전트**로 '컨텍스트 오염' 없이 분할",
+        "**/goal**로 '커밋 리뷰→수정'을 한 번에 자동화"
+      ],
+      "note": "256K 컨텍스트, 복잡 작업 시 **API 호출 3~5배 절감**.",
+      "source": "kimi.com",
+      "url": "https://www.kimi.com/code/en"
+    },
+    {
+      "cat": "market",
+      "title": "미 연방 AI 지출 급증",
+      "lead": "미 연방정부의 AI 지출이 폭증했다. 집행 확정 **의무지출 $7.2B**(2024 대비 +966%), 잠재 계약 **$91.8B**(+1,912%). 트럼프 'America's AI Action Plan'(혁신·인프라·AI 외교)이 배경.",
+      "forYou": "AI 활용·자동화 역량의 시장가치↑ → 지금 **에이전트·자동화 도구를 실제로 다뤄보는 게** 가장 확실한 대비. 돈이 몰리는 **사이버보안·인프라** 기초 개념을 훑어둘 가치.",
+      "source": "brookings.edu",
+      "url": "https://www.brookings.edu/articles/where-does-federal-ai-spending-stand-in-2026/"
     }
   ]
 }
