@@ -1,81 +1,72 @@
 {
-  "date": "2026-07-08",
-  "generatedAt": "2026-07-08T09:00:00+09:00",
+  "date": "2026-07-10",
+  "generatedAt": "2026-07-10T09:05:00+09:00",
   "urgent": {
-    "text": "**7/1부터 Claude Fable 5가 전 세계 정식 오픈.** 6/30 미 상무부의 수출통제 해제로 Claude.ai·API·Code·Cowork에서 누구나 사용 가능 — 외국인 접근 제한이 풀린 첫 사례다. 오늘 바로 최신 플래그십으로 갈아탈 수 있다.",
-    "source": "support.claude.com"
+    "text": "**xAI Grok 4.5가 7/8 정식 공개.** Opus급 성능을 **API $2/$6**(입력/출력, 100만 토큰)로 — Opus 4.8·GPT-5.5보다 60%+ 저렴. Artificial Analysis 지능지수 **54점, 전체 4위**(에이전트 도구사용은 1위). 오늘 가장 값싼 프런티어 모델을 바로 시험해볼 만하다.",
+    "source": "x.ai"
   },
   "items": [
     {
-      "cat": "update",
-      "title": "Claude, Cowork 웹·모바일 확장 + M365 쓰기 도구",
-      "lead": "Anthropic이 7/7 앱 업데이트로 Cowork를 크게 확장했다.",
+      "cat": "tool",
+      "title": "Claude에 'Reflect' — 내 AI 사용 습관 대시보드",
+      "lead": "Anthropic이 7/9 **Reflect**를 베타 공개 — 내가 Claude를 어떻게 쓰는지 되돌아보게 해주는 대시보드('Spotify Wrapped'식 사용 리포트).",
       "points": [
-        "**Cowork 웹·모바일 확장** — 데스크탑뿐 아니라 웹·폰에서도 사용. 세션이 **원격으로 돌아 계정에 저장**돼 기기 넘나들며 이어지고, 노트북을 닫아도 작업이 계속되며 **예약작업이 기기 없이도 실행**된다. Chat과 Cowork가 한 집(프로젝트·아티팩트 공유)으로 통합(Max플랜부터 순차 롤아웃).",
-        "**Microsoft 365 쓰기 도구** — 검색을 넘어 이메일 초안·발송·정리, 캘린더 관리, OneDrive·SharePoint 파일 생성/수정까지 수행(Teams는 읽기 전용, 관리자 동의 필요)."
+        "**사용 리포트** — 최근 1·3·6·12개월 동안 자주 맡긴 작업 유형·가장 많이 쓴 시간대·주제를 요약",
+        "**절제 기능** — 방해금지 시간(quiet hours), 일정 사용량 후 **휴식 알림**, '이건 내가 직접 할 일' 성찰 프롬프트",
+        "**프라이버시** — 시크릿 대화·연결도구 원본파일·건강 연동 대화는 제외"
       ],
-      "forYou": "Cowork 원격 세션은 지금 우리가 쓰는 바로 그 기능 — 폰에서도 이어지고 **기기가 꺼져 있어도 예약작업이 돈다.** TM 'AI 브리핑' 예약작업도 이 흐름의 수혜(디바이스 없이 아침에 자동 생성).",
+      "note": "Memory를 켠 Free·Pro·Max 사용자 대상, 웹·데스크톱 설정에서 접근.",
+      "forYou": "시간 관리 앱을 직접 만드는 입장에선 '사용 회고+절제 넛지'를 붙인 설계가 좋은 참고 사례 — 어떤 지표를 보여주고 어떻게 넛지하는지 뜯어볼 만하다.",
+      "forYouLabel": "배워둘 것",
+      "source": "anthropic.com",
+      "url": "https://www.anthropic.com/news/reflect-with-claude"
+    },
+    {
+      "cat": "update",
+      "title": "Claude 앱 업데이트 — Sonnet 5 기본 + Claude in Chrome 베타",
+      "lead": "7월 릴리스노트에서 Claude Code·브라우저 사용이 크게 정리됐다.",
+      "points": [
+        "**Sonnet 5, Claude Code 기본 모델** — 네이티브 **100만 토큰** 컨텍스트, 8/31까지 프로모 가격 **$2/$10**(100만 토큰)",
+        "**Claude in Chrome, 전 Max 구독자 베타** — 브라우저에서 **예약작업 자동 실행**, 계획 승인 후 워크플로 위임, 모델 선택(Haiku 4.5·Sonnet 4.5·Opus 4.5)",
+        "**MCP 터널** 리서치 프리뷰 — 사내 사설망의 MCP 서버에 연결"
+      ],
       "source": "support.claude.com",
       "url": "https://support.claude.com/en/articles/12138966-release-notes"
     },
     {
       "cat": "model",
-      "title": "Anthropic, Claude Sonnet 5 출시",
-      "lead": "6/30 출시한 '역대 가장 에이전트형' Sonnet. **에이전트형** = 단계별 지시 없이 스스로 도구(브라우저·터미널)를 써 일을 끝내는 것.",
+      "title": "xAI, Grok 4.5 정식 출시 — Cursor로 훈련한 코딩·에이전트 모델",
+      "lead": "7/8 공개된 xAI의 최신 모델. **에이전트형**(스스로 도구를 써 일을 끝냄) 코딩·지식노동에 특화, 상장·Cursor 인수 후 첫 릴리스.",
       "points": [
-        "**SWE-bench Verified 72.7%** (이전 Sonnet 4.6은 62.3%) — 코딩",
-        "**Terminal-bench 76.1%** (+20.7p) — 터미널 작업"
+        "**지능지수 54점 / 168개 중 4위** — 앞엔 Fable 5(60)·Opus 4.8(56)·GPT-5.5(55)뿐",
+        "**API $2/$6**(입력/출력, 100만 토큰) — Opus급인데 60%+ 저렴",
+        "**에이전트 도구사용 부문 1위** 점수"
       ],
-      "note": "Opus 4.8급 성능을 **더 낮은 가격**에 — '에이전트를 싸게 돌리는' 선택지.",
-      "source": "anthropic.com",
-      "url": "https://www.anthropic.com/news/claude-sonnet-5"
-    },
-    {
-      "cat": "tool",
-      "title": "xAI, Grok Voice Agent Builder 베타 출시",
-      "lead": "xAI가 **노코드 음성 에이전트 제작 도구**를 베타 공개(7/3, 모델 Grok Voice). 코딩 없이 몇 분 만에 실사용 음성 에이전트를 만든다.",
-      "points": [
-        "전화 연결·지식검색·툴·가드레일·**MCP**·관측성을 한 곳에서",
-        "**음성 클로닝**·SIP·통화 리뷰 지원"
-      ],
-      "forYou": "음성 에이전트를 직접 만들어보기 가장 쉬운 진입점 — 노코드라 바로 실습 가능.",
-      "forYouLabel": "배워둘 것",
+      "note": "EU는 아직 미제공(7월 중순 예정).",
       "source": "x.ai",
-      "url": "https://x.ai/news"
+      "url": "https://x.ai/news/grok-4-5"
     },
     {
       "cat": "model",
-      "title": "OpenAI, GPT-5.6 패밀리(Sol·Terra·Luna) 프리뷰",
-      "lead": "OpenAI가 차세대 모델 3종을 6/26 프리뷰 공개.",
+      "title": "OpenAI, GPT-5.6(Sol·Terra·Luna) 정식 출시",
+      "lead": "6월 프리뷰였던 3종 모델이 7/9 **정식 공개** — ChatGPT·Codex·API에서 사용 가능.",
       "points": [
-        "**Sol** — 코딩·보안 연구용. **1.5M 토큰 컨텍스트**(GPT-5.5 Pro 대비 +43%), 더 오래 생각하는 **max reasoning**, 작업을 하위 에이전트로 쪼개는 **ultra mode**.",
-        "**Terra** — 대량 업무용.",
-        "**Luna** — 요약·초안 등 저비용 일상용."
+        "**Sol**(플래그십) — $5/$30, 가장 어려운 추론·에이전트 작업",
+        "**Terra**(균형) — $2.50/$15, GPT-5.5급을 절반 가격에",
+        "**Luna**(초저가·고속) — $1/$6, 대량 처리용"
       ],
-      "note": "API·Codex로 신뢰 파트너 ~20곳 제한 공개(정식 출시 예정). Sol $5/$30, Terra $2.50/$15, Luna $1/$6.",
+      "note": "세 모델 모두 **105만 토큰** 컨텍스트·최대 출력 128K.",
       "source": "openai.com",
-      "url": "https://openai.com/index/previewing-gpt-5-6-sol/"
+      "url": "https://openai.com/index/introducing-gpt-5-6/"
     },
     {
       "cat": "tool",
-      "title": "Kimi Code — 오픈소스 코딩 에이전트 CLI",
-      "lead": "Moonshot AI의 코딩 에이전트 CLI(모델 K2.7 Code, CLI=명령줄 도구).",
-      "points": [
-        "터미널에서 **코드 편집·셸 실행·검색·웹 페치 자율 수행**",
-        "**coder·explore·plan 하위 에이전트**로 '컨텍스트 오염' 없이 분할",
-        "**/goal**로 '커밋 리뷰→수정'을 한 번에 자동화"
-      ],
-      "note": "256K 컨텍스트, 복잡 작업 시 **API 호출 3~5배 절감**.",
-      "source": "kimi.com",
-      "url": "https://www.kimi.com/code/en"
-    },
-    {
-      "cat": "market",
-      "title": "미 연방 AI 지출 급증",
-      "lead": "미 연방정부의 AI 지출이 폭증했다. 집행 확정 **의무지출 $7.2B**(2024 대비 +966%), 잠재 계약 **$91.8B**(+1,912%). 트럼프 'America's AI Action Plan'(혁신·인프라·AI 외교)이 배경.",
-      "forYou": "AI 활용·자동화 역량의 시장가치↑ → 지금 **에이전트·자동화 도구를 실제로 다뤄보는 게** 가장 확실한 대비. 돈이 몰리는 **사이버보안·인프라** 기초 개념을 훑어둘 가치.",
-      "source": "brookings.edu",
-      "url": "https://www.brookings.edu/articles/where-does-federal-ai-spending-stand-in-2026/"
+      "title": "OpenAI, GPT-Live — 끊김 없는 실시간 음성",
+      "lead": "7/9 공개된 새 음성 모델. **풀듀플렉스**(듣기와 말하기를 동시에) 구조라 사람과 대화하듯 자연스럽게 주고받는다.",
+      "forYou": "Grok Voice Agent Builder와 함께 음성 에이전트 흐름을 실습하기 좋은 시점 — 실시간 음성 UX가 어떻게 달라지는지 직접 말 걸어 비교해볼 것.",
+      "forYouLabel": "배워둘 것",
+      "source": "openai.com",
+      "url": "https://openai.com/index/introducing-gpt-live/"
     }
   ]
 }
