@@ -1,72 +1,73 @@
 {
-  "date": "2026-07-10",
-  "generatedAt": "2026-07-10T09:05:00+09:00",
+  "date": "2026-07-11",
+  "generatedAt": "2026-07-11T15:40:00+09:00",
   "urgent": {
-    "text": "**xAI Grok 4.5가 7/8 정식 공개.** Opus급 성능을 **API $2/$6**(입력/출력, 100만 토큰)로 — Opus 4.8·GPT-5.5보다 60%+ 저렴. Artificial Analysis 지능지수 **54점, 전체 4위**(에이전트 도구사용은 1위). 오늘 가장 값싼 프런티어 모델을 바로 시험해볼 만하다.",
-    "source": "x.ai"
+    "text": "**OpenAI가 7/9 GPT-5.6를 3종(Sol·Terra·Luna)으로 공개.** 가장 작은 **Luna**는 **API $1/$6**(입력/출력, 100만 토큰)로 아주 싼데 코딩벤치 **SWE-Bench Pro 62.7%**(GPT-5.5의 59.4% 상회). 오늘 저비용으로 코딩·에이전트에 바로 붙여볼 만하다.",
+    "source": "openai.com"
   },
   "items": [
     {
-      "cat": "tool",
-      "title": "Claude에 'Reflect' — 내 AI 사용 습관 대시보드",
-      "lead": "Anthropic이 7/9 **Reflect**를 베타 공개 — 내가 Claude를 어떻게 쓰는지 되돌아보게 해주는 대시보드('Spotify Wrapped'식 사용 리포트).",
+      "cat": "update",
+      "title": "Claude Cowork, 웹·모바일로 확장 — 이제 클라우드에서 돈다",
+      "lead": "Anthropic이 7/7 **Cowork**(사무 잡무를 대신 처리하는 에이전트형 도구, 스스로 파일·앱을 써 일을 끝냄)를 데스크톱을 넘어 웹·모바일로 열었다.",
       "points": [
-        "**사용 리포트** — 최근 1·3·6·12개월 동안 자주 맡긴 작업 유형·가장 많이 쓴 시간대·주제를 요약",
-        "**절제 기능** — 방해금지 시간(quiet hours), 일정 사용량 후 **휴식 알림**, '이건 내가 직접 할 일' 성찰 프롬프트",
-        "**프라이버시** — 시크릿 대화·연결도구 원본파일·건강 연동 대화는 제외"
+        "**클라우드 실행이 기본** — 내 컴퓨터를 켜둘 필요 없이 서버에서 작업 진행, 노트북을 닫아도 계속됨",
+        "**승인이 필요한 순간엔 폰으로 푸시 알림** — 초안 확정·선택지 결정 등 내 사인 없이는 아무것도 최종 전송 안 됨",
+        "**사용 통계** — 120만 세션 중 업무 프로세스 정리가 **33.4%**로 최다, 콘텐츠 작성 16.4%, 소프트웨어 개발은 8.7%뿐"
       ],
-      "note": "Memory를 켠 Free·Pro·Max 사용자 대상, 웹·데스크톱 설정에서 접근.",
-      "forYou": "시간 관리 앱을 직접 만드는 입장에선 '사용 회고+절제 넛지'를 붙인 설계가 좋은 참고 사례 — 어떤 지표를 보여주고 어떻게 넛지하는지 뜯어볼 만하다.",
-      "forYouLabel": "배워둘 것",
-      "source": "anthropic.com",
-      "url": "https://www.anthropic.com/news/reflect-with-claude"
+      "note": "Max 요금제($100/월)부터 베타 시작, 이후 순차 확대.",
+      "source": "techcrunch.com",
+      "url": "https://techcrunch.com/2026/07/07/the-coding-agent-wars-are-spilling-into-the-rest-of-the-office-claude-cowork/"
     },
     {
-      "cat": "update",
-      "title": "Claude 앱 업데이트 — Sonnet 5 기본 + Claude in Chrome 베타",
-      "lead": "7월 릴리스노트에서 Claude Code·브라우저 사용이 크게 정리됐다.",
+      "cat": "tool",
+      "title": "Claude Microsoft 365 연동에 '쓰기' 권한 추가",
+      "lead": "그동안 읽기 전용이던 Microsoft 365 커넥터에 7/7 **쓰기 도구**가 붙어, Claude가 메일·일정·파일을 직접 만들고 고칠 수 있게 됐다.",
       "points": [
-        "**Sonnet 5, Claude Code 기본 모델** — 네이티브 **100만 토큰** 컨텍스트, 8/31까지 프로모 가격 **$2/$10**(100만 토큰)",
-        "**Claude in Chrome, 전 Max 구독자 베타** — 브라우저에서 **예약작업 자동 실행**, 계획 승인 후 워크플로 위임, 모델 선택(Haiku 4.5·Sonnet 4.5·Opus 4.5)",
-        "**MCP 터널** 리서치 프리뷰 — 사내 사설망의 MCP 서버에 연결"
+        "**메일** — 초안 작성·발송·정리, 메일함 설정 변경",
+        "**일정** — 캘린더 이벤트 생성·관리",
+        "**파일** — OneDrive·SharePoint 문서 생성·수정 (단, Teams는 여전히 읽기 전용)"
       ],
+      "note": "조직 관리자(Entra)가 권한 동의 후 활성화해야 사용 가능 — 엔터프라이즈 대상.",
       "source": "support.claude.com",
       "url": "https://support.claude.com/en/articles/12138966-release-notes"
     },
     {
-      "cat": "model",
-      "title": "xAI, Grok 4.5 정식 출시 — Cursor로 훈련한 코딩·에이전트 모델",
-      "lead": "7/8 공개된 xAI의 최신 모델. **에이전트형**(스스로 도구를 써 일을 끝냄) 코딩·지식노동에 특화, 상장·Cursor 인수 후 첫 릴리스.",
+      "cat": "headline",
+      "title": "Anthropic, Claude 안에서 '생각의 작업공간(J-Space)' 발견",
+      "lead": "7/6 Anthropic이 Claude 신경망 내부에 개념을 담고 조작하는 작은 특권 영역 **J-Space**를 찾았다는 논문을 냈다 — 인간 의식 이론(글로벌 워크스페이스)과 닮은 구조.",
       "points": [
-        "**지능지수 54점 / 168개 중 4위** — 앞엔 Fable 5(60)·Opus 4.8(56)·GPT-5.5(55)뿐",
-        "**API $2/$6**(입력/출력, 100만 토큰) — Opus급인데 60%+ 저렴",
-        "**에이전트 도구사용 부문 1위** 점수"
+        "**J-렌즈** — 야코비안 수학 기법으로 모델 내부를 들여다보는 새 분석 도구, 이름도 여기서 유래",
+        "**의식 이론과 부합** — 신경과학이 '의식적 접근'과 연관짓는 5가지 기능적 속성을 J-Space가 만족",
+        "**단, 의식 주장 아님** — Anthropic은 Claude가 의식이 있거나 주관적 경험을 한다는 뜻은 결코 아니라고 못박음"
       ],
-      "note": "EU는 아직 미제공(7월 중순 예정).",
-      "source": "x.ai",
-      "url": "https://x.ai/news/grok-4-5"
-    },
-    {
-      "cat": "model",
-      "title": "OpenAI, GPT-5.6(Sol·Terra·Luna) 정식 출시",
-      "lead": "6월 프리뷰였던 3종 모델이 7/9 **정식 공개** — ChatGPT·Codex·API에서 사용 가능.",
-      "points": [
-        "**Sol**(플래그십) — $5/$30, 가장 어려운 추론·에이전트 작업",
-        "**Terra**(균형) — $2.50/$15, GPT-5.5급을 절반 가격에",
-        "**Luna**(초저가·고속) — $1/$6, 대량 처리용"
-      ],
-      "note": "세 모델 모두 **105만 토큰** 컨텍스트·최대 출력 128K.",
-      "source": "openai.com",
-      "url": "https://openai.com/index/introducing-gpt-5-6/"
-    },
-    {
-      "cat": "tool",
-      "title": "OpenAI, GPT-Live — 끊김 없는 실시간 음성",
-      "lead": "7/9 공개된 새 음성 모델. **풀듀플렉스**(듣기와 말하기를 동시에) 구조라 사람과 대화하듯 자연스럽게 주고받는다.",
-      "forYou": "Grok Voice Agent Builder와 함께 음성 에이전트 흐름을 실습하기 좋은 시점 — 실시간 음성 UX가 어떻게 달라지는지 직접 말 걸어 비교해볼 것.",
+      "forYou": "모델 성능 뉴스는 아니지만, AI가 '무엇을 어떻게 표현하는지' 해석하는 연구다. 프롬프트가 왜 먹히고 안 먹히는지 이해하고 싶다면 해석가능성(interpretability)이 배워둘 만한 축이다.",
       "forYouLabel": "배워둘 것",
+      "source": "venturebeat.com",
+      "url": "https://venturebeat.com/technology/anthropics-new-j-lens-reveals-a-silent-workspace-inside-claude-that-mirrors-a-leading-theory-of-consciousness"
+    },
+    {
+      "cat": "model",
+      "title": "OpenAI GPT-5.6 — Sol·Terra·Luna 3종 동시 출시",
+      "lead": "7/9 OpenAI가 ChatGPT·Codex·API에 **GPT-5.6**를 세 등급으로 공개. 위→아래로 성능·가격이 다른 '지속 가능한 능력 티어'.",
+      "points": [
+        "**Sol**(최상위) — API $5/$30, SWE-Bench Pro **64.6%**, OpenAI 사상 최고의 코딩 모델이라 자평",
+        "**Terra**(중간) — API $2.50/$15, SWE-Bench Pro 63.4%",
+        "**Luna**(최소·최저가) — API **$1/$6**, 62.7% — 코딩 벤치당 비용 효율이 Opus 4.8 대비 훨씬 높음"
+      ],
+      "note": "함께 공개된 **GPT-Live**는 말하는 도중 '음-흠' 맞장구를 치며 듣고·생각하고·말하기를 동시에 하는 실시간 음성 모드.",
       "source": "openai.com",
-      "url": "https://openai.com/index/introducing-gpt-live/"
+      "url": "https://openai.com/index/gpt-5-6/"
+    },
+    {
+      "cat": "market",
+      "title": "UN, AI 거버넌스 글로벌 대화 — '치명적 피해' 경고",
+      "lead": "7/6~7 제네바에서 유엔의 첫 **AI 거버넌스 글로벌 대화**가 열렸다. 과학자문 요슈아 벤지오는 AI가 여러 영역에서 인간 능력에 근접·추월 중이며 규제가 속도를 못 따라간다고 경고.",
+      "note": "딜로이트 조사에선 기업 4곳 중 3곳이 2년 내 에이전트형 AI 도입 계획.",
+      "forYou": "규제·시장 방향은 어떤 스킬이 오래 쓸모 있을지의 신호다. 지금은 '에이전트를 안전하게 운용·감독하는 법'(도구 권한 설계, 검증·승인 흐름)이 배워둘 가치가 커지는 국면.",
+      "forYouLabel": "배워둘 것",
+      "source": "news.un.org",
+      "url": "https://news.un.org/en/story/2026/07/1167862"
     }
   ]
 }
