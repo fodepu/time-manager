@@ -1,73 +1,73 @@
 {
-  "date": "2026-07-11",
-  "generatedAt": "2026-07-11T15:40:00+09:00",
+  "date": "2026-07-12",
+  "generatedAt": "2026-07-12T15:59:24+09:00",
   "urgent": {
-    "text": "**OpenAI가 7/9 GPT-5.6를 3종(Sol·Terra·Luna)으로 공개.** 가장 작은 **Luna**는 **API $1/$6**(입력/출력, 100만 토큰)로 아주 싼데 코딩벤치 **SWE-Bench Pro 62.7%**(GPT-5.5의 59.4% 상회). 오늘 저비용으로 코딩·에이전트에 바로 붙여볼 만하다.",
-    "source": "openai.com"
+    "text": "**xAI가 7/8 Grok 4.5를 공개** — Musk가 \"**Opus급**(작년 최상위 Claude Opus 수준), 하지만 더 빠르고 값싸다\"고 소개. **API $2/$6**(입력/출력, 100만 토큰)로 싸고, 코딩 에디터 **Cursor** 전 요금제에 오늘부터 들어가 있으니 바로 붙여볼 만하다.",
+    "source": "x.ai"
   },
   "items": [
     {
-      "cat": "update",
-      "title": "Claude Cowork, 웹·모바일로 확장 — 이제 클라우드에서 돈다",
-      "lead": "Anthropic이 7/7 **Cowork**(사무 잡무를 대신 처리하는 에이전트형 도구, 스스로 파일·앱을 써 일을 끝냄)를 데스크톱을 넘어 웹·모바일로 열었다.",
+      "cat": "headline",
+      "title": "Anthropic, 신약 개발에 직접 뛰어든다 — 'Claude Science' 공개",
+      "lead": "Anthropic이 7/1 **Claude Science**(제약·생명과학 연구 전용 작업대, 여러 데이터베이스·분석도구를 한 화면에서 다루게 해줌)를 내놓고, 스스로 신약 개발 프로그램까지 시작한다고 밝혔다.",
       "points": [
-        "**클라우드 실행이 기본** — 내 컴퓨터를 켜둘 필요 없이 서버에서 작업 진행, 노트북을 닫아도 계속됨",
-        "**승인이 필요한 순간엔 폰으로 푸시 알림** — 초안 확정·선택지 결정 등 내 사인 없이는 아무것도 최종 전송 안 됨",
-        "**사용 통계** — 120만 세션 중 업무 프로세스 정리가 **33.4%**로 최다, 콘텐츠 작성 16.4%, 소프트웨어 개발은 8.7%뿐"
+        "**60개 넘는 기능** — 유전체학·구조생물학·단백질체학·화학정보학용. CRISPR 스크린 설계, 단일세포 RNA 분석, 3D 단백질 구조 렌더링 등을 대신 수행",
+        "**직접 신약 개발** — 방치된 질병(neglected disease)부터 겨냥해 자체 치료제 프로그램을 돌린다",
+        "**초기 고객** — 노보 노디스크, 앨런 연구소(Allen Institute)"
       ],
-      "note": "Max 요금제($100/월)부터 베타 시작, 이후 순차 확대.",
-      "source": "techcrunch.com",
-      "url": "https://techcrunch.com/2026/07/07/the-coding-agent-wars-are-spilling-into-the-rest-of-the-office-claude-cowork/"
-    },
-    {
-      "cat": "tool",
-      "title": "Claude Microsoft 365 연동에 '쓰기' 권한 추가",
-      "lead": "그동안 읽기 전용이던 Microsoft 365 커넥터에 7/7 **쓰기 도구**가 붙어, Claude가 메일·일정·파일을 직접 만들고 고칠 수 있게 됐다.",
-      "points": [
-        "**메일** — 초안 작성·발송·정리, 메일함 설정 변경",
-        "**일정** — 캘린더 이벤트 생성·관리",
-        "**파일** — OneDrive·SharePoint 문서 생성·수정 (단, Teams는 여전히 읽기 전용)"
-      ],
-      "note": "조직 관리자(Entra)가 권한 동의 후 활성화해야 사용 가능 — 엔터프라이즈 대상.",
-      "source": "support.claude.com",
-      "url": "https://support.claude.com/en/articles/12138966-release-notes"
+      "note": "현재 베타. 프로젝트에 최대 **$3만 상당 크레딧** 지원.",
+      "source": "technologyreview.com",
+      "url": "https://www.technologyreview.com/2026/06/30/1139987/claude-science-is-anthropics-newest-flagship-product/"
     },
     {
       "cat": "headline",
-      "title": "Anthropic, Claude 안에서 '생각의 작업공간(J-Space)' 발견",
-      "lead": "7/6 Anthropic이 Claude 신경망 내부에 개념을 담고 조작하는 작은 특권 영역 **J-Space**를 찾았다는 논문을 냈다 — 인간 의식 이론(글로벌 워크스페이스)과 닮은 구조.",
-      "points": [
-        "**J-렌즈** — 야코비안 수학 기법으로 모델 내부를 들여다보는 새 분석 도구, 이름도 여기서 유래",
-        "**의식 이론과 부합** — 신경과학이 '의식적 접근'과 연관짓는 5가지 기능적 속성을 J-Space가 만족",
-        "**단, 의식 주장 아님** — Anthropic은 Claude가 의식이 있거나 주관적 경험을 한다는 뜻은 결코 아니라고 못박음"
-      ],
-      "forYou": "모델 성능 뉴스는 아니지만, AI가 '무엇을 어떻게 표현하는지' 해석하는 연구다. 프롬프트가 왜 먹히고 안 먹히는지 이해하고 싶다면 해석가능성(interpretability)이 배워둘 만한 축이다.",
+      "title": "Anthropic, Claude 머릿속 '작업 공간' 발견 — 'J-Space'",
+      "lead": "Anthropic이 Claude가 생각을 말로 옮기기 전에 아이디어를 잠깐 붙들고 굴리는 작은 내부 공간을 찾았다고 발표했다(발견에 쓴 수학 기법 Jacobian에서 따와 **J-Space**로 명명).",
+      "note": "사람이 의식적으로 생각을 떠올리는 방식과 비슷한 구조라고 회사는 설명. AI가 어떻게 '생각'하는지 들여다보는 해석가능성(interpretability) 연구의 진전.",
+      "forYou": "모델을 블랙박스로만 쓰지 말고 '왜 이렇게 답했나'를 뜯어보는 감각을 길러둘 때다. 프롬프트를 바꿔가며 출력이 어떻게 달라지는지 기록해보면 모델의 사고 흐름을 읽는 눈이 생긴다.",
       "forYouLabel": "배워둘 것",
-      "source": "venturebeat.com",
-      "url": "https://venturebeat.com/technology/anthropics-new-j-lens-reveals-a-silent-workspace-inside-claude-that-mirrors-a-leading-theory-of-consciousness"
+      "source": "axios.com",
+      "url": "https://www.axios.com/2026/07/06/anthropic-claude-ai-conscious"
     },
     {
       "cat": "model",
-      "title": "OpenAI GPT-5.6 — Sol·Terra·Luna 3종 동시 출시",
-      "lead": "7/9 OpenAI가 ChatGPT·Codex·API에 **GPT-5.6**를 세 등급으로 공개. 위→아래로 성능·가격이 다른 '지속 가능한 능력 티어'.",
+      "title": "xAI Grok 4.5 — Cursor로 훈련한 '싸고 빠른 Opus급'",
+      "lead": "xAI가 7/8 **Grok 4.5**를 공개. 6월 인수한 코딩 에디터 **Cursor**와 함께 훈련한 코딩·에이전트 특화 모델이다.",
       "points": [
-        "**Sol**(최상위) — API $5/$30, SWE-Bench Pro **64.6%**, OpenAI 사상 최고의 코딩 모델이라 자평",
-        "**Terra**(중간) — API $2.50/$15, SWE-Bench Pro 63.4%",
-        "**Luna**(최소·최저가) — API **$1/$6**, 62.7% — 코딩 벤치당 비용 효율이 Opus 4.8 대비 훨씬 높음"
+        "**성능** — DeepSWE 1.0·Terminal-Bench 2.1에선 Opus 4.8을 이기고, DeepSWE 1.1·SWE-Bench Pro에선 진다(엎치락뒤치락)",
+        "**토큰 효율** — SWE-Bench Pro 한 문제를 평균 **1.6만 토큰**으로 푼다(Opus 4.8은 6.7만) → 약 **4.2배** 효율, 그만큼 저렴",
+        "**가격** — API **$2/$6**(입력/출력, 100만 토큰)"
       ],
-      "note": "함께 공개된 **GPT-Live**는 말하는 도중 '음-흠' 맞장구를 치며 듣고·생각하고·말하기를 동시에 하는 실시간 음성 모드.",
-      "source": "openai.com",
-      "url": "https://openai.com/index/gpt-5-6/"
+      "note": "오늘부터 Grok Build·Cursor 전 요금제·xAI 콘솔에서 사용 가능(단, EU 제외).",
+      "source": "techcrunch.com",
+      "url": "https://techcrunch.com/2026/07/08/spacexai-releases-grok-4-5-which-elon-describes-as-an-opus-class-model/"
+    },
+    {
+      "cat": "tool",
+      "title": "OpenAI 'ChatGPT Work' 공개 — 목표만 주면 알아서 끝낸다",
+      "lead": "OpenAI가 7/9 **ChatGPT Work**를 내놨다. 목표 하나를 주면 연결된 앱·파일을 뒤져 정보를 모으고, 일을 단계로 쪼갠 뒤 스스로 완수하는 **에이전트형**(사람이 단계별로 지시하지 않아도 도구를 써 일을 끝냄) 도구다.",
+      "note": "완성된 스프레드시트·슬라이드·문서를 결과물로 내놓는다. Claude Cowork와 정면으로 겹치는 '사무 자동화' 경쟁 본격화.",
+      "source": "aitoolsrecap.com",
+      "url": "https://aitoolsrecap.com/Blog/ai-news-july-11-2026"
     },
     {
       "cat": "market",
-      "title": "UN, AI 거버넌스 글로벌 대화 — '치명적 피해' 경고",
-      "lead": "7/6~7 제네바에서 유엔의 첫 **AI 거버넌스 글로벌 대화**가 열렸다. 과학자문 요슈아 벤지오는 AI가 여러 영역에서 인간 능력에 근접·추월 중이며 규제가 속도를 못 따라간다고 경고.",
-      "note": "딜로이트 조사에선 기업 4곳 중 3곳이 2년 내 에이전트형 AI 도입 계획.",
-      "forYou": "규제·시장 방향은 어떤 스킬이 오래 쓸모 있을지의 신호다. 지금은 '에이전트를 안전하게 운용·감독하는 법'(도구 권한 설계, 검증·승인 흐름)이 배워둘 가치가 커지는 국면.",
+      "title": "Apple, OpenAI를 영업비밀 침해로 제소",
+      "lead": "Apple이 7/11 캘리포니아 북부 연방법원에 OpenAI를 영업비밀 절도 혐의로 제소했다. 전직 Apple 직원 400여 명이 지금 OpenAI에서 일한다는 게 주장의 핵심.",
+      "note": "빅테크 간 인재 이동과 기술 유출을 둘러싼 법적 충돌이 표면화.",
+      "forYou": "빅테크 소송은 남 일 같지만, 앞으로 AI 인재·기술의 이동 규칙이 조여질 수 있다는 신호다. 내가 쓰는 도구가 어느 회사 것이고 어떤 소송·규제 리스크를 안고 있는지 한 번쯤 파악해두면 좋다.",
+      "source": "aitoolsrecap.com",
+      "url": "https://aitoolsrecap.com/Blog/ai-news-july-11-2026"
+    },
+    {
+      "cat": "market",
+      "title": "중국, '의인화 AI' 규제 7/15 발효",
+      "lead": "사람을 흉내 내며 지속적으로 감정 교류를 하는 AI 서비스(AI 친구·연인 챗봇 등)를 겨냥한 중국의 **의인화 AI 상호작용 서비스 잠정 규정**이 7/15부터 시행된다.",
+      "note": "감정형 AI에 대한 세계 첫 본격 규제 축의 하나로, 다른 나라 규제 논의에도 영향 가능.",
+      "forYou": "감정·대화형 AI가 규제 대상이 되기 시작했다는 건, 이 분야가 그만큼 커졌다는 뜻. 챗봇을 '쓰는' 것을 넘어 '어떻게 안전·윤리 기준을 지키며 만드는가'가 새 역량이 된다 — 관련 가이드라인 흐름을 눈여겨볼 것.",
       "forYouLabel": "배워둘 것",
-      "source": "news.un.org",
-      "url": "https://news.un.org/en/story/2026/07/1167862"
+      "source": "cryptointegrat.com",
+      "url": "https://www.cryptointegrat.com/p/ai-news-july-11-2026"
     }
   ]
 }
