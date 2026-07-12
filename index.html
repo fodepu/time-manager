@@ -2536,7 +2536,7 @@
   <div id="briefingMode" style="display:none;">
     <div class="brief-head">
       <div class="brief-title" data-icon-before="sparkles">오늘의 브리핑</div>
-      <div class="brief-metawrap"><span id="briefDate" class="brief-date">—</span><button type="button" id="briefRefreshBtn" class="brief-refresh" title="다시 불러오기" data-icon-before="refresh"></button></div>
+      <div class="brief-metawrap"><button type="button" class="brief-nav" id="briefPrev" title="이전 날" aria-label="이전 날">‹</button><span id="briefDate" class="brief-date">—</span><button type="button" class="brief-nav" id="briefNext" title="다음 날" aria-label="다음 날">›</button><button type="button" id="briefRefreshBtn" class="brief-refresh" title="다시 불러오기" data-icon-before="refresh"></button></div>
     </div>
     <div class="brief-subtabs">
       <button type="button" class="brief-subtab active" data-feed="ai">AI<span class="brief-dot"></span></button>
@@ -7973,7 +7973,9 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   .brief-head{display:flex;align-items:center;justify-content:space-between;margin:6px 0 14px}
   .brief-title{font-size:18px;font-weight:700;display:flex;align-items:center;gap:7px}
   .brief-metawrap{display:flex;align-items:center;gap:8px}
-  .brief-date{font-size:12px;color:#8a8a8a}
+  .brief-date{font-size:12px;color:#8a8a8a;min-width:78px;text-align:center}
+  .brief-nav{background:none;border:none;color:#9aa0a6;font-size:19px;line-height:1;cursor:pointer;padding:0 3px}
+  .brief-nav:disabled{opacity:.28;cursor:default}
   .brief-refresh{background:none;border:1px solid rgba(128,128,128,.35);color:inherit;width:32px;height:32px;border-radius:9px;cursor:pointer;line-height:1;display:inline-flex;align-items:center;justify-content:center}
   .brief-refresh:active{transform:rotate(180deg)}
   .brief-subtabs{display:flex;gap:8px;margin:0 0 8px}
@@ -8066,37 +8068,63 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     body.innerHTML=html;
     foot.textContent=data.generatedAt?('생성: '+esc(data.generatedAt)):'';
   }
-  var FEEDS={ai:'./briefing/latest.json',btc:'./briefing/bitcoin.json'};
-  var feedData={}, curFeed='ai';
+  var FEEDS={ai:'./briefing/ai/',btc:'./briefing/btc/'};
+  var idx={}, viewDate={}, curFeed='ai';
   function seenKey(f){return 'tmbrief_seen_'+f;}
   function getSeen(f){try{return localStorage.getItem(seenKey(f))||'';}catch(e){return '';}}
   function setSeen(f,st){try{localStorage.setItem(seenKey(f),st||'');}catch(e){}}
-  function stampOf(d){return d?(d.generatedAt||d.date||''):'';}
+  function fetchJson(u){ return fetch(u+'?v='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.json():null;}).catch(function(){return null;}); }
+  function setLoading(){var b=document.getElementById('briefBody'); if(b) b.innerHTML='<div class="brief-empty">불러오는 중…</div>';}
+  function setActiveTab(f){ document.querySelectorAll('.brief-subtab').forEach(function(b){ b.classList.toggle('active', b.dataset.feed===f); }); }
   function updateDots(){
     ['ai','btc'].forEach(function(f){
-      var st=stampOf(feedData[f]);
-      var isNew=(st && st!==getSeen(f) && f!==curFeed);
+      var st=(idx[f]&&idx[f].latestStamp)||'';
+      var onLatest=(f===curFeed && idx[f] && viewDate[f]===idx[f].latest);
+      var isNew=(st && st!==getSeen(f) && !onLatest);
       var el=document.querySelector('.brief-subtab[data-feed="'+f+'"] .brief-dot');
       if(el) el.style.display=isNew?'inline-block':'none';
     });
   }
-  function setActiveTab(f){ document.querySelectorAll('.brief-subtab').forEach(function(b){ b.classList.toggle('active', b.dataset.feed===f); }); }
-  function fetchFeed(f){ return fetch(FEEDS[f]+'?v='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.json():null;}).catch(function(){return null;}); }
+  function updateNav(){
+    var f=curFeed, ix=idx[f]||{dates:[]}, dates=ix.dates||[], pos=dates.indexOf(viewDate[f]);
+    var pv=document.getElementById('briefPrev'), nx=document.getElementById('briefNext');
+    if(pv) pv.disabled=!(pos>0);
+    if(nx) nx.disabled=!(pos>=0 && pos<dates.length-1);
+  }
+  function showDate(f,d){
+    viewDate[f]=d;
+    var de=document.getElementById('briefDate'); if(de) de.textContent=d||'—';
+    if(idx[f]&&d===idx[f].latest) setSeen(f, idx[f].latestStamp);
+    updateNav(); updateDots(); setLoading();
+    fetchJson(FEEDS[f]+d+'.json').then(function(data){ if(curFeed===f && viewDate[f]===d) render(data); });
+  }
   function showFeed(f){
     curFeed=f; try{localStorage.setItem('tmbrief_feed',f);}catch(e){}
     setActiveTab(f);
-    var body=document.getElementById('briefBody'); if(body) body.innerHTML='<div class="brief-empty">불러오는 중…</div>';
-    fetchFeed(f).then(function(d){ feedData[f]=d; setSeen(f,stampOf(d)); render(d); updateDots(); });
+    var de=document.getElementById('briefDate'); if(de) de.textContent='…';
+    setLoading();
+    fetchJson(FEEDS[f]+'index.json').then(function(ix){
+      idx[f]=ix||{dates:[],latest:'',latestStamp:''};
+      var d=idx[f].latest||(idx[f].dates&&idx[f].dates[idx[f].dates.length-1])||'';
+      if(!d){ render(null); var de2=document.getElementById('briefDate'); if(de2)de2.textContent='—'; updateNav(); updateDots(); return; }
+      showDate(f,d);
+    });
   }
-  function refreshDots(){ ['ai','btc'].forEach(function(f){ fetchFeed(f).then(function(d){ feedData[f]=d; updateDots(); }); }); }
+  function navDay(delta){
+    var f=curFeed, ix=idx[f]||{dates:[]}, dates=ix.dates||[], pos=dates.indexOf(viewDate[f]);
+    if(pos<0) return; var np=pos+delta; if(np<0||np>=dates.length) return; showDate(f,dates[np]);
+  }
+  function refreshIndexes(){ ['ai','btc'].forEach(function(f){ fetchJson(FEEDS[f]+'index.json').then(function(ix){ if(ix) idx[f]=ix; updateDots(); }); }); }
   window.tmRenderBriefing=function(){
     var f='ai'; try{ f=localStorage.getItem('tmbrief_feed')||'ai'; }catch(e){}
     if(f!=='ai'&&f!=='btc') f='ai';
-    showFeed(f); refreshDots();
+    showFeed(f); refreshIndexes();
   };
   document.addEventListener('DOMContentLoaded',function(){
     var rb=document.getElementById('briefRefreshBtn');
     if(rb&&!rb._w){ rb._w=1; rb.addEventListener('click',function(){ showFeed(curFeed); }); }
+    var pv=document.getElementById('briefPrev'); if(pv&&!pv._w){ pv._w=1; pv.addEventListener('click',function(){ navDay(-1); }); }
+    var nx=document.getElementById('briefNext'); if(nx&&!nx._w){ nx._w=1; nx.addEventListener('click',function(){ navDay(1); }); }
     document.querySelectorAll('.brief-subtab').forEach(function(b){
       if(b._w) return; b._w=1;
       b.addEventListener('click',function(){ showFeed(b.dataset.feed); });
