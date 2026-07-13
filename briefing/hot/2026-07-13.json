@@ -1,0 +1,12 @@
+{
+  "date":"2026-07-13","generatedAt":"2026-07-13T09:40:00+09:00",
+  "urgentLabel":"🔥 오늘 최고 화제",
+  "urgent":{"text":"⚽ **월드컵 4강 빅매치 성사 — 잉글랜드 vs 아르헨티나!** 벨링엄이 노르웨이전 연장에서 혼자 2골로 잉글랜드를 끌어올렸고, 아르헨티나는 스위스를 꺾고 올라왔다.","source":"cnn.com"},
+  "items":[
+    {"cat":"screen","title":"🎬 놀란 신작 '오디세이' 7/17 개봉 — 올여름 최대어","lead":"크리스토퍼 놀란의 신작이 이번 주 개봉한다. 개봉 첫 주말 **$80~100M** 흥행이 예상되는 여름 텐트폴.","source":"buildfastwithai.com","url":"https://www.buildfastwithai.com/blogs/ai-news-today-july-12-2026"},
+    {"cat":"screen","title":"🕷️ 7/31 '터지는 날' — 스파이더맨 + 아리아나 그란데 동시 투하","lead":"'스파이더맨: Brand New Day'와 아리아나 그란데 신곡 'petal'이 같은 날(7/31) 공개된다. 팬덤 초비상.","source":"newengen.com","url":"https://newengen.com/insights/july-tiktok-trends/"},
+    {"cat":"space","title":"🌌 인류가 본 가장 큰 '블랙홀 충돌' 목록 공개","lead":"역대 최대 중력파 카탈로그가 나왔다. **신규 161건**을 더해 관측된 블랙홀 충돌이 총 **390건**으로.","source":"sciencedaily.com","url":"https://www.sciencedaily.com/news/space_time/"},
+    {"cat":"space","title":"🔭 우주 '6.7억 살' 때 빛난 최고령 퀘이사 31개 발견","lead":"빅뱅 직후 우주가 겨우 6.7억 살일 때 타오르던 초기 퀘이사 31개를 포착 — 그중 2개는 **역대 가장 오래된 것**.","source":"sciencedaily.com","url":"https://www.sciencedaily.com/news/space_time/astronomy/"},
+    {"cat":"space","title":"🚀 중국 창정 10B, 첫 비행에 '사상 첫 해상 착륙'까지","lead":"7/10 데뷔 발사에서 위성을 궤도에 올리고, 바다 위 플랫폼에 **재사용 로켓 착륙**을 성공시켰다.","source":"space.com","url":"https://www.space.com/"}
+  ]
+}

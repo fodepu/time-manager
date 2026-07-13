@@ -2541,6 +2541,7 @@
     <div class="brief-subtabs">
       <button type="button" class="brief-subtab active" data-feed="ai">AI<span class="brief-dot"></span></button>
       <button type="button" class="brief-subtab" data-feed="btc">비트코인<span class="brief-dot"></span></button>
+      <button type="button" class="brief-subtab" data-feed="hot">🔥핫이슈<span class="brief-dot"></span></button>
     </div>
     <div class="brief-hint">제목을 탭하면 자세히 펼쳐져요</div>
     <div id="briefUrgent" class="brief-urgent" style="display:none"></div>
@@ -8021,7 +8022,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
 <script>
 /* AI 브리핑 렌더 — briefing/latest.json(예약작업이 매일 생성)을 owner 전용으로 표시 */
 (function(){
-  var CATS={model:['모델 릴리스','#6366f1'],headline:['헤드라인','#0ea5e9'],tool:['도구','#10b981'],market:['정책·시장','#f59e0b'],update:['업데이트','#8b5cf6'],claude:['Claude','#d97757'],grok:['Grok','#5b5b5b'],price:['가격·동인','#f7931a'],mining:['채굴·원가','#b45309'],onchain:['온체인','#0ea5e9'],policy:['정책·기관','#10b981'],macro:['매크로','#6366f1']};
+  var CATS={model:['모델 릴리스','#6366f1'],headline:['헤드라인','#0ea5e9'],tool:['도구','#10b981'],market:['정책·시장','#f59e0b'],update:['업데이트','#8b5cf6'],claude:['Claude','#d97757'],grok:['Grok','#5b5b5b'],price:['가격·동인','#f7931a'],mining:['채굴·원가','#b45309'],onchain:['온체인','#0ea5e9'],policy:['정책·기관','#10b981'],macro:['매크로','#6366f1'],sports:['스포츠','#16a34a'],screen:['영화·컬처','#db2777'],space:['우주','#7c3aed'],science:['과학','#0ea5e9'],viral:['바이럴','#f43f5e']};
   function esc(t){return String(t==null?'':t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
   function md(t){return esc(t).replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>');}
   function todayStr(){return new Date(Date.now()+9*3600000).toISOString().slice(0,10);}
@@ -8056,8 +8057,8 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     var html='';
     if(data.date && data.date!==todayStr()){ html+='<div class="brief-stale">'+esc(data.date)+' 자 브리핑입니다 (오늘 것 아직 생성 전).</div>'; }
     if(data.urgent && (data.urgent.text||typeof data.urgent==='string')){
-      var ut=data.urgent.text||data.urgent, us=data.urgent.source||'';
-      urg.innerHTML='<div class="bu-label">⚡ 당장 챙길 것</div><div class="bu-text">'+md(ut)+'</div>'+(us?'<div class="bu-src">'+esc(us)+'</div>':'');
+      var ut=data.urgent.text||data.urgent, us=data.urgent.source||'', ulabel=data.urgentLabel||'⚡ 당장 챙길 것';
+      urg.innerHTML='<div class="bu-label">'+esc(ulabel)+'</div><div class="bu-text">'+md(ut)+'</div>'+(us?'<div class="bu-src">'+esc(us)+'</div>':'');
       urg.style.display='block';
     } else { urg.style.display='none'; }
     var items=[];
@@ -8068,7 +8069,8 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     body.innerHTML=html;
     foot.textContent=data.generatedAt?('생성: '+esc(data.generatedAt)):'';
   }
-  var FEEDS={ai:'./briefing/ai/',btc:'./briefing/btc/'};
+  var FEEDS={ai:'./briefing/ai/',btc:'./briefing/btc/',hot:'./briefing/hot/'};
+  var FEED_LIST=['ai','btc','hot'];
   var idx={}, viewDate={}, curFeed='ai';
   function seenKey(f){return 'tmbrief_seen_'+f;}
   function getSeen(f){try{return localStorage.getItem(seenKey(f))||'';}catch(e){return '';}}
@@ -8077,7 +8079,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   function setLoading(){var b=document.getElementById('briefBody'); if(b) b.innerHTML='<div class="brief-empty">불러오는 중…</div>';}
   function setActiveTab(f){ document.querySelectorAll('.brief-subtab').forEach(function(b){ b.classList.toggle('active', b.dataset.feed===f); }); }
   function updateDots(){
-    ['ai','btc'].forEach(function(f){
+    FEED_LIST.forEach(function(f){
       var st=(idx[f]&&idx[f].latestStamp)||'';
       var onLatest=(f===curFeed && idx[f] && viewDate[f]===idx[f].latest);
       var isNew=(st && st!==getSeen(f) && !onLatest);
@@ -8114,7 +8116,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     var f=curFeed, ix=idx[f]||{dates:[]}, dates=ix.dates||[], pos=dates.indexOf(viewDate[f]);
     if(pos<0) return; var np=pos+delta; if(np<0||np>=dates.length) return; showDate(f,dates[np]);
   }
-  function refreshIndexes(){ ['ai','btc'].forEach(function(f){ fetchJson(FEEDS[f]+'index.json').then(function(ix){ if(ix) idx[f]=ix; updateDots(); }); }); }
+  function refreshIndexes(){ FEED_LIST.forEach(function(f){ fetchJson(FEEDS[f]+'index.json').then(function(ix){ if(ix) idx[f]=ix; updateDots(); }); }); }
   window.tmRenderBriefing=function(){
     var f='ai'; try{ f=localStorage.getItem('tmbrief_feed')||'ai'; }catch(e){}
     if(f!=='ai'&&f!=='btc') f='ai';
