@@ -1,0 +1,8 @@
+{
+  "date":"2026-07-10","generatedAt":"2026-07-10T09:00:00+09:00",
+  "urgent":null,
+  "items":[
+    {"cat":"model","title":"xAI Grok 4.5 출시 — 코딩 특화","lead":"xAI가 7/9~10 Grok 4.5를 Grok Build·Cursor·API로 출시했다.","points":["**Cursor와 공동 훈련**, 코딩·장기 다단계 작업 겨냥","Artificial Analysis 지능지수 **4위**, 가격 100만 토큰당 입력 **$2**·출력 **$6**"],"source":"x.ai","url":"https://x.ai/news/grok-4-5"},
+    {"cat":"model","title":"GPT-5.6, 전 플랫폼 전면 공개","lead":"Sol·Terra·Luna 3종이 ChatGPT·API·Codex에서 일반 사용 가능해졌다.","points":["OpenAI Preparedness Framework에서 Sol·Terra·Luna를 **사이버·생화학 위험 모두 High**로 분류","코딩 성능 지표에서 Sol이 최상위권"],"source":"llm-stats.com","url":"https://llm-stats.com/llm-updates"}
+  ]
+}

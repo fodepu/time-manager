@@ -1,0 +1,9 @@
+{
+  "date":"2026-07-11","generatedAt":"2026-07-11T09:00:00+09:00",
+  "urgent":null,
+  "items":[
+    {"cat":"headline","title":"애플, OpenAI 상대 영업비밀 침해 소송","lead":"애플이 7/11 북부 캘리포니아 연방법원에 OpenAI를 제소했다.","points":["영업비밀 절취 주장, **전 애플 직원 400명+가 현재 OpenAI 근무** 중이라는 점을 근거로 인용"],"source":"unrot.co","url":"https://unrot.co/blogs/today-top-10-ai-news-july-12-2026"},
+    {"cat":"market","title":"SK하이닉스, 사상 최대 ADR 상장","lead":"SK하이닉스가 7/10 미국 ADR(티커 SKHY)로 상장, **$28~29B**를 조달했다.","points":["**역대 최대 ADR 공모**, 글로벌 고대역폭메모리(HBM) 약 **60%** 점유"],"forYou":"AI 붐의 실물 수혜가 한국 반도체로 직결되는 장면 — HBM 공급망(SK하이닉스·삼성)이 AI 하드웨어 흐름의 핵심임을 읽어둘 것.","source":"unrot.co","url":"https://unrot.co/blogs/today-top-10-ai-news-july-12-2026"},
+    {"cat":"market","title":"연준, AI 영향 첫 태스크포스 신설","lead":"연준(Fed)이 AI의 고용·생산성·통화정책 영향을 다룰 첫 태스크포스를 만들었다.","points":["a16z 공동창업자 **마크 안드레센**이 공동주재"],"forYou":"중앙은행이 AI를 '거시 변수'로 다루기 시작 — AI가 금리·고용 논의의 축이 되는 큰 흐름을 지켜볼 것.","source":"unrot.co","url":"https://unrot.co/blogs/today-top-10-ai-news-july-12-2026"}
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "date":"2026-07-08","generatedAt":"2026-07-08T09:00:00+09:00",
+  "urgent":{"text":"**7/1부터 Claude Fable 5가 전 세계 정식 오픈.** 6/30 미 상무부의 수출통제 해제로 Claude.ai·API·Code·Cowork에서 누구나 사용 가능 — 외국인 접근 제한이 풀린 첫 사례다.","source":"support.claude.com"},
+  "items":[
+    {"cat":"update","title":"Claude, Cowork 웹·모바일 확장 + M365 쓰기 도구","lead":"Anthropic이 7/7 앱 업데이트로 Cowork를 크게 확장했다.","points":["**Cowork 웹·모바일 확장** — 세션이 **원격으로 돌아 계정에 저장**돼 기기 넘나들며 이어지고, 노트북을 닫아도 작업이 계속되며 **예약작업이 기기 없이도 실행**된다.","**Microsoft 365 쓰기 도구** — 이메일 초안·발송·정리, 캘린더 관리, OneDrive·SharePoint 파일 생성/수정까지(Teams 읽기 전용)."],"source":"support.claude.com","url":"https://support.claude.com/en/articles/12138966-release-notes"},
+    {"cat":"model","title":"Anthropic, Claude Sonnet 5 출시","lead":"6/30 출시한 '역대 가장 에이전트형' Sonnet. **에이전트형** = 단계별 지시 없이 스스로 도구를 써 일을 끝내는 것.","points":["**SWE-bench 72.7%**(Sonnet 4.6은 62.3%) — 코딩","**Terminal-bench 76.1%**(+20.7p) — 터미널"],"note":"Opus 4.8급 성능을 **더 낮은 가격**에.","source":"anthropic.com","url":"https://www.anthropic.com/news/claude-sonnet-5"},
+    {"cat":"tool","title":"xAI, Grok Voice Agent Builder 베타","lead":"xAI가 **노코드 음성 에이전트 제작 도구**를 베타 공개(7/3). 코딩 없이 몇 분 만에 음성 에이전트를 만든다.","points":["전화·지식검색·툴·가드레일·**MCP**·관측성을 한 곳에서","**음성 클로닝**·SIP·통화 리뷰 지원"],"source":"x.ai","url":"https://x.ai/news"},
+    {"cat":"model","title":"OpenAI, GPT-5.6 패밀리(Sol·Terra·Luna) 프리뷰","lead":"차세대 3종을 6/26 프리뷰 공개(아직 API·Codex 신뢰 파트너 한정).","points":["**Sol** — 1.5M 토큰 컨텍스트(+43%), **max reasoning**, **ultra mode**","**Terra** 대량 업무용 · **Luna** 저비용 일상용"],"note":"Sol $5/$30, Terra $2.50/$15, Luna $1/$6.","source":"openai.com","url":"https://openai.com/index/previewing-gpt-5-6-sol/"},
+    {"cat":"market","title":"미 연방 AI 지출 급증","lead":"미 연방정부의 AI 지출이 폭증했다.","points":["집행 확정 **의무지출 $7.2B**(+966%), 잠재 계약 **$91.8B**(+1,912%)"],"forYou":"AI 활용·자동화 역량의 시장가치↑ → 지금 **에이전트·자동화 도구를 실제로 다뤄보는 게** 가장 확실한 대비.","source":"brookings.edu","url":"https://www.brookings.edu/articles/where-does-federal-ai-spending-stand-in-2026/"}
+  ]
+}

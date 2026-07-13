@@ -1,0 +1,8 @@
+{
+  "date":"2026-07-09","generatedAt":"2026-07-09T09:10:00+09:00",
+  "urgent":{"text":"**BTC, $62k~$64k 박스권 안착.** 회복세지만 아직 '확인된 하락추세' 안이라 주도권이 매수 쪽으로 넘어간 건 아니다. 방향은 결국 Fed와 ETF 자금이 가른다.","source":"fool.com"},
+  "items":[
+    {"cat":"price","title":"박스권 회복 — 왜 '추세 전환'은 아직인가","lead":"7/9 BTC는 $62,000~$64,000 사이에서 마감했다.","points":["가격을 좌우한 두 축은 여전히 **Fed(금리)와 ETF 자금 흐름**이다. 2025 랠리 대부분이 '금리인하 기대'에서 나왔기에, 그 기대가 사라지면 큰손이 떠날 이유가 생긴다.","이번 반등은 **하락추세 안에서 나온 되돌림** — 매수세가 상단으로 밀어올렸지만 추세를 바꿀 새 신호는 아직 없다."],"note":"7월 전체 방향은 7/28~29 FOMC로 수렴될 가능성.","source":"fool.com","url":"https://www.fool.com/coverage/stock-market-today/2026/07/09/crypto-market-today-july-9-bitcoin-holds-firm-as-risk-appetite-returns-despite-geopolitical-noise/"},
+    {"cat":"onchain","title":"블랙록 주도 ETF 유입 — 왜 이게 신호로 읽히나","lead":"현물 BTC ETF에 3일간 **+$510M**가 들어왔고, 블랙록이 그 흐름을 이끌었다.","points":["ETF 순유입은 운용사가 그만큼 **실제 BTC를 매수**한다는 뜻이라 곧 수요다.","특히 최대 자산운용사(블랙록)가 앞장서면 다른 기관 자금이 뒤따르는 경향이 있어 '기관 수요 복귀'의 대표 신호로 본다."],"source":"techtimes.com","url":"https://www.techtimes.com/articles/319974/20260709/bitcoin-etf-inflows-hit-510m-over-3-days-when-blackrock-leads-bitcoin-follows.htm"}
+  ]
+}

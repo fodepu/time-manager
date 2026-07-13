@@ -1,0 +1,8 @@
+{
+  "date":"2026-07-10","generatedAt":"2026-07-10T09:10:00+09:00",
+  "urgent":{"text":"**ETF 자금 유입 사흘째 이어짐** — 7/10 미 현물 BTC ETF +$90.4M 순유입. 6월 사상 최악(-$45억) 뒤 '신중한 회복' 국면.","source":"cryptobriefing.com"},
+  "items":[
+    {"cat":"onchain","title":"ETF 순유입이 왜 곧 '수요'인가","lead":"7/10 미 현물 BTC ETF는 **+$90.4M**, 이더리움 ETF는 +$18.4M 순유입.","points":["현물 ETF는 유입된 자금만큼 **시장에서 실제 코인을 사서 보관**한다 → 순유입은 그대로 매수 수요, 순유출은 매도 압력.","6월엔 론칭(2024.1) 이후 최악인 **약 -$45억** 유출이었어서, 이번 소규모 연속 유입은 '바닥에서의 방향 전환' 여부를 가늠하는 신호."],"source":"cryptobriefing.com","url":"https://cryptobriefing.com/bitcoin-ethereum-etf-inflows-july-10/"},
+    {"cat":"macro","title":"인플레 기대 완화가 왜 BTC에 순풍인가","lead":"인플레이션 기대가 누그러지며 위험자산 전반에 우호적 분위기가 형성됐다.","points":["인플레가 잡히면 Fed가 **금리를 내릴 여지**가 커진다 → 금리 인하는 유동성 확대와 위험자산 선호로 이어져 BTC 같은 자산에 자금이 흐른다.","크립토 ETF가 이 '바람'을 함께 타면서 유입이 회복되는 모습."],"source":"247wallst.com","url":"https://247wallst.com/investing/cryptocurrency/2026/07/02/bitcoin-price-prediction-for-july-2026/"}
+  ]
+}

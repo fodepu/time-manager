@@ -1,0 +1,9 @@
+{
+  "date":"2026-07-09","generatedAt":"2026-07-09T09:00:00+09:00",
+  "urgent":null,
+  "items":[
+    {"cat":"update","title":"Claude Cowork, 웹·모바일 정식 출시","lead":"Anthropic이 7/9 Cowork를 웹·모바일로 공식 출시했다(OpenAI의 ChatGPT Work 출시와 같은 날).","points":["세션·파일이 기기를 따라다니고 노트북을 닫아도 백그라운드 지속, **예약작업은 기기 꺼져 있어도 실행**","차별점: Constitutional AI 안전 스택 + 기업 거버넌스 인프라(경쟁 ChatGPT Work는 통합 디렉터리가 더 넓음)"],"source":"anthropic.com","url":"https://www.anthropic.com/news"},
+    {"cat":"update","title":"Claude 'Reflect' 대시보드 베타","lead":"7/9 공개. 지난 한 달 Claude 사용 패턴을 시각화·회고하게 해주는 리포트.","points":["많이 다룬 주제·활발한 요일·피크 시간대 관찰, quiet hours 설정","Free·Pro·Max, 웹·데스크톱. '채팅 기록 메모리' 켜져 있어야 작동"],"forYou":"내 집중 시간대·활발한 요일을 데이터로 확인해 하루 설계에 반영 — 감이 아니라 기록으로 시간 배분.","source":"anthropic.com","url":"https://www.anthropic.com/news/reflect-with-claude"},
+    {"cat":"model","title":"OpenAI, GPT-5.6 정식 출시 + ChatGPT Work","lead":"13일간의 정부 조율 프리뷰를 끝내고 7/9 ChatGPT·API·Codex에 전면 공개.","points":["Codex 데스크톱 앱을 ChatGPT 데스크톱에 통합, 중요 동작 전 검사하는 **Auto-Review** 보안 추가","**ChatGPT Work**(GPT-5.6 기반)로 흩어진 메모·초안을 완성물로"],"source":"openai.com","url":"https://openai.com/news/"}
+  ]
+}
