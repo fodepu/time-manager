@@ -8022,7 +8022,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
 <script>
 /* AI 브리핑 렌더 — briefing/latest.json(예약작업이 매일 생성)을 owner 전용으로 표시 */
 (function(){
-  var CATS={model:['모델 릴리스','#6366f1'],headline:['헤드라인','#0ea5e9'],tool:['도구','#10b981'],market:['정책·시장','#f59e0b'],update:['업데이트','#8b5cf6'],claude:['Claude','#d97757'],grok:['Grok','#5b5b5b'],price:['가격·동인','#f7931a'],mining:['채굴·원가','#b45309'],onchain:['온체인','#0ea5e9'],policy:['정책·기관','#10b981'],macro:['매크로','#6366f1'],sports:['스포츠','#16a34a'],screen:['영화·컬처','#db2777'],space:['우주','#7c3aed'],science:['과학','#0ea5e9'],viral:['바이럴','#f43f5e']};
+  var CATS={model:['모델 릴리스','#6366f1'],headline:['헤드라인','#0ea5e9'],tool:['도구','#10b981'],market:['정책·시장','#f59e0b'],update:['업데이트','#8b5cf6'],claude:['Claude','#d97757'],grok:['Grok','#5b5b5b'],price:['가격·동인','#f7931a'],mining:['채굴·원가','#b45309'],onchain:['온체인','#0ea5e9'],policy:['정책·기관','#10b981'],macro:['매크로','#6366f1'],sports:['스포츠','#16a34a'],screen:['영화·컬처','#db2777'],space:['우주','#7c3aed'],science:['과학','#0ea5e9'],viral:['바이럴','#f43f5e'],game:['게임·e스포츠','#f97316']};
   function esc(t){return String(t==null?'':t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
   function md(t){return esc(t).replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>');}
   function todayStr(){return new Date(Date.now()+9*3600000).toISOString().slice(0,10);}
