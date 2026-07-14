@@ -1,11 +1,13 @@
 {
-  "date":"2026-07-13","generatedAt":"2026-07-13T09:45:00+09:00",
+  "date":"2026-07-13","generatedAt":"2026-07-13T10:00:00+09:00",
   "urgentLabel":"🔥 오늘 최고 화제",
-  "urgent":{"text":"🏀 **웸반야마, 스퍼스와 5년 $252M 맥스 연장 합의(7/10)!** 게다가 슈퍼맥스($303M) 대신 25% 맥스를 택해 팀에 **~$50M 여력**을 남겼다 — 자기 주변에 우승 로스터를 짜라는 '연봉 희생'.","source":"espn.com"},
+  "urgent":{"text":"🏀 **웸반야마, 스퍼스와 5년 $252M 맥스 연장(7/10)!** 슈퍼맥스($303M) 대신 25% 맥스를 택해 팀에 **~$50M 여력**을 남겼다 — 우승 로스터 짜라는 '연봉 희생'.","source":"espn.com"},
   "items":[
-    {"cat":"sports","title":"🏀 스퍼스, 22세 웸비 앞세워 '첫 파이널'까지 갔다","lead":"지난 시즌 커리어 첫 플레이오프에서 서부 결승서 OKC를 꺾고 파이널 진출, 뉴욕 닉스에 1-4로 아쉽게 준우승. 연장 계약까지 더해 '마스터클래스 오프시즌'이라는 평가.","source":"airalamo.com","url":"https://airalamo.com/wembanyamas-extension-just-latest-move-spurs-masterclass-offseason"},
-    {"cat":"sports","title":"🏀 NBA 오프시즌 대격변 — 트레이드 폭발","lead":"야니스→히트, 제일런 브라운↔폴 조지(76ers), 라멜로 볼→울브스, 자 모란트→블레이저스. 르브론 행선지는 아직 미정이고, 서머리그(라스베이거스, 7/9~19)가 한창.","source":"nba.com","url":"https://www.nba.com/news/2026-nba-offseason-roundup"},
-    {"cat":"sports","title":"⚽ 월드컵 4강 대진 확정 — 내일·모레 격돌","lead":"7/14 프랑스 vs 스페인(댈러스), 7/15 잉글랜드 vs 아르헨티나(애틀랜타). 벨링엄이 노르웨이전 연장에서 혼자 2골로 잉글랜드를 4강에 올렸다.","source":"aljazeera.com","url":"https://www.aljazeera.com/sports/2026/7/12/which-teams-are-in-the-world-cup-semifinals-and-whats-the-match-schedule"},
-    {"cat":"game","title":"🎮 오버워치 'Community Crafted' 오늘(7/13) 종료","lead":"프로들(Guxue·Apply 등)이 설계한 5v5 실험 모드가 오늘 끝난다. **아나 제트팩**, **둠피스트 라이징 어퍼컷 부활** 등 파격 변경 — 안 해봤다면 오늘이 마지막. 참고로 최신 영웅 **Shion**은 이 모드엔 미포함.","source":"overwatch.blizzard.com","url":"https://overwatch.blizzard.com/en-us/news/patch-notes/"}
+    {"cat":"sports","title":"🏀 [스퍼스] 오프시즌 총정리 — 웸비 중심 우승 도전 로스터","lead":"파이널 준우승(닉스에 1-4) 후 스퍼스가 웸반야마 주변을 채웠다.","points":["**웸반야마** 5년 $252M 연장(25% 맥스, 슈퍼맥스 대신 → ~$50M 세이브)","**토바이어스 해리스** 2년 $31M 영입(작년 13.5점 5.6리바)","**줄리언 샴파니** 3년 $45M(작년 프랜차이즈 최다 **3점 195개**)","**해리슨 반스** 1년 $8M 잔류. 단, 딘 웨이드·존 콜린스는 타팀행으로 빅맨 보강은 숙제"],"source":"nba.com","url":"https://www.nba.com/news/tobias-harris-spurs-free-agency-2026"},
+    {"cat":"game","title":"🎮 [제타 디비전] 새 로스터로 '19연승' 신기록 — 코리아·아시아 무패 제패","lead":"제타가 2026 로스터를 싹 갈아엎고 곧바로 지배자가 됐다.","points":["영입: **Proper·Viol2t·Shu·KNIFE·Mealgaru** + 2회 우승 코치 **Crusty**(기존 멤버는 BERNAR만 잔류)","**코리아 Stage 1 전승 우승**(결승 팔콘스 4-1) → 첫 지역 타이틀. **아시아 Stage 1 우승**(결승 크레이지 라쿤 4-3)","**19연승**으로 종전 18연승(크레이지 라쿤) 기록 경신. 국제전 Champions Clash는 3위"],"source":"owtv.gg","url":"https://owtv.gg/news/zeta-division-unveil-star-studded-2026-owcs-roster"},
+    {"cat":"game","title":"🎮 [오버워치] 시즌3 진행 + 최신 패치노트","lead":"현재 시즌3 'Reign of Talon: Into the Tiger's Den'(6/16 시작) 진행 중. 7/1~2 핫픽스로 신영웅 **Shion** 재장전 중 처형 버그 등 수정. 'Community Crafted' 실험 모드는 오늘(7/13) 종료.","note":"업데이트·패치노트는 공식 페이지에서 최신본 확인.","source":"overwatch.blizzard.com","url":"https://overwatch.blizzard.com/en-us/news/patch-notes/"},
+    {"cat":"sports","title":"🏀 NBA 오프시즌 대격변 — 트레이드 폭발","lead":"프리에이전시 모라토리엄이 풀리며 블록버스터가 쏟아졌다.","points":["**야니스 → 히트**, **제일런 브라운 ↔ 폴 조지(76ers, +픽)**, **라멜로 볼 → 울브스**, **자 모란트 → 블레이저스**","**르브론 행선지 미정**이 최대 화제, 서머리그(라스베이거스, 7/9~19) 진행 중"],"source":"nba.com","url":"https://www.nba.com/news/2026-nba-offseason-roundup"},
+    {"cat":"sports","title":"⚽ 월드컵 4강 대진 — 내일·모레 격돌","lead":"7/14 **프랑스 vs 스페인**(댈러스), 7/15 **잉글랜드 vs 아르헨티나**(애틀랜타). 벨링엄이 노르웨이전 연장 2골로 잉글랜드를 견인했다.","source":"aljazeera.com","url":"https://www.aljazeera.com/sports/2026/7/12/which-teams-are-in-the-world-cup-semifinals-and-whats-the-match-schedule"},
+    {"cat":"sports","title":"⚽ 여름 이적시장 빅딜 — 맨시티, 역대 최고 英선수 영입","lead":"이적창(6/15~8/31)이 한창인 가운데 대형 딜이 이어진다.","points":["**Anderson**, 노팅엄 포레스트 → 맨시티 **£116m** — 역대 최고 몸값 영국 선수","**토트넘**, 뉴캐슬에서 **토날리** 영입하며 구단 기록 경신","**맨유**, 첼시서 **안드레이 산투스 £50m** 영입"],"source":"goal.com","url":"https://www.goal.com/en/lists/summer-transfer-window-2026-biggest-deals-graded/bltba6505bafe3b2faa"}
   ]
 }
