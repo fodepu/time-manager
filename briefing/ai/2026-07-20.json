@@ -1,81 +1,10 @@
 {
-  "date": "2026-07-20",
-  "generatedAt": "2026-07-20T09:12:49+09:00",
-  "urgent": {
-    "text": "오늘부터 Claude 요금제 구조가 바뀐다. Max·Team Premium은 Fable 5를 정식 포함하지만 한도의 50%만 쓸 수 있고, 보너스 사용량 종료로 기본 한도 자체도 33% 줄어든다. Pro·Team Standard는 구독 한도에서 Fable이 빠지고 일회성 $100 크레딧만 지급된다 — 오늘 남은 한도부터 확인하고 무거운 작업 순서를 정할 것.",
-    "source": "the-decoder.com"
-  },
-  "items": [
-    {
-      "cat": "update",
-      "title": "Claude Fable 5, 오늘부터 Max·Team Premium에 '50% 한도'로 정식 포함",
-      "lead": "Anthropic이 최상위 모델 **Fable 5**의 임시 체험을 끝내고 요금제별 접근 방식을 확정했다. Fable 5는 Anthropic이 가장 비싸고 강력한 등급으로 두는 모델이고, '한도(limit)'는 일정 시간 안에 쓸 수 있는 사용량 상한을 뜻한다.",
-      "points": [
-        "**Max·Team Premium**: Fable 5가 플랜에 영구 포함되지만 **한도의 50%**만 적용",
-        "동시에 **보너스 사용량 기간이 오늘 종료** — 기준 한도 자체가 **33% 축소**되어 체감 감소폭이 이중으로 누적",
-        "**Pro·Team Standard**: 구독 한도에서 Fable이 빠지고 **일회성 $100 크레딧** 지급",
-        "크레딧 소진 후에는 API 요율 과금 — 입력 **$10/100만 토큰**, 출력 **$50/100만 토큰**"
-      ],
-      "note": "Anthropic은 'Fable 수요 예측이 어려워 단계적으로 열었다'고 설명했다. 공식 @claudeai 계정 공지 및 7/18 보도.",
-      "forYou": "구독료는 그대로인데 최상위 모델의 실사용량은 줄어드는 구조다. '무조건 최상위 모델'이 아니라 작업 난이도에 따라 모델을 갈아타는 습관이 실질 차이를 만든다. 어려운 설계·리서치만 Fable, 반복 작업은 Sonnet 5로 내려서 나눠 쓸 것.",
-      "forYouLabel": "나에게는",
-      "source": "the-decoder.com",
-      "url": "https://the-decoder.com/anthropic-slashes-claude-fable-5-limits-in-max-and-team-premium-and-pushes-pro-users-toward-api-pricing/"
-    },
-    {
-      "cat": "model",
-      "title": "xAI Grok 4.5, EU 출시 또 미뤄짐 — 'AI법 준수' 때문",
-      "lead": "7월 8일 나온 **Grok 4.5**가 유럽연합에서는 아직 못 쓴다. 상업적 판단이 아니라 **EU AI Act**(고성능 AI에 문서화·위험평가·투명성 의무를 부과하는 유럽 법) 준수 절차가 안 끝났기 때문이다.",
-      "points": [
-        "7/16 기준 xAI 제품·개발자 콘솔 **모두 EU 차단 유지**",
-        "최초 공지는 '7월 중순 EU 오픈'이었으나 개발자 문서는 **'이달 말'로 후퇴**",
-        "모델 스펙은 그대로 — 입력 **$2/100만**, 출력 **$6/100만**, 추론 강도 3단계 선택"
-      ],
-      "note": "머스크는 Grok 4.5를 'Opus급인데 더 빠르고 토큰 효율 좋고 저렴한 모델'이라고 표현했다.",
-      "forYou": "같은 모델도 규제 지역에 따라 출시 시점이 갈리는 시대다. 특정 모델 하나에 워크플로를 묶어두면 정책 변수에 그대로 노출된다. 도구는 2개 이상 병행 검증해 둘 것.",
-      "forYouLabel": "나에게는",
-      "source": "heise.de",
-      "url": "https://www.heise.de/en/news/SpaceXAI-introduces-AI-model-Grok-4-5-EU-users-must-wait-11359422.html"
-    },
-    {
-      "cat": "model",
-      "title": "DeepSeek V4, 1.6조 파라미터 오픈 웨이트 공개 — SWE-bench 80.6%",
-      "lead": "중국 DeepSeek이 **V4-Pro**와 **V4-Flash**를 **MIT 라이선스 오픈 웨이트**로 풀었다. '오픈 웨이트'는 모델 가중치 파일을 누구나 내려받아 직접 돌리고 수정할 수 있다는 뜻으로, 사용료 없이 자체 서버 구동이 가능하다.",
-      "points": [
-        "**V4-Pro**: 총 **1.6조** 파라미터(토큰당 활성 49B) / **V4-Flash**: 총 284B(활성 13B)",
-        "둘 다 컨텍스트 **약 105만 토큰**",
-        "**V4-Pro-Max가 SWE-bench Verified 80.6%** — 오픈 웨이트 최고, Gemini 3.1 Pro와 동률",
-        "가격(100만 토큰): Flash 입력 **$0.09**·출력 **$0.18**, Pro 입력 **$0.435**·출력 **$0.87**"
-      ],
-      "note": "Flash 최대 설정이 Pro 고강도 추론과 비슷한 성능을 내면서 출력 토큰당 비용은 약 12배 저렴하다는 평가가 나온다. Hugging Face 배포.",
-      "source": "artificialanalysis.ai",
-      "url": "https://artificialanalysis.ai/articles/deepseek-is-back-among-the-leading-open-weights-models-with-v4-pro-and-v4-flash"
-    },
-    {
-      "cat": "model",
-      "title": "구글 Gemini 3.5 Pro, 또 연기 — 코딩·추론 테스트 미달",
-      "lead": "업계가 **7월 17일 공개**를 기정사실로 봤던 구글 **Gemini 3.5 Pro**가 다시 밀렸다. 내부 테스트에서 코딩과 복잡 추론 성능이 기준에 못 미쳤다는 이유다.",
-      "points": [
-        "7/17 기준 **확정된 Gemini 3.5 Pro는 없음** — 재구축 모델이 있으나 출시 수준 미달로 알려짐",
-        "코딩 에이전트 부문 최강자는 여전히 **Gemini 3.1 Pro**(코딩 아레나 맞대결 기준)"
-      ],
-      "note": "같은 2주 창에 Kimi K3(7/16)와 DeepSeek V4 가중치가 몰리며 오픈 웨이트 진영의 압박이 커진 국면이다.",
-      "source": "buildfastwithai.com",
-      "url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-18-2026"
-    },
-    {
-      "cat": "market",
-      "title": "애플, 엔비디아 제치고 시총 1위 — 5조 달러 근접",
-      "lead": "7월 17일 기준 **애플이 엔비디아를 제치고 세계 시가총액 1위**가 됐다. 엔비디아는 2위로 내려갔다.",
-      "points": [
-        "애플 시총 **약 5조 달러** 근접",
-        "AI 랠리의 무게중심이 **칩 공급자에서 최종 소비자 제품** 쪽으로 이동하는 신호로 읽힘"
-      ],
-      "note": "엔비디아는 2024~2025년 AI 붐 내내 1위를 지켜왔다.",
-      "forYou": "'AI 인프라는 무조건 상승'이라는 단순 서사가 흔들리는 국면이다. 시장 서사를 그대로 받기보다 실제로 돈이 어디서 나는지 따로 확인하는 습관이 필요하다.",
-      "forYouLabel": "나에게는",
-      "source": "buildfastwithai.com",
-      "url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-18-2026"
-    }
+  "date":"2026-07-20","generatedAt":"2026-07-20T15:01:19+09:00",
+  "urgent":{"text":"**오늘부터 Fable 5 한도 체계가 확정 — 실질 가용량이 이중으로 줄어든다.** Max·Team Premium은 Fable 5를 영구 포함하되 **한도의 50%**만, 동시에 보너스 사용량 종료로 기준 한도 자체가 **33% 축소**. 무거운 런이 있다면 라우팅부터 손볼 것.","source":"support.claude.com"},
+  "items":[
+    {"cat":"update","title":"Fable 5 한도 개편 — 모델 라우팅을 다시 짜야 하는 시점","lead":"Fable 5 임시 체험이 끝나고 플랜별 접근이 확정됐다. Max·Team Premium은 한도 50% 적용, 기준 한도는 보너스 종료로 33% 축소, Pro·Team Standard는 구독 한도에서 제외되고 일회성 $100 크레딧.","points":["**정형 작업을 아래 티어로 내려라** — 요약·포맷 변환·보일러플레이트·테스트 생성은 Sonnet/Haiku로 충분. Fable 5는 장기 추론·대형 리팩터·설계 판단에만 배정해야 축소분을 흡수할 수 있다.","**실패 재시도가 한도를 가장 많이 태운다** — 스코프를 좁힌 프롬프트와 사전 계획(plan) 단계를 먼저 태우고, 검증 실패 시 전체 재실행 대신 델타만 재시도하는 구조로 바꿀 것.","**Pro·Team Standard의 $100 크레딧은 구독 한도와 분리된 예산** — 대형 컨텍스트·복잡 추론처럼 Fable 5가 실제로 우위인 작업에만 몰아쓰는 게 합리적."],"source":"support.claude.com","url":"https://support.claude.com/en/articles/12138966-release-notes"},
+    {"cat":"model","title":"DeepSeek V4 오픈 웨이트 — 에이전트 루프를 종량제에서 떼어낼 선택지","lead":"V4-Pro(총 1.6조·활성 49B)와 V4-Flash(총 284B·활성 13B)를 **MIT 라이선스 오픈 웨이트**로 공개. 컨텍스트 약 105만 토큰.","points":["**V4-Flash(활성 13B)는 자체 호스팅이 현실권** — 반복 에이전트 루프·대량 배치를 API 종량제에서 고정비로 전환할 수 있다. 토큰을 많이 태우는 파이프라인일수록 손익분기가 빨리 온다.","**V4-Pro-Max가 SWE-bench Verified 80.6%** — 오픈 웨이트 최고이자 Gemini 3.1 Pro와 동률. 코딩 에이전트 백엔드를 폐쇄형에서 갈아탈 근거가 처음으로 생겼다.","**MIT라 파인튜닝·재배포 제약이 사실상 없음** — 도메인 특화 튜닝 후 개인·사내 서비스에 그대로 투입 가능."],"note":"1.6조급은 서빙 인프라 요구가 커서 실사용은 Flash 또는 호스팅 프로바이더 경유가 현실적.","source":"llm-stats.com","url":"https://llm-stats.com/llm-updates"},
+    {"cat":"model","title":"Grok 4.5 — 추론 강도로 단가를 접는 법","lead":"입력 $2 / 출력 $6(100만 토큰), 추론 강도 3단계 선택 가능.","points":["**단계별 강도 다이얼링** — 에이전트 루프의 탐색·수집 구간은 낮은 강도로 돌리고 최종 판단·검증만 높은 강도로 올리면 품질 손실 없이 단가를 크게 접을 수 있다.","**Cursor 공동훈련** — IDE 에이전트로 붙일 때 편집·툴 호출 패턴 마찰이 적어 코딩 루프 대체 후보로 바로 시험 가능."],"note":"EU는 AI Act 준수 절차로 아직 차단(이달 말 목표) — EU 대상 배포 계획엔 넣지 말 것.","source":"x.ai","url":"https://x.ai/news/grok-4-5"},
+    {"cat":"model","title":"코딩 에이전트 스택 선택 — Gemini 3.5 Pro 대기할 이유 없음","lead":"7/17 예상됐던 Gemini 3.5 Pro가 내부 코딩·추론 테스트 미달로 다시 연기됐다.","points":["**코딩 아레나 맞대결 기준 최강자는 여전히 Gemini 3.1 Pro** — 지금 스택을 확정해도 손해가 아니다. 3.5를 기다리며 결정을 미루는 게 더 비싸다.","**계층 구성이 실용적** — 비용 민감 루프는 Grok 4.5/DeepSeek V4-Flash로 돌리고, 난이도 높은 단계만 상위 모델로 에스컬레이션하는 라우팅."],"source":"llm-stats.com","url":"https://llm-stats.com/llm-updates"}
   ]
 }
