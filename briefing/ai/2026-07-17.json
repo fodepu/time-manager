@@ -1,0 +1,36 @@
+{
+  "date": "2026-07-17",
+  "generatedAt": "2026-07-19T08:03:53+09:00",
+  "urgent": null,
+  "items": [
+    {
+      "cat": "market",
+      "title": "MS, Anthropic Mythos 겨냥한 'Project Perception' 준비",
+      "lead": "마이크로소프트가 코드 취약점을 찾아 고치는 AI 보안 플랫폼 Project Perception을 이달 중 내놓는다. Anthropic의 보안 특화 모델 **Mythos**의 직접 경쟁 제품이다.",
+      "points": [
+        "**Microsoft·OpenAI·Anthropic** 모델을 작업별로 라우팅해 비용 절감",
+        "코드 + 클라우드 인프라 + 엔드포인트를 함께 훑어 **수정안까지 제시**",
+        "선행 스캐너 **MDASH**는 Windows 제로데이 **16건** 발견, 현재 프라이빗 프리뷰"
+      ],
+      "note": "핵심 판매 포인트는 성능이 아니라 **가격** — Mythos보다 훨씬 싸게 가겠다는 전략.",
+      "source": "techrepublic.com",
+      "url": "https://www.techrepublic.com/article/news-microsoft-project-perception-ai-security-tool/"
+    },
+    {
+      "cat": "headline",
+      "title": "시진핑, 29개국 '세계AI협력기구(WAICO)' 출범",
+      "lead": "중국이 상하이에 본부를 둔 국제 AI 거버넌스 기구 WAICO를 창설했다. 미국 주도의 AI 질서에 대한 맞불 성격이다.",
+      "points": [
+        "창립 회원 **29개국** — 인도네시아·브라질·말레이시아·남아공·세네갈·러시아·파키스탄 등 글로벌 사우스 중심",
+        "유엔 사무총장 **구테흐스** 참석",
+        "개도국에 **5년간 AI 교육 5,000명분** 제공 약속",
+        "**30개국**에 중국산 AI 기상 재난경보 시스템 개방"
+      ],
+      "note": "시진핑: \"AI 발전은 한 나라의 독주가 아니라 국제 협력의 교향곡이어야 한다\" — 미국을 겨냥한 발언으로 해석됨.",
+      "forYou": "AI 규제가 '미국 블록 vs 중국 블록'으로 갈라지면 쓸 수 있는 도구가 지역별로 달라진다. 특정 벤더에 몰빵하기보다 도구를 갈아탈 수 있는 작업 방식을 유지하는 게 안전하다.",
+      "forYouLabel": "그래서 뭐?",
+      "source": "aljazeera.com",
+      "url": "https://www.aljazeera.com/news/2026/7/17/chinas-xi-jinping-launches-new-ai-alliance-what-is-it"
+    }
+  ]
+}

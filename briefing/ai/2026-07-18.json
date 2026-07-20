@@ -1,0 +1,32 @@
+{
+  "date": "2026-07-18",
+  "generatedAt": "2026-07-19T08:03:53+09:00",
+  "urgent": null,
+  "items": [
+    {
+      "cat": "market",
+      "title": "오라클, 3만 명 감원 — $500B 스타게이트 자금 조달",
+      "lead": "오라클이 최대 **3만 명**을 감원한다. AI 인프라 프로젝트 '스타게이트'(총 **5,000억 달러** 규모) 투자 재원을 마련하기 위해서다.",
+      "points": [
+        "감원 규모 **최대 30,000명**",
+        "용도: **$500B** 스타게이트 AI 인프라 파트너십 자금"
+      ],
+      "note": "AI 하드웨어 투자 비용을 인건비 삭감으로 메우는 구조가 가장 선명하게 드러난 사례.",
+      "forYou": "AI 투자가 늘수록 기존 인력 예산이 줄어드는 흐름. '내 일을 AI로 몇 배 빠르게 하는가'가 방어선이 된다.",
+      "forYouLabel": "그래서 뭐?",
+      "source": "buildfastwithai.com",
+      "url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-18-2026"
+    },
+    {
+      "cat": "tool",
+      "title": "Kimi K3, 추론 강도 3단계 선택 지원",
+      "lead": "Kimi K3 웹·모바일에서 모델이 답하기 전에 얼마나 오래 '생각'할지를 사용자가 고를 수 있게 됐다.",
+      "points": [
+        "**Standard** / **High** / **Max** 3단계"
+      ],
+      "note": "추론 강도가 높을수록 정확도는 오르고 응답은 느려지며 비용이 커진다. Grok 4.5도 low/medium/high 3단계를 제공한다.",
+      "source": "buildfastwithai.com",
+      "url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-18-2026"
+    }
+  ]
+}

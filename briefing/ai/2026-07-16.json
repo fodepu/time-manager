@@ -1,0 +1,47 @@
+{
+  "date": "2026-07-16",
+  "generatedAt": "2026-07-19T08:03:53+09:00",
+  "urgent": null,
+  "items": [
+    {
+      "cat": "market",
+      "title": "캘리포니아주, 전 기관에 Claude 50% 할인 도입",
+      "lead": "뉴섬 주지사가 캘리포니아 모든 주 기관·시·카운티가 Claude를 정가의 **절반**에 쓰도록 하는 계약에 서명했다. 특정 AI를 공공부문 표준으로 못박은 첫 사례다.",
+      "points": [
+        "대상: 주 정부 기관 + 시 + 카운티 **전체**",
+        "가격: 정가 대비 **50% 할인**",
+        "앞서 파일럿 'Poppy'가 67개 부서 **2,800명**에게 시험 운영됨"
+      ],
+      "note": "공공조달에서 Anthropic이 선점 고지를 잡았다는 신호. 계약 총액은 비공개.",
+      "forYou": "공공·교육 쪽 문서 업무가 Claude 기준으로 표준화되면, 'Claude로 일하는 법'이 곧 직무 역량이 된다. 지금 익혀두면 나중에 배우는 사람과 격차가 벌어진다.",
+      "forYouLabel": "역량 관점",
+      "source": "buildfastwithai.com",
+      "url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-15-2026"
+    },
+    {
+      "cat": "model",
+      "title": "Moonshot AI, Kimi K3 공개 — 파라미터 2.8조",
+      "lead": "중국 Moonshot AI가 자사 최고 성능 모델 Kimi K3를 냈다. 파라미터(모델의 학습된 연결 개수, 클수록 대체로 더 많은 지식을 담음)가 **2.8조 개**다.",
+      "points": [
+        "자체 벤치마크상 **Claude Opus 4.8**·**GPT-5.5 high** 우위",
+        "**Claude Fable 5**·**GPT-5.6 Sol**에는 열세",
+        "현재 웹·API만 제공, **오픈 웨이트는 7월 27일** 공개 예정"
+      ],
+      "note": "자체 발표 수치라 제3자 검증 전이다. 오픈 웨이트란 모델 가중치를 내려받아 직접 돌릴 수 있게 푸는 것.",
+      "source": "simonwillison.net",
+      "url": "https://simonwillison.net/2026/Jul/16/kimi-k3/"
+    },
+    {
+      "cat": "headline",
+      "title": "구글, Gemini 3.5 Pro 베이스 모델 폐기 후 재설계",
+      "lead": "구글이 Vertex AI 기업 테스트에서 구조적 결함이 드러나자 Gemini 3.5 Pro의 베이스 모델을 통째로 버리고 처음부터 다시 만들고 있다.",
+      "points": [
+        "7월 17일 목표 일정 — **세 번째** 연기",
+        "임시 대안으로 **Gemini 3.6 Flash** 검토 중"
+      ],
+      "note": "프론티어 모델 경쟁에서 구글이 한 박자 밀리는 국면.",
+      "source": "llm-stats.com",
+      "url": "https://llm-stats.com/llm-updates"
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "date": "2026-07-19",
+  "generatedAt": "2026-07-19T08:03:53+09:00",
+  "urgent": {
+    "text": "오늘 밤 미 태평양시 23:59(한국 20일 오후 3:59)에 유료 구독자 대상 Claude Fable 5 무료 접근과 Claude Code 주간 한도 +50% 혜택이 동시에 끝난다. 무겁게 돌릴 작업이 있으면 오늘 안에 소진할 것.",
+    "source": "bleepingcomputer.com"
+  },
+  "items": [
+    {
+      "cat": "update",
+      "title": "Claude Fable 5 무료 접근, 오늘 자정 종료",
+      "lead": "Anthropic이 유료 구독자에게 최상위 모델 **Fable 5**를 무료로 열어준 프로모션이 오늘(7/19) 미 태평양시 23:59:59에 끝난다. 5주 사이 **세 번째** 연장이었고, 이번이 마지막 고지된 기한이다.",
+      "points": [
+        "**Claude Code 주간 사용 한도 +50%** 부스트도 같은 시각 종료",
+        "연장 배경: OpenAI **GPT-5.6 Sol** 출시에 대한 맞대응",
+        "이후 시나리오 — **Opus 5 공개**, 네 번째 연장, 또는 유료 크레딧 전환"
+      ],
+      "note": "비용 비교가 연장 압박의 실체다. 에이전트 작업 1건당 Grok 4.5 **$2.49** vs Fable 5 **$11.80**. 한 개발자는 Fable 5로 $63 든 작업을 Sol에서 **$16**에 처리했다고 보고.",
+      "source": "bleepingcomputer.com",
+      "url": "https://www.bleepingcomputer.com/news/artificial-intelligence/claude-fable-5-stays-free-for-paid-users-until-july-19-as-anthropic-buys-more-time/"
+    },
+    {
+      "cat": "update",
+      "title": "Claude 메모리, 항목 단위로 재설계 + 'Reflect' 대시보드",
+      "lead": "Claude가 기억하는 방식이 바뀌었다. 예전엔 하루치 대화를 요약해 저장했는데, 이제 **분류된 개별 항목**을 대화 중에 읽고 갱신한다.",
+      "points": [
+        "메모리: 일일 요약 → **카테고리별 개별 엔트리**",
+        "신규 **Reflect** 대시보드 — 내가 어떤 주제로, 어떤 작업에 AI를 쓰는지 시각화",
+        "기업·API 조직 대상 **HIPAA 셀프서비스 설정** 추가(BAA 검토 후 원클릭 활성화)"
+      ],
+      "note": "HIPAA는 미국 의료정보 보호법. 의료 데이터를 다루는 조직이 계약 절차 없이 바로 켤 수 있게 됐다는 뜻.",
+      "source": "anthropic.com",
+      "url": "https://www.anthropic.com/news"
+    },
+    {
+      "cat": "update",
+      "title": "Anthropic, 미국 K-12 교사에게 Claude 무료 개방",
+      "lead": "검증된 미국 초·중·고 교사에게 프리미엄 Claude를 무료로 준다. 교육 시장 선점 경쟁의 일환이다.",
+      "points": [
+        "**50개 주 전체** 교육과정 기준에 맞춘 커리큘럼 연동",
+        "교육용 커넥터 + 교사 대상 **AI 활용 교육** 동반 제공"
+      ],
+      "note": "OpenAI·구글과의 교실 선점 경쟁 구도. 대상은 현재 미국 교사로 한정.",
+      "source": "chalkbeat.org",
+      "url": "https://www.chalkbeat.org/2026/07/14/anthropic-launches-claude-for-teachers-as-ai-companies-battle-for-classrooms/"
+    },
+    {
+      "cat": "model",
+      "title": "xAI Grok 4.5 — Opus급 성능에 1/5 가격 주장",
+      "lead": "SpaceXAI(구 xAI)가 코딩·에이전트 작업용 최신 모델 Grok 4.5를 API로 열었다. 상장과 코딩 스타트업 **Cursor** 인수 이후 첫 릴리스다.",
+      "points": [
+        "가격: 입력 **100만 토큰당 $2** / 출력 **$6**",
+        "추론 강도 **low·medium·high** 선택(기본 high)",
+        "제공처: **Grok Build**, **Cursor**, SpaceXAI 콘솔"
+      ],
+      "note": "머스크 주장: \"Opus급인데 더 빠르고 토큰 효율적이며 저렴하다.\" 에이전트 작업 1건당 실측 **$2.49**로 Fable 5의 약 1/5 수준.",
+      "source": "axios.com",
+      "url": "https://www.axios.com/2026/07/08/spacexai-grok-new-model"
+    },
+    {
+      "cat": "tool",
+      "title": "MS Project Perception 출시 — 멀티모델 보안 스캐너",
+      "lead": "마이크로소프트가 코드 취약점을 자동 탐지·수정하는 Project Perception을 내놨다. 자사·OpenAI·Anthropic 모델을 작업별로 골라 쓴다.",
+      "points": [
+        "코드 + 클라우드 + 엔드포인트를 함께 스캔해 **수정안까지 제시**",
+        "선행 스캐너 **MDASH**가 Windows 제로데이 **16건** 발견",
+        "포지셔닝: Anthropic **Mythos 5**의 저가 대안"
+      ],
+      "note": "싸게 만들어 '상시 가동'하게 하는 게 목표. 여러 모델을 라우팅해 단가를 낮추는 방식.",
+      "source": "windowsnews.ai",
+      "url": "https://windowsnews.ai/article/microsofts-project-perception-aims-to-make-ai-vulnerability-fixing-cheap-enough-to-run-nonstop.439207"
+    },
+    {
+      "cat": "model",
+      "title": "Kimi K3 오픈 웨이트, 7월 27일 공개 예정",
+      "lead": "7월 16일 나온 Moonshot AI의 **2.8조 파라미터** 모델 Kimi K3가 이달 말 가중치를 공개한다. 누구나 내려받아 직접 돌릴 수 있게 된다는 뜻이다.",
+      "points": [
+        "오픈 웨이트 공개 예정일 **2026년 7월 27일**",
+        "자체 벤치마크: **Opus 4.8**·**GPT-5.5 high** 우위, **Fable 5**·**Sol**에는 열세"
+      ],
+      "note": "자체 발표 수치이며 제3자 검증 전. 공개되면 프론티어급에 근접한 모델을 자체 인프라에서 돌리는 선택지가 생긴다.",
+      "source": "simonwillison.net",
+      "url": "https://simonwillison.net/2026/Jul/16/kimi-k3/"
+    }
+  ]
+}
