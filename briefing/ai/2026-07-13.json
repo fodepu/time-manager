@@ -1,79 +1,11 @@
 {
-  "date": "2026-07-13",
-  "generatedAt": "2026-07-13T09:34:00+09:00",
-  "urgent": {
-    "text": "**Claude Code 주간 사용 한도 +50% 이벤트가 오늘(7/13) 종료**된다(Pro·Max·Team·Enterprise 대상, 5/13부터 시행). Claude Code를 쓴다면 늘어난 한도는 오늘이 마지막이니 무거운 작업은 오늘 안에 몰아서 처리할 것.",
-    "source": "pasqualepillitteri.it"
-  },
-  "items": [
-    {
-      "cat": "update",
-      "title": "Claude Cowork, 클라우드로 — 모바일·웹에서도",
-      "lead": "Anthropic이 7/7 **Cowork**(내 파일·앱을 대신 뒤져 여러 단계로 된 잡무를 알아서 끝내는 에이전트)를 클라우드로 옮겨 노트북뿐 아니라 모바일·웹에서도 쓸 수 있게 한다고 발표했다.",
-      "points": [
-        "**기기 넘나들기** — 세션·파일이 노트북/휴대폰/웹을 따라다니고, 노트북을 닫아도 백그라운드로 계속 작동",
-        "**오프라인 예약** — 기기가 꺼져 있어도 예약 작업이 돌아가고, 승인이 필요하면 휴대폰으로 알림",
-        "**통합** — Claude 채팅과 Cowork를 한 공간으로 합쳐 같은 파일을 함께 다룸"
-      ],
-      "note": "먼저 **Max 요금제**에 베타 제공 후 다른 요금제로 확대. 출시 기념 Cowork 사용량 2배를 **8/5까지 연장**.",
-      "source": "nbcnews.com",
-      "url": "https://www.nbcnews.com/tech/tech-news/anthropic-will-make-claude-cowork-available-users-cloud-rcna353218"
-    },
-    {
-      "cat": "update",
-      "title": "Claude 'Reflect' — 내가 Claude를 어떻게 썼는지 되짚어준다",
-      "lead": "Anthropic이 7/9 **Reflect**(설정>Reflect)를 공개했다. 지난 한 달 Claude 사용을 돌아보게 해주는 사용 리포트로, 시간을 관리하는 사람에게 특히 잘 맞는다.",
-      "points": [
-        "**무엇을 보여주나** — 많이 다룬 주제, 가장 활발했던 요일과 피크 시간대, 작업 습관 관찰",
-        "**기간 선택** — 이번 달·최근 3개월·6개월·1년",
-        "**쉬어가기** — 설정>Time and focus에서 일정 사용량 뒤 휴식 알림·방해금지 시간 설정"
-      ],
-      "note": "Free·Pro·Max, 웹·데스크톱 **베타**. '채팅 기록으로 메모리 생성'이 켜져 있어야 작동. 시크릿 대화·건강 연동 데이터는 제외.",
-      "forYou": "내 작업 패턴(집중이 잘 되는 시간대, 가장 활발한 요일)을 데이터로 확인하고 하루 설계에 반영해볼 것 — 감이 아니라 기록으로 시간을 배분하는 연습.",
-      "forYouLabel": "배워둘 것",
-      "source": "anthropic.com",
-      "url": "https://www.anthropic.com/news/reflect-with-claude"
-    },
-    {
-      "cat": "market",
-      "title": "Anthropic, 삼성전자와 자체 AI 칩 위탁생산 협의",
-      "lead": "Anthropic이 엔비디아 의존을 줄이려 **삼성전자**와 자체 AI 추론칩(모델을 돌릴 때 쓰는 전용 반도체) 위탁생산을 놓고 초기 협의에 들어갔다.",
-      "points": [
-        "**공정** — 삼성의 **2nm** 최첨단 공정과 고급 패키징 시설 검토",
-        "**배경** — 5월 **$650억** 시리즈H 투자에 삼성·SK하이닉스·마이크론이 전략 투자자로 참여",
-        "**인재** — OpenAI 커스텀칩 팀 2번째 엔지니어 Clive Chan을 6월 영입"
-      ],
-      "note": "아직 초기 단계로 칩 사양·성능은 미정. Anthropic 기업가치 약 **$9,650억**.",
-      "forYou": "삼성이 만든다는 점에서 한국과 직접 연결된 소식. AI 하드웨어가 '엔비디아 독점 → 다변화'로 가는 큰 흐름을 읽어둘 것.",
-      "forYouLabel": "시장 흐름",
-      "source": "techcrunch.com",
-      "url": "https://techcrunch.com/2026/07/02/anthropic-is-discussing-a-new-custom-chip-with-samsung/"
-    },
-    {
-      "cat": "tool",
-      "title": "xAI Grok, 음성·이미지로 확장",
-      "lead": "xAI가 코딩 특화 모델 Grok 4.5(7/8) 출시에 이어 음성·이미지 기능을 크게 넓혔다.",
-      "points": [
-        "**Grok Voice** — 다국어 음성 **21종** 추가, 음성 복제·스피치 태그 지원, Voice·TTS API와 Voice Agent Builder에서 사용 가능",
-        "**Grok Imagine** — 이미지·영상 생성 기능 개발 완료(7/5, Musk 발표)로 멀티모달 본격 진입",
-        "**Grok Build** — /goal 명령 추가, 대형 저장소에서 빠른 시작 등 에이전트·CLI 개선"
-      ],
-      "note": "Grok 4.5 API 가격은 100만 토큰당 입력 **$2**·출력 **$6**(단, EU 제외 제공).",
-      "source": "x.ai",
-      "url": "https://x.ai/news/grok-4-5"
-    },
-    {
-      "cat": "market",
-      "title": "유엔, 첫 'AI 거버넌스 글로벌 대화' 개최",
-      "lead": "유엔이 7/6~7 제네바에서 첫 **AI 거버넌스 글로벌 대화**를 열고 '재앙적 피해' 경고 속에 AI를 국제적으로 어떻게 규율할지 논의를 시작했다.",
-      "points": [
-        "**새 축** — 유엔 산하 국제 AI 과학 패널과 글로벌 대화 창구를 출범시켜 각국 규제의 정합성을 맞추려는 첫걸음"
-      ],
-      "note": "구속력 있는 규제라기보다 협의체 성격. 앞으로 각국 AI 규제 논의의 기준점이 될 수 있음.",
-      "forYou": "국제 규제 틀이 잡히기 시작했다는 신호 — 내가 쓰는 AI 서비스가 어떤 규제 지형에 놓이는지 큰 그림을 봐둘 것.",
-      "forYouLabel": "시장 흐름",
-      "source": "news.un.org",
-      "url": "https://news.un.org/en/story/2026/07/1167862"
-    }
+  "date":"2026-07-13","generatedAt":"2026-07-13T11:00:00+09:00",
+  "urgent":{"text":"**Claude Code 주간 한도 +50% 프로모가 오늘(7/13 18:00 PDT) 종료.** 5/13부터 두 달간 적용됐던 상향분이 원복된다 — 대규모 리팩터·장시간 에이전트 런은 오늘 안에 소진하는 게 이득.","source":"chatforest.com"},
+  "items":[
+    {"cat":"tool","title":"Claude Cowork 클라우드 — 기기에서 분리된 에이전트 런타임","lead":"세션이 로컬 프로세스가 아니라 계정에 귀속돼 원격 실행된다(웹·모바일·데스크톱 공통).","points":["**노트북을 닫아도 러닝이 끊기지 않는다** → 장시간 작업(대량 파일 정리, 리서치 수집, 배치 변환)을 걸어두고 이탈해도 됨. 승인 필요한 지점만 폰으로 알림 받아 처리.","**예약작업이 디바이스 오프라인 상태에서도 실행** → cron형 파이프라인(수집→가공→커밋)을 전적으로 클라우드에 위임 가능. 로컬 머신을 켜둘 필요가 사라짐.","**Chat과 Cowork가 동일 프로젝트·아티팩트 공간 공유** → 탐색은 Chat, 실행은 Cowork로 나눠도 컨텍스트가 끊기지 않음."],"note":"Max 우선 롤아웃 후 순차 확대. 출시 기념 Cowork 사용량 2배가 8/5까지 연장.","source":"anthropic.com","url":"https://support.claude.com/en/articles/12138966-release-notes"},
+    {"cat":"tool","title":"Claude Design (Labs) — 대화로 시안·프로토타입·덱을 뽑는다","lead":"디자인·프로토타입·슬라이드·원페이저를 대화형으로 생성하는 Anthropic Labs 제품.","points":["**코드 손대기 전 레이아웃 A/B** — \"이 카드 UI 3안 뽑아줘\" 식으로 시안을 병렬 생성해 비교한 뒤 확정안만 구현 → 프론트 반복 비용 절감.","**개요만 던져 덱 초안 생성** — 발표·제안서의 구조를 먼저 잡고 내용만 채우는 방식으로 전환.","**아이디어 → 원페이저 즉시 시각화** — 텍스트 설명 대신 공유 가능한 산출물로 논의를 시작."],"note":"claude.ai의 Anthropic Labs에서 접근.","source":"anthropic.com","url":"https://support.claude.com/en/articles/14604416-get-started-with-claude-design"},
+    {"cat":"model","title":"GPT-5.6 정식 — ultra mode와 1.5M 컨텍스트로 바뀌는 작업 단위","lead":"7/9부터 Sol·Terra·Luna가 ChatGPT·API·Codex에 전면 공개.","points":["**ultra mode(서브에이전트 분할)** → 단일 스레드로 못 돌리던 대형 작업(모노레포 리팩터, 다중 소스 리서치)을 병렬 분해해 처리. 태스크를 쪼개 주던 오케스트레이션을 모델에 위임할 수 있음.","**Sol 1.5M 컨텍스트**(GPT-5.5 Pro 대비 +43%) → 코드베이스·문서 코퍼스를 청킹/RAG 없이 통째로 투입하는 워크플로가 현실화. 검색 파이프라인 유지비를 줄이는 선택지.","**3티어 비용 라우팅** — Sol $5/$30, Terra $2.50/$15, Luna $1/$6. 난이도별로 라우팅해 파이프라인 단가를 조정."],"note":"Preparedness Framework상 3종 모두 사이버·생화학 High로 분류돼 일부 용도엔 제약.","source":"openai.com","url":"https://openai.com/index/previewing-gpt-5-6-sol/"},
+    {"cat":"model","title":"Grok 4.5 — Cursor와 공동훈련된 저단가 코딩 에이전트","lead":"7/9~10 Grok Build·Cursor·xAI API로 출시. 코딩·장기 다단계 작업 타깃.","points":["**$2 / $6(100만 토큰)** — 에이전트 루프처럼 토큰을 많이 태우는 워크로드에서 단가 차이가 그대로 비용으로 직결. 반복 실행 파이프라인의 대체 후보.","**Cursor 공동훈련** → Cursor 환경의 편집·도구 호출 패턴에 맞춰져 있어 IDE 에이전트로 붙일 때 마찰이 적음.","**Grok Build의 /goal** — 목표만 주고 완료·검증까지 자율 실행하는 장기 런 모드(상태·일시정지·재개 제어 포함)."],"note":"Artificial Analysis 지능지수 4위. EU 제외 제공.","source":"x.ai","url":"https://x.ai/news/grok-4-5"},
+    {"cat":"tool","title":"Claude Reflect — 내 사용 로그를 워크플로 튜닝에 쓰기","lead":"최근 사용 패턴(주제·요일·피크 시간대)을 집계해 보여주는 대시보드(설정 > Reflect).","points":["**피크 시간대 데이터로 작업 배치 재설계** — 감이 아니라 실제 사용 분포에 맞춰 고난도 작업을 배치.","**주제 분포로 자동화 후보 식별** — 반복 비중이 높은 주제를 스킬·예약작업으로 승격시킬 근거로 사용.","**Time and focus의 휴식·방해금지** — 장시간 에이전트 런과 자기 작업 시간을 분리."],"note":"Free·Pro·Max, 웹·데스크톱 베타. '채팅 기록으로 메모리 생성'이 켜져 있어야 동작. 시크릿 대화 제외.","source":"anthropic.com","url":"https://www.anthropic.com/news/reflect-with-claude"}
   ]
 }
