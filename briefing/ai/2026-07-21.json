@@ -1,0 +1,42 @@
+{
+  "date": "2026-07-21",
+  "generatedAt": "2026-07-21T09:10:00+09:00",
+  "urgent": null,
+  "items": [
+    {
+      "cat": "model",
+      "title": "Gemini 3.6 Flash — 에이전트 루프 단가를 접는 새 기본 티어",
+      "lead": "구글이 7/21 Gemini 3.6 Flash를 공개했다. 1M 컨텍스트, 입력 $1.50·출력 $7.50로 3.5 Flash보다 싸다.",
+      "points": [
+        "**멀티스텝 워크플로에서 출력 토큰을 17% 덜 소비** — 도구 호출이 잦은 에이전트 루프에서 실질 절감이 표시가보다 크다. 탐색·수집·요약 같은 비용 민감 구간의 기본 모델로 내려도 품질 손실이 작다.",
+        "**멀티모달 입력(텍스트·이미지·음성·영상)+1M 컨텍스트** — 긴 문서·화면·영상 파이프라인을 Flash 티어에서 처리하고, 최종 판단만 Pro로 에스컬레이션하는 계층 구성에 맞다."
+      ],
+      "note": "지식 컷오프 2026-03, 최대 출력 65,536토큰. 초기 품질 평가는 엇갈림 — 고난도 추론은 Pro 유지 권장.",
+      "source": "artificialanalysis.ai",
+      "url": "https://artificialanalysis.ai/models/gemini-3-6-flash"
+    },
+    {
+      "cat": "model",
+      "title": "Kimi K3, 코딩·에이전트 벤치 석권 — 다만 지금은 수요 초과",
+      "lead": "Moonshot의 2.8조 MoE Kimi K3가 다수 코딩·에이전트 리더보드 1위를 찍었다. 수요 급증으로 신규 구독은 일시 중단.",
+      "points": [
+        "**Frontend Code Arena에서 K2.6 대비 17계단 점프, Fable 5 상회** — 프론트엔드·에이전트 코드 생성 품질이 최상위권. API($3/$15)로 자사 코딩 태스크를 먼저 A/B 검증할 값어치가 있다.",
+        "**7/27 오픈 웨이트 예정** — 자체 호스팅으로 종량제 이탈 경로가 열린다. 지금은 구독 중단이라 API 확보가 어렵다면 웨이트 공개까지 대기도 방법."
+      ],
+      "note": "컨텍스트 약 100만, KDA·AttnRes로 최대 6.3배 빠른 디코딩 주장. 2.8조 MoE라 자체 서빙 하드웨어 요구가 큼.",
+      "source": "cometapi.com",
+      "url": "https://www.cometapi.com/what-is-kimi-k3-benchmarks-capabilities-access-guide-in-2026/"
+    },
+    {
+      "cat": "headline",
+      "title": "美, 프런티어 모델 30일 사전 검토 프레임워크 — 출시 타이밍이 밀릴 수 있다",
+      "lead": "OpenAI·Anthropic·Google과의 자발적 프레임워크가 마무리 단계다. 연방기관이 신규 프런티어 모델 공개 전 최대 30일 안보 검토.",
+      "points": [
+        "**모델 출시가 검토 기간만큼 지연될 수 있다** — 신규 프런티어 모델의 가용 시점에 의존하는 로드맵엔 버퍼를 둘 것. 이미 OpenAI가 GPT-5.6 롤아웃을 정부 요청으로 분산한 전례가 있다."
+      ],
+      "note": "8/1 전 발표 예상. 자발적·비구속 프레임워크로 세부는 유동적.",
+      "source": "buildfastwithai.com",
+      "url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-21-2026"
+    }
+  ]
+}
