@@ -1,0 +1,34 @@
+{
+  "date": "2026-07-24",
+  "generatedAt": "2026-07-24T08:20:00+09:00",
+  "urgent": {
+    "text": "**오늘 두 개가 동시에 만료된다.** ①DeepSeek 레거시 별칭(deepseek-chat·deepseek-reasoner)이 **15:59 UTC** 이후 완전 폐기 → model을 deepseek-v4-pro/flash로 안 바꾸면 에러. ②Claude **Opus 4.7의 fast mode도 오늘 제거** → speed:\"fast\"로 opus-4-7 호출 시 에러, Opus 4.8/Opus 5 fast로 이전.",
+    "source": "platform.claude.com"
+  },
+  "items": [
+    {
+      "cat": "model",
+      "title": "Claude Opus 5 출시 — 에이전트·컴퓨터 조작에서 Fable 5급을 절반 값에",
+      "lead": "7/24 Opus 5가 기본 Opus로 올라섰다. 1M 컨텍스트, low/medium/high effort 토글, 표준 $5/$25(=Opus 4.8 동일, Fable 5 입력가의 절반).",
+      "points": [
+        "**장기 실행 에이전트·컴퓨터 조작·업무 워크플로에서 SOTA** — OSWorld 2.0에서 Fable 5 최고치를 **1/3 비용**으로 상회, 에이전트형 터미널 코딩은 Opus 4.8의 **2배 이상**. 무인 장기 에이전트의 성공률과 단가가 동시에 개선돼, 감독 없이 돌리는 루프의 손익 계산이 바뀐다.",
+        "**request마다 effort(low/med/high) 토글** — 단순 분류·요약은 low로 토큰을 안 태우고, 어려운 리팩터·계획은 high로. 한 모델 안에서 작업 난이도별 단가를 세밀 조절해 멀티모델 라우팅 로직을 단순화할 수 있다."
+      ],
+      "note": "Claude Max 기본, fast mode $10/$50. 자기 검증·재시도가 강화돼 초기 접근 실패 시 스스로 다른 경로를 시도(예: 이미지→3D 재구성에서 자체 CV 파이프라인을 구축해 성공).",
+      "source": "codersera.com",
+      "url": "https://codersera.com/blog/claude-opus-5-launch-guide-2026/"
+    },
+    {
+      "cat": "update",
+      "title": "Claude Code, Opus 5 기본 탑재 + 중첩 서브에이전트·동적 워크플로",
+      "lead": "같은 날 Claude Code가 Opus 5를 기본 Opus로 채택하고 서브에이전트·MCP·러너 신뢰성을 넓혔다.",
+      "points": [
+        "**nested subagents(서브에이전트 안의 서브에이전트)와 동적 워크플로** — 상위 에이전트가 하위 에이전트를 다시 분기시켜, 대형 마이그레이션·멀티리포 작업을 계층 트리로 쪼개 병렬 처리. 단일 평면 에이전트로는 관리 안 되던 규모를 조직화한다.",
+        "**더 엄격한 샌드박스 제어와 개선된 에러 리포팅** — 무인 백그라운드 러너의 파괴적 작업 격리와 실패 원인 추적이 강해져, 자리 비운 채 돌리는 장기 세션의 신뢰도가 오른다."
+      ],
+      "note": "MCP 처리·접근성도 개선. Opus 4.7 fast mode는 오늘 제거되니 Opus 4.8/5 fast로 이전(위 urgent).",
+      "source": "releasebot.io",
+      "url": "https://releasebot.io/updates/anthropic/claude-code"
+    }
+  ]
+}

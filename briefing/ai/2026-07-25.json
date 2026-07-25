@@ -1,0 +1,31 @@
+{
+  "date": "2026-07-25",
+  "generatedAt": "2026-07-25T08:17:47+09:00",
+  "urgent": null,
+  "items": [
+    {
+      "cat": "tool",
+      "title": "Claude Cowork 'Record a Skill' — 작업을 한 번 시연하면 재실행 가능한 스킬로",
+      "lead": "화면 녹화로 작업을 한 번 수행하면 Claude가 이를 분석해 재사용 가능한 스킬로 변환한다. 프롬프트 작성·단계 서술 없이 '그냥 하면' 자동화된다.",
+      "points": [
+        "**반복 업무를 프롬프트 엔지니어링 없이 자동화** — 매주 하는 리포트 취합·파일 정리·다단계 클릭 작업을 한 번 녹화하면 Claude가 단계를 추출해 스킬로 저장, 이후 호출만으로 재실행. 절차를 글로 옮기는 수고가 사라진다.",
+        "**시연=명세** — 예외 케이스·순서가 암묵적인 작업일수록 서술보다 시연이 정확하다. 눈으로 보여준 그대로를 재현하므로, 말로 설명하기 어려운 UI 흐름을 스킬화하기에 특히 유리."
+      ],
+      "note": "Pro·Max·Team 대상, Cowork 데스크톱 앱. 롤아웃은 Max부터 단계적.",
+      "source": "aiweekly.co",
+      "url": "https://aiweekly.co/alerts/anthropic-ships-record-a-skill-in-claude-cowork-desktop-app"
+    },
+    {
+      "cat": "update",
+      "title": "코딩·에이전트 스택 재정비 — Opus 5 착륙 후 3층 라우팅",
+      "lead": "어제 Opus 5까지 나오며 이번 주 라우팅 선택지가 굳었다. 능력·단가·자체호스팅 3축으로 정리한다.",
+      "points": [
+        "**정점 작업엔 Opus 5(effort high)** — 장기 에이전트·컴퓨터 조작·난도 높은 리팩터. 단순 반복은 같은 모델 effort low나 **Gemini 3.6 Flash($1.5/$7.5, 컴퓨터 조작 내장, 출력 토큰 17%↓)**로 내려 단가를 접는다.",
+        "**대량 배치·1M 롱컨텍스트 분석은 DeepSeek V4-Pro($0.435/$0.87, SWE-bench 80.6%)** — 전체 코드베이스 분석·대량 합성을 Opus 출력가의 약 1/7로. **7/27 Kimi K3 웨이트 공개** 후 반복 루프는 자체호스팅 고정비 전환을 검토."
+      ],
+      "note": "어제 만료된 것: DeepSeek 레거시 별칭·Opus 4.7 fast mode. 별칭 쓰던 연동은 이미 v4-pro/flash로 교체돼 있어야 정상 동작한다.",
+      "source": "artificialanalysis.ai",
+      "url": "https://artificialanalysis.ai/models/gemini-3-6-flash"
+    }
+  ]
+}
