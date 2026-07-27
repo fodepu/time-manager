@@ -1,0 +1,71 @@
+{
+  "date": "2026-07-27",
+  "generatedAt": "2026-07-27T09:07:37+09:00",
+  "urgent": {
+    "text": "오늘(7/27) Moonshot AI가 Kimi K3 전체 가중치 2.8T를 Modified MIT로 공개 — 자가호스팅·상업적 파생을 검토 중이면 오늘 받아둘 가치.",
+    "source": "llm-stats.com"
+  },
+  "items": [
+    {
+      "cat": "model",
+      "title": "Claude Opus 5 — effort 토글·1M 컨텍스트로 에이전트 루프가 실사용권에 진입",
+      "lead": "Fable 5급 지능을 절반 값($5/$25 per MTok)에 얹은 Anthropic의 새 에이전트 플래그십(7/24).",
+      "points": [
+        "요청마다 **low→xhigh 5단계 effort 토글**로 비용↔능력을 직접 조절 — 대량 반복은 low, 자기검증이 필요한 멀티파일 마이그레이션은 xhigh. FrontierBench xhigh **44.4%** vs Opus 4.8 **18.7%**.",
+        "**1M 컨텍스트 + 128k 출력**으로 리포지토리 전체를 한 세션에 올리고, 브라우저에서 스스로 결과를 검증·수정하는 루프를 굴릴 수 있다.",
+        "**mid-conversation tool changes(beta)**: 턴 사이 도구 추가/제거에도 **prompt cache 유지** — 단계별로 도구셋을 바꾸는 에이전트를 캐시 재구축 비용 없이 운용."
+      ],
+      "note": "Claude API·Claude Code·구독 플랜에서 즉시 사용. thinking 기본 on, $5/$25 per MTok.",
+      "source": "anthropic.com",
+      "url": "https://www.anthropic.com/news"
+    },
+    {
+      "cat": "model",
+      "title": "Kimi K3 오픈웨이트 2.8T 공개 — 프론티어급을 자가호스팅하는 선택지",
+      "lead": "Moonshot AI가 오늘 K3 전체 가중치 2.8T를 Modified MIT로 배포.",
+      "points": [
+        "**2.8T 오픈웨이트를 직접 파인튜닝·자가호스팅** — API 종속 없이 사내 GPU에 프론티어급 모델을 올려 데이터 반출 없는 파이프라인 구성.",
+        "**Modified MIT**라 상업적 활용·재배포가 사실상 자유 — 파생 모델을 제품에 넣을 때 라이선스 협상이 필요 없다."
+      ],
+      "note": "7/27 공개. 라이선스 세부 조항(사용자 규모 조건 등)은 배포 시점에 확인.",
+      "source": "llm-stats.com",
+      "url": "https://llm-stats.com/llm-updates"
+    },
+    {
+      "cat": "model",
+      "title": "Grok 4.5 — Microsoft 365 워크플로를 모델에 위임",
+      "lead": "1.5T Grok 4.5가 grok.com·X·iOS·Android에 배포, $2/$6 per MTok·500k 컨텍스트(7/8).",
+      "points": [
+        "**스프레드시트·슬라이드·문서·Microsoft 365 앱 작업**을 모델이 직접 수행 — Office 산출물 초안·정리를 Grok에 넘기는 워크플로가 성립.",
+        "내장 웹서치 + **500k 컨텍스트**로 긴 대화 메모리와 어려운 문제의 추론 속도가 개선."
+      ],
+      "note": "후속 **Grok 4.6(2T)**이 약 2주 내, Grok 4.7이 그 2주 뒤로 로드맵에 잡혀 있음.",
+      "source": "releasebot.io",
+      "url": "https://releasebot.io/updates/xai"
+    },
+    {
+      "cat": "tool",
+      "title": "ChatGPT Work — 앱을 가로지르는 다시간 에이전트가 완성물을 산출",
+      "lead": "OpenAI가 GPT-5.6로 구동되는 장기 실행 에이전트 ChatGPT Work를 출시(7/9).",
+      "points": [
+        "**1,400+ 앱을 @멘션**으로 컨텍스트에 끌어와, 몇 시간짜리 프로젝트를 잘게 쪼개 **시트·슬라이드·문서·공유 웹앱**까지 완성물로 만든다.",
+        "Chat·Work·Codex가 **단일 데스크톱 앱**으로 통합 — 무료 포함 전 등급에서 코딩·업무 에이전트를 한 곳에서 전환."
+      ],
+      "note": "독립 Codex 앱은 통합 흡수, Atlas 브라우저는 순차 종료 예정.",
+      "source": "openai.com",
+      "url": "https://releasebot.io/updates/openai"
+    },
+    {
+      "cat": "model",
+      "title": "Meta Muse Spark 1.1 — 첫 유료 개발자 API + 컴퓨터 유즈",
+      "lead": "Meta가 1M 컨텍스트 에이전트 모델 Muse Spark 1.1을 첫 유료 API 퍼블릭 프리뷰로 공개.",
+      "points": [
+        "**데스크톱·브라우저·모바일 전반의 computer use**를 API로 호출 — Meta 스택에서 크로스-디바이스 자동화 에이전트를 붙일 수 있다.",
+        "**1M 토큰 컨텍스트**로 긴 문서·세션을 한 번에 처리하는 에이전트 구성이 가능."
+      ],
+      "note": "퍼블릭 프리뷰(유료). 가격·레이트리밋은 콘솔에서 확인.",
+      "source": "aiapps.com",
+      "url": "https://www.aiapps.com/blog/top-ai-news-july-breakthroughs-launches-trends/"
+    }
+  ]
+}

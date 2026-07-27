@@ -1,0 +1,56 @@
+{
+  "date": "2026-07-26",
+  "generatedAt": "2026-07-26T09:05:00+09:00",
+  "urgent": null,
+  "items": [
+    {
+      "cat": "model",
+      "title": "Claude Opus 5 출시 — Fable 5급을 절반 값에, effort 제어 추가",
+      "lead": "Anthropic이 7/24 Opus 5를 공개: 1M 컨텍스트·128k 출력·5단계 effort·$5/$25 per MTok.",
+      "points": [
+        "**effort 토글(low/med/high~xhigh)**로 요청 단위 비용·품질을 조절 — 값싼 대량 처리와 고난도 검증형 작업을 한 모델에서 분기.",
+        "**멀티파일 마이그레이션·자기 오류 검증·브라우저 확인**을 이전 Opus가 못하던 수준으로 처리한다고 초기 사용자 보고.",
+        "**mid-conversation tool changes(beta)**로 턴 사이 도구 교체 시 prompt cache를 보존."
+      ],
+      "note": "Claude API·Claude Code·구독 플랜 즉시 사용, thinking 기본 on.",
+      "source": "anthropic.com",
+      "url": "https://www.anthropic.com/news"
+    },
+    {
+      "cat": "update",
+      "title": "Claude 'Reflect' 월간 리캡 + Time and focus — 작업 패턴을 데이터로 되돌려줌",
+      "lead": "Settings > Reflect가 다룬 주제·가장 활발한 날·피크 시간과 작업 방식 관찰을 보여준다(7/9, beta).",
+      "points": [
+        "**주제별 시간·피크 시간대**를 집계해 보여줘, 어떤 유형의 작업에 Claude를 실제로 쓰는지 회고 근거로 활용.",
+        "**Time and focus**에서 휴식 리마인더·조용 시간을 설정 — 세션 리듬을 도구 차원에서 강제."
+      ],
+      "note": "Free·Pro·Max 웹/데스크톱, 메모리 on 필요.",
+      "source": "releasebot.io",
+      "url": "https://releasebot.io/updates/anthropic/claude"
+    },
+    {
+      "cat": "model",
+      "title": "Grok 4.5 — Office 연동과 500k 컨텍스트",
+      "lead": "xAI 1.5T Grok 4.5가 전 플랫폼 배포, $2/$6 per MTok(7/8).",
+      "points": [
+        "**Microsoft 365·스프레드시트·슬라이드·문서** 작업을 직접 처리하는 어시스트가 grok.com·X·모바일에 탑재.",
+        "**500k 컨텍스트 + 내장 웹서치**로 긴 대화·리서치를 한 세션에 유지."
+      ],
+      "note": "Grok 4.6(2T) 후속이 로드맵상 임박.",
+      "source": "axios.com",
+      "url": "https://www.axios.com/2026/07/08/spacexai-grok-new-model"
+    },
+    {
+      "cat": "tool",
+      "title": "ChatGPT Work — 1,400+ 앱을 엮는 장기 에이전트",
+      "lead": "OpenAI가 GPT-5.6 구동 ChatGPT Work를 출시(7/9).",
+      "points": [
+        "**1,400+ 앱 @멘션**으로 컨텍스트를 모아 시트·슬라이드·문서·웹앱을 완성물로 산출.",
+        "Chat·Work·Codex가 **단일 데스크톱 앱**으로 통합돼 무료 포함 전 등급에서 사용."
+      ],
+      "note": "Codex 흡수·Atlas 순차 종료.",
+      "source": "openai.com",
+      "url": "https://releasebot.io/updates/openai"
+    }
+  ]
+}
