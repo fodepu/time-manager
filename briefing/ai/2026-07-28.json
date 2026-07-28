@@ -1,0 +1,67 @@
+{
+  "date": "2026-07-28",
+  "generatedAt": "2026-07-28T09:06:23+09:00",
+  "urgent": null,
+  "items": [
+    {
+      "cat": "update",
+      "title": "Claude Code — 서브에이전트 예산 캡이 실제로 작동, 에이전트 플릿을 비용 상한 안에서 운용",
+      "lead": "한 메시지가 살 수 있는 자율성의 상한을 재조정한 7/21~24 연속 업데이트(v2.1.217→219).",
+      "points": [
+        "**--max-budget-usd가 이제 백그라운드 에이전트까지 중단** — 팬아웃한 서브에이전트가 상한을 넘기면 자동 정지. 대규모 병렬 작업을 **명시적 달러 상한** 안에 가두고 돌릴 수 있다.",
+        "**동시 서브에이전트 20개 캡 + 중첩 기본 depth 3** — 무한 재귀 스폰을 막으면서도 3단 위임은 허용. 오케스트레이터→워커→서브워커 구조를 예측 가능한 비용으로 설계."
+      ],
+      "note": "v2.1.219 이상 기본 적용. depth·동시 한도는 설정으로 조정.",
+      "source": "code.claude.com",
+      "url": "https://code.claude.com/docs/en/whats-new"
+    },
+    {
+      "cat": "update",
+      "title": "Claude Code — /code-review 백그라운드 실행 + MCP 메모리 누수 수정",
+      "lead": "리뷰·긴 세션 신뢰성을 손본 이번 주 Claude Code 업데이트.",
+      "points": [
+        "**/code-review를 백그라운드로** 돌려 메인 세션을 막지 않고 PR 검토를 병행 — 코딩하면서 별도 세션이 리뷰를 산출한다.",
+        "**잘린 MCP 도구 출력이 전체 원본을 메모리에 붙들던 누수 수정** — 대용량 도구를 반복 호출하는 장시간 에이전트 세션의 메모리 안정성이 개선."
+      ],
+      "note": "whats-new 릴리스노트 기준. transcript 쓰기 실패(디스크 풀 등)·세션 저장 꺼짐 경고도 추가.",
+      "source": "code.claude.com",
+      "url": "https://code.claude.com/docs/en/whats-new"
+    },
+    {
+      "cat": "update",
+      "title": "Claude Code 관리자 콘솔 — value·usage 탭으로 팀 사용을 일 단위 가시화",
+      "lead": "조직 차원의 Claude Code 사용을 되돌려주는 두 개의 새 콘솔 탭.",
+      "points": [
+        "**usage 탭: 활성 개발자 수·세션 수·상위 명령**을 조직 전체로 매일 갱신 — 누가 무엇에 얼마나 쓰는지를 근거로 시트 배분·가이드를 조정.",
+        "**value 탭**으로 사용량을 성과 관점에서 묶어 봄 — 팀 단위 Claude Code 도입 효과를 상급자에게 보고할 지표 확보."
+      ],
+      "note": "Team·Enterprise 관리자 콘솔. 일 단위 갱신.",
+      "source": "releasebot.io",
+      "url": "https://releasebot.io/updates/anthropic/claude-code"
+    },
+    {
+      "cat": "tool",
+      "title": "Grok Build — 수백 병렬 에이전트 워크플로 + Tavily 플러그인",
+      "lead": "xAI 개발자 플랫폼 Grok Build에 대규모 팬아웃과 검색 플러그인이 추가.",
+      "points": [
+        "**큰 작업을 수백 개 병렬 에이전트로 팬아웃**해 백그라운드에서 검증하고 **하나의 최종 리포트**로 회수 — 워크플로를 **슬래시 명령으로 저장·재사용**해 반복 파이프라인화.",
+        "**Tavily 플러그인**이 LLM용으로 구조화된 검색 결과를 반환 — 일반 웹서치와 달리 모델이 곧바로 추론에 쓸 수 있는 컨텍스트 최적화 결과를 에이전트에 주입."
+      ],
+      "note": "Grok Build(developer platform) 내장. deep-research 기본 포함.",
+      "source": "releasebot.io",
+      "url": "https://releasebot.io/updates/xai"
+    },
+    {
+      "cat": "update",
+      "title": "Agent Skills — 파일·폴더로 짜는 에이전트 능력이 오픈 표준으로",
+      "lead": "복잡한 워크플로를 파일/폴더 묶음으로 정의하는 Agent Skills가 크로스플랫폼 오픈 표준으로 공개.",
+      "points": [
+        "**절차·스크립트·리소스를 폴더 하나로 패키징**해 에이전트에 주입 — MCP가 '도구 연결'이라면 Skills는 '그 도구로 무엇을 어떤 순서로 하는지'를 가르쳐, 반복 워크플로를 재사용 자산으로.",
+        "**오픈 표준이라 플랫폼 간 이식** — 한 번 만든 스킬을 Claude 외 다른 에이전트 런타임에서도 그대로 사용."
+      ],
+      "note": "MCP와 상호보완. 공개 스펙.",
+      "source": "anthropic.com",
+      "url": "https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills"
+    }
+  ]
+}
