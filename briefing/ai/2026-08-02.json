@@ -1,0 +1,55 @@
+{
+  "date": "2026-08-02",
+  "generatedAt": "2026-08-02T09:10:00+09:00",
+  "urgent": null,
+  "items": [
+    {
+      "cat": "model",
+      "title": "Claude Opus 5 — effort 토글로 비용/지능을 요청마다 조절하는 상시 워크호스",
+      "lead": "Fable 5급 지능을 $5/$25에, low/medium/high/xhigh/max effort와 1M 컨텍스트로 제공.",
+      "points": [
+        "**medium을 기본으로, 어려운 디버깅만 high·xhigh로** 올려 토큰을 아끼고, 장기 에이전트(30분+)엔 max — 한 모델 안에서 난이도별로 비용을 계단식 배분.",
+        "**fast mode(API 리서치 프리뷰, 2.5배 속도)**로 인터랙티브 코딩 루프의 왕복 지연을 줄임 — 대신 단가 $10/$50이라 배치·비대화 작업은 표준 속도로."
+      ],
+      "note": "Claude Code /model claude-opus-5. xhigh·max는 thinking 상시 on.",
+      "source": "platform.claude.com",
+      "url": "https://platform.claude.com/docs/en/about-claude/models/whats-new-opus-5"
+    },
+    {
+      "cat": "tool",
+      "title": "Grok Imagine Video 1.5 — 참조 이미지 7장으로 일관성 잡은 1080p 영상+오디오",
+      "lead": "T2V·I2V·reference-to-video 3모드를 코드에서 종량제로 호출.",
+      "points": [
+        "**참조 7장으로 캐릭터·스타일 고정**→여러 컷에서 동일 인물/톤 유지, 시리즈·브랜드 영상의 재촬영 없는 확장.",
+        "**experimental_generateVideo(AI SDK 6)**로 prompt+image+모션을 넘겨 480p~**1080p($0.025/초)** 생성, 오디오까지 한 패스로."
+      ],
+      "note": "Grok·iOS·Android·xAI API 전반. 무료 30일당 $5 크레딧.",
+      "source": "vercel.com",
+      "url": "https://vercel.com/ai-gateway/models/grok-imagine-video-1.5"
+    },
+    {
+      "cat": "update",
+      "title": "Claude Code — 샌드박스 네트워크 strictAllowlist로 에이전트 외부 접근 차단",
+      "lead": "격리·오케스트레이션을 손본 v2.1.216~220대 릴리스.",
+      "points": [
+        "**sandbox.network.strictAllowlist**로 허용목록 밖 호스트를 무프롬프트 차단 — 자율 에이전트의 데이터 유출·의도치 않은 외부 호출을 정책으로 봉쇄.",
+        "**파일시스템 격리를 네트워크와 독립 설정** — 신뢰 낮은 서브에이전트에만 좁은 권한을 주는 식의 세분화 운용."
+      ],
+      "note": "changelog 기준. Opus 5가 기본 Opus 모델.",
+      "source": "code.claude.com",
+      "url": "https://code.claude.com/docs/en/changelog"
+    },
+    {
+      "cat": "market",
+      "title": "OpenAI 정리 일정 — Atlas 8/9 종료, o3 8/26 은퇴",
+      "lead": "브라우저 에이전트 기능을 ChatGPT·Codex로 흡수하며 구형 제품·모델 정리.",
+      "points": [
+        "**Atlas 8/9 작동 중단** — 브라우징 에이전트는 ChatGPT·Codex로 통합, 관련 워크플로는 그 전에 이관.",
+        "**o3 8/26 은퇴(90일 선셋 종료)** — o3 고정 파이프라인/프롬프트는 후속 모델 교체 계획을 지금 잡아둘 것."
+      ],
+      "note": "ChatGPT 릴리스노트 기준.",
+      "source": "help.openai.com",
+      "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+    }
+  ]
+}

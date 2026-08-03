@@ -1,0 +1,67 @@
+{
+  "date": "2026-08-03",
+  "generatedAt": "2026-08-03T14:00:19+09:00",
+  "urgent": null,
+  "items": [
+    {
+      "cat": "model",
+      "title": "Claude Opus 5 — xhigh·max 리즈닝과 1M 컨텍스트로 '수십 분 자율 코딩'을 상시 도구로",
+      "lead": "Fable 5급 지능을 절반가($5/$25)에 얹고 effort 토글을 단 near-frontier 워크호스.",
+      "points": [
+        "**effort=xhigh/max**로 30분+ 장기 에이전트 작업을 한 프롬프트에 위임 — 하드 디버깅·대규모 리팩터는 high→**xhigh**로 올리고, 타이트한 대화 루프엔 **fast mode(토큰 2.5배, $10/$50)**로 내려 비용·지연을 작업별로 조정.",
+        "**1M 컨텍스트(기본=최대)**로 레포 전체·긴 로그를 통째로 물려 멀티파일 추론 — writer-verifier 서브에이전트 팀을 돌려도 서로 덮어쓰는 충돌이 거의 없어 **팬아웃 병렬 작업**의 신뢰도가 실사용 수준."
+      ],
+      "note": "Claude Code에서 /model 또는 --model claude-opus-5. xhigh·max는 thinking 끌 수 없음. 표준 출력 128K, 배치 API로 300K.",
+      "source": "platform.claude.com",
+      "url": "https://platform.claude.com/docs/en/about-claude/models/whats-new-opus-5"
+    },
+    {
+      "cat": "update",
+      "title": "Claude Code — Opus 5 기본 + 중첩 서브에이전트 + 네트워크 strictAllowlist",
+      "lead": "기본 모델을 Opus 5로 갈고 에이전트 오케스트레이션·샌드박스 격리를 손본 최신 릴리스.",
+      "points": [
+        "**sandbox.network.strictAllowlist**로 허용목록 밖 호스트를 프롬프트 없이 차단 — 에이전트가 임의 외부로 나가는 걸 정책으로 막고, 격리 수준을 파일시스템과 독립 설정.",
+        "**중첩 서브에이전트 확장 + 동적 워크플로**로 오케스트레이터→워커 위임을 깊게 — 큰 작업을 캡 안에서 병렬 분해하고 **--forward-subagent-text**로 서브에이전트 사고까지 stream-json에 회수."
+      ],
+      "note": "changelog 기준 v2.1.216~220대. Opus 5 fast·effort는 모델 피커에서 선택.",
+      "source": "code.claude.com",
+      "url": "https://code.claude.com/docs/en/changelog"
+    },
+    {
+      "cat": "tool",
+      "title": "Grok Voice Think Fast 2.0 — OpenAI Realtime 호환 음성 에이전트 + 60초 음성 클론",
+      "lead": "저지연 speech-to-speech에 즉석 음성 복제를 붙인 xAI 최상위 음성 모델.",
+      "points": [
+        "**OpenAI Realtime API 호환** — base URL만 바꾸면 기존 OpenAI 클라이언트/SDK로 WebSocket 음성 에이전트를 그대로 구동(턴테이킹·툴콜 포함). 마이그레이션 비용 없이 음성 스택만 교체.",
+        "**클린 60초 샘플로 2분 내 프로덕션 음성 클론**→TTS·S2S에 즉시 사용($0.08/분). 전용 STT 대비 **전사 정확도 1.5~2배**(Deepgram Nova 3·ElevenLabs Scribe v2 기준)라 음성봇 인식·응답 품질이 실측 상향."
+      ],
+      "note": "grok-voice-latest가 8/5부터 이 모델로 라우팅. 클론 품질은 길이보다 녹음 환경이 좌우.",
+      "source": "x.ai",
+      "url": "https://x.ai/news/grok-voice-think-fast-2"
+    },
+    {
+      "cat": "tool",
+      "title": "Grok Imagine Video 1.5 — 참조 7장으로 캐릭터·스타일 고정한 1080p 영상 생성",
+      "lead": "이미지·텍스트에서 동기화 오디오까지 한 번에 뽑는 xAI 영상 모델.",
+      "points": [
+        "**reference-to-video: 참조 이미지 최대 7장**으로 캐릭터·스타일·세팅을 고정 — 컷마다 인물/톤이 흔들리던 문제를 잡아 시리즈·브랜드 영상의 일관성을 실사용 수준으로.",
+        "**AI SDK 6의 experimental_generateVideo**로 prompt+image+모션 설명을 넘겨 코드에서 바로 생성, 해상도·비율·길이 파라미터 제어 — 480p $0.008/초 ~ **1080p $0.025/초** 종량제라 파이프라인에 붙이기 쉬움."
+      ],
+      "note": "T2V·I2V·R2V 3모드. Grok·iOS·Android·API 전반. 무료 30일당 $5 크레딧.",
+      "source": "vercel.com",
+      "url": "https://vercel.com/ai-gateway/models/grok-imagine-video-1.5"
+    },
+    {
+      "cat": "headline",
+      "title": "Claude for Open Source — 자격되면 6개월 Max 20x 무료(약 $1,200)",
+      "lead": "OSS 메인테이너·기여자에게 Fable 5 포함 Max 20x를 6개월 무상 제공(선착 1만 석).",
+      "points": [
+        "**스타 5,000+ 또는 npm 월 100만 다운로드** 레포의 최근 3개월 활성 기여자면 개인 계정에 즉시 적용 — 무료로 Max 20x 한도에서 Fable 5·Claude Code를 상시 사용.",
+        "기준 미달이어도 **Ecosystem Impact 트랙**에 서술형 지원 가능('조용히 의존되는' 패키지 대상). 롤링 심사라 지금 넣으면 됨."
+      ],
+      "note": "개인 전용(API 크레딧·팀 공유·자동 갱신 없음). claude.com/contact-sales/claude-for-oss.",
+      "source": "claude.com",
+      "url": "https://claude.com/contact-sales/claude-for-oss"
+    }
+  ]
+}

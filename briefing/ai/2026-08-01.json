@@ -1,0 +1,46 @@
+{
+  "date": "2026-08-01",
+  "generatedAt": "2026-08-01T09:10:00+09:00",
+  "urgent": {
+    "text": "Anthropic 'AI for Science' 그랜트(희귀 유전병 연구, Claude 크레딧 최대 $50K) 지원 마감 8/2 — 해당되면 내일까지 제출.",
+    "source": "anthropic.com"
+  },
+  "items": [
+    {
+      "cat": "headline",
+      "title": "Claude for Open Source — 6개월 Max 20x 무료(약 $1,200), 선착 1만 석",
+      "lead": "OSS 메인테이너·기여자에게 Fable 5 포함 Max 20x를 6개월 무상 제공.",
+      "points": [
+        "**스타 5,000+ 또는 npm 월 100만 다운로드** 레포의 최근 3개월 활성 기여자면 개인 계정에 즉시 적용 — Max 20x 한도로 Fable 5·Claude Code 상시 사용.",
+        "미달이어도 **Ecosystem Impact 트랙** 서술형 지원 가능, 롤링 심사. 개인 전용(API 크레딧·팀 공유·자동 갱신 없음)."
+      ],
+      "note": "claude.com/contact-sales/claude-for-oss.",
+      "source": "claude.com",
+      "url": "https://claude.com/contact-sales/claude-for-oss"
+    },
+    {
+      "cat": "tool",
+      "title": "Grok Voice Think Fast 2.0 — Realtime 호환 음성 에이전트 + 60초 음성 클론",
+      "lead": "저지연 speech-to-speech에 즉석 복제를 붙인 xAI 최상위 음성 모델.",
+      "points": [
+        "**OpenAI Realtime API 호환** — base URL 교체만으로 기존 SDK로 WebSocket 음성 에이전트 구동(턴테이킹·툴콜).",
+        "**60초 클린 샘플→2분 내 프로덕션 클론**($0.08/분), 전사 정확도 전용 STT 대비 **1.5~2배**."
+      ],
+      "note": "grok-voice-latest가 8/5부터 이 모델로 라우팅.",
+      "source": "x.ai",
+      "url": "https://x.ai/news/grok-voice-think-fast-2"
+    },
+    {
+      "cat": "tool",
+      "title": "OpenAI 'Sign in with ChatGPT' 베타 — Notion·Vercel·Supabase를 내 ChatGPT로",
+      "lead": "선별 파트너 사이트/플러그인에 ChatGPT 계정 인증을 붙인 베타.",
+      "points": [
+        "**Airtable·GitLab·HubSpot·Notion·Supabase·Vercel** 등에서 ChatGPT 자격으로 로그인 — 별도 계정·키 없이 ChatGPT 컨텍스트를 파트너 앱에 연결.",
+        "에이전트가 여러 SaaS를 넘나들 때 **인증 단계를 하나로 접는** ID 브로커 흐름."
+      ],
+      "note": "베타·선별 파트너 한정.",
+      "source": "help.openai.com",
+      "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+    }
+  ]
+}
