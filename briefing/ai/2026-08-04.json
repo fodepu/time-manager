@@ -1,0 +1,66 @@
+{
+  "date": "2026-08-04",
+  "generatedAt": "2026-08-05T09:08:54+09:00",
+  "urgent": null,
+  "items": [
+    {
+      "cat": "update",
+      "title": "MCP 2026-07-28 스테이트리스 스펙, Claude에 도입 — 서버리스로 MCP 배포",
+      "lead": "MCP가 양방향 상태유지에서 요청/응답 모델로 바뀌어 서버를 서버리스·엣지에 그대로 올릴 수 있게 됐고, Claude가 이를 지원한다.",
+      "points": [
+        "**initialize 핸드셰이크와 Mcp-Session-Id 헤더가 제거**돼 모든 요청이 자기완결형이 된다 — 평범한 **라운드로빈 LB** 뒤 어느 인스턴스나 처리하고 콜드스타트가 더는 세션 문제를 안 만든다. MCP 서버를 Lambda·엣지 함수로 그냥 배포 가능.",
+        "**Apps·Tasks가 버전드 확장(extensions)**으로 분리돼 코어를 안 건드리고 인터랙티브 UI·장기실행 기능을 붙인다. 인가는 **OAuth 2.0/OIDC 정렬**로 Entra·Okta에 우회 없이 연결."
+      ],
+      "note": "기존 서버는 핸드셰이크·세션 헤더 의존 코드를 걷어내는 마이그레이션 필요. RC 단계.",
+      "source": "claude.com",
+      "url": "https://claude.com/blog/bringing-mcp-2026-07-28-to-claude"
+    },
+    {
+      "cat": "update",
+      "title": "Claude Code v2.1.221 — 긴 작업용 Focus 뷰로 툴 소음 접기",
+      "lead": "Claude Code 2.1.221이 Focus 뷰 등 39개 변경을 담아 장시간 에이전트 세션의 화면 피로를 줄인다.",
+      "points": [
+        "**Ctrl+Alt+F(Focus 뷰)**로 매 턴의 검색·읽기·툴 반환을 접어 요약 한 줄 + 실행중 인디케이터만 남긴다 — 밤새 도는 작업에서 스크롤 지옥 제거.",
+        "**Grep 검색이 더 엄격**해지고 Write 권한 표기가 명확해져 긴 작업의 에이전트 행동을 통제하기 쉽다. 권한 체크 취약점 **보안 픽스 2건** 포함."
+      ],
+      "note": "터미널 최신판 업데이트 시 적용. 구성: 신규 4·보안 2·버그 16·개선 15.",
+      "source": "github.com",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.221"
+    },
+    {
+      "cat": "tool",
+      "title": "Gemini API Managed Agents 갱신 — cron 트리거·툴 전후 훅",
+      "lead": "구글이 Gemini API의 Managed Agents에 스케줄·훅·예산 제어를 추가했다.",
+      "points": [
+        "**cron 문법 예약 트리거**로 에이전트를 주기 실행하고, **툴 호출 전후 환경 훅**으로 검증·로깅·정리 스크립트를 끼워 넣는다 — 오케스트레이션을 자체 구축 없이 위임.",
+        "**max_total_tokens 예산 상한**으로 폭주 비용을 막고 Environments API로 샌드박스 세션을 관리. 기본 모델 Gemini 3.6 Flash, API 키 프로젝트엔 무료 티어."
+      ],
+      "note": "Gemini API에서 활성화. 스케줄·훅이 필요한 에이전트를 옮길 때 검토.",
+      "source": "cryptointegrat.com",
+      "url": "https://www.cryptointegrat.com/p/ai-news-august-4-2026"
+    },
+    {
+      "cat": "model",
+      "title": "DeepSeek V4 Flash 0731 정식 출시 — 초저가로 에이전트 벤치 상위",
+      "lead": "DeepSeek V4 Flash 0731이 프리뷰를 벗어나 $0.14/$0.28(100만 토큰)로 정식 출시됐다.",
+      "points": [
+        "**Terminal-Bench 82.7%**로 자사 1.6T Pro를 에이전트 벤치에서 앞선다 — 툴 사용·터미널 작업 루프를 **프런티어 대비 수십 분의 1 단가**로 돌릴 후보.",
+        "테스트·리팩터·크롤링 후처리 같은 대량 에이전트 루프를 값싼 모델로 옮기고 어려운 스텝만 상위 모델에 라우팅하는 **혼합 전략**에 적합."
+      ],
+      "note": "공개 수치 기준. 실제 태스크로 검증 후 전환 권장.",
+      "source": "llm-stats.com",
+      "url": "https://llm-stats.com/llm-updates"
+    },
+    {
+      "cat": "market",
+      "title": "OpenAI Astra, 미해결 수학·이론CS 10문제를 Lean 증명으로",
+      "lead": "OpenAI가 내부 모델 Astra로 열린 문제 10개를 풀고 기계검증 가능한 Lean 증명을 GitHub에 공개했다고 밝혔다.",
+      "points": [
+        "**비-소픽 군 존재 구성·새 구면채우기 한계** 등을 약 **$2,000 컴퓨트**로 도출 — 필즈상 수상자 T.Gowers가 한 증명을 최상위 저널에 추천하겠다고 평가."
+      ],
+      "note": "연구 시연 단계로 제품·API 아님. 형식 증명 능력이 검증가능 수준에 왔다는 신호.",
+      "source": "openai.com",
+      "url": "https://openai.com/news/company-announcements/"
+    }
+  ]
+}

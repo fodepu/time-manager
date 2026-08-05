@@ -1,0 +1,69 @@
+{
+  "date": "2026-08-05",
+  "generatedAt": "2026-08-05T09:08:54+09:00",
+  "urgent": {
+    "text": "Cowork 웹·모바일 출시 기념 사용량 2배가 오늘(8/5) 종료 — 무거운 백그라운드·예약작업은 오늘 안에 몰아 돌릴 것.",
+    "source": "claude.com"
+  },
+  "items": [
+    {
+      "cat": "update",
+      "title": "Claude Cowork 웹·모바일 — 노트북 닫아도 계속 도는 원격 에이전트",
+      "lead": "Cowork 세션이 데스크톱·웹·모바일을 오가고, 실행이 Anthropic 클라우드로 넘어가 기기가 꺼져 있어도 백그라운드로 완주한다.",
+      "points": [
+        "**예약작업(scheduled tasks)**을 원격에서 돌려 매일 아침 브리핑·주간 리포트 같은 반복 산출물을 자리 비운 사이 완성 — 이 AI 피드도 그 방식으로 갱신된다.",
+        "책상에서 작업을 던지고 **폰에서 진행 확인·승인**, 완성물은 어디서든 회수 — 같은 세션·파일이 기기를 따라온다."
+      ],
+      "note": "유료 플랜(Pro·Max·Team·Enterprise). 출시 기념 사용량 2배는 8/5까지.",
+      "source": "claude.com",
+      "url": "https://claude.com/blog/cowork-web-mobile"
+    },
+    {
+      "cat": "market",
+      "title": "Claude Sonnet 5 프로모 가격 8/31 종료 — API 예산 지금 다시 계산",
+      "lead": "Sonnet 5의 도입가 $2/$10(입력/출력, 100만 토큰)이 8/31에 끝나고 9/1부터 표준가 $3/$15로 오른다.",
+      "points": [
+        "대량 파이프라인·배치는 **8월 안에 프로모가로** 밀어두면 토큰당 **33~50%** 싸게 처리된다.",
+        "새 토크나이저가 같은 글에 **토큰을 약 30% 더** 생성하므로 실질 단가는 표기가보다 더 오른다 — 컨텍스트 예산·비용 추정을 다시 잡을 것."
+      ],
+      "note": "1M 컨텍스트·128k 출력. 9/1부터 표준가 자동 적용.",
+      "source": "platform.claude.com",
+      "url": "https://platform.claude.com/docs/en/release-notes/overview"
+    },
+    {
+      "cat": "tool",
+      "title": "grok-voice-latest, 오늘부터 Think Fast 2.0로 자동 전환",
+      "lead": "오늘(8/5)부로 grok-voice-latest 별칭이 Speech-to-Speech 2.0로 라우팅된다.",
+      "points": [
+        "별칭만 쓰던 음성 에이전트는 코드 변경 없이 **더 빠른 응답·향상된 정확도**로 갈아탄다 — 재배포 불필요.",
+        "지연·톤 변화로 회귀가 우려되면 모델을 **Think Fast 1.0로 명시 고정**해 이전 동작을 유지할 수 있다."
+      ],
+      "note": "2.0 단가 $0.08/분(1.0 $0.05 대비 상승), 텍스트 입력 $0.004/건 별도.",
+      "source": "x.ai",
+      "url": "https://x.ai/news/grok-voice-think-fast-2"
+    },
+    {
+      "cat": "headline",
+      "title": "Grok 4.6, 8/7 공개 확정 — 2주 간격 에이전트 코딩 갱신",
+      "lead": "xAI가 Grok 4.6을 8/7 출시로 확정하고 이어 4.7을 2주 뒤로 예고했다.",
+      "points": [
+        "4.5가 **Artificial Analysis 에이전트 툴 사용 부문 1위**였던 만큼 4.6도 에이전트·코딩 축의 향상이 예상 — Arena 라이브 세션 점수로 곧 검증된다."
+      ],
+      "note": "스펙·가격 미공개. Arena Agent 리더보드 등재 예정.",
+      "source": "x.ai",
+      "url": "https://docs.x.ai/developers/release-notes"
+    },
+    {
+      "cat": "model",
+      "title": "Alibaba Qwen3.8-Max — 10일+ 자율 코딩 노리는 2.4T 모델",
+      "lead": "알리바바가 2.4조 파라미터 Qwen3.8-Max를 공개하며 장기 자율 코딩을 겨냥했다.",
+      "points": [
+        "**10일 이상 연속 자율 코딩**을 표방 — 며칠짜리 마이그레이션·대형 리팩터를 끊김 없이 맡길 장기 에이전트 후보.",
+        "다음 주 **오픈 웨이트**와 27B 버전이 예고돼 자체 호스팅·파인튜닝 실험이 열린다."
+      ],
+      "note": "벤치·가격 추가 검증 필요. 클로즈드 프런티어와 비교 전 파일럿 권장.",
+      "source": "llm-stats.com",
+      "url": "https://llm-stats.com/llm-updates"
+    }
+  ]
+}
