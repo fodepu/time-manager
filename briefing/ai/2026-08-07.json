@@ -1,0 +1,68 @@
+{
+  "date": "2026-08-07",
+  "generatedAt": "2026-08-07T12:50:54+09:00",
+  "urgent": null,
+  "items": [
+    {
+      "cat": "model",
+      "title": "Grok 4.6 오늘 출시 — 규모 대신 SFT/RL로 에이전트 신뢰도를 끌어올린 1.5T",
+      "lead": "xAI가 오늘(8/7) Grok 4.6을 공개했다. 4.5의 1.5T V9 파운데이션을 그대로 재사용하고, 개선된 지도 파인튜닝(SFT)·강화학습(RL)으로 성능을 끌어올린 갱신판이다.",
+      "points": [
+        "**코딩·추론·검색을 라우팅하는 에이전트**에서 4.5의 효율 봉투(토큰당 단가)를 유지한 채 **긴 실패 루프(over-long failure)**를 줄였다 — 고volume·비용민감 파이프라인이면 코드 변경 없이 모델 별칭만 바꿔 신뢰도 이득을 흡수할 수 있다.",
+        "가격이 4.5 라인(**입력 $2 / 출력 $6** per 1M) 근처로 유지되면, GPT·Claude 프런티어 대비 **에이전트 반복 호출이 많은 워크로드**에서 단가 우위가 그대로 이어진다 — 라우터의 기본(default) 모델 후보로 재평가할 시점.",
+        "**2주 뒤 Grok 4.7(2.1T)**이 '모든 면에서 4.6보다 우위'로 예고돼 있어, 지금 4.6으로 파이프라인을 맞춰두면 상위 모델로의 교체도 별칭 스왑만으로 끝난다."
+      ],
+      "note": "docs.x.ai 릴리스노트에서 grok-4-6 별칭으로 즉시 호출. 상세 벤치·확정 단가는 Artificial Analysis/Arena 등재 후 검증 권장.",
+      "source": "x.ai",
+      "url": "https://docs.x.ai/developers/release-notes"
+    },
+    {
+      "cat": "update",
+      "title": "Claude Code 8월 릴리스 — 워크트리 격리로 main 체크아웃 파괴 커밋 차단",
+      "lead": "이번 Claude Code 업데이트가 세션·보안 계열 버그를 대거 손봤다. 핵심은 워크트리 격리 세션이 main 체크아웃에 파괴적 git 명령을 실행하던 문제와, PreToolUse 자동허용 훅이 도구 제한을 우회하던 문제의 수정이다.",
+      "points": [
+        "**워크트리 격리 세션**이 이제 main 브랜치에 대한 파괴적 git(리셋·강제푸시 등)을 막는다 — 병렬 에이전트를 여러 워크트리에 띄워도 서로의 본체 체크아웃을 망가뜨릴 위험이 사라져, **한 저장소에 다수 에이전트 동시 투입** 워크플로가 안전해졌다.",
+        "**PreToolUse auto-allow 훅**이 도구 제한을 우회하던 구멍이 막혀, 훅으로 화이트리스트를 걸어둔 자동승인 정책이 실제로 강제된다 — 무인 예약작업·CI에서 위험 도구가 새어나가지 않는다."
+      ],
+      "note": "claude update로 최신 CLI 반영. 사용량 크레딧 표시·diff·스크린리더 접근성도 함께 개선.",
+      "source": "docs.claude.com",
+      "url": "https://docs.claude.com/en/release-notes/claude-code"
+    },
+    {
+      "cat": "tool",
+      "title": "대화 도중 도구 세트 교체(mid-conversation tool changes) 베타 — 에이전트 구조를 바꾸는 변화",
+      "lead": "Claude Fable 5·Opus 5 등에서 한 대화 안에서 노출되는 도구 목록을 도중에 바꾸는 기능이 베타로 열렸다.",
+      "points": [
+        "**단계별로 도구를 갈아끼우는 에이전트**를 한 세션으로 설계할 수 있다 — 리서치 단계엔 검색 도구만, 실행 단계엔 파일·배포 도구만 노출해 **프롬프트 인젝션·오작동 표면**을 단계마다 좁힌다(대화를 끊어 새로 시작할 필요 없음).",
+        "도구 스키마를 처음부터 다 싣지 않고 **필요할 때 지연 로드**하는 패턴이 가능해져, 도구가 수십 개인 대형 에이전트에서 **컨텍스트 예산**을 실질적으로 절약한다."
+      ],
+      "note": "API beta 헤더로 활성화. Opus 4.8·Mythos 5 포함 최신 계열에서 지원.",
+      "source": "docs.claude.com",
+      "url": "https://docs.claude.com/en/release-notes/api"
+    },
+    {
+      "cat": "tool",
+      "title": "Codex CLI·ChatGPT의 Auto-review가 GPT-5.6 Luna로 — 리뷰 비용 약 1/10",
+      "lead": "OpenAI가 Codex CLI와 ChatGPT 앱의 Auto-review 모델을 GPT-5.4에서 GPT-5.6 Luna로 올렸고, Luna 가격 인하와 겹쳐 리뷰 비용이 약 10배 저렴해졌다.",
+      "points": [
+        "**PR·커밋 자동 리뷰를 상시 켜두는** 운용이 비용 부담 없이 가능해졌다 — 매 diff마다 리뷰를 돌려도 예전 단가의 1/10 수준이라, 리뷰를 '가끔'에서 '기본값'으로 바꿀 만하다.",
+        "플래그십 **GPT-5.6 Sol**은 Codex 벤치 80으로 코딩 선두 — 어려운 설계·리팩터는 Sol에 맡기고 **대량 자동 리뷰는 Luna**로 나누는 2-티어 라우팅이 비용 효율적."
+      ],
+      "note": "Codex CLI 업데이트 후 자동 반영. Sol/Terra/Luna 3티어에서 작업 난이도별 분배.",
+      "source": "openai.com",
+      "url": "https://openai.com/index/gpt-5-6/"
+    },
+    {
+      "cat": "market",
+      "title": "Claude for Open Source — Max 20x 6개월 무료($1,200), 롤링 심사",
+      "lead": "오픈소스 메인테이너에게 Claude Max 20x 6개월(약 $1,200 상당, Claude Code·Cowork 포함)을 무료 제공하는 프로그램이 열려 있다. 총 1만 석, 상시 롤링 심사.",
+      "points": [
+        "**공개 저장소 5,000+ 스타 또는 npm 월 100만+ 다운로드**(최근 3개월 활동)면 표준 트랙으로 신청 — 통과 시 개인 계정에 Max 20x가 붙어 Claude Code·Cowork를 한도 걱정 없이 돌릴 수 있다.",
+        "스타 기준 미달이어도 **Ecosystem Impact 트랙**으로 '생태계가 조용히 의존하는 패키지'임을 서술해 신청 가능 — 크리티컬하지만 눈에 안 띄는 유틸 메인테이너를 위한 경로."
+      ],
+      "note": "claude.com/contact-sales/claude-for-oss에서 신청. 개인 한정(API 크레딧·팀 공유·자동 갱신 없음).",
+      "source": "claude.com",
+      "url": "https://claude.com/contact-sales/claude-for-oss"
+    }
+  ]
+}
