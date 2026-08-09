@@ -1,0 +1,30 @@
+{
+  "date": "2026-08-10",
+  "generatedAt": "2026-08-10T08:58:48+09:00",
+  "urgent": null,
+  "items": [
+    {
+      "cat": "update",
+      "title": "ChatGPT GPT-5.6 전면 개편 — 추론 깊이 슬라이더·Think 버튼·무제한 텍스트",
+      "lead": "이번 주(8/10~) OpenAI가 Plus·Pro에 추론 깊이 슬라이더와 Think 버튼을, Free·Go에 GPT-5.6 Luna 무제한 텍스트 대화를 전면 롤아웃한다. Instant와 추론이 GPT-5.6 Sol 하나로 통합됐다.",
+      "points": [
+        "**질문마다 추론 예산을 손으로 조절**한다 — 일상 답변은 빠르게, 기획·리서치·코딩·의사결정은 슬라이더를 올려 확장 추론으로. 모델을 갈아끼우지 않고 한 대화에서 '속도 vs 깊이'를 국면별로 튜닝하는 방식이 표준이 된다.",
+        "Instant/추론 분기가 사라지고 **Sol 단일 경험**이 되면서 모델 선택 라우팅 부담이 UI 슬라이더로 흡수됐다. 내부 테스트 사실오류 **Luna 62%·Sol 68% 감소**(5.5-Instant 대비) — 사실성 민감 작업의 기본기가 올라감."
+      ],
+      "note": "Plus·Pro는 웹·모바일·데스크톱 슬라이더. Free·Go는 Luna 무제한 텍스트(음성·이미지 등은 별도 한도). 주중 순차 롤아웃.",
+      "source": "openai.com",
+      "url": "https://openai.com/index/improving-gpt-5-6-sol-in-chatgpt/"
+    },
+    {
+      "cat": "market",
+      "title": "Claude Sonnet 5 프로모션 가격 8/31 종료 — 9/1 표준가 적용",
+      "lead": "Anthropic이 Claude Sonnet 5의 프로모션 단가가 8월 31일 종료되고 9월 1일부터 표준가가 적용됨을 확정했다.",
+      "points": [
+        "**Sonnet 5를 대량 파이프라인 기본 모델로 쓰는 경우** 9/1부터 토큰 단가가 오르므로, 8월 안에 실제 인상폭을 확인해 배치 API·캐싱·모델 믹스(간단 작업은 하위 티어로 분리)를 재점검할 시점이다."
+      ],
+      "note": "8/31까지 프로모션가, 9/1 표준가. 인상폭은 공식 가격표에서 확인.",
+      "source": "anthropic.com",
+      "url": "https://www.anthropic.com/news"
+    }
+  ]
+}

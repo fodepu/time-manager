@@ -1,0 +1,42 @@
+{
+  "date": "2026-08-09",
+  "generatedAt": "2026-08-09T11:30:00+09:00",
+  "urgent": null,
+  "items": [
+    {
+      "cat": "update",
+      "title": "Opus 5, Claude Max 기본 모델로 — Pro에선 최강 옵션",
+      "lead": "Claude Opus 5가 Max 플랜의 기본 모델로 지정되고 Pro에서 가장 강한 선택지로 노출됐다(모델 자체는 7/24 출시, 1M 컨텍스트).",
+      "points": [
+        "**Max에서 별도 선택 없이 Opus 5로 실행**되므로 에이전트 코딩·컴퓨터 사용 작업의 기본 성능이 올라간다 — Opus 4.8 대비 Frontier-Bench 2배, SWE-bench Verified **96.0%**. 프런티어(Fable 5)에 근접한 지능을 **Opus 단가 그대로**($5/$25 per 1M) 쓰는 셈.",
+        "**900k 토큰 요청도 9k와 같은 토큰당 단가** — 롱컨텍스트 프리미엄이 없어, 대형 저장소 전체를 한 컨텍스트에 넣는 워크플로의 비용 예측이 단순해진다."
+      ],
+      "note": "Max 기본·Pro 최강 옵션. API 별칭 claude-opus-5, Batch API로 입·출력 반값·캐시 읽기 입력 $0.50.",
+      "source": "anthropic.com",
+      "url": "https://www.anthropic.com/news"
+    },
+    {
+      "cat": "update",
+      "title": "대화 도중 시스템 메시지 교체 — 한 세션에서 에이전트 성격을 단계별 전환",
+      "lead": "대화 중간에 system 메시지를 주입·교체하는 기능이 Fable 5·Mythos 5·Opus 4.8에서 열렸다(Claude API·Bedrock·Google Cloud).",
+      "points": [
+        "**단계마다 지침을 갈아끼우는 에이전트**를 대화를 끊지 않고 설계할 수 있다 — 리서치 단계엔 '출처 검증' 규칙, 작성 단계엔 '톤·포맷' 규칙을 도중에 얹어 앞 맥락을 유지한 채 역할을 전환한다.",
+        "앞서 베타로 열린 **대화 중 도구 세트 교체**와 결합하면, 시스템 지침과 노출 도구를 **단계별로 동시에** 바꿔 프롬프트 인젝션·오작동 표면을 국면마다 좁히는 상태머신형 에이전트가 가능하다."
+      ],
+      "note": "Fable 5·Mythos 5·Opus 4.8 지원. Claude API·Amazon Bedrock·Google Cloud.",
+      "source": "platform.claude.com",
+      "url": "https://platform.claude.com/docs/en/release-notes/overview"
+    },
+    {
+      "cat": "tool",
+      "title": "advisor 도구에 max_tokens — 조언 모델 출력 상한으로 지연·비용 절감",
+      "lead": "Claude API의 advisor 도구가 호출당 조언 모델 출력을 캡하는 max_tokens 파라미터를 지원한다.",
+      "points": [
+        "**advisor를 서브루틴처럼 반복 호출**하는 에이전트에서 조언 응답이 장황해지며 늘던 지연·출력 토큰 비용을 호출 단위로 상한 걸어 눌러버린다 — 조언은 '짧은 판단'만 받고 본체 모델이 실행하는 분업 구조를 명시적으로 강제한다."
+      ],
+      "note": "Claude API. 호출별 max_tokens 지정.",
+      "source": "platform.claude.com",
+      "url": "https://platform.claude.com/docs/en/release-notes/overview"
+    }
+  ]
+}

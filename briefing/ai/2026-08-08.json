@@ -1,0 +1,44 @@
+{
+  "date": "2026-08-08",
+  "generatedAt": "2026-08-08T11:30:00+09:00",
+  "urgent": null,
+  "items": [
+    {
+      "cat": "tool",
+      "title": "Claude Code 세션끼리 직접 대화 — 터미널 창 간 컨텍스트 복붙 종료",
+      "lead": "Claude Code 2.1.224부터 실행 중인 세션들이 서로 메시지를 주고받는다(macOS·Linux). 창을 오가며 맥락을 복사할 필요가 없어졌다.",
+      "points": [
+        "**/list-agents로 도달 가능한 세션을 확인**하고 이름으로 지목해 메시지를 보낸다 — 한 세션이 방금 만든 변경이 다른 세션 작업에 영향을 준다고 능동적으로 알리거나, 질문을 던져 **같은 턴 안에서 답을 회수**할 수 있다. 프런트/백엔드를 다른 창에서 병렬로 돌릴 때 인터페이스 변경을 서로 자동 통지하는 오케스트레이션이 성립.",
+        "전달되는 건 **텍스트뿐**(대화 히스토리·파일·권한은 넘어가지 않음), 세션당 대기 메시지 **50개 상한**·동일 반복 드롭이 기본 내장 — 무인 다중 에이전트에서 폭주를 막는 안전장치. 권한 우회(bypass) 세션으로 들어오는 메시지는 **승인 대기**로 잡힌다.",
+        "2.1.225~226에서 **SendMessage가 다른 머신의 Remote Control 세션까지** 이름으로 지목 가능 — 로컬을 넘어 원격 세션 오케스트레이션으로 확장됐다."
+      ],
+      "note": "claude update로 2.1.226 이상 반영. macOS·Linux 전용(Windows 미지원). crossSessionInbound·dialogExpiry 설정으로 수신 정책 조절. 도구는 ListAgents·SendMessage.",
+      "source": "code.claude.com",
+      "url": "https://code.claude.com/docs/en/cross-session-messaging"
+    },
+    {
+      "cat": "update",
+      "title": "Claude Code 셀프호스트 러너 베타 — 사내 인프라에서 세션 실행",
+      "lead": "claude self-hosted-runner로 자기 머신·컨테이너를 Claude Code 세션 실행 장소로 만드는 셀프호스트 환경이 퍼블릭 베타로 열렸다(Team·Enterprise).",
+      "points": [
+        "러너를 배포해두면 **웹·모바일·데스크톱에서 시작한 세션이 사내망 안 러너에서 실행**된다 — 내부 네트워크·사내 도구·컴플라이언스 통제가 필요한 코드베이스를 클라우드로 내보내지 않고 에이전트를 돌릴 수 있다.",
+        "**고정 러너 또는 온디맨드 러너** 중 선택 — 상시 대기 풀로 지연을 없애거나, 필요할 때만 띄워 비용을 아끼는 두 운용 모드를 워크로드에 맞춰 고른다."
+      ],
+      "note": "Team·Enterprise 플랜 한정 퍼블릭 베타. 셋업 문서는 claude.com/blog 참조.",
+      "source": "claude.com",
+      "url": "https://claude.com/blog/run-claude-code-sessions-on-your-own-compute"
+    },
+    {
+      "cat": "update",
+      "title": "200 서브에이전트 상한 제거 — 장시간 세션이 에이전트 거부 안 함",
+      "lead": "세션당 서브에이전트 200개 스폰 상한이 사라졌다. 오래 도는 세션이 그 이유로 새 에이전트를 거부하지 않는다(동시성·깊이 제한은 유지).",
+      "points": [
+        "**하루 종일 도는 오케스트레이터 세션**에서 누적 스폰 수 때문에 팬아웃이 막히던 문제가 없어져, 대량 병렬 처리·반복 배치를 한 세션으로 계속 밀어붙일 수 있다.",
+        "함께: **게이트웨이 spend-limit 경고**(초과 전 알림), claude agents 실행 시 **워크스페이스 신뢰 프롬프트**, Remote Control 사진을 별도 도구 호출 없이 직접 인식 — 무인 예약작업·CI의 비용·보안 표면이 정돈됐다."
+      ],
+      "note": "2.1.226 반영. 동시성·재귀 깊이 상한은 그대로 적용.",
+      "source": "code.claude.com",
+      "url": "https://code.claude.com/docs/en/changelog"
+    }
+  ]
+}
