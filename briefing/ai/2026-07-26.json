@@ -1,56 +1,68 @@
 {
   "date": "2026-07-26",
-  "generatedAt": "2026-07-26T09:05:00+09:00",
+  "generatedAt": "2026-07-26T09:20:00+09:00",
   "urgent": null,
   "items": [
     {
-      "cat": "model",
-      "title": "Claude Opus 5 출시 — Fable 5급을 절반 값에, effort 제어 추가",
-      "lead": "Anthropic이 7/24 Opus 5를 공개: 1M 컨텍스트·128k 출력·5단계 effort·$5/$25 per MTok.",
-      "points": [
-        "**effort 토글(low/med/high~xhigh)**로 요청 단위 비용·품질을 조절 — 값싼 대량 처리와 고난도 검증형 작업을 한 모델에서 분기.",
-        "**멀티파일 마이그레이션·자기 오류 검증·브라우저 확인**을 이전 Opus가 못하던 수준으로 처리한다고 초기 사용자 보고.",
-        "**mid-conversation tool changes(beta)**로 턴 사이 도구 교체 시 prompt cache를 보존."
-      ],
-      "note": "Claude API·Claude Code·구독 플랜 즉시 사용, thinking 기본 on.",
-      "source": "anthropic.com",
-      "url": "https://www.anthropic.com/news"
-    },
-    {
       "cat": "update",
-      "title": "Claude 'Reflect' 월간 리캡 + Time and focus — 작업 패턴을 데이터로 되돌려줌",
-      "lead": "Settings > Reflect가 다룬 주제·가장 활발한 날·피크 시간과 작업 방식 관찰을 보여준다(7/9, beta).",
+      "title": "Opus 5 — 대화 도중 도구 교체 + 자체검증, 에이전트 설계가 달라진다",
+      "lead": "Opus 5의 API 신기능으로 세션 중간에 툴셋을 바꾸고 모델이 스스로 결과를 점검한다.",
       "points": [
-        "**주제별 시간·피크 시간대**를 집계해 보여줘, 어떤 유형의 작업에 Claude를 실제로 쓰는지 회고 근거로 활용.",
-        "**Time and focus**에서 휴식 리마인더·조용 시간을 설정 — 세션 리듬을 도구 차원에서 강제."
+        "**세션 중간 도구 add/remove(beta)** — 지금까진 대화 시작 시 고정한 tool 목록을 끝까지 재전송해야 했다. 이제 `mid-conversation-tool-changes-2026-07-01` 헤더로 **프롬프트 캐시를 깨지 않고** 단계별로 필요한 툴만 노출 가능. 리서치→코딩→배포처럼 국면이 바뀌는 장기 에이전트에서 컨텍스트 오염과 토큰 낭비를 줄인다.",
+        "**강화된 agentic self-verification** — 멀티스텝 작업 중 중간 산출물을 스스로 검토·수정. 리팩터·데이터 파이프라인처럼 오류가 뒤로 전파되는 작업에서 사람 검수 지점을 줄이고 실패율을 낮춘다.",
+        "**자동 안전 폴백(beta)** — 특정 요청에서 대체 모델로 자동 전환. 프로덕션 에이전트의 중단 위험을 낮추는 장치."
       ],
-      "note": "Free·Pro·Max 웹/데스크톱, 메모리 on 필요.",
-      "source": "releasebot.io",
-      "url": "https://releasebot.io/updates/anthropic/claude"
+      "note": "API 사용 시 각 beta 헤더 명시 필요. Opus 5 단가 $5/$25(1M), fast mode는 2x 단가·2.5x 속도.",
+      "source": "platform.claude.com",
+      "url": "https://platform.claude.com/docs/en/about-claude/models/whats-new-opus-5"
     },
     {
       "cat": "model",
-      "title": "Grok 4.5 — Office 연동과 500k 컨텍스트",
-      "lead": "xAI 1.5T Grok 4.5가 전 플랫폼 배포, $2/$6 per MTok(7/8).",
+      "title": "Opus 5 시각 출력 — 프롬프트만으로 인터랙티브 3D·시뮬레이션 산출",
+      "lead": "Opus 5는 도표를 넘어 상호작용 가능한 시각 산출물을 직접 생성한다.",
       "points": [
-        "**Microsoft 365·스프레드시트·슬라이드·문서** 작업을 직접 처리하는 어시스트가 grok.com·X·모바일에 탑재.",
-        "**500k 컨텍스트 + 내장 웹서치**로 긴 대화·리서치를 한 세션에 유지."
+        "**설명 대신 '작동하는 그림'** — 유체 흐름·세포 구조 같은 개념을 정적 다이어그램이 아니라 파라미터를 만질 수 있는 인터랙티브 illustration으로 뽑는다. 강의자료·기술문서에서 '글+그림' 대신 조작 가능한 데모를 첨부하는 워크플로가 가능.",
+        "**3D 생성 품질 도약** — 초기 사용자들이 특히 주목한 지점. 별도 3D 툴 없이 프롬프트만으로 시제품 수준의 3D 시각화를 얻어 아이디어 검토 루프를 단축."
       ],
-      "note": "Grok 4.6(2T) 후속이 로드맵상 임박.",
-      "source": "axios.com",
-      "url": "https://www.axios.com/2026/07/08/spacexai-grok-new-model"
+      "note": "표준 프롬프트로 사용, 별도 설정 불필요. 웹/데스크톱 Claude에서 Opus 5 선택.",
+      "source": "anthropic.com",
+      "url": "https://www.anthropic.com/news/claude-opus-5"
     },
     {
       "cat": "tool",
-      "title": "ChatGPT Work — 1,400+ 앱을 엮는 장기 에이전트",
-      "lead": "OpenAI가 GPT-5.6 구동 ChatGPT Work를 출시(7/9).",
+      "title": "Grok Automations — 예약·이메일 트리거로 무코드 백그라운드 작업",
+      "lead": "Grok이 스케줄과 수신 이메일 조건으로 작업을 자동 실행하는 Automations를 추가했다.",
       "points": [
-        "**1,400+ 앱 @멘션**으로 컨텍스트를 모아 시트·슬라이드·문서·웹앱을 완성물로 산출.",
-        "Chat·Work·Codex가 **단일 데스크톱 앱**으로 통합돼 무료 포함 전 등급에서 사용."
+        "**이메일 트리거로 인박스 자동 처리** — 발신자·수신자·제목 키워드 조건을 걸면 해당 메일이 올 때 Grok이 내용을 처리하고 **답장 초안까지 작성**. 정형 문의·알림 메일을 규칙 기반으로 선처리하는 파이프라인을 코드 없이 구성.",
+        "**스케줄 잡 + 리포트 백** — 일/주/월 단위 반복 작업(모니터링·요약·집계)을 예약하고 결과를 이메일·앱 알림으로 회신. 템플릿·실행 이력 제공."
       ],
-      "note": "Codex 흡수·Atlas 순차 종료.",
-      "source": "openai.com",
-      "url": "https://releasebot.io/updates/openai"
+      "note": "grok.com/automations에서 생성. 기본 스케줄은 전체, **이메일 트리거는 SuperGrok 구독** 필요(Gmail/Outlook OAuth 연결).",
+      "source": "x.ai",
+      "url": "https://x.ai/news/grok-automations"
+    },
+    {
+      "cat": "tool",
+      "title": "Claude Reflect — 내 AI 사용 패턴을 데이터로 회고",
+      "lead": "Claude 사용 이력을 주제·시간대·작업유형별로 집계해 보여주는 대시보드.",
+      "points": [
+        "**작업 유형 분포로 위임 재설계** — 코딩·초안·리서치·스케줄링 등 카테고리별 비중과 최다 활동 요일·피크 시간을 확인. 어디에 시간을 쏟는지 보고 자동화·스킬로 넘길 반복 작업을 식별하는 근거로 쓴다.",
+        "**기간 선택 회고** — 1/3/6/12개월 단위로 주제 변화를 추적, 관심사·업무 흐름의 이동을 점검."
+      ],
+      "note": "설정 → Reflect(웹·데스크톱). **Memory 활성화 필수**, beta라 미노출 계정 있음.",
+      "source": "anthropic.com",
+      "url": "https://www.anthropic.com/news/reflect-with-claude"
+    },
+    {
+      "cat": "tool",
+      "title": "OpenAI Voice in Chat + Codex 데스크톱 — 음성으로 에이전트 오케스트레이션",
+      "lead": "GPT-Live 기반 실시간 음성이 채팅·업무·Codex에 들어왔다.",
+      "points": [
+        "**말로 백그라운드 작업 지휘** — 데스크톱에서 음성으로 Codex 작업을 띄우고 여러 에이전트를 조율하며, 진행 중인 작업을 손 떼지 않고 계속 굴린다. 코딩·리서치를 병렬로 돌리며 상태만 음성으로 점검하는 흐름.",
+        "**끊고 되묻는 실시간 대화** — 중간 개입·후속질문·웹검색을 지원하는 GPT-Live로, 브레인스토밍을 타이핑 없이 진행."
+      ],
+      "note": "Desktop Chat 및 지원 웹·iOS·Android. Enterprise/EDU 워크스페이스부터 롤아웃.",
+      "source": "help.openai.com",
+      "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
     }
   ]
 }
