@@ -1,5 +1,6 @@
 {
   "date": "2026-08-10",
+<<<<<<< HEAD
   "generatedAt": "2026-08-10T09:39:40+09:00",
   "urgent": null,
   "items": [
@@ -62,8 +63,69 @@
         "**Claude Code 주간 사용량 50% 부스트가 8/19까지** 살아 있으므로, 미뤄둔 대형 리팩터링·마이그레이션 같은 토큰 소모 큰 작업을 이 창구 안에 몰아 처리하면 이득."
       ],
       "note": "Sonnet 5: 8/31 프로모가 → 9/1 표준가. Code 부스트: 8/19까지. 인상폭·잔여 한도는 공식 가격표/대시보드에서 확인.",
+=======
+  "generatedAt": "2026-08-10T09:45:00+09:00",
+  "urgent": null,
+  "items": [
+    {
+      "cat": "update",
+      "title": "Claude Cowork, 웹·모바일 확장 — 세션·파일이 기기 간 동기화",
+      "lead": "Anthropic이 데스크톱 전용이던 Cowork를 웹·모바일로 확장했다. 세션 상태와 생성 파일이 Claude 계정에 저장돼 기기 간 동기화되며, 원격 실행 세션은 베타로 열렸다.",
+      "points": [
+        "**데스크톱에서 시작한 작업을 폰·웹에서 그대로 이어받는다** — 세션과 파일이 계정에 저장되므로, 이동 중엔 승인·후속 지시만 넣고 무거운 실행은 원격 세션(베타)에 맡겨 계속 돌린다. '내 컴퓨터를 켜둬야만 진행'되던 제약이 사라짐.",
+        "**예약작업·장기 에이전트 실행을 로컬 상시가동 없이 운용** — 스케줄 루틴이나 긴 실행을 원격에 넘기고 결과는 어느 기기서든 확인. 이 AI 브리핑 같은 자동화도 데스크톱 의존이 줄어든다."
+      ],
+      "note": "Max 티어부터 베타 접근. 원격 세션은 베타 단계. 세션·파일은 Claude 계정에 저장·동기화.",
+>>>>>>> 299ea79 (ai-briefing: update 2026-08-10)
       "source": "anthropic.com",
       "url": "https://www.anthropic.com/news"
+    },
+    {
+      "cat": "tool",
+      "title": "Claude Code 자가호스팅 환경 퍼블릭 베타 — 세션을 사내 인프라에서 실행",
+      "lead": "8/6 Anthropic이 Claude Code의 클라우드 세션을 조직 자체 네트워크 안에서 돌리는 자가호스팅 환경을 퍼블릭 베타로 열었다.",
+      "points": [
+        "**리포 체크아웃·빌드 산출물·시크릿·세션 생성 파일이 조직이 프로비저닝한 머신 밖으로 나가지 않는다** — 내부 서비스·툴체인·보안통제 바로 옆에서 에이전트가 실행되므로, 규제·보안 때문에 에이전트를 못 붙이던 사내 코드베이스에 직접 투입할 수 있게 됨.",
+        "웹·모바일·터미널·예약 루틴 중 어디서 시작하든 러너가 사내에서 돈다. 내 머신을 이어받는 **Remote Control과 달리 팀 공용 인프라**라, 세션을 시작한 사람이 아니라 조직 누구나 같은 환경을 공유한다."
+      ],
+      "note": "Claude Team·Enterprise 전용, 기본 off, ZDR 조직 제외. 러너 이미지·업데이트·오케스트레이터(온디맨드) 운영은 플랫폼/DevEx팀 몫. 설정은 code.claude.com 문서.",
+      "source": "claude.com",
+      "url": "https://claude.com/blog/run-claude-code-sessions-on-your-own-compute"
+    },
+    {
+      "cat": "tool",
+      "title": "Grok Imagine Image 2.0 정식 — 영역 지정 편집·배경 제거·다중 레퍼런스",
+      "lead": "8/7 xAI가 이미지 모델 Imagine Image 2.0을 grok.com/imagine과 iOS·Android에 Quality 모드로 정식 출시했다(이미지 아레나 2위).",
+      "points": [
+        "**매직 완드로 가리킨 영역만 편집**하고 나머지 프레임은 건드리지 않는다 — 세그멘테이션은 단일 오브젝트의 재질 단위까지 정밀 선택해 색·질감을 교체. 전체 재생성 없이 국소 수정이 되므로 시안 반복 속도가 크게 붙는다.",
+        "**최대 5장 레퍼런스 입력**으로 여러 피사체를 한 번에 합성 — 수작업 컷&페이스트 없이 컴포지팅. 배경 제거는 subject를 투명 캔버스로 추출해 다른 작업에 바로 재사용."
+      ],
+      "note": "grok.com/imagine·앱에서 Quality 모드로 사용. API 단가 표준 **$0.02/장**, Quality **$0.05/장**(1K·2K 동일). 무료 체험 제공.",
+      "source": "x.ai",
+      "url": "https://x.ai/news/grok-imagine-image-2"
+    },
+    {
+      "cat": "model",
+      "title": "Grok Voice, Speech-to-Speech 2.0 — grok-voice-latest 자동 라우팅",
+      "lead": "8/5 xAI가 grok-voice-think-fast-2.0(Speech to Speech)을 출시하고 grok-voice-latest 별칭을 이 모델로 라우팅했다.",
+      "points": [
+        "**음성→음성을 직접 처리**해 텍스트 왕복 없이 저지연 대화형 음성 에이전트를 구성할 수 있다 — 통합 코드에서 grok-voice-latest만 물어두면 통합을 손대지 않아도 최신 음성 모델로 자동 갱신된다."
+      ],
+      "note": "grok-voice-latest 별칭 경로. Grok 앱·API에서 사용.",
+      "source": "x.ai",
+      "url": "https://releasebot.io/updates/xai"
+    },
+    {
+      "cat": "update",
+      "title": "ChatGPT GPT-5.6 전면 롤아웃 + 음성에 파일·Projects",
+      "lead": "이번 주 OpenAI가 GPT-5.6(추론 깊이 슬라이더·Think 버튼·무제한 텍스트)을 전면 롤아웃하고, 음성 대화에 파일 업로드와 Projects를 추가했다.",
+      "points": [
+        "**질문마다 추론 깊이를 슬라이더로 조절**한다 — 모델을 갈아끼우지 않고 한 대화에서 일상 답변은 빠르게, 리서치·코딩·의사결정은 확장 추론으로 국면별 튜닝. 내부 테스트 사실오류 **Luna 62%·Sol 68% 감소**(5.5-Instant 대비).",
+        "**GPT-Live 음성 대화 중 파일 업로드·Projects 참조** — 음성으로 문서를 올려 내용 분석·질문하고, Projects의 소스·지침을 음성에서 그대로 활용. 10k자 넘게 붙여넣으면 자동으로 첨부로 전환돼 컨텍스트 낭비를 막는다."
+      ],
+      "note": "Plus·Pro 슬라이더(웹·모바일·데스크톱), Free·Go는 Luna 무제한 텍스트(음성·이미지는 별도 한도). 주중 순차 롤아웃. Atlas 8/9 종료, DALL·E GPT 8/30 폐기.",
+      "source": "openai.com",
+      "url": "https://openai.com/products/release-notes/"
     }
   ]
 }
