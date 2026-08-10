@@ -1,67 +1,79 @@
 {
   "date": "2026-08-10",
-  "generatedAt": "2026-08-10T09:42:40+09:00",
+  "generatedAt": "2026-08-10T09:42:55+09:00",
   "urgent": null,
   "items": [
     {
-      "cat": "tool",
-      "title": "Claude Code 셀프호스트 환경 공개 베타 — 세션을 사내 인프라에서 실행",
-      "lead": "Claude Code의 클라우드 세션을 Anthropic 서버가 아니라 우리 네트워크 안 컴퓨트에서 돌리는 self-hosted environments가 Team·Enterprise 대상 공개 베타로 열렸다.",
+      "cat": "update",
+      "title": "Claude Cowork, 모바일·웹으로 확장 — 세션·파일이 기기를 따라옴",
+      "lead": "데스크톱 전용이던 Cowork가 모바일·웹으로 확장돼 작업 세션·파일·프로젝트가 기기 간에 이어진다.",
       "points": [
-        "세션이 **사내 네트워크 안**에서 실행돼 내부 서비스·툴체인·시크릿 옆에 붙는다 — 레포 체크아웃·빌드 산출물·수정 파일이 전부 우리 머신에 머문다. 방화벽 뒤 내부 API·DB에 접근하는 에이전트 작업, 외부 반출이 막힌 코드베이스를 Claude Code로 돌리는 게 **처음으로 가능**해진다.",
-        "러너 1개가 **한 번에 한 사용자**만 담당(첫 세션 클레임 시 계정에 락)해 체크아웃 코드가 사용자 간 섞이지 않는다. 러너를 직접 상주시키거나 **오토스케일 오케스트레이터**로 큐에 따라 자동 기동 — 웹·CLI·IDE 등 모든 진입점이 같은 환경으로 라우팅돼 한 번 설정하면 팀 전체가 공유한다."
+        "데스크톱에서 걸어둔 **백그라운드 작업·예약 작업**을 외출 중 폰에서 확인하고, 자리 비운 사이 진행된 파일 편집을 **모바일 승인(approvals)**으로 통과시켜 워크플로가 끊기지 않게 만든다.",
+        "채팅·프로젝트·파일이 **계정 단위로 동기화**돼, 집 데스크톱에서 만들던 산출물을 브라우저에서 그대로 이어 작업할 수 있다."
       ],
-      "note": "Team·Enterprise 플랜. owner/admin이 cloud-environments 관리 페이지에서 활성화(웹용 Claude Code가 켜져 있어야 함). 고정 러너 또는 온디맨드 러너 지원.",
-      "source": "claude.com",
-      "url": "https://claude.com/blog/run-claude-code-sessions-on-your-own-compute"
+      "note": "Claude 앱 모바일/웹에서 사용. 순차 롤아웃.",
+      "source": "anthropic.com",
+      "url": "https://www.anthropic.com/news"
     },
     {
-      "cat": "update",
-      "title": "MCP 2026-07-28 스펙 Claude 도입 — 상태 없는 코어 + Apps(대화 내 UI)",
-      "lead": "7/28 확정된 MCP 2026-07-28 스펙이 Claude에 들어오며, 프로토콜이 상태 유지형에서 요청/응답 stateless 모델로 바뀌고 Apps·Tasks 확장이 정식 버전 체계로 승격됐다.",
+      "cat": "tool",
+      "title": "Claude Code — 게이트웨이 지출 한도·워크스페이스 신뢰 프롬프트",
+      "lead": "Claude Code가 비용 통제와 에이전트 실행 안전장치를 강화했다.",
       "points": [
-        "**MCP Apps**로 커넥터가 대화 안에 인터랙티브 UI(샌드박스 iframe·HTML)를 직접 렌더한다 — 탭 전환 없이 커넥터가 뭘 하는지 보며 인라인으로 조작. tools/call과 **동일한 감사·동의 경로**를 타므로 승인 흐름 재설계 없이 UI형 커넥터를 붙일 수 있다.",
-        "stateless 코어 덕에 MCP 서버를 **서버리스·엣지**에 배포 가능 — 상시 세션을 물고 있을 필요가 없어 커넥터 운영 비용·구조가 단순해진다. **Tasks 확장**은 장기 실행 작업을 코어 변경 없이 표준화하고, enterprise-managed auth는 IdP로 조직 전체 커넥터를 zero-touch 프로비저닝한다."
+        "**gateway spend-limit** 연동으로 사용량 경고를 한도 기반으로 받는다 — 팀 단위 토큰 폭주를 한도 초과 전에 끊는다.",
+        "에이전트가 낯선 디렉터리에서 돌 때 **workspace trust 프롬프트**로 명시 승인을 요구하고, Remote Control 메시지·사진 처리도 개선됐다."
       ],
-      "note": "OAuth 2.1·OIDC 강화. 커넥터 디렉터리 950+개. 자체 MCP 서버를 만든다면 stateless 재설계·Apps UI 선언을 지금 검토할 시점.",
-      "source": "claude.com",
-      "url": "https://claude.com/blog/bringing-mcp-2026-07-28-to-claude"
+      "note": "Claude Code 최신 버전 업데이트 시 반영.",
+      "source": "releasebot.io",
+      "url": "https://releasebot.io/updates/anthropic/claude-code"
+    },
+    {
+      "cat": "tool",
+      "title": "Grok Imagine Image 2.0 — 최대 5장 멀티레퍼런스 편집·스마트 리사이즈",
+      "lead": "xAI가 8/7 Image 2.0을 Quality Mode로 내놓으며 이미지 생성을 '실제 업무용 편집' 도구로 전환했다.",
+      "points": [
+        "한 번의 생성에 **레퍼런스 이미지 5장**까지 넣어 제품컷·헤드샷·합성을 사전 편집 없이 자연어 지시로 결합한다(예: 인물 조명은 유지하고 배경만 교체).",
+        "**magic wand 영역 편집·세그멘테이션·배경 제거**에 **9종 화면비 스마트 리사이즈**, 제품/이커머스/이모지/굿즈 **템플릿**까지 붙어 텍스트·타이포 렌더링이 designer급으로 올라왔다."
+      ],
+      "note": "grok.com/imagine 및 Grok iOS/Android의 Quality Mode. API는 'coming soon'(표준 $0.02·quality $0.05/장은 예고치, 정식가 미정).",
+      "source": "x.ai",
+      "url": "https://x.ai/news"
     },
     {
       "cat": "model",
-      "title": "Grok 4.5 — Cursor 세션으로 학습한 코딩·에이전트 모델, $2/$6",
-      "lead": "SpaceXAI의 코딩·에이전트 우선 모델 Grok 4.5가 Cursor 전 플랜과 콘솔에서 쓸 수 있고, 정적 레포가 아니라 실제 개발자-에이전트 상호작용 트레이스로 학습됐다.",
+      "title": "Grok 4.6 출시 — 1.5T, 추론·지시이행 후처리 대폭 강화",
+      "lead": "xAI가 8/7 Grok 4.6을 공개, 파라미터는 4.5와 같은 1.5T를 유지하고 개선을 전부 post-training에 쏟았다.",
       "points": [
-        "디버깅 트레이스·점진적 편집·다단계 에이전트 세션에서 학습돼 **실패 재시도·후속 프롬프트·멀티파일 추론**을 잘 다룬다 — SWE Bench Pro에서 Opus 4.8(max) 대비 **출력 토큰 약 4.2배 적게** 생성해 에이전트 루프의 실질 비용을 낮춘다.",
-        "입력 **$2 / 출력 $6 / 캐시 입력 $0.50** (M토큰), **500K 컨텍스트**, 80 TPS. 대규모 리팩터·반복 에이전트 작업의 기본 모델을 비용 기준으로 재선택할 만한 지점 — Cursor 안에서 바로 붙여 A/B 해볼 수 있다."
+        "**SFT·RL 후처리 집중**으로 추론·instruction following·응답 품질을 끌어올려, 동일 프롬프트에서 지시 준수와 일관성이 4.5 대비 나아졌다.",
+        "**SuperGrok 소비자 티어·xAI API 콘솔·Grok Build**에서 바로 쓸 수 있다."
       ],
-      "note": "Grok Build 기본, Cursor 전 플랜, SpaceXAI 콘솔에서 제공.",
-      "source": "marktechpost.com",
-      "url": "https://www.marktechpost.com/2026/07/08/spacexai-releases-grok-4-5/"
-    },
-    {
-      "cat": "market",
-      "title": "Claude API 실무 변화 — Sonnet 5 프로모가 8/31 종료 + 토크나이저·거절 과금",
-      "lead": "Sonnet 5 프로모션 단가가 8/31 종료(9/1 표준가)되는 것과 함께, 실제 청구에 영향을 주는 토크나이저·과금 규칙 변화가 겹쳐 있다.",
-      "points": [
-        "Sonnet 5는 **새 토크나이저로 같은 텍스트에 약 30% 더 많은 토큰**을 만든다 — 표면 단가만 보지 말고 토큰 수 증가까지 얹어 실비용을 다시 계산해야 한다. 대량 파이프라인이면 8월 안에 배치 API·프롬프트 캐싱·모델 믹스(단순 작업은 하위 티어로 분리)를 재점검할 시점.",
-        "API에서 **stop_reason: \"refusal\"로 출력 없이 끝난 요청은 이제 과금되지 않는다** — 거절이 잦은 워크로드의 낭비 비용이 사라진다. 안전 필터에 자주 걸리는 파이프라인이라면 재시도·폴백 로직을 이 전제로 단순화할 수 있다."
-      ],
-      "note": "8/31까지 프로모가, 9/1 표준가. Sonnet 5는 1M 컨텍스트·최대 출력 128k. 인상폭은 공식 가격표 확인.",
-      "source": "platform.claude.com",
-      "url": "https://platform.claude.com/docs/en/release-notes/overview"
+      "note": "컨텍스트 창·벤치마크·API 식별자·모델카드는 launch 시점 미공개(4.5 기준 500K 토큰).",
+      "source": "x.ai",
+      "url": "https://x.ai/news"
     },
     {
       "cat": "update",
-      "title": "ChatGPT GPT-5.6 — 추론 슬라이더·Think 버튼·무제한 텍스트",
-      "lead": "OpenAI가 Plus·Pro에 추론 깊이 조절과 Think 버튼을, Free·Go에 GPT-5.6 Luna 무제한 텍스트를 롤아웃하며 Instant/추론 분기를 단일 경험으로 통합했다.",
+      "title": "ChatGPT — 추론 깊이 슬라이더·Think 버튼, 무료도 무제한 텍스트",
+      "lead": "OpenAI가 GPT-5.6을 전면 확대하며 응답별 '연산량'을 사용자가 직접 조절하게 했다.",
       "points": [
-        "질문마다 **추론 예산을 손으로 조절**한다 — 일상 답변은 빠르게, 기획·리서치·코딩은 깊이를 올려 확장 추론으로. 모델을 갈아끼우지 않고 한 대화에서 국면별 '속도 vs 깊이'를 튜닝하는 방식이 표준이 된다.",
-        "내부 테스트 사실오류 **Luna 62%·Sol 68% 감소**(5.5-Instant 대비) — 사실성 민감 작업의 기본기가 올라감. Free·Go는 텍스트 무제한이라 일상 초안·정리 작업을 한도 걱정 없이 돌릴 수 있다."
+        "유료(Plus·Pro)는 **처리 파워 슬라이더**로 빠른 답↔고심도 추론을 응답마다 고른다 — 같은 GPT-5.6 Sol이 속도형·추론형을 겸해, 간단 질의는 저비용·복잡 과제는 슬라이더를 올려 처리한다.",
+        "무료는 **GPT-5.6 Luna 기본 + 무제한 텍스트**에 **Think 버튼**으로 필요할 때만 심층 추론을 호출한다(사실 오류 Luna 62%·Sol 68% 감소)."
       ],
-      "note": "Plus·Pro는 웹·모바일·데스크톱 슬라이더. Free·Go는 Luna 무제한 텍스트(음성·이미지는 별도 한도). 주중 순차 롤아웃.",
-      "source": "techcrunch.com",
-      "url": "https://techcrunch.com/2026/08/06/openai-brings-unlimited-chatgpt-text-chats-to-free-users/"
+      "note": "8/30 DALL·E GPT 종료 → ChatGPT Images로 이전 권장.",
+      "source": "openai.com",
+      "url": "https://openai.com/products/release-notes/"
+    },
+    {
+      "cat": "market",
+      "title": "Claude 가격·사용량 — Sonnet 5 프로모 8/31 종료, Code 주간 50% 부스트 8/19까지 연장",
+      "lead": "Anthropic이 프로모션 종료일과 사용량 부스트 연장을 확정했다.",
+      "points": [
+        "**Sonnet 5 프로모 요금 8/31 종료**·9/1부터 표준가 — 월간 대량 호출 파이프라인이라면 8월 안에 비용 구조를 재점검할 시점이다.",
+        "Claude Code 구독자 **주간 사용량 50% 부스트가 8/19까지 연장** — 무거운 에이전트 작업을 이 기간에 몰아 처리하면 이득이다."
+      ],
+      "note": "claude.com 공지·릴리스노트 기준.",
+      "source": "claude.com",
+      "url": "https://www.anthropic.com/news"
     }
   ]
 }
