@@ -1,0 +1,67 @@
+{
+  "date": "2026-08-11",
+  "generatedAt": "2026-08-11T09:34:29+09:00",
+  "urgent": null,
+  "items": [
+    {
+      "cat": "tool",
+      "title": "Claude Code, Focus View + 서브에이전트 스트리밍",
+      "lead": "v2.1.226 계열이 화면 정리와 병렬 에이전트 관찰 방식을 손봤다.",
+      "points": [
+        "**Ctrl+Alt+F**(Focus View)로 도구 실행 로그를 턴별 요약 뒤로 접고 실행 중인 도구만 라이브로 남긴다 — 긴 리팩터·멀티파일 편집에서 **스크롤 지옥 없이** 모델의 판단 흐름만 따라가며 리뷰.",
+        "**서브에이전트 텍스트 스트리밍**이 켜져, Agent 툴로 띄운 하위 작업(버그 수정·PR 리뷰·플래키 테스트 조사)의 진행을 완료까지 기다리지 않고 실시간으로 읽으며 **중간에 방향을 튼다**."
+      ],
+      "note": "터미널 성능·백그라운드 에이전트 안정성·프롬프트 캐싱도 함께 강화. v2.1.225는 게이트웨이 spend-limit 경고와 미신뢰 디렉터리 trust 프롬프트 추가. `claude update`로 반영.",
+      "source": "code.claude.com",
+      "url": "https://code.claude.com/docs/en/changelog"
+    },
+    {
+      "cat": "update",
+      "title": "Claude Cowork, 웹·모바일로 확장 (클라우드 세션)",
+      "lead": "Cowork 세션이 로컬 대신 Anthropic 서버에서 돌며 계정에 붙어 기기를 따라온다.",
+      "points": [
+        "노트북에서 시작한 파일·캘린더·메일 작업이 **노트북을 닫아도 클라우드에서 계속** 실행 — 이동 중 폰으로 진행을 보고, 권한·결정이 필요한 순간에만 개입.",
+        "세션과 산출 파일이 **Claude 계정에 저장**돼 데스크톱↔웹↔모바일에서 같은 세션을 이어간다. 장시간 도는 자동화(예약작업 포함)를 기기 전원에서 분리."
+      ],
+      "note": "Max 사용자부터 베타 롤아웃(7/7 발표) 후 순차 확대. 원격 클라우드 실행은 베타.",
+      "source": "claude.com",
+      "url": "https://claude.com/blog/cowork-web-mobile"
+    },
+    {
+      "cat": "model",
+      "title": "xAI Grok Voice Think Fast 2.0 (speech-to-speech)",
+      "lead": "xAI 최상위 음성 모델이 Speech to Speech로 공개, grok-voice-latest가 8/5부터 자동 라우팅.",
+      "points": [
+        "**time-to-first-audio 1.25s→0.70s**로 떨어져 실시간 음성 에이전트의 응답 지연이 체감상 사라진다 — 전화 응대·라이브 통역형 봇을 **끊김 없이** 구성.",
+        "음성 추론·**툴 호출 신뢰도**가 1.0 대비 1.4배(스피치-투-스피치 벤치 75.7%→82.9%). 음성만으로 함수 호출·검색을 태우는 에이전트가 실사용 수준."
+      ],
+      "note": "$0.08/분. 1.0을 유지하려면 grok-voice-think-fast-1.0으로 핀 고정. docs.x.ai 릴리스노트.",
+      "source": "x.ai",
+      "url": "https://x.ai/news/grok-voice-think-fast-2"
+    },
+    {
+      "cat": "update",
+      "title": "ChatGPT, GPT-5.6 Sol + effort 슬라이더",
+      "lead": "Instant/Thinking 이원화를 없애고 단일 모델 + 사고량 슬라이더로 통합(8/6).",
+      "points": [
+        "Plus/Pro는 답변마다 **슬라이더로 사고량을 조절** — 일상 질문은 낮게, 기획·리서치·코딩·의사결정은 높여 톤 변화 없이 **깊이만** 끌어올린다.",
+        "모델 전환 없이 한 대화 안에서 구간별로 effort를 바꿔 쓰므로 '어느 모델 고를까'를 **작업 단위 다이얼**로 대체."
+      ],
+      "note": "웹·모바일·데스크톱. Free/Go는 새 기본 모델 + 무제한 텍스트 챗, 어려운 질문용 Think 버튼.",
+      "source": "openai.com",
+      "url": "https://openai.com/index/improving-gpt-5-6-sol-in-chatgpt/"
+    },
+    {
+      "cat": "tool",
+      "title": "ChatGPT Voice, 파일 업로드·Projects 지원",
+      "lead": "음성 대화 중에도 파일 분석과 Projects 컨텍스트 참조가 가능해졌다.",
+      "points": [
+        "음성으로 대화하며 **문서·이미지를 올려 그 자리에서 분석** — 타이핑 없이 '이 PDF 요약해줘' 식 핸즈프리 워크플로.",
+        "Voice가 **Projects의 지침·소스·과거 챗**을 참조해 프로젝트 맥락을 유지한 음성 브레인스토밍/리뷰가 가능. GPT-Live도 동일 지원."
+      ],
+      "note": "ChatGPT 릴리스노트 기준.",
+      "source": "help.openai.com",
+      "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+    }
+  ]
+}
