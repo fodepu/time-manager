@@ -1,0 +1,58 @@
+{
+  "date": "2026-08-12",
+  "generatedAt": "2026-08-12T09:38:46+09:00",
+  "urgent": {
+    "text": "Claude Code auto mode가 8/14 Pro·Max·Team 신규 세션 기본값 — 자동 실행을 원치 않으면 그 전에 managed settings의 defaultMode를 고정하거나 disableAutoMode로 꺼둘 것.",
+    "source": "claude.com"
+  },
+  "items": [
+    {
+      "cat": "update",
+      "title": "Claude Code, 8/14부터 auto mode가 기본값 — 단계별 승인 프롬프트가 사라진다",
+      "lead": "8/14부터 Pro·Max·Team 신규 세션은 매 도구 호출마다 'y'를 받던 방식 대신 auto mode로 시작한다.",
+      "points": [
+        "**작업 흐름이 바뀐다**: 매 호출을 사람이 승인하던 것을 분류기가 대신 검사해 **비가역·파괴적·환경 밖** 동작만 차단하고 나머지는 그대로 진행한다. 막히면 Claude가 더 안전한 경로를 찾거나 그때만 허가를 묻는다 — 긴 리팩터·테스트·마이그레이션 루프에서 승인창 연타가 없어진다.",
+        "**근거가 기존 전제를 뒤집는다**: 유료 테스터 1,053명 연구에서 auto mode가 유해 동작의 **89%**를 잡은 반면 수동 리뷰는 **13.6%**에 그쳤고, 사람은 프롬프트의 **97%**를 습관적으로 승인했다. '내가 검토하니 더 안전'이라는 가정을 데이터로 부정하는 셈.",
+        "**제어권은 그대로**: 세션 중 **Shift+Tab**으로 default→acceptEdits→plan 순환, 관리자는 managed settings의 **defaultMode**로 조직 기본값을 고정하거나 **disableAutoMode: \"disable\"**로 완전히 끌 수 있다."
+      ],
+      "note": "8/14 Pro·Max·Team 신규 세션부터. Enterprise·API·클라우드 플랫폼은 한 달 내 동일 적용 예정. 데스크톱·VS Code 확장은 설정에서 auto mode를 먼저 켠 뒤 세션 드롭다운에서 선택.",
+      "source": "claude.com",
+      "url": "https://claude.com/blog/auto-mode-default-in-claude-code"
+    },
+    {
+      "cat": "tool",
+      "title": "xAI Grok Bot 퍼블릭 베타 — 전용 클라우드 PC를 가진 상시 에이전트 팀",
+      "lead": "질문에 답하는 챗봇이 아니라, 각자 클라우드 컴퓨터를 받고 기존 도구에 로그인해 다단계 업무를 끝내는 에이전트다.",
+      "points": [
+        "**API·MCP 커넥터가 없는 앱·웹사이트도** Bot이 실제 화면을 조작해 처리한다 — 커넥터 미지원 사내 툴이나 레거시 SaaS까지 자동화 대상에 넣을 수 있고, 사람에겐 **승인이 필요할 때만** 돌아온다.",
+        "실제 용례: 세일즈 Bot이 통화 전사로 **CRM 갱신·후속 메일 초안**, 옵스 Bot이 Gmail 인보이스 처리·신규 입사자 온보딩, 엔지니어링 Bot이 UI에서 **버그 재현→티켓 생성→디버깅 Bot에 인계**. 사람 없이 도구 사이를 오가는 워크플로를 통째로 위임하는 형태."
+      ],
+      "note": "SuperGrok Heavy·Cursor Ultra·Cursor Teams Premium 구독자 대상, 데스크톱·iOS. 8/11 퍼블릭 베타(제한 접근)로 시작, 이번 주 Grok 4.6과 함께 확대 예정.",
+      "source": "x.ai",
+      "url": "https://x.ai/news/introducing-grok-bot"
+    },
+    {
+      "cat": "headline",
+      "title": "OpenAI, ChatGPT의 DALL·E GPT를 8/30 종료 — gpt-image로 이전",
+      "lead": "구형 모델 은퇴 물결 속에서 ChatGPT 안 DALL·E GPT 인터페이스가 8/30 내려간다.",
+      "points": [
+        "이미지 생성 경로가 **DALL·E → ChatGPT Images(gpt-image)**로 완전히 넘어간다. DALL·E GPT로 만든 이미지·대화가 필요하면 **8/30 전에 저장**하고, 그 GPT를 호출하던 자동화·북마크는 새 이미지 엔드포인트로 교체해야 한다.",
+        "API의 DALL·E 스냅샷은 앞서 이미 폐기됐고 **gpt-5.2-chat-latest** 등 다른 스냅샷도 8월 은퇴가 진행 중 — 고정 모델 ID를 박아둔 스크립트·통합은 지금 점검해 두는 편이 안전하다."
+      ],
+      "note": "ChatGPT 내 DALL·E GPT 한정 종료(8/30). 대체는 gpt-image 계열.",
+      "source": "openai.com",
+      "url": "https://developers.openai.com/api/docs/deprecations"
+    },
+    {
+      "cat": "tool",
+      "title": "OpenAI GPT-5.6-Cyber + Daybreak Blue/Red — 승인된 방어자용 보안 프론티어 모델",
+      "lead": "Daybreak 사이버보안 이니셔티브가 확장되며 보안 작업 전용 모델과 방어·모의공격용 접근이 열렸다.",
+      "points": [
+        "**GPT-5.6-Cyber**는 취약점 연구·코드 리뷰·인시던트 대응·보안 테스트에 특화된 모델로, 승인된 방어자는 **Daybreak Blue/Red**를 통해 프론티어 모델을 실제 방어(blue)·모의공격(red) 워크플로에 직접 붙일 수 있다 — 범용 모델로 우회하던 보안 자동화를 전용 모델로 대체하는 경로."
+      ],
+      "note": "정식 보안 작업(authorized security work) 대상 승인제 접근으로, 일반 소비자용 기능은 아님.",
+      "source": "openai.com",
+      "url": "https://openai.com/news/"
+    }
+  ]
+}
