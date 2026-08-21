@@ -1,0 +1,43 @@
+{
+  "date": "2026-08-20",
+  "generatedAt": "2026-08-21T09:30:37+09:00",
+  "urgent": null,
+  "items": [
+    {
+      "cat": "tool",
+      "title": "Grok Bot — '실제 업무를 맡기는' AI 팀원",
+      "lead": "xAI가 AI 팀원 범주에 진입한 Grok Bot을 베타 공개 — 각 봇에 전용 클라우드 컴퓨터를 붙여 실제 작업을 위임하는 형태.",
+      "points": [
+        "봇마다 **전용 클라우드 컴퓨터**가 할당돼, 단발 답변이 아니라 파일·툴을 다루는 **장시간 실행 작업을 통째로 위임**할 수 있다 — 리서치 수집→정리, 반복 데이터 처리 같은 '맡겨두고 결과만 받는' 워크플로에 맞는다.",
+        "X·Grok 생태계에 붙어 있어 별도 인프라 없이 팀원처럼 태스크를 던지고 진행을 확인하는 사용 패턴이 가능."
+      ],
+      "note": "8/11 베타. AI 팀원 카테고리 초기 단계이므로, 검증 가능한 산출물(문서·표)로 결과를 받는 태스크부터 붙여보는 게 현실적.",
+      "source": "digitalapplied.com",
+      "url": "https://www.digitalapplied.com/blog/grok-bot-ai-teammates-launch-cloud-computer-2026"
+    },
+    {
+      "cat": "update",
+      "title": "GPT-5.6 Sol 사실 정확도 개선 + Luna 무료 개방",
+      "lead": "OpenAI가 GPT-5.6 Sol을 사실 신뢰도·집중도 위주로 업데이트하고, 무료·Go 사용자에게 새 기본 모델과 GPT-5.6 Luna 접근을 확대.",
+      "points": [
+        "Sol이 **사실 관계에 더 안정적이고 답변이 더 좁게 집중** → 사양·수치를 다루는 실무 질의에서 재검증 왕복을 줄일 수 있다.",
+        "무료·Go 티어의 일상 대화 기본 모델이 교체되고 **Luna 접근이 열려**, 유료 없이도 더 나은 기본 응답 품질을 팀 전반에 깔 수 있다."
+      ],
+      "note": "help.openai.com 릴리스노트 기준 순차 롤아웃. 정확도 개선이라도 사양·가격 등은 여전히 원문 교차확인 권장.",
+      "source": "openai.com",
+      "url": "https://openai.com/index/improving-gpt-5-6-sol-in-chatgpt/"
+    },
+    {
+      "cat": "market",
+      "title": "Anthropic, AI 출력에 워터마크 내장",
+      "lead": "8/2 이후 출시된 Claude 제품군의 AI 생성물에 EU AI Act 대응용 기계판독 표식이 삽입된다.",
+      "points": [
+        "8/2 이후 산출물에 **기계판독 워터마크**가 들어가므로, 규제·컴플라이언스 문서 파이프라인에서 'AI 생성 표식' 요건을 별도 도구 없이 충족할 수 있다.",
+        "구형 모델은 **12/2까지** 순차 적용 예정 — 표식 유무가 모델·출시시점에 따라 갈리니, 검증 워크플로를 짤 땐 이 경계를 전제로."
+      ],
+      "note": "정책성 변화지만 EU 대상 배포·감사 대상 조직엔 실무 요건. 세부는 원문 확인.",
+      "source": "artificiallawyer.com",
+      "url": "https://www.artificiallawyer.com/2026/08/13/anthropic-will-embed-watermarks-in-ai-outputs/"
+    }
+  ]
+}

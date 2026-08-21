@@ -1,0 +1,46 @@
+{
+  "date": "2026-08-19",
+  "generatedAt": "2026-08-21T09:30:37+09:00",
+  "urgent": {
+    "text": "OpenAI o3가 8/26 ChatGPT에서 은퇴(90일 일몰 종료), 공식 DALL·E GPT는 8/30 종료. o3·DALL·E에 의존하는 프롬프트·자동화는 이번 주 안에 후속 모델로 이관할 것.",
+    "source": "help.openai.com"
+  },
+  "items": [
+    {
+      "cat": "update",
+      "title": "Claude Academy — 위임·검증 중심 실무 학습 허브",
+      "lead": "Anthropic이 코스·튜토리얼·배지·개인화 추천을 갖춘 학습 허브 Claude Academy를 공개.",
+      "points": [
+        "'배우기'보다 **위임·검증 워크플로**에 초점 — Claude에게 무엇을 맡기고 결과를 어떻게 검증하는지를 체계적으로 정리해, 팀 온보딩·사내 AI 활용 가이드의 표준 커리큘럼으로 쓸 수 있다.",
+        "배지·개인화 추천으로 개인별 숙련 경로를 추적 가능 → 사내 AI 리터러시 교육을 임의 자료 대신 구조화된 트랙으로 대체."
+      ],
+      "note": "claude.com 공지 기준. 실무 팀 교육 자료를 새로 만들기 전에 이 트랙을 베이스로 삼는 게 효율적.",
+      "source": "claude.com",
+      "url": "https://claude.com/blog-category/announcements"
+    },
+    {
+      "cat": "headline",
+      "title": "OpenAI o3·DALL·E GPT 일몰",
+      "lead": "o3(8/26)·공식 DALL·E GPT(8/30)가 ChatGPT에서 순차 종료된다.",
+      "points": [
+        "o3를 고정 지정한 **API 호출·커스텀 GPT·자동화 스크립트**는 후속 모델로 재지정 필요 — 일몰 후 조용히 실패하지 않도록 모델 ID를 지금 점검.",
+        "이미지 생성은 DALL·E GPT 대신 현행 기본 이미지 경로로 이관 — 프롬프트·워크플로를 미리 검증해둘 것."
+      ],
+      "note": "help.openai.com 모델 릴리스노트 기준. 종료일 전 이관이 유일한 안전책.",
+      "source": "help.openai.com",
+      "url": "https://help.openai.com/en/articles/9624314-model-release-notes"
+    },
+    {
+      "cat": "tool",
+      "title": "Grok Imagine Image 2.0 — 텍스트를 아는 이미지 모델",
+      "lead": "xAI가 타이포그래피(이미지 속 글자)를 정면으로 다루는 Grok Imagine Image 2.0을 공개, Vercel AI Gateway에도 즉시 탑재.",
+      "points": [
+        "프론티어 랩 최초로 **이미지 속 텍스트 렌더링**을 핵심 문제로 설계 → 포스터·배너·메뉴판처럼 글자가 정확해야 하는 시안을 별도 후보정 없이 1차 생성 품질로 뽑을 여지가 커진다.",
+        "**네이티브 밈 생성** + 영역 편집·다중 이미지 입력·스마트 리사이즈 지원, **Vercel AI Gateway**로 게이트웨이 코드에 바로 붙일 수 있다."
+      ],
+      "note": "8/7 출시. 글자 품질은 여전히 검수 대상이나, 텍스트 실패율이 낮아진 만큼 시안 반복 횟수를 줄이는 용도로 유효.",
+      "source": "developersdigest.tech",
+      "url": "https://www.developersdigest.tech/blog/grok-imagine-image-2-0-2026"
+    }
+  ]
+}

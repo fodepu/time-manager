@@ -1,0 +1,72 @@
+{
+  "date": "2026-08-21",
+  "generatedAt": "2026-08-21T09:30:37+09:00",
+  "urgent": {
+    "text": "Claude Sonnet 5 프로모션 가격(/0 per M)이 8/31 종료 → 9/1부터 표준 /5. Sonnet 대량 배치·에이전트 루프는 8월 안에 실행/캐싱 전략을 확정해 단가를 잠가둘 것.",
+    "source": "claude.com"
+  },
+  "items": [
+    {
+      "cat": "model",
+      "title": "Grok 4.6 — 500K 컨텍스트 + reasoning effort 4단계",
+      "lead": "xAI가 장시간 에이전트·코딩 워크로드용 플래그십 Grok 4.6을 API로 공개(입력 /M, 200K 초과 구간은 프리미엄 요율).",
+      "points": [
+        "reasoning effort를 **low/medium/high/xhigh**로 요청마다 지정 → 추출·분류·정형 코드 변환은 low로 지연·비용을 눌러 처리하고, **다중 파일 수정·여러 툴콜이 얽힌 에이전트 루프**만 high, 고가치 리서치·설계는 xhigh로 라우팅하는 '작업별 사고량 배분'이 가능해진다.",
+        "**500K 토큰** 단일 컨텍스트로 계획→툴콜→코드수정→검증→구조화 응답을 한 세션에 담을 수 있어, 리포지토리 전체를 잘라 넣지 않고도 멀티스텝 리팩터링·조사 에이전트를 붙일 수 있다.",
+        "단 **200K 초과 구간엔 프리미엄 요율(입력 톨게이트)** — 긴 컨텍스트를 습관적으로 채우기보다, 실제로 500K가 필요한 태스크에만 열고 나머지는 200K 이내로 유지하는 게 단가 방어."
+      ],
+      "note": "docs.x.ai 및 Amazon Bedrock 모델카드로 즉시 호출 가능. effort 파라미터가 곧 비용·지연 레버이므로 라우팅 규칙을 코드에 박아두는 게 실전 사용법.",
+      "source": "docs.x.ai",
+      "url": "https://docs.x.ai/developers/grok-4-6"
+    },
+    {
+      "cat": "update",
+      "title": "Claude Code — Concise 출력 스타일 + 기본 모델 고정",
+      "lead": "Claude Code가 결과 우선의 **Concise output style**과 세션 시작 모델을 고정하는 환경변수를 추가.",
+      "points": [
+        "**Concise output style**로 전환하면 설명 서두를 걷어내고 결과부터 반환 → 반복 편집 루프에서 왕복 토큰과 읽는 시간이 줄어, 같은 사용량 창(5시간/주간) 안에서 더 많은 실제 편집을 돌릴 수 있다.",
+        "**ANTHROPIC_DEFAULT_MODEL** 환경변수로 새 세션이 항상 원하는 모델(예: 비용 낮은 모델)로 시작하도록 강제 → 예약 실행·야간 배치에서 실수로 Opus로 켜져 사용량을 태우는 사고를 막는다.",
+        "**cross-session idle 알림(notify_when_idle)** + auto-continue 조합으로, 사용량 한도로 멈춘 장시간 작업이 리셋 시각에 스스로 이어지고 유휴 상태를 알려줘 '재프롬프트하러 돌아가기'가 사라진다."
+      ],
+      "note": "code.claude.com/docs whats-new 참조. auto-continue는 한도 자체를 늘리지 않고 '리셋 후 이어받기'만 자동화 — 야간·예약 에이전트 루프의 실질 QoL 개선.",
+      "source": "code.claude.com",
+      "url": "https://code.claude.com/docs/en/whats-new"
+    },
+    {
+      "cat": "update",
+      "title": "Claude API — Files API·Admin API 정식(GA) 전환",
+      "lead": "Claude API의 Files 엔드포인트와 Enterprise Admin(멤버·초대·그룹·커스텀 롤) 관리 엔드포인트가 베타 헤더 없이 GA.",
+      "points": [
+        "**/v1/files** 호출에서 files-api-2025-04-14 베타 헤더가 불필요 → 파일 업로드·재사용을 프로덕션 코드에 헤더 분기 없이 그대로 배포할 수 있어, 문서 첨부 파이프라인을 정식 기능으로 안정화한다.",
+        "**Admin API user-management GA**로 조직 멤버·초대·그룹·커스텀 롤을 코드로 프로비저닝 가능 → 팀 온보딩·권한 회수를 콘솔 수작업 대신 스크립트/스케줄로 자동화."
+      ],
+      "note": "platform.claude.com 릴리스노트 기준. 기존 베타 헤더를 붙여 호출하던 코드는 지금 정리해도 무방(하위호환 유지되지만 헤더 제거가 표준).",
+      "source": "platform.claude.com",
+      "url": "https://platform.claude.com/docs/en/release-notes/overview"
+    },
+    {
+      "cat": "tool",
+      "title": "GPT-5.6 Sol — 응답 effort 슬라이더 + Computer History",
+      "lead": "OpenAI가 GPT-5.6 Sol에 사용자가 사고량을 조절하는 슬라이더를 붙이고, 데스크톱에 활동 기반 메모리 'Computer History'를 도입.",
+      "points": [
+        "Plus/Pro에서 **effort 슬라이더**로 응답당 연산량을 직접 조절 → 빠른 초안은 낮게, 사실 정확도가 중요한 답변은 높게 돌려 한 대화 안에서 속도/정확도를 수동 트레이드오프.",
+        "**Computer History**(macOS 데스크톱, opt-in)는 앱·웹 활동을 타임라인 메모리로 만들어 ChatGPT와 **Codex**가 참조 → 어떤 앱·사이트가 기여할지 선택하고 언제든 일시정지·삭제 가능. 반복 작업 맥락을 매번 붙여넣지 않아도 되는 대신, 기여 앱을 좁게 화이트리스트하는 게 안전한 사용법."
+      ],
+      "note": "Computer History는 Pro·Business·Enterprise 대상. 활동을 상시 수집하므로 민감 앱은 기여 목록에서 빼고 시작할 것.",
+      "source": "openai.com",
+      "url": "https://openai.com/index/improving-gpt-5-6-sol-in-chatgpt/"
+    },
+    {
+      "cat": "model",
+      "title": "OpenAI Ultrafast — GPT-5.6 Sol을 750 tok/s로",
+      "lead": "OpenAI가 GPT-5.6 Sol을 표준 대비 최대 **14배(≈750 tok/s)**로 돌리는 Ultrafast 티어를 API 한정 프리뷰로 공개(Cerebras 인프라).",
+      "points": [
+        "출력 **~750 tok/s**(표준 ~53 tok/s)면 라이브 대화 중 복잡한 응답, 결제 진행 중 재고·이슈 해결, 장애 대응 중 실시간 보조처럼 **사람이 기다리는 인터랙티브 루프**에 LLM을 처음으로 실시간급으로 끼워 넣을 수 있다.",
+        "긴 CoT 추론도 지연이 짧아져, 지금까진 배치로 미뤄야 했던 다단계 추론을 **동기 요청 안에서** 처리하는 UX가 가능해진다."
+      ],
+      "note": "현재 소수 고객 한정 프리뷰(가격·정식일 미공개), API 우선. 코딩·커머스·금융리서치·CS 등 지연 민감 앱부터 신청 대상.",
+      "source": "openai.com",
+      "url": "https://openai.com/index/previewing-ultrafast/"
+    }
+  ]
+}
