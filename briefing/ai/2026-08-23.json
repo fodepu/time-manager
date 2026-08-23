@@ -1,0 +1,54 @@
+{
+  "date": "2026-08-23",
+  "generatedAt": "2026-08-23T09:10:00+09:00",
+  "urgent": null,
+  "items": [
+    {
+      "cat": "update",
+      "title": "Claude Academy — 실무 위임·검증 훈련 허브",
+      "lead": "Anthropic이 Claude를 실제 업무에 위임·검증하는 법을 다루는 학습 허브 Claude Academy를 열었다.",
+      "points": [
+        "'막연히 물어보기'가 아니라 **작업을 위임하고 결과를 검증하는 절차**를 코스·튜토리얼로 정형화 → 반복 업무를 에이전트에 넘길 때 어디까지 맡기고 어디서 사람이 검수할지 경계를 설계하는 실전 감각을 빠르게 잡는다.",
+        "배지·개인화 추천으로 **팀 온보딩 표준 커리큘럼**을 만들어, 신규 인원이 각자 방식으로 헤매는 대신 검증된 사용 패턴부터 시작하게 한다."
+      ],
+      "note": "claude.com 학습 허브. 도구가 아니라 사용 역량 자산 — 팀 도입 시 온보딩 트랙에 얹는 용도.",
+      "source": "claude.com",
+      "url": "https://claude.com/blog-category/announcements"
+    },
+    {
+      "cat": "tool",
+      "title": "ChatGPT — Library에 Google Drive · macOS 나란히 편집",
+      "lead": "ChatGPT가 Library에서 Google Drive 파일을 직접 붙이고, macOS 앱에서 Docs·Sheets·Slides를 나란히 놓고 작업하는 모드를 추가.",
+      "points": [
+        "**Google Drive를 Library에 연결**해 Docs·Sheets 원본을 다운로드·업로드 왕복 없이 대화에 물릴 수 있어, 문서 기반 반복 작업(요약·수정·표 정리)을 소스에 붙은 채로 처리한다.",
+        "macOS에서 **문서를 좌우로 나란히 열고** ChatGPT가 옆에서 편집을 제안 → 원문과 대화를 오가며 복붙하던 흐름이 한 화면 안 편집 루프로 압축된다."
+      ],
+      "note": "openai.com 릴리스노트. Drive 연결은 계정 권한 부여 필요, 나란히 편집은 macOS 데스크톱 앱 한정.",
+      "source": "openai.com",
+      "url": "https://openai.com/products/release-notes/"
+    },
+    {
+      "cat": "headline",
+      "title": "Claude 출력물 기계판독 워터마크 — 8/2 이후 전면",
+      "lead": "Anthropic이 8월 2일 이후 출시분부터 모든 Claude 생성물에 기계판독 마킹을 넣기 시작(구모델은 12/2까지, EU AI Act 대응).",
+      "points": [
+        "생성물에 **감지 가능한 표식**이 박히므로, 대외 배포·규정 대상 콘텐츠를 만들 때 'AI 생성 여부가 자동 판별될 수 있다'는 전제로 워크플로를 짜야 한다 — 특히 저작·심사·제출물 파이프라인에서 표기·검수 절차를 미리 반영."
+      ],
+      "note": "claude.com 공지. 8/2 이후 출시 모델은 즉시, 이전 모델은 12/2까지 적용. 정책 성격 — 개인 산출물 규정 준수 체크에 반영할 것.",
+      "source": "artificiallawyer.com",
+      "url": "https://www.artificiallawyer.com/2026/08/13/anthropic-will-embed-watermarks-in-ai-outputs/"
+    },
+    {
+      "cat": "update",
+      "title": "Grok Build — 긴 대화 프롬프트 캐싱 · 신뢰성 개선",
+      "lead": "xAI가 Grok Build의 프롬프트 캐싱을 개선하고 인증·웨이크턴·언어서버 관련 안정성 버그를 다수 정리.",
+      "points": [
+        "**긴 대화 프롬프트 캐싱 강화**로 장시간 세션에서 앞 맥락을 반복 재전송하는 비용·지연을 줄여, 멀티스텝 에이전트 세션을 끊지 않고 길게 끌고 갈 때 단가가 눌린다.",
+        "임베드 프리뷰 리다이렉트 루프·채팅 히스토리 손상 등 **세션 중단 유발 버그를 제거** → 장시간 작업이 중간에 깨져 처음부터 다시 하는 사고가 줄어든다."
+      ],
+      "note": "releasebot(xAI) 기준. 기능 추가보다 장시간 세션 신뢰성·비용 QoL 개선.",
+      "source": "releasebot.io",
+      "url": "https://releasebot.io/updates/xai/grok-build"
+    }
+  ]
+}

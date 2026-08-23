@@ -1,0 +1,43 @@
+{
+  "date": "2026-08-22",
+  "generatedAt": "2026-08-22T09:10:00+09:00",
+  "urgent": null,
+  "items": [
+    {
+      "cat": "model",
+      "title": "Claude Fable 5 · Sonnet 5 — Dreams 리서치 프리뷰 편입",
+      "lead": "Anthropic이 Claude Fable 5와 Sonnet 5를 개발자 플랫폼의 실험 러너 Dreams에 리서치 프리뷰로 열었다.",
+      "points": [
+        "Dreams에서 **동일 프롬프트를 Fable 5 / Sonnet 5로 병렬 실행**해 출력·지연·비용을 나란히 비교할 수 있어, 프로덕션에 어느 모델을 박을지를 감이 아니라 **A/B 실측**으로 고정한다.",
+        "프리뷰 단계의 신모델을 정식 배포 전에 **내 실제 태스크(추출·정형 변환·에이전트 루프)로 먼저 돌려보고** 회귀·품질 저하를 미리 잡을 수 있어, 모델 스왑 리스크를 배포 이후가 아니라 프리뷰에서 소진한다."
+      ],
+      "note": "platform.claude.com 개발자 플랫폼 내 Dreams. 리서치 프리뷰이므로 SLA·가격은 잠정 — 벤치·탐색용으로만 쓰고 프로덕션 트래픽은 아직 붙이지 말 것.",
+      "source": "platform.claude.com",
+      "url": "https://platform.claude.com/docs/en/release-notes/overview"
+    },
+    {
+      "cat": "tool",
+      "title": "ChatGPT — 인터랙티브 퀴즈 · Think(Free/Go) · Linux 데스크톱 프리뷰",
+      "lead": "OpenAI가 ChatGPT에 자동 생성 퀴즈, 무료·Go 등급의 Think 추론, Linux 데스크톱 앱 퍼블릭 프리뷰를 한꺼번에 풀었다.",
+      "points": [
+        "임의 자료를 붙이면 **인터랙티브 퀴즈로 즉시 변환** → 학습·온보딩 자료를 별도 도구 없이 문답형 점검 세트로 만들어 팀 교육·자기점검 루프를 돌린다.",
+        "**Think 추론이 Free·Go 등급까지 확장** → 유료 상위 등급이 아니어도 다단계 추론이 필요한 검증·기획 작업을 같은 창에서 처리, 저비용 계정으로도 추론 품질을 끌어올린다.",
+        "**Linux 데스크톱 앱(퍼블릭 프리뷰)**으로 리눅스 개발 환경에서 브라우저 왕복 없이 네이티브 클라이언트를 상시 띄워둔다."
+      ],
+      "note": "openai.com 릴리스노트. Linux 앱은 퍼블릭 프리뷰(버그·기능 미완 가능), Think 확장은 등급별 롤아웃 순차 적용.",
+      "source": "openai.com",
+      "url": "https://openai.com/products/release-notes/"
+    },
+    {
+      "cat": "headline",
+      "title": "OpenAI 사이버 방어 모델 공개",
+      "lead": "AI 주도 공격 급증에 대응해 OpenAI가 방어 특화 사이버 모델을 발표.",
+      "points": [
+        "취약점 탐지·로그 분석·사고 대응 같은 **블루팀 워크플로에 특화**된 모델로, 범용 모델보다 보안 태스크의 신뢰도를 높이는 방향 — 지금 당장 개인이 붙일 도구라기보다 보안팀 파이프라인 후보."
+      ],
+      "note": "트러스티드 액세스 통제 하에 제공. 실무 편입은 보안팀·규정 검토 후. 개인 워크플로 영향은 제한적.",
+      "source": "techcrunch.com",
+      "url": "https://techcrunch.com/2026/08/10/as-ai-led-attacks-multiply-openai-launches-a-new-cyber-model/"
+    }
+  ]
+}

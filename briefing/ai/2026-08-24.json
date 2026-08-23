@@ -1,0 +1,71 @@
+{
+  "date": "2026-08-24",
+  "generatedAt": "2026-08-24T08:07:28+09:00",
+  "urgent": {
+    "text": "OpenAI가 8/30 ChatGPT 내 공식 DALL·E GPT를 종료 → 이미지 생성은 ChatGPT Images 경로로 이전. DALL·E GPT를 부르는 커스텀 지침·북마크·자동화가 있으면 8/30 전에 Images 호출로 교체해둘 것.",
+    "source": "openai.com"
+  },
+  "items": [
+    {
+      "cat": "update",
+      "title": "Claude Platform — 프로덕션 에이전트 3종 세트(computer use·Skills·Files)",
+      "lead": "Anthropic이 computer use 도구, 신규 browser use 도구, Skills API, Files API를 묶어 프로덕션 에이전트 구축 스택으로 정식 공개.",
+      "points": [
+        "**Skills API**로 반복 작업 절차를 재사용 가능한 스킬로 등록해 에이전트에 주입 → 매 요청마다 장문 지침을 붙여넣는 대신, 검증된 워크플로를 호출로 재사용하고 버전 관리한다.",
+        "**browser use 도구**로 에이전트가 실제 브라우저에서 로그인·탐색·폼 작성을 수행 → 스크린 좌표 클릭에 의존하던 자동화를 DOM 인지 방식으로 바꿔 안정적인 웹 작업 에이전트를 붙인다.",
+        "**Files API + computer use**를 합치면 문서 업로드→가공→브라우저 제출을 한 파이프라인에 담아, 사람이 앱을 오가며 하던 다단계 사무 작업을 종단간 자동화로 넘길 수 있다."
+      ],
+      "note": "claude.com/blog 및 platform.claude.com. Skills·Files API는 Microsoft Foundry에서도 사용 가능. browser use 최신판은 Foundry엔 아직 미탑재(베타 computer use는 지원), Vertex AI는 곧.",
+      "source": "claude.com",
+      "url": "https://claude.com/blog/computer-use-skills-api-files-api"
+    },
+    {
+      "cat": "update",
+      "title": "Skills API, Microsoft Foundry에서 사용 가능 — Azure 위 Claude 에이전트",
+      "lead": "Claude가 Microsoft Foundry에서 GA로 제공되며 Skills API·구조화 출력·웹검색/페치·MCP 커넥터·툴서치가 Azure 배포에서 열렸다.",
+      "points": [
+        "Azure에 이미 있는 조직이라면 **Foundry 배포에 Skills API를 붙여** 데이터·인증·컴플라이언스를 Azure 경계 안에 두고 Claude 에이전트를 돌릴 수 있어, 외부로 데이터를 빼지 않고 사내 에이전트를 세운다.",
+        "**MCP 커넥터·툴서치·웹검색/페치**가 Foundry 배포에서 바로 동작 → 사내 시스템·문서에 연결된 에이전트를 별도 게이트웨이 구축 없이 Azure 표준 배포로 구성한다."
+      ],
+      "note": "azure.microsoft.com / devblogs.microsoft.com/foundry. browser use 최신 툴셋은 Foundry 미탑재(베타 computer use만), 나머지 에이전트 기능은 GA.",
+      "source": "azure.microsoft.com",
+      "url": "https://devblogs.microsoft.com/foundry/five-new-claude-capabilities-now-available-in-foundry/"
+    },
+    {
+      "cat": "tool",
+      "title": "Grok Bot — 자기 컴퓨터를 가진 AI 팀원, Cursor·SuperGrok로 확대",
+      "lead": "xAI의 AI 팀원 Grok Bot이 SuperGrok Plus·Cursor Pro+·전 Cursor Teams 요금제로 확대됐다.",
+      "points": [
+        "각 Bot이 **브라우저·파일시스템·터미널을 갖춘 상시 클라우드 컴퓨터**에서 내가 쓰는 툴에 직접 로그인해 사람처럼 작업 → '지시→결과 대기'가 아니라 **아웃바운드 영업·버그 수정·사무 운영 같은 작업을 종단간 위임**하고 승인이 필요할 때만 돌아오게 만든다.",
+        "**여러 Bot을 병렬로** 띄워 24/7로 각자 프로젝트를 진행시키고, 일하는 방식을 학습시켜 갈수록 손이 덜 가게 한다 → 반복 업무 라인을 사람 1명이 여러 에이전트를 감독하는 구조로 재편한다."
+      ],
+      "note": "x.ai/news. SuperGrok Plus·Cursor Pro+·Cursor Teams 포함. 툴 로그인·상시 실행 권한을 주므로, 민감 계정은 접근 범위를 좁혀 시작할 것.",
+      "source": "x.ai",
+      "url": "https://x.ai/news/grok-bot-more-plans"
+    },
+    {
+      "cat": "market",
+      "title": "GPT-5.6 Sol API 가격 3개월 한시 20%+ 인하",
+      "lead": "OpenAI가 GPT-5.6 Sol의 API·크레딧 가격을 3개월간 20% 넘게 내렸다.",
+      "points": [
+        "동일 예산으로 **20%+ 더 많은 토큰**을 돌릴 수 있는 3개월 창 → 대량 배치·평가·데이터 정제처럼 물량이 큰 작업을 이 기간에 몰아 처리하면 실효 단가를 낮춘다.",
+        "한시 인하라 **9월 이후 표준가 복귀 가능** → 지금 파이프라인 비용을 재산정해 Sol로 옮길 워크로드를 정하고, 캐싱·배치 전략까지 이 창 안에 확정하는 게 이득."
+      ],
+      "note": "openai.com 3개월 한시. 종료 시점 표준가 환원 가능성 — 비용 계획을 기간 기준으로 세울 것.",
+      "source": "openai.com",
+      "url": "https://openai.com/products/release-notes/"
+    },
+    {
+      "cat": "tool",
+      "title": "ChatGPT — Library의 Google Drive · macOS 나란히 편집(확대 적용)",
+      "lead": "Library에서 Google Drive를 붙이고 macOS에서 Docs·Sheets·Slides를 나란히 두고 편집하는 기능이 순차 확대 중.",
+      "points": [
+        "**Drive 원본을 대화에 직접 연결**해 다운로드·재업로드 왕복 없이 문서 요약·수정·표 정리를 소스에 붙은 채 반복 처리한다.",
+        "macOS **나란히 편집**으로 원문과 대화 창을 오가는 복붙 흐름을 한 화면 편집 루프로 압축 → 문서 작업 회전율이 올라간다."
+      ],
+      "note": "openai.com. Drive 연결은 계정 권한 부여 필요, 나란히 편집은 macOS 데스크톱 한정. 등급·지역별 순차 롤아웃.",
+      "source": "openai.com",
+      "url": "https://openai.com/products/release-notes/"
+    }
+  ]
+}
