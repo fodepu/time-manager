@@ -1,0 +1,81 @@
+{
+  "date": "2026-08-28",
+  "generatedAt": "2026-08-28T09:30:36+09:00",
+  "urgent": {
+    "text": "DALL·E GPT가 8/30 폐기 — 보존할 이미지는 오늘내로 다운로드, 생성은 ChatGPT Images(gpt-image-1)로 전환.",
+    "source": "help.openai.com"
+  },
+  "items": [
+    {
+      "cat": "tool",
+      "title": "Claude in Chrome 정식 출시 — 브라우저 자율 조작",
+      "lead": "8/26 모든 유료 플랜에서 정식화, Claude가 열린 탭을 직접 읽고 클릭·입력·폼 작성까지 수행한다.",
+      "points": [
+        "**직접 연동이 없는 웹서비스**를 그대로 자동화한다: 예약 사이트·사내 어드민·레거시 대시보드에 **기존 로그인 상태**로 들어가 양식 채우기·다건 클릭을 위임. API나 커넥터가 없어도 화면만 있으면 태스크가 된다.",
+        "**auto mode**가 안전하다고 판단한 액션은 **매 단계 승인 없이 자율 실행** — 반복 리서치·수집처럼 클릭 수십 번짜리 작업을 감독 없이 돌리고 결과만 검수하는 흐름으로 전환된다."
+      ],
+      "note": "Pro/Max/Team/Enterprise 유료 플랜 포함(Pro 월 $17~20). Chrome 확장으로 설치, 민감 액션은 여전히 확인 요청.",
+      "source": "claude.com",
+      "url": "https://claude.com/blog/claude-in-chrome-generally-available"
+    },
+    {
+      "cat": "update",
+      "title": "Claude 메모리, 채팅↔Cowork 통합",
+      "lead": "8/25부터 채팅에서 알려준 것과 Cowork가 배운 것이 양방향 공유되고, 대화 종료 전에도 실시간 반영된다.",
+      "points": [
+        "채팅에서 **프로젝트 맥락·선호·제약**을 한 번 말해두면 Cowork 작업(파일·자동화)에서 재설명 없이 그대로 이어간다 — 컨텍스트 재입력 비용이 사라진다.",
+        "**Topics** 설정에 기억이 파일 목록으로 노출돼 **직접 읽기·수정·삭제**가 가능. 잘못 학습된 사실을 고치면 채팅·Cowork 양쪽에 즉시 적용된다."
+      ],
+      "note": "Free/Pro/Max 웹·데스크톱·모바일 기본 on. 건강·정치·성정체성 주제는 opt-in 전까지 제외.",
+      "source": "techcrunch.com",
+      "url": "https://techcrunch.com/2026/08/25/claude-cowork-finally-remembers-what-you-told-the-app-in-chat/"
+    },
+    {
+      "cat": "market",
+      "title": "Claude Sonnet 5 가격 $2/$10 영구 고정",
+      "lead": "9/1 예정이던 $3/$15 인상이 취소되고 도입가가 표준가로 확정됐다.",
+      "points": [
+        "토큰당 **50% 인상**을 전제로 잡았던 API 예산을 되돌릴 수 있다 — 출력 토큰이 큰 **대량 배치·에이전트 루프**일수록 절감 폭이 그대로 유지된다.",
+        "9월 인상을 이유로 다른 모델 이전을 검토 중이었다면 **재검토 불필요** — 동일 단가에서 1M 컨텍스트·최신 성능을 유지한다."
+      ],
+      "note": "입력 $2 / 출력 $10 per MTok, platform.claude.com 가격 문서 반영.",
+      "source": "platform.claude.com",
+      "url": "https://platform.claude.com/docs/en/about-claude/pricing"
+    },
+    {
+      "cat": "model",
+      "title": "Grok 4.6 — 50만 토큰 컨텍스트",
+      "lead": "8/12 출시된 xAI 멀티모달 플래그십, API ID grok-4.6, 컨텍스트 500k.",
+      "points": [
+        "**50만 토큰** 창으로 대형 코드베이스·장문 문서 다발을 **분할 없이 한 번에** 넣어 교차참조 질의 — Bedrock에서 reasoning 레벨을 조절해 장기 실행 에이전트로 운용한다.",
+        "xAI API와 **Amazon Bedrock** 양쪽 제공이라, 기존 AWS 파이프라인에 모델만 바꿔 끼워 500k 창을 즉시 테스트할 수 있다."
+      ],
+      "note": "xAI API·Amazon Bedrock, 게이트웨이 파트너 경유 가능.",
+      "source": "releasebot.io",
+      "url": "https://releasebot.io/updates/xai"
+    },
+    {
+      "cat": "market",
+      "title": "GPT-5.6 Sol API 20%+ 인하 (3개월 한시)",
+      "lead": "8/21 OpenAI가 GPT-5.6 Sol의 API·크레딧 가격을 향후 약 3개월간 20% 이상 낮췄다.",
+      "points": [
+        "**3개월 한시 할인**이라, 비용 민감한 대량 추론·평가·데이터 라벨링을 이 창구 안에 몰아 처리하면 단가 이득 — 상시 워크로드 이전보다 **배치성 작업 선집행**이 합리적이다."
+      ],
+      "note": "2026-08-21 적용, 약 3개월 한시. OpenAI 릴리스노트 기준.",
+      "source": "openai.com",
+      "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+    },
+    {
+      "cat": "headline",
+      "title": "DALL·E GPT 8/30 폐기 → ChatGPT Images로 이관",
+      "lead": "ChatGPT의 공식 DALL·E GPT가 8/30 종료되고, 이미지 생성은 gpt-image-1 기반 ChatGPT Images로 옮겨간다.",
+      "points": [
+        "DALL·E GPT로 만든 이미지는 **8/30 전에 다운로드**해야 보존된다 — 이후 해당 GPT 접근 불가. 신규 생성/편집은 **ChatGPT Images(gpt-image-1)**로 전환.",
+        "이미지 생성이 켜진 **사용자 제작 GPT는 영향 없음** — 커스텀 GPT 워크플로를 쓰고 있었다면 그대로 유지된다."
+      ],
+      "note": "2026-08-30 종료. API의 dall-e-2/3는 이미 5/12 제거됨.",
+      "source": "help.openai.com",
+      "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+    }
+  ]
+}

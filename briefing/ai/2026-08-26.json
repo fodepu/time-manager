@@ -1,0 +1,41 @@
+{
+  "date": "2026-08-26",
+  "generatedAt": "2026-08-26T09:30:00+09:00",
+  "urgent": null,
+  "items": [
+    {
+      "cat": "tool",
+      "title": "Claude in Chrome 정식 출시",
+      "lead": "모든 유료 플랜에서 정식화 — Claude가 열린 페이지를 읽고 클릭·입력·폼 작성을 수행한다.",
+      "points": [
+        "**연동 없는 웹서비스**에 기존 로그인 상태로 들어가 다건 클릭·양식 입력을 위임 — 화면만 있으면 자동화 대상이 된다.",
+        "**auto mode**가 안전한 액션을 매 단계 승인 없이 실행, 반복 작업을 감독 없이 돌리고 결과만 검수한다."
+      ],
+      "note": "Pro/Max/Team/Enterprise 포함, Chrome 확장 설치. 민감 액션은 확인 요청.",
+      "source": "claude.com",
+      "url": "https://claude.com/blog/claude-in-chrome-generally-available"
+    },
+    {
+      "cat": "tool",
+      "title": "Claude Cowork, Chrome 사이드패널 진입",
+      "lead": "Cowork를 브라우저 사이드패널에서 바로 호출한다.",
+      "points": [
+        "보고 있는 페이지를 맥락으로 **Cowork 태스크를 현장 실행** — 탭 전환 없이 리서치→파일 산출을 한 화면에서 처리한다."
+      ],
+      "note": "Chrome 확장 기반.",
+      "source": "claude.com",
+      "url": "https://claude.com/blog/cowork-chrome-side-panel"
+    },
+    {
+      "cat": "headline",
+      "title": "ChatGPT 인터랙티브 콘텐츠 점진 렌더",
+      "lead": "생성 중인 인터랙티브 콘텐츠가 완성 전부터 화면에 나타난다.",
+      "points": [
+        "긴 캔버스·앱형 출력에서 **첫 부분을 즉시 확인**하며 방향을 조기 교정 — 다 기다렸다 폐기하는 낭비를 줄인다."
+      ],
+      "note": "ChatGPT 웹. 2026-08-21 적용분.",
+      "source": "help.openai.com",
+      "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+    }
+  ]
+}

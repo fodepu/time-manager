@@ -1,0 +1,41 @@
+{
+  "date": "2026-08-25",
+  "generatedAt": "2026-08-25T09:30:00+09:00",
+  "urgent": null,
+  "items": [
+    {
+      "cat": "update",
+      "title": "Claude 통합 메모리 공개 — 채팅과 Cowork가 기억을 공유",
+      "lead": "채팅과 Cowork의 메모리가 하나로 합쳐져, 한쪽에서 배운 것이 다른 쪽에서도 즉시 쓰인다.",
+      "points": [
+        "채팅에서 준 **프로젝트 맥락·선호**를 Cowork 자동화가 재설명 없이 이어받는다 — 도구 사이를 오가며 같은 배경을 다시 입력하던 비용이 사라진다.",
+        "**Topics** 설정에서 저장된 기억을 파일 단위로 **읽기·수정·삭제**, 정정은 양쪽에 일괄 적용."
+      ],
+      "note": "Free/Pro/Max 기본 on. 건강·정치·성정체성은 opt-in 전 제외.",
+      "source": "9to5mac.com",
+      "url": "https://9to5mac.com/2026/08/25/anthropic-update-unifies-memory-feature-across-claude-cowork-and-chat/"
+    },
+    {
+      "cat": "model",
+      "title": "Grok 4.6, 500k 컨텍스트로 장문 에이전트",
+      "lead": "xAI 플래그십 grok-4.6이 50만 토큰 창과 조절 가능한 reasoning으로 장기 실행 작업을 노린다.",
+      "points": [
+        "대형 코드베이스·문서 다발을 **분할 없이** 넣어 교차참조 — Bedrock에서 reasoning 레벨을 올려 자율 에이전트로 운용한다."
+      ],
+      "note": "xAI API·Amazon Bedrock 제공.",
+      "source": "releasebot.io",
+      "url": "https://releasebot.io/updates/xai"
+    },
+    {
+      "cat": "market",
+      "title": "Sonnet 5 9월 인상 취소 확정",
+      "lead": "$3/$15 예정 인상이 철회되고 $2/$10이 표준가가 됐다.",
+      "points": [
+        "이미 잡아둔 **50% 인상분 예산**을 되돌릴 수 있다 — 출력 토큰 큰 파이프라인일수록 이득이 유지된다."
+      ],
+      "note": "platform.claude.com 가격 문서 반영.",
+      "source": "platform.claude.com",
+      "url": "https://platform.claude.com/docs/en/about-claude/pricing"
+    }
+  ]
+}
