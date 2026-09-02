@@ -2449,9 +2449,6 @@
   html[data-theme="dark"] .tt-block.done { filter: brightness(.88) saturate(.5); }
   .sb-cat-chip.c-out { background:#E3F3F8; color:#0B4F63; }
   html[data-theme="dark"] .sb-cat-chip.c-out { background:rgba(110,190,215,.14); color:#9fdcef; }
-  .tt-colors { display:flex; flex-wrap:wrap; gap:8px; }
-  .tt-color { width:30px; height:30px; border-radius:50%; border:2px solid transparent; cursor:pointer; padding:0; box-shadow: inset 0 0 0 1px rgba(0,0,0,.06); }
-  .tt-color.on { border-color: var(--text); transform: scale(1.1); }
   /* ⋯ 메뉴 */
   .tt-menu { position:fixed; z-index:1000; background: var(--bg-card,#fff); border:1px solid var(--border,#e5e5e5); border-radius:10px; box-shadow:0 8px 24px rgba(0,0,0,.14); padding:4px; min-width:150px; }
   .tt-menu button { display:block; width:100%; text-align:left; background:none; border:none; padding:9px 12px; font-size:14px; color: var(--text); border-radius:7px; cursor:pointer; }
@@ -8544,33 +8541,33 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   }
 
 
-  // ---- 블록 색상 선택 (카테고리 대체) ----
+  // ---- 블록 편집: 장소 입력 추가, 카테고리/메모/알람 숨김, 색은 랜덤 배정 ----
   var PALETTE=['#F1897A','#F9AB63','#F3C660','#A3CC66','#7DC77F','#72D0C2','#74A5EC','#9B84EA','#D39CF3','#B0B0B0'];
-  var selColor=PALETTE[6];
-  function ensureColorGrid(){
-    var cat=document.getElementById('sbCatGrid'); if(!cat) return null;
+  function ensurePlaceField(){
+    var cat=document.getElementById('sbCatGrid'); if(!cat) return;
     var grp=cat.closest('.field-group'); if(grp) grp.classList.add('tm-gone');
     var note=document.getElementById('sbNote'); if(note){ var ng=note.closest('.field-group'); if(ng) ng.classList.add('tm-gone'); }
     var al=document.getElementById('sbAlarm'); if(al){ var ag=al.closest('.field-group')||al.closest('label'); if(ag) ag.classList.add('tm-gone'); }
-    var g=document.getElementById('sbColorGrid');
-    if(!g){
-      g=document.createElement('div'); g.className='field-group'; g.innerHTML='<label class="field-label">색상</label><div class="tt-colors" id="sbColorGrid"></div>';
+    if(!document.getElementById('sbPlace')){
+      var g=document.createElement('div'); g.className='field-group';
+      g.innerHTML='<label class="field-label">장소 <span style="color:var(--text-muted);font-weight:400;">(선택)</span></label><input type="text" class="field-input" id="sbPlace" placeholder="예: 청704" maxlength="30" autocomplete="off">';
       (grp||cat).parentNode.insertBefore(g, grp||cat);
-      var wrap=g.querySelector('#sbColorGrid');
-      PALETTE.forEach(function(c){ var b=document.createElement('button'); b.type='button'; b.className='tt-color'; b.style.background=c; b.dataset.c=c; b.addEventListener('click', function(){ selColor=c; paintColors(); }); wrap.appendChild(b); });
-      g=wrap;
-    } else { g=document.getElementById('sbColorGrid'); }
-    return g;
+    }
   }
-  function paintColors(){ document.querySelectorAll('#sbColorGrid .tt-color').forEach(function(b){ b.classList.toggle('on', b.dataset.c.toLowerCase()===String(selColor).toLowerCase()); }); }
+  function randomColor(){
+    var used={}; entries.forEach(function(e){ if(e&&e.color) used[String(e.color).toUpperCase()]=1; });
+    var free=PALETTE.filter(function(c){ return !used[c.toUpperCase()]; });
+    var pool=free.length?free:PALETTE; return pool[Math.floor(Math.random()*pool.length)];
+  }
   var _openEdit=window.openScheduleBlockModal, _openNew=window.openNewScheduleBlockModal, _save=window.saveScheduleBlock;
-  window.openScheduleBlockModal=function(id){ _openEdit(id); ensureColorGrid(); var e=entries.find(function(x){return x.id===id;}); selColor=(e&&e.color)||PALETTE[6]; paintColors(); };
-  window.openNewScheduleBlockModal=function(){ _openNew(); ensureColorGrid(); selColor=PALETTE[6]; paintColors(); };
+  window.openScheduleBlockModal=function(id){ _openEdit(id); ensurePlaceField(); var e=entries.find(function(x){return x.id===id;}); var p=document.getElementById('sbPlace'); if(p) p.value=(e&&e.place)||''; };
+  window.openNewScheduleBlockModal=function(){ _openNew(); ensurePlaceField(); var p=document.getElementById('sbPlace'); if(p) p.value=''; };
   window.saveScheduleBlock=function(){
     var editId=sbModalState.editingId; var before={}; entries.forEach(function(e){ before[e.id]=1; });
+    var place=(document.getElementById('sbPlace')||{}).value||''; place=String(place).trim();
     _save();
     var t = editId ? entries.find(function(e){return e.id===editId;}) : entries.find(function(e){ return !before[e.id]; });
-    if(t){ t.color=selColor; saveTemplate(); persist(); refreshAll(); }
+    if(t){ t.place=place; if(!t.color) t.color=randomColor(); saveTemplate(); persist(); refreshAll(); }
   };
 
   // ---- 자동 알림: 모든 블록 시작 10분 전 (앱이 열려 있을 때) ----
