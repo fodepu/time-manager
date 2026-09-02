@@ -2481,6 +2481,12 @@
   .lms-detail { margin-top:4px; }
   .lms-brief { margin:0 12px 6px; padding:10px 12px; background: var(--bg-soft); border-radius:10px; font-size:13px; line-height:1.55; white-space:pre-wrap; }
   .lms-item.static { cursor:default; }
+  .lms-files { display:none; flex-wrap:wrap; gap:6px; margin-top:8px; }
+  .lms-item.open .lms-files { display:flex; }
+  .lms-file { display:inline-flex; align-items:center; gap:4px; font-size:12px; padding:5px 9px; border:1px solid var(--border,#e5e5e5); border-radius:8px; color: var(--text); text-decoration:none; background: var(--bg-soft); max-width:100%; }
+  .lms-file i { font-style:normal; color: var(--text-muted); font-size:11px; }
+  .lms-clip { display:inline-flex; align-items:center; gap:2px; font-size:11px; color: var(--text-muted); }
+  .lms-body { max-height:60vh; overflow:auto; }
   /* LMS 카드 */
   .lms-card { margin:14px 0 4px; border:1px solid var(--border,#e5e5e5); border-radius:12px; background: var(--bg-card,#fff); overflow:hidden; }
   .lms-head { display:flex; align-items:center; justify-content:space-between; padding:10px 12px; font-weight:700; font-size:14px; border-bottom:1px solid var(--border,#e5e5e5); }
@@ -8498,6 +8504,8 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     C.querySelectorAll('.lms-course').forEach(function(el){ el.addEventListener('click', function(){ openCourse(el.getAttribute('data-course')); }); });
     if(lmsSel && courses.indexOf(lmsSel)>=0){ renderCourse(lmsSel); showList(false); } else { D.style.display='none'; showList(true); }
   };
+  var CLIP='<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>';
+  function filesHtml(files){ if(!files||!files.length) return ''; return '<div class="lms-files">'+files.map(function(f){ return '<a class="lms-file" href="'+escapeHtml(f.url||'#')+'" target="_blank" rel="noopener">'+CLIP+' '+escapeHtml(f.name||'첨부')+(f.text?' <i>(내용 추출됨)</i>':'')+'</a>'; }).join('')+'</div>'; }
   function shortCourse(c){ return String(c||'').replace(/\s*\(?S?\d{2,3}분반\)?\s*$/,'').replace(/^\(SDGs\)/,'').trim(); }
   function fmtShort(iso, withTime){ var d=new Date(iso); return (d.getMonth()+1)+'/'+d.getDate()+(withTime?' '+pad(d.getHours())+':'+pad(d.getMinutes()):''); }
   function showList(on){ var U=document.getElementById('lmsUrgent'), C=document.getElementById('lmsCards'); if(U) U.style.display=on?'':'none'; if(C) C.style.display=on?'':'none'; }
@@ -8512,14 +8520,16 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     if(bc && Array.isArray(bc.todos) && bc.todos.length){ h+='<div class="lms-sec">해야 할 일 (공지에서 추출)</div>'; bc.todos.forEach(function(t){ h+='<div class="lms-item static"><div class="lms-main"><div class="lms-title">☐ '+escapeHtml(t)+'</div></div></div>'; }); }
     h+='<div class="lms-sec">과제</div>';
     if(!as.length) h+='<div class="lms-empty">과제 없음</div>';
-    as.forEach(function(a){ h+='<div class="lms-item'+(a.submitted?' submitted':'')+'"><div class="lms-main"><div class="lms-title">'+escapeHtml(a.title)+'</div><div class="lms-sub">'+fmtDue(a.due)+'</div></div>'+ddBadge(a)+(a.due&&!a.submitted?'<button type="button" class="lms-add" data-add="'+escapeHtml(a.id||a.title)+'">＋블록</button>':'')+'</div>'; });
+    as.forEach(function(a){ var hasMore=!!(a.body||(a.files&&a.files.length)); h+='<div class="lms-item'+(a.submitted?' submitted':'')+(hasMore?' expandable':'')+'"><div class="lms-main"><div class="lms-title">'+escapeHtml(a.title)+'</div><div class="lms-sub">'+fmtDue(a.due)+(a.files&&a.files.length?' · 첨부 '+a.files.length:'')+'</div>'+(hasMore?'<div class="lms-body">'+(lmsBrief&&lmsBrief.assignments&&lmsBrief.assignments[String(a.id)]&&lmsBrief.assignments[String(a.id)].ko_summary?'<b>요약</b> '+escapeHtml(lmsBrief.assignments[String(a.id)].ko_summary)+'\n\n':'')+escapeHtml(a.body||'')+'</div>'+filesHtml(a.files):'')+'</div>'+ddBadge(a)+(a.due&&!a.submitted?'<button type="button" class="lms-add" data-add="'+escapeHtml(a.id||a.title)+'">＋블록</button>':'')+'</div>'; });
     h+='<div class="lms-sec">공지</div>';
     if(!ns.length) h+='<div class="lms-empty">공지 없음</div>';
     ns.forEach(function(n){ var b=briefFor(n.id); var isNew=!seen.has(String(n.id));
-      h+='<div class="lms-item" data-nid="'+escapeHtml(String(n.id))+'"><div class="lms-main"><div class="lms-title">'+escapeHtml((b&&b.ko_title)||n.title)+'</div>'+(b&&b.ko_title&&b.ko_title!==n.title?'<div class="lms-sub">'+escapeHtml(n.title)+'</div>':'')+'<div class="lms-sub">'+(n.date?fmtShort(n.date):'')+'</div><div class="lms-body">'+(b&&b.ko_summary?'<b>요약</b> '+escapeHtml(b.ko_summary)+'\n\n':'')+escapeHtml(n.summary||'')+(n.url?'\n'+n.url:'')+'</div></div>'+(isNew?'<span class="lms-badge new">NEW</span>':'')+'</div>'; });
+      h+='<div class="lms-item" data-nid="'+escapeHtml(String(n.id))+'"><div class="lms-main"><div class="lms-title">'+escapeHtml((b&&b.ko_title)||n.title)+'</div>'+(b&&b.ko_title&&b.ko_title!==n.title?'<div class="lms-sub">'+escapeHtml(n.title)+'</div>':'')+'<div class="lms-sub">'+(n.date?fmtShort(n.date):'')+'</div><div class="lms-body">'+(b&&b.ko_summary?'<b>요약</b> '+escapeHtml(b.ko_summary)+'\n\n':'')+escapeHtml(n.body||n.summary||'')+'</div>'+filesHtml(n.files)+(n.url?'<div class="lms-files"><a class="lms-file" href="'+escapeHtml(n.url)+'" target="_blank" rel="noopener">e-campus에서 열기 ↗</a></div>':'')+'</div>'+(isNew?'<span class="lms-badge new">NEW</span>':'')+(n.files&&n.files.length?'<span class="lms-clip">'+CLIP+n.files.length+'</span>':'')+'</div>'; });
     D.innerHTML=h; D.style.display='block';
     D.querySelector('#lmsClose').addEventListener('click', function(){ lmsSel=null; D.style.display='none'; showList(true); window.scrollTo({top:0}); });
     D.querySelectorAll('.lms-item[data-nid]').forEach(function(el){ el.addEventListener('click', function(){ el.classList.toggle('open'); markSeen(el.getAttribute('data-nid')); var b=el.querySelector('.lms-badge.new'); if(b) b.remove(); }); });
+    D.querySelectorAll('.lms-item.expandable').forEach(function(el){ el.addEventListener('click', function(){ el.classList.toggle('open'); }); });
+    D.querySelectorAll('.lms-file').forEach(function(a){ a.addEventListener('click', function(ev){ ev.stopPropagation(); }); });
     D.querySelectorAll('.lms-add').forEach(function(bt){ bt.addEventListener('click', function(ev){ ev.stopPropagation(); var id=bt.getAttribute('data-add'); var a=as.find(function(x){ return String(x.id||x.title)===id; }); if(a) addAssignmentBlock(a); }); });
   }
   // 탭 전환 훅

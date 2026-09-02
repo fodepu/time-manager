@@ -13,6 +13,65 @@ const prev = (() => { try { return JSON.parse(fs.readFileSync(OUT, 'utf8')); } c
 const write = (obj) => { fs.mkdirSync('data', { recursive: true }); fs.writeFileSync(OUT, JSON.stringify(obj, null, 2) + '\n'); console.log('wrote', OUT, `assignments=${obj.assignments?.length ?? 0} notices=${obj.notices?.length ?? 0} source=${obj.source}`); };
 const strip = (html) => String(html || '').replace(/<style[\s\S]*?<\/style>/gi, '').replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/\s+/g, ' ').trim();
 const summarize = (html, n = 240) => { const t = strip(html); return t.length > n ? t.slice(0, n) + '…' : t; };
+const fullText = (html, n = 6000) => { const t = strip(html); return t.length > n ? t.slice(0, n) + '…' : t; };
+
+// ---- 첨부파일: Canvas attachments[] + 본문 HTML 안의 /files/<id> 링크 ----
+function linksFromHtml(html) {
+  const out = []; const re = /<a\s[^>]*href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/gi; let m;
+  while ((m = re.exec(String(html || '')))) {
+    const href = m[1].replace(/&amp;/g, '&'); const name = strip(m[2]) || href;
+    const fm = href.match(/\/files\/(\d+)/);
+    if (fm) out.push({ id: fm[1], name, url: href.startsWith('http') ? href : BASE + href });
+    else if (/^https?:\/\//.test(href) && !/khcanvas|instructure/.test(href)) out.push({ name, url: href, external: true });
+  }
+  return out;
+}
+let pdfjsMod = null;
+async function loadPdfParser() {
+  if (pdfjsMod !== null) return pdfjsMod;
+  try {
+    const { createRequire } = await import('node:module'); const req = createRequire(import.meta.url);
+    let p; try { p = req.resolve('pdfjs-dist/legacy/build/pdf.mjs'); }
+    catch { const { execSync } = await import('node:child_process'); execSync(`npm i --no-save --silent --prefix "${process.cwd()}" pdfjs-dist@4.10.38`, { stdio: 'ignore' }); p = req.resolve('pdfjs-dist/legacy/build/pdf.mjs'); }
+    pdfjsMod = await import(p);
+  } catch (e) { console.warn('pdfjs 로드 실패:', e.message); pdfjsMod = false; }
+  return pdfjsMod;
+}
+async function pdfToText(buf) {
+  const pdfjs = await loadPdfParser(); if (!pdfjs) return '';
+  const doc = await pdfjs.getDocument({ data: new Uint8Array(buf), disableWorker: true, isEvalSupported: false }).promise;
+  let out = ''; const maxPages = Math.min(doc.numPages, 40);
+  for (let i = 1; i <= maxPages; i++) { const pg = await doc.getPage(i); const tc = await pg.getTextContent(); out += tc.items.map(it => it.str).join(' ').replace(/\s+/g, ' ').trim() + '\n'; }
+  if (doc.numPages > maxPages) out += `…(총 ${doc.numPages}쪽 중 ${maxPages}쪽까지)`;
+  return out.trim();
+}
+const fileTextCache = new Map();
+async function fileInfo(id) {
+  try { return await canvasGet(`/files/${id}`); } catch { return null; }
+}
+async function extractPdfText(url, name) {
+  if (fileTextCache.has(url)) return fileTextCache.get(url);
+  let text = '';
+  try {
+    const r = await fetch(url, { headers: { Authorization: `Bearer ${TOKEN}` }, redirect: 'follow', signal: AbortSignal.timeout(30000) });
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    const buf = Buffer.from(await r.arrayBuffer()); if (buf.length > 15 * 1024 * 1024) throw new Error('too large');
+    text = await pdfToText(buf);
+    if (text.length > 8000) text = text.slice(0, 8000) + '…';
+  } catch (e) { console.warn('PDF 텍스트 추출 실패', name, e.message); }
+  fileTextCache.set(url, text); return text;
+}
+async function collectFiles(attachments, html) {
+  const files = [];
+  for (const a of (attachments || [])) files.push({ id: String(a.id), name: a.display_name || a.filename, url: a.url, type: a['content-type'] || a.content_type || '', size: a.size || 0 });
+  for (const l of linksFromHtml(html)) if (!files.some(f => f.id && f.id === l.id) && !files.some(f => f.url === l.url)) files.push(l);
+  for (const f of files) {
+    if (f.external) continue;
+    if (f.id && !f.type) { const info = await fileInfo(f.id); if (info) { f.name = info.display_name || f.name; f.type = info['content-type'] || ''; f.url = info.url || f.url; f.size = info.size || 0; } }
+    if (/pdf/i.test(f.type || '') || /\.pdf$/i.test(f.name || '')) f.text = await extractPdfText(f.url, f.name);
+  }
+  return files;
+}
 
 async function canvasGet(path, params = {}) {
   // 페이지네이션(Link: rel="next") 자동 수집
@@ -48,12 +107,13 @@ async function fromCanvas() {
         const s = a.submission || {};
         assignments.push({ id: `a${a.id}`, course: cname, title: a.name, due: a.due_at || null,
           submitted: !!(s.submitted_at || s.workflow_state === 'submitted' || s.workflow_state === 'graded'),
-          url: a.html_url || `${BASE}/courses/${c.id}/assignments/${a.id}` });
+          url: a.html_url || `${BASE}/courses/${c.id}/assignments/${a.id}`,
+          body: fullText(a.description, 3000), files: await collectFiles(null, a.description) });
       }
     } catch (e) { console.warn('assignments', cname, e.message); }
     try {
       const an = await canvasGet('/announcements', { 'context_codes[]': [`course_${c.id}`], active_only: 'true' });
-      for (const n of an) notices.push({ id: `n${n.id}`, course: cname, title: n.title, date: n.posted_at || n.created_at || null, summary: summarize(n.message), url: n.html_url || '' });
+      for (const n of an) notices.push({ id: `n${n.id}`, course: cname, title: n.title, date: n.posted_at || n.created_at || null, summary: summarize(n.message), body: fullText(n.message), url: n.html_url || '', files: await collectFiles(n.attachments, n.message) });
     } catch (e) { console.warn('announcements', cname, e.message); }
   }
   return { generatedAt: new Date().toISOString(), source: 'canvas', user: me?.name || null, courses: courses.map(c => String(c.name||'').replace(/\s*\(?S?\d{2,3}분반\)?\s*$/, '').trim()), assignments, notices };
