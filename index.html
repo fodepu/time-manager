@@ -2476,7 +2476,9 @@
   .lms-detail { margin-top:12px; border:1px solid var(--border,#e5e5e5); border-radius:12px; background: var(--bg-card,#fff); overflow:hidden; }
   .lms-dhead { display:flex; align-items:center; justify-content:space-between; padding:10px 12px; }
   .lms-dname { font-size:16px; font-weight:800; }
-  .lms-close { border:none; background: var(--bg-soft); color: var(--text-muted); width:30px; height:30px; border-radius:50%; font-size:14px; cursor:pointer; }
+  .lms-back { border:none; background:none; color: var(--text-muted); font-size:14px; font-weight:600; padding:4px 8px 4px 0; cursor:pointer; white-space:nowrap; }
+  .lms-dhead { gap:8px; }
+  .lms-detail { margin-top:4px; }
   .lms-brief { margin:0 12px 6px; padding:10px 12px; background: var(--bg-soft); border-radius:10px; font-size:13px; line-height:1.55; white-space:pre-wrap; }
   .lms-item.static { cursor:default; }
   /* LMS 카드 */
@@ -8494,16 +8496,17 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     });
     C.innerHTML=ch;
     C.querySelectorAll('.lms-course').forEach(function(el){ el.addEventListener('click', function(){ openCourse(el.getAttribute('data-course')); }); });
-    if(lmsSel && courses.indexOf(lmsSel)>=0) renderCourse(lmsSel); else { D.style.display='none'; }
+    if(lmsSel && courses.indexOf(lmsSel)>=0){ renderCourse(lmsSel); showList(false); } else { D.style.display='none'; showList(true); }
   };
   function shortCourse(c){ return String(c||'').replace(/\s*\(?S?\d{2,3}분반\)?\s*$/,'').replace(/^\(SDGs\)/,'').trim(); }
   function fmtShort(iso, withTime){ var d=new Date(iso); return (d.getMonth()+1)+'/'+d.getDate()+(withTime?' '+pad(d.getHours())+':'+pad(d.getMinutes()):''); }
-  function openCourse(c){ lmsSel=c; renderCourse(c); var D=document.getElementById('lmsDetail'); setTimeout(function(){ D.scrollIntoView({behavior:'smooth',block:'start'}); },30); }
+  function showList(on){ var U=document.getElementById('lmsUrgent'), C=document.getElementById('lmsCards'); if(U) U.style.display=on?'':'none'; if(C) C.style.display=on?'':'none'; }
+  function openCourse(c){ lmsSel=c; renderCourse(c); showList(false); window.scrollTo({top:0,behavior:'smooth'}); }
   function renderCourse(c){
     var D=document.getElementById('lmsDetail'); if(!lmsData) return; var col=courseColor(c); var seen=seenSet();
     var as=(lmsData.assignments||[]).filter(function(a){ return a.course===c; }).sort(function(a,b){ return (a.due?new Date(a.due):8.64e15)-(b.due?new Date(b.due):8.64e15); });
     var ns=(lmsData.notices||[]).filter(function(n){ return n.course===c; }).sort(function(a,b){ return new Date(b.date||0)-new Date(a.date||0); });
-    var h='<div class="lms-dhead" style="border-left:5px solid '+col+'"><div><div class="lms-dname">'+escapeHtml(shortCourse(c))+'</div><div class="lms-sub">과제 '+as.length+' · 공지 '+ns.length+'</div></div><button type="button" class="lms-close" id="lmsClose">✕</button></div>';
+    var h='<div class="lms-dhead" style="border-left:5px solid '+col+'"><button type="button" class="lms-back" id="lmsClose">‹ 과목 목록</button><div style="flex:1;min-width:0"><div class="lms-dname">'+escapeHtml(shortCourse(c))+'</div><div class="lms-sub">과제 '+as.length+' · 공지 '+ns.length+'</div></div></div>';
     var bc = lmsBrief && lmsBrief.courses && lmsBrief.courses[c];
     if(bc && bc.summary) h+='<div class="lms-brief">'+escapeHtml(bc.summary)+'</div>';
     if(bc && Array.isArray(bc.todos) && bc.todos.length){ h+='<div class="lms-sec">해야 할 일 (공지에서 추출)</div>'; bc.todos.forEach(function(t){ h+='<div class="lms-item static"><div class="lms-main"><div class="lms-title">☐ '+escapeHtml(t)+'</div></div></div>'; }); }
@@ -8515,7 +8518,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     ns.forEach(function(n){ var b=briefFor(n.id); var isNew=!seen.has(String(n.id));
       h+='<div class="lms-item" data-nid="'+escapeHtml(String(n.id))+'"><div class="lms-main"><div class="lms-title">'+escapeHtml((b&&b.ko_title)||n.title)+'</div>'+(b&&b.ko_title&&b.ko_title!==n.title?'<div class="lms-sub">'+escapeHtml(n.title)+'</div>':'')+'<div class="lms-sub">'+(n.date?fmtShort(n.date):'')+'</div><div class="lms-body">'+(b&&b.ko_summary?'<b>요약</b> '+escapeHtml(b.ko_summary)+'\n\n':'')+escapeHtml(n.summary||'')+(n.url?'\n'+n.url:'')+'</div></div>'+(isNew?'<span class="lms-badge new">NEW</span>':'')+'</div>'; });
     D.innerHTML=h; D.style.display='block';
-    D.querySelector('#lmsClose').addEventListener('click', function(){ lmsSel=null; D.style.display='none'; });
+    D.querySelector('#lmsClose').addEventListener('click', function(){ lmsSel=null; D.style.display='none'; showList(true); window.scrollTo({top:0}); });
     D.querySelectorAll('.lms-item[data-nid]').forEach(function(el){ el.addEventListener('click', function(){ el.classList.toggle('open'); markSeen(el.getAttribute('data-nid')); var b=el.querySelector('.lms-badge.new'); if(b) b.remove(); }); });
     D.querySelectorAll('.lms-add').forEach(function(bt){ bt.addEventListener('click', function(ev){ ev.stopPropagation(); var id=bt.getAttribute('data-add'); var a=as.find(function(x){ return String(x.id||x.title)===id; }); if(a) addAssignmentBlock(a); }); });
   }
