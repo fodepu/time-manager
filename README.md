@@ -13,7 +13,7 @@
 앱은 정적 페이지라 브라우저에서 LMS를 직접 호출하지 않습니다. **GitHub Actions**(`.github/workflows/lms.yml`)가 30분마다 `scripts/lms-fetch.mjs`를 실행해 `data/lms.json`을 커밋합니다. 토큰은 **repo Secrets에만** 저장됩니다.
 
 ### 1) Canvas 여부 확인
-러닝X는 Canvas 기반입니다. 로그인한 브라우저에서 `https://ecampus.khu.ac.kr/api/v1/users/self` 를 열어 JSON(이름·id)이 보이면 Canvas API 사용 가능.
+러닝X는 Canvas 기반입니다. 로그인한 브라우저에서 `https://khcanvas.khu.ac.kr/api/v1/users/self` 를 열어 JSON(이름·id)이 보이면 Canvas API 사용 가능.
 
 ### 2) 액세스 토큰 발급
 e-campus → **계정(Account) → 설정(Settings) → "승인된 통합(Approved Integrations)" → + 새 액세스 토큰**
@@ -26,12 +26,12 @@ e-campus → **계정(Account) → 설정(Settings) → "승인된 통합(Approv
 
 | Secret | 값 | 필수 |
 |---|---|---|
-| `LMS_BASE_URL` | `https://ecampus.khu.ac.kr` | Canvas API 사용 시 |
+| `LMS_BASE_URL` | `https://khcanvas.khu.ac.kr` | Canvas API 사용 시 |
 | `LMS_TOKEN` | 위에서 발급한 토큰 | Canvas API 사용 시 |
 | `LMS_ICS_URL` | 캘린더 피드 URL (3-b) | 폴백(선택) |
 
 **3-b) 폴백 — 캘린더 .ics 피드**
-e-campus **캘린더 → 캘린더 피드(Calendar Feed)** 버튼 → `https://ecampus.khu.ac.kr/feeds/calendars/user_….ics` 복사 → `LMS_ICS_URL`에 등록. Canvas API가 막혀도 **과제 마감**은 표시됩니다(공지·제출여부는 불가).
+e-campus **캘린더 → 캘린더 피드(Calendar Feed)** 버튼 → `https://khcanvas.khu.ac.kr/feeds/calendars/user_….ics` 복사 → `LMS_ICS_URL`에 등록. Canvas API가 막혀도 **과제 마감**은 표시됩니다(공지·제출여부는 불가).
 
 ### 4) 실행
 - Actions 탭 → **LMS sync** → **Run workflow**로 즉시 1회 실행 후, 이후 30분마다 자동.
