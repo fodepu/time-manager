@@ -2783,7 +2783,7 @@
         <div class="lec-left">
           <div class="lec-dropzone" id="lecDropZone">
             <canvas id="lecCanvas"></canvas>
-            <div class="lec-drop-hint">PDF를 여기에 드래그하거나 "PDF 열기"</div>
+            <div class="lec-drop-hint">PDF를 여기에 드래그하거나 "PDF 열기"<br><small>온라인 강의(물리학 등)는 PDF 없이 바로 녹음 시작 → 5분마다 구간 자동 분할, → 키로 수동 분할</small></div>
           </div>
           <div class="lec-nav"><button type="button" class="lec-btn" id="lecPrev">←</button><span id="lecPage">–</span><button type="button" class="lec-btn" id="lecNext">→</button><span class="lec-hint">키보드 ← → / Space</span></div>
         </div>
@@ -8825,7 +8825,11 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     cv.width=v.width; cv.height=v.height; cv.style.width=(v.width/dpr)+'px'; cv.style.height=(v.height/dpr)+'px';
     await pg.render({canvasContext:cv.getContext('2d'), viewport:v}).promise; $('lecPage').textContent=S.page+' / '+S.total;
   }
-  function goPage(n){ if(!S.pdf) return; n=Math.max(1,Math.min(S.total,n)); if(n===S.page) return; S.page=n; if(S.running) S.log.push({t:nowT(), page:n}); renderPage(); renderLive(); }
+  var ONLINE_AUTO_SEC=300; S.online=false; S.lastCut=0;
+  function goPage(n){
+    if(S.online){ if(n<=S.page) return; S.page=S.page+1; S.total=S.page; S.lastCut=nowT(); if(S.running) S.log.push({t:nowT(), page:S.page}); $('lecPage').textContent='구간 '+S.page; renderLive(); return; }
+    if(!S.pdf) return; n=Math.max(1,Math.min(S.total,n)); if(n===S.page) return; S.page=n; if(S.running) S.log.push({t:nowT(), page:n}); renderPage(); renderLive(); }
+  function autoCut(){ if(!S.online||!S.running) return; if(nowT()-S.lastCut>=ONLINE_AUTO_SEC){ goPage(S.page+1); } }
 
   // ---- 번역기: Chrome Translator API → 폴백(웹) ----
   async function initTranslator(){
@@ -8857,7 +8861,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   }
   function renderLive(){
     var box=$('lecLive'); if(!box) return; var p=S.page||1, sl=S.slides[p]||{segs:[]}; var showEn=$('lecShowEn')&&$('lecShowEn').checked;
-    var h='<div class="lec-live-head">슬라이드 '+p+(S.total?' / '+S.total:'')+' <small>'+sl.segs.length+'문장 · '+(S.running?'● 녹음 중 '+fmtT(nowT()):'대기')+'</small></div>';
+    var h='<div class="lec-live-head">'+(S.online?'구간 '+p+' <small>(5분마다 자동, → 키로 수동 분할)</small>':'슬라이드 '+p+(S.total?' / '+S.total:''))+' <small>'+sl.segs.length+'문장 · '+(S.running?'● 녹음 중 '+fmtT(nowT()):'대기')+'</small></div>';
     sl.segs.forEach(function(s){ h+='<div class="lec-seg"><div class="lec-ko">'+(s.ko?escapeHtml(s.ko):'<span class="lec-wait">번역 중…</span>')+'</div>'+(showEn?'<div class="lec-en">'+escapeHtml(s.en)+'</div>':'')+'</div>'; });
     if(S.lastInterim) h+='<div class="lec-seg interim"><div class="lec-en">'+escapeHtml(S.lastInterim)+'</div></div>';
     box.innerHTML=h; box.scrollTop=box.scrollHeight;
@@ -8872,12 +8876,13 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     S.course=$('lecCourse').value||''; S.title=($('lecTitle').value||'').trim(); if(!S.course){ showToast('과목을 선택하세요'); return; }
     if(!S.title) S.title=S.course.replace(/^\(SDGs\)/,'')+' 강의';
     S.date=toLocalDateStr(new Date()); S.id='lec_'+S.date+'_'+Date.now().toString(36);
+    S.online=!S.pdf; if(S.online){ S.page=1; S.total=1; S.lastCut=0; $('lecPage').textContent='구간 1'; }
     S.slides={}; S.log=[{t:0,page:S.page||1}]; S.startAt=Date.now(); S.running=true; S.audioBlob=null; $('lecDownloadAudio').style.display='none'; $('lecFinish').style.display='none';
     status('번역기 준비 중…'); await initTranslator();
     if(!startRecognition()){ S.running=false; return; }
     await startAudio();
-    $('lecRec').textContent='■ 녹음 중지'; $('lecRec').classList.add('on'); status('● 녹음 중 · 번역: '+(S.tmode==='chrome'?'Chrome 내장':'웹')+' · ← → 로 슬라이드 넘기기','ok');
-    S.tick=setInterval(renderLive,1000); saveLocal();
+    $('lecRec').textContent='■ 녹음 중지'; $('lecRec').classList.add('on'); status('● 녹음 중 · 번역: '+(S.tmode==='chrome'?'Chrome 내장':'웹')+(S.online?' · 온라인 강의 모드(PDF 없음): 5분마다 구간 자동, → 로 수동 분할':' · ← → 로 슬라이드 넘기기'),'ok');
+    S.tick=setInterval(function(){ renderLive(); autoCut(); },1000); saveLocal();
   }
   function stopAll(){
     S.running=false; clearInterval(S.tick); try{ if(S.rec){ S.rec.onend=null; S.rec.stop(); } }catch(e){} stopAudio();
@@ -8885,7 +8890,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     saveLocal(); $('lecFinish').style.display=''; renderList();
   }
   function payload(){ var slides=Object.keys(S.slides).map(Number).sort(function(a,b){return a-b;}).map(function(p){ var sl=S.slides[p]; return { page:p, en:sl.segs.map(function(s){return s.en;}).join(' '), ko:sl.segs.map(function(s){return s.ko;}).join(' '), segs:sl.segs }; });
-    return { id:S.id, course:S.course, title:S.title, date:S.date, pdf:S.pdfName, pages:S.total, duration:nowT(), log:S.log, slides:slides, savedAt:new Date().toISOString() }; }
+    return { id:S.id, course:S.course, title:S.title, date:S.date, mode:(S.online?'online':'slides'), pdf:S.pdfName, pages:S.total, duration:nowT(), log:S.log, slides:slides, savedAt:new Date().toISOString() }; }
   function saveLocal(){ if(!S.id) return; idbPut('lec', Object.assign({status:S.running?'recording':'saved'}, payload())).catch(function(){}); }
   async function sendFinish(){
     if(!S.id||!Object.keys(S.slides).length){ showToast('보낼 대본이 없어요'); return; }
@@ -8914,17 +8919,17 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     if(!data){ try{ data=await idbGet('lec',id); }catch(e){} } if(!data){ showToast('데이터를 찾을 수 없어요'); return; }
     var col=courseColorFor(data.course);
     var h='<div class="lms-topbar"><button type="button" class="lms-back" id="lecBack">←</button><span style="flex:1"></span><button type="button" class="lec-export" id="lecExport">마크다운 내보내기</button><button type="button" class="lec-export danger" id="lecDelete">이 기기에서 삭제</button></div>';
-    h+='<div class="lms-dhead" style="border-left:5px solid '+col+'"><div><div class="lms-dname">'+escapeHtml(data.title||'강의')+'</div><div class="lms-sub">'+escapeHtml(String(data.course||'').replace(/^\(SDGs\)/,''))+' · '+escapeHtml(data.date||'')+(data.pages?' · '+data.pages+'쪽':'')+(data.duration?' · '+fmtT(data.duration):'')+'</div></div></div>';
+    h+='<div class="lms-dhead" style="border-left:5px solid '+col+'"><div><div class="lms-dname">'+escapeHtml(data.title||'강의')+'</div><div class="lms-sub">'+escapeHtml(String(data.course||'').replace(/^\(SDGs\)/,''))+' · '+escapeHtml(data.date||'')+(data.pages?' · '+data.pages+(data.mode==='online'?'구간':'쪽'):'')+(data.duration?' · '+fmtT(data.duration):'')+'</div></div></div>';
     if(data.overview) h+='<div class="lms-brief">'+md(data.overview)+'</div>';
     if(data.exam && data.exam.length){ h+='<div class="lms-sec">시험·과제 언급</div><div class="lms-todos">'; data.exam.forEach(function(x){ h+='<div class="lms-todo"><div class="lms-todo-text">'+md(x).replace(/^<p class="md-p">|<\/p>$/g,'')+'</div></div>'; }); h+='</div>'; }
-    (data.slides||[]).forEach(function(s){ h+='<div class="lec-slide"><div class="lec-slide-head">슬라이드 '+s.page+(s.summary?' <span>— '+escapeHtml(s.summary)+'</span>':'')+'</div>'+(s.keyPoints&&s.keyPoints.length?'<div class="lec-kp">'+md(s.keyPoints.map(function(k){return '- '+k;}).join('\n'))+'</div>':'<div class="lec-kp muted">'+(ready?'핵심 없음':'필기 생성 전 — 대본만')+'</div>')+'<details class="lec-tr"><summary>대본 보기 (한국어 / 영어)</summary><div class="lec-ko">'+escapeHtml(s.ko||'')+'</div><div class="lec-en">'+escapeHtml(s.en||'')+'</div></details></div>'; });
+    (data.slides||[]).forEach(function(s){ h+='<div class="lec-slide"><div class="lec-slide-head">'+(data.mode==='online'?'구간 ':'슬라이드 ')+s.page+(s.summary?' <span>— '+escapeHtml(s.summary)+'</span>':'')+'</div>'+(s.keyPoints&&s.keyPoints.length?'<div class="lec-kp">'+md(s.keyPoints.map(function(k){return '- '+k;}).join('\n'))+'</div>':'<div class="lec-kp muted">'+(ready?'핵심 없음':'필기 생성 전 — 대본만')+'</div>')+'<details class="lec-tr"><summary>대본 보기 (한국어 / 영어)</summary><div class="lec-ko">'+escapeHtml(s.ko||'')+'</div><div class="lec-en">'+escapeHtml(s.en||'')+'</div></details></div>'; });
     R.innerHTML=h; R.style.display='block'; $('lecWork').style.display='none'; $('lecList').style.display='none';
     $('lecBack').addEventListener('click',function(){ R.style.display='none'; $('lecWork').style.display=''; $('lecList').style.display=''; });
     $('lecExport').addEventListener('click',function(){ exportMd(data); });
     $('lecDelete').addEventListener('click',async function(){ if(!confirm('이 강의 기록을 이 기기에서 삭제할까요? (저장소의 필기는 남습니다)')) return; await idbDel('lec',id); R.style.display='none'; $('lecWork').style.display=''; $('lecList').style.display=''; renderList(); });
   }
   function exportMd(d){ var m='# '+(d.title||'강의')+'\n\n'+(d.course||'')+' · '+(d.date||'')+'\n\n'; if(d.overview) m+=d.overview+'\n\n'; (d.exam||[]).forEach(function(x){ m+='- ⚠️ '+x+'\n'; }); if(d.exam&&d.exam.length) m+='\n';
-    (d.slides||[]).forEach(function(s){ m+='## 슬라이드 '+s.page+(s.summary?' — '+s.summary:'')+'\n\n'; (s.keyPoints||[]).forEach(function(k){ m+='- '+k+'\n'; }); m+='\n<details><summary>대본</summary>\n\n'+(s.ko||'')+'\n\n'+(s.en||'')+'\n\n</details>\n\n'; });
+    (d.slides||[]).forEach(function(s){ m+='## '+(d.mode==='online'?'구간 ':'슬라이드 ')+s.page+(s.summary?' — '+s.summary:'')+'\n\n'; (s.keyPoints||[]).forEach(function(k){ m+='- '+k+'\n'; }); m+='\n<details><summary>대본</summary>\n\n'+(s.ko||'')+'\n\n'+(s.en||'')+'\n\n</details>\n\n'; });
     var a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([m],{type:'text/markdown'})); a.download=(d.title||'lecture')+'_'+(d.date||'')+'.md'; a.click(); }
 
   // ---- 과목/PDF 소스 ----
