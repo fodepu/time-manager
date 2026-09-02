@@ -40,7 +40,7 @@ async function fromCanvas() {
     .filter(c => c && c.name && !c.access_restricted_by_date);
   const assignments = [], notices = [];
   for (const c of courses) {
-    const cname = c.course_code || c.name;
+    const cname = String(c.name || c.course_code || '').replace(/\s*\(?S?\d{2,3}분반\)?\s*$/, '').replace(/^\(SDGs\)/, '').trim() || c.course_code;
     try {
       const as = await canvasGet(`/courses/${c.id}/assignments`, { 'include[]': ['submission'], order_by: 'due_at' });
       for (const a of as) {
@@ -56,7 +56,7 @@ async function fromCanvas() {
       for (const n of an) notices.push({ id: `n${n.id}`, course: cname, title: n.title, date: n.posted_at || n.created_at || null, summary: summarize(n.message), url: n.html_url || '' });
     } catch (e) { console.warn('announcements', cname, e.message); }
   }
-  return { generatedAt: new Date().toISOString(), source: 'canvas', user: me?.name || null, courses: courses.map(c => c.course_code || c.name), assignments, notices };
+  return { generatedAt: new Date().toISOString(), source: 'canvas', user: me?.name || null, courses: courses.map(c => String(c.name||'').replace(/\s*\(?S?\d{2,3}분반\)?\s*$/, '').trim()), assignments, notices };
 }
 
 function parseIcs(text) {
