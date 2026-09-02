@@ -2378,7 +2378,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="19">
+<meta name="tm-version" content="20">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -2460,7 +2460,7 @@
   .p-del { border:none; background: var(--bg-soft); color: var(--text-muted); width:30px; height:34px; border-radius:8px; cursor:pointer; flex-shrink:0; }
   .tt-addp { width:100%; border:1px dashed var(--border,#ccc); background:none; color: var(--text-muted); padding:9px; border-radius:10px; font-size:13px; cursor:pointer; }
   /* 강의노트: 폰 숨김 + 전체화면 노트 모드 */
-  @media (max-width: 759px) { .tab[data-mode="lecture"] { display:none !important; } }
+  @media (max-width: 759px) and (hover: none) and (pointer: coarse) { .tab[data-mode="lecture"] { display:none !important; } }
   body.lec-full .header, body.lec-full .date-block, body.lec-full .tabs { display:none !important; }
   body.lec-full .container { max-width:none; padding:8px 14px; }
   body.lec-full .lec-main { grid-template-columns: minmax(0,7fr) minmax(320px,3fr); height: calc(100vh - 150px); }
