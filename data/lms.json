@@ -1,217 +1,413 @@
 {
-  "generatedAt": "2026-09-02T06:21:41.407Z",
+  "generatedAt": "2026-09-02T07:18:22.857Z",
   "source": "canvas",
   "user": "김주함(2025####72)",
   "courses": [
-    "(SDGs)리질리언스와지속가능한도시 S00분반",
-    "거시경제학 00분반",
-    "계량경제학 00분반",
-    "모두를위한물리학 S00분반",
-    "성찰과표현 S00분반",
-    "창업과 thinking design S00분반"
+    "(SDGs)리질리언스와지속가능한도시",
+    "거시경제학",
+    "계량경제학",
+    "모두를위한물리학",
+    "성찰과표현",
+    "창업과 thinking design"
   ],
   "assignments": [
     {
       "id": "a1492416",
-      "course": "모두를위한물리학 S00분반",
+      "course": "모두를위한물리학",
       "title": "1주차 과제",
       "due": "2026-09-14T14:59:00Z",
       "submitted": false,
-      "url": "https://khcanvas.khu.ac.kr/courses/97015/assignments/1492416"
+      "url": "https://khcanvas.khu.ac.kr/courses/97015/assignments/1492416",
+      "body": "",
+      "files": []
     },
     {
       "id": "a1492422",
-      "course": "모두를위한물리학 S00분반",
+      "course": "모두를위한물리학",
       "title": "2주차 과제",
       "due": "2026-09-14T14:59:00Z",
       "submitted": false,
-      "url": "https://khcanvas.khu.ac.kr/courses/97015/assignments/1492422"
+      "url": "https://khcanvas.khu.ac.kr/courses/97015/assignments/1492422",
+      "body": "",
+      "files": []
     },
     {
       "id": "a1492423",
-      "course": "모두를위한물리학 S00분반",
+      "course": "모두를위한물리학",
       "title": "3주차 과제",
       "due": "2026-09-21T14:59:00Z",
       "submitted": false,
-      "url": "https://khcanvas.khu.ac.kr/courses/97015/assignments/1492423"
+      "url": "https://khcanvas.khu.ac.kr/courses/97015/assignments/1492423",
+      "body": "아래 질문에 대해 각각 270~350자(공백포함) 이내로 답하시오. (글자 수 확인은 매뉴얼 참고) [글자 수는 제목을 제외한 내용만을 셉니다. 예를 2번의 경우 [5차시 11:29] 하야부사 와 같은 부분들도 제외하고 글자수를 확인하니 이점 꼭 확인하고 과제 작성을 하시길 바랍니다.] --- 이번 주 강의에서 이야기한 내용만을 사용하여, 카오스와 프랙탈의 관계에 대하여 로렌츠 끌개를 예로 이용하여 설명하라. 2. 이번 주 강의에서 가장 인상 깊었던 부분에 대해 다음과 같은 방식으로 요약하라. - 인상 깊었던 부분이 강의에서 나오는 시점 (여러 곳에 있는 경우 모두 써도 무방) - 제목 - 인상 깊었던 이유 (예시) [5차시 11:29] 하야부사 일본이 그렇게 앞선 기술을 가졌다는.... 3. 동영상 강의에 관한 질문 (이 문항은 질문이 있는 사람만 쓸 것. 쓰지 않아도 감점 없음. 분량 제한 없음) --- 1. 과제 제출은 e-campus에 직접 작성하여 제출하시면 되십니다. (PDF, hwp 등 파일로 제출 시 0점처리) 2. 인터넷 소스를 베껴서 과제를 제출하실 경우 0점 처리하도록 하겠습니다. 3. 과제 제출 마감기한은 매주 월요일 23:59분으로 접속자가 몰리면 간혹 서버에 문제가 생기는 경우가 있으니 미리 제출해주세요. 23:00 이후 제출하여 문제가 발생하는 경우 (서버에 의한 문제일 지라도) 미제출로 처리 합니다. 4. 해당 과제에 대한 채점 완료 후 튜터들의 피드백을 확인 하시기 바랍니다.",
+      "files": []
     },
     {
       "id": "a1492424",
-      "course": "모두를위한물리학 S00분반",
+      "course": "모두를위한물리학",
       "title": "4주차 과제",
       "due": "2026-09-28T14:59:00Z",
       "submitted": false,
-      "url": "https://khcanvas.khu.ac.kr/courses/97015/assignments/1492424"
+      "url": "https://khcanvas.khu.ac.kr/courses/97015/assignments/1492424",
+      "body": "아래 질문에 대해 각각 270~350자(공백포함) 이내로 답하시오. (글자 수 확인은 매뉴얼 참고) [글자 수는 제목을 제외한 내용만을 셉니다. 예를 2번의 경우 [5차시 11:29] 하야부사 와 같은 부분들도 제외하고 글자수를 확인하니 이점 꼭 확인하고 과제 작성을 하시길 바랍니다.] --- 이번 주 강의에서 우주를 연극에 비유했다. 일반 상대성이론을 고려할 때 연극에 어떤 변화가 생기는가? 2. 이번 주 강의에서 가장 인상 깊었던 부분에 대해 다음과 같은 방식으로 요약하라. - 인상 깊었던 부분이 강의에서 나오는 시점 (여러 곳에 있는 경우 모두 써도 무방) - 제목 - 인상 깊었던 이유 (예시) [5차시 11:29] 하야부사 일본이 그렇게 앞선 기술을 가졌다는.... 3. 동영상 강의에 관한 질문 (이 문항은 질문이 있는 사람만 쓸 것. 쓰지 않아도 감점 없음. 분량 제한 없음) --- 1. 과제 제출은 e-campus에 직접 작성하여 제출하시면 되십니다. (PDF, hwp 등 파일로 제출 시 0점처리) 2. 인터넷 소스를 베껴서 과제를 제출하실 경우 0점 처리하도록 하겠습니다. 3. 과제 제출 마감기한은 매주 월요일 23:59분으로 접속자가 몰리면 간혹 서버에 문제가 생기는 경우가 있으니 미리 제출해주세요. 23:00 이후 제출하여 문제가 발생하는 경우 (서버에 의한 문제일 지라도) 미제출로 처리 합니다. 4. 해당 과제에 대한 채점 완료 후 튜터들의 피드백을 확인 하시기 바랍니다.",
+      "files": []
     },
     {
       "id": "a1492425",
-      "course": "모두를위한물리학 S00분반",
+      "course": "모두를위한물리학",
       "title": "5주차 과제",
       "due": "2026-10-05T14:59:00Z",
       "submitted": false,
-      "url": "https://khcanvas.khu.ac.kr/courses/97015/assignments/1492425"
+      "url": "https://khcanvas.khu.ac.kr/courses/97015/assignments/1492425",
+      "body": "아래 질문에 대해 각각 270~350자(공백포함) 이내로 답하시오. (글자 수 확인은 매뉴얼 참고) [글자 수는 제목을 제외한 내용만을 셉니다. 예를 2번의 경우 [5차시 11:29] 하야부사 와 같은 부분들도 제외하고 글자수를 확인하니 이점 꼭 확인하고 과제 작성을 하시길 바랍니다.] --- 이번 주 강의에서 이야기한 내용만을 사용하여, 빅뱅 이론이 옳다는 것을 보여주는 관측 증거 두 가지를 간단히 기술하라. 2. 이번 주 강의에서 가장 인상 깊었던 부분에 대해 다음과 같은 방식으로 요약하라. - 인상 깊었던 부분이 강의에서 나오는 시점 (여러 곳에 있는 경우 모두 써도 무방) - 제목 - 인상 깊었던 이유 (예시) [5차시 11:29] 하야부사 일본이 그렇게 앞선 기술을 가졌다는.... 3. 동영상 강의에 관한 질문 (이 문항은 질문이 있는 사람만 쓸 것. 쓰지 않아도 감점 없음. 분량 제한 없음) --- 1. 과제 제출은 e-campus에 직접 작성하여 제출하시면 되십니다. (PDF, hwp 등 파일로 제출 시 0점처리) 2. 인터넷 소스를 베껴서 과제를 제출하실 경우 0점 처리하도록 하겠습니다. 3. 과제 제출 마감기한은 매주 월요일 23:59분으로 접속자가 몰리면 간혹 서버에 문제가 생기는 경우가 있으니 미리 제출해주세요. 23:00 이후 제출하여 문제가 발생하는 경우 (서버에 의한 문제일 지라도) 미제출로 처리 합니다. 4. 해당 과제에 대한 채점 완료 후 튜터들의 피드백을 확인 하시기 바랍니다.",
+      "files": []
     },
     {
       "id": "a1492426",
-      "course": "모두를위한물리학 S00분반",
+      "course": "모두를위한물리학",
       "title": "6주차 과제",
       "due": "2026-10-12T14:59:00Z",
       "submitted": false,
-      "url": "https://khcanvas.khu.ac.kr/courses/97015/assignments/1492426"
+      "url": "https://khcanvas.khu.ac.kr/courses/97015/assignments/1492426",
+      "body": "아래 질문에 대해 각각 270~350자(공백포함) 이내로 답하시오. (글자 수 확인은 매뉴얼 참고) [글자 수는 제목을 제외한 내용만을 셉니다. 예를 2번의 경우 [5차시 11:29] 하야부사 와 같은 부분들도 제외하고 글자수를 확인하니 이점 꼭 확인하고 과제 작성을 하시길 바랍니다.] --- 이번 주 강의에서 이야기한 내용만을 사용하여, 맥스웰 방정식 각각의 식이 갖는 의미를 간단히 설명하라. 참고로 맥스웰 방정식에 아래와 같이 번호를 준다. 2. 이번 주 강의에서 가장 인상 깊었던 부분에 대해 다음과 같은 방식으로 요약하라. - 인상 깊었던 부분이 강의에서 나오는 시점 (여러 곳에 있는 경우 모두 써도 무방) - 제목 - 인상 깊었던 이유 (예시) [5차시 11:29] 하야부사 일본이 그렇게 앞선 기술을 가졌다는.... 3. 동영상 강의에 관한 질문 (이 문항은 질문이 있는 사람만 쓸 것. 쓰지 않아도 감점 없음. 분량 제한 없음) --- 1. 과제 제출은 e-campus에 직접 작성하여 제출하시면 되십니다. (PDF, hwp 등 파일로 제출 시 0점처리) 2. 인터넷 소스를 베껴서 과제를 제출하실 경우 0점 처리하도록 하겠습니다. 3. 과제 제출 마감기한은 매주 월요일 23:59분으로 접속자가 몰리면 간혹 서버에 문제가 생기는 경우가 있으니 미리 제출해주세요. 23:00 이후 제출하여 문제가 발생하는 경우 (서버에 의한 문제일 지라도) 미제출로 처리 합니다. 4. 해당 과제에 대한 채점 완료 후 튜터들의 피드백을 확인 하시기 바랍니다.",
+      "files": []
     },
     {
       "id": "a1492427",
-      "course": "모두를위한물리학 S00분반",
+      "course": "모두를위한물리학",
       "title": "7주차 과제",
       "due": "2026-10-19T14:59:00Z",
       "submitted": false,
-      "url": "https://khcanvas.khu.ac.kr/courses/97015/assignments/1492427"
+      "url": "https://khcanvas.khu.ac.kr/courses/97015/assignments/1492427",
+      "body": "아래 질문에 대해 각각 270~350자(공백포함) 이내로 답하시오. (글자 수 확인은 매뉴얼 참고) [글자 수는 제목을 제외한 내용만을 셉니다. 예를 2번의 경우 [5차시 11:29] 하야부사 와 같은 부분들도 제외하고 글자수를 확인하니 이점 꼭 확인하고 과제 작성을 하시길 바랍니다.] --- 이번 주 강의에서 이야기한 내용만 사용하여, 내 앞에 놓인 사과를 인식하기까지 일어나는 모든 과정을 정해진 과제 분량 내에서 최대한 자세히 설명하라. 2. 이번 주 강의에서 가장 인상 깊었던 부분에 대해 다음과 같은 방식으로 요약하라. - 인상 깊었던 부분이 강의에서 나오는 시점 (여러 곳에 있는 경우 모두 써도 무방) - 제목 - 인상 깊었던 이유 (예시) [5차시 11:29] 하야부사 일본이 그렇게 앞선 기술을 가졌다는.... 3. 동영상 강의에 관한 질문 (이 문항은 질문이 있는 사람만 쓸 것. 쓰지 않아도 감점 없음. 분량 제한 없음) --- 1. 과제 제출은 e-campus에 직접 작성하여 제출하시면 되십니다. (PDF, hwp 등 파일로 제출 시 0점처리) 2. 인터넷 소스를 베껴서 과제를 제출하실 경우 0점 처리하도록 하겠습니다. 3. 과제 제출 마감기한은 매주 월요일 23:59분으로 접속자가 몰리면 간혹 서버에 문제가 생기는 경우가 있으니 미리 제출해주세요. 23:00 이후 제출하여 문제가 발생하는 경우 (서버에 의한 문제일 지라도) 미제출로 처리 합니다. 4. 해당 과제에 대한 채점 완료 후 튜터들의 피드백을 확인 하시기 바랍니다.",
+      "files": []
     },
     {
       "id": "a1492428",
-      "course": "모두를위한물리학 S00분반",
+      "course": "모두를위한물리학",
       "title": "9주차 과제",
       "due": "2026-11-02T14:59:59Z",
       "submitted": false,
-      "url": "https://khcanvas.khu.ac.kr/courses/97015/assignments/1492428"
+      "url": "https://khcanvas.khu.ac.kr/courses/97015/assignments/1492428",
+      "body": "아래 질문에 대해 각각 270~350자(공백포함) 이내로 답하시오. (글자 수 확인은 매뉴얼 참고) [글자 수는 제목을 제외한 내용만을 셉니다. 예를 2번의 경우 [5차시 11:29] 하야부사 와 같은 부분들도 제외하고 글자수를 확인하니 이점 꼭 확인하고 과제 작성을 하시길 바랍니다.] --- 이번 주 강의에서 이야기한 내용만을 사용하여, 빛이 입자인 이유에 대하여 설명하라. 2. 이번 주 강의에서 가장 인상 깊었던 부분에 대해 다음과 같은 방식으로 요약하라. - 인상 깊었던 부분이 강의에서 나오는 시점 (여러 곳에 있는 경우 모두 써도 무방) - 제목 - 인상 깊었던 이유 (예시) [5차시 11:29] 하야부사 일본이 그렇게 앞선 기술을 가졌다는.... 3. 동영상 강의에 관한 질문 (이 문항은 질문이 있는 사람만 쓸 것. 쓰지 않아도 감점 없음. 분량 제한 없음) --- 1. 과제 제출은 e-campus에 직접 작성하여 제출하시면 되십니다. (PDF, hwp 등 파일로 제출 시 0점처리) 2. 인터넷 소스를 베껴서 과제를 제출하실 경우 0점 처리하도록 하겠습니다. 3. 과제 제출 마감기한은 매주 월요일 23:59분으로 접속자가 몰리면 간혹 서버에 문제가 생기는 경우가 있으니 미리 제출해주세요. 23:00 이후 제출하여 문제가 발생하는 경우 (서버에 의한 문제일 지라도) 미제출로 처리 합니다. 4. 해당 과제에 대한 채점 완료 후 튜터들의 피드백을 확인 하시기 바랍니다.",
+      "files": []
     },
     {
       "id": "a1492417",
-      "course": "모두를위한물리학 S00분반",
+      "course": "모두를위한물리학",
       "title": "10주차 과제",
       "due": "2026-11-09T14:59:59Z",
       "submitted": false,
-      "url": "https://khcanvas.khu.ac.kr/courses/97015/assignments/1492417"
+      "url": "https://khcanvas.khu.ac.kr/courses/97015/assignments/1492417",
+      "body": "아래 질문에 대해 각각 270~350자(공백포함) 이내로 답하시오. (글자 수 확인은 매뉴얼 참고) [글자 수는 제목을 제외한 내용만을 셉니다. 예를 2번의 경우 [5차시 11:29] 하야부사 와 같은 부분들도 제외하고 글자수를 확인하니 이점 꼭 확인하고 과제 작성을 하시길 바랍니다.] --- 양자역학의 코펜하겐 해석에 대해 아인슈타인은 “신은 주사위를 던지지 않는다.”라고 말했다. 이번 주 강의에서 이야기한 이중슬릿 실험을 사용하여, 이 말의 의미를 설명하라. 2. 이번 주 강의에서 가장 인상 깊었던 부분에 대해 다음과 같은 방식으로 요약하라. - 인상 깊었던 부분이 강의에서 나오는 시점 (여러 곳에 있는 경우 모두 써도 무방) - 제목 - 인상 깊었던 이유 (예시) [5차시 11:29] 하야부사 일본이 그렇게 앞선 기술을 가졌다는.... 3. 동영상 강의에 관한 질문 (이 문항은 질문이 있는 사람만 쓸 것. 쓰지 않아도 감점 없음. 분량 제한 없음) --- 1. 과제 제출은 e-campus에 직접 작성하여 제출하시면 되십니다. (PDF, hwp 등 파일로 제출 시 0점처리) 2. 인터넷 소스를 베껴서 과제를 제출하실 경우 0점 처리하도록 하겠습니다. 3. 과제 제출 마감기한은 매주 월요일 23:59분으로 접속자가 몰리면 간혹 서버에 문제가 생기는 경우가 있으니 미리 제출해주세요. 23:00 이후 제출하여 문제가 발생하는 경우 (서버에 의한 문제일 지라도) 미제출로 처리 합니다. 4. 해당 과제에 대한 채점 완료 후 튜터들의 피드백을 확인 하시기 바랍니다.",
+      "files": []
     },
     {
       "id": "a1492418",
-      "course": "모두를위한물리학 S00분반",
+      "course": "모두를위한물리학",
       "title": "11주차 과제",
       "due": "2026-11-16T14:59:59Z",
       "submitted": false,
-      "url": "https://khcanvas.khu.ac.kr/courses/97015/assignments/1492418"
+      "url": "https://khcanvas.khu.ac.kr/courses/97015/assignments/1492418",
+      "body": "아래 질문에 대해 각각 270~350자(공백포함) 이내로 답하시오. (글자 수 확인은 매뉴얼 참고) [글자 수는 제목을 제외한 내용만을 셉니다. 예를 2번의 경우 [5차시 11:29] 하야부사 와 같은 부분들도 제외하고 글자수를 확인하니 이점 꼭 확인하고 과제 작성을 하시길 바랍니다.] --- 이번 주 강의에서 이야기한 내용만 사용하여, 튜링기계의 관점에서 컴퓨터의 작동 원리를 설명하라. 2. 이번 주 강의에서 가장 인상 깊었던 부분에 대해 다음과 같은 방식으로 요약하라. - 인상 깊었던 부분이 강의에서 나오는 시점 (여러 곳에 있는 경우 모두 써도 무방) - 제목 - 인상 깊었던 이유 (예시) [5차시 11:29] 하야부사 일본이 그렇게 앞선 기술을 가졌다는.... 3. 동영상 강의에 관한 질문 (이 문항은 질문이 있는 사람만 쓸 것. 쓰지 않아도 감점 없음. 분량 제한 없음) --- 1. 과제 제출은 e-campus에 직접 작성하여 제출하시면 되십니다. (PDF, hwp 등 파일로 제출 시 0점처리) 2. 인터넷 소스를 베껴서 과제를 제출하실 경우 0점 처리하도록 하겠습니다. 3. 과제 제출 마감기한은 매주 월요일 23:59분으로 접속자가 몰리면 간혹 서버에 문제가 생기는 경우가 있으니 미리 제출해주세요. 23:00 이후 제출하여 문제가 발생하는 경우 (서버에 의한 문제일 지라도) 미제출로 처리 합니다. 4. 해당 과제에 대한 채점 완료 후 튜터들의 피드백을 확인 하시기 바랍니다.",
+      "files": []
     },
     {
       "id": "a1492419",
-      "course": "모두를위한물리학 S00분반",
+      "course": "모두를위한물리학",
       "title": "12주차 과제",
       "due": "2026-11-23T14:59:59Z",
       "submitted": false,
-      "url": "https://khcanvas.khu.ac.kr/courses/97015/assignments/1492419"
+      "url": "https://khcanvas.khu.ac.kr/courses/97015/assignments/1492419",
+      "body": "아래 질문에 대해 각각 270~350자(공백포함) 이내로 답하시오. (글자 수 확인은 매뉴얼 참고) [글자 수는 제목을 제외한 내용만을 셉니다. 예를 2번의 경우 [5차시 11:29] 하야부사 와 같은 부분들도 제외하고 글자수를 확인하니 이점 꼭 확인하고 과제 작성을 하시길 바랍니다.] --- 장난감 루빅스 큐브(Rubik's Cube)를 이용하여 열역학 제2법칙을 설명하라. 2. 이번 주 강의에서 가장 인상 깊었던 부분에 대해 다음과 같은 방식으로 요약하라. - 인상 깊었던 부분이 강의에서 나오는 시점 (여러 곳에 있는 경우 모두 써도 무방) - 제목 - 인상 깊었던 이유 (예시) [5차시 11:29] 하야부사 일본이 그렇게 앞선 기술을 가졌다는.... 3. 동영상 강의에 관한 질문 (이 문항은 질문이 있는 사람만 쓸 것. 쓰지 않아도 감점 없음. 분량 제한 없음) --- 1. 과제 제출은 e-campus에 직접 작성하여 제출하시면 되십니다. (PDF, hwp 등 파일로 제출 시 0점처리) 2. 인터넷 소스를 베껴서 과제를 제출하실 경우 0점 처리하도록 하겠습니다. 3. 과제 제출 마감기한은 매주 월요일 23:59분으로 접속자가 몰리면 간혹 서버에 문제가 생기는 경우가 있으니 미리 제출해주세요. 23:00 이후 제출하여 문제가 발생하는 경우 (서버에 의한 문제일 지라도) 미제출로 처리 합니다. 4. 해당 과제에 대한 채점 완료 후 튜터들의 피드백을 확인 하시기 바랍니다.",
+      "files": []
     },
     {
       "id": "a1492420",
-      "course": "모두를위한물리학 S00분반",
+      "course": "모두를위한물리학",
       "title": "13주차 과제",
       "due": "2026-11-30T14:59:59Z",
       "submitted": false,
-      "url": "https://khcanvas.khu.ac.kr/courses/97015/assignments/1492420"
+      "url": "https://khcanvas.khu.ac.kr/courses/97015/assignments/1492420",
+      "body": "아래 질문에 대해 각각 270~350자(공백포함) 이내로 답하시오. (글자 수 확인은 매뉴얼 참고) [글자 수는 제목을 제외한 내용만을 셉니다. 예를 2번의 경우 [5차시 11:29] 하야부사 와 같은 부분들도 제외하고 글자수를 확인하니 이점 꼭 확인하고 과제 작성을 하시길 바랍니다.] --- 이번 주 강의에서 이야기한 내용만을 사용하여 \"정보에서 의미를 제거하다\"의 의미를 설명하라. 2. 이번 주 강의에서 가장 인상 깊었던 부분에 대해 다음과 같은 방식으로 요약하라. - 인상 깊었던 부분이 강의에서 나오는 시점 (여러 곳에 있는 경우 모두 써도 무방) - 제목 - 인상 깊었던 이유 (예시) [5차시 11:29] 하야부사 일본이 그렇게 앞선 기술을 가졌다는.... 3. 동영상 강의에 관한 질문 (이 문항은 질문이 있는 사람만 쓸 것. 쓰지 않아도 감점 없음. 분량 제한 없음) --- 1. 과제 제출은 e-campus에 직접 작성하여 제출하시면 되십니다. (PDF, hwp 등 파일로 제출 시 0점처리) 2. 인터넷 소스를 베껴서 과제를 제출하실 경우 0점 처리하도록 하겠습니다. 3. 과제 제출 마감기한은 매주 월요일 23:59분으로 접속자가 몰리면 간혹 서버에 문제가 생기는 경우가 있으니 미리 제출해주세요. 23:00 이후 제출하여 문제가 발생하는 경우 (서버에 의한 문제일 지라도) 미제출로 처리 합니다. 4. 해당 과제에 대한 채점 완료 후 튜터들의 피드백을 확인 하시기 바랍니다.",
+      "files": []
     },
     {
       "id": "a1492421",
-      "course": "모두를위한물리학 S00분반",
+      "course": "모두를위한물리학",
       "title": "14주차 과제",
       "due": "2026-12-07T14:59:59Z",
       "submitted": false,
-      "url": "https://khcanvas.khu.ac.kr/courses/97015/assignments/1492421"
+      "url": "https://khcanvas.khu.ac.kr/courses/97015/assignments/1492421",
+      "body": "아래 질문에 대해 각각 270~350자(공백포함) 이내로 답하시오. (글자 수 확인은 매뉴얼 참고) [글자 수는 제목을 제외한 내용만을 셉니다. 예를 2번의 경우 [5차시 11:29] 하야부사 와 같은 부분들도 제외하고 글자수를 확인하니 이점 꼭 확인하고 과제 작성을 하시길 바랍니다.] --- 이번 주 강의에서는 ‘창발’에 대해 여러 차례 이야기한다. 세상을 총체적으로 이해하는 데 창발이 왜 중요한지 설명하라. 2. 이번 주 강의에서 가장 인상 깊었던 부분에 대해 다음과 같은 방식으로 요약하라. - 인상 깊었던 부분이 강의에서 나오는 시점 (여러 곳에 있는 경우 모두 써도 무방) - 제목 - 인상 깊었던 이유 (예시) [5차시 11:29] 하야부사 일본이 그렇게 앞선 기술을 가졌다는.... 3. 동영상 강의에 관한 질문 (이 문항은 질문이 있는 사람만 쓸 것. 쓰지 않아도 감점 없음. 분량 제한 없음) --- 1. 과제 제출은 e-campus에 직접 작성하여 제출하시면 되십니다. (PDF, hwp 등 파일로 제출 시 0점처리) 2. 인터넷 소스를 베껴서 과제를 제출하실 경우 0점 처리하도록 하겠습니다. 3. 과제 제출 마감기한은 매주 월요일 23:59분으로 접속자가 몰리면 간혹 서버에 문제가 생기는 경우가 있으니 미리 제출해주세요. 23:00 이후 제출하여 문제가 발생하는 경우 (서버에 의한 문제일 지라도) 미제출로 처리 합니다. 4. 해당 과제에 대한 채점 완료 후 튜터들의 피드백을 확인 하시기 바랍니다.",
+      "files": []
     }
   ],
   "notices": [
     {
       "id": "n476944",
-      "course": "거시경제학 00분반",
+      "course": "거시경제학",
       "title": "Generative AI Guidelines for Students [경희대학교 AI 활용 교육 가이드라인 (학습자용)]",
       "date": "2026-09-01T01:06:50Z",
       "summary": "Dear Students, Please, see the attached PDF file of the University Generative AI Guidelines for Students [경희대학교 AI 활용 교육 가이드라인 (학습자용)]. Unfortunately, there is no English version yet. Cheers, Sun",
-      "url": "https://khcanvas.khu.ac.kr/courses/95555/discussion_topics/476944"
+      "body": "Dear Students, Please, see the attached PDF file of the University Generative AI Guidelines for Students [경희대학교 AI 활용 교육 가이드라인 (학습자용)]. Unfortunately, there is no English version yet. Cheers, Sun",
+      "url": "https://khcanvas.khu.ac.kr/courses/95555/discussion_topics/476944",
+      "files": [
+        {
+          "id": "9684541",
+          "name": "z경희대학교 AI 활용 교육 가이드라인 (학습자용).pdf",
+          "url": "https://khcanvas.khu.ac.kr/files/9684541/download?download_frd=1&verifier=d2rz8JRJIFl89I4XlF4pJg28TpQUfGbv2f1YbHtv",
+          "type": "application/pdf",
+          "size": 215341,
+          "text": "- 1 - AI 활용 교육 가이드라인 ( 학습자용 ) v1.1 교수학습개발원 1. 서문 1-1. 경희대학교의 교육 철학과 AI 경희대학교는 ‘ 문화세계의 창조 ’ 라는 설립이념을 바탕으로 ‘ 학문과 평화 ’ 의 학풍과 전통을 이어왔습니다 . 이러한 건학 이념은 인간의 존엄과 공동체적 공존을 바탕으로 전인적이고 실천적인 인재를 길러내는 교육으로의 여정으로 이어졌습니다 . 우리 대학은 최근 발전하고 있는 AI 역시 , 교육의 수월성을 증진하고 , 대학다운 미래대학을 만들어 나가기 위한 중요한 기술적 진보로 판단하고 있습니다 . 본 가이드라인은 이러한 교육철학을 바탕으로 인공지능 ( 특히 생성형 AI) 을 학습의 본질을 확장하는 도구로서 책임 있게 활용하도록 안내하기 위한 기본 원칙을 제시 하기 위해 작성되었습니다 . 우리는 AI 가 학습자의 사고력과 창의성을 대체하는 기계가 아니라 , 깊은 이해 , 비판적 성찰 , 공동선에 대한 책임을 촉진하는 동반자여야 한다고 봅니다 . 이러한 관점은 후마니타스가 강조하는 인간 이해와 타자 배려 , 그리고 경희가 지향해 온 평화와 공존의 가치에서 출발합니다 . 본 가이드라인은 AI 의 효율성과 접근성 증대라는 장점과 함께 환각 , 편향 , 지적 재산 침해 , 개인정보 침해 등의 위험을 균형 있게 고려하여 제작되었습니다 . 따라서 우리는 학문공동체 구성원이 정보를 비판적으로 검증하고 , 자신의 판단과 책임 아래 AI 를 활용하도록 돕는 원칙과 실천 방안을 제시 하려고 합니다 . 1-2. 적용 범위 및 용어 설명 본 가이드라인의 적용 범위는 학부 및 대학원 수업 , 비교과 프로그램 , 평가 및 과제 전반을 망라하며 연구 목적의 활용은 별도의 연구윤리 ·IRB 지침을 우선하되 교육 맥락에서는 본 가이드라인을 준용합니다 .  ‘ 생성형 AI(Generative AI)’ 란 텍스트 , 코드 , 이미지 , 오디오 , 비디오 등 다양한 형식의 콘텐츠를 생성 하거나 변형하는 모델과 서비스를 의미합니다 .  ‘ 공개 (Disclosure)’ 란 수업자료 , 과제나 평가물에서 AI 사용 사실과 도구명 , 사용 목적 , 핵심 프롬프트 요약 , 검증 방법 등을 명시하는 행위를 말합니다 .  ‘ 출처 표기 (Citation)’ 란 AI 도구 및 결과물을 적절한 서지 형식으로 밝히는 것을 뜻합니다 .\n- 2 - 2. 기본 원칙 : 경희교육철학에 뿌리를 둔 여섯 가지 약속 Human Agency 첫째 , 인간 중심의 학습 주권을 확립 합니다 . AI 는 학습 과정을 지원하는 도구일 뿐 , 지적 성취의 주체는 학습자 자신입니다 . 기술의 진보가 인간의 자율적 성숙과 결합할 때 비로소 진정한 ' 문화세계의 창조 ' 가 실현된다는 믿음에 기반합니다 . Equity & Inclusion 둘째 , 공존 · 상생과 공공성을 강화 합니다 . AI 도입은 학습 격차를 줄이고 접근성을 높이는 방식으로 설계되어야 합니다 . 장애 , 언어 , 사회경제적 배경에 따른 장벽을 낮추어 모든 구성원이 배움에 참여할 수 있도록 합니다 . Academic Integrity 셋째 , 정직 · 투명 · 책임을 준수 합니다 . AI 사용 여부를 명확히 공개하고 출처를 표기하며 , 결과의 정확성과 적법성에 대한 책임을 사용자가 집니다 . 이는 학문공동체의 신뢰를 지키는 핵심 원칙입니다 . Safety & Security 넷째 , 안전과 프라이버시를 보호 합니다 . 개인정보와 민감한 학습 · 연구 데이터를 외부에 노출하지 않으며 , 관련 법령과 대학 규정을 엄격히 준수합니다 . 학습자와 공동체의 안전은 혁신과 효율보다 우선합니다 . Critical & Creative Thinking 다섯째 , 비판적 · 창의적 사고력을 함양 합니다 . 경희대학교 구성원은 AI 의 원리와 한계를 이해하고 , 편향과 오류를 식별하며 , 창의적으로 문제를 재구성하는 능력을 키워야 합니다 . 이는 모든 학습자가 지닌 학문적 책임입니다 . Global Citizenship & Sustainable Peace 여섯째 , 글로벌 시민성과 평화의 가치를 확장 합니다 . AI 활용은 인류의 지속가능발전과 인권 존중에 기여해야 하며 , 지식과 기술의 공유를 통해 국내외 공동체의 평화적 발전과 공존을 추구합니다 .\n- 3 - 3. 기술 · 법적 · 윤리 기준 : 정보 보안 및 사용자 안전 ( 권리 ) 3-1. AI 활용 위험도 분류 교육 상황에서 AI 활용은 학습의 공정성과 교육의 성취 , 창의성의 보전이라는 교육적 목적에서 비롯됩니다 . 사용 수준 및 정도에 따라 발생할 수 있는 안전과 보안 관련 위험 요소를 예측하고 관리해야 합니다 . [ 저위험 활용 ] AI 가 아이디어 발상 , 개념 설명 , 문장 윤문과 같이 학습을 보조하지만 , 학습 성과를 완벽히 대체할 수 없는 수준의 활용입니다 . [ 중위험 활용 ] AI 를 활용한 요약 , 번역 , 코드 디버깅 , 피드백 초안 작성처럼 교육의 결과물 , 성취에 실질적으로 기여하는 활동입니다 . 학습자가 AI 결과물을 검토하고 수정하는 과정이 포함되어야 하며 , 교수자는 AI 사용 여부 공개 , 출처 표기 , 결과 검증 기록을 의무화해야 합니다 . [ 고위험 활용 ] AI 가 최종 산출물 ( 보고서 , 에세이 , 코드 , 이미지 , 음원 , 동영상 등 ) 의 핵심 내용 및 논리를 주도적으로 작성 · 생성하여 , 학습자의 탐구 과정이 최소화되는 수준의 활동입니다 . 교수자는 교과목 내 AI 활용 수준 및 범위를 명확히 정하여 안내하고 , 금지하거나 엄격히 제한해야 합니다 . 3-2. 데이터 보호 및 보안 기준 학습자 권리와 연구윤리 , 저작권 보호를 위해 다음 기준을 준수해야 합니다 . [ 개인정보 및 민감정보 보호 ]  개인식별정보 , 건강 · 재정 · 학적 정보 등 민감한 개인정보는 외부 AI 서비스에 업로드하지 않습니다 .  학생 기록은 어떠한 상황에서도 외부 상용 AI 서비스에 업로드하지 않습니다 . [ 연구 자료 및 지식재산 보호 ]  미공개 연구 자료나 지식재산 관련 내용은 원칙적으로 업로드를 금지합니다 .  학내 승인 서비스 ( 예 : 쿠옹샘 ) 의 사용을 우선하며 , 데이터 보존과 삭제 정책을 사전에 확인합니다 . [ 수업자료 및 공개 데이터 활용 ]  수업자료는 담당 교수자의 판단에 따라 선택적으로 활용할 수 있습니다 .  공개 데이터와 자료는 라이선스를 준수하는 범위에서 활용 가능합니다 . [ 저작권 및 지식재산권 준수 ]  AI 가 생성하거나 변형한 콘텐츠의 라이선스를 확인합니다 .  2 차 저작물의 성격과 사용 조건을 확인한 후 과제와 수업에 활용합니다 .\n- 4 - 4. 학습자 가이드 : 책임 있는 활용과 학업 윤리 [ 기본 지침 ]  생성형 AI 활용의 목적은 학습과 연구의 보조 , 그리고 학문적 지식의 깊이 있는 이해입니다 .  각 교과목에서 교수자가 제시한 AI 활용 수준 및 범위를 우선적으로 준수해야 합니다 .  지식습득의 핵심은 학습자의 자율적인 학습과 탐구이므로 , 생성형 AI 에 지나치게 의존하지 않습니다 .  AI 를 올바른 학습 보조 도구로 활용하고 있는지 점검하기 위해 AI 활용 자가 점검 체크리스트 ( 부록 참조 ) 를 확인할 수 있습니다 . [ 의무 사항 ]  AI 사용 시에는 반드시 그 사실을 공개하고 적절한 형식으로 출처를 표기해야 합니다 .  AI 생성 결과물은 항상 정확성을 확인하고 신뢰할 만한 정보원을 통해 검증해야 하며 , 그 책임은 학습자 본인에게 있습니다 .  신뢰할 만한 정보원의 예시 : - 학술 데이터베이스의 학회 논문 및 전문 학술지 , 연구보고서 - 정부 기관 , 국제기구 , 연구소 등의 공식 발행 자료 - 해당 분야 전문가가 저술한 서적 및 교재 [ 조치 및 지원 ]  AI 사용 사실을 표기하지 않거나 , 교수자가 허용하지 않은 방식으로 사용하거나 , 과제 또는 수업 활동의 결과물 전체를 AI 가 생성한 내용 그대로 제출하는 행위는 학업윤리 위반에 해당합니다 .  학업윤리는 학문 공동체의 신뢰와 공정성을 지키기 위한 기본 원칙으로 , 정직성 , 책임성 , 투명성을 핵심 가치로 합니다 . 위반 시 대학의 관련 규정에 따라 경고 , 과제 재제출 , 성적 조정 , 징계 등 교육적 지도를 포함한 절차적 조치가 따를 수 있습니다 .  제시된 범위 외에 추가적인 AI 자원이 필요한 경우에는 교수자에게 사유와 필요한 서비스를 명확히 설명해야 합니다 .\n- 5 - [ 학습자 실천 가이드 ] 기본 지침 및 의무 사항 실천 요소 구체적인 실천 가이드 교과목별 AI 활용 정책 확인 AI 활용 가능 여부 확인 각 교과목의 강의계획서를 통해 해당 수업의 AI 활용 수준 ( 금지형 , 제한 허용형 , 적극통합형 ) 을 확인합니다 . 허용 범위 및 도구 확인 각 교과목의 교수자가 제시한 AI 활용 상세 지침을 통해 AI 활용 가능 범위와 허용되는 AI 도구를 확인합니다 . 금지 행위 및 조치 사항 숙지 각 교과목의 교수자가 지정한 AI 활용 금지 행위 및 위반 시 조치 ( 경고 , 과제 재제출 , 징계 등 ) 를 미리 확인합니다 . AI 활용 투명성 확보 및 공개 출처 명시 출처는 교수자가 제시한 방식 , 또는 학문 분야별 주요 학술지에서 사용하는 표기 방식을 따르기를 권장합니다 . 공개 의무 중위험 이상의 활용도가 있는 과제 또는 제출물에서는 AI 사용 도구 , 사용 목적 , 핵심 프롬프트의 요약 , 검증 방법 등을 교수자가 요구할 수 있습니다 . 근거자료 제출 준비 교수자가 요구할 경우를 대비하여 AI 사용 시 프롬프트 기록 ( 전문 또는 주요 프롬프트 스크린샷 ), 결과물 원본 , 활용 방식 등의 근거자료를 미리 확보합니다 . 신뢰성 검증 및 비판적 사용 원본 대조 및 문헌 확인 AI 가 제시한 출처나 사실을 학술 데이터베이스의 학회 논문 , 전문 학술지 , 정부 기관 등의 공식 발행 자료 등 신뢰할 만한 정보원과 반드시 대조하여 사실관계를 확인합니다 . 검증 기록 확보 AI 결과물의 검증 과정 ( 원전 대조 , 문헌 확인 , 테스트 실행 등 ) 을 구체적 으로 기록하여 과제의 투명성을 확보합니다 . 비판적 사고 및 판단 AI 결과물에 의존하지 않고 , 결과의 논리적 일관성과 타당성을 비판적으로 성찰합니다 . 단순히 AI 가 제공한 정보를 수동적으로 받아들이지 않고 , 자신의 비판적 · 창의적 사고력을 함양하는 기회로 활용합니다 . 위험 요소 및 윤리 점검 환각 및 편향 인식 AI 가 생성하는 내용에는 환각 , 편향의 위험이 있을 수 있음을 인지하고 , 결과물이 비윤리적이거나 편향되지는 않았는지 검토합니다 . 저작권 확인 AI 가 학습 데이터로부터 생성한 결과물은 사용 전 원저작물 여부를 확인 하여 저작권법에 저촉되지 않도록 주의합니다 . 2 차 저작물의 성격과 사용 조건도 확인합니다 . 개인 정보 보호 개인식별정보 , 민감한 학습 · 연구 데이터 , 미공개 연구 자료 등은 안전을 위해 외부 AI 서비스에 업로드하지 않습니다 . [TIP] 효과적인 AI 활용 ( 프롬프트 ) 실전 가이드 * AI 에게 질문을 던져보세요 ! AI 는 학습 과정을 보조하는 파트너 ( 튜터 ) 로 활용할 때 가장 효과적입니다 . 1. 맞춤형 개념 학습 ( 어려운 개념이 이해되지 않을 때 ) ( 예시 ) “ 특정 개념 ” 에 대해 설명해줘 . 내가 해당 전공 초심자임을 감안해서 쉽게 이해할 수 있는 비유와 예시를 통해 설명해줘 2. 대화를 통한 구체화 ( 발표 주제나 과제의 방향성이 막막할 때 ) ( 예시 ) 내가 “ 특정 개념 ” 에 대한 주제를 정할 수 있도록 계속해서 질문해줘 . 바로 답을 주지 말고 , 주제를 구체적으로 좁힐 수 있을 때까지 꼬리 질문을 던져줘 3. 개요 구조화 ( 아이디어를 보고서나 논문 구조로 정리하고 싶을 때 ) ( 예시 ) 내가 구상한 아이디어는 “ 아이디어 내용 ” 과 같아 . 이 내용을 “ 특정 구조 ( 예시 )” 형태로 구조화해줘 4. 초안 피드백 및 교정 ( 작성한 글을 다듬고 싶을 때 ) ( 예시 ) 너는 글쓰기 컨설턴트야 . 내가 작성한 초안을 검토하되 문장을 직접 수정하지 말고 , 논리적 흐름과 문단 구성 측면에서 개선할 점 3 가지를 피드백해줘 5. 팩트체크 목록 추출 (AI 답변의 사실 여부나 출처를 직접 대조 · 검증하고 싶을 때 ) ( 예시 ) 작성해 준 답변의 맨 마지막에 , 내가 학술 DB 나 공식 자료를 통해 사실 여부를 직접 검증해야 하는 인용 · 통계 · 수치 목록을 정리해줘\n- 6 - [ 부록 ] AI 활용 자가 점검 체크리스트 ( 예시 ) 본 교과목에서 AI 활용 지침과 학습 윤리를 준수했는지 아래 항목을 확인하여 □ 안에 체크 (V) 해 주십시오 . 1. 공통 항목 □ 교수자가 공지한 AI 활용 수준과 위반 시 조치사항 ( 경고 , 과제 재제출 , 징계 등 ) 을 확인하였나 □ 교수자가 제시한 AI 활용 상세 지침 ( 범위 , 허용 도구 , 출처 표기 방식 등 ) 을 준수하였나 □ 개인식별정보 , 민감한 연구 · 학습 데이터 , 미공개 수업 자료 등을 AI 서비스에 입력하지는 않았나 2-A [ 금지형 ] 선택 시 확인 항목 □ 초안 작성부터 최종 제출물 완성까지 어떠한 AI 도구도 사용하지 않았으며 , 오직 본인의 독립적이고 창의적인 역량으로 과제를 작성하였나 2-B [ 제한허용형 ], [ 적극통합형 ] 선택 시 확인 항목 □ 교수자 요구 시 제출할 수 있도록 주요 프롬프트 기록 ( 전문 또는 스크린샷 ), 결과물 원본 , 활용 방식 등 근거자료를 확보하였나 □ AI 가 제시한 정보 · 통계 · 출처를 학술 데이터베이스 ( 논문 , 전문 학술지 등 ) 및 공식 발행 자료 ( 정부 기관 등 ) 와 대조하여 사실관계를 확인하였나 □ AI 의 환각 ( 오류 )· 편향 · 비윤리적 표현 가능성을 인지하고 , 답변의 논리적 타당성을 비판적으로 검토하였나 □ AI 생성물의 원저작물 침해 여부 및 2 차 저작물 사용 조건을 확인하여 저작권법을 준수하였나 본 과제물은 경희대학교 AI 가이드라인 및 해당 교과목의 AI 활용 방침을 준수하여 작성되었습니다 . 최종 결과물 및 AI 활용에 대한 모든 책임은 작성자 본인에게 있으며 , 지침 위반 또는 부정행위 확인 시 이에 따른 불이익 조치를 감수할 것을 서약합니다 . 제출일 : 년 월 일 제출자 : ( 인 ) 교과목명 AI 활용 수준 [ ] 금지형 [ ] 제한허용형 [ ] 적극통합형 사용한 AI 도구 활용 목적 핵심 프롬프트 요약 결과물 검증 방법"
+        }
+      ]
     },
     {
       "id": "n475143",
-      "course": "거시경제학 00분반",
+      "course": "거시경제학",
       "title": "[Internship Listings in Korean] 청년인턴 공지 관련 사이트 모음.",
       "date": "2026-08-27T05:45:21Z",
       "summary": "1. 경희대학교 미래문명원 UN/국제기구 인턴 UN/국제기구 인턴십: https://uninternship.khu.ac.kr/uninternship/user/main/view .do 미래문명원 Main Website: https://gafc.khu.ac.kr/gafc_kor/user/main/view.do 2. 중앙부처 청년인턴 채용 사이트 https://www.2030db.go.kr/user/youthIntern/select…",
-      "url": "https://khcanvas.khu.ac.kr/courses/95555/discussion_topics/475143"
+      "body": "1. 경희대학교 미래문명원 UN/국제기구 인턴 UN/국제기구 인턴십: https://uninternship.khu.ac.kr/uninternship/user/main/view .do 미래문명원 Main Website: https://gafc.khu.ac.kr/gafc_kor/user/main/view.do 2. 중앙부처 청년인턴 채용 사이트 https://www.2030db.go.kr/user/youthIntern/selectYouthInternList.do 3. 한국은행 청년인턴 한국은행 채용사이트 : https://apply.bok.or.kr/ home > 뉴스/자료 > 공지사항: 2025년도 정보 https://www.bok.or.kr/portal/bbs/P0000561/view.do?menuNo=200037&nttId=10090714 . 4. 금융위원회 청년인턴 금융위원회 채용사이트: https://www.fsc.go.kr/no010104?srchCtgry=&curPage=&srchKey=&srchText=&srchBeginDt=&srchEndDt= 2025년 공지링크: https://www.fsc.go.kr/no010104/85891 . 5. 재정경제부 청년인턴: https://www.mofe.go.kr/nw/notice/emrcDetail.do?searchBbsId1=MOSFBBS_000000000031&searchNttId1=MOSF_000000000078582&menuNo=4050200 . 6. 예금보험공사 청년인턴 예금보험공사 채용사이트: https://www.kdic.or.kr/di/empm/selectPbcrEmpmPbancList.do . 7. 한국산업은행 청년인턴 https://recruit.kdb.co.kr/index.jsp https://kdb.incruit.com/hire/viewhire.asp?projectid=120 . 8. 한국수출입은행 청년인턴 https://koreaexim.incruit.com/hire/viewhire.asp?projectid=114 https://koreaexim.incruit.com/hire/hirelist.asp . 9. 외교부 국제기구 인사센터 청년인턴 외교부 국제기구 인사센터: https://unrecruit.mofa.go.kr/new/main/index.jsp 국제기구인턴십: https://unrecruit.mofa.go.kr/new/internship/un.jsp 인턴쉽공고: https://unrecruit.mofa.go.kr/new/internship/notice.jsp",
+      "url": "https://khcanvas.khu.ac.kr/courses/95555/discussion_topics/475143",
+      "files": [
+        {
+          "name": "https://uninternship.khu.ac.kr/uninternship/user/main/view",
+          "url": "https://uninternship.khu.ac.kr/uninternship/user/main/view",
+          "external": true
+        },
+        {
+          "name": "https://gafc.khu.ac.kr/gafc_kor/user/main/view.do",
+          "url": "https://gafc.khu.ac.kr/gafc_kor/user/main/view.do",
+          "external": true
+        },
+        {
+          "name": "https://www.2030db.go.kr/user/youthIntern/selectYouthInternList.do",
+          "url": "https://www.2030db.go.kr/user/youthIntern/selectYouthInternList.do",
+          "external": true
+        },
+        {
+          "name": "https://apply.bok.or.kr/",
+          "url": "https://apply.bok.or.kr/",
+          "external": true
+        },
+        {
+          "name": "https://www.bok.or.kr/portal/bbs/P0000561/view.do?menuNo=200037&nttId=10090714",
+          "url": "https://www.bok.or.kr/portal/bbs/P0000561/view.do?menuNo=200037&nttId=10090714",
+          "external": true
+        },
+        {
+          "name": "https://www.fsc.go.kr/no010104?srchCtgry=&curPage=&srchKey=&srchText=&srchBeginDt=&srchEndDt=",
+          "url": "https://www.fsc.go.kr/no010104?srchCtgry=&curPage=&srchKey=&srchText=&srchBeginDt=&srchEndDt=",
+          "external": true
+        },
+        {
+          "name": "https://www.fsc.go.kr/no010104/85891",
+          "url": "https://www.fsc.go.kr/no010104/85891",
+          "external": true
+        },
+        {
+          "name": "https://www.mofe.go.kr/nw/notice/emrcDetail.do?searchBbsId1=MOSFBBS_000000000031&searchNttId1=MOSF_000000000078582&menuNo=4050200",
+          "url": "https://www.mofe.go.kr/nw/notice/emrcDetail.do?searchBbsId1=MOSFBBS_000000000031&searchNttId1=MOSF_000000000078582&menuNo=4050200",
+          "external": true
+        },
+        {
+          "name": "https://www.kdic.or.kr/di/empm/selectPbcrEmpmPbancList.do",
+          "url": "https://www.kdic.or.kr/di/empm/selectPbcrEmpmPbancList.do",
+          "external": true
+        },
+        {
+          "name": "https://recruit.kdb.co.kr/index.jsp",
+          "url": "https://recruit.kdb.co.kr/index.jsp",
+          "external": true
+        },
+        {
+          "name": "https://kdb.incruit.com/hire/viewhire.asp?projectid=120",
+          "url": "https://kdb.incruit.com/hire/viewhire.asp?projectid=120",
+          "external": true
+        },
+        {
+          "name": "https://koreaexim.incruit.com/hire/viewhire.asp?projectid=114",
+          "url": "https://koreaexim.incruit.com/hire/viewhire.asp?projectid=114",
+          "external": true
+        },
+        {
+          "name": "https://koreaexim.incruit.com/hire/hirelist.asp",
+          "url": "https://koreaexim.incruit.com/hire/hirelist.asp",
+          "external": true
+        },
+        {
+          "name": "https://unrecruit.mofa.go.kr/new/main/index.jsp",
+          "url": "https://unrecruit.mofa.go.kr/new/main/index.jsp",
+          "external": true
+        },
+        {
+          "name": "https://unrecruit.mofa.go.kr/new/internship/un.jsp",
+          "url": "https://unrecruit.mofa.go.kr/new/internship/un.jsp",
+          "external": true
+        },
+        {
+          "name": "https://unrecruit.mofa.go.kr/new/internship/notice.jsp",
+          "url": "https://unrecruit.mofa.go.kr/new/internship/notice.jsp",
+          "external": true
+        }
+      ]
     },
     {
       "id": "n475142",
-      "course": "거시경제학 00분반",
+      "course": "거시경제학",
       "title": "Concerning Rational Expectations in an Economic Model",
       "date": "2026-08-27T05:38:21Z",
       "summary": "The following paragraphs are from Section 4.8.1 of John Cochrane's book Inflation , discussing rational expectations. \"My adaptive expectations model captures the essence of the views of central banks, policy makers, and most economists. To…",
-      "url": "https://khcanvas.khu.ac.kr/courses/95555/discussion_topics/475142"
+      "body": "The following paragraphs are from Section 4.8.1 of John Cochrane's book Inflation , discussing rational expectations. \"My adaptive expectations model captures the essence of the views of central banks, policy makers, and most economists. To them it provides a satisfactory summary and narrative for experience, which we should not discount. It has a harder time with currency crashes and hyperinflations outside most advanced-country experience, but practical policy types seem willing to have different theories for such events. Still, it would be unfortunate if this were our baseline theory, as it relies crucially on non-rational expectations. Now, an unproductive debate has raged for decades whether people are really “rational,” in their expectations as well as other decisions, and what that means in the complex real world. Fortunately, that’s not the issue. Rational expectations just means that the expectations of the model are the same as the expectations of the people in the model. “Rational expectations” is not a statement about the world, it is an internal consistency condition of a model. Rational expectations are just another facet of the optimizing behavior that we like to put in basic underlying economic models. That discipline reduces somewhat the impression that one can get any result one wishes by ad-hoc behavioral assumptions. Many models of animal behavior assume optimizing rational decisions, and describe animal behavior very well, though the animals don’t answer surveys very well. Model-consistent expectations, like optimizing behavior, moves us a bit more to offering explanations rather than mere descriptions of events, and raise the hope that the model’s predictions generalize and are robust to different policy regimes. For this reason, and despite its enduring popularity in policy circles, academic journals since the late 1970s have published essentially no classic IS-LM style articles, and insist to the point of repetitious tedium on detailed micro-foundations. Sure, people don’t exactly optimize, and surely their expectations are not perfect either. (Though, don’t confuse rational expectations with clairvoyant expectations. Fed staff economists are not that great at forecasting inflation either.) For this reason, less-than-rational expectations, are, like failures to optimize and long lists of frictions, interesting ingredients for elaborating an underlying simple model to match episodes, to match dynamics, on top of a simple optimizing model that gives us the basic sign and operation of monetary policy. They are potentially useful icing on the economic cake. But if we stop with model-inconsistent expectations at the heart of the most basic story about monetary policy, as a minimal, crucial, necessary ingredient, we deny that there is any simple, optimizing, supply and demand model of monetary policy like monetarism at the basis of inflation and the operation of monetary policy. Irrational expectations are not the icing, they are the cake. The basic sign and stability of monetary policy rest on people systematically making mistakes. Perhaps that is true, but it is surely worth looking a little harder for a simple underlying fully economic model. The Lucas rules of micro-founded, policy-invariant economic theory have stood for a half-century, at least as the starting point, for good reason. It’s worth making really sure before we abandon them. More practically, if that is true (and it may be so), then the proposition that higher interest rates lower inflation is highly contingent, and may easily disappear in other times, shocks, and institutional arrangements.\"",
+      "url": "https://khcanvas.khu.ac.kr/courses/95555/discussion_topics/475142",
+      "files": []
     },
     {
       "id": "n475139",
-      "course": "거시경제학 00분반",
+      "course": "거시경제학",
       "title": "Campus-wide MATLAB license",
       "date": "2026-08-27T05:35:11Z",
       "summary": "Dear Students, We now have a campus-wide MATLAB license. Here is a link to the university announcement: https://www.instagram.com/p/Cwway3cSCL9/?img_index=1 . Cheers, Sun Search entries or author",
-      "url": "https://khcanvas.khu.ac.kr/courses/95555/discussion_topics/475139"
+      "body": "Dear Students, We now have a campus-wide MATLAB license. Here is a link to the university announcement: https://www.instagram.com/p/Cwway3cSCL9/?img_index=1 . Cheers, Sun Search entries or author",
+      "url": "https://khcanvas.khu.ac.kr/courses/95555/discussion_topics/475139",
+      "files": [
+        {
+          "name": "https://www.instagram.com/p/Cwway3cSCL9/?img_index=1 .",
+          "url": "https://www.instagram.com/p/Cwway3cSCL9/?img_index=1",
+          "external": true
+        }
+      ]
     },
     {
       "id": "n475138",
-      "course": "거시경제학 00분반",
+      "course": "거시경제학",
       "title": "Useful Academic Library Resources",
       "date": "2026-08-27T05:34:26Z",
       "summary": "Dear Students, Kyung Hee University has an excellent academic library system which contributes to the prestige of our university. Please, enjoy the resources provided ( https://libguides.khu.ac.kr/ByResource Links to an external site. ). Fo…",
-      "url": "https://khcanvas.khu.ac.kr/courses/95555/discussion_topics/475138"
+      "body": "Dear Students, Kyung Hee University has an excellent academic library system which contributes to the prestige of our university. Please, enjoy the resources provided ( https://libguides.khu.ac.kr/ByResource Links to an external site. ). For newspapers and magazines check out https://libguides.khu.ac.kr/newspaper/guide and https://lib.khu.ac.kr/bbs/list/13 . Cheers, Sun",
+      "url": "https://khcanvas.khu.ac.kr/courses/95555/discussion_topics/475138",
+      "files": [
+        {
+          "name": "https://libguides.khu.ac.kr/ByResource Links to an external site.",
+          "url": "https://libguides.khu.ac.kr/ByResource",
+          "external": true
+        },
+        {
+          "name": "https://libguides.khu.ac.kr/newspaper/guide",
+          "url": "https://libguides.khu.ac.kr/newspaper/guide",
+          "external": true
+        },
+        {
+          "name": "https://lib.khu.ac.kr/bbs/list/13 .",
+          "url": "https://lib.khu.ac.kr/bbs/list/13",
+          "external": true
+        }
+      ]
     },
     {
       "id": "n475136",
-      "course": "거시경제학 00분반",
+      "course": "거시경제학",
       "title": "Main Library In-Stock Tracker",
       "date": "2026-08-27T05:31:45Z",
       "summary": "Dear Students, [Library In-Stock Tracker] The main library has our textbook \"Macroeconomics\", 6th edition, global edition, by Stephen D. Williamson, in stock. Here is the (Korean) link: https://lib.khu.ac.kr/search/detail/CATTOT000000981101…",
-      "url": "https://khcanvas.khu.ac.kr/courses/95555/discussion_topics/475136"
+      "body": "Dear Students, [Library In-Stock Tracker] The main library has our textbook \"Macroeconomics\", 6th edition, global edition, by Stephen D. Williamson, in stock. Here is the (Korean) link: https://lib.khu.ac.kr/search/detail/CATTOT000000981101?mainLink=/search/tot&briefLink=/search/tot/result?st=KWRD_A_q=macroeconomics+stephen+williamson_A_si=TOTAL You can have the English version of the site by clicking the language button at the upper-right corner. Cheers, Sun",
+      "url": "https://khcanvas.khu.ac.kr/courses/95555/discussion_topics/475136",
+      "files": []
     },
     {
       "id": "n475133",
-      "course": "거시경제학 00분반",
+      "course": "거시경제학",
       "title": "(Updated) Online University Book Store for Our Textbook",
       "date": "2026-08-27T05:30:25Z",
       "summary": "Dear Students, Y ou may visit online book store(s) such as Peason( https://share.google/HO9KlchHEQAVSUIgi ), Kyobo Book ( http://www.kyobobook.co.kr/product/detailViewEng.laf?ejkGb=ENG&mallGb=ENG&barcode=9781292215761&orderClick=LEa&Kc= (Li…",
-      "url": "https://khcanvas.khu.ac.kr/courses/95555/discussion_topics/475133"
+      "body": "Dear Students, Y ou may visit online book store(s) such as Peason( https://share.google/HO9KlchHEQAVSUIgi ), Kyobo Book ( http://www.kyobobook.co.kr/product/detailViewEng.laf?ejkGb=ENG&mallGb=ENG&barcode=9781292215761&orderClick=LEa&Kc= (Links to an external site.) ), or Amazon ( https://www.amazon.com/Macroeconomics-Global-D-Williamson-Stephen/dp/1292215763/ref=sr_1_1?crid=3BSOKJAXHVAWH&dib=eyJ2IjoiMSJ9.OufYXxPeHZ1ZhHpgPLrkBt-FiqdzG1h6utKZqleTAA_vSaYCFSN4I9J8R1e7lPsVw5aM_8brMGdvWxqsJ4jcPGSaUhw7u2pMJqen37VmceNOc_Bbrr--YdvY8H9WPp6rGE7CtOuKDSERobDSpp8JV_TKSQeNMdU_J3HaQNH7R4nAaBXPVu8HozucM0UXSQZVId-sKwL7AzeWL6Rrn1fhBf7qmcjrXt41Ilhn7YsTJl8.WHxiq0oPPbQrFGAdgsBc_HVqrNvAgyOyufa-4pc7o78&dib_tag=se&keywords=macroeconomics+steve+williamson&qid=1787808574&sprefix=macroeconomics+steve+williamson%2Caps%2C284&sr=8-1 ). Cheers, Sun",
+      "url": "https://khcanvas.khu.ac.kr/courses/95555/discussion_topics/475133",
+      "files": [
+        {
+          "name": "https://share.google/HO9KlchHEQAVSUIgi",
+          "url": "https://share.google/HO9KlchHEQAVSUIgi",
+          "external": true
+        },
+        {
+          "name": "http://www.kyobobook.co.kr/product/detailViewEng.laf?ejkGb=ENG&mallGb=ENG&barcode=9781292215761&orderClick=LEa&Kc= (Links to an external site.)",
+          "url": "http://www.kyobobook.co.kr/product/detailViewEng.laf?ejkGb=ENG&mallGb=ENG&barcode=9781292215761&orderClick=LEa&Kc=",
+          "external": true
+        },
+        {
+          "name": "https://www.amazon.com/Macroeconomics-Global-D-Williamson-Stephen/dp/1292215763/ref=sr_1_1?crid=3BSOKJAXHVAWH&dib=eyJ2IjoiMSJ9.OufYXxPeHZ1ZhHpgPLrkBt-FiqdzG1h6utKZqleTAA_vSaYCFSN4I9J8R1e7lPsVw5aM_8brMGdvWxqsJ4jcPGSaUhw7u2pMJqen37VmceNOc_Bbrr--YdvY8H9WPp6rGE7CtOuKDSERobDSpp8JV_TKSQeNMdU_J3HaQNH7R4nAaBXPVu8HozucM0UXSQZVId-sKwL7AzeWL6Rrn1fhBf7qmcjrXt41Ilhn7YsTJl8.WHxiq0oPPbQrFGAdgsBc_HVqrNvAgyOyufa-4pc7o78&dib_tag=se&keywords=macroeconomics+steve+williamson&qid=1787808574&sprefix=macroeconomics+steve+williamson%2Caps%2C284&sr=8-1",
+          "url": "https://www.amazon.com/Macroeconomics-Global-D-Williamson-Stephen/dp/1292215763/ref=sr_1_1?crid=3BSOKJAXHVAWH&dib=eyJ2IjoiMSJ9.OufYXxPeHZ1ZhHpgPLrkBt-FiqdzG1h6utKZqleTAA_vSaYCFSN4I9J8R1e7lPsVw5aM_8brMGdvWxqsJ4jcPGSaUhw7u2pMJqen37VmceNOc_Bbrr--YdvY8H9WPp6rGE7CtOuKDSERobDSpp8JV_TKSQeNMdU_J3HaQNH7R4nAaBXPVu8HozucM0UXSQZVId-sKwL7AzeWL6Rrn1fhBf7qmcjrXt41Ilhn7YsTJl8.WHxiq0oPPbQrFGAdgsBc_HVqrNvAgyOyufa-4pc7o78&dib_tag=se&keywords=macroeconomics+steve+williamson&qid=1787808574&sprefix=macroeconomics+steve+williamson%2Caps%2C284&sr=8-1",
+          "external": true
+        }
+      ]
     },
     {
       "id": "n475131",
-      "course": "거시경제학 00분반",
+      "course": "거시경제학",
       "title": "[Attention] 8 Tips to do BETTER in our Class",
       "date": "2026-08-27T05:19:20Z",
       "summary": "1. NEVER EVER GIVE UP! 2. Attend your in-person and online lectures REGULARLY. 3. Visit our class website REGULARLY and check class schedule updates. 4. Follow the class GUIDELINES announced in the `Syllabus' and our class website. 5. Revie…",
-      "url": "https://khcanvas.khu.ac.kr/courses/95555/discussion_topics/475131"
+      "body": "1. NEVER EVER GIVE UP! 2. Attend your in-person and online lectures REGULARLY. 3. Visit our class website REGULARLY and check class schedule updates. 4. Follow the class GUIDELINES announced in the `Syllabus' and our class website. 5. Review class materials with problem-solving. 6. Submit homework assignments and exam(s) ON TIME . 7. Exploit COMMUNICATION channels offered in our class. 8. Finally and most importantly, your ACTIVE participation and response matter. Show your performance AS MUCH AS POSSIBLE.",
+      "url": "https://khcanvas.khu.ac.kr/courses/95555/discussion_topics/475131",
+      "files": []
     },
     {
       "id": "n475129",
-      "course": "거시경제학 00분반",
+      "course": "거시경제학",
       "title": "Greetings to All Students",
       "date": "2026-08-27T05:18:26Z",
       "summary": "Dear Students, Before our class begins, I will post class materials under `Weekly Learning'. Until then, enjoy your vacation and stay healthy. I would like to end this message by quoting Professor Robert Solow, \"I estimate that if I had neg…",
-      "url": "https://khcanvas.khu.ac.kr/courses/95555/discussion_topics/475129"
+      "body": "Dear Students, Before our class begins, I will post class materials under `Weekly Learning'. Until then, enjoy your vacation and stay healthy. I would like to end this message by quoting Professor Robert Solow, \"I estimate that if I had neglected the students, I could have written 25 percent more scientific papers. The choice was easy to make and I do not regret it.\" ( For his full speech, see https://www.nobelprize.org/prizes/economic-sciences/1987/solow/speech/ ) Cheers, Sun",
+      "url": "https://khcanvas.khu.ac.kr/courses/95555/discussion_topics/475129",
+      "files": []
     },
     {
       "id": "n475126",
-      "course": "거시경제학 00분반",
+      "course": "거시경제학",
       "title": "[Warning!] I, Hyung Sun Choi, DO NOT consent to a UNAUTHORIZED access and a sneak peek to this class website.",
       "date": "2026-08-27T05:16:21Z",
       "summary": "I, Hyung Sun Choi, DO NOT consent to UNAUTHORIZED access and a sneak peek to this class website from anyone other than registered students! Sun 본 수업의 책임자인 최형선 교수는 수강생이외에 교내외 본인의 동의를 득하지 않은 자의 수업 홈페이지에 대한 부정접속 및 행위를 관련 법령에 따라 금지합니다. 최형선",
-      "url": "https://khcanvas.khu.ac.kr/courses/95555/discussion_topics/475126"
+      "body": "I, Hyung Sun Choi, DO NOT consent to UNAUTHORIZED access and a sneak peek to this class website from anyone other than registered students! Sun 본 수업의 책임자인 최형선 교수는 수강생이외에 교내외 본인의 동의를 득하지 않은 자의 수업 홈페이지에 대한 부정접속 및 행위를 관련 법령에 따라 금지합니다. 최형선",
+      "url": "https://khcanvas.khu.ac.kr/courses/95555/discussion_topics/475126",
+      "files": []
     },
     {
       "id": "n475704",
-      "course": "모두를위한물리학 S00분반",
+      "course": "모두를위한물리학",
       "title": "모두를 위한 물리학 매뉴얼",
       "date": "2026-08-30T08:02:02Z",
       "summary": "안녕하세요. 모두를 위한 물리학 튜터 송하림 입니다. 이번 학기 과목 운영에 대한 전반적인 내용이 담긴 매뉴얼입니다. 많은 인원이 수강하는 과목이기에 수업에 관련된 그동안의 전반적인 문의사항을 반영하여 작성되었습니다. 매뉴얼은 출석, 교재, 평가, 중간고사/기말고사, 과제에 대한 내용을 담고 있습니다. 메뉴얼을 필독하여 점수에 불이익을 받는 일이 없도록 하시길 바랍니다. 매년 많은 학생들이 메뉴얼 미숙지로 인한 감점을 받습니다…",
-      "url": "https://khcanvas.khu.ac.kr/courses/97015/discussion_topics/475704"
+      "body": "안녕하세요. 모두를 위한 물리학 튜터 송하림 입니다. 이번 학기 과목 운영에 대한 전반적인 내용이 담긴 매뉴얼입니다. 많은 인원이 수강하는 과목이기에 수업에 관련된 그동안의 전반적인 문의사항을 반영하여 작성되었습니다. 매뉴얼은 출석, 교재, 평가, 중간고사/기말고사, 과제에 대한 내용을 담고 있습니다. 메뉴얼을 필독하여 점수에 불이익을 받는 일이 없도록 하시길 바랍니다. 매년 많은 학생들이 메뉴얼 미숙지로 인한 감점을 받습니다. 질의응답 튜터님이나 담당교수님에게 문의하기 전에 우선적으로 읽어보시기 바랍니다. 질의응답 튜터 : 허윤진 질의 응답은 Q&A게시판을 이용바라며, ecampus 메세지나 메일은 확인이 어려울 수 있습니다. 잘 읽어보시고 모두를 위한 물리학 재밌게 수강 하셨으면 좋겠습니다. 감사합니다.",
+      "url": "https://khcanvas.khu.ac.kr/courses/97015/discussion_topics/475704",
+      "files": [
+        {
+          "id": "9681691",
+          "name": "2026_2_모두를_위한_물리학_사용매뉴얼v2.hwp.pdf",
+          "url": "https://khcanvas.khu.ac.kr/files/9681691/download?download_frd=1&verifier=sMLZWSFsxouJKrqwMiYFRyBrlDwBmQXS3WQ6HLOe",
+          "type": "application/pdf",
+          "size": 73878,
+          "text": "모두를 위한 물리학 매뉴얼 ※ 조교장이나 담당교수에게 문의하기 전에 우선 이 매뉴얼을 찾아보기 바랍니다 . 1. 출석 1.1 매주 월요일 23:59 까지 강의를 들어야 출석으로 인정합니다 . 1.1.1 1 주차 강의에 한해 2 주차 마감일까지 들으면 됩니다 . 1.1.1.1 이번 학기 1 주차는 9/1( 화 )~7( 월 ), 2 주차는 9/8( 화 )~14( 월 ) 이고 , 2 주차 마감일은 9/14( 월 ) 입니다 . 1.2 출석률이 학칙이 정한 기준에 미달되는 경우 무조건 F 학점이 부여됩니다 . ( 출석률 미달로 F 학점을 받은 학생들이 종종 있으니 주의바랍니다 .) 1.3 인터넷 강의라 지각은 없고 출석과 결석만 있습니다 . 1.4 e-campus 의 동영상 강의 출석기준은 영상 길이의 95% 이상을 시청해야 출석으로 인정됩니다 . ex) 14 분 강의는 13.3 분 이상 시청해야 출석 , 13.3 분 미만 시청은 결석 . ex) 8 분 강의는 7.6 분 이상 시청해야 출석 , 7.6 분 미만 시청은 결석 . 1.5 한 주차 5 개 강의를 모두 각각 영상 길이의 95% 이상을 시청해야 합니다 . 1.6 배속으로 시청하더라도 영상 길이 95% 이상을 시청해야합니다 . 1.6.1 배속으로 시청하는 경우 시스템 오류로 인해 학습 진행 상태가 실제 시청한 시간만큼 나오지 않는 경우가 생길 수 있습니다 . 이점을 유의하여 강의 시청 후 본인의 학습 진행 상태를 확인하시길 바랍니 다 . 2. 교재 2.1 김상욱 < 떨림과 울림 > 동아시아 3. 평가 3.1 총점 = ( 중간고사 40% + 기말고사 40% + 과제 20% ) x 출석률 3.1.1 출석률 = ( 출석 횟수 ) / ( 총출석수 ) = ( 출석 횟수 ) / 80 ※ 총출석수 = 강의 (14 주 x 5 차시 ) + 중간 / 기말고사 참석 (2 주 x 5) = 80 4. 중간 / 기말고사 4.1 중간 / 기말고사는 오프라인 지필고사로 치룹니다 . ※ 코로나 19 등과 같은 특이사항 발생시 다른 방식으로 시험을 진행할 수 있습니다 . 4.2 중간고사 (40% 반영 ) 10/23( 금 ) 18:00~19:00 4.3 기말고사 (40% 반영 ) 12/18( 금 ) 18:00~19:00 4.4 중간고사 시험범위 : 1 주차 ~7 주차 온라인 강의내용\n4.5 기말고사 시험범위 : 9 주차 ~15 주차 온라인 강의내용 (80%) 및 교재 < 떨림과 울림 >(20%) 4.6 예기치 못한 부득이한 사유를 제외하고 중간 / 기말고사를 결시하는 경우 F 학점이 나갑니다 . 부득이 한 상황이 발생하면 반드시 시험 전 튜터장이나 담당교수에게 연락해야 합니다 . 4.6.1 중간 또는 기말고사에 사전 연락 없이 불참하여 F 학점을 받는 학생이 있으니 유의 바랍니다 . 4.7 대규모 강의라 시험 날짜 변경은 불가합니다 . 4.8 시험 장소는 따로 공지합니다 . 4.9 기출문제는 시험 1 주일 전 공개합니다 . 4.10 시험문제는 객관식이며 OMR 카드를 사용합니다 . 4.10.1 수성싸인펜 ( 컴퓨터용 싸인펜 ) 은 수강생 각자가 준비합니다 . 5. 과제 이번 학기부터 인공지능을 이용하여 과제를 작성하고 제출합니다 . 아직 준비가 완전히 끝나지 않아 개 강 후 자세한 사항을 따로 공지하겠습니다 . 1 주차 과제는 2 주차 끝나는 날 (9/14) 까지 완료하면 됩니다 . 6. 문의사항 강의 관련 : e-campus 문의게시판 ( 형식은 따로 공지 ) 기타 모든 질의 : 튜터 허윤진 (e-campus 문의게시판 )"
+        }
+      ]
     },
     {
       "id": "n474980",
-      "course": "창업과 thinking design S00분반",
+      "course": "창업과 thinking design",
       "title": "1주(9월 1일) 수업 공지 및 이번 학기 운영 방안",
       "date": "2026-08-26T09:31:49Z",
       "summary": "안녕하세요. 창업과 디자인씽킹을 주제로 강의하는 심혜린입니다. 첫 주는 오리엔테이션 시간입니다. 이번 학기 개요와 향후 계획에 대해 안내하는 시간입니다. 첫 주간이 지나야 최종 이번 학기 수강생이 확정되므로 9월 1일 수업은 오프라인 수업 없이 오리엔테이션 자료를 공유하는 것으로 대신합니다. 이번 학기 운영 방향에 대해 정리한 첨부파일 참고해 주시기 바랍니다. 아울러 제 소개 간략히 드립니다. 저는 미디어(학사/석사 과정), …",
-      "url": "https://khcanvas.khu.ac.kr/courses/97242/discussion_topics/474980"
+      "body": "안녕하세요. 창업과 디자인씽킹을 주제로 강의하는 심혜린입니다. 첫 주는 오리엔테이션 시간입니다. 이번 학기 개요와 향후 계획에 대해 안내하는 시간입니다. 첫 주간이 지나야 최종 이번 학기 수강생이 확정되므로 9월 1일 수업은 오프라인 수업 없이 오리엔테이션 자료를 공유하는 것으로 대신합니다. 이번 학기 운영 방향에 대해 정리한 첨부파일 참고해 주시기 바랍니다. 아울러 제 소개 간략히 드립니다. 저는 미디어(학사/석사 과정), 사용자경험(박사논문 주제)을 배경으로 창업을 교육해 오고 있습니다. 사용자경험 및 디자인씽킹을 기반으로 하여 미디어커뮤니케이션 분야에서 실무자로 일한 경험 + 3차례 창업 경험을 바탕으로 창업과 기업가정신을 여러분과 함께 탐구하는 학기를 보내려고 합니다. 창업에 관심이 있거나 꼭 창업을 하고자 하는 것은 아니지만 향후 진로를 디자인할 때 원하는 방향을 분별하고 힘 있게 그 길을 걷고자 하는 뜻이 있는 모두를 환영합니다. 다양한 자극에 기꺼이 스스로를 열어 성장하고자 하는 모든 분을 환영합니다. 공유하는 내용 찬찬히 살펴보시고 질문이나 의견있는 분은 메일( lleia@naver.com ) 보내주세요. 서로에게 영감주는 학기이길 기대합니다. 고맙습니다. 심혜린 드림",
+      "url": "https://khcanvas.khu.ac.kr/courses/97242/discussion_topics/474980",
+      "files": [
+        {
+          "id": "9679448",
+          "name": "창업과 thinking design _2026 가을_학기 운영방안.pdf",
+          "url": "https://khcanvas.khu.ac.kr/files/9679448/download?download_frd=1&verifier=VloWOfUfzZjCMIwYj4QQQ7Ne7Tf7IAbOWgDH5qC2",
+          "type": "application/pdf",
+          "size": 289638,
+          "text": "이번 학기 운영 방안 공지입니다 . 수 업 전 반 에 강 의 , 후 반 에 는 워 크 샵 으 로 운 영 됩 니 다 . 과 제 및 성 적 평 가 방 법 은 다 음 과 같 습 니 다 . 1. 팀 과제 ( 5 0%) - 피치덱 제작 - 매주 워크샵 통해 회사 설립을 위한 아이디어 developing - 매 주 진행한 내용을 총합 , 정리해 기말 리포트로 제출 - 종강 수업 시간에 발표 2. 개인 과제 ( 4 0%) 1) 발제 : 매주 정해진 분량 ( 공지 참고 ) 의 책 두 권 읽고 발제 ● 아이디어불패의 법칙 ( 알베르토 사보이아 / 인플루엔셜 ) ● 회복탄력성 ( 김주환 / 위즈덤하우스 ) - 매주 월 요일 오후 8 시까지 제출 - 파일명 : 제출자이름 _ 제출일자 ( 예시 0901) - e - campus 과제란에 업로딩 - 자유형식 2) 개별과제 4 회 첫번째 과제 성공한 스타트업 사례 분석 주제 : 본인이 관심 있는 성공한 스타트업 1 개를 선택하여 분석 • 어떤 문제를 해결했는가 ? • 6 가지 공통점 중 어떤 요소가 두드러지는가 ? • 성공 요인은 무엇이라고 생각하는가 ?\n제출시한 : 2026 년 9 월 11 일 오후 6 시 제출형식 및 분량 : A4 용지 기준 2 페이지 이상 ( 워드문서 ) 파일명 : 1 차 _ 제출자이름 _ 제출 일자 ( 예시 0901) 제출방법 : e - campus 과제란 두번째 과제 본인의 회복탄력성 진단 주제 : 나의 회복탄력성 진단 및 UP 전략 • 나의 현재 회복탄련성 수준은 어떠한가 ? ( 자가 진단 ) • 나의 회복탄력성 중 끌어올리고 싶은 분야는 ? • 어떻게 끌어올릴 지에 대한 UP 계획 제출시한 : 2026 년 9 월 30 일 오후 6 시 제출형식 및 분량 : A4 용지 기준 2 페이지 이 상 ( 워드문서 ) 파일명 : 2 차 _ 제출자이름 _ 제출 일자 ( 예시 0901) 제출방법 : e - campus 과제란 세번째 과제\n3) 제출시한 : 2026 년 10 월 14 일 오후 6 시 제출형식 및 분량 : A4 용지 기준 3 페이지 이상 ( 워드문서 ) 파일명 : 3 차 _ 제출자이름 _ 제출 일자 ( 예시 0901) 제출방법 : e - campus 과제란 네번째 과제 나의 창업 스토리 주제 : 내가 창업을 한다면 그 이유는 무엇인가 ? 무엇을 위해 창업하는가 ? 창업을 통 해 이루고자 하는 것은 무엇인가 ? 취업대신 창업을 한다면 나의 삶은 어떻게 달라질 까 ? 제출시한 : 2026 년 11 월 6 일 오후 6 시 제출형식 및 분량 : 분량 자유 ( 워드문서 ) 파일명 : 4 차 _ 제출자이름 _ 제출일자 ( 예시 0901) 제출방법 : e - campus 과제란\n기 말 과제 1. 주제 : 피치덱 (Pitch Deck) 작성 2. 포맷 : PPT or 동영상 ( 발표를 진행하는 것을 콘텐츠로 하는 동영상 ) 3. 분량 : PPT 기준 10~15 장 동영상 기준 10~ 15 분 4. 제출방법 : e - campus 과제란 . 파일명 : ( 예시 ) 파일명 : 기말 _ 제출자이름 _ 제출일자 ( 예시 0901) 5. 제출시한 : 2026 년 12 월 7 일 오후 6 시 ( 기한 후 제출 시 성적처리 되지 않습니다 ) # 생성형 AI 활용 시 출처를 note 로 명기해야 함 # 동영상으로 제출 시 가산점 부여 피치덱에 대해서는 1 1 주 차 에 강의내용으로 다루지만 간략히 설명하면 , * 피치덱 - 창업 아이디어를 투자자나 심사위원에게 설득하기 위한 발표 자료 - 투자자나 심사위원에게 “우리 사업이 왜 되는지”를 짧고 설득력 있게 보여주는 발표 자료 - 쉽게 말하면 “우리 아이디어에 투자하거나 지원해 주세요 ! ” 를 설명하는 창업용 PPT - 보통 창업 경진대회 , 투자 유치 , 창업 수업 발표 때 사용하고 슬라이드 10~15 장 정도로 핵심만 압축해서 작성 아이디어 자체보다도 - 문제를 잘 정의했는지 - 진짜 필요한 서비스인지 - 돈이 되는 구조인지 - 팀이 실행 가능한지 가 관건인 자료입니다 . 보통 들어가는 기본 구성은\n- Cover - Problem - Solution - Market - Business Model - Competitor - Marketing - Team - Future Plan 입니다 . 3. 강 의참여 및 출석률 (10%) 4. 주 차 별 강 의 주 제\n이 상입니다 . 관련해서 궁금한 점 수업 시간 중이나 이메일 ( lleia@naver.com ) 통해 알려주세요 ."
+        }
+      ]
     }
   ]
 }
