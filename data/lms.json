@@ -1,8 +1,217 @@
 {
-  "generatedAt": null,
-  "assignments": [],
-  "notices": [],
-  "error": "Canvas /users/self 연결 실패: fetch failed [ENOTFOUND] getaddrinfo ENOTFOUND ecampus.khu.ac.kr",
-  "checkedAt": "2026-09-02T06:19:08.918Z",
-  "diag": "dns 실패: ENOTFOUND"
+  "generatedAt": "2026-09-02T06:21:41.407Z",
+  "source": "canvas",
+  "user": "김주함(2025####72)",
+  "courses": [
+    "(SDGs)리질리언스와지속가능한도시 S00분반",
+    "거시경제학 00분반",
+    "계량경제학 00분반",
+    "모두를위한물리학 S00분반",
+    "성찰과표현 S00분반",
+    "창업과 thinking design S00분반"
+  ],
+  "assignments": [
+    {
+      "id": "a1492416",
+      "course": "모두를위한물리학 S00분반",
+      "title": "1주차 과제",
+      "due": "2026-09-14T14:59:00Z",
+      "submitted": false,
+      "url": "https://khcanvas.khu.ac.kr/courses/97015/assignments/1492416"
+    },
+    {
+      "id": "a1492422",
+      "course": "모두를위한물리학 S00분반",
+      "title": "2주차 과제",
+      "due": "2026-09-14T14:59:00Z",
+      "submitted": false,
+      "url": "https://khcanvas.khu.ac.kr/courses/97015/assignments/1492422"
+    },
+    {
+      "id": "a1492423",
+      "course": "모두를위한물리학 S00분반",
+      "title": "3주차 과제",
+      "due": "2026-09-21T14:59:00Z",
+      "submitted": false,
+      "url": "https://khcanvas.khu.ac.kr/courses/97015/assignments/1492423"
+    },
+    {
+      "id": "a1492424",
+      "course": "모두를위한물리학 S00분반",
+      "title": "4주차 과제",
+      "due": "2026-09-28T14:59:00Z",
+      "submitted": false,
+      "url": "https://khcanvas.khu.ac.kr/courses/97015/assignments/1492424"
+    },
+    {
+      "id": "a1492425",
+      "course": "모두를위한물리학 S00분반",
+      "title": "5주차 과제",
+      "due": "2026-10-05T14:59:00Z",
+      "submitted": false,
+      "url": "https://khcanvas.khu.ac.kr/courses/97015/assignments/1492425"
+    },
+    {
+      "id": "a1492426",
+      "course": "모두를위한물리학 S00분반",
+      "title": "6주차 과제",
+      "due": "2026-10-12T14:59:00Z",
+      "submitted": false,
+      "url": "https://khcanvas.khu.ac.kr/courses/97015/assignments/1492426"
+    },
+    {
+      "id": "a1492427",
+      "course": "모두를위한물리학 S00분반",
+      "title": "7주차 과제",
+      "due": "2026-10-19T14:59:00Z",
+      "submitted": false,
+      "url": "https://khcanvas.khu.ac.kr/courses/97015/assignments/1492427"
+    },
+    {
+      "id": "a1492428",
+      "course": "모두를위한물리학 S00분반",
+      "title": "9주차 과제",
+      "due": "2026-11-02T14:59:59Z",
+      "submitted": false,
+      "url": "https://khcanvas.khu.ac.kr/courses/97015/assignments/1492428"
+    },
+    {
+      "id": "a1492417",
+      "course": "모두를위한물리학 S00분반",
+      "title": "10주차 과제",
+      "due": "2026-11-09T14:59:59Z",
+      "submitted": false,
+      "url": "https://khcanvas.khu.ac.kr/courses/97015/assignments/1492417"
+    },
+    {
+      "id": "a1492418",
+      "course": "모두를위한물리학 S00분반",
+      "title": "11주차 과제",
+      "due": "2026-11-16T14:59:59Z",
+      "submitted": false,
+      "url": "https://khcanvas.khu.ac.kr/courses/97015/assignments/1492418"
+    },
+    {
+      "id": "a1492419",
+      "course": "모두를위한물리학 S00분반",
+      "title": "12주차 과제",
+      "due": "2026-11-23T14:59:59Z",
+      "submitted": false,
+      "url": "https://khcanvas.khu.ac.kr/courses/97015/assignments/1492419"
+    },
+    {
+      "id": "a1492420",
+      "course": "모두를위한물리학 S00분반",
+      "title": "13주차 과제",
+      "due": "2026-11-30T14:59:59Z",
+      "submitted": false,
+      "url": "https://khcanvas.khu.ac.kr/courses/97015/assignments/1492420"
+    },
+    {
+      "id": "a1492421",
+      "course": "모두를위한물리학 S00분반",
+      "title": "14주차 과제",
+      "due": "2026-12-07T14:59:59Z",
+      "submitted": false,
+      "url": "https://khcanvas.khu.ac.kr/courses/97015/assignments/1492421"
+    }
+  ],
+  "notices": [
+    {
+      "id": "n476944",
+      "course": "거시경제학 00분반",
+      "title": "Generative AI Guidelines for Students [경희대학교 AI 활용 교육 가이드라인 (학습자용)]",
+      "date": "2026-09-01T01:06:50Z",
+      "summary": "Dear Students, Please, see the attached PDF file of the University Generative AI Guidelines for Students [경희대학교 AI 활용 교육 가이드라인 (학습자용)]. Unfortunately, there is no English version yet. Cheers, Sun",
+      "url": "https://khcanvas.khu.ac.kr/courses/95555/discussion_topics/476944"
+    },
+    {
+      "id": "n475143",
+      "course": "거시경제학 00분반",
+      "title": "[Internship Listings in Korean] 청년인턴 공지 관련 사이트 모음.",
+      "date": "2026-08-27T05:45:21Z",
+      "summary": "1. 경희대학교 미래문명원 UN/국제기구 인턴 UN/국제기구 인턴십: https://uninternship.khu.ac.kr/uninternship/user/main/view .do 미래문명원 Main Website: https://gafc.khu.ac.kr/gafc_kor/user/main/view.do 2. 중앙부처 청년인턴 채용 사이트 https://www.2030db.go.kr/user/youthIntern/select…",
+      "url": "https://khcanvas.khu.ac.kr/courses/95555/discussion_topics/475143"
+    },
+    {
+      "id": "n475142",
+      "course": "거시경제학 00분반",
+      "title": "Concerning Rational Expectations in an Economic Model",
+      "date": "2026-08-27T05:38:21Z",
+      "summary": "The following paragraphs are from Section 4.8.1 of John Cochrane's book Inflation , discussing rational expectations. \"My adaptive expectations model captures the essence of the views of central banks, policy makers, and most economists. To…",
+      "url": "https://khcanvas.khu.ac.kr/courses/95555/discussion_topics/475142"
+    },
+    {
+      "id": "n475139",
+      "course": "거시경제학 00분반",
+      "title": "Campus-wide MATLAB license",
+      "date": "2026-08-27T05:35:11Z",
+      "summary": "Dear Students, We now have a campus-wide MATLAB license. Here is a link to the university announcement: https://www.instagram.com/p/Cwway3cSCL9/?img_index=1 . Cheers, Sun Search entries or author",
+      "url": "https://khcanvas.khu.ac.kr/courses/95555/discussion_topics/475139"
+    },
+    {
+      "id": "n475138",
+      "course": "거시경제학 00분반",
+      "title": "Useful Academic Library Resources",
+      "date": "2026-08-27T05:34:26Z",
+      "summary": "Dear Students, Kyung Hee University has an excellent academic library system which contributes to the prestige of our university. Please, enjoy the resources provided ( https://libguides.khu.ac.kr/ByResource Links to an external site. ). Fo…",
+      "url": "https://khcanvas.khu.ac.kr/courses/95555/discussion_topics/475138"
+    },
+    {
+      "id": "n475136",
+      "course": "거시경제학 00분반",
+      "title": "Main Library In-Stock Tracker",
+      "date": "2026-08-27T05:31:45Z",
+      "summary": "Dear Students, [Library In-Stock Tracker] The main library has our textbook \"Macroeconomics\", 6th edition, global edition, by Stephen D. Williamson, in stock. Here is the (Korean) link: https://lib.khu.ac.kr/search/detail/CATTOT000000981101…",
+      "url": "https://khcanvas.khu.ac.kr/courses/95555/discussion_topics/475136"
+    },
+    {
+      "id": "n475133",
+      "course": "거시경제학 00분반",
+      "title": "(Updated) Online University Book Store for Our Textbook",
+      "date": "2026-08-27T05:30:25Z",
+      "summary": "Dear Students, Y ou may visit online book store(s) such as Peason( https://share.google/HO9KlchHEQAVSUIgi ), Kyobo Book ( http://www.kyobobook.co.kr/product/detailViewEng.laf?ejkGb=ENG&mallGb=ENG&barcode=9781292215761&orderClick=LEa&Kc= (Li…",
+      "url": "https://khcanvas.khu.ac.kr/courses/95555/discussion_topics/475133"
+    },
+    {
+      "id": "n475131",
+      "course": "거시경제학 00분반",
+      "title": "[Attention] 8 Tips to do BETTER in our Class",
+      "date": "2026-08-27T05:19:20Z",
+      "summary": "1. NEVER EVER GIVE UP! 2. Attend your in-person and online lectures REGULARLY. 3. Visit our class website REGULARLY and check class schedule updates. 4. Follow the class GUIDELINES announced in the `Syllabus' and our class website. 5. Revie…",
+      "url": "https://khcanvas.khu.ac.kr/courses/95555/discussion_topics/475131"
+    },
+    {
+      "id": "n475129",
+      "course": "거시경제학 00분반",
+      "title": "Greetings to All Students",
+      "date": "2026-08-27T05:18:26Z",
+      "summary": "Dear Students, Before our class begins, I will post class materials under `Weekly Learning'. Until then, enjoy your vacation and stay healthy. I would like to end this message by quoting Professor Robert Solow, \"I estimate that if I had neg…",
+      "url": "https://khcanvas.khu.ac.kr/courses/95555/discussion_topics/475129"
+    },
+    {
+      "id": "n475126",
+      "course": "거시경제학 00분반",
+      "title": "[Warning!] I, Hyung Sun Choi, DO NOT consent to a UNAUTHORIZED access and a sneak peek to this class website.",
+      "date": "2026-08-27T05:16:21Z",
+      "summary": "I, Hyung Sun Choi, DO NOT consent to UNAUTHORIZED access and a sneak peek to this class website from anyone other than registered students! Sun 본 수업의 책임자인 최형선 교수는 수강생이외에 교내외 본인의 동의를 득하지 않은 자의 수업 홈페이지에 대한 부정접속 및 행위를 관련 법령에 따라 금지합니다. 최형선",
+      "url": "https://khcanvas.khu.ac.kr/courses/95555/discussion_topics/475126"
+    },
+    {
+      "id": "n475704",
+      "course": "모두를위한물리학 S00분반",
+      "title": "모두를 위한 물리학 매뉴얼",
+      "date": "2026-08-30T08:02:02Z",
+      "summary": "안녕하세요. 모두를 위한 물리학 튜터 송하림 입니다. 이번 학기 과목 운영에 대한 전반적인 내용이 담긴 매뉴얼입니다. 많은 인원이 수강하는 과목이기에 수업에 관련된 그동안의 전반적인 문의사항을 반영하여 작성되었습니다. 매뉴얼은 출석, 교재, 평가, 중간고사/기말고사, 과제에 대한 내용을 담고 있습니다. 메뉴얼을 필독하여 점수에 불이익을 받는 일이 없도록 하시길 바랍니다. 매년 많은 학생들이 메뉴얼 미숙지로 인한 감점을 받습니다…",
+      "url": "https://khcanvas.khu.ac.kr/courses/97015/discussion_topics/475704"
+    },
+    {
+      "id": "n474980",
+      "course": "창업과 thinking design S00분반",
+      "title": "1주(9월 1일) 수업 공지 및 이번 학기 운영 방안",
+      "date": "2026-08-26T09:31:49Z",
+      "summary": "안녕하세요. 창업과 디자인씽킹을 주제로 강의하는 심혜린입니다. 첫 주는 오리엔테이션 시간입니다. 이번 학기 개요와 향후 계획에 대해 안내하는 시간입니다. 첫 주간이 지나야 최종 이번 학기 수강생이 확정되므로 9월 1일 수업은 오프라인 수업 없이 오리엔테이션 자료를 공유하는 것으로 대신합니다. 이번 학기 운영 방향에 대해 정리한 첨부파일 참고해 주시기 바랍니다. 아울러 제 소개 간략히 드립니다. 저는 미디어(학사/석사 과정), …",
+      "url": "https://khcanvas.khu.ac.kr/courses/97242/discussion_topics/474980"
+    }
+  ]
 }
