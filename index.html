@@ -2506,6 +2506,15 @@
   .lec-tr summary { font-size:12px; color: var(--text-muted); cursor:pointer; }
   .lec-tr .lec-ko { font-size:13px; margin-top:6px; white-space:pre-wrap; }
   .lec-tr .lec-en { white-space:pre-wrap; }
+  .lec-week { border:1px solid var(--border,#e5e5e5); border-radius:12px; padding:8px 10px; margin-bottom:8px; background: var(--bg-card,#fff); }
+  .lec-week-head { display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:6px; }
+  .lec-week-name { font-size:14px; }
+  .lec-week-items { display:flex; flex-wrap:wrap; gap:6px; }
+  .lec-week-items .lms-file.pdf { border-color: var(--accent); font-weight:600; }
+  .lec-week-all { margin-top:8px; border-top:1px solid var(--border-soft,#f0f0f0); padding-top:6px; }
+  .lec-week-all details { margin:4px 0; } .lec-week-all summary { font-size:13px; cursor:pointer; padding:4px 0; }
+  .lec-week-all .lec-week-items { margin:4px 0 6px 12px; }
+  .lec-muted { font-size:11px; color: var(--text-muted); }
   /* ⋯ 메뉴 */
   .tt-menu { position:fixed; z-index:1000; background: var(--bg-card,#fff); border:1px solid var(--border,#e5e5e5); border-radius:10px; box-shadow:0 8px 24px rgba(0,0,0,.14); padding:4px; min-width:150px; }
   .tt-menu button { display:block; width:100%; text-align:left; background:none; border:none; padding:9px 12px; font-size:14px; color: var(--text); border-radius:7px; cursor:pointer; }
@@ -2767,6 +2776,7 @@
         <label class="lec-chk"><input type="checkbox" id="lecShowEn"> 영어 원문 표시</label>
       </div>
       <div class="lec-status" id="lecStatus"></div>
+      <div id="lecWeek" class="lec-week" style="display:none"></div>
       <div id="lecPdfMem" class="lec-mem"></div>
       <div id="lecLmsFiles" class="lms-files lec-lmsfiles" style="display:none"></div>
       <div class="lec-main">
@@ -8573,7 +8583,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
       if(ok && (!best || lab.length>best.len)) best={len:lab.length,color:t.color}; });
     return best?best.color:'#B0B0B0';
   }
-  window.tmCourseColor=courseColor;
+  window.tmCourseColor=courseColor; window.tmClip=CLIP;
   function briefFor(id){ return (lmsBrief && lmsBrief.notices && lmsBrief.notices[String(id)]) || null; }
   function ddBadge(a){ var dd=dday(a.due); if(a.submitted) return '<span class="lms-badge">제출 완료</span>'; if(dd===null) return '<span class="lms-badge">기한 없음</span>'; if(dd<0) return '<span class="lms-badge">마감 지남</span>'; return '<span class="lms-badge'+(dd<=3?' red':'')+'">D-'+dd+'</span>'; }
   function nextAssignment(course){ var as=(lmsData.assignments||[]).filter(function(a){ return a.course===course && !a.submitted && a.due && dday(a.due)>=0; }).sort(function(a,b){ return new Date(a.due)-new Date(b.due); }); return as[0]||null; }
@@ -8925,6 +8935,26 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   async function refreshPdfMemory(){ var box=$('lecPdfMem'); if(!box) return; var all=[]; try{ all=await idbAll('pdf'); }catch(e){} var c=S.course||$('lecCourse').value||''; var mine=all.filter(function(p){ return !c||p.course===c; }).sort(function(a,b){return b.at-a.at;}).slice(0,6);
     box.innerHTML=mine.length?'<span class="lec-mem-label">최근 PDF</span>'+mine.map(function(p){ return '<button type="button" class="lec-chip" data-k="'+escapeHtml(p.key)+'">'+escapeHtml(p.name)+'</button>'; }).join(''):'';
     box.querySelectorAll('.lec-chip').forEach(function(b){ b.addEventListener('click',async function(){ var p=await idbGet('pdf',b.getAttribute('data-k')); if(p) openPdfBytes(p.bytes,p.name); }); }); }
+  var LEC_SEM_START='2026-09-01'; // 1주차 시작(화)
+  function weekNo(dateStr){ var a=new Date(LEC_SEM_START+'T00:00:00'), b=new Date((dateStr||toLocalDateStr(new Date()))+'T00:00:00'); return Math.floor((b-a)/604800000)+1; }
+  function modWeek(m){ var x=String(m.name||'').match(/(\d{1,2})\s*주/); return x?parseInt(x[1],10):null; }
+  var weekOpen=false, weekPick=null;
+  function renderWeek(){
+    var box=$('lecWeek'); if(!box) return; var c=S.course||$('lecCourse').value||''; var d=window.lecLms; var mods=(d&&d.courseModules&&d.courseModules[c])||[];
+    if(!c){ box.style.display='none'; return; }
+    box.style.display='';
+    if(!mods.length){ box.innerHTML='<span class="lec-mem-label">주차학습</span><span class="lec-muted">e-campus 주차 목록이 아직 없어요 (다음 갱신 후 표시). "e-campus 자료"로 파일 목록을 보세요.</span>'; return; }
+    var wk=weekNo(); var cur = (weekPick!=null ? mods.find(function(m){return m.id===weekPick;}) : null) || mods.find(function(m){ return modWeek(m)===wk; }) || mods[Math.min(mods.length-1, Math.max(0, wk-1))] || mods[0];
+    function itemsHtml(m){ return (m.items||[]).map(function(it){ var isPdf=/\.pdf$/i.test(it.title||''), isFile=it.type==='File'; var ic=isFile?(window.tmClip||'')+' ':(it.type==='Page'?'▤ ':it.type==='Assignment'?'✎ ':it.type==='ExternalUrl'?'↗ ':'• ');
+        return it.url?'<a class="lms-file'+(isPdf?' pdf':'')+'" href="'+escapeHtml(it.url)+'" target="_blank" rel="noopener" style="margin-left:'+(it.indent*10)+'px">'+ic+escapeHtml(it.title||'')+'</a>':'<span class="lec-chip" style="margin-left:'+(it.indent*10)+'px">'+ic+escapeHtml(it.title||'')+'</span>'; }).join(' ') || '<span class="lec-muted">항목 없음</span>'; }
+    var h='<div class="lec-week-head"><span class="lec-mem-label" style="width:auto">주차학습</span><b class="lec-week-name">'+escapeHtml(cur.name)+'</b>'+(modWeek(cur)===wk?'<span class="lms-badge new">이번 주</span>':'<span class="lms-badge">'+wk+'주차 아님</span>')+'<button type="button" class="lec-chip" id="lecWeekToggle">'+(weekOpen?'접기':'다른 주차 ▾')+'</button></div>';
+    h+='<div class="lec-week-items">'+itemsHtml(cur)+'</div>';
+    if(weekOpen){ h+='<div class="lec-week-all">'+mods.map(function(m){ return '<details'+(m.id===cur.id?' open':'')+'><summary>'+escapeHtml(m.name)+(modWeek(m)===wk?' · 이번 주':'')+' <button type="button" class="lec-chip lec-week-pick" data-id="'+escapeHtml(m.id)+'">선택</button></summary><div class="lec-week-items">'+itemsHtml(m)+'</div></details>'; }).join('')+'</div>'; }
+    h+='<div class="lec-muted" style="margin-top:4px">PDF는 클릭해 다운로드한 뒤 왼쪽에 드롭하세요 (한 번 열면 기억됩니다)</div>';
+    box.innerHTML=h;
+    var tg=box.querySelector('#lecWeekToggle'); if(tg) tg.addEventListener('click',function(){ weekOpen=!weekOpen; renderWeek(); });
+    box.querySelectorAll('.lec-week-pick').forEach(function(b){ b.addEventListener('click',function(e){ e.preventDefault(); e.stopPropagation(); weekPick=b.getAttribute('data-id'); weekOpen=false; renderWeek(); }); });
+  }
   function showLmsFiles(){ var d=window.lecLms; var c=S.course||$('lecCourse').value||''; var files=(d&&d.courseFiles&&d.courseFiles[c])||[]; var box=$('lecLmsFiles');
     if(!c){ showToast('과목을 먼저 선택하세요'); return; }
     if(!files.length){ box.innerHTML='<div class="lms-empty">이 과목의 e-campus 파일 목록이 아직 없어요 (Actions가 다음 갱신 때 가져옵니다). 직접 PDF를 열어주세요.</div>'; box.style.display=''; return; }
@@ -8933,7 +8963,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   // ---- 바인딩 ----
   function bind(){
     if(!$('lectureMode')) return;
-    $('lecCourse').addEventListener('change',function(){ S.course=this.value; refreshPdfMemory(); $('lecLmsFiles').style.display='none'; });
+    $('lecCourse').addEventListener('change',function(){ S.course=this.value; weekPick=null; weekOpen=false; refreshPdfMemory(); renderWeek(); $('lecLmsFiles').style.display='none'; });
     $('lecOpenPdf').addEventListener('click',function(){ $('lecFile').click(); });
     $('lecFile').addEventListener('change',function(){ var f=this.files[0]; if(!f) return; f.arrayBuffer().then(function(b){ openPdfBytes(b,f.name); }); this.value=''; });
     $('lecFromLms').addEventListener('click',showLmsFiles);
@@ -8948,7 +8978,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     window.addEventListener('resize',function(){ if(typeof currentMode!=='undefined' && currentMode==='lecture') renderPage(); });
     window.addEventListener('beforeunload',function(e){ if(S.running){ e.preventDefault(); e.returnValue=''; } });
   }
-  var _sm2=window.switchMode; window.switchMode=function(m){ _sm2(m); var p=$('lectureMode'); if(p) p.style.display=(m==='lecture')?'block':'none'; if(m==='lecture'){ fillCourses(); renderList(); refreshPdfMemory(); setTimeout(renderPage,50); } };
+  var _sm2=window.switchMode; window.switchMode=function(m){ _sm2(m); var p=$('lectureMode'); if(p) p.style.display=(m==='lecture')?'block':'none'; if(m==='lecture'){ fillCourses().then(renderWeek); renderList(); refreshPdfMemory(); setTimeout(renderPage,50); } };
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',bind); else bind();
 })();
 </script>

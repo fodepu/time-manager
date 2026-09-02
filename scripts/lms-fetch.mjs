@@ -126,7 +126,20 @@ async function fromCanvas() {
         .slice(0, 40).map(f => ({ id: String(f.id), name: f.display_name || f.filename, type: f['content-type'] || '', size: f.size || 0, updated: f.updated_at || f.created_at || null, url: `${BASE}/courses/${c.id}/files/${f.id}/download?download_frd=1` }));
     } catch (e) { console.warn('files', cname, e.message); courseFiles[cname] = []; }
   }
-  return { generatedAt: new Date().toISOString(), source: 'canvas', user: me?.name || null, courseFiles, courses: courses.map(c => String(c.name||'').replace(/\s*\(?S?\d{2,3}분반\)?\s*$/, '').trim()), assignments, notices };
+  // 주차학습(모듈) 구조 — 이름·항목(파일/페이지/링크/과제) 링크만
+  const courseModules = {};
+  for (const c of courses) {
+    const cname = String(c.name || c.course_code || '').replace(/\s*\(?S?\d{2,3}분반\)?\s*$/, '').replace(/^\(SDGs\)/, '').trim() || c.course_code;
+    try {
+      const mods = await canvasGet(`/courses/${c.id}/modules`, { 'include[]': ['items'] });
+      courseModules[cname] = mods.map(m => ({ id: String(m.id), name: m.name, position: m.position || 0, unlock: m.unlock_at || null,
+        items: (m.items || []).filter(it => it.type !== 'SubHeader').map(it => ({
+          type: it.type, title: it.title, indent: it.indent || 0,
+          url: it.type === 'File' && it.content_id ? `${BASE}/courses/${c.id}/files/${it.content_id}/download?download_frd=1` : (it.html_url || it.external_url || ''),
+          fileId: it.type === 'File' ? String(it.content_id || '') : undefined })) }));
+    } catch (e) { console.warn('modules', cname, e.message); courseModules[cname] = []; }
+  }
+  return { generatedAt: new Date().toISOString(), source: 'canvas', user: me?.name || null, courseFiles, courseModules, courses: courses.map(c => String(c.name||'').replace(/\s*\(?S?\d{2,3}분반\)?\s*$/, '').trim()), assignments, notices };
 }
 
 function parseIcs(text) {
