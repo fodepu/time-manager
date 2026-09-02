@@ -2,6 +2,7 @@
   "generatedAt": null,
   "assignments": [],
   "notices": [],
-  "error": "fetch failed",
-  "checkedAt": "2026-09-02T06:16:55.317Z"
+  "error": "Canvas /users/self 연결 실패: fetch failed [ENOTFOUND] getaddrinfo ENOTFOUND ecampus.khu.ac.kr",
+  "checkedAt": "2026-09-02T06:19:08.918Z",
+  "diag": "dns 실패: ENOTFOUND"
 }
