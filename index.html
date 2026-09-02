@@ -2459,6 +2459,16 @@
   .tt-ptime span { color: var(--text-muted); }
   .p-del { border:none; background: var(--bg-soft); color: var(--text-muted); width:30px; height:34px; border-radius:8px; cursor:pointer; flex-shrink:0; }
   .tt-addp { width:100%; border:1px dashed var(--border,#ccc); background:none; color: var(--text-muted); padding:9px; border-radius:10px; font-size:13px; cursor:pointer; }
+  /* 강의노트: 폰 숨김 + 전체화면 노트 모드 */
+  @media (max-width: 759px) { .tab[data-mode="lecture"] { display:none !important; } }
+  body.lec-full .header, body.lec-full .date-block, body.lec-full .tabs { display:none !important; }
+  body.lec-full .container { max-width:none; padding:8px 14px; }
+  body.lec-full .lec-main { grid-template-columns: minmax(0,7fr) minmax(320px,3fr); height: calc(100vh - 150px); }
+  body.lec-full .lec-dropzone { height:100%; min-height:0; }
+  body.lec-full .lec-dropzone canvas { max-height:100%; width:auto !important; height:auto !important; max-width:100%; }
+  body.lec-full .lec-live { height:100%; }
+  body.lec-full .lec-left { display:flex; flex-direction:column; min-height:0; }
+  .lec-exit { border:1px solid var(--border,#e5e5e5); background: var(--bg-card,#fff); color: var(--text); font-size:16px; width:34px; height:34px; border-radius:10px; cursor:pointer; }
   /* 강의노트 */
   .lec-top { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:6px 0 6px; }
   .lec-sel, .lec-inp { font-size:14px; padding:8px 10px; border:1px solid var(--border,#e5e5e5); border-radius:10px; background: var(--bg-card,#fff); color: var(--text); }
@@ -2767,6 +2777,7 @@
   <div id="lectureMode" style="display:none;">
     <div id="lecWork">
       <div class="lec-top">
+        <button type="button" class="lec-exit" id="lecExit" title="시간표로">←</button>
         <select id="lecCourse" class="lec-sel"><option value="">과목 선택</option></select>
         <input type="text" id="lecTitle" class="lec-inp" placeholder="강의 제목 (예: 3주차 IS-LM)" maxlength="40">
         <button type="button" class="lec-btn" id="lecOpenPdf">PDF 열기</button>
@@ -8977,6 +8988,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   function bind(){
     if(!$('lectureMode')) return;
     $('lecCourse').addEventListener('change',function(){ S.course=this.value; weekPick=null; weekOpen=false; refreshPdfMemory(); renderWeek(); $('lecLmsFiles').style.display='none'; });
+    $('lecExit').addEventListener('click',function(){ if(S.running && !confirm('녹음 중입니다. 나갈까요? (녹음은 계속되지 않습니다)')) return; if(S.running) stopAll(); switchMode('growth'); });
     $('lecOpenPdf').addEventListener('click',function(){ $('lecFile').click(); });
     $('lecFile').addEventListener('change',function(){ var f=this.files[0]; if(!f) return; f.arrayBuffer().then(function(b){ openPdfBytes(b,f.name); }); this.value=''; });
     $('lecFromLms').addEventListener('click',showLmsFiles);
@@ -8991,7 +9003,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     window.addEventListener('resize',function(){ if(typeof currentMode!=='undefined' && currentMode==='lecture') renderPage(); });
     window.addEventListener('beforeunload',function(e){ if(S.running){ e.preventDefault(); e.returnValue=''; } });
   }
-  var _sm2=window.switchMode; window.switchMode=function(m){ _sm2(m); var p=$('lectureMode'); if(p) p.style.display=(m==='lecture')?'block':'none'; if(m==='lecture'){ fillCourses().then(renderWeek); renderList(); refreshPdfMemory(); setTimeout(renderPage,50); } };
+  var _sm2=window.switchMode; window.switchMode=function(m){ _sm2(m); var p=$('lectureMode'); if(p) p.style.display=(m==='lecture')?'block':'none'; document.body.classList.toggle('lec-full', m==='lecture'); if(m==='lecture'){ fillCourses().then(renderWeek); renderList(); refreshPdfMemory(); setTimeout(renderPage,50); } };
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',bind); else bind();
 })();
 </script>
