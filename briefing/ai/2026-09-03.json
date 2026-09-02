@@ -1,0 +1,67 @@
+{
+  "date": "2026-09-03",
+  "generatedAt": "2026-09-03T08:34:00+09:00",
+  "urgent": null,
+  "items": [
+    {
+      "cat": "update",
+      "title": "Fable 5.1 'preserved thinking' — 에이전트 대화 배열을 append-only로 강제",
+      "lead": "9월 초 Messages API가 thinking 블록을 그것을 만든 system·tools·messages 프리픽스에 묶어(distillation 방지), 프리픽스가 어긋나면 요청을 거부한다.",
+      "points": [
+        "**8/31 UTC 이후 생성된 신규 API 계정**에 자동 적용 — 과거 대화 중간을 편집·재요약하거나 도구 정의를 바꿔 히스토리를 재전송하던 에이전트 루프는 이제 **에러로 깨진다**. messages를 **append-only**로 다루도록 파이프라인을 재설계하는 게 핵심 변화.",
+        "깨뜨리기 싫으면 `thinking.block_binding.prefix_mismatch_behavior:\"drop_block\"` + 베타헤더 `thinking-binding-controls-2026-08-01`로 **불일치 블록을 조용히 드롭**(드롭분은 과금 안 됨, `input_transformations`에 명시). 멀티턴 도구 에이전트를 리팩터 없이 굴리는 탈출구."
+      ],
+      "note": "platform.claude.com 'Preserved thinking' 문서. drop_block은 해당 블록과 그 이후 모든 thinking 블록을 함께 제거.",
+      "source": "platform.claude.com",
+      "url": "https://platform.claude.com/docs/en/build-with-claude/preserved-thinking"
+    },
+    {
+      "cat": "update",
+      "title": "Claude Code 9월 업데이트 — 서브에이전트 모델 고정·세션 한정 effort·외부읽기 가드",
+      "lead": "프롬프트/러너 설정과 MCP·플러그인 보안을 손본 광범위 릴리스.",
+      "points": [
+        "`CLAUDE_CODE_SUBAGENT_MODEL_FORCE`로 **모든 서브에이전트를 지정 모델로 강제** — 에이전트 정의·spawn별 오버라이드를 무시하니, 대량 서브에이전트를 값싼 모델로 일괄 실행해 **비용을 통제**한다.",
+        "`/effort`가 이제 **현재 세션만** 바꾼다(`/model`처럼) — 무거운 리팩터 한 판만 고effort로 올리고 끝나면 자동 원복, 설정 영구변경 없이 세션별로 사고 강도를 조절.",
+        "auto 모드에서 **작업 디렉터리 밖 첫 파일 읽기 직전 1회 확인 프롬프트**(차단 옵션 포함) — 자율 실행 중 의도치 않은 외부 파일 접근을 막는 안전장치."
+      ],
+      "note": "support.anthropic.com 릴리스노트. background 세션·에이전트 메시징·키바인딩 안정화 다수 포함.",
+      "source": "support.anthropic.com",
+      "url": "https://support.anthropic.com/en/articles/12138966-release-notes"
+    },
+    {
+      "cat": "tool",
+      "title": "Grok Bot — 자기 컴퓨터·터미널·메모리를 가진 상주 에이전트",
+      "lead": "xAI가 지속형 봇을 베타 공개: 각 봇이 전용 컴퓨터·브라우저·파일시스템·터미널·메모리를 갖고 서로 협업한다.",
+      "points": [
+        "**노트북을 닫아도 계속 작동** — 로그인 세션·파일·브라우저 상태를 유지하며 장시간 백그라운드 작업을 이어간다. 매번 컨텍스트를 다시 붙일 필요 없는 **상주 워커**로 반복 파이프라인을 위임한다.",
+        "**시연으로 워크플로 학습**하고 이미 쓰는 도구에 **직접 로그인**해 작업 — 사람이 한 번 보여준 절차를 봇들이 나눠 수행하는 다중 에이전트 협업 구조."
+      ],
+      "note": "8/11 early beta 시작. SuperGrok 계열 대상, xAI Grok Bot 문서 참조.",
+      "source": "x.ai",
+      "url": "https://x.ai/news"
+    },
+    {
+      "cat": "tool",
+      "title": "ChatGPT Work 브라우저 — 로그인된 사이트에서 실제 작업 완료",
+      "lead": "ChatGPT Work의 내장 브라우저가 사용자가 로그인한 웹사이트에서 태스크를 끝까지 수행하도록 확장됐다.",
+      "points": [
+        "**패스워드 매니저 연동 + 보안 로그인**으로 사내 SaaS·대시보드에 접속해 조작 — 조회에 그치지 않고 폼 입력·상태 변경 같은 **실제 조작을 자동화**한다.",
+        "**결과가 큰 행동 전 확인 절차**를 넣어, 되돌리기 어려운 액션(전송·결제·삭제)은 사람 승인 후 실행. 자율 브라우징을 실무에 붙일 때의 안전 경계."
+      ],
+      "note": "9/1 ChatGPT Work 대상. Epic 연동·헬스케어 퍼블릭데이터 플러그인도 같은 날 추가.",
+      "source": "releasebot.io",
+      "url": "https://releasebot.io/updates/openai/chatgpt"
+    },
+    {
+      "cat": "update",
+      "title": "ChatGPT, 한 대화에서 다중 Google 계정 동시 사용",
+      "lead": "Gmail·Calendar·Contacts를 여러 Google 계정에 걸쳐 하나의 대화에서 다룬다.",
+      "points": [
+        "개인·업무 계정을 **한 스레드에서 교차 조회** — 계정 전환 없이 두 캘린더를 합쳐 일정 조율하거나, 한쪽 메일을 근거로 다른 쪽 초안을 만드는 **크로스계정 워크플로**가 가능해진다."
+      ],
+      "note": "OpenAI 9월 릴리스노트. Gmail/Calendar/Contacts 커넥터 대상.",
+      "source": "releasebot.io",
+      "url": "https://releasebot.io/updates/openai/chatgpt"
+    }
+  ]
+}
