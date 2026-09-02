@@ -116,7 +116,17 @@ async function fromCanvas() {
       for (const n of an) notices.push({ id: `n${n.id}`, course: cname, title: n.title, date: n.posted_at || n.created_at || null, summary: summarize(n.message), body: fullText(n.message), url: n.html_url || '', files: await collectFiles(n.attachments, n.message) });
     } catch (e) { console.warn('announcements', cname, e.message); }
   }
-  return { generatedAt: new Date().toISOString(), source: 'canvas', user: me?.name || null, courses: courses.map(c => String(c.name||'').replace(/\s*\(?S?\d{2,3}분반\)?\s*$/, '').trim()), assignments, notices };
+  // 과목 강의자료 목록 (파일 탭) — 링크만 (파일 본문은 저장 안 함)
+  const courseFiles = {};
+  for (const c of courses) {
+    const cname = String(c.name || c.course_code || '').replace(/\s*\(?S?\d{2,3}분반\)?\s*$/, '').replace(/^\(SDGs\)/, '').trim() || c.course_code;
+    try {
+      const fl = await canvasGet(`/courses/${c.id}/files`, { sort: 'updated_at', order: 'desc', 'only[]': ['names'] });
+      courseFiles[cname] = fl.filter(f => /pdf|powerpoint|presentation|msword|officedocument/i.test(f['content-type'] || '') || /\.(pdf|pptx?|docx?)$/i.test(f.display_name || ''))
+        .slice(0, 40).map(f => ({ id: String(f.id), name: f.display_name || f.filename, type: f['content-type'] || '', size: f.size || 0, updated: f.updated_at || f.created_at || null, url: `${BASE}/courses/${c.id}/files/${f.id}/download?download_frd=1` }));
+    } catch (e) { console.warn('files', cname, e.message); courseFiles[cname] = []; }
+  }
+  return { generatedAt: new Date().toISOString(), source: 'canvas', user: me?.name || null, courseFiles, courses: courses.map(c => String(c.name||'').replace(/\s*\(?S?\d{2,3}분반\)?\s*$/, '').trim()), assignments, notices };
 }
 
 function parseIcs(text) {
