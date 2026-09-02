@@ -3184,7 +3184,29 @@ const SAMPLE_TEMPLATE = {
     { start: '21:30', end: '22:00', label: '취침 준비',      category: 'prep' },
   ],
 };
-const OWNER_TEMPLATE = { weekday: [], saturday: [], sunday: [] }; // 2026-09: 옛 개인 시간표 제거 — 새 그리드에서 직접 추가
+// 2026-09-02: 에브리타임 '2026년 2학기' 시간표 그대로 (색·강의실 포함). owner 계정 전용.
+const OWNER_TEMPLATE = {
+  weekday: [
+    { start: '06:25', end: '08:00', label: '이동',        category: 'prep',  color: '#B9534B', days: [1,2,3] },
+    { start: '18:30', end: '20:10', label: '이동',        category: 'prep',  color: '#B9534B', days: [1,2,3] },
+    { start: '06:25', end: '07:30', label: '이동',        category: 'prep',  color: '#5F4E9C', days: [4,5] },
+    { start: '08:00', end: '14:30', label: 'Farm Planet', category: 'alba',  color: '#3E8A55', days: [4,5] },
+    { start: '09:00', end: '10:15', label: '성표',        category: 'toeic', color: '#A98B3B', days: [1,3], place: '청704' },
+    { start: '10:30', end: '11:45', label: '계량',        category: 'toeic', color: '#6F8C3E', days: [1,3], place: '정309' },
+    { start: '12:00', end: '14:45', label: '리질리언스',  category: 'toeic', color: '#4A6BA8', days: [2],   place: '청303' },
+    { start: '15:00', end: '16:15', label: '거시',        category: 'toeic', color: '#3F8F89', days: [1,3], place: '정111' },
+    { start: '15:00', end: '17:45', label: '창업',        category: 'toeic', color: '#B87434', days: [2],   place: '청201' },
+  ],
+  saturday: [
+    { start: '09:00', end: '10:00', label: '이동', category: 'prep', color: '#8E5DAE' },
+    { start: '16:30', end: '17:30', label: '이동', category: 'prep', color: '#8E5DAE' },
+  ],
+  sunday: [
+    { start: '09:00', end: '10:00', label: '이동', category: 'prep', color: '#8E5DAE' },
+    { start: '14:00', end: '16:00', label: '교회', category: 'out',  color: '#B9534B' },
+    { start: '16:30', end: '17:30', label: '이동', category: 'prep', color: '#8E5DAE' },
+  ],
+};
 let SCHEDULE_TEMPLATE = SAMPLE_TEMPLATE;
 const TM_OWNER_EMAIL = 'kimjuham1120@gmail.com';
 window.tmUseOwnerTemplate = function(){ SCHEDULE_TEMPLATE = OWNER_TEMPLATE; };
@@ -3216,6 +3238,8 @@ function syncScheduleEntries() {
         if (!Array.isArray(existing.types) || existing.types.length === 0) { existing.types = ['check']; changed = true; }
         if (!existing.goalMinutes) { existing.goalMinutes = mins; changed = true; }
         if (!existing.values) { existing.values = {}; changed = true; }
+        if (block.color && !existing.color) { existing.color = block.color; changed = true; }
+        if (block.place && !existing.place) { existing.place = block.place; changed = true; }
       } else {
         entries.push({
           id,
@@ -3223,6 +3247,8 @@ function syncScheduleEntries() {
           start: block.start,
           end: block.end,
           category: block.category,
+          color: block.color || '',
+          place: block.place || '',
           types: ['check'],
           values: {},
           pinned: true,
@@ -3568,7 +3594,7 @@ function saveTemplate() {
       cue: e.cue || '', place: e.place || '', bundle: e.bundle || '',
       difficulty: e.difficulty || 3,
       // 시간표 필드 (시간 블록인 경우)
-      start: e.start || '', end: e.end || '', category: e.category || '',
+      start: e.start || '', end: e.end || '', category: e.category || '', color: e.color || '',
       subs: e.subs ? e.subs.map(s => ({ label: s.label, value: '' })) : undefined
     }));
   return lsSet(lsKey('template'), pinned);
@@ -5548,6 +5574,7 @@ function saveScheduleBlock() {
     e.label = label;
     e.start = start;
     e.end = end;
+    if (e.category !== sbModalState.selectedCat) delete e.color; // 카테고리 변경 시 개별 색 해제
     e.category = sbModalState.selectedCat;
     e.days = [...sbModalState.selectedDays].sort((a,b)=>a-b);
     e.alarm = alarmOn ? start : '';
@@ -7602,7 +7629,7 @@ function loadDate(date) {
         cue: e.cue || '', place: e.place || '', bundle: e.bundle || '',
         difficulty: e.difficulty || 3,
         // 시간표 필드 보존 (시간 블록인 경우)
-        start: e.start || '', end: e.end || '', category: e.category || '',
+        start: e.start || '', end: e.end || '', category: e.category || '', color: e.color || '',
         subs: e.subs ? e.subs.map(s => ({ label: s.label, value: '' })) : undefined,
       }));
     }
@@ -7622,6 +7649,8 @@ function loadDate(date) {
         existing.start = t.start || '';
         existing.end = t.end || '';
         existing.category = t.category || '';
+        existing.color = t.color || '';
+        existing.place = t.place || existing.place || '';
         existing.days = t.days || ['all'];
         existing.alarm = t.alarm || '';
         existing.goalMinutes = t.goalMinutes || 0;
@@ -7636,6 +7665,8 @@ function loadDate(date) {
           start: t.start || '',
           end: t.end || '',
           category: t.category || '',
+          color: t.color || '',
+          place: t.place || '',
           days: t.days || ['all'],
           alarm: t.alarm || '',
           goalMinutes: t.goalMinutes || 0,
@@ -7661,7 +7692,7 @@ function normalizeEntry(e) {
       cue: e.cue || '', place: e.place || '', bundle: e.bundle || '',
       difficulty: e.difficulty || 3,
       // 시간표 필드 보존
-      start: e.start || '', end: e.end || '', category: e.category || '',
+      start: e.start || '', end: e.end || '', category: e.category || '', color: e.color || '',
       subs: e.subs,
       fromGoalId: e.fromGoalId, fromTaskId: e.fromTaskId,
     };
@@ -8203,7 +8234,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   function templateEntriesFor(date){
     var tmpl = (typeof loadTemplate==='function' && loadTemplate()) || [];
     return tmpl.filter(function(e){ return e && e.start && e.end && e.pinned!==false && entryAppliesToDate(e, date); })
-      .map(function(e){ return { id:e.id, label:e.label, start:e.start, end:e.end, category:e.category||'prep', types:e.types||['check'], values:{}, pinned:true, days:e.days||['all'], place:e.place||'', alarm:e.alarm||'' }; });
+      .map(function(e){ return { id:e.id, label:e.label, start:e.start, end:e.end, category:e.category||'prep', color:e.color||'', types:e.types||['check'], values:{}, pinned:true, days:e.days||['all'], place:e.place||'', alarm:e.alarm||'' }; });
   }
   function snapshotFor(date){
     var g = loadGrowth(date);
@@ -8222,10 +8253,10 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
       // 템플릿 sched_* 는 최신 템플릿으로 덮어쓰되 values 보존 (loadDate와 동일 규칙)
       var tmpl = templateEntriesFor(date), byId={};
       list.forEach(function(e){ byId[e.id]=e; });
-      tmpl.forEach(function(t){ var ex=byId[t.id]; if(!ex){ list.push(t); } else { ex.label=t.label; ex.start=t.start; ex.end=t.end; ex.category=t.category; ex.days=t.days; } });
+      tmpl.forEach(function(t){ var ex=byId[t.id]; if(!ex){ list.push(t); } else { ex.label=t.label; ex.start=t.start; ex.end=t.end; ex.category=t.category; ex.color=t.color; ex.place=t.place||ex.place; ex.days=t.days; } });
     }
     var out = list.filter(function(e){ return e && e.start && e.end && (!e.pinned || entryAppliesToDate(e, date)); })
-      .map(function(e){ return { id:e.id, label:e.label, start:e.start, end:e.end, category:e.category||'prep', values:e.values||{}, sub:((e.values&&e.values.note)||e.place||''), alarm:e.alarm }; });
+      .map(function(e){ return { id:e.id, label:e.label, start:e.start, end:e.end, category:e.category||'prep', color:e.color||'', values:e.values||{}, sub:((e.values&&e.values.note)||e.place||''), alarm:e.alarm }; });
     return { rec:false, blocks: out };
   }
 
@@ -8305,7 +8336,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
         var el=document.createElement('div');
         var st=b.values.check;
         el.className='tt-block c-'+(b.category||'prep')+(st===true?' done':st===false?' undone':'')+(week?' sm':'')+(hgt<30?' xs':'');
-        el.style.top=top+'px'; el.style.height=hgt+'px';
+        el.style.top=top+'px'; el.style.height=hgt+'px'; if(b.color) el.style.background=b.color;
         var sub = b.sub || (b.start+'~'+b.end);
         el.innerHTML='<div class="t">'+escapeHtml(b.label||'')+(b.alarm?' ⏰':'')+'</div><div class="s">'+escapeHtml(sub)+'</div><div class="more" data-more="1">⋯</div>';
         el.title=b.label+' '+b.start+'~'+b.end+(st===true?' · 완료':st===false?' · 미완료':'');
@@ -8421,8 +8452,8 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     try{
       if(isOwner && !lsGet(lsKey('tt_reset_v1'))){
         entries = entries.filter(function(e){ return !(e && e.id && String(e.id).indexOf('sched_')===0); });
-        saveTemplate(); persist(); lsSet(lsKey('tt_reset_v1'),'1');
-        if(typeof showToast==='function') showToast('새 시간표로 전환됨 — ＋ 로 블록을 추가하세요');
+        saveTemplate(); if(typeof syncScheduleEntries==='function') syncScheduleEntries(); persist(); lsSet(lsKey('tt_reset_v1'),'1');
+        if(typeof showToast==='function') showToast('에타 시간표로 전환됨');
       }
     }catch(e){ console.warn('tt reset', e); }
     try{ refreshAll(); }catch(e){}
