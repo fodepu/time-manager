@@ -2449,6 +2449,13 @@
   html[data-theme="dark"] .tt-block.done { filter: brightness(.88) saturate(.5); }
   .sb-cat-chip.c-out { background:#E3F3F8; color:#0B4F63; }
   html[data-theme="dark"] .sb-cat-chip.c-out { background:rgba(110,190,215,.14); color:#9fdcef; }
+  .tt-prow { border:1px solid var(--border,#e5e5e5); border-radius:10px; padding:8px; margin-bottom:8px; }
+  .tt-pdays { margin-top:0 !important; }
+  .tt-ptime { display:flex; align-items:center; gap:6px; margin-top:8px; }
+  .tt-ptime .field-input { flex:1; min-width:0; }
+  .tt-ptime span { color: var(--text-muted); }
+  .p-del { border:none; background: var(--bg-soft); color: var(--text-muted); width:30px; height:34px; border-radius:8px; cursor:pointer; flex-shrink:0; }
+  .tt-addp { width:100%; border:1px dashed var(--border,#ccc); background:none; color: var(--text-muted); padding:9px; border-radius:10px; font-size:13px; cursor:pointer; }
   /* ⋯ 메뉴 */
   .tt-menu { position:fixed; z-index:1000; background: var(--bg-card,#fff); border:1px solid var(--border,#e5e5e5); border-radius:10px; box-shadow:0 8px 24px rgba(0,0,0,.14); padding:4px; min-width:150px; }
   .tt-menu button { display:block; width:100%; text-align:left; background:none; border:none; padding:9px 12px; font-size:14px; color: var(--text); border-radius:7px; cursor:pointer; }
@@ -3222,24 +3229,24 @@ const SAMPLE_TEMPLATE = {
 // 2026-09-02: 에브리타임 '2026년 2학기' 시간표 그대로 (색·강의실 포함). owner 계정 전용.
 const OWNER_TEMPLATE = {
   weekday: [
-    { start: '06:25', end: '08:00', label: '이동',        category: 'prep',  color: '#F1897A', days: [1,2,3] },
-    { start: '18:30', end: '20:10', label: '이동',        category: 'prep',  color: '#F1897A', days: [1,2,3] },
-    { start: '06:25', end: '07:30', label: '이동',        category: 'prep',  color: '#9B84EA', days: [4,5] },
-    { start: '08:00', end: '14:30', label: 'Farm Planet', category: 'alba',  color: '#7DC77F', days: [4,5] },
-    { start: '09:00', end: '10:15', label: '성표',        category: 'toeic', color: '#F3C660', days: [1,3], place: '청704' },
-    { start: '10:30', end: '11:45', label: '계량',        category: 'toeic', color: '#A3CC66', days: [1,3], place: '정309' },
-    { start: '12:00', end: '14:45', label: '리질리언스',  category: 'toeic', color: '#74A5EC', days: [2],   place: '청303' },
-    { start: '15:00', end: '16:15', label: '거시',        category: 'toeic', color: '#72D0C2', days: [1,3], place: '정111' },
-    { start: '15:00', end: '17:45', label: '창업',        category: 'toeic', color: '#F9AB63', days: [2],   place: '청201' },
+    { start: '06:25', end: '08:00', label: '이동',        category: 'prep',  color: '#F1897A', days: [1,2,3], group: 'g_move_mtw' },
+    { start: '18:30', end: '20:10', label: '이동',        category: 'prep',  color: '#F1897A', days: [1,2,3], group: 'g_move_mtw' },
+    { start: '06:25', end: '07:30', label: '이동',        category: 'prep',  color: '#9B84EA', days: [4,5], group: 'g_move_tf' },
+    { start: '08:00', end: '14:30', label: 'Farm Planet', category: 'alba',  color: '#7DC77F', days: [4,5], group: 'g_farm' },
+    { start: '09:00', end: '10:15', label: '성표',        category: 'toeic', color: '#F3C660', days: [1,3], place: '청704', group: 'g_sp' },
+    { start: '10:30', end: '11:45', label: '계량',        category: 'toeic', color: '#A3CC66', days: [1,3], place: '정309', group: 'g_gy' },
+    { start: '12:00', end: '14:45', label: '리질리언스',  category: 'toeic', color: '#74A5EC', days: [2],   place: '청303', group: 'g_rz' },
+    { start: '15:00', end: '16:15', label: '거시',        category: 'toeic', color: '#72D0C2', days: [1,3], place: '정111', group: 'g_gs' },
+    { start: '15:00', end: '17:45', label: '창업',        category: 'toeic', color: '#F9AB63', days: [2],   place: '청201', group: 'g_cu' },
   ],
   saturday: [
-    { start: '09:00', end: '10:00', label: '이동', category: 'prep', color: '#D39CF3' },
-    { start: '16:30', end: '17:30', label: '이동', category: 'prep', color: '#D39CF3' },
+    { start: '09:00', end: '10:00', label: '이동', category: 'prep', color: '#D39CF3', group: 'g_move_we' },
+    { start: '16:30', end: '17:30', label: '이동', category: 'prep', color: '#D39CF3', group: 'g_move_we' },
   ],
   sunday: [
-    { start: '09:00', end: '10:00', label: '이동', category: 'prep', color: '#D39CF3' },
-    { start: '14:00', end: '16:00', label: '교회', category: 'out',  color: '#F1897A' },
-    { start: '16:30', end: '17:30', label: '이동', category: 'prep', color: '#D39CF3' },
+    { start: '09:00', end: '10:00', label: '이동', category: 'prep', color: '#D39CF3', group: 'g_move_we' },
+    { start: '14:00', end: '16:00', label: '교회', category: 'out',  color: '#F1897A', group: 'g_church' },
+    { start: '16:30', end: '17:30', label: '이동', category: 'prep', color: '#D39CF3', group: 'g_move_we' },
   ],
 };
 let SCHEDULE_TEMPLATE = SAMPLE_TEMPLATE;
@@ -3275,6 +3282,7 @@ function syncScheduleEntries() {
         if (!existing.values) { existing.values = {}; changed = true; }
         if (block.color && !existing.color) { existing.color = block.color; changed = true; }
         if (block.place && !existing.place) { existing.place = block.place; changed = true; }
+        if (block.group && !existing.group) { existing.group = block.group; changed = true; }
       } else {
         entries.push({
           id,
@@ -3283,6 +3291,7 @@ function syncScheduleEntries() {
           end: block.end,
           category: block.category,
           color: block.color || '',
+          group: block.group || '',
           place: block.place || '',
           types: ['check'],
           values: {},
@@ -3629,7 +3638,7 @@ function saveTemplate() {
       cue: e.cue || '', place: e.place || '', bundle: e.bundle || '',
       difficulty: e.difficulty || 3,
       // 시간표 필드 (시간 블록인 경우)
-      start: e.start || '', end: e.end || '', category: e.category || '', color: e.color || '',
+      start: e.start || '', end: e.end || '', category: e.category || '', color: e.color || '', group: e.group || '',
       subs: e.subs ? e.subs.map(s => ({ label: s.label, value: '' })) : undefined
     }));
   return lsSet(lsKey('template'), pinned);
@@ -7664,7 +7673,7 @@ function loadDate(date) {
         cue: e.cue || '', place: e.place || '', bundle: e.bundle || '',
         difficulty: e.difficulty || 3,
         // 시간표 필드 보존 (시간 블록인 경우)
-        start: e.start || '', end: e.end || '', category: e.category || '', color: e.color || '',
+        start: e.start || '', end: e.end || '', category: e.category || '', color: e.color || '', group: e.group || '',
         subs: e.subs ? e.subs.map(s => ({ label: s.label, value: '' })) : undefined,
       }));
     }
@@ -7685,6 +7694,7 @@ function loadDate(date) {
         existing.end = t.end || '';
         existing.category = t.category || '';
         existing.color = t.color || '';
+        existing.group = t.group || '';
         existing.place = t.place || existing.place || '';
         existing.days = t.days || ['all'];
         existing.alarm = t.alarm || '';
@@ -7701,6 +7711,7 @@ function loadDate(date) {
           end: t.end || '',
           category: t.category || '',
           color: t.color || '',
+          group: t.group || '',
           place: t.place || '',
           days: t.days || ['all'],
           alarm: t.alarm || '',
@@ -7727,7 +7738,7 @@ function normalizeEntry(e) {
       cue: e.cue || '', place: e.place || '', bundle: e.bundle || '',
       difficulty: e.difficulty || 3,
       // 시간표 필드 보존
-      start: e.start || '', end: e.end || '', category: e.category || '', color: e.color || '',
+      start: e.start || '', end: e.end || '', category: e.category || '', color: e.color || '', group: e.group || '',
       subs: e.subs,
       fromGoalId: e.fromGoalId, fromTaskId: e.fromTaskId,
     };
@@ -8541,33 +8552,79 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   }
 
 
-  // ---- 블록 편집: 장소 입력 추가, 카테고리/메모/알람 숨김, 색은 랜덤 배정 ----
+  // ---- 블록 편집: 한 일정 = 여러 시간대(요일별) ----
   var PALETTE=['#F1897A','#F9AB63','#F3C660','#A3CC66','#7DC77F','#72D0C2','#74A5EC','#9B84EA','#D39CF3','#B0B0B0'];
-  function ensurePlaceField(){
+  var DAYS_ORDER=[1,2,3,4,5,6,0], DOWK=['일','월','화','수','목','금','토'];
+  var periods=[]; // [{days:[..], start:'HH:MM', end:'HH:MM', id?:entryId}]
+  function groupOf(id){ var e=entries.find(function(x){return x.id===id;}); if(!e) return []; if(e.group) return entries.filter(function(x){ return x.group===e.group && x.start && x.end; }); return [e]; }
+  function setupModal(){
     var cat=document.getElementById('sbCatGrid'); if(!cat) return;
-    var grp=cat.closest('.field-group'); if(grp) grp.classList.add('tm-gone');
-    var note=document.getElementById('sbNote'); if(note){ var ng=note.closest('.field-group'); if(ng) ng.classList.add('tm-gone'); }
-    var al=document.getElementById('sbAlarm'); if(al){ var ag=al.closest('.field-group')||al.closest('label'); if(ag) ag.classList.add('tm-gone'); }
+    ['sbCatGrid','sbNote','sbAlarm','sbStart','sbDayChips'].forEach(function(id){ var el=document.getElementById(id); if(!el) return; var grp=(id==='sbStart')? el.closest('.field-row') : (el.closest('.field-group')||el.closest('label')); if(grp) grp.classList.add('tm-gone'); });
     if(!document.getElementById('sbPlace')){
       var g=document.createElement('div'); g.className='field-group';
-      g.innerHTML='<label class="field-label">장소 <span style="color:var(--text-muted);font-weight:400;">(선택)</span></label><input type="text" class="field-input" id="sbPlace" placeholder="예: 청704" maxlength="30" autocomplete="off">';
-      (grp||cat).parentNode.insertBefore(g, grp||cat);
+      g.innerHTML='<label class="field-label">장소 <span style="color:var(--text-muted);font-weight:400;">(선택)</span></label><input type="text" class="field-input" id="sbPlace" placeholder="예: 청704, 6:37 지하철" maxlength="30" autocomplete="off">';
+      var lab=document.getElementById('sbLabel').closest('.field-group'); lab.parentNode.insertBefore(g, lab.nextSibling);
     }
+    if(!document.getElementById('sbPeriods')){
+      var p=document.createElement('div'); p.className='field-group'; p.id='sbPeriods';
+      p.innerHTML='<label class="field-label">시간 <span style="color:var(--text-muted);font-weight:400;">(요일별로 다르면 줄을 추가)</span></label><div id="sbPeriodList"></div><button type="button" class="tt-addp" id="sbAddPeriod">＋ 시간 추가</button>';
+      var pl=document.getElementById('sbPlace').closest('.field-group'); pl.parentNode.insertBefore(p, pl.nextSibling);
+      p.querySelector('#sbAddPeriod').addEventListener('click', function(){ var last=periods[periods.length-1]; periods.push({days:last?last.days.slice():[1,2,3,4,5], start:'', end:''}); renderPeriods(); });
+    }
+  }
+  function renderPeriods(){
+    var list=document.getElementById('sbPeriodList'); if(!list) return; list.innerHTML='';
+    periods.forEach(function(p,i){
+      var row=document.createElement('div'); row.className='tt-prow';
+      var days=document.createElement('div'); days.className='sb-day-chips tt-pdays';
+      DAYS_ORDER.forEach(function(d){ var b=document.createElement('button'); b.type='button'; b.className='sb-day-chip'+(d===0?' sun':d===6?' sat':'')+(p.days.indexOf(d)>=0?' on':''); b.textContent=DOWK[d]; b.addEventListener('click', function(){ var k=p.days.indexOf(d); if(k>=0) p.days.splice(k,1); else p.days.push(d); b.classList.toggle('on'); }); days.appendChild(b); });
+      var time=document.createElement('div'); time.className='tt-ptime';
+      time.innerHTML='<input type="time" class="field-input p-start" value="'+(p.start||'')+'"><span>~</span><input type="time" class="field-input p-end" value="'+(p.end||'')+'">'+(periods.length>1?'<button type="button" class="p-del" title="이 시간 삭제">✕</button>':'');
+      time.querySelector('.p-start').addEventListener('input', function(ev){ p.start=ev.target.value; });
+      time.querySelector('.p-end').addEventListener('input', function(ev){ p.end=ev.target.value; });
+      var del=time.querySelector('.p-del'); if(del) del.addEventListener('click', function(){ periods.splice(i,1); renderPeriods(); });
+      row.appendChild(days); row.appendChild(time); list.appendChild(row);
+    });
   }
   function randomColor(){
     var used={}; entries.forEach(function(e){ if(e&&e.color) used[String(e.color).toUpperCase()]=1; });
-    var free=PALETTE.filter(function(c){ return !used[c.toUpperCase()]; });
-    var pool=free.length?free:PALETTE; return pool[Math.floor(Math.random()*pool.length)];
+    var free=PALETTE.filter(function(c){ return !used[c.toUpperCase()]; }); var pool=free.length?free:PALETTE; return pool[Math.floor(Math.random()*pool.length)];
   }
-  var _openEdit=window.openScheduleBlockModal, _openNew=window.openNewScheduleBlockModal, _save=window.saveScheduleBlock;
-  window.openScheduleBlockModal=function(id){ _openEdit(id); ensurePlaceField(); var e=entries.find(function(x){return x.id===id;}); var p=document.getElementById('sbPlace'); if(p) p.value=(e&&e.place)||''; };
-  window.openNewScheduleBlockModal=function(){ _openNew(); ensurePlaceField(); var p=document.getElementById('sbPlace'); if(p) p.value=''; };
+  var _openEdit=window.openScheduleBlockModal, _openNew=window.openNewScheduleBlockModal;
+  window.openScheduleBlockModal=function(id){
+    _openEdit(id); setupModal(); var e=entries.find(function(x){return x.id===id;}); if(!e) return;
+    document.getElementById('sbPlace').value=e.place||'';
+    periods=groupOf(id).sort(function(a,b){ return mins(a.start)-mins(b.start); }).map(function(x){ return { id:x.id, days:(x.days||[]).map(Number).filter(function(d){return !isNaN(d);}), start:x.start, end:x.end }; });
+    if(!periods.length) periods=[{id:e.id, days:[1,2,3,4,5], start:e.start, end:e.end}];
+    renderPeriods();
+  };
+  window.openNewScheduleBlockModal=function(){ _openNew(); setupModal(); document.getElementById('sbPlace').value=''; var dow=new Date(currentDate+'T00:00:00').getDay(); periods=[{days:[dow], start:'', end:''}]; renderPeriods(); };
   window.saveScheduleBlock=function(){
-    var editId=sbModalState.editingId; var before={}; entries.forEach(function(e){ before[e.id]=1; });
-    var place=(document.getElementById('sbPlace')||{}).value||''; place=String(place).trim();
-    _save();
-    var t = editId ? entries.find(function(e){return e.id===editId;}) : entries.find(function(e){ return !before[e.id]; });
-    if(t){ t.place=place; if(!t.color) t.color=randomColor(); saveTemplate(); persist(); refreshAll(); }
+    var label=document.getElementById('sbLabel').value.trim(); var place=(document.getElementById('sbPlace').value||'').trim();
+    if(!label){ showToast('활동 이름을 입력하세요'); return; }
+    var valid=periods.filter(function(p){ return p.start && p.end; });
+    if(!valid.length){ showToast('시작/끝 시간을 입력하세요'); return; }
+    if(valid.some(function(p){ return !p.days.length; })){ showToast('요일을 1개 이상 선택하세요'); return; }
+    if(valid.some(function(p){ return mins(p.end)<=mins(p.start); })){ showToast('끝 시간이 시작보다 늦어야 해요'); return; }
+    var editId=sbModalState.editingId; var base=editId?entries.find(function(x){return x.id===editId;}):null;
+    var gid=(base&&base.group)||('g_'+Date.now().toString(36)+Math.random().toString(36).slice(2,5));
+    var color=(base&&base.color)||randomColor(); var cat=(base&&base.category)||'prep';
+    var old=base?groupOf(editId):[]; if(base&&!base.group){ base.group=gid; }
+    var keep={};
+    valid.forEach(function(p){
+      var days=p.days.slice().sort(function(a,b){return a-b;});
+      var ex=p.id?entries.find(function(x){return x.id===p.id;}):null;
+      if(ex){ ex.label=label; ex.place=place; ex.start=p.start; ex.end=p.end; ex.days=days; ex.group=gid; ex.color=color; ex.goalMinutes=scheduleMinutesBetween(p.start,p.end); keep[ex.id]=1; }
+      else { var ne={ id:'sched_user_'+Date.now().toString(36)+Math.random().toString(36).slice(2,5), label:label, start:p.start, end:p.end, category:cat, color:color, group:gid, place:place, days:days, types:['check'], values:{}, pinned:true, alarm:'', alarmMessage:'', goalMinutes:scheduleMinutesBetween(p.start,p.end) }; entries.push(ne); keep[ne.id]=1; }
+    });
+    old.forEach(function(x){ if(!keep[x.id]){ var i=entries.findIndex(function(y){return y.id===x.id;}); if(i>=0) entries.splice(i,1); } });
+    saveTemplate(); persist(); closeScheduleBlockModal(); refreshAll(); showToast(editId?'수정되었습니다':'추가되었습니다');
+  };
+  window.deleteScheduleBlock=function(){
+    var id=sbModalState.editingId; if(!id) return; var grp=groupOf(id);
+    if(!confirm(grp.length>1?'이 일정의 시간 '+grp.length+'개를 모두 삭제할까요?':'이 시간 블록을 삭제할까요?')) return;
+    grp.forEach(function(x){ var i=entries.findIndex(function(y){return y.id===x.id;}); if(i>=0) entries.splice(i,1); });
+    saveTemplate(); persist(); closeScheduleBlockModal(); refreshAll(); showToast('삭제되었습니다');
   };
 
   // ---- 자동 알림: 모든 블록 시작 10분 전 (앱이 열려 있을 때) ----
