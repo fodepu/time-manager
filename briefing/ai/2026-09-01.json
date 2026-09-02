@@ -1,0 +1,55 @@
+{
+  "date": "2026-09-01",
+  "generatedAt": "2026-09-01T09:20:00+09:00",
+  "urgent": {
+    "text": "Sonnet 5 도입가는 8/31로 종료 — 9/1부터 $3/$15. 대량 워크로드는 캐시·배치로 단가 방어.",
+    "source": "support.claude.com"
+  },
+  "items": [
+    {
+      "cat": "model",
+      "title": "Claude Fable 5.1 & Mythos 5.1 공개",
+      "lead": "오늘 출시된 Anthropic 최상위 모델, 코딩·지식 작업과 장기 자율 세션을 정면으로 겨냥한다.",
+      "points": [
+        "**멀티데이 무감독 세션**에서 스스로 테스트를 짜 검증하고 근본 원인을 수정 — 전체 코드베이스 규모 작업을 시작부터 끝까지 위임한다.",
+        "agentic 코딩 **+30%**, Terminal-Bench-Science **2배**로, 리서치·성능 튜닝처럼 검증이 핵심인 태스크의 완주율이 오른다."
+      ],
+      "note": "Fable 5.1 GA, Mythos 5.1 trusted access 한정. $10/$50 per MTok.",
+      "source": "anthropic.com",
+      "url": "https://www.anthropic.com/claude-fable-and-mythos-5-1"
+    },
+    {
+      "cat": "market",
+      "title": "Fable 5.1, 캐시 읽기 75% 인하",
+      "lead": "캐시 히트 단가가 $1.00→$0.25/MTok, 배치는 입출력 반값이다.",
+      "points": [
+        "컨텍스트 재사용이 잦은 **에이전트 워크로드 실비용 약 45%↓** — 시스템 프롬프트·문서를 캐시 대상으로 재구성하면 즉시 반영된다."
+      ],
+      "note": "cache read $0.25/MTok, batch $5/$25.",
+      "source": "venturebeat.com",
+      "url": "https://venturebeat.com/technology/anthropics-claude-fable-5-1-and-mythos-5-1-arrive-with-a-75-cost-reduction-for-fable-cache-reads"
+    },
+    {
+      "cat": "tool",
+      "title": "Grok Build Workflows — 병렬 에이전트 오케스트레이션",
+      "lead": "평문 서술 하나를 수백 병렬 에이전트로 팬아웃해 검증 후 리포트한다.",
+      "points": [
+        "기본 **128**, 최대 **1,024 에이전트** — 반복성 대량 처리·QC·리팩터를 한 번의 백그라운드 실행으로 끝낸다."
+      ],
+      "note": "SuperGrok Heavy, grok.com·CLI.",
+      "source": "x.ai",
+      "url": "https://x.ai/news/workflows"
+    },
+    {
+      "cat": "headline",
+      "title": "Claude for Teachers, 무료 Enterprise로 학교 배포",
+      "lead": "오늘부터 학교·교육청이 SSO·역할기반 접근·도메인 클레임을 갖춘 무료 Enterprise로 도입할 수 있다.",
+      "points": [
+        "교직원을 **중앙 관리 조직**으로 묶어 계정·권한을 일괄 관리 — 교육기관 단위 도입의 관리 부담이 줄어든다."
+      ],
+      "note": "9/1 시작, 무료 Enterprise 오퍼링.",
+      "source": "support.claude.com",
+      "url": "https://support.claude.com/en/articles/12138966-release-notes"
+    }
+  ]
+}

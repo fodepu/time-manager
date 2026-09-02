@@ -1,0 +1,83 @@
+{
+  "date": "2026-09-02",
+  "generatedAt": "2026-09-02T12:41:11+09:00",
+  "urgent": {
+    "text": "Claude Code 주간 50% 보너스가 9/14 종료 후 영구 25% 인상으로 대체 — 대량 코딩 세션은 9/14 안에 몰아 처리하면 이득.",
+    "source": "support.claude.com"
+  },
+  "items": [
+    {
+      "cat": "model",
+      "title": "Claude Fable 5.1 & Mythos 5.1 — 코딩·에이전트 최상위",
+      "lead": "9/1 출시된 Anthropic 신형 플래그십, 전체 코드베이스 규모의 야심찬 작업과 멀티데이 자율 세션을 겨냥한다.",
+      "points": [
+        "**스스로 테스트를 작성**해 결과를 검증하고, 빠른 패치 대신 **근본 원인 수정**을 택한다 — 긴 무감독 작업에서 품질을 위해 지름길을 피해, 감독 없이 돌리고 결과만 검수하는 **장기 에이전트 루프**의 신뢰도가 올라간다.",
+        "**vision으로 PDF·파일 안의 다이어그램·차트·표를 이해** — 금융·법률·분석·설계처럼 문서 중심 작업에서 스크린샷/도표를 근거로 산출물을 자기 점검한다.",
+        "**Terminal-Bench-Science 2배**, agentic 코딩 **+30%**, CursorBench 3.2 max effort **73.4%** — 시작부터 끝까지 난도 높은 코딩 태스크를 위임 가능한 수준."
+      ],
+      "note": "Fable 5.1은 GA(웹·API), Mythos 5.1은 trusted access 한정. 헤드라인 단가는 Fable 5와 동일 $10/$50 per MTok.",
+      "source": "anthropic.com",
+      "url": "https://www.anthropic.com/claude-fable-and-mythos-5-1"
+    },
+    {
+      "cat": "market",
+      "title": "Fable 5.1 캐시 읽기 75%↓ — 에이전트 비용 최대 45% 절감",
+      "lead": "헤드라인 단가는 그대로지만 프롬프트 캐시 읽기가 $1.00→$0.25/MTok로 내렸다.",
+      "points": [
+        "컨텍스트를 반복 재주입하는 **에이전트·장문 워크로드**일수록 이득 — 캐시 히트 비중이 큰 파이프라인은 실질 비용이 **약 45%** 낮아진다. 시스템 프롬프트·문서 컨텍스트를 캐시 대상으로 재설계할 실익이 커졌다.",
+        "**배치 처리는 입출력 반값**($5/$25) — 비동기 대량 추론·평가·라벨링은 배치 큐로 돌려 단가를 절반으로 눌러라."
+      ],
+      "note": "cache read $0.25/MTok, batch $5/$25. platform.claude.com 가격 문서 반영.",
+      "source": "venturebeat.com",
+      "url": "https://venturebeat.com/technology/anthropics-claude-fable-5-1-and-mythos-5-1-arrive-with-a-75-cost-reduction-for-fable-cache-reads"
+    },
+    {
+      "cat": "tool",
+      "title": "Grok Build Workflows — 수백 병렬 에이전트 오케스트레이션",
+      "lead": "대형 작업을 평문으로 서술하면 Grok이 계획을 세워 백그라운드로 수백 에이전트에 분배하고 검증 후 보고한다.",
+      "points": [
+        "기본 **128 에이전트**, 최대 **1,024**까지 팬아웃(기존 8개 서브에이전트 대비 대폭 확대) — 데이터 처리·QC·리팩터 같은 **반복성 대량 작업**을 한 번의 백그라운드 실행으로 끝낸다.",
+        "단계형 아키텍처: Build가 작업을 **계획→단계별 에이전트 배정→병렬 실행→결과 취합·검증**까지 수행하므로, 사람은 요청과 최종 리포트만 다룬다."
+      ],
+      "note": "SuperGrok Heavy 대상, grok.com·CLI. Workflow 1건당 에이전트 예산 조정 가능.",
+      "source": "x.ai",
+      "url": "https://x.ai/news/workflows"
+    },
+    {
+      "cat": "tool",
+      "title": "Grok, Google Workspace·Excel에 사이드패널로 진입",
+      "lead": "Sheets·Docs·Slides용 단일 애드온과 Microsoft 365(Excel·Word·PPT·Outlook) 애드인이 무료 배포됐다.",
+      "points": [
+        "**Sheets/Excel에서 평문 질문 → 실제 수식이 수식 바에 생성**되고, 근거 셀을 인용하며 가정이 바뀌면 시나리오를 재실행한다 — 별도 도구 전환 없이 스프레드시트 안에서 재무모델·what-if를 돌린다.",
+        "설치 1회로 **Docs·Sheets·Slides 전체에서 사이드패널** 사용 — 파일 옆에서 초안·차트·요약을 만들어 붙인다."
+      ],
+      "note": "Google Workspace Marketplace·Microsoft Marketplace 무료 다운로드.",
+      "source": "x.ai",
+      "url": "https://x.ai/grok/workspace"
+    },
+    {
+      "cat": "tool",
+      "title": "ChatGPT 데스크톱, 사이트 자체 도구를 앱 안에서 호출",
+      "lead": "ChatGPT Work·Codex가 내장 브라우저에서 지원 사이트가 제공하는 도구를 별도 연결 없이 바로 쓴다.",
+      "points": [
+        "**커넥터 설정 없이** 웹사이트가 노출한 도구를 그대로 태스크에 편입 — 데스크톱 브라우저의 site tools로 예약·조회 등을 앱 안에서 완결한다.",
+        "브라우저 확장 지원 확대·데스크톱 site tools 추가로, 화면만 있는 서비스를 **연동 코드 없이** 워크플로에 끼운다."
+      ],
+      "note": "ChatGPT 데스크톱/모바일 업데이트, 9/1자. 지원 사이트 한정 롤아웃.",
+      "source": "releasebot.io",
+      "url": "https://releasebot.io/updates/openai/chatgpt"
+    },
+    {
+      "cat": "market",
+      "title": "Sonnet 5 프로모 종료 → $3/$15 표준가 발효",
+      "lead": "8/31로 도입가($2/$10)가 끝나고 9/1부터 입력 $3·출력 $15/MTok가 적용된다.",
+      "points": [
+        "출력 토큰이 큰 **에이전트 루프·대량 배치**는 토큰당 **50% 인상**을 그대로 맞는다 — 비용 민감 워크로드는 캐시·배치 적용, 또는 값 내린 **Fable 5.1 캐시 경로**와 비교해 재배치할 시점.",
+        "지속 워크로드라면 지금 단가로 **월 비용을 재산정**하고 모델 믹스(Haiku/Sonnet/Fable)를 다시 나눠라."
+      ],
+      "note": "입력 $3 / 출력 $15 per MTok, 9/1 발효.",
+      "source": "support.claude.com",
+      "url": "https://support.claude.com/en/articles/12138966-release-notes"
+    }
+  ]
+}
