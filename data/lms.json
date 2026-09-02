@@ -1,1 +1,7 @@
-{ "generatedAt": null, "assignments": [], "notices": [], "error": "secrets not configured" }
+{
+  "generatedAt": null,
+  "assignments": [],
+  "notices": [],
+  "error": "fetch failed",
+  "checkedAt": "2026-09-02T06:16:55.317Z"
+}
