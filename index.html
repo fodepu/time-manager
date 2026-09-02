@@ -2378,7 +2378,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="20">
+<meta name="tm-version" content="21">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -7995,7 +7995,7 @@ window.mergeRemoteData = mergeRemoteData;
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-app.js";
 import { getAuth, GoogleAuthProvider, signInWithCredential, onAuthStateChanged, signOut, setPersistence, browserLocalPersistence } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-auth.js";
-import { getFirestore, doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-firestore.js";
+import { getFirestore, doc, getDoc, setDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-firestore.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBrX_BUDNZgDlbaRDk13rGW7UDa3JHFnxo",
@@ -8016,9 +8016,30 @@ const PREFIX = 'tracker_';
 const KEEP = new Set(['tracker_theme','tracker_device_id','tracker_sync_config']);
 function clearTracker(){ const rm=[]; for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i); if(k && k.startsWith(PREFIX) && !KEEP.has(k)) rm.push(k);} rm.forEach(k=>{try{localStorage.removeItem(k);}catch(e){}}); }
 
-let started=false, uid=null, pushTimer=null;
-window.tmOnChange = function(){ if(!uid) return; if(pushTimer) clearTimeout(pushTimer); pushTimer=setTimeout(pushNow, 4000); };
-async function pushNow(){ if(!uid) return; try{ const payload = window.collectLocalDataForSync && window.collectLocalDataForSync(); if(!payload) return; await setDoc(doc(db,'users',uid), { payload, updatedAt: Date.now() }); }catch(e){ console.warn('cloud push', e&&e.message); } }
+let started=false, uid=null, pushTimer=null, lastPushAt=0, unsub=null;
+const DEVICE_ID = (function(){ try{ let d=localStorage.getItem('tracker_device_id'); if(!d){ d=JSON.stringify('dev_'+Math.random().toString(36).slice(2,10)); localStorage.setItem('tracker_device_id', d); } return String(d).replace(/"/g,''); }catch(e){ return 'dev_x'; } })();
+window.tmOnChange = function(){ if(!uid) return; if(pushTimer) clearTimeout(pushTimer); pushTimer=setTimeout(pushNow, 1200); };
+async function pushNow(){ if(!uid) return; if(pushTimer){ clearTimeout(pushTimer); pushTimer=null; } try{ const payload = window.collectLocalDataForSync && window.collectLocalDataForSync(); if(!payload) return; lastPushAt=Date.now(); await setDoc(doc(db,'users',uid), { payload, updatedAt: lastPushAt, deviceId: DEVICE_ID }); }catch(e){ console.warn('cloud push', e&&e.message); } }
+// 앱을 숨기거나 닫을 때 대기 중인 변경을 즉시 업로드 (폰에서 추가 직후 나가도 저장되게)
+document.addEventListener('visibilitychange', function(){ if(document.visibilityState==='hidden' && pushTimer) pushNow(); });
+window.addEventListener('pagehide', function(){ if(pushTimer) pushNow(); });
+// 다른 기기에서 바뀐 데이터 실시간 반영
+function listenRemote(){
+  if(unsub || !uid) return;
+  unsub = onSnapshot(doc(db,'users',uid), function(snap){
+    try{
+      if(!snap.exists() || snap.metadata.hasPendingWrites) return;
+      const d=snap.data(); if(!d || !d.payload) return;
+      if(d.deviceId===DEVICE_ID || !d.updatedAt || d.updatedAt<=lastPushAt) return;
+      if(pushTimer) return; // 내 변경이 대기 중이면 덮어쓰지 않음 (곧 내 것이 올라감)
+      clearTracker(); if(window.mergeRemoteData) window.mergeRemoteData(d.payload,'remote');
+      lastPushAt=d.updatedAt;
+      if(typeof loadDate==='function' && typeof currentDate!=='undefined') loadDate(currentDate);
+      if(typeof refreshAll==='function') refreshAll();
+      if(typeof showToast==='function') showToast('다른 기기의 변경이 반영됐어요');
+    }catch(e){ console.warn('remote apply', e&&e.message); }
+  });
+}
 
 function showApp(email){ document.body.classList.remove('tm-locked'); const o=document.getElementById('tmAuthOverlay'); if(o)o.classList.add('tm-auth-hidden'); const b=document.getElementById('tmLogoutBtn'); if(b){b.classList.remove('tm-auth-hidden'); b.title='로그아웃 ('+(email||'')+')';} }
 function showLogin(){ document.body.classList.add('tm-locked'); const o=document.getElementById('tmAuthOverlay'); if(o)o.classList.remove('tm-auth-hidden'); const b=document.getElementById('tmLogoutBtn'); if(b)b.classList.add('tm-auth-hidden'); }
@@ -8048,6 +8069,7 @@ onAuthStateChanged(auth, async (user)=>{
     if(!isOwner && currentMode==='plan'){ if(window.switchMode) switchMode('free'); }
     if(isOwner){ try{ if(window.tmPullProcessed) tmPullProcessed(); }catch(e){} }
     if(!cloudHad) pushNow();
+    listenRemote();
   } else {
     showLogin();
   }
@@ -8543,6 +8565,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
       if(!isRec) items.push(['✎ 편집 (시간·활동·카테고리)', function(){ if(date!==currentDate) loadDate(date); openScheduleBlockModal(b.id); }]);
       else items.push(['📝 클로드 정리 기록 (편집 불가)', function(){ showToast('정리 기록 블록은 편집할 수 없어요. 아래 버튼으로 기본 시간표로 되돌릴 수 있습니다.'); }]);
       items.push([b.values.check===true?'☐ 완료 해제':'☑ 완료로 표시', function(){ if(b.values.check===true){ cycleFor(date,b.id); cycleFor(date,b.id); } else if(b.values.check===undefined){ cycleFor(date,b.id); } else { cycleFor(date,b.id); cycleFor(date,b.id); } }]);
+      if(!isRec) items.push(['🗑 일정 삭제 (묶인 시간 전부)', function(){ if(date!==currentDate) loadDate(date); var grp=(function(id){ var e=entries.find(function(x){return x.id===id;}); if(!e) return []; return e.group? entries.filter(function(x){ return x.group===e.group; }) : [e]; })(b.id); if(!grp.length) return; if(!confirm('"'+(b.label||'')+'" 일정을 삭제할까요? (시간 '+grp.length+'개 모두)')) return; grp.forEach(function(x){ var i=entries.findIndex(function(y){return y.id===x.id;}); if(i>=0) entries.splice(i,1); }); saveTemplate(); persist(); refreshAll(); showToast('삭제되었습니다'); }]);
       items.push(['✕ 의도적 미완료', function(){ if(b.values.check===undefined){ cycleFor(date,b.id); cycleFor(date,b.id); } else if(b.values.check===true){ cycleFor(date,b.id); } }]);
       items.forEach(function(it){ var bt=document.createElement('button'); bt.type='button'; bt.textContent=it[0]; bt.addEventListener('click', function(ev){ ev.stopPropagation(); closeMenu(); it[1](); }); m.appendChild(bt); });
       document.body.appendChild(m);
@@ -8713,7 +8736,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
       DAYS_ORDER.forEach(function(d){ var b=document.createElement('button'); b.type='button'; b.className='sb-day-chip'+(d===0?' sun':d===6?' sat':'')+(p.days.indexOf(d)>=0?' on':''); b.textContent=DOWK[d]; b.addEventListener('click', function(){ var k=p.days.indexOf(d); if(k>=0) p.days.splice(k,1); else p.days.push(d); b.classList.toggle('on'); }); days.appendChild(b); });
       var time=document.createElement('div'); time.className='tt-ptime';
       time.innerHTML='<input type="time" class="field-input p-start" value="'+(p.start||'')+'"><span>~</span><input type="time" class="field-input p-end" value="'+(p.end||'')+'">'+(periods.length>1?'<button type="button" class="p-del" title="이 시간 삭제">✕</button>':'');
-      time.querySelector('.p-start').addEventListener('input', function(ev){ p.start=ev.target.value; });
+      time.querySelector('.p-start').addEventListener('input', function(ev){ p.start=ev.target.value; var endEl=time.querySelector('.p-end'); if(p.start && (!p.end || mins(p.end)<=mins(p.start))){ var m=Math.min(mins(p.start)+60, 23*60+59); p.end=String(Math.floor(m/60)).padStart(2,'0')+':'+String(m%60).padStart(2,'0'); endEl.value=p.end; } });
       time.querySelector('.p-end').addEventListener('input', function(ev){ p.end=ev.target.value; });
       var del=time.querySelector('.p-del'); if(del) del.addEventListener('click', function(){ periods.splice(i,1); renderPeriods(); });
       row.appendChild(days); row.appendChild(time); list.appendChild(row);
