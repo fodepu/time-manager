@@ -21,7 +21,9 @@ async function canvasGet(path, params = {}) {
   url.searchParams.set('per_page', '100');
   const all = [];
   for (let i = 0; i < 20 && url; i++) {
-    const r = await fetch(url, { headers: { Authorization: `Bearer ${TOKEN}`, Accept: 'application/json' } });
+    let r;
+    try { r = await fetch(url, { headers: { Authorization: `Bearer ${TOKEN}`, Accept: 'application/json' }, signal: AbortSignal.timeout(20000) }); }
+    catch (e) { const c = e.cause || {}; throw new Error(`Canvas ${path} 연결 실패: ${e.message}${c.code ? ' [' + c.code + ']' : ''}${c.message ? ' ' + c.message : ''}`); }
     if (!r.ok) throw new Error(`Canvas ${path} → HTTP ${r.status}`);
     const j = await r.json();
     if (Array.isArray(j)) all.push(...j); else return j;
@@ -71,17 +73,24 @@ function parseIcs(text) {
     due: toIso(e.DTEND || e.DTSTART), submitted: false, url: e.URL || '' })).filter(a => a.due);
 }
 async function fromIcs() {
-  const r = await fetch(ICS); if (!r.ok) throw new Error(`ICS HTTP ${r.status}`);
+  let r; try { r = await fetch(ICS, { signal: AbortSignal.timeout(20000) }); } catch (e) { const c = e.cause || {}; throw new Error(`ICS 연결 실패: ${e.message}${c.code ? ' [' + c.code + ']' : ''}`); }
+  if (!r.ok) throw new Error(`ICS HTTP ${r.status}`);
   const assignments = parseIcs(await r.text());
   return { generatedAt: new Date().toISOString(), source: 'ics', assignments, notices: [] };
 }
 
+async function diag() {
+  if (!BASE) return null;
+  try { const dns = await import('node:dns/promises'); const host = new URL(BASE).hostname; const a = await dns.lookup(host); return `dns ${host} → ${a.address}`; }
+  catch (e) { return `dns 실패: ${e.code || e.message}`; }
+}
 (async () => {
   let err = null;
+  const d = await diag(); if (d) console.log('[diag]', d);
   if (BASE && TOKEN) { try { return write(await fromCanvas()); } catch (e) { err = e.message; console.warn('Canvas 실패:', err); } }
   else console.warn('LMS_BASE_URL/LMS_TOKEN 미설정 → Canvas 건너뜀');
   if (ICS) { try { const d = await fromIcs(); d.error = err || undefined; return write(d); } catch (e) { err = (err ? err + ' / ' : '') + e.message; console.warn('ICS 실패:', e.message); } }
   // 둘 다 실패: 이전 데이터 보존 + 오류만 갱신
-  write({ ...(prev || { assignments: [], notices: [] }), generatedAt: prev?.generatedAt || null, checkedAt: new Date().toISOString(), error: err || 'secrets not configured' });
+  write({ ...(prev || { assignments: [], notices: [] }), generatedAt: prev?.generatedAt || null, checkedAt: new Date().toISOString(), error: err || 'secrets not configured', diag: d || undefined });
   process.exitCode = 0; // 워크플로는 실패로 처리하지 않음 (데이터는 보존)
 })();
