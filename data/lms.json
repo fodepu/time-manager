@@ -1,7 +1,1457 @@
 {
-  "generatedAt": "2026-09-02T07:18:22.857Z",
+  "generatedAt": "2026-09-02T08:14:44.928Z",
   "source": "canvas",
   "user": "김주함(2025####72)",
+  "courseFiles": {
+    "리질리언스와지속가능한도시": [],
+    "거시경제학": [],
+    "계량경제학": [],
+    "모두를위한물리학": [],
+    "성찰과표현": [],
+    "창업과 thinking design": []
+  },
+  "courseModules": {
+    "리질리언스와지속가능한도시": [
+      {
+        "id": "1529842",
+        "name": "1주차",
+        "position": 1,
+        "unlock": null,
+        "items": []
+      },
+      {
+        "id": "1529843",
+        "name": "2주차",
+        "position": 2,
+        "unlock": null,
+        "items": [
+          {
+            "type": "Page",
+            "title": "2주차 읽기자료: 지속가능발전목표(SDGs)",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/96922/modules/items/4773571"
+          }
+        ]
+      },
+      {
+        "id": "1529844",
+        "name": "3주차",
+        "position": 3,
+        "unlock": null,
+        "items": []
+      },
+      {
+        "id": "1529845",
+        "name": "4주차",
+        "position": 4,
+        "unlock": null,
+        "items": []
+      },
+      {
+        "id": "1529846",
+        "name": "5주차",
+        "position": 5,
+        "unlock": null,
+        "items": []
+      },
+      {
+        "id": "1529847",
+        "name": "6주차",
+        "position": 6,
+        "unlock": null,
+        "items": []
+      },
+      {
+        "id": "1529848",
+        "name": "7주차",
+        "position": 7,
+        "unlock": null,
+        "items": []
+      },
+      {
+        "id": "1529849",
+        "name": "8주차",
+        "position": 8,
+        "unlock": null,
+        "items": []
+      },
+      {
+        "id": "1529850",
+        "name": "9주차",
+        "position": 9,
+        "unlock": null,
+        "items": []
+      },
+      {
+        "id": "1529851",
+        "name": "10주차",
+        "position": 10,
+        "unlock": null,
+        "items": []
+      },
+      {
+        "id": "1529852",
+        "name": "11주차",
+        "position": 11,
+        "unlock": null,
+        "items": []
+      },
+      {
+        "id": "1529853",
+        "name": "12주차",
+        "position": 12,
+        "unlock": null,
+        "items": []
+      },
+      {
+        "id": "1529854",
+        "name": "13주차",
+        "position": 13,
+        "unlock": null,
+        "items": []
+      },
+      {
+        "id": "1529855",
+        "name": "14주차",
+        "position": 14,
+        "unlock": null,
+        "items": []
+      },
+      {
+        "id": "1529856",
+        "name": "15주차",
+        "position": 15,
+        "unlock": null,
+        "items": []
+      },
+      {
+        "id": "1529857",
+        "name": "16주차",
+        "position": 16,
+        "unlock": null,
+        "items": []
+      }
+    ],
+    "거시경제학": [
+      {
+        "id": "1507971",
+        "name": "(Warning!!) DONOT make UNAUTHORIZED access to this website WITHOUT MY CONSENT!",
+        "position": 2,
+        "unlock": null,
+        "items": []
+      },
+      {
+        "id": "1507972",
+        "name": "(경고!!) 최형선 교수의 동의가 없는 자의 수업 홈페이지 부정접속과 자료 다운로드를 관련 법령에 따라 금지합니다!",
+        "position": 3,
+        "unlock": null,
+        "items": []
+      },
+      {
+        "id": "1507973",
+        "name": "Interesting piece(s) in your spare time",
+        "position": 4,
+        "unlock": null,
+        "items": [
+          {
+            "type": "ExternalTool",
+            "title": "Why Multitasking Does More Harm Than Good | Wu Tsai Neurosciences Institute",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4761735"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "Economist_20090716_What went wrong with economics",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4761739"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "Economist_20090806_Robert_Lucas_In defence of the dismal science",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4761740"
+          }
+        ]
+      },
+      {
+        "id": "1507974",
+        "name": "Syllabus and Email Submission Guide",
+        "position": 5,
+        "unlock": null,
+        "items": [
+          {
+            "type": "ExternalTool",
+            "title": "Syllabus26Fall_UMacro_260808",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4766172"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "Generative AI Guidelines for Students [경희대학교 AI 활용 교육 가이드라인 (학습자용)]",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4769887"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "zHW_EMail_Submission_Guide_Final",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4760004"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "Guide_for_Email_Submission",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4760006"
+          }
+        ]
+      },
+      {
+        "id": "1507975",
+        "name": "Lecture Notes/Slides and VODs",
+        "position": 6,
+        "unlock": null,
+        "items": [
+          {
+            "type": "ExternalTool",
+            "title": "IMacro_Note_New190925",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4760010"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "Chiang_Wainwright_MathSymbols_Notations",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4760012"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "CESFunction_wPics",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4760013"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "(UPDATED!) Sample_Qts_Math_Review",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4760014"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "Math_Review_VOD1",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4760015"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "Math_Review_VOD2",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4760016"
+          }
+        ]
+      },
+      {
+        "id": "1507976",
+        "name": "Homework Assignments and Solutions",
+        "position": 7,
+        "unlock": null,
+        "items": []
+      }
+    ],
+    "계량경제학": [
+      {
+        "id": "1507906",
+        "name": "1주차",
+        "position": 1,
+        "unlock": null,
+        "items": [
+          {
+            "type": "ExternalTool",
+            "title": "syllabus2026fall",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/95551/modules/items/4762772"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "Group Project Preference Survey (individual survey, please complete by Sep 5)",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/95551/modules/items/4770905"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "lecture_week1_random_variables",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/95551/modules/items/4772231"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "lecture_week1_statistical_inference",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/95551/modules/items/4772383"
+          }
+        ]
+      },
+      {
+        "id": "1507907",
+        "name": "2주차",
+        "position": 2,
+        "unlock": null,
+        "items": []
+      },
+      {
+        "id": "1507908",
+        "name": "3주차",
+        "position": 3,
+        "unlock": null,
+        "items": []
+      },
+      {
+        "id": "1507909",
+        "name": "4주차",
+        "position": 4,
+        "unlock": null,
+        "items": []
+      },
+      {
+        "id": "1507910",
+        "name": "5주차",
+        "position": 5,
+        "unlock": null,
+        "items": []
+      },
+      {
+        "id": "1507911",
+        "name": "6주차",
+        "position": 6,
+        "unlock": null,
+        "items": []
+      },
+      {
+        "id": "1507912",
+        "name": "7주차",
+        "position": 7,
+        "unlock": null,
+        "items": []
+      },
+      {
+        "id": "1507913",
+        "name": "8주차",
+        "position": 8,
+        "unlock": null,
+        "items": []
+      },
+      {
+        "id": "1507914",
+        "name": "9주차",
+        "position": 9,
+        "unlock": null,
+        "items": []
+      },
+      {
+        "id": "1507915",
+        "name": "10주차",
+        "position": 10,
+        "unlock": null,
+        "items": []
+      },
+      {
+        "id": "1507916",
+        "name": "11주차",
+        "position": 11,
+        "unlock": null,
+        "items": []
+      },
+      {
+        "id": "1507917",
+        "name": "12주차",
+        "position": 12,
+        "unlock": null,
+        "items": []
+      },
+      {
+        "id": "1507918",
+        "name": "13주차",
+        "position": 13,
+        "unlock": null,
+        "items": []
+      },
+      {
+        "id": "1507919",
+        "name": "14주차",
+        "position": 14,
+        "unlock": null,
+        "items": []
+      },
+      {
+        "id": "1507920",
+        "name": "15주차",
+        "position": 15,
+        "unlock": null,
+        "items": []
+      },
+      {
+        "id": "1507921",
+        "name": "16주차",
+        "position": 16,
+        "unlock": null,
+        "items": []
+      }
+    ],
+    "모두를위한물리학": [
+      {
+        "id": "1587711",
+        "name": "1주차",
+        "position": 17,
+        "unlock": null,
+        "items": [
+          {
+            "type": "ExternalTool",
+            "title": "1주차 1강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758734"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "1주차 2강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758735"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "1주차 3강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758736"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "1주차 4강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758737"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "1주차 5강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758738"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "1주차 강의노트",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758739"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "1주차 강의노트(Mac)",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758740"
+          }
+        ]
+      },
+      {
+        "id": "1587712",
+        "name": "2주차",
+        "position": 18,
+        "unlock": null,
+        "items": [
+          {
+            "type": "ExternalTool",
+            "title": "2주차 1강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758741"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "2주차 2강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758742"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "2주차 3강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758743"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "2주차 4강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758744"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "2주차 5강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758745"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "2주차 강의노트",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758746"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "2주차 강의노트(Mac)",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758747"
+          }
+        ]
+      },
+      {
+        "id": "1587713",
+        "name": "3주차",
+        "position": 19,
+        "unlock": null,
+        "items": [
+          {
+            "type": "ExternalTool",
+            "title": "3주차 1강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758748"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "3주차 2강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758749"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "3주차 3강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758750"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "3주차 4강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758751"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "3주차 5강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758752"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "3주차 강의노트(Mac)",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758753"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "3주차 강의노트",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758754"
+          }
+        ]
+      },
+      {
+        "id": "1587714",
+        "name": "4주차",
+        "position": 20,
+        "unlock": null,
+        "items": [
+          {
+            "type": "ExternalTool",
+            "title": "4주차 1강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758755"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "4주차 2강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758756"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "4주차 3강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758757"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "4주차 4강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758758"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "4주차 5강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758759"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "4주차 강의노트(Mac)",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758760"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "4주차 강의노트",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758761"
+          }
+        ]
+      },
+      {
+        "id": "1587715",
+        "name": "5주차",
+        "position": 21,
+        "unlock": null,
+        "items": [
+          {
+            "type": "ExternalTool",
+            "title": "5주차 1강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758762"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "5주차 2강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758763"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "5주차 3강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758764"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "5주차 4강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758765"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "5주차 5강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758766"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "5주차 강의노트(Mac)",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758767"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "5주차 강의노트",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758768"
+          }
+        ]
+      },
+      {
+        "id": "1587716",
+        "name": "6주차",
+        "position": 22,
+        "unlock": null,
+        "items": [
+          {
+            "type": "ExternalTool",
+            "title": "6주차 1강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758769"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "6주차 2강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758770"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "6주차 3강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758771"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "6주차 4강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758772"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "6주차 5강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758773"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "6주차 강의노트",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758774"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "6주차 강의노트(Mac)",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758775"
+          }
+        ]
+      },
+      {
+        "id": "1587717",
+        "name": "7주차",
+        "position": 23,
+        "unlock": null,
+        "items": [
+          {
+            "type": "ExternalTool",
+            "title": "7주차 1강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758776"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "7주차 2강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758777"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "7주차 3강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758778"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "7주차 4강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758779"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "7주차 5강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758780"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "7주차 강의노트",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758781"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "7주차 강의노트(Mac)",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758782"
+          }
+        ]
+      },
+      {
+        "id": "1587718",
+        "name": "8주차",
+        "position": 24,
+        "unlock": null,
+        "items": []
+      },
+      {
+        "id": "1587719",
+        "name": "9주차",
+        "position": 25,
+        "unlock": null,
+        "items": [
+          {
+            "type": "ExternalTool",
+            "title": "9주차 1강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758783"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "9주차 2강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758784"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "9주차 3강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758785"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "9주차 4강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758786"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "9주차 5강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758787"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "9주차 강의노트",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758788"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "9주차 강의노트(Mac)",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758789"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "[강의노트]모두를 위한 물리학_9-4차시_v1.2_250801",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758790"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "9주차 2강 (자막O, 출결체크X)",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758791"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "9주차 3강 (자막O, 출결체크X)",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758792"
+          }
+        ]
+      },
+      {
+        "id": "1587720",
+        "name": "10주차",
+        "position": 26,
+        "unlock": null,
+        "items": [
+          {
+            "type": "ExternalTool",
+            "title": "10주차 1강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758793"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "10주차 2강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758794"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "10주차 3강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758795"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "10주차 4강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758796"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "10주차 5강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758797"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "10주차 강의노트",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758798"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "10주차 강의노트(Mac)",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758799"
+          }
+        ]
+      },
+      {
+        "id": "1587721",
+        "name": "11주차",
+        "position": 27,
+        "unlock": null,
+        "items": [
+          {
+            "type": "ExternalTool",
+            "title": "11주차 1강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758800"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "11주차 2강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758801"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "11주차 3강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758802"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "11주차 4강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758803"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "11주차 5강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758804"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "11주차 강의노트",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758805"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "11주차 강의노트(Mac)",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758806"
+          }
+        ]
+      },
+      {
+        "id": "1587722",
+        "name": "12주차",
+        "position": 28,
+        "unlock": null,
+        "items": [
+          {
+            "type": "ExternalTool",
+            "title": "12주차 1강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758807"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "12주차 2강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758808"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "12주차 3강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758809"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "12주차 4강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758810"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "12주차 5강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758811"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "12주차 강의노트",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758812"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "12주차 강의노트(Mac)",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758813"
+          }
+        ]
+      },
+      {
+        "id": "1587723",
+        "name": "13주차",
+        "position": 29,
+        "unlock": null,
+        "items": [
+          {
+            "type": "ExternalTool",
+            "title": "13주차 1강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758814"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "13주차 2강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758815"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "13주차 3강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758816"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "13주차 4강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758817"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "13주차 5강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758818"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "13주차 강의노트",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758819"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "13주차 강의노트(Mac)",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758820"
+          }
+        ]
+      },
+      {
+        "id": "1587724",
+        "name": "14주차",
+        "position": 30,
+        "unlock": null,
+        "items": [
+          {
+            "type": "ExternalTool",
+            "title": "14주차 1강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758821"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "14주차 2강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758822"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "14주차 3강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758823"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "14주차 4강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758824"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "14주차 5강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758825"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "14주차 강의노트",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758826"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "14주차 강의노트(Mac)",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758827"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "[2026-1] 모두를 위한 물리학 QnA l 2026. 06. 04.(목) 19:15~20:15, 온/오프 동시 진행 (ZOOM)",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758828"
+          }
+        ]
+      },
+      {
+        "id": "1587725",
+        "name": "15주차",
+        "position": 31,
+        "unlock": null,
+        "items": [
+          {
+            "type": "ExternalTool",
+            "title": "15주차 1강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758830"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "15주차 2강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758831"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "15주차 3강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758832"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "15주차 4강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758833"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "15주차 5강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758834"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "15주차 강의노트",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758835"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "15주차 강의노트(Mac)",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758836"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "[2026-1] 기말 모두를위한물리학 QnA",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4758837"
+          }
+        ]
+      },
+      {
+        "id": "1587726",
+        "name": "16주차",
+        "position": 32,
+        "unlock": null,
+        "items": []
+      }
+    ],
+    "성찰과표현": [
+      {
+        "id": "1525682",
+        "name": "1주차",
+        "position": 1,
+        "unlock": null,
+        "items": [
+          {
+            "type": "ExternalTool",
+            "title": "성찰과 표현_1주차_2강_강의계획서(0900)",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/96662/modules/items/4765681"
+          }
+        ]
+      },
+      {
+        "id": "1525683",
+        "name": "2주차",
+        "position": 2,
+        "unlock": null,
+        "items": [
+          {
+            "type": "ExternalTool",
+            "title": "성찰과 표현_2주차_1강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/96662/modules/items/4756000"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "성찰과 표현_2주차_2강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/96662/modules/items/4756001"
+          }
+        ]
+      },
+      {
+        "id": "1525684",
+        "name": "3주차",
+        "position": 3,
+        "unlock": null,
+        "items": [
+          {
+            "type": "ExternalTool",
+            "title": "성찰과 표현_3주차 2강_서사 묘사 비유 1)",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/96662/modules/items/4756002"
+          }
+        ]
+      },
+      {
+        "id": "1525685",
+        "name": "4주차",
+        "position": 4,
+        "unlock": null,
+        "items": [
+          {
+            "type": "ExternalTool",
+            "title": "성찰과 표현_4주차 2강_서사 묘사 비유 2)",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/96662/modules/items/4756003"
+          }
+        ]
+      },
+      {
+        "id": "1525686",
+        "name": "5주차",
+        "position": 5,
+        "unlock": null,
+        "items": []
+      },
+      {
+        "id": "1525687",
+        "name": "6주차",
+        "position": 6,
+        "unlock": null,
+        "items": []
+      },
+      {
+        "id": "1525688",
+        "name": "7주차",
+        "position": 7,
+        "unlock": null,
+        "items": []
+      },
+      {
+        "id": "1525689",
+        "name": "8주차",
+        "position": 8,
+        "unlock": null,
+        "items": []
+      },
+      {
+        "id": "1525690",
+        "name": "9주차",
+        "position": 9,
+        "unlock": null,
+        "items": [
+          {
+            "type": "ExternalTool",
+            "title": "성찰과 표현_9주차 1강_비교 대조 1",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/96662/modules/items/4756004"
+          }
+        ]
+      },
+      {
+        "id": "1525691",
+        "name": "10주차",
+        "position": 10,
+        "unlock": null,
+        "items": [
+          {
+            "type": "ExternalTool",
+            "title": "성찰과 표현_10주차_1강_비교 대조 2",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/96662/modules/items/4756005"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "성찰과 표현_10주차 2강_고쳐쓰기",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/96662/modules/items/4756006"
+          }
+        ]
+      },
+      {
+        "id": "1525692",
+        "name": "11주차",
+        "position": 11,
+        "unlock": null,
+        "items": []
+      },
+      {
+        "id": "1525693",
+        "name": "12주차",
+        "position": 12,
+        "unlock": null,
+        "items": [
+          {
+            "type": "ExternalTool",
+            "title": "성찰과 표현_12주차_1강_칼럼쓰기1",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/96662/modules/items/4756007"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "성찰과 표현_12주차_2강_칼럼쓰기2",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/96662/modules/items/4756008"
+          }
+        ]
+      },
+      {
+        "id": "1525694",
+        "name": "13주차",
+        "position": 13,
+        "unlock": null,
+        "items": []
+      },
+      {
+        "id": "1525695",
+        "name": "14주차",
+        "position": 14,
+        "unlock": null,
+        "items": [
+          {
+            "type": "ExternalTool",
+            "title": "성찰과 표현_14주차 2강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/96662/modules/items/4756009"
+          }
+        ]
+      },
+      {
+        "id": "1525696",
+        "name": "15주차",
+        "position": 15,
+        "unlock": null,
+        "items": [
+          {
+            "type": "ExternalTool",
+            "title": "성찰과 표현_15주차_1강",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/96662/modules/items/4756010"
+          }
+        ]
+      },
+      {
+        "id": "1525697",
+        "name": "16주차",
+        "position": 16,
+        "unlock": null,
+        "items": []
+      }
+    ],
+    "창업과 thinking design": [
+      {
+        "id": "1534962",
+        "name": "1주차",
+        "position": 1,
+        "unlock": null,
+        "items": []
+      },
+      {
+        "id": "1534963",
+        "name": "2주차",
+        "position": 2,
+        "unlock": null,
+        "items": []
+      },
+      {
+        "id": "1534964",
+        "name": "3주차",
+        "position": 3,
+        "unlock": null,
+        "items": []
+      },
+      {
+        "id": "1534965",
+        "name": "4주차",
+        "position": 4,
+        "unlock": null,
+        "items": []
+      },
+      {
+        "id": "1534966",
+        "name": "5주차",
+        "position": 5,
+        "unlock": null,
+        "items": []
+      },
+      {
+        "id": "1534967",
+        "name": "6주차",
+        "position": 6,
+        "unlock": null,
+        "items": []
+      },
+      {
+        "id": "1534968",
+        "name": "7주차",
+        "position": 7,
+        "unlock": null,
+        "items": []
+      },
+      {
+        "id": "1534969",
+        "name": "8주차",
+        "position": 8,
+        "unlock": null,
+        "items": []
+      },
+      {
+        "id": "1534970",
+        "name": "9주차",
+        "position": 9,
+        "unlock": null,
+        "items": []
+      },
+      {
+        "id": "1534971",
+        "name": "10주차",
+        "position": 10,
+        "unlock": null,
+        "items": []
+      },
+      {
+        "id": "1534972",
+        "name": "11주차",
+        "position": 11,
+        "unlock": null,
+        "items": []
+      },
+      {
+        "id": "1534973",
+        "name": "12주차",
+        "position": 12,
+        "unlock": null,
+        "items": []
+      },
+      {
+        "id": "1534974",
+        "name": "13주차",
+        "position": 13,
+        "unlock": null,
+        "items": []
+      },
+      {
+        "id": "1534975",
+        "name": "14주차",
+        "position": 14,
+        "unlock": null,
+        "items": []
+      },
+      {
+        "id": "1534976",
+        "name": "15주차",
+        "position": 15,
+        "unlock": null,
+        "items": []
+      },
+      {
+        "id": "1534977",
+        "name": "16주차",
+        "position": 16,
+        "unlock": null,
+        "items": []
+      }
+    ]
+  },
   "courses": [
     "(SDGs)리질리언스와지속가능한도시",
     "거시경제학",
@@ -143,6 +1593,16 @@
     }
   ],
   "notices": [
+    {
+      "id": "n478052",
+      "course": "리질리언스와지속가능한도시",
+      "title": "2주차 읽어오기 자료(SDGs) 안내",
+      "date": "2026-09-02T07:36:17Z",
+      "summary": "2주차에 SDGs 자료를 읽어오시기 바랍니다. 자료는 주차 학습(2주차)에서 보실 수 있습니다. 이날, 강의계획서 최종본을 배포하고 주별 계획, 과제 등도 자세히 안내할게요. 다음 주에 봅시다!",
+      "body": "2주차에 SDGs 자료를 읽어오시기 바랍니다. 자료는 주차 학습(2주차)에서 보실 수 있습니다. 이날, 강의계획서 최종본을 배포하고 주별 계획, 과제 등도 자세히 안내할게요. 다음 주에 봅시다!",
+      "url": "https://khcanvas.khu.ac.kr/courses/96922/discussion_topics/478052",
+      "files": []
+    },
     {
       "id": "n476944",
       "course": "거시경제학",
