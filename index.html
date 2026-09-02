@@ -2394,11 +2394,11 @@
   .tt-head-right { display:flex; align-items:center; gap:6px; flex-shrink:0; }
   .tt-toggle { border:1px solid var(--border, #e5e5e5); background: var(--bg-card, transparent); color: var(--text); font-size:12px; font-weight:600; padding:6px 10px; border-radius:8px; cursor:pointer; white-space:nowrap; }
   .tt-toggle.on { background: var(--accent); color:#fff; border-color: var(--accent); }
-  .tt-icon { width:32px; height:32px; border-radius:8px; border:1px solid var(--border, #e5e5e5); background: var(--bg-card, transparent); color: var(--text); font-size:18px; line-height:1; cursor:pointer; display:flex; align-items:center; justify-content:center; }
-  .tt-wrap { display:grid; grid-template-columns: 34px 1fr; border:1px solid var(--border, #e5e5e5); border-radius:8px; overflow:hidden; background: var(--bg-card, #fff); user-select:none; -webkit-user-select:none; }
-  .tt-corner { border-bottom:1px solid var(--border, #e5e5e5); background: var(--bg-soft); }
-  .tt-days { display:grid; border-bottom:1px solid var(--border, #e5e5e5); background: var(--bg-soft); }
-  .tt-day { text-align:center; font-size:12px; font-weight:600; color: var(--text-muted); padding:6px 0 5px; border-left:1px solid var(--border, #e5e5e5); cursor:pointer; line-height:1.15; }
+  .tt-icon { width:32px; height:32px; padding:0; border-radius:8px; border:1px solid var(--border, #e5e5e5); background: var(--bg-card, transparent); color: var(--text); font-size:18px; line-height:1; cursor:pointer; display:flex; align-items:center; justify-content:center; }
+  .tt-wrap { display:grid; grid-template-columns: 30px 1fr; border-top:1px solid var(--border, #e3e3e3); border-bottom:1px solid var(--border, #e3e3e3); background: var(--bg-card, #fff); user-select:none; -webkit-user-select:none; }
+  .tt-corner { border-bottom:1px solid var(--border, #e3e3e3); }
+  .tt-days { display:grid; border-bottom:1px solid var(--border, #e3e3e3); }
+  .tt-day { text-align:center; font-size:13px; font-weight:600; color: var(--text); padding:7px 0 6px; border-left:1px solid var(--border, #e3e3e3); cursor:pointer; line-height:1.15; }
   .tt-day:first-child { border-left:none; }
   .tt-day b { display:block; font-size:11px; font-weight:500; opacity:.75; }
   .tt-day.today { color: var(--accent); }
@@ -2406,53 +2406,47 @@
   .tt-day.sel { background: rgba(0,0,0,.04); }
   html[data-theme="dark"] .tt-day.sel { background: rgba(255,255,255,.06); }
   .tt-axis { position:relative; }
-  .tt-axis span { position:absolute; right:5px; transform:translateY(-6px); font-size:10px; color: var(--text-muted); font-variant-numeric: tabular-nums; }
+  .tt-axis span { position:absolute; right:4px; transform:translateY(3px); font-size:10px; color: var(--text-muted); font-variant-numeric: tabular-nums; }
+  .tt-axis::after { content:''; position:absolute; top:0; bottom:0; right:0; border-right:1px solid var(--border, #e3e3e3); }
   .tt-cols { display:grid; position:relative; }
-  .tt-col { position:relative; border-left:1px solid var(--border, #e5e5e5); }
+  .tt-col { position:relative; border-left:1px solid var(--border, #e3e3e3); }
   .tt-col:first-child { border-left:none; }
-  .tt-hline { position:absolute; left:0; right:0; height:0; border-top:1px solid var(--border-soft, #ececec); pointer-events:none; }
+  .tt-hline { position:absolute; left:0; right:0; height:0; border-top:1px solid var(--border, #e3e3e3); pointer-events:none; }
   html[data-theme="dark"] .tt-hline { border-top-color: rgba(255,255,255,.07); }
-  .tt-block { -webkit-touch-callout:none; position:absolute; left:1px; right:1px; border-radius:3px; padding:3px 4px; overflow:hidden; cursor:pointer; box-sizing:border-box; border:1px solid transparent; display:flex; flex-direction:column; gap:1px; transition: opacity .15s, filter .15s; -webkit-tap-highlight-color: transparent; }
+  .tt-block { -webkit-touch-callout:none; position:absolute; left:0; right:0; border-radius:0; padding:4px 5px; overflow:hidden; cursor:pointer; box-sizing:border-box; border:none; outline:1px solid var(--bg-card,#fff); outline-offset:-1px; display:flex; flex-direction:column; gap:1px; transition: opacity .15s, filter .15s; -webkit-tap-highlight-color: transparent; }
   .tt-block .t { font-weight:700; font-size:12px; line-height:1.2; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-  .tt-block .s { font-size:10px; line-height:1.2; opacity:.8; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .tt-block .s { font-size:10px; line-height:1.2; opacity:.92; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
   .tt-block.sm .t { font-size:10px; }
   .tt-block.sm .s { font-size:9px; }
   .tt-block.xs { padding:1px 3px; }
   .tt-block.xs .s { display:none; }
   .tt-block.xs .t { font-size:9px; }
-  .tt-block .more { position:absolute; top:0; right:0; width:18px; height:16px; font-size:12px; line-height:14px; text-align:center; opacity:.55; border-radius:0 3px 0 4px; }
-  .tt-block .more:hover { opacity:1; background: rgba(0,0,0,.08); }
-  .tt-block.done { opacity:.55; filter: saturate(.55); }
+  .tt-block .more { position:absolute; top:0; right:0; width:18px; height:16px; font-size:12px; line-height:14px; text-align:center; opacity:.75; color:#fff; border-radius:0 3px 0 4px; }
+  .tt-block .more:hover { opacity:1; background: rgba(0,0,0,.15); }
+  .tt-block.done { opacity:.5; filter: saturate(.5); }
   .tt-block.done .t::before { content:'✓ '; font-weight:800; }
-  .tt-block.undone { border-left:3px solid #d16565; }
-  .tt-block.undone .t::before { content:'✕ '; font-weight:800; color:#d16565; }
+  .tt-block.undone { box-shadow: inset 3px 0 0 #c62828; }
+  .tt-block.undone .t::before { content:'✕ '; font-weight:800; }
   .tt-block.pressing { transform: scale(.985); }
   .tt-now { position:absolute; left:0; right:0; height:0; border-top:1.5px solid #e53935; pointer-events:none; z-index:5; }
   .tt-now::before { content:''; position:absolute; left:-3px; top:-4px; width:7px; height:7px; border-radius:50%; background:#e53935; }
   .tt-empty { padding:28px 12px; text-align:center; color: var(--text-muted); font-size:13px; }
   .tt-empty button { margin-top:10px; border:1px solid var(--border,#e5e5e5); background:none; color: var(--text); border-radius:8px; padding:6px 12px; font-size:13px; cursor:pointer; }
-  /* 카테고리 파스텔 (라이트) */
-  .tt-block.c-meal     { background:#F1EFE8; color:#5F5E5A; }
-  .tt-block.c-read     { background:#E1F5EE; color:#085041; }
-  .tt-block.c-toeic    { background:#FBEAF0; color:#72243E; }
-  .tt-block.c-app      { background:#EEEDFE; color:#3C3489; }
-  .tt-block.c-alba     { background:#E6F1FB; color:#0C447C; }
-  .tt-block.c-out      { background:#E3F3F8; color:#0B4F63; }
-  .tt-block.c-exercise { background:#EAF3DE; color:#27500A; }
-  .tt-block.c-dopa     { background:#FAEEDA; color:#633806; }
-  .tt-block.c-prep     { background:#EFEFF1; color:#55555E; }
-  .tt-block.c-journal  { background:#FAECE7; color:#712B13; }
-  /* 다크 */
-  html[data-theme="dark"] .tt-block.c-meal     { background:rgba(241,239,232,.14); color:#dcdad3; }
-  html[data-theme="dark"] .tt-block.c-read     { background:rgba(125,201,179,.20); color:#9fe0cb; }
-  html[data-theme="dark"] .tt-block.c-toeic    { background:rgba(224,142,170,.20); color:#f0a9c2; }
-  html[data-theme="dark"] .tt-block.c-app      { background:rgba(168,163,229,.20); color:#c3bff0; }
-  html[data-theme="dark"] .tt-block.c-alba     { background:rgba(125,169,212,.20); color:#a5c8ea; }
-  html[data-theme="dark"] .tt-block.c-out      { background:rgba(110,190,215,.20); color:#9fdcef; }
-  html[data-theme="dark"] .tt-block.c-exercise { background:rgba(152,196,109,.20); color:#b9dc90; }
-  html[data-theme="dark"] .tt-block.c-dopa     { background:rgba(214,168,106,.20); color:#e9c48f; }
-  html[data-theme="dark"] .tt-block.c-prep     { background:rgba(200,200,210,.14); color:#d3d3da; }
-  html[data-theme="dark"] .tt-block.c-journal  { background:rgba(209,138,109,.20); color:#e7ab92; }
+  /* 카테고리 색 — 에브리타임 팔레트, 흰 글자 */
+  .tt-block { color:#fff; }
+  .tt-block.c-meal     { background:#F58A8A; }
+  .tt-block.c-read     { background:#8FC96E; }
+  .tt-block.c-toeic    { background:#7F97E3; }
+  .tt-block.c-app      { background:#AE8FE0; }
+  .tt-block.c-alba     { background:#6FAEE6; }
+  .tt-block.c-out      { background:#F08FBC; }
+  .tt-block.c-exercise { background:#66C7B7; }
+  .tt-block.c-dopa     { background:#F5AB66; }
+  .tt-block.c-prep     { background:#AFAFAF; }
+  .tt-block.c-journal  { background:#E0B94A; }
+  /* 다크: 같은 색, 살짝 낮춘 명도 */
+  html[data-theme="dark"] .tt-block { filter: brightness(.88); }
+  html[data-theme="dark"] .tt-block.done { filter: brightness(.88) saturate(.5); }
   .sb-cat-chip.c-out { background:#E3F3F8; color:#0B4F63; }
   html[data-theme="dark"] .sb-cat-chip.c-out { background:rgba(110,190,215,.14); color:#9fdcef; }
   /* ⋯ 메뉴 */
@@ -2460,17 +2454,6 @@
   .tt-menu button { display:block; width:100%; text-align:left; background:none; border:none; padding:9px 12px; font-size:14px; color: var(--text); border-radius:7px; cursor:pointer; }
   .tt-menu button:hover { background: var(--bg-soft); }
   .tt-menu button.danger { color:#d16565; }
-  /* 기록 보내기 모달 */
-  .tt-send-overlay { position:fixed; inset:0; background:rgba(0,0,0,.45); z-index:900; display:none; align-items:flex-end; justify-content:center; }
-  .tt-send-overlay.open { display:flex; }
-  .tt-send { width:100%; max-width:520px; background: var(--bg-card,#fff); border-radius:16px 16px 0 0; padding:16px 16px calc(16px + env(safe-area-inset-bottom)); }
-  .tt-send h3 { margin:0 0 10px; font-size:16px; }
-  .tt-send textarea { width:100%; min-height:140px; border:1px solid var(--border,#e5e5e5); border-radius:10px; padding:10px; font-size:14px; background: var(--bg,transparent); color: var(--text); box-sizing:border-box; resize:vertical; }
-  .tt-send-row { display:flex; gap:8px; align-items:center; margin-bottom:8px; }
-  .tt-send-row input[type=date] { flex:1; font-size:14px; padding:7px 8px; border:1px solid var(--border,#e5e5e5); border-radius:8px; background: var(--bg,transparent); color: var(--text); }
-  .tt-send-actions { display:flex; gap:8px; justify-content:flex-end; margin-top:10px; }
-  .tt-send-actions button { padding:9px 14px; border-radius:9px; border:1px solid var(--border,#e5e5e5); background:none; color: var(--text); font-size:14px; cursor:pointer; }
-  .tt-send-actions button.primary { background: var(--accent); color:#fff; border-color: var(--accent); }
   /* LMS 카드 */
   .lms-card { margin:14px 0 4px; border:1px solid var(--border,#e5e5e5); border-radius:12px; background: var(--bg-card,#fff); overflow:hidden; }
   .lms-head { display:flex; align-items:center; justify-content:space-between; padding:10px 12px; font-weight:700; font-size:14px; border-bottom:1px solid var(--border,#e5e5e5); }
@@ -2491,6 +2474,10 @@
   .lms-add { border:1px solid var(--border,#e5e5e5); background:none; color: var(--text); font-size:11px; padding:3px 7px; border-radius:6px; cursor:pointer; white-space:nowrap; }
   .lms-empty { padding:14px 12px; font-size:13px; color: var(--text-muted); line-height:1.5; }
   .lms-empty code { font-size:12px; }
+</style>
+<style>
+  .tt-icon svg, .lms-head svg { width:16px; height:16px; stroke: currentColor; }
+  .lms-head span { display:flex; align-items:center; gap:6px; }
 </style>
 
 </head>
@@ -2518,7 +2505,6 @@
           <div class="settings-menu" id="settingsMenu">
             <button type="button" class="settings-item" data-proxy="themeBtn">테마 (다크 / 라이트)</button>
             <button type="button" class="settings-item" data-proxy="alarmBtn">알람</button>
-            <button type="button" class="settings-item owner-only" data-proxy="tmTokenSetBtn" style="display:none">기록 전송 토큰</button>
             <button type="button" class="settings-item danger" data-proxy="tmLogoutBtn">로그아웃</button>
           </div>
         </div>
@@ -2556,9 +2542,8 @@
         <button type="button" class="tt-title" id="ttTitleBtn" title="오늘로">시간표 <span>▾</span></button>
       </div>
       <div class="tt-head-right">
-        <button type="button" class="tt-icon owner-only" id="ttSendBtn" title="기록 보내기" style="display:none">📤</button>
         <button type="button" class="tt-toggle" id="ttWeekBtn">시간표 전체보기</button>
-        <button type="button" class="tt-icon" id="addBtn" title="시간 블록 추가">＋</button>
+        <button type="button" class="tt-icon" id="addBtn" title="시간 블록 추가" data-icon="plus"></button>
       </div>
     </div>
     <div id="sleepCard" style="display:none;"></div>
@@ -8197,14 +8182,6 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   });
 })();
 </script>
-<div class="tt-send-overlay" id="ttSendOverlay">
-  <div class="tt-send">
-    <h3>📤 기록 보내기 (클로드 정리)</h3>
-    <div class="tt-send-row"><span style="font-size:13px;color:var(--text-muted)">날짜</span><input type="date" id="ttSendDate"></div>
-    <textarea id="ttSendText" placeholder="예: 7:30 기상, ~8:00 준비, ~9:00 이동, ~9:20 아침 …"></textarea>
-    <div class="tt-send-actions"><button type="button" id="ttSendCancel">취소</button><button type="button" class="primary" id="ttSendGo">보내기</button></div>
-  </div>
-</div>
 <script>
 /* ===== 에브리타임 스타일 시간표 + 기록 보내기 + LMS 카드 (v19) ===== */
 (function(){
@@ -8343,7 +8320,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
 
     if(data.some(function(d){ return d.info.rec; })){
       var ban=document.createElement('div'); ban.className='dayrec-banner'; ban.style.marginTop='8px';
-      var sp2=document.createElement('span'); sp2.textContent='📝 클로드 정리 기록이 반영된 날이 있어요'; ban.appendChild(sp2);
+      var sp2=document.createElement('span'); sp2.textContent='클로드 정리 기록이 반영된 날이 있어요'; ban.appendChild(sp2);
       if(data.length===1){ var rb=document.createElement('button'); rb.type='button'; rb.textContent='기본 시간표로 되돌리기'; rb.onclick=revertDayblocks; ban.appendChild(rb); }
       container.appendChild(ban);
     }
@@ -8399,25 +8376,6 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     var pw=document.getElementById('ttPrevWeek'); if(pw) pw.addEventListener('click', function(){ loadDate(addDays(currentDate,-7)); });
     var nw=document.getElementById('ttNextWeek'); if(nw) nw.addEventListener('click', function(){ loadDate(addDays(currentDate,7)); });
     var tt=document.getElementById('ttTitleBtn'); if(tt) tt.addEventListener('click', function(){ var td=toLocalDateStr(new Date()); if(currentDate!==td) loadDate(td); else showToast('오늘 시간표를 보고 있어요'); });
-    var sb=document.getElementById('ttSendBtn'); if(sb) sb.addEventListener('click', openSend);
-    var so=document.getElementById('ttSendOverlay'); if(so){ so.addEventListener('click', function(e){ if(e.target===so) so.classList.remove('open'); }); }
-    var sc=document.getElementById('ttSendCancel'); if(sc) sc.addEventListener('click', function(){ document.getElementById('ttSendOverlay').classList.remove('open'); });
-    var sg=document.getElementById('ttSendGo'); if(sg) sg.addEventListener('click', doSend);
-  }
-  // ---- 기록 보내기 (기존 sendClaudeReport 재사용) ----
-  function openSend(){
-    var o=document.getElementById('ttSendOverlay'); if(!o) return;
-    document.getElementById('ttSendDate').value=currentDate;
-    var prev=(typeof loadFree==='function' && loadFree(currentDate)); document.getElementById('ttSendText').value=(prev&&prev.freeText)||'';
-    o.classList.add('open'); setTimeout(function(){ document.getElementById('ttSendText').focus(); },60);
-  }
-  async function doSend(){
-    var d=document.getElementById('ttSendDate').value||currentDate, t=document.getElementById('ttSendText').value;
-    if(!t.trim()){ showToast('보낼 기록을 적어주세요'); return; }
-    var rd=document.getElementById('recordDate'), fj=document.getElementById('freeJournal');
-    if(rd) rd.value=d; if(fj) fj.value=t;
-    document.getElementById('ttSendOverlay').classList.remove('open');
-    if(typeof sendClaudeReport==='function') await sendClaudeReport();
   }
 
   // ---- LMS 카드 ----
@@ -8429,7 +8387,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   window.tmRenderLms = async function(){
     var card=document.getElementById('lmsCard'); if(!card || !window.tmIsOwner) return;
     var data=null; try{ var r=await fetch('./data/lms.json?v='+Date.now(),{cache:'no-store'}); if(r.ok) data=await r.json(); }catch(e){}
-    var h='<div class="lms-head"><span>📚 과제·공지</span><small>'+(data&&data.generatedAt?('갱신 '+new Date(data.generatedAt).toLocaleString('ko-KR',{month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit'})):'')+'</small></div>';
+    var h='<div class="lms-head"><span>'+(icon('bookOpen',16)||'')+'과제·공지</span><small>'+(data&&data.generatedAt?('갱신 '+new Date(data.generatedAt).toLocaleString('ko-KR',{month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit'})):'')+'</small></div>';
     if(!data || (!data.assignments && !data.notices)){
       h+='<div class="lms-empty">아직 LMS 데이터가 없어요. GitHub 저장소 Secrets에 <code>LMS_BASE_URL</code>·<code>LMS_TOKEN</code>을 등록하면 30분마다 자동으로 채워집니다. (README 참고)'+(data&&data.error?'<br><span style="color:#c62828">오류: '+escapeHtml(String(data.error))+'</span>':'')+'</div>';
       card.innerHTML=h; return;
