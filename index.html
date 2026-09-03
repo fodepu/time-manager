@@ -2379,7 +2379,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="43">
+<meta name="tm-version" content="44">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -2849,6 +2849,7 @@
         <button type="button" class="lec-exit" id="lecExit" title="시간표로">←</button>
         <select id="lecCourse" class="lec-sel"><option value="">과목 선택</option></select>
         <input type="text" id="lecTitle" class="lec-inp" placeholder="강의 제목 (예: 3주차 IS-LM)" maxlength="40">
+        <select id="lecLang" class="lec-sel" title="강의 언어"><option value="en-US">영어 강의</option><option value="ko-KR">한국어 강의</option></select>
         <button type="button" class="lec-btn" id="lecOpenPdf">PDF 열기</button>
         <button type="button" class="lec-btn" id="lecFromLms">e-campus 자료</button>
         <input type="file" id="lecFile" accept="application/pdf" style="display:none">
@@ -9214,11 +9215,14 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   function loadPdfJs(){ if(window.pdfjsLib) return Promise.resolve(); return new Promise(function(res,rej){ var s=document.createElement('script'); s.src='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js'; s.onload=function(){ window.pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js'; res(); }; s.onerror=rej; document.head.appendChild(s); }); }
   async function openPdfBytes(bytes,name){
     try{ await loadPdfJs(); }catch(e){ status('PDF 라이브러리 로드 실패','err'); return; }
-    S.pdf=await pdfjsLib.getDocument({data:bytes.slice(0)}).promise; S.total=S.pdf.numPages; S.pdfName=name||'slides.pdf'; S.pdfBytes=bytes; S.page=1;
+    S.pdf=await pdfjsLib.getDocument({data:bytes.slice(0)}).promise; S.total=S.pdf.numPages; S.pdfName=name||'slides.pdf'; S.pdfBytes=bytes; S.page=1; S.slideText=null; extractSlideText().catch(function(){});
     $('lecDropZone').classList.add('has-pdf'); renderPage(); status('PDF 열림 · '+S.total+'쪽');
     var course=S.course||$('lecCourse').value||''; if(course) idbPut('pdf',{key:course+'|'+S.pdfName, course:course, name:S.pdfName, bytes:bytes, at:Date.now()}).catch(function(){});
     refreshPdfMemory();
   }
+  // 슬라이드 텍스트(pdf.js) — 필기 품질용: 슬라이드 용어를 필기 작업에 같이 보냄
+  S.slideText=null;
+  async function extractSlideText(){ if(!S.pdf) return; var out={}; for(var i=1;i<=S.total;i++){ try{ var pg=await S.pdf.getPage(i); var tc=await pg.getTextContent(); out[i]=tc.items.map(function(it){ return it.str; }).join(' ').replace(/\s+/g,' ').trim().slice(0,1500); }catch(e){ out[i]=''; } } S.slideText=out; saveLocal(); }
   var _renderTask=null;
   async function renderPage(){
     if(!S.pdf) return; try{ if(_renderTask) _renderTask.cancel(); }catch(e){} var pg=await S.pdf.getPage(S.page); var cv=$('lecCanvas'); var wrap=cv.parentNode; var vw=pg.getViewport({scale:1}); var dpr=window.devicePixelRatio||1; var scale=Math.min(Math.max(wrap.clientWidth-4,200)/vw.width, 2); var v=pg.getViewport({scale:scale*dpr});
@@ -9246,17 +9250,19 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   function slide(p){ if(!S.slides[p]) S.slides[p]={segs:[]}; return S.slides[p]; }
   function startRecognition(){
     var SR=window.SpeechRecognition||window.webkitSpeechRecognition; if(!SR){ status('이 브라우저는 음성인식을 지원하지 않아요 — Chrome을 쓰세요','err'); return false; }
-    var rec=new SR(); rec.lang='en-US'; rec.continuous=true; rec.interimResults=true; rec.maxAlternatives=1;
+    var rec=new SR(); rec.lang=S.lang||'en-US'; rec.continuous=true; rec.interimResults=true; rec.maxAlternatives=1;
     rec.onresult=function(ev){ var interim='';
       for(var i=ev.resultIndex;i<ev.results.length;i++){ var r=ev.results[i]; var t=(r[0]&&r[0].transcript||'').trim(); if(!t) continue; if(r.isFinal){ addFinal(t); } else interim+=t+' '; }
-      S.lastInterim=interim.trim(); renderLive(); };
+      S.lastInterim=interim.trim(); S.lastResultAt=Date.now(); renderLive(); };
     rec.onerror=function(ev){ if(ev.error==='not-allowed'||ev.error==='service-not-allowed'){ status('마이크 권한이 필요해요 (주소창 자물쇠 → 마이크 허용)','err'); stopAll(); } else if(ev.error!=='no-speech' && ev.error!=='aborted'){ status('인식 오류: '+ev.error,'err'); } };
     rec.onend=function(){ if(S.running){ clearTimeout(S.restartTimer); S.restartTimer=setTimeout(function(){ try{ rec.start(); }catch(e){} }, 250); } };
     try{ rec.start(); }catch(e){ status('음성인식 시작 실패: '+e.message,'err'); return false; }
     S.rec=rec; return true;
   }
   function addFinal(text){
-    var p=S.page||1, sl=slide(p); var seg={t:nowT(), page:p, en:text, ko:''}; sl.segs.push(seg);
+    var p=S.page||1, sl=slide(p); S.lastResultAt=Date.now();
+    if(S.lang==='ko-KR'){ var segk={t:nowT(), page:p, en:'', ko:text}; sl.segs.push(segk); renderLive(); saveLocal(); return; }
+    var seg={t:nowT(), page:p, en:text, ko:''}; sl.segs.push(seg);
     translate(text).then(function(ko){ seg.ko=ko; renderLive(); saveLocal(); });
   }
   function renderLive(){
@@ -9274,6 +9280,8 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   // ---- 세션 ----
   async function startAll(){
     S.course=$('lecCourse').value||''; S.title=($('lecTitle').value||'').trim(); if(!S.course){ showToast('과목을 선택하세요'); return; }
+    S.lang=($('lecLang')&&$('lecLang').value)||'en-US'; try{ lsSet(lsKey('lec_lang'),S.lang); }catch(e){}
+    if(S.pdf && !S.slideText) extractSlideText().catch(function(){});
     if(!S.title) S.title=S.course.replace(/^\(SDGs\)/,'')+' 강의';
     S.date=toLocalDateStr(new Date()); S.id='lec_'+S.date+'_'+Date.now().toString(36);
     S.online=!S.pdf; if(S.online){ S.page=1; S.total=1; S.lastCut=0; $('lecPage').textContent='구간 1'; }
@@ -9282,15 +9290,16 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     if(!startRecognition()){ S.running=false; return; }
     await startAudio();
     $('lecRec').textContent='■ 녹음 중지'; $('lecRec').classList.add('on'); status('● 녹음 중 · 번역: '+(S.tmode==='chrome'?'Chrome 내장':'웹')+(S.online?' · 온라인 강의 모드(PDF 없음): 5분마다 구간 자동, → 로 수동 분할':' · ← → 로 슬라이드 넘기기'),'ok');
-    S.tick=setInterval(function(){ renderLive(); autoCut(); },1000); saveLocal();
+    S.lastResultAt=Date.now(); try{ if(navigator.wakeLock){ navigator.wakeLock.request('screen').then(function(w){ S.wake=w; }).catch(function(){}); } }catch(e){}
+    S.tick=setInterval(function(){ renderLive(); autoCut(); if(S.running && S.rec && Date.now()-S.lastResultAt>25000){ S.lastResultAt=Date.now(); try{ S.rec.abort(); }catch(e){} } },1000); saveLocal();
   }
   function stopAll(){
-    S.running=false; clearInterval(S.tick); clearTimeout(S.restartTimer); try{ if(S.rec){ S.rec.onend=null; S.rec.stop(); } }catch(e){} stopAudio();
+    S.running=false; clearInterval(S.tick); clearTimeout(S.restartTimer); try{ if(S.rec){ S.rec.onend=null; S.rec.stop(); } }catch(e){} stopAudio(); try{ if(S.wake){ S.wake.release(); S.wake=null; } }catch(e){}
     $('lecRec').textContent='● 녹음 시작'; $('lecRec').classList.remove('on'); status('중지됨 · '+Object.keys(S.slides).length+'개 슬라이드에 대본 저장됨 → "필기 요청 보내기"');
     saveLocal(); $('lecFinish').style.display=''; renderList();
   }
-  function payload(){ var slides=Object.keys(S.slides).map(Number).sort(function(a,b){return a-b;}).map(function(p){ var sl=S.slides[p]; return { page:p, en:sl.segs.map(function(s){return s.en;}).join(' '), ko:sl.segs.map(function(s){return s.ko;}).join(' '), segs:sl.segs }; });
-    return { id:S.id, course:S.course, title:S.title, date:S.date, mode:(S.online?'online':'slides'), pdf:S.pdfName, pages:S.total, duration:nowT(), log:S.log, slides:slides, savedAt:new Date().toISOString() }; }
+  function payload(){ var slides=Object.keys(S.slides).map(Number).sort(function(a,b){return a-b;}).map(function(p){ var sl=S.slides[p]; return { page:p, en:sl.segs.map(function(s){return s.en;}).join(' '), ko:sl.segs.map(function(s){return s.ko;}).join(' '), slideText:(S.slideText&&S.slideText[p])||'', segs:sl.segs }; });
+    return { id:S.id, course:S.course, title:S.title, date:S.date, lang:(S.lang==='ko-KR'?'ko':'en'), mode:(S.online?'online':'slides'), pdf:S.pdfName, pages:S.total, duration:nowT(), log:S.log, slides:slides, savedAt:new Date().toISOString() }; }
   function saveLocal(){ if(!S.id) return; idbPut('lec', Object.assign({status:S.running?'recording':'saved'}, payload())).catch(function(){}); }
   async function sendFinish(){
     if(!S.id||!Object.keys(S.slides).length){ showToast('보낼 대본이 없어요'); return; }
@@ -9389,6 +9398,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     $('lecFinish').addEventListener('click',sendFinish);
     $('lecDownloadAudio').addEventListener('click',function(){ if(!S.audioBlob) return; var a=document.createElement('a'); a.href=URL.createObjectURL(S.audioBlob); a.download=(S.title||'lecture')+'_'+S.date+'.webm'; a.click(); });
     $('lecShowEn').addEventListener('change',renderLive);
+    try{ var ll=lsGet(lsKey('lec_lang')); if(ll&&$('lecLang')) $('lecLang').value=ll; }catch(e){}
     var _rz=null; window.addEventListener('resize',function(){ if(typeof currentMode!=='undefined' && currentMode==='lecture'){ clearTimeout(_rz); _rz=setTimeout(renderPage,150); } });
     window.addEventListener('beforeunload',function(e){ if(S.running){ e.preventDefault(); e.returnValue=''; } });
   }
