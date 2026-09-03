@@ -2378,7 +2378,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="40">
+<meta name="tm-version" content="41">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -2562,6 +2562,8 @@
   .todo-actions { display:flex; justify-content:space-between; gap:8px; margin-top:10px; }
   .todo-actions button { padding:9px 14px; border-radius:10px; border:1px solid var(--border,#e5e5e5); background:none; color: var(--text-muted); font-size:13px; cursor:pointer; }
   .todo-actions button.primary { background: var(--accent); color:#fff; border-color: var(--accent); font-weight:700; }
+  .tt-block.k-tasks .t { white-space:normal; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; word-break:keep-all; }
+  .tt-block.k-tasks.xs .t { -webkit-line-clamp:1; }
   .p-place { margin-top:6px; font-size:13px; }
   .wk-stats { margin:16px 0 8px; }
   .wk-head { margin-bottom:8px; }
@@ -8665,7 +8667,13 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
         el.style.top=top+'px'; el.style.height=hgt+'px'; if(b.color) el.style.background=b.color;
         var td=(b.values&&b.values.todos)||[]; var tdDone=td.filter(function(x){return x.d;}).length;
         var sub = b.sub || (td.length? tdDone+'/'+td.length+' 완료' : (b.kind==='tasks'?'탭해서 할 일 적기':''));
-        el.innerHTML='<div class="t">'+escapeHtml(b.label||'')+'</div>'+(sub?'<div class="s">'+escapeHtml(sub)+'</div>':'')+((td.length&&hgt>58)?'<div class="tt-td">'+td.slice(0,4).map(function(x){ return '<div class="'+(x.d?'d':'')+'">'+(x.d?'✓ ':'· ')+escapeHtml(x.t)+'</div>'; }).join('')+(td.length>4?'<div>+'+(td.length-4)+'</div>':'')+'</div>':'')+'<div class="more" data-more="1">⋯</div>';
+        var title=b.label||'';
+        if(b.kind==='tasks' && td.length){
+          // 체크 블록: 적은 할 일이 블록 이름이 되고, 원래 이름은 작게
+          title=td.map(function(x){ return (x.d?'✓':'')+x.t; }).join(', ');
+          sub=(b.label||'')+' · '+tdDone+'/'+td.length+(b.sub?' · '+b.sub:'');
+        }
+        el.innerHTML='<div class="t">'+escapeHtml(title)+'</div>'+(sub?'<div class="s">'+escapeHtml(sub)+'</div>':'')+((td.length&&hgt>58&&b.kind!=='tasks')?'<div class="tt-td">'+td.slice(0,4).map(function(x){ return '<div class="'+(x.d?'d':'')+'">'+(x.d?'✓ ':'· ')+escapeHtml(x.t)+'</div>'; }).join('')+(td.length>4?'<div>+'+(td.length-4)+'</div>':'')+'</div>':'')+'<div class="more" data-more="1">⋯</div>';
         el.title=b.label+' '+b.start+'~'+b.end+(st===true?' · 완료':st===false?' · 미완료':'');
         bindBlock(el, x.date, b, x.info.rec);
         col.appendChild(el);
