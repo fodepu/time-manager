@@ -2378,7 +2378,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="23">
+<meta name="tm-version" content="24">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -8786,7 +8786,9 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   window.openScheduleBlockModal=function(id){
     _openEdit(id); setupModal(); var e=entries.find(function(x){return x.id===id;}); if(!e) return;
     document.getElementById('sbPlace').value=e.place||'';
-    periods=groupOf(id).sort(function(a,b){ return mins(a.start)-mins(b.start); }).map(function(x){ return { id:x.id, days:(x.days||[]).map(Number).filter(function(d){return !isNaN(d);}), start:x.start, end:x.end }; });
+    var dayRank=function(ds){ var r=(ds||[]).map(function(d){ return (Number(d)+6)%7; }).filter(function(n){ return !isNaN(n); }); return r.length?Math.min.apply(null,r):9; };
+    periods=groupOf(id).map(function(x){ return { id:x.id, days:(x.days||[]).map(Number).filter(function(d){return !isNaN(d);}), start:x.start, end:x.end }; })
+      .sort(function(a,b){ return dayRank(a.days)-dayRank(b.days) || mins(a.start)-mins(b.start); });
     if(!periods.length) periods=[{id:e.id, days:[1,2,3,4,5], start:e.start, end:e.end}];
     renderPeriods();
   };
