@@ -2378,7 +2378,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="22">
+<meta name="tm-version" content="23">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -8034,13 +8034,13 @@ function prunePayload(payload){
 async function pushNow(){ if(!uid) return; if(pushTimer){ clearTimeout(pushTimer); pushTimer=null; }
   try{ let payload = window.collectLocalDataForSync && window.collectLocalDataForSync(); if(!payload) return; payload=prunePayload(payload);
     const s=JSON.stringify(payload); window.tmSync.size=s.length; lastPushAt=Date.now(); window.tmSync.lastPushAt=lastPushAt;
-    await setDoc(doc(db,'users',uid), { payload, updatedAt: lastPushAt, deviceId: DEVICE_ID });
+    await setDoc(doc(db,'users',uid), { payload, updatedAt: lastPushAt, deviceId: DEVICE_ID, appVersion: (window.TM_VERSION||0) });
     window.tmSync.lastPushOk=true; window.tmSync.lastError='';
   }catch(e){ window.tmSync.lastPushOk=false; window.tmSync.lastError=(e&&(e.code||e.message))||String(e); console.warn('cloud push', e&&e.message); if(typeof showToast==='function') showToast('동기화 업로드 실패: '+window.tmSync.lastError); }
 }
 window.tmSyncNow = async function(){ if(!uid){ showToast('로그인 상태가 아니에요'); return; } await pushNow(); try{ const snap=await getDoc(doc(db,'users',uid)); if(snap.exists()){ const d=snap.data(); window.tmSync.lastRemoteAt=d.updatedAt||0; } }catch(e){} showSyncInfo(); };
 function fmt(t){ return t? new Date(t).toLocaleString('ko-KR',{month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit',second:'2-digit'}):'—'; }
-window.showSyncInfo=function(){ const s=window.tmSync; const msg='계정: '+(s.email||'—')+'\n이 기기: '+DEVICE_ID+'\n마지막 업로드: '+fmt(s.lastPushAt)+' '+(s.lastPushOk===true?'✓ 성공':s.lastPushOk===false?'✗ 실패 ('+s.lastError+')':'(아직 없음)')+'\n업로드 크기: '+(s.size?Math.round(s.size/1024)+' KB':'—')+(s.pruned?' (오래된 '+s.pruned+'일 제외)':'')+'\n마지막 수신(다른 기기): '+fmt(s.lastRemoteAt)+'\n대기 중 변경: '+(pushTimer?'있음':'없음'); alert(msg); };
+window.showSyncInfo=function(){ const s=window.tmSync; const msg='계정: '+(s.email||'—')+'\n이 기기: '+DEVICE_ID+'\n마지막 업로드: '+fmt(s.lastPushAt)+' '+(s.lastPushOk===true?'✓ 성공':s.lastPushOk===false?'✗ 실패 ('+s.lastError+')':'(아직 없음)')+'\n업로드 크기: '+(s.size?Math.round(s.size/1024)+' KB':'—')+(s.pruned?' (오래된 '+s.pruned+'일 제외)':'')+'\n마지막 수신(다른 기기): '+fmt(s.lastRemoteAt)+'\n대기 중 변경: '+(pushTimer?'있음':'없음')+'\n앱 버전: v'+(window.TM_VERSION||'?'); alert(msg); };
 // 앱을 숨기거나 닫을 때 대기 중인 변경을 즉시 업로드 (폰에서 추가 직후 나가도 저장되게)
 document.addEventListener('visibilitychange', function(){ if(document.visibilityState==='hidden' && pushTimer) pushNow(); });
 window.addEventListener('pagehide', function(){ if(pushTimer) pushNow(); });
@@ -8429,7 +8429,22 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
 <script>
 /* ===== 에브리타임 스타일 시간표 + 기록 보내기 + LMS 카드 (v19) ===== */
 (function(){
-  window.TM_VERSION = 19;
+  window.TM_VERSION = parseInt((document.querySelector('meta[name="tm-version"]')||{}).content||'0',10) || 0;
+  // ---- 자동 업데이트: 서버 version.json 이 더 최신이면 캐시 우회 재로드 (폰이 옛 버전에 갇히는 문제 방지) ----
+  var _upChecked=0;
+  async function checkUpdate(force){
+    var now=Date.now(); if(!force && now-_upChecked<120000) return; _upChecked=now;
+    try{
+      var r=await fetch('./version.json?t='+now,{cache:'no-store'}); if(!r.ok) return; var j=await r.json();
+      var latest=parseInt(j&&j.version,10)||0; if(!latest || latest<=window.TM_VERSION) return;
+      try{ if(sessionStorage.getItem('tm_reloaded_for')===String(latest)) return; sessionStorage.setItem('tm_reloaded_for',String(latest)); }catch(e){}
+      if(typeof showToast==='function') showToast('새 버전(v'+latest+') 적용 중…');
+      setTimeout(function(){ var u=new URL(location.href); u.searchParams.set('v',String(latest)); location.replace(u.toString()); }, 600);
+    }catch(e){}
+  }
+  window.tmCheckUpdate=checkUpdate;
+  setTimeout(function(){ checkUpdate(true); }, 1500);
+  document.addEventListener('visibilitychange', function(){ if(document.visibilityState==='visible') checkUpdate(false); });
   var TT_WEEK_KEY = 'tm_tt_week';          // 오늘만/전체보기 토글 (기기별)
   var CAT_LABEL = { meal:'식사', read:'독서', toeic:'학습', app:'개발', alba:'알바', out:'외부', exercise:'운동', dopa:'휴식', prep:'이동·준비', journal:'일기' };
   var DOW = ['일','월','화','수','목','금','토'];
