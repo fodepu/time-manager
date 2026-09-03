@@ -2378,7 +2378,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="41">
+<meta name="tm-version" content="42">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -8670,8 +8670,8 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
         var title=b.label||'';
         if(b.kind==='tasks' && td.length){
           // 체크 블록: 적은 할 일이 블록 이름이 되고, 원래 이름은 작게
-          title=td.map(function(x){ return (x.d?'✓':'')+x.t; }).join(', ');
-          sub=(b.label||'')+' · '+tdDone+'/'+td.length+(b.sub?' · '+b.sub:'');
+          title=td.map(function(x){ return x.t; }).join(', ');
+          sub=(b.sub||'')+(td.length>1&&tdDone<td.length?((b.sub?' · ':'')+tdDone+'/'+td.length):'');
         }
         el.innerHTML='<div class="t">'+escapeHtml(title)+'</div>'+(sub?'<div class="s">'+escapeHtml(sub)+'</div>':'')+((td.length&&hgt>58&&b.kind!=='tasks')?'<div class="tt-td">'+td.slice(0,4).map(function(x){ return '<div class="'+(x.d?'d':'')+'">'+(x.d?'✓ ':'· ')+escapeHtml(x.t)+'</div>'; }).join('')+(td.length>4?'<div>+'+(td.length-4)+'</div>':'')+'</div>':'')+'<div class="more" data-more="1">⋯</div>';
         el.title=b.label+' '+b.start+'~'+b.end+(st===true?' · 완료':st===false?' · 미완료':'');
