@@ -2378,7 +2378,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="26">
+<meta name="tm-version" content="27">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -2525,6 +2525,31 @@
   .lec-week-all details { margin:4px 0; } .lec-week-all summary { font-size:13px; cursor:pointer; padding:4px 0; }
   .lec-week-all .lec-week-items { margin:4px 0 6px 12px; }
   .lec-muted { font-size:11px; color: var(--text-muted); }
+  .tt-td { margin-top:3px; font-size:10px; line-height:1.35; opacity:.95; overflow:hidden; }
+  .tt-td .d { opacity:.6; text-decoration:line-through; }
+  .todo-overlay { position:fixed; inset:0; background:rgba(0,0,0,.45); z-index:1100; display:none; align-items:center; justify-content:center; padding:16px; }
+  .todo-overlay.open { display:flex; }
+  .todo-sheet { width:100%; max-width:460px; max-height:82vh; display:flex; flex-direction:column; background: var(--bg-card,#fff); border-radius:16px; padding:14px 14px calc(14px + env(safe-area-inset-bottom)); }
+  .todo-head { display:flex; align-items:flex-start; justify-content:space-between; gap:8px; margin-bottom:10px; }
+  .todo-title { font-size:17px; font-weight:800; }
+  .todo-sub { font-size:12px; color: var(--text-muted); margin-top:2px; }
+  .todo-close { border:none; background: var(--bg-soft); color: var(--text-muted); width:30px; height:30px; border-radius:50%; font-size:14px; cursor:pointer; }
+  .todo-list { flex:1; overflow:auto; margin-bottom:8px; }
+  .todo-empty { color: var(--text-muted); font-size:13px; padding:16px 4px; text-align:center; }
+  .todo-row { display:flex; align-items:center; gap:6px; padding:4px 0; }
+  .todo-check { width:26px; height:26px; flex-shrink:0; border:1.5px solid var(--border,#ccc); background: var(--bg,transparent); color: var(--accent); border-radius:8px; font-size:14px; font-weight:800; cursor:pointer; }
+  .todo-row.done .todo-check { background: var(--accent); color:#fff; border-color: var(--accent); }
+  .todo-text { flex:1; min-width:0; font-size:14px; padding:7px 8px; border:1px solid transparent; border-radius:8px; background:transparent; color: var(--text); }
+  .todo-text:focus { border-color: var(--border,#ddd); background: var(--bg,transparent); outline:none; }
+  .todo-row.done .todo-text { color: var(--text-muted); text-decoration:line-through; }
+  .todo-up, .todo-del { border:none; background:none; color: var(--text-muted); width:26px; height:26px; border-radius:6px; cursor:pointer; font-size:13px; flex-shrink:0; }
+  .todo-del:hover { color:#c62828; }
+  .todo-add { display:flex; gap:6px; }
+  .todo-add input { flex:1; min-width:0; font-size:14px; padding:9px 10px; border:1px solid var(--border,#e5e5e5); border-radius:10px; background: var(--bg,transparent); color: var(--text); }
+  .todo-add button { border:1px solid var(--border,#e5e5e5); background: var(--bg-soft); color: var(--text); padding:0 14px; border-radius:10px; font-size:14px; font-weight:600; cursor:pointer; }
+  .todo-actions { display:flex; justify-content:space-between; gap:8px; margin-top:10px; }
+  .todo-actions button { padding:9px 14px; border-radius:10px; border:1px solid var(--border,#e5e5e5); background:none; color: var(--text-muted); font-size:13px; cursor:pointer; }
+  .todo-actions button.primary { background: var(--accent); color:#fff; border-color: var(--accent); font-weight:700; }
   /* ⋯ 메뉴 */
   .tt-menu { position:fixed; z-index:1000; background: var(--bg-card,#fff); border:1px solid var(--border,#e5e5e5); border-radius:10px; box-shadow:0 8px 24px rgba(0,0,0,.14); padding:4px; min-width:150px; }
   .tt-menu button { display:block; width:100%; text-align:left; background:none; border:none; padding:9px 12px; font-size:14px; color: var(--text); border-radius:7px; cursor:pointer; }
@@ -2775,6 +2800,14 @@
     <div class="lms-urgent" id="lmsUrgent"></div>
     <div class="lms-cards" id="lmsCards"></div>
     <div class="lms-detail" id="lmsDetail" style="display:none"></div>
+  </div>
+  <div class="todo-overlay" id="todoOverlay">
+    <div class="todo-sheet">
+      <div class="todo-head"><div><div class="todo-title" id="todoTitle">할 일</div><div class="todo-sub" id="todoSub"></div></div><button type="button" class="todo-close" id="todoClose">✕</button></div>
+      <div class="todo-list" id="todoList"></div>
+      <div class="todo-add"><input type="text" id="todoInput" placeholder="할 일을 적고 Enter" maxlength="80"><button type="button" id="todoAdd">추가</button></div>
+      <div class="todo-actions"><button type="button" id="todoPaste">여러 줄 붙여넣기</button><button type="button" class="primary" id="todoSave">저장</button></div>
+    </div>
   </div>
   <div id="lectureMode" style="display:none;">
     <div id="lecWork">
@@ -3363,6 +3396,7 @@ const OWNER_TEMPLATE = {
     { start: '12:00', end: '14:45', label: '리질리언스',  category: 'toeic', color: '#74A5EC', days: [2],   place: '청303', group: 'g_rz' },
     { start: '15:00', end: '16:15', label: '거시',        category: 'toeic', color: '#72D0C2', days: [1,3], place: '정111', group: 'g_gs' },
     { start: '15:00', end: '17:45', label: '창업',        category: 'toeic', color: '#F9AB63', days: [2],   place: '청201', group: 'g_cu' },
+    { start: '20:20', end: '22:00', label: '공부',        category: 'read',  color: '#7DC77F', days: [1,2,3,4,5], group: 'g_study' },
   ],
   saturday: [
     { start: '09:00', end: '10:00', label: '이동', category: 'prep', color: '#D39CF3', group: 'g_move_we' },
@@ -8574,8 +8608,9 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
         var st=b.values.check;
         el.className='tt-block c-'+(b.category||'prep')+(st===true?' done':st===false?' undone':'')+(week?' sm':'')+(hgt<30?' xs':'');
         el.style.top=top+'px'; el.style.height=hgt+'px'; if(b.color) el.style.background=b.color;
-        var sub = b.sub || '';
-        el.innerHTML='<div class="t">'+escapeHtml(b.label||'')+'</div>'+(sub?'<div class="s">'+escapeHtml(sub)+'</div>':'')+'<div class="more" data-more="1">⋯</div>';
+        var td=(b.values&&b.values.todos)||[]; var tdDone=td.filter(function(x){return x.d;}).length;
+        var sub = b.sub || (td.length? tdDone+'/'+td.length+' 완료' : '');
+        el.innerHTML='<div class="t">'+escapeHtml(b.label||'')+'</div>'+(sub?'<div class="s">'+escapeHtml(sub)+'</div>':'')+((td.length&&hgt>58)?'<div class="tt-td">'+td.slice(0,4).map(function(x){ return '<div class="'+(x.d?'d':'')+'">'+(x.d?'✓ ':'· ')+escapeHtml(x.t)+'</div>'; }).join('')+(td.length>4?'<div>+'+(td.length-4)+'</div>':'')+'</div>':'')+'<div class="more" data-more="1">⋯</div>';
         el.title=b.label+' '+b.start+'~'+b.end+(st===true?' · 완료':st===false?' · 미완료':'');
         bindBlock(el, x.date, b, x.info.rec);
         col.appendChild(el);
@@ -8610,6 +8645,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
       var items=[];
       if(!isRec) items.push(['✎ 편집 (시간·활동·카테고리)', function(){ if(date!==currentDate) loadDate(date); openScheduleBlockModal(b.id); }]);
       else items.push(['📝 클로드 정리 기록 (편집 불가)', function(){ showToast('정리 기록 블록은 편집할 수 없어요. 아래 버튼으로 기본 시간표로 되돌릴 수 있습니다.'); }]);
+      items.push(['📝 오늘 할 일 적기', function(){ openTodos(date, b.id, b.label); }]);
       items.push([b.values.check===true?'☐ 완료 해제':'☑ 완료로 표시', function(){ if(b.values.check===true){ cycleFor(date,b.id); cycleFor(date,b.id); } else if(b.values.check===undefined){ cycleFor(date,b.id); } else { cycleFor(date,b.id); cycleFor(date,b.id); } }]);
       items.push(['✕ 의도적 미완료', function(){ if(b.values.check===undefined){ cycleFor(date,b.id); cycleFor(date,b.id); } else if(b.values.check===true){ cycleFor(date,b.id); } }]);
       items.forEach(function(it){ var bt=document.createElement('button'); bt.type='button'; bt.textContent=it[0]; bt.addEventListener('click', function(ev){ ev.stopPropagation(); closeMenu(); it[1](); }); m.appendChild(bt); });
@@ -8635,6 +8671,62 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   }
   function onDocDown(ev){ if(ev.target && ev.target.closest && ev.target.closest('#ttMenu')) return; closeMenu(); }
   function closeMenu(){ var m=document.getElementById('ttMenu'); if(m) m.remove(); document.removeEventListener('pointerdown', onDocDown); }
+
+  // ---- 그날의 할 일 (블록별·날짜별) ----
+  var todoCtx=null; // {date,id,items:[{t,d}]}
+  function entryForDate(date,id){
+    if(date===currentDate){ var e=entries.find(function(x){return x.id===id;}); return e? {e:e, save:function(){ persist(); }} : null; }
+    if(id.indexOf('day_')===0){
+      var a=lsGet(lsKey('dayblocks_'+date)); var i=parseInt(id.split('_').pop(),10); if(!a||!a[i]) return null;
+      a[i].values=a[i].values||{}; return {e:a[i], save:function(){ lsSet(lsKey('dayblocks_'+date),a); if(window.tmOnChange) window.tmOnChange(); }};
+    }
+    var snap=snapshotFor(date); var x=snap.entries.find(function(y){return y.id===id;});
+    if(!x){ var t=templateEntriesFor(date).find(function(y){return y.id===id;}); if(!t) return null; snap.entries.push(t); x=t; }
+    x.values=x.values||{};
+    return {e:x, save:function(){ snap.savedAt=new Date().toISOString(); delete snap._synth; saveGrowth(date,snap); if(typeof scheduleSyncPush==='function') scheduleSyncPush(); if(window.tmOnChange) window.tmOnChange(); }};
+  }
+  function openTodos(date,id,label){
+    var ref=entryForDate(date,id); if(!ref){ showToast('이 블록을 찾을 수 없어요'); return; }
+    var list=(ref.e.values&&ref.e.values.todos)||[];
+    todoCtx={date:date,id:id,items:list.map(function(x){ return {t:x.t||'', d:!!x.d}; })};
+    $('todoTitle').textContent=label||'할 일';
+    var dd=new Date(date+'T00:00:00'); $('todoSub').textContent=(dd.getMonth()+1)+'/'+dd.getDate()+' ('+DOW[dd.getDay()]+')';
+    renderTodos(); $('todoOverlay').classList.add('open'); setTimeout(function(){ $('todoInput').focus(); },80);
+  }
+  function renderTodos(){
+    var box=$('todoList'); if(!todoCtx) return; box.innerHTML='';
+    if(!todoCtx.items.length){ box.innerHTML='<div class="todo-empty">아직 할 일이 없어요. 아래에 적어보세요.</div>'; }
+    todoCtx.items.forEach(function(it,i){
+      var row=document.createElement('div'); row.className='todo-row'+(it.d?' done':'');
+      row.innerHTML='<button type="button" class="todo-check">'+(it.d?'✓':'')+'</button><input type="text" class="todo-text" value="">'+
+        '<button type="button" class="todo-up">↑</button><button type="button" class="todo-del">✕</button>';
+      row.querySelector('.todo-text').value=it.t;
+      row.querySelector('.todo-check').addEventListener('click',function(){ it.d=!it.d; renderTodos(); });
+      row.querySelector('.todo-text').addEventListener('input',function(ev){ it.t=ev.target.value; });
+      row.querySelector('.todo-up').addEventListener('click',function(){ if(i>0){ var a=todoCtx.items; var t=a[i-1]; a[i-1]=a[i]; a[i]=t; renderTodos(); } });
+      row.querySelector('.todo-del').addEventListener('click',function(){ todoCtx.items.splice(i,1); renderTodos(); });
+      box.appendChild(row);
+    });
+    box.scrollTop=box.scrollHeight;
+  }
+  function addTodo(){ var v=$('todoInput').value.trim(); if(!v) return; v.split(/\n/).forEach(function(line){ line=line.replace(/^[-*•\s]+/,'').trim(); if(line) todoCtx.items.push({t:line,d:false}); }); $('todoInput').value=''; renderTodos(); }
+  function saveTodos(){
+    if(!todoCtx) return; var ref=entryForDate(todoCtx.date,todoCtx.id); if(!ref) return;
+    var items=todoCtx.items.filter(function(x){ return (x.t||'').trim(); }).map(function(x){ return {t:x.t.trim(), d:!!x.d}; });
+    ref.e.values=ref.e.values||{}; if(items.length) ref.e.values.todos=items; else delete ref.e.values.todos;
+    ref.save(); $('todoOverlay').classList.remove('open'); todoCtx=null; refreshAll(); showToast('할 일 저장됨');
+  }
+  function bindTodos(){
+    if(!$('todoOverlay')) return;
+    $('todoClose').addEventListener('click',function(){ $('todoOverlay').classList.remove('open'); todoCtx=null; });
+    $('todoOverlay').addEventListener('click',function(e){ if(e.target===$('todoOverlay')){ $('todoOverlay').classList.remove('open'); todoCtx=null; } });
+    $('todoAdd').addEventListener('click',addTodo);
+    $('todoInput').addEventListener('keydown',function(e){ if(e.key==='Enter'){ e.preventDefault(); addTodo(); } });
+    $('todoPaste').addEventListener('click',function(){ var t=prompt('할 일을 줄마다 하나씩 붙여넣으세요'); if(!t) return; t.split(/\n/).forEach(function(line){ line=line.replace(/^[-*•\s]+/,'').trim(); if(line) todoCtx.items.push({t:line,d:false}); }); renderTodos(); });
+    $('todoSave').addEventListener('click',saveTodos);
+  }
+  function $(id){ return document.getElementById(id); }
+  window.tmOpenTodos=openTodos;
 
   // 기존 렌더 진입점 덮어쓰기 (refreshAll → renderItems)
   window.renderItems = render;
@@ -8870,7 +8962,8 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     if(isOwner) setTimeout(tmRenderLms, 400);
   };
 
-  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', bindHeader); else bindHeader();
+  function bindAll(){ bindHeader(); bindTodos(); }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', bindAll); else bindAll();
 })();
 </script>
 
