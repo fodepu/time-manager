@@ -2378,7 +2378,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="36">
+<meta name="tm-version" content="37">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -3796,6 +3796,8 @@ function lsListKeys(prefix) {
   return keys;
 }
 
+function tmDeadIds(){ try{ return lsGet(lsKey('sched_tombstones'))||[]; }catch(e){ return []; } }
+function tmFilterDead(list){ var d=tmDeadIds(); if(!d.length||!Array.isArray(list)) return list; return list.filter(function(e){ return !(e&&e.id&&d.indexOf(e.id)>=0); }); }
 function loadGrowth(date) { return lsGet(lsKey(`g_${date}`)); }
 function saveGrowth(date, data) { return lsSet(lsKey(`g_${date}`), data); }
 function loadFree(date) { return lsGet(lsKey(`f_${date}`)); }
@@ -3815,7 +3817,7 @@ function saveTemplate() {
       start: e.start || '', end: e.end || '', category: e.category || '', color: e.color || '', group: e.group || '', kind: e.kind || 'single',
       subs: e.subs ? e.subs.map(s => ({ label: s.label, value: '' })) : undefined
     }));
-  return lsSet(lsKey('template'), pinned);
+  return lsSet(lsKey('template'), tmFilterDead(pinned));
 }
 
 function loadGoals() {
@@ -7851,6 +7853,7 @@ function loadDate(date) {
         subs: e.subs ? e.subs.map(s => ({ label: s.label, value: '' })) : undefined,
       }));
     }
+    entries = tmFilterDead(entries);
     // === 시간 블록 강제 동기화 ===
     // snapshot에 박힌 옛 시간표 정보를 template으로 덮어쓰기.
     // 그날의 values(check, note)만 보존.
@@ -8526,7 +8529,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   }
   function snapshotFor(date){
     var g = loadGrowth(date);
-    if(g && Array.isArray(g.entries)) return g;
+    if(g && Array.isArray(g.entries)){ g.entries = (typeof tmFilterDead==='function')? tmFilterDead(g.entries) : g.entries; return g; }
     return { date:date, entries: templateEntriesFor(date), savedAt:new Date().toISOString(), _synth:true };
   }
   function blocksFor(date){
