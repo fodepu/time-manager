@@ -2378,7 +2378,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="35">
+<meta name="tm-version" content="36">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -3434,9 +3434,11 @@ function syncScheduleEntries() {
     sunday: [0],
   };
   let changed = false;
+  const __dead = (typeof lsGet==='function' && lsGet(lsKey('sched_tombstones'))) || [];
   Object.entries(SCHEDULE_TEMPLATE).forEach(([dayKey, blocks]) => {
     blocks.forEach((block, idx) => {
       const id = 'sched_' + dayKey + '_' + String(idx).padStart(2,'0');
+      if (__dead.indexOf(id) >= 0) return;  // 사용자가 삭제한 블록은 되살리지 않음
       const mins = scheduleMinutesBetween(block.start, block.end);
       const existing = entries.find(e => e.id === id);
       if (existing) {
@@ -8908,6 +8910,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
       row.appendChild(days); row.appendChild(time); list.appendChild(row);
     });
   }
+  function tombstone(ids){ try{ var d=lsGet(lsKey('sched_tombstones'))||[]; var ch=false; ids.forEach(function(i){ if(i && d.indexOf(i)<0){ d.push(i); ch=true; } }); if(ch){ lsSet(lsKey('sched_tombstones'), d); if(window.tmOnChange) window.tmOnChange(); } }catch(e){} }
   function randomColor(){
     var used={}; entries.forEach(function(e){ if(e&&e.color) used[String(e.color).toUpperCase()]=1; });
     var free=PALETTE.filter(function(c){ return !used[c.toUpperCase()]; }); var pool=free.length?free:PALETTE; return pool[Math.floor(Math.random()*pool.length)];
@@ -8942,12 +8945,14 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
       if(ex){ ex.label=label; ex.place=place; ex.start=p.start; ex.end=p.end; ex.days=days; ex.group=gid; ex.color=color; ex.kind=selKind; ex._kindEdited=true; ex.goalMinutes=scheduleMinutesBetween(p.start,p.end); keep[ex.id]=1; }
       else { var ne={ id:'sched_user_'+Date.now().toString(36)+Math.random().toString(36).slice(2,5), label:label, start:p.start, end:p.end, category:cat, color:color, group:gid, kind:selKind, _kindEdited:true, place:place, days:days, types:['check'], values:{}, pinned:true, alarm:'', alarmMessage:'', goalMinutes:scheduleMinutesBetween(p.start,p.end) }; entries.push(ne); keep[ne.id]=1; }
     });
+    var removedIds=old.filter(function(x){ return !keep[x.id]; }).map(function(x){ return x.id; }); tombstone(removedIds);
     old.forEach(function(x){ if(!keep[x.id]){ var i=entries.findIndex(function(y){return y.id===x.id;}); if(i>=0) entries.splice(i,1); } });
     saveTemplate(); persist(); closeScheduleBlockModal(); refreshAll(); showToast(editId?'수정되었습니다':'추가되었습니다');
   };
   window.deleteScheduleBlock=function(){
     var id=sbModalState.editingId; if(!id) return; var grp=groupOf(id);
     if(!confirm(grp.length>1?'이 일정의 시간 '+grp.length+'개를 모두 삭제할까요?':'이 시간 블록을 삭제할까요?')) return;
+    tombstone(grp.map(function(x){ return x.id; }));
     grp.forEach(function(x){ var i=entries.findIndex(function(y){return y.id===x.id;}); if(i>=0) entries.splice(i,1); });
     saveTemplate(); persist(); closeScheduleBlockModal(); refreshAll(); showToast('삭제되었습니다');
   };
@@ -8970,6 +8975,14 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   }, {once:false});
 
   // ---- owner 1회: 블록 색을 에타 원색으로 갱신 ----
+  window.tmDedupeEntries=function(){
+    try{
+      var seen={}, removed=0;
+      for(var i=entries.length-1;i>=0;i--){ var e=entries[i]; if(!e||!e.start) continue; var key=(e.label||'')+'|'+e.start+'|'+e.end+'|'+JSON.stringify((e.days||[]).slice().sort());
+        if(seen[key]){ entries.splice(i,1); removed++; } else seen[key]=1; }
+      if(removed){ saveTemplate(); persist(); if(typeof showToast==='function') showToast('중복 블록 '+removed+'개 정리'); }
+    }catch(e){ console.warn('dedupeEntries', e&&e.message); }
+  };
   window.tmRepairBlocks=function(){
     try{
       if(lsGet(lsKey('tt_repair_v1'))) return;
@@ -9036,7 +9049,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
         if(typeof showToast==='function') showToast('에타 시간표로 전환됨');
       }
     }catch(e){ console.warn('tt reset', e); }
-    try{ if(isOwner){ tmRecolorOwner(); tmRepairBlocks(); tmFixDupColors(); } }catch(e){}
+    try{ if(isOwner){ tmRecolorOwner(); tmRepairBlocks(); tmDedupeEntries(); tmFixDupColors(); } }catch(e){}
     try{ refreshAll(); }catch(e){}
     if(isOwner) setTimeout(tmRenderLms, 400);
   };
