@@ -2378,7 +2378,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="39">
+<meta name="tm-version" content="40">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -2562,6 +2562,7 @@
   .todo-actions { display:flex; justify-content:space-between; gap:8px; margin-top:10px; }
   .todo-actions button { padding:9px 14px; border-radius:10px; border:1px solid var(--border,#e5e5e5); background:none; color: var(--text-muted); font-size:13px; cursor:pointer; }
   .todo-actions button.primary { background: var(--accent); color:#fff; border-color: var(--accent); font-weight:700; }
+  .p-place { margin-top:6px; font-size:13px; }
   .wk-stats { margin:16px 0 8px; }
   .wk-head { margin-bottom:8px; }
   .wk-title { font-size:16px; font-weight:800; }
@@ -8959,7 +8960,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     }
     if(!document.getElementById('sbPlace')){
       var g=document.createElement('div'); g.className='field-group';
-      g.innerHTML='<label class="field-label">장소 <span style="color:var(--text-muted);font-weight:400;">(선택)</span></label><input type="text" class="field-input" id="sbPlace" placeholder="예: 청704, 6:37 지하철" maxlength="30" autocomplete="off">';
+      g.innerHTML='<label class="field-label">장소 <span style="color:var(--text-muted);font-weight:400;">(선택 · 시간마다 다르면 아래 줄에 따로 입력)</span></label><input type="text" class="field-input" id="sbPlace" placeholder="예: 청704, 6:37 지하철" maxlength="30" autocomplete="off">';
       var lab=document.getElementById('sbLabel').closest('.field-group'); lab.parentNode.insertBefore(g, lab.nextSibling);
     }
     if(!document.getElementById('sbPeriods')){
@@ -8980,7 +8981,8 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
       time.querySelector('.p-start').addEventListener('input', function(ev){ p.start=ev.target.value; var endEl=time.querySelector('.p-end'); if(p.start && (!p.end || mins(p.end)<=mins(p.start))){ var m=Math.min(mins(p.start)+60, 23*60+59); p.end=String(Math.floor(m/60)).padStart(2,'0')+':'+String(m%60).padStart(2,'0'); endEl.value=p.end; } });
       time.querySelector('.p-end').addEventListener('input', function(ev){ p.end=ev.target.value; });
       var del=time.querySelector('.p-del'); if(del) del.addEventListener('click', function(){ periods.splice(i,1); renderPeriods(); });
-      row.appendChild(days); row.appendChild(time); list.appendChild(row);
+      var pl=document.createElement('input'); pl.type='text'; pl.className='field-input p-place'; pl.maxLength=30; pl.autocomplete='off'; pl.placeholder='이 시간의 장소 (비우면 위 장소)'; pl.value=p.place||''; pl.addEventListener('input', function(ev){ p.place=ev.target.value; });
+      row.appendChild(days); row.appendChild(time); row.appendChild(pl); list.appendChild(row);
     });
   }
   function tombstone(ids){ try{ var d=lsGet(lsKey('sched_tombstones'))||[]; var have={}; d.forEach(function(x){ have[typeof x==='string'?x:(x&&x.id)]=1; }); var since=toLocalDateStr(new Date()); var ch=false; ids.forEach(function(i){ if(i && !have[i]){ d.push({id:i, since:since}); ch=true; } }); if(ch){ lsSet(lsKey('sched_tombstones'), d); if(window.tmOnChange) window.tmOnChange(); } }catch(e){} }
@@ -8994,7 +8996,9 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     selKind=e.kind||'single'; paintKind();
     document.getElementById('sbPlace').value=e.place||'';
     var dayRank=function(ds){ var r=(ds||[]).map(function(d){ return (Number(d)+6)%7; }).filter(function(n){ return !isNaN(n); }); return r.length?Math.min.apply(null,r):9; };
-    periods=groupOf(id).map(function(x){ return { id:x.id, days:(x.days||[]).map(Number).filter(function(d){return !isNaN(d);}), start:x.start, end:x.end }; })
+    var grp0=groupOf(id); var common=(e.place||''); var allSame=grp0.every(function(x){ return (x.place||'')===common; });
+    document.getElementById('sbPlace').value=allSame?common:'';
+    periods=grp0.map(function(x){ return { id:x.id, days:(x.days||[]).map(Number).filter(function(d){return !isNaN(d);}), start:x.start, end:x.end, place:allSame?'':(x.place||'') }; })
       .sort(function(a,b){ return dayRank(a.days)-dayRank(b.days) || mins(a.start)-mins(b.start); });
     if(!periods.length) periods=[{id:e.id, days:[1,2,3,4,5], start:e.start, end:e.end}];
     renderPeriods();
@@ -9015,8 +9019,9 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     valid.forEach(function(p){
       var days=p.days.slice().sort(function(a,b){return a-b;});
       var ex=p.id?entries.find(function(x){return x.id===p.id;}):null;
-      if(ex){ ex.label=label; ex.place=place; ex.start=p.start; ex.end=p.end; ex.days=days; ex.group=gid; ex.color=color; ex.kind=selKind; ex._kindEdited=true; ex.goalMinutes=scheduleMinutesBetween(p.start,p.end); keep[ex.id]=1; }
-      else { var ne={ id:'sched_user_'+Date.now().toString(36)+Math.random().toString(36).slice(2,5), label:label, start:p.start, end:p.end, category:cat, color:color, group:gid, kind:selKind, _kindEdited:true, place:place, days:days, types:['check'], values:{}, pinned:true, alarm:'', alarmMessage:'', goalMinutes:scheduleMinutesBetween(p.start,p.end) }; entries.push(ne); keep[ne.id]=1; }
+      var pplace=((p.place||'').trim())||place;
+      if(ex){ ex.label=label; ex.place=pplace; ex.start=p.start; ex.end=p.end; ex.days=days; ex.group=gid; ex.color=color; ex.kind=selKind; ex._kindEdited=true; ex.goalMinutes=scheduleMinutesBetween(p.start,p.end); keep[ex.id]=1; }
+      else { var ne={ id:'sched_user_'+Date.now().toString(36)+Math.random().toString(36).slice(2,5), label:label, start:p.start, end:p.end, category:cat, color:color, group:gid, kind:selKind, _kindEdited:true, place:pplace, days:days, types:['check'], values:{}, pinned:true, alarm:'', alarmMessage:'', goalMinutes:scheduleMinutesBetween(p.start,p.end) }; entries.push(ne); keep[ne.id]=1; }
     });
     var removedIds=old.filter(function(x){ return !keep[x.id]; }).map(function(x){ return x.id; }); tombstone(removedIds);
     old.forEach(function(x){ if(!keep[x.id]){ var i=entries.findIndex(function(y){return y.id===x.id;}); if(i>=0) entries.splice(i,1); } });
