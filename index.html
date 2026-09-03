@@ -2378,7 +2378,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="32">
+<meta name="tm-version" content="33">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -8992,8 +8992,8 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   };
   window.tmFixDupColors=function(){
     try{
-      if(lsGet(lsKey('tt_colors_v6'))) return;
-      var PREF={'러닝':'#7DC77F','근력 운동':'#A3CC66','근력운동':'#A3CC66','자유시간':'#FF8FB1','Farm Planet':'#5FC2A6','아침':'#B0B0B0'};
+      if(lsGet(lsKey('tt_colors_v7'))) return;
+      var PREF={'러닝':'#7DC77F','근력 운동':'#A3CC66','근력운동':'#A3CC66','자유시간':'#F9AB63','창업':'#FFC93C','Farm Planet':'#5FC2A6','아침':'#B0B0B0'};
       var used={}, changed=false, byGroup={};
       entries.forEach(function(e){ if(!e||!e.start) return; var k=e.group||('id:'+e.id); (byGroup[k]=byGroup[k]||[]).push(e); });
       Object.keys(byGroup).forEach(function(k){
@@ -9012,7 +9012,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
         list.forEach(function(e){ if(e.color!==c){ e.color=c; changed=true; } });
       });
       if(changed){ saveTemplate(); persist(); }
-      lsSet(lsKey('tt_colors_v6'),'1');
+      lsSet(lsKey('tt_colors_v7'),'1');
       if(changed && typeof showToast==='function') showToast('겹치던 블록 색을 서로 다르게 정리했어요');
     }catch(e){ console.warn('fixDup', e&&e.message); }
   };
