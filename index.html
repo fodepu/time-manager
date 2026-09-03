@@ -2378,7 +2378,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="21">
+<meta name="tm-version" content="22">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -2630,10 +2630,12 @@
           <div class="settings-menu" id="settingsMenu">
             <button type="button" class="settings-item" data-proxy="themeBtn">테마 (다크 / 라이트)</button>
             <button type="button" class="settings-item" data-proxy="alarmBtn">알람</button>
+            <button type="button" class="settings-item" data-proxy="tmSyncNowBtn">동기화 상태 / 지금 동기화</button>
             <button type="button" class="settings-item danger" data-proxy="tmLogoutBtn">로그아웃</button>
           </div>
         </div>
         <button class="icon-btn ctl-hidden" id="tmLogoutBtn" title="로그아웃" data-icon="logOut"></button>
+        <button class="icon-btn ctl-hidden" id="tmSyncNowBtn" title="동기화" onclick="if(window.tmSyncNow) tmSyncNow();"></button>
         <button class="icon-btn ctl-hidden" id="syncBtn" title="동기화" data-icon="cloud"><span class="sync-dot" id="syncDot"></span></button>
         <button class="icon-btn ctl-hidden" id="lettersBtn" title="편지" data-icon="mail"></button>
         <button class="icon-btn ctl-hidden" id="dataBtn" title="데이터 백업/복원" data-icon="settings"></button>
@@ -8019,7 +8021,26 @@ function clearTracker(){ const rm=[]; for(let i=0;i<localStorage.length;i++){con
 let started=false, uid=null, pushTimer=null, lastPushAt=0, unsub=null;
 const DEVICE_ID = (function(){ try{ let d=localStorage.getItem('tracker_device_id'); if(!d){ d=JSON.stringify('dev_'+Math.random().toString(36).slice(2,10)); localStorage.setItem('tracker_device_id', d); } return String(d).replace(/"/g,''); }catch(e){ return 'dev_x'; } })();
 window.tmOnChange = function(){ if(!uid) return; if(pushTimer) clearTimeout(pushTimer); pushTimer=setTimeout(pushNow, 1200); };
-async function pushNow(){ if(!uid) return; if(pushTimer){ clearTimeout(pushTimer); pushTimer=null; } try{ const payload = window.collectLocalDataForSync && window.collectLocalDataForSync(); if(!payload) return; lastPushAt=Date.now(); await setDoc(doc(db,'users',uid), { payload, updatedAt: lastPushAt, deviceId: DEVICE_ID }); }catch(e){ console.warn('cloud push', e&&e.message); } }
+window.tmSync = { lastPushAt:0, lastPushOk:null, lastError:'', size:0, lastRemoteAt:0, pruned:0, uid:null, email:'' };
+function prunePayload(payload){
+  // Firestore 문서 1MB 제한 대비: 45일 이전 날짜 스냅샷(g_/f_/dayblocks_)은 업로드에서 제외 (로컬엔 유지)
+  try{
+    let s=JSON.stringify(payload); if(s.length<900000) return payload;
+    const cutoff=new Date(Date.now()-45*86400000).toISOString().slice(0,10); let n=0;
+    Object.keys(payload.data).forEach(k=>{ const m=k.match(/^tracker_(?:g|f|dayblocks)_(\d{4}-\d{2}-\d{2})$/); if(m && m[1]<cutoff){ delete payload.data[k]; n++; } });
+    window.tmSync.pruned=n; return payload;
+  }catch(e){ return payload; }
+}
+async function pushNow(){ if(!uid) return; if(pushTimer){ clearTimeout(pushTimer); pushTimer=null; }
+  try{ let payload = window.collectLocalDataForSync && window.collectLocalDataForSync(); if(!payload) return; payload=prunePayload(payload);
+    const s=JSON.stringify(payload); window.tmSync.size=s.length; lastPushAt=Date.now(); window.tmSync.lastPushAt=lastPushAt;
+    await setDoc(doc(db,'users',uid), { payload, updatedAt: lastPushAt, deviceId: DEVICE_ID });
+    window.tmSync.lastPushOk=true; window.tmSync.lastError='';
+  }catch(e){ window.tmSync.lastPushOk=false; window.tmSync.lastError=(e&&(e.code||e.message))||String(e); console.warn('cloud push', e&&e.message); if(typeof showToast==='function') showToast('동기화 업로드 실패: '+window.tmSync.lastError); }
+}
+window.tmSyncNow = async function(){ if(!uid){ showToast('로그인 상태가 아니에요'); return; } await pushNow(); try{ const snap=await getDoc(doc(db,'users',uid)); if(snap.exists()){ const d=snap.data(); window.tmSync.lastRemoteAt=d.updatedAt||0; } }catch(e){} showSyncInfo(); };
+function fmt(t){ return t? new Date(t).toLocaleString('ko-KR',{month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit',second:'2-digit'}):'—'; }
+window.showSyncInfo=function(){ const s=window.tmSync; const msg='계정: '+(s.email||'—')+'\n이 기기: '+DEVICE_ID+'\n마지막 업로드: '+fmt(s.lastPushAt)+' '+(s.lastPushOk===true?'✓ 성공':s.lastPushOk===false?'✗ 실패 ('+s.lastError+')':'(아직 없음)')+'\n업로드 크기: '+(s.size?Math.round(s.size/1024)+' KB':'—')+(s.pruned?' (오래된 '+s.pruned+'일 제외)':'')+'\n마지막 수신(다른 기기): '+fmt(s.lastRemoteAt)+'\n대기 중 변경: '+(pushTimer?'있음':'없음'); alert(msg); };
 // 앱을 숨기거나 닫을 때 대기 중인 변경을 즉시 업로드 (폰에서 추가 직후 나가도 저장되게)
 document.addEventListener('visibilitychange', function(){ if(document.visibilityState==='hidden' && pushTimer) pushNow(); });
 window.addEventListener('pagehide', function(){ if(pushTimer) pushNow(); });
@@ -8030,6 +8051,7 @@ function listenRemote(){
     try{
       if(!snap.exists() || snap.metadata.hasPendingWrites) return;
       const d=snap.data(); if(!d || !d.payload) return;
+      if(d.updatedAt) window.tmSync.lastRemoteAt=d.updatedAt;
       if(d.deviceId===DEVICE_ID || !d.updatedAt || d.updatedAt<=lastPushAt) return;
       if(pushTimer) return; // 내 변경이 대기 중이면 덮어쓰지 않음 (곧 내 것이 올라감)
       clearTracker(); if(window.mergeRemoteData) window.mergeRemoteData(d.payload,'remote');
@@ -8046,7 +8068,7 @@ function showLogin(){ document.body.classList.add('tm-locked'); const o=document
 
 onAuthStateChanged(auth, async (user)=>{
   if(user){
-    uid=user.uid;
+    uid=user.uid; window.tmSync.uid=uid; window.tmSync.email=user.email||'';
     let cloudHad=false;
     try{
       const snap=await getDoc(doc(db,'users',user.uid));
@@ -8565,7 +8587,6 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
       if(!isRec) items.push(['✎ 편집 (시간·활동·카테고리)', function(){ if(date!==currentDate) loadDate(date); openScheduleBlockModal(b.id); }]);
       else items.push(['📝 클로드 정리 기록 (편집 불가)', function(){ showToast('정리 기록 블록은 편집할 수 없어요. 아래 버튼으로 기본 시간표로 되돌릴 수 있습니다.'); }]);
       items.push([b.values.check===true?'☐ 완료 해제':'☑ 완료로 표시', function(){ if(b.values.check===true){ cycleFor(date,b.id); cycleFor(date,b.id); } else if(b.values.check===undefined){ cycleFor(date,b.id); } else { cycleFor(date,b.id); cycleFor(date,b.id); } }]);
-      if(!isRec) items.push(['🗑 일정 삭제 (묶인 시간 전부)', function(){ if(date!==currentDate) loadDate(date); var grp=(function(id){ var e=entries.find(function(x){return x.id===id;}); if(!e) return []; return e.group? entries.filter(function(x){ return x.group===e.group; }) : [e]; })(b.id); if(!grp.length) return; if(!confirm('"'+(b.label||'')+'" 일정을 삭제할까요? (시간 '+grp.length+'개 모두)')) return; grp.forEach(function(x){ var i=entries.findIndex(function(y){return y.id===x.id;}); if(i>=0) entries.splice(i,1); }); saveTemplate(); persist(); refreshAll(); showToast('삭제되었습니다'); }]);
       items.push(['✕ 의도적 미완료', function(){ if(b.values.check===undefined){ cycleFor(date,b.id); cycleFor(date,b.id); } else if(b.values.check===true){ cycleFor(date,b.id); } }]);
       items.forEach(function(it){ var bt=document.createElement('button'); bt.type='button'; bt.textContent=it[0]; bt.addEventListener('click', function(ev){ ev.stopPropagation(); closeMenu(); it[1](); }); m.appendChild(bt); });
       document.body.appendChild(m);
