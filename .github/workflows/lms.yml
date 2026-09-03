@@ -20,12 +20,23 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
+      - name: Keep previous lms.json (for new-item detection)
+        run: cp data/lms.json /tmp/old-lms.json 2>/dev/null || true
       - name: Fetch LMS data
         env:
           LMS_BASE_URL: ${{ secrets.LMS_BASE_URL }}
           LMS_TOKEN: ${{ secrets.LMS_TOKEN }}
           LMS_ICS_URL: ${{ secrets.LMS_ICS_URL }}
         run: node scripts/lms-fetch.mjs
+      - name: Push notifications for new assignments/notices
+        if: ${{ secrets.FIREBASE_SA != '' }}
+        env:
+          FIREBASE_SA: ${{ secrets.FIREBASE_SA }}
+          VAPID_PRIVATE_KEY: ${{ secrets.VAPID_PRIVATE_KEY }}
+          VAPID_PUBLIC_KEY: BF7PMzQeCNaQ63iq3CKqiU4EWYJcNyNxDm3syvR2l1E3HgXuuRltpTDWx4wcgtN6ZcVWh7IsY1JwgLSQORvNEgg
+        run: |
+          npm install --no-save --silent web-push firebase-admin
+          node scripts/push-send.mjs
       - name: Commit if changed
         run: |
           git config user.name "lms-bot"
