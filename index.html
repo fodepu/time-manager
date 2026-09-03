@@ -2378,7 +2378,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="27">
+<meta name="tm-version" content="28">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -2525,6 +2525,12 @@
   .lec-week-all details { margin:4px 0; } .lec-week-all summary { font-size:13px; cursor:pointer; padding:4px 0; }
   .lec-week-all .lec-week-items { margin:4px 0 6px 12px; }
   .lec-muted { font-size:11px; color: var(--text-muted); }
+  .sb-kinds { display:flex; gap:8px; }
+  .sb-kind { flex:1; text-align:left; padding:10px 12px; border:1.5px solid var(--border,#e5e5e5); border-radius:12px; background: var(--bg,transparent); color: var(--text); cursor:pointer; }
+  .sb-kind b { display:block; font-size:14px; font-weight:700; }
+  .sb-kind span { display:block; font-size:11px; color: var(--text-muted); margin-top:2px; line-height:1.3; }
+  .sb-kind.on { border-color: var(--accent); background: rgba(0,0,0,.03); }
+  html[data-theme="dark"] .sb-kind.on { background: rgba(255,255,255,.06); }
   .tt-td { margin-top:3px; font-size:10px; line-height:1.35; opacity:.95; overflow:hidden; }
   .tt-td .d { opacity:.6; text-decoration:line-through; }
   .todo-overlay { position:fixed; inset:0; background:rgba(0,0,0,.45); z-index:1100; display:none; align-items:center; justify-content:center; padding:16px; }
@@ -3396,7 +3402,7 @@ const OWNER_TEMPLATE = {
     { start: '12:00', end: '14:45', label: '리질리언스',  category: 'toeic', color: '#74A5EC', days: [2],   place: '청303', group: 'g_rz' },
     { start: '15:00', end: '16:15', label: '거시',        category: 'toeic', color: '#72D0C2', days: [1,3], place: '정111', group: 'g_gs' },
     { start: '15:00', end: '17:45', label: '창업',        category: 'toeic', color: '#F9AB63', days: [2],   place: '청201', group: 'g_cu' },
-    { start: '20:20', end: '22:00', label: '공부',        category: 'read',  color: '#7DC77F', days: [1,2,3,4,5], group: 'g_study' },
+    { start: '20:20', end: '22:00', label: '공부',        category: 'read',  color: '#7DC77F', days: [1,2,3,4,5], group: 'g_study', kind: 'tasks' },
   ],
   saturday: [
     { start: '09:00', end: '10:00', label: '이동', category: 'prep', color: '#D39CF3', group: 'g_move_we' },
@@ -3442,6 +3448,7 @@ function syncScheduleEntries() {
         if (block.color && !existing.color) { existing.color = block.color; changed = true; }
         if (block.place && !existing.place) { existing.place = block.place; changed = true; }
         if (block.group && !existing.group) { existing.group = block.group; changed = true; }
+        if (block.kind && existing.kind !== block.kind && !existing._kindEdited) { existing.kind = block.kind; changed = true; }
       } else {
         entries.push({
           id,
@@ -3451,6 +3458,7 @@ function syncScheduleEntries() {
           category: block.category,
           color: block.color || '',
           group: block.group || '',
+          kind: block.kind || 'single',
           place: block.place || '',
           types: ['check'],
           values: {},
@@ -3797,7 +3805,7 @@ function saveTemplate() {
       cue: e.cue || '', place: e.place || '', bundle: e.bundle || '',
       difficulty: e.difficulty || 3,
       // 시간표 필드 (시간 블록인 경우)
-      start: e.start || '', end: e.end || '', category: e.category || '', color: e.color || '', group: e.group || '',
+      start: e.start || '', end: e.end || '', category: e.category || '', color: e.color || '', group: e.group || '', kind: e.kind || 'single',
       subs: e.subs ? e.subs.map(s => ({ label: s.label, value: '' })) : undefined
     }));
   return lsSet(lsKey('template'), pinned);
@@ -7832,7 +7840,7 @@ function loadDate(date) {
         cue: e.cue || '', place: e.place || '', bundle: e.bundle || '',
         difficulty: e.difficulty || 3,
         // 시간표 필드 보존 (시간 블록인 경우)
-        start: e.start || '', end: e.end || '', category: e.category || '', color: e.color || '', group: e.group || '',
+        start: e.start || '', end: e.end || '', category: e.category || '', color: e.color || '', group: e.group || '', kind: e.kind || 'single',
         subs: e.subs ? e.subs.map(s => ({ label: s.label, value: '' })) : undefined,
       }));
     }
@@ -7854,6 +7862,7 @@ function loadDate(date) {
         existing.category = t.category || '';
         existing.color = t.color || '';
         existing.group = t.group || '';
+        existing.kind = t.kind || 'single';
         existing.place = t.place || existing.place || '';
         existing.days = t.days || ['all'];
         existing.alarm = t.alarm || '';
@@ -7871,6 +7880,7 @@ function loadDate(date) {
           category: t.category || '',
           color: t.color || '',
           group: t.group || '',
+          kind: t.kind || 'single',
           place: t.place || '',
           days: t.days || ['all'],
           alarm: t.alarm || '',
@@ -7897,7 +7907,7 @@ function normalizeEntry(e) {
       cue: e.cue || '', place: e.place || '', bundle: e.bundle || '',
       difficulty: e.difficulty || 3,
       // 시간표 필드 보존
-      start: e.start || '', end: e.end || '', category: e.category || '', color: e.color || '', group: e.group || '',
+      start: e.start || '', end: e.end || '', category: e.category || '', color: e.color || '', group: e.group || '', kind: e.kind || 'single',
       subs: e.subs,
       fromGoalId: e.fromGoalId, fromTaskId: e.fromTaskId,
     };
@@ -8505,7 +8515,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   function templateEntriesFor(date){
     var tmpl = (typeof loadTemplate==='function' && loadTemplate()) || [];
     return tmpl.filter(function(e){ return e && e.start && e.end && e.pinned!==false && entryAppliesToDate(e, date); })
-      .map(function(e){ return { id:e.id, label:e.label, start:e.start, end:e.end, category:e.category||'prep', color:e.color||'', types:e.types||['check'], values:{}, pinned:true, days:e.days||['all'], place:e.place||'', alarm:e.alarm||'' }; });
+      .map(function(e){ return { id:e.id, label:e.label, start:e.start, end:e.end, category:e.category||'prep', color:e.color||'', kind:e.kind||'single', types:e.types||['check'], values:{}, pinned:true, days:e.days||['all'], place:e.place||'', alarm:e.alarm||'' }; });
   }
   function snapshotFor(date){
     var g = loadGrowth(date);
@@ -8515,7 +8525,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   function blocksFor(date){
     var db = lsGet(lsKey('dayblocks_'+date));
     if(db && Array.isArray(db) && db.length){
-      return { rec:true, blocks: db.map(function(b,i){ return { id:'day_'+date+'_'+i, label:b.label, start:b.start, end:b.end, category:b.category||'prep', values:b.values||{}, sub:(b.values&&b.values.note)||'' }; }) };
+      return { rec:true, blocks: db.map(function(b,i){ return { id:'day_'+date+'_'+i, label:b.label, start:b.start, end:b.end, category:b.category||'prep', color:b.color||'', kind:b.kind||'single', values:b.values||{}, sub:(b.values&&b.values.note)||'' }; }) };
     }
     var list;
     if(date===currentDate){ list = entries; }
@@ -8524,10 +8534,10 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
       // 템플릿 sched_* 는 최신 템플릿으로 덮어쓰되 values 보존 (loadDate와 동일 규칙)
       var tmpl = templateEntriesFor(date), byId={};
       list.forEach(function(e){ byId[e.id]=e; });
-      tmpl.forEach(function(t){ var ex=byId[t.id]; if(!ex){ list.push(t); } else { ex.label=t.label; ex.start=t.start; ex.end=t.end; ex.category=t.category; ex.color=t.color; ex.place=t.place||ex.place; ex.days=t.days; } });
+      tmpl.forEach(function(t){ var ex=byId[t.id]; if(!ex){ list.push(t); } else { ex.label=t.label; ex.start=t.start; ex.end=t.end; ex.category=t.category; ex.color=t.color; ex.kind=t.kind||ex.kind; ex.place=t.place||ex.place; ex.days=t.days; } });
     }
     var out = list.filter(function(e){ return e && e.start && e.end && (!e.pinned || entryAppliesToDate(e, date)); })
-      .map(function(e){ return { id:e.id, label:e.label, start:e.start, end:e.end, category:e.category||'prep', color:e.color||'', values:e.values||{}, sub:((e.values&&e.values.note)||e.place||''), alarm:e.alarm }; });
+      .map(function(e){ return { id:e.id, label:e.label, start:e.start, end:e.end, category:e.category||'prep', color:e.color||'', kind:e.kind||'single', values:e.values||{}, sub:((e.values&&e.values.note)||e.place||''), alarm:e.alarm }; });
     return { rec:false, blocks: out };
   }
 
@@ -8609,7 +8619,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
         el.className='tt-block c-'+(b.category||'prep')+(st===true?' done':st===false?' undone':'')+(week?' sm':'')+(hgt<30?' xs':'');
         el.style.top=top+'px'; el.style.height=hgt+'px'; if(b.color) el.style.background=b.color;
         var td=(b.values&&b.values.todos)||[]; var tdDone=td.filter(function(x){return x.d;}).length;
-        var sub = b.sub || (td.length? tdDone+'/'+td.length+' 완료' : '');
+        var sub = b.sub || (td.length? tdDone+'/'+td.length+' 완료' : (b.kind==='tasks'?'탭해서 할 일 적기':''));
         el.innerHTML='<div class="t">'+escapeHtml(b.label||'')+'</div>'+(sub?'<div class="s">'+escapeHtml(sub)+'</div>':'')+((td.length&&hgt>58)?'<div class="tt-td">'+td.slice(0,4).map(function(x){ return '<div class="'+(x.d?'d':'')+'">'+(x.d?'✓ ':'· ')+escapeHtml(x.t)+'</div>'; }).join('')+(td.length>4?'<div>+'+(td.length-4)+'</div>':'')+'</div>':'')+'<div class="more" data-more="1">⋯</div>';
         el.title=b.label+' '+b.start+'~'+b.end+(st===true?' · 완료':st===false?' · 미완료':'');
         bindBlock(el, x.date, b, x.info.rec);
@@ -8643,6 +8653,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
       closeMenu();
       var m=document.createElement('div'); m.className='tt-menu'; m.id='ttMenu';
       var items=[];
+      if(b.kind==='tasks' && !isRec) items.push([(b.values.check===true?'☐ 완료 해제':'☑ 블록 완료로 표시'), function(){ if(b.values.check===true){ cycleFor(date,b.id); cycleFor(date,b.id); } else if(b.values.check===undefined){ cycleFor(date,b.id); } else { cycleFor(date,b.id); cycleFor(date,b.id); } }]);
       if(!isRec) items.push(['✎ 편집 (시간·활동·카테고리)', function(){ if(date!==currentDate) loadDate(date); openScheduleBlockModal(b.id); }]);
       else items.push(['📝 클로드 정리 기록 (편집 불가)', function(){ showToast('정리 기록 블록은 편집할 수 없어요. 아래 버튼으로 기본 시간표로 되돌릴 수 있습니다.'); }]);
       items.push(['📝 오늘 할 일 적기', function(){ openTodos(date, b.id, b.label); }]);
@@ -8666,6 +8677,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     el.addEventListener('click', function(ev){
       if(ev.target.getAttribute('data-more')){ ev.stopPropagation(); openMenu(ev.clientX, ev.clientY); return; }
       if(longFired){ longFired=false; return; }
+      if(b.kind==='tasks' && !isRec){ openTodos(date, b.id, b.label); return; }
       cycleFor(date, b.id);
     });
   }
@@ -8714,6 +8726,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     if(!todoCtx) return; var ref=entryForDate(todoCtx.date,todoCtx.id); if(!ref) return;
     var items=todoCtx.items.filter(function(x){ return (x.t||'').trim(); }).map(function(x){ return {t:x.t.trim(), d:!!x.d}; });
     ref.e.values=ref.e.values||{}; if(items.length) ref.e.values.todos=items; else delete ref.e.values.todos;
+    if((ref.e.kind||'single')==='tasks'){ if(items.length && items.every(function(x){return x.d;})) ref.e.values.check=true; else if(ref.e.values.check===true) delete ref.e.values.check; }
     ref.save(); $('todoOverlay').classList.remove('open'); todoCtx=null; refreshAll(); showToast('할 일 저장됨');
   }
   function bindTodos(){
@@ -8849,10 +8862,20 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   var PALETTE=['#F1897A','#F9AB63','#F3C660','#A3CC66','#7DC77F','#72D0C2','#74A5EC','#9B84EA','#D39CF3','#B0B0B0'];
   var DAYS_ORDER=[1,2,3,4,5,6,0], DOWK=['일','월','화','수','목','금','토'];
   var periods=[]; // [{days:[..], start:'HH:MM', end:'HH:MM', id?:entryId}]
+  var selKind='single';
+  function paintKind(){ document.querySelectorAll('#sbKind .sb-kind').forEach(function(b){ b.classList.toggle('on', b.dataset.k===selKind); }); }
   function groupOf(id){ var e=entries.find(function(x){return x.id===id;}); if(!e) return []; if(e.group) return entries.filter(function(x){ return x.group===e.group && x.start && x.end; }); return [e]; }
   function setupModal(){
     var cat=document.getElementById('sbCatGrid'); if(!cat) return;
     ['sbCatGrid','sbNote','sbAlarm','sbStart','sbDayChips'].forEach(function(id){ var el=document.getElementById(id); if(!el) return; var grp=(id==='sbStart')? el.closest('.field-row') : (el.closest('.field-group')||el.closest('label')); if(grp) grp.classList.add('tm-gone'); });
+    if(!document.getElementById('sbKind')){
+      var kg=document.createElement('div'); kg.className='field-group';
+      kg.innerHTML='<label class="field-label">블록 타입</label><div class="sb-kinds" id="sbKind">'+
+        '<button type="button" class="sb-kind on" data-k="single"><b>활동</b><span>한 가지 일을 하는 시간</span></button>'+
+        '<button type="button" class="sb-kind" data-k="tasks"><b>할 일 목록</b><span>그날 할 일을 적고 체크</span></button></div>';
+      var lab0=document.getElementById('sbLabel').closest('.field-group'); lab0.parentNode.insertBefore(kg, lab0.nextSibling);
+      kg.querySelectorAll('.sb-kind').forEach(function(b){ b.addEventListener('click',function(){ selKind=b.dataset.k; paintKind(); }); });
+    }
     if(!document.getElementById('sbPlace')){
       var g=document.createElement('div'); g.className='field-group';
       g.innerHTML='<label class="field-label">장소 <span style="color:var(--text-muted);font-weight:400;">(선택)</span></label><input type="text" class="field-input" id="sbPlace" placeholder="예: 청704, 6:37 지하철" maxlength="30" autocomplete="off">';
@@ -8886,6 +8909,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   var _openEdit=window.openScheduleBlockModal, _openNew=window.openNewScheduleBlockModal;
   window.openScheduleBlockModal=function(id){
     _openEdit(id); setupModal(); var e=entries.find(function(x){return x.id===id;}); if(!e) return;
+    selKind=e.kind||'single'; paintKind();
     document.getElementById('sbPlace').value=e.place||'';
     var dayRank=function(ds){ var r=(ds||[]).map(function(d){ return (Number(d)+6)%7; }).filter(function(n){ return !isNaN(n); }); return r.length?Math.min.apply(null,r):9; };
     periods=groupOf(id).map(function(x){ return { id:x.id, days:(x.days||[]).map(Number).filter(function(d){return !isNaN(d);}), start:x.start, end:x.end }; })
@@ -8893,7 +8917,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     if(!periods.length) periods=[{id:e.id, days:[1,2,3,4,5], start:e.start, end:e.end}];
     renderPeriods();
   };
-  window.openNewScheduleBlockModal=function(){ _openNew(); setupModal(); document.getElementById('sbPlace').value=''; var dow=new Date(currentDate+'T00:00:00').getDay(); periods=[{days:[dow], start:'', end:''}]; renderPeriods(); };
+  window.openNewScheduleBlockModal=function(){ _openNew(); setupModal(); selKind='single'; paintKind(); document.getElementById('sbPlace').value=''; var dow=new Date(currentDate+'T00:00:00').getDay(); periods=[{days:[dow], start:'', end:''}]; renderPeriods(); };
   window.saveScheduleBlock=function(){
     var label=document.getElementById('sbLabel').value.trim(); var place=(document.getElementById('sbPlace').value||'').trim();
     if(!label){ showToast('활동 이름을 입력하세요'); return; }
@@ -8909,8 +8933,8 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     valid.forEach(function(p){
       var days=p.days.slice().sort(function(a,b){return a-b;});
       var ex=p.id?entries.find(function(x){return x.id===p.id;}):null;
-      if(ex){ ex.label=label; ex.place=place; ex.start=p.start; ex.end=p.end; ex.days=days; ex.group=gid; ex.color=color; ex.goalMinutes=scheduleMinutesBetween(p.start,p.end); keep[ex.id]=1; }
-      else { var ne={ id:'sched_user_'+Date.now().toString(36)+Math.random().toString(36).slice(2,5), label:label, start:p.start, end:p.end, category:cat, color:color, group:gid, place:place, days:days, types:['check'], values:{}, pinned:true, alarm:'', alarmMessage:'', goalMinutes:scheduleMinutesBetween(p.start,p.end) }; entries.push(ne); keep[ne.id]=1; }
+      if(ex){ ex.label=label; ex.place=place; ex.start=p.start; ex.end=p.end; ex.days=days; ex.group=gid; ex.color=color; ex.kind=selKind; ex._kindEdited=true; ex.goalMinutes=scheduleMinutesBetween(p.start,p.end); keep[ex.id]=1; }
+      else { var ne={ id:'sched_user_'+Date.now().toString(36)+Math.random().toString(36).slice(2,5), label:label, start:p.start, end:p.end, category:cat, color:color, group:gid, kind:selKind, _kindEdited:true, place:place, days:days, types:['check'], values:{}, pinned:true, alarm:'', alarmMessage:'', goalMinutes:scheduleMinutesBetween(p.start,p.end) }; entries.push(ne); keep[ne.id]=1; }
     });
     old.forEach(function(x){ if(!keep[x.id]){ var i=entries.findIndex(function(y){return y.id===x.id;}); if(i>=0) entries.splice(i,1); } });
     saveTemplate(); persist(); closeScheduleBlockModal(); refreshAll(); showToast(editId?'수정되었습니다':'추가되었습니다');
