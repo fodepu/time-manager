@@ -29,7 +29,7 @@ jobs:
           LMS_ICS_URL: ${{ secrets.LMS_ICS_URL }}
         run: node scripts/lms-fetch.mjs
       - name: Push notifications for new assignments/notices
-        if: ${{ secrets.FIREBASE_SA != '' }}
+        continue-on-error: true
         env:
           FIREBASE_SA: ${{ secrets.FIREBASE_SA }}
           VAPID_PRIVATE_KEY: ${{ secrets.VAPID_PRIVATE_KEY }}
