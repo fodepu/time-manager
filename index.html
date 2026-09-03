@@ -30,9 +30,9 @@
     --text: #1f1f1d;
     --text-soft: #6b6b66;
     --text-muted: #9b9b95;
-    --accent: #2e7d6e;
-    --accent-soft: #e8f2ef;
-    --accent-strong: #1f5a4f;
+    --accent: #378ADD;
+    --accent-soft: #E6F1FB;
+    --accent-strong: #185FA5;
     --warn: #c4502e;
     --warn-soft: #fbe9e0;
     --gold: #b08428;
@@ -58,9 +58,9 @@
     --text: #ededec;
     --text-soft: #a8a8a3;
     --text-muted: #6e6e6a;
-    --accent: #5fb59f;
-    --accent-soft: #1a302a;
-    --accent-strong: #7ec9b4;
+    --accent: #85B7EB;
+    --accent-soft: #102740;
+    --accent-strong: #B5D4F4;
     --warn: #e07a5b;
     --warn-soft: #3a1f15;
     --gold: #d8a958;
@@ -78,7 +78,7 @@
       --bg: #161616; --bg-soft: #1f1f1f; --bg-hover: #262626; --bg-elev: #1f1f1f;
       --border: #2c2c2c; --border-strong: #3a3a3a;
       --text: #ededec; --text-soft: #a8a8a3; --text-muted: #6e6e6a;
-      --accent: #5fb59f; --accent-soft: #1a302a; --accent-strong: #7ec9b4;
+      --accent: #85B7EB; --accent-soft: #102740; --accent-strong: #B5D4F4;
       --warn: #e07a5b; --warn-soft: #3a1f15;
       --gold: #d8a958; --gold-soft: #322714;
       --indigo: #8a99d8; --indigo-soft: #1d2238;
@@ -2378,7 +2378,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="28">
+<meta name="tm-version" content="29">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -2531,6 +2531,10 @@
   .sb-kind span { display:block; font-size:11px; color: var(--text-muted); margin-top:2px; line-height:1.3; }
   .sb-kind.on { border-color: var(--accent); background: rgba(0,0,0,.03); }
   html[data-theme="dark"] .sb-kind.on { background: rgba(255,255,255,.06); }
+  .tt-block.k-tasks { background:#333A45 !important; color:#fff !important; box-shadow: inset 3px 0 0 var(--accent); }
+  .tt-block.k-tasks .s { opacity:.75; }
+  html[data-theme="dark"] .tt-block.k-tasks { background:#454E5C !important; }
+  .sb-kind.k2.on { border-color:#333A45; }
   .tt-td { margin-top:3px; font-size:10px; line-height:1.35; opacity:.95; overflow:hidden; }
   .tt-td .d { opacity:.6; text-decoration:line-through; }
   .todo-overlay { position:fixed; inset:0; background:rgba(0,0,0,.45); z-index:1100; display:none; align-items:center; justify-content:center; padding:16px; }
@@ -8616,7 +8620,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
         var top=(s-sH*60)/60*hourPx, hgt=Math.max(14,(e-s)/60*hourPx-1);
         var el=document.createElement('div');
         var st=b.values.check;
-        el.className='tt-block c-'+(b.category||'prep')+(st===true?' done':st===false?' undone':'')+(week?' sm':'')+(hgt<30?' xs':'');
+        el.className='tt-block c-'+(b.category||'prep')+(b.kind==='tasks'?' k-tasks':'')+(st===true?' done':st===false?' undone':'')+(week?' sm':'')+(hgt<30?' xs':'');
         el.style.top=top+'px'; el.style.height=hgt+'px'; if(b.color) el.style.background=b.color;
         var td=(b.values&&b.values.todos)||[]; var tdDone=td.filter(function(x){return x.d;}).length;
         var sub = b.sub || (td.length? tdDone+'/'+td.length+' 완료' : (b.kind==='tasks'?'탭해서 할 일 적기':''));
@@ -8859,7 +8863,8 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
 
 
   // ---- 블록 편집: 한 일정 = 여러 시간대(요일별) ----
-  var PALETTE=['#F1897A','#F9AB63','#F3C660','#A3CC66','#7DC77F','#72D0C2','#74A5EC','#9B84EA','#D39CF3','#B0B0B0'];
+  var PALETTE=['#F1897A','#F9AB63','#F3C660','#C9CF5B','#A3CC66','#7DC77F','#5FC2A6','#72D0C2','#6FC3DE','#74A5EC','#8E9BEE','#9B84EA','#C08BE8','#D39CF3','#EE8FBF','#E08A8A','#B98F6E','#B0B0B0'];
+  var INK='#333A45'; // 체크 블록 전용 (파스텔 사이에서 튀는 색)
   var DAYS_ORDER=[1,2,3,4,5,6,0], DOWK=['일','월','화','수','목','금','토'];
   var periods=[]; // [{days:[..], start:'HH:MM', end:'HH:MM', id?:entryId}]
   var selKind='single';
@@ -8871,8 +8876,8 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     if(!document.getElementById('sbKind')){
       var kg=document.createElement('div'); kg.className='field-group';
       kg.innerHTML='<label class="field-label">블록 타입</label><div class="sb-kinds" id="sbKind">'+
-        '<button type="button" class="sb-kind on" data-k="single"><b>활동</b><span>한 가지 일을 하는 시간</span></button>'+
-        '<button type="button" class="sb-kind" data-k="tasks"><b>할 일 목록</b><span>그날 할 일을 적고 체크</span></button></div>';
+        '<button type="button" class="sb-kind on" data-k="single"><b>활동 블록</b><span>한 가지 일을 하는 시간</span></button>'+
+        '<button type="button" class="sb-kind k2" data-k="tasks"><b>체크 블록</b><span>그날 할 일을 적고 체크</span></button></div>';
       var lab0=document.getElementById('sbLabel').closest('.field-group'); lab0.parentNode.insertBefore(kg, lab0.nextSibling);
       kg.querySelectorAll('.sb-kind').forEach(function(b){ b.addEventListener('click',function(){ selKind=b.dataset.k; paintKind(); }); });
     }
@@ -8927,7 +8932,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     if(valid.some(function(p){ return mins(p.end)<=mins(p.start); })){ showToast('끝 시간이 시작보다 늦어야 해요'); return; }
     var editId=sbModalState.editingId; var base=editId?entries.find(function(x){return x.id===editId;}):null;
     var gid=(base&&base.group)||('g_'+Date.now().toString(36)+Math.random().toString(36).slice(2,5));
-    var color=(base&&base.color)||randomColor(); var cat=(base&&base.category)||'prep';
+    var color=(selKind==='tasks')?INK:((base&&base.color&&base.color!==INK)?base.color:randomColor()); var cat=(base&&base.category)||'prep';
     var old=base?groupOf(editId):[]; if(base&&!base.group){ base.group=gid; }
     var keep={};
     valid.forEach(function(p){
@@ -8964,6 +8969,29 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   }, {once:false});
 
   // ---- owner 1회: 블록 색을 에타 원색으로 갱신 ----
+  window.tmFixDupColors=function(){
+    try{
+      if(lsGet(lsKey('tt_colors_v3'))) return;
+      var used={}, changed=false, byGroup={};
+      entries.forEach(function(e){ if(!e||!e.start) return; var k=e.group||('id:'+e.id); (byGroup[k]=byGroup[k]||[]).push(e); });
+      Object.keys(byGroup).forEach(function(k){
+        var list=byGroup[k]; var isTasks=(list[0].kind==='tasks');
+        var c=isTasks?INK:(list[0].color||'');
+        if(!isTasks){
+          if(!c || used[c.toUpperCase()]){
+            var free=PALETTE.filter(function(p){ return !used[p.toUpperCase()]; });
+            c=(free.length?free:PALETTE)[Math.floor(Math.random()*(free.length?free.length:PALETTE.length))];
+            changed=true;
+          }
+          used[c.toUpperCase()]=1;
+        }
+        list.forEach(function(e){ if(e.color!==c){ e.color=c; changed=true; } });
+      });
+      if(changed){ saveTemplate(); persist(); }
+      lsSet(lsKey('tt_colors_v3'),'1');
+      if(changed && typeof showToast==='function') showToast('겹치던 블록 색을 서로 다르게 정리했어요');
+    }catch(e){ console.warn('fixDup', e&&e.message); }
+  };
   window.tmRecolorOwner=function(){
     if(lsGet(lsKey('tt_colors_v2'))) return;
     var dm={weekday:[1,2,3,4,5],saturday:[6],sunday:[0]}, changed=false;
@@ -8981,7 +9009,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
         if(typeof showToast==='function') showToast('에타 시간표로 전환됨');
       }
     }catch(e){ console.warn('tt reset', e); }
-    try{ if(isOwner) tmRecolorOwner(); }catch(e){}
+    try{ if(isOwner){ tmRecolorOwner(); tmFixDupColors(); } }catch(e){}
     try{ refreshAll(); }catch(e){}
     if(isOwner) setTimeout(tmRenderLms, 400);
   };
