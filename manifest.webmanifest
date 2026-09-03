@@ -1,7 +1,7 @@
 {
-  "name": "데이블",
-  "short_name": "데이블",
-  "description": "주함의 시간표 · 과제 알림 · 강의노트",
+  "name": "Dayble",
+  "short_name": "Dayble",
+  "description": "Dayble — 시간표 · 과제 알림 · 강의노트",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
