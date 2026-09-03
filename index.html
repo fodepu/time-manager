@@ -2378,7 +2378,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="25">
+<meta name="tm-version" content="26">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -8022,14 +8022,23 @@ let started=false, uid=null, pushTimer=null, lastPushAt=0, unsub=null;
 const DEVICE_ID = (function(){ try{ let d=localStorage.getItem('tracker_device_id'); if(!d){ d=JSON.stringify('dev_'+Math.random().toString(36).slice(2,10)); localStorage.setItem('tracker_device_id', d); } return String(d).replace(/"/g,''); }catch(e){ return 'dev_x'; } })();
 window.tmOnChange = function(){ if(!uid) return; if(pushTimer) clearTimeout(pushTimer); pushTimer=setTimeout(pushNow, 1200); };
 window.tmSync = { lastPushAt:0, lastPushOk:null, lastError:'', size:0, lastRemoteAt:0, pruned:0, uid:null, email:'' };
+function byteLen(s){ try{ return new Blob([String(s)]).size; }catch(e){ return String(s).length*2; } }
 function prunePayload(payload){
-  // Firestore 문서 1MB 제한 대비: 45일 이전 날짜 스냅샷(g_/f_/dayblocks_)은 업로드에서 제외 (로컬엔 유지)
+  // Firestore 문서 1MB 제한 대비: 오래된 날짜 스냅샷부터 제거해 700KB 이하로 (로컬 데이터는 그대로 유지)
   try{
-    let s=JSON.stringify(payload); if(s.length<900000) return payload;
-    const cutoff=new Date(Date.now()-45*86400000).toISOString().slice(0,10); let n=0;
-    Object.keys(payload.data).forEach(k=>{ const m=k.match(/^tracker_(?:g|f|dayblocks)_(\d{4}-\d{2}-\d{2})$/); if(m && m[1]<cutoff){ delete payload.data[k]; n++; } });
-    window.tmSync.pruned=n; return payload;
-  }catch(e){ return payload; }
+    window.tmSync.pruned=0; window.tmSync.big='';
+    var size=byteLen(JSON.stringify(payload)); window.tmSync.rawSize=size;
+    if(size<=700000) return payload;
+    var dated=[]; Object.keys(payload.data).forEach(function(k){ var m=k.match(/^tracker_(?:g|f|dayblocks|sc)_(\d{4}-\d{2}-\d{2})$/); if(m) dated.push([m[1],k]); });
+    dated.sort(function(a,b){ return a[0]<b[0]?-1:1; });
+    var today=new Date().toISOString().slice(0,10);
+    for(var i=0;i<dated.length && size>700000;i++){
+      var d=dated[i][0], k=dated[i][1]; if(d===today) continue;
+      size-=byteLen(JSON.stringify(payload.data[k])+k); delete payload.data[k]; window.tmSync.pruned++;
+    }
+    if(size>700000){ var mx=0,mk=''; Object.keys(payload.data).forEach(function(k){ var n=byteLen(payload.data[k]||''); if(n>mx){ mx=n; mk=k; } }); window.tmSync.big=mk+' ('+Math.round(mx/1024)+'KB)'; }
+    return payload;
+  }catch(e){ console.warn('prune', e&&e.message); return payload; }
 }
 async function pushNow(){ if(!uid) return; if(pushTimer){ clearTimeout(pushTimer); pushTimer=null; }
   try{ let payload = window.collectLocalDataForSync && window.collectLocalDataForSync(); if(!payload) return; payload=prunePayload(payload);
