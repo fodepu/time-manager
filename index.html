@@ -2378,7 +2378,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="37">
+<meta name="tm-version" content="38">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -3427,14 +3427,14 @@ window.tmUseOwnerTemplate = function(){ SCHEDULE_TEMPLATE = OWNER_TEMPLATE; };
 // 누락된 블록은 추가, 기존 블록의 누락된 필드는 채워넣음 (사용자 편집은 보존)
 function syncScheduleEntries() {
   // 1회 마이그레이션: 토익 계획 삭제 → 기존 시간표 항목 재생성 (토익 블록 제거)
-  try{ if(window.tmIsOwner && !localStorage.getItem('tm_sched_toeicfree')){ if(typeof entries!=='undefined'&&Array.isArray(entries)){ entries = entries.filter(function(e){ return !(e&&e.id&&String(e.id).indexOf('sched_')===0); }); } localStorage.setItem('tm_sched_toeicfree','1'); } }catch(e){}
+  // (제거됨) 옛 토익 마이그레이션 — 새 기기에서 사용자 블록까지 지우던 위험 코드
   const dayMap = {
     weekday: [1, 2, 3, 4, 5],
     saturday: [6],
     sunday: [0],
   };
   let changed = false;
-  const __dead = (typeof lsGet==='function' && lsGet(lsKey('sched_tombstones'))) || [];
+  const __dead = ((typeof lsGet==='function' && lsGet(lsKey('sched_tombstones'))) || []).map(function(x){ return typeof x==='string'? x : (x&&x.id); });
   Object.entries(SCHEDULE_TEMPLATE).forEach(([dayKey, blocks]) => {
     blocks.forEach((block, idx) => {
       const id = 'sched_' + dayKey + '_' + String(idx).padStart(2,'0');
@@ -3797,7 +3797,9 @@ function lsListKeys(prefix) {
 }
 
 function tmDeadIds(){ try{ return lsGet(lsKey('sched_tombstones'))||[]; }catch(e){ return []; } }
-function tmFilterDead(list){ var d=tmDeadIds(); if(!d.length||!Array.isArray(list)) return list; return list.filter(function(e){ return !(e&&e.id&&d.indexOf(e.id)>=0); }); }
+function tmDeadMap(){ var m={}; tmDeadIds().forEach(function(x){ if(typeof x==='string') m[x]='0000-00-00'; else if(x&&x.id) m[x.id]=x.since||'0000-00-00'; }); return m; }
+// date 를 주면 '삭제 시점 이후 날짜'에만 적용 (과거 완료 기록 보존). date 없으면(템플릿) 전부 적용
+function tmFilterDead(list, date){ var m=tmDeadMap(); var ks=Object.keys(m); if(!ks.length||!Array.isArray(list)) return list; return list.filter(function(e){ if(!e||!e.id||!(e.id in m)) return true; return date ? (date < m[e.id]) : false; }); }
 function loadGrowth(date) { return lsGet(lsKey(`g_${date}`)); }
 function saveGrowth(date, data) { return lsSet(lsKey(`g_${date}`), data); }
 function loadFree(date) { return lsGet(lsKey(`f_${date}`)); }
@@ -7853,7 +7855,7 @@ function loadDate(date) {
         subs: e.subs ? e.subs.map(s => ({ label: s.label, value: '' })) : undefined,
       }));
     }
-    entries = tmFilterDead(entries);
+    entries = tmFilterDead(entries, date);
     // === 시간 블록 강제 동기화 ===
     // snapshot에 박힌 옛 시간표 정보를 template으로 덮어쓰기.
     // 그날의 values(check, note)만 보존.
@@ -7872,7 +7874,7 @@ function loadDate(date) {
         existing.category = t.category || '';
         existing.color = t.color || '';
         existing.group = t.group || '';
-        if(!existing.kind) existing.kind = t.kind || 'single';
+        existing.kind = t.kind || existing.kind || 'single';
         existing.place = t.place || existing.place || '';
         existing.days = t.days || ['all'];
         existing.alarm = t.alarm || '';
@@ -8071,8 +8073,18 @@ const provider = new GoogleAuthProvider();
 const PREFIX = 'tracker_';
 const KEEP = new Set(['tracker_theme','tracker_device_id','tracker_sync_config']);
 function clearTracker(){ const rm=[]; for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i); if(k && k.startsWith(PREFIX) && !KEEP.has(k)) rm.push(k);} rm.forEach(k=>{try{localStorage.removeItem(k);}catch(e){}}); }
+// 원격 적용: 원격에 없는 키 중 '오래된 날짜 스냅샷'은 프루닝된 것일 수 있으므로 로컬에 보존
+function applyRemote(payload){
+  const remoteKeys = new Set(Object.keys((payload&&payload.data)||{}));
+  const cutoff = new Date(Date.now()-45*86400000); const cut = cutoff.getFullYear()+'-'+String(cutoff.getMonth()+1).padStart(2,'0')+'-'+String(cutoff.getDate()).padStart(2,'0');
+  const rm=[]; for(let i=0;i<localStorage.length;i++){ const k=localStorage.key(i); if(!k||!k.startsWith(PREFIX)||KEEP.has(k)||remoteKeys.has(k)) continue;
+    const m=k.match(/^tracker_(?:g|f|dayblocks|sc)_(\d{4}-\d{2}-\d{2})$/); if(m && m[1]<cut) continue; rm.push(k); }
+  rm.forEach(k=>{ try{ localStorage.removeItem(k); }catch(e){} });
+  if(window.mergeRemoteData) window.mergeRemoteData(payload,'remote');
+}
 
-let started=false, uid=null, pushTimer=null, lastPushAt=0, unsub=null;
+let started=false, uid=null, pushTimer=null, lastPushAt=0, unsub=null, pendingRemote=null;
+window.tmApplyPendingRemote=function(){ try{ if(!pendingRemote||pushTimer) return; var d=pendingRemote; pendingRemote=null; applyRemote(d.payload); lastPushAt=d.updatedAt; if(typeof loadDate==='function') loadDate(currentDate); if(typeof refreshAll==='function') refreshAll(); }catch(e){} };
 const DEVICE_ID = (function(){ try{ let d=localStorage.getItem('tracker_device_id'); if(!d){ d=JSON.stringify('dev_'+Math.random().toString(36).slice(2,10)); localStorage.setItem('tracker_device_id', d); } return String(d).replace(/"/g,''); }catch(e){ return 'dev_x'; } })();
 window.tmOnChange = function(){ if(!uid) return; if(pushTimer) clearTimeout(pushTimer); pushTimer=setTimeout(pushNow, 1200); };
 window.tmSync = { lastPushAt:0, lastPushOk:null, lastError:'', size:0, lastRemoteAt:0, pruned:0, uid:null, email:'' };
@@ -8085,7 +8097,7 @@ function prunePayload(payload){
     if(size<=700000) return payload;
     var dated=[]; Object.keys(payload.data).forEach(function(k){ var m=k.match(/^tracker_(?:g|f|dayblocks|sc)_(\d{4}-\d{2}-\d{2})$/); if(m) dated.push([m[1],k]); });
     dated.sort(function(a,b){ return a[0]<b[0]?-1:1; });
-    var today=new Date().toISOString().slice(0,10);
+    var today=(typeof toLocalDateStr==='function')?toLocalDateStr(new Date()):new Date().toISOString().slice(0,10);
     for(var i=0;i<dated.length && size>700000;i++){
       var d=dated[i][0], k=dated[i][1]; if(d===today) continue;
       size-=byteLen(JSON.stringify(payload.data[k])+k); delete payload.data[k]; window.tmSync.pruned++;
@@ -8096,10 +8108,10 @@ function prunePayload(payload){
 }
 async function pushNow(){ if(!uid) return; if(pushTimer){ clearTimeout(pushTimer); pushTimer=null; }
   try{ let payload = window.collectLocalDataForSync && window.collectLocalDataForSync(); if(!payload) return; payload=prunePayload(payload);
-    const s=JSON.stringify(payload); window.tmSync.size=byteLen(s); lastPushAt=Date.now(); window.tmSync.lastPushAt=lastPushAt;
-    await setDoc(doc(db,'users',uid), { payload, updatedAt: lastPushAt, deviceId: DEVICE_ID, appVersion: (window.TM_VERSION||0) });
-    window.tmSync.lastPushOk=true; window.tmSync.lastError='';
-  }catch(e){ window.tmSync.lastPushOk=false; window.tmSync.lastError=(e&&(e.code||e.message))||String(e); console.warn('cloud push', e&&e.message); if(typeof showToast==='function') showToast('동기화 업로드 실패: '+window.tmSync.lastError+' ('+Math.round(window.tmSync.size/1024)+'KB) — 설정에서 상세 확인'); }
+    const s=JSON.stringify(payload); window.tmSync.size=byteLen(s); const ts=Date.now();
+    await setDoc(doc(db,'users',uid), { payload, updatedAt: ts, deviceId: DEVICE_ID, appVersion: (window.TM_VERSION||0) });
+    lastPushAt=ts; window.tmSync.lastPushAt=ts; window.tmSync.lastPushOk=true; window.tmSync.lastError='';
+  }catch(e){ window.tmSync.lastPushOk=false; window.tmSync.lastError=(e&&(e.code||e.message))||String(e); console.warn('cloud push', e&&e.message); if(!pushTimer) pushTimer=setTimeout(pushNow, 15000); /* 실패 시 15초 후 재시도 */ if(typeof showToast==='function') showToast('동기화 업로드 실패: '+window.tmSync.lastError+' ('+Math.round(window.tmSync.size/1024)+'KB) — 설정에서 상세 확인'); }
 }
 window.tmSyncNow = async function(){ if(!uid){ showToast('로그인 상태가 아니에요'); return; } await pushNow(); try{ const snap=await getDoc(doc(db,'users',uid)); if(snap.exists()){ const d=snap.data(); window.tmSync.lastRemoteAt=d.updatedAt||0; } }catch(e){} showSyncInfo(); };
 function fmt(t){ return t? new Date(t).toLocaleString('ko-KR',{month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit',second:'2-digit'}):'—'; }
@@ -8117,7 +8129,9 @@ function listenRemote(){
       if(d.updatedAt) window.tmSync.lastRemoteAt=d.updatedAt;
       if(d.deviceId===DEVICE_ID || !d.updatedAt || d.updatedAt<=lastPushAt) return;
       if(pushTimer) return; // 내 변경이 대기 중이면 덮어쓰지 않음 (곧 내 것이 올라감)
-      clearTracker(); if(window.mergeRemoteData) window.mergeRemoteData(d.payload,'remote');
+      try{ if(typeof autoSaveTimer!=='undefined' && autoSaveTimer){ clearTimeout(autoSaveTimer); if(typeof persist==='function') persist(); if(pushTimer) return; } }catch(e){}
+      try{ var _m=document.getElementById('sbModal'), _t=document.getElementById('todoOverlay'); if((_m&&_m.classList.contains('open'))||(_t&&_t.classList.contains('open'))){ pendingRemote=d; return; } }catch(e){}
+      applyRemote(d.payload);
       lastPushAt=d.updatedAt;
       if(typeof loadDate==='function' && typeof currentDate!=='undefined') loadDate(currentDate);
       if(typeof refreshAll==='function') refreshAll();
@@ -8132,15 +8146,16 @@ function showLogin(){ document.body.classList.add('tm-locked'); const o=document
 onAuthStateChanged(auth, async (user)=>{
   if(user){
     uid=user.uid; window.tmSync.uid=uid; window.tmSync.email=user.email||'';
-    let cloudHad=false;
+    let cloudHad=false, cloudChecked=false;
     try{
       const snap=await getDoc(doc(db,'users',user.uid));
+      cloudChecked=true;
       if(snap.exists() && snap.data() && snap.data().payload){
         cloudHad=true;
-        clearTracker();
-        if(window.mergeRemoteData) window.mergeRemoteData(snap.data().payload, 'remote');
+        applyRemote(snap.data().payload);
+        if(snap.data().updatedAt) { lastPushAt=snap.data().updatedAt; window.tmSync.lastRemoteAt=snap.data().updatedAt; }
       }
-    }catch(e){ console.warn('cloud pull', e&&e.message); }
+    }catch(e){ console.warn('cloud pull', e&&e.message); if(typeof showToast==='function') showToast('클라우드 읽기 실패 — 업로드를 보류합니다'); }
     const OWNER='kimjuham1120@gmail.com';
     window.tmIsOwner=(user.email===OWNER);
     if(user.email===OWNER && window.tmUseOwnerTemplate) window.tmUseOwnerTemplate();
@@ -8153,7 +8168,7 @@ onAuthStateChanged(auth, async (user)=>{
     var _ftl=document.getElementById('freeTabLabel'); if(_ftl) _ftl.textContent = isOwner ? '기록 작성' : '일기';
     if(!isOwner && currentMode==='plan'){ if(window.switchMode) switchMode('free'); }
     if(isOwner){ try{ if(window.tmPullProcessed) tmPullProcessed(); }catch(e){} }
-    if(!cloudHad) pushNow();
+    if(cloudChecked && !cloudHad) pushNow();  // 읽기 실패 시엔 절대 덮어쓰지 않음
     listenRemote();
   } else {
     showLogin();
@@ -8181,7 +8196,7 @@ function tmInitGIS(){
 tmInitGIS();
 const logoutBtn=document.getElementById('tmLogoutBtn');
 if(logoutBtn) logoutBtn.addEventListener('click', async ()=>{
-  try{ clearTracker(); await signOut(auth); }catch(e){}
+  try{ if(pushTimer) await pushNow(); if(window.tmSync && window.tmSync.lastPushOk===false && !confirm('마지막 동기화가 실패했습니다. 그래도 로그아웃할까요? (로컬 변경이 사라질 수 있음)')) return; clearTracker(); await signOut(auth); }catch(e){}
   location.reload();
 });
 </script>
@@ -8308,7 +8323,8 @@ async function tmPullProcessed(){
         var m = it.name.match(/(\d{4}-\d{2}-\d{2})/);
         var date = data.date || (m?m[1]:null);
         var blocks = data.blocks || (Array.isArray(data)?data:null);
-        if(date && Array.isArray(blocks) && blocks.length){ lsSet(lsKey('dayblocks_'+date), blocks); applied++; }
+        var okApply=false; if(date && Array.isArray(blocks) && blocks.length){ okApply=!!lsSet(lsKey('dayblocks_'+date), blocks); if(okApply) applied++; }
+        if(!okApply) continue;
         await fetch('https://api.github.com/repos/'+repo+'/contents/'+it.path, { method:'DELETE', headers:{ 'Authorization':'Bearer '+token, 'Accept':'application/vnd.github+json' }, body: JSON.stringify({ message:'consume processed '+it.name, sha: it.sha }) });
       }catch(e){}
     }
@@ -8523,13 +8539,13 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
 
   // ---- 날짜별 블록 취득 (현재 날짜=live entries, 그 외=저장본) ----
   function templateEntriesFor(date){
-    var tmpl = (typeof loadTemplate==='function' && loadTemplate()) || [];
+    var tmpl = (typeof loadTemplate==='function' && loadTemplate()) || []; if(!Array.isArray(tmpl)) tmpl=[];
     return tmpl.filter(function(e){ return e && e.start && e.end && e.pinned!==false && entryAppliesToDate(e, date); })
       .map(function(e){ return { id:e.id, label:e.label, start:e.start, end:e.end, category:e.category||'prep', color:e.color||'', kind:e.kind||'single', types:e.types||['check'], values:{}, pinned:true, days:e.days||['all'], place:e.place||'', alarm:e.alarm||'' }; });
   }
   function snapshotFor(date){
     var g = loadGrowth(date);
-    if(g && Array.isArray(g.entries)){ g.entries = (typeof tmFilterDead==='function')? tmFilterDead(g.entries) : g.entries; return g; }
+    if(g && Array.isArray(g.entries)){ g.entries = (typeof tmFilterDead==='function')? tmFilterDead(g.entries, date) : g.entries; return g; }
     return { date:date, entries: templateEntriesFor(date), savedAt:new Date().toISOString(), _synth:true };
   }
   function blocksFor(date){
@@ -8667,7 +8683,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
       if(!isRec) items.push(['✎ 편집 (시간·활동·카테고리)', function(){ if(date!==currentDate) loadDate(date); openScheduleBlockModal(b.id); }]);
       else items.push(['📝 클로드 정리 기록 (편집 불가)', function(){ showToast('정리 기록 블록은 편집할 수 없어요. 아래 버튼으로 기본 시간표로 되돌릴 수 있습니다.'); }]);
       items.push(['📝 오늘 할 일 적기', function(){ openTodos(date, b.id, b.label); }]);
-      items.push([b.values.check===true?'☐ 완료 해제':'☑ 완료로 표시', function(){ if(b.values.check===true){ cycleFor(date,b.id); cycleFor(date,b.id); } else if(b.values.check===undefined){ cycleFor(date,b.id); } else { cycleFor(date,b.id); cycleFor(date,b.id); } }]);
+      if(b.kind!=='tasks') items.push([b.values.check===true?'☐ 완료 해제':'☑ 완료로 표시', function(){ if(b.values.check===true){ cycleFor(date,b.id); cycleFor(date,b.id); } else if(b.values.check===undefined){ cycleFor(date,b.id); } else { cycleFor(date,b.id); cycleFor(date,b.id); } }]);
       items.push(['✕ 의도적 미완료', function(){ if(b.values.check===undefined){ cycleFor(date,b.id); cycleFor(date,b.id); } else if(b.values.check===true){ cycleFor(date,b.id); } }]);
       items.forEach(function(it){ var bt=document.createElement('button'); bt.type='button'; bt.textContent=it[0]; bt.addEventListener('click', function(ev){ ev.stopPropagation(); closeMenu(); it[1](); }); m.appendChild(bt); });
       document.body.appendChild(m);
@@ -8737,11 +8753,11 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     var items=todoCtx.items.filter(function(x){ return (x.t||'').trim(); }).map(function(x){ return {t:x.t.trim(), d:!!x.d}; });
     ref.e.values=ref.e.values||{}; if(items.length) ref.e.values.todos=items; else delete ref.e.values.todos;
     if((ref.e.kind||'single')==='tasks'){ if(items.length && items.every(function(x){return x.d;})) ref.e.values.check=true; else if(ref.e.values.check===true) delete ref.e.values.check; }
-    ref.save(); $('todoOverlay').classList.remove('open'); todoCtx=null; refreshAll(); showToast('할 일 저장됨');
+    ref.save(); $('todoOverlay').classList.remove('open'); todoCtx=null; refreshAll(); showToast('할 일 저장됨'); if(window.tmApplyPendingRemote) setTimeout(tmApplyPendingRemote,2000);
   }
   function bindTodos(){
     if(!$('todoOverlay')) return;
-    $('todoClose').addEventListener('click',function(){ $('todoOverlay').classList.remove('open'); todoCtx=null; });
+    $('todoClose').addEventListener('click',function(){ $('todoOverlay').classList.remove('open'); todoCtx=null; if(window.tmApplyPendingRemote) setTimeout(tmApplyPendingRemote,300); });
     $('todoOverlay').addEventListener('click',function(e){ if(e.target===$('todoOverlay')){ $('todoOverlay').classList.remove('open'); todoCtx=null; } });
     $('todoAdd').addEventListener('click',addTodo);
     $('todoInput').addEventListener('keydown',function(e){ if(e.key==='Enter'){ e.preventDefault(); addTodo(); } });
@@ -8858,7 +8874,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   }
   // 탭 전환 훅
   var _sm=window.switchMode;
-  window.switchMode=function(m){ _sm(m); var p=document.getElementById('lmsMode'); if(p) p.style.display = (m==='lms')?'block':'none'; if(m==='lms') tmRenderLms(); };
+  window.switchMode=function(m){ var was=(typeof currentMode!=='undefined')?currentMode:null; _sm(m); var p=document.getElementById('lmsMode'); if(p) p.style.display = (m==='lms')?'block':'none'; if(m==='lms' && was!=='lms') tmRenderLms(); };
   function addAssignmentBlock(a){
     var due=new Date(a.due); var date=toLocalDateStr(due); var em=due.getHours()*60+due.getMinutes(); if(em<60) em=60; var sm=Math.max(0,em-60);
     var blk={ id:'lms_'+String(a.id||Date.now()), label:'제출: '+(a.title||'과제'), start:pad(Math.floor(sm/60))+':'+pad(sm%60), end:pad(Math.floor(em/60))+':'+pad(em%60), category:'toeic', types:['check'], values:{note:a.course||''}, pinned:false, goalMinutes:60 };
@@ -8913,7 +8929,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
       row.appendChild(days); row.appendChild(time); list.appendChild(row);
     });
   }
-  function tombstone(ids){ try{ var d=lsGet(lsKey('sched_tombstones'))||[]; var ch=false; ids.forEach(function(i){ if(i && d.indexOf(i)<0){ d.push(i); ch=true; } }); if(ch){ lsSet(lsKey('sched_tombstones'), d); if(window.tmOnChange) window.tmOnChange(); } }catch(e){} }
+  function tombstone(ids){ try{ var d=lsGet(lsKey('sched_tombstones'))||[]; var have={}; d.forEach(function(x){ have[typeof x==='string'?x:(x&&x.id)]=1; }); var since=toLocalDateStr(new Date()); var ch=false; ids.forEach(function(i){ if(i && !have[i]){ d.push({id:i, since:since}); ch=true; } }); if(ch){ lsSet(lsKey('sched_tombstones'), d); if(window.tmOnChange) window.tmOnChange(); } }catch(e){} }
   function randomColor(){
     var used={}; entries.forEach(function(e){ if(e&&e.color) used[String(e.color).toUpperCase()]=1; });
     var free=PALETTE.filter(function(c){ return !used[c.toUpperCase()]; }); var pool=free.length?free:PALETTE; return pool[Math.floor(Math.random()*pool.length)];
@@ -8972,14 +8988,16 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
       try{ new Notification(LEAD+'분 후 · '+b.label, { body: b.start+'~'+b.end+(b.sub&&b.sub!==b.start+'~'+b.end?' · '+b.sub:''), tag:key }); }catch(e){}
     });
   };
+  var _askedNotif=false;
   document.addEventListener('click', function(ev){
-    if(!('Notification' in window) || Notification.permission!=='default') return;
-    if(ev.target.closest && ev.target.closest('#items')) { try{ Notification.requestPermission(); }catch(e){} }
+    if(_askedNotif || !('Notification' in window) || Notification.permission!=='default') return;
+    if(ev.target.closest && ev.target.closest('#items')) { _askedNotif=true; try{ Notification.requestPermission(); }catch(e){} }
   }, {once:false});
 
   // ---- owner 1회: 블록 색을 에타 원색으로 갱신 ----
   window.tmDedupeEntries=function(){
     try{
+      if(lsGet(lsKey('tt_dedupe_v1'))) return; lsSet(lsKey('tt_dedupe_v1'),'1');
       var seen={}, removed=0;
       for(var i=entries.length-1;i>=0;i--){ var e=entries[i]; if(!e||!e.start) continue; var key=(e.label||'')+'|'+e.start+'|'+e.end+'|'+JSON.stringify((e.days||[]).slice().sort());
         if(seen[key]){ entries.splice(i,1); removed++; } else seen[key]=1; }
@@ -9074,7 +9092,8 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   function token(){ return (typeof lsGet==='function' && lsGet(lsKey('inbox_token'))) || localStorage.getItem('tm_inbox_token') || ''; }
 
   // ---- IndexedDB (기기 로컬: 대본·PDF) ----
-  function idb(){ return new Promise(function(res,rej){ var r=indexedDB.open('tm_lectures',1); r.onupgradeneeded=function(){ var d=r.result; if(!d.objectStoreNames.contains('lec')) d.createObjectStore('lec',{keyPath:'id'}); if(!d.objectStoreNames.contains('pdf')) d.createObjectStore('pdf',{keyPath:'key'}); }; r.onsuccess=function(){ res(r.result); }; r.onerror=function(){ rej(r.error); }; }); }
+  var _idbP=null;
+  function idb(){ if(_idbP) return _idbP; _idbP=new Promise(function(res,rej){ var r=indexedDB.open('tm_lectures',1); r.onupgradeneeded=function(){ var d=r.result; if(!d.objectStoreNames.contains('lec')) d.createObjectStore('lec',{keyPath:'id'}); if(!d.objectStoreNames.contains('pdf')) d.createObjectStore('pdf',{keyPath:'key'}); }; r.onsuccess=function(){ res(r.result); }; r.onerror=function(){ _idbP=null; rej(r.error); }; }); return _idbP; }
   function idbPut(store,obj){ return idb().then(function(d){ return new Promise(function(res,rej){ var t=d.transaction(store,'readwrite'); t.objectStore(store).put(obj); t.oncomplete=function(){res();}; t.onerror=function(){rej(t.error);}; }); }); }
   function idbGet(store,key){ return idb().then(function(d){ return new Promise(function(res,rej){ var r=d.transaction(store).objectStore(store).get(key); r.onsuccess=function(){res(r.result||null);}; r.onerror=function(){rej(r.error);}; }); }); }
   function idbAll(store){ return idb().then(function(d){ return new Promise(function(res,rej){ var r=d.transaction(store).objectStore(store).getAll(); r.onsuccess=function(){res(r.result||[]);}; r.onerror=function(){rej(r.error);}; }); }); }
@@ -9089,10 +9108,11 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     var course=S.course||$('lecCourse').value||''; if(course) idbPut('pdf',{key:course+'|'+S.pdfName, course:course, name:S.pdfName, bytes:bytes, at:Date.now()}).catch(function(){});
     refreshPdfMemory();
   }
+  var _renderTask=null;
   async function renderPage(){
-    if(!S.pdf) return; var pg=await S.pdf.getPage(S.page); var cv=$('lecCanvas'); var wrap=cv.parentNode; var vw=pg.getViewport({scale:1}); var dpr=window.devicePixelRatio||1; var scale=Math.min(Math.max(wrap.clientWidth-4,200)/vw.width, 2); var v=pg.getViewport({scale:scale*dpr});
+    if(!S.pdf) return; try{ if(_renderTask) _renderTask.cancel(); }catch(e){} var pg=await S.pdf.getPage(S.page); var cv=$('lecCanvas'); var wrap=cv.parentNode; var vw=pg.getViewport({scale:1}); var dpr=window.devicePixelRatio||1; var scale=Math.min(Math.max(wrap.clientWidth-4,200)/vw.width, 2); var v=pg.getViewport({scale:scale*dpr});
     cv.width=v.width; cv.height=v.height; cv.style.width=(v.width/dpr)+'px'; cv.style.height=(v.height/dpr)+'px';
-    await pg.render({canvasContext:cv.getContext('2d'), viewport:v}).promise; $('lecPage').textContent=S.page+' / '+S.total;
+    try{ _renderTask=pg.render({canvasContext:cv.getContext('2d'), viewport:v}); await _renderTask.promise; }catch(e){ if(!/cancel/i.test(String(e&&e.message))) console.warn('pdf render', e&&e.message); } _renderTask=null; $('lecPage').textContent=S.page+' / '+S.total;
   }
   var ONLINE_AUTO_SEC=300; S.online=false; S.lastCut=0;
   function goPage(n){
@@ -9154,7 +9174,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     S.tick=setInterval(function(){ renderLive(); autoCut(); },1000); saveLocal();
   }
   function stopAll(){
-    S.running=false; clearInterval(S.tick); try{ if(S.rec){ S.rec.onend=null; S.rec.stop(); } }catch(e){} stopAudio();
+    S.running=false; clearInterval(S.tick); clearTimeout(S.restartTimer); try{ if(S.rec){ S.rec.onend=null; S.rec.stop(); } }catch(e){} stopAudio();
     $('lecRec').textContent='● 녹음 시작'; $('lecRec').classList.remove('on'); status('중지됨 · '+Object.keys(S.slides).length+'개 슬라이드에 대본 저장됨 → "필기 요청 보내기"');
     saveLocal(); $('lecFinish').style.display=''; renderList();
   }
@@ -9258,7 +9278,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     $('lecFinish').addEventListener('click',sendFinish);
     $('lecDownloadAudio').addEventListener('click',function(){ if(!S.audioBlob) return; var a=document.createElement('a'); a.href=URL.createObjectURL(S.audioBlob); a.download=(S.title||'lecture')+'_'+S.date+'.webm'; a.click(); });
     $('lecShowEn').addEventListener('change',renderLive);
-    window.addEventListener('resize',function(){ if(typeof currentMode!=='undefined' && currentMode==='lecture') renderPage(); });
+    var _rz=null; window.addEventListener('resize',function(){ if(typeof currentMode!=='undefined' && currentMode==='lecture'){ clearTimeout(_rz); _rz=setTimeout(renderPage,150); } });
     window.addEventListener('beforeunload',function(e){ if(S.running){ e.preventDefault(); e.returnValue=''; } });
   }
   var _sm2=window.switchMode; window.switchMode=function(m){ _sm2(m); var p=$('lectureMode'); if(p) p.style.display=(m==='lecture')?'block':'none'; document.body.classList.toggle('lec-full', m==='lecture'); if(m==='lecture'){ fillCourses().then(renderWeek); renderList(); refreshPdfMemory(); setTimeout(renderPage,50); } };
