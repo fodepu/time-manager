@@ -3,18 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#5DBE94" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#378ADD" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#161616" media="(prefers-color-scheme: dark)">
-<title>Time Manager</title>
+<title>데이블</title>
+<link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,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">
 <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAABmJLR0QA/wD/AP+gvaeTAAADjklEQVRIie2WTUgqbRTHz4wzaaaRLlpUZFMhJEHfBUOIuOgDdRMEIuFCSorCiAraB0GLNoKlBi0lKDDDIIrok6IWQUm4yD7BTCq1Qsys8S58EXGGrreXC/fC/e+e5/zP+T3zzDnDIPn5+fA7hf7W6v8AfwQAy8REkqRSqWxqakq0nN/vPzw8dDqdBwcHP81Fvm5TsVg8OTlJkiRjdG9vb2xs7Pz8/JsAuVxutVr5fH4sFltZWVlbW7u9vQWA4uLilpYWhUKB4/jr62tPT8/m5uYvA6qqqhwOR3Z29vHxcX9//+XlJQDo9XoAsFqtAFBWVmYymWpqaiKRiEqlcrlcvwDAcXx3d5cgiP39fbVaHY1GE/s3NzcAIBKJEks2mz0/P0+SpMfjkclksViMXoq5izQaDUEQwWBQp9MlqwMAi8VisVjJZTQa7e7uDoVC5eXlarWasRQzoLOzEwBmZmaCwSCjQaFQHB0dzc7OPj09mc3mZEpGAD6fX1dXBwAOh4MeRRBkYWFhbm5OJBK9v78DwPLyMgA0NDTweLyMAIWFhSiKRiKR6+vrtBCGYRiGSaVSn8/X19c3MDAAABcXF29vbyiKFhQU0KsxDBqXywWAcDicto/jOIIgAGAymaamplIN4XCYw+EwPgED4OHhAQCEQiGO46mNEYvFent74/H40tJSqj8rK0sgEACA3+/PCODz+UKhUF5eHkmS29vbqSG73U735+bmDg4OSiSS+/t7epSVk5OTtkVRVEVFhUQi4fF4aYdNE4qiQqGwurra6/UuLi4iCEJRVLqHMdNsNlMU1d7e3tra+gVgeHj45OTEZrOtrq4ajcaioiIMS78SZoDL5bLZbAAwPT0tlUrpBgzD5HL5yMgIjuMAsL6+bjAYhoaGPj4+0pwMV5TQ1tZWc3MzQRAdHR0CgeDs7Cytr3Q6ncfjQVH08fFRo9EYDAa9Xm+xWBLDkdRXX1Mul2s0GlUqFQBQFHV6enp1dQUAIpFIqVSOj497PB6n08lms2tray0WC4IgYrH4+fk5U0BCbW1to6OjlZWVqZsymYwgCKvV2tXV9fLyYrfbORyO2+2WyWRp6T8HJFRSUtLY2JiY1bu7u42NjUAgMDExodVqAQDDMK/Xq9Vq3W735+fndwB0IQgSj8dLS0vr6+sDgcDOzg5FUfSX/H1AUhiGURRFn4D/ov+zOgDQT52qv/+/6O8H/ACuoGEpMXDXTQAAAABJRU5ErkJggg==">
 <!-- PWA 아이콘 (홈 화면 추가 시) -->
 <!-- PWA / iOS 홈 화면 추가 시 사용 -->
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="Time Manager">
-<meta name="application-name" content="Time Manager">
-<meta name="description" content="다음 할 일을 미루지 않게 — 정체성 기반 습관 트래커">
+<meta name="apple-mobile-web-app-title" content="데이블">
+<meta name="application-name" content="데이블">
+<meta name="description" content="데이블 — 주함의 시간표 · 과제 알림 · 강의노트">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -2378,7 +2379,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="42">
+<meta name="tm-version" content="43">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -2663,7 +2664,7 @@
 </head>
 <body class="tm-locked">
 <div class="tm-auth-overlay" id="tmAuthOverlay">
-  <div class="tm-auth-logo">🗓️ Time Manager</div>
+  <div class="tm-auth-logo">🗓️ 데이블</div>
   <div class="tm-auth-sub">로그인하면 내 시간표가 내 계정에 저장되고, 모든 기기에서 동기화됩니다.</div>
   <div id="gsiButton"></div>
   <div class="tm-auth-err" id="tmAuthErr"></div>
@@ -2675,7 +2676,7 @@
     <div class="header-top">
       <div class="logo">
         <div class="logo-mark"><svg viewBox="0 0 180 180" width="24" height="24" aria-hidden="true"><rect width="180" height="180" rx="42" fill="#161616"/><circle cx="90" cy="86" r="46" fill="none" stroke="#ffffff" stroke-width="12"/><line x1="90" y1="86" x2="90" y2="58" stroke="#ffffff" stroke-width="11" stroke-linecap="round"/><line x1="90" y1="86" x2="112" y2="73" stroke="#ffffff" stroke-width="11" stroke-linecap="round"/><circle cx="90" cy="86" r="6" fill="#ffffff"/><circle cx="128" cy="124" r="23" fill="#ffffff" stroke="#161616" stroke-width="8"/><path d="M117 124 l7 8 l15 -18" fill="none" stroke="#161616" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <span>Time Manager</span>
+        <span>데이블</span>
       </div>
       <div class="header-actions">
         <button class="icon-btn" id="reloadBtn" title="새로고침" data-icon="refresh"></button>
@@ -2685,11 +2686,13 @@
           <div class="settings-menu" id="settingsMenu">
             <button type="button" class="settings-item" data-proxy="themeBtn">테마 (다크 / 라이트)</button>
             <button type="button" class="settings-item" data-proxy="alarmBtn">알람</button>
+            <button type="button" class="settings-item owner-only" id="tmPushItem" data-proxy="tmPushBtn">새 과제·공지 알림</button>
             <button type="button" class="settings-item" data-proxy="tmSyncNowBtn">동기화 상태 / 지금 동기화</button>
             <button type="button" class="settings-item danger" data-proxy="tmLogoutBtn">로그아웃</button>
           </div>
         </div>
         <button class="icon-btn ctl-hidden" id="tmLogoutBtn" title="로그아웃" data-icon="logOut"></button>
+        <button class="icon-btn ctl-hidden" id="tmPushBtn" title="푸시 알림" onclick="if(window.tmPushSetup) tmPushSetup();"></button>
         <button class="icon-btn ctl-hidden" id="tmSyncNowBtn" title="동기화" onclick="if(window.tmSyncNow) tmSyncNow();"></button>
         <button class="icon-btn ctl-hidden" id="syncBtn" title="동기화" data-icon="cloud"><span class="sync-dot" id="syncDot"></span></button>
         <button class="icon-btn ctl-hidden" id="lettersBtn" title="편지" data-icon="mail"></button>
@@ -4271,7 +4274,7 @@ function collectLocalDataForSync() {
   });
   return {
     version: 2,
-    appName: 'Time Manager',
+    appName: '데이블',
     updatedAt: new Date().toISOString(),
     deviceId: getDeviceId(),
     data
@@ -5603,7 +5606,7 @@ function buildClaudeReport(dateArg) {
       return `${e.start}~${e.end} ${e.label} ${st}${n ? ' / 메모: ' + n : ''}`;
     });
   }
-  let out = `[Time Manager 기록 — ${dateStr}]\n`;
+  let out = `[데이블 기록 — ${dateStr}]\n`;
   if (note) out += `\n■ 메모/변동사항:\n${note}\n`;
   out += `\n■ 블록:\n${lines.join('\n')}\n`;
   out += `\n(고정: 일·출퇴근·운동·수면은 그대로, 유연 블록만 조정해줘)`;
@@ -6355,7 +6358,7 @@ function exportAllData() {
   const blob = new Blob([JSON.stringify({
     version: 1,
     exportedAt: new Date().toISOString(),
-    appName: 'Time Manager',
+    appName: '데이블',
     data
   }, null, 2)], { type: 'application/json' });
   const url = URL.createObjectURL(blob);
@@ -8133,6 +8136,8 @@ async function pushNow(){ if(!uid) return; if(pushTimer){ clearTimeout(pushTimer
     lastPushAt=ts; window.tmSync.lastPushAt=ts; window.tmSync.lastPushOk=true; window.tmSync.lastError='';
   }catch(e){ window.tmSync.lastPushOk=false; window.tmSync.lastError=(e&&(e.code||e.message))||String(e); console.warn('cloud push', e&&e.message); if(!pushTimer) pushTimer=setTimeout(pushNow, 15000); /* 실패 시 15초 후 재시도 */ if(typeof showToast==='function') showToast('동기화 업로드 실패: '+window.tmSync.lastError+' ('+Math.round(window.tmSync.size/1024)+'KB) — 설정에서 상세 확인'); }
 }
+window.tmSavePushSub = async function(sub){ if(!uid) throw new Error('로그인 필요'); await setDoc(doc(db,'users',uid,'devices',DEVICE_ID), { sub: sub, ua: navigator.userAgent.slice(0,120), updatedAt: Date.now(), enabled: true, email: (window.tmSync&&window.tmSync.email)||'' }); };
+window.tmRemovePushSub = async function(){ if(!uid) return; try{ await setDoc(doc(db,'users',uid,'devices',DEVICE_ID), { enabled:false, updatedAt: Date.now() }, { merge:true }); }catch(e){} };
 window.tmSyncNow = async function(){ if(!uid){ showToast('로그인 상태가 아니에요'); return; } await pushNow(); try{ const snap=await getDoc(doc(db,'users',uid)); if(snap.exists()){ const d=snap.data(); window.tmSync.lastRemoteAt=d.updatedAt||0; } }catch(e){} showSyncInfo(); };
 function fmt(t){ return t? new Date(t).toLocaleString('ko-KR',{month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit',second:'2-digit'}):'—'; }
 window.showSyncInfo=function(){ const s=window.tmSync; const msg='계정: '+(s.email||'—')+'\n이 기기: '+DEVICE_ID+'\n마지막 업로드: '+fmt(s.lastPushAt)+' '+(s.lastPushOk===true?'✓ 성공':s.lastPushOk===false?'✗ 실패 ('+s.lastError+')':'(아직 없음)')+'\n업로드 크기: '+(s.size?Math.round(s.size/1024)+' KB':'—')+(s.rawSize?' / 원본 '+Math.round(s.rawSize/1024)+'KB':'')+(s.pruned?' (오래된 '+s.pruned+'개 제외)':'')+(s.big?'\n가장 큰 항목: '+s.big:'')+'\n마지막 수신(다른 기기): '+fmt(s.lastRemoteAt)+'\n대기 중 변경: '+(pushTimer?'있음':'없음')+'\n앱 버전: v'+(window.TM_VERSION||'?'); alert(msg); };
@@ -8183,6 +8188,7 @@ onAuthStateChanged(auth, async (user)=>{
     showApp(user.email);
     const isOwner = (user.email===OWNER);
     try{ if(window.tmAfterAuth) window.tmAfterAuth(isOwner); }catch(e){}
+    try{ if(window.tmAfterPush) window.tmAfterPush(isOwner); }catch(e){}
     document.querySelectorAll('.free-send-btn,.free-send-hint').forEach(function(el){ el.style.display = isOwner ? '' : 'none'; });
     document.querySelectorAll('.owner-only').forEach(function(el){ el.style.display = isOwner ? '' : 'none'; });
     var _ftl=document.getElementById('freeTabLabel'); if(_ftl) _ftl.textContent = isOwner ? '기록 작성' : '일기';
@@ -8832,6 +8838,44 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     box.innerHTML=h;
   }
   window.tmRenderWeekStats=renderWeekStats;
+
+  // ---- 푸시 알림 (새 과제·공지) ----
+  var VAPID_PUBLIC='BF7PMzQeCNaQ63iq3CKqiU4EWYJcNyNxDm3syvR2l1E3HgXuuRltpTDWx4wcgtN6ZcVWh7IsY1JwgLSQORvNEgg';
+  function b64ToU8(s){ var pad='='.repeat((4-s.length%4)%4); var b=(s+pad).replace(/-/g,'+').replace(/_/g,'/'); var raw=atob(b); var a=new Uint8Array(raw.length); for(var i=0;i<raw.length;i++) a[i]=raw.charCodeAt(i); return a; }
+  var swReg=null;
+  function regSW(){ if(!('serviceWorker' in navigator)) return Promise.resolve(null); if(swReg) return Promise.resolve(swReg); return navigator.serviceWorker.register('./sw.js').then(function(r){ swReg=r; return r; }).catch(function(e){ console.warn('sw', e&&e.message); return null; }); }
+  function isStandalone(){ return (window.matchMedia&&window.matchMedia('(display-mode: standalone)').matches) || navigator.standalone===true; }
+  function isIOS(){ return /iPhone|iPad|iPod/.test(navigator.userAgent) || (navigator.platform==='MacIntel' && navigator.maxTouchPoints>1); }
+  function pushStateLabel(){ var it=document.getElementById('tmPushItem'); if(!it) return; var on=('Notification' in window)&&Notification.permission==='granted'&&lsGet(lsKey('push_on')); it.textContent='새 과제·공지 알림 — '+(on?'켜짐':'꺼짐'); }
+  window.tmPushSetup=function(){
+    if(!('PushManager' in window) || !('serviceWorker' in navigator) || !('Notification' in window)){
+      if(isIOS() && !isStandalone()) alert('아이폰은 홈 화면에 설치한 앱에서만 알림을 받을 수 있어요.\n\nSafari 하단 공유(⬆︎) → "홈 화면에 추가" → 홈 화면의 데이블을 열고 다시 이 메뉴를 눌러주세요.');
+      else alert('이 브라우저는 푸시 알림을 지원하지 않아요.');
+      return;
+    }
+    if(isIOS() && !isStandalone()){ alert('아이폰은 홈 화면에 설치한 앱에서만 알림을 받을 수 있어요.\n\nSafari 하단 공유(⬆︎) → "홈 화면에 추가" → 홈 화면의 데이블을 열고 다시 이 메뉴를 눌러주세요.'); return; }
+    if(Notification.permission==='granted' && lsGet(lsKey('push_on'))){
+      if(!confirm('이 기기의 새 과제·공지 알림을 끌까요?')) return;
+      regSW().then(function(r){ return r&&r.pushManager.getSubscription(); }).then(function(s){ if(s) return s.unsubscribe(); }).then(function(){ lsSet(lsKey('push_on'),''); if(window.tmRemovePushSub) tmRemovePushSub(); pushStateLabel(); showToast('알림을 껐어요'); });
+      return;
+    }
+    Notification.requestPermission().then(function(p){
+      if(p!=='granted'){ showToast('알림 권한이 거부됐어요. 설정 > 알림에서 허용해 주세요'); return; }
+      return regSW().then(function(r){ if(!r) throw new Error('서비스워커 등록 실패'); return navigator.serviceWorker.ready.then(function(){ return r.pushManager.getSubscription().then(function(s){ return s || r.pushManager.subscribe({ userVisibleOnly:true, applicationServerKey: b64ToU8(VAPID_PUBLIC) }); }); }); })
+        .then(function(sub){ if(!window.tmSavePushSub) throw new Error('로그인 필요'); return tmSavePushSub(sub.toJSON()); })
+        .then(function(){ lsSet(lsKey('push_on'),'1'); pushStateLabel(); showToast('이 기기로 새 과제·공지 알림을 보내드릴게요'); try{ swReg.showNotification('데이블', { body:'알림이 켜졌어요. 새 과제·공지가 올라오면 알려드릴게요.', icon:'./icons/icon-192.png' }); }catch(e){} });
+    }).catch(function(e){ console.warn('push', e); showToast('알림 설정 실패: '+(e&&e.message||e)); });
+  };
+  // 앱 열 때: 이미 켜져 있으면 구독을 조용히 갱신 (만료 대비)
+  function refreshPush(){
+    try{
+      if(!lsGet(lsKey('push_on')) || !('PushManager' in window) || Notification.permission!=='granted') return;
+      regSW().then(function(r){ return r&&r.pushManager.getSubscription(); }).then(function(s){ if(s && window.tmSavePushSub){ var last=+lsGet(lsKey('push_saved_at'))||0; if(Date.now()-last>6*3600e3){ tmSavePushSub(s.toJSON()).then(function(){ lsSet(lsKey('push_saved_at'), String(Date.now())); }).catch(function(){}); } } });
+    }catch(e){}
+  }
+  regSW();
+  window.tmAfterPush=function(isOwner){ setTimeout(function(){ pushStateLabel(); refreshPush(); if(isOwner && location.hash==='#lms' && window.switchMode){ try{ switchMode('lms'); }catch(e){} history.replaceState(null,'',location.pathname); } }, 500); };
+  document.addEventListener('click', function(e){ if(e.target && e.target.id==='settingsBtn') setTimeout(pushStateLabel, 50); }, true);
 
   // ---- 헤더 컨트롤 ----
   function bindHeader(){
