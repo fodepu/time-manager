@@ -2378,10 +2378,11 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="38">
+<meta name="tm-version" content="39">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
+  #identityCard, #freshBanner, #recoverBanner, #restDayBanner, #lettersDueSection, #firstProgressContainer, #reviewCardContainer, #insightsSection, #goalsSection, #summaryGrid, #cumulativeText, #statsSection, .history-section { display:none !important; }
   .header .logo { display:none !important; }
   .date-nav { display:none !important; }
   .date-block { margin-top:4px; }
@@ -2561,6 +2562,21 @@
   .todo-actions { display:flex; justify-content:space-between; gap:8px; margin-top:10px; }
   .todo-actions button { padding:9px 14px; border-radius:10px; border:1px solid var(--border,#e5e5e5); background:none; color: var(--text-muted); font-size:13px; cursor:pointer; }
   .todo-actions button.primary { background: var(--accent); color:#fff; border-color: var(--accent); font-weight:700; }
+  .wk-stats { margin:16px 0 8px; }
+  .wk-head { margin-bottom:8px; }
+  .wk-title { font-size:16px; font-weight:800; }
+  .wk-sub { font-size:12px; color: var(--text-muted); margin-top:2px; }
+  .wk-row { display:flex; align-items:center; gap:10px; padding:7px 0; border-top:1px solid var(--border-soft,#f0f0f0); }
+  .wk-row:first-of-type { border-top:none; }
+  .wk-dot { width:12px; height:12px; border-radius:3px; flex-shrink:0; }
+  .wk-main { flex:1; min-width:0; }
+  .wk-line { display:flex; justify-content:space-between; align-items:baseline; gap:8px; font-size:13.5px; }
+  .wk-line b { font-weight:700; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .wk-num { font-variant-numeric: tabular-nums; white-space:nowrap; }
+  .wk-num small { color: var(--text-muted); font-size:11px; }
+  .wk-bar { height:6px; background: var(--bg-soft); border-radius:3px; margin-top:4px; overflow:hidden; }
+  .wk-bar-plan { height:100%; border-radius:3px; position:relative; opacity:.55; }
+  .wk-bar-done { position:absolute; left:0; top:0; height:100%; background:rgba(0,0,0,.35); border-radius:3px; }
   /* ⋯ 메뉴 */
   .tt-menu { position:fixed; z-index:1000; background: var(--bg-card,#fff); border:1px solid var(--border,#e5e5e5); border-radius:10px; box-shadow:0 8px 24px rgba(0,0,0,.14); padding:4px; min-width:150px; }
   .tt-menu button { display:block; width:100%; text-align:left; background:none; border:none; padding:9px 12px; font-size:14px; color: var(--text); border-radius:7px; cursor:pointer; }
@@ -2714,6 +2730,7 @@
     <div id="sleepCard" style="display:none;"></div>
     <div class="items" id="items"></div>
     <span id="itemCount" style="display:none;">—</span>
+    <div class="wk-stats" id="weekStats"></div>
     <!-- 정체성 선언 (Identity-based habits, Clear 2018) -->
     <div class="identity-card" id="identityCard" style="display:none">
       <div class="identity-label">✦ 이번 시즌의 나</div>
@@ -8614,6 +8631,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
       em.innerHTML='이 날의 시간표가 비어 있어요<br><button type="button" id="ttEmptyAdd">＋ 시간 블록 추가</button>';
       container.appendChild(em);
       em.querySelector('#ttEmptyAdd').addEventListener('click', function(){ document.getElementById('addBtn').click(); });
+      try{ renderWeekStats(); }catch(e){}
       return;
     }
 
@@ -8665,6 +8683,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     }
     updateNow();
     if(!nowTimer) nowTimer=setInterval(updateNow, 60000);
+    try{ renderWeekStats(); }catch(e){ console.warn('weekStats', e&&e.message); }
   }
   function updateNow(){
     if(!nowEl) return; var n=new Date(); var m=n.getHours()*60+n.getMinutes();
@@ -8767,8 +8786,43 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   function $(id){ return document.getElementById(id); }
   window.tmOpenTodos=openTodos;
 
+  // 숨긴 섹션(장기목표·연속성·통계·편지 등)의 렌더는 건너뜀 — 매 토글마다 전체 기록 재계산 방지
+  ['renderIdentity','renderFreshStart','renderRecoverBanner','renderRestDay','renderGoals','renderSummary','renderCumulative','renderDetailedStats','renderInsights','renderLettersDue','renderReviewCard','renderFirstProgress','renderHistory','renderLettersUpcoming','updateLettersBtnBadge'].forEach(function(n){ if(typeof window[n]==='function') window[n]=function(){}; });
+
   // 기존 렌더 진입점 덮어쓰기 (refreshAll → renderItems)
   window.renderItems = render;
+
+  // ---- 이번 주 활동 시간 (블록 이름 기준 합산) ----
+  function fmtH(m){ if(!m) return '0분'; var hh=Math.floor(m/60), mm=m%60; return (hh?hh+'시간':'')+(mm?(hh?' ':'')+mm+'분':''); }
+  function renderWeekStats(){
+    var box=$('weekStats'); if(!box) return;
+    var dates=weekDates(currentDate); var today=toLocalDateStr(new Date());
+    var agg={}, order=[];
+    dates.forEach(function(d){
+      var info=blocksFor(d);
+      info.blocks.forEach(function(b){
+        var s=mins(b.start), e=mins(b.end); if(e<=s) e=1440; var dur=e-s;
+        var key=(b.label||'').trim(); if(!key) return;
+        if(!agg[key]){ agg[key]={label:key, plan:0, done:0, past:0, color:b.color||'', tasks:(b.kind==='tasks')}; order.push(key); }
+        var a=agg[key]; a.plan+=dur; if(!a.color&&b.color) a.color=b.color;
+        if(b.values&&b.values.check===true) a.done+=dur;
+        if(d<today || (d===today && e<=(new Date().getHours()*60+new Date().getMinutes()))) a.past+=dur;
+      });
+    });
+    var rows=order.map(function(k){ return agg[k]; }).sort(function(a,b){ return b.plan-a.plan; });
+    var totalPlan=rows.reduce(function(s,r){ return s+r.plan; },0), totalDone=rows.reduce(function(s,r){ return s+r.done; },0);
+    var h='<div class="wk-head"><div class="wk-title">이번 주 활동 시간</div><div class="wk-sub">'+rangeLabel(dates)+' · 같은 이름은 합산 · 계획 '+fmtH(totalPlan)+' / 완료 '+fmtH(totalDone)+'</div></div>';
+    if(!rows.length){ h+='<div class="lms-empty">이번 주 블록이 없어요.</div>'; box.innerHTML=h; return; }
+    var max=rows[0].plan||1;
+    rows.forEach(function(r){
+      var pct=Math.round(r.plan/max*100), dpct=r.plan?Math.round(r.done/r.plan*100):0;
+      h+='<div class="wk-row"><span class="wk-dot" style="background:'+(r.tasks?'#fff':(r.color||'#B0B0B0'))+(r.tasks?';box-shadow:inset 0 0 0 1.5px #111':'')+'"></span>'+
+         '<div class="wk-main"><div class="wk-line"><b>'+escapeHtml(r.label)+'</b><span class="wk-num">'+fmtH(r.plan)+'<small> · 완료 '+fmtH(r.done)+(r.plan?' ('+dpct+'%)':'')+'</small></span></div>'+
+         '<div class="wk-bar"><div class="wk-bar-plan" style="width:'+pct+'%;background:'+(r.tasks?'#ddd':(r.color||'#B0B0B0'))+'"><div class="wk-bar-done" style="width:'+dpct+'%"></div></div></div></div></div>';
+    });
+    box.innerHTML=h;
+  }
+  window.tmRenderWeekStats=renderWeekStats;
 
   // ---- 헤더 컨트롤 ----
   function bindHeader(){
