@@ -2379,7 +2379,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="46">
+<meta name="tm-version" content="47">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -2565,6 +2565,9 @@
   .todo-actions button.primary { background: var(--accent); color:#fff; border-color: var(--accent); font-weight:700; }
   .tt-block.k-tasks .t { white-space:normal; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; word-break:keep-all; }
   .tt-block.k-tasks.xs .t { -webkit-line-clamp:1; }
+  .lec-note-link { cursor:pointer; } .lec-note-link b { color: var(--accent); font-weight:700; margin-left:4px; }
+  .lec-ext { margin:0 6px 0 2px; font-size:12px; color: var(--text-muted); text-decoration:none; }
+  .lec-item { cursor:pointer; }
   .p-place { margin-top:6px; font-size:13px; }
   .wk-stats { margin:16px 0 8px; }
   .wk-head { margin-bottom:8px; }
@@ -9319,7 +9322,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     local.forEach(function(l){ if(!items.some(function(x){return x.id===l.id;})) items.push({id:l.id,course:l.course,title:l.title,date:l.date,pages:l.pages,ready:false,status:l.status}); });
     items.sort(function(a,b){ return String(b.id).localeCompare(String(a.id)); });
     var h='<div class="lms-sec-title">강의 목록</div>'; if(!items.length) h+='<div class="lms-empty">아직 저장된 강의가 없어요. 과목·PDF를 고르고 녹음을 시작하세요.</div>';
-    items.forEach(function(it){ var col=courseColorFor(it.course); h+='<div class="lms-uitem lec-item" data-id="'+escapeHtml(it.id)+'" data-ready="'+(it.ready?1:0)+'"><span class="lms-dot" style="background:'+col+'"></span><div class="lms-main"><div class="lms-title">'+escapeHtml(it.title||'강의')+'</div><div class="lms-sub"><b style="color:'+col+'">'+escapeHtml(String(it.course||'').replace(/^\(SDGs\)/,''))+'</b> · '+escapeHtml(it.date||'')+(it.pages?' · '+it.pages+'쪽':'')+'</div></div>'+(it.ready?'<span class="lms-badge new">필기 완료</span>':'<span class="lms-badge">'+(it.status==='sent'?'정리 중':it.status==='recording'?'녹음 중':'대본만')+'</span>')+'</div>'; });
+    items.forEach(function(it){ var col=courseColorFor(it.course); h+='<div class="lms-uitem lec-item" data-id="'+escapeHtml(it.id)+'" data-ready="'+(it.ready?1:0)+'"><span class="lms-dot" style="background:'+col+'"></span><div class="lms-main"><div class="lms-title">'+escapeHtml(it.title||'강의')+'</div><div class="lms-sub"><b style="color:'+col+'">'+escapeHtml(String(it.course||'').replace(/^\(SDGs\)/,''))+'</b> · '+escapeHtml(it.date||'')+(it.pages?' · '+it.pages+'쪽':'')+'</div></div>'+(it.ready?'<span class="lms-badge new">필기 보기 →</span>':'<span class="lms-badge">'+(it.status==='sent'?'정리 중':it.status==='recording'?'녹음 중':'대본만')+'</span>')+'</div>'; });
     box.innerHTML=h; box.querySelectorAll('.lec-item').forEach(function(el){ el.addEventListener('click',function(){ openReview(el.getAttribute('data-id'), el.getAttribute('data-ready')==='1'); }); });
   }
   async function openReview(id, ready){
@@ -9327,7 +9330,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     if(ready){ try{ var r=await fetch('./lectures/notes/'+id+'.json?v='+Date.now(),{cache:'no-store'}); if(r.ok) data=await r.json(); }catch(e){} }
     if(!data){ try{ data=await idbGet('lec',id); }catch(e){} } if(!data){ showToast('데이터를 찾을 수 없어요'); return; }
     var col=courseColorFor(data.course);
-    var h='<div class="lms-topbar"><button type="button" class="lms-back" id="lecBack">←</button><span style="flex:1"></span><button type="button" class="lec-export" id="lecExport">마크다운 내보내기</button><button type="button" class="lec-export danger" id="lecDelete">이 기기에서 삭제</button></div>';
+    var eu=ecampusUrlFor(data); var h='<div class="lms-topbar"><button type="button" class="lms-back" id="lecBack">←</button><span style="flex:1"></span>'+(eu?'<a class="lec-export" href="'+escapeHtml(eu)+'" target="_blank" rel="noopener">▶ e-campus 영상</a>':'')+'<button type="button" class="lec-export" id="lecExport">마크다운 내보내기</button><button type="button" class="lec-export danger" id="lecDelete">이 기기에서 삭제</button></div>';
     h+='<div class="lms-dhead" style="border-left:5px solid '+col+'"><div><div class="lms-dname">'+escapeHtml(data.title||'강의')+'</div><div class="lms-sub">'+escapeHtml(String(data.course||'').replace(/^\(SDGs\)/,''))+' · '+escapeHtml(data.date||'')+(data.pages?' · '+data.pages+(data.mode==='online'?'구간':'쪽'):'')+(data.duration?' · '+fmtT(data.duration):'')+'</div></div></div>';
     if(data.overview) h+='<div class="lms-brief">'+md(data.overview)+'</div>';
     if(data.exam && data.exam.length){ h+='<div class="lms-sec">시험·과제 언급</div><div class="lms-todos">'; data.exam.forEach(function(x){ h+='<div class="lms-todo"><div class="lms-todo-text">'+md(x).replace(/^<p class="md-p">|<\/p>$/g,'')+'</div></div>'; }); h+='</div>'; }
@@ -9353,10 +9356,14 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   function weekNo(dateStr){ var a=new Date(LEC_SEM_START+'T00:00:00'), b=new Date((dateStr||toLocalDateStr(new Date()))+'T00:00:00'); return Math.floor((b-a)/604800000)+1; }
   function modWeek(m){ var x=String(m.name||'').match(/(\d{1,2})\s*주/)||String(m.name||'').match(/week\s*(\d{1,2})/i); return x?parseInt(x[1],10):null; }
   var weekOpen=false, weekPick=null;
+  function noteForItem(course, title){ var m=/(\d{1,2})\s*주차\s*(\d{1,2})\s*강/.exec(String(title||'')); if(!m||!notesIndex) return null; var w=+m[1], k=+m[2]; var cn=String(course||'').replace(/^\(SDGs\)/,'');
+    return notesIndex.find(function(n){ return String(n.course||'').replace(/^\(SDGs\)/,'')===cn && (new RegExp('-w'+w+'-'+k+'$').test(n.id) || new RegExp(w+'\\s*주차\\s*'+k+'\\s*강').test(n.title||'')); })||null; }
+  function ecampusUrlFor(data){ try{ var d=window.lecLms; var mods=(d&&d.courseModules&&d.courseModules[data.course])||[]; var m=/(\d{1,2})\s*주차\s*(\d{1,2})\s*강/.exec(data.title||''); if(!m) return ''; var re=new RegExp('^'+(+m[1])+'\\s*주차\\s*'+(+m[2])+'\\s*강$'); for(var i=0;i<mods.length;i++){ var it=(mods[i].items||[]).find(function(x){ return re.test(String(x.title||'').trim()); }); if(it&&it.url) return it.url; } }catch(e){} return ''; }
   function renderWeek(){
     var box=$('lecWeek'); if(!box) return; var c=S.course||$('lecCourse').value||''; var d=window.lecLms; var mods=(d&&d.courseModules&&d.courseModules[c])||[];
     if(!c){ box.style.display='none'; return; }
     box.style.display='';
+    if(!notesIndex){ fetchIndex().then(renderWeek); }
     if(!mods.length){ box.innerHTML='<span class="lec-mem-label">주차학습</span><span class="lec-muted">e-campus 주차 목록이 아직 없어요 (다음 갱신 후 표시). "e-campus 자료"로 파일 목록을 보세요.</span>'; return; }
     var wk=weekNo(); var weekly=mods.some(function(m){ return modWeek(m)!=null; });
     var cur = (weekPick!=null ? mods.find(function(m){return m.id===weekPick;}) : null) || (weekly ? (mods.find(function(m){ return modWeek(m)===wk; }) || mods[Math.min(mods.length-1, Math.max(0, wk-1))]) : null);
@@ -9368,12 +9375,14 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
       box.innerHTML=hh; return;
     }
     function itemsHtml(m){ return (m.items||[]).map(function(it){ var isPdf=/\.pdf$/i.test(it.title||''), isFile=it.type==='File'; var isVid=/\d\s*강$|강의|VOD|영상/i.test(it.title||''); var ic=isFile?(window.tmClip||'')+' ':(it.type==='Page'?'▤ ':it.type==='Assignment'?'✎ ':it.type==='ExternalUrl'?'↗ ':isVid?'▶ ':'▤ ');
+        var nt=noteForItem(c, it.title); if(nt) return '<span class="lms-file lec-note-link" data-id="'+escapeHtml(nt.id)+'" style="margin-left:'+(it.indent*10)+'px">📝 '+escapeHtml(it.title||'')+' <b>필기 보기</b></span>'+(it.url?'<a class="lec-ext" href="'+escapeHtml(it.url)+'" target="_blank" rel="noopener" title="e-campus에서 영상 열기">↗</a>':'');
         return it.url?'<a class="lms-file'+(isPdf?' pdf':'')+'" href="'+escapeHtml(it.url)+'" target="_blank" rel="noopener" style="margin-left:'+(it.indent*10)+'px">'+ic+escapeHtml(it.title||'')+'</a>':'<span class="lec-chip" style="margin-left:'+(it.indent*10)+'px">'+ic+escapeHtml(it.title||'')+'</span>'; }).join(' ') || '<span class="lec-muted">항목 없음</span>'; }
     var h='<div class="lec-week-head"><span class="lec-mem-label" style="width:auto">주차학습</span><b class="lec-week-name">'+escapeHtml(cur.name)+'</b>'+(modWeek(cur)===wk?'<span class="lms-badge new">이번 주</span>':'<span class="lms-badge">'+wk+'주차 아님</span>')+'<button type="button" class="lec-chip" id="lecWeekToggle">'+(weekOpen?'접기':'다른 주차 ▾')+'</button></div>';
     h+='<div class="lec-week-items">'+itemsHtml(cur)+'</div>';
     if(weekOpen){ h+='<div class="lec-week-all">'+mods.map(function(m){ return '<details'+(m.id===cur.id?' open':'')+'><summary>'+escapeHtml(m.name)+(modWeek(m)===wk?' · 이번 주':'')+' <button type="button" class="lec-chip lec-week-pick" data-id="'+escapeHtml(m.id)+'">선택</button></summary><div class="lec-week-items">'+itemsHtml(m)+'</div></details>'; }).join('')+'</div>'; }
     h+='<div class="lec-muted" style="margin-top:4px">항목을 누르면 e-campus 뷰어가 열려요 → PDF는 거기서 다운로드 → 왼쪽에 드롭 (한 번 열면 기억) · 영상(▶)은 스피커로 재생하며 녹음</div>';
     box.innerHTML=h;
+    box.querySelectorAll('.lec-note-link').forEach(function(el){ el.addEventListener('click',function(){ openReview(el.getAttribute('data-id'), true); }); });
     var tg=box.querySelector('#lecWeekToggle'); if(tg) tg.addEventListener('click',function(){ weekOpen=!weekOpen; renderWeek(); });
     box.querySelectorAll('.lec-week-pick').forEach(function(b){ b.addEventListener('click',function(e){ e.preventDefault(); e.stopPropagation(); weekPick=b.getAttribute('data-id'); weekOpen=false; renderWeek(); }); });
   }
