@@ -1,0 +1,45 @@
+{
+  "date": "2026-09-04",
+  "generatedAt": "2026-09-04T08:47:43+09:00",
+  "urgent": null,
+  "items": [
+    {
+      "cat": "update",
+      "title": "Claude Code 2.1.259 — 조직 공용 MCP·완전무인 헤드리스·GitLab MR 인식",
+      "lead": "9/2 릴리스가 팀 배포·CI 자동화·MR 워크플로를 정면으로 겨냥해 세 축을 손봤다.",
+      "points": [
+        "`managedMcpServers` 관리자 설정으로 **HTTP/SSE MCP 서버를 전원에게 일괄 배포**(.mcp.json과 동일 스키마, command 실행형은 스킵) — 팀원이 각자 커넥터를 붙일 필요 없이 관리자가 표준 툴셋을 강제한다. 주의: `allowedMcpServers`는 이제 **사용자가 추가한 서버만** 통제하니, 예전 화이트리스트로 걸러지던 managed-mcp.json이 업그레이드 시 자동 로드된다 — 끄려면 `deniedMcpServers`.",
+        "`--permission-prompts none`로 **완전 무인 헤드리스** 실행 — 프롬프트가 뜰 상황을 자동 거부하되 auto 등 활성 permission mode의 판단은 그대로 유지. CI·크론에서 승인창 없이 안전하게 에이전트를 돌리는 정식 스위치.",
+        "`glab mr create/merge/close/...`를 인식해 **MR !N**로 접힌 요약·푸터 배지에 표시, `claude plugin validate --json`으로 **기계판독 검증 리포트** — GitLab 팀의 MR 루프와 플러그인 CI 게이트를 코드로 엮을 수 있다."
+      ],
+      "note": "code.claude.com 체인지로그(v2.1.259). 동시 세션이 서로의 ~/.claude.json을 되돌리던 버그도 수정(워크스페이스 신뢰·MCP 상태 유지).",
+      "source": "code.claude.com",
+      "url": "https://code.claude.com/docs/en/changelog"
+    },
+    {
+      "cat": "model",
+      "title": "GPT-6 Astra — Codex가 컨텍스트 창을 넘겨 '메모'로 기억",
+      "lead": "9/3 OpenAI가 코딩·컴퓨터 사용·과학용 최상위 모델을 공개, ChatGPT·Codex·API·AWS로 순차 롤아웃.",
+      "points": [
+        "Codex가 컨텍스트가 차면 **요약으로 압축하지 않고 창을 넘겨 노트를 유지**하고, 지난 창도 **검색 가능**하게 남긴다 — 노트에 안 담긴 요구사항·테스트 결과까지 되짚어, **하루 넘는 장기 코딩 세션**에서 초반 결정이 사라지는 문제를 구조적으로 없앤다.",
+        "갱신된 Codex 하니스가 Mind2Web에서 **작업 완료 1.9배 가속**, 프로덕션 품질까지 **반복(iteration)이 덜 필요**한 코드를 낸다 — 리뷰-수정 왕복이 줄어드는 게 실무 체감 변화. 보안은 **시큐어 코드리뷰·패치는 돕되 PoC 익스플로잇 생성은 거부**.",
+        "**1M 컨텍스트**·표준 **$10/$50 per 1M**(fast는 $20/$100). 창을 가득 채우면 1콜에 ~$10이니, 대형 리포 전체 투입보다 노트-검색 방식에 맡기는 게 비용상 유리."
+      ],
+      "note": "openai.com/index/gpt-6-astra. 제한 조직부터 시작해 Plus/Pro/Business/Enterprise·API로 확대. 가격은 아티피셜애널리시스 기준.",
+      "source": "openai.com",
+      "url": "https://openai.com/index/gpt-6-astra/"
+    },
+    {
+      "cat": "tool",
+      "title": "Grok Imagine Video 1.5 — 텍스트·이미지·음성 레퍼런스로 1080p 생성",
+      "lead": "xAI 영상 모델이 품질과 속도를 함께 끌어올리고 참조 입력을 다변화했다.",
+      "points": [
+        "**텍스트+이미지+음성 레퍼런스**를 함께 물려 **1080p**까지 생성 — 스틸 한 장과 원하는 톤의 보이스를 던져 사운드 포함 숏폼을 뽑는 식으로, 별도 편집 파이프라인 없이 참조 기반 영상 제작을 한 번에 처리한다.",
+        "이전 대비 **더 빠른 속도**로 반복 시안을 여러 컷 돌려보기 좋다 — 콘셉트 탐색 단계에서 프롬프트·레퍼런스를 바꿔가며 빠르게 후보를 쌓는 용도."
+      ],
+      "note": "x.ai/news. Grok Imagine 계열. 별개로 Grok 4.7(플래그십)은 ~9/11-12 목표로 예고됐으나 API ID·가격·벤치는 미공개(머스크 발언 단계).",
+      "source": "x.ai",
+      "url": "https://x.ai/news"
+    }
+  ]
+}
