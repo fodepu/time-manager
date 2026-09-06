@@ -2379,7 +2379,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="49">
+<meta name="tm-version" content="50">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -8856,7 +8856,8 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     $('todoClose').addEventListener('click',function(){ $('todoOverlay').classList.remove('open'); todoCtx=null; if(window.tmApplyPendingRemote) setTimeout(tmApplyPendingRemote,300); });
     $('todoOverlay').addEventListener('click',function(e){ if(e.target===$('todoOverlay')){ $('todoOverlay').classList.remove('open'); todoCtx=null; } });
     $('todoAdd').addEventListener('click',addTodo);
-    $('todoInput').addEventListener('keydown',function(e){ if(e.key==='Enter'){ e.preventDefault(); addTodo(); } });
+    // 한글 IME 조합 중 Enter는 무시 (조합 중 Enter를 받으면 마지막 글자가 새 항목으로 한 번 더 들어감)
+    $('todoInput').addEventListener('keydown',function(e){ if(e.key==='Enter'){ e.preventDefault(); if(e.isComposing || e.keyCode===229) return; addTodo(); } });
     $('todoPaste').addEventListener('click',function(){ var t=prompt('할 일을 줄마다 하나씩 붙여넣으세요'); if(!t) return; t.split(/\n/).forEach(function(line){ line=line.replace(/^[-*•\s]+/,'').trim(); if(line) todoCtx.items.push({t:line,d:false}); }); renderTodos(); });
     $('todoSave').addEventListener('click',saveTodos);
   }
