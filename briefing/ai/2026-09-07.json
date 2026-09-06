@@ -1,0 +1,56 @@
+{
+  "date": "2026-09-07",
+  "generatedAt": "2026-09-07T08:50:22+09:00",
+  "urgent": null,
+  "items": [
+    {
+      "cat": "tool",
+      "title": "Claude Design (Anthropic Labs) — 프롬프트 한 줄로 프로토타입·피치덱·랜딩",
+      "lead": "Claude.ai의 Design 탭에서 평문 프롬프트를 살아있는 캔버스 위 인터랙티브 시안으로 바꾸고 대화로 다듬는다.",
+      "points": [
+        "**Prototype / Pitch Deck / From Template / Design System** 4개 진입점 — Figma 없이 앱 UI·투자자 덱·랜딩 데모를 몇 분 만에 뽑아 **실제 사용자에게 먼저 테스트**하고 나서 디자인에 몇 주를 쓰는 순서로 뒤집는다.",
+        "**Design System** 템플릿에 브랜드 킷을 먼저 학습시키면 이후 산출물이 그 톤·타이포로 통일 — 매번 브랜드 지시를 반복할 필요 없음.",
+        "다운스트림에 맞춰 export를 고른다: 슬라이드는 **PPTX**, 외부 협업은 **Canva**, 개발 핸드오프는 **HTML→Claude Code**, 열람용 승인은 **PDF**. Tweaks 패널(디바이스 프리뷰·테마·타이포·슬라이더)로 재프롬프트 없이 미세조정."
+      ],
+      "note": "Claude.ai > Design 탭. 브리프에 대상·플랫폼·무드 같은 제약을 최소 1개 넣을수록 결과가 좋아진다.",
+      "source": "anthropic.com",
+      "url": "https://www.anthropic.com/news/claude-design-anthropic-labs"
+    },
+    {
+      "cat": "update",
+      "title": "Enterprise Frontier Safeguards — ZDR 유지하며 오용 탐지",
+      "lead": "제로 데이터 보존(ZDR)과 오용 탐지를 동시에 가져가되, 모니터링 데이터를 고객 소유 클라우드에 저장하는 엔터프라이즈 안전장치다.",
+      "points": [
+        "모니터링 로그를 **Anthropic이 아닌 고객 통제 클라우드**에 두므로, ZDR 계약을 깨지 않고도 Claude Code·Claude Enterprise를 규제 산업에서 **정식 도입**할 근거가 생긴다.",
+        "**Amazon Bedrock·Google Agent Platform·Microsoft Foundry**까지 지원 — 이미 쓰는 클라우드 위에서 동일 안전장치를 얹는다(금융·헬스케어·제조·공공 100+ 고객과 개발)."
+      ],
+      "note": "Enterprise/Platform 계약 레벨 기능. 개인 요금제와 무관.",
+      "source": "releasebot.io",
+      "url": "https://releasebot.io/updates/anthropic"
+    },
+    {
+      "cat": "tool",
+      "title": "Grok Bot — X 계정 연동과 타임라인 도구",
+      "lead": "항상 켜진 Grok 에이전트가 X 계정에 붙어 게시·타임라인·멘션을 직접 다룬다.",
+      "points": [
+        "**account linking** 후 post·timeline·mention 툴로, 멘션 모니터링→초안→예약 게시 같은 **X 운영 루프를 에이전트에 상주**시킨다.",
+        "유료 Grok Bot 사용자에게 **무료 X API 크레딧** 지급 — 별도 API 셋업 비용 없이 자동화를 바로 시작."
+      ],
+      "note": "SuperGrok Plus/Heavy·Cursor Pro+/Ultra/Teams 등에서 이용. 엔터프라이즈는 접근·네트워크·감사 제어 추가.",
+      "source": "blog.mean.ceo",
+      "url": "https://blog.mean.ceo/grok-x-ai-news-september-2026/"
+    },
+    {
+      "cat": "market",
+      "title": "Claudeforce — Salesforce CRM에 Claude 기본 탑재",
+      "lead": "Salesforce와 Anthropic이 Claude를 Salesforce의 신뢰 경계 안 기본 모델로 넣는 Claudeforce를 발표했다.",
+      "points": [
+        "Agentforce·CRM 데이터 위에서 Claude가 도는 상용 에이전트 **블루프린트**를 제공 — 세일즈·서비스 에이전트를 처음부터 짜는 대신 검증된 출발점에서 커스터마이즈.",
+        "Salesforce를 쓰는 팀에겐 **별도 통합 구축 없이** Claude 기반 자동화를 붙일 경로가 생긴다는 신호."
+      ],
+      "note": "엔터프라이즈 대상 파트너십. 세부 가용성은 Salesforce 채널별 롤아웃.",
+      "source": "salesforce.com",
+      "url": "https://www.salesforce.com/news/press-releases/2026/08/26/salesforce-and-anthropic-announce-claudeforce/"
+    }
+  ]
+}
