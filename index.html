@@ -2379,7 +2379,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="48">
+<meta name="tm-version" content="49">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -8834,7 +8834,22 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     var items=todoCtx.items.filter(function(x){ return (x.t||'').trim(); }).map(function(x){ return {t:x.t.trim(), d:!!x.d}; });
     ref.e.values=ref.e.values||{}; if(items.length) ref.e.values.todos=items; else delete ref.e.values.todos;
     if((ref.e.kind||'single')==='tasks'){ if(items.length && items.every(function(x){return x.d;})) ref.e.values.check=true; else if(ref.e.values.check===true) delete ref.e.values.check; }
-    ref.save(); $('todoOverlay').classList.remove('open'); todoCtx=null; refreshAll(); showToast('할 일 저장됨'); if(window.tmApplyPendingRemote) setTimeout(tmApplyPendingRemote,2000);
+    ref.save();
+    // 같은 날의 다른 체크 블록에도 같은 목록을 띄움 (하루 할 일은 하나의 목록)
+    if((ref.e.kind||'single')==='tasks') try{ replicateTodos(todoCtx.date, items, todoCtx.id); }catch(e){ console.warn('replicate', e&&e.message); }
+    $('todoOverlay').classList.remove('open'); todoCtx=null; refreshAll(); showToast('할 일 저장됨'); if(window.tmApplyPendingRemote) setTimeout(tmApplyPendingRemote,2000);
+  }
+  function applyTodosTo(e, items){ e.values=e.values||{}; if(items.length) e.values.todos=items.map(function(x){ return {t:x.t, d:!!x.d}; }); else delete e.values.todos;
+    if(items.length && items.every(function(x){return x.d;})) e.values.check=true; else if(e.values.check===true) delete e.values.check; }
+  function replicateTodos(date, items, srcId){
+    if(date===currentDate){
+      entries.forEach(function(e){ if(e && e.kind==='tasks' && e.id!==srcId) applyTodosTo(e, items); }); persist();
+    } else {
+      var snap=snapshotFor(date); var have={}; snap.entries.forEach(function(x){ have[x.id]=1; });
+      templateEntriesFor(date).forEach(function(t){ if(t.kind==='tasks' && !have[t.id]) snap.entries.push(t); });
+      var ch=false; snap.entries.forEach(function(x){ if(x && x.kind==='tasks' && x.id!==srcId){ applyTodosTo(x, items); ch=true; } });
+      if(ch){ snap.savedAt=new Date().toISOString(); delete snap._synth; saveGrowth(date,snap); if(typeof scheduleSyncPush==='function') scheduleSyncPush(); if(window.tmOnChange) window.tmOnChange(); }
+    }
   }
   function bindTodos(){
     if(!$('todoOverlay')) return;
