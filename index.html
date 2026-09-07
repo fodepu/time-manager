@@ -2379,7 +2379,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="70">
+<meta name="tm-version" content="71">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -9423,17 +9423,17 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   async function aiTick(force){
     if(!S.running || AI.busy || !aiEngine()) return; var now=Date.now(); if(!force && now-AI.lastRun<20000) return;
     var p=S.page||1, sl=S.slides[p]; if(!sl) return; var pend=sl.segs.map(function(s,i){ return {s:s,i:i}; }).filter(function(x){ return !x.s.fix; });
-    if(!pend.length || (!force && pend.length<2 && now-AI.lastRun<45000)) return;
+    if(!pend.length) return;
     AI.busy=true; AI.lastRun=now; var live=S.live=S.live||{}; var cur=live[p]||{notes:[],summary:'',exam:[]};
     var ctx=sl.segs.filter(function(s){ return s.fix; }).slice(-4).map(function(s){ return s.fix; });
     var payload={ course:S.course, language:(S.lang==='ko-KR'?'ko':'en'), slide:{ page:p, total:S.total, text:((S.slideText&&S.slideText[p])||'').slice(aiEngine()==='nano'?0:0, aiEngine()==='nano'?1200:2500) }, previous_slide_text:aiEngine()==='nano'?'':((S.slideText&&S.slideText[p-1])||'').slice(0,600), recent_corrected_context:ctx.slice(aiEngine()==='nano'?-2:0), existing_notes:cur.notes, segments:pend.map(function(x){ return {i:x.i, t:x.s.t, text:(S.lang==='ko-KR'?x.s.ko:x.s.en)}; }) };
     try{
-      var out=await aiCall(AI_SYSTEM, JSON.stringify(payload), 1500); var j=parseJson(out); if(!j) throw new Error('bad json');
+      var out=await aiCall(AI_SYSTEM, JSON.stringify(payload), 1500); var j=parseJson(out); if(!j) throw new Error('형식 오류: '+String(out).slice(0,120));
       (j.segments||[]).forEach(function(g){ var s=sl.segs[g.i]; if(!s) return; if(g.text){ s.fix=String(g.text); } if(g.ko){ s.ko=String(g.ko); } if(!s.fix) s.fix=(S.lang==='ko-KR'?s.ko:s.en); });
       pend.forEach(function(x){ if(!x.s.fix) x.s.fix=(S.lang==='ko-KR'?x.s.ko:x.s.en); });
       live[p]={ notes:(j.notes||cur.notes||[]).slice(0,6), summary:j.summary||cur.summary||'', exam:(j.exam||cur.exam||[]).slice(0,5), at:Date.now() };
       AI.fails=0; renderLive(); saveLocal();
-    }catch(e){ AI.fails++; console.warn('ai', e&&e.message); if(AI.fails===1||/401|403|invalid|credit/i.test(String(e&&e.message))) status('내 맥 Claude'+' 필기 오류: '+(e&&e.message||e)+(/401|403/.test(String(e&&e.message))?' — 키 확인':''),'err'); }
+    }catch(e){ AI.fails++; console.warn('ai', e&&e.message); if(true) status('내 맥 Claude'+' 필기 오류: '+(e&&e.message||e)+(/401|403/.test(String(e&&e.message))?' — 키 확인':''),'err'); }
     AI.busy=false;
   }
   function liveNotesHtml(p){ var l=S.live&&S.live[p]; if(!l||(!l.notes||!l.notes.length)) return aiEngine()?'<div class="lec-ai muted">✦ 실시간 필기 준비 중… ('+'내 맥 Claude'+', 말이 쌓이면 20초마다 정리)</div>':''; var h='<div class="lec-ai"><div class="lec-ai-head">✦ 실시간 필기'+(l.summary?' <span>— '+escapeHtml(l.summary)+'</span>':'')+'</div>'+md(l.notes.map(function(k){ return '- '+k; }).join('\n'))+(l.exam&&l.exam.length?'<div class="lec-ai-exam">'+l.exam.map(function(x){ return '⚠ '+escapeHtml(x); }).join('<br>')+'</div>':'')+'</div>'; return h; }

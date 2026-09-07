@@ -19,17 +19,22 @@ function cors(req, res) {
   res.setHeader('Access-Control-Max-Age', '600');
 }
 
-function runClaude(system, user) {
+function runClaude(system, user, noSys) {
   return new Promise((resolve, reject) => {
-    const args = ['-p', '--output-format', 'text', '--model', MODEL, '--max-turns', '1', '--system-prompt', system];
+    const args = noSys
+      ? ['-p', '--output-format', 'text', '--model', MODEL, '--max-turns', '1']
+      : ['-p', '--output-format', 'text', '--model', MODEL, '--max-turns', '1', '--system-prompt', system];
     const p = spawn('claude', args, { stdio: ['pipe', 'pipe', 'pipe'], env: { ...process.env, PATH: (process.env.HOME + '/.local/bin:' + process.env.HOME + '/.claude/local:' + (process.env.PATH || '')), CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC: '1' } });
     let out = '', err = '';
     const timer = setTimeout(() => { p.kill('SIGKILL'); reject(new Error('timeout (60s)')); }, 60000);
     p.stdout.on('data', d => out += d);
     p.stderr.on('data', d => err += d);
     p.on('error', e => { clearTimeout(timer); reject(e); });
-    p.on('close', code => { clearTimeout(timer); if (code === 0) resolve(out.trim()); else reject(new Error('claude exit ' + code + ': ' + err.slice(0, 300))); });
-    p.stdin.end(user);
+    p.on('close', code => { clearTimeout(timer);
+      if (code === 0) return resolve(out.trim());
+      if (!noSys && /unknown option|unrecognized|--system-prompt/i.test(err)) return resolve(runClaude(system, user, true));
+      reject(new Error('claude exit ' + code + ': ' + err.slice(0, 300))); });
+    p.stdin.end(noSys ? (system + '\n\n---\n\n' + user) : user);
   });
 }
 
@@ -44,7 +49,8 @@ const server = http.createServer(async (req, res) => {
         const { system, user } = JSON.parse(body || '{}');
         if (!system || !user) throw new Error('system/user 필요');
         busy++; const t0 = Date.now();
-        const text = await runClaude(system, user);
+        let text = await runClaude(system, user);
+        text = String(text).replace(/^```(?:json)?\s*/i, '').replace(/```\s*$/, '').trim();
         busy--; done++;
         console.log(new Date().toLocaleTimeString('ko-KR'), `✓ ${Math.round((Date.now() - t0) / 1000)}s`, text.replace(/\s+/g, ' ').slice(0, 90));
         res.writeHead(200, { 'content-type': 'application/json' }); res.end(JSON.stringify({ text }));
