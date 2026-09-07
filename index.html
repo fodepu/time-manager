@@ -2379,7 +2379,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="75">
+<meta name="tm-version" content="76">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -2560,6 +2560,8 @@
   .todo-text:focus { border-color: var(--border,#ddd); background: var(--bg,transparent); outline:none; }
   #lecWork:focus, #lecView:focus { outline:none; }
   .lec-langbtn { font-weight:700; }
+  .lec-annot { position:absolute; pointer-events:none; }
+  .lec-view-canvas { position:relative; }
   .lec-ctx { position:absolute; left:-99999px; top:0; width:1px; height:1px; overflow:hidden; white-space:pre-wrap; }
   #lecAiBtn.on { border-color:#8B5CF6; color:#8B5CF6; font-weight:700; }
   #lecAiBtn:not(.on) { color: var(--text-muted); }
@@ -2944,7 +2946,7 @@
       <div class="lec-main">
         <div class="lec-left">
           <div class="lec-dropzone" id="lecDropZone">
-            <canvas id="lecCanvas"></canvas>
+            <canvas id="lecCanvas"></canvas><canvas id="lecAnnot" class="lec-annot"></canvas>
             <div class="lec-drop-hint">PDF를 여기에 드래그하거나 "PDF 열기"<br><small>PDF 없이 시작하면 5분마다 구간 자동 분할, → 키로 수동 분할</small></div>
           </div>
           <div class="lec-nav"><button type="button" class="lec-btn" id="lecPrev">←</button><span id="lecPage">–</span><button type="button" class="lec-btn" id="lecNext">→</button><span class="lec-hint">키보드 ← → / Space</span></div>
@@ -9331,12 +9333,45 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   }
   // 슬라이드 텍스트(pdf.js) — 필기 품질용: 슬라이드 용어를 필기 작업에 같이 보냄
   S.slideText=null;
-  async function extractSlideText(){ if(!S.pdf) return; var out={}; for(var i=1;i<=S.total;i++){ try{ var pg=await S.pdf.getPage(i); var tc=await pg.getTextContent(); out[i]=tc.items.map(function(it){ return it.str; }).join(' ').replace(/\s+/g,' ').trim().slice(0,1500); }catch(e){ out[i]=''; } } S.slideText=out; saveLocal(); }
+  // 텍스트 아이템을 줄로 묶기 (같은 y, 좌→우) — 슬라이드 위 표시의 좌표 기준
+  function groupLines(items, vw){
+    var rows=[]; items.forEach(function(it){ if(!it.str||!it.str.trim()) return; var tr=it.transform; var x=tr[4], yb=tr[5], hgt=Math.abs(it.height||tr[3]||10), w=it.width||0; var y=vw.height-yb; // top-left 좌표계
+      var row=rows.find(function(r){ return Math.abs(r.y-y)<Math.max(3,hgt*0.5); }); if(!row){ row={y:y,h:hgt,x0:x,x1:x+w,parts:[]}; rows.push(row); } row.parts.push({x:x,s:it.str}); row.x0=Math.min(row.x0,x); row.x1=Math.max(row.x1,x+w); row.h=Math.max(row.h,hgt); });
+    rows.sort(function(a,b){ return a.y-b.y; });
+    return rows.map(function(r,i){ r.parts.sort(function(a,b){ return a.x-b.x; }); return { i:i, text:r.parts.map(function(p){return p.s;}).join(' ').replace(/\s+/g,' ').trim(), x:r.x0, y:r.y-r.h, w:r.x1-r.x0, h:r.h*1.15 }; }).filter(function(l){ return l.text.length>0; }).slice(0,80);
+  }
+  async function extractSlideText(){ if(!S.pdf) return; var out={}, lines={}; for(var i=1;i<=S.total;i++){ try{ var pg=await S.pdf.getPage(i); var tc=await pg.getTextContent(); var vw=pg.getViewport({scale:1}); out[i]=tc.items.map(function(it){ return it.str; }).join(' ').replace(/\s+/g,' ').trim().slice(0,1500); lines[i]={ w:vw.width, h:vw.height, lines:groupLines(tc.items, vw) }; }catch(e){ out[i]=''; } } S.slideText=out; S.slideLines=lines; saveLocal(); }
+  // ---- 슬라이드 위 표시 (Claude가 고른 줄에 형광펜·밑줄·동그라미·여백 메모) ----
+  S.ann={}; // page → [{line, type:'highlight'|'underline'|'circle', note}]
+  var ANN_COLORS={ highlight:'rgba(255, 230, 0, 0.38)', underline:'#e0442e', circle:'#e0442e', note:'#1d4ed8' };
+  function drawAnnotations(cv, ov, page, annList, linesInfo){
+    if(!ov||!cv) return; ov.width=cv.width; ov.height=cv.height; ov.style.width=cv.style.width; ov.style.height=cv.style.height; ov.style.left=cv.offsetLeft+'px'; ov.style.top=cv.offsetTop+'px';
+    var ctx=ov.getContext('2d'); ctx.clearRect(0,0,ov.width,ov.height);
+    var info=linesInfo; if(!info||!info.lines||!annList||!annList.length) return;
+    var sx=ov.width/info.w, sy=ov.height/info.h; var fontPx=Math.max(11, Math.round(12*sx)); var usedNotes=[];
+    annList.forEach(function(a){ var L=info.lines[a.line]; if(!L) return; var x=L.x*sx, y=L.y*sy, w=L.w*sx, hh=L.h*sy;
+      if(a.type==='highlight'){ ctx.fillStyle=ANN_COLORS.highlight; ctx.fillRect(x-2, y, w+4, hh); }
+      else if(a.type==='underline'){ ctx.strokeStyle=ANN_COLORS.underline; ctx.lineWidth=Math.max(1.5, 2*sx); ctx.beginPath(); ctx.moveTo(x, y+hh-1); ctx.lineTo(x+w, y+hh-1); ctx.stroke(); }
+      else if(a.type==='circle'){ ctx.strokeStyle=ANN_COLORS.circle; ctx.lineWidth=Math.max(1.5, 2*sx); ctx.beginPath(); ctx.ellipse(x+w/2, y+hh/2, w/2+8*sx, hh/2+6*sy, 0, 0, Math.PI*2); ctx.stroke(); }
+      if(a.note){ ctx.font='500 '+fontPx+'px Pretendard, -apple-system, sans-serif'; var txt='✎ '+a.note; var tw=ctx.measureText(txt).width+10*sx, th=fontPx*1.5;
+        var nx=x+w+10*sx, ny=y+hh/2-th/2; if(nx+tw>ov.width-4){ nx=Math.max(4, ov.width-tw-4); ny=y+hh+2; } // 오른쪽 여백에 안 들어가면 줄 아래
+        var tries=0; while(usedNotes.some(function(u){ return Math.abs(u.y-ny)<th && Math.abs(u.x-nx)<tw; }) && tries++<6){ ny+=th+2; }
+        usedNotes.push({x:nx,y:ny});
+        ctx.fillStyle='rgba(255,255,255,0.92)'; ctx.strokeStyle=ANN_COLORS.note; ctx.lineWidth=1; roundRect(ctx, nx, ny, tw, th, 4*sx); ctx.fill(); ctx.stroke();
+        ctx.fillStyle=ANN_COLORS.note; ctx.textBaseline='middle'; ctx.fillText(txt, nx+5*sx, ny+th/2);
+        if(a.type){ ctx.strokeStyle=ANN_COLORS.note; ctx.setLineDash([3,3]); ctx.beginPath(); ctx.moveTo(x+w+2, y+hh/2); ctx.lineTo(nx, ny+th/2); ctx.stroke(); ctx.setLineDash([]); }
+      }
+    });
+  }
+  function roundRect(ctx,x,y,w,h,r){ ctx.beginPath(); ctx.moveTo(x+r,y); ctx.lineTo(x+w-r,y); ctx.quadraticCurveTo(x+w,y,x+w,y+r); ctx.lineTo(x+w,y+h-r); ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h); ctx.lineTo(x+r,y+h); ctx.quadraticCurveTo(x,y+h,x,y+h-r); ctx.lineTo(x,y+r); ctx.quadraticCurveTo(x,y,x+r,y); ctx.closePath(); }
+  window.tmDrawAnnotations=drawAnnotations;
+  window.tmS=S; // 디버그/테스트용
+  function redrawAnn(){ try{ drawAnnotations($('lecCanvas'), $('lecAnnot'), S.page, S.ann[S.page]||[], S.slideLines&&S.slideLines[S.page]); }catch(e){} }
   var _renderTask=null;
   async function renderPage(){
     if(!S.pdf) return; try{ if(_renderTask) _renderTask.cancel(); }catch(e){} var pg=await S.pdf.getPage(S.page); var cv=$('lecCanvas'); var wrap=cv.parentNode; var vw=pg.getViewport({scale:1}); var dpr=window.devicePixelRatio||1; var scale=Math.min(Math.max(wrap.clientWidth-4,200)/vw.width, 2); var v=pg.getViewport({scale:scale*dpr});
     cv.width=v.width; cv.height=v.height; cv.style.width=(v.width/dpr)+'px'; cv.style.height=(v.height/dpr)+'px';
-    try{ _renderTask=pg.render({canvasContext:cv.getContext('2d'), viewport:v}); await _renderTask.promise; }catch(e){ if(!/cancel/i.test(String(e&&e.message))) console.warn('pdf render', e&&e.message); } _renderTask=null; $('lecPage').textContent=S.page+' / '+S.total;
+    try{ _renderTask=pg.render({canvasContext:cv.getContext('2d'), viewport:v}); await _renderTask.promise; }catch(e){ if(!/cancel/i.test(String(e&&e.message))) console.warn('pdf render', e&&e.message); } _renderTask=null; $('lecPage').textContent=S.page+' / '+S.total; redrawAnn();
   }
   var ONLINE_AUTO_SEC=300; S.online=false; S.lastCut=0;
   function goPage(n){
@@ -9429,19 +9464,21 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   function parseJson(s){ try{ return JSON.parse(s); }catch(e){} var m=s.match(/\{[\s\S]*\}/); if(m){ try{ return JSON.parse(m[0]); }catch(e){} } return null; }
   var AI_SYSTEM='You are a live lecture note-taker for a Korean university student. You receive (1) the text of the current slide (authoritative for terms, symbols, numbers), (2) raw speech-recognition segments of what the professor just said (noisy: homophones, dropped words, wrong proper nouns), (3) notes already written for this slide.\n'+
     'Tasks: A) Correct each segment into what the professor most likely said, using the slide text for terminology — keep the original language, keep it faithful (do not add content, do not summarize, keep filler minimal). B) Give a natural Korean translation of each corrected segment (if the lecture is already Korean, "ko" = corrected Korean text). C) Update the notes for this slide: 2–5 concise Korean bullet points of what the professor explained, **bold** key terms with the English term in parentheses, formulas/numbers exactly as on the slide, no fluff; merge with existing notes (replace, do not duplicate). Mention exam/assignment/deadline hints in "exam".\n'+
-    'Return ONLY JSON: {"segments":[{"i":<index>,"text":"<corrected original>","ko":"<Korean>"}],"notes":["..."],"summary":"<one line, ≤30 chars Korean>","exam":["..."]}';
+    'D) Mark the slide like a diligent student would with a pen, based ONLY on what the professor just said: choose from "slide_lines" (given as index + text). type "highlight" = the sentence/definition the professor is explaining now; "underline" = a phrase the professor emphasized; "circle" = a number, formula or single term the professor called out. Add "note" (≤ 22 chars) only when the professor added something NOT on the slide (an example, a caveat, "exam!"); in English lectures write the note in Korean (with the English term if useful). At most 3 new marks per call, do not repeat lines already in "existing_marks". If the professor is not talking about this slide, return an empty list.\n'+
+    'Return ONLY JSON: {"segments":[{"i":<index>,"text":"<corrected original>","ko":"<Korean>"}],"notes":["..."],"summary":"<one line, ≤30 chars Korean>","exam":["..."],"marks":[{"line":<slide line index>,"type":"highlight|underline|circle","note":"<optional>"}]}';
   async function aiTick(force){
     if(!S.running || AI.busy || !aiEngine()) return; var now=Date.now(); if(!force && now-AI.lastRun<20000) return;
     var p=S.page||1, sl=S.slides[p]; if(!sl) return; var pend=sl.segs.map(function(s,i){ return {s:s,i:i}; }).filter(function(x){ return !x.s.fix; });
     if(!pend.length) return;
     AI.busy=true; AI.lastRun=now; var live=S.live=S.live||{}; var cur=live[p]||{notes:[],summary:'',exam:[]};
     var ctx=sl.segs.filter(function(s){ return s.fix; }).slice(-4).map(function(s){ return s.fix; });
-    var payload={ course:S.course, language:(S.lang==='ko-KR'?'ko':'en'), slide:{ page:p, total:S.total, text:((S.slideText&&S.slideText[p])||'').slice(aiEngine()==='nano'?0:0, aiEngine()==='nano'?1200:2500) }, previous_slide_text:aiEngine()==='nano'?'':((S.slideText&&S.slideText[p-1])||'').slice(0,600), recent_corrected_context:ctx.slice(aiEngine()==='nano'?-2:0), existing_notes:cur.notes, segments:pend.map(function(x){ return {i:x.i, t:x.s.t, text:(S.lang==='ko-KR'?x.s.ko:x.s.en)}; }) };
+    var payload={ course:S.course, language:(S.lang==='ko-KR'?'ko':'en'), slide:{ page:p, total:S.total, text:((S.slideText&&S.slideText[p])||'').slice(aiEngine()==='nano'?0:0, aiEngine()==='nano'?1200:2500) }, previous_slide_text:aiEngine()==='nano'?'':((S.slideText&&S.slideText[p-1])||'').slice(0,600), recent_corrected_context:ctx.slice(aiEngine()==='nano'?-2:0), existing_notes:cur.notes, slide_lines:((S.slideLines&&S.slideLines[p]&&S.slideLines[p].lines)||[]).map(function(l){ return {i:l.i, text:l.text.slice(0,120)}; }).slice(0,60), existing_marks:(S.ann[p]||[]).map(function(a){ return {line:a.line,type:a.type}; }), segments:pend.map(function(x){ return {i:x.i, t:x.s.t, text:(S.lang==='ko-KR'?x.s.ko:x.s.en)}; }) };
     try{
       var out=await aiCall(AI_SYSTEM, JSON.stringify(payload), 1500); var j=parseJson(out); if(!j) throw new Error('형식 오류: '+String(out).slice(0,120));
       (j.segments||[]).forEach(function(g){ var s=sl.segs[g.i]; if(!s) return; if(g.text){ s.fix=String(g.text); } if(g.ko){ s.ko=String(g.ko); } if(!s.fix) s.fix=(S.lang==='ko-KR'?s.ko:s.en); });
       pend.forEach(function(x){ if(!x.s.fix) x.s.fix=(S.lang==='ko-KR'?x.s.ko:x.s.en); });
       live[p]={ notes:(j.notes||cur.notes||[]).slice(0,6), summary:j.summary||cur.summary||'', exam:(j.exam||cur.exam||[]).slice(0,5), at:Date.now() };
+      try{ var cur2=S.ann[p]||[]; (j.marks||[]).forEach(function(m){ var li=parseInt(m.line,10); if(isNaN(li)) return; var ty=(['highlight','underline','circle'].indexOf(m.type)>=0)?m.type:(m.note?'':'underline'); if(cur2.some(function(a){ return a.line===li && a.type===ty; })) return; if(cur2.length>=10) return; cur2.push({line:li, type:ty, note:(m.note?String(m.note).slice(0,40):'')}); }); S.ann[p]=cur2; if(p===S.page) redrawAnn(); }catch(e){}
       AI.fails=0; renderLive(); saveLocal();
     }catch(e){ AI.fails++; console.warn('ai', e&&e.message); if(true) status('내 맥 Claude'+' 필기 오류: '+(e&&e.message||e)+(/401|403/.test(String(e&&e.message))?' — 키 확인':''),'err'); }
     AI.busy=false;
@@ -9457,7 +9494,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     if(!S.title) S.title=S.course.replace(/^\(SDGs\)/,'')+' 강의'; if(S.weekNo!=null && !/주차/.test(S.title)) S.title+=' '+S.weekNo+'주차';
     S.date=toLocalDateStr(new Date()); S.id='lec_'+S.date+'_'+Date.now().toString(36);
     S.online=!S.pdf; if(S.online){ S.page=1; S.total=1; S.lastCut=0; $('lecPage').textContent='구간 1'; }
-    S.slides={}; S.log=[{t:0,page:S.page||1}]; S.startAt=Date.now(); S.running=true; S.audioBlob=null; $('lecDownloadAudio').style.display='none'; $('lecFinish').style.display='none';
+    S.slides={}; S.ann={}; S.log=[{t:0,page:S.page||1}]; S.startAt=Date.now(); S.running=true; S.audioBlob=null; $('lecDownloadAudio').style.display='none'; $('lecFinish').style.display='none';
     $('lecRec').textContent='■ 녹음 중지'; $('lecRec').classList.add('on'); status('마이크 여는 중… (권한 창이 뜨면 허용)');
     S.localOK=false; try{ if(window.SpeechRecognition && SpeechRecognition.available){ var av=await Promise.race([SpeechRecognition.available({langs:[S.lang], processLocally:true}), new Promise(function(r){ setTimeout(function(){ r('unavailable'); },1500); })]); S.localOK=(av==='available'); } }catch(e){}
     if(!startRecognition()){ S.running=false; $('lecRec').textContent='● 녹음 시작'; $('lecRec').classList.remove('on'); return; }
@@ -9476,7 +9513,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     $('lecRec').textContent='● 녹음 시작'; $('lecRec').classList.remove('on'); status('중지됨 · '+Object.keys(S.slides).length+'개 슬라이드에 대본 저장됨 → "필기 요청 보내기"');
     saveLocal(); $('lecFinish').style.display='';
   }
-  function payload(){ var slides=Object.keys(S.slides).map(Number).sort(function(a,b){return a-b;}).map(function(p){ var sl=S.slides[p]; return { page:p, en:sl.segs.map(function(s){return (S.lang==='ko-KR')?'':(s.fix||s.en);}).join(' '), ko:sl.segs.map(function(s){return (S.lang==='ko-KR')?(s.fix||s.ko):s.ko;}).join(' '), slideText:(S.slideText&&S.slideText[p])||'', liveNotes:(S.live&&S.live[p])||undefined, segs:sl.segs }; });
+  function payload(){ var slides=Object.keys(S.slides).map(Number).sort(function(a,b){return a-b;}).map(function(p){ var sl=S.slides[p]; return { page:p, en:sl.segs.map(function(s){return (S.lang==='ko-KR')?'':(s.fix||s.en);}).join(' '), ko:sl.segs.map(function(s){return (S.lang==='ko-KR')?(s.fix||s.ko):s.ko;}).join(' '), slideText:(S.slideText&&S.slideText[p])||'', liveNotes:(S.live&&S.live[p])||undefined, marks:(S.ann&&S.ann[p])||undefined, lines:(S.slideLines&&S.slideLines[p])||undefined, segs:sl.segs }; });
     return { id:S.id, course:S.course, title:S.title, date:S.date, week:(S.weekNo!=null?S.weekNo:undefined), module:(S.week&&S.week!=='misc'?S.week:undefined), lang:(S.lang==='ko-KR'?'ko':'en'), mode:(S.online?'online':'slides'), pdf:S.pdfName, pages:S.total, duration:nowT(), log:S.log, slides:slides, savedAt:new Date().toISOString() }; }
   function saveLocal(){ if(!S.id) return; idbPut('lec', Object.assign({status:S.running?'recording':'saved'}, payload())).catch(function(){}); }
   async function sendFinish(){
@@ -9582,7 +9619,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     if(note && !pdfKey && note.studyPdf){ pdfKey='r:'+note.id; }
     if(!note && !pdfKey && V.notes.length) note=V.notes.find(function(n){return n.ready;})||V.notes[0];
     var pdf=null; if(pdfKey) pdf=V.pdfs.find(function(p){return p.key===pdfKey;}); if(!pdf && note && note.pdf) pdf=V.pdfs.find(function(p){ return p.name===note.pdf; })||null; if(!pdf && !noteId && V.pdfs.length) pdf=V.pdfs[0]; if(!pdf && V.pdfs.length===1 && note && note.mode!=='online') pdf=V.pdfs[0];
-    var R=$('lecView'); R.innerHTML='<div class="lms-topbar"><button type="button" class="lms-back" id="lecViewBack">←</button><b class="lec-view-title">'+esc(cname(c))+' · '+esc(m.name)+'</b><span style="flex:1"></span><span id="lecViewBtns"></span></div><div class="lec-view-main'+(pdf?'':' nopdf')+'">'+(pdf?'<div class="lec-view-left"><div class="lec-view-canvas"><canvas id="lecViewCanvas"></canvas></div><div class="lec-nav"><button type="button" class="lec-btn" id="lecViewPrev">←</button><span id="lecViewPage">–</span><button type="button" class="lec-btn" id="lecViewNext">→</button><span class="lec-hint">'+esc(pdf.name)+'</span></div></div>':'')+'<div class="lec-view-right"><div class="lec-view-tabs" id="lecViewTabs"></div><div class="lec-view-notes" id="lecViewNotes"></div></div></div>';
+    var R=$('lecView'); R.innerHTML='<div class="lms-topbar"><button type="button" class="lms-back" id="lecViewBack">←</button><b class="lec-view-title">'+esc(cname(c))+' · '+esc(m.name)+'</b><span style="flex:1"></span><span id="lecViewBtns"></span></div><div class="lec-view-main'+(pdf?'':' nopdf')+'">'+(pdf?'<div class="lec-view-left"><div class="lec-view-canvas"><canvas id="lecViewCanvas"></canvas><canvas id="lecViewAnnot" class="lec-annot"></canvas></div><div class="lec-nav"><button type="button" class="lec-btn" id="lecViewPrev">←</button><span id="lecViewPage">–</span><button type="button" class="lec-btn" id="lecViewNext">→</button><span class="lec-hint">'+esc(pdf.name)+'</span></div></div>':'')+'<div class="lec-view-right"><div class="lec-view-tabs" id="lecViewTabs"></div><div class="lec-view-notes" id="lecViewNotes"></div></div></div>';
     showPane('lecView');
     $('lecViewBack').addEventListener('click',function(){ V.pdf=null; showPane('lecHome'); renderHome(); });
     // 탭: 이 주차의 필기들 + PDF들
@@ -9602,7 +9639,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   var _vtask=null;
   async function renderViewPage(){ if(!V.pdf) return; try{ if(_vtask) _vtask.cancel(); }catch(e){} var pg=await V.pdf.getPage(V.page); var cv=$('lecViewCanvas'); if(!cv) return; var wrap=cv.parentNode; var vw=pg.getViewport({scale:1}); var dpr=window.devicePixelRatio||1; var scale=Math.min(Math.max(wrap.clientWidth-4,200)/vw.width, 2); var v=pg.getViewport({scale:scale*dpr});
     cv.width=v.width; cv.height=v.height; cv.style.width=(v.width/dpr)+'px'; cv.style.height=(v.height/dpr)+'px';
-    try{ _vtask=pg.render({canvasContext:cv.getContext('2d'), viewport:v}); await _vtask.promise; }catch(e){} _vtask=null; var pe=$('lecViewPage'); if(pe) pe.textContent=V.page+' / '+V.total; syncNoteToPage(); }
+    try{ _vtask=pg.render({canvasContext:cv.getContext('2d'), viewport:v}); await _vtask.promise; }catch(e){} _vtask=null; var pe=$('lecViewPage'); if(pe) pe.textContent=V.page+' / '+V.total; syncNoteToPage(); try{ var sd=V.note&&(V.note.slides||[]).find(function(s){ return +s.page===V.page; }); drawAnnotations($('lecViewCanvas'), $('lecViewAnnot'), V.page, (sd&&sd.marks)||[], sd&&sd.lines); }catch(e){} }
   function viewGo(n){ if(!V.pdf) return; n=Math.max(1,Math.min(V.total,n)); if(n===V.page) return; V.page=n; renderViewPage(); }
   function syncNoteToPage(){ var box=$('lecViewNotes'); if(!box||!V.note||V.note.mode==='online') return; box.querySelectorAll('.lec-slide').forEach(function(el){ var on=(+el.getAttribute('data-page')===V.page); el.classList.toggle('cur',on); if(on) el.scrollIntoView({block:'nearest',behavior:'smooth'}); }); }
   function bindViewRec(){ var b=$('lecViewRec'); if(b) b.addEventListener('click',function(){ if(V.curPdf) startWeekRecording(V.mid, V.curPdf.key); }); }
