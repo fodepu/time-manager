@@ -2379,7 +2379,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="76">
+<meta name="tm-version" content="77">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -2937,6 +2937,7 @@
         <button type="button" class="lec-btn" id="lecOpenPdf">PDF 열기</button>
         <button type="button" class="lec-btn lec-langbtn" id="lecLang2" title="강의 언어 전환">🇰🇷 한국어</button>
         <button type="button" class="lec-btn" id="lecAiBtn" title="맥의 Dayble 도우미가 켜져 있으면 Claude가 슬라이드 맥락으로 실시간 필기">✦ 도우미 꺼짐</button>
+        <button type="button" class="lec-btn" id="lecGemBtn" title="Google AI Studio 무료 Gemini 키를 넣으면 대본·번역이 1~2초 만에 실시간으로 나와요">◈ Gemini 꺼짐</button>
         <button type="button" class="lec-btn rec" id="lecRec">● 녹음 시작</button>
         <label class="lec-chk"><input type="checkbox" id="lecShowEn" checked> 영어 원문 표시</label>
         <label class="lec-chk" title="끄면 마이크를 음성 인식기만 사용 (인식이 안 될 때 시도)"><input type="checkbox" id="lecBackup" checked> 녹음 파일 백업</label>
@@ -9429,7 +9430,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     el.textContent='[강의 컨텍스트 — AI 도우미가 읽는 영역] 과목: '+cname(S.course)+' · 제목: '+(S.title||'')+' · 현재 슬라이드 '+p+'/'+(S.total||'?')+'\n\n[현재 슬라이드 텍스트]\n'+(st||'(텍스트 없음)')+'\n\n[실시간 필기]\n'+(live&&live.notes?live.notes.join('\n'):'(없음)')+'\n\n[최근 대본 (시간, 원문 / 번역)]\n'+(recent.join('\n')||'(아직 없음)'); }
   function renderLive(){ renderCtx();
     var box=$('lecLive'); if(!box) return; var p=S.page||1, sl=S.slides[p]||{segs:[]}; var showEn=$('lecShowEn')&&$('lecShowEn').checked;
-    var h='<div class="lec-live-head">'+(S.online?'구간 '+p+' <small>(5분마다 자동, → 키로 수동 분할)</small>':'슬라이드 '+p+(S.total?' / '+S.total:''))+' <small>'+sl.segs.length+'문장 · '+(S.running?'● 녹음 중 '+fmtT(nowT())+(S.recOn?' · 인식기 켜짐':' · 인식기 대기')+' · '+(S.lang==='ko-KR'?'한국어':'영어')+' 인식'+(S.biased?' · 슬라이드 용어 '+S.biased+'개 반영':'')+(S.lastErr&&S.lastErr!=='no-speech'&&S.lastErr!=='aborted'?' · 마지막 오류: '+S.lastErr:''):'대기')+'</small></div>';
+    var h='<div class="lec-live-head">'+(S.online?'구간 '+p+' <small>(5분마다 자동, → 키로 수동 분할)</small>':'슬라이드 '+p+(S.total?' / '+S.total:''))+' <small>'+sl.segs.length+'문장 · '+(S.running?'● 녹음 중 '+fmtT(nowT())+(S.recOn?' · 인식기 켜짐':' · 인식기 대기')+' · '+(S.lang==='ko-KR'?'한국어':'영어')+' 인식'+(G.on?' · Gemini':'')+(S.biased?' · 슬라이드 용어 '+S.biased+'개 반영':'')+(S.lastErr&&S.lastErr!=='no-speech'&&S.lastErr!=='aborted'?' · 마지막 오류: '+S.lastErr:''):'대기')+'</small></div>';
     if(S.running && !sl.segs.length && !S.lastInterim) h+='<div class="lec-seg interim"><div class="lec-en">듣는 중… 말소리가 들리면 몇 초 안에 문장이 여기 붙어요. 30초 넘게 아무것도 안 붙으면: 마이크 입력 장치(시스템 설정 → 사운드 → 입력)와 강의 언어(영어/한국어) 확인</div></div>';
     var rawMode=$('lecRaw')&&$('lecRaw').checked;
     // 실시간 필기 박스는 표시하지 않음 (필기는 슬라이드 위 표시로 대체 예정; 데이터는 최종 필기용으로 계속 저장)
@@ -9475,7 +9476,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     var payload={ course:S.course, language:(S.lang==='ko-KR'?'ko':'en'), slide:{ page:p, total:S.total, text:((S.slideText&&S.slideText[p])||'').slice(aiEngine()==='nano'?0:0, aiEngine()==='nano'?1200:2500) }, previous_slide_text:aiEngine()==='nano'?'':((S.slideText&&S.slideText[p-1])||'').slice(0,600), recent_corrected_context:ctx.slice(aiEngine()==='nano'?-2:0), existing_notes:cur.notes, slide_lines:((S.slideLines&&S.slideLines[p]&&S.slideLines[p].lines)||[]).map(function(l){ return {i:l.i, text:l.text.slice(0,120)}; }).slice(0,60), existing_marks:(S.ann[p]||[]).map(function(a){ return {line:a.line,type:a.type}; }), segments:pend.map(function(x){ return {i:x.i, t:x.s.t, text:(S.lang==='ko-KR'?x.s.ko:x.s.en)}; }) };
     try{
       var out=await aiCall(AI_SYSTEM, JSON.stringify(payload), 1500); var j=parseJson(out); if(!j) throw new Error('형식 오류: '+String(out).slice(0,120));
-      (j.segments||[]).forEach(function(g){ var s=sl.segs[g.i]; if(!s) return; if(g.text){ s.fix=String(g.text); } if(g.ko){ s.ko=String(g.ko); } if(!s.fix) s.fix=(S.lang==='ko-KR'?s.ko:s.en); });
+      (j.segments||[]).forEach(function(g){ var s=sl.segs[g.i]; if(!s) return; if(g.text){ s.fix=String(g.text); } if(g.ko && s.src!=='gemini'){ s.ko=String(g.ko); } if(!s.fix) s.fix=(S.lang==='ko-KR'?s.ko:s.en); });
       pend.forEach(function(x){ if(!x.s.fix) x.s.fix=(S.lang==='ko-KR'?x.s.ko:x.s.en); });
       live[p]={ notes:(j.notes||cur.notes||[]).slice(0,6), summary:j.summary||cur.summary||'', exam:(j.exam||cur.exam||[]).slice(0,5), at:Date.now() };
       try{ var cur2=S.ann[p]||[]; (j.marks||[]).forEach(function(m){ var li=parseInt(m.line,10); if(isNaN(li)) return; var ty=(['highlight','underline','circle'].indexOf(m.type)>=0)?m.type:(m.note?'':'underline'); if(cur2.some(function(a){ return a.line===li && a.type===ty; })) return; if(cur2.length>=10) return; cur2.push({line:li, type:ty, note:(m.note?String(m.note).slice(0,40):'')}); }); S.ann[p]=cur2; if(p===S.page) redrawAnn(); }catch(e){}
@@ -9486,7 +9487,69 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   function liveNotesHtml(p){ var l=S.live&&S.live[p]; if(!l||(!l.notes||!l.notes.length)) return aiEngine()?'<div class="lec-ai muted">✦ 실시간 필기 준비 중… ('+'내 맥 Claude'+', 말이 쌓이면 20초마다 정리)</div>':''; var h='<div class="lec-ai"><div class="lec-ai-head">✦ 실시간 필기'+(l.summary?' <span>— '+escapeHtml(l.summary)+'</span>':'')+'</div>'+md(l.notes.map(function(k){ return '- '+k; }).join('\n'))+(l.exam&&l.exam.length?'<div class="lec-ai-exam">'+l.exam.map(function(x){ return '⚠ '+escapeHtml(x); }).join('<br>')+'</div>':'')+'</div>'; return h; }
 
   // ---- 세션 ----
-  function recLabel(){ return '● 녹음 중 · 번역: '+(S.tmode==='chrome'?'Chrome 내장':'웹')+(S.online?' · 온라인 모드: 5분마다 구간 자동, → 로 수동 분할':' · ← → 로 슬라이드 넘기기'); }
+  function recLabel(){ return '● 녹음 중 · '+(G.on?'Gemini 실시간 대본·번역':'번역: '+(S.tmode==='chrome'?'Chrome 내장':'웹'))+(S.online?' · 온라인 모드: 5분마다 구간 자동, → 로 수동 분할':' · ← → 로 슬라이드 넘기기'); }
+
+  // ---- Gemini Live: 마이크 → 실시간 대본(영어) + 한국어 번역 (무료 티어, 키는 이 기기에만 저장) ----
+  var G={ ws:null, on:false, ready:false, everReady:false, lang:'', ac:null, node:null, stream:null, seg:null, koOpen:false, lastIn:0, retry:0, fails:0, extras:true, reconnT:null, sent:0 };
+  function geminiKey(){ try{ return (lsGet(lsKey('gemini_key'))||'').trim(); }catch(e){ return ''; } }
+  function paintGemBtn(){ var b=$('lecGemBtn'); if(!b) return; var k=!!geminiKey(); b.textContent=k?(G.on?'◈ Gemini 실시간':'◈ Gemini 준비됨'):'◈ Gemini 꺼짐'; b.classList.toggle('on',k); }
+  function gemModel(){ return S.lang==='ko-KR'?'gemini-3.5-transcribe-live':'gemini-3.5-live-translate-preview'; }
+  function gemSetup(){ var setup={ model:'models/'+gemModel() };
+    if(S.lang==='ko-KR'){ setup.generationConfig={ responseModalities:['TEXT'] }; setup.inputAudioTranscription={ languageCodes:['ko-KR'] }; try{ var terms=slideTerms().slice(0,100); if(terms.length) setup.inputAudioTranscription.customVocabulary=terms; }catch(e){} }
+    else { setup.generationConfig={ responseModalities:['AUDIO'], inputAudioTranscription:{}, outputAudioTranscription:{}, translationConfig:{ targetLanguageCode:'ko', echoTargetLanguage:false } }; }
+    if(G.extras){ setup.contextWindowCompression={ slidingWindow:{} }; setup.sessionResumption={}; }
+    return { setup:setup }; }
+  async function gemAudioStart(){
+    var st=await navigator.mediaDevices.getUserMedia({ audio:{ channelCount:1, echoCancellation:false, noiseSuppression:true, autoGainControl:true } }); G.stream=st;
+    var AC=window.AudioContext||window.webkitAudioContext; var ac; try{ ac=new AC({sampleRate:16000}); }catch(e){ ac=new AC(); } G.ac=ac;
+    var src=ac.createMediaStreamSource(st); var rate=ac.sampleRate; var buf=[], n=0, need=Math.round(rate/10);
+    function push(f32){ buf.push(f32); n+=f32.length; if(n>=need){ var all=new Float32Array(n), o=0; buf.forEach(function(b){ all.set(b,o); o+=b.length; }); buf=[]; n=0; gemSendPcm(all, rate); } }
+    var ok=false;
+    try{ if(ac.audioWorklet){ var code='class P extends AudioWorkletProcessor{process(i){var c=i[0]&&i[0][0];if(c)this.port.postMessage(c.slice(0));return true;}}registerProcessor("dayble-pcm",P);'; var url=URL.createObjectURL(new Blob([code],{type:'application/javascript'})); await ac.audioWorklet.addModule(url); var w=new AudioWorkletNode(ac,'dayble-pcm'); w.port.onmessage=function(e){ push(e.data); }; src.connect(w); G.node=w; ok=true; } }catch(e){}
+    if(!ok){ var sp=ac.createScriptProcessor(4096,1,1); sp.onaudioprocess=function(e){ push(new Float32Array(e.inputBuffer.getChannelData(0))); }; src.connect(sp); sp.connect(ac.destination); G.node=sp; }
+    if(ac.state==='suspended'){ try{ ac.resume(); }catch(e){} }
+  }
+  function gemSendPcm(f32, rate){ if(!G.ws || G.ws.readyState!==1 || !G.ready) return;
+    var out=f32; if(rate!==16000){ var ratio=rate/16000, len=Math.floor(f32.length/ratio); out=new Float32Array(len); for(var i=0;i<len;i++) out[i]=f32[Math.floor(i*ratio)]; }
+    var pcm=new Int16Array(out.length); for(var j=0;j<out.length;j++){ var v=Math.max(-1,Math.min(1,out[j])); pcm[j]=v<0?v*0x8000:v*0x7FFF; }
+    var bytes=new Uint8Array(pcm.buffer), bin=''; for(var k=0;k<bytes.length;k+=8192) bin+=String.fromCharCode.apply(null, bytes.subarray(k,k+8192));
+    try{ G.ws.send(JSON.stringify({ realtimeInput:{ audio:{ data:btoa(bin), mimeType:'audio/pcm;rate=16000' } } })); G.sent++; }catch(e){} }
+  function gemConnect(){ var key=geminiKey(); if(!key) return false; G.lang=S.lang; G.ready=false;
+    var ws=new WebSocket('wss://generativelanguage.googleapis.com/ws/google.ai.generativelanguage.v1beta.GenerativeService.BidiGenerateContent?key='+encodeURIComponent(key)); G.ws=ws;
+    ws.onopen=function(){ try{ ws.send(JSON.stringify(gemSetup())); }catch(e){} };
+    ws.onmessage=function(ev){ if(ev.data instanceof Blob){ ev.data.text().then(gemHandle); } else gemHandle(ev.data); };
+    ws.onerror=function(){};
+    ws.onclose=function(ev){ if(G.ws!==ws) return; G.ws=null; G.ready=false; S.recOn=false; if(!S.running || !G.on) return;
+      if(!G.everReady && G.extras){ G.extras=false; gemConnect(); return; }
+      if(!G.everReady){ G.fails++; if(G.fails>=2){ gemFallback('Gemini 연결 실패('+(ev.code||'')+' '+(ev.reason||'').slice(0,80)+') — Chrome 음성인식으로 전환'); return; } }
+      if(G.retry>=5){ gemFallback('Gemini 재연결 실패가 반복돼요 — Chrome 음성인식으로 전환'); return; }
+      var wait=Math.min(8000, 600*Math.pow(2, G.retry++)); clearTimeout(G.reconnT); G.reconnT=setTimeout(function(){ if(S.running&&G.on) gemConnect(); }, wait); };
+    return true; }
+  function gemHandle(txt){ var m; try{ m=JSON.parse(txt); }catch(e){ return; }
+    if(m.setupComplete){ G.ready=true; G.everReady=true; G.retry=0; G.fails=0; S.recOn=true; S.lastResultAt=Date.now(); S.lastErr=''; if(S.running) status(recLabel(),'ok'); paintGemBtn(); return; }
+    if(m.goAway){ return; } // 곧 끊김 → onclose에서 즉시 재연결
+    var sc=m.serverContent; if(!sc) return;
+    if(sc.interimInputTranscription && sc.interimInputTranscription.text){ S.lastInterim=String(sc.interimInputTranscription.text).trim(); S.lastResultAt=Date.now(); renderLive(); }
+    if(sc.inputTranscription && sc.inputTranscription.text) gemInput(sc.inputTranscription.text);
+    if(sc.outputTranscription && sc.outputTranscription.text) gemOutput(sc.outputTranscription.text);
+    if(sc.turnComplete){ G.koOpen=false; } }
+  function gemJoin(a,b){ b=String(b); if(!a) return b.replace(/^\s+/,''); if(/\s$/.test(a)||/^[\s,.;:!?)%]/.test(b)) return a+b; return a+' '+b; }
+  function gemInput(t){ t=String(t); if(!t.trim()) return;
+    if(S.lang==='ko-KR'){ S.lastInterim=''; addFinal(t.trim(),''); return; }
+    var now=Date.now(), p=S.page||1, seg=G.seg;
+    var fresh=!seg || seg.page!==p || (now-G.lastIn>2500 && seg.ko) || (seg.en.length>220 && /[.?!]\s*$/.test(seg.en));
+    if(fresh){ seg={ t:nowT(), page:p, en:'', ko:'', src:'gemini' }; slide(p).segs.push(seg); G.seg=seg; G.koOpen=false; }
+    seg.en=gemJoin(seg.en,t); G.lastIn=now; S.lastResultAt=now; S.lastInterim=''; renderLive(); saveLocal(); }
+  function gemOutput(t){ var seg=G.seg; if(!seg) return; seg.ko=gemJoin(seg.ko,t); G.koOpen=true; renderLive(); }
+  function gemStop(){ G.on=false; clearTimeout(G.reconnT); try{ if(G.ws){ var w=G.ws; G.ws=null; try{ w.send(JSON.stringify({realtimeInput:{audioStreamEnd:true}})); }catch(e){} w.close(); } }catch(e){}
+    try{ if(G.node) G.node.disconnect(); }catch(e){} try{ if(G.ac) G.ac.close(); }catch(e){} try{ if(G.stream) G.stream.getTracks().forEach(function(t){ t.stop(); }); }catch(e){}
+    G.node=null; G.ac=null; G.stream=null; G.seg=null; G.ready=false; paintGemBtn(); }
+  function gemFallback(msg){ gemStop(); status(msg,'err'); S.tmode='web'; S.translator=null; startRecognition(); Promise.race([initTranslator(), new Promise(function(r){ setTimeout(r,8000); })]); }
+  async function gemStart(){ G.on=true; G.everReady=false; G.fails=0; G.retry=0; G.extras=true; G.seg=null; G.sent=0; paintGemBtn();
+    try{ await gemAudioStart(); }catch(e){ gemFallback('마이크 열기 실패: '+e.message); return; }
+    if(!gemConnect()){ gemFallback('Gemini 키 없음'); return; }
+    setTimeout(function(){ if(G.on && !G.everReady && S.running) gemFallback('Gemini 연결이 안 돼요 (키 확인) — Chrome 음성인식으로 전환'); }, 8000); }
+  window.tmG=G; window.tmGemHandle=gemHandle; window.tmGemSend=gemSendPcm; window.tmPayload=function(){ return payload(); };
   async function startAll(){
     S.course=$('lecCourse').value||''; S.title=($('lecTitle').value||'').trim(); if(!S.course){ showToast('과목을 선택하세요'); return; }
     S.lang=($('lecLang')&&$('lecLang').getAttribute('data-lang'))||'ko-KR';
@@ -9497,19 +9560,21 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     S.slides={}; S.ann={}; S.log=[{t:0,page:S.page||1}]; S.startAt=Date.now(); S.running=true; S.audioBlob=null; $('lecDownloadAudio').style.display='none'; $('lecFinish').style.display='none';
     $('lecRec').textContent='■ 녹음 중지'; $('lecRec').classList.add('on'); status('마이크 여는 중… (권한 창이 뜨면 허용)');
     S.localOK=false; try{ if(window.SpeechRecognition && SpeechRecognition.available){ var av=await Promise.race([SpeechRecognition.available({langs:[S.lang], processLocally:true}), new Promise(function(r){ setTimeout(function(){ r('unavailable'); },1500); })]); S.localOK=(av==='available'); } }catch(e){}
-    if(!startRecognition()){ S.running=false; $('lecRec').textContent='● 녹음 시작'; $('lecRec').classList.remove('on'); return; }
     S.tmode='web'; S.translator=null;
-    Promise.race([initTranslator(), new Promise(function(r){ setTimeout(r, 8000); })]).then(function(){ if(S.running) status(recLabel(),'ok'); });
+    if(geminiKey()){ status('Gemini 연결 중…'); gemStart(); }
+    else { if(!startRecognition()){ S.running=false; $('lecRec').textContent='● 녹음 시작'; $('lecRec').classList.remove('on'); return; }
+      Promise.race([initTranslator(), new Promise(function(r){ setTimeout(r, 8000); })]).then(function(){ if(S.running) status(recLabel(),'ok'); }); }
     if(!$('lecBackup') || $('lecBackup').checked) startAudio(); else status(recLabel()+' · 백업 녹음 꺼짐','ok');
     try{ $('lecWork').focus(); }catch(e){}
     S.lastResultAt=Date.now(); try{ if(navigator.wakeLock){ navigator.wakeLock.request('screen').then(function(w){ S.wake=w; }).catch(function(){}); } }catch(e){}
     S.tick=setInterval(function(){ renderLive(); autoCut(); try{ aiTick(false); }catch(e){}
+      try{ if(G.on && G.lang && G.lang!==S.lang){ gemStop(); gemStart(); } }catch(e){}
       // 잠정 문장이 8초 넘게 확정되지 않으면 강제로 확정 처리 (한국어에서 자주 멈춤)
       try{ if(S.running){ if(S.lastInterim!==S._pi){ S._pi=S.lastInterim; S._piAt=Date.now(); } else if(S.lastInterim && Date.now()-(S._piAt||0)>8000){ var t=S.lastInterim; S.lastInterim=''; S._pi=''; addFinal(t,''); try{ S.rec.abort(); }catch(e){} } } }catch(e){} if(S.running && S.rec && !S.lastInterim && Date.now()-S.lastResultAt>60000){ S.lastResultAt=Date.now(); try{ S.rec.abort(); }catch(e){} } },1000); saveLocal();
   }
   function stopAll(){
     try{ if(aiEngine() && S.running){ aiTick(true); } }catch(e){}
-    S.running=false; clearInterval(S.tick); clearTimeout(S.restartTimer); try{ if(S.rec){ S.rec.onend=null; S.rec.stop(); } }catch(e){} stopAudio(); try{ if(S.wake){ S.wake.release(); S.wake=null; } }catch(e){}
+    S.running=false; clearInterval(S.tick); clearTimeout(S.restartTimer); try{ if(S.rec){ S.rec.onend=null; S.rec.stop(); } }catch(e){} try{ gemStop(); }catch(e){} stopAudio(); try{ if(S.wake){ S.wake.release(); S.wake=null; } }catch(e){}
     $('lecRec').textContent='● 녹음 시작'; $('lecRec').classList.remove('on'); status('중지됨 · '+Object.keys(S.slides).length+'개 슬라이드에 대본 저장됨 → "필기 요청 보내기"');
     saveLocal(); $('lecFinish').style.display='';
   }
@@ -9707,6 +9772,8 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     function paintLang(l){ var b=$('lecLang'); if(!b) return; b.setAttribute('data-lang',l); b.textContent=(l==='ko-KR')?'🇰🇷 한국어 강의':'🇺🇸 영어 강의'; b.classList.toggle('en', l!=='ko-KR'); var b2=$('lecLang2'); if(b2){ b2.textContent=(l==='ko-KR')?'🇰🇷 한국어':'🇺🇸 영어'; b2.classList.toggle('en', l!=='ko-KR'); } }
     try{ paintLang(langFor()); }catch(e){ paintLang('ko-KR'); }
     $('lecLang2').addEventListener('click',function(){ $('lecLang').click(); });
+    paintGemBtn();
+    $('lecGemBtn').addEventListener('click',function(){ var cur=geminiKey(); var v=prompt('Google AI Studio(aistudio.google.com/apikey)에서 만든 Gemini API 키를 붙여넣으세요.\n무료 티어로 대본·번역이 1~2초 만에 나와요. 키는 이 기기에만 저장돼요.\n(비우고 확인하면 해제 → Chrome 음성인식 사용)', cur); if(v===null) return; v=v.trim(); lsSet(lsKey('gemini_key'), v); paintGemBtn(); showToast(v?'Gemini 켜짐 — 다음 녹음부터 적용':'Gemini 해제'); if(S.running){ if(v && !G.on){ try{ if(S.rec){ S.rec.onend=null; S.rec.stop(); S.rec=null; } }catch(e){} gemStart(); } else if(!v && G.on){ gemFallback('Gemini 해제 — Chrome 음성인식으로 전환'); } } });
     $('lecAiBtn').addEventListener('click',function(){ if(LOCAL.ok){ alert('내 맥의 Claude Code(구독)로 실시간 필기 중 — 추가 비용 없음.\n모델: '+LOCAL.model); } else { alert('실시간 필기 도우미가 꺼져 있어요.\n\n맥에서 "Dayble 도우미 시작.command"를 더블클릭해 켜면 15초 안에 자동 연결돼요. (없이도 대본·번역은 그대로 됩니다. 필기는 수업 후 생성)'); localPing(); } }); paintAiBtn();
     $('lecLang').addEventListener('click',function(){ var cur=this.getAttribute('data-lang'); var nx=(cur==='ko-KR')?'en-US':'ko-KR'; paintLang(nx); try{ lsSet(lsKey(langKey()),nx); if(window.tmOnChange) tmOnChange(); }catch(e){} showToast(cname($('lecCourse').value)+' → '+(nx==='ko-KR'?'한국어':'영어')+' 강의로 기억'); if(S.running){ S.lang=nx; S.langSample=''; S.langWarned=false; try{ S.rec.abort(); }catch(e){} showToast('언어 전환: '+(nx==='ko-KR'?'한국어':'영어')+' — 인식기 재시작'); } });
     var _rz=null; window.addEventListener('resize',function(){ if(typeof currentMode!=='undefined' && currentMode==='lecture'){ clearTimeout(_rz); _rz=setTimeout(function(){ renderPage(); renderViewPage(); },150); } });
