@@ -2379,7 +2379,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="73">
+<meta name="tm-version" content="74">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -9396,7 +9396,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     var h='<div class="lec-live-head">'+(S.online?'구간 '+p+' <small>(5분마다 자동, → 키로 수동 분할)</small>':'슬라이드 '+p+(S.total?' / '+S.total:''))+' <small>'+sl.segs.length+'문장 · '+(S.running?'● 녹음 중 '+fmtT(nowT())+(S.recOn?' · 인식기 켜짐':' · 인식기 대기')+' · '+(S.lang==='ko-KR'?'한국어':'영어')+' 인식'+(S.biased?' · 슬라이드 용어 '+S.biased+'개 반영':'')+(S.lastErr&&S.lastErr!=='no-speech'&&S.lastErr!=='aborted'?' · 마지막 오류: '+S.lastErr:''):'대기')+'</small></div>';
     if(S.running && !sl.segs.length && !S.lastInterim) h+='<div class="lec-seg interim"><div class="lec-en">듣는 중… 말소리가 들리면 몇 초 안에 문장이 여기 붙어요. 30초 넘게 아무것도 안 붙으면: 마이크 입력 장치(시스템 설정 → 사운드 → 입력)와 강의 언어(영어/한국어) 확인</div></div>';
     var rawMode=$('lecRaw')&&$('lecRaw').checked;
-    h+=liveNotesHtml(p);
+    // 실시간 필기 박스는 표시하지 않음 (필기는 슬라이드 위 표시로 대체 예정; 데이터는 최종 필기용으로 계속 저장)
     sl.segs.forEach(function(s){ var main=(S.lang==='ko-KR')?(rawMode&&s.raw?s.raw:(s.fix||s.ko)):(s.ko?s.ko:''); h+='<div class="lec-seg"><span class="lec-ts">'+fmtT(s.t||0)+'</span><div class="lec-segbody"><div class="lec-ko">'+(main?escapeHtml(main):'<span class="lec-wait">번역 중…</span>')+'</div>'+(S.lang!=='ko-KR'&&showEn?'<div class="lec-en'+(s.fix&&!rawMode?' fixed':'')+'">'+escapeHtml(rawMode&&s.raw?s.raw:(s.fix||s.en))+'</div>':'')+(rawMode&&s.raw&&S.lang==='ko-KR'?'<div class="lec-en">확정: '+escapeHtml(s.ko)+'</div>':'')+'</div></div>'; });
     if(S.lastInterim) h+='<div class="lec-seg interim live"><span class="lec-ts">'+fmtT(nowT())+'</span><div class="lec-segbody"><div class="lec-ko">'+escapeHtml(S.lastInterim)+' <span class="lec-cursor">▍</span></div></div></div>';
     var stick=(box.scrollHeight-box.scrollTop-box.clientHeight)<60; box.innerHTML=h; if(stick||!S.userScrolled) box.scrollTop=box.scrollHeight;
