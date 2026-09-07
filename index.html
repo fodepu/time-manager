@@ -2379,7 +2379,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="95">
+<meta name="tm-version" content="96">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -2506,7 +2506,7 @@
   .lec-tools i { width:1px; background:var(--border,#e5e7eb); margin:4px 4px; }
   .lec-tools .lec-zoomlbl { min-width:46px; font-variant-numeric:tabular-nums; }
   .lec-dropzone.zoomed, .lec-view-canvas.zoomed { overflow:auto; align-items:flex-start; justify-content:flex-start; }
-  .lec-dropzone.zoomed canvas, .lec-view-canvas.zoomed canvas, body.lec-full .lec-dropzone.zoomed canvas { max-width:none !important; max-height:none !important; width:var(--cw) !important; height:var(--ch) !important; }
+  .lec-dropzone.sized canvas, .lec-view-canvas.sized canvas, body.lec-full .lec-dropzone.sized canvas { max-width:none !important; max-height:none !important; width:var(--cw) !important; height:var(--ch) !important; }
   .lec-dropzone .lec-drop-hint ~ .lec-tools, .lec-dropzone:not(.has-pdf) .lec-tools { display:none; }
   .lec-tools button { border:0; background:transparent; width:30px; height:30px; display:inline-flex; align-items:center; justify-content:center; border-radius:8px; cursor:pointer; color:#374151; padding:0; }
   .lec-tools button:hover { background:#f3f4f6; }
@@ -9393,6 +9393,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   function wordAt(words, info, ov, ev){ if(!words||!info) return null; var r=ov.getBoundingClientRect(); var lx=(ev.clientX-r.left)/Math.max(1,r.width)*info.w, ly=(ev.clientY-r.top)/Math.max(1,r.height)*info.h; var best=null, bd=1e9;
     words.forEach(function(wd){ if(lx>=wd.x-2&&lx<=wd.x+wd.w+2&&ly>=wd.y-2&&ly<=wd.y+wd.h+2){ var d=Math.abs(lx-(wd.x+wd.w/2)); if(d<bd){ bd=d; best=wd; } } }); return best; }
   var TOOL={ mode:'select' };
+  function fitScale(wrap, vw){ var w=Math.max(wrap.clientWidth-4,200)/vw.width; var hasH=document.body.classList.contains('lec-full')||wrap.classList.contains('lec-view-canvas'); var ch=wrap.clientHeight; var hh=(hasH&&ch>80)?(ch-4)/vw.height:Infinity; return Math.min(w, hh, 2); }
   function paintZoom(wrap, Z){ var l=wrap.querySelector('.lec-zoomlbl'); if(l) l.textContent=Math.round((Z||1)*100)+'%'; }
   var _zoomT=null;
   function setZoom(which, Z, anchor){ Z=Math.max(0.5, Math.min(4, Z)); var wrap=which==='view'?($('lecViewCanvas')&&$('lecViewCanvas').parentNode):$('lecDropZone'); var prev=(which==='view'?V.zoom:S.zoom)||1;
@@ -9492,7 +9493,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   }
   var _renderTask=null;
   async function renderPage(){
-    if(!S.pdf) return; try{ if(_renderTask) _renderTask.cancel(); }catch(e){} var pg=await S.pdf.getPage(Math.max(1,S.page-(S.base||0))); var cv=$('lecCanvas'); var wrap=cv.parentNode; var vw=pg.getViewport({scale:1}); var dpr=window.devicePixelRatio||1; var Z=S.zoom||1; var scale=Math.min(Math.max(wrap.clientWidth-4,200)/vw.width, 2)*Z; var v=pg.getViewport({scale:scale*dpr}); wrap.classList.toggle('zoomed', Z>1.001); paintZoom(wrap, Z); wrap._fitW=(v.width/dpr)/Z; wrap._fitH=(v.height/dpr)/Z; wrap.style.setProperty('--cw',(v.width/dpr)+'px'); wrap.style.setProperty('--ch',(v.height/dpr)+'px');
+    if(!S.pdf) return; try{ if(_renderTask) _renderTask.cancel(); }catch(e){} var pg=await S.pdf.getPage(Math.max(1,S.page-(S.base||0))); var cv=$('lecCanvas'); var wrap=cv.parentNode; var vw=pg.getViewport({scale:1}); var dpr=window.devicePixelRatio||1; var Z=S.zoom||1; var scale=fitScale(wrap, vw)*Z; var v=pg.getViewport({scale:scale*dpr}); wrap.classList.add('sized'); wrap.classList.toggle('zoomed', Z>1.001); paintZoom(wrap, Z); wrap._fitW=(v.width/dpr)/Z; wrap._fitH=(v.height/dpr)/Z; wrap.style.setProperty('--cw',(v.width/dpr)+'px'); wrap.style.setProperty('--ch',(v.height/dpr)+'px');
     cv.width=v.width; cv.height=v.height; cv.style.width=(v.width/dpr)+'px'; cv.style.height=(v.height/dpr)+'px';
     try{ _renderTask=pg.render({canvasContext:cv.getContext('2d'), viewport:v}); await _renderTask.promise; }catch(e){ if(!/cancel/i.test(String(e&&e.message))) console.warn('pdf render', e&&e.message); } _renderTask=null; $('lecPage').textContent=(S.page-(S.base||0))+' / '+S.total; redrawAnn(); bindAnnClicks();
   }
@@ -9931,7 +9932,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     V.pdf=null; if(pdf){ try{ await loadPdfJs(); V.pdf=await pdfjsLib.getDocument(pdf.remote?{url:pdf.url+'?v='+Date.now()}:{data:pdf.bytes.slice(0)}).promise; V.total=V.pdf.numPages; V.page=1; V.zoom=1; renderViewPage(); $('lecViewPrev').addEventListener('click',function(){ viewGo(V.page-1); }); var cb=$('lecViewClearAnn'); if(cb) cb.addEventListener('click',function(){ if(!V.curPdf) return; var st=annLoad($('lecCourse').value||'', V.curPdf.name); var n=(st[V.page]||[]).length; if(!n){ showToast('이 쪽엔 표시가 없어요'); return; } if(!confirm('이 쪽의 표시 '+n+'개를 모두 지울까요?')) return; delete st[V.page]; annSave($('lecCourse').value||'', V.curPdf.name, st); renderViewPage(); }); $('lecViewNext').addEventListener('click',function(){ viewGo(V.page+1); }); }catch(e){ showToast('PDF를 열 수 없어요'); } }
   }
   var _vtask=null;
-  async function renderViewPage(){ if(!V.pdf) return; try{ if(_vtask) _vtask.cancel(); }catch(e){} var pg=await V.pdf.getPage(V.page); var cv=$('lecViewCanvas'); if(!cv) return; var wrap=cv.parentNode; var vw=pg.getViewport({scale:1}); var dpr=window.devicePixelRatio||1; var Z=V.zoom||1; var scale=Math.min(Math.max(wrap.clientWidth-4,200)/vw.width, 2)*Z; var v=pg.getViewport({scale:scale*dpr}); wrap.classList.toggle('zoomed', Z>1.001); paintZoom(wrap, Z); wrap._fitW=(v.width/dpr)/Z; wrap._fitH=(v.height/dpr)/Z; wrap.style.setProperty('--cw',(v.width/dpr)+'px'); wrap.style.setProperty('--ch',(v.height/dpr)+'px');
+  async function renderViewPage(){ if(!V.pdf) return; try{ if(_vtask) _vtask.cancel(); }catch(e){} var pg=await V.pdf.getPage(V.page); var cv=$('lecViewCanvas'); if(!cv) return; var wrap=cv.parentNode; var vw=pg.getViewport({scale:1}); var dpr=window.devicePixelRatio||1; var Z=V.zoom||1; var scale=fitScale(wrap, vw)*Z; var v=pg.getViewport({scale:scale*dpr}); wrap.classList.add('sized'); wrap.classList.toggle('zoomed', Z>1.001); paintZoom(wrap, Z); wrap._fitW=(v.width/dpr)/Z; wrap._fitH=(v.height/dpr)/Z; wrap.style.setProperty('--cw',(v.width/dpr)+'px'); wrap.style.setProperty('--ch',(v.height/dpr)+'px');
     cv.width=v.width; cv.height=v.height; cv.style.width=(v.width/dpr)+'px'; cv.style.height=(v.height/dpr)+'px';
     try{ _vtask=pg.render({canvasContext:cv.getContext('2d'), viewport:v}); await _vtask.promise; }catch(e){} _vtask=null; var pe=$('lecViewPage'); if(pe) pe.textContent=V.page+' / '+V.total; syncNoteToPage(); try{ var sd=V.note&&(V.note.slides||[]).find(function(s){ return +s.page===V.page; }); var stored=V.curPdf?(annLoad($('lecCourse').value||'', V.curPdf.name)[V.page]||[]):[]; var marks=stored.length?stored.slice():((sd&&sd.marks)||[]).slice(); V.marks=marks; var li=await linesForPage(V.pdf, V.page, V.curPdf?V.curPdf.name:'x')||(sd&&sd.lines); V.lines=li; drawAnnotations($('lecViewCanvas'), $('lecViewAnnot'), V.page, marks, li); bindAnnClicks(); }catch(e){} }
   function viewGo(n){ if(!V.pdf) return; n=Math.max(1,Math.min(V.total,n)); if(n===V.page) return; V.page=n; renderViewPage(); }
