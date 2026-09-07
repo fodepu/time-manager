@@ -2379,7 +2379,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="61">
+<meta name="tm-version" content="62">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -2560,6 +2560,9 @@
   .todo-text:focus { border-color: var(--border,#ddd); background: var(--bg,transparent); outline:none; }
   #lecWork:focus, #lecView:focus { outline:none; }
   .lec-langbtn { font-weight:700; }
+  .lec-seg { display:flex; gap:8px; align-items:flex-start; }
+  .lec-ts { flex-shrink:0; font-size:11px; color: var(--text-muted); font-variant-numeric: tabular-nums; padding-top:3px; min-width:34px; }
+  .lec-segbody { flex:1; min-width:0; }
   .lec-link { border:none; background:none; color: var(--text-muted); text-decoration:underline; cursor:pointer; font-size:12px; font-family:inherit; }
   .lec-seg.live .lec-ko { color: var(--text-muted); }
   .lec-cursor { animation: lecblink 1s steps(2) infinite; color: var(--accent); }
@@ -2923,6 +2926,7 @@
         <button type="button" class="lec-btn rec" id="lecRec">● 녹음 시작</button>
         <label class="lec-chk"><input type="checkbox" id="lecShowEn"> 영어 원문 표시</label>
         <label class="lec-chk" title="끄면 마이크를 음성 인식기만 사용 (인식이 안 될 때 시도)"><input type="checkbox" id="lecBackup" checked> 녹음 파일 백업</label>
+        <label class="lec-chk" title="확정 문장 대신 들리는 순간의 잠정 문장을 그대로 표시"><input type="checkbox" id="lecRaw"> 들린 그대로</label>
       </div>
       <div class="lec-status" id="lecStatus"></div>
       <div class="lec-main">
@@ -9331,11 +9335,17 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
 
   // ---- 음성 인식 (Chrome Web Speech) ----
   function slide(p){ if(!S.slides[p]) S.slides[p]={segs:[]}; return S.slides[p]; }
+  function slideTerms(){ // PDF 전체 텍스트에서 용어 후보 (영문 4자+ / 한글 2자+), 빈도순 상위
+    var st=S.slideText||{}; var freq={}; var STOP={'that':1,'with':1,'this':1,'from':1,'have':1,'which':1,'about':1,'their':1,'there':1,'these':1,'those':1,'between':1,'where':1,'when':1,'what':1,'would':1,'could':1,'should':1,'than':1,'then':1,'they':1,'them':1,'into':1,'over':1,'under':1,'more':1,'most':1,'some':1,'such':1,'each':1,'also':1,'only':1,'very':1,'will':1,'been':1,'were':1,'does':1,'because':1};
+    Object.keys(st).forEach(function(p){ (String(st[p]).match(/[A-Za-z][A-Za-z\-]{3,}|[가-힣]{2,}/g)||[]).forEach(function(w){ var k=w.toLowerCase(); if(STOP[k]) return; freq[k]=(freq[k]||0)+1; }); });
+    return Object.keys(freq).sort(function(a,b){ return freq[b]-freq[a]; }).slice(0,200); }
   function startRecognition(){
     var SR=window.SpeechRecognition||window.webkitSpeechRecognition; if(!SR){ status('이 브라우저는 음성인식을 지원하지 않아요 — Chrome을 쓰세요','err'); return false; }
     var rec=new SR(); rec.lang=S.lang||'en-US'; rec.continuous=true; rec.interimResults=true; rec.maxAlternatives=1;
+    // 슬라이드 용어 편향: 지원되는 Chrome에서만 (contextual biasing)
+    try{ if(window.SpeechRecognitionPhrase && S.slideText){ var terms=slideTerms(); if(terms.length){ var arr=terms.map(function(t){ return new SpeechRecognitionPhrase(t, 3.0); }); rec.phrases=(window.ObservableArray?arr:arr); S.biased=terms.length; } } }catch(e){ S.biased=0; }
     rec.onresult=function(ev){ var interim='';
-      for(var i=ev.resultIndex;i<ev.results.length;i++){ var r=ev.results[i]; var t=(r[0]&&r[0].transcript||'').trim(); if(!t) continue; if(r.isFinal){ addFinal(t); } else interim+=t+' '; }
+      for(var i=ev.resultIndex;i<ev.results.length;i++){ var r=ev.results[i]; var t=(r[0]&&r[0].transcript||'').trim(); if(!t) continue; if(r.isFinal){ addFinal(t, S.lastInterim||''); } else interim+=t+' '; }
       S.lastInterim=interim.trim(); S.lastResultAt=Date.now(); renderLive(); };
     rec.onstart=function(){ S.recOn=true; if(S.running) status(recLabel(),'ok'); };
     rec.onaudiostart=function(){ S.recOn=true; };
@@ -9344,21 +9354,22 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     try{ rec.start(); }catch(e){ status('음성인식 시작 실패: '+e.message,'err'); return false; }
     S.rec=rec; return true;
   }
-  function addFinal(text){
-    var p=S.page||1, sl=slide(p); S.lastResultAt=Date.now();
+  function addFinal(text, raw){
+    var p=S.page||1, sl=slide(p); S.lastResultAt=Date.now(); raw=(raw||'').trim(); if(raw===text) raw='';
     // 언어 설정이 실제 강의 언어와 다르면 안내 (한국어 모드인데 영어가 계속 잡히거나 그 반대)
     try{ S.langSample=(S.langSample||'')+' '+text; if(S.langSample.length>120 && !S.langWarned){ var lat=(S.langSample.match(/[A-Za-z]/g)||[]).length, han=(S.langSample.match(/[가-힣]/g)||[]).length; if(S.lang==='ko-KR' && lat>han*2){ S.langWarned=true; status('영어로 들리는 것 같아요 — 상단 언어 버튼을 🇺🇸 영어로 바꾸면 훨씬 정확해져요','err'); } else if(S.lang==='en-US' && han>lat*2){ S.langWarned=true; status('한국어로 들리는 것 같아요 — 상단 언어 버튼을 🇰🇷 한국어로 바꾸세요','err'); } } }catch(e){}
-    if(S.lang==='ko-KR'){ var segk={t:nowT(), page:p, en:'', ko:text}; sl.segs.push(segk); renderLive(); saveLocal(); return; }
-    var seg={t:nowT(), page:p, en:text, ko:''}; sl.segs.push(seg);
+    if(S.lang==='ko-KR'){ var segk={t:nowT(), page:p, en:'', ko:text, raw:raw||undefined}; sl.segs.push(segk); renderLive(); saveLocal(); return; }
+    var seg={t:nowT(), page:p, en:text, ko:'', raw:raw||undefined}; sl.segs.push(seg);
     translate(text).then(function(ko){ seg.ko=ko; renderLive(); saveLocal(); });
   }
   document.addEventListener('scroll',function(e){ if(e.target&&e.target.id==='lecLive'){ var b=e.target; S.userScrolled=(b.scrollHeight-b.scrollTop-b.clientHeight)>=60; } },true);
   function renderLive(){
     var box=$('lecLive'); if(!box) return; var p=S.page||1, sl=S.slides[p]||{segs:[]}; var showEn=$('lecShowEn')&&$('lecShowEn').checked;
-    var h='<div class="lec-live-head">'+(S.online?'구간 '+p+' <small>(5분마다 자동, → 키로 수동 분할)</small>':'슬라이드 '+p+(S.total?' / '+S.total:''))+' <small>'+sl.segs.length+'문장 · '+(S.running?'● 녹음 중 '+fmtT(nowT())+(S.recOn?' · 인식기 켜짐':' · 인식기 대기')+' · '+(S.lang==='ko-KR'?'한국어':'영어')+' 인식'+(S.lastErr&&S.lastErr!=='no-speech'&&S.lastErr!=='aborted'?' · 마지막 오류: '+S.lastErr:''):'대기')+'</small></div>';
+    var h='<div class="lec-live-head">'+(S.online?'구간 '+p+' <small>(5분마다 자동, → 키로 수동 분할)</small>':'슬라이드 '+p+(S.total?' / '+S.total:''))+' <small>'+sl.segs.length+'문장 · '+(S.running?'● 녹음 중 '+fmtT(nowT())+(S.recOn?' · 인식기 켜짐':' · 인식기 대기')+' · '+(S.lang==='ko-KR'?'한국어':'영어')+' 인식'+(S.biased?' · 슬라이드 용어 '+S.biased+'개 반영':'')+(S.lastErr&&S.lastErr!=='no-speech'&&S.lastErr!=='aborted'?' · 마지막 오류: '+S.lastErr:''):'대기')+'</small></div>';
     if(S.running && !sl.segs.length && !S.lastInterim) h+='<div class="lec-seg interim"><div class="lec-en">듣는 중… 말소리가 들리면 몇 초 안에 문장이 여기 붙어요. 30초 넘게 아무것도 안 붙으면: 마이크 입력 장치(시스템 설정 → 사운드 → 입력)와 강의 언어(영어/한국어) 확인</div></div>';
-    sl.segs.forEach(function(s){ h+='<div class="lec-seg"><div class="lec-ko">'+(s.ko?escapeHtml(s.ko):'<span class="lec-wait">번역 중…</span>')+'</div>'+(showEn?'<div class="lec-en">'+escapeHtml(s.en)+'</div>':'')+'</div>'; });
-    if(S.lastInterim) h+='<div class="lec-seg interim live"><div class="lec-ko">'+escapeHtml(S.lastInterim)+' <span class="lec-cursor">▍</span></div></div>';
+    var rawMode=$('lecRaw')&&$('lecRaw').checked;
+    sl.segs.forEach(function(s){ var main=(S.lang==='ko-KR')?(rawMode&&s.raw?s.raw:s.ko):(s.ko?s.ko:''); h+='<div class="lec-seg"><span class="lec-ts">'+fmtT(s.t||0)+'</span><div class="lec-segbody"><div class="lec-ko">'+(main?escapeHtml(main):'<span class="lec-wait">번역 중…</span>')+'</div>'+(S.lang!=='ko-KR'&&showEn?'<div class="lec-en">'+escapeHtml(rawMode&&s.raw?s.raw:s.en)+'</div>':'')+(rawMode&&s.raw&&S.lang==='ko-KR'?'<div class="lec-en">확정: '+escapeHtml(s.ko)+'</div>':'')+'</div></div>'; });
+    if(S.lastInterim) h+='<div class="lec-seg interim live"><span class="lec-ts">'+fmtT(nowT())+'</span><div class="lec-segbody"><div class="lec-ko">'+escapeHtml(S.lastInterim)+' <span class="lec-cursor">▍</span></div></div></div>';
     var stick=(box.scrollHeight-box.scrollTop-box.clientHeight)<60; box.innerHTML=h; if(stick||!S.userScrolled) box.scrollTop=box.scrollHeight;
   }
 
@@ -9527,7 +9538,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     var h='<div class="lec-note-head"><b>'+esc(data.title||'강의')+'</b><span class="lms-sub">'+esc(data.date||'')+(data.pages?' · '+data.pages+(data.mode==='online'?'구간':'쪽'):'')+(data.duration?' · '+fmtT(data.duration):'')+(note.ready?'':' · <em>'+(note.status==='sent'?'필기 만드는 중 — 대본만 표시':'아직 전송 전 — 대본만 표시')+'</em>')+'</span></div>';
     if(data.overview) h+='<div class="lms-brief">'+md(data.overview)+'</div>';
     if(data.exam && data.exam.length){ h+='<div class="lms-sec">시험·과제 언급</div><div class="lms-todos">'; data.exam.forEach(function(x){ h+='<div class="lms-todo"><div class="lms-todo-text">'+md(x).replace(/^<p class="md-p">|<\/p>$/g,'')+'</div></div>'; }); h+='</div>'; }
-    (data.slides||[]).forEach(function(s){ h+='<div class="lec-slide" data-page="'+s.page+'"><div class="lec-slide-head">'+(data.mode==='online'?'구간 ':'슬라이드 ')+s.page+(s.summary?' <span>— '+esc(s.summary)+'</span>':'')+'</div>'+(s.keyPoints&&s.keyPoints.length?'<div class="lec-kp">'+md(s.keyPoints.map(function(k){return '- '+k;}).join('\n'))+'</div>':'<div class="lec-kp muted">'+(note.ready?'핵심 없음':'필기 생성 전 — 대본만')+'</div>')+'<details class="lec-tr"><summary>대본 보기</summary><div class="lec-ko">'+esc(s.ko||'')+'</div>'+(s.en?'<div class="lec-en">'+esc(s.en)+'</div>':'')+'</details></div>'; });
+    (data.slides||[]).forEach(function(s){ h+='<div class="lec-slide" data-page="'+s.page+'"><div class="lec-slide-head">'+(data.mode==='online'?'구간 ':'슬라이드 ')+s.page+(s.summary?' <span>— '+esc(s.summary)+'</span>':'')+'</div>'+(s.keyPoints&&s.keyPoints.length?'<div class="lec-kp">'+md(s.keyPoints.map(function(k){return '- '+k;}).join('\n'))+'</div>':'<div class="lec-kp muted">'+(note.ready?'핵심 없음':'필기 생성 전 — 대본만')+'</div>')+'<details class="lec-tr"><summary>대본 보기</summary>'+((s.segs&&s.segs.length)?s.segs.map(function(g){ return '<div class="lec-seg"><span class="lec-ts">'+fmtT(g.t||0)+'</span><div class="lec-segbody"><div class="lec-ko">'+esc(g.ko||g.en||'')+'</div>'+(g.en&&g.ko?'<div class="lec-en">'+esc(g.en)+'</div>':'')+'</div></div>'; }).join(''):'<div class="lec-ko">'+esc(s.ko||'')+'</div>'+(s.en?'<div class="lec-en">'+esc(s.en)+'</div>':''))+'</details></div>'; });
     box.innerHTML=h; syncNoteToPage();
   }
   function exportMd(d){ var m='# '+(d.title||'강의')+'\n\n'+(d.course||'')+' · '+(d.date||'')+'\n\n'; if(d.overview) m+=d.overview+'\n\n'; (d.exam||[]).forEach(function(x){ m+='- ⚠️ '+x+'\n'; }); if(d.exam&&d.exam.length) m+='\n';
@@ -9569,7 +9580,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     $('lecRec').addEventListener('click',function(){ if(S.running) stopAll(); else startAll(); });
     $('lecFinish').addEventListener('click',sendFinish);
     $('lecDownloadAudio').addEventListener('click',function(){ if(!S.audioBlob) return; var a=document.createElement('a'); a.href=URL.createObjectURL(S.audioBlob); a.download=(S.title||'lecture')+'_'+S.date+'.webm'; a.click(); });
-    $('lecShowEn').addEventListener('change',renderLive);
+    $('lecShowEn').addEventListener('change',renderLive); $('lecRaw').addEventListener('change',renderLive);
     var LANG_DEFAULT={'계량경제학':'en-US','거시경제학':'en-US'}; // 나머지는 한국어
     function langKey(){ return 'lec_lang_'+cname($('lecCourse').value||''); }
     function langFor(){ var c=cname($('lecCourse').value||''); var saved=lsGet(lsKey(langKey())); if(saved==='en-US'||saved==='ko-KR') return saved; for(var k in LANG_DEFAULT){ if(c.indexOf(k)>=0) return LANG_DEFAULT[k]; } return 'ko-KR'; }
