@@ -2379,7 +2379,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="72">
+<meta name="tm-version" content="73">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -2935,7 +2935,7 @@
         <button type="button" class="lec-btn lec-langbtn" id="lecLang2" title="강의 언어 전환">🇰🇷 한국어</button>
         <button type="button" class="lec-btn" id="lecAiBtn" title="맥의 Dayble 도우미가 켜져 있으면 Claude가 슬라이드 맥락으로 실시간 필기">✦ 도우미 꺼짐</button>
         <button type="button" class="lec-btn rec" id="lecRec">● 녹음 시작</button>
-        <label class="lec-chk"><input type="checkbox" id="lecShowEn"> 영어 원문 표시</label>
+        <label class="lec-chk"><input type="checkbox" id="lecShowEn" checked> 영어 원문 표시</label>
         <label class="lec-chk" title="끄면 마이크를 음성 인식기만 사용 (인식이 안 될 때 시도)"><input type="checkbox" id="lecBackup" checked> 녹음 파일 백업</label>
         <label class="lec-chk" title="확정 문장 대신 들리는 순간의 잠정 문장을 그대로 표시"><input type="checkbox" id="lecRaw"> 들린 그대로</label>
       </div>
@@ -8048,6 +8048,7 @@ function switchMode(mode) {
   clearTimeout(autoSaveTimer);
   persist();
   currentMode = mode;
+  try{ if(typeof lsSet==='function') lsSet(lsKey('last_mode'), mode); }catch(e){}
   document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.mode === mode));
   document.getElementById('growthMode').style.display = mode === 'growth' ? 'block' : 'none';
   document.getElementById('freeMode').style.display = mode === 'free' ? 'block' : 'none';
@@ -8974,7 +8975,15 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     }catch(e){}
   }
   regSW();
-  window.tmAfterPush=function(isOwner){ setTimeout(function(){ pushStateLabel(); refreshPush(); if(isOwner && location.hash==='#lms' && window.switchMode){ try{ switchMode('lms'); }catch(e){} history.replaceState(null,'',location.pathname); } }, 500); };
+  // 새로고침해도 마지막 탭(그리고 강의노트에서 보던 위치) 유지
+  window.tmRestoreView=function(isOwner){
+    try{
+      if(!isOwner) return;
+      var m=lsGet(lsKey('last_mode'));
+      if(m && m!=='growth' && window.switchMode) switchMode(m);
+    }catch(e){}
+  };
+  window.tmAfterPush=function(isOwner){ setTimeout(function(){ tmRestoreView(isOwner); pushStateLabel(); refreshPush(); if(isOwner && location.hash==='#lms' && window.switchMode){ try{ switchMode('lms'); }catch(e){} history.replaceState(null,'',location.pathname); } }, 500); };
   document.addEventListener('click', function(e){ if(e.target && e.target.id==='settingsBtn') setTimeout(pushStateLabel, 50); }, true);
 
   // ---- 헤더 컨트롤 ----
@@ -9509,7 +9518,8 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   function noteForItem(title, notes){ var m=/(\d{1,2})\s*주차\s*(\d{1,2})\s*강/.exec(String(title||'')); if(!m) return null; var k=+m[2]; return notes.find(function(n){ return noteLec(n)===k; })||null; }
   function ecampusUrlFor(data){ try{ var mods=modsFor(data.course); var m=/(\d{1,2})\s*주차\s*(\d{1,2})\s*강/.exec(data.title||''); if(!m) return ''; var re=new RegExp('^'+(+m[1])+'\\s*주차\\s*'+(+m[2])+'\\s*강$'); for(var i=0;i<mods.length;i++){ var it=(mods[i].items||[]).find(function(x){ return re.test(String(x.title||'').trim()); }); if(it&&it.url) return it.url; } }catch(e){} return ''; }
   function itemIcon(it){ var isFile=it.type==='File', isVid=/\d\s*강$|강의|VOD|영상/i.test(it.title||''); return isFile?'📎 ':(it.type==='Page'?'▤ ':it.type==='Assignment'?'✎ ':it.type==='ExternalUrl'?'↗ ':isVid?'▶ ':'▤ '); }
-  function showPane(name){ ['lecHome','lecWork','lecView'].forEach(function(id){ var el=$(id); if(el) el.style.display=(id===name)?'':'none'; }); try{ if(name!=='lecHome') setTimeout(function(){ $(name).focus({preventScroll:true}); },30); }catch(e){} }
+  function showPane(name){ try{ if(name==='lecHome') lsSet(lsKey('lec_pane'), {p:'home'}); }catch(e){}
+    ['lecHome','lecWork','lecView'].forEach(function(id){ var el=$(id); if(el) el.style.display=(id===name)?'':'none'; }); try{ if(name!=='lecHome') setTimeout(function(){ $(name).focus({preventScroll:true}); },30); }catch(e){} }
 
   async function renderHome(){
     var box=$('lecWeeks'); if(!box) return; var c=$('lecCourse').value||''; S.course=c; try{ lsSet(lsKey('lec_course'),c); }catch(e){}
@@ -9579,6 +9589,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     tabs.querySelectorAll('[data-note]').forEach(function(b){ b.addEventListener('click',function(){ openView(b.getAttribute('data-note'), mid, pdf?pdf.key:null); }); });
     tabs.querySelectorAll('[data-pdfk]').forEach(function(b){ b.addEventListener('click',function(){ openView(note?note.id:null, mid, b.getAttribute('data-pdfk')); }); });
     V.curPdf=pdf||null;
+    try{ lsSet(lsKey('lec_pane'), {p:'view', mid:mid, note:(note&&note.id)||null, pdf:(pdf&&pdf.key)||null}); }catch(e){}
     // 필기
     await renderNote(note, c);
     // PDF
@@ -9645,7 +9656,8 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     $('lecRec').addEventListener('click',function(){ if(S.running) stopAll(); else startAll(); });
     $('lecFinish').addEventListener('click',sendFinish);
     $('lecDownloadAudio').addEventListener('click',function(){ if(!S.audioBlob) return; var a=document.createElement('a'); a.href=URL.createObjectURL(S.audioBlob); a.download=(S.title||'lecture')+'_'+S.date+'.webm'; a.click(); });
-    $('lecShowEn').addEventListener('change',renderLive); $('lecRaw').addEventListener('change',renderLive);
+    try{ var se=lsGet(lsKey('lec_show_en')); $('lecShowEn').checked = (se===''||se===null||se===undefined)?true:!!se; }catch(e){}
+    $('lecShowEn').addEventListener('change',function(){ try{ lsSet(lsKey('lec_show_en'), $('lecShowEn').checked?1:0); }catch(e){} renderLive(); }); $('lecRaw').addEventListener('change',renderLive);
     var LANG_DEFAULT={'계량경제학':'en-US','거시경제학':'en-US'}; // 나머지는 한국어
     function langKey(){ return 'lec_lang_'+cname($('lecCourse').value||''); }
     function langFor(){ var c=cname($('lecCourse').value||''); var saved=lsGet(lsKey(langKey())); if(saved==='en-US'||saved==='ko-KR') return saved; for(var k in LANG_DEFAULT){ if(c.indexOf(k)>=0) return LANG_DEFAULT[k]; } return 'ko-KR'; }
@@ -9658,7 +9670,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     var _rz=null; window.addEventListener('resize',function(){ if(typeof currentMode!=='undefined' && currentMode==='lecture'){ clearTimeout(_rz); _rz=setTimeout(function(){ renderPage(); renderViewPage(); },150); } });
     window.addEventListener('beforeunload',function(e){ if(S.running){ e.preventDefault(); e.returnValue=''; } });
   }
-  var _sm2=window.switchMode; window.switchMode=function(m){ _sm2(m); var p=$('lectureMode'); if(p) p.style.display=(m==='lecture')?'block':'none'; document.body.classList.toggle('lec-full', m==='lecture'); if(m==='lecture'){ if(S.running){ showPane('lecWork'); setTimeout(renderPage,50); } else { showPane('lecHome'); fillCourses().then(function(){ if(window.tmPaintLang) tmPaintLang(); fetchIndex().then(renderHome); }); } } };
+  var _sm2=window.switchMode; window.switchMode=function(m){ _sm2(m); var p=$('lectureMode'); if(p) p.style.display=(m==='lecture')?'block':'none'; document.body.classList.toggle('lec-full', m==='lecture'); if(m==='lecture'){ if(S.running){ showPane('lecWork'); setTimeout(renderPage,50); } else { var st=null; try{ st=lsGet(lsKey('lec_pane')); }catch(e){} showPane('lecHome'); fillCourses().then(function(){ if(window.tmPaintLang) tmPaintLang(); fetchIndex().then(function(){ renderHome(); try{ if(st && st.p==='view' && st.mid){ loadLocal().then(function(){ openView(st.note||null, st.mid, st.pdf||null); }); } }catch(e){} }); }); } } };
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',bind); else bind();
 })();
 </script>
