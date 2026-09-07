@@ -22,7 +22,7 @@ function cors(req, res) {
 function runClaude(system, user) {
   return new Promise((resolve, reject) => {
     const args = ['-p', '--output-format', 'text', '--model', MODEL, '--max-turns', '1', '--system-prompt', system];
-    const p = spawn('claude', args, { stdio: ['pipe', 'pipe', 'pipe'], env: { ...process.env, CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC: '1' } });
+    const p = spawn('claude', args, { stdio: ['pipe', 'pipe', 'pipe'], env: { ...process.env, PATH: (process.env.HOME + '/.local/bin:' + process.env.HOME + '/.claude/local:' + (process.env.PATH || '')), CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC: '1' } });
     let out = '', err = '';
     const timer = setTimeout(() => { p.kill('SIGKILL'); reject(new Error('timeout (60s)')); }, 60000);
     p.stdout.on('data', d => out += d);
