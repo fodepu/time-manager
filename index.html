@@ -2379,7 +2379,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="59">
+<meta name="tm-version" content="60">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -9367,7 +9367,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   function recLabel(){ return '● 녹음 중 · 번역: '+(S.tmode==='chrome'?'Chrome 내장':'웹')+(S.online?' · 온라인 모드: 5분마다 구간 자동, → 로 수동 분할':' · ← → 로 슬라이드 넘기기'); }
   async function startAll(){
     S.course=$('lecCourse').value||''; S.title=($('lecTitle').value||'').trim(); if(!S.course){ showToast('과목을 선택하세요'); return; }
-    S.lang=($('lecLang')&&$('lecLang').getAttribute('data-lang'))||'ko-KR'; try{ lsSet(lsKey('lec_lang'),S.lang); }catch(e){}
+    S.lang=($('lecLang')&&$('lecLang').getAttribute('data-lang'))||'ko-KR';
     if(S.pdf && !S.slideText) extractSlideText().catch(function(){});
     if(!S.title) S.title=S.course.replace(/^\(SDGs\)/,'')+' 강의'; if(S.weekNo!=null && !/주차/.test(S.title)) S.title+=' '+S.weekNo+'주차';
     S.date=toLocalDateStr(new Date()); S.id='lec_'+S.date+'_'+Date.now().toString(36);
@@ -9552,7 +9552,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   // ---- 바인딩 ----
   function bind(){
     if(!$('lectureMode')) return;
-    $('lecCourse').addEventListener('change',function(){ S.course=this.value; renderHome(); });
+    $('lecCourse').addEventListener('change',function(){ S.course=this.value; if(window.tmPaintLang) tmPaintLang(); renderHome(); });
     $('lecExit').addEventListener('click',function(){ switchMode('growth'); });
     $('lecWorkBack').addEventListener('click',function(){ if(S.running && !confirm('녹음 중입니다. 나갈까요? (녹음이 중지됩니다)')) return; if(S.running) stopAll(); showPane('lecHome'); renderHome(); });
     $('lecOpenPdf').addEventListener('click',function(){ pendingWeek=null; $('lecFile').click(); });
@@ -9567,14 +9567,18 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     $('lecFinish').addEventListener('click',sendFinish);
     $('lecDownloadAudio').addEventListener('click',function(){ if(!S.audioBlob) return; var a=document.createElement('a'); a.href=URL.createObjectURL(S.audioBlob); a.download=(S.title||'lecture')+'_'+S.date+'.webm'; a.click(); });
     $('lecShowEn').addEventListener('change',renderLive);
+    var LANG_DEFAULT={'계량경제학':'en-US','거시경제학':'en-US'}; // 나머지는 한국어
+    function langKey(){ return 'lec_lang_'+cname($('lecCourse').value||''); }
+    function langFor(){ var c=cname($('lecCourse').value||''); var saved=lsGet(lsKey(langKey())); if(saved==='en-US'||saved==='ko-KR') return saved; for(var k in LANG_DEFAULT){ if(c.indexOf(k)>=0) return LANG_DEFAULT[k]; } return 'ko-KR'; }
+    window.tmPaintLang=function(){ paintLang(langFor()); };
     function paintLang(l){ var b=$('lecLang'); if(!b) return; b.setAttribute('data-lang',l); b.textContent=(l==='ko-KR')?'🇰🇷 한국어 강의':'🇺🇸 영어 강의'; b.classList.toggle('en', l!=='ko-KR'); var b2=$('lecLang2'); if(b2){ b2.textContent=(l==='ko-KR')?'🇰🇷 한국어':'🇺🇸 영어'; b2.classList.toggle('en', l!=='ko-KR'); } }
-    try{ var ll=lsGet(lsKey('lec_lang')); paintLang(ll==='en-US'?'en-US':'ko-KR'); }catch(e){ paintLang('ko-KR'); }
+    try{ paintLang(langFor()); }catch(e){ paintLang('ko-KR'); }
     $('lecLang2').addEventListener('click',function(){ $('lecLang').click(); });
-    $('lecLang').addEventListener('click',function(){ var cur=this.getAttribute('data-lang'); var nx=(cur==='ko-KR')?'en-US':'ko-KR'; paintLang(nx); try{ lsSet(lsKey('lec_lang'),nx); }catch(e){} if(S.running){ S.lang=nx; S.langSample=''; S.langWarned=false; try{ S.rec.abort(); }catch(e){} showToast('언어 전환: '+(nx==='ko-KR'?'한국어':'영어')+' — 인식기 재시작'); } });
+    $('lecLang').addEventListener('click',function(){ var cur=this.getAttribute('data-lang'); var nx=(cur==='ko-KR')?'en-US':'ko-KR'; paintLang(nx); try{ lsSet(lsKey(langKey()),nx); if(window.tmOnChange) tmOnChange(); }catch(e){} showToast(cname($('lecCourse').value)+' → '+(nx==='ko-KR'?'한국어':'영어')+' 강의로 기억'); if(S.running){ S.lang=nx; S.langSample=''; S.langWarned=false; try{ S.rec.abort(); }catch(e){} showToast('언어 전환: '+(nx==='ko-KR'?'한국어':'영어')+' — 인식기 재시작'); } });
     var _rz=null; window.addEventListener('resize',function(){ if(typeof currentMode!=='undefined' && currentMode==='lecture'){ clearTimeout(_rz); _rz=setTimeout(function(){ renderPage(); renderViewPage(); },150); } });
     window.addEventListener('beforeunload',function(e){ if(S.running){ e.preventDefault(); e.returnValue=''; } });
   }
-  var _sm2=window.switchMode; window.switchMode=function(m){ _sm2(m); var p=$('lectureMode'); if(p) p.style.display=(m==='lecture')?'block':'none'; document.body.classList.toggle('lec-full', m==='lecture'); if(m==='lecture'){ if(S.running){ showPane('lecWork'); setTimeout(renderPage,50); } else { showPane('lecHome'); fillCourses().then(function(){ fetchIndex().then(renderHome); }); } } };
+  var _sm2=window.switchMode; window.switchMode=function(m){ _sm2(m); var p=$('lectureMode'); if(p) p.style.display=(m==='lecture')?'block':'none'; document.body.classList.toggle('lec-full', m==='lecture'); if(m==='lecture'){ if(S.running){ showPane('lecWork'); setTimeout(renderPage,50); } else { showPane('lecHome'); fillCourses().then(function(){ if(window.tmPaintLang) tmPaintLang(); fetchIndex().then(renderHome); }); } } };
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',bind); else bind();
 })();
 </script>
