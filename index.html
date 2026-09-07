@@ -2379,7 +2379,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="94">
+<meta name="tm-version" content="95">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -9395,10 +9395,16 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   var TOOL={ mode:'select' };
   function paintZoom(wrap, Z){ var l=wrap.querySelector('.lec-zoomlbl'); if(l) l.textContent=Math.round((Z||1)*100)+'%'; }
   var _zoomT=null;
-  function setZoom(which, Z){ Z=Math.max(0.5, Math.min(4, Z)); if(which==='view'){ V.zoom=Z; clearTimeout(_zoomT); _zoomT=setTimeout(renderViewPage, 40); } else { S.zoom=Z; clearTimeout(_zoomT); _zoomT=setTimeout(renderPage, 40); } }
+  function setZoom(which, Z, anchor){ Z=Math.max(0.5, Math.min(4, Z)); var wrap=which==='view'?($('lecViewCanvas')&&$('lecViewCanvas').parentNode):$('lecDropZone'); var prev=(which==='view'?V.zoom:S.zoom)||1;
+    if(which==='view') V.zoom=Z; else S.zoom=Z;
+    // 즉시: 현재 비트맵을 CSS로 늘려 보여줌 (부드러운 핀치), 멈추면 선명하게 다시 그림
+    try{ if(wrap && wrap._fitW){ var k=Z/prev; var mx=anchor?anchor.x:wrap.clientWidth/2, my=anchor?anchor.y:wrap.clientHeight/2; var sl=wrap.scrollLeft, stp=wrap.scrollTop;
+      wrap.classList.toggle('zoomed', Z>1.001); wrap.style.setProperty('--cw',(wrap._fitW*Z)+'px'); wrap.style.setProperty('--ch',(wrap._fitH*Z)+'px'); paintZoom(wrap, Z);
+      wrap.scrollLeft=(sl+mx)*k-mx; wrap.scrollTop=(stp+my)*k-my; } }catch(e){}
+    clearTimeout(_zoomT); _zoomT=setTimeout(which==='view'?renderViewPage:renderPage, 160); }
   function zoomStep(which, dir){ var cur=(which==='view'?V.zoom:S.zoom)||1; setZoom(which, dir===0?1:(dir>0?cur*1.2:cur/1.2)); }
   function bindZoom(wrap, which){ if(!wrap||wrap._zoom) return; wrap._zoom=true;
-    wrap.addEventListener('wheel',function(e){ if(!(e.ctrlKey||e.metaKey)) return; e.preventDefault(); var cur=(which==='view'?V.zoom:S.zoom)||1; setZoom(which, cur*(e.deltaY<0?1.06:0.94)); }, {passive:false});
+    wrap.addEventListener('wheel',function(e){ if(!(e.ctrlKey||e.metaKey)) return; e.preventDefault(); var cur=(which==='view'?V.zoom:S.zoom)||1; var r=wrap.getBoundingClientRect(); setZoom(which, cur*Math.exp(-e.deltaY*0.01), {x:e.clientX-r.left, y:e.clientY-r.top}); }, {passive:false});
     wrap.querySelectorAll('[data-zoom]').forEach(function(b){ b.addEventListener('click',function(){ var z=b.getAttribute('data-zoom'); zoomStep(which, z==='+'?1:(z==='-'?-1:0)); }); }); }
   document.addEventListener('keydown',function(e){ if(typeof currentMode==='undefined' || currentMode!=='lecture') return; if(!(e.metaKey||e.ctrlKey)) return; var k=e.key; if(k!=='='&&k!=='+'&&k!=='-'&&k!=='0') return; var inView=$('lecView')&&$('lecView').style.display!=='none'; if(inView?!V.pdf:!S.pdf) return; e.preventDefault(); zoomStep(inView?'view':'rec', k==='0'?0:(k==='-'?-1:1)); });
   function setTool(m){ TOOL.mode=m; document.querySelectorAll('[data-tools] button').forEach(function(b){ b.classList.toggle('on', b.getAttribute('data-tool')===m); }); ['lecAnnot','lecViewAnnot'].forEach(function(id){ var el=$(id); if(!el) return; el.className='lec-annot t-'+m; }); }
@@ -9427,6 +9433,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     var ls=linesInRect(info, ov, x0,y0,x1,y1); if(m==='hl') addMarks(ctx, ls, 'highlight'); else if(m==='ul') addMarks(ctx, ls, 'underline'); else if(m==='circle') addMarks(ctx, ls.slice(0,1), 'circle'); else if(m==='note'){ if(ls.length){ var t=prompt('포스트잇 내용 (짧게):'); if(t&&t.trim()) addMarks(ctx,[ls[0]],'',t.trim().slice(0,60)); } }
     return true; }
   var _tipT=null;
+  document.addEventListener('mousedown',function(e){ if(e.target&&e.target.closest&&e.target.closest('.lec-wordtip')) return; document.querySelectorAll('.lec-wordtip, .lec-sellayer').forEach(function(t){ t.remove(); }); }, true);
   function phraseInRect(words, info, ov, x0,y0,x1,y1){ if(!words||!info) return ''; var r=ov.getBoundingClientRect(); var fx=info.w/Math.max(1,r.width), fy=info.h/Math.max(1,r.height); var ax=Math.min(x0,x1)*fx, bx=Math.max(x0,x1)*fx, ay=Math.min(y0,y1)*fy, by=Math.max(y0,y1)*fy;
     var sel=words.filter(function(wd){ var cx=wd.x+wd.w/2, cy=wd.y+wd.h/2; return cx>=ax&&cx<=bx&&cy>=ay&&cy<=by; }); sel.sort(function(a,b){ return (Math.abs(a.y-b.y)>a.h*0.6)?(a.y-b.y):(a.x-b.x); }); return sel.map(function(w){ return w.text; }).join(' ').replace(/\s+/g,' ').trim(); }
   function flowWords(info){ if(!info||!info.words) return []; if(info._flow) return info._flow; var ws=info.words.slice(); ws.sort(function(a,b){ return (Math.abs(a.y-b.y)>Math.min(a.h,b.h)*0.6)?(a.y-b.y):(a.x-b.x); }); ws.forEach(function(w,i){ w.fi=i; var L=(info.lines||[]).find(function(l){ var cy=w.y+w.h/2; return cy>=l.y-2&&cy<=l.y+l.h+2; }); w.li=L?L.i:-1; }); info._flow=ws; return ws; }
@@ -9485,7 +9492,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   }
   var _renderTask=null;
   async function renderPage(){
-    if(!S.pdf) return; try{ if(_renderTask) _renderTask.cancel(); }catch(e){} var pg=await S.pdf.getPage(Math.max(1,S.page-(S.base||0))); var cv=$('lecCanvas'); var wrap=cv.parentNode; var vw=pg.getViewport({scale:1}); var dpr=window.devicePixelRatio||1; var Z=S.zoom||1; var scale=Math.min(Math.max(wrap.clientWidth-4,200)/vw.width, 2)*Z; var v=pg.getViewport({scale:scale*dpr}); wrap.classList.toggle('zoomed', Z>1.001); paintZoom(wrap, Z); wrap.style.setProperty('--cw',(v.width/dpr)+'px'); wrap.style.setProperty('--ch',(v.height/dpr)+'px');
+    if(!S.pdf) return; try{ if(_renderTask) _renderTask.cancel(); }catch(e){} var pg=await S.pdf.getPage(Math.max(1,S.page-(S.base||0))); var cv=$('lecCanvas'); var wrap=cv.parentNode; var vw=pg.getViewport({scale:1}); var dpr=window.devicePixelRatio||1; var Z=S.zoom||1; var scale=Math.min(Math.max(wrap.clientWidth-4,200)/vw.width, 2)*Z; var v=pg.getViewport({scale:scale*dpr}); wrap.classList.toggle('zoomed', Z>1.001); paintZoom(wrap, Z); wrap._fitW=(v.width/dpr)/Z; wrap._fitH=(v.height/dpr)/Z; wrap.style.setProperty('--cw',(v.width/dpr)+'px'); wrap.style.setProperty('--ch',(v.height/dpr)+'px');
     cv.width=v.width; cv.height=v.height; cv.style.width=(v.width/dpr)+'px'; cv.style.height=(v.height/dpr)+'px';
     try{ _renderTask=pg.render({canvasContext:cv.getContext('2d'), viewport:v}); await _renderTask.promise; }catch(e){ if(!/cancel/i.test(String(e&&e.message))) console.warn('pdf render', e&&e.message); } _renderTask=null; $('lecPage').textContent=(S.page-(S.base||0))+' / '+S.total; redrawAnn(); bindAnnClicks();
   }
@@ -9924,7 +9931,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     V.pdf=null; if(pdf){ try{ await loadPdfJs(); V.pdf=await pdfjsLib.getDocument(pdf.remote?{url:pdf.url+'?v='+Date.now()}:{data:pdf.bytes.slice(0)}).promise; V.total=V.pdf.numPages; V.page=1; V.zoom=1; renderViewPage(); $('lecViewPrev').addEventListener('click',function(){ viewGo(V.page-1); }); var cb=$('lecViewClearAnn'); if(cb) cb.addEventListener('click',function(){ if(!V.curPdf) return; var st=annLoad($('lecCourse').value||'', V.curPdf.name); var n=(st[V.page]||[]).length; if(!n){ showToast('이 쪽엔 표시가 없어요'); return; } if(!confirm('이 쪽의 표시 '+n+'개를 모두 지울까요?')) return; delete st[V.page]; annSave($('lecCourse').value||'', V.curPdf.name, st); renderViewPage(); }); $('lecViewNext').addEventListener('click',function(){ viewGo(V.page+1); }); }catch(e){ showToast('PDF를 열 수 없어요'); } }
   }
   var _vtask=null;
-  async function renderViewPage(){ if(!V.pdf) return; try{ if(_vtask) _vtask.cancel(); }catch(e){} var pg=await V.pdf.getPage(V.page); var cv=$('lecViewCanvas'); if(!cv) return; var wrap=cv.parentNode; var vw=pg.getViewport({scale:1}); var dpr=window.devicePixelRatio||1; var Z=V.zoom||1; var scale=Math.min(Math.max(wrap.clientWidth-4,200)/vw.width, 2)*Z; var v=pg.getViewport({scale:scale*dpr}); wrap.classList.toggle('zoomed', Z>1.001); paintZoom(wrap, Z); wrap.style.setProperty('--cw',(v.width/dpr)+'px'); wrap.style.setProperty('--ch',(v.height/dpr)+'px');
+  async function renderViewPage(){ if(!V.pdf) return; try{ if(_vtask) _vtask.cancel(); }catch(e){} var pg=await V.pdf.getPage(V.page); var cv=$('lecViewCanvas'); if(!cv) return; var wrap=cv.parentNode; var vw=pg.getViewport({scale:1}); var dpr=window.devicePixelRatio||1; var Z=V.zoom||1; var scale=Math.min(Math.max(wrap.clientWidth-4,200)/vw.width, 2)*Z; var v=pg.getViewport({scale:scale*dpr}); wrap.classList.toggle('zoomed', Z>1.001); paintZoom(wrap, Z); wrap._fitW=(v.width/dpr)/Z; wrap._fitH=(v.height/dpr)/Z; wrap.style.setProperty('--cw',(v.width/dpr)+'px'); wrap.style.setProperty('--ch',(v.height/dpr)+'px');
     cv.width=v.width; cv.height=v.height; cv.style.width=(v.width/dpr)+'px'; cv.style.height=(v.height/dpr)+'px';
     try{ _vtask=pg.render({canvasContext:cv.getContext('2d'), viewport:v}); await _vtask.promise; }catch(e){} _vtask=null; var pe=$('lecViewPage'); if(pe) pe.textContent=V.page+' / '+V.total; syncNoteToPage(); try{ var sd=V.note&&(V.note.slides||[]).find(function(s){ return +s.page===V.page; }); var stored=V.curPdf?(annLoad($('lecCourse').value||'', V.curPdf.name)[V.page]||[]):[]; var marks=stored.length?stored.slice():((sd&&sd.marks)||[]).slice(); V.marks=marks; var li=await linesForPage(V.pdf, V.page, V.curPdf?V.curPdf.name:'x')||(sd&&sd.lines); V.lines=li; drawAnnotations($('lecViewCanvas'), $('lecViewAnnot'), V.page, marks, li); bindAnnClicks(); }catch(e){} }
   function viewGo(n){ if(!V.pdf) return; n=Math.max(1,Math.min(V.total,n)); if(n===V.page) return; V.page=n; renderViewPage(); }
