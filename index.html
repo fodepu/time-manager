@@ -2379,7 +2379,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="62">
+<meta name="tm-version" content="63">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -9343,7 +9343,8 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     var SR=window.SpeechRecognition||window.webkitSpeechRecognition; if(!SR){ status('이 브라우저는 음성인식을 지원하지 않아요 — Chrome을 쓰세요','err'); return false; }
     var rec=new SR(); rec.lang=S.lang||'en-US'; rec.continuous=true; rec.interimResults=true; rec.maxAlternatives=1;
     // 슬라이드 용어 편향: 지원되는 Chrome에서만 (contextual biasing)
-    try{ if(window.SpeechRecognitionPhrase && S.slideText){ var terms=slideTerms(); if(terms.length){ var arr=terms.map(function(t){ return new SpeechRecognitionPhrase(t, 3.0); }); rec.phrases=(window.ObservableArray?arr:arr); S.biased=terms.length; } } }catch(e){ S.biased=0; }
+    // 용어 편향은 기기 내(on-device) 인식일 때만 동작 — 사용 가능할 때만 켬 (2026-09 기준 macOS Chrome 148은 unavailable)
+    S.biased=0; try{ if(window.SpeechRecognitionPhrase && S.slideText && S.localOK===true){ var terms=slideTerms(); if(terms.length){ rec.processLocally=true; rec.phrases=terms.map(function(t){ return new SpeechRecognitionPhrase(t, 3.0); }); S.biased=terms.length; } } }catch(e){ S.biased=0; }
     rec.onresult=function(ev){ var interim='';
       for(var i=ev.resultIndex;i<ev.results.length;i++){ var r=ev.results[i]; var t=(r[0]&&r[0].transcript||'').trim(); if(!t) continue; if(r.isFinal){ addFinal(t, S.lastInterim||''); } else interim+=t+' '; }
       S.lastInterim=interim.trim(); S.lastResultAt=Date.now(); renderLive(); };
@@ -9388,6 +9389,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     S.online=!S.pdf; if(S.online){ S.page=1; S.total=1; S.lastCut=0; $('lecPage').textContent='구간 1'; }
     S.slides={}; S.log=[{t:0,page:S.page||1}]; S.startAt=Date.now(); S.running=true; S.audioBlob=null; $('lecDownloadAudio').style.display='none'; $('lecFinish').style.display='none';
     $('lecRec').textContent='■ 녹음 중지'; $('lecRec').classList.add('on'); status('마이크 여는 중… (권한 창이 뜨면 허용)');
+    S.localOK=false; try{ if(window.SpeechRecognition && SpeechRecognition.available){ var av=await Promise.race([SpeechRecognition.available({langs:[S.lang], processLocally:true}), new Promise(function(r){ setTimeout(function(){ r('unavailable'); },1500); })]); S.localOK=(av==='available'); } }catch(e){}
     if(!startRecognition()){ S.running=false; $('lecRec').textContent='● 녹음 시작'; $('lecRec').classList.remove('on'); return; }
     S.tmode='web'; S.translator=null;
     Promise.race([initTranslator(), new Promise(function(r){ setTimeout(r, 8000); })]).then(function(){ if(S.running) status(recLabel(),'ok'); });
