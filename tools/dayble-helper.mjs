@@ -25,11 +25,12 @@ function cors(req, res) {
   res.setHeader('Access-Control-Max-Age', '600');
 }
 
+let noToolsFlag = true;   // --tools "" 로 도구 설명을 빼서 프롬프트를 줄임 (미지원 CLI면 자동 해제)
 function runClaude(system, user, noSys) {
   return new Promise((resolve, reject) => {
-    const args = noSys
-      ? ['-p', '--output-format', 'text', '--model', MODEL, '--max-turns', '1']
-      : ['-p', '--output-format', 'text', '--model', MODEL, '--max-turns', '1', '--system-prompt', system];
+    const args = ['-p', '--output-format', 'text', '--model', MODEL, '--max-turns', '1'];
+    if (noToolsFlag) args.push('--tools', '');
+    if (!noSys) args.push('--system-prompt', system);
     const p = spawn('claude', args, { stdio: ['pipe', 'pipe', 'pipe'], env: { ...process.env, PATH: (process.env.HOME + '/.local/bin:' + process.env.HOME + '/.claude/local:' + (process.env.PATH || '')), CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC: '1' } });
     let out = '', err = '';
     const timer = setTimeout(() => { p.kill('SIGKILL'); reject(new Error('timeout (60s)')); }, 60000);
@@ -38,10 +39,30 @@ function runClaude(system, user, noSys) {
     p.on('error', e => { clearTimeout(timer); reject(e); });
     p.on('close', code => { clearTimeout(timer);
       if (code === 0) return resolve(out.trim());
-      if (!noSys && /unknown option|unrecognized|--system-prompt/i.test(err)) return resolve(runClaude(system, user, true));
-      reject(new Error('claude exit ' + code + ': ' + err.slice(0, 300))); });
+      const msg = (err + ' ' + out).trim();
+      if (noToolsFlag && /unknown option|unrecognized|--tools/i.test(msg)) { noToolsFlag = false; return resolve(runClaude(system, user, noSys)); }
+      if (!noSys && /unknown option|unrecognized|--system-prompt/i.test(msg)) return resolve(runClaude(system, user, true));
+      reject(new Error('claude exit ' + code + ': ' + msg.replace(/\s+/g, ' ').slice(0, 300))); });
     p.stdin.end(noSys ? (system + '\n\n---\n\n' + user) : user);
   });
+}
+
+// 한 번에 하나만 실행. 실행 중에 새 요청이 오면 대기, 대기 중인 게 이미 있으면 그건 버림(최신만 유지)
+let running = false, waiting = null;
+function runQueued(system, user) {
+  return new Promise((resolve, reject) => {
+    if (waiting) { waiting.reject(new Error('superseded')); waiting = null; }
+    const job = { system, user, resolve, reject };
+    if (running) { waiting = job; return; }
+    exec(job);
+  });
+  function exec(job) {
+    running = true;
+    runClaude(job.system, job.user).then(job.resolve, job.reject).finally(() => {
+      running = false;
+      if (waiting) { const w = waiting; waiting = null; exec(w); }
+    });
+  }
 }
 
 const server = http.createServer(async (req, res) => {
@@ -57,7 +78,7 @@ const server = http.createServer(async (req, res) => {
         busy++; const t0 = Date.now();
         const st = styleText();
         const sys = st ? system + '\n\n# 사용자의 필기법 (반드시 따를 것)\n' + st : system;
-        let text = await runClaude(sys, user);
+        let text = await runQueued(sys, user);
         text = String(text).replace(/^```(?:json)?\s*/i, '').replace(/```\s*$/, '').trim();
         busy--; done++;
         console.log(new Date().toLocaleTimeString('ko-KR'), `✓ ${Math.round((Date.now() - t0) / 1000)}s`, text.replace(/\s+/g, ' ').slice(0, 90));
