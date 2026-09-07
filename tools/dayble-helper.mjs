@@ -3,6 +3,12 @@
 // 실행: node dayble-helper.mjs   (수업 전에 켜두고, 끝나면 Ctrl+C)
 import http from 'node:http';
 import { spawn } from 'node:child_process';
+import fs from 'node:fs';
+import path from 'node:path';
+
+// 필기법.md — 사용자의 필기 지침. 있으면 매 요청마다 읽어 시스템 프롬프트 뒤에 붙인다 (수정 즉시 반영, 재시작 불필요)
+const STYLE_FILE = path.join(path.dirname(new URL(import.meta.url).pathname), '필기법.md');
+function styleText() { try { return fs.readFileSync(STYLE_FILE, 'utf8').trim(); } catch { return ''; } }
 
 const PORT = 7377;
 const ALLOW = new Set(['https://fodepu.github.io', 'http://localhost', 'http://127.0.0.1']);
@@ -49,7 +55,9 @@ const server = http.createServer(async (req, res) => {
         const { system, user } = JSON.parse(body || '{}');
         if (!system || !user) throw new Error('system/user 필요');
         busy++; const t0 = Date.now();
-        let text = await runClaude(system, user);
+        const st = styleText();
+        const sys = st ? system + '\n\n# 사용자의 필기법 (반드시 따를 것)\n' + st : system;
+        let text = await runClaude(sys, user);
         text = String(text).replace(/^```(?:json)?\s*/i, '').replace(/```\s*$/, '').trim();
         busy--; done++;
         console.log(new Date().toLocaleTimeString('ko-KR'), `✓ ${Math.round((Date.now() - t0) / 1000)}s`, text.replace(/\s+/g, ' ').slice(0, 90));
@@ -67,6 +75,7 @@ const server = http.createServer(async (req, res) => {
 
 server.listen(PORT, '127.0.0.1', () => {
   console.log(`\nDayble 도우미 실행 중 — http://localhost:${PORT}  (모델: ${MODEL})`);
+  console.log(styleText() ? '필기법.md 적용 중 (' + styleText().length + '자)' : '필기법.md 없음 — 기본 지침으로 동작');
   console.log('Dayble 녹음 화면의 AI 필기 버튼이 "✦ Claude 필기 (내 맥)"로 바뀌면 연결된 거예요. 끝나면 Ctrl+C\n');
   // 시작 시 Claude Code 로그인 확인
   runClaude('Reply with exactly: ok', 'ping').then(t => console.log('Claude Code 확인:', t.slice(0, 40))).catch(e => console.log('⚠ Claude Code 호출 실패 —', e.message, '\n  터미널에서 `claude` 를 한 번 실행해 로그인(구독 계정)돼 있는지 확인하세요.'));
