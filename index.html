@@ -2379,7 +2379,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="85">
+<meta name="tm-version" content="86">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -9490,7 +9490,20 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     if(!r.ok){ var t=''; try{ t=(await r.json()).error.message; }catch(e){} throw new Error(r.status+' '+t); }
     var j=await r.json(); return (j.content||[]).map(function(c){ return c.text||''; }).join('');
   }
-  function parseJson(s){ try{ return JSON.parse(s); }catch(e){} var m=s.match(/\{[\s\S]*\}/); if(m){ try{ return JSON.parse(m[0]); }catch(e){} } return null; }
+  function parseJson(s){ s=String(s||'').replace(/^```(?:json)?\s*/i,'').replace(/```\s*$/,'').trim();
+    var i0=s.indexOf('{'); if(i0>0) s=s.slice(i0);
+    var clean=s.replace(/[\u0000-\u001f]+/g,' ');
+    var tries=[s, clean];
+    for(var k=0;k<tries.length;k++){ try{ return JSON.parse(tries[k]); }catch(e){} }
+    var m=clean.match(/\{[\s\S]*\}/); if(m){ try{ return JSON.parse(m[0]); }catch(e){} }
+    return repairJson(clean); }
+  // 잘린 JSON 복구: 마지막 완전한 항목까지 자르고 괄호를 닫는다
+  function repairJson(s){
+    function close(str){ var st=[], inS=false, esc=false; for(var i=0;i<str.length;i++){ var c=str[i]; if(inS){ if(esc) esc=false; else if(c==='\\') esc=true; else if(c==='"') inS=false; continue; } if(c==='"') inS=true; else if(c==='{'||c==='[') st.push(c); else if(c==='}'||c===']') st.pop(); }
+      var out=str; if(inS) out+='"'; out=out.replace(/[,:]\s*$/,''); while(st.length){ var o=st.pop(); out+=(o==='{'?'}':']'); } return out; }
+    try{ return JSON.parse(close(s)); }catch(e){}
+    var cut=s.length; for(var n=0;n<40;n++){ var j=Math.max(s.lastIndexOf(',',cut-1), s.lastIndexOf('}',cut-1), s.lastIndexOf(']',cut-1)); if(j<=0) break; cut=j; try{ return JSON.parse(close(s.slice(0,cut))); }catch(e){} }
+    return null; }
   var AI_SYSTEM='You are a live lecture note-taker for a Korean university student. You receive (1) the text of the current slide (authoritative for terms, symbols, numbers), (2) raw speech-recognition segments of what the professor just said (noisy: homophones, dropped words, wrong proper nouns), (3) notes already written for this slide.\n'+
     'Tasks: A) Correct each segment into what the professor most likely said, using the slide text for terminology — keep the original language, keep it faithful (do not add content, do not summarize, keep filler minimal). B) Give a natural Korean translation of each corrected segment (if the lecture is already Korean, "ko" = corrected Korean text). C) Update the notes for this slide: 2–5 concise Korean bullet points of what the professor explained, **bold** key terms with the English term in parentheses, formulas/numbers exactly as on the slide, no fluff; merge with existing notes (replace, do not duplicate). Mention exam/assignment/deadline hints in "exam".\n'+
     'D) Slide marks — be very selective, like a student who marks only what he would otherwise forget. Usually return an empty "marks" list. Add a mark ONLY when: (a) the professor said something that is NOT on the slide and matters later (a rule, deadline, exception, example, warning, "exam") → post-it: {"line":<nearest slide line index>,"type":"","note":"<≤ 22 chars, Korean; keep the English term if useful>"}; (b) the professor explicitly said a line is important or will be on the exam → "highlight" on that line; (c) the professor told you to remember one specific number/term → "circle". Never mark lines the professor is merely reading or paraphrasing; names, rooms, phone numbers, times, URLs are NOT worth marking unless he added a rule about them. At most 1 new mark per call, 4 per slide, no repeats of "existing_marks".\n'+
