@@ -2379,7 +2379,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="64">
+<meta name="tm-version" content="65">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -2757,12 +2757,14 @@
             <button type="button" class="settings-item" data-proxy="themeBtn">테마 (다크 / 라이트)</button>
             <button type="button" class="settings-item" data-proxy="alarmBtn">알람</button>
             <button type="button" class="settings-item owner-only" id="tmPushItem" data-proxy="tmPushBtn">새 과제·공지 알림</button>
+            <button type="button" class="settings-item owner-only" data-proxy="tmClaudeKeyBtn">Claude API 키 (강의노트 실시간 필기)</button>
             <button type="button" class="settings-item" data-proxy="tmSyncNowBtn">동기화 상태 / 지금 동기화</button>
             <button type="button" class="settings-item danger" data-proxy="tmLogoutBtn">로그아웃</button>
           </div>
         </div>
         <button class="icon-btn ctl-hidden" id="tmLogoutBtn" title="로그아웃" data-icon="logOut"></button>
         <button class="icon-btn ctl-hidden" id="tmPushBtn" title="푸시 알림" onclick="if(window.tmPushSetup) tmPushSetup();"></button>
+        <button class="icon-btn ctl-hidden" id="tmClaudeKeyBtn" onclick="if(window.tmSetClaudeKey) tmSetClaudeKey();"></button>
         <button class="icon-btn ctl-hidden" id="tmSyncNowBtn" title="동기화" onclick="if(window.tmSyncNow) tmSyncNow();"></button>
         <button class="icon-btn ctl-hidden" id="syncBtn" title="동기화" data-icon="cloud"><span class="sync-dot" id="syncDot"></span></button>
         <button class="icon-btn ctl-hidden" id="lettersBtn" title="편지" data-icon="mail"></button>
@@ -9391,8 +9393,9 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
 
   // ---- 실시간 AI 필기 (Claude API, 사용자 키) — 슬라이드 맥락으로 대본 교정 + 번역 + 요점 ----
   var AI={ busy:false, lastRun:0, fails:0, model:'claude-haiku-4-5-20251001' };
-  function aiKey(){ try{ return localStorage.getItem('tm_claude_key')||''; }catch(e){ return ''; } }
-  window.tmSetClaudeKey=function(){ var cur=aiKey(); var k=prompt('Claude API 키 (console.anthropic.com → API Keys). 이 기기에만 저장되고 동기화되지 않아요.\n비우고 확인하면 삭제.', cur?cur.slice(0,12)+'…':''); if(k===null) return; k=k.trim(); if(!k||/…$/.test(k)) { if(!k){ localStorage.removeItem('tm_claude_key'); showToast('Claude 키 삭제됨'); paintAiBtn(); } return; } if(!/^sk-ant-/.test(k)){ showToast('sk-ant- 로 시작하는 키여야 해요'); return; } localStorage.setItem('tm_claude_key',k); showToast('Claude 실시간 필기 켜짐'); paintAiBtn(); };
+  // 키는 내 계정 데이터(Firestore users/{uid}, 본인만 읽기 가능)와 함께 동기화 → 기기마다 다시 넣을 필요 없음
+  function aiKey(){ try{ var k=lsGet(lsKey('claude_key')); if(!k){ var old=localStorage.getItem('tm_claude_key'); if(old){ lsSet(lsKey('claude_key'),old); localStorage.removeItem('tm_claude_key'); if(window.tmOnChange) tmOnChange(); k=old; } } return k||''; }catch(e){ return ''; } }
+  window.tmSetClaudeKey=function(){ var cur=aiKey(); var k=prompt('Claude API 키 (console.anthropic.com → API Keys). 내 계정에 저장돼 폰·PC 모두에서 자동으로 쓰여요.\n비우고 확인하면 삭제.', cur?cur.slice(0,12)+'…':''); if(k===null) return; k=k.trim(); if(!k||/…$/.test(k)) { if(!k){ try{ localStorage.removeItem(lsKey('claude_key')); localStorage.removeItem('tm_claude_key'); }catch(e){} if(window.tmOnChange) tmOnChange(); showToast('Claude 키 삭제됨'); paintAiBtn(); } return; } if(!/^sk-ant-/.test(k)){ showToast('sk-ant- 로 시작하는 키여야 해요'); return; } lsSet(lsKey('claude_key'),k); if(window.tmOnChange) tmOnChange(); showToast('Claude 실시간 필기 켜짐 — 모든 기기에 적용'); paintAiBtn(); };
   function paintAiBtn(){ var b=$('lecAiBtn'); if(!b) return; var on=!!aiKey(); b.textContent=on?'✦ Claude 필기 켜짐':'✦ Claude 키'; b.classList.toggle('on',on); }
   async function aiCall(system, user, maxTokens){
     var r=await fetch('https://api.anthropic.com/v1/messages',{ method:'POST', headers:{ 'content-type':'application/json', 'x-api-key':aiKey(), 'anthropic-version':'2023-06-01', 'anthropic-dangerous-direct-browser-access':'true' },
