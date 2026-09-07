@@ -2379,7 +2379,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="90">
+<meta name="tm-version" content="91">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -2499,6 +2499,10 @@
   .lec-nav { display:flex; align-items:center; gap:8px; margin-top:6px; font-size:13px; font-variant-numeric: tabular-nums; }
   .lec-hint { font-size:11px; color: var(--text-muted); margin-left:auto; }
   .lec-nav-ai { margin-left:12px; }
+  .lec-tools { display:inline-flex; gap:2px; margin-right:10px; background:var(--bg-card,#fff); border:1px solid var(--border,#e5e7eb); border-radius:10px; padding:2px; }
+  .lec-tools button { border:0; background:transparent; font-size:12px; padding:5px 8px; border-radius:8px; cursor:pointer; color:var(--text,#111827); }
+  .lec-tools button.on { background:#111827; color:#fff; }
+  .lec-annot.t-hl, .lec-annot.t-ul { cursor:crosshair; } .lec-annot.t-circle, .lec-annot.t-note { cursor:pointer; } .lec-annot.t-eraser { cursor:cell; }
   .lec-live { border:1px solid var(--border,#e5e5e5); border-radius:12px; background: var(--bg-card,#fff); height: min(70vh, 640px); overflow:auto; padding:10px 12px; }
   .lec-resume { background:#fef2f2; border:1px solid #fecaca; border-radius:12px; padding:10px 14px; margin-bottom:10px; font-size:13px; display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
   .lec-nav-ai { margin-left:auto; display:flex; gap:6px; }
@@ -2571,7 +2575,8 @@
   #lecWork:focus, #lecView:focus { outline:none; }
   .lec-langbtn { font-weight:700; }
   .lec-annot { position:absolute; pointer-events:auto; cursor:text; user-select:none; }
-  .lec-selrect { position:absolute; background:rgba(59,130,246,.18); border:1px solid rgba(59,130,246,.6); pointer-events:none; z-index:15; }
+  .lec-sellayer { position:absolute; inset:0; pointer-events:none; z-index:15; }
+  .lec-selrect { position:absolute; background:rgba(59,130,246,.28); pointer-events:none; }
   .lec-view-canvas { position:relative; }
   .lec-ctx { position:absolute; left:-99999px; top:0; width:1px; height:1px; overflow:hidden; white-space:pre-wrap; }
   #lecAiBtn.on { border-color:#8B5CF6; color:#8B5CF6; font-weight:700; }
@@ -2959,7 +2964,7 @@
             <canvas id="lecCanvas"></canvas><canvas id="lecAnnot" class="lec-annot"></canvas>
             <div class="lec-drop-hint">PDF를 여기에 드래그하거나 "PDF 열기"<br><small>PDF 없이 시작하면 5분마다 구간 자동 분할, → 키로 수동 분할</small></div>
           </div>
-          <div class="lec-nav"><button type="button" class="lec-btn" id="lecPrev">←</button><span id="lecPage">–</span><button type="button" class="lec-btn" id="lecNext">→</button><span class="lec-hint">키보드 ← → / Space</span><span class="lec-nav-ai"><button type="button" class="lec-btn" id="lecClearAnn" title="이 쪽의 형광펜·동그라미·포스트잇을 모두 지웁니다">표시 지우기</button><button type="button" class="lec-btn" id="lecGemBtn" title="Google AI Studio 무료 Gemini 키를 넣으면 대본·번역이 1~2초 만에 실시간으로 나와요">◈ Gemini 꺼짐</button><button type="button" class="lec-btn" id="lecAiBtn" title="맥의 Dayble 도우미가 켜져 있으면 Claude가 슬라이드 맥락으로 실시간 필기">✦ 도우미 꺼짐</button></span></div>
+          <div class="lec-nav"><span class="lec-tools" data-tools><button type="button" data-tool="select" class="on" title="클릭: 단어 번역·표시 삭제 / 드래그: 구 번역">↖ 선택</button><button type="button" data-tool="hl" title="드래그하거나 줄을 클릭">🟨 형광펜</button><button type="button" data-tool="ul" title="드래그하거나 줄을 클릭">▁ 밑줄</button><button type="button" data-tool="circle" title="줄을 클릭">◯ 동그라미</button><button type="button" data-tool="note" title="줄을 클릭하고 메모 입력">📝 포스트잇</button><button type="button" data-tool="eraser" title="표시를 클릭하거나 드래그로 지움">◻ 지우개</button></span><button type="button" class="lec-btn" id="lecPrev">←</button><span id="lecPage">–</span><button type="button" class="lec-btn" id="lecNext">→</button><span class="lec-hint">키보드 ← → / Space</span><span class="lec-nav-ai"><button type="button" class="lec-btn" id="lecClearAnn" title="이 쪽의 형광펜·동그라미·포스트잇을 모두 지웁니다">표시 지우기</button><button type="button" class="lec-btn" id="lecGemBtn" title="Google AI Studio 무료 Gemini 키를 넣으면 대본·번역이 1~2초 만에 실시간으로 나와요">◈ Gemini 꺼짐</button><button type="button" class="lec-btn" id="lecAiBtn" title="맥의 Dayble 도우미가 켜져 있으면 Claude가 슬라이드 맥락으로 실시간 필기">✦ 도우미 꺼짐</button></span></div>
         </div>
         <div class="lec-right"><div class="lec-live" id="lecLive"><div class="lms-empty">녹음을 시작하면 이 슬라이드의 대본과 번역이 여기에 실시간으로 쌓입니다.</div></div></div>
       </div>
@@ -9376,14 +9381,50 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   function wordsFrom(items, vw){ var out=[]; items.forEach(function(it){ var s=it.str||''; if(!s.trim()) return; var tr=it.transform; var x0=tr[4], yb=tr[5], hgt=Math.abs(it.height||tr[3]||10), w=it.width||0; var cw=s.length?w/s.length:0; var y=vw.height-yb-hgt; var re=/\S+/g, m; while((m=re.exec(s))){ out.push({ text:m[0], x:x0+m.index*cw, y:y, w:m[0].length*cw, h:hgt*1.25 }); } }); return out; }
   function wordAt(words, info, ov, ev){ if(!words||!info) return null; var r=ov.getBoundingClientRect(); var lx=(ev.clientX-r.left)/Math.max(1,r.width)*info.w, ly=(ev.clientY-r.top)/Math.max(1,r.height)*info.h; var best=null, bd=1e9;
     words.forEach(function(wd){ if(lx>=wd.x-2&&lx<=wd.x+wd.w+2&&ly>=wd.y-2&&ly<=wd.y+wd.h+2){ var d=Math.abs(lx-(wd.x+wd.w/2)); if(d<bd){ bd=d; best=wd; } } }); return best; }
+  var TOOL={ mode:'select' };
+  function setTool(m){ TOOL.mode=m; document.querySelectorAll('[data-tools] button').forEach(function(b){ b.classList.toggle('on', b.getAttribute('data-tool')===m); }); ['lecAnnot','lecViewAnnot'].forEach(function(id){ var el=$(id); if(!el) return; el.className='lec-annot t-'+m; }); }
+  function bindTools(){ document.querySelectorAll('[data-tools] button').forEach(function(b){ if(b._t) return; b._t=true; b.addEventListener('click',function(){ setTool(b.getAttribute('data-tool')); }); }); }
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape' && TOOL.mode!=='select') setTool('select'); });
+  function lineAt(info, ov, ev){ if(!info||!info.lines) return -1; var r=ov.getBoundingClientRect(); var lx=(ev.clientX-r.left)/Math.max(1,r.width)*info.w, ly=(ev.clientY-r.top)/Math.max(1,r.height)*info.h; var best=-1, bd=1e9;
+    info.lines.forEach(function(L){ if(lx>=L.x-4&&lx<=L.x+L.w+4&&ly>=L.y-3&&ly<=L.y+L.h+3){ var d=Math.abs(ly-(L.y+L.h/2)); if(d<bd){ bd=d; best=L.i; } } }); return best; }
+  function linesInRect(info, ov, x0,y0,x1,y1){ if(!info||!info.lines) return []; var r=ov.getBoundingClientRect(); var fx=info.w/Math.max(1,r.width), fy=info.h/Math.max(1,r.height); var ax=Math.min(x0,x1)*fx, bx=Math.max(x0,x1)*fx, ay=Math.min(y0,y1)*fy, by=Math.max(y0,y1)*fy;
+    return info.lines.filter(function(L){ var cy=L.y+L.h/2; return cy>=ay&&cy<=by && L.x+L.w>=ax && L.x<=bx; }).map(function(L){ return L.i; }); }
+  function hitsInRect(ov, x0,y0,x1,y1){ var r=ov.getBoundingClientRect(); var fx=ov.width/Math.max(1,r.width), fy=ov.height/Math.max(1,r.height); var ax=Math.min(x0,x1)*fx, bx=Math.max(x0,x1)*fx, ay=Math.min(y0,y1)*fy, by=Math.max(y0,y1)*fy;
+    return (ov._hits||[]).filter(function(t){ return t.x+t.w>=ax && t.x<=bx && t.y+t.h>=ay && t.y<=by; }).map(function(t){ return t.idx; }); }
+  // 표시 컨텍스트: 녹음 화면(S) / 복습 뷰어(V)
+  function annCtxRec(){ return { list:function(){ return S.ann[S.page]||[]; }, save:function(l){ S.ann[S.page]=l; annPersistPage(S.page); redrawAnn(); saveLocal(); } }; }
+  function annCtxView(){ return { list:function(){ return V.marks||[]; }, save:function(l){ V.marks=l; if(V.curPdf){ var st=annLoad($('lecCourse').value||'', V.curPdf.name); if(l.length) st[V.page]=l; else delete st[V.page]; annSave($('lecCourse').value||'', V.curPdf.name, st); } renderViewPage(); } }; }
+  function addMarks(ctx, idxs, type, note){ var l=ctx.list().slice(); idxs.forEach(function(i){ if(i<0) return; if(l.some(function(a){ return a.line===i && a.type===type && (a.note||'')===(note||''); })) return; l.push({line:i, type:type, note:note||'', by:'me'}); }); ctx.save(l); }
+  function removeMarks(ctx, idxs){ if(!idxs.length) return; var l=ctx.list().filter(function(a,i){ return idxs.indexOf(i)<0; }); ctx.save(l); }
+  // 클릭 (드래그 아님) 처리 — 도구별
+  function toolClick(ctx, ov, info, ev){ var m=TOOL.mode; if(m==='select') return false;
+    if(m==='eraser'){ var i=annHitTest(ov, ev); if(i>=0) removeMarks(ctx,[i]); return true; }
+    var li=lineAt(info, ov, ev); if(li<0){ showToast('글자 줄 위를 눌러주세요'); return true; }
+    if(m==='hl') addMarks(ctx,[li],'highlight'); else if(m==='ul') addMarks(ctx,[li],'underline'); else if(m==='circle') addMarks(ctx,[li],'circle');
+    else if(m==='note'){ var t=prompt('포스트잇 내용 (짧게):'); if(t&&t.trim()) addMarks(ctx,[li],'',t.trim().slice(0,60)); }
+    return true; }
+  function toolDrag(ctx, ov, info, x0,y0,x1,y1){ var m=TOOL.mode; if(m==='select') return false;
+    if(m==='eraser'){ removeMarks(ctx, hitsInRect(ov,x0,y0,x1,y1)); return true; }
+    var ls=linesInRect(info, ov, x0,y0,x1,y1); if(m==='hl') addMarks(ctx, ls, 'highlight'); else if(m==='ul') addMarks(ctx, ls, 'underline'); else if(m==='circle') addMarks(ctx, ls.slice(0,1), 'circle'); else if(m==='note'){ if(ls.length){ var t=prompt('포스트잇 내용 (짧게):'); if(t&&t.trim()) addMarks(ctx,[ls[0]],'',t.trim().slice(0,60)); } }
+    return true; }
   var _tipT=null;
   function phraseInRect(words, info, ov, x0,y0,x1,y1){ if(!words||!info) return ''; var r=ov.getBoundingClientRect(); var fx=info.w/Math.max(1,r.width), fy=info.h/Math.max(1,r.height); var ax=Math.min(x0,x1)*fx, bx=Math.max(x0,x1)*fx, ay=Math.min(y0,y1)*fy, by=Math.max(y0,y1)*fy;
     var sel=words.filter(function(wd){ var cx=wd.x+wd.w/2, cy=wd.y+wd.h/2; return cx>=ax&&cx<=bx&&cy>=ay&&cy<=by; }); sel.sort(function(a,b){ return (Math.abs(a.y-b.y)>a.h*0.6)?(a.y-b.y):(a.x-b.x); }); return sel.map(function(w){ return w.text; }).join(' ').replace(/\s+/g,' ').trim(); }
-  function bindDragSelect(ov, getInfo){ if(ov._drag) return; ov._drag=true; var wrap=ov.parentNode; var st=null, box=null;
-    ov.addEventListener('mousedown',function(ev){ if(ev.button!==0) return; var r=ov.getBoundingClientRect(); st={x:ev.clientX-r.left, y:ev.clientY-r.top, cx:ev.clientX, cy:ev.clientY}; ov._dragged=false; });
-    ov.addEventListener('mousemove',function(ev){ if(!st) return; var r=ov.getBoundingClientRect(); var x=ev.clientX-r.left, y=ev.clientY-r.top; if(!ov._dragged && Math.hypot(x-st.x,y-st.y)<5) return; ov._dragged=true;
-      if(!box){ box=document.createElement('div'); box.className='lec-selrect'; wrap.appendChild(box); } var wr=wrap.getBoundingClientRect(); box.style.left=(Math.min(st.x,x)+r.left-wr.left+wrap.scrollLeft)+'px'; box.style.top=(Math.min(st.y,y)+r.top-wr.top+wrap.scrollTop)+'px'; box.style.width=Math.abs(x-st.x)+'px'; box.style.height=Math.abs(y-st.y)+'px'; ev.preventDefault(); });
-    function end(ev){ if(!st) return; var s=st; st=null; if(box){ box.remove(); box=null; } if(!ov._dragged) return; var r=ov.getBoundingClientRect(); var x=ev.clientX-r.left, y=ev.clientY-r.top; var info=getInfo(); var ph=phraseInRect(info&&info.words, info, ov, s.x,s.y,x,y); if(ph) showWordTip(wrap, ev, ph); setTimeout(function(){ ov._dragged=false; },0); }
+  function flowWords(info){ if(!info||!info.words) return []; if(info._flow) return info._flow; var ws=info.words.slice(); ws.sort(function(a,b){ return (Math.abs(a.y-b.y)>Math.min(a.h,b.h)*0.6)?(a.y-b.y):(a.x-b.x); }); ws.forEach(function(w,i){ w.fi=i; var L=(info.lines||[]).find(function(l){ var cy=w.y+w.h/2; return cy>=l.y-2&&cy<=l.y+l.h+2; }); w.li=L?L.i:-1; }); info._flow=ws; return ws; }
+  function nearestWord(info, ov, cx, cy){ var ws=flowWords(info); if(!ws.length) return null; var r=ov.getBoundingClientRect(); var lx=(cx-r.left)/Math.max(1,r.width)*info.w, ly=(cy-r.top)/Math.max(1,r.height)*info.h; var best=null, bd=1e9;
+    ws.forEach(function(w){ var dy=(ly<w.y)?(w.y-ly):(ly>w.y+w.h?ly-(w.y+w.h):0); var dx=(lx<w.x)?(w.x-lx):(lx>w.x+w.w?lx-(w.x+w.w):0); var d=dy*4+dx; if(d<bd){ bd=d; best=w; } }); return best; }
+  function bindDragSelect(ov, getInfo){ if(ov._drag) return; ov._drag=true; var wrap=ov.parentNode; var st=null, layer=null;
+    function paint(a,b,info){ if(!layer){ layer=document.createElement('div'); layer.className='lec-sellayer'; wrap.appendChild(layer); } var r=ov.getBoundingClientRect(), wr=wrap.getBoundingClientRect(); var fx=r.width/info.w, fy=r.height/info.h; var ws=flowWords(info); var i0=Math.min(a.fi,b.fi), i1=Math.max(a.fi,b.fi); var html='';
+      for(var i=i0;i<=i1;i++){ var w=ws[i]; html+='<div class="lec-selrect" style="left:'+(w.x*fx+r.left-wr.left+wrap.scrollLeft)+'px;top:'+(w.y*fy+r.top-wr.top+wrap.scrollTop)+'px;width:'+(w.w*fx+2)+'px;height:'+(w.h*fy)+'px"></div>'; } layer.innerHTML=html; }
+    ov.addEventListener('mousedown',function(ev){ if(ev.button!==0) return; var info=getInfo(); st={cx:ev.clientX, cy:ev.clientY, a:nearestWord(info, ov, ev.clientX, ev.clientY), info:info}; ov._dragged=false; });
+    ov.addEventListener('mousemove',function(ev){ if(!st) return; if(!ov._dragged && Math.hypot(ev.clientX-st.cx, ev.clientY-st.cy)<5) return; ov._dragged=true; ev.preventDefault(); if(!st.a||!st.info) return; var b=nearestWord(st.info, ov, ev.clientX, ev.clientY); if(b) paint(st.a, b, st.info); });
+    function end(ev){ if(!st) return; var s=st; st=null; if(layer){ layer.remove(); layer=null; } if(!ov._dragged) return; var info=s.info; var b=s.a?nearestWord(info, ov, ev.clientX, ev.clientY):null;
+      if(s.a && b){ var ws=flowWords(info); var i0=Math.min(s.a.fi,b.fi), i1=Math.max(s.a.fi,b.fi); var sel=ws.slice(i0,i1+1); var lineIdx=[]; sel.forEach(function(w){ if(w.li>=0 && lineIdx.indexOf(w.li)<0) lineIdx.push(w.li); });
+        var ctx=(ov.id==='lecViewAnnot')?annCtxView():annCtxRec(); var m=TOOL.mode;
+        if(m==='hl') addMarks(ctx, lineIdx, 'highlight'); else if(m==='ul') addMarks(ctx, lineIdx, 'underline'); else if(m==='circle') addMarks(ctx, lineIdx.slice(0,1), 'circle'); else if(m==='note'){ var t=prompt('포스트잇 내용 (짧게):'); if(t&&t.trim()) addMarks(ctx,[lineIdx[0]],'',t.trim().slice(0,60)); }
+        else if(m==='eraser'){ var r=ov.getBoundingClientRect(); removeMarks(ctx, hitsInRect(ov, s.cx-r.left, s.cy-r.top, ev.clientX-r.left, ev.clientY-r.top)); }
+        else { var ph=sel.map(function(w){ return w.text; }).join(' ').replace(/\s+/g,' ').trim(); if(ph) showWordTip(wrap, ev, ph); } }
+      setTimeout(function(){ ov._dragged=false; },0); }
     ov.addEventListener('mouseup',end); ov.addEventListener('mouseleave',function(ev){ if(st) end(ev); }); }
   async function showWordTip(wrap, ev, word){ var old=wrap.querySelector('.lec-wordtip'); if(old) old.remove(); var clean=String(word).replace(/^[^A-Za-z0-9가-힣(]+|[^A-Za-z0-9가-힣%).]+$/g,''); if(!clean) return;
     var tip=document.createElement('div'); tip.className='lec-wordtip'; tip.innerHTML='<b>'+escapeHtml(clean)+'</b><small>번역 중…</small>'; var r=wrap.getBoundingClientRect(); tip.style.left=Math.max(4,(ev.clientX-r.left+wrap.scrollLeft+8))+'px'; tip.style.top=Math.max(4,(ev.clientY-r.top+wrap.scrollTop-40))+'px'; wrap.appendChild(tip);
@@ -9414,9 +9455,9 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   window.tmDrawAnnotations=drawAnnotations;
   window.tmS=S; // 디버그/테스트용
   function redrawAnn(){ try{ drawAnnotations($('lecCanvas'), $('lecAnnot'), S.page, S.ann[S.page]||[], S.slideLines&&S.slideLines[S.page]); }catch(e){} }
-  function bindAnnClicks(){
-    var ov=$('lecAnnot'); if(ov && !ov._bound){ ov._bound=true; bindDragSelect(ov, function(){ return S.slideLines&&S.slideLines[S.page]; }); ov.addEventListener('click',function(ev){ if(ov._dragged) return; var i=annHitTest(ov, ev); if(i<0){ var info=S.slideLines&&S.slideLines[S.page]; var wd=wordAt(info&&info.words, info, ov, ev); if(wd) showWordTip(ov.parentNode, ev, wd.text); return; } var list=S.ann[S.page]||[]; var a=list[i]; if(!a) return; if(!confirm('이 표시를 지울까요?\n'+(a.note||a.type))) return; list.splice(i,1); S.ann[S.page]=list; annPersistPage(S.page); redrawAnn(); saveLocal(); }); }
-    var vo=$('lecViewAnnot'); if(vo && !vo._bound){ vo._bound=true; bindDragSelect(vo, function(){ return V.lines; }); vo.addEventListener('click',function(ev){ if(vo._dragged) return; var i=annHitTest(vo, ev); if(i<0){ var info=V.lines; var wd=wordAt(info&&info.words, info, vo, ev); if(wd) showWordTip(vo.parentNode, ev, wd.text); return; } var list=V.marks||[]; var a=list[i]; if(!a) return; if(!confirm('이 표시를 지울까요?\n'+(a.note||a.type))) return; list.splice(i,1); if(V.curPdf){ var st=annLoad($('lecCourse').value||'', V.curPdf.name); if(list.length) st[V.page]=list; else delete st[V.page]; annSave($('lecCourse').value||'', V.curPdf.name, st); } renderViewPage(); }); }
+  function bindAnnClicks(){ bindTools(); setTool(TOOL.mode);
+    var ov=$('lecAnnot'); if(ov && !ov._bound){ ov._bound=true; bindDragSelect(ov, function(){ return S.slideLines&&S.slideLines[S.page]; }); ov.addEventListener('click',function(ev){ if(ov._dragged) return; if(toolClick(annCtxRec(), ov, S.slideLines&&S.slideLines[S.page], ev)) return; var i=annHitTest(ov, ev); if(i<0){ var info=S.slideLines&&S.slideLines[S.page]; var wd=wordAt(info&&info.words, info, ov, ev); if(wd) showWordTip(ov.parentNode, ev, wd.text); return; } var list=S.ann[S.page]||[]; var a=list[i]; if(!a) return; if(!confirm('이 표시를 지울까요?\n'+(a.note||a.type))) return; list.splice(i,1); S.ann[S.page]=list; annPersistPage(S.page); redrawAnn(); saveLocal(); }); }
+    var vo=$('lecViewAnnot'); if(vo && !vo._bound){ vo._bound=true; bindDragSelect(vo, function(){ return V.lines; }); vo.addEventListener('click',function(ev){ if(vo._dragged) return; if(toolClick(annCtxView(), vo, V.lines, ev)) return; var i=annHitTest(vo, ev); if(i<0){ var info=V.lines; var wd=wordAt(info&&info.words, info, vo, ev); if(wd) showWordTip(vo.parentNode, ev, wd.text); return; } var list=V.marks||[]; var a=list[i]; if(!a) return; if(!confirm('이 표시를 지울까요?\n'+(a.note||a.type))) return; list.splice(i,1); if(V.curPdf){ var st=annLoad($('lecCourse').value||'', V.curPdf.name); if(list.length) st[V.page]=list; else delete st[V.page]; annSave($('lecCourse').value||'', V.curPdf.name, st); } renderViewPage(); }); }
   }
   var _renderTask=null;
   async function renderPage(){
@@ -9841,7 +9882,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     if(note && !pdfKey && note.studyPdf){ pdfKey='r:'+note.id; }
     if(!note && !pdfKey && V.notes.length) note=V.notes.find(function(n){return n.ready;})||V.notes[0];
     var pdf=null; if(pdfKey) pdf=V.pdfs.find(function(p){return p.key===pdfKey;}); if(!pdf && note && note.pdf) pdf=V.pdfs.find(function(p){ return p.name===note.pdf; })||null; if(!pdf && !noteId && V.pdfs.length) pdf=V.pdfs[0]; if(!pdf && V.pdfs.length===1 && note && note.mode!=='online') pdf=V.pdfs[0];
-    var R=$('lecView'); R.innerHTML='<div class="lms-topbar"><button type="button" class="lms-back" id="lecViewBack">←</button><b class="lec-view-title">'+esc(cname(c))+' · '+esc(m.name)+'</b><span style="flex:1"></span><span id="lecViewBtns"></span></div><div class="lec-view-main'+(pdf?'':' nopdf')+'">'+(pdf?'<div class="lec-view-left"><div class="lec-view-canvas"><canvas id="lecViewCanvas"></canvas><canvas id="lecViewAnnot" class="lec-annot"></canvas></div><div class="lec-nav"><button type="button" class="lec-btn" id="lecViewPrev">←</button><span id="lecViewPage">–</span><button type="button" class="lec-btn" id="lecViewNext">→</button><button type="button" class="lec-btn" id="lecViewClearAnn" title="이 쪽의 표시를 모두 지웁니다">표시 지우기</button><span class="lec-hint">'+esc(pdf.name)+'</span></div></div>':'')+'<div class="lec-view-right"><div class="lec-view-tabs" id="lecViewTabs"></div><div class="lec-view-notes" id="lecViewNotes"></div></div></div>';
+    var R=$('lecView'); R.innerHTML='<div class="lms-topbar"><button type="button" class="lms-back" id="lecViewBack">←</button><b class="lec-view-title">'+esc(cname(c))+' · '+esc(m.name)+'</b><span style="flex:1"></span><span id="lecViewBtns"></span></div><div class="lec-view-main'+(pdf?'':' nopdf')+'">'+(pdf?'<div class="lec-view-left"><div class="lec-view-canvas"><canvas id="lecViewCanvas"></canvas><canvas id="lecViewAnnot" class="lec-annot"></canvas></div><div class="lec-nav"><span class="lec-tools" data-tools><button type="button" data-tool="select" class="on" title="클릭: 단어 번역·표시 삭제 / 드래그: 구 번역">↖ 선택</button><button type="button" data-tool="hl" title="드래그하거나 줄을 클릭">🟨 형광펜</button><button type="button" data-tool="ul" title="드래그하거나 줄을 클릭">▁ 밑줄</button><button type="button" data-tool="circle" title="줄을 클릭">◯ 동그라미</button><button type="button" data-tool="note" title="줄을 클릭하고 메모 입력">📝 포스트잇</button><button type="button" data-tool="eraser" title="표시를 클릭하거나 드래그로 지움">◻ 지우개</button></span><button type="button" class="lec-btn" id="lecViewPrev">←</button><span id="lecViewPage">–</span><button type="button" class="lec-btn" id="lecViewNext">→</button><button type="button" class="lec-btn" id="lecViewClearAnn" title="이 쪽의 표시를 모두 지웁니다">표시 지우기</button><span class="lec-hint">'+esc(pdf.name)+'</span></div></div>':'')+'<div class="lec-view-right"><div class="lec-view-tabs" id="lecViewTabs"></div><div class="lec-view-notes" id="lecViewNotes"></div></div></div>';
     showPane('lecView');
     $('lecViewBack').addEventListener('click',function(){ V.pdf=null; showPane('lecHome'); renderHome(); });
     // 탭: 이 주차의 필기들 + PDF들
