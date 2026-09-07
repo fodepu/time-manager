@@ -2379,7 +2379,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="83">
+<meta name="tm-version" content="84">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -2498,8 +2498,10 @@
   .lec-drop-hint { font-size:13px; color: var(--text-muted); padding:20px; text-align:center; }
   .lec-nav { display:flex; align-items:center; gap:8px; margin-top:6px; font-size:13px; font-variant-numeric: tabular-nums; }
   .lec-hint { font-size:11px; color: var(--text-muted); margin-left:auto; }
+  .lec-nav-ai { margin-left:12px; }
   .lec-live { border:1px solid var(--border,#e5e5e5); border-radius:12px; background: var(--bg-card,#fff); height: min(70vh, 640px); overflow:auto; padding:10px 12px; }
   .lec-resume { background:#fef2f2; border:1px solid #fecaca; border-radius:12px; padding:10px 14px; margin-bottom:10px; font-size:13px; display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+  .lec-nav-ai { margin-left:auto; display:flex; gap:6px; }
   .lec-recbanner { position:fixed; right:16px; bottom:16px; z-index:50; background:#dc2626; color:#fff; border:0; border-radius:999px; padding:10px 16px; font-weight:800; font-size:13px; box-shadow:0 4px 14px rgba(0,0,0,.25); cursor:pointer; }
   .lec-divider { font-size:11px; color:var(--text-muted); margin:10px 0 4px; border-top:1px dashed var(--border,#e5e7eb); padding-top:4px; }
   .lec-live-head { font-size:12px; font-weight:800; color: var(--text-muted); margin-bottom:8px; position:sticky; top:-10px; background: var(--bg-card,#fff); padding:4px 0; }
@@ -2939,8 +2941,6 @@
         <input type="text" id="lecTitle" class="lec-inp" placeholder="강의 제목" maxlength="40">
         <button type="button" class="lec-btn" id="lecOpenPdf">PDF 열기</button>
         <button type="button" class="lec-btn lec-langbtn" id="lecLang2" title="강의 언어 전환">🇰🇷 한국어</button>
-        <button type="button" class="lec-btn" id="lecAiBtn" title="맥의 Dayble 도우미가 켜져 있으면 Claude가 슬라이드 맥락으로 실시간 필기">✦ 도우미 꺼짐</button>
-        <button type="button" class="lec-btn" id="lecGemBtn" title="Google AI Studio 무료 Gemini 키를 넣으면 대본·번역이 1~2초 만에 실시간으로 나와요">◈ Gemini 꺼짐</button>
         <button type="button" class="lec-btn rec" id="lecRec">● 녹음 시작</button>
         <label class="lec-chk"><input type="checkbox" id="lecShowEn" checked> 영어 원문 표시</label>
         <label class="lec-chk" title="끄면 마이크를 음성 인식기만 사용 (인식이 안 될 때 시도)"><input type="checkbox" id="lecBackup" checked> 녹음 파일 백업</label>
@@ -2953,7 +2953,7 @@
             <canvas id="lecCanvas"></canvas><canvas id="lecAnnot" class="lec-annot"></canvas>
             <div class="lec-drop-hint">PDF를 여기에 드래그하거나 "PDF 열기"<br><small>PDF 없이 시작하면 5분마다 구간 자동 분할, → 키로 수동 분할</small></div>
           </div>
-          <div class="lec-nav"><button type="button" class="lec-btn" id="lecPrev">←</button><span id="lecPage">–</span><button type="button" class="lec-btn" id="lecNext">→</button><span class="lec-hint">키보드 ← → / Space</span></div>
+          <div class="lec-nav"><button type="button" class="lec-btn" id="lecPrev">←</button><span id="lecPage">–</span><button type="button" class="lec-btn" id="lecNext">→</button><span class="lec-hint">키보드 ← → / Space</span><span class="lec-nav-ai"><button type="button" class="lec-btn" id="lecGemBtn" title="Google AI Studio 무료 Gemini 키를 넣으면 대본·번역이 1~2초 만에 실시간으로 나와요">◈ Gemini 꺼짐</button><button type="button" class="lec-btn" id="lecAiBtn" title="맥의 Dayble 도우미가 켜져 있으면 Claude가 슬라이드 맥락으로 실시간 필기">✦ 도우미 꺼짐</button></span></div>
         </div>
         <div class="lec-right"><div class="lec-live" id="lecLive"><div class="lms-empty">녹음을 시작하면 이 슬라이드의 대본과 번역이 여기에 실시간으로 쌓입니다.</div></div></div>
       </div>
@@ -8183,7 +8183,7 @@ const db = getFirestore(app);
 const provider = new GoogleAuthProvider();
 
 const PREFIX = 'tracker_';
-const KEEP = new Set(['tracker_theme','tracker_device_id','tracker_sync_config']);
+const KEEP = new Set(['tracker_theme','tracker_device_id','tracker_sync_config','tracker_gemini_key']);
 function clearTracker(){ const rm=[]; for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i); if(k && k.startsWith(PREFIX) && !KEEP.has(k)) rm.push(k);} rm.forEach(k=>{try{localStorage.removeItem(k);}catch(e){}}); }
 // 원격 적용: 원격에 없는 키 중 '오래된 날짜 스냅샷'은 프루닝된 것일 수 있으므로 로컬에 보존
 function applyRemote(payload){
