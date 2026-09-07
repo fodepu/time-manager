@@ -2379,7 +2379,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="56">
+<meta name="tm-version" content="57">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -2558,6 +2558,10 @@
   .todo-text:focus { border-color: var(--border,#ddd); background: var(--bg,transparent); outline:none; }
   #lecWork:focus, #lecView:focus { outline:none; }
   .lec-langbtn { font-weight:700; }
+  .lec-link { border:none; background:none; color: var(--text-muted); text-decoration:underline; cursor:pointer; font-size:12px; font-family:inherit; }
+  .lec-seg.live .lec-ko { color: var(--text-muted); }
+  .lec-cursor { animation: lecblink 1s steps(2) infinite; color: var(--accent); }
+  @keyframes lecblink { to { opacity:0; } }
   .lec-export.rec { border-color:#d16565; color:#d16565; font-weight:700; }
   .lec-langbtn.en { border-color: var(--accent); color: var(--accent); }
   .todo-up, .todo-del { border:none; background:none; color: var(--text-muted); width:26px; height:26px; border-radius:6px; cursor:pointer; font-size:13px; flex-shrink:0; }
@@ -9332,7 +9336,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     rec.onstart=function(){ S.recOn=true; if(S.running) status(recLabel(),'ok'); };
     rec.onaudiostart=function(){ S.recOn=true; };
     rec.onerror=function(ev){ S.lastErr=ev.error; if(ev.error==='not-allowed'||ev.error==='service-not-allowed'){ status('마이크 권한이 필요해요 — 주소창 왼쪽 자물쇠 → 마이크 "허용" 후 다시 시작','err'); stopAll(); } else if(ev.error==='audio-capture'){ status('마이크를 찾을 수 없어요 — 시스템 설정에서 입력 장치 확인','err'); stopAll(); } else if(ev.error==='network'){ status('음성인식 서버 연결 실패(network) — 인터넷 연결·VPN 확인. 자동 재시도 중…','err'); } else if(ev.error==='language-not-supported'){ status('이 언어는 지원되지 않아요: '+S.lang,'err'); } else if(ev.error!=='no-speech' && ev.error!=='aborted'){ status('인식 오류: '+ev.error+' — 자동 재시도 중…','err'); } };
-    rec.onend=function(){ S.recOn=false; if(S.running){ clearTimeout(S.restartTimer); S.restartTimer=setTimeout(function(){ if(rec.lang!==S.lang){ try{ rec.onend=null; }catch(e){} startRecognition(); return; } try{ rec.start(); }catch(e){} }, 250); } };
+    rec.onend=function(){ S.recOn=false; if(S.running){ clearTimeout(S.restartTimer); S.restartTimer=setTimeout(function(){ if(rec.lang!==S.lang){ try{ rec.onend=null; }catch(e){} startRecognition(); return; } try{ rec.start(); }catch(e){} }, 80); } };
     try{ rec.start(); }catch(e){ status('음성인식 시작 실패: '+e.message,'err'); return false; }
     S.rec=rec; return true;
   }
@@ -9347,7 +9351,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     var h='<div class="lec-live-head">'+(S.online?'구간 '+p+' <small>(5분마다 자동, → 키로 수동 분할)</small>':'슬라이드 '+p+(S.total?' / '+S.total:''))+' <small>'+sl.segs.length+'문장 · '+(S.running?'● 녹음 중 '+fmtT(nowT())+(S.recOn?' · 인식기 켜짐':' · 인식기 대기')+(S.lastErr&&S.lastErr!=='no-speech'&&S.lastErr!=='aborted'?' · 마지막 오류: '+S.lastErr:''):'대기')+'</small></div>';
     if(S.running && !sl.segs.length && !S.lastInterim) h+='<div class="lec-seg interim"><div class="lec-en">듣는 중… 말소리가 들리면 몇 초 안에 문장이 여기 붙어요. 30초 넘게 아무것도 안 붙으면: 마이크 입력 장치(시스템 설정 → 사운드 → 입력)와 강의 언어(영어/한국어) 확인</div></div>';
     sl.segs.forEach(function(s){ h+='<div class="lec-seg"><div class="lec-ko">'+(s.ko?escapeHtml(s.ko):'<span class="lec-wait">번역 중…</span>')+'</div>'+(showEn?'<div class="lec-en">'+escapeHtml(s.en)+'</div>':'')+'</div>'; });
-    if(S.lastInterim) h+='<div class="lec-seg interim"><div class="lec-en">'+escapeHtml(S.lastInterim)+'</div></div>';
+    if(S.lastInterim) h+='<div class="lec-seg interim live"><div class="lec-ko">'+escapeHtml(S.lastInterim)+' <span class="lec-cursor">▍</span></div></div>';
     box.innerHTML=h; box.scrollTop=box.scrollHeight;
   }
 
@@ -9372,7 +9376,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     startAudio();
     try{ $('lecWork').focus(); }catch(e){}
     S.lastResultAt=Date.now(); try{ if(navigator.wakeLock){ navigator.wakeLock.request('screen').then(function(w){ S.wake=w; }).catch(function(){}); } }catch(e){}
-    S.tick=setInterval(function(){ renderLive(); autoCut(); if(S.running && S.rec && Date.now()-S.lastResultAt>25000){ S.lastResultAt=Date.now(); try{ S.rec.abort(); }catch(e){} } },1000); saveLocal();
+    S.tick=setInterval(function(){ renderLive(); autoCut(); if(S.running && S.rec && !S.lastInterim && Date.now()-S.lastResultAt>60000){ S.lastResultAt=Date.now(); try{ S.rec.abort(); }catch(e){} } },1000); saveLocal();
   }
   function stopAll(){
     S.running=false; clearInterval(S.tick); clearTimeout(S.restartTimer); try{ if(S.rec){ S.rec.onend=null; S.rec.stop(); } }catch(e){} stopAudio(); try{ if(S.wake){ S.wake.release(); S.wake=null; } }catch(e){}
@@ -9449,7 +9453,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
         h+='<div class="lec-wk-files">'+pdfs.map(function(p){ return '<span class="lec-file"><button type="button" class="lec-chip pdf" data-pdf="'+esc(p.key)+'" data-mid="'+esc(m.id)+'">📄 '+esc(p.name)+'</button><button type="button" class="lec-x" data-delpdf="'+esc(p.key)+'" title="이 PDF 삭제">✕</button></span>'; }).join('')
           +extra.map(function(n){ return '<button type="button" class="lec-chip'+(n.ready?' on':'')+'" data-open="'+esc(n.id)+'" data-mid="'+esc(m.id)+'">'+(n.ready?'📝 ':'🎙 ')+esc(n.title)+(n.ready?'':' <small>'+(n.status==='sent'?'필기 만드는 중':n.status==='recording'?'녹음 중':'대본만')+'</small>')+'</button>'; }).join('')+'</div>';
       }
-      h+='<div class="lec-wk-actions"><button type="button" class="lec-btn" data-addpdf="'+esc(m.id)+'">＋ PDF 넣기</button><button type="button" class="lec-btn rec" data-rec="'+esc(m.id)+'">● 이 주차 녹음</button><span class="lec-muted">PDF를 이 카드에 드래그해도 돼요 · PDF·필기를 누르면 같이 열려요</span></div>';
+      h+='<div class="lec-wk-actions"><button type="button" class="lec-btn" data-addpdf="'+esc(m.id)+'">＋ PDF 넣기</button><span class="lec-muted">PDF를 이 카드에 드래그해도 돼요 · PDF를 열고 그 안에서 "● 이 PDF로 녹음"</span>'+(pdfs.length?'':'<button type="button" class="lec-link" data-rec="'+esc(m.id)+'">PDF 없이 녹음(구간 모드)</button>')+'</div>';
       h+='</div></details>';
     });
     box.innerHTML=h;
