@@ -2379,7 +2379,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="63">
+<meta name="tm-version" content="64">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -2560,6 +2560,14 @@
   .todo-text:focus { border-color: var(--border,#ddd); background: var(--bg,transparent); outline:none; }
   #lecWork:focus, #lecView:focus { outline:none; }
   .lec-langbtn { font-weight:700; }
+  #lecAiBtn.on { border-color:#8B5CF6; color:#8B5CF6; font-weight:700; }
+  .lec-ai { border:1px solid #DDD6FE; background:#F5F3FF; border-radius:10px; padding:8px 10px; margin-bottom:8px; font-size:13px; }
+  html[data-theme="dark"] .lec-ai { background:#2A2440; border-color:#4C3D7A; }
+  .lec-ai.muted { color: var(--text-muted); font-size:12px; }
+  .lec-ai-head { font-weight:800; color:#7C3AED; margin-bottom:4px; } .lec-ai-head span { font-weight:600; color: var(--text); }
+  .lec-ai .md-ul { margin:0; padding-left:18px; } .lec-ai li { margin:2px 0; }
+  .lec-ai-exam { margin-top:4px; color:#B45309; font-size:12px; }
+  .lec-en.fixed::before { content:'✦ '; color:#8B5CF6; }
   .lec-seg { display:flex; gap:8px; align-items:flex-start; }
   .lec-ts { flex-shrink:0; font-size:11px; color: var(--text-muted); font-variant-numeric: tabular-nums; padding-top:3px; min-width:34px; }
   .lec-segbody { flex:1; min-width:0; }
@@ -2923,6 +2931,7 @@
         <input type="text" id="lecTitle" class="lec-inp" placeholder="강의 제목" maxlength="40">
         <button type="button" class="lec-btn" id="lecOpenPdf">PDF 열기</button>
         <button type="button" class="lec-btn lec-langbtn" id="lecLang2" title="강의 언어 전환">🇰🇷 한국어</button>
+        <button type="button" class="lec-btn" id="lecAiBtn" title="Claude API 키를 넣으면 슬라이드 맥락으로 대본 교정·번역·실시간 필기">✦ Claude 키</button>
         <button type="button" class="lec-btn rec" id="lecRec">● 녹음 시작</button>
         <label class="lec-chk"><input type="checkbox" id="lecShowEn"> 영어 원문 표시</label>
         <label class="lec-chk" title="끄면 마이크를 음성 인식기만 사용 (인식이 안 될 때 시도)"><input type="checkbox" id="lecBackup" checked> 녹음 파일 백업</label>
@@ -9319,7 +9328,8 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   var ONLINE_AUTO_SEC=300; S.online=false; S.lastCut=0;
   function goPage(n){
     if(S.online){ if(n<=S.page) return; S.page=S.page+1; S.total=S.page; S.lastCut=nowT(); if(S.running) S.log.push({t:nowT(), page:S.page}); $('lecPage').textContent='구간 '+S.page; renderLive(); return; }
-    if(!S.pdf) return; n=Math.max(1,Math.min(S.total,n)); if(n===S.page) return; S.page=n; if(S.running) S.log.push({t:nowT(), page:n}); renderPage(); renderLive(); }
+    if(!S.pdf) return; n=Math.max(1,Math.min(S.total,n)); if(n===S.page) return; var prev=S.page; S.page=n; if(S.running) S.log.push({t:nowT(), page:n}); renderPage(); renderLive();
+    if(S.running && aiKey()){ var keep=S.page; S.page=prev; aiTick(true).then(function(){ S.page=keep; renderLive(); }); S.page=keep; } }
   function autoCut(){ if(!S.online||!S.running) return; if(nowT()-S.lastCut>=ONLINE_AUTO_SEC){ goPage(S.page+1); } }
 
   // ---- 번역기: Chrome Translator API → 폴백(웹) ----
@@ -9369,7 +9379,8 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     var h='<div class="lec-live-head">'+(S.online?'구간 '+p+' <small>(5분마다 자동, → 키로 수동 분할)</small>':'슬라이드 '+p+(S.total?' / '+S.total:''))+' <small>'+sl.segs.length+'문장 · '+(S.running?'● 녹음 중 '+fmtT(nowT())+(S.recOn?' · 인식기 켜짐':' · 인식기 대기')+' · '+(S.lang==='ko-KR'?'한국어':'영어')+' 인식'+(S.biased?' · 슬라이드 용어 '+S.biased+'개 반영':'')+(S.lastErr&&S.lastErr!=='no-speech'&&S.lastErr!=='aborted'?' · 마지막 오류: '+S.lastErr:''):'대기')+'</small></div>';
     if(S.running && !sl.segs.length && !S.lastInterim) h+='<div class="lec-seg interim"><div class="lec-en">듣는 중… 말소리가 들리면 몇 초 안에 문장이 여기 붙어요. 30초 넘게 아무것도 안 붙으면: 마이크 입력 장치(시스템 설정 → 사운드 → 입력)와 강의 언어(영어/한국어) 확인</div></div>';
     var rawMode=$('lecRaw')&&$('lecRaw').checked;
-    sl.segs.forEach(function(s){ var main=(S.lang==='ko-KR')?(rawMode&&s.raw?s.raw:s.ko):(s.ko?s.ko:''); h+='<div class="lec-seg"><span class="lec-ts">'+fmtT(s.t||0)+'</span><div class="lec-segbody"><div class="lec-ko">'+(main?escapeHtml(main):'<span class="lec-wait">번역 중…</span>')+'</div>'+(S.lang!=='ko-KR'&&showEn?'<div class="lec-en">'+escapeHtml(rawMode&&s.raw?s.raw:s.en)+'</div>':'')+(rawMode&&s.raw&&S.lang==='ko-KR'?'<div class="lec-en">확정: '+escapeHtml(s.ko)+'</div>':'')+'</div></div>'; });
+    h+=liveNotesHtml(p);
+    sl.segs.forEach(function(s){ var main=(S.lang==='ko-KR')?(rawMode&&s.raw?s.raw:(s.fix||s.ko)):(s.ko?s.ko:''); h+='<div class="lec-seg"><span class="lec-ts">'+fmtT(s.t||0)+'</span><div class="lec-segbody"><div class="lec-ko">'+(main?escapeHtml(main):'<span class="lec-wait">번역 중…</span>')+'</div>'+(S.lang!=='ko-KR'&&showEn?'<div class="lec-en'+(s.fix&&!rawMode?' fixed':'')+'">'+escapeHtml(rawMode&&s.raw?s.raw:(s.fix||s.en))+'</div>':'')+(rawMode&&s.raw&&S.lang==='ko-KR'?'<div class="lec-en">확정: '+escapeHtml(s.ko)+'</div>':'')+'</div></div>'; });
     if(S.lastInterim) h+='<div class="lec-seg interim live"><span class="lec-ts">'+fmtT(nowT())+'</span><div class="lec-segbody"><div class="lec-ko">'+escapeHtml(S.lastInterim)+' <span class="lec-cursor">▍</span></div></div></div>';
     var stick=(box.scrollHeight-box.scrollTop-box.clientHeight)<60; box.innerHTML=h; if(stick||!S.userScrolled) box.scrollTop=box.scrollHeight;
   }
@@ -9377,6 +9388,39 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   // ---- 녹음(백업 파일) ----
   async function startAudio(){ try{ var st=await navigator.mediaDevices.getUserMedia({audio:true}); S.chunks=[]; var mr=new MediaRecorder(st); mr.ondataavailable=function(e){ if(e.data&&e.data.size) S.chunks.push(e.data); }; mr.start(10000); S.recorder=mr; }catch(e){ status('마이크 접근 실패: '+e.message,'err'); } }
   function stopAudio(){ try{ if(S.recorder&&S.recorder.state!=='inactive'){ S.recorder.stop(); S.recorder.stream.getTracks().forEach(function(t){t.stop();}); } }catch(e){} setTimeout(function(){ if(S.chunks.length){ S.audioBlob=new Blob(S.chunks,{type:S.chunks[0].type||'audio/webm'}); var b=$('lecDownloadAudio'); if(b) b.style.display=''; } },600); }
+
+  // ---- 실시간 AI 필기 (Claude API, 사용자 키) — 슬라이드 맥락으로 대본 교정 + 번역 + 요점 ----
+  var AI={ busy:false, lastRun:0, fails:0, model:'claude-haiku-4-5-20251001' };
+  function aiKey(){ try{ return localStorage.getItem('tm_claude_key')||''; }catch(e){ return ''; } }
+  window.tmSetClaudeKey=function(){ var cur=aiKey(); var k=prompt('Claude API 키 (console.anthropic.com → API Keys). 이 기기에만 저장되고 동기화되지 않아요.\n비우고 확인하면 삭제.', cur?cur.slice(0,12)+'…':''); if(k===null) return; k=k.trim(); if(!k||/…$/.test(k)) { if(!k){ localStorage.removeItem('tm_claude_key'); showToast('Claude 키 삭제됨'); paintAiBtn(); } return; } if(!/^sk-ant-/.test(k)){ showToast('sk-ant- 로 시작하는 키여야 해요'); return; } localStorage.setItem('tm_claude_key',k); showToast('Claude 실시간 필기 켜짐'); paintAiBtn(); };
+  function paintAiBtn(){ var b=$('lecAiBtn'); if(!b) return; var on=!!aiKey(); b.textContent=on?'✦ Claude 필기 켜짐':'✦ Claude 키'; b.classList.toggle('on',on); }
+  async function aiCall(system, user, maxTokens){
+    var r=await fetch('https://api.anthropic.com/v1/messages',{ method:'POST', headers:{ 'content-type':'application/json', 'x-api-key':aiKey(), 'anthropic-version':'2023-06-01', 'anthropic-dangerous-direct-browser-access':'true' },
+      body:JSON.stringify({ model:AI.model, max_tokens:maxTokens||1200, system:system, messages:[{role:'user',content:user}] }) });
+    if(!r.ok){ var t=''; try{ t=(await r.json()).error.message; }catch(e){} throw new Error(r.status+' '+t); }
+    var j=await r.json(); return (j.content||[]).map(function(c){ return c.text||''; }).join('');
+  }
+  function parseJson(s){ try{ return JSON.parse(s); }catch(e){} var m=s.match(/\{[\s\S]*\}/); if(m){ try{ return JSON.parse(m[0]); }catch(e){} } return null; }
+  var AI_SYSTEM='You are a live lecture note-taker for a Korean university student. You receive (1) the text of the current slide (authoritative for terms, symbols, numbers), (2) raw speech-recognition segments of what the professor just said (noisy: homophones, dropped words, wrong proper nouns), (3) notes already written for this slide.\n'+
+    'Tasks: A) Correct each segment into what the professor most likely said, using the slide text for terminology — keep the original language, keep it faithful (do not add content, do not summarize, keep filler minimal). B) Give a natural Korean translation of each corrected segment (if the lecture is already Korean, "ko" = corrected Korean text). C) Update the notes for this slide: 2–5 concise Korean bullet points of what the professor explained, **bold** key terms with the English term in parentheses, formulas/numbers exactly as on the slide, no fluff; merge with existing notes (replace, do not duplicate). Mention exam/assignment/deadline hints in "exam".\n'+
+    'Return ONLY JSON: {"segments":[{"i":<index>,"text":"<corrected original>","ko":"<Korean>"}],"notes":["..."],"summary":"<one line, ≤30 chars Korean>","exam":["..."]}';
+  async function aiTick(force){
+    if(!S.running || AI.busy || !aiKey()) return; var now=Date.now(); if(!force && now-AI.lastRun<20000) return;
+    var p=S.page||1, sl=S.slides[p]; if(!sl) return; var pend=sl.segs.map(function(s,i){ return {s:s,i:i}; }).filter(function(x){ return !x.s.fix; });
+    if(!pend.length || (!force && pend.length<2 && now-AI.lastRun<45000)) return;
+    AI.busy=true; AI.lastRun=now; var live=S.live=S.live||{}; var cur=live[p]||{notes:[],summary:'',exam:[]};
+    var ctx=sl.segs.filter(function(s){ return s.fix; }).slice(-4).map(function(s){ return s.fix; });
+    var payload={ course:S.course, language:(S.lang==='ko-KR'?'ko':'en'), slide:{ page:p, total:S.total, text:((S.slideText&&S.slideText[p])||'').slice(0,2500) }, previous_slide_text:((S.slideText&&S.slideText[p-1])||'').slice(0,600), recent_corrected_context:ctx, existing_notes:cur.notes, segments:pend.map(function(x){ return {i:x.i, t:x.s.t, text:(S.lang==='ko-KR'?x.s.ko:x.s.en)}; }) };
+    try{
+      var out=await aiCall(AI_SYSTEM, JSON.stringify(payload), 1500); var j=parseJson(out); if(!j) throw new Error('bad json');
+      (j.segments||[]).forEach(function(g){ var s=sl.segs[g.i]; if(!s) return; if(g.text){ s.fix=String(g.text); } if(g.ko){ s.ko=String(g.ko); } if(!s.fix) s.fix=(S.lang==='ko-KR'?s.ko:s.en); });
+      pend.forEach(function(x){ if(!x.s.fix) x.s.fix=(S.lang==='ko-KR'?x.s.ko:x.s.en); });
+      live[p]={ notes:(j.notes||cur.notes||[]).slice(0,6), summary:j.summary||cur.summary||'', exam:(j.exam||cur.exam||[]).slice(0,5), at:Date.now() };
+      AI.fails=0; renderLive(); saveLocal();
+    }catch(e){ AI.fails++; console.warn('ai', e&&e.message); if(AI.fails===1||/401|403|invalid|credit/i.test(String(e&&e.message))) status('Claude 필기 오류: '+(e&&e.message||e)+(/401|403/.test(String(e&&e.message))?' — 키 확인':''),'err'); }
+    AI.busy=false;
+  }
+  function liveNotesHtml(p){ var l=S.live&&S.live[p]; if(!l||(!l.notes||!l.notes.length)) return aiKey()?'<div class="lec-ai muted">✦ 실시간 필기 준비 중… (말이 쌓이면 20초마다 정리)</div>':''; var h='<div class="lec-ai"><div class="lec-ai-head">✦ 실시간 필기'+(l.summary?' <span>— '+escapeHtml(l.summary)+'</span>':'')+'</div>'+md(l.notes.map(function(k){ return '- '+k; }).join('\n'))+(l.exam&&l.exam.length?'<div class="lec-ai-exam">'+l.exam.map(function(x){ return '⚠ '+escapeHtml(x); }).join('<br>')+'</div>':'')+'</div>'; return h; }
 
   // ---- 세션 ----
   function recLabel(){ return '● 녹음 중 · 번역: '+(S.tmode==='chrome'?'Chrome 내장':'웹')+(S.online?' · 온라인 모드: 5분마다 구간 자동, → 로 수동 분할':' · ← → 로 슬라이드 넘기기'); }
@@ -9396,14 +9440,15 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     if(!$('lecBackup') || $('lecBackup').checked) startAudio(); else status(recLabel()+' · 백업 녹음 꺼짐','ok');
     try{ $('lecWork').focus(); }catch(e){}
     S.lastResultAt=Date.now(); try{ if(navigator.wakeLock){ navigator.wakeLock.request('screen').then(function(w){ S.wake=w; }).catch(function(){}); } }catch(e){}
-    S.tick=setInterval(function(){ renderLive(); autoCut(); if(S.running && S.rec && !S.lastInterim && Date.now()-S.lastResultAt>60000){ S.lastResultAt=Date.now(); try{ S.rec.abort(); }catch(e){} } },1000); saveLocal();
+    S.tick=setInterval(function(){ renderLive(); autoCut(); try{ aiTick(false); }catch(e){} if(S.running && S.rec && !S.lastInterim && Date.now()-S.lastResultAt>60000){ S.lastResultAt=Date.now(); try{ S.rec.abort(); }catch(e){} } },1000); saveLocal();
   }
   function stopAll(){
+    try{ if(aiKey() && S.running){ S.running=true; aiTick(true); } }catch(e){}
     S.running=false; clearInterval(S.tick); clearTimeout(S.restartTimer); try{ if(S.rec){ S.rec.onend=null; S.rec.stop(); } }catch(e){} stopAudio(); try{ if(S.wake){ S.wake.release(); S.wake=null; } }catch(e){}
     $('lecRec').textContent='● 녹음 시작'; $('lecRec').classList.remove('on'); status('중지됨 · '+Object.keys(S.slides).length+'개 슬라이드에 대본 저장됨 → "필기 요청 보내기"');
     saveLocal(); $('lecFinish').style.display='';
   }
-  function payload(){ var slides=Object.keys(S.slides).map(Number).sort(function(a,b){return a-b;}).map(function(p){ var sl=S.slides[p]; return { page:p, en:sl.segs.map(function(s){return s.en;}).join(' '), ko:sl.segs.map(function(s){return s.ko;}).join(' '), slideText:(S.slideText&&S.slideText[p])||'', segs:sl.segs }; });
+  function payload(){ var slides=Object.keys(S.slides).map(Number).sort(function(a,b){return a-b;}).map(function(p){ var sl=S.slides[p]; return { page:p, en:sl.segs.map(function(s){return (S.lang==='ko-KR')?'':(s.fix||s.en);}).join(' '), ko:sl.segs.map(function(s){return (S.lang==='ko-KR')?(s.fix||s.ko):s.ko;}).join(' '), slideText:(S.slideText&&S.slideText[p])||'', liveNotes:(S.live&&S.live[p])||undefined, segs:sl.segs }; });
     return { id:S.id, course:S.course, title:S.title, date:S.date, week:(S.weekNo!=null?S.weekNo:undefined), module:(S.week&&S.week!=='misc'?S.week:undefined), lang:(S.lang==='ko-KR'?'ko':'en'), mode:(S.online?'online':'slides'), pdf:S.pdfName, pages:S.total, duration:nowT(), log:S.log, slides:slides, savedAt:new Date().toISOString() }; }
   function saveLocal(){ if(!S.id) return; idbPut('lec', Object.assign({status:S.running?'recording':'saved'}, payload())).catch(function(){}); }
   async function sendFinish(){
@@ -9540,7 +9585,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     var h='<div class="lec-note-head"><b>'+esc(data.title||'강의')+'</b><span class="lms-sub">'+esc(data.date||'')+(data.pages?' · '+data.pages+(data.mode==='online'?'구간':'쪽'):'')+(data.duration?' · '+fmtT(data.duration):'')+(note.ready?'':' · <em>'+(note.status==='sent'?'필기 만드는 중 — 대본만 표시':'아직 전송 전 — 대본만 표시')+'</em>')+'</span></div>';
     if(data.overview) h+='<div class="lms-brief">'+md(data.overview)+'</div>';
     if(data.exam && data.exam.length){ h+='<div class="lms-sec">시험·과제 언급</div><div class="lms-todos">'; data.exam.forEach(function(x){ h+='<div class="lms-todo"><div class="lms-todo-text">'+md(x).replace(/^<p class="md-p">|<\/p>$/g,'')+'</div></div>'; }); h+='</div>'; }
-    (data.slides||[]).forEach(function(s){ h+='<div class="lec-slide" data-page="'+s.page+'"><div class="lec-slide-head">'+(data.mode==='online'?'구간 ':'슬라이드 ')+s.page+(s.summary?' <span>— '+esc(s.summary)+'</span>':'')+'</div>'+(s.keyPoints&&s.keyPoints.length?'<div class="lec-kp">'+md(s.keyPoints.map(function(k){return '- '+k;}).join('\n'))+'</div>':'<div class="lec-kp muted">'+(note.ready?'핵심 없음':'필기 생성 전 — 대본만')+'</div>')+'<details class="lec-tr"><summary>대본 보기</summary>'+((s.segs&&s.segs.length)?s.segs.map(function(g){ return '<div class="lec-seg"><span class="lec-ts">'+fmtT(g.t||0)+'</span><div class="lec-segbody"><div class="lec-ko">'+esc(g.ko||g.en||'')+'</div>'+(g.en&&g.ko?'<div class="lec-en">'+esc(g.en)+'</div>':'')+'</div></div>'; }).join(''):'<div class="lec-ko">'+esc(s.ko||'')+'</div>'+(s.en?'<div class="lec-en">'+esc(s.en)+'</div>':''))+'</details></div>'; });
+    (data.slides||[]).forEach(function(s){ h+='<div class="lec-slide" data-page="'+s.page+'"><div class="lec-slide-head">'+(data.mode==='online'?'구간 ':'슬라이드 ')+s.page+(s.summary?' <span>— '+esc(s.summary)+'</span>':'')+'</div>'+(s.keyPoints&&s.keyPoints.length?'<div class="lec-kp">'+md(s.keyPoints.map(function(k){return '- '+k;}).join('\n'))+'</div>':(s.liveNotes&&s.liveNotes.notes&&s.liveNotes.notes.length?'<div class="lec-kp"><div class="lec-ai-head">✦ 실시간 필기</div>'+md(s.liveNotes.notes.map(function(k){return '- '+k;}).join('\n'))+'</div>':'<div class="lec-kp muted">'+(note.ready?'핵심 없음':'필기 생성 전 — 대본만')+'</div>'))+'<details class="lec-tr"><summary>대본 보기</summary>'+((s.segs&&s.segs.length)?s.segs.map(function(g){ return '<div class="lec-seg"><span class="lec-ts">'+fmtT(g.t||0)+'</span><div class="lec-segbody"><div class="lec-ko">'+esc(g.ko||g.en||'')+'</div>'+(g.en&&g.ko?'<div class="lec-en">'+esc(g.en)+'</div>':'')+'</div></div>'; }).join(''):'<div class="lec-ko">'+esc(s.ko||'')+'</div>'+(s.en?'<div class="lec-en">'+esc(s.en)+'</div>':''))+'</details></div>'; });
     box.innerHTML=h; syncNoteToPage();
   }
   function exportMd(d){ var m='# '+(d.title||'강의')+'\n\n'+(d.course||'')+' · '+(d.date||'')+'\n\n'; if(d.overview) m+=d.overview+'\n\n'; (d.exam||[]).forEach(function(x){ m+='- ⚠️ '+x+'\n'; }); if(d.exam&&d.exam.length) m+='\n';
@@ -9590,6 +9635,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     function paintLang(l){ var b=$('lecLang'); if(!b) return; b.setAttribute('data-lang',l); b.textContent=(l==='ko-KR')?'🇰🇷 한국어 강의':'🇺🇸 영어 강의'; b.classList.toggle('en', l!=='ko-KR'); var b2=$('lecLang2'); if(b2){ b2.textContent=(l==='ko-KR')?'🇰🇷 한국어':'🇺🇸 영어'; b2.classList.toggle('en', l!=='ko-KR'); } }
     try{ paintLang(langFor()); }catch(e){ paintLang('ko-KR'); }
     $('lecLang2').addEventListener('click',function(){ $('lecLang').click(); });
+    $('lecAiBtn').addEventListener('click',function(){ window.tmSetClaudeKey(); }); paintAiBtn();
     $('lecLang').addEventListener('click',function(){ var cur=this.getAttribute('data-lang'); var nx=(cur==='ko-KR')?'en-US':'ko-KR'; paintLang(nx); try{ lsSet(lsKey(langKey()),nx); if(window.tmOnChange) tmOnChange(); }catch(e){} showToast(cname($('lecCourse').value)+' → '+(nx==='ko-KR'?'한국어':'영어')+' 강의로 기억'); if(S.running){ S.lang=nx; S.langSample=''; S.langWarned=false; try{ S.rec.abort(); }catch(e){} showToast('언어 전환: '+(nx==='ko-KR'?'한국어':'영어')+' — 인식기 재시작'); } });
     var _rz=null; window.addEventListener('resize',function(){ if(typeof currentMode!=='undefined' && currentMode==='lecture'){ clearTimeout(_rz); _rz=setTimeout(function(){ renderPage(); renderViewPage(); },150); } });
     window.addEventListener('beforeunload',function(e){ if(S.running){ e.preventDefault(); e.returnValue=''; } });
