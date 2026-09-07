@@ -2379,7 +2379,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="55">
+<meta name="tm-version" content="56">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -2558,6 +2558,7 @@
   .todo-text:focus { border-color: var(--border,#ddd); background: var(--bg,transparent); outline:none; }
   #lecWork:focus, #lecView:focus { outline:none; }
   .lec-langbtn { font-weight:700; }
+  .lec-export.rec { border-color:#d16565; color:#d16565; font-weight:700; }
   .lec-langbtn.en { border-color: var(--accent); color: var(--accent); }
   .todo-up, .todo-del { border:none; background:none; color: var(--text-muted); width:26px; height:26px; border-radius:6px; cursor:pointer; font-size:13px; flex-shrink:0; }
   .todo-del:hover { color:#c62828; }
@@ -9477,6 +9478,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     var c=$('lecCourse').value||''; var m=cardsFor(c).find(function(x){ return x.id===mid; })||{id:mid,name:mid==='misc'?'주차 미지정':''}; var w=modWeek(m);
     V.mid=mid; V.notes=(mid==='misc')?notesForWeek(c,null,'misc'):notesForWeek(c,w,mid); V.pdfs=(mid==='misc')?pdfsForWeek(c,'misc'):pdfsForWeek(c,mid);
     var note=noteId?V.notes.find(function(n){return n.id===noteId;}):null;
+    if(!note && pdfKey){ var pk=V.pdfs.find(function(p){return p.key===pdfKey;}); if(pk) note=V.notes.find(function(n){ return n.pdf===pk.name && n.ready; })||V.notes.find(function(n){ return n.pdf===pk.name; })||null; }
     if(!note && !pdfKey && V.notes.length) note=V.notes.find(function(n){return n.ready;})||V.notes[0];
     var pdf=null; if(pdfKey) pdf=V.pdfs.find(function(p){return p.key===pdfKey;}); if(!pdf && note && note.pdf) pdf=V.pdfs.find(function(p){ return p.name===note.pdf; })||null; if(!pdf && !noteId && V.pdfs.length) pdf=V.pdfs[0]; if(!pdf && V.pdfs.length===1 && note && note.mode!=='online') pdf=V.pdfs[0];
     var R=$('lecView'); R.innerHTML='<div class="lms-topbar"><button type="button" class="lms-back" id="lecViewBack">←</button><b class="lec-view-title">'+esc(cname(c))+' · '+esc(m.name)+'</b><span style="flex:1"></span><span id="lecViewBtns"></span></div><div class="lec-view-main'+(pdf?'':' nopdf')+'">'+(pdf?'<div class="lec-view-left"><div class="lec-view-canvas"><canvas id="lecViewCanvas"></canvas></div><div class="lec-nav"><button type="button" class="lec-btn" id="lecViewPrev">←</button><span id="lecViewPage">–</span><button type="button" class="lec-btn" id="lecViewNext">→</button><span class="lec-hint">'+esc(pdf.name)+'</span></div></div>':'')+'<div class="lec-view-right"><div class="lec-view-tabs" id="lecViewTabs"></div><div class="lec-view-notes" id="lecViewNotes"></div></div></div>';
@@ -9489,6 +9491,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     tabs.innerHTML=th; tabs.style.display=th?'':'none';
     tabs.querySelectorAll('[data-note]').forEach(function(b){ b.addEventListener('click',function(){ openView(b.getAttribute('data-note'), mid, pdf?pdf.key:null); }); });
     tabs.querySelectorAll('[data-pdfk]').forEach(function(b){ b.addEventListener('click',function(){ openView(note?note.id:null, mid, b.getAttribute('data-pdfk')); }); });
+    V.curPdf=pdf||null;
     // 필기
     await renderNote(note, c);
     // PDF
@@ -9500,14 +9503,15 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     try{ _vtask=pg.render({canvasContext:cv.getContext('2d'), viewport:v}); await _vtask.promise; }catch(e){} _vtask=null; var pe=$('lecViewPage'); if(pe) pe.textContent=V.page+' / '+V.total; syncNoteToPage(); }
   function viewGo(n){ if(!V.pdf) return; n=Math.max(1,Math.min(V.total,n)); if(n===V.page) return; V.page=n; renderViewPage(); }
   function syncNoteToPage(){ var box=$('lecViewNotes'); if(!box||!V.note||V.note.mode==='online') return; box.querySelectorAll('.lec-slide').forEach(function(el){ var on=(+el.getAttribute('data-page')===V.page); el.classList.toggle('cur',on); if(on) el.scrollIntoView({block:'nearest',behavior:'smooth'}); }); }
+  function bindViewRec(){ var b=$('lecViewRec'); if(b) b.addEventListener('click',function(){ if(V.curPdf) startWeekRecording(V.mid, V.curPdf.key); }); }
   async function renderNote(note, c){
     var box=$('lecViewNotes'), btns=$('lecViewBtns'); V.note=null; btns.innerHTML='';
-    if(!note){ box.innerHTML='<div class="lms-empty">이 주차엔 아직 필기가 없어요.<br><small>"● 이 주차 녹음"으로 수업을 녹음해 보내면 30분 안에 필기가 생겨요. 온라인 강의(물리학)는 화·목 새벽에 자동으로 만들어져요.</small></div>'; return; }
+    if(!note){ box.innerHTML='<div class="lms-empty">이 PDF엔 아직 필기가 없어요.<br><small>위의 "● 이 PDF로 녹음"으로 수업을 녹음해 보내면 30분 안에 필기가 생겨요.</small></div>'; if(V.curPdf){ btns.innerHTML='<button type="button" class="lec-export rec" id="lecViewRec">● 이 PDF로 녹음</button>'; bindViewRec(); } return; }
     var data=null; if(note.ready){ try{ var r=await fetch('./lectures/notes/'+note.id+'.json?v='+Date.now(),{cache:'no-store'}); if(r.ok) data=await r.json(); }catch(e){} }
     if(!data){ try{ data=await idbGet('lec',note.id); }catch(e){} } if(!data){ box.innerHTML='<div class="lms-empty">필기 데이터를 찾을 수 없어요</div>'; return; }
     V.note=data;
-    var eu=ecampusUrlFor(data); btns.innerHTML=(eu?'<a class="lec-export" href="'+esc(eu)+'" target="_blank" rel="noopener">▶ e-campus 영상</a>':'')+'<button type="button" class="lec-export" id="lecExport">마크다운</button>'+(note.ready?'':'<button type="button" class="lec-export danger" id="lecDelete">이 기기에서 삭제</button>');
-    $('lecExport').addEventListener('click',function(){ exportMd(data); });
+    var eu=ecampusUrlFor(data); btns.innerHTML=(V.curPdf?'<button type="button" class="lec-export rec" id="lecViewRec">● 이 PDF로 녹음</button>':'')+(eu?'<a class="lec-export" href="'+esc(eu)+'" target="_blank" rel="noopener">▶ e-campus 영상</a>':'')+'<button type="button" class="lec-export" id="lecExport">마크다운</button>'+(note.ready?'':'<button type="button" class="lec-export danger" id="lecDelete">이 기기에서 삭제</button>');
+    $('lecExport').addEventListener('click',function(){ exportMd(data); }); bindViewRec();
     var dl=$('lecDelete'); if(dl) dl.addEventListener('click',async function(){ if(!confirm('이 녹음 기록을 이 기기에서 삭제할까요?')) return; await idbDel('lec',note.id); showPane('lecHome'); renderHome(); });
     var h='<div class="lec-note-head"><b>'+esc(data.title||'강의')+'</b><span class="lms-sub">'+esc(data.date||'')+(data.pages?' · '+data.pages+(data.mode==='online'?'구간':'쪽'):'')+(data.duration?' · '+fmtT(data.duration):'')+(note.ready?'':' · <em>'+(note.status==='sent'?'필기 만드는 중 — 대본만 표시':'아직 전송 전 — 대본만 표시')+'</em>')+'</span></div>';
     if(data.overview) h+='<div class="lms-brief">'+md(data.overview)+'</div>';
@@ -9520,7 +9524,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     var a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([m],{type:'text/markdown'})); a.download=(d.title||'lecture')+'_'+(d.date||'')+'.md'; a.click(); }
 
   // ---- 녹음 시작 (주차에서) ----
-  async function startWeekRecording(mid){
+  async function startWeekRecording(mid, pdfKey){
     var c=$('lecCourse').value||''; if(!c){ showToast('과목을 먼저 선택하세요'); return; }
     var m=cardsFor(c).find(function(x){ return x.id===mid; })||{id:mid,name:''}; S.week=mid; S.weekNo=modWeek(m);
     $('lecTitle').value=(m.name&&mid!=='misc')?(cname(c)+' '+m.name):cname(c)+' 강의';
@@ -9528,7 +9532,10 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     showPane('lecWork'); status('');
     // 이 주차 PDF가 있으면 바로 열기 (없으면 온라인 강의 모드로 녹음 가능)
     var pdfs=pdfsForWeek(c,mid); S.pdf=null; S.total=0; S.pdfName=''; $('lecDropZone').classList.remove('has-pdf'); $('lecPage').textContent='–';
-    if(pdfs.length){ await openPdfBytes(pdfs[pdfs.length-1].bytes, pdfs[pdfs.length-1].name, false); status('PDF 열림 · '+S.total+'쪽 — ● 녹음 시작을 누르세요'); }
+    var pick=pdfKey?pdfs.find(function(p){ return p.key===pdfKey; }):null;
+    if(pick){ await openPdfBytes(pick.bytes, pick.name, false); $('lecTitle').value=cname(c)+' '+(m.name||'')+' · '+pick.name.replace(/\.pdf$/i,''); status('PDF 열림 · '+S.total+'쪽 — ● 녹음 시작을 누르세요'); }
+    else if(pdfs.length===1){ await openPdfBytes(pdfs[0].bytes, pdfs[0].name, false); status('PDF 열림 · '+S.total+'쪽 — ● 녹음 시작을 누르세요'); }
+    else if(pdfs.length>1){ status('이 주차에 PDF가 '+pdfs.length+'개예요 — 특정 PDF로 녹음하려면 카드에서 PDF를 연 뒤 "이 PDF로 녹음"을 누르세요. 그냥 시작하면 PDF 없이 구간 모드로 녹음돼요'); }
     else status('이 주차에 PDF가 없어요 — 왼쪽에 드래그하면 저장되고, 없이 시작하면 5분 구간 모드로 녹음돼요');
     $('lecLive').innerHTML='<div class="lms-empty">녹음을 시작하면 이 슬라이드의 대본과 번역이 여기에 실시간으로 쌓입니다.</div>';
     setTimeout(renderPage,50);
