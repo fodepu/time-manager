@@ -2379,7 +2379,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="51">
+<meta name="tm-version" content="52">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -2552,9 +2552,10 @@
   .todo-row { display:flex; align-items:center; gap:6px; padding:4px 0; }
   .todo-check { width:26px; height:26px; flex-shrink:0; border:1.5px solid var(--border,#ccc); background: var(--bg,transparent); color: var(--accent); border-radius:8px; font-size:14px; font-weight:800; cursor:pointer; }
   .todo-row.done .todo-check { background: var(--accent); color:#fff; border-color: var(--accent); }
+  .todo-hint { font-size:11.5px; color: var(--text-muted); padding:2px 2px 6px; }
+  .todo-row.done .todo-text { text-decoration:none; color: var(--text); font-weight:600; }
   .todo-text { flex:1; min-width:0; font-size:14px; padding:7px 8px; border:1px solid transparent; border-radius:8px; background:transparent; color: var(--text); }
   .todo-text:focus { border-color: var(--border,#ddd); background: var(--bg,transparent); outline:none; }
-  .todo-row.done .todo-text { color: var(--text-muted); text-decoration:line-through; }
   .todo-up, .todo-del { border:none; background:none; color: var(--text-muted); width:26px; height:26px; border-radius:6px; cursor:pointer; font-size:13px; flex-shrink:0; }
   .todo-del:hover { color:#c62828; }
   .todo-add { display:flex; gap:6px; }
@@ -8151,7 +8152,7 @@ function applyRemote(payload){
   const remoteKeys = new Set(Object.keys((payload&&payload.data)||{}));
   const cutoff = new Date(Date.now()-45*86400000); const cut = cutoff.getFullYear()+'-'+String(cutoff.getMonth()+1).padStart(2,'0')+'-'+String(cutoff.getDate()).padStart(2,'0');
   const rm=[]; for(let i=0;i<localStorage.length;i++){ const k=localStorage.key(i); if(!k||!k.startsWith(PREFIX)||KEEP.has(k)||remoteKeys.has(k)) continue;
-    const m=k.match(/^tracker_(?:g|f|dayblocks|sc)_(\d{4}-\d{2}-\d{2})$/); if(m && m[1]<cut) continue; rm.push(k); }
+    const m=k.match(/^tracker_(?:g|f|dayblocks|sc|tp)_(\d{4}-\d{2}-\d{2})$/); if(m && m[1]<cut) continue; rm.push(k); }
   rm.forEach(k=>{ try{ localStorage.removeItem(k); }catch(e){} });
   if(window.mergeRemoteData) window.mergeRemoteData(payload,'remote');
 }
@@ -8168,7 +8169,7 @@ function prunePayload(payload){
     window.tmSync.pruned=0; window.tmSync.big='';
     var size=byteLen(JSON.stringify(payload)); window.tmSync.rawSize=size;
     if(size<=700000) return payload;
-    var dated=[]; Object.keys(payload.data).forEach(function(k){ var m=k.match(/^tracker_(?:g|f|dayblocks|sc)_(\d{4}-\d{2}-\d{2})$/); if(m) dated.push([m[1],k]); });
+    var dated=[]; Object.keys(payload.data).forEach(function(k){ var m=k.match(/^tracker_(?:g|f|dayblocks|sc|tp)_(\d{4}-\d{2}-\d{2})$/); if(m) dated.push([m[1],k]); });
     dated.sort(function(a,b){ return a[0]<b[0]?-1:1; });
     var today=(typeof toLocalDateStr==='function')?toLocalDateStr(new Date()):new Date().toISOString().slice(0,10);
     for(var i=0;i<dated.length && size>700000;i++){
@@ -8727,7 +8728,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
         if(b.kind==='tasks' && td.length){
           // 체크 블록: 적은 할 일이 블록 이름이 되고, 원래 이름은 작게
           title=td.map(function(x){ return x.t; }).join(', ');
-          sub=(b.sub||'')+(td.length>1&&tdDone<td.length?((b.sub?' · ':'')+tdDone+'/'+td.length):'');
+          sub=(b.sub||'');
         }
         el.innerHTML='<div class="t">'+escapeHtml(title)+'</div>'+(sub?'<div class="s">'+escapeHtml(sub)+'</div>':'')+((td.length&&hgt>58&&b.kind!=='tasks')?'<div class="tt-td">'+td.slice(0,4).map(function(x){ return '<div class="'+(x.d?'d':'')+'">'+(x.d?'✓ ':'· ')+escapeHtml(x.t)+'</div>'; }).join('')+(td.length>4?'<div>+'+(td.length-4)+'</div>':'')+'</div>':'')+'<div class="more" data-more="1">⋯</div>';
         el.title=b.label+' '+b.start+'~'+b.end+(st===true?' · 완료':st===false?' · 미완료':'');
@@ -8807,17 +8808,21 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     x.values=x.values||{};
     return {e:x, save:function(){ snap.savedAt=new Date().toISOString(); delete snap._synth; saveGrowth(date,snap); if(typeof scheduleSyncPush==='function') scheduleSyncPush(); if(window.tmOnChange) window.tmOnChange(); }};
   }
+  function getPool(date){ var a=lsGet(lsKey('tp_'+date)); return Array.isArray(a)?a.map(String):[]; }
+  function setPool(date,arr){ if(arr.length) lsSet(lsKey('tp_'+date),arr); else { try{ localStorage.removeItem(lsKey('tp_'+date)); }catch(e){} } if(window.tmOnChange) window.tmOnChange(); }
   function openTodos(date,id,label){
     var ref=entryForDate(date,id); if(!ref){ showToast('이 블록을 찾을 수 없어요'); return; }
-    var list=(ref.e.values&&ref.e.values.todos)||[];
-    todoCtx={date:date,id:id,items:list.map(function(x){ return {t:x.t||'', d:!!x.d}; })};
+    var mine=((ref.e.values&&ref.e.values.todos)||[]).map(function(x){ return x.t||''; }).filter(Boolean);
+    var pool=getPool(date); mine.forEach(function(t){ if(pool.indexOf(t)<0) pool.push(t); });
+    todoCtx={date:date,id:id,items:pool.map(function(t){ return {t:t, d:mine.indexOf(t)>=0}; })};
     $('todoTitle').textContent=label||'할 일';
     var dd=new Date(date+'T00:00:00'); $('todoSub').textContent=(dd.getMonth()+1)+'/'+dd.getDate()+' ('+DOW[dd.getDay()]+')';
     renderTodos(); $('todoOverlay').classList.add('open'); setTimeout(function(){ $('todoInput').focus(); },80);
   }
   function renderTodos(){
     var box=$('todoList'); if(!todoCtx) return; box.innerHTML='';
-    if(!todoCtx.items.length){ box.innerHTML='<div class="todo-empty">아직 할 일이 없어요. 아래에 적어보세요.</div>'; }
+    if(!todoCtx.items.length){ box.innerHTML='<div class="todo-empty">오늘 할 일 후보가 없어요. 아래에 적어두고, 이 블록에서 할 것만 체크하세요.</div>'; }
+    else { var hint=document.createElement('div'); hint.className='todo-hint'; hint.textContent='오늘의 할 일 후보 — 이 블록에서 할 것에 체크 (다른 체크 블록에서도 같은 후보가 보여요)'; box.appendChild(hint); }
     todoCtx.items.forEach(function(it,i){
       var row=document.createElement('div'); row.className='todo-row'+(it.d?' done':'');
       row.innerHTML='<button type="button" class="todo-check">'+(it.d?'✓':'')+'</button><input type="text" class="todo-text" value="">'+
@@ -8834,12 +8839,11 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   function addTodo(){ var v=$('todoInput').value.trim(); if(!v) return; v.split(/\n/).forEach(function(line){ line=line.replace(/^[-*•\s]+/,'').trim(); if(line) todoCtx.items.push({t:line,d:false}); }); $('todoInput').value=''; renderTodos(); }
   function saveTodos(){
     if(!todoCtx) return; var ref=entryForDate(todoCtx.date,todoCtx.id); if(!ref) return;
-    var items=todoCtx.items.filter(function(x){ return (x.t||'').trim(); }).map(function(x){ return {t:x.t.trim(), d:!!x.d}; });
+    var all=todoCtx.items.map(function(x){ return {t:(x.t||'').trim(), d:!!x.d}; }).filter(function(x){ return x.t; });
+    setPool(todoCtx.date, all.map(function(x){ return x.t; }));
+    var items=all.filter(function(x){ return x.d; }).map(function(x){ return {t:x.t, d:false}; });
     ref.e.values=ref.e.values||{}; if(items.length) ref.e.values.todos=items; else delete ref.e.values.todos;
-    if((ref.e.kind||'single')==='tasks'){ if(items.length && items.every(function(x){return x.d;})) ref.e.values.check=true; else if(ref.e.values.check===true) delete ref.e.values.check; }
     ref.save();
-    // 같은 날의 다른 체크 블록에도 같은 목록을 띄움 (하루 할 일은 하나의 목록)
-    if((ref.e.kind||'single')==='tasks') try{ replicateTodos(todoCtx.date, items, todoCtx.id); }catch(e){ console.warn('replicate', e&&e.message); }
     $('todoOverlay').classList.remove('open'); todoCtx=null; refreshAll(); showToast('할 일 저장됨'); if(window.tmApplyPendingRemote) setTimeout(tmApplyPendingRemote,2000);
   }
   function applyTodosTo(e, items){ e.values=e.values||{}; if(items.length) e.values.todos=items.map(function(x){ return {t:x.t, d:!!x.d}; }); else delete e.values.todos;
