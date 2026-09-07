@@ -2379,7 +2379,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="66">
+<meta name="tm-version" content="67">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -9399,8 +9399,13 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   function paintAiBtn(){ var b=$('lecAiBtn'); if(!b) return; var eng=aiEngine(); b.textContent=eng==='claude'?'✦ Claude 필기':eng==='nano'?'✦ 내장 AI 필기 (무료)':(NANO.state==='downloadable'||NANO.state==='downloading')?'✦ AI 필기 준비 (무료 다운로드)':'✦ AI 필기 설정'; b.classList.toggle('on',!!eng); }
   var NANO={ session:null, state:'', sys:'' };
   async function nanoState(){ try{ if(typeof LanguageModel==='undefined') return 'unsupported'; return await LanguageModel.availability(); }catch(e){ return 'unsupported'; } }
-  window.tmNanoSetup=async function(){ var st=await nanoState(); if(st==='unsupported'){ alert('이 브라우저엔 Chrome 내장 AI가 없어요. 최신 Chrome(데스크톱)에서 열어주세요.'); return; } if(st==='available'){ showToast('내장 AI 준비됨 — 녹음하면 무료로 실시간 필기'); paintAiBtn(); return; } if(st==='unavailable'){ alert('이 기기에선 내장 AI를 쓸 수 없어요 (저장공간 22GB 이상·메모리 16GB 필요).'); return; }
-    status('내장 AI 모델 다운로드 중… (한 번만, 약 2GB) 0%'); try{ NANO.session=await LanguageModel.create({ monitor:function(m){ m.addEventListener('downloadprogress',function(e){ status('내장 AI 모델 다운로드 중… '+Math.round((e.loaded/(e.total||1))*100)+'%'); }); } }); status('내장 AI 준비 완료 — 이제 무료로 실시간 필기가 돼요','ok'); }catch(e){ status('내장 AI 준비 실패: '+(e&&e.message||e),'err'); } paintAiBtn(); };
+  window.tmNanoSetup=function(){ // 클릭 제스처 안에서 바로 create() 호출해야 다운로드가 허용됨 (await 금지)
+    if(typeof LanguageModel==='undefined'){ alert('이 브라우저엔 Chrome 내장 AI가 없어요. 최신 Chrome(데스크톱)에서 열어주세요.'); return; }
+    var b=$('lecAiBtn'); if(b) b.textContent='✦ 모델 준비 중… 0%'; status('내장 AI 모델 다운로드 중… (한 번만, 약 2GB) 0%'); showToast('내장 AI 다운로드 시작 — 몇 분 걸려요');
+    var p; try{ p=LanguageModel.create({ monitor:function(m){ m.addEventListener('downloadprogress',function(e){ var pct=Math.round((e.loaded/(e.total||1))*100); status('내장 AI 모델 다운로드 중… '+pct+'%'); if(b) b.textContent='✦ 모델 준비 중… '+pct+'%'; }); } }); }catch(e){ alert('내장 AI 시작 실패: '+(e&&e.message||e)); paintAiBtn(); return; }
+    p.then(function(s){ NANO.session=s; NANO.state='available'; status('내장 AI 준비 완료 — 이제 무료로 실시간 필기가 돼요','ok'); showToast('내장 AI 준비 완료'); paintAiBtn(); })
+     .catch(function(e){ var msg=(e&&e.name)+': '+(e&&e.message||e); status('내장 AI 준비 실패: '+msg,'err'); alert('내장 AI 준비 실패\n'+msg+'\n\n'+(/NotAllowed|gesture|activation/i.test(msg)?'chrome://flags 에서 "Prompt API for Gemini Nano"를 Enabled로 바꾸고 Chrome을 재시작한 뒤 다시 눌러주세요.':/NotSupported|unavailable/i.test(msg)?'이 기기/브라우저에선 내장 AI를 쓸 수 없어요 (저장공간 22GB·메모리 16GB 필요).':'chrome://components 에서 "Optimization Guide On Device Model" 업데이트 확인 후 다시 시도해 주세요.')); nanoState().then(function(s){ NANO.state=s; paintAiBtn(); }); });
+  };
   async function nanoCall(system, user){
     if(!NANO.session || NANO.sys!==system){ NANO.session=await LanguageModel.create({ initialPrompts:[{role:'system',content:system}] }); NANO.sys=system; }
     var s=NANO.session; try{ var c=await s.clone(); return await c.prompt(user); }catch(e){ NANO.session=null; throw e; }
