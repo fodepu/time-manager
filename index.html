@@ -2379,7 +2379,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="71">
+<meta name="tm-version" content="72">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -9456,7 +9456,9 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     if(!$('lecBackup') || $('lecBackup').checked) startAudio(); else status(recLabel()+' · 백업 녹음 꺼짐','ok');
     try{ $('lecWork').focus(); }catch(e){}
     S.lastResultAt=Date.now(); try{ if(navigator.wakeLock){ navigator.wakeLock.request('screen').then(function(w){ S.wake=w; }).catch(function(){}); } }catch(e){}
-    S.tick=setInterval(function(){ renderLive(); autoCut(); try{ aiTick(false); }catch(e){} if(S.running && S.rec && !S.lastInterim && Date.now()-S.lastResultAt>60000){ S.lastResultAt=Date.now(); try{ S.rec.abort(); }catch(e){} } },1000); saveLocal();
+    S.tick=setInterval(function(){ renderLive(); autoCut(); try{ aiTick(false); }catch(e){}
+      // 잠정 문장이 8초 넘게 확정되지 않으면 강제로 확정 처리 (한국어에서 자주 멈춤)
+      try{ if(S.running){ if(S.lastInterim!==S._pi){ S._pi=S.lastInterim; S._piAt=Date.now(); } else if(S.lastInterim && Date.now()-(S._piAt||0)>8000){ var t=S.lastInterim; S.lastInterim=''; S._pi=''; addFinal(t,''); try{ S.rec.abort(); }catch(e){} } } }catch(e){} if(S.running && S.rec && !S.lastInterim && Date.now()-S.lastResultAt>60000){ S.lastResultAt=Date.now(); try{ S.rec.abort(); }catch(e){} } },1000); saveLocal();
   }
   function stopAll(){
     try{ if(aiEngine() && S.running){ aiTick(true); } }catch(e){}
