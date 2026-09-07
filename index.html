@@ -2379,7 +2379,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="77">
+<meta name="tm-version" content="78">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -2499,6 +2499,8 @@
   .lec-nav { display:flex; align-items:center; gap:8px; margin-top:6px; font-size:13px; font-variant-numeric: tabular-nums; }
   .lec-hint { font-size:11px; color: var(--text-muted); margin-left:auto; }
   .lec-live { border:1px solid var(--border,#e5e5e5); border-radius:12px; background: var(--bg-card,#fff); height: min(70vh, 640px); overflow:auto; padding:10px 12px; }
+  .lec-recbanner { position:fixed; right:16px; bottom:16px; z-index:50; background:#dc2626; color:#fff; border:0; border-radius:999px; padding:10px 16px; font-weight:800; font-size:13px; box-shadow:0 4px 14px rgba(0,0,0,.25); cursor:pointer; }
+  .lec-divider { font-size:11px; color:var(--text-muted); margin:10px 0 4px; border-top:1px dashed var(--border,#e5e7eb); padding-top:4px; }
   .lec-live-head { font-size:12px; font-weight:800; color: var(--text-muted); margin-bottom:8px; position:sticky; top:-10px; background: var(--bg-card,#fff); padding:4px 0; }
   .lec-live-head small { font-weight:500; margin-left:6px; }
   .lec-seg { padding:6px 0; border-top:1px solid var(--border-soft,#f0f0f0); }
@@ -9328,7 +9330,11 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   function loadPdfJs(){ if(window.pdfjsLib) return Promise.resolve(); return new Promise(function(res,rej){ var s=document.createElement('script'); s.src='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js'; s.onload=function(){ window.pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js'; res(); }; s.onerror=rej; document.head.appendChild(s); }); }
   async function openPdfBytes(bytes,name,save){
     try{ await loadPdfJs(); }catch(e){ status('PDF 라이브러리 로드 실패','err'); return; }
-    S.pdf=await pdfjsLib.getDocument({data:bytes.slice(0)}).promise; S.total=S.pdf.numPages; S.pdfName=name||'slides.pdf'; S.pdfBytes=bytes; S.page=1; S.slideText=null; extractSlideText().catch(function(){});
+    var doc=await pdfjsLib.getDocument({data:bytes.slice(0)}).promise;
+    if(S.running && S.pdf){ S.base=(S.base||0)+(S.total||0); } else { S.base=0; S.docs=[]; S.slideText=null; S.slideLines=null; }
+    S.pdf=doc; S.total=S.pdf.numPages; S.pdfName=name||'slides.pdf'; S.pdfBytes=bytes; S.page=S.base+1; S.docs=(S.docs||[]); S.docs.push({ name:S.pdfName, base:S.base, total:S.total, from:S.running?nowT():0 });
+    if(S.running){ S.log.push({t:nowT(), page:S.page, pdf:S.pdfName}); showToast('녹음 유지 · PDF 교체: '+S.pdfName); }
+    extractSlideText().catch(function(){});
     $('lecDropZone').classList.add('has-pdf'); renderPage(); status('PDF 열림 · '+S.total+'쪽');
     var course=S.course||$('lecCourse').value||''; if(save && course){ var wk=S.week||'misc'; idbPut('pdf',{key:course+'|'+wk+'|'+S.pdfName, course:course, week:wk, name:S.pdfName, bytes:bytes, at:Date.now()}).catch(function(){}); }
   }
@@ -9341,7 +9347,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     rows.sort(function(a,b){ return a.y-b.y; });
     return rows.map(function(r,i){ r.parts.sort(function(a,b){ return a.x-b.x; }); return { i:i, text:r.parts.map(function(p){return p.s;}).join(' ').replace(/\s+/g,' ').trim(), x:r.x0, y:r.y-r.h, w:r.x1-r.x0, h:r.h*1.15 }; }).filter(function(l){ return l.text.length>0; }).slice(0,80);
   }
-  async function extractSlideText(){ if(!S.pdf) return; var out={}, lines={}; for(var i=1;i<=S.total;i++){ try{ var pg=await S.pdf.getPage(i); var tc=await pg.getTextContent(); var vw=pg.getViewport({scale:1}); out[i]=tc.items.map(function(it){ return it.str; }).join(' ').replace(/\s+/g,' ').trim().slice(0,1500); lines[i]={ w:vw.width, h:vw.height, lines:groupLines(tc.items, vw) }; }catch(e){ out[i]=''; } } S.slideText=out; S.slideLines=lines; saveLocal(); }
+  async function extractSlideText(){ if(!S.pdf) return; var out={}, lines={}, base=S.base||0, pdf=S.pdf; for(var i=1;i<=S.total;i++){ try{ var pg=await pdf.getPage(i); var tc=await pg.getTextContent(); var vw=pg.getViewport({scale:1}); out[base+i]=tc.items.map(function(it){ return it.str; }).join(' ').replace(/\s+/g,' ').trim().slice(0,1500); lines[base+i]={ w:vw.width, h:vw.height, lines:groupLines(tc.items, vw) }; }catch(e){ out[base+i]=''; } } S.slideText=Object.assign(S.slideText||{}, out); S.slideLines=Object.assign(S.slideLines||{}, lines); saveLocal(); }
   // ---- 슬라이드 위 표시 (Claude가 고른 줄에 형광펜·밑줄·동그라미·여백 메모) ----
   S.ann={}; // page → [{line, type:'highlight'|'underline'|'circle', note}]
   var ANN_COLORS={ highlight:'rgba(255, 230, 0, 0.38)', underline:'#e0442e', circle:'#e0442e', note:'#1d4ed8' };
@@ -9354,13 +9360,12 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
       if(a.type==='highlight'){ ctx.fillStyle=ANN_COLORS.highlight; ctx.fillRect(x-2, y, w+4, hh); }
       else if(a.type==='underline'){ ctx.strokeStyle=ANN_COLORS.underline; ctx.lineWidth=Math.max(1.5, 2*sx); ctx.beginPath(); ctx.moveTo(x, y+hh-1); ctx.lineTo(x+w, y+hh-1); ctx.stroke(); }
       else if(a.type==='circle'){ ctx.strokeStyle=ANN_COLORS.circle; ctx.lineWidth=Math.max(1.5, 2*sx); ctx.beginPath(); ctx.ellipse(x+w/2, y+hh/2, w/2+8*sx, hh/2+6*sy, 0, 0, Math.PI*2); ctx.stroke(); }
-      if(a.note){ ctx.font='500 '+fontPx+'px Pretendard, -apple-system, sans-serif'; var txt='✎ '+a.note; var tw=ctx.measureText(txt).width+10*sx, th=fontPx*1.5;
+      if(a.note){ ctx.font='500 '+fontPx+'px Pretendard, -apple-system, sans-serif'; var txt=a.note; var pad=7*sx; var tw=ctx.measureText(txt).width+pad*2, th=fontPx*1.8;
         var nx=x+w+10*sx, ny=y+hh/2-th/2; if(nx+tw>ov.width-4){ nx=Math.max(4, ov.width-tw-4); ny=y+hh+2; } // 오른쪽 여백에 안 들어가면 줄 아래
         var tries=0; while(usedNotes.some(function(u){ return Math.abs(u.y-ny)<th && Math.abs(u.x-nx)<tw; }) && tries++<6){ ny+=th+2; }
         usedNotes.push({x:nx,y:ny});
-        ctx.fillStyle='rgba(255,255,255,0.92)'; ctx.strokeStyle=ANN_COLORS.note; ctx.lineWidth=1; roundRect(ctx, nx, ny, tw, th, 4*sx); ctx.fill(); ctx.stroke();
-        ctx.fillStyle=ANN_COLORS.note; ctx.textBaseline='middle'; ctx.fillText(txt, nx+5*sx, ny+th/2);
-        if(a.type){ ctx.strokeStyle=ANN_COLORS.note; ctx.setLineDash([3,3]); ctx.beginPath(); ctx.moveTo(x+w+2, y+hh/2); ctx.lineTo(nx, ny+th/2); ctx.stroke(); ctx.setLineDash([]); }
+        ctx.save(); ctx.shadowColor='rgba(0,0,0,0.22)'; ctx.shadowBlur=5*sx; ctx.shadowOffsetY=2*sx; ctx.fillStyle='#bfdbfe'; ctx.fillRect(nx, ny, tw, th); ctx.restore();
+        ctx.fillStyle='#1e3a8a'; ctx.textBaseline='middle'; ctx.fillText(txt, nx+pad, ny+th/2);
       }
     });
   }
@@ -9370,14 +9375,14 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   function redrawAnn(){ try{ drawAnnotations($('lecCanvas'), $('lecAnnot'), S.page, S.ann[S.page]||[], S.slideLines&&S.slideLines[S.page]); }catch(e){} }
   var _renderTask=null;
   async function renderPage(){
-    if(!S.pdf) return; try{ if(_renderTask) _renderTask.cancel(); }catch(e){} var pg=await S.pdf.getPage(S.page); var cv=$('lecCanvas'); var wrap=cv.parentNode; var vw=pg.getViewport({scale:1}); var dpr=window.devicePixelRatio||1; var scale=Math.min(Math.max(wrap.clientWidth-4,200)/vw.width, 2); var v=pg.getViewport({scale:scale*dpr});
+    if(!S.pdf) return; try{ if(_renderTask) _renderTask.cancel(); }catch(e){} var pg=await S.pdf.getPage(Math.max(1,S.page-(S.base||0))); var cv=$('lecCanvas'); var wrap=cv.parentNode; var vw=pg.getViewport({scale:1}); var dpr=window.devicePixelRatio||1; var scale=Math.min(Math.max(wrap.clientWidth-4,200)/vw.width, 2); var v=pg.getViewport({scale:scale*dpr});
     cv.width=v.width; cv.height=v.height; cv.style.width=(v.width/dpr)+'px'; cv.style.height=(v.height/dpr)+'px';
-    try{ _renderTask=pg.render({canvasContext:cv.getContext('2d'), viewport:v}); await _renderTask.promise; }catch(e){ if(!/cancel/i.test(String(e&&e.message))) console.warn('pdf render', e&&e.message); } _renderTask=null; $('lecPage').textContent=S.page+' / '+S.total; redrawAnn();
+    try{ _renderTask=pg.render({canvasContext:cv.getContext('2d'), viewport:v}); await _renderTask.promise; }catch(e){ if(!/cancel/i.test(String(e&&e.message))) console.warn('pdf render', e&&e.message); } _renderTask=null; $('lecPage').textContent=(S.page-(S.base||0))+' / '+S.total; redrawAnn();
   }
   var ONLINE_AUTO_SEC=300; S.online=false; S.lastCut=0;
   function goPage(n){
     if(S.online){ if(n<=S.page) return; S.page=S.page+1; S.total=S.page; S.lastCut=nowT(); if(S.running) S.log.push({t:nowT(), page:S.page}); $('lecPage').textContent='구간 '+S.page; renderLive(); return; }
-    if(!S.pdf) return; n=Math.max(1,Math.min(S.total,n)); if(n===S.page) return; var prev=S.page; S.page=n; if(S.running) S.log.push({t:nowT(), page:n}); renderPage(); renderLive();
+    if(!S.pdf) return; var b0=S.base||0; n=Math.max(b0+1,Math.min(b0+S.total,n)); if(n===S.page) return; var prev=S.page; S.page=n; if(S.running) S.log.push({t:nowT(), page:n}); renderPage(); renderLive();
     if(S.running && aiEngine()){ var keep=S.page; S.page=prev; aiTick(true).then(function(){ S.page=keep; renderLive(); }); S.page=keep; } }
   function autoCut(){ if(!S.online||!S.running) return; if(nowT()-S.lastCut>=ONLINE_AUTO_SEC){ goPage(S.page+1); } }
 
@@ -9428,13 +9433,15 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     var recent=[]; Object.keys(S.slides).map(Number).sort(function(a,b){return a-b;}).forEach(function(q){ S.slides[q].segs.forEach(function(s){ recent.push('['+fmtT(s.t||0)+' 슬라이드 '+q+'] '+(s.fix||s.en||s.ko||'')+(s.ko&&s.en?' / '+s.ko:'')); }); }); recent=recent.slice(-40);
     var live=S.live&&S.live[p];
     el.textContent='[강의 컨텍스트 — AI 도우미가 읽는 영역] 과목: '+cname(S.course)+' · 제목: '+(S.title||'')+' · 현재 슬라이드 '+p+'/'+(S.total||'?')+'\n\n[현재 슬라이드 텍스트]\n'+(st||'(텍스트 없음)')+'\n\n[실시간 필기]\n'+(live&&live.notes?live.notes.join('\n'):'(없음)')+'\n\n[최근 대본 (시간, 원문 / 번역)]\n'+(recent.join('\n')||'(아직 없음)'); }
+  function allSegs(){ var a=[]; Object.keys(S.slides||{}).forEach(function(q){ (S.slides[q].segs||[]).forEach(function(s){ a.push(s); }); }); a.sort(function(x,y){ return (x.t||0)-(y.t||0); }); return a; }
   function renderLive(){ renderCtx();
     var box=$('lecLive'); if(!box) return; var p=S.page||1, sl=S.slides[p]||{segs:[]}; var showEn=$('lecShowEn')&&$('lecShowEn').checked;
-    var h='<div class="lec-live-head">'+(S.online?'구간 '+p+' <small>(5분마다 자동, → 키로 수동 분할)</small>':'슬라이드 '+p+(S.total?' / '+S.total:''))+' <small>'+sl.segs.length+'문장 · '+(S.running?'● 녹음 중 '+fmtT(nowT())+(S.recOn?' · 인식기 켜짐':' · 인식기 대기')+' · '+(S.lang==='ko-KR'?'한국어':'영어')+' 인식'+(G.on?' · Gemini':'')+(S.biased?' · 슬라이드 용어 '+S.biased+'개 반영':'')+(S.lastErr&&S.lastErr!=='no-speech'&&S.lastErr!=='aborted'?' · 마지막 오류: '+S.lastErr:''):'대기')+'</small></div>';
-    if(S.running && !sl.segs.length && !S.lastInterim) h+='<div class="lec-seg interim"><div class="lec-en">듣는 중… 말소리가 들리면 몇 초 안에 문장이 여기 붙어요. 30초 넘게 아무것도 안 붙으면: 마이크 입력 장치(시스템 설정 → 사운드 → 입력)와 강의 언어(영어/한국어) 확인</div></div>';
+    var h='<div class="lec-live-head">'+(S.online?'구간 '+p+' <small>(5분마다 자동, → 키로 수동 분할)</small>':'슬라이드 '+(p-(S.base||0))+(S.total?' / '+S.total:''))+' <small>'+allSegs().length+'문장 · '+(S.running?'● 녹음 중 '+fmtT(nowT())+(S.recOn?' · 인식기 켜짐':' · 인식기 대기')+' · '+(S.lang==='ko-KR'?'한국어':'영어')+' 인식'+(G.on?' · Gemini':'')+(S.biased?' · 슬라이드 용어 '+S.biased+'개 반영':'')+(S.lastErr&&S.lastErr!=='no-speech'&&S.lastErr!=='aborted'?' · 마지막 오류: '+S.lastErr:''):'대기')+'</small></div>';
+    if(S.running && !allSegs().length && !S.lastInterim) h+='<div class="lec-seg interim"><div class="lec-en">듣는 중… 말소리가 들리면 몇 초 안에 문장이 여기 붙어요. 30초 넘게 아무것도 안 붙으면: 마이크 입력 장치(시스템 설정 → 사운드 → 입력)와 강의 언어(영어/한국어) 확인</div></div>';
     var rawMode=$('lecRaw')&&$('lecRaw').checked;
     // 실시간 필기 박스는 표시하지 않음 (필기는 슬라이드 위 표시로 대체 예정; 데이터는 최종 필기용으로 계속 저장)
-    sl.segs.forEach(function(s){ var main=(S.lang==='ko-KR')?(rawMode&&s.raw?s.raw:(s.fix||s.ko)):(s.ko?s.ko:''); h+='<div class="lec-seg"><span class="lec-ts">'+fmtT(s.t||0)+'</span><div class="lec-segbody"><div class="lec-ko">'+(main?escapeHtml(main):'<span class="lec-wait">번역 중…</span>')+'</div>'+(S.lang!=='ko-KR'&&showEn?'<div class="lec-en'+(s.fix&&!rawMode?' fixed':'')+'">'+escapeHtml(rawMode&&s.raw?s.raw:(s.fix||s.en))+'</div>':'')+(rawMode&&s.raw&&S.lang==='ko-KR'?'<div class="lec-en">확정: '+escapeHtml(s.ko)+'</div>':'')+'</div></div>'; });
+    var all=allSegs(); var hidden=Math.max(0, all.length-150); if(hidden) h+='<div class="lec-divider">이전 '+hidden+'문장은 접힘 (저장돼 있어요)</div>'; var lastPg=null;
+    all.slice(-150).forEach(function(s){ if(s.page!==lastPg){ lastPg=s.page; h+='<div class="lec-divider">'+escapeHtml(pageLabel(s.page))+'</div>'; } var main=(S.lang==='ko-KR')?(rawMode&&s.raw?s.raw:(s.fix||s.ko)):(s.ko?s.ko:''); h+='<div class="lec-seg"><span class="lec-ts">'+fmtT(s.t||0)+'</span><div class="lec-segbody"><div class="lec-ko">'+(main?escapeHtml(main):'<span class="lec-wait">번역 중…</span>')+'</div>'+(S.lang!=='ko-KR'&&showEn?'<div class="lec-en'+(s.fix&&!rawMode?' fixed':'')+'">'+escapeHtml(rawMode&&s.raw?s.raw:(s.fix||s.en))+'</div>':'')+(rawMode&&s.raw&&S.lang==='ko-KR'?'<div class="lec-en">확정: '+escapeHtml(s.ko)+'</div>':'')+'</div></div>'; });
     if(S.lastInterim) h+='<div class="lec-seg interim live"><span class="lec-ts">'+fmtT(nowT())+'</span><div class="lec-segbody"><div class="lec-ko">'+escapeHtml(S.lastInterim)+' <span class="lec-cursor">▍</span></div></div></div>';
     var stick=(box.scrollHeight-box.scrollTop-box.clientHeight)<60; box.innerHTML=h; if(stick||!S.userScrolled) box.scrollTop=box.scrollHeight;
   }
@@ -9465,7 +9472,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   function parseJson(s){ try{ return JSON.parse(s); }catch(e){} var m=s.match(/\{[\s\S]*\}/); if(m){ try{ return JSON.parse(m[0]); }catch(e){} } return null; }
   var AI_SYSTEM='You are a live lecture note-taker for a Korean university student. You receive (1) the text of the current slide (authoritative for terms, symbols, numbers), (2) raw speech-recognition segments of what the professor just said (noisy: homophones, dropped words, wrong proper nouns), (3) notes already written for this slide.\n'+
     'Tasks: A) Correct each segment into what the professor most likely said, using the slide text for terminology — keep the original language, keep it faithful (do not add content, do not summarize, keep filler minimal). B) Give a natural Korean translation of each corrected segment (if the lecture is already Korean, "ko" = corrected Korean text). C) Update the notes for this slide: 2–5 concise Korean bullet points of what the professor explained, **bold** key terms with the English term in parentheses, formulas/numbers exactly as on the slide, no fluff; merge with existing notes (replace, do not duplicate). Mention exam/assignment/deadline hints in "exam".\n'+
-    'D) Mark the slide like a diligent student would with a pen, based ONLY on what the professor just said: choose from "slide_lines" (given as index + text). type "highlight" = the sentence/definition the professor is explaining now; "underline" = a phrase the professor emphasized; "circle" = a number, formula or single term the professor called out. Add "note" (≤ 22 chars) only when the professor added something NOT on the slide (an example, a caveat, "exam!"); in English lectures write the note in Korean (with the English term if useful). At most 3 new marks per call, do not repeat lines already in "existing_marks". If the professor is not talking about this slide, return an empty list.\n'+
+    'D) Slide marks — be very selective, like a student who marks only what he would otherwise forget. Usually return an empty "marks" list. Add a mark ONLY when: (a) the professor said something that is NOT on the slide and matters later (a rule, deadline, exception, example, warning, "exam") → post-it: {"line":<nearest slide line index>,"type":"","note":"<≤ 22 chars, Korean; keep the English term if useful>"}; (b) the professor explicitly said a line is important or will be on the exam → "highlight" on that line; (c) the professor told you to remember one specific number/term → "circle". Never mark lines the professor is merely reading or paraphrasing; names, rooms, phone numbers, times, URLs are NOT worth marking unless he added a rule about them. At most 1 new mark per call, 4 per slide, no repeats of "existing_marks".\n'+
     'Return ONLY JSON: {"segments":[{"i":<index>,"text":"<corrected original>","ko":"<Korean>"}],"notes":["..."],"summary":"<one line, ≤30 chars Korean>","exam":["..."],"marks":[{"line":<slide line index>,"type":"highlight|underline|circle","note":"<optional>"}]}';
   async function aiTick(force){
     if(!S.running || AI.busy || !aiEngine()) return; var now=Date.now(); if(!force && now-AI.lastRun<20000) return;
@@ -9479,7 +9486,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
       (j.segments||[]).forEach(function(g){ var s=sl.segs[g.i]; if(!s) return; if(g.text){ s.fix=String(g.text); } if(g.ko && s.src!=='gemini'){ s.ko=String(g.ko); } if(!s.fix) s.fix=(S.lang==='ko-KR'?s.ko:s.en); });
       pend.forEach(function(x){ if(!x.s.fix) x.s.fix=(S.lang==='ko-KR'?x.s.ko:x.s.en); });
       live[p]={ notes:(j.notes||cur.notes||[]).slice(0,6), summary:j.summary||cur.summary||'', exam:(j.exam||cur.exam||[]).slice(0,5), at:Date.now() };
-      try{ var cur2=S.ann[p]||[]; (j.marks||[]).forEach(function(m){ var li=parseInt(m.line,10); if(isNaN(li)) return; var ty=(['highlight','underline','circle'].indexOf(m.type)>=0)?m.type:(m.note?'':'underline'); if(cur2.some(function(a){ return a.line===li && a.type===ty; })) return; if(cur2.length>=10) return; cur2.push({line:li, type:ty, note:(m.note?String(m.note).slice(0,40):'')}); }); S.ann[p]=cur2; if(p===S.page) redrawAnn(); }catch(e){}
+      try{ var cur2=S.ann[p]||[]; (j.marks||[]).slice(0,2).forEach(function(m){ var li=parseInt(m.line,10); if(isNaN(li)) return; var ty=(['highlight','underline','circle'].indexOf(m.type)>=0)?m.type:''; if(!ty && !m.note) return; if(cur2.some(function(a){ return a.line===li && a.type===ty; })) return; if(cur2.length>=4) return; cur2.push({line:li, type:ty, note:(m.note?String(m.note).slice(0,40):'')}); }); S.ann[p]=cur2; if(p===S.page) redrawAnn(); }catch(e){}
       AI.fails=0; renderLive(); saveLocal();
     }catch(e){ AI.fails++; console.warn('ai', e&&e.message); if(true) status('내 맥 Claude'+' 필기 오류: '+(e&&e.message||e)+(/401|403/.test(String(e&&e.message))?' — 키 확인':''),'err'); }
     AI.busy=false;
@@ -9549,13 +9556,15 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     try{ await gemAudioStart(); }catch(e){ gemFallback('마이크 열기 실패: '+e.message); return; }
     if(!gemConnect()){ gemFallback('Gemini 키 없음'); return; }
     setTimeout(function(){ if(G.on && !G.everReady && S.running) gemFallback('Gemini 연결이 안 돼요 (키 확인) — Chrome 음성인식으로 전환'); }, 8000); }
-  window.tmG=G; window.tmGemHandle=gemHandle; window.tmGemSend=gemSendPcm; window.tmPayload=function(){ return payload(); };
+  window.tmG=G; window.tmGemHandle=gemHandle; window.tmGemSend=gemSendPcm; window.tmOpenPdf=openPdfBytes; window.tmGoPage=goPage; window.tmPayload=function(){ return payload(); };
   async function startAll(){
     S.course=$('lecCourse').value||''; S.title=($('lecTitle').value||'').trim(); if(!S.course){ showToast('과목을 선택하세요'); return; }
     S.lang=($('lecLang')&&$('lecLang').getAttribute('data-lang'))||'ko-KR';
     if(S.pdf && !S.slideText) extractSlideText().catch(function(){});
     if(!S.title) S.title=S.course.replace(/^\(SDGs\)/,'')+' 강의'; if(S.weekNo!=null && !/주차/.test(S.title)) S.title+=' '+S.weekNo+'주차';
     S.date=toLocalDateStr(new Date()); S.id='lec_'+S.date+'_'+Date.now().toString(36);
+    if(S.pdf && (S.base||0)>0){ S.base=0; S.page=1; S.docs=[{name:S.pdfName, base:0, total:S.total, from:0}]; S.slideText=null; S.slideLines=null; extractSlideText().catch(function(){}); renderPage(); }
+    if(S.pdf && !(S.docs&&S.docs.length)) S.docs=[{name:S.pdfName, base:0, total:S.total, from:0}];
     S.online=!S.pdf; if(S.online){ S.page=1; S.total=1; S.lastCut=0; $('lecPage').textContent='구간 1'; }
     S.slides={}; S.ann={}; S.log=[{t:0,page:S.page||1}]; S.startAt=Date.now(); S.running=true; S.audioBlob=null; $('lecDownloadAudio').style.display='none'; $('lecFinish').style.display='none';
     $('lecRec').textContent='■ 녹음 중지'; $('lecRec').classList.add('on'); status('마이크 여는 중… (권한 창이 뜨면 허용)');
@@ -9575,11 +9584,13 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   function stopAll(){
     try{ if(aiEngine() && S.running){ aiTick(true); } }catch(e){}
     S.running=false; clearInterval(S.tick); clearTimeout(S.restartTimer); try{ if(S.rec){ S.rec.onend=null; S.rec.stop(); } }catch(e){} try{ gemStop(); }catch(e){} stopAudio(); try{ if(S.wake){ S.wake.release(); S.wake=null; } }catch(e){}
-    $('lecRec').textContent='● 녹음 시작'; $('lecRec').classList.remove('on'); status('중지됨 · '+Object.keys(S.slides).length+'개 슬라이드에 대본 저장됨 → "필기 요청 보내기"');
+    $('lecRec').textContent='● 녹음 시작'; $('lecRec').classList.remove('on'); status('중지됨 · '+Object.keys(S.slides).length+'개 슬라이드에 대본 저장됨 → "필기 요청 보내기"'); try{ var rb=$('lecRecBanner'); if(rb) rb.style.display='none'; }catch(e){}
     saveLocal(); $('lecFinish').style.display='';
   }
-  function payload(){ var slides=Object.keys(S.slides).map(Number).sort(function(a,b){return a-b;}).map(function(p){ var sl=S.slides[p]; return { page:p, en:sl.segs.map(function(s){return (S.lang==='ko-KR')?'':(s.fix||s.en);}).join(' '), ko:sl.segs.map(function(s){return (S.lang==='ko-KR')?(s.fix||s.ko):s.ko;}).join(' '), slideText:(S.slideText&&S.slideText[p])||'', liveNotes:(S.live&&S.live[p])||undefined, marks:(S.ann&&S.ann[p])||undefined, lines:(S.slideLines&&S.slideLines[p])||undefined, segs:sl.segs }; });
-    return { id:S.id, course:S.course, title:S.title, date:S.date, week:(S.weekNo!=null?S.weekNo:undefined), module:(S.week&&S.week!=='misc'?S.week:undefined), lang:(S.lang==='ko-KR'?'ko':'en'), mode:(S.online?'online':'slides'), pdf:S.pdfName, pages:S.total, duration:nowT(), log:S.log, slides:slides, savedAt:new Date().toISOString() }; }
+  function docOf(p){ var ds=S.docs||[]; for(var i=ds.length-1;i>=0;i--){ if(p>ds[i].base) return ds[i]; } return {name:S.pdfName||'', base:0}; }
+  function pageLabel(p){ if(S.online) return '구간 '+p; var d=docOf(p); return ((S.docs&&S.docs.length>1)?d.name.replace(/\.pdf$/i,'')+' · ':'')+(p-d.base)+'쪽'; }
+  function payload(){ var slides=Object.keys(S.slides).map(Number).sort(function(a,b){return a-b;}).map(function(p){ var sl=S.slides[p]; return { page:p, en:sl.segs.map(function(s){return (S.lang==='ko-KR')?'':(s.fix||s.en);}).join(' '), ko:sl.segs.map(function(s){return (S.lang==='ko-KR')?(s.fix||s.ko):s.ko;}).join(' '), pdf:docOf(p).name, pdfPage:p-docOf(p).base, slideText:(S.slideText&&S.slideText[p])||'', liveNotes:(S.live&&S.live[p])||undefined, marks:(S.ann&&S.ann[p])||undefined, lines:(S.slideLines&&S.slideLines[p])||undefined, segs:sl.segs }; });
+    return { id:S.id, course:S.course, title:S.title, date:S.date, week:(S.weekNo!=null?S.weekNo:undefined), module:(S.week&&S.week!=='misc'?S.week:undefined), lang:(S.lang==='ko-KR'?'ko':'en'), mode:(S.online?'online':'slides'), pdf:S.pdfName, pdfs:(S.docs&&S.docs.length>1)?S.docs:undefined, pages:S.total, duration:nowT(), log:S.log, slides:slides, savedAt:new Date().toISOString() }; }
   function saveLocal(){ if(!S.id) return; idbPut('lec', Object.assign({status:S.running?'recording':'saved'}, payload())).catch(function(){}); }
   async function sendFinish(){
     if(!S.id||!Object.keys(S.slides).length){ showToast('보낼 대본이 없어요'); return; }
@@ -9624,7 +9635,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   function ecampusUrlFor(data){ try{ var mods=modsFor(data.course); var m=/(\d{1,2})\s*주차\s*(\d{1,2})\s*강/.exec(data.title||''); if(!m) return ''; var re=new RegExp('^'+(+m[1])+'\\s*주차\\s*'+(+m[2])+'\\s*강$'); for(var i=0;i<mods.length;i++){ var it=(mods[i].items||[]).find(function(x){ return re.test(String(x.title||'').trim()); }); if(it&&it.url) return it.url; } }catch(e){} return ''; }
   function itemIcon(it){ var isFile=it.type==='File', isVid=/\d\s*강$|강의|VOD|영상/i.test(it.title||''); return isFile?'📎 ':(it.type==='Page'?'▤ ':it.type==='Assignment'?'✎ ':it.type==='ExternalUrl'?'↗ ':isVid?'▶ ':'▤ '); }
   function showPane(name){ try{ if(name==='lecHome') lsSet(lsKey('lec_pane'), {p:'home'}); }catch(e){}
-    ['lecHome','lecWork','lecView'].forEach(function(id){ var el=$(id); if(el) el.style.display=(id===name)?'':'none'; }); try{ if(name!=='lecHome') setTimeout(function(){ $(name).focus({preventScroll:true}); },30); }catch(e){} }
+    ['lecHome','lecWork','lecView'].forEach(function(id){ var el=$(id); if(el) el.style.display=(id===name)?'':'none'; }); try{ var rb=$('lecRecBanner'); if(rb) rb.style.display=(S.running&&name!=='lecWork')?'':'none'; }catch(e){} try{ if(name!=='lecHome') setTimeout(function(){ $(name).focus({preventScroll:true}); },30); }catch(e){} }
 
   async function renderHome(){
     var box=$('lecWeeks'); if(!box) return; var c=$('lecCourse').value||''; S.course=c; try{ lsSet(lsKey('lec_course'),c); }catch(e){}
@@ -9730,6 +9741,9 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   // ---- 녹음 시작 (주차에서) ----
   async function startWeekRecording(mid, pdfKey){
     var c=$('lecCourse').value||''; if(!c){ showToast('과목을 먼저 선택하세요'); return; }
+    if(S.running){ var pk=pdfKey?pdfsForWeek(c,mid).find(function(p){ return p.key===pdfKey; }):null; if(!pk){ showToast('교체할 PDF를 고르세요'); return; }
+      if(pk.remote){ try{ pk.bytes=await (await fetch(pk.url)).arrayBuffer(); }catch(e){ showToast('PDF를 못 받았어요'); return; } }
+      await openPdfBytes(pk.bytes, pk.name, false); showPane('lecWork'); renderPage(); renderLive(); return; }
     var m=cardsFor(c).find(function(x){ return x.id===mid; })||{id:mid,name:''}; S.week=mid; S.weekNo=modWeek(m);
     $('lecTitle').value=(m.name&&mid!=='misc')?(cname(c)+' '+m.name):cname(c)+' 강의';
     $('lecWorkWeek').textContent=cname(c)+' · '+(m.name||'주차 미지정');
@@ -9751,7 +9765,8 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     if(!$('lectureMode')) return;
     $('lecCourse').addEventListener('change',function(){ S.course=this.value; if(window.tmPaintLang) tmPaintLang(); renderHome(); });
     $('lecExit').addEventListener('click',function(){ switchMode('growth'); });
-    $('lecWorkBack').addEventListener('click',function(){ if(S.running && !confirm('녹음 중입니다. 나갈까요? (녹음이 중지됩니다)')) return; if(S.running) stopAll(); showPane('lecHome'); renderHome(); });
+    $('lecWorkBack').addEventListener('click',function(){ showPane('lecHome'); renderHome(); if(S.running) showToast('녹음은 계속돼요 — PDF를 열고 "이 PDF로 녹음"을 누르면 이 녹음에 이어져요'); });
+    var rb=document.createElement('button'); rb.type='button'; rb.id='lecRecBanner'; rb.className='lec-recbanner'; rb.textContent='● 녹음 계속 중 — 녹음 화면으로'; rb.style.display='none'; rb.addEventListener('click',function(){ showPane('lecWork'); }); $('lectureMode').appendChild(rb);
     $('lecOpenPdf').addEventListener('click',function(){ pendingWeek=null; $('lecFile').click(); });
     $('lecFile').addEventListener('change',function(){ var fs=Array.prototype.slice.call(this.files||[]); this.value=''; if(!fs.length) return; if(pendingWeek){ savePdfs(fs, pendingWeek); pendingWeek=null; } else { fs[0].arrayBuffer().then(function(b){ openPdfBytes(b,fs[0].name,true); }); } });
     var drop=$('lecDropZone'); ['dragenter','dragover'].forEach(function(ev){ drop.addEventListener(ev,function(e){ e.preventDefault(); drop.classList.add('over'); }); }); ['dragleave','drop'].forEach(function(ev){ drop.addEventListener(ev,function(e){ e.preventDefault(); drop.classList.remove('over'); }); });
