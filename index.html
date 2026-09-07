@@ -2379,7 +2379,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="58">
+<meta name="tm-version" content="59">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -2917,6 +2917,7 @@
         <b id="lecWorkWeek" class="lec-view-title"></b>
         <input type="text" id="lecTitle" class="lec-inp" placeholder="강의 제목" maxlength="40">
         <button type="button" class="lec-btn" id="lecOpenPdf">PDF 열기</button>
+        <button type="button" class="lec-btn lec-langbtn" id="lecLang2" title="강의 언어 전환">🇰🇷 한국어</button>
         <button type="button" class="lec-btn rec" id="lecRec">● 녹음 시작</button>
         <label class="lec-chk"><input type="checkbox" id="lecShowEn"> 영어 원문 표시</label>
         <label class="lec-chk" title="끄면 마이크를 음성 인식기만 사용 (인식이 안 될 때 시도)"><input type="checkbox" id="lecBackup" checked> 녹음 파일 백업</label>
@@ -9343,6 +9344,8 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   }
   function addFinal(text){
     var p=S.page||1, sl=slide(p); S.lastResultAt=Date.now();
+    // 언어 설정이 실제 강의 언어와 다르면 안내 (한국어 모드인데 영어가 계속 잡히거나 그 반대)
+    try{ S.langSample=(S.langSample||'')+' '+text; if(S.langSample.length>120 && !S.langWarned){ var lat=(S.langSample.match(/[A-Za-z]/g)||[]).length, han=(S.langSample.match(/[가-힣]/g)||[]).length; if(S.lang==='ko-KR' && lat>han*2){ S.langWarned=true; status('영어로 들리는 것 같아요 — 상단 언어 버튼을 🇺🇸 영어로 바꾸면 훨씬 정확해져요','err'); } else if(S.lang==='en-US' && han>lat*2){ S.langWarned=true; status('한국어로 들리는 것 같아요 — 상단 언어 버튼을 🇰🇷 한국어로 바꾸세요','err'); } } }catch(e){}
     if(S.lang==='ko-KR'){ var segk={t:nowT(), page:p, en:'', ko:text}; sl.segs.push(segk); renderLive(); saveLocal(); return; }
     var seg={t:nowT(), page:p, en:text, ko:''}; sl.segs.push(seg);
     translate(text).then(function(ko){ seg.ko=ko; renderLive(); saveLocal(); });
@@ -9564,9 +9567,10 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     $('lecFinish').addEventListener('click',sendFinish);
     $('lecDownloadAudio').addEventListener('click',function(){ if(!S.audioBlob) return; var a=document.createElement('a'); a.href=URL.createObjectURL(S.audioBlob); a.download=(S.title||'lecture')+'_'+S.date+'.webm'; a.click(); });
     $('lecShowEn').addEventListener('change',renderLive);
-    function paintLang(l){ var b=$('lecLang'); if(!b) return; b.setAttribute('data-lang',l); b.textContent=(l==='ko-KR')?'🇰🇷 한국어 강의':'🇺🇸 영어 강의'; b.classList.toggle('en', l!=='ko-KR'); }
+    function paintLang(l){ var b=$('lecLang'); if(!b) return; b.setAttribute('data-lang',l); b.textContent=(l==='ko-KR')?'🇰🇷 한국어 강의':'🇺🇸 영어 강의'; b.classList.toggle('en', l!=='ko-KR'); var b2=$('lecLang2'); if(b2){ b2.textContent=(l==='ko-KR')?'🇰🇷 한국어':'🇺🇸 영어'; b2.classList.toggle('en', l!=='ko-KR'); } }
     try{ var ll=lsGet(lsKey('lec_lang')); paintLang(ll==='en-US'?'en-US':'ko-KR'); }catch(e){ paintLang('ko-KR'); }
-    $('lecLang').addEventListener('click',function(){ var cur=this.getAttribute('data-lang'); var nx=(cur==='ko-KR')?'en-US':'ko-KR'; paintLang(nx); try{ lsSet(lsKey('lec_lang'),nx); }catch(e){} if(S.running){ S.lang=nx; try{ S.rec.abort(); }catch(e){} showToast('언어 전환: '+(nx==='ko-KR'?'한국어':'영어')+' — 인식기 재시작'); } });
+    $('lecLang2').addEventListener('click',function(){ $('lecLang').click(); });
+    $('lecLang').addEventListener('click',function(){ var cur=this.getAttribute('data-lang'); var nx=(cur==='ko-KR')?'en-US':'ko-KR'; paintLang(nx); try{ lsSet(lsKey('lec_lang'),nx); }catch(e){} if(S.running){ S.lang=nx; S.langSample=''; S.langWarned=false; try{ S.rec.abort(); }catch(e){} showToast('언어 전환: '+(nx==='ko-KR'?'한국어':'영어')+' — 인식기 재시작'); } });
     var _rz=null; window.addEventListener('resize',function(){ if(typeof currentMode!=='undefined' && currentMode==='lecture'){ clearTimeout(_rz); _rz=setTimeout(function(){ renderPage(); renderViewPage(); },150); } });
     window.addEventListener('beforeunload',function(e){ if(S.running){ e.preventDefault(); e.returnValue=''; } });
   }
