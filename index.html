@@ -2379,7 +2379,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="78">
+<meta name="tm-version" content="79">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -9494,7 +9494,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   function liveNotesHtml(p){ var l=S.live&&S.live[p]; if(!l||(!l.notes||!l.notes.length)) return aiEngine()?'<div class="lec-ai muted">✦ 실시간 필기 준비 중… ('+'내 맥 Claude'+', 말이 쌓이면 20초마다 정리)</div>':''; var h='<div class="lec-ai"><div class="lec-ai-head">✦ 실시간 필기'+(l.summary?' <span>— '+escapeHtml(l.summary)+'</span>':'')+'</div>'+md(l.notes.map(function(k){ return '- '+k; }).join('\n'))+(l.exam&&l.exam.length?'<div class="lec-ai-exam">'+l.exam.map(function(x){ return '⚠ '+escapeHtml(x); }).join('<br>')+'</div>':'')+'</div>'; return h; }
 
   // ---- 세션 ----
-  function recLabel(){ return '● 녹음 중 · '+(G.on?'Gemini 실시간 대본·번역':'번역: '+(S.tmode==='chrome'?'Chrome 내장':'웹'))+(S.online?' · 온라인 모드: 5분마다 구간 자동, → 로 수동 분할':' · ← → 로 슬라이드 넘기기'); }
+  function recLabel(){ return '● 녹음 중 · '+(G.on?'Gemini 실시간 대본·번역':'번역: '+(S.tmode==='chrome'?'Chrome 내장':'웹')+(S.gemErr?' · ⚠ '+S.gemErr:''))+(S.online?' · 온라인 모드: 5분마다 구간 자동, → 로 수동 분할':' · ← → 로 슬라이드 넘기기'); }
 
   // ---- Gemini Live: 마이크 → 실시간 대본(영어) + 한국어 번역 (무료 티어, 키는 이 기기에만 저장) ----
   var G={ ws:null, on:false, ready:false, everReady:false, lang:'', ac:null, node:null, stream:null, seg:null, koOpen:false, lastIn:0, retry:0, fails:0, extras:true, reconnT:null, sent:0 };
@@ -9526,7 +9526,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     ws.onopen=function(){ try{ ws.send(JSON.stringify(gemSetup())); }catch(e){} };
     ws.onmessage=function(ev){ if(ev.data instanceof Blob){ ev.data.text().then(gemHandle); } else gemHandle(ev.data); };
     ws.onerror=function(){};
-    ws.onclose=function(ev){ if(G.ws!==ws) return; G.ws=null; G.ready=false; S.recOn=false; if(!S.running || !G.on) return;
+    ws.onclose=function(ev){ if(G.ws!==ws) return; G.lastClose=(ev.code||'')+' '+(ev.reason||''); console.warn('gemini ws closed', ev.code, ev.reason); G.ws=null; G.ready=false; S.recOn=false; if(!S.running || !G.on) return;
       if(!G.everReady && G.extras){ G.extras=false; gemConnect(); return; }
       if(!G.everReady){ G.fails++; if(G.fails>=2){ gemFallback('Gemini 연결 실패('+(ev.code||'')+' '+(ev.reason||'').slice(0,80)+') — Chrome 음성인식으로 전환'); return; } }
       if(G.retry>=5){ gemFallback('Gemini 재연결 실패가 반복돼요 — Chrome 음성인식으로 전환'); return; }
@@ -9551,8 +9551,8 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   function gemStop(){ G.on=false; clearTimeout(G.reconnT); try{ if(G.ws){ var w=G.ws; G.ws=null; try{ w.send(JSON.stringify({realtimeInput:{audioStreamEnd:true}})); }catch(e){} w.close(); } }catch(e){}
     try{ if(G.node) G.node.disconnect(); }catch(e){} try{ if(G.ac) G.ac.close(); }catch(e){} try{ if(G.stream) G.stream.getTracks().forEach(function(t){ t.stop(); }); }catch(e){}
     G.node=null; G.ac=null; G.stream=null; G.seg=null; G.ready=false; paintGemBtn(); }
-  function gemFallback(msg){ gemStop(); status(msg,'err'); S.tmode='web'; S.translator=null; startRecognition(); Promise.race([initTranslator(), new Promise(function(r){ setTimeout(r,8000); })]); }
-  async function gemStart(){ G.on=true; G.everReady=false; G.fails=0; G.retry=0; G.extras=true; G.seg=null; G.sent=0; paintGemBtn();
+  function gemFallback(msg){ gemStop(); S.gemErr=msg+(G.lastClose?' ['+G.lastClose.trim()+']':''); status(S.gemErr,'err'); S.tmode='web'; S.translator=null; startRecognition(); Promise.race([initTranslator(), new Promise(function(r){ setTimeout(r,8000); })]); }
+  async function gemStart(){ S.gemErr=''; G.lastClose=''; G.on=true; G.everReady=false; G.fails=0; G.retry=0; G.extras=true; G.seg=null; G.sent=0; paintGemBtn();
     try{ await gemAudioStart(); }catch(e){ gemFallback('마이크 열기 실패: '+e.message); return; }
     if(!gemConnect()){ gemFallback('Gemini 키 없음'); return; }
     setTimeout(function(){ if(G.on && !G.everReady && S.running) gemFallback('Gemini 연결이 안 돼요 (키 확인) — Chrome 음성인식으로 전환'); }, 8000); }
@@ -9788,7 +9788,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     try{ paintLang(langFor()); }catch(e){ paintLang('ko-KR'); }
     $('lecLang2').addEventListener('click',function(){ $('lecLang').click(); });
     paintGemBtn();
-    $('lecGemBtn').addEventListener('click',function(){ var cur=geminiKey(); var v=prompt('Google AI Studio(aistudio.google.com/apikey)에서 만든 Gemini API 키를 붙여넣으세요.\n무료 티어로 대본·번역이 1~2초 만에 나와요. 키는 이 기기에만 저장돼요.\n(비우고 확인하면 해제 → Chrome 음성인식 사용)', cur); if(v===null) return; v=v.trim(); lsSet(lsKey('gemini_key'), v); paintGemBtn(); showToast(v?'Gemini 켜짐 — 다음 녹음부터 적용':'Gemini 해제'); if(S.running){ if(v && !G.on){ try{ if(S.rec){ S.rec.onend=null; S.rec.stop(); S.rec=null; } }catch(e){} gemStart(); } else if(!v && G.on){ gemFallback('Gemini 해제 — Chrome 음성인식으로 전환'); } } });
+    $('lecGemBtn').addEventListener('click',function(){ var cur=geminiKey(); var v=prompt('Google AI Studio(aistudio.google.com/apikey)에서 만든 Gemini API 키를 붙여넣으세요.\n무료 티어로 대본·번역이 1~2초 만에 나와요. 키는 이 기기에만 저장돼요.\n(비우고 확인하면 해제 → Chrome 음성인식 사용)', cur); if(v===null) return; v=v.trim(); lsSet(lsKey('gemini_key'), v); paintGemBtn(); if(v){ status('Gemini 키 확인 중…'); fetch('https://generativelanguage.googleapis.com/v1beta/models?pageSize=1&key='+encodeURIComponent(v)).then(function(r){ return r.json().then(function(j){ return {ok:r.ok, j:j}; }); }).then(function(x){ if(x.ok){ status('Gemini 키 확인됨 ✓ — 녹음 시작하면 실시간 대본·번역','ok'); } else { var m=(x.j&&x.j.error&&x.j.error.message)||('HTTP '+x.j); status('Gemini 키 오류: '+m,'err'); } }).catch(function(e){ status('Gemini 연결 실패: '+e.message,'err'); }); } else showToast('Gemini 해제'); if(S.running){ if(v && !G.on){ try{ if(S.rec){ S.rec.onend=null; S.rec.stop(); S.rec=null; } }catch(e){} gemStart(); } else if(!v && G.on){ gemFallback('Gemini 해제 — Chrome 음성인식으로 전환'); } } });
     $('lecAiBtn').addEventListener('click',function(){ if(LOCAL.ok){ alert('내 맥의 Claude Code(구독)로 실시간 필기 중 — 추가 비용 없음.\n모델: '+LOCAL.model); } else { alert('실시간 필기 도우미가 꺼져 있어요.\n\n맥에서 "Dayble 도우미 시작.command"를 더블클릭해 켜면 15초 안에 자동 연결돼요. (없이도 대본·번역은 그대로 됩니다. 필기는 수업 후 생성)'); localPing(); } }); paintAiBtn();
     $('lecLang').addEventListener('click',function(){ var cur=this.getAttribute('data-lang'); var nx=(cur==='ko-KR')?'en-US':'ko-KR'; paintLang(nx); try{ lsSet(lsKey(langKey()),nx); if(window.tmOnChange) tmOnChange(); }catch(e){} showToast(cname($('lecCourse').value)+' → '+(nx==='ko-KR'?'한국어':'영어')+' 강의로 기억'); if(S.running){ S.lang=nx; S.langSample=''; S.langWarned=false; try{ S.rec.abort(); }catch(e){} showToast('언어 전환: '+(nx==='ko-KR'?'한국어':'영어')+' — 인식기 재시작'); } });
     var _rz=null; window.addEventListener('resize',function(){ if(typeof currentMode!=='undefined' && currentMode==='lecture'){ clearTimeout(_rz); _rz=setTimeout(function(){ renderPage(); renderViewPage(); },150); } });
