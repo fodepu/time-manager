@@ -2379,7 +2379,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="79">
+<meta name="tm-version" content="80">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -9503,7 +9503,10 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   function gemModel(){ return S.lang==='ko-KR'?'gemini-3.5-transcribe-live':'gemini-3.5-live-translate-preview'; }
   function gemSetup(){ var setup={ model:'models/'+gemModel() };
     if(S.lang==='ko-KR'){ setup.generationConfig={ responseModalities:['TEXT'] }; setup.inputAudioTranscription={ languageCodes:['ko-KR'] }; try{ var terms=slideTerms().slice(0,100); if(terms.length) setup.inputAudioTranscription.customVocabulary=terms; }catch(e){} }
-    else { setup.generationConfig={ responseModalities:['AUDIO'], inputAudioTranscription:{}, outputAudioTranscription:{}, translationConfig:{ targetLanguageCode:'ko', echoTargetLanguage:false } }; }
+    else { var tr={ targetLanguageCode:'ko', echoTargetLanguage:false }; var v=G.variant||0;
+      if(v===0){ setup.generationConfig={ responseModalities:['AUDIO'], translationConfig:tr }; setup.inputAudioTranscription={}; setup.outputAudioTranscription={}; }
+      else if(v===1){ setup.generationConfig={ responseModalities:['AUDIO'] }; setup.translationConfig=tr; setup.inputAudioTranscription={}; setup.outputAudioTranscription={}; }
+      else { setup.generationConfig={ responseModalities:['AUDIO'], inputAudioTranscription:{}, outputAudioTranscription:{}, translationConfig:tr }; } }
     if(G.extras){ setup.contextWindowCompression={ slidingWindow:{} }; setup.sessionResumption={}; }
     return { setup:setup }; }
   async function gemAudioStart(){
@@ -9527,6 +9530,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     ws.onmessage=function(ev){ if(ev.data instanceof Blob){ ev.data.text().then(gemHandle); } else gemHandle(ev.data); };
     ws.onerror=function(){};
     ws.onclose=function(ev){ if(G.ws!==ws) return; G.lastClose=(ev.code||'')+' '+(ev.reason||''); console.warn('gemini ws closed', ev.code, ev.reason); G.ws=null; G.ready=false; S.recOn=false; if(!S.running || !G.on) return;
+      if(!G.everReady && ev.code===1007){ var rs=String(ev.reason||''); if(/compression|resumption/i.test(rs) && G.extras){ G.extras=false; gemConnect(); return; } if((G.variant||0)<2){ G.variant=(G.variant||0)+1; gemConnect(); return; } }
       if(!G.everReady && G.extras){ G.extras=false; gemConnect(); return; }
       if(!G.everReady){ G.fails++; if(G.fails>=2){ gemFallback('Gemini 연결 실패('+(ev.code||'')+' '+(ev.reason||'').slice(0,80)+') — Chrome 음성인식으로 전환'); return; } }
       if(G.retry>=5){ gemFallback('Gemini 재연결 실패가 반복돼요 — Chrome 음성인식으로 전환'); return; }
@@ -9552,7 +9556,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     try{ if(G.node) G.node.disconnect(); }catch(e){} try{ if(G.ac) G.ac.close(); }catch(e){} try{ if(G.stream) G.stream.getTracks().forEach(function(t){ t.stop(); }); }catch(e){}
     G.node=null; G.ac=null; G.stream=null; G.seg=null; G.ready=false; paintGemBtn(); }
   function gemFallback(msg){ gemStop(); S.gemErr=msg+(G.lastClose?' ['+G.lastClose.trim()+']':''); status(S.gemErr,'err'); S.tmode='web'; S.translator=null; startRecognition(); Promise.race([initTranslator(), new Promise(function(r){ setTimeout(r,8000); })]); }
-  async function gemStart(){ S.gemErr=''; G.lastClose=''; G.on=true; G.everReady=false; G.fails=0; G.retry=0; G.extras=true; G.seg=null; G.sent=0; paintGemBtn();
+  async function gemStart(){ S.gemErr=''; G.lastClose=''; G.variant=0; G.on=true; G.everReady=false; G.fails=0; G.retry=0; G.extras=true; G.seg=null; G.sent=0; paintGemBtn();
     try{ await gemAudioStart(); }catch(e){ gemFallback('마이크 열기 실패: '+e.message); return; }
     if(!gemConnect()){ gemFallback('Gemini 키 없음'); return; }
     setTimeout(function(){ if(G.on && !G.everReady && S.running) gemFallback('Gemini 연결이 안 돼요 (키 확인) — Chrome 음성인식으로 전환'); }, 8000); }
