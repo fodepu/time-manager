@@ -2379,7 +2379,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="53">
+<meta name="tm-version" content="54">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -2557,6 +2557,8 @@
   .todo-text { flex:1; min-width:0; font-size:14px; padding:7px 8px; border:1px solid transparent; border-radius:8px; background:transparent; color: var(--text); }
   .todo-text:focus { border-color: var(--border,#ddd); background: var(--bg,transparent); outline:none; }
   #lecWork:focus, #lecView:focus { outline:none; }
+  .lec-langbtn { font-weight:700; }
+  .lec-langbtn.en { border-color: var(--accent); color: var(--accent); }
   .todo-up, .todo-del { border:none; background:none; color: var(--text-muted); width:26px; height:26px; border-radius:6px; cursor:pointer; font-size:13px; flex-shrink:0; }
   .todo-del:hover { color:#c62828; }
   .todo-add { display:flex; gap:6px; }
@@ -2896,7 +2898,7 @@
       <div class="lec-top">
         <button type="button" class="lec-exit" id="lecExit" title="시간표로">←</button>
         <select id="lecCourse" class="lec-sel"><option value="">과목 선택</option></select>
-        <select id="lecLang" class="lec-sel" title="강의 언어 (녹음 시)"><option value="en-US">영어 강의</option><option value="ko-KR">한국어 강의</option></select>
+        <button type="button" id="lecLang" class="lec-btn lec-langbtn" data-lang="ko-KR" title="누르면 영어/한국어 전환">🇰🇷 한국어 강의</button>
         <span class="lec-hint">e-campus 주차학습 그대로 · 주차 카드에 PDF를 넣고, PDF나 필기를 누르면 나란히 열려요</span>
       </div>
       <div id="lecWeeks" class="lec-weeks"></div>
@@ -9327,7 +9329,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     rec.onstart=function(){ S.recOn=true; if(S.running) status(recLabel(),'ok'); };
     rec.onaudiostart=function(){ S.recOn=true; };
     rec.onerror=function(ev){ S.lastErr=ev.error; if(ev.error==='not-allowed'||ev.error==='service-not-allowed'){ status('마이크 권한이 필요해요 — 주소창 왼쪽 자물쇠 → 마이크 "허용" 후 다시 시작','err'); stopAll(); } else if(ev.error==='audio-capture'){ status('마이크를 찾을 수 없어요 — 시스템 설정에서 입력 장치 확인','err'); stopAll(); } else if(ev.error==='network'){ status('음성인식 서버 연결 실패(network) — 인터넷 연결·VPN 확인. 자동 재시도 중…','err'); } else if(ev.error==='language-not-supported'){ status('이 언어는 지원되지 않아요: '+S.lang,'err'); } else if(ev.error!=='no-speech' && ev.error!=='aborted'){ status('인식 오류: '+ev.error+' — 자동 재시도 중…','err'); } };
-    rec.onend=function(){ S.recOn=false; if(S.running){ clearTimeout(S.restartTimer); S.restartTimer=setTimeout(function(){ try{ rec.start(); }catch(e){} }, 250); } };
+    rec.onend=function(){ S.recOn=false; if(S.running){ clearTimeout(S.restartTimer); S.restartTimer=setTimeout(function(){ if(rec.lang!==S.lang){ try{ rec.onend=null; }catch(e){} startRecognition(); return; } try{ rec.start(); }catch(e){} }, 250); } };
     try{ rec.start(); }catch(e){ status('음성인식 시작 실패: '+e.message,'err'); return false; }
     S.rec=rec; return true;
   }
@@ -9354,7 +9356,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   function recLabel(){ return '● 녹음 중 · 번역: '+(S.tmode==='chrome'?'Chrome 내장':'웹')+(S.online?' · 온라인 모드: 5분마다 구간 자동, → 로 수동 분할':' · ← → 로 슬라이드 넘기기'); }
   async function startAll(){
     S.course=$('lecCourse').value||''; S.title=($('lecTitle').value||'').trim(); if(!S.course){ showToast('과목을 선택하세요'); return; }
-    S.lang=($('lecLang')&&$('lecLang').value)||'en-US'; try{ lsSet(lsKey('lec_lang'),S.lang); }catch(e){}
+    S.lang=($('lecLang')&&$('lecLang').getAttribute('data-lang'))||'ko-KR'; try{ lsSet(lsKey('lec_lang'),S.lang); }catch(e){}
     if(S.pdf && !S.slideText) extractSlideText().catch(function(){});
     if(!S.title) S.title=S.course.replace(/^\(SDGs\)/,'')+' 강의'; if(S.weekNo!=null && !/주차/.test(S.title)) S.title+=' '+S.weekNo+'주차';
     S.date=toLocalDateStr(new Date()); S.id='lec_'+S.date+'_'+Date.now().toString(36);
@@ -9544,7 +9546,9 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     $('lecFinish').addEventListener('click',sendFinish);
     $('lecDownloadAudio').addEventListener('click',function(){ if(!S.audioBlob) return; var a=document.createElement('a'); a.href=URL.createObjectURL(S.audioBlob); a.download=(S.title||'lecture')+'_'+S.date+'.webm'; a.click(); });
     $('lecShowEn').addEventListener('change',renderLive);
-    try{ var ll=lsGet(lsKey('lec_lang')); if(ll&&$('lecLang')) $('lecLang').value=ll; }catch(e){}
+    function paintLang(l){ var b=$('lecLang'); if(!b) return; b.setAttribute('data-lang',l); b.textContent=(l==='ko-KR')?'🇰🇷 한국어 강의':'🇺🇸 영어 강의'; b.classList.toggle('en', l!=='ko-KR'); }
+    try{ var ll=lsGet(lsKey('lec_lang')); paintLang(ll==='en-US'?'en-US':'ko-KR'); }catch(e){ paintLang('ko-KR'); }
+    $('lecLang').addEventListener('click',function(){ var cur=this.getAttribute('data-lang'); var nx=(cur==='ko-KR')?'en-US':'ko-KR'; paintLang(nx); try{ lsSet(lsKey('lec_lang'),nx); }catch(e){} if(S.running){ S.lang=nx; try{ S.rec.abort(); }catch(e){} showToast('언어 전환: '+(nx==='ko-KR'?'한국어':'영어')+' — 인식기 재시작'); } });
     var _rz=null; window.addEventListener('resize',function(){ if(typeof currentMode!=='undefined' && currentMode==='lecture'){ clearTimeout(_rz); _rz=setTimeout(function(){ renderPage(); renderViewPage(); },150); } });
     window.addEventListener('beforeunload',function(e){ if(S.running){ e.preventDefault(); e.returnValue=''; } });
   }
