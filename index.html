@@ -2379,7 +2379,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="65">
+<meta name="tm-version" content="66">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -9331,7 +9331,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   function goPage(n){
     if(S.online){ if(n<=S.page) return; S.page=S.page+1; S.total=S.page; S.lastCut=nowT(); if(S.running) S.log.push({t:nowT(), page:S.page}); $('lecPage').textContent='구간 '+S.page; renderLive(); return; }
     if(!S.pdf) return; n=Math.max(1,Math.min(S.total,n)); if(n===S.page) return; var prev=S.page; S.page=n; if(S.running) S.log.push({t:nowT(), page:n}); renderPage(); renderLive();
-    if(S.running && aiKey()){ var keep=S.page; S.page=prev; aiTick(true).then(function(){ S.page=keep; renderLive(); }); S.page=keep; } }
+    if(S.running && aiEngine()){ var keep=S.page; S.page=prev; aiTick(true).then(function(){ S.page=keep; renderLive(); }); S.page=keep; } }
   function autoCut(){ if(!S.online||!S.running) return; if(nowT()-S.lastCut>=ONLINE_AUTO_SEC){ goPage(S.page+1); } }
 
   // ---- 번역기: Chrome Translator API → 폴백(웹) ----
@@ -9396,8 +9396,19 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   // 키는 내 계정 데이터(Firestore users/{uid}, 본인만 읽기 가능)와 함께 동기화 → 기기마다 다시 넣을 필요 없음
   function aiKey(){ try{ var k=lsGet(lsKey('claude_key')); if(!k){ var old=localStorage.getItem('tm_claude_key'); if(old){ lsSet(lsKey('claude_key'),old); localStorage.removeItem('tm_claude_key'); if(window.tmOnChange) tmOnChange(); k=old; } } return k||''; }catch(e){ return ''; } }
   window.tmSetClaudeKey=function(){ var cur=aiKey(); var k=prompt('Claude API 키 (console.anthropic.com → API Keys). 내 계정에 저장돼 폰·PC 모두에서 자동으로 쓰여요.\n비우고 확인하면 삭제.', cur?cur.slice(0,12)+'…':''); if(k===null) return; k=k.trim(); if(!k||/…$/.test(k)) { if(!k){ try{ localStorage.removeItem(lsKey('claude_key')); localStorage.removeItem('tm_claude_key'); }catch(e){} if(window.tmOnChange) tmOnChange(); showToast('Claude 키 삭제됨'); paintAiBtn(); } return; } if(!/^sk-ant-/.test(k)){ showToast('sk-ant- 로 시작하는 키여야 해요'); return; } lsSet(lsKey('claude_key'),k); if(window.tmOnChange) tmOnChange(); showToast('Claude 실시간 필기 켜짐 — 모든 기기에 적용'); paintAiBtn(); };
-  function paintAiBtn(){ var b=$('lecAiBtn'); if(!b) return; var on=!!aiKey(); b.textContent=on?'✦ Claude 필기 켜짐':'✦ Claude 키'; b.classList.toggle('on',on); }
+  function paintAiBtn(){ var b=$('lecAiBtn'); if(!b) return; var eng=aiEngine(); b.textContent=eng==='claude'?'✦ Claude 필기':eng==='nano'?'✦ 내장 AI 필기 (무료)':(NANO.state==='downloadable'||NANO.state==='downloading')?'✦ AI 필기 준비 (무료 다운로드)':'✦ AI 필기 설정'; b.classList.toggle('on',!!eng); }
+  var NANO={ session:null, state:'', sys:'' };
+  async function nanoState(){ try{ if(typeof LanguageModel==='undefined') return 'unsupported'; return await LanguageModel.availability(); }catch(e){ return 'unsupported'; } }
+  window.tmNanoSetup=async function(){ var st=await nanoState(); if(st==='unsupported'){ alert('이 브라우저엔 Chrome 내장 AI가 없어요. 최신 Chrome(데스크톱)에서 열어주세요.'); return; } if(st==='available'){ showToast('내장 AI 준비됨 — 녹음하면 무료로 실시간 필기'); paintAiBtn(); return; } if(st==='unavailable'){ alert('이 기기에선 내장 AI를 쓸 수 없어요 (저장공간 22GB 이상·메모리 16GB 필요).'); return; }
+    status('내장 AI 모델 다운로드 중… (한 번만, 약 2GB) 0%'); try{ NANO.session=await LanguageModel.create({ monitor:function(m){ m.addEventListener('downloadprogress',function(e){ status('내장 AI 모델 다운로드 중… '+Math.round((e.loaded/(e.total||1))*100)+'%'); }); } }); status('내장 AI 준비 완료 — 이제 무료로 실시간 필기가 돼요','ok'); }catch(e){ status('내장 AI 준비 실패: '+(e&&e.message||e),'err'); } paintAiBtn(); };
+  async function nanoCall(system, user){
+    if(!NANO.session || NANO.sys!==system){ NANO.session=await LanguageModel.create({ initialPrompts:[{role:'system',content:system}] }); NANO.sys=system; }
+    var s=NANO.session; try{ var c=await s.clone(); return await c.prompt(user); }catch(e){ NANO.session=null; throw e; }
+  }
+  function aiEngine(){ if(NANO.state==='available' && !lsGet(lsKey('ai_prefer_claude'))) return 'nano'; if(aiKey()) return 'claude'; return ''; } // 무료 내장 AI 우선
+  nanoState().then(function(s){ NANO.state=s; paintAiBtn(); });
   async function aiCall(system, user, maxTokens){
+    if(aiEngine()==='nano') return nanoCall(system, user);
     var r=await fetch('https://api.anthropic.com/v1/messages',{ method:'POST', headers:{ 'content-type':'application/json', 'x-api-key':aiKey(), 'anthropic-version':'2023-06-01', 'anthropic-dangerous-direct-browser-access':'true' },
       body:JSON.stringify({ model:AI.model, max_tokens:maxTokens||1200, system:system, messages:[{role:'user',content:user}] }) });
     if(!r.ok){ var t=''; try{ t=(await r.json()).error.message; }catch(e){} throw new Error(r.status+' '+t); }
@@ -9408,22 +9419,22 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     'Tasks: A) Correct each segment into what the professor most likely said, using the slide text for terminology — keep the original language, keep it faithful (do not add content, do not summarize, keep filler minimal). B) Give a natural Korean translation of each corrected segment (if the lecture is already Korean, "ko" = corrected Korean text). C) Update the notes for this slide: 2–5 concise Korean bullet points of what the professor explained, **bold** key terms with the English term in parentheses, formulas/numbers exactly as on the slide, no fluff; merge with existing notes (replace, do not duplicate). Mention exam/assignment/deadline hints in "exam".\n'+
     'Return ONLY JSON: {"segments":[{"i":<index>,"text":"<corrected original>","ko":"<Korean>"}],"notes":["..."],"summary":"<one line, ≤30 chars Korean>","exam":["..."]}';
   async function aiTick(force){
-    if(!S.running || AI.busy || !aiKey()) return; var now=Date.now(); if(!force && now-AI.lastRun<20000) return;
+    if(!S.running || AI.busy || !aiEngine()) return; var now=Date.now(); if(!force && now-AI.lastRun<20000) return;
     var p=S.page||1, sl=S.slides[p]; if(!sl) return; var pend=sl.segs.map(function(s,i){ return {s:s,i:i}; }).filter(function(x){ return !x.s.fix; });
     if(!pend.length || (!force && pend.length<2 && now-AI.lastRun<45000)) return;
     AI.busy=true; AI.lastRun=now; var live=S.live=S.live||{}; var cur=live[p]||{notes:[],summary:'',exam:[]};
     var ctx=sl.segs.filter(function(s){ return s.fix; }).slice(-4).map(function(s){ return s.fix; });
-    var payload={ course:S.course, language:(S.lang==='ko-KR'?'ko':'en'), slide:{ page:p, total:S.total, text:((S.slideText&&S.slideText[p])||'').slice(0,2500) }, previous_slide_text:((S.slideText&&S.slideText[p-1])||'').slice(0,600), recent_corrected_context:ctx, existing_notes:cur.notes, segments:pend.map(function(x){ return {i:x.i, t:x.s.t, text:(S.lang==='ko-KR'?x.s.ko:x.s.en)}; }) };
+    var payload={ course:S.course, language:(S.lang==='ko-KR'?'ko':'en'), slide:{ page:p, total:S.total, text:((S.slideText&&S.slideText[p])||'').slice(aiEngine()==='nano'?0:0, aiEngine()==='nano'?1200:2500) }, previous_slide_text:aiEngine()==='nano'?'':((S.slideText&&S.slideText[p-1])||'').slice(0,600), recent_corrected_context:ctx.slice(aiEngine()==='nano'?-2:0), existing_notes:cur.notes, segments:pend.map(function(x){ return {i:x.i, t:x.s.t, text:(S.lang==='ko-KR'?x.s.ko:x.s.en)}; }) };
     try{
       var out=await aiCall(AI_SYSTEM, JSON.stringify(payload), 1500); var j=parseJson(out); if(!j) throw new Error('bad json');
       (j.segments||[]).forEach(function(g){ var s=sl.segs[g.i]; if(!s) return; if(g.text){ s.fix=String(g.text); } if(g.ko){ s.ko=String(g.ko); } if(!s.fix) s.fix=(S.lang==='ko-KR'?s.ko:s.en); });
       pend.forEach(function(x){ if(!x.s.fix) x.s.fix=(S.lang==='ko-KR'?x.s.ko:x.s.en); });
       live[p]={ notes:(j.notes||cur.notes||[]).slice(0,6), summary:j.summary||cur.summary||'', exam:(j.exam||cur.exam||[]).slice(0,5), at:Date.now() };
       AI.fails=0; renderLive(); saveLocal();
-    }catch(e){ AI.fails++; console.warn('ai', e&&e.message); if(AI.fails===1||/401|403|invalid|credit/i.test(String(e&&e.message))) status('Claude 필기 오류: '+(e&&e.message||e)+(/401|403/.test(String(e&&e.message))?' — 키 확인':''),'err'); }
+    }catch(e){ AI.fails++; console.warn('ai', e&&e.message); if(AI.fails===1||/401|403|invalid|credit/i.test(String(e&&e.message))) status((aiEngine()==='nano'?'내장 AI':'Claude')+' 필기 오류: '+(e&&e.message||e)+(/401|403/.test(String(e&&e.message))?' — 키 확인':''),'err'); }
     AI.busy=false;
   }
-  function liveNotesHtml(p){ var l=S.live&&S.live[p]; if(!l||(!l.notes||!l.notes.length)) return aiKey()?'<div class="lec-ai muted">✦ 실시간 필기 준비 중… (말이 쌓이면 20초마다 정리)</div>':''; var h='<div class="lec-ai"><div class="lec-ai-head">✦ 실시간 필기'+(l.summary?' <span>— '+escapeHtml(l.summary)+'</span>':'')+'</div>'+md(l.notes.map(function(k){ return '- '+k; }).join('\n'))+(l.exam&&l.exam.length?'<div class="lec-ai-exam">'+l.exam.map(function(x){ return '⚠ '+escapeHtml(x); }).join('<br>')+'</div>':'')+'</div>'; return h; }
+  function liveNotesHtml(p){ var l=S.live&&S.live[p]; if(!l||(!l.notes||!l.notes.length)) return aiEngine()?'<div class="lec-ai muted">✦ 실시간 필기 준비 중… ('+(aiEngine()==='nano'?'내장 AI':'Claude')+', 말이 쌓이면 20초마다 정리)</div>':''; var h='<div class="lec-ai"><div class="lec-ai-head">✦ 실시간 필기'+(l.summary?' <span>— '+escapeHtml(l.summary)+'</span>':'')+'</div>'+md(l.notes.map(function(k){ return '- '+k; }).join('\n'))+(l.exam&&l.exam.length?'<div class="lec-ai-exam">'+l.exam.map(function(x){ return '⚠ '+escapeHtml(x); }).join('<br>')+'</div>':'')+'</div>'; return h; }
 
   // ---- 세션 ----
   function recLabel(){ return '● 녹음 중 · 번역: '+(S.tmode==='chrome'?'Chrome 내장':'웹')+(S.online?' · 온라인 모드: 5분마다 구간 자동, → 로 수동 분할':' · ← → 로 슬라이드 넘기기'); }
@@ -9446,7 +9457,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     S.tick=setInterval(function(){ renderLive(); autoCut(); try{ aiTick(false); }catch(e){} if(S.running && S.rec && !S.lastInterim && Date.now()-S.lastResultAt>60000){ S.lastResultAt=Date.now(); try{ S.rec.abort(); }catch(e){} } },1000); saveLocal();
   }
   function stopAll(){
-    try{ if(aiKey() && S.running){ S.running=true; aiTick(true); } }catch(e){}
+    try{ if(aiEngine() && S.running){ aiTick(true); } }catch(e){}
     S.running=false; clearInterval(S.tick); clearTimeout(S.restartTimer); try{ if(S.rec){ S.rec.onend=null; S.rec.stop(); } }catch(e){} stopAudio(); try{ if(S.wake){ S.wake.release(); S.wake=null; } }catch(e){}
     $('lecRec').textContent='● 녹음 시작'; $('lecRec').classList.remove('on'); status('중지됨 · '+Object.keys(S.slides).length+'개 슬라이드에 대본 저장됨 → "필기 요청 보내기"');
     saveLocal(); $('lecFinish').style.display='';
@@ -9638,7 +9649,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     function paintLang(l){ var b=$('lecLang'); if(!b) return; b.setAttribute('data-lang',l); b.textContent=(l==='ko-KR')?'🇰🇷 한국어 강의':'🇺🇸 영어 강의'; b.classList.toggle('en', l!=='ko-KR'); var b2=$('lecLang2'); if(b2){ b2.textContent=(l==='ko-KR')?'🇰🇷 한국어':'🇺🇸 영어'; b2.classList.toggle('en', l!=='ko-KR'); } }
     try{ paintLang(langFor()); }catch(e){ paintLang('ko-KR'); }
     $('lecLang2').addEventListener('click',function(){ $('lecLang').click(); });
-    $('lecAiBtn').addEventListener('click',function(){ window.tmSetClaudeKey(); }); paintAiBtn();
+    $('lecAiBtn').addEventListener('click',function(){ if(NANO.state!=='available' && aiKey()){ if(confirm('Claude 키가 설정돼 있어요. 키를 바꾸거나 지우려면 확인, 그대로 두려면 취소')) window.tmSetClaudeKey(); return; } if(NANO.state==='available'){ if(aiKey()){ var pc=!!lsGet(lsKey('ai_prefer_claude')); if(confirm(pc?'지금: Claude(유료). 무료 내장 AI로 바꿀까요?':'지금: 무료 내장 AI. Claude(유료, 더 정확)로 바꿀까요?')){ lsSet(lsKey('ai_prefer_claude'), pc?'':'1'); if(window.tmOnChange) tmOnChange(); paintAiBtn(); } } else if(confirm('무료 내장 AI로 실시간 필기 중이에요.\n더 정확한 Claude API 키(유료)를 넣으려면 확인')) window.tmSetClaudeKey(); return; } if(NANO.state==='downloadable'||NANO.state==='downloading'){ window.tmNanoSetup(); return; } if(confirm('이 브라우저엔 무료 내장 AI가 없어요. Claude API 키(유료)를 넣을까요?')) window.tmSetClaudeKey(); }); paintAiBtn();
     $('lecLang').addEventListener('click',function(){ var cur=this.getAttribute('data-lang'); var nx=(cur==='ko-KR')?'en-US':'ko-KR'; paintLang(nx); try{ lsSet(lsKey(langKey()),nx); if(window.tmOnChange) tmOnChange(); }catch(e){} showToast(cname($('lecCourse').value)+' → '+(nx==='ko-KR'?'한국어':'영어')+' 강의로 기억'); if(S.running){ S.lang=nx; S.langSample=''; S.langWarned=false; try{ S.rec.abort(); }catch(e){} showToast('언어 전환: '+(nx==='ko-KR'?'한국어':'영어')+' — 인식기 재시작'); } });
     var _rz=null; window.addEventListener('resize',function(){ if(typeof currentMode!=='undefined' && currentMode==='lecture'){ clearTimeout(_rz); _rz=setTimeout(function(){ renderPage(); renderViewPage(); },150); } });
     window.addEventListener('beforeunload',function(e){ if(S.running){ e.preventDefault(); e.returnValue=''; } });
