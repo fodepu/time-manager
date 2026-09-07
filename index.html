@@ -2379,7 +2379,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="54">
+<meta name="tm-version" content="55">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -2582,6 +2582,8 @@
   .lec-wk-items { display:flex; flex-direction:column; gap:2px; }
   .lec-it { display:flex; align-items:center; gap:8px; padding:5px 0; border-top:1px solid var(--border-soft,#f0f0f0); font-size:13.5px; }
   .lec-it:first-child { border-top:none; }
+  .lec-it-head { font-size:12px; font-weight:700; color: var(--text-muted); margin:10px 0 2px; }
+  .lec-it-head:first-child { margin-top:2px; }
   .lec-it-title { flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
   .lec-ext { font-size:12px; color: var(--text-muted); text-decoration:none; white-space:nowrap; }
   .lec-ext:hover { color: var(--accent); }
@@ -9403,6 +9405,10 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   function weekNo(dateStr){ var a=new Date(LEC_SEM_START+'T00:00:00'), b=new Date((dateStr||toLocalDateStr(new Date()))+'T00:00:00'); return Math.floor((b-a)/604800000)+1; }
   function modWeek(m){ var x=String(m.name||'').match(/(\d{1,2})\s*주/)||String(m.name||'').match(/week\s*(\d{1,2})/i); return x?parseInt(x[1],10):null; }
   function modsFor(c){ var d=window.lecLms; return (d&&d.courseModules&&d.courseModules[c])||[]; }
+  // 주차 구조가 아닌 과목(예: 거시경제학 — 주제별 모듈)은 1주차~15주차 카드로 바꾸고, 기존 항목은 전부 1주차에 넣음
+  function cardsFor(c){ var mods=modsFor(c); var weekly=mods.some(function(m){ return modWeek(m)!=null; }); if(weekly || !mods.length) return mods;
+    var items=[]; mods.forEach(function(m){ if(!(m.items||[]).length) return; items.push({type:'Header', title:m.name, indent:0}); m.items.forEach(function(it){ items.push(Object.assign({}, it, {indent:(it.indent||0)+1})); }); });
+    var out=[]; for(var n=1;n<=15;n++) out.push({id:'wk'+n, name:n+'주차', items:(n===1?items:[]), synthetic:true}); return out; }
   function noteWeek(n){ var m=/-w(\d+)-/.exec(n.id||'')||/(\d{1,2})\s*주차/.exec(n.title||''); return m?+m[1]:null; }
   function noteLec(n){ var m=/-w\d+-(\d+)$/.exec(n.id||'')||/(\d{1,2})\s*강/.exec(n.title||''); return m?+m[1]:null; }
   function notesForWeek(c,w,mid){
@@ -9421,7 +9427,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     var box=$('lecWeeks'); if(!box) return; var c=$('lecCourse').value||''; S.course=c; try{ lsSet(lsKey('lec_course'),c); }catch(e){}
     if(!c){ box.innerHTML='<div class="lms-empty">위에서 과목을 고르면 e-campus 주차학습이 그대로 나와요.</div>'; return; }
     if(!notesIndex) await fetchIndex(); await loadLocal();
-    var mods=modsFor(c).slice(); var wk=weekNo(); var weekly=mods.some(function(m){ return modWeek(m)!=null; });
+    var mods=cardsFor(c).slice(); var wk=weekNo(); var weekly=mods.some(function(m){ return modWeek(m)!=null; });
     // 주차 미지정 자료(예전 PDF·주차 없이 녹음한 것)
     var miscNotes=notesForWeek(c,null,'misc'), miscPdfs=pdfsForWeek(c,'misc');
     if(!mods.length) mods.push({id:'misc', name:'강의 자료', items:[]});
@@ -9434,7 +9440,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
       h+='<details class="lec-wk'+(isNow?' now':'')+'" data-mid="'+esc(m.id)+'"'+(open?' open':'')+'><summary><span class="lec-wk-name">'+esc(m.name)+'</span>'+(isNow?'<span class="lms-badge new">이번 주</span>':'')+'<span class="lec-wk-meta">'+(pdfs.length?'<span>📄 '+pdfs.length+'</span>':'')+(readyN?'<span>📝 '+readyN+'</span>':'')+'</span></summary><div class="lec-wk-body">';
       var used={};
       if((m.items||[]).length){
-        h+='<div class="lec-wk-items">'+m.items.map(function(it){ var n=noteForItem(it.title, notes); if(n) used[n.id]=1;
+        h+='<div class="lec-wk-items">'+m.items.map(function(it){ if(it.type==='Header') return '<div class="lec-it-head">'+esc(it.title)+'</div>'; var n=noteForItem(it.title, notes); if(n) used[n.id]=1;
           return '<div class="lec-it" style="margin-left:'+((it.indent||0)*12)+'px"><span class="lec-it-title">'+itemIcon(it)+esc(it.title)+'</span>'+(n?'<button type="button" class="lec-chip'+(n.ready?' on':'')+'" data-open="'+esc(n.id)+'" data-mid="'+esc(m.id)+'">'+(n.ready?'📝 필기 보기':'🎙 대본')+'</button>':'')+(it.url?'<a class="lec-ext" href="'+esc(it.url)+'" target="_blank" rel="noopener">e-campus ↗</a>':'')+'</div>'; }).join('')+'</div>';
       }
       var extra=notes.filter(function(n){ return !used[n.id]; });
@@ -9468,7 +9474,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   // ---- 뷰어: PDF + 필기 나란히 ----
   var V={ pdf:null, page:1, total:0, note:null, notes:[], pdfs:[], mid:null, task:null };
   async function openView(noteId, mid, pdfKey){
-    var c=$('lecCourse').value||''; var m=modsFor(c).find(function(x){ return x.id===mid; })||{id:mid,name:mid==='misc'?'주차 미지정':''}; var w=modWeek(m);
+    var c=$('lecCourse').value||''; var m=cardsFor(c).find(function(x){ return x.id===mid; })||{id:mid,name:mid==='misc'?'주차 미지정':''}; var w=modWeek(m);
     V.mid=mid; V.notes=(mid==='misc')?notesForWeek(c,null,'misc'):notesForWeek(c,w,mid); V.pdfs=(mid==='misc')?pdfsForWeek(c,'misc'):pdfsForWeek(c,mid);
     var note=noteId?V.notes.find(function(n){return n.id===noteId;}):null;
     if(!note && !pdfKey && V.notes.length) note=V.notes.find(function(n){return n.ready;})||V.notes[0];
@@ -9516,7 +9522,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   // ---- 녹음 시작 (주차에서) ----
   async function startWeekRecording(mid){
     var c=$('lecCourse').value||''; if(!c){ showToast('과목을 먼저 선택하세요'); return; }
-    var m=modsFor(c).find(function(x){ return x.id===mid; })||{id:mid,name:''}; S.week=mid; S.weekNo=modWeek(m);
+    var m=cardsFor(c).find(function(x){ return x.id===mid; })||{id:mid,name:''}; S.week=mid; S.weekNo=modWeek(m);
     $('lecTitle').value=(m.name&&mid!=='misc')?(cname(c)+' '+m.name):cname(c)+' 강의';
     $('lecWorkWeek').textContent=cname(c)+' · '+(m.name||'주차 미지정');
     showPane('lecWork'); status('');
