@@ -2379,7 +2379,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="82">
+<meta name="tm-version" content="83">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -2499,6 +2499,7 @@
   .lec-nav { display:flex; align-items:center; gap:8px; margin-top:6px; font-size:13px; font-variant-numeric: tabular-nums; }
   .lec-hint { font-size:11px; color: var(--text-muted); margin-left:auto; }
   .lec-live { border:1px solid var(--border,#e5e5e5); border-radius:12px; background: var(--bg-card,#fff); height: min(70vh, 640px); overflow:auto; padding:10px 12px; }
+  .lec-resume { background:#fef2f2; border:1px solid #fecaca; border-radius:12px; padding:10px 14px; margin-bottom:10px; font-size:13px; display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
   .lec-recbanner { position:fixed; right:16px; bottom:16px; z-index:50; background:#dc2626; color:#fff; border:0; border-radius:999px; padding:10px 16px; font-weight:800; font-size:13px; box-shadow:0 4px 14px rgba(0,0,0,.25); cursor:pointer; }
   .lec-divider { font-size:11px; color:var(--text-muted); margin:10px 0 4px; border-top:1px dashed var(--border,#e5e7eb); padding-top:4px; }
   .lec-live-head { font-size:12px; font-weight:800; color: var(--text-muted); margin-bottom:8px; position:sticky; top:-10px; background: var(--bg-card,#fff); padding:4px 0; }
@@ -9328,9 +9329,10 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
 
   // ---- PDF (pdf.js CDN 지연 로드) ----
   function loadPdfJs(){ if(window.pdfjsLib) return Promise.resolve(); return new Promise(function(res,rej){ var s=document.createElement('script'); s.src='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js'; s.onload=function(){ window.pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js'; res(); }; s.onerror=rej; document.head.appendChild(s); }); }
-  async function openPdfBytes(bytes,name,save){
+  async function openPdfBytes(bytes,name,save,keep){
     try{ await loadPdfJs(); }catch(e){ status('PDF 라이브러리 로드 실패','err'); return; }
     var doc=await pdfjsLib.getDocument({data:bytes.slice(0)}).promise;
+    if(keep){ S.pdf=doc; S.total=S.pdf.numPages; S.pdfName=name||'slides.pdf'; S.pdfBytes=bytes; $('lecDropZone').classList.add('has-pdf'); renderPage(); return; }
     if(S.running && S.pdf){ S.base=(S.base||0)+(S.total||0); } else { S.base=0; S.docs=[]; S.slideText=null; S.slideLines=null; }
     S.pdf=doc; S.total=S.pdf.numPages; S.pdfName=name||'slides.pdf'; S.pdfBytes=bytes; S.page=S.base+1; S.docs=(S.docs||[]); S.docs.push({ name:S.pdfName, base:S.base, total:S.total, from:S.running?nowT():0 });
     if(S.running){ S.log.push({t:nowT(), page:S.page, pdf:S.pdfName}); showToast('녹음 유지 · PDF 교체: '+S.pdfName); }
@@ -9456,7 +9458,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   function aiKey(){ return ''; } // API 키 경로 제거 (2026-09-07) — 로컬 도우미(내 맥 Claude Code)만 사용
   // 로컬 도우미(내 맥의 Claude Code, 구독 → 추가 비용 0) — http://localhost:7377
   var LOCAL={ ok:false, model:'', checkedAt:0 };
-  async function localPing(){ try{ var r=await fetch('http://localhost:7377/ping',{cache:'no-store'}); if(!r.ok) throw 0; var j=await r.json(); LOCAL.ok=!!j.ok; LOCAL.model=j.model||''; }catch(e){ LOCAL.ok=false; } LOCAL.checkedAt=Date.now(); paintAiBtn(); return LOCAL.ok; }
+  async function localPing(){ try{ var r=await fetch('http://localhost:7377/ping',{cache:'no-store'}); if(!r.ok) throw 0; var j=await r.json(); LOCAL.ok=!!j.ok; LOCAL.model=j.model||''; }catch(e){ LOCAL.ok=false; } LOCAL.checkedAt=Date.now(); paintAiBtn(); try{ paintGemBtn(); }catch(e){} return LOCAL.ok; }
   async function localCall(system, user){ var r=await fetch('http://localhost:7377/notes',{ method:'POST', headers:{'content-type':'application/json'}, body:JSON.stringify({system:system,user:user}) }); var j=await r.json().catch(function(){ return {}; }); if(!r.ok) throw new Error(j.error||('helper '+r.status)); return j.text||''; }
   setInterval(function(){ if(typeof currentMode!=='undefined' && currentMode==='lecture') localPing(); }, 15000); setTimeout(localPing, 1500);
   function aiEngine(){ return LOCAL.ok?'local':''; }
@@ -9525,21 +9527,32 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     var pcm=new Int16Array(out.length); for(var j=0;j<out.length;j++){ var v=Math.max(-1,Math.min(1,out[j])); pcm[j]=v<0?v*0x8000:v*0x7FFF; }
     var bytes=new Uint8Array(pcm.buffer), bin=''; for(var k=0;k<bytes.length;k+=8192) bin+=String.fromCharCode.apply(null, bytes.subarray(k,k+8192));
     try{ G.ws.send(JSON.stringify({ realtimeInput:{ audio:{ data:btoa(bin), mimeType:'audio/pcm;rate=16000' } } })); G.sent++; }catch(e){} }
+  function gemRotate(){ // 새 연결을 먼저 열고, 준비되면 옛 연결을 닫는다 (공백 없음)
+    if(!G.on || !S.running || G.rotating) return; var key=geminiKey(); if(!key) return; G.rotating=true; var old=G.ws;
+    var ws=new WebSocket('wss://generativelanguage.googleapis.com/ws/google.ai.generativelanguage.v1beta.GenerativeService.BidiGenerateContent?key='+encodeURIComponent(key));
+    ws.onopen=function(){ try{ ws.send(JSON.stringify(gemSetup())); }catch(e){} };
+    ws.onmessage=function(ev){ var go=function(txt){ var m; try{ m=JSON.parse(txt); }catch(e){ return; }
+        if(m.setupComplete){ G.rotating=false; if(old&&old!==ws){ try{ old.onclose=null; old.send(JSON.stringify({realtimeInput:{audioStreamEnd:true}})); old.close(); }catch(e){} } G.ws=ws; ws.onmessage=function(e2){ if(e2.data instanceof Blob){ e2.data.text().then(gemHandle); } else gemHandle(e2.data); }; ws.onclose=gemOnClose(ws); gemHandle(txt); return; }
+        gemHandle(txt); };
+      if(ev.data instanceof Blob){ ev.data.text().then(go); } else go(ev.data); };
+    ws.onerror=function(){}; ws.onclose=function(){ if(G.ws!==ws){ G.rotating=false; } };
+  }
+  function gemOnClose(ws){ return function(ev){ if(G.ws!==ws) return; G.lastClose=(ev.code||'')+' '+(ev.reason||''); console.warn('gemini ws closed', ev.code, ev.reason); G.ws=null; G.ready=false; S.recOn=false; if(!S.running || !G.on) return;
+      if(!G.everReady && ev.code===1007){ var rs=String(ev.reason||''); if(/compression|resumption/i.test(rs) && G.extras){ G.extras=false; gemConnect(); return; } if(/vocabulary|language_codes|languageCodes/i.test(rs) && G.vocab!==false){ G.vocab=false; gemConnect(); return; } if((G.variant||0)<2){ G.variant=(G.variant||0)+1; gemConnect(); return; } }
+      if(!G.everReady && G.extras){ G.extras=false; gemConnect(); return; }
+      if(!G.everReady){ G.fails++; if(G.fails>=2){ gemFallback('Gemini 연결 실패('+(ev.code||'')+' '+(ev.reason||'').slice(0,80)+') — Chrome 음성인식으로 전환'); return; } }
+      if(G.retry>=5){ gemFallback('Gemini 재연결 실패가 반복돼요 — Chrome 음성인식으로 전환'); return; }
+      status('Gemini 재연결 중…','err'); var wait=Math.min(8000, 300*Math.pow(2, G.retry++)); clearTimeout(G.reconnT); G.reconnT=setTimeout(function(){ if(S.running&&G.on) gemConnect(); }, wait); }; }
   function gemConnect(){ var key=geminiKey(); if(!key) return false; G.lang=S.lang; G.ready=false;
     var ws=new WebSocket('wss://generativelanguage.googleapis.com/ws/google.ai.generativelanguage.v1beta.GenerativeService.BidiGenerateContent?key='+encodeURIComponent(key)); G.ws=ws;
     ws.onopen=function(){ try{ ws.send(JSON.stringify(gemSetup())); }catch(e){} };
     ws.onmessage=function(ev){ if(ev.data instanceof Blob){ ev.data.text().then(gemHandle); } else gemHandle(ev.data); };
     ws.onerror=function(){};
-    ws.onclose=function(ev){ if(G.ws!==ws) return; G.lastClose=(ev.code||'')+' '+(ev.reason||''); console.warn('gemini ws closed', ev.code, ev.reason); G.ws=null; G.ready=false; S.recOn=false; if(!S.running || !G.on) return;
-      if(!G.everReady && ev.code===1007){ var rs=String(ev.reason||''); if(/compression|resumption/i.test(rs) && G.extras){ G.extras=false; gemConnect(); return; } if(/vocabulary|language_codes|languageCodes/i.test(rs) && G.vocab!==false){ G.vocab=false; gemConnect(); return; } if((G.variant||0)<2){ G.variant=(G.variant||0)+1; gemConnect(); return; } }
-      if(!G.everReady && G.extras){ G.extras=false; gemConnect(); return; }
-      if(!G.everReady){ G.fails++; if(G.fails>=2){ gemFallback('Gemini 연결 실패('+(ev.code||'')+' '+(ev.reason||'').slice(0,80)+') — Chrome 음성인식으로 전환'); return; } }
-      if(G.retry>=5){ gemFallback('Gemini 재연결 실패가 반복돼요 — Chrome 음성인식으로 전환'); return; }
-      var wait=Math.min(8000, 600*Math.pow(2, G.retry++)); clearTimeout(G.reconnT); G.reconnT=setTimeout(function(){ if(S.running&&G.on) gemConnect(); }, wait); };
+    ws.onclose=gemOnClose(ws);
     return true; }
   function gemHandle(txt){ var m; try{ m=JSON.parse(txt); }catch(e){ return; }
-    if(m.setupComplete){ G.ready=true; G.everReady=true; G.retry=0; G.fails=0; S.recOn=true; S.lastResultAt=Date.now(); S.lastErr=''; if(S.running) status(recLabel(),'ok'); paintGemBtn(); return; }
-    if(m.goAway){ return; } // 곧 끊김 → onclose에서 즉시 재연결
+    if(m.setupComplete){ G.ready=true; G.everReady=true; G.retry=0; G.fails=0; S.recOn=true; S.lastResultAt=Date.now(); S.lastErr=''; if(S.running) status(recLabel(),'ok'); paintGemBtn(); clearTimeout(G.rotT); G.rotT=setTimeout(gemRotate, 8*60*1000); return; } // 8분마다 미리 교체 (연결 10분 제한)
+    if(m.goAway){ gemRotate(); return; }
     var sc=m.serverContent; if(!sc) return;
     if(sc.interimInputTranscription && sc.interimInputTranscription.text){ S.lastInterim=String(sc.interimInputTranscription.text).trim(); S.lastResultAt=Date.now(); renderLive(); }
     if(sc.inputTranscription && sc.inputTranscription.text) gemInput(sc.inputTranscription.text);
@@ -9553,7 +9566,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     if(fresh){ seg={ t:nowT(), page:p, en:'', ko:'', src:'gemini' }; slide(p).segs.push(seg); G.seg=seg; G.koOpen=false; }
     seg.en=gemJoin(seg.en,t); G.lastIn=now; S.lastResultAt=now; S.lastInterim=''; renderLive(); saveLocal(); }
   function gemOutput(t){ var seg=G.seg; if(!seg) return; seg.ko=gemJoin(seg.ko,t); G.koOpen=true; renderLive(); }
-  function gemStop(){ G.on=false; clearTimeout(G.reconnT); try{ if(G.ws){ var w=G.ws; G.ws=null; try{ w.send(JSON.stringify({realtimeInput:{audioStreamEnd:true}})); }catch(e){} w.close(); } }catch(e){}
+  function gemStop(){ G.on=false; clearTimeout(G.reconnT); clearTimeout(G.rotT); G.rotating=false; try{ if(G.ws){ var w=G.ws; G.ws=null; try{ w.send(JSON.stringify({realtimeInput:{audioStreamEnd:true}})); }catch(e){} w.close(); } }catch(e){}
     try{ if(G.node) G.node.disconnect(); }catch(e){} try{ if(G.ac) G.ac.close(); }catch(e){} try{ if(G.stream) G.stream.getTracks().forEach(function(t){ t.stop(); }); }catch(e){}
     G.node=null; G.ac=null; G.stream=null; G.seg=null; G.ready=false; paintGemBtn(); }
   function gemFallback(msg){ gemStop(); S.gemErr=msg+(G.lastClose?' ['+G.lastClose.trim()+']':''); status(S.gemErr,'err'); S.tmode='web'; S.translator=null; startRecognition(); Promise.race([initTranslator(), new Promise(function(r){ setTimeout(r,8000); })]); }
@@ -9566,12 +9579,13 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     S.course=$('lecCourse').value||''; S.title=($('lecTitle').value||'').trim(); if(!S.course){ showToast('과목을 선택하세요'); return; }
     S.lang=($('lecLang')&&$('lecLang').getAttribute('data-lang'))||'ko-KR';
     if(S.pdf && !S.slideText) extractSlideText().catch(function(){});
-    if(!S.title) S.title=S.course.replace(/^\(SDGs\)/,'')+' 강의'; if(S.weekNo!=null && !/주차/.test(S.title)) S.title+=' '+S.weekNo+'주차';
-    S.date=toLocalDateStr(new Date()); S.id='lec_'+S.date+'_'+Date.now().toString(36);
-    if(S.pdf && (S.base||0)>0){ S.base=0; S.page=1; S.docs=[{name:S.pdfName, base:0, total:S.total, from:0}]; S.slideText=null; S.slideLines=null; extractSlideText().catch(function(){}); renderPage(); }
+    if(!S.title) S.title=S.course.replace(/^\(SDGs\)/,'')+' 강의'; if(S.resume && S.course!==($('lecCourse').value||S.course)) S.course=$('lecCourse').value||S.course; if(S.weekNo!=null && !/주차/.test(S.title)) S.title+=' '+S.weekNo+'주차';
+    var resume=!!S.resume; S.resume=false;
+    if(!resume){ S.date=toLocalDateStr(new Date()); S.id='lec_'+S.date+'_'+Date.now().toString(36); }
+    if(!resume && S.pdf && (S.base||0)>0){ S.base=0; S.page=1; S.docs=[{name:S.pdfName, base:0, total:S.total, from:0}]; S.slideText=null; S.slideLines=null; extractSlideText().catch(function(){}); renderPage(); }
     if(S.pdf && !(S.docs&&S.docs.length)) S.docs=[{name:S.pdfName, base:0, total:S.total, from:0}];
-    S.online=!S.pdf; if(S.online){ S.page=1; S.total=1; S.lastCut=0; $('lecPage').textContent='구간 1'; }
-    S.slides={}; S.ann={}; S.log=[{t:0,page:S.page||1}]; S.startAt=Date.now(); S.running=true; S.audioBlob=null; $('lecDownloadAudio').style.display='none'; $('lecFinish').style.display='none';
+    if(!resume){ S.online=!S.pdf; if(S.online){ S.page=1; S.total=1; S.lastCut=0; $('lecPage').textContent='구간 1'; } S.slides={}; S.ann={}; S.log=[{t:0,page:S.page||1}]; S.startAt=Date.now(); } else { S.log.push({t:nowT(), page:S.page, resumed:true}); S.lastCut=nowT(); }
+    S.running=true; S.audioBlob=null; $('lecDownloadAudio').style.display='none'; $('lecFinish').style.display='none';
     $('lecRec').textContent='■ 녹음 중지'; $('lecRec').classList.add('on'); status('마이크 여는 중… (권한 창이 뜨면 허용)');
     S.localOK=false; try{ if(window.SpeechRecognition && SpeechRecognition.available){ var av=await Promise.race([SpeechRecognition.available({langs:[S.lang], processLocally:true}), new Promise(function(r){ setTimeout(function(){ r('unavailable'); },1500); })]); S.localOK=(av==='available'); } }catch(e){}
     S.tmode='web'; S.translator=null;
@@ -9596,7 +9610,23 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   function pageLabel(p){ if(S.online) return '구간 '+p; var d=docOf(p); return ((S.docs&&S.docs.length>1)?d.name.replace(/\.pdf$/i,'')+' · ':'')+(p-d.base)+'쪽'; }
   function payload(){ var slides=Object.keys(S.slides).map(Number).sort(function(a,b){return a-b;}).map(function(p){ var sl=S.slides[p]; return { page:p, en:sl.segs.map(function(s){return (S.lang==='ko-KR')?'':(s.fix||s.en);}).join(' '), ko:sl.segs.map(function(s){return (S.lang==='ko-KR')?(s.fix||s.ko):s.ko;}).join(' '), pdf:docOf(p).name, pdfPage:p-docOf(p).base, slideText:(S.slideText&&S.slideText[p])||'', liveNotes:(S.live&&S.live[p])||undefined, marks:(S.ann&&S.ann[p])||undefined, lines:(S.slideLines&&S.slideLines[p])||undefined, segs:sl.segs }; });
     return { id:S.id, course:S.course, title:S.title, date:S.date, week:(S.weekNo!=null?S.weekNo:undefined), module:(S.week&&S.week!=='misc'?S.week:undefined), lang:(S.lang==='ko-KR'?'ko':'en'), mode:(S.online?'online':'slides'), pdf:S.pdfName, pdfs:(S.docs&&S.docs.length>1)?S.docs:undefined, pages:S.total, duration:nowT(), log:S.log, slides:slides, savedAt:new Date().toISOString() }; }
-  function saveLocal(){ if(!S.id) return; idbPut('lec', Object.assign({status:S.running?'recording':'saved'}, payload())).catch(function(){}); }
+  function saveLocal(){ if(!S.id) return; idbPut('lec', Object.assign({status:S.running?'recording':'saved', curPage:S.page, base:S.base||0, docs:S.docs||[], weekId:S.week||'misc', langCode:S.lang}, payload())).catch(function(){}); }
+  // 끊긴 녹음(새로고침·탭 닫힘) 이어가기
+  function resumable(){ var now=Date.now(); return (localLecs||[]).filter(function(r){ return r.status==='recording' && r.savedAt && (now-new Date(r.savedAt).getTime())<3*3600*1000 && !(S.running && S.id===r.id); }).sort(function(a,b){ return new Date(b.savedAt)-new Date(a.savedAt); })[0]||null; }
+  async function resumeSession(rec){
+    S.id=rec.id; S.course=rec.course; S.title=rec.title; S.date=rec.date; S.week=rec.weekId||rec.module||'misc'; S.weekNo=(rec.week!=null?rec.week:null); S.lang=rec.langCode||(rec.lang==='ko'?'ko-KR':'en-US');
+    S.online=rec.mode==='online'; S.docs=rec.docs&&rec.docs.length?rec.docs:(rec.pdf?[{name:rec.pdf,base:0,total:rec.pages||0,from:0}]:[]); S.log=rec.log||[]; S.startAt=Date.now()-(rec.duration||0)*1000;
+    S.slides={}; S.ann={}; S.live={}; S.slideText={}; S.slideLines={};
+    (rec.slides||[]).forEach(function(s){ var p=+s.page; S.slides[p]={segs:(s.segs||[]).map(function(g){ return g; })}; if(s.marks) S.ann[p]=s.marks; if(s.liveNotes) S.live[p]=s.liveNotes; if(s.slideText) S.slideText[p]=s.slideText; if(s.lines) S.slideLines[p]=s.lines; });
+    S.page=rec.curPage||((S.log.slice(-1)[0]||{}).page)||1; S.base=rec.base||0; S.total=rec.pages||1;
+    try{ $('lecCourse').value=S.course; }catch(e){} $('lecTitle').value=S.title||''; $('lecWorkWeek').textContent=cname(S.course)+' · '+(S.week&&S.week!=='misc'?(cardsFor(S.course).find(function(x){return x.id===S.week;})||{}).name||'':'주차 미지정');
+    if(window.tmPaintLang) tmPaintLang(); try{ if(window.tmSetLangUI) tmSetLangUI(S.lang); }catch(e){}
+    // PDF 다시 열기 (기기 저장분)
+    S.pdf=null; var d=docOf(S.page); if(d&&d.name){ var pk=(weekPdfs||[]).find(function(p){ return p.course===S.course && p.name===d.name; })||(weekPdfs||[]).find(function(p){ return p.name===d.name; }); if(pk){ try{ await openPdfBytes(pk.bytes, pk.name, false, true); }catch(e){} } }
+    showPane('lecWork'); $('lecDropZone').classList.toggle('has-pdf', !!S.pdf); if(S.online) $('lecPage').textContent='구간 '+S.page; else if(S.pdf) renderPage(); else $('lecPage').textContent='–';
+    renderLive(); S.resume=true; showToast('이어서 녹음 — '+allSegs().length+'문장 복구됨'); startAll();
+  }
+  window.tmResume=resumeSession; window.tmResumable=resumable; window.tmGemRotate=gemRotate;
   async function sendFinish(){
     if(!S.id||!Object.keys(S.slides).length){ showToast('보낼 대본이 없어요'); return; }
     var tk=token(); if(!tk){ tk=prompt('저장소 전송용 GitHub 토큰을 붙여넣으세요:'); if(!tk) return; tk=tk.trim(); lsSet(lsKey('inbox_token'),tk); }
@@ -9651,7 +9681,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     var miscNotes=notesForWeek(c,null,'misc'), miscPdfs=pdfsForWeek(c,'misc',miscNotes);
     if(!mods.length) mods.push({id:'misc', name:'강의 자료', items:[]});
     else if(miscNotes.length||miscPdfs.length) mods.push({id:'misc', name:'주차 미지정', items:[]});
-    var h='';
+    var h=''; var rz=resumable(); if(rz){ var mins=Math.max(1,Math.round((Date.now()-new Date(rz.savedAt).getTime())/60000)); var nseg=(rz.slides||[]).reduce(function(a,s){ return a+((s.segs||[]).length); },0); h+='<div class="lec-resume">● 끊긴 녹음: <b>'+esc(rz.title||'')+'</b> · '+nseg+'문장 · '+mins+'분 전 저장 <button type="button" class="lec-btn rec" data-resume="'+esc(rz.id)+'">이어서 녹음</button> <button type="button" class="lec-btn" data-discard="'+esc(rz.id)+'">보관만</button></div>'; }
     mods.forEach(function(m,i){
       var w=modWeek(m), isNow=(weekly && w===wk); var notes=(m.id==='misc')?miscNotes:notesForWeek(c,w,m.id); var pdfs=(m.id==='misc')?miscPdfs:pdfsForWeek(c,m.id,notes);
       var open=isNow || !weekly || (!mods.some(function(x){return modWeek(x)===wk;}) && i===0);
@@ -9671,6 +9701,8 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
       h+='</div></details>';
     });
     box.innerHTML=h;
+    box.querySelectorAll('[data-resume]').forEach(function(b){ b.addEventListener('click',function(){ var r=(localLecs||[]).find(function(x){ return x.id===b.getAttribute('data-resume'); }); if(r) resumeSession(r); }); });
+    box.querySelectorAll('[data-discard]').forEach(function(b){ b.addEventListener('click',async function(){ var r=(localLecs||[]).find(function(x){ return x.id===b.getAttribute('data-discard'); }); if(r){ r.status='saved'; try{ await idbPut('lec', r); }catch(e){} renderHome(); } }); });
     box.querySelectorAll('[data-open]').forEach(function(b){ b.addEventListener('click',function(e){ e.preventDefault(); openView(b.getAttribute('data-open'), b.getAttribute('data-mid'), null); }); });
     box.querySelectorAll('[data-pdf]').forEach(function(b){ b.addEventListener('click',function(){ openView(null, b.getAttribute('data-mid'), b.getAttribute('data-pdf')); }); });
     box.querySelectorAll('[data-delpdf]').forEach(function(b){ b.addEventListener('click',async function(){ if(!confirm('이 PDF를 이 기기에서 지울까요?')) return; await idbDel('pdf', b.getAttribute('data-delpdf')); renderHome(); }); });
