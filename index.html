@@ -2379,7 +2379,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="84">
+<meta name="tm-version" content="85">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -2565,7 +2565,7 @@
   .todo-text:focus { border-color: var(--border,#ddd); background: var(--bg,transparent); outline:none; }
   #lecWork:focus, #lecView:focus { outline:none; }
   .lec-langbtn { font-weight:700; }
-  .lec-annot { position:absolute; pointer-events:none; }
+  .lec-annot { position:absolute; pointer-events:auto; cursor:default; }
   .lec-view-canvas { position:relative; }
   .lec-ctx { position:absolute; left:-99999px; top:0; width:1px; height:1px; overflow:hidden; white-space:pre-wrap; }
   #lecAiBtn.on { border-color:#8B5CF6; color:#8B5CF6; font-weight:700; }
@@ -9335,7 +9335,8 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     if(keep){ S.pdf=doc; S.total=S.pdf.numPages; S.pdfName=name||'slides.pdf'; S.pdfBytes=bytes; $('lecDropZone').classList.add('has-pdf'); renderPage(); return; }
     if(S.running && S.pdf){ S.base=(S.base||0)+(S.total||0); } else { S.base=0; S.docs=[]; S.slideText=null; S.slideLines=null; }
     S.pdf=doc; S.total=S.pdf.numPages; S.pdfName=name||'slides.pdf'; S.pdfBytes=bytes; S.page=S.base+1; S.docs=(S.docs||[]); S.docs.push({ name:S.pdfName, base:S.base, total:S.total, from:S.running?nowT():0 });
-    if(S.running){ S.log.push({t:nowT(), page:S.page, pdf:S.pdfName}); showToast('녹음 유지 · PDF 교체: '+S.pdfName); }
+    if(S.running){ S.log.push({t:nowT(), page:S.page, pdf:S.pdfName}); showToast('녹음 유지 · PDF 교체: '+S.pdfName); } else { S.ann={}; }
+    try{ annLoadIntoS(); }catch(e){}
     extractSlideText().catch(function(){});
     $('lecDropZone').classList.add('has-pdf'); renderPage(); status('PDF 열림 · '+S.total+'쪽');
     var course=S.course||$('lecCourse').value||''; if(save && course){ var wk=S.week||'misc'; idbPut('pdf',{key:course+'|'+wk+'|'+S.pdfName, course:course, week:wk, name:S.pdfName, bytes:bytes, at:Date.now()}).catch(function(){}); }
@@ -9353,19 +9354,33 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   // ---- 슬라이드 위 표시 (Claude가 고른 줄에 형광펜·밑줄·동그라미·여백 메모) ----
   S.ann={}; // page → [{line, type:'highlight'|'underline'|'circle', note}]
   var ANN_COLORS={ highlight:'rgba(255, 230, 0, 0.38)', underline:'#e0442e', circle:'#e0442e', note:'#1d4ed8' };
+  // PDF에 붙은 표시는 녹음과 상관없이 남는다. 지우는 건 사용자가 직접 클릭.
+  function annStoreKey(course, pdfName){ return lsKey('pdfann_'+(course||'')+'|'+(pdfName||'')); }
+  function annLoad(course, pdfName){ try{ return lsGet(annStoreKey(course,pdfName))||{}; }catch(e){ return {}; } }
+  function annSave(course, pdfName, obj){ try{ lsSet(annStoreKey(course,pdfName), obj); if(window.tmOnChange) tmOnChange(); }catch(e){} }
+  function annPersistPage(p){ // S.ann[p](논리 쪽) → 저장소(실제 쪽)
+    var d=docOf(p); if(!d||!d.name) return; var store=annLoad(S.course,d.name); var pp=p-(d.base||0); var list=(S.ann[p]||[]); if(list.length) store[pp]=list; else delete store[pp]; annSave(S.course,d.name,store); }
+  function annLoadIntoS(){ // 현재 PDF의 저장된 표시를 S.ann(논리 쪽)에 합침
+    var d=S.docs&&S.docs.length?S.docs[S.docs.length-1]:null; if(!d) return; var store=annLoad(S.course,d.name); S.ann=S.ann||{};
+    Object.keys(store).forEach(function(pp){ var p=(d.base||0)+parseInt(pp,10); var cur=S.ann[p]||[]; (store[pp]||[]).forEach(function(m){ if(!cur.some(function(a){ return a.line===m.line && a.type===m.type && (a.note||'')===(m.note||''); })) cur.push(m); }); S.ann[p]=cur; }); }
+  // 텍스트 줄 좌표 (복습 뷰어처럼 slideLines가 없을 때 즉석 추출)
+  var _lineCache={};
+  async function linesForPage(pdfDoc, pageNo, cacheKey){ var k=cacheKey+'#'+pageNo; if(_lineCache[k]) return _lineCache[k]; try{ var pg=await pdfDoc.getPage(pageNo); var tc=await pg.getTextContent(); var vw=pg.getViewport({scale:1}); var info={ w:vw.width, h:vw.height, lines:groupLines(tc.items, vw) }; _lineCache[k]=info; return info; }catch(e){ return null; } }
+  function annHitTest(ov, ev){ var hits=ov._hits||[]; var r=ov.getBoundingClientRect(); var x=(ev.clientX-r.left)*(ov.width/Math.max(1,r.width)), y=(ev.clientY-r.top)*(ov.height/Math.max(1,r.height));
+    for(var i=hits.length-1;i>=0;i--){ var t=hits[i]; if(x>=t.x&&x<=t.x+t.w&&y>=t.y&&y<=t.y+t.h) return t.idx; } return -1; }
   function drawAnnotations(cv, ov, page, annList, linesInfo){
     if(!ov||!cv) return; ov.width=cv.width; ov.height=cv.height; ov.style.width=cv.style.width; ov.style.height=cv.style.height; ov.style.left=cv.offsetLeft+'px'; ov.style.top=cv.offsetTop+'px';
     var ctx=ov.getContext('2d'); ctx.clearRect(0,0,ov.width,ov.height);
-    var info=linesInfo; if(!info||!info.lines||!annList||!annList.length) return;
-    var sx=ov.width/info.w, sy=ov.height/info.h; var fontPx=Math.max(11, Math.round(12*sx)); var usedNotes=[];
-    annList.forEach(function(a){ var L=info.lines[a.line]; if(!L) return; var x=L.x*sx, y=L.y*sy, w=L.w*sx, hh=L.h*sy;
+    var info=linesInfo; ov._hits=[]; if(!info||!info.lines||!annList||!annList.length) return;
+    var sx=ov.width/info.w, sy=ov.height/info.h; var fontPx=Math.max(11, Math.round(12*sx)); var usedNotes=[]; var hits=[]; ov._hits=hits;
+    annList.forEach(function(a, ai){ var L=info.lines[a.line]; if(!L) return; var x=L.x*sx, y=L.y*sy, w=L.w*sx, hh=L.h*sy; if(a.type) hits.push({x:x-6,y:y-4,w:w+12,h:hh+8,idx:ai});
       if(a.type==='highlight'){ ctx.fillStyle=ANN_COLORS.highlight; ctx.fillRect(x-2, y, w+4, hh); }
       else if(a.type==='underline'){ ctx.strokeStyle=ANN_COLORS.underline; ctx.lineWidth=Math.max(1.5, 2*sx); ctx.beginPath(); ctx.moveTo(x, y+hh-1); ctx.lineTo(x+w, y+hh-1); ctx.stroke(); }
       else if(a.type==='circle'){ ctx.strokeStyle=ANN_COLORS.circle; ctx.lineWidth=Math.max(1.5, 2*sx); ctx.beginPath(); ctx.ellipse(x+w/2, y+hh/2, w/2+8*sx, hh/2+6*sy, 0, 0, Math.PI*2); ctx.stroke(); }
       if(a.note){ ctx.font='500 '+fontPx+'px Pretendard, -apple-system, sans-serif'; var txt=a.note; var pad=7*sx; var tw=ctx.measureText(txt).width+pad*2, th=fontPx*1.8;
         var nx=x+w+10*sx, ny=y+hh/2-th/2; if(nx+tw>ov.width-4){ nx=Math.max(4, ov.width-tw-4); ny=y+hh+2; } // 오른쪽 여백에 안 들어가면 줄 아래
         var tries=0; while(usedNotes.some(function(u){ return Math.abs(u.y-ny)<th && Math.abs(u.x-nx)<tw; }) && tries++<6){ ny+=th+2; }
-        usedNotes.push({x:nx,y:ny});
+        usedNotes.push({x:nx,y:ny}); hits.push({x:nx,y:ny,w:tw,h:th,idx:ai});
         ctx.save(); ctx.shadowColor='rgba(0,0,0,0.22)'; ctx.shadowBlur=5*sx; ctx.shadowOffsetY=2*sx; ctx.fillStyle='#bfdbfe'; ctx.fillRect(nx, ny, tw, th); ctx.restore();
         ctx.fillStyle='#1e3a8a'; ctx.textBaseline='middle'; ctx.fillText(txt, nx+pad, ny+th/2);
       }
@@ -9375,11 +9390,15 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   window.tmDrawAnnotations=drawAnnotations;
   window.tmS=S; // 디버그/테스트용
   function redrawAnn(){ try{ drawAnnotations($('lecCanvas'), $('lecAnnot'), S.page, S.ann[S.page]||[], S.slideLines&&S.slideLines[S.page]); }catch(e){} }
+  function bindAnnClicks(){
+    var ov=$('lecAnnot'); if(ov && !ov._bound){ ov._bound=true; ov.addEventListener('click',function(ev){ var i=annHitTest(ov, ev); if(i<0) return; var list=S.ann[S.page]||[]; var a=list[i]; if(!a) return; if(!confirm('이 표시를 지울까요?\n'+(a.note||a.type))) return; list.splice(i,1); S.ann[S.page]=list; annPersistPage(S.page); redrawAnn(); saveLocal(); }); }
+    var vo=$('lecViewAnnot'); if(vo && !vo._bound){ vo._bound=true; vo.addEventListener('click',function(ev){ var i=annHitTest(vo, ev); if(i<0) return; var list=V.marks||[]; var a=list[i]; if(!a) return; if(!confirm('이 표시를 지울까요?\n'+(a.note||a.type))) return; list.splice(i,1); if(V.curPdf){ var st=annLoad($('lecCourse').value||'', V.curPdf.name); if(list.length) st[V.page]=list; else delete st[V.page]; annSave($('lecCourse').value||'', V.curPdf.name, st); } renderViewPage(); }); }
+  }
   var _renderTask=null;
   async function renderPage(){
     if(!S.pdf) return; try{ if(_renderTask) _renderTask.cancel(); }catch(e){} var pg=await S.pdf.getPage(Math.max(1,S.page-(S.base||0))); var cv=$('lecCanvas'); var wrap=cv.parentNode; var vw=pg.getViewport({scale:1}); var dpr=window.devicePixelRatio||1; var scale=Math.min(Math.max(wrap.clientWidth-4,200)/vw.width, 2); var v=pg.getViewport({scale:scale*dpr});
     cv.width=v.width; cv.height=v.height; cv.style.width=(v.width/dpr)+'px'; cv.style.height=(v.height/dpr)+'px';
-    try{ _renderTask=pg.render({canvasContext:cv.getContext('2d'), viewport:v}); await _renderTask.promise; }catch(e){ if(!/cancel/i.test(String(e&&e.message))) console.warn('pdf render', e&&e.message); } _renderTask=null; $('lecPage').textContent=(S.page-(S.base||0))+' / '+S.total; redrawAnn();
+    try{ _renderTask=pg.render({canvasContext:cv.getContext('2d'), viewport:v}); await _renderTask.promise; }catch(e){ if(!/cancel/i.test(String(e&&e.message))) console.warn('pdf render', e&&e.message); } _renderTask=null; $('lecPage').textContent=(S.page-(S.base||0))+' / '+S.total; redrawAnn(); bindAnnClicks();
   }
   var ONLINE_AUTO_SEC=300; S.online=false; S.lastCut=0;
   function goPage(n){
@@ -9488,7 +9507,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
       (j.segments||[]).forEach(function(g){ var s=sl.segs[g.i]; if(!s) return; if(g.text){ s.fix=String(g.text); } if(g.ko && s.src!=='gemini'){ s.ko=String(g.ko); } if(!s.fix) s.fix=(S.lang==='ko-KR'?s.ko:s.en); });
       pend.forEach(function(x){ if(!x.s.fix) x.s.fix=(S.lang==='ko-KR'?x.s.ko:x.s.en); });
       live[p]={ notes:(j.notes||cur.notes||[]).slice(0,6), summary:j.summary||cur.summary||'', exam:(j.exam||cur.exam||[]).slice(0,5), at:Date.now() };
-      try{ var cur2=S.ann[p]||[]; (j.marks||[]).slice(0,2).forEach(function(m){ var li=parseInt(m.line,10); if(isNaN(li)) return; var ty=(['highlight','underline','circle'].indexOf(m.type)>=0)?m.type:''; if(!ty && !m.note) return; if(cur2.some(function(a){ return a.line===li && a.type===ty; })) return; if(cur2.length>=4) return; cur2.push({line:li, type:ty, note:(m.note?String(m.note).slice(0,40):'')}); }); S.ann[p]=cur2; if(p===S.page) redrawAnn(); }catch(e){}
+      try{ var cur2=S.ann[p]||[]; (j.marks||[]).slice(0,2).forEach(function(m){ var li=parseInt(m.line,10); if(isNaN(li)) return; var ty=(['highlight','underline','circle'].indexOf(m.type)>=0)?m.type:''; if(!ty && !m.note) return; if(cur2.some(function(a){ return a.line===li && a.type===ty; })) return; if(cur2.length>=4) return; cur2.push({line:li, type:ty, note:(m.note?String(m.note).slice(0,40):'')}); }); S.ann[p]=cur2; annPersistPage(p); if(p===S.page) redrawAnn(); }catch(e){}
       AI.fails=0; renderLive(); saveLocal();
     }catch(e){ AI.fails++; console.warn('ai', e&&e.message); if(true) status('내 맥 Claude'+' 필기 오류: '+(e&&e.message||e)+(/401|403/.test(String(e&&e.message))?' — 키 확인':''),'err'); }
     AI.busy=false;
@@ -9582,9 +9601,9 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     if(!S.title) S.title=S.course.replace(/^\(SDGs\)/,'')+' 강의'; if(S.resume && S.course!==($('lecCourse').value||S.course)) S.course=$('lecCourse').value||S.course; if(S.weekNo!=null && !/주차/.test(S.title)) S.title+=' '+S.weekNo+'주차';
     var resume=!!S.resume; S.resume=false;
     if(!resume){ S.date=toLocalDateStr(new Date()); S.id='lec_'+S.date+'_'+Date.now().toString(36); }
-    if(!resume && S.pdf && (S.base||0)>0){ S.base=0; S.page=1; S.docs=[{name:S.pdfName, base:0, total:S.total, from:0}]; S.slideText=null; S.slideLines=null; extractSlideText().catch(function(){}); renderPage(); }
+    if(!resume && S.pdf && (S.base||0)>0){ S.base=0; S.page=1; S.docs=[{name:S.pdfName, base:0, total:S.total, from:0}]; S.slideText=null; S.slideLines=null; S.ann={}; try{ annLoadIntoS(); }catch(e){} extractSlideText().catch(function(){}); renderPage(); }
     if(S.pdf && !(S.docs&&S.docs.length)) S.docs=[{name:S.pdfName, base:0, total:S.total, from:0}];
-    if(!resume){ S.online=!S.pdf; if(S.online){ S.page=1; S.total=1; S.lastCut=0; $('lecPage').textContent='구간 1'; } S.slides={}; S.ann={}; S.log=[{t:0,page:S.page||1}]; S.startAt=Date.now(); } else { S.log.push({t:nowT(), page:S.page, resumed:true}); S.lastCut=nowT(); }
+    if(!resume){ S.online=!S.pdf; if(S.online){ S.page=1; S.total=1; S.lastCut=0; $('lecPage').textContent='구간 1'; } S.slides={}; S.log=[{t:0,page:S.page||1}]; S.startAt=Date.now(); } else { S.log.push({t:nowT(), page:S.page, resumed:true}); S.lastCut=nowT(); }
     S.running=true; S.audioBlob=null; $('lecDownloadAudio').style.display='none'; $('lecFinish').style.display='none';
     $('lecRec').textContent='■ 녹음 중지'; $('lecRec').classList.add('on'); status('마이크 여는 중… (권한 창이 뜨면 허용)');
     S.localOK=false; try{ if(window.SpeechRecognition && SpeechRecognition.available){ var av=await Promise.race([SpeechRecognition.available({langs:[S.lang], processLocally:true}), new Promise(function(r){ setTimeout(function(){ r('unavailable'); },1500); })]); S.localOK=(av==='available'); } }catch(e){}
@@ -9623,6 +9642,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     if(window.tmPaintLang) tmPaintLang(); try{ if(window.tmSetLangUI) tmSetLangUI(S.lang); }catch(e){}
     // PDF 다시 열기 (기기 저장분)
     S.pdf=null; var d=docOf(S.page); if(d&&d.name){ var pk=(weekPdfs||[]).find(function(p){ return p.course===S.course && p.name===d.name; })||(weekPdfs||[]).find(function(p){ return p.name===d.name; }); if(pk){ try{ await openPdfBytes(pk.bytes, pk.name, false, true); }catch(e){} } }
+    try{ annLoadIntoS(); }catch(e){}
     showPane('lecWork'); $('lecDropZone').classList.toggle('has-pdf', !!S.pdf); if(S.online) $('lecPage').textContent='구간 '+S.page; else if(S.pdf) renderPage(); else $('lecPage').textContent='–';
     renderLive(); S.resume=true; showToast('이어서 녹음 — '+allSegs().length+'문장 복구됨'); startAll();
   }
@@ -9752,7 +9772,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   var _vtask=null;
   async function renderViewPage(){ if(!V.pdf) return; try{ if(_vtask) _vtask.cancel(); }catch(e){} var pg=await V.pdf.getPage(V.page); var cv=$('lecViewCanvas'); if(!cv) return; var wrap=cv.parentNode; var vw=pg.getViewport({scale:1}); var dpr=window.devicePixelRatio||1; var scale=Math.min(Math.max(wrap.clientWidth-4,200)/vw.width, 2); var v=pg.getViewport({scale:scale*dpr});
     cv.width=v.width; cv.height=v.height; cv.style.width=(v.width/dpr)+'px'; cv.style.height=(v.height/dpr)+'px';
-    try{ _vtask=pg.render({canvasContext:cv.getContext('2d'), viewport:v}); await _vtask.promise; }catch(e){} _vtask=null; var pe=$('lecViewPage'); if(pe) pe.textContent=V.page+' / '+V.total; syncNoteToPage(); try{ var sd=V.note&&(V.note.slides||[]).find(function(s){ return +s.page===V.page; }); drawAnnotations($('lecViewCanvas'), $('lecViewAnnot'), V.page, (sd&&sd.marks)||[], sd&&sd.lines); }catch(e){} }
+    try{ _vtask=pg.render({canvasContext:cv.getContext('2d'), viewport:v}); await _vtask.promise; }catch(e){} _vtask=null; var pe=$('lecViewPage'); if(pe) pe.textContent=V.page+' / '+V.total; syncNoteToPage(); try{ var sd=V.note&&(V.note.slides||[]).find(function(s){ return +s.page===V.page; }); var stored=V.curPdf?(annLoad($('lecCourse').value||'', V.curPdf.name)[V.page]||[]):[]; var marks=stored.length?stored.slice():((sd&&sd.marks)||[]).slice(); V.marks=marks; var li=(sd&&sd.lines)||await linesForPage(V.pdf, V.page, V.curPdf?V.curPdf.name:'x'); drawAnnotations($('lecViewCanvas'), $('lecViewAnnot'), V.page, marks, li); bindAnnClicks(); }catch(e){} }
   function viewGo(n){ if(!V.pdf) return; n=Math.max(1,Math.min(V.total,n)); if(n===V.page) return; V.page=n; renderViewPage(); }
   function syncNoteToPage(){ var box=$('lecViewNotes'); if(!box||!V.note||V.note.mode==='online') return; box.querySelectorAll('.lec-slide').forEach(function(el){ var on=(+el.getAttribute('data-page')===V.page); el.classList.toggle('cur',on); if(on) el.scrollIntoView({block:'nearest',behavior:'smooth'}); }); }
   function bindViewRec(){ var b=$('lecViewRec'); if(b) b.addEventListener('click',function(){ if(V.curPdf) startWeekRecording(V.mid, V.curPdf.key); }); }
