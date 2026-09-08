@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-08T00:47:55.805Z",
+  "generatedAt": "2026-09-08T05:26:53.960Z",
   "source": "canvas",
   "user": "김주함(2025####72)",
   "courseFiles": {
@@ -30,6 +30,12 @@
             "title": "2주차 읽기자료: 지속가능발전목표(SDGs)",
             "indent": 0,
             "url": "https://khcanvas.khu.ac.kr/courses/96922/modules/items/4773571"
+          },
+          {
+            "type": "Page",
+            "title": "2주차_SDGs 강의자료",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/96922/modules/items/4779402"
           }
         ]
       },
@@ -1685,6 +1691,35 @@
       }
     ]
   },
+  "changes": [
+    {
+      "id": "d_n479426",
+      "course": "창업과 thinking design",
+      "type": "due",
+      "date": "2026-09-18",
+      "title": "개인 1차 과제 제출 시한 변경",
+      "url": "https://khcanvas.khu.ac.kr/courses/97242/discussion_topics/479426",
+      "noticeId": "n479426"
+    },
+    {
+      "id": "c_n479418",
+      "course": "창업과 thinking design",
+      "type": "cancel",
+      "date": "2026-09-08",
+      "title": "강의 일정 변경 안내",
+      "url": "https://khcanvas.khu.ac.kr/courses/97242/discussion_topics/479418",
+      "noticeId": "n479418"
+    },
+    {
+      "id": "c_n474980",
+      "course": "창업과 thinking design",
+      "type": "cancel",
+      "date": "2026-09-01",
+      "title": "1주(9월 1일) 수업 공지 및 이번 학기 운영 방안",
+      "url": "https://khcanvas.khu.ac.kr/courses/97242/discussion_topics/474980",
+      "noticeId": "n474980"
+    }
+  ],
   "courses": [
     "(SDGs)리질리언스와지속가능한도시",
     "거시경제학",
@@ -1694,6 +1729,25 @@
     "창업과 thinking design"
   ],
   "assignments": [
+    {
+      "id": "a1497825",
+      "course": "계량경제학",
+      "title": "Assignment1",
+      "due": null,
+      "submitted": false,
+      "url": "https://khcanvas.khu.ac.kr/courses/95551/assignments/1497825",
+      "body": "assignment1.pdf",
+      "files": [
+        {
+          "id": "9700194",
+          "name": "assignment1.pdf",
+          "url": "https://khcanvas.khu.ac.kr/files/9700194/download?download_frd=1&verifier=FOlUUSTHZbadaarupIX8JFKJZnUtNT0ftjG34mjn",
+          "type": "application/pdf",
+          "size": 155256,
+          "text": "Introduction to Econometrics Problem Set 1 Problem Set 1 Random Variables, Sampling, and the Central Limit Theorem Introduction to Econometrics Sunha Myong, Kyung Hee University September 2026 Reading: Stock & Watson, Chapters 2–3. Submission: answers must be handwritten. Write on your own paper, label every part clearly (e.g. “2(b)”), put your name and student ID on the first page, and upload a single scanned PDF . Please keep your writing legible. Problem 1. The Variance Identity (a) Let X have mean μ X = E [ X ]. Starting from the definition Var( X ) = E [( X − μ X ) 2 ], expand the square and use the linearity of expectations to prove that Var( X ) = E [ X 2 ] − ( E [ X ]) 2 . (b) Let X be the number of job offers a graduating senior receives: x 0 1 2 3 Pr( X = x ) 0.20 0.40 0.30 0.10 Compute E [ X ], E [ X 2 ], Var( X ), and the standard deviation σ X . Problem 2. A Joint Distribution Draw a worker at random from the population aged 25–34. Let X = 1 if the worker has a four-year college degree ( X = 0 otherwise), and Y = 1 if the worker is employed full time ( Y = 0 otherwise). The joint distribution is: Y = 0 Y = 1 Total X = 0 (no degree) 0.15 0.35 0.50 X = 1 (degree) 0.07 0.43 0.50 Total 0.22 0.78 1.00 The four numbers in the table are the joint probabilities: for example, Pr( X = 1 , Y = 1) = 0 . 43 means 43% of this population both holds a degree and works full time. The four blank cells are what you will fill in below. 1\nIntroduction to Econometrics Problem Set 1 (a) The marginal distribution of X is the distribution of X on its own, ignoring Y entirely. You get it by summing the joint probabilities across all values of the other variable: Pr( X = x ) = X y Pr( X = x, Y = y ) , Pr( Y = y ) = X x Pr( X = x, Y = y ) . So the marginal distribution of X is the row totals (the right-hand column), and the marginal distribution of Y is the column totals (the bottom row). Fill in all four blank cells, check that each marginal sums to 1, and say in words what Pr( X = 1) means. (b) Compute Pr( Y = 1 | X = 1) and Pr( Y = 1 | X = 0), and interpret the difference in one sentence. (c) Compute Cov( X, Y ). Problem 3. CDF and PDF (a) Define the cumulative distribution function F X ( x ). Then state the two formulas linking F X to the density f X of a continuous random variable. (b) Let X be the fraction of the year a worker is employed, with density f X ( x ) = 3 x 2 for 0 ≤ x ≤ 1 and 0 otherwise. (i) Verify R 1 0 f X ( x ) dx = 1. (ii) Find F X ( x ) for 0 ≤ x ≤ 1. (iii) Compute Pr(0 . 5 < X ≤ 0 . 8) using the CDF. (iv) Compute E [ X ]. Problem 4. Why Divide by n − 1 ? Let X 1 , . . . , X n be i.i.d. with mean μ and variance σ 2 , and let ¯ X = 1 n n X i =1 X i , s 2 X = 1 n − 1 n X i =1 ( X i − ¯ X ) 2 . (a) Show that E [ ¯ X ] = μ and Var( ¯ X ) = σ 2 /n . Where is independence used? (b) You may use the algebraic identity n X i =1 ( X i − μ ) 2 = n X i =1 ( X i − ¯ X ) 2 + n ( ¯ X − μ ) 2 . Take expectations on both sides and use part (a) to show that E \u0002 P i ( X i − ¯ X ) 2 \u0003 = ( n − 1) σ 2 . Conclude that E [ s 2 X ] = σ 2 , and state what the bias would be if we divided by n instead. (c) In one or two sentences, give the “degrees of freedom” intuition. Why does using ¯ X in place of the unknown μ make the sum of squared deviations too small ? (d) Five workers report years of experience: 3 , 5 , 6 , 8 , 8. Compute ¯ X , P i ( X i − ¯ X ) 2 , s 2 X , s X , and the estimated standard error c SE( ¯ X ) = s X / √ n . 2\nIntroduction to Econometrics Problem Set 1 Problem 5. What Makes a Good Estimator? (a) Define estimator and estimate . Why is an estimator a random variable while an estimate is just a number? (b) Any function of the data is an estimator, but most are bad ones. For an i.i.d. sample with mean μ and variance σ 2 , consider ˆ μ 1 = ¯ X, ˆ μ 2 = X 1 , ˆ μ 3 = 7 . Find E [ˆ μ j ] and Var(ˆ μ j ) for each, and say which are unbiased. (c) Both ˆ μ 1 and ˆ μ 2 are unbiased. Which is better, and why? What happens to each as n → ∞ ? (d) ˆ μ 3 = 7 has zero variance — the smallest possible. Explain in one or two sentences why it is still a bad estimator. 3"
+        }
+      ]
+    },
     {
       "id": "a1492416",
       "course": "모두를위한물리학",
@@ -2271,35 +2325,6 @@
           "text": "이번 학기 운영 방안 공지입니다 . 수 업 전 반 에 강 의 , 후 반 에 는 워 크 샵 으 로 운 영 됩 니 다 . 과 제 및 성 적 평 가 방 법 은 다 음 과 같 습 니 다 . 1. 팀 과제 ( 5 0%) - 피치덱 제작 - 매주 워크샵 통해 회사 설립을 위한 아이디어 developing - 매 주 진행한 내용을 총합 , 정리해 기말 리포트로 제출 - 종강 수업 시간에 발표 2. 개인 과제 ( 4 0%) 1) 발제 : 매주 정해진 분량 ( 공지 참고 ) 의 책 두 권 읽고 발제 ● 아이디어불패의 법칙 ( 알베르토 사보이아 / 인플루엔셜 ) ● 회복탄력성 ( 김주환 / 위즈덤하우스 ) - 매주 월 요일 오후 8 시까지 제출 - 파일명 : 제출자이름 _ 제출일자 ( 예시 0901) - e - campus 과제란에 업로딩 - 자유형식 2) 개별과제 4 회 첫번째 과제 성공한 스타트업 사례 분석 주제 : 본인이 관심 있는 성공한 스타트업 1 개를 선택하여 분석 • 어떤 문제를 해결했는가 ? • 6 가지 공통점 중 어떤 요소가 두드러지는가 ? • 성공 요인은 무엇이라고 생각하는가 ?\n제출시한 : 2026 년 9 월 11 일 오후 6 시 제출형식 및 분량 : A4 용지 기준 2 페이지 이상 ( 워드문서 ) 파일명 : 1 차 _ 제출자이름 _ 제출 일자 ( 예시 0901) 제출방법 : e - campus 과제란 두번째 과제 본인의 회복탄력성 진단 주제 : 나의 회복탄력성 진단 및 UP 전략 • 나의 현재 회복탄련성 수준은 어떠한가 ? ( 자가 진단 ) • 나의 회복탄력성 중 끌어올리고 싶은 분야는 ? • 어떻게 끌어올릴 지에 대한 UP 계획 제출시한 : 2026 년 9 월 30 일 오후 6 시 제출형식 및 분량 : A4 용지 기준 2 페이지 이 상 ( 워드문서 ) 파일명 : 2 차 _ 제출자이름 _ 제출 일자 ( 예시 0901) 제출방법 : e - campus 과제란 세번째 과제\n3) 제출시한 : 2026 년 10 월 14 일 오후 6 시 제출형식 및 분량 : A4 용지 기준 3 페이지 이상 ( 워드문서 ) 파일명 : 3 차 _ 제출자이름 _ 제출 일자 ( 예시 0901) 제출방법 : e - campus 과제란 네번째 과제 나의 창업 스토리 주제 : 내가 창업을 한다면 그 이유는 무엇인가 ? 무엇을 위해 창업하는가 ? 창업을 통 해 이루고자 하는 것은 무엇인가 ? 취업대신 창업을 한다면 나의 삶은 어떻게 달라질 까 ? 제출시한 : 2026 년 11 월 6 일 오후 6 시 제출형식 및 분량 : 분량 자유 ( 워드문서 ) 파일명 : 4 차 _ 제출자이름 _ 제출일자 ( 예시 0901) 제출방법 : e - campus 과제란\n기 말 과제 1. 주제 : 피치덱 (Pitch Deck) 작성 2. 포맷 : PPT or 동영상 ( 발표를 진행하는 것을 콘텐츠로 하는 동영상 ) 3. 분량 : PPT 기준 10~15 장 동영상 기준 10~ 15 분 4. 제출방법 : e - campus 과제란 . 파일명 : ( 예시 ) 파일명 : 기말 _ 제출자이름 _ 제출일자 ( 예시 0901) 5. 제출시한 : 2026 년 12 월 7 일 오후 6 시 ( 기한 후 제출 시 성적처리 되지 않습니다 ) # 생성형 AI 활용 시 출처를 note 로 명기해야 함 # 동영상으로 제출 시 가산점 부여 피치덱에 대해서는 1 1 주 차 에 강의내용으로 다루지만 간략히 설명하면 , * 피치덱 - 창업 아이디어를 투자자나 심사위원에게 설득하기 위한 발표 자료 - 투자자나 심사위원에게 “우리 사업이 왜 되는지”를 짧고 설득력 있게 보여주는 발표 자료 - 쉽게 말하면 “우리 아이디어에 투자하거나 지원해 주세요 ! ” 를 설명하는 창업용 PPT - 보통 창업 경진대회 , 투자 유치 , 창업 수업 발표 때 사용하고 슬라이드 10~15 장 정도로 핵심만 압축해서 작성 아이디어 자체보다도 - 문제를 잘 정의했는지 - 진짜 필요한 서비스인지 - 돈이 되는 구조인지 - 팀이 실행 가능한지 가 관건인 자료입니다 . 보통 들어가는 기본 구성은\n- Cover - Problem - Solution - Market - Business Model - Competitor - Marketing - Team - Future Plan 입니다 . 3. 강 의참여 및 출석률 (10%) 4. 주 차 별 강 의 주 제\n이 상입니다 . 관련해서 궁금한 점 수업 시간 중이나 이메일 ( lleia@naver.com ) 통해 알려주세요 ."
         }
       ]
-    }
-  ],
-  "changes": [
-    {
-      "id": "d_n479426",
-      "course": "창업과 thinking design",
-      "type": "due",
-      "date": "2026-09-18",
-      "title": "개인 1차 과제 제출 시한 변경",
-      "url": "https://khcanvas.khu.ac.kr/courses/97242/discussion_topics/479426",
-      "noticeId": "n479426"
-    },
-    {
-      "id": "c_n479418",
-      "course": "창업과 thinking design",
-      "type": "cancel",
-      "date": "2026-09-08",
-      "title": "강의 일정 변경 안내",
-      "url": "https://khcanvas.khu.ac.kr/courses/97242/discussion_topics/479418",
-      "noticeId": "n479418"
-    },
-    {
-      "id": "c_n474980",
-      "course": "창업과 thinking design",
-      "type": "cancel",
-      "date": "2026-09-01",
-      "title": "1주(9월 1일) 수업 공지 및 이번 학기 운영 방안",
-      "url": "https://khcanvas.khu.ac.kr/courses/97242/discussion_topics/474980",
-      "noticeId": "n474980"
     }
   ]
 }
