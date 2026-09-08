@@ -2383,7 +2383,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="113">
+<meta name="tm-version" content="114">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -9691,7 +9691,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   function stopAudio(){ try{ if(S.recorder&&S.recorder.state!=='inactive'){ S.recorder.stop(); S.recorder.stream.getTracks().forEach(function(t){t.stop();}); } }catch(e){} setTimeout(function(){ if(S.chunks.length){ S.audioBlob=new Blob(S.chunks,{type:S.chunks[0].type||'audio/webm'}); var b=$('lecDownloadAudio'); if(b) b.style.display=''; } },600); }
 
   // ---- 실시간 AI 필기 (Claude API, 사용자 키) — 슬라이드 맥락으로 대본 교정 + 번역 + 요점 ----
-  var AI={ busy:false, lastRun:0, fails:0 };
+  var AI={ busy:false, lastRun:0, fails:0 }; window.tmAI=AI;
   // 키는 내 계정 데이터(Firestore users/{uid}, 본인만 읽기 가능)와 함께 동기화 → 기기마다 다시 넣을 필요 없음
   // 로컬 도우미(내 맥의 Claude Code, 구독 → 추가 비용 0) — http://localhost:7377
   var LOCAL={ ok:false, model:'', checkedAt:0 };
@@ -9847,7 +9847,8 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     if(!resume){ S.date=toLocalDateStr(new Date()); S.id='lec_'+S.date+'_'+Date.now().toString(36); }
     if(!resume && S.pdf && (S.base||0)>0){ S.base=0; S.page=1; S.docs=[{name:S.pdfName, base:0, total:S.total, from:0}]; S.slideText=null; S.slideLines=null; S.ann={}; try{ annLoadIntoS(); }catch(e){} extractSlideText().catch(function(){}); renderPage(); }
     if(S.pdf && !(S.docs&&S.docs.length)) S.docs=[{name:S.pdfName, base:0, total:S.total, from:0}];
-    if(!resume){ S.online=!S.pdf; if(S.online){ S.page=1; S.total=1; S.lastCut=0; $('lecPage').textContent='구간 1'; S.docEdits={}; _docSig=''; } S.slides={}; S.log=[{t:0,page:S.page||1}]; S.startAt=Date.now(); } else { S.log.push({t:nowT(), page:S.page, resumed:true}); S.lastCut=nowT(); }
+    S.online=!S.pdf;
+    if(!resume){ if(S.online){ S.page=1; S.total=1; S.lastCut=0; $('lecPage').textContent='구간 1'; S.docEdits={}; _docSig=''; } S.slides={}; S.log=[{t:0,page:S.page||1}]; S.startAt=Date.now(); } else { if(S.online){ S.page=Math.max(1,S.page||1); S.total=S.page; $('lecPage').textContent='구간 '+S.page; _docSig=''; } S.log.push({t:nowT(), page:S.page, resumed:true}); S.lastCut=nowT(); }
     S.running=true; S.audioBlob=null; $('lecDownloadAudio').style.display='none'; $('lecFinish').style.display='none';
     $('lecRec').innerHTML=ICO.stop+'녹음 중지'; $('lecRec').classList.add('on'); status('마이크 여는 중… (권한 창이 뜨면 허용)');
     S.localOK=false; try{ if(window.SpeechRecognition && SpeechRecognition.available){ var av=await Promise.race([SpeechRecognition.available({langs:[S.lang], processLocally:true}), new Promise(function(r){ setTimeout(function(){ r('unavailable'); },1500); })]); S.localOK=(av==='available'); } }catch(e){}
