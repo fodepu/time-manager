@@ -1,0 +1,70 @@
+{
+  "date": "2026-09-08",
+  "generatedAt": "2026-09-08T08:21:00+09:00",
+  "urgent": null,
+  "items": [
+    {
+      "cat": "model",
+      "title": "Claude Fable 5.1 / Mythos 5.1 — 같은 값에 에이전틱 코딩 한 단계 위로",
+      "lead": "Fable 5를 잇는 신형으로, 입·출력 단가는 그대로 두고 장기 에이전틱 코딩·다단계 리서치·문서/시트/슬라이드 작업을 강화했다.",
+      "points": [
+        "**Terminal-Bench 4.0에서 55.8%**(Fable 5는 42.0%), Terminal-Bench-Science는 **52.6%로 2배** — 여러 파일을 오가는 리팩터링·마이그레이션처럼 **한 세션에서 오래 돌리는 작업**을 사람이 중간에 끊어 붙일 필요 없이 맡길 수 있다.",
+        "**effort(추론 강도) 레벨**을 낮추면 비슷한 결과를 훨씬 싸게 뽑는다 — 정형 코드 수정·대량 처리엔 low effort로, 난도 높은 설계엔 high로 나눠 **작업별로 비용을 조절**하는 운용이 가능.",
+        "**캐시 읽기 단가 1/4** — 긴 시스템 프롬프트·레포 컨텍스트를 반복 주입하는 에이전트 루프에서 **같은 컨텍스트를 재사용**할수록 실질 비용이 크게 떨어진다."
+      ],
+      "note": "Fable 5.1은 전체 공개. Mythos 5.1은 동일 모델·안전장치만 강화판으로 미국 신뢰접근 프로그램 한정. platform.claude.com에서 fable-5-1로 호출.",
+      "source": "anthropic.com",
+      "url": "https://www.anthropic.com/claude-fable-and-mythos-5-1"
+    },
+    {
+      "cat": "tool",
+      "title": "Claude Code 2.1.261 — /skill-doctor·인라인 출력 128K·VS Code 정비",
+      "lead": "9월 4일 배포된 업데이트로 스킬 진단, 인라인 출력 한도 확대, VS Code 워크플로 개선이 한 번에 들어왔다.",
+      "points": [
+        "**/skill-doctor** — 로드된 스킬 중 **실제로 안 쓰이는 것과 각 스킬의 컨텍스트 비용**을 보여준다. 스킬을 잔뜩 붙여둔 프로젝트에서 **컨텍스트 낭비 원인을 찾아 걷어내는** 정리 도구.",
+        "**bashOutputMaxChars·taskOutputMaxChars**로 명령·백그라운드 출력을 **최대 128K자까지 인라인** 유지 — 긴 테스트 로그·빌드 출력이 파일로 잘려 나가 다시 열어보던 흐름을 없앤다.",
+        "VS Code 확장은 세션 목록·탭·권한 프롬프트 중심 26건 수정 — 모델 선택·Remote Control·시작 안정성까지 손봐 **에디터 안에서 세션을 여러 개 굴리는** 사용이 매끄러워졌다."
+      ],
+      "note": "claude update 또는 VS Code 확장 자동 갱신. 팀 설정에 policy/skill 진단이 추가됨.",
+      "source": "dev.classmethod.jp",
+      "url": "https://dev.classmethod.jp/en/articles/20260905-cc-updates-v2-1-261/"
+    },
+    {
+      "cat": "headline",
+      "title": "Grok 4.7 — 9/12 목표, 2.1T·SpaceX 데이터 학습(아직 미출시)",
+      "lead": "머스크가 9월 12일경 출시를 예고한 xAI 차기 모델로, 벤치마크·가격은 미공개다.",
+      "points": [
+        "파라미터를 **1.5T→2.1T(약 40%↑)**로 키우고 SpaceX 로켓·제조 데이터를 넣어 **엔지니어링 추론**을 노린다 — 다만 개발자 문서상 현재 최신은 여전히 **Grok 4.6**이라 지금 붙일 건 없다.",
+        "\"4.6보다 모든 면에서 낫되 약간 느리고 토큰 효율↑\"라는 예고 수준 — **공식 벤치마크가 나오기 전까진 도입 판단 보류**가 맞다."
+      ],
+      "note": "9/12 전후 x.ai 발표·문서 업데이트를 확인 후 실사용 검토. 현시점 정보는 기대치.",
+      "source": "cometapi.com",
+      "url": "https://www.cometapi.com/grok-4-7-release-date/"
+    },
+    {
+      "cat": "model",
+      "title": "OpenAI GPT-6 Astra — 컴퓨터 유즈·템플릿 준수 문서 생성",
+      "lead": "9월 3일 출시된 신형으로 컴퓨터 유즈·브라우징·소프트웨어 엔지니어링·다단계 작업을 겨냥한다.",
+      "points": [
+        "**내 템플릿·지시를 따르는 문서/스프레드시트/프레젠테이션 생성** — 포맷을 매번 다시 지정하지 않고 **기존 양식 그대로** 산출물을 뽑는 반복 문서 작업에 바로 얹을 수 있다.",
+        "**Codex 컨텍스트 보존** 강화 — 긴 코딩 세션에서 앞 단계 맥락이 유지돼 **여러 단계로 이어지는 리팩터링·기능 구현**을 한 흐름으로 진행.",
+        "ChatGPT·API·Azure·Bedrock로 롤아웃 — 이미 쓰는 채널에서 **컴퓨터 유즈/브라우징 에이전트**를 별도 셋업 없이 시험."
+      ],
+      "note": "ChatGPT Plus/Pro/Business/Enterprise·API·AWS로 순차 롤아웃(coming days).",
+      "source": "cnbc.com",
+      "url": "https://www.cnbc.com/2026/09/03/open-ai-astra-gpt-6-cyber.html"
+    },
+    {
+      "cat": "tool",
+      "title": "ChatGPT — Google Docs/Sheets/Slides 옆에 띄우고 폴더 단위 작업",
+      "lead": "대화 옆에 워크스페이스 문서를 열어둔 채 요약·분석·비교·생성을 시키고, 폴더를 지정해 그 안 파일들을 가로질러 작업한다.",
+      "points": [
+        "Docs·Sheets·Slides를 **사이드바에 띄운 상태**로 붙여넣기 없이 요약·비교·재작성 — 문서와 챗을 오가며 복사하던 과정을 없앤다.",
+        "**폴더를 선택해 그 안 파일 전반을 대상**으로 지시 — 여러 문서에 흩어진 내용을 한 번에 취합·대조하는 리서치·정리 작업을 파일별로 반복하지 않는다."
+      ],
+      "note": "ChatGPT의 Google Workspace 연동 기능. 연결 계정·권한 범위 내에서 동작.",
+      "source": "releasebot.io",
+      "url": "https://releasebot.io/updates/openai/chatgpt"
+    }
+  ]
+}
