@@ -2383,7 +2383,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="115">
+<meta name="tm-version" content="116">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -2439,6 +2439,10 @@
   .tt-block.undone { box-shadow: inset 3px 0 0 #c62828; }
   .tt-block.undone .t::before { content:'✕ '; font-weight:800; }
   .tt-block.pressing { transform: scale(.985); }
+  .tt-block.moved .t::before { content:'↕ '; opacity:.7; }
+  .tt-block.dragging { opacity:.55; }
+  .tt-ghost { position:absolute; left:0; right:0; z-index:30; pointer-events:none; border-radius:0; outline:2px solid #2563eb; background:rgba(37,99,235,.18); box-sizing:border-box; }
+  .tt-ghost .tt-ghost-t { position:absolute; top:-18px; left:4px; font-size:11px; font-weight:800; color:#1d4ed8; background:#fff; padding:1px 6px; border-radius:6px; box-shadow:0 1px 4px rgba(0,0,0,.2); white-space:nowrap; }
   .tt-now { position:absolute; left:0; right:0; height:0; border-top:1.5px solid #e53935; pointer-events:none; z-index:5; }
   .tt-now::before { content:''; position:absolute; left:-3px; top:-4px; width:7px; height:7px; border-radius:50%; background:#e53935; }
   .tt-empty { padding:28px 12px; text-align:center; color: var(--text-muted); font-size:13px; }
@@ -8769,7 +8773,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   function blocksFor(date){
     var db = lsGet(lsKey('dayblocks_'+date));
     if(db && Array.isArray(db) && db.length){
-      return { rec:true, blocks: db.map(function(b,i){ return { id:'day_'+date+'_'+i, label:b.label, start:b.start, end:b.end, category:b.category||'prep', color:b.color||'', kind:b.kind||'single', values:b.values||{}, sub:(b.values&&b.values.note)||'' }; }) };
+      return { rec:true, blocks: db.map(function(b,i){ var mv=b.values&&b.values.mv; return { id:'day_'+date+'_'+i, label:b.label, start:(mv&&mv.s)||b.start, end:(mv&&mv.e)||b.end, moved:!!mv, category:b.category||'prep', color:b.color||'', kind:b.kind||'single', values:b.values||{}, sub:(b.values&&b.values.note)||'' }; }) };
     }
     var list;
     if(date===currentDate){ list = entries; }
@@ -8781,7 +8785,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
       tmpl.forEach(function(t){ var ex=byId[t.id]; if(!ex){ list.push(t); } else { ex.label=t.label; ex.start=t.start; ex.end=t.end; ex.category=t.category; ex.color=t.color; ex.kind=t.kind||ex.kind; ex.place=t.place||ex.place; ex.days=t.days; } });
     }
     var out = list.filter(function(e){ return e && e.start && e.end && (!e.pinned || entryAppliesToDate(e, date)); })
-      .map(function(e){ return { id:e.id, label:e.label, start:e.start, end:e.end, category:e.category||'prep', color:e.color||'', kind:e.kind||'single', values:e.values||{}, sub:((e.values&&e.values.note)||e.place||''), alarm:e.alarm }; });
+      .map(function(e){ var mv=e.values&&e.values.mv; return { id:e.id, label:e.label, start:(mv&&mv.s)||e.start, end:(mv&&mv.e)||e.end, moved:!!mv, category:e.category||'prep', color:e.color||'', kind:e.kind||'single', values:e.values||{}, sub:((e.values&&e.values.note)||e.place||''), alarm:e.alarm }; });
     return { rec:false, blocks: out };
   }
 
@@ -8824,7 +8828,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     var sH=6, eH=24;
     data.forEach(function(x){ x.info.blocks.forEach(function(b){ var s=mins(b.start), e=mins(b.end); if(e<=s) e=1440; sH=Math.min(sH, Math.floor(s/60)); eH=Math.max(eH, Math.ceil(e/60)); }); });
     eH=Math.min(eH,24); if(sH<0) sH=0;
-    hourPx = week ? 40 : 56;
+    hourPx = week ? 40 : 56; window.TT_G={hourPx:hourPx, sH:sH};
     var H=(eH-sH)*hourPx;
 
     if(total===0 && !week){
@@ -8872,7 +8876,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
           sub=(b.sub||'');
         }
         el.innerHTML='<div class="t">'+escapeHtml(title)+'</div>'+(sub?'<div class="s">'+escapeHtml(sub)+'</div>':'')+((td.length&&hgt>58&&b.kind!=='tasks')?'<div class="tt-td">'+td.slice(0,4).map(function(x){ return '<div class="'+(x.d?'d':'')+'">'+(x.d?'✓ ':'· ')+escapeHtml(x.t)+'</div>'; }).join('')+(td.length>4?'<div>+'+(td.length-4)+'</div>':'')+'</div>':'')+'<div class="more" data-more="1">⋯</div>';
-        el.title=b.label+' '+b.start+'~'+b.end+(st===true?' · 완료':st===false?' · 미완료':'');
+        el.title=b.label+' '+b.start+'~'+b.end+(st===true?' · 완료':st===false?' · 미완료':'')+(b.moved?' · 오늘만 옮김':''); if(b.moved) el.classList.add('moved');
         bindBlock(el, x.date, b, x.info.rec);
         col.appendChild(el);
       });
@@ -8910,6 +8914,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
       else items.push(['정리 기록 (편집 불가)', function(){ showToast('정리 기록 블록은 편집할 수 없어요. 아래 버튼으로 기본 시간표로 되돌릴 수 있습니다.'); }]);
       items.push([b.kind==='tasks'?'할 일 적기·수정':'할 일 적기', function(){ openTodos(date, b.id, b.label); }, 'clipboard']);
       if(b.kind!=='tasks') items.push([b.values.check===true?'완료 해제':'완료로 표시', function(){ if(b.values.check===true){ cycleFor(date,b.id); cycleFor(date,b.id); } else if(b.values.check===undefined){ cycleFor(date,b.id); } else { cycleFor(date,b.id); cycleFor(date,b.id); } }, (b.values.check===true?'minus':'check')]);
+      if(b.moved && !isRec) items.push(['원래 시간으로 되돌리기', function(){ var ref=entryForDate(date,b.id); if(ref&&ref.e.values){ delete ref.e.values.mv; ref.save(); if(window.tmOnChange) tmOnChange(); refreshAll(); } }, 'edit']);
       items.push(['의도적 미완료', function(){ if(b.values.check===undefined){ cycleFor(date,b.id); cycleFor(date,b.id); } else if(b.values.check===true){ cycleFor(date,b.id); } }, 'x', 'danger']);
       items.forEach(function(it){ var bt=document.createElement('button'); bt.type='button'; var lab=it[0], ic=it[2]||''; if(ic && typeof ICONS!=='undefined' && ICONS[ic]) bt.innerHTML='<svg class="tt-mi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">'+ICONS[ic]+'</svg><span></span>'; else bt.innerHTML='<span></span>'; bt.querySelector('span').textContent=lab; if(it[3]) bt.classList.add(it[3]); bt.addEventListener('click', function(ev){ ev.stopPropagation(); closeMenu(); it[1](); }); m.appendChild(bt); });
       document.body.appendChild(m);
@@ -8917,14 +8922,23 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
       m.style.left=Math.max(8,L)+'px'; m.style.top=Math.max(8,T)+'px';
       setTimeout(function(){ document.addEventListener('pointerdown', onDocDown); }, 0);
     }
+    var armed=false, drag=null;
+    function canMove(){ return !isRec && b.values.check!==true; }
     el.addEventListener('pointerdown', function(ev){
       if(ev.target.getAttribute('data-more')) return;
-      longFired=false; sx=ev.clientX; sy=ev.clientY; el.classList.add('pressing');
-      timer=setTimeout(function(){ longFired=true; el.classList.remove('pressing'); if(navigator.vibrate) try{navigator.vibrate(10);}catch(e){} openMenu(ev.clientX, ev.clientY); }, 480);
+      longFired=false; armed=false; drag=null; sx=ev.clientX; sy=ev.clientY; el.classList.add('pressing');
+      timer=setTimeout(function(){ longFired=true; el.classList.remove('pressing'); if(navigator.vibrate) try{navigator.vibrate(10);}catch(e){} openMenu(ev.clientX, ev.clientY); if(canMove()){ armed=true; try{ el.setPointerCapture(ev.pointerId); }catch(e){} } }, 480);
     });
     function cancel(){ if(timer){ clearTimeout(timer); timer=null; } el.classList.remove('pressing'); }
-    el.addEventListener('pointermove', function(ev){ if(Math.abs(ev.clientX-sx)>8||Math.abs(ev.clientY-sy)>8) cancel(); });
-    el.addEventListener('pointerup', cancel); el.addEventListener('pointercancel', cancel); el.addEventListener('pointerleave', cancel);
+    function startDrag(ev){ closeMenu(); drag={ col:el.parentNode, dur:mins(b.end)-mins(b.start), ghost:document.createElement('div'), origTop:parseFloat(el.style.top)||0 }; if(drag.dur<=0) drag.dur=60;
+      drag.ghost.className='tt-ghost'; drag.ghost.style.height=el.style.height; drag.ghost.innerHTML='<div class="tt-ghost-t"></div>'; drag.col.appendChild(drag.ghost); el.classList.add('dragging'); moveDrag(ev); }
+    function snapStart(ev){ var g=window.TT_G||{hourPx:56,sH:6}; var dy=ev.clientY-sy; var m=mins(b.start)+Math.round(dy/g.hourPx*60/5)*5; m=Math.max(g.sH*60, Math.min(1440-drag.dur, m)); return m; }
+    function fmtM(m){ return pad(Math.floor(m/60))+':'+pad(m%60); }
+    function moveDrag(ev){ var g=window.TT_G||{hourPx:56,sH:6}; var m=snapStart(ev); drag.ghost.style.top=((m-g.sH*60)/60*g.hourPx)+'px'; drag.ghost.querySelector('.tt-ghost-t').textContent=fmtM(m)+' ~ '+fmtM(m+drag.dur); drag.m=m; }
+    function endDrag(){ var m=drag.m; try{ drag.ghost.remove(); }catch(e){} el.classList.remove('dragging'); var was=drag; drag=null; armed=false; if(m==null || m===mins(b.start)) return;
+      var ref=entryForDate(date,b.id); if(!ref){ showToast('이 블록을 찾을 수 없어요'); return; } ref.e.values=ref.e.values||{}; ref.e.values.mv={ s:fmtM(m), e:fmtM(m+was.dur) }; ref.save(); if(window.tmOnChange) tmOnChange(); showToast(b.label+' → '+fmtM(m)+'~'+fmtM(m+was.dur)+' (오늘만)'); refreshAll(); }
+    el.addEventListener('pointermove', function(ev){ if(drag){ ev.preventDefault(); moveDrag(ev); return; } if(armed){ if(Math.abs(ev.clientY-sy)>6||Math.abs(ev.clientX-sx)>6) startDrag(ev); return; } if(Math.abs(ev.clientX-sx)>8||Math.abs(ev.clientY-sy)>8) cancel(); });
+    el.addEventListener('pointerup', function(){ if(drag){ endDrag(); return; } armed=false; cancel(); }); el.addEventListener('pointercancel', function(){ if(drag){ drag.m=null; endDrag(); } armed=false; cancel(); }); el.addEventListener('pointerleave', function(){ if(!drag && !armed) cancel(); });
     el.addEventListener('contextmenu', function(ev){ ev.preventDefault(); });
     el.addEventListener('click', function(ev){
       if(ev.target.getAttribute('data-more')){ ev.stopPropagation(); openMenu(ev.clientX, ev.clientY); return; }
