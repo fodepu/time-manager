@@ -2383,7 +2383,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="100">
+<meta name="tm-version" content="101">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -2527,6 +2527,22 @@
   .lec-exam { color:#92400e; font-size:13px; margin:4px 0; }
   .lec-wordtip { position:absolute; z-index:20; background:#111827; color:#fff; font-size:13px; padding:6px 10px; border-radius:8px; box-shadow:0 4px 14px rgba(0,0,0,.25); max-width:280px; pointer-events:none; }
   .lec-wordtip small { color:#9ca3af; display:block; font-size:11px; }
+  .lec-doc { display:flex; flex-direction:column; min-height:0; height:100%; border:1px solid var(--border,#e5e7eb); border-radius:12px; background:var(--bg-soft,#f7f7f8); overflow:hidden; }
+  .lec-doc-bar { display:flex; gap:8px; align-items:center; padding:8px 10px; font-size:12px; border-bottom:1px solid var(--border,#e5e7eb); background:var(--bg-card,#fff); }
+  .lec-doc-hint { color:var(--text-muted,#6b7280); }
+  .lec-doc-paper { flex:1; overflow:auto; padding:18px 22px; }
+  .lec-doc-sec { background:#fff; border:1px solid #e5e7eb; border-radius:10px; padding:12px 16px; margin-bottom:12px; box-shadow:0 1px 2px rgba(0,0,0,.04); }
+  .lec-doc-sec.cur { border-color:#93c5fd; box-shadow:0 0 0 3px rgba(59,130,246,.12); }
+  .lec-doc-sec h3 { margin:0 0 6px; font-size:15px; display:flex; gap:8px; align-items:baseline; }
+  .lec-doc-sec h3 small { font-weight:500; color:#6b7280; font-size:11px; }
+  .lec-doc-body { font-size:14px; line-height:1.6; outline:none; min-height:1.6em; }
+  .lec-doc-body:focus { background:#fafcff; }
+  .lec-doc-body ul { margin:0; padding-left:18px; } .lec-doc-body li { margin:2px 0; }
+  .lec-doc-body mark { background:#fde68a; padding:0 2px; }
+  .lec-doc-body .ex { color:#92400e; }
+  .lec-doc-wait { color:#9ca3af; font-size:13px; }
+  .lec-doc-sec.edited h3::after { content:'✎ 수정됨'; font-size:10px; color:#2563eb; font-weight:500; }
+  @media print { body * { visibility:hidden; } #lecDocPaper, #lecDocPaper * { visibility:visible; } #lecDocPaper { position:absolute; left:0; top:0; width:100%; padding:0; } .lec-doc-sec { break-inside:avoid; box-shadow:none; } }
   .lec-recbanner { position:fixed; right:16px; bottom:16px; z-index:50; background:#dc2626; color:#fff; border:0; border-radius:999px; padding:10px 16px; font-weight:800; font-size:13px; box-shadow:0 4px 14px rgba(0,0,0,.25); cursor:pointer; }
   .lec-divider { font-size:11px; color:var(--text-muted); margin:10px 0 4px; border-top:1px dashed var(--border,#e5e7eb); padding-top:4px; }
   .lec-live-head { font-size:12px; font-weight:800; color: var(--text-muted); margin-bottom:8px; position:sticky; top:-10px; background: var(--bg-card,#fff); padding:4px 0; }
@@ -2980,6 +2996,10 @@
       <div class="lec-status" id="lecStatus"></div>
       <div class="lec-main" id="lecMain">
         <div class="lec-left">
+          <div class="lec-doc" id="lecDoc" style="display:none">
+            <div class="lec-doc-bar"><b>실시간 필기 문서</b><span class="lec-doc-hint">PDF 없는 수업 · 20초마다 Claude가 채워요 · 글을 클릭해 고치거나 덧붙일 수 있어요</span><span style="flex:1"></span><button type="button" class="lec-btn" id="lecDocMark" title="드래그한 글에 형광펜">형광펜</button><button type="button" class="lec-btn" id="lecDocSplit" title="새 구간 시작 (→ 키와 같음)">새 구간</button><button type="button" class="lec-btn" id="lecDocPrint" title="지금까지 내용을 PDF로 저장(인쇄)">PDF로 저장</button></div>
+            <div class="lec-doc-paper" id="lecDocPaper"></div>
+          </div>
           <div class="lec-dropzone" id="lecDropZone">
             <canvas id="lecCanvas"></canvas><canvas id="lecAnnot" class="lec-annot"></canvas><span class="lec-tools" data-tools><button type="button" data-tool="select" class="on" title="선택 — 클릭: 단어 번역·표시 삭제 / 드래그: 구 번역"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3l14 8-6.5 1.5L10 19z"/></svg></button><button type="button" data-tool="hl" title="형광펜 — 줄 클릭 또는 드래그"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 15l-4 4h6l1-1"/><path d="M14 4l6 6-8 8-6-6z"/><path d="M4 21h16"/></svg></button><button type="button" data-tool="ul" title="밑줄 — 줄 클릭 또는 드래그"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4v6a5 5 0 0 0 10 0V4"/><path d="M5 20h14"/></svg></button><button type="button" data-tool="circle" title="동그라미 — 줄 클릭"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="12" rx="9" ry="6.5"/></svg></button><button type="button" data-tool="note" title="포스트잇 — 원하는 곳에 박스를 드래그해 만들고, 선택 모드에서 끌어 옮기거나 클릭해 수정"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v10l-6 6H4z"/><path d="M14 20v-6h6"/></svg></button><button type="button" data-tool="eraser" title="지우개 — 표시 클릭 또는 드래그"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15l9-9 6 6-7 7H8z"/><path d="M6 21h14"/></svg></button><i></i><button type="button" data-zoom="-" title="축소 (⌘−, 핀치)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/></svg></button><button type="button" data-zoom="0" title="맞춤 (⌘0)" class="lec-zoomlbl">100%</button><button type="button" data-zoom="+" title="확대 (⌘+, 핀치)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></button></span>
             <div class="lec-drop-hint">PDF를 여기에 드래그하거나 "PDF 열기"<br><small>PDF 없이 시작하면 5분마다 구간 자동 분할, → 키로 수동 분할</small></div>
@@ -9614,7 +9634,27 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     var live=S.live&&S.live[p];
     el.textContent='[강의 컨텍스트 — AI 도우미가 읽는 영역] 과목: '+cname(S.course)+' · 제목: '+(S.title||'')+' · 현재 슬라이드 '+p+'/'+(S.total||'?')+'\n\n[현재 슬라이드 텍스트]\n'+(st||'(텍스트 없음)')+'\n\n[실시간 필기]\n'+(live&&live.notes?live.notes.join('\n'):'(없음)')+'\n\n[최근 대본 (시간, 원문 / 번역)]\n'+(recent.join('\n')||'(아직 없음)'); }
   function allSegs(){ var a=[]; Object.keys(S.slides||{}).forEach(function(q){ (S.slides[q].segs||[]).forEach(function(s){ a.push(s); }); }); a.sort(function(x,y){ return (x.t||0)-(y.t||0); }); return a; }
-  function renderLive(){ renderCtx();
+  // ---- PDF 없는 수업: 실시간 문서 ----
+  S.docEdits=S.docEdits||{};
+  function docShow(on){ var d=$('lecDoc'), z=$('lecDropZone'); if(!d||!z) return; d.style.display=on?'':'none'; z.style.display=on?'none':''; }
+  function mdInline(s){ return escapeHtml(String(s||'')).replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>'); }
+  function docSecHtml(p){ var l=(S.live&&S.live[p])||{}; var notes=(l.notes||[]).map(function(n){ return '<li>'+mdInline(n)+'</li>'; }).join(''); var ex=(l.exam||[]).map(function(x){ return '<li class="ex">⚠ '+escapeHtml(x)+'</li>'; }).join('');
+    return (notes||ex)?'<ul>'+notes+ex+'</ul>':'<div class="lec-doc-wait">'+(S.running?'듣는 중… 20초쯤 뒤에 채워져요':'내용 없음')+'</div>'; }
+  var _docSig='';
+  function renderDoc(){ var paper=$('lecDocPaper'); if(!paper) return; var pages=Object.keys(S.slides||{}).map(Number); if(S.running && pages.indexOf(S.page)<0) pages.push(S.page); pages.sort(function(a,b){return a-b;}); if(!pages.length) pages=[1];
+    var sig=JSON.stringify([S.page, pages, S.live, S.docEdits]); if(sig===_docSig) return; _docSig=sig;
+    var focused=document.activeElement && document.activeElement.classList && document.activeElement.classList.contains('lec-doc-body') ? document.activeElement.getAttribute('data-p') : null;
+    var h=''; pages.forEach(function(p){ var l=(S.live&&S.live[p])||{}; var segs=(S.slides[p]&&S.slides[p].segs)||[]; var t0=segs.length?fmtT(segs[0].t||0):''; var ed=S.docEdits[p];
+      h+='<div class="lec-doc-sec'+(p===S.page?' cur':'')+(ed?' edited':'')+'" data-p="'+p+'"><h3>'+escapeHtml(l.summary||('구간 '+p))+' <small>'+(t0?t0+' · ':'')+segs.length+'문장</small></h3><div class="lec-doc-body" contenteditable="true" data-p="'+p+'">'+(ed?ed:docSecHtml(p))+'</div></div>'; });
+    paper.innerHTML=h;
+    paper.querySelectorAll('.lec-doc-body').forEach(function(b){ b.addEventListener('input',function(){ S.docEdits[b.getAttribute('data-p')]=b.innerHTML; _docSig=''; saveLocal(); }); });
+    if(focused){ var fb=paper.querySelector('.lec-doc-body[data-p="'+focused+'"]'); if(fb) fb.focus(); }
+    else { var cur=paper.querySelector('.lec-doc-sec.cur'); if(cur && !S.userScrolledDoc) cur.scrollIntoView({block:'nearest'}); } }
+  function docBind(){ var m=$('lecDocMark'); if(m && !m._b){ m._b=true; m.addEventListener('mousedown',function(e){ e.preventDefault(); }); m.addEventListener('click',function(){ try{ var sel=window.getSelection(); if(!sel.rangeCount||sel.isCollapsed){ showToast('형광펜 칠할 글을 먼저 드래그하세요'); return; } var r=sel.getRangeAt(0); var body=r.commonAncestorContainer.nodeType===1?r.commonAncestorContainer:r.commonAncestorContainer.parentNode; body=body.closest&&body.closest('.lec-doc-body'); if(!body) return; var mk=document.createElement('mark'); r.surroundContents(mk); sel.removeAllRanges(); S.docEdits[body.getAttribute('data-p')]=body.innerHTML; _docSig=''; saveLocal(); }catch(e){ showToast('한 문단 안에서만 칠할 수 있어요'); } }); }
+    var s=$('lecDocSplit'); if(s && !s._b){ s._b=true; s.addEventListener('click',function(){ goPage(S.page+1); }); }
+    var pr=$('lecDocPrint'); if(pr && !pr._b){ pr._b=true; pr.addEventListener('click',function(){ document.title=(S.title||'강의 필기')+' · '+(S.date||''); window.print(); }); }
+    var paper=$('lecDocPaper'); if(paper && !paper._b){ paper._b=true; paper.addEventListener('scroll',function(){ S.userScrolledDoc=(paper.scrollHeight-paper.scrollTop-paper.clientHeight)>80; }); } }
+  function renderLive(){ renderCtx(); if(S.online){ docShow(true); docBind(); renderDoc(); } else docShow(false);
     var box=$('lecLive'); if(!box) return; var p=S.page||1, sl=S.slides[p]||{segs:[]}; var showEn=$('lecShowEn')&&$('lecShowEn').checked;
     var h='<div class="lec-live-head">'+(S.online?'구간 '+p+' <small>(5분마다 자동, → 키로 수동 분할)</small>':'슬라이드 '+(p-(S.base||0))+(S.total?' / '+S.total:''))+' <small>'+allSegs().length+'문장 · '+(S.running?'● 녹음 중 '+fmtT(nowT())+(S.recOn?' · 인식기 켜짐':' · 인식기 대기')+' · '+(S.lang==='ko-KR'?'한국어':'영어')+' 인식'+(G.on?' · Gemini':'')+(S.biased?' · 슬라이드 용어 '+S.biased+'개 반영':'')+(S.lastErr&&S.lastErr!=='no-speech'&&S.lastErr!=='aborted'?' · 마지막 오류: '+S.lastErr:''):'대기')+'</small></div>';
     if(S.running && !allSegs().length && !S.lastInterim) h+='<div class="lec-seg interim"><div class="lec-en">듣는 중… 말소리가 들리면 몇 초 안에 문장이 여기 붙어요. 30초 넘게 아무것도 안 붙으면: 마이크 입력 장치(시스템 설정 → 사운드 → 입력)와 강의 언어(영어/한국어) 확인</div></div>';
@@ -9666,6 +9706,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   var AI_SYSTEM='You are a live lecture note-taker for a Korean university student. You receive (1) the text of the current slide (authoritative for terms, symbols, numbers), (2) raw speech-recognition segments of what the professor just said (noisy: homophones, dropped words, wrong proper nouns), (3) notes already written for this slide.\n'+
     'Tasks: A) Correct each segment into what the professor most likely said, using the slide text for terminology — keep the original language, keep it faithful (do not add content, do not summarize, keep filler minimal). B) Give a natural Korean translation of each corrected segment (if the lecture is already Korean, "ko" = corrected Korean text). C) Update the notes for this slide: 2–5 concise Korean bullet points of what the professor explained, **bold** key terms with the English term in parentheses, formulas/numbers exactly as on the slide, no fluff; merge with existing notes (replace, do not duplicate). Mention exam/assignment/deadline hints in "exam".\n'+
     'D) Slide marks — be very selective, like a student who marks only what he would otherwise forget. Usually return an empty "marks" list. Add a mark ONLY when: (a) the professor said something that is NOT on the slide and matters later (a rule, deadline, exception, example, warning, "exam") → post-it: {"line":<nearest slide line index>,"type":"","note":"<≤ 22 chars, Korean; keep the English term if useful>"}; (b) the professor explicitly said a line is important or will be on the exam → "highlight" on that line; (c) the professor told you to remember one specific number/term → "circle". Never mark lines the professor is merely reading or paraphrasing; names, rooms, phone numbers, times, URLs are NOT worth marking unless he added a rule about them. Do NOT use "underline". At most 1 new mark per call, 3 per slide, no repeats of "existing_marks". When in doubt, return no marks.\n'+
+    'E) If "slide"."text" is EMPTY (a lecture without slides), the notes are the student\'s ONLY record: write 3–7 bullets that would let the student reconstruct this part of the lecture — definitions, claims, examples, numbers, names, and the professor\'s reasoning — in Korean with English terms in parentheses; "summary" becomes a short section title (≤ 20 chars) naming the topic of this part; marks must be empty.\n'+
     'Return ONLY JSON: {"segments":[{"i":<index>,"text":"<corrected original>","ko":"<Korean>"}],"notes":["..."],"summary":"<one line, ≤30 chars Korean>","exam":["..."],"marks":[{"line":<slide line index>,"type":"highlight|underline|circle","note":"<optional>"}]}';
   async function aiTick(force){
     if(!S.running || AI.busy || !aiEngine()) return; var now=Date.now(); if(!force && now-AI.lastRun<20000) return;
@@ -9776,7 +9817,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     if(!resume){ S.date=toLocalDateStr(new Date()); S.id='lec_'+S.date+'_'+Date.now().toString(36); }
     if(!resume && S.pdf && (S.base||0)>0){ S.base=0; S.page=1; S.docs=[{name:S.pdfName, base:0, total:S.total, from:0}]; S.slideText=null; S.slideLines=null; S.ann={}; try{ annLoadIntoS(); }catch(e){} extractSlideText().catch(function(){}); renderPage(); }
     if(S.pdf && !(S.docs&&S.docs.length)) S.docs=[{name:S.pdfName, base:0, total:S.total, from:0}];
-    if(!resume){ S.online=!S.pdf; if(S.online){ S.page=1; S.total=1; S.lastCut=0; $('lecPage').textContent='구간 1'; } S.slides={}; S.log=[{t:0,page:S.page||1}]; S.startAt=Date.now(); } else { S.log.push({t:nowT(), page:S.page, resumed:true}); S.lastCut=nowT(); }
+    if(!resume){ S.online=!S.pdf; if(S.online){ S.page=1; S.total=1; S.lastCut=0; $('lecPage').textContent='구간 1'; S.docEdits={}; _docSig=''; } S.slides={}; S.log=[{t:0,page:S.page||1}]; S.startAt=Date.now(); } else { S.log.push({t:nowT(), page:S.page, resumed:true}); S.lastCut=nowT(); }
     S.running=true; S.audioBlob=null; $('lecDownloadAudio').style.display='none'; $('lecFinish').style.display='none';
     $('lecRec').textContent='■ 녹음 중지'; $('lecRec').classList.add('on'); status('마이크 여는 중… (권한 창이 뜨면 허용)');
     S.localOK=false; try{ if(window.SpeechRecognition && SpeechRecognition.available){ var av=await Promise.race([SpeechRecognition.available({langs:[S.lang], processLocally:true}), new Promise(function(r){ setTimeout(function(){ r('unavailable'); },1500); })]); S.localOK=(av==='available'); } }catch(e){}
@@ -9787,6 +9828,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     if(!$('lecBackup') || $('lecBackup').checked) startAudio(); else status(recLabel()+' · 백업 녹음 꺼짐','ok');
     try{ $('lecWork').focus(); }catch(e){}
     S.lastResultAt=Date.now(); try{ if(navigator.wakeLock){ navigator.wakeLock.request('screen').then(function(w){ S.wake=w; }).catch(function(){}); } }catch(e){}
+    try{ renderLive(); }catch(e){}
     S.tick=setInterval(function(){ renderLive(); autoCut(); try{ aiTick(false); }catch(e){}
       try{ if(G.on && G.lang && G.lang!==S.lang){ gemStop(); gemStart(); } }catch(e){}
       // 잠정 문장이 8초 넘게 확정되지 않으면 강제로 확정 처리 (한국어에서 자주 멈춤)
@@ -9800,7 +9842,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   }
   function docOf(p){ var ds=S.docs||[]; for(var i=ds.length-1;i>=0;i--){ if(p>ds[i].base) return ds[i]; } return {name:S.pdfName||'', base:0}; }
   function pageLabel(p){ if(S.online) return '구간 '+p; var d=docOf(p); return ((S.docs&&S.docs.length>1)?d.name.replace(/\.pdf$/i,'')+' · ':'')+(p-d.base)+'쪽'; }
-  function payload(){ var slides=Object.keys(S.slides).map(Number).sort(function(a,b){return a-b;}).map(function(p){ var sl=S.slides[p]; return { page:p, en:sl.segs.map(function(s){return (S.lang==='ko-KR')?'':(s.fix||s.en);}).join(' '), ko:sl.segs.map(function(s){return (S.lang==='ko-KR')?(s.fix||s.ko):s.ko;}).join(' '), pdf:docOf(p).name, pdfPage:p-docOf(p).base, slideText:(S.slideText&&S.slideText[p])||'', liveNotes:(S.live&&S.live[p])||undefined, marks:(S.ann&&S.ann[p])||undefined, lines:(S.slideLines&&S.slideLines[p])?{w:S.slideLines[p].w,h:S.slideLines[p].h,lines:S.slideLines[p].lines}:undefined, segs:sl.segs }; });
+  function payload(){ var slides=Object.keys(S.slides).map(Number).sort(function(a,b){return a-b;}).map(function(p){ var sl=S.slides[p]; return { page:p, en:sl.segs.map(function(s){return (S.lang==='ko-KR')?'':(s.fix||s.en);}).join(' '), ko:sl.segs.map(function(s){return (S.lang==='ko-KR')?(s.fix||s.ko):s.ko;}).join(' '), pdf:docOf(p).name, pdfPage:p-docOf(p).base, slideText:(S.slideText&&S.slideText[p])||'', liveNotes:(S.live&&S.live[p])||undefined, docHtml:(S.docEdits&&S.docEdits[p])||undefined, marks:(S.ann&&S.ann[p])||undefined, lines:(S.slideLines&&S.slideLines[p])?{w:S.slideLines[p].w,h:S.slideLines[p].h,lines:S.slideLines[p].lines}:undefined, segs:sl.segs }; });
     return { id:S.id, course:S.course, title:S.title, date:S.date, week:(S.weekNo!=null?S.weekNo:undefined), module:(S.week&&S.week!=='misc'?S.week:undefined), lang:(S.lang==='ko-KR'?'ko':'en'), mode:(S.online?'online':'slides'), pdf:S.pdfName, pdfs:(S.docs&&S.docs.length>1)?S.docs:undefined, pages:S.total, duration:nowT(), log:S.log, slides:slides, savedAt:new Date().toISOString() }; }
   function saveLocal(){ if(!S.id) return; idbPut('lec', Object.assign({status:S.running?'recording':'saved', curPage:S.page, base:S.base||0, docs:S.docs||[], weekId:S.week||'misc', langCode:S.lang}, payload())).catch(function(){}); }
   // 끊긴 녹음(새로고침·탭 닫힘) 이어가기
@@ -9857,8 +9899,8 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   async function resumeSession(rec){
     S.id=rec.id; S.course=rec.course; S.title=rec.title; S.date=rec.date; S.week=rec.weekId||rec.module||'misc'; S.weekNo=(rec.week!=null?rec.week:null); S.lang=rec.langCode||(rec.lang==='ko'?'ko-KR':'en-US');
     S.online=rec.mode==='online'; S.docs=rec.docs&&rec.docs.length?rec.docs:(rec.pdf?[{name:rec.pdf,base:0,total:rec.pages||0,from:0}]:[]); S.log=rec.log||[]; S.startAt=Date.now()-(rec.duration||0)*1000;
-    S.slides={}; S.ann={}; S.live={}; S.slideText={}; S.slideLines={};
-    (rec.slides||[]).forEach(function(s){ var p=+s.page; S.slides[p]={segs:(s.segs||[]).map(function(g){ return g; })}; if(s.marks) S.ann[p]=s.marks; if(s.liveNotes) S.live[p]=s.liveNotes; if(s.slideText) S.slideText[p]=s.slideText; if(s.lines) S.slideLines[p]=s.lines; });
+    S.slides={}; S.ann={}; S.live={}; S.slideText={}; S.slideLines={}; S.docEdits={};
+    (rec.slides||[]).forEach(function(s){ var p=+s.page; S.slides[p]={segs:(s.segs||[]).map(function(g){ return g; })}; if(s.marks) S.ann[p]=s.marks; if(s.liveNotes) S.live[p]=s.liveNotes; if(s.slideText) S.slideText[p]=s.slideText; if(s.lines) S.slideLines[p]=s.lines; if(s.docHtml) S.docEdits[p]=s.docHtml; });
     S.page=rec.curPage||((S.log.slice(-1)[0]||{}).page)||1; S.base=rec.base||0; S.total=rec.pages||1;
     try{ $('lecCourse').value=S.course; }catch(e){} $('lecTitle').value=S.title||''; $('lecWorkWeek').textContent=cname(S.course)+' · '+(S.week&&S.week!=='misc'?(cardsFor(S.course).find(function(x){return x.id===S.week;})||{}).name||'':'주차 미지정');
     if(window.tmPaintLang) tmPaintLang(); try{ if(window.tmSetLangUI) tmSetLangUI(S.lang); }catch(e){}
