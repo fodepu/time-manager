@@ -2383,7 +2383,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="111">
+<meta name="tm-version" content="112">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -9720,15 +9720,15 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     'Return ONLY JSON: {"segments":[{"i":<index>,"text":"<corrected original>","ko":"<Korean>"}],"notes":["..."],"summary":"<one line, ≤30 chars Korean>","exam":["..."],"marks":[{"line":<slide line index>,"type":"highlight|underline|circle","note":"<optional>"}]}';
   async function aiTick(force){
     if(!S.running || AI.busy || !aiEngine()) return; var now=Date.now(); if(!force && now-AI.lastRun<20000) return;
-    var p=S.page||1, sl=S.slides[p]; if(!sl) return; var pend=sl.segs.map(function(s,i){ return {s:s,i:i}; }).filter(function(x){ return !x.s.fix; });
+    var p=S.page||1, sl=S.slides[p]; if(!sl) return; var pend=sl.segs.map(function(s,i){ return {s:s,i:i}; }).filter(function(x){ return !x.s.ai; });
     if(!pend.length) return;
     AI.busy=true; AI.lastRun=now; var live=S.live=S.live||{}; var cur=live[p]||{notes:[],summary:'',exam:[]};
     var ctx=sl.segs.filter(function(s){ return s.fix; }).slice(-4).map(function(s){ return s.fix; });
-    var payload={ course:S.course, language:(S.lang==='ko-KR'?'ko':'en'), slide:{ page:p, total:S.total, text:((S.slideText&&S.slideText[p])||'').slice(0,2500) }, previous_slide_text:((S.slideText&&S.slideText[p-1])||'').slice(0,600), recent_corrected_context:ctx, existing_notes:cur.notes, slide_lines:((S.slideLines&&S.slideLines[p]&&S.slideLines[p].lines)||[]).map(function(l){ return {i:l.i, text:l.text.slice(0,120)}; }).slice(0,60), existing_marks:(S.ann[p]||[]).map(function(a){ return {line:a.line,type:a.type}; }), segments:pend.map(function(x){ return {i:x.i, t:x.s.t, text:(S.lang==='ko-KR'?x.s.ko:x.s.en)}; }) };
+    var payload={ course:S.course, language:(S.lang==='ko-KR'?'ko':'en'), slide:{ page:p, total:S.total, text:((S.slideText&&S.slideText[p])||'').slice(0,2500) }, previous_slide_text:((S.slideText&&S.slideText[p-1])||'').slice(0,600), recent_corrected_context:ctx, existing_notes:cur.notes, slide_lines:((S.slideLines&&S.slideLines[p]&&S.slideLines[p].lines)||[]).map(function(l){ return {i:l.i, text:l.text.slice(0,120)}; }).slice(0,60), existing_marks:(S.ann[p]||[]).map(function(a){ return {line:a.line,type:a.type}; }), segments:pend.map(function(x){ return {i:x.i, t:x.s.t, text:(S.lang==='ko-KR'?(x.s.fix||x.s.ko):x.s.en)}; }) };
     try{
       var out=await aiCall(AI_SYSTEM, JSON.stringify(payload), 1500); var j=parseJson(out); if(!j) throw new Error('형식 오류: '+String(out).slice(0,120));
       (j.segments||[]).forEach(function(g){ var s=sl.segs[g.i]; if(!s) return; if(g.text && (s.src!=='gemini' || (S.lang==='ko-KR' && !s.gfix))){ s.fix=String(g.text); } if(g.ko && s.src!=='gemini'){ s.ko=String(g.ko); } if(!s.fix) s.fix=(S.lang==='ko-KR'?s.ko:s.en); });
-      pend.forEach(function(x){ if(!x.s.fix) x.s.fix=(S.lang==='ko-KR'?x.s.ko:x.s.en); });
+      pend.forEach(function(x){ x.s.ai=true; if(!x.s.fix) x.s.fix=(S.lang==='ko-KR'?x.s.ko:x.s.en); });
       live[p]={ notes:(j.notes||cur.notes||[]).slice(0,6), summary:j.summary||cur.summary||'', exam:(j.exam||cur.exam||[]).slice(0,5), at:Date.now() };
       try{ var cur2=S.ann[p]||[]; (j.marks||[]).slice(0,2).forEach(function(m){ var li=parseInt(m.line,10); if(isNaN(li)) return; var ty=(['highlight','underline','circle'].indexOf(m.type)>=0)?m.type:''; if(!ty && !m.note) return; if(cur2.some(function(a){ return a.line===li && a.type===ty; })) return; if(cur2.length>=3) return; if(ty==='underline') return; cur2.push({line:li, type:ty, note:(m.note?String(m.note).slice(0,40):'')}); }); S.ann[p]=cur2; annPersistPage(p); if(p===S.page) redrawAnn(); }catch(e){}
       AI.fails=0; renderLive(); saveLocal();
