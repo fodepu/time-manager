@@ -2383,7 +2383,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="101">
+<meta name="tm-version" content="102">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -9982,7 +9982,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
         h+='<div class="lec-wk-files">'+pdfs.map(function(p){ return '<span class="lec-file"><button type="button" class="lec-chip pdf'+(p.remote?' study':'')+'" data-pdf="'+esc(p.key)+'" data-mid="'+esc(m.id)+'">'+(p.remote?'📘 ':'📄 ')+esc(p.name)+'</button>'+(p.remote?'':'<button type="button" class="lec-x" data-delpdf="'+esc(p.key)+'" title="이 PDF 삭제">✕</button>')+'</span>'; }).join('')
           +extra.map(function(n){ return '<button type="button" class="lec-chip'+(n.ready?' on':'')+'" data-open="'+esc(n.id)+'" data-mid="'+esc(m.id)+'">'+(n.ready?'📝 ':'🎙 ')+esc(n.title)+(n.ready?'':' <small>'+(n.status==='sent'?'필기 만드는 중':n.status==='recording'?'녹음 중':'대본만')+'</small>')+'</button>'; }).join('')+'</div>';
       }
-      h+='<div class="lec-wk-actions"><button type="button" class="lec-btn" data-addpdf="'+esc(m.id)+'">＋ PDF 넣기</button><span class="lec-muted">PDF를 이 카드에 드래그해도 돼요 · PDF를 열고 그 안에서 "● 이 PDF로 녹음"</span>'+'</div>';
+      h+='<div class="lec-wk-actions"><button type="button" class="lec-btn" data-addpdf="'+esc(m.id)+'">＋ PDF 넣기</button><button type="button" class="lec-btn rec" data-nopdf="'+esc(m.id)+'">✎ PDF 없이 필기</button><span class="lec-muted">PDF를 카드에 드래그해도 돼요 · PDF를 열면 그 안에서 "● 이 PDF로 녹음" · PDF 없이 필기는 말하는 대로 문서가 만들어져요</span>'+'</div>';
       h+='</div></details>';
     });
     box.innerHTML=h;
@@ -9993,6 +9993,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     box.querySelectorAll('[data-pdf]').forEach(function(b){ b.addEventListener('click',function(){ openView(null, b.getAttribute('data-mid'), b.getAttribute('data-pdf')); }); });
     box.querySelectorAll('[data-delpdf]').forEach(function(b){ b.addEventListener('click',async function(){ if(!confirm('이 PDF를 이 기기에서 지울까요?')) return; await idbDel('pdf', b.getAttribute('data-delpdf')); renderHome(); }); });
     box.querySelectorAll('[data-addpdf]').forEach(function(b){ b.addEventListener('click',function(){ pendingWeek=b.getAttribute('data-addpdf'); $('lecFile').click(); }); });
+    box.querySelectorAll('[data-nopdf]').forEach(function(b){ b.addEventListener('click',function(){ startWeekRecording(b.getAttribute('data-nopdf'), null, true); }); });
     box.querySelectorAll('[data-rec]').forEach(function(b){ b.addEventListener('click',function(){ startWeekRecording(b.getAttribute('data-rec')); }); });
     box.querySelectorAll('details.lec-wk').forEach(function(card){
       ['dragenter','dragover'].forEach(function(ev){ card.addEventListener(ev,function(e){ e.preventDefault(); e.stopPropagation(); card.classList.add('over'); }); });
@@ -10066,7 +10067,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     var a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([m],{type:'text/markdown'})); a.download=(d.title||'lecture')+'_'+(d.date||'')+'.md'; a.click(); }
 
   // ---- 녹음 시작 (주차에서) ----
-  async function startWeekRecording(mid, pdfKey){
+  async function startWeekRecording(mid, pdfKey, noPdf){
     var c=$('lecCourse').value||''; if(!c){ showToast('과목을 먼저 선택하세요'); return; }
     if(S.running){ var pk=pdfKey?pdfsForWeek(c,mid).find(function(p){ return p.key===pdfKey; }):null; if(!pk){ showToast('교체할 PDF를 고르세요'); return; }
       if(pk.remote){ try{ pk.bytes=await (await fetch(pk.url)).arrayBuffer(); }catch(e){ showToast('PDF를 못 받았어요'); return; } }
@@ -10079,7 +10080,8 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     var pdfs=pdfsForWeek(c,mid); S.pdf=null; S.total=0; S.pdfName=''; $('lecDropZone').classList.remove('has-pdf'); $('lecPage').textContent='–';
     var pick=pdfKey?pdfs.find(function(p){ return p.key===pdfKey; }):null;
     if(pick && pick.remote){ try{ pick.bytes=await (await fetch(pick.url)).arrayBuffer(); }catch(e){ pick=null; } }
-    if(pick){ await openPdfBytes(pick.bytes, pick.name, false); $('lecTitle').value=cname(c)+' '+(m.name||'')+' · '+pick.name.replace(/\.pdf$/i,''); status('PDF 열림 · '+S.total+'쪽 — ● 녹음 시작을 누르세요'); }
+    if(noPdf){ status('PDF 없이 필기 — ● 녹음 시작을 누르면 왼쪽에 실시간 필기 문서가 만들어져요'); }
+    else if(pick){ await openPdfBytes(pick.bytes, pick.name, false); $('lecTitle').value=cname(c)+' '+(m.name||'')+' · '+pick.name.replace(/\.pdf$/i,''); status('PDF 열림 · '+S.total+'쪽 — ● 녹음 시작을 누르세요'); }
     else if(pdfs.length===1){ await openPdfBytes(pdfs[0].bytes, pdfs[0].name, false); status('PDF 열림 · '+S.total+'쪽 — ● 녹음 시작을 누르세요'); }
     else if(pdfs.length>1){ status('이 주차에 PDF가 '+pdfs.length+'개예요 — 특정 PDF로 녹음하려면 카드에서 PDF를 연 뒤 "이 PDF로 녹음"을 누르세요. 그냥 시작하면 PDF 없이 구간 모드로 녹음돼요'); }
     else status('이 주차에 PDF가 없어요 — 왼쪽에 드래그하면 저장되고, 없이 시작하면 5분 구간 모드로 녹음돼요');
