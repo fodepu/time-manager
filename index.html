@@ -2383,7 +2383,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="99">
+<meta name="tm-version" content="100">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -2430,6 +2430,8 @@
   .tt-block.xs { padding:1px 3px; }
   .tt-block.xs .s { display:none; }
   .tt-block.xs .t { font-size:9px; }
+  .tt-block.cancelled { opacity:.45; background-image:repeating-linear-gradient(135deg, transparent 0 6px, rgba(0,0,0,.12) 6px 8px) !important; }
+  .tt-block.cancelled .t { text-decoration:line-through; }
   .tt-block .more { position:absolute; top:0; right:0; width:18px; height:16px; font-size:12px; line-height:14px; text-align:center; opacity:.75; color:#fff; border-radius:0 3px 0 4px; }
   .tt-block .more:hover { opacity:1; background: rgba(0,0,0,.15); }
   .tt-block.done { opacity:.5; filter: saturate(.5); }
@@ -8707,6 +8709,10 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     if(g && Array.isArray(g.entries)){ g.entries = (typeof tmFilterDead==='function')? tmFilterDead(g.entries, date) : g.entries; return g; }
     return { date:date, entries: templateEntriesFor(date), savedAt:new Date().toISOString(), _synth:true };
   }
+  // 공지에서 감지한 휴강/보강 (data/lms.json changes) — 블록 이름과 과목명 대조
+  function tmNormName(s){ return String(s||'').toLowerCase().replace(/\(sdgs\)|\s|[·ㆍ\-_()]/g,''); }
+  function tmChangeFor(date, label){ var ch=window.tmLmsChanges||[]; if(!ch.length||!label) return null; var L=tmNormName(label); if(!L) return null;
+    for(var i=0;i<ch.length;i++){ var c=ch[i]; if(c.date!==date) continue; var C=tmNormName(c.course); if(!C) continue; var key=C.slice(0,4); if(L.indexOf(key)>=0 || C.indexOf(L.slice(0,4))>=0) return c; } return null; }
   function blocksFor(date){
     var db = lsGet(lsKey('dayblocks_'+date));
     if(db && Array.isArray(db) && db.length){
@@ -8801,12 +8807,12 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
         var s=mins(b.start), e=mins(b.end); if(e<=s) e=1440;
         var top=(s-sH*60)/60*hourPx, hgt=Math.max(14,(e-s)/60*hourPx-1);
         var el=document.createElement('div');
-        var st=b.values.check;
-        el.className='tt-block c-'+(b.category||'prep')+(b.kind==='tasks'?' k-tasks':'')+(st===true?' done':st===false?' undone':'')+(week?' sm':'')+(hgt<30?' xs':'');
+        var st=b.values.check; var chg=tmChangeFor(x.date, b.label);
+        el.className='tt-block c-'+(b.category||'prep')+(b.kind==='tasks'?' k-tasks':'')+(st===true?' done':st===false?' undone':'')+(week?' sm':'')+(hgt<30?' xs':'')+(chg&&chg.type==='cancel'?' cancelled':'');
         el.style.top=top+'px'; el.style.height=hgt+'px'; if(b.color) el.style.background=b.color;
         var td=(b.values&&b.values.todos)||[]; var tdDone=td.filter(function(x){return x.d;}).length;
         var sub = b.sub || (td.length? tdDone+'/'+td.length+' 완료' : (b.kind==='tasks'?'탭해서 할 일 적기':''));
-        var title=b.label||'';
+        var title=b.label||''; if(chg&&chg.type==='cancel'){ title='휴강 · '+title; sub='공지: '+(chg.title||''); el.title='공지에서 자동 감지: '+(chg.title||'')+' (원문은 과제·공지 탭)'; }
         if(b.kind==='tasks' && td.length){
           // 체크 블록: 적은 할 일이 블록 이름이 되고, 원래 이름은 작게
           title=td.map(function(x){ return x.t; }).join(', ');
@@ -9067,6 +9073,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   window.tmRenderLms = async function(){
     var root=document.getElementById('lmsMode'); if(!root || !window.tmIsOwner) return;
     try{ var r=await fetch('./data/lms.json?v='+Date.now(),{cache:'no-store'}); lmsData = r.ok? await r.json(): null; }catch(e){ lmsData=null; }
+    try{ var prevC=JSON.stringify(window.tmLmsChanges||[]); window.tmLmsChanges=(lmsData&&lmsData.changes)||[]; if(JSON.stringify(window.tmLmsChanges)!==prevC && typeof refreshAll==='function') refreshAll(); }catch(e){}
     try{ var r2=await fetch('./data/lms-brief.json?v='+Date.now(),{cache:'no-store'}); lmsBrief = r2.ok? await r2.json(): null; }catch(e){ lmsBrief=null; }
     var U=document.getElementById('lmsUrgent'), C=document.getElementById('lmsCards'), D=document.getElementById('lmsDetail');
     if(!lmsData || !Array.isArray(lmsData.assignments)){

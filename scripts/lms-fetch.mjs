@@ -139,7 +139,35 @@ async function fromCanvas() {
           fileId: it.type === 'File' ? String(it.content_id || '') : undefined })) }));
     } catch (e) { console.warn('modules', cname, e.message); courseModules[cname] = []; }
   }
-  return { generatedAt: new Date().toISOString(), source: 'canvas', user: me?.name || null, courseFiles, courseModules, courses: courses.map(c => String(c.name||'').replace(/\s*\(?S?\d{2,3}분반\)?\s*$/, '').trim()), assignments, notices };
+  const changes = extractChanges(notices);
+  return { generatedAt: new Date().toISOString(), source: 'canvas', user: me?.name || null, courseFiles, courseModules, changes, courses: courses.map(c => String(c.name||'').replace(/\s*\(?S?\d{2,3}분반\)?\s*$/, '').trim()), assignments, notices };
+}
+
+// 공지 본문에서 일정 변경(휴강·보강·마감 변경)을 규칙으로 뽑는다 (AI 없이, 비용 0)
+function extractChanges(notices) {
+  const out = [];
+  for (const n of notices || []) {
+    const text = ((n.title || '') + '\n' + (n.body || n.summary || '')).replace(/\s+/g, ' ');
+    const posted = n.date ? new Date(n.date) : new Date();
+    const dates = [];
+    const re = /(\d{4})?\s*년?\s*(\d{1,2})\s*월\s*(\d{1,2})\s*일/g; let m;
+    while ((m = re.exec(text))) { let y = m[1] ? +m[1] : posted.getFullYear(); const mo = +m[2], d = +m[3]; if (!m[1] && mo < posted.getMonth() + 1 - 6) y += 1; if (mo >= 1 && mo <= 12 && d >= 1 && d <= 31) dates.push({ iso: `${y}-${String(mo).padStart(2, '0')}-${String(d).padStart(2, '0')}`, idx: m.index }); }
+    const cancelRe = /(휴강|강의를\s*진행하지\s*못|수업(?:을|이)?\s*(?:진행하지\s*않|없)|수업\s*취소|강의\s*취소)/;
+    const cm = cancelRe.exec(text);
+    if (cm) {
+      // 취소 키워드에서 가장 가까운 날짜 (없으면 "내일"/"오늘")
+      let best = null;
+      for (const dt of dates) { const dist = Math.abs(dt.idx - cm.index); if (!best || dist < best.dist) best = { ...dt, dist }; }
+      let iso = best && best.dist < 200 ? best.iso : null;
+      if (!iso && /내일/.test(text.slice(Math.max(0, cm.index - 40), cm.index + 40))) { const t = new Date(posted.getTime() + 9 * 3600 * 1000); t.setUTCDate(t.getUTCDate() + 1); iso = t.toISOString().slice(0, 10); }
+      if (!iso && /오늘/.test(text.slice(Math.max(0, cm.index - 40), cm.index + 40))) { const t = new Date(posted.getTime() + 9 * 3600 * 1000); iso = t.toISOString().slice(0, 10); }
+      if (iso) out.push({ id: 'c_' + n.id, course: n.course, type: 'cancel', date: iso, title: n.title, url: n.url || '', noticeId: n.id });
+    }
+    const mk = /보강/.exec(text);
+    if (mk) { let best = null; for (const dt of dates) { const dist = Math.abs(dt.idx - mk.index); if (!best || dist < best.dist) best = { ...dt, dist }; } if (best && best.dist < 120) out.push({ id: 'm_' + n.id, course: n.course, type: 'makeup', date: best.iso, title: n.title, url: n.url || '', noticeId: n.id }); }
+    if (/(제출\s*시한|마감|제출\s*기한|기한)\s*(변경|연장|조정)|(변경|연장)합니다/.test(text) && dates.length) { out.push({ id: 'd_' + n.id, course: n.course, type: 'due', date: dates[dates.length - 1].iso, title: n.title, url: n.url || '', noticeId: n.id }); }
+  }
+  return out;
 }
 
 function parseIcs(text) {

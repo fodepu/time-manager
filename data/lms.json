@@ -2272,5 +2272,34 @@
         }
       ]
     }
+  ],
+  "changes": [
+    {
+      "id": "d_n479426",
+      "course": "창업과 thinking design",
+      "type": "due",
+      "date": "2026-09-18",
+      "title": "개인 1차 과제 제출 시한 변경",
+      "url": "https://khcanvas.khu.ac.kr/courses/97242/discussion_topics/479426",
+      "noticeId": "n479426"
+    },
+    {
+      "id": "c_n479418",
+      "course": "창업과 thinking design",
+      "type": "cancel",
+      "date": "2026-09-08",
+      "title": "강의 일정 변경 안내",
+      "url": "https://khcanvas.khu.ac.kr/courses/97242/discussion_topics/479418",
+      "noticeId": "n479418"
+    },
+    {
+      "id": "c_n474980",
+      "course": "창업과 thinking design",
+      "type": "cancel",
+      "date": "2026-09-01",
+      "title": "1주(9월 1일) 수업 공지 및 이번 학기 운영 방안",
+      "url": "https://khcanvas.khu.ac.kr/courses/97242/discussion_topics/474980",
+      "noticeId": "n474980"
+    }
   ]
 }
