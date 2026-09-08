@@ -2383,7 +2383,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="108">
+<meta name="tm-version" content="109">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -2643,7 +2643,7 @@
   .lec-ai-head { font-weight:800; color:#7C3AED; margin-bottom:4px; } .lec-ai-head span { font-weight:600; color: var(--text); }
   .lec-ai .md-ul { margin:0; padding-left:18px; } .lec-ai li { margin:2px 0; }
   .lec-ai-exam { margin-top:4px; color:#B45309; font-size:12px; }
-  .lec-en.fixed::before { content:'✦ '; color:#8B5CF6; }
+  .lec-en.fixed::before { content:'✱ '; color:#8B5CF6; }
   .lec-seg { display:flex; gap:8px; align-items:flex-start; }
   .lec-ts { flex-shrink:0; font-size:11px; color: var(--text-muted); font-variant-numeric: tabular-nums; padding-top:3px; min-width:34px; }
   .lec-segbody { flex:1; min-width:0; }
@@ -3026,7 +3026,7 @@
             <canvas id="lecCanvas"></canvas><canvas id="lecAnnot" class="lec-annot"></canvas><span class="lec-tools" data-tools><button type="button" data-tool="select" class="on" title="선택 — 클릭: 단어 번역·표시 삭제 / 드래그: 구 번역"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3l14 8-6.5 1.5L10 19z"/></svg></button><button type="button" data-tool="hl" title="형광펜 — 줄 클릭 또는 드래그"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 15l-4 4h6l1-1"/><path d="M14 4l6 6-8 8-6-6z"/><path d="M4 21h16"/></svg></button><button type="button" data-tool="ul" title="밑줄 — 줄 클릭 또는 드래그"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4v6a5 5 0 0 0 10 0V4"/><path d="M5 20h14"/></svg></button><button type="button" data-tool="circle" title="동그라미 — 줄 클릭"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="12" rx="9" ry="6.5"/></svg></button><button type="button" data-tool="note" title="포스트잇 — 원하는 곳에 박스를 드래그해 만들고, 선택 모드에서 끌어 옮기거나 클릭해 수정"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v10l-6 6H4z"/><path d="M14 20v-6h6"/></svg></button><button type="button" data-tool="eraser" title="지우개 — 표시 클릭 또는 드래그"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15l9-9 6 6-7 7H8z"/><path d="M6 21h14"/></svg></button><i></i><button type="button" data-zoom="-" title="축소 (⌘−, 핀치)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/></svg></button><button type="button" data-zoom="0" title="맞춤 (⌘0)" class="lec-zoomlbl">100%</button><button type="button" data-zoom="+" title="확대 (⌘+, 핀치)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></button></span>
             <div class="lec-drop-hint">PDF를 여기에 드래그하거나 "PDF 열기"<br><small>PDF 없이 시작하면 5분마다 구간 자동 분할, → 키로 수동 분할</small></div>
           </div>
-          <div class="lec-nav"><button type="button" class="lec-btn" id="lecPrev">←</button><span id="lecPage">–</span><button type="button" class="lec-btn" id="lecNext">→</button><span class="lec-hint">키보드 ← → / Space</span><span class="lec-nav-ai"><button type="button" class="lec-btn" id="lecClearAnn" title="이 쪽의 형광펜·동그라미·포스트잇을 모두 지웁니다">표시 지우기</button><button type="button" class="lec-btn" id="lecGemBtn" title="Google AI Studio 무료 Gemini 키를 넣으면 대본·번역이 1~2초 만에 실시간으로 나와요">Gemini 꺼짐</button><button type="button" class="lec-btn" id="lecAiBtn" title="맥의 Dayble 도우미가 켜져 있으면 Claude가 슬라이드 맥락으로 실시간 필기">도우미 꺼짐</button></span></div>
+          <div class="lec-nav"><button type="button" class="lec-btn" id="lecPrev">←</button><span id="lecPage">–</span><button type="button" class="lec-btn" id="lecNext">→</button><span class="lec-hint">키보드 ← → / Space</span><span class="lec-nav-ai"><button type="button" class="lec-btn" id="lecClearAnn" title="이 쪽의 형광펜·동그라미·포스트잇을 모두 지웁니다">표시 지우기</button><button type="button" class="lec-btn" id="lecGemBtn" title="Google AI Studio 무료 Gemini 키를 넣으면 대본·번역이 1~2초 만에 실시간으로 나와요">✦ Gemini 꺼짐</button><button type="button" class="lec-btn" id="lecAiBtn" title="맥의 Dayble 도우미가 켜져 있으면 Claude가 슬라이드 맥락으로 실시간 필기">✱ 도우미 꺼짐</button></span></div>
         </div>
         <div class="lec-split" data-split="lecMain" title="드래그해서 비율 조절"></div>
         <div class="lec-right"><div class="lec-live" id="lecLive"><div class="lms-empty">녹음을 시작하면 이 슬라이드의 대본과 번역이 여기에 실시간으로 쌓입니다.</div></div></div>
@@ -9705,7 +9705,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   async function localCall(system, user){ var r=await fetch('http://localhost:7377/notes',{ method:'POST', headers:{'content-type':'application/json'}, body:JSON.stringify({system:system,user:user}) }); var j=await r.json().catch(function(){ return {}; }); if(!r.ok) throw new Error(j.error||('helper '+r.status)); return j.text||''; }
   setInterval(function(){ if(typeof currentMode!=='undefined' && currentMode==='lecture') localPing(); }, 15000); setTimeout(localPing, 1500);
   function aiEngine(){ return LOCAL.ok?'local':''; }
-  function paintAiBtn(){ var b=$('lecAiBtn'); if(!b) return; b.textContent=LOCAL.ok?'✦ Claude 필기 (내 맥)':'✦ 도우미 꺼짐'; b.classList.toggle('on',LOCAL.ok); }
+  function paintAiBtn(){ var b=$('lecAiBtn'); if(!b) return; b.textContent=LOCAL.ok?'✱ Claude 필기 (내 맥)':'✱ 도우미 꺼짐'; b.classList.toggle('on',LOCAL.ok); }
   async function aiCall(system, user, maxTokens){
     if(aiEngine()==='local') return localCall(system, user);
     throw new Error('도우미가 꺼져 있어요');
@@ -9750,7 +9750,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     }catch(e){ AI.fails++; console.warn('ai', e&&e.message); if(true) status('내 맥 Claude'+' 필기 오류: '+(e&&e.message||e)+(/401|403/.test(String(e&&e.message))?' — 키 확인':''),'err'); }
     AI.busy=false;
   }
-  function liveNotesHtml(p){ var l=S.live&&S.live[p]; if(!l||(!l.notes||!l.notes.length)) return aiEngine()?'<div class="lec-ai muted">✦ 실시간 필기 준비 중… ('+'내 맥 Claude'+', 말이 쌓이면 20초마다 정리)</div>':''; var h='<div class="lec-ai"><div class="lec-ai-head">✦ 실시간 필기'+(l.summary?' <span>— '+escapeHtml(l.summary)+'</span>':'')+'</div>'+md(l.notes.map(function(k){ return '- '+k; }).join('\n'))+(l.exam&&l.exam.length?'<div class="lec-ai-exam">'+l.exam.map(function(x){ return '⚠ '+escapeHtml(x); }).join('<br>')+'</div>':'')+'</div>'; return h; }
+  function liveNotesHtml(p){ var l=S.live&&S.live[p]; if(!l||(!l.notes||!l.notes.length)) return aiEngine()?'<div class="lec-ai muted">✱ 실시간 필기 준비 중… ('+'내 맥 Claude'+', 말이 쌓이면 20초마다 정리)</div>':''; var h='<div class="lec-ai"><div class="lec-ai-head">✱ 실시간 필기'+(l.summary?' <span>— '+escapeHtml(l.summary)+'</span>':'')+'</div>'+md(l.notes.map(function(k){ return '- '+k; }).join('\n'))+(l.exam&&l.exam.length?'<div class="lec-ai-exam">'+l.exam.map(function(x){ return '⚠ '+escapeHtml(x); }).join('<br>')+'</div>':'')+'</div>'; return h; }
 
   // ---- 세션 ----
   function recLabel(){ return '● 녹음 중 · '+(G.on?'Gemini 실시간 대본·번역':'번역: '+(S.tmode==='chrome'?'Chrome 내장':'웹')+(S.gemErr?' · ⚠ '+S.gemErr:''))+(S.online?' · 온라인 모드: 5분마다 구간 자동, → 로 수동 분할':' · ← → 로 슬라이드 넘기기'); }
@@ -9758,7 +9758,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   // ---- Gemini Live: 마이크 → 실시간 대본(영어) + 한국어 번역 (무료 티어, 키는 이 기기에만 저장) ----
   var G={ ws:null, on:false, ready:false, everReady:false, lang:'', ac:null, node:null, stream:null, seg:null, koOpen:false, lastIn:0, retry:0, fails:0, extras:true, reconnT:null, sent:0 };
   function geminiKey(){ try{ return (lsGet(lsKey('gemini_key'))||'').trim(); }catch(e){ return ''; } }
-  function paintGemBtn(){ var b=$('lecGemBtn'); if(!b) return; var k=!!geminiKey(); b.textContent=k?(G.on?'◈ Gemini 실시간':'◈ Gemini 준비됨'):'◈ Gemini 꺼짐'; b.classList.toggle('on',k); }
+  function paintGemBtn(){ var b=$('lecGemBtn'); if(!b) return; var k=!!geminiKey(); b.textContent=k?(G.on?'✦ Gemini 실시간':'✦ Gemini 준비됨'):'✦ Gemini 꺼짐'; b.classList.toggle('on',k); }
   function gemModel(){ if(S.lang==='ko-KR') return ((G.variant||0)>=2)?'gemini-3.5-live-translate-preview':'gemini-3.5-transcribe-live'; return 'gemini-3.5-live-translate-preview'; }
   function gemSetup(){ var setup={ model:'models/'+gemModel() };
     if(S.lang==='ko-KR' && (G.variant||0)<2){ setup.generationConfig={ responseModalities:['TEXT'] }; setup.inputAudioTranscription={ languageCodes:['ko-KR'] }; if((G.variant||0)===1){ setup.inputAudioTranscription.mode='VERBATIM'; } S.biased=0; try{ var terms=slideTerms().slice(0,100); if(terms.length && G.vocab!==false){ setup.inputAudioTranscription.customVocabulary=terms; S.biased=terms.length; } }catch(e){} }
@@ -10136,7 +10136,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     (data.slides||[]).forEach(function(s){ h+='<div class="lec-slide" data-page="'+s.page+'"><div class="lec-slide-head">'+(data.mode==='online'?'구간 ':'슬라이드 ')+s.page+(s.summary?' <span>— '+esc(s.summary)+'</span>':'')+'</div>'+(function(){ var st=(V.curPdf&&s.pdf===V.curPdf.name||!s.pdf)?(annLoad(data.course, (s.pdf||(V.curPdf&&V.curPdf.name)||''))[s.pdfPage||s.page]||[]):[]; var marks=st.length?st:(s.marks||[]); var notes=marks.filter(function(m){ return m.note; }).map(function(m){ return m.note; }); var ex=(s.liveNotes&&s.liveNotes.exam)||[]; var out='';
       if(notes.length) out+='<div class="lec-postits">'+notes.map(function(n){ return '<span class="lec-postit">'+esc(n)+'</span>'; }).join('')+'</div>';
       if(ex.length) out+='<div class="lec-exam">'+ex.map(function(x){ return '⚠ '+esc(x); }).join('<br>')+'</div>';
-      var kp=(s.keyPoints&&s.keyPoints.length)?s.keyPoints:((s.liveNotes&&s.liveNotes.notes)||[]); if(kp.length) out+='<div class="lec-kp">'+(s.keyPoints&&s.keyPoints.length?'':'<div class="lec-ai-head">✦ 실시간 필기</div>')+md(kp.map(function(k){return '- '+k;}).join('\n'))+'</div>';
+      var kp=(s.keyPoints&&s.keyPoints.length)?s.keyPoints:((s.liveNotes&&s.liveNotes.notes)||[]); if(kp.length) out+='<div class="lec-kp">'+(s.keyPoints&&s.keyPoints.length?'':'<div class="lec-ai-head">✱ 실시간 필기</div>')+md(kp.map(function(k){return '- '+k;}).join('\n'))+'</div>';
       if(!out) out='<div class="lec-kp muted">'+(note.ready?'핵심 없음':'필기 생성 전 — 대본만')+'</div>'; return out; })()+'<details class="lec-tr"><summary>대본 보기</summary>'+((s.segs&&s.segs.length)?s.segs.map(function(g){ return '<div class="lec-seg"><span class="lec-ts">'+fmtT(g.t||0)+'</span><div class="lec-segbody"><div class="lec-ko">'+esc(g.ko||g.en||'')+'</div>'+(g.en&&g.ko?'<div class="lec-en">'+esc(g.en)+'</div>':'')+'</div></div>'; }).join(''):'<div class="lec-ko">'+esc(s.ko||'')+'</div>'+(s.en?'<div class="lec-en">'+esc(s.en)+'</div>':''))+'</details></div>'; });
     box.innerHTML=h; syncNoteToPage();
   }

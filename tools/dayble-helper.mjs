@@ -145,7 +145,7 @@ server.listen(PORT, '127.0.0.1', () => {
   console.log(`\nDayble 도우미 실행 중 — http://localhost:${PORT}  (모델: ${MODEL})`);
   { const w = whisperInfo(); console.log(w.ok ? 'Whisper 준비됨: ' + w.model : 'Whisper 없음 — ' + w.error + ' (한국어 인식을 내 맥에서 하려면 설치)'); }
   console.log(styleText() ? '필기법.md 적용 중 (' + styleText().length + '자)' : '필기법.md 없음 — 기본 지침으로 동작');
-  console.log('Dayble 녹음 화면의 AI 필기 버튼이 "✦ Claude 필기 (내 맥)"로 바뀌면 연결된 거예요. 끝나면 Ctrl+C\n');
+  console.log('Dayble 녹음 화면의 AI 필기 버튼이 "✱ Claude 필기 (내 맥)"로 바뀌면 연결된 거예요. 끝나면 Ctrl+C\n');
   // 시작 시 Claude Code 로그인 확인
   runClaude('Reply with exactly: ok', 'ping').then(t => console.log('Claude Code 확인:', t.slice(0, 40))).catch(e => console.log('⚠ Claude Code 호출 실패 —', e.message, '\n  터미널에서 `claude` 를 한 번 실행해 로그인(구독 계정)돼 있는지 확인하세요.'));
 });
