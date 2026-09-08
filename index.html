@@ -2383,7 +2383,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="98">
+<meta name="tm-version" content="99">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -9885,7 +9885,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   var LEC_SEM_START='2026-09-01'; // 1주차 시작(화)
   function weekNo(dateStr){ var a=new Date(LEC_SEM_START+'T00:00:00'), b=new Date((dateStr||toLocalDateStr(new Date()))+'T00:00:00'); return Math.floor((b-a)/604800000)+1; }
   function modWeek(m){ var x=String(m.name||'').match(/(\d{1,2})\s*주/)||String(m.name||'').match(/week\s*(\d{1,2})/i); return x?parseInt(x[1],10):null; }
-  function modsFor(c){ var d=window.lecLms; return (d&&d.courseModules&&d.courseModules[c])||[]; }
+  function modsFor(c){ var d=window.lecLms; var cm=(d&&d.courseModules)||{}; if(cm[c]) return cm[c]; var k=Object.keys(cm).find(function(x){ return cname(x)===cname(c); }); return (k&&cm[k])||[]; }
   // 주차 구조가 아닌 과목(예: 거시경제학 — 주제별 모듈)은 1주차~15주차 카드로 바꾸고, 기존 항목은 전부 1주차에 넣음
   function cardsFor(c){ var mods=modsFor(c); var weekly=mods.some(function(m){ return modWeek(m)!=null; }); if(weekly || !mods.length) return mods;
     var items=[]; mods.forEach(function(m){ if(!(m.items||[]).length) return; items.push({type:'Header', title:m.name, indent:0}); m.items.forEach(function(it){ items.push(Object.assign({}, it, {indent:(it.indent||0)+1})); }); });
