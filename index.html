@@ -2383,7 +2383,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="117">
+<meta name="tm-version" content="118">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -2440,6 +2440,7 @@
   .tt-block.undone .t::before { content:'✕ '; font-weight:800; }
   .tt-block.pressing { transform: scale(.985); }
   .tt-block.moved .t::before { content:'↕ '; opacity:.7; }
+  .toast-undo { margin-left:8px; padding:2px 10px; border-radius:999px; border:1px solid rgba(255,255,255,.6); background:transparent; color:inherit; font:inherit; font-weight:800; cursor:pointer; }
   .tt-rz { position:absolute; left:0; right:0; height:7px; cursor:ns-resize; z-index:2; }
   .tt-rz-t { top:0; } .tt-rz-b { bottom:0; }
   .tt-block.done .tt-rz { display:none; }
@@ -3484,6 +3485,7 @@ const ICONS = {
   plus: '<path d="M12 5v14"/><path d="M5 12h14"/>',
   minus: '<path d="M5 12h14"/>',
   edit: '<path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.12 2.12 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>',
+  copy: '<rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>',
   trash: '<path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>',
   x: '<path d="M18 6 6 18"/><path d="m6 6 12 12"/>',
   check: '<path d="M20 6 9 17l-5-5"/>',
@@ -8778,7 +8780,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   function blocksFor(date){
     var db = lsGet(lsKey('dayblocks_'+date));
     if(db && Array.isArray(db) && db.length){
-      return { rec:true, blocks: db.map(function(b,i){ var mv=b.values&&b.values.mv; return { id:'day_'+date+'_'+i, label:b.label, start:(mv&&mv.s)||b.start, end:(mv&&mv.e)||b.end, moved:!!mv, category:b.category||'prep', color:b.color||'', kind:b.kind||'single', values:b.values||{}, sub:(b.values&&b.values.note)||'' }; }) };
+      return { rec:true, blocks: db.map(function(b,i){ var mv=b.values&&b.values.mv; return { id:'day_'+date+'_'+i, label:b.label, start:(mv&&mv.s)||b.start, end:(mv&&mv.e)||b.end, moved:!!mv, category:b.category||'prep', color:b.color||'', kind:b.kind||'single', values:b.values||{}, sub:(b.values&&b.values.note)||'' }; }).filter(function(x){ return !x.values.skip; }) };
     }
     var list;
     if(date===currentDate){ list = entries; }
@@ -8789,7 +8791,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
       list.forEach(function(e){ byId[e.id]=e; });
       tmpl.forEach(function(t){ var ex=byId[t.id]; if(!ex){ list.push(t); } else { ex.label=t.label; ex.start=t.start; ex.end=t.end; ex.category=t.category; ex.color=t.color; ex.kind=t.kind||ex.kind; ex.place=t.place||ex.place; ex.days=t.days; } });
     }
-    var out = list.filter(function(e){ return e && e.start && e.end && (!e.pinned || entryAppliesToDate(e, date)); })
+    var out = list.filter(function(e){ return e && e.start && e.end && !(e.values&&e.values.skip) && (!e.pinned || entryAppliesToDate(e, date)); })
       .map(function(e){ var mv=e.values&&e.values.mv; return { id:e.id, label:e.label, start:(mv&&mv.s)||e.start, end:(mv&&mv.e)||e.end, moved:!!mv, category:e.category||'prep', color:e.color||'', kind:e.kind||'single', values:e.values||{}, sub:((e.values&&e.values.note)||e.place||''), alarm:e.alarm }; });
     return { rec:false, blocks: out };
   }
@@ -8920,6 +8922,8 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
       items.push([b.kind==='tasks'?'할 일 적기·수정':'할 일 적기', function(){ openTodos(date, b.id, b.label); }, 'clipboard']);
       if(b.kind!=='tasks') items.push([b.values.check===true?'완료 해제':'완료로 표시', function(){ if(b.values.check===true){ cycleFor(date,b.id); cycleFor(date,b.id); } else if(b.values.check===undefined){ cycleFor(date,b.id); } else { cycleFor(date,b.id); cycleFor(date,b.id); } }, (b.values.check===true?'minus':'check')]);
       if(b.moved && !isRec) items.push(['원래 시간으로 되돌리기', function(){ var ref=entryForDate(date,b.id); if(ref&&ref.e.values){ delete ref.e.values.mv; ref.save(); if(window.tmOnChange) tmOnChange(); refreshAll(); } }, 'edit']);
+      items.push(['복사 (바로 뒤에 하나 더)', function(){ copyBlock(date,b); }, 'copy']);
+      items.push([(b.id.indexOf('sched_')===0||b.id.indexOf('day_')===0)?'오늘만 삭제':'삭제', function(){ deleteBlockToday(date,b); }, 'trash', 'danger']);
       items.push(['의도적 미완료', function(){ if(b.values.check===undefined){ cycleFor(date,b.id); cycleFor(date,b.id); } else if(b.values.check===true){ cycleFor(date,b.id); } }, 'x', 'danger']);
       items.forEach(function(it){ var bt=document.createElement('button'); bt.type='button'; var lab=it[0], ic=it[2]||''; if(ic && typeof ICONS!=='undefined' && ICONS[ic]) bt.innerHTML='<svg class="tt-mi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">'+ICONS[ic]+'</svg><span></span>'; else bt.innerHTML='<span></span>'; bt.querySelector('span').textContent=lab; if(it[3]) bt.classList.add(it[3]); bt.addEventListener('click', function(ev){ ev.stopPropagation(); closeMenu(); it[1](); }); m.appendChild(bt); });
       document.body.appendChild(m);
@@ -8958,6 +8962,36 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
       if(b.kind==='tasks' && !isRec){ var td0=(b.values&&b.values.todos)||[]; if(!td0.length){ openTodos(date, b.id, b.label); return; } }
       cycleFor(date, b.id);
     });
+  }
+  function fmtMin(m){ return pad(Math.floor(m/60))+':'+pad(m%60); }
+  function addOneOff(date, blk){
+    if(date===currentDate){ entries.push(blk); persist(); }
+    else { var snap=snapshotFor(date); snap.entries.push(blk); snap.savedAt=new Date().toISOString(); delete snap._synth; saveGrowth(date,snap); if(typeof scheduleSyncPush==='function') scheduleSyncPush(); if(window.tmOnChange) window.tmOnChange(); }
+  }
+  function copyBlock(date,b){
+    var s=mins(b.start), e=mins(b.end); var dur=Math.max(10, e-s); var ns=e, ne=e+dur; if(ne>1440){ ne=1440; ns=Math.max(0,1440-dur); }
+    var src=entryForDate(date,b.id); var se=src?src.e:{};
+    var blk={ id:'copy_'+Date.now().toString(36)+Math.random().toString(36).slice(2,5), label:b.label, start:fmtMin(ns), end:fmtMin(ne), category:b.category||'prep', color:b.color||'', kind:b.kind||'single', place:se.place||'', types:['check'], values:{}, pinned:false, goalMinutes:dur };
+    addOneOff(date, blk); refreshAll(); showToast(b.label+' 복사됨 → '+blk.start+'~'+blk.end+' (꾹 눌러 옮길 수 있어요)');
+  }
+  function deleteBlockToday(date,b){
+    var ref=entryForDate(date,b.id); if(!ref){ showToast('이 블록을 찾을 수 없어요'); return; }
+    var oneOff=(b.id.indexOf('sched_')!==0 && b.id.indexOf('day_')!==0);
+    if(oneOff){
+      var removed=ref.e;
+      if(date===currentDate){ var i=entries.indexOf(removed); if(i>=0) entries.splice(i,1); persist(); }
+      else { var snap=snapshotFor(date); var j=snap.entries.findIndex(function(x){ return x.id===b.id; }); if(j>=0) snap.entries.splice(j,1); snap.savedAt=new Date().toISOString(); delete snap._synth; saveGrowth(date,snap); if(typeof scheduleSyncPush==='function') scheduleSyncPush(); if(window.tmOnChange) window.tmOnChange(); }
+      refreshAll(); undoToast(b.label+' 삭제됨', function(){ addOneOff(date, removed); refreshAll(); });
+    } else {
+      ref.e.values=ref.e.values||{}; ref.e.values.skip=true; ref.save(); if(window.tmOnChange) tmOnChange(); refreshAll();
+      undoToast(b.label+' — 오늘 시간표에서만 뺐어요', function(){ var r2=entryForDate(date,b.id); if(r2&&r2.e.values){ delete r2.e.values.skip; r2.save(); if(window.tmOnChange) tmOnChange(); refreshAll(); } });
+    }
+  }
+  function undoToast(msg, fn){
+    var t=document.getElementById('toast'); if(!t){ showToast(msg); return; }
+    t.textContent=''; var s=document.createElement('span'); s.textContent=msg+' '; var bt=document.createElement('button'); bt.type='button'; bt.className='toast-undo'; bt.textContent='되돌리기';
+    bt.addEventListener('click', function(ev){ ev.stopPropagation(); t.classList.remove('show'); t.textContent=''; fn(); });
+    t.appendChild(s); t.appendChild(bt); t.classList.add('show'); clearTimeout(t._u); t._u=setTimeout(function(){ t.classList.remove('show'); setTimeout(function(){ if(!t.classList.contains('show')) t.textContent=''; },300); }, 5000);
   }
   function onDocDown(ev){ if(ev.target && ev.target.closest && ev.target.closest('#ttMenu')) return; closeMenu(); }
   function closeMenu(){ var m=document.getElementById('ttMenu'); if(m) m.remove(); document.removeEventListener('pointerdown', onDocDown); }
