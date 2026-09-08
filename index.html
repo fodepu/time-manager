@@ -2383,7 +2383,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="103">
+<meta name="tm-version" content="104">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -2559,6 +2559,8 @@
   .lec-doc-wait { color:#9ca3af; font-size:13px; }
   .lec-doc-sec.edited h3::after { content:'✎ 수정됨'; font-size:10px; color:#2563eb; font-weight:500; }
   @media print { body * { visibility:hidden; } #lecDocPaper, #lecDocPaper * { visibility:visible; } #lecDocPaper { position:absolute; left:0; top:0; width:100%; padding:0; } .lec-doc-sec { break-inside:avoid; box-shadow:none; } }
+  .lec-meter { display:inline-block; width:64px; height:8px; border-radius:4px; background:#e5e7eb; overflow:hidden; vertical-align:middle; margin-left:4px; }
+  .lec-meter i { display:block; height:100%; width:0; background:linear-gradient(90deg,#22c55e,#eab308 70%,#ef4444); transition:width .08s linear; }
   .lec-recbanner { position:fixed; right:16px; bottom:16px; z-index:50; background:#dc2626; color:#fff; border:0; border-radius:999px; padding:10px 16px; font-weight:800; font-size:13px; box-shadow:0 4px 14px rgba(0,0,0,.25); cursor:pointer; }
   .lec-divider { font-size:11px; color:var(--text-muted); margin:10px 0 4px; border-top:1px dashed var(--border,#e5e7eb); padding-top:4px; }
   .lec-live-head { font-size:12px; font-weight:800; color: var(--text-muted); margin-bottom:8px; position:sticky; top:-10px; background: var(--bg-card,#fff); padding:4px 0; }
@@ -3008,6 +3010,7 @@
         <label class="lec-chk"><input type="checkbox" id="lecShowEn" checked> 영어 원문 표시</label>
         <label class="lec-chk" title="끄면 마이크를 음성 인식기만 사용 (인식이 안 될 때 시도)"><input type="checkbox" id="lecBackup" checked> 녹음 파일 백업</label>
         <label class="lec-chk" title="확정 문장 대신 들리는 순간의 잠정 문장을 그대로 표시"><input type="checkbox" id="lecRaw"> 들린 그대로</label>
+        <label class="lec-chk" title="교수님 목소리가 작을 때 마이크 입력을 키워요 (Gemini 인식용)">🎚 <select id="lecGain"><option value="auto">자동 증폭</option><option value="1">1×</option><option value="2">2×</option><option value="4">4×</option><option value="8">8×</option></select></label><span class="lec-meter" title="마이크 입력 레벨"><i id="lecMeterBar"></i></span>
       </div>
       <div class="lec-status" id="lecStatus"></div>
       <div class="lec-main" id="lecMain">
@@ -9773,7 +9776,13 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     if(!ok){ var sp=ac.createScriptProcessor(4096,1,1); sp.onaudioprocess=function(e){ push(new Float32Array(e.inputBuffer.getChannelData(0))); }; src.connect(sp); sp.connect(ac.destination); G.node=sp; }
     if(ac.state==='suspended'){ try{ ac.resume(); }catch(e){} }
   }
-  function gemSendPcm(f32, rate){ if(!G.ws || G.ws.readyState!==1 || !G.ready) return;
+  var AGC={ gain:1, target:0.09, last:0, peak:0 };
+  function gainMode(){ var s=$('lecGain'); var v=s?s.value:'auto'; try{ lsSet(lsKey('lec_gain'), v); }catch(e){} return v; }
+  function applyGain(f32){ var n=f32.length; if(!n) return f32; var sum=0; for(var i=0;i<n;i++) sum+=f32[i]*f32[i]; var rms=Math.sqrt(sum/n); var mode=gainMode(); var g;
+    if(mode==='auto'){ if(rms>0.004){ var want=Math.min(12, Math.max(1, AGC.target/rms)); AGC.gain=AGC.gain*0.8+want*0.2; } g=AGC.gain; } else { g=parseFloat(mode)||1; AGC.gain=g; }
+    var out=new Float32Array(n), pk=0; for(var j=0;j<n;j++){ var x=f32[j]*g; var v=(x>0.8||x<-0.8)?Math.tanh(x):x; out[j]=v; var a=v<0?-v:v; if(a>pk) pk=a; }
+    AGC.peak=pk; var bar=$('lecMeterBar'); if(bar){ var now=Date.now(); if(now-AGC.last>80){ AGC.last=now; bar.style.width=Math.min(100, Math.round(pk*100))+'%'; } } return out; }
+  function gemSendPcm(f32, rate){ if(!G.ws || G.ws.readyState!==1 || !G.ready) return; f32=applyGain(f32);
     var out=f32; if(rate!==16000){ var ratio=rate/16000, len=Math.floor(f32.length/ratio); out=new Float32Array(len); for(var i=0;i<len;i++) out[i]=f32[Math.floor(i*ratio)]; }
     var pcm=new Int16Array(out.length); for(var j=0;j<out.length;j++){ var v=Math.max(-1,Math.min(1,out[j])); pcm[j]=v<0?v*0x8000:v*0x7FFF; }
     var bytes=new Uint8Array(pcm.buffer), bin=''; for(var k=0;k<bytes.length;k+=8192) bin+=String.fromCharCode.apply(null, bytes.subarray(k,k+8192));
@@ -10135,7 +10144,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     function paintLang(l){ var b=$('lecLang'); if(!b) return; b.setAttribute('data-lang',l); b.textContent=(l==='ko-KR')?'🇰🇷 한국어 강의':'🇺🇸 영어 강의'; b.classList.toggle('en', l!=='ko-KR'); var b2=$('lecLang2'); if(b2){ b2.textContent=(l==='ko-KR')?'🇰🇷 한국어':'🇺🇸 영어'; b2.classList.toggle('en', l!=='ko-KR'); } }
     try{ paintLang(langFor()); }catch(e){ paintLang('ko-KR'); }
     $('lecLang2').addEventListener('click',function(){ $('lecLang').click(); });
-    paintGemBtn();
+    paintGemBtn(); try{ var gs=$('lecGain'); var gv=lsGet(lsKey('lec_gain')); if(gs && gv) gs.value=gv; }catch(e){}
     $('lecClearAnn').addEventListener('click',function(){ var n=(S.ann[S.page]||[]).length; if(!n){ showToast('이 쪽엔 표시가 없어요'); return; } if(!confirm('이 쪽의 표시 '+n+'개를 모두 지울까요?')) return; S.ann[S.page]=[]; annPersistPage(S.page); redrawAnn(); saveLocal(); });
     $('lecGemBtn').addEventListener('click',function(){ var cur=geminiKey(); if(S.running && cur && !G.on){ try{ if(S.rec){ S.rec.onend=null; S.rec.stop(); S.rec=null; } }catch(e){} gemStart(); showToast('Gemini 연결 중…'); return; } var v=prompt('Google AI Studio(aistudio.google.com/apikey)에서 만든 Gemini API 키를 붙여넣으세요.\n무료 티어로 대본·번역이 1~2초 만에 나와요. 키는 이 기기에만 저장돼요.\n(비우고 확인하면 해제 → Chrome 음성인식 사용)', cur); if(v===null) return; v=v.trim(); lsSet(lsKey('gemini_key'), v); try{ if(window.tmOnChange) tmOnChange(); }catch(e){} paintGemBtn(); if(v){ status('Gemini 키 확인 중…'); fetch('https://generativelanguage.googleapis.com/v1beta/models?pageSize=1&key='+encodeURIComponent(v)).then(function(r){ return r.json().then(function(j){ return {ok:r.ok, j:j}; }); }).then(function(x){ if(x.ok){ status('Gemini 키 확인됨 ✓ — 녹음 시작하면 실시간 대본·번역','ok'); } else { var m=(x.j&&x.j.error&&x.j.error.message)||('HTTP '+x.j); status('Gemini 키 오류: '+m,'err'); } }).catch(function(e){ status('Gemini 연결 실패: '+e.message,'err'); }); } else showToast('Gemini 해제'); if(S.running){ if(v && !G.on){ try{ if(S.rec){ S.rec.onend=null; S.rec.stop(); S.rec=null; } }catch(e){} gemStart(); } else if(!v && G.on){ gemFallback('Gemini 해제 — Chrome 음성인식으로 전환'); } } });
     $('lecAiBtn').addEventListener('click',function(){ if(LOCAL.ok){ alert('내 맥의 Claude Code(구독)로 실시간 필기 중 — 추가 비용 없음.\n모델: '+LOCAL.model); } else { alert('실시간 필기 도우미가 꺼져 있어요.\n\n맥에서 "Dayble 도우미 시작.command"를 더블클릭해 켜면 15초 안에 자동 연결돼요. (없이도 대본·번역은 그대로 됩니다. 필기는 수업 후 생성)'); localPing(); } }); paintAiBtn();
