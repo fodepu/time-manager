@@ -2383,7 +2383,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="102">
+<meta name="tm-version" content="103">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -2531,6 +2531,22 @@
   .lec-doc-bar { display:flex; gap:8px; align-items:center; padding:8px 10px; font-size:12px; border-bottom:1px solid var(--border,#e5e7eb); background:var(--bg-card,#fff); }
   .lec-doc-hint { color:var(--text-muted,#6b7280); }
   .lec-doc-paper { flex:1; overflow:auto; padding:18px 22px; }
+  .lec-doc-paper.slides { padding:14px 18px; background:#1a1a1d; }
+  .lec-slide-card { position:relative; aspect-ratio:16/9; width:100%; max-width:960px; margin:0 auto 14px; background:#0B0B0D; color:#fff; border-radius:10px; padding:5% 6%; box-sizing:border-box; box-shadow:0 6px 24px rgba(0,0,0,.35); overflow:hidden; display:flex; flex-direction:column; }
+  .lec-slide-card.cur { outline:3px solid var(--lec-accent,#60a5fa); outline-offset:2px; }
+  .lec-slide-card .sl-top { font-size:12px; color:#9ca3af; display:flex; gap:10px; align-items:center; margin-bottom:2%; }
+  .lec-slide-card .sl-top i { display:inline-block; width:36px; height:2px; background:var(--lec-accent,#60a5fa); }
+  .lec-slide-card h2 { font-size:clamp(20px, 3.2vw, 34px); margin:0 0 3%; line-height:1.2; font-weight:800; letter-spacing:-0.01em; }
+  .lec-slide-card h2::after { content:''; display:block; width:56px; height:3px; background:var(--lec-accent,#60a5fa); margin-top:10px; }
+  .lec-slide-card .sl-body { font-size:clamp(14px, 1.9vw, 21px); line-height:1.5; outline:none; flex:1; }
+  .lec-slide-card .sl-body ul { list-style:none; margin:0; padding:0; } .lec-slide-card .sl-body li { margin:0 0 .35em; }
+  .lec-slide-card .sl-body strong { color:var(--lec-accent,#60a5fa); }
+  .lec-slide-card .sl-body mark { background:rgba(253,230,138,.35); color:#fde68a; padding:0 3px; }
+  .lec-slide-card .sl-body .ex { color:#fbbf24; }
+  .lec-slide-card .lec-doc-wait { color:#6b7280; }
+  .lec-slide-card .sl-vig { position:absolute; inset:0; pointer-events:none; background:radial-gradient(ellipse at 20% 0%, rgba(255,255,255,.06), transparent 60%); }
+  .lec-slide-card.edited .sl-top::after { content:'✎ 수정됨'; color:#93c5fd; margin-left:auto; }
+  @media print { .lec-doc-paper.slides { background:#fff; } .lec-slide-card { break-after:page; margin:0; max-width:none; border-radius:0; box-shadow:none; -webkit-print-color-adjust:exact; print-color-adjust:exact; } }
   .lec-doc-sec { background:#fff; border:1px solid #e5e7eb; border-radius:10px; padding:12px 16px; margin-bottom:12px; box-shadow:0 1px 2px rgba(0,0,0,.04); }
   .lec-doc-sec.cur { border-color:#93c5fd; box-shadow:0 0 0 3px rgba(59,130,246,.12); }
   .lec-doc-sec h3 { margin:0 0 6px; font-size:15px; display:flex; gap:8px; align-items:baseline; }
@@ -2997,7 +3013,7 @@
       <div class="lec-main" id="lecMain">
         <div class="lec-left">
           <div class="lec-doc" id="lecDoc" style="display:none">
-            <div class="lec-doc-bar"><b>실시간 필기 문서</b><span class="lec-doc-hint">PDF 없는 수업 · 20초마다 Claude가 채워요 · 글을 클릭해 고치거나 덧붙일 수 있어요</span><span style="flex:1"></span><button type="button" class="lec-btn" id="lecDocMark" title="드래그한 글에 형광펜">형광펜</button><button type="button" class="lec-btn" id="lecDocSplit" title="새 구간 시작 (→ 키와 같음)">새 구간</button><button type="button" class="lec-btn" id="lecDocPrint" title="지금까지 내용을 PDF로 저장(인쇄)">PDF로 저장</button></div>
+            <div class="lec-doc-bar"><b>실시간 슬라이드</b><span class="lec-doc-hint">PDF 없는 수업 · 말하는 대로 슬라이드가 생겨요 · 글을 클릭해 고칠 수 있어요</span><span style="flex:1"></span><button type="button" class="lec-btn" id="lecDocMode" title="슬라이드 / 문서 보기 전환">문서로</button><button type="button" class="lec-btn" id="lecDocMark" title="드래그한 글에 형광펜">형광펜</button><button type="button" class="lec-btn" id="lecDocSplit" title="새 구간 시작 (→ 키와 같음)">새 구간</button><button type="button" class="lec-btn" id="lecDocPrint" title="지금까지 내용을 PDF로 저장(인쇄)">PDF로 저장</button></div>
             <div class="lec-doc-paper" id="lecDocPaper"></div>
           </div>
           <div class="lec-dropzone" id="lecDropZone">
@@ -9641,16 +9657,19 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   function docSecHtml(p){ var l=(S.live&&S.live[p])||{}; var notes=(l.notes||[]).map(function(n){ return '<li>'+mdInline(n)+'</li>'; }).join(''); var ex=(l.exam||[]).map(function(x){ return '<li class="ex">⚠ '+escapeHtml(x)+'</li>'; }).join('');
     return (notes||ex)?'<ul>'+notes+ex+'</ul>':'<div class="lec-doc-wait">'+(S.running?'듣는 중… 20초쯤 뒤에 채워져요':'내용 없음')+'</div>'; }
   var _docSig='';
-  function renderDoc(){ var paper=$('lecDocPaper'); if(!paper) return; var pages=Object.keys(S.slides||{}).map(Number); if(S.running && pages.indexOf(S.page)<0) pages.push(S.page); pages.sort(function(a,b){return a-b;}); if(!pages.length) pages=[1];
+  function docMode(){ try{ return lsGet(lsKey('lec_doc_mode'))||'slides'; }catch(e){ return 'slides'; } }
+  function renderDoc(){ var paper=$('lecDocPaper'); if(!paper) return; var slidesMode=docMode()==='slides'; paper.classList.toggle('slides', slidesMode); var mb=$('lecDocMode'); if(mb) mb.textContent=slidesMode?'문서로':'슬라이드로'; try{ paper.style.setProperty('--lec-accent', courseColorFor(S.course)); }catch(e){} var pages=Object.keys(S.slides||{}).map(Number); if(S.running && pages.indexOf(S.page)<0) pages.push(S.page); pages.sort(function(a,b){return a-b;}); if(!pages.length) pages=[1];
     var sig=JSON.stringify([S.page, pages, S.live, S.docEdits]); if(sig===_docSig) return; _docSig=sig;
     var focused=document.activeElement && document.activeElement.classList && document.activeElement.classList.contains('lec-doc-body') ? document.activeElement.getAttribute('data-p') : null;
     var h=''; pages.forEach(function(p){ var l=(S.live&&S.live[p])||{}; var segs=(S.slides[p]&&S.slides[p].segs)||[]; var t0=segs.length?fmtT(segs[0].t||0):''; var ed=S.docEdits[p];
-      h+='<div class="lec-doc-sec'+(p===S.page?' cur':'')+(ed?' edited':'')+'" data-p="'+p+'"><h3>'+escapeHtml(l.summary||('구간 '+p))+' <small>'+(t0?t0+' · ':'')+segs.length+'문장</small></h3><div class="lec-doc-body" contenteditable="true" data-p="'+p+'">'+(ed?ed:docSecHtml(p))+'</div></div>'; });
+      if(slidesMode){ h+='<div class="lec-slide-card'+(p===S.page?' cur':'')+(ed?' edited':'')+'" data-p="'+p+'"><div class="sl-vig"></div><div class="sl-top"><i></i><span>'+escapeHtml(cname(S.course)||'')+' · '+p+'</span><span>'+(t0||'')+'</span></div><h2>'+escapeHtml(l.summary||('구간 '+p))+'</h2><div class="sl-body lec-doc-body" contenteditable="true" data-p="'+p+'">'+(ed?ed:docSecHtml(p))+'</div></div>'; }
+      else h+='<div class="lec-doc-sec'+(p===S.page?' cur':'')+(ed?' edited':'')+'" data-p="'+p+'"><h3>'+escapeHtml(l.summary||('구간 '+p))+' <small>'+(t0?t0+' · ':'')+segs.length+'문장</small></h3><div class="lec-doc-body" contenteditable="true" data-p="'+p+'">'+(ed?ed:docSecHtml(p))+'</div></div>'; });
     paper.innerHTML=h;
     paper.querySelectorAll('.lec-doc-body').forEach(function(b){ b.addEventListener('input',function(){ S.docEdits[b.getAttribute('data-p')]=b.innerHTML; _docSig=''; saveLocal(); }); });
     if(focused){ var fb=paper.querySelector('.lec-doc-body[data-p="'+focused+'"]'); if(fb) fb.focus(); }
-    else { var cur=paper.querySelector('.lec-doc-sec.cur'); if(cur && !S.userScrolledDoc) cur.scrollIntoView({block:'nearest'}); } }
+    else { var cur=paper.querySelector('.lec-doc-sec.cur, .lec-slide-card.cur'); if(cur && !S.userScrolledDoc) cur.scrollIntoView({block:'nearest'}); } }
   function docBind(){ var m=$('lecDocMark'); if(m && !m._b){ m._b=true; m.addEventListener('mousedown',function(e){ e.preventDefault(); }); m.addEventListener('click',function(){ try{ var sel=window.getSelection(); if(!sel.rangeCount||sel.isCollapsed){ showToast('형광펜 칠할 글을 먼저 드래그하세요'); return; } var r=sel.getRangeAt(0); var body=r.commonAncestorContainer.nodeType===1?r.commonAncestorContainer:r.commonAncestorContainer.parentNode; body=body.closest&&body.closest('.lec-doc-body'); if(!body) return; var mk=document.createElement('mark'); r.surroundContents(mk); sel.removeAllRanges(); S.docEdits[body.getAttribute('data-p')]=body.innerHTML; _docSig=''; saveLocal(); }catch(e){ showToast('한 문단 안에서만 칠할 수 있어요'); } }); }
+    var mb=$('lecDocMode'); if(mb && !mb._b){ mb._b=true; mb.addEventListener('click',function(){ lsSet(lsKey('lec_doc_mode'), docMode()==='slides'?'doc':'slides'); _docSig=''; renderDoc(); }); }
     var s=$('lecDocSplit'); if(s && !s._b){ s._b=true; s.addEventListener('click',function(){ goPage(S.page+1); }); }
     var pr=$('lecDocPrint'); if(pr && !pr._b){ pr._b=true; pr.addEventListener('click',function(){ document.title=(S.title||'강의 필기')+' · '+(S.date||''); window.print(); }); }
     var paper=$('lecDocPaper'); if(paper && !paper._b){ paper._b=true; paper.addEventListener('scroll',function(){ S.userScrolledDoc=(paper.scrollHeight-paper.scrollTop-paper.clientHeight)>80; }); } }
@@ -9706,7 +9725,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   var AI_SYSTEM='You are a live lecture note-taker for a Korean university student. You receive (1) the text of the current slide (authoritative for terms, symbols, numbers), (2) raw speech-recognition segments of what the professor just said (noisy: homophones, dropped words, wrong proper nouns), (3) notes already written for this slide.\n'+
     'Tasks: A) Correct each segment into what the professor most likely said, using the slide text for terminology — keep the original language, keep it faithful (do not add content, do not summarize, keep filler minimal). B) Give a natural Korean translation of each corrected segment (if the lecture is already Korean, "ko" = corrected Korean text). C) Update the notes for this slide: 2–5 concise Korean bullet points of what the professor explained, **bold** key terms with the English term in parentheses, formulas/numbers exactly as on the slide, no fluff; merge with existing notes (replace, do not duplicate). Mention exam/assignment/deadline hints in "exam".\n'+
     'D) Slide marks — be very selective, like a student who marks only what he would otherwise forget. Usually return an empty "marks" list. Add a mark ONLY when: (a) the professor said something that is NOT on the slide and matters later (a rule, deadline, exception, example, warning, "exam") → post-it: {"line":<nearest slide line index>,"type":"","note":"<≤ 22 chars, Korean; keep the English term if useful>"}; (b) the professor explicitly said a line is important or will be on the exam → "highlight" on that line; (c) the professor told you to remember one specific number/term → "circle". Never mark lines the professor is merely reading or paraphrasing; names, rooms, phone numbers, times, URLs are NOT worth marking unless he added a rule about them. Do NOT use "underline". At most 1 new mark per call, 3 per slide, no repeats of "existing_marks". When in doubt, return no marks.\n'+
-    'E) If "slide"."text" is EMPTY (a lecture without slides), the notes are the student\'s ONLY record: write 3–7 bullets that would let the student reconstruct this part of the lecture — definitions, claims, examples, numbers, names, and the professor\'s reasoning — in Korean with English terms in parentheses; "summary" becomes a short section title (≤ 20 chars) naming the topic of this part; marks must be empty.\n'+
+    'E) If "slide"."text" is EMPTY (a lecture without slides), you are writing the SLIDE the professor did not have: "summary" = slide title (≤ 14 chars, the one idea of this part); "notes" = 2–5 slide lines, each ≤ 40 chars, phrases not sentences, **bold** the key term (English in parentheses if useful), carry the logic with symbols instead of connectives: → (then/result), ∴ (therefore), ≠ / = (is not / is), < (smaller left, e.g. 호르몬 < 사회적 학습), never use >. Definitions, numbers and examples go in as short lines; the transcript keeps the details, so do not write paragraphs. marks must be empty.\n'+
     'Return ONLY JSON: {"segments":[{"i":<index>,"text":"<corrected original>","ko":"<Korean>"}],"notes":["..."],"summary":"<one line, ≤30 chars Korean>","exam":["..."],"marks":[{"line":<slide line index>,"type":"highlight|underline|circle","note":"<optional>"}]}';
   async function aiTick(force){
     if(!S.running || AI.busy || !aiEngine()) return; var now=Date.now(); if(!force && now-AI.lastRun<20000) return;
