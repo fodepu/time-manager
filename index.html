@@ -2383,7 +2383,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="120">
+<meta name="tm-version" content="121">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -9503,7 +9503,9 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     try{ await loadPdfJs(); }catch(e){ status('PDF 라이브러리 로드 실패','err'); return; }
     var doc=await pdfjsLib.getDocument({data:bytes.slice(0)}).promise;
     if(keep){ S.pdf=doc; S.total=S.pdf.numPages; S.pdfName=name||'slides.pdf'; S.pdfBytes=bytes; $('lecDropZone').classList.add('has-pdf'); renderPage(); return; }
-    if(S.running && S.pdf){ S.base=(S.base||0)+(S.total||0); } else { S.base=0; S.docs=[]; S.slideText=null; S.slideLines=null; }
+    if(S.running && S.pdf){ S.base=(S.base||0)+(S.total||0); }
+    else if(S.running && S.online){ var kSec=Math.max(1,S.page||1); S.docs=S.docs||[]; if(!S.docs.some(function(d){ return d.nopdf; })) S.docs.push({ name:'(PDF 없이 필기)', base:0, total:kSec, from:0, nopdf:true }); S.base=kSec; S.online=false; S.viewPage=null; try{ docShow(false); }catch(e){} showToast('PDF 모드로 전환 — 앞 구간 '+kSec+'개는 그대로 보관'); }
+    else { S.base=0; S.docs=[]; S.slideText=null; S.slideLines=null; }
     S.zoom=1; S.pdf=doc; S.total=S.pdf.numPages; S.pdfName=name||'slides.pdf'; S.pdfBytes=bytes; S.page=S.base+1; S.docs=(S.docs||[]); S.docs.push({ name:S.pdfName, base:S.base, total:S.total, from:S.running?nowT():0 });
     if(S.running){ S.log.push({t:nowT(), page:S.page, pdf:S.pdfName}); showToast('녹음 유지 · PDF 교체: '+S.pdfName); } else { S.ann={}; }
     try{ annLoadIntoS(); }catch(e){}
@@ -9541,7 +9543,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   function wordAt(words, info, ov, ev){ if(!words||!info) return null; var r=ov.getBoundingClientRect(); var lx=(ev.clientX-r.left)/Math.max(1,r.width)*info.w, ly=(ev.clientY-r.top)/Math.max(1,r.height)*info.h; var best=null, bd=1e9;
     words.forEach(function(wd){ if(lx>=wd.x-2&&lx<=wd.x+wd.w+2&&ly>=wd.y-2&&ly<=wd.y+wd.h+2){ var d=Math.abs(lx-(wd.x+wd.w/2)); if(d<bd){ bd=d; best=wd; } } }); return best; }
   var TOOL={ mode:'select' };
-  function fitScale(wrap, vw){ var w=Math.max(wrap.clientWidth-4,200)/vw.width; var hasH=document.body.classList.contains('lec-full')||wrap.classList.contains('lec-view-canvas')||wrap.classList.contains('lec-fs'); var ch=wrap.clientHeight; var hh=(hasH&&ch>80)?(ch-4)/vw.height:Infinity; return Math.min(w, hh, 2); }
+  function fitScale(wrap, vw){ var w=Math.max(wrap.clientWidth-4,200)/vw.width; var hasH=document.body.classList.contains('lec-full')||wrap.classList.contains('lec-view-canvas')||wrap.classList.contains('lec-fs'); var ch=wrap.clientHeight; var hh=(hasH&&ch>80)?(ch-4)/vw.height:Infinity; return Math.min(w, hh, 6); }
   function paintZoom(wrap, Z){ var l=wrap.querySelector('.lec-zoomlbl'); if(l) l.textContent=Math.round((Z||1)*100)+'%'; }
   var _zoomT=null;
   function setZoom(which, Z, anchor){ Z=Math.max(0.5, Math.min(4, Z)); var wrap=which==='view'?($('lecViewCanvas')&&$('lecViewCanvas').parentNode):$('lecDropZone'); var prev=(which==='view'?V.zoom:S.zoom)||1;
