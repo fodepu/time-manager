@@ -2383,7 +2383,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="151">
+<meta name="tm-version" content="152">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -9589,18 +9589,69 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   function sceneState(){ var s=sceneLoad(); var d=sceneDone(); var sun=d.total?Math.min(1, d.done/d.total):0; var growth=Math.min(1, 0.08 + s.study/300 + s.boosts*0.06); return { sun:sun, growth:growth, sessions:s.sessions, rare:s.rare, done:d.done, total:d.total }; }
   function lerp(a,b,t){ return a+(b-a)*t; }
   function mixHex(c1,c2,t){ var a=parseInt(c1.slice(1),16), b=parseInt(c2.slice(1),16); var r=Math.round(lerp(a>>16,b>>16,t)), g=Math.round(lerp((a>>8)&255,(b>>8)&255,t)), bl=Math.round(lerp(a&255,b&255,t)); return '#'+((1<<24)+(r<<16)+(g<<8)+bl).toString(16).slice(1); }
-  function skyColors(sun){ var stops=[['#070912','#0b1020'],['#1a1a3a','#3b2a4a'],['#f08a5d','#ffd28a'],['#5fb2ff','#dff3ff'],['#3d8fff','#bfe6ff']]; var x=sun*(stops.length-1); var i=Math.min(stops.length-2, Math.floor(x)); var t=x-i; return [mixHex(stops[i][0],stops[i+1][0],t), mixHex(stops[i][1],stops[i+1][1],t)]; }
+  function skyColors_unused(sun){ var stops=[['#070912','#0b1020'],['#1a1a3a','#3b2a4a'],['#f08a5d','#ffd28a'],['#5fb2ff','#dff3ff'],['#3d8fff','#bfe6ff']]; var x=sun*(stops.length-1); var i=Math.min(stops.length-2, Math.floor(x)); var t=x-i; return [mixHex(stops[i][0],stops[i+1][0],t), mixHex(stops[i][1],stops[i+1][1],t)]; }
   function seeded(n){ var x=Math.sin(n*9301+49297)*233280; return x-Math.floor(x); }
-  function sceneSvg(st, w, hgt){ var sky=skyColors(st.sun); var sunY=hgt*0.78 - st.sun*hgt*0.62; var sunX=w*0.18 + st.sun*w*0.64; var g=st.growth; var groundC=mixHex('#1a2418','#4c8a3a', Math.min(1, st.sun*0.7+g*0.5));
-    var plants=''; var n=Math.round(2 + g*26); for(var i=0;i<n;i++){ var px=w*(0.04+0.92*seeded(i+1)); var ph=(hgt*0.06 + hgt*0.22*g)*(0.6+0.8*seeded(i+7)); var by=hgt*0.83 + seeded(i+3)*hgt*0.08; var lean=(seeded(i+11)-0.5)*ph*0.4; var col=mixHex('#2f4f2a','#7ed957', Math.min(1, g*0.9+st.sun*0.3));
-      plants+='<path d="M'+px+' '+by+' Q'+(px+lean)+' '+(by-ph*0.6)+' '+(px+lean*1.6)+' '+(by-ph)+'" stroke="'+col+'" stroke-width="'+Math.max(1.2, hgt*0.004+g*3)+'" fill="none" stroke-linecap="round"/>';
-      if(g>0.35 && seeded(i+5)<g){ var lx=px+lean*1.6, ly=by-ph; plants+='<ellipse cx="'+lx+'" cy="'+ly+'" rx="'+(hgt*0.012+g*hgt*0.01)+'" ry="'+(hgt*0.007+g*hgt*0.006)+'" fill="'+col+'" transform="rotate('+((seeded(i+9)-0.5)*80)+' '+lx+' '+ly+')"/>'; }
-      if(g>0.7 && seeded(i+13)<(g-0.6)*2){ var fx=px+lean*1.6, fy=by-ph; var fc=['#ffd166','#ff8fab','#fff'][Math.floor(seeded(i+17)*3)]; plants+='<circle cx="'+fx+'" cy="'+fy+'" r="'+(hgt*0.009)+'" fill="'+fc+'"/>'; } }
-    var stars=''; if(st.sun<0.45){ var a=1-st.sun/0.45; for(var k=0;k<40;k++){ stars+='<circle cx="'+(w*seeded(k+31))+'" cy="'+(hgt*0.6*seeded(k+41))+'" r="'+(0.8+seeded(k+51)*1.4)+'" fill="#fff" opacity="'+(a*(0.3+0.7*seeded(k+61))).toFixed(2)+'"/>'; } }
-    var rare=st.rare?'<path d="M'+(w*0.7)+' '+(hgt*0.12)+' l '+(w*0.12)+' '+(hgt*0.1)+'" stroke="#fff" stroke-width="2" opacity=".9" stroke-linecap="round"/>':'';
-    return '<svg viewBox="0 0 '+w+' '+hgt+'" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="'+sky[0]+'"/><stop offset="1" stop-color="'+sky[1]+'"/></linearGradient><radialGradient id="sunG"><stop offset="0" stop-color="#fff5c0"/><stop offset=".5" stop-color="#ffcf5a"/><stop offset="1" stop-color="#ffcf5a" stop-opacity="0"/></radialGradient></defs>'+
-      '<rect width="'+w+'" height="'+hgt+'" fill="url(#sky)"/>'+stars+'<circle cx="'+sunX+'" cy="'+sunY+'" r="'+(hgt*0.16)+'" fill="url(#sunG)" opacity="'+(0.35+st.sun*0.65).toFixed(2)+'"/><circle cx="'+sunX+'" cy="'+sunY+'" r="'+(hgt*0.06)+'" fill="#ffe08a"/>'+rare+
-      '<path d="M0 '+(hgt*0.86)+' Q '+(w*0.25)+' '+(hgt*0.78)+' '+(w*0.5)+' '+(hgt*0.85)+' T '+w+' '+(hgt*0.83)+' V '+hgt+' H0 Z" fill="'+groundC+'"/>'+plants+'</svg>'; }
+  function clamp(x,a,b){ return Math.max(a,Math.min(b,x)); }
+  function ramp(stops,x){ x=clamp(x,0,1)*(stops.length-1); var i=Math.min(stops.length-2,Math.floor(x)); return mixHex(stops[i],stops[i+1],x-i); }
+  function sceneSvg(st,w,h){
+    var sun=clamp(st.sun||0,0,1), g=clamp(st.growth||0,0,1);
+    var skyTop=ramp(['#070b18','#141a3a','#2a3a6e','#4f8fd6','#5eb0ff'],sun), skyMid=ramp(['#0d1428','#3a2f5e','#c9713f','#f2b26b','#9fd4ff'],sun), skyHor=ramp(['#141a30','#6b3d55','#ff9a4a','#ffd88a','#e8f4ff'],sun);
+    var cx=w*0.5, horizon=h*0.44; var sunY=horizon+h*0.06 - sun*h*0.36; var sunR=h*0.055;
+    var far=ramp(['#151c34','#3a3358','#b56a55','#9db2c9','#a9c6e3'],sun), mid=ramp(['#0f1526','#2a2748','#6f4a52','#5f7f8f','#6f96ad'],sun), near=ramp(['#0a0f1c','#1c1f36','#3d3446','#3b5f5a','#3e6f5e'],sun);
+    var forest=ramp(['#070b12','#0f1a1c','#1a2e22','#1f4a2e','#245a35'],Math.max(sun,g*0.6)), forest2=ramp(['#050809','#0b1412','#132318','#173a24','#1b452a'],Math.max(sun,g*0.6));
+    var grassA=ramp(['#1a2416','#2f3a1e','#5b6b2a','#7ea63a','#8fbf44'],Math.max(sun*0.8,g)), grassB=ramp(['#0f160e','#1f2a16','#3f4f20','#5f8a2e','#6ea536'],Math.max(sun*0.8,g));
+    var o=[]; o.push('<svg viewBox="0 0 '+w+' '+h+'" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">');
+    o.push('<defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="'+skyTop+'"/><stop offset=".62" stop-color="'+skyMid+'"/><stop offset="1" stop-color="'+skyHor+'"/></linearGradient>'+
+      '<radialGradient id="glow" cx="'+cx+'" cy="'+sunY+'" r="'+(h*0.55)+'" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fff3c4" stop-opacity="'+(0.85*Math.max(0.15,sun)).toFixed(2)+'"/><stop offset=".25" stop-color="#ffcf6b" stop-opacity="'+(0.55*Math.max(0.1,sun)).toFixed(2)+'"/><stop offset="1" stop-color="#ffb060" stop-opacity="0"/></radialGradient>'+
+      '<radialGradient id="sunc"><stop offset="0" stop-color="#fffbe8"/><stop offset=".7" stop-color="#ffe89a"/><stop offset="1" stop-color="#ffd166"/></radialGradient>'+
+      '<linearGradient id="ground" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="'+grassA+'"/><stop offset="1" stop-color="'+grassB+'"/></linearGradient>'+
+      '<filter id="soft" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="'+(h*0.012)+'"/></filter><filter id="soft2" x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation="'+(h*0.03)+'"/></filter><filter id="rays" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="'+(h*0.02)+'"/></filter></defs>');
+    o.push('<rect width="'+w+'" height="'+h+'" fill="url(#sky)"/>');
+    // 별
+    if(sun<0.5){ var a=1-sun/0.5; for(var k=0;k<70;k++){ o.push('<circle cx="'+(w*seeded(k+31)).toFixed(0)+'" cy="'+(horizon*0.9*seeded(k+41)).toFixed(0)+'" r="'+(0.7+seeded(k+51)*1.5).toFixed(1)+'" fill="#fff" opacity="'+(a*(0.25+0.75*seeded(k+61))).toFixed(2)+'"/>'); } }
+    // 햇살(god rays)
+    if(sun>0.12){ var ro=(sun-0.12)*0.35; for(var r=0;r<9;r++){ var ang=-90+(r-4)*13+(seeded(r+3)-0.5)*6; var len=h*(0.5+0.5*sun); var wid=h*0.035*(0.6+seeded(r+8)); var rad=ang*Math.PI/180; var x2=cx+Math.cos(rad)*len, y2=sunY+Math.sin(rad)*len; var nx=-Math.sin(rad)*wid, ny=Math.cos(rad)*wid;
+      o.push('<polygon points="'+cx+','+sunY+' '+(x2+nx).toFixed(0)+','+(y2+ny).toFixed(0)+' '+(x2-nx).toFixed(0)+','+(y2-ny).toFixed(0)+'" fill="#fff0b8" opacity="'+(ro*(0.5+0.5*seeded(r+5))).toFixed(2)+'" filter="url(#rays)"/>'); } }
+    // 구름
+    var cloudLit=ramp(['#1a2140','#4a3f6a','#ffb37a','#ffe3a8','#ffffff'],sun), cloudShade=ramp(['#0c1228','#2b2a4d','#a05a4a','#c98a70','#c9d9ea'],sun);
+    var clouds=[[0.12,0.16,1.0],[0.3,0.09,0.8],[0.5,0.2,1.3],[0.68,0.11,0.9],[0.86,0.18,1.1],[0.4,0.3,0.7],[0.78,0.32,0.6]];
+    clouds.forEach(function(c,i){ var x=w*c[0], y=h*c[1], s=c[2]*h*0.06; var op=(0.35+0.65*sun).toFixed(2);
+      o.push('<g opacity="'+op+'" filter="url(#soft)"><ellipse cx="'+x+'" cy="'+y+'" rx="'+(s*2.6)+'" ry="'+(s*0.9)+'" fill="'+cloudShade+'"/><ellipse cx="'+(x-s*0.8)+'" cy="'+(y-s*0.5)+'" rx="'+(s*1.5)+'" ry="'+(s*0.9)+'" fill="'+cloudLit+'"/><ellipse cx="'+(x+s*0.9)+'" cy="'+(y-s*0.35)+'" rx="'+(s*1.7)+'" ry="'+(s*0.8)+'" fill="'+cloudLit+'"/><ellipse cx="'+(x+s*0.2)+'" cy="'+(y-s*0.7)+'" rx="'+(s*1.1)+'" ry="'+(s*0.7)+'" fill="'+cloudLit+'"/></g>'); });
+    // 해 + 글로우
+    o.push('<circle cx="'+cx+'" cy="'+sunY+'" r="'+(h*0.55)+'" fill="url(#glow)"/>');
+    o.push('<circle cx="'+cx+'" cy="'+sunY+'" r="'+(sunR*1.9)+'" fill="#ffe08a" opacity="'+(0.35*sun).toFixed(2)+'" filter="url(#soft2)"/><circle cx="'+cx+'" cy="'+sunY+'" r="'+sunR+'" fill="url(#sunc)"/>');
+    // 산 3겹
+    function ridge(y0,amp,seed,steps){ var pts=['0,'+h]; for(var i=0;i<=steps;i++){ var x=w*i/steps; var y=y0 - amp*(0.5+0.5*Math.sin(i*1.3+seed)) - amp*0.5*seeded(i*7+seed); pts.push(x.toFixed(0)+','+y.toFixed(0)); } pts.push(w+','+h); return pts.join(' '); }
+    o.push('<polygon points="'+ridge(horizon+h*0.02,h*0.11,2,14)+'" fill="'+far+'"/>');
+    o.push('<polygon points="'+ridge(horizon+h*0.07,h*0.08,5,18)+'" fill="'+mid+'"/>');
+    o.push('<polygon points="'+ridge(horizon+h*0.12,h*0.05,9,22)+'" fill="'+near+'"/>');
+    // 안개
+    o.push('<rect x="0" y="'+(horizon+h*0.08)+'" width="'+w+'" height="'+(h*0.1)+'" fill="'+skyHor+'" opacity="'+(0.35*sun).toFixed(2)+'" filter="url(#soft2)"/>');
+    // 침엽수 숲 2줄
+    function trees(baseY,scale,color,seed,count){ var s=''; for(var i=0;i<count;i++){ var x=w*(i+seeded(i+seed))/count; var th=h*scale*(0.7+0.6*seeded(i*3+seed)); var tw=th*0.38; var y=baseY+ (seeded(i*5+seed)-0.5)*h*0.02;
+        s+='<path d="M'+x+' '+(y-th)+' L'+(x+tw*0.35)+' '+(y-th*0.62)+' L'+(x+tw*0.2)+' '+(y-th*0.62)+' L'+(x+tw*0.55)+' '+(y-th*0.33)+' L'+(x+tw*0.35)+' '+(y-th*0.33)+' L'+(x+tw*0.75)+' '+y+' L'+(x-tw*0.75)+' '+y+' L'+(x-tw*0.35)+' '+(y-th*0.33)+' L'+(x-tw*0.55)+' '+(y-th*0.33)+' L'+(x-tw*0.2)+' '+(y-th*0.62)+' L'+(x-tw*0.35)+' '+(y-th*0.62)+' Z" fill="'+color+'"/>'; } return s; }
+    o.push(trees(horizon+h*0.15, 0.09, forest, 1, 46));
+    o.push('<rect x="0" y="'+(horizon+h*0.14)+'" width="'+w+'" height="'+(h*0.06)+'" fill="'+forest+'"/>');
+    o.push(trees(horizon+h*0.21, 0.13, forest2, 7, 34));
+    o.push('<rect x="0" y="'+(horizon+h*0.2)+'" width="'+w+'" height="'+(h*0.05)+'" fill="'+forest2+'"/>');
+    // 초원
+    o.push('<path d="M0 '+(horizon+h*0.24)+' Q '+(w*0.3)+' '+(horizon+h*0.2)+' '+(w*0.55)+' '+(horizon+h*0.25)+' T '+w+' '+(horizon+h*0.23)+' V '+h+' H0 Z" fill="url(#ground)"/>');
+    // 풀: 멀리 작게, 가까이 크게
+    var blade=ramp(['#22301a','#3c4d22','#6a8a2c','#8cc34a','#a3d95a'],Math.max(sun*0.7,g));
+    var nb=Math.round(160+g*220); for(var b=0;b<nb;b++){ var t=seeded(b+101); var y=horizon+h*0.25 + t*t*(h-(horizon+h*0.25)); var depth=(y-(horizon+h*0.25))/(h-(horizon+h*0.25)); var x=w*seeded(b+211); var bh=h*(0.02+0.09*depth)*(0.6+0.8*seeded(b+307)); var lean=(seeded(b+401)-0.5)*bh*0.9; var sw=(0.8+depth*2.2).toFixed(1);
+      o.push('<path d="M'+x.toFixed(0)+' '+y.toFixed(0)+' q '+(lean*0.3).toFixed(0)+' '+(-bh*0.5).toFixed(0)+' '+lean.toFixed(0)+' '+(-bh).toFixed(0)+'" stroke="'+mixHex(blade,'#fff3b0',0.15*depth*sun)+'" stroke-width="'+sw+'" fill="none" stroke-linecap="round" opacity="'+(0.55+0.45*depth).toFixed(2)+'"/>'); }
+    // 데이지: 성장에 따라 봉오리 → 개화, 개수 증가
+    var nd=Math.round(8+g*90); for(var d=0;d<nd;d++){ var td=Math.pow(seeded(d+501),0.8); var y=horizon+h*0.27 + td*(h-(horizon+h*0.3)); var depth=(y-(horizon+h*0.27))/(h-(horizon+h*0.27)); var x=w*seeded(d+601); var r=h*(0.005+0.034*depth*depth); var open=clamp((g-0.15)*1.6 + seeded(d+701)*0.4, 0, 1); var stemH=r*(1.1+1.4*seeded(d+801));
+      o.push('<path d="M'+x.toFixed(0)+' '+(y+r*0.2).toFixed(0)+' q '+(r*0.4).toFixed(0)+' '+(-stemH*0.5).toFixed(0)+' '+(r*0.6).toFixed(0)+' '+(-stemH).toFixed(0)+'" stroke="'+blade+'" stroke-width="'+(1+depth*2).toFixed(1)+'" fill="none"/>');
+      var fx=x+r*0.6, fy=y-stemH;
+      if(open<0.35){ o.push('<ellipse cx="'+fx.toFixed(0)+'" cy="'+fy.toFixed(0)+'" rx="'+(r*0.3).toFixed(1)+'" ry="'+(r*0.5).toFixed(1)+'" fill="'+mixHex(blade,'#ffffff',0.25)+'"/>'); }
+      else { var pet=open<0.7?7:10; var pr=r*(0.5+open*0.6); for(var p=0;p<pet;p++){ var ang=p*360/pet+seeded(d+p)*10; o.push('<ellipse cx="'+fx.toFixed(0)+'" cy="'+fy.toFixed(0)+'" rx="'+(pr*0.32).toFixed(1)+'" ry="'+pr.toFixed(1)+'" fill="'+mixHex('#e8e6dc','#ffffff',sun)+'" transform="translate(0 '+(-pr*0.55).toFixed(1)+') rotate('+ang.toFixed(0)+' '+fx.toFixed(0)+' '+(fy+pr*0.55).toFixed(1)+')" opacity="'+(0.85+0.15*depth).toFixed(2)+'"/>'); } o.push('<circle cx="'+fx.toFixed(0)+'" cy="'+fy.toFixed(0)+'" r="'+(pr*0.36).toFixed(1)+'" fill="'+mixHex('#c9a227','#ffd23f',sun)+'"/>'); } }
+    // 앞쪽 비네트(사진 느낌)
+    o.push('<rect width="'+w+'" height="'+h+'" fill="url(#vig)"/>');
+    o.push('<defs><radialGradient id="vig" cx="50%" cy="45%" r="75%"><stop offset="0.6" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity="0.35"/></radialGradient></defs>');
+    if(st.rare) o.push('<path d="M'+(w*0.72)+' '+(h*0.1)+' l '+(w*0.1)+' '+(h*0.08)+'" stroke="#fff" stroke-width="2.5" opacity=".9" stroke-linecap="round"/>');
+    o.push('</svg>'); return o.join('');
+  }
   var SCENE_ANIM={ from:null, to:null, t0:0 };
   function scenePaint(el, st){ if(!el) return; el.innerHTML=sceneSvg(st, 1600, 900); }
   function sceneAnimate(el, from, to, ms, done){ var t0=performance.now(); function step(now){ var t=Math.min(1,(now-t0)/ms); var e=1-Math.pow(1-t,3); scenePaint(el, { sun:lerp(from.sun,to.sun,e), growth:lerp(from.growth,to.growth,e), rare:to.rare }); if(t<1) requestAnimationFrame(step); else if(done) done(); } requestAnimationFrame(step); }
