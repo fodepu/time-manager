@@ -2383,7 +2383,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="128">
+<meta name="tm-version" content="129">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -9596,6 +9596,10 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   // 표시 컨텍스트: 녹음 화면(S) / 복습 뷰어(V)
   function annCtxRec(){ return { list:function(){ return S.ann[S.page]||[]; }, save:function(l){ S.ann[S.page]=l; annPersistPage(S.page); redrawAnn(); saveLocal(); } }; }
   function annCtxView(){ return { list:function(){ return V.marks||[]; }, save:function(l){ V.marks=l; if(V.curPdf){ var st=annLoad($('lecCourse').value||'', V.curPdf.name); if(l.length) st[V.page]=l; else delete st[V.page]; annSave($('lecCourse').value||'', V.curPdf.name, st); } renderViewPage(); } }; }
+  function convertNote(ctx, hit, ov, info){ if(!hit||!hit.conv) return hit; var l=ctx.list().slice(); var a=l[hit.idx]; if(!a) return hit; var sx=ov.width/info.w, sy=ov.height/info.h;
+    var fr={ line:-1, type:'', note:a.note||'', x:hit.x/sx, y:hit.y/sy, w:Math.max(120, hit.w/sx+8), h:Math.max(30, hit.h/sy+6), by:a.by||'ai' }; var idx=hit.idx;
+    if(a.type){ l[idx]=Object.assign({}, a, {note:''}); l.push(fr); idx=l.length-1; } else { l[idx]=fr; }
+    ctx.save(l); var hs=ov._hits||[]; for(var i=hs.length-1;i>=0;i--){ if(hs[i].idx===idx && hs[i].free && !hs[i].conv) return hs[i]; } return {x:fr.x*sx,y:fr.y*sy,w:fr.w*sx,h:fr.h*sy,idx:idx,free:true}; }
   function editFree(ctx, idx, ov, info){ var l=ctx.list(); var m=l[idx]; if(!m||!ov||!info) return; var wrap=ov.parentNode; var old=wrap.querySelector('.lec-postit-edit'); if(old) old._done && old._done();
     var r=ov.getBoundingClientRect(), wr=wrap.getBoundingClientRect(); var fx=r.width/info.w, fy=r.height/info.h;
     var ta=document.createElement('textarea'); ta.className='lec-postit-edit'; ta.value=m.note||''; ta.placeholder='메모 입력 · ⌘↩ 저장 · Esc 취소';
@@ -9627,7 +9631,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     function paint(a,b,info){ if(!layer){ layer=document.createElement('div'); layer.className='lec-sellayer'; wrap.appendChild(layer); } var r=ov.getBoundingClientRect(), wr=wrap.getBoundingClientRect(); var fx=r.width/info.w, fy=r.height/info.h; var ws=flowWords(info); var i0=Math.min(a.fi,b.fi), i1=Math.max(a.fi,b.fi); var html='';
       for(var i=i0;i<=i1;i++){ var w=ws[i]; html+='<div class="lec-selrect" style="left:'+(w.x*fx+r.left-wr.left+wrap.scrollLeft)+'px;top:'+(w.y*fy+r.top-wr.top+wrap.scrollTop)+'px;width:'+(w.w*fx+2)+'px;height:'+(w.h*fy)+'px"></div>'; } layer.innerHTML=html; }
     ov.addEventListener('mousedown',function(ev){ if(ev.button!==0) return; var info=getInfo(); if(!info && TOOL.mode==='select'){ showToast('이 쪽의 글자 정보를 아직 읽는 중이에요 — 잠시 후 다시 끌어 보세요'); if(ov.id==='lecAnnot' && S.pdf) extractSlideText().catch(function(){}); } st={cx:ev.clientX, cy:ev.clientY, a:nearestWord(info, ov, ev.clientX, ev.clientY), info:info}; ov._dragged=false;
-      if(TOOL.mode==='select' && info){ var ht=annHitInfo(ov, ev); if(ht && ht.free){ var ctx=(ov.id==='lecViewAnnot')?annCtxView():annCtxRec(); var m=ctx.list()[ht.idx]; if(m){ var p=toLogical(info, ov, ev.clientX, ev.clientY); st.move={idx:ht.idx, dx:p.x-m.x, dy:p.y-m.y, ctx:ctx}; } } }
+      if(TOOL.mode==='select' && info){ var ht=annHitInfo(ov, ev); if(ht && ht.free){ var ctx=(ov.id==='lecViewAnnot')?annCtxView():annCtxRec(); if(ht.conv) ht=convertNote(ctx, ht, ov, info); var m=ctx.list()[ht.idx]; if(m){ var p=toLogical(info, ov, ev.clientX, ev.clientY); st.move={idx:ht.idx, dx:p.x-m.x, dy:p.y-m.y, ctx:ctx}; } } }
       if(TOOL.mode==='note' && info){ st.box=true; }
       if(TOOL.mode==='select' && !st.move && wrap.classList.contains('zoomed') && !wordAt(info, ov, ev.clientX, ev.clientY)){ st.pan={ sl:wrap.scrollLeft, stp:wrap.scrollTop }; ov.style.cursor='grabbing'; } });
     ov.addEventListener('mousemove',function(ev){ if(!st) return; if(!ov._dragged && Math.hypot(ev.clientX-st.cx, ev.clientY-st.cy)<5) return; ov._dragged=true; ev.preventDefault();
@@ -9678,7 +9682,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
       if(a.note){ ctx.font='500 '+fontPx+'px Pretendard, -apple-system, sans-serif'; var txt=a.note; var pad=7*sx; var tw=ctx.measureText(txt).width+pad*2, th=fontPx*1.8;
         var nx=x+w+10*sx, ny=y+hh/2-th/2; if(nx+tw>ov.width-4){ nx=Math.max(4, ov.width-tw-4); ny=y+hh+2; } // 오른쪽 여백에 안 들어가면 줄 아래
         var tries=0; while(usedNotes.some(function(u){ return Math.abs(u.y-ny)<th && Math.abs(u.x-nx)<tw; }) && tries++<6){ ny+=th+2; }
-        usedNotes.push({x:nx,y:ny}); hits.push({x:nx,y:ny,w:tw,h:th,idx:ai});
+        usedNotes.push({x:nx,y:ny}); hits.push({x:nx,y:ny,w:tw,h:th,idx:ai,free:true,conv:true});
         ctx.save(); ctx.shadowColor='rgba(0,0,0,0.22)'; ctx.shadowBlur=5*sx; ctx.shadowOffsetY=2*sx; ctx.fillStyle='#bfdbfe'; ctx.fillRect(nx, ny, tw, th); ctx.restore();
         ctx.fillStyle='#1e3a8a'; ctx.textBaseline='middle'; ctx.fillText(txt, nx+pad, ny+th/2);
       }
@@ -9712,8 +9716,8 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
         function up(){ document.removeEventListener('mousemove',mv); document.removeEventListener('mouseup',up); sp.classList.remove('on'); try{ lsSet(lsKey('lec_split'), grid.style.getPropertyValue('--lec-split')); }catch(e){} try{ renderPage(); renderViewPage(); }catch(e){} }
         document.addEventListener('mousemove',mv); document.addEventListener('mouseup',up); }); }); }
   function bindAnnClicks(){ bindTools(); setTool(TOOL.mode); bindSplits(); try{ bindZoom($('lecDropZone'),'rec'); var vc=$('lecViewCanvas'); if(vc) bindZoom(vc.parentNode,'view'); }catch(e){}
-    var ov=$('lecAnnot'); if(ov && !ov._bound){ ov._bound=true; bindDragSelect(ov, function(){ return S.slideLines&&S.slideLines[S.page]; }); ov.addEventListener('click',function(ev){ if(ov._dragged) return; if(toolClick(annCtxRec(), ov, S.slideLines&&S.slideLines[S.page], ev)) return; var hi=annHitInfo(ov, ev); if(hi&&hi.free){ editFree(annCtxRec(), hi.idx, ov, S.slideLines&&S.slideLines[S.page]); return; } var i=annHitTest(ov, ev); if(i<0){ var info=S.slideLines&&S.slideLines[S.page]; var wd=wordAt(info&&info.words, info, ov, ev); if(wd) showWordTip(ov.parentNode, ev, wd.text); return; } var list=S.ann[S.page]||[]; var a=list[i]; if(!a) return; if(!confirm('이 표시를 지울까요?\n'+(a.note||a.type))) return; list.splice(i,1); S.ann[S.page]=list; annPersistPage(S.page); redrawAnn(); saveLocal(); }); }
-    var vo=$('lecViewAnnot'); if(vo && !vo._bound){ vo._bound=true; bindDragSelect(vo, function(){ return V.lines; }); vo.addEventListener('click',function(ev){ if(vo._dragged) return; if(toolClick(annCtxView(), vo, V.lines, ev)) return; var hv=annHitInfo(vo, ev); if(hv&&hv.free){ editFree(annCtxView(), hv.idx, vo, V.lines); return; } var i=annHitTest(vo, ev); if(i<0){ var info=V.lines; var wd=wordAt(info&&info.words, info, vo, ev); if(wd) showWordTip(vo.parentNode, ev, wd.text); return; } var list=V.marks||[]; var a=list[i]; if(!a) return; if(!confirm('이 표시를 지울까요?\n'+(a.note||a.type))) return; list.splice(i,1); if(V.curPdf){ var st=annLoad($('lecCourse').value||'', V.curPdf.name); if(list.length) st[V.page]=list; else delete st[V.page]; annSave($('lecCourse').value||'', V.curPdf.name, st); } renderViewPage(); }); }
+    var ov=$('lecAnnot'); if(ov && !ov._bound){ ov._bound=true; bindDragSelect(ov, function(){ return S.slideLines&&S.slideLines[S.page]; }); ov.addEventListener('click',function(ev){ if(ov._dragged) return; if(toolClick(annCtxRec(), ov, S.slideLines&&S.slideLines[S.page], ev)) return; var hi=annHitInfo(ov, ev); if(hi&&hi.free){ if(hi.conv) hi=convertNote(annCtxRec(), hi, ov, S.slideLines&&S.slideLines[S.page]); editFree(annCtxRec(), hi.idx, ov, S.slideLines&&S.slideLines[S.page]); return; } var i=annHitTest(ov, ev); if(i<0){ var info=S.slideLines&&S.slideLines[S.page]; var wd=wordAt(info&&info.words, info, ov, ev); if(wd) showWordTip(ov.parentNode, ev, wd.text); return; } var list=S.ann[S.page]||[]; var a=list[i]; if(!a) return; if(!confirm('이 표시를 지울까요?\n'+(a.note||a.type))) return; list.splice(i,1); S.ann[S.page]=list; annPersistPage(S.page); redrawAnn(); saveLocal(); }); }
+    var vo=$('lecViewAnnot'); if(vo && !vo._bound){ vo._bound=true; bindDragSelect(vo, function(){ return V.lines; }); vo.addEventListener('click',function(ev){ if(vo._dragged) return; if(toolClick(annCtxView(), vo, V.lines, ev)) return; var hv=annHitInfo(vo, ev); if(hv&&hv.free){ if(hv.conv) hv=convertNote(annCtxView(), hv, vo, V.lines); editFree(annCtxView(), hv.idx, vo, V.lines); return; } var i=annHitTest(vo, ev); if(i<0){ var info=V.lines; var wd=wordAt(info&&info.words, info, vo, ev); if(wd) showWordTip(vo.parentNode, ev, wd.text); return; } var list=V.marks||[]; var a=list[i]; if(!a) return; if(!confirm('이 표시를 지울까요?\n'+(a.note||a.type))) return; list.splice(i,1); if(V.curPdf){ var st=annLoad($('lecCourse').value||'', V.curPdf.name); if(list.length) st[V.page]=list; else delete st[V.page]; annSave($('lecCourse').value||'', V.curPdf.name, st); } renderViewPage(); }); }
   }
   var _renderTask=null;
   async function renderPage(){
