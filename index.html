@@ -2383,7 +2383,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="125">
+<meta name="tm-version" content="126">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -2590,8 +2590,8 @@
   .lec-meter i { display:block; height:100%; width:0; background:linear-gradient(90deg,#22c55e,#eab308 70%,#ef4444); transition:width .08s linear; }
   .ico { vertical-align:-2px; margin-right:5px; flex:none; }
   .lec-btn .ico, .lec-chip .ico, .lec-tab .ico { margin-right:5px; }
-  .lec-notes-live { margin:0 0 8px; border:1px solid #ddd6fe; background:#faf5ff; border-radius:10px; padding:6px 10px; font-size:13px; }
-  .lec-notes-live summary { cursor:pointer; font-weight:700; color:#6d28d9; }
+  .lec-notes-live { margin:0 0 8px; border:1px solid #F1D4C6; background:#FDF6F2; border-radius:10px; padding:6px 10px; font-size:13px; }
+  .lec-notes-live summary { cursor:pointer; font-weight:700; color:#C25E3C; }
   .lec-notes-live ul { margin:6px 0 2px; padding-left:18px; line-height:1.5; } .lec-notes-live li.ex { color:#92400e; }
   .lec-recbanner { position:fixed; right:16px; bottom:16px; z-index:50; background:#dc2626; color:#fff; border:0; border-radius:999px; padding:10px 16px; font-weight:800; font-size:13px; box-shadow:0 4px 14px rgba(0,0,0,.25); cursor:pointer; }
   .lec-divider { font-size:11px; color:var(--text-muted); margin:10px 0 4px; border-top:1px dashed var(--border,#e5e7eb); padding-top:4px; }
@@ -2668,16 +2668,18 @@
   .lec-annot.t-note { cursor:crosshair; }
   .lec-view-canvas { position:relative; }
   .lec-ctx { position:absolute; left:-99999px; top:0; width:1px; height:1px; overflow:hidden; white-space:pre-wrap; }
-  #lecAiBtn.on { border-color:#8B5CF6; color:#8B5CF6; font-weight:700; }
+  #lecAiBtn.on { border-color:#D97757; color:#C25E3C; background:#FBF1EC; font-weight:700; }
+  #lecGemBtn.on { border-color:#1A73E8; color:#1A5FCC; background:#EAF2FE; font-weight:700; }
+  #lecGemBtn:not(.on) { color: var(--text-muted); }
   #lecAiBtn:not(.on) { color: var(--text-muted); }
-  .lec-ai { border:1px solid #DDD6FE; background:#F5F3FF; border-radius:10px; padding:8px 10px; margin-bottom:8px; font-size:13px; }
-  html[data-theme="dark"] .lec-ai { background:#2A2440; border-color:#4C3D7A; }
+  .lec-ai { border:1px solid #F1D4C6; background:#FDF6F2; border-radius:10px; padding:8px 10px; margin-bottom:8px; font-size:13px; }
+  html[data-theme="dark"] .lec-ai { background:#3A2A22; border-color:#7A4E3D; }
   .lec-ai.muted { color: var(--text-muted); font-size:12px; }
-  .lec-ai-head { font-weight:800; color:#7C3AED; margin-bottom:4px; } .lec-ai-head span { font-weight:600; color: var(--text); }
+  .lec-ai-head { font-weight:800; color:#C25E3C; margin-bottom:4px; } .lec-ai-head span { font-weight:600; color: var(--text); }
   .lec-ai .md-ul { margin:0; padding-left:18px; } .lec-ai li { margin:2px 0; }
   .lec-ai-exam { margin-top:4px; color:#B45309; font-size:12px; }
-  .lec-en.fixed::before { content:'✱ '; color:#8B5CF6; }
-  .lec-en.gem::before { content:'✦ '; color:#2563eb; }
+  .lec-en.fixed::before { content:'✱ '; color:#D97757; }
+  .lec-en.gem::before { content:'✦ '; color:#1A73E8; }
   .lec-seg { display:flex; gap:8px; align-items:flex-start; }
   .lec-ts { flex-shrink:0; font-size:11px; color: var(--text-muted); font-variant-numeric: tabular-nums; padding-top:3px; min-width:34px; }
   .lec-segbody { flex:1; min-width:0; }
