@@ -2383,7 +2383,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="142">
+<meta name="tm-version" content="143">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -2676,7 +2676,7 @@
   .lec-trline { position:absolute; color:#1d4ed8; background:rgba(255,255,255,.88); line-height:1.2; padding:1px 4px; border-radius:3px; white-space:normal; font-weight:600; font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo',sans-serif; }
   .lec-tools .lec-trbtn { font-size:12px; font-weight:800; color:#6b7280; } .lec-tools .lec-trbtn.on { color:#1d4ed8; background:#dbeafe; }
   .lec-selrect { position:absolute; background:rgba(59,130,246,.28); pointer-events:none; }
-  .lec-postit-edit { position:absolute; z-index:22; background:#bfdbfe; color:#1e3a8a; border:1px solid #1d4ed8; border-radius:3px; padding:5px 6px; font:500 13px Pretendard,-apple-system,sans-serif; line-height:1.35; resize:both; box-shadow:0 4px 12px rgba(0,0,0,.2); outline:none; }
+  .lec-postit-edit { position:absolute; z-index:22; box-sizing:content-box; background:#bfdbfe; color:#1e3a8a; border:1px solid #1d4ed8; border-radius:3px; padding:5px 6px; font:500 13px Pretendard,-apple-system,sans-serif; line-height:1.35; resize:both; box-shadow:0 4px 12px rgba(0,0,0,.2); outline:none; }
   .lec-postit-del { position:absolute; z-index:23; width:20px; height:20px; border-radius:50%; border:0; background:#111827; color:#fff; font-size:11px; cursor:pointer; padding:0; }
   .lec-selrect.box { background:rgba(191,219,254,.6); border:1px dashed #1d4ed8; }
   .lec-annot.t-note { cursor:crosshair; }
@@ -9662,9 +9662,9 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   function editFree(ctx, idx, ov, info){ var l=ctx.list(); var m=l[idx]; if(!m||!ov||!info) return; var wrap=ov.parentNode; var old=wrap.querySelector('.lec-postit-edit'); if(old) old._done && old._done();
     var r=ov.getBoundingClientRect(), wr=wrap.getBoundingClientRect(); var fx=r.width/info.w, fy=r.height/info.h;
     var ta=document.createElement('textarea'); ta.className='lec-postit-edit'; ta.value=m.note||''; ta.placeholder='메모 입력 · ⌘↩ 저장 · Esc 취소';
-    ta.style.left=(m.x*fx+r.left-wr.left+wrap.scrollLeft)+'px'; ta.style.top=(m.y*fy+r.top-wr.top+wrap.scrollTop)+'px'; ta.style.width=((m.w||160)*fx)+'px'; ta.style.height=((m.h||50)*fy)+'px'; ta.style.fontSize=Math.max(11, Math.min(60, ((m.h||50)*fy-8)/Math.max(1,String(m.note||'').split('\n').length)/1.3))+'px';
+    ta.style.left=(m.x*fx+r.left-wr.left+wrap.scrollLeft)+'px'; ta.style.top=(m.y*fy+r.top-wr.top+wrap.scrollTop)+'px'; ta.style.width=Math.max(20,(m.w||160)*fx-14)+'px'; ta.style.height=Math.max(10,(m.h||50)*fy-12)+'px'; ta.style.fontSize=Math.max(11, Math.min(60, ((m.h||50)*fy-8)/Math.max(1,String(m.note||'').split('\n').length)/1.3))+'px';
     var del=document.createElement('button'); del.type='button'; del.className='lec-postit-del'; del.textContent='✕'; del.title='이 포스트잇 삭제'; del.style.left=((m.x+(m.w||160))*fx+r.left-wr.left+wrap.scrollLeft-10)+'px'; del.style.top=(m.y*fy+r.top-wr.top+wrap.scrollTop-10)+'px';
-    var done=false; function finish(save){ if(done) return; done=true; try{ ta.remove(); del.remove(); }catch(e){} if(!save) return; var l2=ctx.list().slice(); var mm=l2[idx]; if(!mm) return; mm.note=ta.value.trim().slice(0,400); mm.w=Math.max(40, ta.offsetWidth/fx); mm.h=Math.max(20, ta.offsetHeight/fy); ctx.save(l2); }
+    var done=false; function finish(save){ if(done) return; done=true; var ow=ta.offsetWidth, oh=ta.offsetHeight; try{ ta.remove(); del.remove(); }catch(e){} if(!save) return; var l2=ctx.list().slice(); var mm=l2[idx]; if(!mm) return; mm.note=ta.value.trim().slice(0,400); if(ow>0 && oh>0){ mm.w=Math.max(40, (ow-14)/fx); mm.h=Math.max(18, (oh-12)/fy); } ctx.save(l2); }
     ta._done=function(){ finish(true); };
     ta.addEventListener('keydown',function(e){ if(e.key==='Escape'){ e.preventDefault(); finish(false); } else if(e.key==='Enter'&&(e.metaKey||e.ctrlKey)){ e.preventDefault(); finish(true); } e.stopPropagation(); });
     ta.addEventListener('mousedown',function(e){ e.stopPropagation(); }); ta.addEventListener('blur',function(){ setTimeout(function(){ finish(true); },120); });
