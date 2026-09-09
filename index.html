@@ -2383,7 +2383,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="137">
+<meta name="tm-version" content="138">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -2669,7 +2669,7 @@
   .lec-annot { position:absolute; pointer-events:auto; cursor:text; user-select:none; }
   .lec-sellayer { position:absolute; inset:0; pointer-events:none; z-index:15; }
   .lec-trlayer { position:absolute; inset:0; pointer-events:none; z-index:14; }
-  .lec-trline { position:absolute; color:#1d4ed8; background:rgba(255,255,255,.85); line-height:1.15; padding:0 3px; border-radius:3px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; font-weight:600; font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo',sans-serif; }
+  .lec-trline { position:absolute; color:#1d4ed8; background:rgba(255,255,255,.88); line-height:1.2; padding:1px 4px; border-radius:3px; white-space:normal; font-weight:600; font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo',sans-serif; }
   .lec-tools .lec-trbtn { font-size:12px; font-weight:800; color:#6b7280; } .lec-tools .lec-trbtn.on { color:#1d4ed8; background:#dbeafe; }
   .lec-selrect { position:absolute; background:rgba(59,130,246,.28); pointer-events:none; }
   .lec-postit-edit { position:absolute; z-index:22; background:#bfdbfe; color:#1e3a8a; border:1px solid #1d4ed8; border-radius:3px; padding:5px 6px; font:500 13px Pretendard,-apple-system,sans-serif; line-height:1.35; resize:both; box-shadow:0 4px 12px rgba(0,0,0,.2); outline:none; }
@@ -9751,11 +9751,15 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   function trKey(course,pdf){ return lsKey('pdftr_'+(course||'')+'|'+(pdf||'')); }
   function trCtx(which){ if(which==='view'){ var vc=$('lecViewCanvas'); if(!vc||!V.pdf) return null; return { wrap:vc.parentNode, ov:$('lecViewAnnot'), info:V.lines, course:$('lecCourse').value||'', pdf:V.curPdf?V.curPdf.name:'', phys:V.page }; }
     var cv=$('lecCanvas'); if(!cv||!S.pdf) return null; var d=docOf(S.page); return { wrap:cv.parentNode, ov:$('lecAnnot'), info:S.slideLines&&S.slideLines[S.page], course:S.course||$('lecCourse').value||'', pdf:d.name||S.pdfName, phys:S.page-(d.base||0) }; }
+  function trGroups(info){ var ls=(info.lines||[]).filter(function(l){ return /[A-Za-z]{2,}/.test(l.text) && l.text.replace(/[^A-Za-z]/g,'').length>=3; }); var gs=[], cur=null;
+    ls.forEach(function(l){ var starts=/^[•\-–▪●◦*]|^\(?\d+[.)]|^[a-z]\)|^[A-Z][a-z]+/.test(l.text.trim()) && (!cur || /[.?!:]\s*$/.test(cur.text) || l.h>cur.h*1.25 || Math.abs(l.x-cur.x0)>info.w*0.08 && l.x<cur.x0);
+      var gap=cur? (l.y-(cur.last.y+cur.last.h)) : 0; if(!cur || starts || gap>cur.last.h*1.6){ cur={ i:l.i, text:l.text, x0:l.x, first:l, last:l, lines:[l] }; gs.push(cur); } else { cur.text+=' '+l.text; cur.last=l; cur.lines.push(l); } });
+    gs.forEach(function(g){ g.text=g.text.replace(/\s+/g,' ').replace(/^[•\-–▪●◦*]\s*/,'').trim(); }); return gs; }
   function paintTr(which){ var c=trCtx(which); if(!c||!c.wrap) return; var old=c.wrap.querySelector('.lec-trlayer'); if(old) old.remove(); document.querySelectorAll('[data-tr]').forEach(function(b){ b.classList.toggle('on', trEnabled()); });
     if(!trEnabled()||!c.info||!c.info.lines||!c.ov) return; var cache=lsGet(trKey(c.course,c.pdf))||{}; var pg=cache[c.phys]||{}; var r=c.ov.getBoundingClientRect(), wr=c.wrap.getBoundingClientRect(); if(!r.width) return; var fx=r.width/c.info.w, fy=r.height/c.info.h;
     var layer=document.createElement('div'); layer.className='lec-trlayer'; var html='', missing=[];
-    c.info.lines.forEach(function(l){ if(!/[A-Za-z]{2,}/.test(l.text)||l.text.replace(/[^A-Za-z]/g,'').length<3) return; var ko=pg[l.i]; if(ko==null){ missing.push(l); return; } if(!ko||ko===l.text) return;
-      var left=l.x*fx+r.left-wr.left+c.wrap.scrollLeft, top=(l.y+l.h)*fy+r.top-wr.top+c.wrap.scrollTop-Math.max(1,l.h*fy*0.12); var fs=Math.max(8, Math.min(15, l.h*fy*0.5)); var mw=Math.max(140, r.width-(l.x*fx)-4);
+    trGroups(c.info).forEach(function(g){ var ko=pg['g'+g.i]; if(ko==null){ missing.push({ i:'g'+g.i, text:g.text }); return; } if(!ko||ko===g.text) return; var l=g.last;
+      var left=g.x0*fx+r.left-wr.left+c.wrap.scrollLeft, top=(l.y+l.h)*fy+r.top-wr.top+c.wrap.scrollTop-Math.max(1,l.h*fy*0.12); var fs=Math.max(8, Math.min(15, l.h*fy*0.5)); var mw=Math.max(140, r.width-(g.x0*fx)-4);
       html+='<div class="lec-trline" style="left:'+left+'px;top:'+top+'px;font-size:'+fs+'px;max-width:'+mw+'px">'+escapeHtml(ko)+'</div>'; });
     layer.innerHTML=html; c.wrap.appendChild(layer); if(missing.length) trFetch(c, missing, which); }
   async function trFetch(c, lines, which){ var key=c.course+'|'+c.pdf+'|'+c.phys; if(_trJobs[key]) return; _trJobs[key]=true;
