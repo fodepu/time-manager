@@ -2383,7 +2383,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="152">
+<meta name="tm-version" content="153">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -2442,6 +2442,8 @@
   .tt-block.moved .t::before { content:'↕ '; opacity:.7; }
   .toast-undo { margin-left:8px; padding:2px 10px; border-radius:999px; border:1px solid rgba(255,255,255,.6); background:transparent; color:inherit; font:inherit; font-weight:800; cursor:pointer; }
   #sbPeriods.once .tt-pdays { display:none; } .sb-once { margin-bottom:8px; } .sb-once-date { margin-bottom:8px; }
+  .tm-now-fab { position:fixed; right:18px; bottom:22px; z-index:120; width:46px; height:46px; border-radius:50%; border:1px solid var(--border,#e5e7eb); background:var(--bg-card,#fff); color:var(--text); box-shadow:0 4px 14px rgba(0,0,0,.15); cursor:pointer; display:flex; align-items:center; justify-content:center; }
+  .tm-now-fab.on { background:#111827; color:#fff; border-color:#111827; }
   .tm-now { position:fixed; inset:0; z-index:950; background:rgba(15,23,42,.55); backdrop-filter:blur(6px); display:flex; align-items:center; justify-content:center; padding:20px; }
   .tm-now-box { background:var(--bg-card,#fff); color:var(--text); border-radius:22px; padding:34px 36px; max-width:520px; width:100%; text-align:center; box-shadow:0 20px 60px rgba(0,0,0,.35); }
   .tm-now-when { font-size:14px; font-weight:700; color:var(--text-muted); }
@@ -9000,6 +9002,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
       if(!isRec) items.push(['편집 (시간·장소·요일)', function(){ if(date!==currentDate) loadDate(date); openScheduleBlockModal(b.id); }, 'edit']);
       else items.push(['정리 기록 (편집 불가)', function(){ showToast('정리 기록 블록은 편집할 수 없어요. 아래 버튼으로 기본 시간표로 되돌릴 수 있습니다.'); }]);
       items.push([b.kind==='tasks'?'할 일 적기·수정':'할 일 적기', function(){ openTodos(date, b.id, b.label); }, 'clipboard']);
+      if(!isRec && b.values.check!==true) items.push(['타이머 시작', function(){ if(window.tmPromptNow) tmPromptNow(true, b); }, 'play']);
       if(b.moved && !isRec) items.push(['이 시간으로 계속 (시간표에 저장)', function(){ var ref=entryForDate(date,b.id); var mv=ref&&ref.e.values&&ref.e.values.mv; if(!mv) return; var tm=(typeof loadTemplate==='function' && loadTemplate())||[]; var t=tm.find(function(x){ return x.id===b.id; }); if(t){ t.start=mv.s; t.end=mv.e; lsSet(lsKey('template'), tm); } var ce=(typeof entries!=='undefined')?entries.find(function(x){ return x.id===b.id; }):null; if(ce){ ce.start=mv.s; ce.end=mv.e; if(ce.values) delete ce.values.mv; if(typeof persist==='function') persist(); } if(ref&&ref.e.values){ delete ref.e.values.mv; ref.save(); } if(window.tmOnChange) tmOnChange(); showToast(b.label+' '+mv.s+'~'+mv.e+' 로 시간표에 저장됨'); refreshAll(); }, 'check']);
       if(b.moved && !isRec) items.push(['원래 시간으로 되돌리기', function(){ var ref=entryForDate(date,b.id); if(ref&&ref.e.values){ delete ref.e.values.mv; ref.save(); if(window.tmOnChange) tmOnChange(); refreshAll(); } }, 'edit']);
       items.push(['복사 (바로 뒤에 하나 더)', function(){ copyBlock(date,b); }, 'copy']);
@@ -9563,10 +9566,10 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     bl.forEach(function(b){ var s=mins(b.start), e=mins(b.end); if(e<=s) return; if(s<=m && m<e && b.values.check!==true){ if(!cur || s>mins(cur.start)) cur=b; } else if(s>m && s-m<=10 && (!soon || s<mins(soon.start))) soon=b; });
     return { date:ds, m:m, cur:cur, soon:soon }; }
   var _nowShownFor='';
-  function tmPromptNow(force){ try{ if(!window.tmIsOwner) return; if(document.getElementById('tmNowCard')) return; if(TIMER.end) return; var inf=tmNowInfo(); var b=inf.soon||inf.cur; if(!b) return; if(b.id.indexOf('day_')===0) return;
+  function tmPromptNow(force, block){ try{ if(!window.tmIsOwner) return; var oldc=document.getElementById('tmNowCard'); if(oldc){ if(!force) return; oldc.remove(); } if(TIMER.end){ if(force){ tmTimerShow(); } return; } var inf=tmNowInfo(); var b=block||inf.soon||inf.cur; if(!b){ if(force) showToast('지금 진행 중인 블록이 없어요 — 블록을 우클릭해 타이머를 시작할 수 있어요'); return; } if(b.id.indexOf('day_')===0) return;
       var key=inf.date+'|'+b.id+'|'+b.start; if(!force){ if(_nowShownFor===key) return; try{ if(sessionStorage.getItem('tm_now_'+key)) return; }catch(e){} } _nowShownFor=key;
-      var course=tmCourseFor(b.label); var isCourse=!!course && !tmIsPhone(); var isStudy=!course && !NOW_SKIP.test(b.label); if(!isCourse && !isStudy) return;
-      var remain=Math.max(1, mins(b.end)-Math.max(inf.m, mins(b.start)));
+      var course=tmCourseFor(b.label); var isCourse=!!course && !tmIsPhone(); var isStudy=!course && !NOW_SKIP.test(b.label); if(block){ isStudy=!isCourse; } if(!isCourse && !isStudy) return;
+      var remain=Math.max(1, mins(b.end)-Math.max(inf.m, mins(b.start))); if(block && mins(b.end)<=inf.m) remain=50;
       var card=document.createElement('div'); card.id='tmNowCard'; card.className='tm-now';
       card.innerHTML='<div class="tm-now-box"><div class="tm-now-scene">'+sceneSvg(sceneState(), 1600, 500)+'</div><div class="tm-now-when">'+(inf.soon===b?'곧 시작 · ':'지금 · ')+b.start+'~'+b.end+'</div><h1>'+escapeHtml(b.label)+'</h1>'+
         (isCourse?'<p>강의노트를 열까요?</p><div class="tm-now-btns"><button type="button" class="pri" data-act="lecture">강의노트로 가기</button><button type="button" data-act="no">아니요</button></div>'
@@ -9684,6 +9687,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   function tmTimerRestore(){ try{ var t=JSON.parse(localStorage.getItem('tm_timer')||'null'); if(!t||!t.end) return; TIMER.end=t.end; TIMER.total=t.total||0; TIMER.label=t.label||''; TIMER.paused=t.paused||0; TIMER.startedAt=t.startedAt||0; TIMER.credited=t.credited||0; if(!TIMER.paused && TIMER.end<Date.now()){ TIMER.end=0; tmTimerSave(); return; } tmTimerShow(); }catch(e){} }
   window.tmTimerStart=tmTimerStart;
   document.addEventListener('visibilitychange', function(){ if(document.visibilityState==='visible') setTimeout(function(){ tmPromptNow(false); }, 400); });
+  (function(){ var fb=document.createElement('button'); fb.type='button'; fb.id='tmNowFab'; fb.className='tm-now-fab'; fb.title='지금 블록 타이머'; fb.innerHTML='<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2"/><path d="M9 2h6"/></svg>'; fb.addEventListener('click', function(){ tmPromptNow(true); }); document.body.appendChild(fb); setInterval(function(){ var show=window.tmIsOwner && (typeof currentMode==='undefined' || currentMode==='growth' || currentMode==='timetable' || !currentMode) && !document.body.classList.contains('lec-full'); fb.style.display=show?'':'none'; fb.classList.toggle('on', !!TIMER.end); }, 1000); })();
   setInterval(function(){ if(document.visibilityState==='visible') tmPromptNow(false); }, 60000);
   function bindAll(){ bindHeader(); bindTodos(); }
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', bindAll); else bindAll();
