@@ -2383,7 +2383,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="138">
+<meta name="tm-version" content="139">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -2527,6 +2527,9 @@
   body.lec-fs-on { overflow:hidden; }
   .lec-fs-nav { position:fixed; left:50%; bottom:14px; transform:translateX(-50%); z-index:901; display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,.96); border:1px solid var(--border,#e5e7eb); border-radius:999px; padding:4px 6px; box-shadow:0 2px 10px rgba(0,0,0,.12); font-size:13px; font-weight:700; color:#374151; }
   .lec-fs-nav button { border:0; background:transparent; width:30px; height:30px; border-radius:999px; cursor:pointer; font-size:16px; color:#374151; }
+  .lec-fs-nav .lec-fs-sep { width:1px; height:20px; background:#e5e7eb; margin:0 4px; }
+  .lec-fs-nav input { width:min(46vw, 520px); font-size:13px; padding:6px 10px; border:1px solid #e5e7eb; border-radius:999px; outline:none; background:#fff; color:#111; }
+  .lec-fs-nav #lecBoardFsGo { width:auto; padding:0 12px; font-size:13px; font-weight:700; background:#fde68a; }
   .lec-fs-nav button:hover { background:#f3f4f6; }
   .lec-tools .lec-zoomlbl { min-width:46px; font-variant-numeric:tabular-nums; }
   .lec-dropzone.zoomed, .lec-view-canvas.zoomed { overflow:auto; align-items:flex-start; justify-content:flex-start; }
@@ -9613,7 +9616,8 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     document.querySelectorAll('.lec-fs').forEach(function(x){ if(x!==wrap) x.classList.remove('lec-fs'); }); wrap.classList.toggle('lec-fs', on); document.body.classList.toggle('lec-fs-on', on);
     var nav=$('lecFsNav'); if(nav) nav.remove();
     if(on){ nav=document.createElement('div'); nav.className='lec-fs-nav'; nav.id='lecFsNav'; var isDoc=wrap.id==='lecDocWrap', isView=wrap.classList.contains('lec-view-canvas');
-      nav.innerHTML='<button type="button" data-d="-1">‹</button><span id="lecFsPage"></span><button type="button" data-d="1">›</button>';
+      nav.innerHTML='<button type="button" data-d="-1">‹</button><span id="lecFsPage"></span><button type="button" data-d="1">›</button>'+(!isView?'<span class="lec-fs-sep"></span><span class="lec-board-tag">✎</span><input type="text" id="lecBoardFs" placeholder="판서 대충 적고 Enter"><button type="button" id="lecBoardFsGo">정리</button>':'');
+      if(!isView){ var fi=nav.querySelector('#lecBoardFs'), fg=nav.querySelector('#lecBoardFsGo'); var send=function(){ var v=(fi.value||'').trim(); if(!v) return; var main=$('lecBoardIn'); if(main){ main.value=v; } fi.value=''; fg.textContent='정리 중…'; fg.disabled=true; Promise.resolve(boardAsk()).finally(function(){ fg.textContent='정리'; fg.disabled=false; }); }; fg.addEventListener('click',send); fi.addEventListener('keydown',function(e){ if(e.key==='Enter'){ e.preventDefault(); send(); } e.stopPropagation(); }); }
       nav.querySelectorAll('button').forEach(function(b){ b.addEventListener('click',function(){ var d=+b.getAttribute('data-d'); if(isView) viewGo(V.page+d); else if(isDoc){ goPage((S.viewPage||S.page||1)+d); } else goPage(S.page+d); }); });
       document.body.appendChild(nav); }
     fsPaint();
