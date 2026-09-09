@@ -2383,7 +2383,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="131">
+<meta name="tm-version" content="132">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -2441,6 +2441,7 @@
   .tt-block.pressing { transform: scale(.985); }
   .tt-block.moved .t::before { content:'↕ '; opacity:.7; }
   .toast-undo { margin-left:8px; padding:2px 10px; border-radius:999px; border:1px solid rgba(255,255,255,.6); background:transparent; color:inherit; font:inherit; font-weight:800; cursor:pointer; }
+  #sbPeriods.once .tt-pdays { display:none; } .sb-once { margin-bottom:8px; } .sb-once-date { margin-bottom:8px; }
   .tt-rz { position:absolute; left:0; right:0; height:7px; cursor:ns-resize; z-index:2; }
   .tt-rz-t { top:0; } .tt-rz-b { bottom:0; }
   .tt-block.done .tt-rz { display:none; }
@@ -9291,6 +9292,8 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   var INK='#FFFFFF'; // 체크 블록 전용 (흰 배경 + 검정 글자·테두리)
   var DAYS_ORDER=[1,2,3,4,5,6,0], DOWK=['일','월','화','수','목','금','토'];
   var periods=[]; // [{days:[..], start:'HH:MM', end:'HH:MM', id?:entryId}]
+  var once=false;
+  function setOnce(v){ once=!!v; var box=document.getElementById('sbOnce'); if(box){ box.querySelectorAll('.sb-kind').forEach(function(b){ b.classList.toggle('on', (b.dataset.o==='1')===once); }); } var d=document.getElementById('sbOnceDate'); if(d){ d.style.display=once?'':'none'; var inp=document.getElementById('sbOnceInp'); if(inp && !inp.value) inp.value=currentDate; } var m=document.getElementById('sbPeriods'); if(m) m.classList.toggle('once', once); }
   var selKind='single';
   function paintKind(){ document.querySelectorAll('#sbKind .sb-kind').forEach(function(b){ b.classList.toggle('on', b.dataset.k===selKind); }); }
   function groupOf(id){ var e=entries.find(function(x){return x.id===id;}); if(!e) return []; if(e.group) return entries.filter(function(x){ return x.group===e.group && x.start && x.end; }); return [e]; }
@@ -9312,7 +9315,8 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     }
     if(!document.getElementById('sbPeriods')){
       var p=document.createElement('div'); p.className='field-group'; p.id='sbPeriods';
-      p.innerHTML='<label class="field-label">시간 <span style="color:var(--text-muted);font-weight:400;">(요일별로 다르면 줄을 추가)</span></label><div id="sbPeriodList"></div><button type="button" class="tt-addp" id="sbAddPeriod">＋ 시간 추가</button>';
+      p.innerHTML='<div class="sb-kinds sb-once" id="sbOnce"><button type="button" class="sb-kind on" data-o="0"><b>매주 반복</b><span>요일을 골라 시간표에</span></button><button type="button" class="sb-kind" data-o="1"><b>이날만</b><span>세미나·약속 같은 일회성</span></button></div><div class="field-row sb-once-date" id="sbOnceDate" style="display:none"><label class="field-label">날짜</label><input type="date" class="field-input" id="sbOnceInp"></div><label class="field-label">시간 <span style="color:var(--text-muted);font-weight:400;">(요일별로 다르면 줄을 추가)</span></label><div id="sbPeriodList"></div><button type="button" class="tt-addp" id="sbAddPeriod">＋ 시간 추가</button>';
+      p.querySelectorAll('#sbOnce .sb-kind').forEach(function(b){ b.addEventListener('click',function(){ setOnce(b.dataset.o==='1'); }); });
       var pl=document.getElementById('sbPlace').closest('.field-group'); pl.parentNode.insertBefore(p, pl.nextSibling);
       p.querySelector('#sbAddPeriod').addEventListener('click', function(){ var last=periods[periods.length-1]; periods.push({days:last?last.days.slice():[1,2,3,4,5], start:'', end:''}); renderPeriods(); });
     }
@@ -9340,7 +9344,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   var _openEdit=window.openScheduleBlockModal, _openNew=window.openNewScheduleBlockModal;
   window.openScheduleBlockModal=function(id){
     _openEdit(id); setupModal(); var e=entries.find(function(x){return x.id===id;}); if(!e) return;
-    selKind=e.kind||'single'; paintKind();
+    selKind=e.kind||'single'; paintKind(); setOnce(false); var ob2=document.getElementById('sbOnce'); if(ob2) ob2.style.display='none';
     document.getElementById('sbPlace').value=e.place||'';
     var dayRank=function(ds){ var r=(ds||[]).map(function(d){ return (Number(d)+6)%7; }).filter(function(n){ return !isNaN(n); }); return r.length?Math.min.apply(null,r):9; };
     var grp0=groupOf(id); var common=(e.place||''); var allSame=grp0.every(function(x){ return (x.place||'')===common; });
@@ -9350,12 +9354,15 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     if(!periods.length) periods=[{id:e.id, days:[1,2,3,4,5], start:e.start, end:e.end}];
     renderPeriods();
   };
-  window.openNewScheduleBlockModal=function(){ _openNew(); setupModal(); selKind='single'; paintKind(); document.getElementById('sbPlace').value=''; var dow=new Date(currentDate+'T00:00:00').getDay(); periods=[{days:[dow], start:'', end:''}]; renderPeriods(); };
+  window.openNewScheduleBlockModal=function(){ _openNew(); setupModal(); selKind='single'; paintKind(); var oi=document.getElementById('sbOnceInp'); if(oi) oi.value=currentDate; setOnce(false); var ob=document.getElementById('sbOnce'); if(ob) ob.style.display=''; document.getElementById('sbPlace').value=''; var dow=new Date(currentDate+'T00:00:00').getDay(); periods=[{days:[dow], start:'', end:''}]; renderPeriods(); };
   window.saveScheduleBlock=function(){
     var label=document.getElementById('sbLabel').value.trim(); var place=(document.getElementById('sbPlace').value||'').trim();
     if(!label){ showToast('활동 이름을 입력하세요'); return; }
     var valid=periods.filter(function(p){ return p.start && p.end; });
     if(!valid.length){ showToast('시작/끝 시간을 입력하세요'); return; }
+    if(once){ var od=(document.getElementById('sbOnceInp')||{}).value||currentDate; if(valid.some(function(p){ return mins(p.end)<=mins(p.start); })){ showToast('끝 시간이 시작보다 늦어야 해요'); return; } var col=(selKind==='tasks')?INK:randomColor();
+      valid.forEach(function(p){ addOneOff(od, { id:'once_'+Date.now().toString(36)+Math.random().toString(36).slice(2,5), label:label, start:p.start, end:p.end, category:'prep', color:col, kind:selKind, place:place, types:['check'], values:{}, pinned:false, goalMinutes:scheduleMinutesBetween(p.start,p.end) }); });
+      closeScheduleBlockModal(); refreshAll(); showToast(od+' 에 "'+label+'" 추가됨 (이날만)'); return; }
     if(valid.some(function(p){ return !p.days.length; })){ showToast('요일을 1개 이상 선택하세요'); return; }
     if(valid.some(function(p){ return mins(p.end)<=mins(p.start); })){ showToast('끝 시간이 시작보다 늦어야 해요'); return; }
     var editId=sbModalState.editingId; var base=editId?entries.find(function(x){return x.id===editId;}):null;
