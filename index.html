@@ -2383,7 +2383,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="127">
+<meta name="tm-version" content="128">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -9822,6 +9822,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     var pr=$('lecDocPrint'); if(pr && !pr._b){ pr._b=true; pr.addEventListener('click',function(){ document.title=(S.title||'강의 필기')+' · '+(S.date||''); window.print(); }); }
     var paper=$('lecDocPaper'); if(paper && !paper._b){ paper._b=true; paper.addEventListener('scroll',function(){ S.userScrolledDoc=(paper.scrollHeight-paper.scrollTop-paper.clientHeight)>80; }); } }
   document.addEventListener('toggle',function(e){ try{ if(e.target&&e.target.classList&&e.target.classList.contains('lec-notes-live')) lsSet(lsKey('lec_notes_open'), e.target.open?1:0); }catch(x){} }, true);
+  function sentHtml(t){ t=String(t||''); if(t.length<90) return escapeHtml(t); var parts=t.split(/(?<=[.?!。])\s+(?=[A-Z가-힣"'(\d])/); if(parts.length<2) return escapeHtml(t); return parts.map(function(x){ return escapeHtml(x); }).join('<br>'); }
   function renderLive(){ try{ fsPaint(); }catch(e){} try{ cleanGemFix(); }catch(e){} renderCtx(); if(S.online){ docShow(true); docBind(); renderDoc(); } else docShow(false);
     var box=$('lecLive'); if(!box) return; var p=S.page||1, sl=S.slides[p]||{segs:[]}; var showEn=$('lecShowEn')&&$('lecShowEn').checked;
     var h='<div class="lec-live-head">'+(S.online?'구간 '+p+' <small>(5분마다 자동, → 키로 수동 분할)</small>':'슬라이드 '+(p-(S.base||0))+(S.total?' / '+S.total:''))+' <small>'+allSegs().length+'문장 · '+(S.running?'● 녹음 중 '+fmtT(nowT())+(S.recOn?' · 인식기 켜짐':' · 인식기 대기')+' · '+(S.lang==='ko-KR'?'한국어':'영어')+' 인식'+(G.on?' · Gemini '+(G.ready?'연결':'대기')+' · 보냄 '+Math.round((G.sent||0)/10)+'s · 받음 '+(G.rxText||0)+(S.lang==='ko-KR'?' · '+(((G.variant||0)===0)?'실시간 교정':((G.variant||0)===1?'전사 전용':'번역 에코')):''):'')+(S.biased?' · 슬라이드 용어 '+S.biased+'개 반영':'')+(S.lastErr&&S.lastErr!=='no-speech'&&S.lastErr!=='aborted'?' · 마지막 오류: '+S.lastErr:''):'대기')+'</small></div>';
@@ -9830,7 +9831,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     // ✱ 요점: PDF 수업에서도 현재 슬라이드의 Claude 요점·시험 언급을 대본 위에 작게 보여줌 (접기 가능)
     if(!S.online){ var lv=S.live&&S.live[p]; var nts=(lv&&lv.notes)||[], exs=(lv&&lv.exam)||[]; if(nts.length||exs.length||(S.running&&aiEngine())){ h+='<details class="lec-notes-live"'+(lsGet(lsKey('lec_notes_open'))===0?'':' open')+'><summary>✱ 요점 · 슬라이드 '+(p-(S.base||0))+(nts.length?' <small>'+nts.length+'줄</small>':'')+'</summary>'+(nts.length||exs.length?'<ul>'+nts.map(function(n){ return '<li>'+mdInline(n)+'</li>'; }).join('')+exs.map(function(x){ return '<li class="ex">⚠ '+escapeHtml(x)+'</li>'; }).join('')+'</ul>':'<div class="lec-doc-wait">'+(AI.busy?'Claude 필기 중…':'20초마다 갱신 — 아직 없음')+'</div>')+'</details>'; } }
     var all=allSegs(); var hidden=Math.max(0, all.length-150); if(hidden) h+='<div class="lec-divider">이전 '+hidden+'문장은 접힘 (저장돼 있어요)</div>'; var lastPg=null;
-    all.slice(-150).forEach(function(s){ if(s.page!==lastPg){ lastPg=s.page; h+='<div class="lec-divider">'+escapeHtml(pageLabel(s.page))+'</div>'; } var main=(S.lang==='ko-KR')?(rawMode&&s.raw?s.raw:(s.fix||s.ko)):(s.ko?s.ko:''); h+='<div class="lec-seg"><span class="lec-ts">'+fmtT(s.t||0)+'</span><div class="lec-segbody"><div class="lec-ko">'+(main?escapeHtml(main):'<span class="lec-wait">번역 중…</span>')+'</div>'+(S.lang!=='ko-KR'&&showEn?'<div class="lec-en'+(s.src==='gemini'?' gem':(s.fix&&!rawMode?' fixed':''))+'">'+escapeHtml(s.src==='gemini'?s.en:(rawMode&&s.raw?s.raw:(s.fix||s.en)))+'</div>':'')+(rawMode&&s.raw&&S.lang==='ko-KR'?'<div class="lec-en">확정: '+escapeHtml(s.ko)+'</div>':'')+'</div></div>'; });
+    all.slice(-150).forEach(function(s){ if(s.page!==lastPg){ lastPg=s.page; h+='<div class="lec-divider">'+escapeHtml(pageLabel(s.page))+'</div>'; } var main=(S.lang==='ko-KR')?(rawMode&&s.raw?s.raw:(s.fix||s.ko)):(s.ko?s.ko:''); h+='<div class="lec-seg"><span class="lec-ts">'+fmtT(s.t||0)+'</span><div class="lec-segbody"><div class="lec-ko">'+(main?sentHtml(main):'<span class="lec-wait">번역 중…</span>')+'</div>'+(S.lang!=='ko-KR'&&showEn?'<div class="lec-en'+(s.src==='gemini'?' gem':(s.fix&&!rawMode?' fixed':''))+'">'+sentHtml(s.src==='gemini'?s.en:(rawMode&&s.raw?s.raw:(s.fix||s.en)))+'</div>':'')+(rawMode&&s.raw&&S.lang==='ko-KR'?'<div class="lec-en">확정: '+escapeHtml(s.ko)+'</div>':'')+'</div></div>'; });
     if(S.lastInterim) h+='<div class="lec-seg interim live"><span class="lec-ts">'+fmtT(nowT())+'</span><div class="lec-segbody"><div class="lec-ko">'+escapeHtml(S.lastInterim)+' <span class="lec-cursor">▍</span></div></div></div>';
     var stick=(box.scrollHeight-box.scrollTop-box.clientHeight)<60; box.innerHTML=h; if(stick||!S.userScrolled) box.scrollTop=box.scrollHeight;
   }
@@ -9973,7 +9974,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   function gemInput(t){ t=String(t); if(!t.trim()) return;
     if(S.lang==='ko-KR'){ var nowK=Date.now(); var pk=S.page||1; var sk=G.seg; var v0=(G.variant||0)===0; if(!sk || sk.page!==pk || (!v0 && (nowK-G.lastIn>2500 || sk.ko.length>200))){ sk={ t:nowT(), page:pk, en:'', ko:'', src:'gemini' }; slide(pk).segs.push(sk); G.seg=sk; } sk.ko=gemJoin(sk.ko,t); G.lastIn=nowK; S.lastResultAt=nowK; S.lastInterim=''; renderLive(); saveLocal(); return; }
     var now=Date.now(), p=S.page||1, seg=G.seg;
-    var fresh=!seg || seg.page!==p || (now-G.lastIn>2500 && seg.ko) || (seg.en.length>220 && /[.?!]\s*$/.test(seg.en));
+    var fresh=!seg || seg.page!==p || (now-G.lastIn>1800 && seg.ko) || (seg.en.length>150 && /[.?!]\s*$/.test(seg.en)) || seg.en.length>380;
     if(fresh){ seg={ t:nowT(), page:p, en:'', ko:'', src:'gemini' }; slide(p).segs.push(seg); G.seg=seg; G.koOpen=false; }
     seg.en=gemJoin(seg.en,t); G.lastIn=now; S.lastResultAt=now; S.lastInterim=''; renderLive(); saveLocal(); }
   function gemOutput(t){ var seg=G.seg; if(!seg) return; seg.ko=gemJoin(seg.ko,t); G.koOpen=true; renderLive(); }
