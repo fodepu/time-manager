@@ -2383,7 +2383,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="149">
+<meta name="tm-version" content="150">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -2442,6 +2442,22 @@
   .tt-block.moved .t::before { content:'↕ '; opacity:.7; }
   .toast-undo { margin-left:8px; padding:2px 10px; border-radius:999px; border:1px solid rgba(255,255,255,.6); background:transparent; color:inherit; font:inherit; font-weight:800; cursor:pointer; }
   #sbPeriods.once .tt-pdays { display:none; } .sb-once { margin-bottom:8px; } .sb-once-date { margin-bottom:8px; }
+  .tm-now { position:fixed; inset:0; z-index:950; background:rgba(15,23,42,.55); backdrop-filter:blur(6px); display:flex; align-items:center; justify-content:center; padding:20px; }
+  .tm-now-box { background:var(--bg-card,#fff); color:var(--text); border-radius:22px; padding:34px 36px; max-width:520px; width:100%; text-align:center; box-shadow:0 20px 60px rgba(0,0,0,.35); }
+  .tm-now-when { font-size:14px; font-weight:700; color:var(--text-muted); }
+  .tm-now-box h1 { font-size:40px; font-weight:900; margin:8px 0 6px; letter-spacing:-0.5px; }
+  .tm-now-box p { margin:0 0 18px; color:var(--text-muted); font-size:15px; }
+  .tm-now-btns { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; }
+  .tm-now-btns button { font:inherit; font-size:17px; font-weight:800; padding:14px 22px; border-radius:14px; border:1px solid var(--border,#e5e7eb); background:var(--bg-soft); color:var(--text); cursor:pointer; }
+  .tm-now-btns button.pri { background:#111827; color:#fff; border-color:#111827; }
+  .tm-timer { position:fixed; inset:0; z-index:960; background:#0b0b0d; color:#fff; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:22px; --pct:0%; }
+  .tm-timer-ring { width:min(70vw,70vh); height:min(70vw,70vh); border-radius:50%; background: conic-gradient(#22c55e var(--pct), rgba(255,255,255,.12) 0); display:flex; align-items:center; justify-content:center; }
+  .tm-timer-ring::before { content:''; position:absolute; width:calc(min(70vw,70vh) - 28px); height:calc(min(70vw,70vh) - 28px); border-radius:50%; background:#0b0b0d; }
+  .tm-timer-time { position:relative; font-size:min(22vw,22vh); font-weight:900; font-variant-numeric:tabular-nums; letter-spacing:-2px; }
+  .tm-timer.paused .tm-timer-time { opacity:.5; } .tm-timer.done .tm-timer-ring { background:#22c55e; }
+  .tm-timer-label { font-size:24px; font-weight:800; color:rgba(255,255,255,.85); }
+  .tm-timer-btns { display:flex; gap:12px; } .tm-timer-btns button { font:inherit; font-size:17px; font-weight:800; padding:12px 22px; border-radius:999px; border:1px solid rgba(255,255,255,.3); background:rgba(255,255,255,.1); color:#fff; cursor:pointer; }
+  body.tm-timer-on { overflow:hidden; }
   .tt-rz { position:absolute; left:0; right:0; height:7px; cursor:ns-resize; z-index:2; }
   .tt-rz-t { top:0; } .tt-rz-b { bottom:0; }
   .tt-block.done .tt-rz { display:none; }
@@ -8210,7 +8226,7 @@ function switchMode(mode) {
   clearTimeout(autoSaveTimer);
   persist();
   currentMode = mode;
-  try{ if(typeof lsSet==='function') lsSet(lsKey('last_mode'), mode); }catch(e){}
+  try{ localStorage.setItem('tm_last_mode', mode); }catch(e){}
   document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.mode === mode));
   document.getElementById('growthMode').style.display = mode === 'growth' ? 'block' : 'none';
   document.getElementById('freeMode').style.display = mode === 'free' ? 'block' : 'none';
@@ -9206,7 +9222,8 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   window.tmRestoreView=function(isOwner){
     try{
       if(!isOwner) return;
-      var m=lsGet(lsKey('last_mode'));
+      var m=localStorage.getItem('tm_last_mode'); var phone=window.matchMedia&&window.matchMedia('(max-width: 759px) and (hover: none) and (pointer: coarse)').matches;
+      if(phone && m==='lecture') m=null;
       if(m && m!=='growth' && window.switchMode) switchMode(m);
     }catch(e){}
   };
@@ -9528,8 +9545,50 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     try{ if(isOwner){ tmRecolorOwner(); tmRepairBlocks(); tmDedupeEntries(); tmFixDupColors(); } }catch(e){}
     try{ refreshAll(); }catch(e){}
     if(isOwner) setTimeout(tmRenderLms, 400);
+    if(isOwner){ window.tmIsOwner=true; setTimeout(function(){ tmTimerRestore(); tmPromptNow(false); }, 900); }
   };
 
+  // ---- 지금 블록 안내 (앱을 열면 지금 할 블록을 크게 묻고, 공부면 타이머·수업이면 강의노트로) ----
+  var NOW_SKIP=/이동|식사|아침|점심|저녁|수면|잠|자유|휴식|샤워|준비|기상|출근|퇴근/;
+  function tmIsPhone(){ try{ return window.matchMedia('(max-width: 759px) and (hover: none) and (pointer: coarse)').matches; }catch(e){ return false; } }
+  function tmCourseNames(){ var out=[]; try{ var sel=document.getElementById('lecCourse'); if(sel) Array.prototype.forEach.call(sel.options, function(o){ if(o.value) out.push({ value:o.value, name:o.textContent.replace(/^\(SDGs\)/,'') }); }); }catch(e){} return out; }
+  function tmCourseFor(label){ var L=tmNormName(label); if(!L) return null; var cs=tmCourseNames(); for(var i=0;i<cs.length;i++){ var C=tmNormName(cs[i].name); if(!C) continue; if(L.indexOf(C.slice(0,4))>=0 || C.indexOf(L.slice(0,4))>=0) return cs[i]; } return null; }
+  function tmNowInfo(){ var d=new Date(); var ds=toLocalDateStr(d); var m=d.getHours()*60+d.getMinutes(); var bl=[]; try{ bl=blocksFor(ds).blocks||[]; }catch(e){} var cur=null, soon=null;
+    bl.forEach(function(b){ var s=mins(b.start), e=mins(b.end); if(e<=s) return; if(s<=m && m<e && b.values.check!==true){ if(!cur || s>mins(cur.start)) cur=b; } else if(s>m && s-m<=10 && (!soon || s<mins(soon.start))) soon=b; });
+    return { date:ds, m:m, cur:cur, soon:soon }; }
+  var _nowShownFor='';
+  function tmPromptNow(force){ try{ if(!window.tmIsOwner) return; if(document.getElementById('tmNowCard')) return; if(TIMER.end) return; var inf=tmNowInfo(); var b=inf.soon||inf.cur; if(!b) return; if(b.id.indexOf('day_')===0) return;
+      var key=inf.date+'|'+b.id+'|'+b.start; if(!force){ if(_nowShownFor===key) return; try{ if(sessionStorage.getItem('tm_now_'+key)) return; }catch(e){} } _nowShownFor=key;
+      var course=tmCourseFor(b.label); var isCourse=!!course && !tmIsPhone(); var isStudy=!course && !NOW_SKIP.test(b.label); if(!isCourse && !isStudy) return;
+      var remain=Math.max(1, mins(b.end)-Math.max(inf.m, mins(b.start)));
+      var card=document.createElement('div'); card.id='tmNowCard'; card.className='tm-now';
+      card.innerHTML='<div class="tm-now-box"><div class="tm-now-when">'+(inf.soon===b?'곧 시작 · ':'지금 · ')+b.start+'~'+b.end+'</div><h1>'+escapeHtml(b.label)+'</h1>'+
+        (isCourse?'<p>강의노트를 열까요?</p><div class="tm-now-btns"><button type="button" class="pri" data-act="lecture">강의노트로 가기</button><button type="button" data-act="no">아니요</button></div>'
+        :'<p>시작할까요? 타이머가 화면을 꽉 채워요</p><div class="tm-now-btns"><button type="button" class="pri" data-act="t40">40분</button><button type="button" class="pri" data-act="t50">50분</button><button type="button" data-act="tend">끝까지 '+remain+'분</button><button type="button" data-act="no">아니요</button></div>')+'</div>';
+      document.body.appendChild(card);
+      card.addEventListener('click', function(ev){ var bt=ev.target.closest('[data-act]'); if(!bt && ev.target!==card) return; var act=bt?bt.getAttribute('data-act'):'no'; card.remove(); try{ sessionStorage.setItem('tm_now_'+key,'1'); }catch(e){}
+        if(act==='lecture'){ try{ switchMode('lecture'); setTimeout(function(){ var sel=document.getElementById('lecCourse'); if(sel && course){ sel.value=course.value; sel.dispatchEvent(new Event('change')); } }, 150); }catch(e){} }
+        else if(act==='t40') tmTimerStart(40, b.label); else if(act==='t50') tmTimerStart(50, b.label); else if(act==='tend') tmTimerStart(remain, b.label); });
+    }catch(e){ console.warn('now prompt', e); } }
+  window.tmPromptNow=tmPromptNow;
+  // 타이머
+  var TIMER={ end:0, total:0, label:'', paused:0, tick:null };
+  function tmTimerSave(){ try{ if(TIMER.end) localStorage.setItem('tm_timer', JSON.stringify({end:TIMER.end,total:TIMER.total,label:TIMER.label,paused:TIMER.paused})); else localStorage.removeItem('tm_timer'); }catch(e){} }
+  function tmTimerStart(min, label){ TIMER.end=Date.now()+min*60000; TIMER.total=min*60000; TIMER.label=label||''; TIMER.paused=0; tmTimerSave(); tmTimerShow(); try{ if(navigator.wakeLock) navigator.wakeLock.request('screen').then(function(w){ TIMER.wake=w; }).catch(function(){}); }catch(e){} }
+  function tmTimerStop(){ TIMER.end=0; TIMER.paused=0; clearInterval(TIMER.tick); TIMER.tick=null; tmTimerSave(); var el=document.getElementById('tmTimer'); if(el) el.remove(); document.body.classList.remove('tm-timer-on'); try{ if(TIMER.wake){ TIMER.wake.release(); TIMER.wake=null; } }catch(e){} }
+  function tmTimerShow(){ var el=document.getElementById('tmTimer'); if(!el){ el=document.createElement('div'); el.id='tmTimer'; el.className='tm-timer'; el.innerHTML='<div class="tm-timer-ring"><div class="tm-timer-time" id="tmTimerTime">00:00</div></div><div class="tm-timer-label" id="tmTimerLabel"></div><div class="tm-timer-btns"><button type="button" data-t="pause" id="tmTimerPause">일시정지</button><button type="button" data-t="plus">+5분</button><button type="button" data-t="stop">종료</button></div>';
+      document.body.appendChild(el); document.body.classList.add('tm-timer-on');
+      el.addEventListener('click', function(ev){ var bt=ev.target.closest('[data-t]'); if(!bt) return; var t=bt.getAttribute('data-t'); if(t==='stop'){ tmTimerStop(); refreshAll(); } else if(t==='plus'){ if(TIMER.paused) TIMER.paused+=300000; else TIMER.end+=300000; TIMER.total+=300000; tmTimerSave(); tmTimerPaint(); } else { if(TIMER.paused){ TIMER.end=Date.now()+TIMER.paused; TIMER.paused=0; bt.textContent='일시정지'; } else { TIMER.paused=Math.max(0,TIMER.end-Date.now()); bt.textContent='계속'; } tmTimerSave(); tmTimerPaint(); } }); }
+    document.getElementById('tmTimerLabel').textContent=TIMER.label; document.getElementById('tmTimerPause').textContent=TIMER.paused?'계속':'일시정지'; clearInterval(TIMER.tick); TIMER.tick=setInterval(tmTimerPaint, 500); tmTimerPaint(); }
+  function tmTimerPaint(){ var el=document.getElementById('tmTimer'); if(!el||!TIMER.end) return; var left=TIMER.paused?TIMER.paused:(TIMER.end-Date.now()); if(left<=0){ tmTimerDone(); return; } var s=Math.ceil(left/1000); var mm=Math.floor(s/60), ss=s%60; document.getElementById('tmTimerTime').textContent=(mm<10?'0':'')+mm+':'+(ss<10?'0':'')+ss; var pct=Math.max(0,Math.min(100, 100*(1-left/Math.max(1,TIMER.total)))); el.style.setProperty('--pct', pct+'%'); el.classList.toggle('paused', !!TIMER.paused); }
+  function tmTimerDone(){ var el=document.getElementById('tmTimer'); clearInterval(TIMER.tick); TIMER.tick=null; TIMER.end=0; TIMER.paused=0; tmTimerSave(); try{ if(navigator.vibrate) navigator.vibrate([200,100,200,100,400]); }catch(e){}
+    try{ var ac=new (window.AudioContext||window.webkitAudioContext)(); [0,0.25,0.5].forEach(function(t){ var o=ac.createOscillator(), g=ac.createGain(); o.frequency.value=880; o.connect(g); g.connect(ac.destination); g.gain.setValueAtTime(0.001, ac.currentTime+t); g.gain.exponentialRampToValueAtTime(0.4, ac.currentTime+t+0.02); g.gain.exponentialRampToValueAtTime(0.001, ac.currentTime+t+0.2); o.start(ac.currentTime+t); o.stop(ac.currentTime+t+0.22); }); }catch(e){}
+    if(el){ el.classList.add('done'); document.getElementById('tmTimerTime').textContent='끝!'; el.querySelector('.tm-timer-btns').innerHTML='<button type="button" data-t="stop">닫기</button>'; }
+    try{ if('Notification' in window && Notification.permission==='granted') new Notification('타이머 끝', { body:TIMER.label }); }catch(e){} }
+  function tmTimerRestore(){ try{ var t=JSON.parse(localStorage.getItem('tm_timer')||'null'); if(!t||!t.end) return; TIMER.end=t.end; TIMER.total=t.total||0; TIMER.label=t.label||''; TIMER.paused=t.paused||0; if(!TIMER.paused && TIMER.end<Date.now()){ TIMER.end=0; tmTimerSave(); return; } tmTimerShow(); }catch(e){} }
+  window.tmTimerStart=tmTimerStart;
+  document.addEventListener('visibilitychange', function(){ if(document.visibilityState==='visible') setTimeout(function(){ tmPromptNow(false); }, 400); });
+  setInterval(function(){ if(document.visibilityState==='visible') tmPromptNow(false); }, 60000);
   function bindAll(){ bindHeader(); bindTodos(); }
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', bindAll); else bindAll();
 })();
