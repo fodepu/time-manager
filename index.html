@@ -2383,7 +2383,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="150">
+<meta name="tm-version" content="151">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -2450,12 +2450,18 @@
   .tm-now-btns { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; }
   .tm-now-btns button { font:inherit; font-size:17px; font-weight:800; padding:14px 22px; border-radius:14px; border:1px solid var(--border,#e5e7eb); background:var(--bg-soft); color:var(--text); cursor:pointer; }
   .tm-now-btns button.pri { background:#111827; color:#fff; border-color:#111827; }
-  .tm-timer { position:fixed; inset:0; z-index:960; background:#0b0b0d; color:#fff; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:22px; --pct:0%; }
-  .tm-timer-ring { width:min(70vw,70vh); height:min(70vw,70vh); border-radius:50%; background: conic-gradient(#22c55e var(--pct), rgba(255,255,255,.12) 0); display:flex; align-items:center; justify-content:center; }
-  .tm-timer-ring::before { content:''; position:absolute; width:calc(min(70vw,70vh) - 28px); height:calc(min(70vw,70vh) - 28px); border-radius:50%; background:#0b0b0d; }
-  .tm-timer-time { position:relative; font-size:min(22vw,22vh); font-weight:900; font-variant-numeric:tabular-nums; letter-spacing:-2px; }
+  .tm-timer { position:fixed; inset:0; z-index:960; background:#0b0b0d; color:#fff; display:flex; flex-direction:column; align-items:center; justify-content:space-between; padding:6vh 0 5vh; --pct:0%; overflow:hidden; }
+  .tm-scene { position:absolute; inset:0; z-index:0; } .tm-scene svg { width:100%; height:100%; display:block; }
+  .tm-timer-top { position:relative; z-index:1; display:flex; flex-direction:column; align-items:center; gap:14px; }
+  .tm-now-scene { height:120px; border-radius:14px; overflow:hidden; margin:-14px -16px 12px; } .tm-now-scene svg { width:100%; height:100%; display:block; }
+  .tm-timer.late .tm-timer-ring { background: conic-gradient(#f59e0b var(--pct), rgba(255,255,255,.14) 0); }
+  .tm-timer-btns { position:relative; z-index:1; }
+  .tm-timer-btns .hold { position:relative; overflow:hidden; } .tm-timer-btns .hold .hold-fill { position:absolute; left:0; top:0; bottom:0; width:0; background:rgba(239,68,68,.55); transition:none; } .tm-timer-btns .hold.holding .hold-fill { width:100%; transition:width 2s linear; } .tm-timer-btns .hold .hold-txt { position:relative; }
+  .tm-timer-ring { position:relative; width:min(46vw,46vh); height:min(46vw,46vh); border-radius:50%; background: conic-gradient(#22c55e var(--pct), rgba(255,255,255,.14) 0); display:flex; align-items:center; justify-content:center; }
+  .tm-timer-ring::before { content:''; position:absolute; width:calc(min(46vw,46vh) - 18px); height:calc(min(46vw,46vh) - 18px); border-radius:50%; background:rgba(8,10,20,.55); backdrop-filter:blur(2px); }
+  .tm-timer-time { position:relative; font-size:min(13vw,13vh); font-weight:900; font-variant-numeric:tabular-nums; letter-spacing:-2px; text-shadow:0 2px 12px rgba(0,0,0,.5); }
   .tm-timer.paused .tm-timer-time { opacity:.5; } .tm-timer.done .tm-timer-ring { background:#22c55e; }
-  .tm-timer-label { font-size:24px; font-weight:800; color:rgba(255,255,255,.85); }
+  .tm-timer-label { font-size:22px; font-weight:800; color:rgba(255,255,255,.9); text-shadow:0 1px 8px rgba(0,0,0,.5); }
   .tm-timer-btns { display:flex; gap:12px; } .tm-timer-btns button { font:inherit; font-size:17px; font-weight:800; padding:12px 22px; border-radius:999px; border:1px solid rgba(255,255,255,.3); background:rgba(255,255,255,.1); color:#fff; cursor:pointer; }
   body.tm-timer-on { overflow:hidden; }
   .tt-rz { position:absolute; left:0; right:0; height:7px; cursor:ns-resize; z-index:2; }
@@ -9562,7 +9568,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
       var course=tmCourseFor(b.label); var isCourse=!!course && !tmIsPhone(); var isStudy=!course && !NOW_SKIP.test(b.label); if(!isCourse && !isStudy) return;
       var remain=Math.max(1, mins(b.end)-Math.max(inf.m, mins(b.start)));
       var card=document.createElement('div'); card.id='tmNowCard'; card.className='tm-now';
-      card.innerHTML='<div class="tm-now-box"><div class="tm-now-when">'+(inf.soon===b?'곧 시작 · ':'지금 · ')+b.start+'~'+b.end+'</div><h1>'+escapeHtml(b.label)+'</h1>'+
+      card.innerHTML='<div class="tm-now-box"><div class="tm-now-scene">'+sceneSvg(sceneState(), 1600, 500)+'</div><div class="tm-now-when">'+(inf.soon===b?'곧 시작 · ':'지금 · ')+b.start+'~'+b.end+'</div><h1>'+escapeHtml(b.label)+'</h1>'+
         (isCourse?'<p>강의노트를 열까요?</p><div class="tm-now-btns"><button type="button" class="pri" data-act="lecture">강의노트로 가기</button><button type="button" data-act="no">아니요</button></div>'
         :'<p>시작할까요? 타이머가 화면을 꽉 채워요</p><div class="tm-now-btns"><button type="button" class="pri" data-act="t40">40분</button><button type="button" class="pri" data-act="t50">50분</button><button type="button" data-act="tend">끝까지 '+remain+'분</button><button type="button" data-act="no">아니요</button></div>')+'</div>';
       document.body.appendChild(card);
@@ -9574,18 +9580,57 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   // 타이머
   var TIMER={ end:0, total:0, label:'', paused:0, tick:null };
   function tmTimerSave(){ try{ if(TIMER.end) localStorage.setItem('tm_timer', JSON.stringify({end:TIMER.end,total:TIMER.total,label:TIMER.label,paused:TIMER.paused})); else localStorage.removeItem('tm_timer'); }catch(e){} }
-  function tmTimerStart(min, label){ TIMER.end=Date.now()+min*60000; TIMER.total=min*60000; TIMER.label=label||''; TIMER.paused=0; tmTimerSave(); tmTimerShow(); try{ if(navigator.wakeLock) navigator.wakeLock.request('screen').then(function(w){ TIMER.wake=w; }).catch(function(){}); }catch(e){} }
-  function tmTimerStop(){ TIMER.end=0; TIMER.paused=0; clearInterval(TIMER.tick); TIMER.tick=null; tmTimerSave(); var el=document.getElementById('tmTimer'); if(el) el.remove(); document.body.classList.remove('tm-timer-on'); try{ if(TIMER.wake){ TIMER.wake.release(); TIMER.wake=null; } }catch(e){} }
-  function tmTimerShow(){ var el=document.getElementById('tmTimer'); if(!el){ el=document.createElement('div'); el.id='tmTimer'; el.className='tm-timer'; el.innerHTML='<div class="tm-timer-ring"><div class="tm-timer-time" id="tmTimerTime">00:00</div></div><div class="tm-timer-label" id="tmTimerLabel"></div><div class="tm-timer-btns"><button type="button" data-t="pause" id="tmTimerPause">일시정지</button><button type="button" data-t="plus">+5분</button><button type="button" data-t="stop">종료</button></div>';
+  // ---- 하루 풍경: 완수한 블록 = 해가 뜸, 공부 세션 = 식물이 자람 ----
+  function sceneKey(){ return 'tm_scene_'+toLocalDateStr(new Date()); }
+  function sceneLoad(){ try{ return JSON.parse(localStorage.getItem(sceneKey())||'null')||{ study:0, sessions:0, boosts:0, seenDone:0, rare:0 }; }catch(e){ return { study:0, sessions:0, boosts:0, seenDone:0, rare:0 }; } }
+  function sceneSave(s){ try{ localStorage.setItem(sceneKey(), JSON.stringify(s)); }catch(e){} }
+  function sceneDone(){ var ds=toLocalDateStr(new Date()); var bl=[]; try{ bl=blocksFor(ds).blocks||[]; }catch(e){} var tot=bl.length, done=bl.filter(function(b){ return b.values.check===true; }).length; return { done:done, total:tot }; }
+  // 진행도(0~1): 완수 블록 비율(해 높이) / 성장(식물)은 공부 분 + 완수 부스트
+  function sceneState(){ var s=sceneLoad(); var d=sceneDone(); var sun=d.total?Math.min(1, d.done/d.total):0; var growth=Math.min(1, 0.08 + s.study/300 + s.boosts*0.06); return { sun:sun, growth:growth, sessions:s.sessions, rare:s.rare, done:d.done, total:d.total }; }
+  function lerp(a,b,t){ return a+(b-a)*t; }
+  function mixHex(c1,c2,t){ var a=parseInt(c1.slice(1),16), b=parseInt(c2.slice(1),16); var r=Math.round(lerp(a>>16,b>>16,t)), g=Math.round(lerp((a>>8)&255,(b>>8)&255,t)), bl=Math.round(lerp(a&255,b&255,t)); return '#'+((1<<24)+(r<<16)+(g<<8)+bl).toString(16).slice(1); }
+  function skyColors(sun){ var stops=[['#070912','#0b1020'],['#1a1a3a','#3b2a4a'],['#f08a5d','#ffd28a'],['#5fb2ff','#dff3ff'],['#3d8fff','#bfe6ff']]; var x=sun*(stops.length-1); var i=Math.min(stops.length-2, Math.floor(x)); var t=x-i; return [mixHex(stops[i][0],stops[i+1][0],t), mixHex(stops[i][1],stops[i+1][1],t)]; }
+  function seeded(n){ var x=Math.sin(n*9301+49297)*233280; return x-Math.floor(x); }
+  function sceneSvg(st, w, hgt){ var sky=skyColors(st.sun); var sunY=hgt*0.78 - st.sun*hgt*0.62; var sunX=w*0.18 + st.sun*w*0.64; var g=st.growth; var groundC=mixHex('#1a2418','#4c8a3a', Math.min(1, st.sun*0.7+g*0.5));
+    var plants=''; var n=Math.round(2 + g*26); for(var i=0;i<n;i++){ var px=w*(0.04+0.92*seeded(i+1)); var ph=(hgt*0.06 + hgt*0.22*g)*(0.6+0.8*seeded(i+7)); var by=hgt*0.83 + seeded(i+3)*hgt*0.08; var lean=(seeded(i+11)-0.5)*ph*0.4; var col=mixHex('#2f4f2a','#7ed957', Math.min(1, g*0.9+st.sun*0.3));
+      plants+='<path d="M'+px+' '+by+' Q'+(px+lean)+' '+(by-ph*0.6)+' '+(px+lean*1.6)+' '+(by-ph)+'" stroke="'+col+'" stroke-width="'+Math.max(1.2, hgt*0.004+g*3)+'" fill="none" stroke-linecap="round"/>';
+      if(g>0.35 && seeded(i+5)<g){ var lx=px+lean*1.6, ly=by-ph; plants+='<ellipse cx="'+lx+'" cy="'+ly+'" rx="'+(hgt*0.012+g*hgt*0.01)+'" ry="'+(hgt*0.007+g*hgt*0.006)+'" fill="'+col+'" transform="rotate('+((seeded(i+9)-0.5)*80)+' '+lx+' '+ly+')"/>'; }
+      if(g>0.7 && seeded(i+13)<(g-0.6)*2){ var fx=px+lean*1.6, fy=by-ph; var fc=['#ffd166','#ff8fab','#fff'][Math.floor(seeded(i+17)*3)]; plants+='<circle cx="'+fx+'" cy="'+fy+'" r="'+(hgt*0.009)+'" fill="'+fc+'"/>'; } }
+    var stars=''; if(st.sun<0.45){ var a=1-st.sun/0.45; for(var k=0;k<40;k++){ stars+='<circle cx="'+(w*seeded(k+31))+'" cy="'+(hgt*0.6*seeded(k+41))+'" r="'+(0.8+seeded(k+51)*1.4)+'" fill="#fff" opacity="'+(a*(0.3+0.7*seeded(k+61))).toFixed(2)+'"/>'; } }
+    var rare=st.rare?'<path d="M'+(w*0.7)+' '+(hgt*0.12)+' l '+(w*0.12)+' '+(hgt*0.1)+'" stroke="#fff" stroke-width="2" opacity=".9" stroke-linecap="round"/>':'';
+    return '<svg viewBox="0 0 '+w+' '+hgt+'" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="'+sky[0]+'"/><stop offset="1" stop-color="'+sky[1]+'"/></linearGradient><radialGradient id="sunG"><stop offset="0" stop-color="#fff5c0"/><stop offset=".5" stop-color="#ffcf5a"/><stop offset="1" stop-color="#ffcf5a" stop-opacity="0"/></radialGradient></defs>'+
+      '<rect width="'+w+'" height="'+hgt+'" fill="url(#sky)"/>'+stars+'<circle cx="'+sunX+'" cy="'+sunY+'" r="'+(hgt*0.16)+'" fill="url(#sunG)" opacity="'+(0.35+st.sun*0.65).toFixed(2)+'"/><circle cx="'+sunX+'" cy="'+sunY+'" r="'+(hgt*0.06)+'" fill="#ffe08a"/>'+rare+
+      '<path d="M0 '+(hgt*0.86)+' Q '+(w*0.25)+' '+(hgt*0.78)+' '+(w*0.5)+' '+(hgt*0.85)+' T '+w+' '+(hgt*0.83)+' V '+hgt+' H0 Z" fill="'+groundC+'"/>'+plants+'</svg>'; }
+  var SCENE_ANIM={ from:null, to:null, t0:0 };
+  function scenePaint(el, st){ if(!el) return; el.innerHTML=sceneSvg(st, 1600, 900); }
+  function sceneAnimate(el, from, to, ms, done){ var t0=performance.now(); function step(now){ var t=Math.min(1,(now-t0)/ms); var e=1-Math.pow(1-t,3); scenePaint(el, { sun:lerp(from.sun,to.sun,e), growth:lerp(from.growth,to.growth,e), rare:to.rare }); if(t<1) requestAnimationFrame(step); else if(done) done(); } requestAnimationFrame(step); }
+  window.tmSceneState=sceneState; window.tmSceneSvg=sceneSvg;
+  // 타이머
+  var TIMER={ end:0, total:0, label:'', paused:0, tick:null, startedAt:0, credited:0 };
+  function tmTimerSave(){ try{ if(TIMER.end) localStorage.setItem('tm_timer', JSON.stringify({end:TIMER.end,total:TIMER.total,label:TIMER.label,paused:TIMER.paused,startedAt:TIMER.startedAt,credited:TIMER.credited})); else localStorage.removeItem('tm_timer'); }catch(e){} }
+  function tmStartSound(){ try{ var ac=new (window.AudioContext||window.webkitAudioContext)(); var o=ac.createOscillator(), g=ac.createGain(); o.type='sine'; o.frequency.setValueAtTime(392, ac.currentTime); o.frequency.exponentialRampToValueAtTime(523, ac.currentTime+0.5); o.connect(g); g.connect(ac.destination); g.gain.setValueAtTime(0.001, ac.currentTime); g.gain.exponentialRampToValueAtTime(0.25, ac.currentTime+0.05); g.gain.exponentialRampToValueAtTime(0.001, ac.currentTime+0.9); o.start(); o.stop(ac.currentTime+0.95); }catch(e){} }
+  function tmEndSound(){ try{ var ac=new (window.AudioContext||window.webkitAudioContext)(); [[523,0],[659,0.18],[784,0.36]].forEach(function(p){ var o=ac.createOscillator(), g=ac.createGain(); o.type='sine'; o.frequency.value=p[0]; o.connect(g); g.connect(ac.destination); g.gain.setValueAtTime(0.001, ac.currentTime+p[1]); g.gain.exponentialRampToValueAtTime(0.22, ac.currentTime+p[1]+0.04); g.gain.exponentialRampToValueAtTime(0.001, ac.currentTime+p[1]+1.2); o.start(ac.currentTime+p[1]); o.stop(ac.currentTime+p[1]+1.25); }); }catch(e){} }
+  function tmTimerStart(min, label){ var before=sceneState(); var s=sceneLoad(); var d=sceneDone(); var newlyDone=Math.max(0, d.done-(s.seenDone||0)); s.seenDone=d.done; s.boosts=(s.boosts||0)+newlyDone+(s.sessions===0?1:0); s.sessions=(s.sessions||0)+1; sceneSave(s);
+    TIMER.end=Date.now()+min*60000; TIMER.total=min*60000; TIMER.label=label||''; TIMER.paused=0; TIMER.startedAt=Date.now(); TIMER.credited=0; tmTimerSave(); tmTimerShow(true);
+    tmStartSound(); var after=sceneState(); var sc=document.getElementById('tmScene'); scenePaint(sc, before); setTimeout(function(){ sceneAnimate(sc, before, after, 2600); }, 300);
+    try{ if(navigator.wakeLock) navigator.wakeLock.request('screen').then(function(w){ TIMER.wake=w; }).catch(function(){}); }catch(e){} }
+  function tmTimerCredit(){ if(!TIMER.startedAt) return; var elapsed=TIMER.paused?0:0; var doneMin=Math.floor((Math.min(Date.now(),TIMER.end)-TIMER.startedAt)/60000); var add=doneMin-(TIMER.credited||0); if(add>0){ var s=sceneLoad(); s.study=(s.study||0)+add; sceneSave(s); TIMER.credited=doneMin; tmTimerSave(); } }
+  function tmTimerStop(){ tmTimerCredit(); TIMER.end=0; TIMER.paused=0; TIMER.startedAt=0; clearInterval(TIMER.tick); TIMER.tick=null; tmTimerSave(); var el=document.getElementById('tmTimer'); if(el) el.remove(); document.body.classList.remove('tm-timer-on'); try{ if(TIMER.wake){ TIMER.wake.release(); TIMER.wake=null; } }catch(e){} }
+  function tmTimerShow(fresh){ var el=document.getElementById('tmTimer'); if(!el){ el=document.createElement('div'); el.id='tmTimer'; el.className='tm-timer';
+      el.innerHTML='<div class="tm-scene" id="tmScene"></div><div class="tm-timer-top"><div class="tm-timer-ring"><div class="tm-timer-time" id="tmTimerTime">00:00</div></div><div class="tm-timer-label" id="tmTimerLabel"></div></div><div class="tm-timer-btns"><button type="button" data-t="pause" id="tmTimerPause">일시정지</button><button type="button" data-t="plus">+5분</button><button type="button" class="hold" id="tmTimerStopBtn"><span class="hold-fill"></span><span class="hold-txt">꾹 눌러 종료</span></button></div>';
       document.body.appendChild(el); document.body.classList.add('tm-timer-on');
-      el.addEventListener('click', function(ev){ var bt=ev.target.closest('[data-t]'); if(!bt) return; var t=bt.getAttribute('data-t'); if(t==='stop'){ tmTimerStop(); refreshAll(); } else if(t==='plus'){ if(TIMER.paused) TIMER.paused+=300000; else TIMER.end+=300000; TIMER.total+=300000; tmTimerSave(); tmTimerPaint(); } else { if(TIMER.paused){ TIMER.end=Date.now()+TIMER.paused; TIMER.paused=0; bt.textContent='일시정지'; } else { TIMER.paused=Math.max(0,TIMER.end-Date.now()); bt.textContent='계속'; } tmTimerSave(); tmTimerPaint(); } }); }
-    document.getElementById('tmTimerLabel').textContent=TIMER.label; document.getElementById('tmTimerPause').textContent=TIMER.paused?'계속':'일시정지'; clearInterval(TIMER.tick); TIMER.tick=setInterval(tmTimerPaint, 500); tmTimerPaint(); }
-  function tmTimerPaint(){ var el=document.getElementById('tmTimer'); if(!el||!TIMER.end) return; var left=TIMER.paused?TIMER.paused:(TIMER.end-Date.now()); if(left<=0){ tmTimerDone(); return; } var s=Math.ceil(left/1000); var mm=Math.floor(s/60), ss=s%60; document.getElementById('tmTimerTime').textContent=(mm<10?'0':'')+mm+':'+(ss<10?'0':'')+ss; var pct=Math.max(0,Math.min(100, 100*(1-left/Math.max(1,TIMER.total)))); el.style.setProperty('--pct', pct+'%'); el.classList.toggle('paused', !!TIMER.paused); }
-  function tmTimerDone(){ var el=document.getElementById('tmTimer'); clearInterval(TIMER.tick); TIMER.tick=null; TIMER.end=0; TIMER.paused=0; tmTimerSave(); try{ if(navigator.vibrate) navigator.vibrate([200,100,200,100,400]); }catch(e){}
-    try{ var ac=new (window.AudioContext||window.webkitAudioContext)(); [0,0.25,0.5].forEach(function(t){ var o=ac.createOscillator(), g=ac.createGain(); o.frequency.value=880; o.connect(g); g.connect(ac.destination); g.gain.setValueAtTime(0.001, ac.currentTime+t); g.gain.exponentialRampToValueAtTime(0.4, ac.currentTime+t+0.02); g.gain.exponentialRampToValueAtTime(0.001, ac.currentTime+t+0.2); o.start(ac.currentTime+t); o.stop(ac.currentTime+t+0.22); }); }catch(e){}
-    if(el){ el.classList.add('done'); document.getElementById('tmTimerTime').textContent='끝!'; el.querySelector('.tm-timer-btns').innerHTML='<button type="button" data-t="stop">닫기</button>'; }
+      el.addEventListener('click', function(ev){ var bt=ev.target.closest('[data-t]'); if(!bt) return; var t=bt.getAttribute('data-t'); if(t==='close'){ tmTimerStop(); refreshAll(); } else if(t==='plus'){ if(TIMER.paused) TIMER.paused+=300000; else TIMER.end+=300000; TIMER.total+=300000; tmTimerSave(); tmTimerPaint(); } else if(t==='pause'){ if(TIMER.paused){ TIMER.end=Date.now()+TIMER.paused; TIMER.startedAt=Date.now()-((TIMER.credited||0)*60000); TIMER.paused=0; bt.textContent='일시정지'; } else { tmTimerCredit(); TIMER.paused=Math.max(0,TIMER.end-Date.now()); bt.textContent='계속'; } tmTimerSave(); tmTimerPaint(); } });
+      // 종료는 2초 꾹 (종료 마찰)
+      var hb=el.querySelector('#tmTimerStopBtn'); var hT=null; function hStart(e){ e.preventDefault(); hb.classList.add('holding'); hT=setTimeout(function(){ hb.classList.remove('holding'); tmTimerStop(); refreshAll(); }, 2000); } function hEnd(){ clearTimeout(hT); hb.classList.remove('holding'); }
+      hb.addEventListener('pointerdown', hStart); hb.addEventListener('pointerup', hEnd); hb.addEventListener('pointerleave', hEnd); hb.addEventListener('pointercancel', hEnd); }
+    document.getElementById('tmTimerLabel').textContent=TIMER.label; document.getElementById('tmTimerPause').textContent=TIMER.paused?'계속':'일시정지'; clearInterval(TIMER.tick); TIMER.tick=setInterval(tmTimerPaint, 500); if(!fresh) scenePaint(document.getElementById('tmScene'), sceneState()); tmTimerPaint(); }
+  function tmTimerPaint(){ var el=document.getElementById('tmTimer'); if(!el||!TIMER.end) return; var left=TIMER.paused?TIMER.paused:(TIMER.end-Date.now()); if(left<=0){ tmTimerDone(); return; } var s=Math.ceil(left/1000); var mm=Math.floor(s/60), ss=s%60; document.getElementById('tmTimerTime').textContent=(mm<10?'0':'')+mm+':'+(ss<10?'0':'')+ss;
+    var frac=1-left/Math.max(1,TIMER.total); var shown=0.08+0.92*frac; if(frac>0.8) shown=0.08+0.92*(0.8+(frac-0.8)*1.0); // 미리 채움 8%
+    el.style.setProperty('--pct', Math.min(100, shown*100)+'%'); el.classList.toggle('late', frac>0.8); el.classList.toggle('paused', !!TIMER.paused); if(!TIMER.paused && Date.now()%60000<600) tmTimerCredit(); }
+  function tmTimerDone(){ var el=document.getElementById('tmTimer'); clearInterval(TIMER.tick); TIMER.tick=null; tmTimerCredit(); var s=sceneLoad(); var rare=Math.random()<0.12; if(rare) s.rare=(s.rare||0)+1; sceneSave(s); TIMER.end=0; TIMER.paused=0; TIMER.startedAt=0; tmTimerSave(); try{ if(navigator.vibrate) navigator.vibrate([120,80,120]); }catch(e){} tmEndSound();
+    if(el){ el.classList.add('done'); var before=sceneState(); var to={ sun:before.sun, growth:Math.min(1, before.growth+0.06), rare:before.rare }; sceneAnimate(document.getElementById('tmScene'), before, to, 1600); document.getElementById('tmTimerTime').textContent='끝'; el.querySelector('.tm-timer-btns').innerHTML='<button type="button" data-t="close">닫기</button>'; }
     try{ if('Notification' in window && Notification.permission==='granted') new Notification('타이머 끝', { body:TIMER.label }); }catch(e){} }
-  function tmTimerRestore(){ try{ var t=JSON.parse(localStorage.getItem('tm_timer')||'null'); if(!t||!t.end) return; TIMER.end=t.end; TIMER.total=t.total||0; TIMER.label=t.label||''; TIMER.paused=t.paused||0; if(!TIMER.paused && TIMER.end<Date.now()){ TIMER.end=0; tmTimerSave(); return; } tmTimerShow(); }catch(e){} }
+  function tmTimerRestore(){ try{ var t=JSON.parse(localStorage.getItem('tm_timer')||'null'); if(!t||!t.end) return; TIMER.end=t.end; TIMER.total=t.total||0; TIMER.label=t.label||''; TIMER.paused=t.paused||0; TIMER.startedAt=t.startedAt||0; TIMER.credited=t.credited||0; if(!TIMER.paused && TIMER.end<Date.now()){ TIMER.end=0; tmTimerSave(); return; } tmTimerShow(); }catch(e){} }
   window.tmTimerStart=tmTimerStart;
   document.addEventListener('visibilitychange', function(){ if(document.visibilityState==='visible') setTimeout(function(){ tmPromptNow(false); }, 400); });
   setInterval(function(){ if(document.visibilityState==='visible') tmPromptNow(false); }, 60000);
