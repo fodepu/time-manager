@@ -2383,7 +2383,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="147">
+<meta name="tm-version" content="148">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -8338,7 +8338,7 @@ const db = getFirestore(app);
 const provider = new GoogleAuthProvider();
 
 const PREFIX = 'tracker_';
-const KEEP = new Set(['tracker_theme','tracker_device_id','tracker_sync_config','tracker_gemini_key']);
+const KEEP = new Set(['tracker_theme','tracker_device_id','tracker_sync_config','tracker_gemini_key','tracker_inbox_token']);
 function clearTracker(){ const rm=[]; for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i); if(k && k.startsWith(PREFIX) && !KEEP.has(k)) rm.push(k);} rm.forEach(k=>{try{localStorage.removeItem(k);}catch(e){}}); }
 // 원격 적용: 원격에 없는 키 중 '오래된 날짜 스냅샷'은 프루닝된 것일 수 있으므로 로컬에 보존
 function applyRemote(payload){
@@ -10184,7 +10184,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   }
   window.tmResume=resumeSession; window.tmResumable=resumable; window.tmGemRotate=gemRotate;
   async function sendRec(obj, quiet){
-    if(!obj||!obj.id||!(obj.slides||[]).length) return false; var tk=token(); if(!tk){ if(!quiet){ tk=prompt('저장소 전송용 GitHub 토큰을 붙여넣으세요:'); if(!tk) return false; tk=tk.trim(); lsSet(lsKey('inbox_token'),tk); } else return false; }
+    if(!obj||!obj.id||!(obj.slides||[]).length) return false; var tk=token(); if(!tk){ if(!quiet){ tk=prompt('저장소 전송용 GitHub 토큰을 붙여넣으세요:'); if(!tk) return false; tk=tk.trim(); lsSet(lsKey('inbox_token'),tk); try{ localStorage.setItem('tm_inbox_token', tk); }catch(e){} if(window.tmOnChange) tmOnChange(); } else return false; }
     var clean=Object.assign({}, obj); delete clean.status; delete clean.curPage; var body=JSON.stringify(clean,null,1); var b64=btoa(unescape(encodeURIComponent(body))); var path='lectures/inbox/'+obj.id+'.json'; var url='https://api.github.com/repos/'+REPO+'/contents/'+path; var hd={'Authorization':'Bearer '+tk,'Accept':'application/vnd.github+json'};
     try{ var sha=null; try{ var g=await fetch(url+'?t='+Date.now(),{headers:hd}); if(g.ok){ sha=(await g.json()).sha; } }catch(e){}
       var pb={message:'lecture '+obj.id, content:b64}; if(sha) pb.sha=sha;
