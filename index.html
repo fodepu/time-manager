@@ -2383,7 +2383,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="126">
+<meta name="tm-version" content="127">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -2707,6 +2707,7 @@
   details.lec-wk > summary::-webkit-details-marker { display:none; }
   details.lec-wk > summary::before { content:'▸'; color: var(--text-muted); width:12px; }
   details.lec-wk[open] > summary::before { content:'▾'; }
+  .lec-dot { display:inline-block; width:8px; height:8px; border-radius:50%; background:#1A73E8; margin-left:6px; vertical-align:middle; box-shadow:0 0 0 2px rgba(26,115,232,.18); }
   .lec-wk-meta { margin-left:auto; display:flex; gap:8px; font-size:12px; color: var(--text-muted); font-weight:500; }
   .lec-wk-body { padding:0 12px 10px 30px; }
   .lec-wk-items { display:flex; flex-direction:column; gap:2px; }
@@ -10018,7 +10019,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     try{ if(aiEngine() && S.running){ aiTick(true); } }catch(e){}
     S.running=false; clearInterval(S.tick); clearTimeout(S.restartTimer); try{ if(S.rec){ S.rec.onend=null; S.rec.stop(); } }catch(e){} try{ gemStop(); }catch(e){} stopAudio(); try{ if(S.wake){ S.wake.release(); S.wake=null; } }catch(e){}
     $('lecRec').innerHTML=ICO.rec+'녹음 시작'; $('lecRec').classList.remove('on'); status('중지됨 · '+Object.keys(S.slides).length+'개 슬라이드에 대본 저장됨 → "필기 요청 보내기"'); try{ var rb=$('lecRecBanner'); if(rb) rb.style.display='none'; }catch(e){}
-    saveLocal(); $('lecFinish').style.display=''; try{ if(window.tmApplyPendingUpdate) setTimeout(tmApplyPendingUpdate, 1500); }catch(e){}
+    saveLocal(); $('lecFinish').style.display=''; try{ autoSend(); }catch(e){} try{ if(window.tmApplyPendingUpdate) setTimeout(tmApplyPendingUpdate, 1500); }catch(e){}
   }
   function docOf(p){ var ds=S.docs||[]; for(var i=ds.length-1;i>=0;i--){ if(p>ds[i].base) return ds[i]; } return {name:S.pdfName||'', base:0}; }
   function pageLabel(p){ if(S.online) return '구간 '+p; var d=docOf(p); return ((S.docs&&S.docs.length>1)?d.name.replace(/\.pdf$/i,'')+' · ':'')+(p-d.base)+'쪽'; }
@@ -10058,7 +10059,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     for(var i=0;i<list.length;i++){ if(list[i].id!==merged.id){ try{ await idbDel('lec', list[i].id); }catch(e){} } }
     // 표시는 PDF에도 붙여둔다
     try{ merged.slides.forEach(function(s){ if(!s.marks||!s.marks.length||!s.pdf) return; var st=annLoad(merged.course, s.pdf); var cur=st[s.pdfPage]||[]; s.marks.forEach(function(m){ if(!cur.some(function(a){ return a.line===m.line&&a.type===m.type&&(a.note||'')===(m.note||''); })) cur.push(m); }); st[s.pdfPage]=cur; annSave(merged.course, s.pdf, st); }); }catch(e){}
-    await loadLocal(); showToast(list.length+'개 녹음을 하나로 합쳤어요 — '+merged.slides.reduce(function(a,s){ return a+s.segs.length; },0)+'문장'); return merged;
+    await loadLocal(); showToast(list.length+'개 녹음을 하나로 합쳤어요 — '+merged.slides.reduce(function(a,s){ return a+s.segs.length; },0)+'문장'); try{ sendRec(merged, true); }catch(e){} return merged;
   }
   window.tmMergeLecs=mergeLecs; window.tmSameClassGroup=sameClassGroup;
   // 녹음 시작 시: 같은 과목·같은 날·3시간 이내 녹음이 있으면 거기에 이어 붙인다 (새 파일 안 만듦)
@@ -10091,14 +10092,19 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     renderLive(); S.resume=true; showToast('이어서 녹음 — '+allSegs().length+'문장 복구됨'); startAll();
   }
   window.tmResume=resumeSession; window.tmResumable=resumable; window.tmGemRotate=gemRotate;
-  async function sendFinish(){
-    if(!S.id||!Object.keys(S.slides).length){ showToast('보낼 대본이 없어요'); return; }
-    var tk=token(); if(!tk){ tk=prompt('저장소 전송용 GitHub 토큰을 붙여넣으세요:'); if(!tk) return; tk=tk.trim(); lsSet(lsKey('inbox_token'),tk); }
-    var body=JSON.stringify(payload(),null,1); var b64=btoa(unescape(encodeURIComponent(body))); var path='lectures/inbox/'+S.id+'.json';
-    try{ var res=await fetch('https://api.github.com/repos/'+REPO+'/contents/'+path,{method:'PUT',headers:{'Authorization':'Bearer '+tk,'Accept':'application/vnd.github+json'},body:JSON.stringify({message:'lecture '+S.id,content:b64})});
-      if(res.ok){ showToast('필기 요청 보냄 ✓ — 정리되면 목록에 "필기 완료"로 표시돼요'); var o=await idbGet('lec',S.id); if(o){ o.status='sent'; await idbPut('lec',o); } }
-      else showToast('전송 실패('+res.status+')'); }catch(e){ showToast('네트워크 오류'); }
+  async function sendRec(obj, quiet){
+    if(!obj||!obj.id||!(obj.slides||[]).length) return false; var tk=token(); if(!tk){ if(!quiet){ tk=prompt('저장소 전송용 GitHub 토큰을 붙여넣으세요:'); if(!tk) return false; tk=tk.trim(); lsSet(lsKey('inbox_token'),tk); } else return false; }
+    var clean=Object.assign({}, obj); delete clean.status; delete clean.curPage; var body=JSON.stringify(clean,null,1); var b64=btoa(unescape(encodeURIComponent(body))); var path='lectures/inbox/'+obj.id+'.json'; var url='https://api.github.com/repos/'+REPO+'/contents/'+path; var hd={'Authorization':'Bearer '+tk,'Accept':'application/vnd.github+json'};
+    try{ var sha=null; try{ var g=await fetch(url+'?t='+Date.now(),{headers:hd}); if(g.ok){ sha=(await g.json()).sha; } }catch(e){}
+      var pb={message:'lecture '+obj.id, content:b64}; if(sha) pb.sha=sha;
+      var res=await fetch(url,{method:'PUT',headers:hd,body:JSON.stringify(pb)});
+      if(res.ok){ var o=await idbGet('lec',obj.id); if(o){ o.status='sent'; o.sentAt=Date.now(); await idbPut('lec',o); } if(!quiet) showToast('필기 요청 보냄 ✓ — 새벽에 정리돼 주차에 파란 점으로 표시돼요'); return true; }
+      if(!quiet) showToast('전송 실패('+res.status+')'); return false; }catch(e){ if(!quiet) showToast('네트워크 오류'); return false; }
   }
+  async function sendFinish(){ if(!S.id||!Object.keys(S.slides).length){ showToast('보낼 대본이 없어요'); return; } await sendRec(Object.assign({status:'saved'}, payload()), false); }
+  // 녹음이 끝나면 자동 전송 (마지막 Claude 필기가 끝날 때까지 최대 60초 대기)
+  async function autoSend(){ if(!S.id||!Object.keys(S.slides).length) return; var t0=Date.now(); while(AI.busy && Date.now()-t0<60000){ await new Promise(function(r){ setTimeout(r,1000); }); } if(S.running) return; saveLocal();
+    var ok=await sendRec(Object.assign({status:'saved'}, payload()), true); if(ok){ status('중지됨 · 필기 요청 자동 전송됨 — 새벽에 정리돼요'); $('lecFinish').style.display='none'; } else { status('중지됨 · 자동 전송 실패 — "필기 요청 보내기"를 눌러 주세요'); } }
 
   // ---- 주차학습 홈 (과목 → 주차 → PDF·필기) ----
   var notesIndex=null, weekPdfs=[], localLecs=[];
@@ -10121,6 +10127,8 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     var out=[]; for(var n=1;n<=15;n++) out.push({id:'wk'+n, name:n+'주차', items:(n===1?items:[]), synthetic:true}); return out; }
   function noteWeek(n){ var m=/-w(\d+)-/.exec(n.id||'')||/(\d{1,2})\s*주차/.exec(n.title||''); return m?+m[1]:null; }
   function noteLec(n){ var m=/-w\d+-(\d+)$/.exec(n.id||'')||/(\d{1,2})\s*강/.exec(n.title||''); return m?+m[1]:null; }
+  function seenNotes(){ var a=lsGet(lsKey('lec_seen')); return Array.isArray(a)?a:[]; }
+  function markSeen(id){ var a=seenNotes(); if(a.indexOf(id)<0){ a.push(id); if(a.length>400) a=a.slice(-400); lsSet(lsKey('lec_seen'), a); } }
   function notesForWeek(c,w,mid){
     var out=[];
     (notesIndex||[]).forEach(function(n){ if(cname(n.course)!==cname(c)) return; var nw=(n.week!=null)?+n.week:noteWeek(n); if((mid&&n.module===mid) || (w!=null && nw===w) || (mid==='misc' && nw==null && !n.module)) out.push({id:n.id,title:n.title,ready:true,date:n.date,mode:n.mode,pdf:n.pdf||'',studyPdf:n.studyPdf||''}); });
@@ -10170,7 +10178,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
       var w=modWeek(m), isNow=(weekly && w===wk); var notes=(m.id==='misc')?miscNotes:notesForWeek(c,w,m.id); var pdfs=(m.id==='misc')?miscPdfs:pdfsForWeek(c,m.id,notes);
       var open=isNow || !weekly || (!mods.some(function(x){return modWeek(x)===wk;}) && i===0);
       var readyN=notes.filter(function(n){return n.ready;}).length;
-      h+='<details class="lec-wk'+(isNow?' now':'')+'" data-mid="'+esc(m.id)+'"'+(open?' open':'')+'><summary><span class="lec-wk-name">'+esc(m.name)+'</span>'+(isNow?'<span class="lms-badge new">이번 주</span>':'')+'<span class="lec-wk-meta">'+(pdfs.length?'<span>'+ICO.file+pdfs.length+'</span>':'')+(readyN?'<span>'+ICO.note+readyN+'</span>':'')+'</span></summary><div class="lec-wk-body">';
+      h+='<details class="lec-wk'+(isNow?' now':'')+'" data-mid="'+esc(m.id)+'"'+(open?' open':'')+'><summary><span class="lec-wk-name">'+esc(m.name)+(notes.some(function(n){ return n.ready && seenNotes().indexOf(n.id)<0; })?'<span class="lec-dot" title="새 필기"></span>':'')+'</span>'+(isNow?'<span class="lms-badge new">이번 주</span>':'')+'<span class="lec-wk-meta">'+(pdfs.length?'<span>'+ICO.file+pdfs.length+'</span>':'')+(readyN?'<span>'+ICO.note+readyN+'</span>':'')+'</span></summary><div class="lec-wk-body">';
       var used={};
       if((m.items||[]).length){
         h+='<div class="lec-wk-items">'+m.items.map(function(it){ if(it.type==='Header') return '<div class="lec-it-head">'+esc(it.title)+'</div>'; var n=noteForItem(it.title, notes); if(n) used[n.id]=1;
@@ -10188,7 +10196,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     box.querySelectorAll('[data-merge]').forEach(function(b){ b.addEventListener('click',async function(){ var ids=b.getAttribute('data-merge').split(','); var list=(localLecs||[]).filter(function(r){ return ids.indexOf(r.id)>=0; }); if(list.length<2) return; if(!confirm(list.length+'개 녹음을 시간순으로 하나로 합칠까요? (대본·표시·필기 모두 유지, 원본은 삭제)')) return; b.disabled=true; await mergeGroup(list); renderHome(); }); });
     box.querySelectorAll('[data-resume]').forEach(function(b){ b.addEventListener('click',function(){ var r=(localLecs||[]).find(function(x){ return x.id===b.getAttribute('data-resume'); }); if(r) resumeSession(r); }); });
     box.querySelectorAll('[data-discard]').forEach(function(b){ b.addEventListener('click',async function(){ var r=(localLecs||[]).find(function(x){ return x.id===b.getAttribute('data-discard'); }); if(r){ r.status='saved'; try{ await idbPut('lec', r); }catch(e){} renderHome(); } }); });
-    box.querySelectorAll('[data-open]').forEach(function(b){ b.addEventListener('click',function(e){ e.preventDefault(); openView(b.getAttribute('data-open'), b.getAttribute('data-mid'), null); }); });
+    box.querySelectorAll('[data-open]').forEach(function(b){ b.addEventListener('click',function(e){ e.preventDefault(); markSeen(b.getAttribute('data-open')); openView(b.getAttribute('data-open'), b.getAttribute('data-mid'), null); }); });
     box.querySelectorAll('[data-pdf]').forEach(function(b){ b.addEventListener('click',function(){ openView(null, b.getAttribute('data-mid'), b.getAttribute('data-pdf')); }); });
     box.querySelectorAll('[data-delpdf]').forEach(function(b){ b.addEventListener('click',async function(){ if(!confirm('이 PDF를 이 기기에서 지울까요?')) return; await idbDel('pdf', b.getAttribute('data-delpdf')); renderHome(); }); });
     box.querySelectorAll('[data-addpdf]').forEach(function(b){ b.addEventListener('click',function(){ pendingWeek=b.getAttribute('data-addpdf'); $('lecFile').click(); }); });
