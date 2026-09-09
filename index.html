@@ -2383,7 +2383,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="121">
+<meta name="tm-version" content="122">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -2521,7 +2521,8 @@
   .lec-tools { position:absolute; top:8px; left:8px; z-index:16; display:inline-flex; gap:2px; background:rgba(255,255,255,.96); border:1px solid var(--border,#e5e7eb); border-radius:10px; padding:2px; box-shadow:0 2px 8px rgba(0,0,0,.08); }
   .lec-tools i { width:1px; background:var(--border,#e5e7eb); margin:4px 4px; }
   .lec-tools .fs-out, .lec-fs .lec-tools .fs-in { display:none; } .lec-fs .lec-tools .fs-out { display:block; }
-  .lec-fs { position:fixed !important; inset:0 !important; z-index:900 !important; height:auto !important; max-height:none !important; min-height:0 !important; border-radius:0 !important; border:0 !important; background:#fff !important; margin:0 !important; }
+  .lec-fs { padding-top:46px !important; box-sizing:border-box; position:fixed !important; inset:0 !important; z-index:900 !important; height:auto !important; max-height:none !important; min-height:0 !important; border-radius:0 !important; border:0 !important; background:#fff !important; margin:0 !important; }
+  #lecDocWrap.lec-fs { padding-top:0 !important; }
   body.lec-fs-on { overflow:hidden; }
   .lec-fs-nav { position:fixed; left:50%; bottom:14px; transform:translateX(-50%); z-index:901; display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,.96); border:1px solid var(--border,#e5e7eb); border-radius:999px; padding:4px 6px; box-shadow:0 2px 10px rgba(0,0,0,.12); font-size:13px; font-weight:700; color:#374151; }
   .lec-fs-nav button { border:0; background:transparent; width:30px; height:30px; border-radius:999px; cursor:pointer; font-size:16px; color:#374151; }
@@ -2673,6 +2674,7 @@
   .lec-ai .md-ul { margin:0; padding-left:18px; } .lec-ai li { margin:2px 0; }
   .lec-ai-exam { margin-top:4px; color:#B45309; font-size:12px; }
   .lec-en.fixed::before { content:'✱ '; color:#8B5CF6; }
+  .lec-en.gem::before { content:'✦ '; color:#2563eb; }
   .lec-seg { display:flex; gap:8px; align-items:flex-start; }
   .lec-ts { flex-shrink:0; font-size:11px; color: var(--text-muted); font-variant-numeric: tabular-nums; padding-top:3px; min-width:34px; }
   .lec-segbody { flex:1; min-width:0; }
@@ -9543,7 +9545,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   function wordAt(words, info, ov, ev){ if(!words||!info) return null; var r=ov.getBoundingClientRect(); var lx=(ev.clientX-r.left)/Math.max(1,r.width)*info.w, ly=(ev.clientY-r.top)/Math.max(1,r.height)*info.h; var best=null, bd=1e9;
     words.forEach(function(wd){ if(lx>=wd.x-2&&lx<=wd.x+wd.w+2&&ly>=wd.y-2&&ly<=wd.y+wd.h+2){ var d=Math.abs(lx-(wd.x+wd.w/2)); if(d<bd){ bd=d; best=wd; } } }); return best; }
   var TOOL={ mode:'select' };
-  function fitScale(wrap, vw){ var w=Math.max(wrap.clientWidth-4,200)/vw.width; var hasH=document.body.classList.contains('lec-full')||wrap.classList.contains('lec-view-canvas')||wrap.classList.contains('lec-fs'); var ch=wrap.clientHeight; var hh=(hasH&&ch>80)?(ch-4)/vw.height:Infinity; return Math.min(w, hh, 6); }
+  function fitScale(wrap, vw){ var w=Math.max(wrap.clientWidth-4,200)/vw.width; var hasH=document.body.classList.contains('lec-full')||wrap.classList.contains('lec-view-canvas')||wrap.classList.contains('lec-fs'); var ch=wrap.clientHeight-(parseFloat(getComputedStyle(wrap).paddingTop)||0); var hh=(hasH&&ch>80)?(ch-4)/vw.height:Infinity; return Math.min(w, hh, 6); }
   function paintZoom(wrap, Z){ var l=wrap.querySelector('.lec-zoomlbl'); if(l) l.textContent=Math.round((Z||1)*100)+'%'; }
   var _zoomT=null;
   function setZoom(which, Z, anchor){ Z=Math.max(0.5, Math.min(4, Z)); var wrap=which==='view'?($('lecViewCanvas')&&$('lecViewCanvas').parentNode):$('lecDropZone'); var prev=(which==='view'?V.zoom:S.zoom)||1;
@@ -9801,7 +9803,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     // ✱ 요점: PDF 수업에서도 현재 슬라이드의 Claude 요점·시험 언급을 대본 위에 작게 보여줌 (접기 가능)
     if(!S.online){ var lv=S.live&&S.live[p]; var nts=(lv&&lv.notes)||[], exs=(lv&&lv.exam)||[]; if(nts.length||exs.length||(S.running&&aiEngine())){ h+='<details class="lec-notes-live"'+(lsGet(lsKey('lec_notes_open'))===0?'':' open')+'><summary>✱ 요점 · 슬라이드 '+(p-(S.base||0))+(nts.length?' <small>'+nts.length+'줄</small>':'')+'</summary>'+(nts.length||exs.length?'<ul>'+nts.map(function(n){ return '<li>'+mdInline(n)+'</li>'; }).join('')+exs.map(function(x){ return '<li class="ex">⚠ '+escapeHtml(x)+'</li>'; }).join('')+'</ul>':'<div class="lec-doc-wait">'+(AI.busy?'Claude 필기 중…':'20초마다 갱신 — 아직 없음')+'</div>')+'</details>'; } }
     var all=allSegs(); var hidden=Math.max(0, all.length-150); if(hidden) h+='<div class="lec-divider">이전 '+hidden+'문장은 접힘 (저장돼 있어요)</div>'; var lastPg=null;
-    all.slice(-150).forEach(function(s){ if(s.page!==lastPg){ lastPg=s.page; h+='<div class="lec-divider">'+escapeHtml(pageLabel(s.page))+'</div>'; } var main=(S.lang==='ko-KR')?(rawMode&&s.raw?s.raw:(s.fix||s.ko)):(s.ko?s.ko:''); h+='<div class="lec-seg"><span class="lec-ts">'+fmtT(s.t||0)+'</span><div class="lec-segbody"><div class="lec-ko">'+(main?escapeHtml(main):'<span class="lec-wait">번역 중…</span>')+'</div>'+(S.lang!=='ko-KR'&&showEn?'<div class="lec-en'+(s.fix&&!rawMode?' fixed':'')+'">'+escapeHtml(rawMode&&s.raw?s.raw:(s.fix||s.en))+'</div>':'')+(rawMode&&s.raw&&S.lang==='ko-KR'?'<div class="lec-en">확정: '+escapeHtml(s.ko)+'</div>':'')+'</div></div>'; });
+    all.slice(-150).forEach(function(s){ if(s.page!==lastPg){ lastPg=s.page; h+='<div class="lec-divider">'+escapeHtml(pageLabel(s.page))+'</div>'; } var main=(S.lang==='ko-KR')?(rawMode&&s.raw?s.raw:(s.fix||s.ko)):(s.ko?s.ko:''); h+='<div class="lec-seg"><span class="lec-ts">'+fmtT(s.t||0)+'</span><div class="lec-segbody"><div class="lec-ko">'+(main?escapeHtml(main):'<span class="lec-wait">번역 중…</span>')+'</div>'+(S.lang!=='ko-KR'&&showEn?'<div class="lec-en'+(s.src==='gemini'&&!s.fix?' gem':(s.fix&&!rawMode?' fixed':''))+'">'+escapeHtml(rawMode&&s.raw?s.raw:(s.fix||s.en))+'</div>':'')+(rawMode&&s.raw&&S.lang==='ko-KR'?'<div class="lec-en">확정: '+escapeHtml(s.ko)+'</div>':'')+'</div></div>'; });
     if(S.lastInterim) h+='<div class="lec-seg interim live"><span class="lec-ts">'+fmtT(nowT())+'</span><div class="lec-segbody"><div class="lec-ko">'+escapeHtml(S.lastInterim)+' <span class="lec-cursor">▍</span></div></div></div>';
     var stick=(box.scrollHeight-box.scrollTop-box.clientHeight)<60; box.innerHTML=h; if(stick||!S.userScrolled) box.scrollTop=box.scrollHeight;
   }
@@ -9853,7 +9855,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     try{
       var out=await aiCall(AI_SYSTEM, JSON.stringify(payload), 1500); var j=parseJson(out); if(!j) throw new Error('형식 오류: '+String(out).slice(0,120));
       (j.segments||[]).forEach(function(g){ var s=sl.segs[g.i]; if(!s) return; if(g.text && (s.src!=='gemini' || (S.lang==='ko-KR' && !s.gfix))){ s.fix=String(g.text); } if(g.ko && s.src!=='gemini'){ s.ko=String(g.ko); } if(!s.fix) s.fix=(S.lang==='ko-KR'?s.ko:s.en); });
-      pend.forEach(function(x){ x.s.ai=true; if(!x.s.fix) x.s.fix=(S.lang==='ko-KR'?x.s.ko:x.s.en); });
+      pend.forEach(function(x){ x.s.ai=true; if(!x.s.fix && x.s.src!=='gemini') x.s.fix=(S.lang==='ko-KR'?x.s.ko:x.s.en); });
       live[p]={ notes:(j.notes||cur.notes||[]).slice(0,6), summary:j.summary||cur.summary||'', exam:(j.exam||cur.exam||[]).slice(0,5), at:Date.now() };
       try{ var cur2=S.ann[p]||[]; (j.marks||[]).slice(0,2).forEach(function(m){ var li=parseInt(m.line,10); if(isNaN(li)) return; var ty=(['highlight','underline','circle'].indexOf(m.type)>=0)?m.type:''; if(!ty && !m.note) return; if(cur2.some(function(a){ return a.line===li && a.type===ty; })) return; if(cur2.length>=3) return; if(ty==='underline') return; cur2.push({line:li, type:ty, note:(m.note?String(m.note).slice(0,40):'')}); }); S.ann[p]=cur2; annPersistPage(p); if(p===S.page) redrawAnn(); }catch(e){}
       AI.fails=0; renderLive(); saveLocal();
