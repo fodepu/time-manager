@@ -2383,7 +2383,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="154">
+<meta name="tm-version" content="155">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -2454,6 +2454,11 @@
   .tm-now-btns button.pri { background:#111827; color:#fff; border-color:#111827; }
   .tm-timer { position:fixed; inset:0; z-index:960; background:#0b0b0d; color:#fff; display:flex; flex-direction:column; align-items:center; justify-content:space-between; padding:6vh 0 5vh; --pct:0%; overflow:hidden; }
   .tm-scene { position:absolute; inset:0; z-index:0; } .tm-scene svg { width:100%; height:100%; display:block; }
+  @keyframes tmSway { 0%,100% { transform:rotate(-2.2deg); } 50% { transform:rotate(2.2deg); } }
+  @keyframes tmDrift { 0% { transform:translateX(-2%); } 100% { transform:translateX(2%); } }
+  .tm-scene .sway, .tm-now-scene .sway { transform-box:fill-box; transform-origin:50% 100%; animation:tmSway 4s ease-in-out infinite; }
+  .tm-scene .drift { animation:tmDrift 90s linear infinite alternate; }
+  @media (prefers-reduced-motion: reduce){ .tm-scene .sway, .tm-scene .drift { animation:none; } }
   .tm-timer-top { position:relative; z-index:1; display:flex; flex-direction:column; align-items:center; gap:14px; }
   .tm-now-scene { height:120px; border-radius:14px; overflow:hidden; margin:-14px -16px 12px; } .tm-now-scene svg { width:100%; height:100%; display:block; }
   .tm-timer.late .tm-timer-ring { background: conic-gradient(#f59e0b var(--pct), rgba(255,255,255,.14) 0); }
@@ -9619,7 +9624,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     var cloudLit=ramp(['#1a2140','#4a3f6a','#ffb37a','#ffe3a8','#ffffff'],sun), cloudShade=ramp(['#0c1228','#2b2a4d','#a05a4a','#c98a70','#c9d9ea'],sun);
     var clouds=[[0.12,0.16,1.0],[0.3,0.09,0.8],[0.5,0.2,1.3],[0.68,0.11,0.9],[0.86,0.18,1.1],[0.4,0.3,0.7],[0.78,0.32,0.6]];
     clouds.forEach(function(c,i){ var x=w*c[0], y=h*c[1], s=c[2]*h*0.06; var op=(0.35+0.65*sun).toFixed(2);
-      o.push('<g opacity="'+op+'" filter="url(#soft)"><ellipse cx="'+x+'" cy="'+y+'" rx="'+(s*2.6)+'" ry="'+(s*0.9)+'" fill="'+cloudShade+'"/><ellipse cx="'+(x-s*0.8)+'" cy="'+(y-s*0.5)+'" rx="'+(s*1.5)+'" ry="'+(s*0.9)+'" fill="'+cloudLit+'"/><ellipse cx="'+(x+s*0.9)+'" cy="'+(y-s*0.35)+'" rx="'+(s*1.7)+'" ry="'+(s*0.8)+'" fill="'+cloudLit+'"/><ellipse cx="'+(x+s*0.2)+'" cy="'+(y-s*0.7)+'" rx="'+(s*1.1)+'" ry="'+(s*0.7)+'" fill="'+cloudLit+'"/></g>'); });
+      o.push('<g class="drift" style="animation-duration:'+(60+seeded(i+3)*60).toFixed(0)+'s;animation-delay:-'+(seeded(i+5)*60).toFixed(0)+'s" opacity="'+op+'" filter="url(#soft)"><ellipse cx="'+x+'" cy="'+y+'" rx="'+(s*2.6)+'" ry="'+(s*0.9)+'" fill="'+cloudShade+'"/><ellipse cx="'+(x-s*0.8)+'" cy="'+(y-s*0.5)+'" rx="'+(s*1.5)+'" ry="'+(s*0.9)+'" fill="'+cloudLit+'"/><ellipse cx="'+(x+s*0.9)+'" cy="'+(y-s*0.35)+'" rx="'+(s*1.7)+'" ry="'+(s*0.8)+'" fill="'+cloudLit+'"/><ellipse cx="'+(x+s*0.2)+'" cy="'+(y-s*0.7)+'" rx="'+(s*1.1)+'" ry="'+(s*0.7)+'" fill="'+cloudLit+'"/></g>'); });
     // 해 + 글로우
     o.push('<circle cx="'+cx+'" cy="'+sunY+'" r="'+(h*0.55)+'" fill="url(#glow)"/>');
     o.push('<circle cx="'+cx+'" cy="'+sunY+'" r="'+(sunR*1.9)+'" fill="#ffe08a" opacity="'+(0.35*sun).toFixed(2)+'" filter="url(#soft2)"/><circle cx="'+cx+'" cy="'+sunY+'" r="'+sunR+'" fill="url(#sunc)"/>');
@@ -9642,13 +9647,13 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     // 풀: 멀리 작게, 가까이 크게
     var blade=ramp(['#22301a','#3c4d22','#6a8a2c','#8cc34a','#a3d95a'],Math.max(sun*0.7,g));
     var nb=Math.round(160+g*220); for(var b=0;b<nb;b++){ var t=seeded(b+101); var y=horizon+h*0.25 + t*t*(h-(horizon+h*0.25)); var depth=(y-(horizon+h*0.25))/(h-(horizon+h*0.25)); var x=w*seeded(b+211); var bh=h*(0.02+0.09*depth)*(0.6+0.8*seeded(b+307)); var lean=(seeded(b+401)-0.5)*bh*0.9; var sw=(0.8+depth*2.2).toFixed(1);
-      o.push('<path d="M'+x.toFixed(0)+' '+y.toFixed(0)+' q '+(lean*0.3).toFixed(0)+' '+(-bh*0.5).toFixed(0)+' '+lean.toFixed(0)+' '+(-bh).toFixed(0)+'" stroke="'+mixHex(blade,'#fff3b0',0.15*depth*sun)+'" stroke-width="'+sw+'" fill="none" stroke-linecap="round" opacity="'+(0.55+0.45*depth).toFixed(2)+'"/>'); }
+      o.push('<path class="sway" style="animation-duration:'+(2.6+seeded(b+9)*2.4).toFixed(1)+'s;animation-delay:-'+(seeded(b+13)*5).toFixed(1)+'s" d="M'+x.toFixed(0)+' '+y.toFixed(0)+' q '+(lean*0.3).toFixed(0)+' '+(-bh*0.5).toFixed(0)+' '+lean.toFixed(0)+' '+(-bh).toFixed(0)+'" stroke="'+mixHex(blade,'#fff3b0',0.15*depth*sun)+'" stroke-width="'+sw+'" fill="none" stroke-linecap="round" opacity="'+(0.55+0.45*depth).toFixed(2)+'"/>'); }
     // 데이지: 성장에 따라 봉오리 → 개화, 개수 증가
     var nd=Math.round(8+g*90); for(var d=0;d<nd;d++){ var td=Math.pow(seeded(d+501),0.8); var y=horizon+h*0.27 + td*(h-(horizon+h*0.3)); var depth=(y-(horizon+h*0.27))/(h-(horizon+h*0.27)); var x=w*seeded(d+601); var r=h*(0.005+0.034*depth*depth); var open=clamp((g-0.15)*1.6 + seeded(d+701)*0.4, 0, 1); var stemH=r*(1.1+1.4*seeded(d+801));
-      o.push('<path d="M'+x.toFixed(0)+' '+(y+r*0.2).toFixed(0)+' q '+(r*0.4).toFixed(0)+' '+(-stemH*0.5).toFixed(0)+' '+(r*0.6).toFixed(0)+' '+(-stemH).toFixed(0)+'" stroke="'+blade+'" stroke-width="'+(1+depth*2).toFixed(1)+'" fill="none"/>');
+      o.push('<g class="sway" style="animation-duration:'+(3+seeded(d+21)*2.5).toFixed(1)+'s;animation-delay:-'+(seeded(d+23)*5).toFixed(1)+'s"><path d="M'+x.toFixed(0)+' '+(y+r*0.2).toFixed(0)+' q '+(r*0.4).toFixed(0)+' '+(-stemH*0.5).toFixed(0)+' '+(r*0.6).toFixed(0)+' '+(-stemH).toFixed(0)+'" stroke="'+blade+'" stroke-width="'+(1+depth*2).toFixed(1)+'" fill="none"/>');
       var fx=x+r*0.6, fy=y-stemH;
       if(open<0.35){ o.push('<ellipse cx="'+fx.toFixed(0)+'" cy="'+fy.toFixed(0)+'" rx="'+(r*0.3).toFixed(1)+'" ry="'+(r*0.5).toFixed(1)+'" fill="'+mixHex(blade,'#ffffff',0.25)+'"/>'); }
-      else { var pet=open<0.7?7:10; var pr=r*(0.5+open*0.6); for(var p=0;p<pet;p++){ var ang=p*360/pet+seeded(d+p)*10; o.push('<ellipse cx="'+fx.toFixed(0)+'" cy="'+fy.toFixed(0)+'" rx="'+(pr*0.32).toFixed(1)+'" ry="'+pr.toFixed(1)+'" fill="'+mixHex('#e8e6dc','#ffffff',sun)+'" transform="translate(0 '+(-pr*0.55).toFixed(1)+') rotate('+ang.toFixed(0)+' '+fx.toFixed(0)+' '+(fy+pr*0.55).toFixed(1)+')" opacity="'+(0.85+0.15*depth).toFixed(2)+'"/>'); } o.push('<circle cx="'+fx.toFixed(0)+'" cy="'+fy.toFixed(0)+'" r="'+(pr*0.36).toFixed(1)+'" fill="'+mixHex('#c9a227','#ffd23f',sun)+'"/>'); } }
+      else { var pet=open<0.7?7:10; var pr=r*(0.5+open*0.6); for(var p=0;p<pet;p++){ var ang=p*360/pet+seeded(d+p)*10; o.push('<ellipse cx="'+fx.toFixed(0)+'" cy="'+fy.toFixed(0)+'" rx="'+(pr*0.32).toFixed(1)+'" ry="'+pr.toFixed(1)+'" fill="'+mixHex('#e8e6dc','#ffffff',sun)+'" transform="translate(0 '+(-pr*0.55).toFixed(1)+') rotate('+ang.toFixed(0)+' '+fx.toFixed(0)+' '+(fy+pr*0.55).toFixed(1)+')" opacity="'+(0.85+0.15*depth).toFixed(2)+'"/>'); } o.push('<circle cx="'+fx.toFixed(0)+'" cy="'+fy.toFixed(0)+'" r="'+(pr*0.36).toFixed(1)+'" fill="'+mixHex('#c9a227','#ffd23f',sun)+'"/>'); } o.push('</g>'); }
     // 앞쪽 비네트(사진 느낌)
     o.push('<rect width="'+w+'" height="'+h+'" fill="url(#vig)"/>');
     o.push('<defs><radialGradient id="vig" cx="50%" cy="45%" r="75%"><stop offset="0.6" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity="0.35"/></radialGradient></defs>');
@@ -9677,8 +9682,8 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
       // 종료는 2초 꾹 (종료 마찰)
       var hb=el.querySelector('#tmTimerStopBtn'); var hT=null; function hStart(e){ e.preventDefault(); hb.classList.add('holding'); hT=setTimeout(function(){ hb.classList.remove('holding'); tmTimerStop(); refreshAll(); }, 2000); } function hEnd(){ clearTimeout(hT); hb.classList.remove('holding'); }
       hb.addEventListener('pointerdown', hStart); hb.addEventListener('pointerup', hEnd); hb.addEventListener('pointerleave', hEnd); hb.addEventListener('pointercancel', hEnd); }
-    document.getElementById('tmTimerLabel').textContent=TIMER.label; document.getElementById('tmTimerPause').textContent=TIMER.paused?'계속':'일시정지'; clearInterval(TIMER.tick); TIMER.tick=setInterval(tmTimerPaint, 5000); if(!fresh) scenePaint(document.getElementById('tmScene'), sceneState()); tmTimerPaint(); }
-  function tmTimerPaint(){ var el=document.getElementById('tmTimer'); if(!el||!TIMER.end) return; var left=TIMER.paused?TIMER.paused:(TIMER.end-Date.now()); if(left<=0){ tmTimerDone(); return; } var mLeft=Math.ceil(left/60000); document.getElementById('tmTimerTime').textContent=(left<60000?'1분 미만':mLeft+'분');
+    document.getElementById('tmTimerLabel').textContent=TIMER.label; document.getElementById('tmTimerPause').textContent=TIMER.paused?'계속':'일시정지'; clearInterval(TIMER.tick); TIMER.tick=setInterval(tmTimerPaint, 2000); if(!fresh) scenePaint(document.getElementById('tmScene'), sceneState()); tmTimerPaint(); }
+  function tmTimerPaint(){ var el=document.getElementById('tmTimer'); if(!el||!TIMER.end) return; var left=TIMER.paused?TIMER.paused:(TIMER.end-Date.now()); if(left<=0){ tmTimerDone(); return; } var s10=Math.ceil(left/10000)*10; var mm=Math.floor(s10/60), ss=s10%60; document.getElementById('tmTimerTime').textContent=(mm<10?'0':'')+mm+':'+(ss<10?'0':'')+ss;
     var frac=1-Math.ceil(left/60000)*60000/Math.max(1,TIMER.total); // 링도 분 단위로만 움직임 var shown=0.08+0.92*frac; if(frac>0.8) shown=0.08+0.92*(0.8+(frac-0.8)*1.0); // 미리 채움 8%
     el.style.setProperty('--pct', Math.min(100, shown*100)+'%'); el.classList.toggle('late', frac>0.8); el.classList.toggle('paused', !!TIMER.paused); if(!TIMER.paused) tmTimerCredit(); }
   function tmTimerDone(){ var el=document.getElementById('tmTimer'); clearInterval(TIMER.tick); TIMER.tick=null; tmTimerCredit(); var s=sceneLoad(); var rare=Math.random()<0.12; if(rare) s.rare=(s.rare||0)+1; sceneSave(s); TIMER.end=0; TIMER.paused=0; TIMER.startedAt=0; tmTimerSave(); try{ if(navigator.vibrate) navigator.vibrate([120,80,120]); }catch(e){} tmEndSound();
