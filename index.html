@@ -2383,7 +2383,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="132">
+<meta name="tm-version" content="133">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -10275,8 +10275,9 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     var data=null; if(note.ready){ try{ var r=await fetch('./lectures/notes/'+note.id+'.json?v='+Date.now(),{cache:'no-store'}); if(r.ok) data=await r.json(); }catch(e){} }
     if(!data){ try{ data=await idbGet('lec',note.id); }catch(e){} } if(!data){ box.innerHTML='<div class="lms-empty">필기 데이터를 찾을 수 없어요</div>'; return; }
     V.note=data;
-    var eu=ecampusUrlFor(data); btns.innerHTML=((V.curPdf&&!V.curPdf.remote)?'<button type="button" class="lec-export rec" id="lecViewRec">● 이 PDF로 녹음</button>':'')+(eu?'<a class="lec-export" href="'+esc(eu)+'" target="_blank" rel="noopener">▶ e-campus 영상</a>':'')+'<button type="button" class="lec-export" id="lecExport">마크다운</button>'+(note.ready?'':'<button type="button" class="lec-export danger" id="lecDelete">이 기기에서 삭제</button>');
+    var eu=ecampusUrlFor(data); btns.innerHTML=((V.curPdf&&!V.curPdf.remote)?'<button type="button" class="lec-export rec" id="lecViewRec">● 이 PDF로 녹음</button>':'')+(eu?'<a class="lec-export" href="'+esc(eu)+'" target="_blank" rel="noopener">▶ e-campus 영상</a>':'')+'<button type="button" class="lec-export" id="lecExport">마크다운</button>'+(note.ready?'':'<button type="button" class="lec-export" id="lecSend">'+(data.status==='sent'?'다시 보내기':'필기 요청 보내기')+'</button><button type="button" class="lec-export danger" id="lecDelete">이 기기에서 삭제</button>');
     $('lecExport').addEventListener('click',function(){ exportMd(data); }); bindViewRec();
+    var sb=$('lecSend'); if(sb) sb.addEventListener('click',async function(){ sb.disabled=true; sb.textContent='보내는 중…'; var ok=await sendRec(data,false); sb.disabled=false; sb.textContent=ok?'보냄 ✓':'필기 요청 보내기'; });
     var dl=$('lecDelete'); if(dl) dl.addEventListener('click',async function(){ if(!confirm('이 녹음 기록을 이 기기에서 삭제할까요?')) return; await idbDel('lec',note.id); showPane('lecHome'); renderHome(); });
     var h='<div class="lec-note-head"><b>'+esc(data.title||'강의')+'</b><span class="lms-sub">'+esc(data.date||'')+(data.pages?' · '+data.pages+(data.mode==='online'?'구간':'쪽'):'')+(data.duration?' · '+fmtT(data.duration):'')+(note.ready?'':' · <em>'+(note.status==='sent'?'필기 만드는 중 — 대본만 표시':'아직 전송 전 — 대본만 표시')+'</em>')+'</span></div>';
     if(data.overview) h+='<div class="lms-brief">'+md(data.overview)+'</div>';
