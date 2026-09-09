@@ -2383,7 +2383,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="122">
+<meta name="tm-version" content="123">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -9614,6 +9614,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   var _tipT=null;
   document.addEventListener('mousedown',function(e){ if(e.target&&e.target.closest&&e.target.closest('.lec-wordtip, .lec-postit-edit, .lec-postit-del')) return; document.querySelectorAll('.lec-wordtip, .lec-sellayer').forEach(function(t){ t.remove(); }); }, true);
   function flowWords(info){ if(!info||!info.words) return []; if(info._flow) return info._flow; var ws=info.words.slice(); ws.sort(function(a,b){ return (Math.abs(a.y-b.y)>Math.min(a.h,b.h)*0.6)?(a.y-b.y):(a.x-b.x); }); ws.forEach(function(w,i){ w.fi=i; var L=(info.lines||[]).find(function(l){ var cy=w.y+w.h/2; return cy>=l.y-2&&cy<=l.y+l.h+2; }); w.li=L?L.i:-1; }); info._flow=ws; return ws; }
+  function wordAt(info, ov, cx, cy){ if(!info) return null; var ws=flowWords(info); var r=ov.getBoundingClientRect(); var lx=(cx-r.left)/Math.max(1,r.width)*info.w, ly=(cy-r.top)/Math.max(1,r.height)*info.h; var m=Math.max(3, info.h*0.006); for(var i=0;i<ws.length;i++){ var w=ws[i]; if(lx>=w.x-m&&lx<=w.x+w.w+m&&ly>=w.y-m&&ly<=w.y+w.h+m) return w; } return null; }
   function nearestWord(info, ov, cx, cy){ var ws=flowWords(info); if(!ws.length) return null; var r=ov.getBoundingClientRect(); var lx=(cx-r.left)/Math.max(1,r.width)*info.w, ly=(cy-r.top)/Math.max(1,r.height)*info.h; var best=null, bd=1e9;
     ws.forEach(function(w){ var dy=(ly<w.y)?(w.y-ly):(ly>w.y+w.h?ly-(w.y+w.h):0); var dx=(lx<w.x)?(w.x-lx):(lx>w.x+w.w?lx-(w.x+w.w):0); var d=dy*4+dx; if(d<bd){ bd=d; best=w; } }); return best; }
   function bindDragSelect(ov, getInfo){ if(ov._drag) return; ov._drag=true; var wrap=ov.parentNode; var st=null, layer=null;
@@ -9621,12 +9622,14 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
       for(var i=i0;i<=i1;i++){ var w=ws[i]; html+='<div class="lec-selrect" style="left:'+(w.x*fx+r.left-wr.left+wrap.scrollLeft)+'px;top:'+(w.y*fy+r.top-wr.top+wrap.scrollTop)+'px;width:'+(w.w*fx+2)+'px;height:'+(w.h*fy)+'px"></div>'; } layer.innerHTML=html; }
     ov.addEventListener('mousedown',function(ev){ if(ev.button!==0) return; var info=getInfo(); st={cx:ev.clientX, cy:ev.clientY, a:nearestWord(info, ov, ev.clientX, ev.clientY), info:info}; ov._dragged=false;
       if(TOOL.mode==='select' && info){ var ht=annHitInfo(ov, ev); if(ht && ht.free){ var ctx=(ov.id==='lecViewAnnot')?annCtxView():annCtxRec(); var m=ctx.list()[ht.idx]; if(m){ var p=toLogical(info, ov, ev.clientX, ev.clientY); st.move={idx:ht.idx, dx:p.x-m.x, dy:p.y-m.y, ctx:ctx}; } } }
-      if(TOOL.mode==='note' && info){ st.box=true; } });
+      if(TOOL.mode==='note' && info){ st.box=true; }
+      if(TOOL.mode==='select' && !st.move && wrap.classList.contains('zoomed') && !wordAt(info, ov, ev.clientX, ev.clientY)){ st.pan={ sl:wrap.scrollLeft, stp:wrap.scrollTop }; ov.style.cursor='grabbing'; } });
     ov.addEventListener('mousemove',function(ev){ if(!st) return; if(!ov._dragged && Math.hypot(ev.clientX-st.cx, ev.clientY-st.cy)<5) return; ov._dragged=true; ev.preventDefault();
+      if(st.pan){ wrap.scrollLeft=st.pan.sl-(ev.clientX-st.cx); wrap.scrollTop=st.pan.stp-(ev.clientY-st.cy); return; }
       if(st.move){ var p=toLogical(st.info, ov, ev.clientX, ev.clientY); var l=st.move.ctx.list(); var m=l[st.move.idx]; if(m){ m.x=Math.max(0,p.x-st.move.dx); m.y=Math.max(0,p.y-st.move.dy); if(ov.id==='lecViewAnnot') drawAnnotations($('lecViewCanvas'), ov, V.page, l, st.info); else redrawAnn(); } return; }
       if(st.box){ if(!layer){ layer=document.createElement('div'); layer.className='lec-sellayer'; wrap.appendChild(layer); } var r=ov.getBoundingClientRect(), wr=wrap.getBoundingClientRect(); var x0=Math.min(st.cx,ev.clientX)-wr.left+wrap.scrollLeft, y0=Math.min(st.cy,ev.clientY)-wr.top+wrap.scrollTop; layer.innerHTML='<div class="lec-selrect box" style="left:'+x0+'px;top:'+y0+'px;width:'+Math.abs(ev.clientX-st.cx)+'px;height:'+Math.abs(ev.clientY-st.cy)+'px"></div>'; return; }
       if(!st.a||!st.info) return; var b=nearestWord(st.info, ov, ev.clientX, ev.clientY); if(b) paint(st.a, b, st.info); });
-    function end(ev){ if(!st) return; var s=st; st=null; if(layer){ layer.remove(); layer=null; } var info=s.info;
+    function end(ev){ if(!st) return; var s=st; st=null; if(layer){ layer.remove(); layer=null; } var info=s.info; if(s.pan){ ov.style.cursor=''; if(ov._dragged){ setTimeout(function(){ ov._dragged=false; },0); return; } }
       if(s.move){ if(ov._dragged){ s.move.ctx.save(s.move.ctx.list().slice()); } setTimeout(function(){ ov._dragged=false; },0); if(ov._dragged) return; }
       if(s.box && info){ var p0=toLogical(info, ov, s.cx, s.cy), p1=toLogical(info, ov, ev.clientX, ev.clientY); var bw=Math.abs(p1.x-p0.x), bh=Math.abs(p1.y-p0.y); if(!ov._dragged || bw<20 || bh<14){ bw=Math.max(bw,150); bh=Math.max(bh,44); }
         var ctx=(ov.id==='lecViewAnnot')?annCtxView():annCtxRec(); var l=ctx.list().slice(); l.push({line:-1, type:'', note:'', x:Math.min(p0.x,p1.x), y:Math.min(p0.y,p1.y), w:bw, h:bh, by:'me'}); ctx.save(l); setTool('select'); showToast('박스를 클릭하면 글을 쓸 수 있어요');
@@ -9642,8 +9645,8 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   async function showWordTip(wrap, ev, word){ var old=wrap.querySelector('.lec-wordtip'); if(old) old.remove(); var clean=String(word).replace(/^[^A-Za-z0-9가-힣(]+|[^A-Za-z0-9가-힣%).]+$/g,''); if(!clean) return;
     var tip=document.createElement('div'); tip.className='lec-wordtip'; tip.innerHTML='<b>'+escapeHtml(clean)+'</b><small>번역 중…</small>'; var r=wrap.getBoundingClientRect(); tip.style.left=Math.max(4,(ev.clientX-r.left+wrap.scrollLeft+8))+'px'; tip.style.top=Math.max(4,(ev.clientY-r.top+wrap.scrollTop-40))+'px'; wrap.appendChild(tip);
     tip.style.maxWidth='420px'; clearTimeout(_tipT); _tipT=setTimeout(function(){ try{ tip.remove(); }catch(e){} }, clean.length>30?12000:7000);
-    try{ if(!S.translator && 'Translator' in self){ await initTranslator(); } }catch(e){}
-    var ko=''; try{ ko=await translate(clean); }catch(e){} if(!tip.parentNode) return; tip.innerHTML='<b>'+escapeHtml(clean)+'</b> '+escapeHtml(ko||'(번역 실패)'); }
+    try{ if(!S.translator && !S._trInit && 'Translator' in self){ S._trInit=true; var p=initTranslator(); await Promise.race([p, new Promise(function(res){ setTimeout(res,1200); })]); } }catch(e){}
+    var ko=''; try{ ko=await translate(clean); }catch(e){} if(!tip.parentNode) return; tip.innerHTML='<b>'+escapeHtml(clean)+'</b> '+escapeHtml(ko||'(번역 실패 — 인터넷 확인)'); clearTimeout(_tipT); _tipT=setTimeout(function(){ try{ tip.remove(); }catch(e){} }, clean.length>30?12000:7000); }
   function annHitTest(ov, ev){ var t=annHitInfo(ov, ev); return t?t.idx:-1; }
   function annHitInfo(ov, ev){ var hits=ov._hits||[]; var r=ov.getBoundingClientRect(); var x=(ev.clientX-r.left)*(ov.width/Math.max(1,r.width)), y=(ev.clientY-r.top)*(ov.height/Math.max(1,r.height));
     for(var i=hits.length-1;i>=0;i--){ var t=hits[i]; if(x>=t.x&&x<=t.x+t.w&&y>=t.y&&y<=t.y+t.h) return t; } return null; }
@@ -9708,7 +9711,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   }
   async function translate(text){
     if(!text) return '';
-    try{ if(S.translator) return await S.translator.translate(text); }catch(e){}
+    try{ if(S.translator){ var out=await Promise.race([S.translator.translate(text), new Promise(function(res){ setTimeout(function(){ res(null); },1500); })]); if(out) return out; } }catch(e){}
     try{ var r=await fetch('https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=ko&dt=t&q='+encodeURIComponent(text)); var j=await r.json(); return (j&&j[0]||[]).map(function(x){return x&&x[0]||'';}).join(''); }catch(e){ return ''; }
   }
 
@@ -9877,10 +9880,10 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   function gemSetup(){ var setup={ model:'models/'+gemModel() };
     if(S.lang==='ko-KR' && (G.variant||0)===0){ setup.generationConfig={ responseModalities:['TEXT'], temperature:0.2 }; setup.systemInstruction={ parts:[{ text:koSysPrompt() }] }; setup.inputAudioTranscription={}; S.biased=0; try{ S.biased=slideTerms().slice(0,60).length; }catch(e){} }
     else if(S.lang==='ko-KR' && (G.variant||0)===1){ setup.generationConfig={ responseModalities:['TEXT'] }; setup.inputAudioTranscription={ languageCodes:['ko-KR'] }; S.biased=0; try{ var terms=slideTerms().slice(0,100); if(terms.length && G.vocab!==false){ setup.inputAudioTranscription.customVocabulary=terms; S.biased=terms.length; } }catch(e){} }
-    else if(S.lang==='ko-KR'){ var trk={ targetLanguageCode:'ko', echoTargetLanguage:true }; var iatk={}; S.biased=0; if(G.vocab!==false){ try{ var tmk=slideTerms().slice(0,100); if(tmk.length){ iatk={ languageCodes:['ko-KR'], customVocabulary:tmk }; S.biased=tmk.length; } }catch(e){} }
+    else if(S.lang==='ko-KR'){ var trk={ targetLanguageCode:'ko', echoTargetLanguage:true }; var iatk={ languageCodes:['ko-KR'] }; S.biased=0; if(G.vocab!==false){ try{ var tmk=slideTerms().slice(0,100); if(tmk.length){ iatk.customVocabulary=tmk; S.biased=tmk.length; } }catch(e){} }
       setup.generationConfig={ responseModalities:['AUDIO'], translationConfig:trk }; setup.inputAudioTranscription=iatk; setup.outputAudioTranscription={}; }
     else { var tr={ targetLanguageCode:'ko', echoTargetLanguage:false }; var v=G.variant||0;
-      var iat={}; S.biased=0; if(G.vocab!==false){ try{ var tm=slideTerms().slice(0,100); if(tm.length){ iat={ languageCodes:['en-US'], customVocabulary:tm }; S.biased=tm.length; } }catch(e){} } // PDF 용어를 미리 알려줘 인식 정확도 ↑
+      var iat={ languageCodes:['en-US'] }; S.biased=0; if(G.vocab!==false){ try{ var tm=slideTerms().slice(0,100); if(tm.length){ iat.customVocabulary=tm; S.biased=tm.length; } }catch(e){} } // 언어 고정: 비워두면 일본어 등으로 오인식 // PDF 용어를 미리 알려줘 인식 정확도 ↑
       if(v===0){ setup.generationConfig={ responseModalities:['AUDIO'], translationConfig:tr }; setup.inputAudioTranscription=iat; setup.outputAudioTranscription={}; }
       else if(v===1){ setup.generationConfig={ responseModalities:['AUDIO'] }; setup.translationConfig=tr; setup.inputAudioTranscription=iat; setup.outputAudioTranscription={}; }
       else { setup.generationConfig={ responseModalities:['AUDIO'], inputAudioTranscription:{}, outputAudioTranscription:{}, translationConfig:tr }; } }
