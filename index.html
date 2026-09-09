@@ -2383,7 +2383,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="148">
+<meta name="tm-version" content="149">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -8975,15 +8975,13 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
       closeMenu();
       var m=document.createElement('div'); m.className='tt-menu'; m.id='ttMenu';
       var items=[];
-      if(b.kind==='tasks' && !isRec) items.push([(b.values.check===true?'완료 해제':'완료로 표시'), function(){ if(b.values.check===true){ cycleFor(date,b.id); cycleFor(date,b.id); } else if(b.values.check===undefined){ cycleFor(date,b.id); } else { cycleFor(date,b.id); cycleFor(date,b.id); } }, (b.values.check===true?'minus':'check')]);
       if(!isRec) items.push(['편집 (시간·장소·요일)', function(){ if(date!==currentDate) loadDate(date); openScheduleBlockModal(b.id); }, 'edit']);
       else items.push(['정리 기록 (편집 불가)', function(){ showToast('정리 기록 블록은 편집할 수 없어요. 아래 버튼으로 기본 시간표로 되돌릴 수 있습니다.'); }]);
       items.push([b.kind==='tasks'?'할 일 적기·수정':'할 일 적기', function(){ openTodos(date, b.id, b.label); }, 'clipboard']);
-      if(b.kind!=='tasks') items.push([b.values.check===true?'완료 해제':'완료로 표시', function(){ if(b.values.check===true){ cycleFor(date,b.id); cycleFor(date,b.id); } else if(b.values.check===undefined){ cycleFor(date,b.id); } else { cycleFor(date,b.id); cycleFor(date,b.id); } }, (b.values.check===true?'minus':'check')]);
+      if(b.moved && !isRec) items.push(['이 시간으로 계속 (시간표에 저장)', function(){ var ref=entryForDate(date,b.id); var mv=ref&&ref.e.values&&ref.e.values.mv; if(!mv) return; var tm=(typeof loadTemplate==='function' && loadTemplate())||[]; var t=tm.find(function(x){ return x.id===b.id; }); if(t){ t.start=mv.s; t.end=mv.e; lsSet(lsKey('template'), tm); } var ce=(typeof entries!=='undefined')?entries.find(function(x){ return x.id===b.id; }):null; if(ce){ ce.start=mv.s; ce.end=mv.e; if(ce.values) delete ce.values.mv; if(typeof persist==='function') persist(); } if(ref&&ref.e.values){ delete ref.e.values.mv; ref.save(); } if(window.tmOnChange) tmOnChange(); showToast(b.label+' '+mv.s+'~'+mv.e+' 로 시간표에 저장됨'); refreshAll(); }, 'check']);
       if(b.moved && !isRec) items.push(['원래 시간으로 되돌리기', function(){ var ref=entryForDate(date,b.id); if(ref&&ref.e.values){ delete ref.e.values.mv; ref.save(); if(window.tmOnChange) tmOnChange(); refreshAll(); } }, 'edit']);
       items.push(['복사 (바로 뒤에 하나 더)', function(){ copyBlock(date,b); }, 'copy']);
       items.push([(b.id.indexOf('sched_')===0||b.id.indexOf('day_')===0)?'오늘만 삭제':'삭제', function(){ deleteBlockToday(date,b); }, 'trash', 'danger']);
-      items.push(['의도적 미완료', function(){ if(b.values.check===undefined){ cycleFor(date,b.id); cycleFor(date,b.id); } else if(b.values.check===true){ cycleFor(date,b.id); } }, 'x', 'danger']);
       items.forEach(function(it){ var bt=document.createElement('button'); bt.type='button'; var lab=it[0], ic=it[2]||''; if(ic && typeof ICONS!=='undefined' && ICONS[ic]) bt.innerHTML='<svg class="tt-mi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">'+ICONS[ic]+'</svg><span></span>'; else bt.innerHTML='<span></span>'; bt.querySelector('span').textContent=lab; if(it[3]) bt.classList.add(it[3]); bt.addEventListener('click', function(ev){ ev.stopPropagation(); closeMenu(); it[1](); }); m.appendChild(bt); });
       document.body.appendChild(m);
       var r=m.getBoundingClientRect(); var L=Math.min(x, window.innerWidth-r.width-8), T=Math.min(y, window.innerHeight-r.height-8);
