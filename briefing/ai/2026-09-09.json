@@ -1,0 +1,66 @@
+{
+  "date": "2026-09-09",
+  "generatedAt": "2026-09-09T09:03:41+09:00",
+  "urgent": null,
+  "items": [
+    {
+      "cat": "model",
+      "title": "Claude Fable 5.1 · Mythos 5.1 — 캐시값 75% 인하",
+      "lead": "Fable 5·Mythos 5의 후속. 안전장치 등급만 다른 동일 모델 쌍이다.",
+      "points": [
+        "캐시 읽기가 **$0.25/M(75%↓)**로 떨어져 장시간 에이전트 세션 비용이 **최대 45%** 절감된다. 시스템 프롬프트·코드베이스·티켓 이력을 매 스텝 재열람하는 멀티파일 리팩터·마이그레이션·수시간짜리 코드리뷰를 이제 비용 부담 없이 통째로 컨텍스트에 물려 돌릴 수 있다.",
+        "강점이 **장기 에이전트 코딩·프런트엔드/비주얼 코드 생성·재무 분석**에 집중된다. 한 세션에서 여러 파일을 가로지르는 대형 리팩터와 세션 간 코드리뷰를 사람 개입 최소화로 위임하는 워크플로가 실전 수준이 됐다."
+      ],
+      "note": "가격 $10/$50 per M 유지, 캐시 쓰기 $12.50/M. Claude Developer Platform·API에서 즉시 사용.",
+      "source": "anthropic.com",
+      "url": "https://www.anthropic.com/claude-fable-and-mythos-5-1"
+    },
+    {
+      "cat": "update",
+      "title": "Claude Developer Platform — Managed Agents에 GitHub 스킬·예산 상한",
+      "lead": "Managed Agents 세션이 리포의 스킬을 자동 로딩하고, 세션 단위 예산 상한과 Skills API 정식판이 열렸다.",
+      "points": [
+        "세션이 리포를 마운트하면 **.claude/skills** 폴더의 스킬이 세션 시작 시 자동 발견된다. 팀 공용 워크플로를 리포에 커밋해 두면 에이전트가 별도 설정 없이 그 능력을 그대로 실행한다.",
+        "세션에 **예산 하드캡**을 걸 수 있고 도달 시 budget_reached로 정지한다. 폭주하는 에이전트 토큰 비용을 사전에 차단하는 안전장치."
+      ],
+      "note": "Skills API(/v1/skills) 베타 종료로 skills-2025-10-02 헤더 불필요. geo-pinned 추론으로 데이터 레지던시 지정 가능.",
+      "source": "releasebot.io",
+      "url": "https://releasebot.io/updates/anthropic/claude-developer-platform"
+    },
+    {
+      "cat": "model",
+      "title": "OpenAI GPT-6 Astra — 컴퓨터를 직접 쓰는 에이전트",
+      "lead": "GPT-5.6 Sol의 후속으로, GUI를 사람처럼 조작하도록 학습된 네이티브 컴퓨터 사용 모델이다.",
+      "points": [
+        "화면·버튼·메뉴를 조작해 앱을 넘나들며 **레코드 갱신·개발도구 탐색·소프트웨어 테스트 → 결과를 보고서로 조립**하는 다단계 작업을 수행한다. OSWorld 2.0 **72.6%**를 이전 대비 **약 47% 빠른 시간**에 달성.",
+        "네이티브 멀티에이전트 구조라 오케스트레이션 에이전트가 가설을 세우고 서브에이전트를 병렬 배치해 변형을 검증한다. 복잡한 작업을 분해·병렬 실행하는 방식."
+      ],
+      "note": "ChatGPT Plus/Pro/Business/Enterprise·API·AWS·Microsoft Foundry. 제한된 조직부터 롤아웃 중, 일반 공개 아직 아님.",
+      "source": "openai.com",
+      "url": "https://openai.com/index/gpt-6-astra/"
+    },
+    {
+      "cat": "headline",
+      "title": "xAI Grok Bot 출시 · Grok 4.7 9/12 예고",
+      "lead": "xAI가 엔터프라이즈용 지속형 에이전트 Grok Bot을 내놓고 Grok 4.7 정식 출시를 9월 12일로 예고했다.",
+      "points": [
+        "**Grok Bot**은 봇·챗·툴·아티팩트를 묶은 지속형 에이전트다. 컴퓨터 접근, 인라인 카드/위젯, 공유 그룹챗, 업무 루틴으로 자율 AI 워커를 팀에 배치하며 접근·네트워크·감사 제어가 붙는다.",
+        "X 계정 연동으로 **포스트·타임라인·멘션 도구**를 에이전트에 직접 물릴 수 있다."
+      ],
+      "note": "Grok·Cursor Enterprise 고객은 2주 무료로 조직 전체 초대 가능. Grok 4.7 정식 출시는 9/12 목표.",
+      "source": "releasebot.io",
+      "url": "https://releasebot.io/updates/xai"
+    },
+    {
+      "cat": "market",
+      "title": "Salesforce × Anthropic 'Claudeforce'",
+      "lead": "Claude 에이전트가 Salesforce의 데이터·워크플로·거버넌스에 안전하게 접근하는 전략 제휴.",
+      "points": [
+        "CRM의 데이터·비즈니스 로직·액션·거버넌스를 Claude가 다루게 해 세일즈·서비스 업무를 에이전틱하게 구동한다. Salesforce를 쓰는 조직이라면 CRM 위에서 바로 에이전트를 붙일 수 있는 경로."
+      ],
+      "note": "선정 파일럿 고객 우선, 9월 오픈베타 예정.",
+      "source": "salesforce.com",
+      "url": "https://www.salesforce.com/news/press-releases/2026/08/26/salesforce-and-anthropic-announce-claudeforce/"
+    }
+  ]
+}
