@@ -2383,7 +2383,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="130">
+<meta name="tm-version" content="131">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -9610,10 +9610,10 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   function editFree(ctx, idx, ov, info){ var l=ctx.list(); var m=l[idx]; if(!m||!ov||!info) return; var wrap=ov.parentNode; var old=wrap.querySelector('.lec-postit-edit'); if(old) old._done && old._done();
     var r=ov.getBoundingClientRect(), wr=wrap.getBoundingClientRect(); var fx=r.width/info.w, fy=r.height/info.h;
     var ta=document.createElement('textarea'); ta.className='lec-postit-edit'; ta.value=m.note||''; ta.placeholder='메모 입력 · ⌘↩ 저장 · Esc 취소';
-    ta.style.left=(m.x*fx+r.left-wr.left+wrap.scrollLeft)+'px'; ta.style.top=(m.y*fy+r.top-wr.top+wrap.scrollTop)+'px'; ta.style.width=((m.w||160)*fx)+'px'; ta.style.height=((m.h||50)*fy)+'px';
+    ta.style.left=(m.x*fx+r.left-wr.left+wrap.scrollLeft)+'px'; ta.style.top=(m.y*fy+r.top-wr.top+wrap.scrollTop)+'px'; ta.style.width=((m.w||160)*fx)+'px'; ta.style.height=((m.h||50)*fy)+'px'; ta.style.fontSize=Math.max(11, 9*fx)+'px';
     var del=document.createElement('button'); del.type='button'; del.className='lec-postit-del'; del.textContent='✕'; del.title='이 포스트잇 삭제'; del.style.left=((m.x+(m.w||160))*fx+r.left-wr.left+wrap.scrollLeft-10)+'px'; del.style.top=(m.y*fy+r.top-wr.top+wrap.scrollTop-10)+'px';
     var done=false; function finish(save){ if(done) return; done=true; try{ ta.remove(); del.remove(); }catch(e){} if(!save) return; var l2=ctx.list().slice(); var mm=l2[idx]; if(!mm) return; mm.note=ta.value.trim().slice(0,400); mm.w=Math.max(40, ta.offsetWidth/fx); mm.h=Math.max(20, ta.offsetHeight/fy); ctx.save(l2); }
-    ta._done=function(){ finish(true); };
+    ta._done=function(){ finish(true); }; setTimeout(function(){ try{ if(ta.scrollHeight>ta.offsetHeight) ta.style.height=(ta.scrollHeight+4)+'px'; }catch(e){} },0);
     ta.addEventListener('keydown',function(e){ if(e.key==='Escape'){ e.preventDefault(); finish(false); } else if(e.key==='Enter'&&(e.metaKey||e.ctrlKey)){ e.preventDefault(); finish(true); } e.stopPropagation(); });
     ta.addEventListener('mousedown',function(e){ e.stopPropagation(); }); ta.addEventListener('blur',function(){ setTimeout(function(){ finish(true); },120); });
     del.addEventListener('mousedown',function(e){ e.preventDefault(); e.stopPropagation(); done=true; try{ ta.remove(); del.remove(); }catch(x){} var l3=ctx.list().slice(); l3.splice(idx,1); ctx.save(l3); });
@@ -9672,14 +9672,14 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     if(!ov||!cv) return; ov.width=cv.width; ov.height=cv.height; ov.style.width=cv.style.width; ov.style.height=cv.style.height; ov.style.left=cv.offsetLeft+'px'; ov.style.top=cv.offsetTop+'px';
     var ctx=ov.getContext('2d'); ctx.clearRect(0,0,ov.width,ov.height);
     var info=linesInfo; ov._hits=[]; if(!info||!info.lines||!annList||!annList.length) return;
-    var sx=ov.width/info.w, sy=ov.height/info.h; var fontPx=Math.max(11, Math.round(12*sx)); var usedNotes=[]; var hits=[]; ov._hits=hits;
+    var sx=ov.width/info.w, sy=ov.height/info.h; var fontPx=Math.max(10, Math.round(9*sx)); var usedNotes=[]; var hits=[]; ov._hits=hits;
     annList.forEach(function(a, ai){
       if(a.x!=null && a.y!=null){ // 자유 포스트잇
-        var bx=a.x*sx, by=a.y*sy, bw=(a.w||160)*sx, bh=(a.h||50)*sy; var fp=Math.max(11, Math.round(12*sx)); ctx.font='500 '+fp+'px Pretendard, -apple-system, sans-serif';
+        var bx=a.x*sx, by=a.y*sy, bw=(a.w||160)*sx, bh=(a.h||50)*sy; var fp=Math.max(10, Math.round(9*sx)); ctx.font='500 '+fp+'px Pretendard, -apple-system, sans-serif';
+        var padx=6*sx, lineH=fp*1.35, maxW=bw-padx*2; var rows=[]; String(a.note||'').split(/\n/).forEach(function(par){ var words=par.split(/\s+/).filter(Boolean), line=''; if(!words.length){ rows.push(''); return; } words.forEach(function(wd){ var test=line?line+' '+wd:wd; if(ctx.measureText(test).width>maxW && line){ rows.push(line); line=wd; } else line=test; }); if(line) rows.push(line); });
+        var need=rows.length*lineH+10*sy; if(need>bh){ bh=need; a.h=bh/sy; } // 글이 잘리지 않게 상자를 키움
         ctx.save(); ctx.shadowColor='rgba(0,0,0,0.22)'; ctx.shadowBlur=5*sx; ctx.shadowOffsetY=2*sx; ctx.fillStyle='#bfdbfe'; ctx.fillRect(bx, by, bw, bh); ctx.restore();
-        ctx.fillStyle='#1e3a8a'; ctx.textBaseline='top'; var padx=6*sx, lineH=fp*1.35, cy=by+5*sy, maxW=bw-padx*2; var words=String(a.note||'').split(/\s+/), line='';
-        for(var wi=0;wi<words.length && cy+lineH<=by+bh+1;wi++){ var test=line?line+' '+words[wi]:words[wi]; if(ctx.measureText(test).width>maxW && line){ ctx.fillText(line, bx+padx, cy); cy+=lineH; line=words[wi]; } else line=test; }
-        if(line && cy+lineH<=by+bh+1) ctx.fillText(line, bx+padx, cy);
+        ctx.fillStyle='#1e3a8a'; ctx.textBaseline='top'; var cy=by+5*sy; rows.forEach(function(rw){ ctx.fillText(rw, bx+padx, cy); cy+=lineH; });
         if(!a.note){ ctx.save(); ctx.strokeStyle='#60a5fa'; ctx.setLineDash([4*sx,3*sx]); ctx.lineWidth=1; ctx.strokeRect(bx+0.5,by+0.5,bw-1,bh-1); ctx.restore(); }
         hits.push({x:bx,y:by,w:bw,h:bh,idx:ai,free:true}); return; }
       var L=info.lines[a.line]; if(!L) return; var x=L.x*sx, y=L.y*sy, w=L.w*sx, hh=L.h*sy; if(a.type) hits.push({x:x-6,y:y-4,w:w+12,h:hh+8,idx:ai});
