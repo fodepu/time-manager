@@ -2383,7 +2383,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="134">
+<meta name="tm-version" content="135">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -10022,7 +10022,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   function gemInput(t){ t=String(t); if(!t.trim()) return;
     if(S.lang==='ko-KR'){ var nowK=Date.now(); var pk=S.page||1; var sk=G.seg; var v0=(G.variant||0)===0; if(!sk || sk.page!==pk || (!v0 && (nowK-G.lastIn>2500 || sk.ko.length>200))){ sk={ t:nowT(), page:pk, en:'', ko:'', src:'gemini' }; slide(pk).segs.push(sk); G.seg=sk; } sk.ko=gemJoin(sk.ko,t); G.lastIn=nowK; S.lastResultAt=nowK; S.lastInterim=''; renderLive(); saveLocal(); return; }
     var now=Date.now(), p=S.page||1, seg=G.seg;
-    var fresh=!seg || seg.page!==p || (now-G.lastIn>1800 && seg.ko) || (seg.en.length>150 && /[.?!]\s*$/.test(seg.en)) || seg.en.length>380;
+    var fresh=!seg || seg.page!==p || (now-G.lastIn>2500 && seg.ko) || (seg.en.length>260 && /[.?!]\s*$/.test(seg.en)) || seg.en.length>520;
     if(fresh){ seg={ t:nowT(), page:p, en:'', ko:'', src:'gemini' }; slide(p).segs.push(seg); G.seg=seg; G.koOpen=false; }
     seg.en=gemJoin(seg.en,t); G.lastIn=now; S.lastResultAt=now; S.lastInterim=''; renderLive(); saveLocal(); }
   function gemOutput(t){ var seg=G.seg; if(!seg) return; seg.ko=gemJoin(seg.ko,t); G.koOpen=true; renderLive(); }
