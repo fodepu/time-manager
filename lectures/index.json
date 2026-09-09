@@ -48,5 +48,17 @@
   "notesAt": "2026-09-02T18:22:35.862207Z",
   "mode": "online",
   "studyPdf": "lectures/pdf/lec_2026-09-02_phys-w1-5.pdf"
+ },
+ {
+  "id": "lec_2026-09-09_mttfcjke",
+  "course": "계량경제학",
+  "title": "계량경제학 2주차",
+  "date": "2026-09-09",
+  "pages": 42,
+  "notesAt": "2026-09-09T04:24:40.586292+00:00",
+  "mode": "slides",
+  "pdf": "lecture_week1_statistical_inference.pdf",
+  "week": 2,
+  "module": "1507907"
  }
 ]
