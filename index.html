@@ -2383,7 +2383,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="153">
+<meta name="tm-version" content="154">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -9677,10 +9677,10 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
       // 종료는 2초 꾹 (종료 마찰)
       var hb=el.querySelector('#tmTimerStopBtn'); var hT=null; function hStart(e){ e.preventDefault(); hb.classList.add('holding'); hT=setTimeout(function(){ hb.classList.remove('holding'); tmTimerStop(); refreshAll(); }, 2000); } function hEnd(){ clearTimeout(hT); hb.classList.remove('holding'); }
       hb.addEventListener('pointerdown', hStart); hb.addEventListener('pointerup', hEnd); hb.addEventListener('pointerleave', hEnd); hb.addEventListener('pointercancel', hEnd); }
-    document.getElementById('tmTimerLabel').textContent=TIMER.label; document.getElementById('tmTimerPause').textContent=TIMER.paused?'계속':'일시정지'; clearInterval(TIMER.tick); TIMER.tick=setInterval(tmTimerPaint, 500); if(!fresh) scenePaint(document.getElementById('tmScene'), sceneState()); tmTimerPaint(); }
-  function tmTimerPaint(){ var el=document.getElementById('tmTimer'); if(!el||!TIMER.end) return; var left=TIMER.paused?TIMER.paused:(TIMER.end-Date.now()); if(left<=0){ tmTimerDone(); return; } var s=Math.ceil(left/1000); var mm=Math.floor(s/60), ss=s%60; document.getElementById('tmTimerTime').textContent=(mm<10?'0':'')+mm+':'+(ss<10?'0':'')+ss;
-    var frac=1-left/Math.max(1,TIMER.total); var shown=0.08+0.92*frac; if(frac>0.8) shown=0.08+0.92*(0.8+(frac-0.8)*1.0); // 미리 채움 8%
-    el.style.setProperty('--pct', Math.min(100, shown*100)+'%'); el.classList.toggle('late', frac>0.8); el.classList.toggle('paused', !!TIMER.paused); if(!TIMER.paused && Date.now()%60000<600) tmTimerCredit(); }
+    document.getElementById('tmTimerLabel').textContent=TIMER.label; document.getElementById('tmTimerPause').textContent=TIMER.paused?'계속':'일시정지'; clearInterval(TIMER.tick); TIMER.tick=setInterval(tmTimerPaint, 5000); if(!fresh) scenePaint(document.getElementById('tmScene'), sceneState()); tmTimerPaint(); }
+  function tmTimerPaint(){ var el=document.getElementById('tmTimer'); if(!el||!TIMER.end) return; var left=TIMER.paused?TIMER.paused:(TIMER.end-Date.now()); if(left<=0){ tmTimerDone(); return; } var mLeft=Math.ceil(left/60000); document.getElementById('tmTimerTime').textContent=(left<60000?'1분 미만':mLeft+'분');
+    var frac=1-Math.ceil(left/60000)*60000/Math.max(1,TIMER.total); // 링도 분 단위로만 움직임 var shown=0.08+0.92*frac; if(frac>0.8) shown=0.08+0.92*(0.8+(frac-0.8)*1.0); // 미리 채움 8%
+    el.style.setProperty('--pct', Math.min(100, shown*100)+'%'); el.classList.toggle('late', frac>0.8); el.classList.toggle('paused', !!TIMER.paused); if(!TIMER.paused) tmTimerCredit(); }
   function tmTimerDone(){ var el=document.getElementById('tmTimer'); clearInterval(TIMER.tick); TIMER.tick=null; tmTimerCredit(); var s=sceneLoad(); var rare=Math.random()<0.12; if(rare) s.rare=(s.rare||0)+1; sceneSave(s); TIMER.end=0; TIMER.paused=0; TIMER.startedAt=0; tmTimerSave(); try{ if(navigator.vibrate) navigator.vibrate([120,80,120]); }catch(e){} tmEndSound();
     if(el){ el.classList.add('done'); var before=sceneState(); var to={ sun:before.sun, growth:Math.min(1, before.growth+0.06), rare:before.rare }; sceneAnimate(document.getElementById('tmScene'), before, to, 1600); document.getElementById('tmTimerTime').textContent='끝'; el.querySelector('.tm-timer-btns').innerHTML='<button type="button" data-t="close">닫기</button>'; }
     try{ if('Notification' in window && Notification.permission==='granted') new Notification('타이머 끝', { body:TIMER.label }); }catch(e){} }
