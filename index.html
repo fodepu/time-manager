@@ -2383,7 +2383,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="143">
+<meta name="tm-version" content="144">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -9858,7 +9858,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     go.disabled=true; go.textContent='전송 중…';
     try{ await localPing(); if(!LOCAL.ok) throw new Error('도우미 꺼짐');
       var ctx=[]; Object.keys(S.slides).map(Number).sort(function(a,b){return a-b;}).forEach(function(q){ if(q<p-1) return; (S.slides[q].segs||[]).forEach(function(s){ var t=(S.lang==='ko-KR')?(s.fix||s.ko):(s.fix||s.en); if(t) ctx.push(t); }); }); ctx=ctx.slice(-18);
-      var sys='너는 대학 강의의 판서 정리 도우미다. 학생이 교수의 판서를 급하게 대충 적은 텍스트와, 같은 시각의 강의 녹음 대본을 받는다. 판서를 정확한 수식·표기로 복원해 1~4줄로 출력한다.\n규칙: 유니코드 수식(x₁ x₂ xⁿ xᵅ ∂ Σ ∫ √ ≤ ∈ →, 분수는 a/b), 변수 뜻이 대본이나 메모에 있으면 "(ℓ = 여가)"처럼 괄호로, **핵심 용어** 굵게 + 영어 병기. 대본에 없는 내용을 지어내지 말고, 메모가 문제/과제면 "문제:"로 시작. 설명 문장 금지, 판서 줄만. 각 줄은 줄바꿈으로 구분, 불릿 기호 없이.';
+      var sys='너는 대학 강의의 판서 복원 도우미다. 학생이 교수의 판서를 급하게 대충 적은 텍스트와, 같은 시각의 강의 녹음 대본을 받는다. 판서에 실제로 적혔을 내용만 그대로 복원한다.\n규칙: (1) 길이는 학생 메모와 비슷하게 — 늘리지 말 것. 메모가 단어 몇 개면 출력도 그 단어들뿐(철자·기호만 교정). 설명·부연·예시·정의 추가 금지. (2) 유니코드 수식(x₁ x₂ xⁿ xᵅ ∂ Σ ∫ √ ≤ ∈ →, 분수는 a/b). (3) 변수 뜻은 학생이 적었을 때만 "(ℓ = 여가)"처럼 괄호로. (4) 대본은 철자·기호를 바로잡는 참고일 뿐, 대본 내용을 옮겨 적지 않는다. (5) 메모가 문제/과제면 "문제:"로 시작. (6) 줄바꿈으로 구분, 불릿·번호·굵게 표시 없이, 최대 4줄.';
       var user='[과목] '+cname(S.course)+'\n[학생 메모] '+raw+'\n[방금 대본]\n'+ctx.join('\n')+(lv.board.length?'\n[이 구간의 이전 판서]\n'+lv.board.join('\n'):'');
       var out=String(await localCall(sys,user)).replace(/^```[a-z]*\s*/i,'').replace(/```\s*$/,'').trim(); var lines=out.split(/\n+/).map(function(x){ return x.replace(/^(?:[-•]|\*(?!\*))\s*/,'').trim(); }).filter(Boolean).slice(0,4); if(!lines.length) throw new Error('빈 응답');
       lines.forEach(function(x){ lv.board.push(x); }); inp.value='';
