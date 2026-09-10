@@ -2383,7 +2383,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="159">
+<meta name="tm-version" content="160">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -9035,12 +9035,11 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
       var ref=entryForDate(date,b.id); if(!ref){ showToast('이 블록을 찾을 수 없어요'); return; } ref.e.values=ref.e.values||{}; ref.e.values.mv={ s:fmtM(m), e:fmtM(m+was.dur) }; ref.save(); if(window.tmOnChange) tmOnChange(); showToast(b.label+' → '+fmtM(m)+'~'+fmtM(m+was.dur)+' (오늘만)'); refreshAll(); }
     el.addEventListener('pointermove', function(ev){ if(rz){ ev.preventDefault(); rzMove(ev); return; } if(drag){ ev.preventDefault(); moveDrag(ev); return; } if(armed){ if(Math.abs(ev.clientY-sy)>6||Math.abs(ev.clientX-sx)>6) startDrag(ev); return; } if(Math.abs(ev.clientX-sx)>8||Math.abs(ev.clientY-sy)>8) cancel(); });
     el.addEventListener('pointerup', function(){ if(rz){ rzEnd(); longFired=true; setTimeout(function(){ longFired=false; },0); return; } if(drag){ endDrag(); return; } armed=false; cancel(); }); el.addEventListener('pointercancel', function(){ if(rz){ rz.s=rz.s0; rz.e=rz.e0; rzEnd(); } if(drag){ drag.m=null; endDrag(); } armed=false; cancel(); }); el.addEventListener('pointerleave', function(){ if(!drag && !armed) cancel(); });
-    el.addEventListener('contextmenu', function(ev){ ev.preventDefault(); cancel(); armed=false; longFired=true; openMenu(ev.clientX, ev.clientY); setTimeout(function(){ longFired=false; },0); });
+    el.addEventListener('contextmenu', function(ev){ ev.preventDefault(); cancel(); armed=false; longFired=true; if(b.kind==='tasks' && !isRec){ closeMenu(); openTodos(date, b.id, b.label); } else openMenu(ev.clientX, ev.clientY); setTimeout(function(){ longFired=false; },0); });
     el.addEventListener('click', function(ev){
       if(ev.target.getAttribute&&ev.target.getAttribute('data-rz')) return;
       if(longFired){ longFired=false; return; }
-      if(b.kind==='tasks' && !isRec){ var td0=(b.values&&b.values.todos)||[]; if(!td0.length){ openTodos(date, b.id, b.label); return; } }
-      cycleFor(date, b.id);
+      cycleFor(date, b.id); // 체크 블록도 좌클릭 = 완료/미완료/미정 순환, 할 일은 우클릭 메뉴
     });
   }
   function fmtMin(m){ return pad(Math.floor(m/60))+':'+pad(m%60); }
