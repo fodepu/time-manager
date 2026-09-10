@@ -506,6 +506,12 @@
      "ko": "그래서 그것은",
      "src": "gemini"
     }
+   ],
+   "summary": "복습노트·숙제 접근법 안내",
+   "keyPoints": [
+    "▶ 숙제 2번: 주어진 **효용함수**(utility function)에서 **한계효용**(marginal utility)을 수학적으로 구하는 문제",
+    "▶ 문제 풀이 순서: **Canvas 자료** 먼저 → 교재(textbook) → 그래도 없으면 ChatGPT·Gemini·구글 (처음부터 검색하지 말 것)",
+    "▶ Canvas 맨 아래 **수학 복습노트**(math review notes) 업로드됨 — 특히 **3.1절 편미분**(partial derivative)에 소비·여가의 한계효용 정의 있음"
    ]
   },
   {
@@ -609,6 +615,10 @@
      "ko": "복사해서 붙여넣는 것이 아니라",
      "src": "gemini"
     }
+   ],
+   "summary": "수학 복습노트 표지",
+   "keyPoints": [
+    "(슬라이드) 중급거시 수학 요약노트(Choi, Hyung Sun) — 미완성, 무단 배포 금지"
    ]
   },
   {
@@ -752,6 +762,10 @@
      "ko": "정의가",
      "src": "gemini"
     }
+   ],
+   "summary": "지수·로그 성질(넘김)",
+   "keyPoints": [
+    "(슬라이드) 지수·**자연로그**(natural log) 성질: ln(xy)=ln x+ln y, ln(x^α)=α ln x, ln(1)=0"
    ]
   },
   {
@@ -982,6 +996,10 @@
      "ko": "있습니다. 그래서",
      "src": "gemini"
     }
+   ],
+   "summary": "편미분 정의(넘김)",
+   "keyPoints": [
+    "(슬라이드) **효용함수** U=u(c,l)의 세 성질: c,l에 증가 · c의 한계효용 체감 · l의 한계효용 체감"
    ]
   },
   {
@@ -1277,6 +1295,12 @@
      "ko": "자, 이제 슬라이드로 넘어가서 우리가 마친",
      "src": "gemini"
     }
+   ],
+   "summary": "편미분: MU·MP 정의, 숙제",
+   "keyPoints": [
+    "**한계효용**(marginal utility): ∂U/∂c = u₁(c,l) = MUc (l 고정), ∂U/∂l = u₂(c,l) = MUl (c 고정)",
+    "**한계생산**(marginal product): y=f(k,n)에서 ∂y/∂k = f₁ = MPk, ∂y/∂n = f₂ = MPn",
+    "▶ 숙제: U = α ln(c)+ln(l)에서 u₁,u₂ / y = k^α n^(1−α)에서 f₁,f₂ 직접 구하기 (Canvas에 질문 게시됨)"
    ]
   },
   {
@@ -1436,6 +1460,10 @@
      "src": "gemini",
      "ai": true
     }
+   ],
+   "summary": "전미분·음함수 정리(넘김)",
+   "keyPoints": [
+    "(슬라이드) **음함수 정리**(implicit function theorem): 0=f(x,y) ⇒ dy/dx = −f₁/f₂"
    ]
   },
   {
@@ -1483,7 +1511,9 @@
      "ko": "부분을 봅시다. 그래서 1장,",
      "src": "gemini"
     }
-   ]
+   ],
+   "summary": "1장 시작",
+   "keyPoints": []
   },
   {
    "page": 25,
@@ -1565,6 +1595,10 @@
      "src": "gemini",
      "ai": true
     }
+   ],
+   "summary": "수업 목표(넘김)",
+   "keyPoints": [
+    "(슬라이드) 목표: 거시경제 사실 학습 → 모형 구축·정책 함의 → 실제 데이터와 비교"
    ]
   },
   {
@@ -1716,6 +1750,11 @@
      "src": "gemini",
      "ai": true
     }
+   ],
+   "summary": "경제학의 정의 복습(판서)",
+   "keyPoints": [
+    "**경제학**(economics) = 제약 하에서 **행복 극대화**(maximize happiness) 연구",
+    "판서 형식: max 행복 **subject to** 제약(constraints) — 지난 시간 복습"
    ]
   },
   {
@@ -2185,6 +2224,14 @@
      "src": "gemini",
      "ai": true
     }
+   ],
+   "summary": "경제학 = 제약 하 극대화 문제",
+   "keyPoints": [
+    "경제주체(agents)는 **선택변수**(choice variables)를 고름 — 소비자의 선택변수는 **소비**(consumption)와 **여가**(leisure)",
+    "소비자의 행복은 **효용함수**(utility function)로 측정: 소비·여가 ↑ → 효용 ↑, **노동**(labor)은 여가의 반대 → 효용 ↓",
+    "**예산제약**(budget constraint): 우변 첫 항 w·n = **세전 노동소득**(before-tax labor income), 세금 뺀 전체 = **가처분소득**(disposable / after-tax income) — 4장에서 상세",
+    "제약이 없는 소비자 = 무한히 부유, 노동·소비량 고민 불필요 → 정부·중앙은행도 불필요 → 경제학이 재미없어짐",
+    "현실 제약 3가지: **시간**(time), **위치**(location, 3차원 세계라 한 곳에만 존재), **자원**(resources, 예: 중동 석유 분쟁) → 제약을 진지하게 다룰 것"
    ]
   },
   {
@@ -2373,6 +2420,13 @@
      "src": "gemini",
      "ai": true
     }
+   ],
+   "summary": "미시 vs 거시경제학",
+   "keyPoints": [
+    "**미시경제학**(microeconomics): 개별 소비자·생산자의 특정 시장 행동과 정책·사건에 대한 반응",
+    "**거시경제학**(macroeconomics): **총체적**(aggregate) 소비자·생산자의 총시장 행동과 반응",
+    "수학적으로 aggregate = **합산**(summation, Σ): 개별 소비자 i=1…N을 더해 대문자 변수로 표기",
+    "미시·거시는 편의상의 구분일 뿐 별개 학문 아님 — 노벨상 수상 경제학자는 '**총량경제학**(aggregate economics)'이란 명칭을 제안"
    ]
   },
   {
@@ -2501,6 +2555,12 @@
      "src": "gemini",
      "ai": true
     }
+   ],
+   "summary": "거시경제학 연구 방법",
+   "keyPoints": [
+    "총소비 변화만 봐선 어느 개인의 소비가 바뀌었는지 식별 불가 → 총량 변수의 작동을 설명할 **모형**(model)이 필요",
+    "핵심 현상: **장기 성장**(long-run growth)과 **경기변동**(business cycles) — 과거·현재·미래의 **시간 동학**(time dynamics)",
+    "교재 접근법: **미시적 기초**(micro foundations) 위에 거시 분석 구축 — 초반엔 미시처럼 느껴질 것"
    ]
   },
   {
@@ -2685,6 +2745,13 @@
      "src": "gemini",
      "ai": true
     }
+   ],
+   "summary": "소득-지출 항등식·생산함수 ★",
+   "keyPoints": [
+    "**소득-지출 항등식**(income-expenditure identity): **Y = C + I + G + NX** — 거시경제학의 핵심 식, 암기",
+    "**생산기술**(production technology)/생산함수: **Y = zF(K, N)**, z = **총요소생산성**(TFP), K = 자본, N = 노동투입",
+    "노동투입을 L 대신 **N**으로 쓰는 이유: Prescott이 1982년 **실물경기변동**(real business cycle) 모형 논문에서 N을 사용한 관례",
+    "▶ 이 두 표기는 반드시 기억할 것"
    ]
   },
   {
@@ -2811,6 +2878,12 @@
      "ko": "그리고 물론",
      "src": "gemini"
     }
+   ],
+   "summary": "국내 통계 웹사이트",
+   "keyPoints": [
+    "통계청·한국은행 ECOS: 수업에서 많이 쓰는 통계 사이트",
+    "▶ **Penn World Table**(Groningen): 국제 데이터 — 국제무역·국제거시에 관심 있으면 참고",
+    "▶ **BIS**(Bank for International Settlements): 금융 데이터"
    ]
   },
   {
@@ -2914,6 +2987,11 @@
      "ko": "거시경제 분석인데, 국민 계정 을 찾을 수 있고 데이터를 찾을 수 있는 국민 계정 을 미국에서 찾을 수 있습니다. 그리고 노동통계국은 물론 노동 관련 변수를 찾을 수 있습니다. 그 안에서 그리고 그건 또 다른 미국 그",
      "src": "gemini"
     }
+   ],
+   "summary": "해외 통계 웹사이트",
+   "keyPoints": [
+    "**BEA**: 미국 **국민계정**(national accounts) 데이터",
+    "**BLS**: 미국 노동 관련 변수"
    ]
   },
   {
@@ -3166,6 +3244,14 @@
      "src": "gemini",
      "ai": true
     }
+   ],
+   "summary": "Y의 세 얼굴과 GDP",
+   "keyPoints": [
+    "Y = C+I+G+NX에서 Y는 **총소득**(aggregate income) = **총지출**(aggregate expenditure); 생산함수를 적용하면 **총생산**(aggregate output) — Y는 세 가지로 해석 가능",
+    "**GDP**(gross domestic product): 일정 기간 한 나라 국경 안에서 생산된 재화·서비스의 양 — 거시경제학에서 가장 중요한 변수",
+    "GDP는 연도별로 계산 → 시간 개념 내포: 장기(예: 1900~2025) 변화 = **경제성장**(economic growth), 단기(2~3년) 등락 = **경기변동**(business cycle)",
+    "GDP 연구의 두 갈래: 장기 성장 / 단기 경기변동(Keynes, 실물경기변동이론)",
+    "▶ 앞으로 16주간 'Y'가 보이면 GDP로 읽을 것"
    ]
   },
   {
@@ -3430,6 +3516,15 @@
      "ko": "저는",
      "src": "gemini"
     }
+   ],
+   "summary": "1인당 실질GDP 그래프(미국 1900~2008)",
+   "keyPoints": [
+    "**1인당 실질GDP**(per capita real GDP) = Y ÷ 인구; 생산가능인구 = 취업자로 가정하면 **Y/N**",
+    "Y/N의 두 해석: 1인당 GDP(파이 8조각을 8명이 나누는 비유) 또는 **평균 노동생산성**(average labor productivity)",
+    "그래프 관찰 ①: 108년간 **우상향**(upward trend)",
+    "관찰 ②: 매끄럽지 않고 오르내림 반복 → 경기변동",
+    "관찰 ③: **비선형**(nonlinear) 증가 — 초기엔 완만, 1960년대 이후 가속",
+    "미국 1인당 GDP 장기 **평균 성장률 ≈ 2%/년** — 계산기 대신 근사법 사용 예정"
    ]
   },
   {
@@ -3678,6 +3773,15 @@
      "src": "gemini",
      "ai": true
     }
+   ],
+   "summary": "로그 GDP와 성장률 근사 ★",
+   "keyPoints": [
+    "성장 표기: **Y₁ = (1+g₁)Y₀**, 일반화 **Yₜ = (1+gₜ)Yₜ₋₁**, gₜ = t−1→t 성장률",
+    "양변 자연로그: ln Yₜ = ln(1+gₜ) + ln Yₜ₋₁ ⇒ **ln Yₜ − ln Yₜ₋₁ = ln(1+gₜ)**",
+    "**로그 근사**(log approximation): gₜ가 0에 가까우면 **ln(1+gₜ) ≈ gₜ** — 선진국 성장률은 1~3%/년으로 작아 적용 가능",
+    "따라서 로그 GDP의 차분(그래프 기울기) = 성장률 → 로그 변환으로 **선형화**(linearize)",
+    "로그 그래프는 거의 직선이나 **대공황**(Great Depression)과 **2차 세계대전**은 예외적 이탈",
+    "▶ 두 가지 기법: 로그 근사로 평균 성장률 구하기 / 로그로 선형화"
    ]
   },
   {
@@ -3771,6 +3875,11 @@
      "src": "gemini",
      "ai": true
     }
+   ],
+   "summary": "경제성장의 질문",
+   "keyPoints": [
+    "**경제성장**(economic growth)을 어떻게 지속시키나, 무엇이 지속 성장을 일으키나, 정부가 성장률을 바꿀 수 있나/바꿔야 하나 → 7장에서 답",
+    "▶ 교수: 이 수업에서 **두 번째로 중요한 슬라이드**"
    ]
   },
   {
@@ -3905,6 +4014,12 @@
      "src": "gemini",
      "ai": true
     }
+   ],
+   "summary": "로그 GDP와 추세",
+   "keyPoints": [
+    "기술적 방법으로 데이터에서 매끄러운 **장기 추세**(trend, 파란 선)를 추출 — 방법은 다루지 않음",
+    "추세를 기준으로 실제 데이터의 **추세 편차**(deviation from trend, %)를 계산 → 다음 슬라이드",
+    "▶ 이 시점에 **경제분석 3단계**(three steps of economic analysis)를 시험 대비로 강조 — p.43 필기 참조"
    ]
   },
   {
@@ -3982,6 +4097,12 @@
      "ko": "그리고",
      "src": "gemini"
     }
+   ],
+   "summary": "추세 편차 = 경기변동",
+   "keyPoints": [
+    "**추세 편차**(percentage deviation from trend) 그래프 = 경기변동의 특성",
+    "0선(추세) 아래 = **경기침체**(recession)·**불황**(depression), 위 = **호황**(boom)·**회복**(recovery)",
+    "연구 질문: 무엇이 경기변동을 일으키나"
    ]
   },
   {
@@ -4110,6 +4231,11 @@
      "ko": "네.",
      "src": "gemini"
     }
+   ],
+   "summary": "경기변동의 원인 이론",
+   "keyPoints": [
+    "경기변동 원인의 **경쟁 이론**(competing theories): ① **기술충격**(technology shock) — Kydland·Prescott(노벨상)의 주장 ② **협응 실패**(coordination failure) ③ **시장 분할**(segmented market) ④ **예상치 못한 통화정책**(unexpected monetary policy)",
+    "(슬라이드) 대공황·2차대전급 급변동이 반복될 수 있나(2008년은?) / 정부가 경기를 평탄화해야 하나"
    ]
   },
   {
@@ -4246,6 +4372,12 @@
      "ko": "중요한 슬라이드라고",
      "src": "gemini"
     }
+   ],
+   "summary": "거시경제학 기타 주제",
+   "keyPoints": [
+    "**소비이론**(consumption theory, C 이야기) → 9장",
+    "정부정책(G 이야기) → 4·5장",
+    "(슬라이드) 노동(N), 국제무역(NX), 화폐경제학, 자산시장도 주제에 포함"
    ]
   },
   {
@@ -4317,6 +4449,10 @@
      "ko": "그래서 네, 음 음 아니요. 당신이",
      "src": "gemini"
     }
+   ],
+   "summary": "거시경제 모형(넘김)",
+   "keyPoints": [
+    "(슬라이드) **거시경제 모형**(macroeconomic model): 문제 분석에 필요한 핵심만 담아 **단순**해야 하며 현실적일 필요는 없음"
    ]
   },
   {
@@ -4402,6 +4538,10 @@
      "ko": "생각해요.",
      "src": "gemini"
     }
+   ],
+   "summary": "모형의 기본 요소(넘김)",
+   "keyPoints": [
+    "(슬라이드) 모형 요소: 참가자(소비자·생산자·정부), 선호, 재화 집합, 생산기술, 가용 자원"
    ]
   },
   {
@@ -4473,8 +4613,25 @@
      "ko": "시험을 위해서요. 그래서 지금부터는 여러분에게 물어볼게요. 질문할게요.",
      "src": "gemini"
     }
+   ],
+   "summary": "경제분석 3단계 ★시험",
+   "keyPoints": [
+    "**경제분석 3단계**(three steps of economic analysis) — 시험·퀴즈 출제 예고, 이 슬라이드를 보고 외울 것",
+    "① **모형 설정**(set up the model): 흥미로운 경제 현상을 관찰한 뒤 이를 설명할 모형을 세움",
+    "② **균형 배분 결정**(determine equilibrium allocations): 모형을 '푸는' 것 = 균형 찾기",
+    "③ **비교정태분석**(comparative static analysis): **외생변수**(exogenous variable) 변화가 **내생변수**(endogenous variable)에 미치는 효과 — 가장 중요한 단계",
+    "▶ 다음 주부터 반복 연습 예정"
    ]
   }
  ],
- "savedAt": "2026-09-09T07:09:19.399Z"
+ "savedAt": "2026-09-09T07:09:19.399Z",
+ "overview": "**주제** 1장 서론 — 경제학 정의(제약 하 효용극대화) 복습 후 미시·거시 구분, 거시경제학의 두 핵심 식(Y=C+I+G+NX, Y=zF(K,N)), GDP의 장기 성장·단기 경기변동\n**핵심 흐름** 1인당 실질GDP 그래프 → 로그 변환·로그 근사(ln(1+g)≈g)로 평균 성장률 ≈2% 도출 → 추세 편차로 경기변동 정의 → 경기변동 원인 이론\n**시험 포인트** 경제분석 3단계(모형 설정 → 균형 결정 → 비교정태분석)와 경제성장 질문 슬라이드를 특히 강조\n**다음 시간** 경제분석 3단계 반복 연습, 데이터 확인 후 2장 이어감",
+ "exam": [
+  "**숙제** Canvas 게시 문제: U=α ln(c)+ln(l)에서 u₁,u₂ / y=k^α n^(1−α)에서 f₁,f₂ 구하기 — 수학 복습노트 3.1절 참고, Canvas→교재→검색 순으로 접근",
+  "**시험** '경제분석 3단계'(모형 설정·균형 배분 결정·비교정태분석) 서술 문제 출제 예고 — 3단계와 각 의미를 쓸 것",
+  "**시험** '경제성장의 질문' 슬라이드(p.36)를 두 번째로 중요한 슬라이드로 강조",
+  "**암기** Y=C+I+G+NX(소득-지출 항등식), Y=zF(K,N)(생산함수) 표기",
+  "**읽을거리** Canvas 수학 복습노트(MATH Summary Notes) 3절 편미분"
+ ],
+ "notesAt": "2026-09-10T08:54:48.186779Z"
 }

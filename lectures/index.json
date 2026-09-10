@@ -60,5 +60,17 @@
   "pdf": "lecture_week1_statistical_inference.pdf",
   "week": 2,
   "module": "1507907"
+ },
+ {
+  "id": "lec_2026-09-09_mttpgtnd",
+  "course": "거시경제학",
+  "title": "거시경제학 2주차",
+  "date": "2026-09-09",
+  "pages": 34,
+  "notesAt": "2026-09-10T08:54:48.186779Z",
+  "mode": "slides",
+  "pdf": "LNCh1_Slides.pdf",
+  "week": 2,
+  "module": "wk2"
  }
 ]
