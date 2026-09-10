@@ -2383,7 +2383,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="155">
+<meta name="tm-version" content="156">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -2474,6 +2474,7 @@
   .tt-rz { position:absolute; left:0; right:0; height:7px; cursor:ns-resize; z-index:2; }
   .tt-rz-t { top:0; } .tt-rz-b { bottom:0; }
   .tt-block.done .tt-rz { display:none; }
+  .tt-block.short .tt-rz { height:3px; } .tt-block.short .tt-rz-t { display:none; }
   .tt-block:hover .tt-rz-b::after, .tt-block:hover .tt-rz-t::after { content:''; position:absolute; left:50%; width:28px; height:3px; margin-left:-14px; border-radius:2px; background:rgba(0,0,0,.35); }
   .tt-block:hover .tt-rz-t::after { top:2px; } .tt-block:hover .tt-rz-b::after { bottom:2px; }
   .tt-block.dragging { opacity:.55; }
@@ -8961,7 +8962,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
         var el=document.createElement('div');
         var st=b.values.check; var chg=tmChangeFor(x.date, b.label);
         el.className='tt-block c-'+(b.category||'prep')+(b.kind==='tasks'?' k-tasks':'')+(st===true?' done':st===false?' undone':'')+(week?' sm':'')+(hgt<30?' xs':'')+(chg&&chg.type==='cancel'?' cancelled':'');
-        el.style.top=top+'px'; el.style.height=hgt+'px'; if(b.color) el.style.background=b.color;
+        el.style.top=top+'px'; el.style.height=hgt+'px'; if(hgt<26) el.classList.add('short'); if(b.color) el.style.background=b.color;
         var td=(b.values&&b.values.todos)||[]; var tdDone=td.filter(function(x){return x.d;}).length;
         var sub = b.sub || (td.length? tdDone+'/'+td.length+' 완료' : (b.kind==='tasks'?'탭해서 할 일 적기':''));
         var title=b.label||''; if(chg&&chg.type==='cancel'){ title='휴강 · '+title; sub='공지: '+(chg.title||''); el.title='공지에서 자동 감지: '+(chg.title||'')+' (원문은 과제·공지 탭)'; }
