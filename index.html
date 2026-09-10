@@ -2383,7 +2383,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="160">
+<meta name="tm-version" content="161">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -2436,10 +2436,9 @@
   .tt-block .more:hover { opacity:1; background: rgba(0,0,0,.15); }
   .tt-block.done { opacity:.5; filter: saturate(.5); }
   .tt-block.done .t::before { content:'✓ '; font-weight:800; }
-  .tt-block.undone { box-shadow: inset 3px 0 0 #c62828; }
   .tt-block.undone .t::before { content:'✕ '; font-weight:800; }
   .tt-block.pressing { transform: scale(.985); }
-  .tt-block.moved .t::before { content:'↕ '; opacity:.7; }
+  .tt-block.moved .t::after { content:' ↕'; opacity:.6; }
   .toast-undo { margin-left:8px; padding:2px 10px; border-radius:999px; border:1px solid rgba(255,255,255,.6); background:transparent; color:inherit; font:inherit; font-weight:800; cursor:pointer; }
   #sbPeriods.once .tt-pdays { display:none; } .sb-once { margin-bottom:8px; } .sb-once-date { margin-bottom:8px; }
   .tm-now-fab { position:fixed; right:18px; bottom:22px; z-index:120; width:46px; height:46px; border-radius:50%; border:1px solid var(--border,#e5e7eb); background:var(--bg-card,#fff); color:var(--text); box-shadow:0 4px 14px rgba(0,0,0,.15); cursor:pointer; display:flex; align-items:center; justify-content:center; }
@@ -2668,6 +2667,7 @@
   .sb-kind.on { border-color: var(--accent); background: rgba(0,0,0,.03); }
   html[data-theme="dark"] .sb-kind.on { background: rgba(255,255,255,.06); }
   .tt-block.k-tasks { background:#FFFFFF !important; color:#111111 !important; box-shadow: inset 0 0 0 1.5px #111111; }
+  .tt-block.undone .t::before { content:'✕ '; }
   .tt-block.k-tasks .s { opacity:.65; }
   .tt-block.k-tasks .more { color:#111111; }
   html[data-theme="dark"] .tt-block.k-tasks { background:#FFFFFF !important; color:#111111 !important; }
