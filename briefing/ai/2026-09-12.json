@@ -1,0 +1,79 @@
+{
+  "date": "2026-09-12",
+  "generatedAt": "2026-09-12T08:22:57+09:00",
+  "urgent": null,
+  "items": [
+    {
+      "cat": "update",
+      "title": "Claude Fable 5.1 · Mythos 5.1 — 캐시 리드 75% 인하",
+      "lead": "9/1 공개된 두 모델은 동일 성능·상이한 안전등급 조합이고, 핵심 변화는 가격 구조다.",
+      "points": [
+        "**캐시 리드가 $0.25/M**(-75%)로 떨어져, 긴 시스템 프롬프트·레포 전체·PDF 묶음을 매 턴 다시 읽히는 **에이전트 루프 비용이 최대 45% 절감**된다. 지금까지 컨텍스트 비용 때문에 잘라 넣던 자료를 통째로 상주시키는 방식이 경제적으로 가능해짐.",
+        "입출력은 **$10/$50 per M** 유지. 즉 '입력을 크게, 반복 호출로' 설계할수록 유리 — 코드 리뷰·대량 문서 대조·반복 검수 워크플로를 프롬프트 캐싱 전제로 다시 짜면 실질 단가가 내려간다."
+      ],
+      "note": "claude-fable-5-1 / claude-mythos-5-1. API·Claude 앱에서 사용, 캐싱은 프롬프트 캐시 활성 시 자동 적용.",
+      "source": "releasebot.io",
+      "url": "https://releasebot.io/updates/anthropic/claude"
+    },
+    {
+      "cat": "tool",
+      "title": "Managed Agents — GitHub 레포에서 스킬 자동 로드",
+      "lead": "에이전트 세션이 시작될 때 지정 레포의 스킬을 직접 읽어 온다.",
+      "points": [
+        "레포 루트의 **`.claude/skills`** 디렉터리에 있는 스킬이 세션 시작 시 **자동 발견**되어 그 세션 에이전트가 바로 쓴다. 팀 표준 작업(배포 절차·리뷰 체크리스트·문서 포맷)을 레포에 커밋만 해두면 별도 설정 없이 에이전트가 그대로 수행.",
+        "스킬을 코드와 같은 레포에서 **버전 관리**하게 되므로, 워크플로 변경이 PR·리뷰를 거쳐 반영된다 — 프롬프트를 사람이 매번 복붙하던 부분을 레포 커밋 하나로 갱신하는 구조로 전환 가능."
+      ],
+      "note": "Claude Developer Platform의 Managed Agents 대상. 루트 `.claude/skills` 규칙.",
+      "source": "releasebot.io",
+      "url": "https://releasebot.io/updates/anthropic/claude-developer-platform"
+    },
+    {
+      "cat": "tool",
+      "title": "Smart Reports — 세션에서 '스킬로 묶을 반복 패턴' 추출",
+      "lead": "팀의 Claude 사용을 분석해 무엇이 어디서 막히는지, 무엇을 공용 스킬로 만들지 짚어주는 Enterprise 베타.",
+      "points": [
+        "세션 로그에서 **반복되는 작업 패턴**을 찾아 '이건 공유 스킬로 패키징하면 이득'이라고 지목한다. 팀원들이 각자 매번 비슷한 프롬프트를 다시 쓰는 지점을 데이터로 발견해 표준 스킬화하는 근거로 사용.",
+        "**비용·마찰 지점**을 함께 리포트하므로, 어느 워크플로가 토큰을 태우는지 보고 캐싱·모델 등급을 조정하는 최적화 판단에 바로 쓸 수 있다."
+      ],
+      "note": "Claude Enterprise 플랜 베타. 팀 단위 사용 분석용.",
+      "source": "releasebot.io",
+      "url": "https://releasebot.io/updates/anthropic"
+    },
+    {
+      "cat": "tool",
+      "title": "OpenAI GPT-Live-1 — 풀듀플렉스 음성 API",
+      "lead": "9/10 공개. 끊김 없는 양방향(full-duplex) 음성 대화를 API로 제공.",
+      "points": [
+        "**말하는 도중 끼어들기(interruption)**가 되는 실시간 대화가 API 레벨에서 지원돼, 콜센터·음성 비서 같은 걸 데모가 아니라 실제 서비스로 붙일 수 있다.",
+        "**커스텀 보이스 + 텔레포니(전화망) 연동**을 기본 제공 — 전화 인바운드/아웃바운드 자동응대를 별도 음성 스택 없이 구성 가능. 지시 따르기(instruction following)도 강화돼 스크립트 준수형 응대에 유리."
+      ],
+      "note": "OpenAI API. 커스텀 보이스·telephony 지원.",
+      "source": "releasebot.io",
+      "url": "https://releasebot.io/updates/openai"
+    },
+    {
+      "cat": "tool",
+      "title": "Codex — GPT-6-Astra 지원 · worktree 세션",
+      "lead": "OpenAI Codex가 신모델 지원과 병렬 작업 기능을 추가.",
+      "points": [
+        "**실험적 worktree 세션**으로 같은 레포의 여러 브랜치를 격리된 작업트리에서 동시에 돌릴 수 있다 — 한 이슈를 고치는 동안 다른 세션이 별 브랜치에서 병렬 진행, 충돌 없이 여러 작업을 한 번에.",
+        "**인라인 질의응답**과 MCP OAuth·세션 재개(resume) 개선으로, 긴 작업을 끊고 이어받거나 코드 특정 지점에 바로 질문을 붙이는 흐름이 매끄러워짐."
+      ],
+      "note": "OpenAI Codex. worktree는 실험 기능, Windows 백그라운드 서버 관리 포함.",
+      "source": "releasebot.io",
+      "url": "https://releasebot.io/updates/openai/codex"
+    },
+    {
+      "cat": "model",
+      "title": "xAI Grok 4.7 — 오늘(9/12) 출시 목표, 연기 가능성",
+      "lead": "머스크가 예고한 2.1T 파라미터 모델로, SpaceX 엔지니어링 데이터로 학습.",
+      "points": [
+        "'4.6보다 모든 면에서 낫지만 서빙은 약간 느림', **토큰 효율 개선**을 표방 — 같은 답을 더 적은 토큰으로 낸다면 장문 추론·에이전트 반복 호출의 실단가가 내려간다.",
+        "다만 **9/12 목표일은 미확정·연기 보도**가 있어, 지금 워크플로를 갈아엎기보다 정식 공개·API 가용 여부를 확인한 뒤 붙이는 편이 안전."
+      ],
+      "note": "발표 기준. 출시일 슬립 가능성 있음 — 실제 API 제공 확인 필요.",
+      "source": "cellcog.ai",
+      "url": "https://cellcog.ai/blog/grok-4-7-release-date/"
+    }
+  ]
+}
