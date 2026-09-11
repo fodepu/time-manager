@@ -2383,7 +2383,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="162">
+<meta name="tm-version" content="163">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -8919,8 +8919,8 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
 
     // 시간 범위 (기본 06~24, 블록 있으면 확장)
     var sH=6, eH=24;
-    data.forEach(function(x){ x.info.blocks.forEach(function(b){ var s=mins(b.start), e=mins(b.end); if(e<=s) e=1440; sH=Math.min(sH, Math.floor(s/60)); eH=Math.max(eH, Math.ceil(e/60)); }); });
-    eH=Math.min(eH,24); if(sH<0) sH=0;
+    data.forEach(function(x){ x.info.blocks.forEach(function(b){ var s=mins(b.start), e=mins(b.end); if(e<=s) e=1440; sH=Math.min(sH, Math.floor(s/60)); eH=Math.max(eH, Math.ceil(e/60)+1); }); });
+    eH=Math.min(Math.max(eH,25),28); if(sH<0) sH=0; // 자정 넘어 최대 04시까지, 블록이 있으면 한 시간 여유
     hourPx = week ? 40 : 56; window.TT_G={hourPx:hourPx, sH:sH};
     var H=(eH-sH)*hourPx;
 
@@ -8945,7 +8945,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     wrap.appendChild(days);
 
     var axis=document.createElement('div'); axis.className='tt-axis'; axis.style.height=H+'px';
-    for(var h=sH; h<=eH; h++){ var sp=document.createElement('span'); sp.style.top=((h-sH)*hourPx)+'px'; sp.textContent=h; if(h===sH) sp.style.transform='translateY(0)'; if(h===eH) sp.style.transform='translateY(-12px)'; axis.appendChild(sp); }
+    for(var h=sH; h<=eH; h++){ var sp=document.createElement('span'); sp.style.top=((h-sH)*hourPx)+'px'; sp.textContent=(h>=24?(h-24):h); if(h===sH) sp.style.transform='translateY(0)'; if(h===eH) sp.style.transform='translateY(-12px)'; axis.appendChild(sp); }
     wrap.appendChild(axis);
 
     var cols=document.createElement('div'); cols.className='tt-cols'; cols.style.gridTemplateColumns='repeat('+dates.length+',1fr)'; cols.style.height=H+'px';
@@ -9021,7 +9021,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     var rz=null;
     function rzStart(ev, side){ if(!canMove()) return; ev.preventDefault(); ev.stopPropagation(); try{ el.setPointerCapture(ev.pointerId); }catch(e){} var g=window.TT_G||{hourPx:56,sH:6}; rz={ side:side, s0:mins(b.start), e0:mins(b.end), y0:ev.clientY, g:g, ghost:document.createElement('div') }; if(rz.e0<=rz.s0) rz.e0=rz.s0+60;
       rz.ghost.className='tt-ghost'; rz.ghost.innerHTML='<div class="tt-ghost-t"></div>'; el.parentNode.appendChild(rz.ghost); el.classList.add('dragging'); rzMove(ev); }
-    function rzMove(ev){ var g=rz.g; var dm=Math.round((ev.clientY-rz.y0)/g.hourPx*60/5)*5; var s=rz.s0, e=rz.e0; if(rz.side==='t'){ s=Math.max(g.sH*60, Math.min(rz.e0-10, rz.s0+dm)); } else { e=Math.min(1440, Math.max(rz.s0+10, rz.e0+dm)); } rz.s=s; rz.e=e;
+    function rzMove(ev){ var g=rz.g; var dm=Math.round((ev.clientY-rz.y0)/g.hourPx*60/5)*5; var s=rz.s0, e=rz.e0; if(rz.side==='t'){ s=Math.max(g.sH*60, Math.min(rz.e0-10, rz.s0+dm)); } else { e=Math.min(1680, Math.max(rz.s0+10, rz.e0+dm)); } rz.s=s; rz.e=e;
       rz.ghost.style.top=((s-g.sH*60)/60*g.hourPx)+'px'; rz.ghost.style.height=Math.max(14,(e-s)/60*g.hourPx-1)+'px'; rz.ghost.querySelector('.tt-ghost-t').textContent=fmtM(s)+' ~ '+fmtM(e)+' ('+(e-s)+'분)'; }
     function rzEnd(){ var r=rz; rz=null; try{ r.ghost.remove(); }catch(e){} el.classList.remove('dragging'); if(r.s===r.s0 && r.e===r.e0) return; var ref=entryForDate(date,b.id); if(!ref){ showToast('이 블록을 찾을 수 없어요'); return; } ref.e.values=ref.e.values||{}; ref.e.values.mv={ s:fmtM(r.s), e:fmtM(r.e) }; ref.save(); if(window.tmOnChange) tmOnChange(); showToast(b.label+' → '+fmtM(r.s)+'~'+fmtM(r.e)+' (오늘만)'); refreshAll(); }
     el.addEventListener('pointerdown', function(ev){
@@ -9033,7 +9033,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     function cancel(){ if(timer){ clearTimeout(timer); timer=null; } el.classList.remove('pressing'); }
     function startDrag(ev){ closeMenu(); drag={ col:el.parentNode, dur:mins(b.end)-mins(b.start), ghost:document.createElement('div'), origTop:parseFloat(el.style.top)||0 }; if(drag.dur<=0) drag.dur=60;
       drag.ghost.className='tt-ghost'; drag.ghost.style.height=el.style.height; drag.ghost.innerHTML='<div class="tt-ghost-t"></div>'; drag.col.appendChild(drag.ghost); el.classList.add('dragging'); moveDrag(ev); }
-    function snapStart(ev){ var g=window.TT_G||{hourPx:56,sH:6}; var dy=ev.clientY-sy; var m=mins(b.start)+Math.round(dy/g.hourPx*60/5)*5; m=Math.max(g.sH*60, Math.min(1440-drag.dur, m)); return m; }
+    function snapStart(ev){ var g=window.TT_G||{hourPx:56,sH:6}; var dy=ev.clientY-sy; var m=mins(b.start)+Math.round(dy/g.hourPx*60/5)*5; m=Math.max(g.sH*60, Math.min(1680-drag.dur, m)); return m; }
     function fmtM(m){ return pad(Math.floor(m/60))+':'+pad(m%60); }
     function moveDrag(ev){ var g=window.TT_G||{hourPx:56,sH:6}; var m=snapStart(ev); drag.ghost.style.top=((m-g.sH*60)/60*g.hourPx)+'px'; drag.ghost.querySelector('.tt-ghost-t').textContent=fmtM(m)+' ~ '+fmtM(m+drag.dur); drag.m=m; }
     function endDrag(){ var m=drag.m; try{ drag.ghost.remove(); }catch(e){} el.classList.remove('dragging'); var was=drag; drag=null; armed=false; if(m==null || m===mins(b.start)) return;
@@ -9053,7 +9053,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     else { var snap=snapshotFor(date); snap.entries.push(blk); snap.savedAt=new Date().toISOString(); delete snap._synth; saveGrowth(date,snap); if(typeof scheduleSyncPush==='function') scheduleSyncPush(); if(window.tmOnChange) window.tmOnChange(); }
   }
   function copyBlock(date,b){
-    var s=mins(b.start), e=mins(b.end); var dur=Math.max(10, e-s); var ns=e, ne=e+dur; if(ne>1440){ ne=1440; ns=Math.max(0,1440-dur); }
+    var s=mins(b.start), e=mins(b.end); var dur=Math.max(10, e-s); var ns=e, ne=e+dur; if(ne>1680){ ne=1680; ns=Math.max(0,1680-dur); }
     var src=entryForDate(date,b.id); var se=src?src.e:{};
     var blk={ id:'copy_'+Date.now().toString(36)+Math.random().toString(36).slice(2,5), label:b.label, start:fmtMin(ns), end:fmtMin(ne), category:b.category||'prep', color:b.color||'', kind:b.kind||'single', place:se.place||'', types:['check'], values:{}, pinned:false, goalMinutes:dur };
     addOneOff(date, blk); refreshAll(); showToast(b.label+' 복사됨 → '+blk.start+'~'+blk.end+' (꾹 눌러 옮길 수 있어요)');
