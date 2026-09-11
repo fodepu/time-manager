@@ -1,0 +1,54 @@
+{
+  "date": "2026-09-10",
+  "generatedAt": "2026-09-11T21:29:01+09:00",
+  "urgent": null,
+  "items": [
+    {
+      "cat": "headline",
+      "title": "Anthropic 위협 인텔리전스 리포트 (9월) — Claude 악용 수법 공개",
+      "lead": "지난 8개월간 탐지·차단한 Claude 악용 작전 사례집. 방어 관점에서 실무 참고점.",
+      "points": [
+        "공격자가 LLM을 **어떤 워크플로로 악용하는지**(정찰·피싱 문안·코드 난독화 등) 실제 케이스로 정리. 사내 보안팀은 이 패턴을 **탐지 룰·프롬프트 필터 설계의 레퍼런스**로 쓸 수 있다.",
+        "2025년 리포트 대비 악용 방식의 **진화 경로**를 짚어, AI 기반 위협 대응 로드맵을 갱신할 근거를 제공."
+      ],
+      "note": "anthropic.com/news에서 전문 공개. 정책성 발표지만 방어 실무에 직접 쓰이는 사례 중심.",
+      "source": "anthropic.com",
+      "url": "https://www.anthropic.com/threat-intelligence-report-september-2026"
+    },
+    {
+      "cat": "tool",
+      "title": "Gemini Enterprise Agent Platform — 프로세스 샌드박싱·에이전트 관측성",
+      "lead": "프로덕션 에이전트 운영에 필요한 격리·모니터링 기능을 플랫폼에 추가.",
+      "points": [
+        "**프로세스 단위 샌드박싱**과 자동 업데이트 체크로, 에이전트를 실서비스에 붙일 때의 격리·안정성을 플랫폼이 보장. CodeMender CLI 프리뷰의 Windows 지원도 개선.",
+        "Observability 탭에 **TTFT·TTFA·TTLT의 p50/p95** 지표가 추가돼, 에이전트 응답 지연을 실측·SLA 관리할 수 있다. 토큰 사용량 통계로 비용 추적도 가능."
+      ],
+      "note": "Google Cloud Gemini Enterprise Agent Platform 릴리스노트 참조.",
+      "source": "docs.cloud.google.com",
+      "url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/release-notes"
+    },
+    {
+      "cat": "market",
+      "title": "OpenAI, 미 연방기관에 모델 50% 할인 — $1/년 딜 종료",
+      "lead": "기존 상징적 $1/년 계약을 접고 정가의 50% 할인 구조로 전환.",
+      "points": [
+        "미 정부기관 대상 가격이 **정가 대비 50%**로 재편. 공공·규제 섹터 조달에서 벤더 선택·예산 산정 기준이 바뀌므로, 관련 프로젝트라면 갱신 시점 단가를 다시 확인할 것."
+      ],
+      "note": "내가 직접 할 건 없는 조달·정책 이슈라 참고만.",
+      "source": "bloomberg.com",
+      "url": "https://www.bloomberg.com/news/articles/2026-09-10/openai-gives-us-agencies-50-off-models-ending-1-per-year-deal"
+    },
+    {
+      "cat": "model",
+      "title": "OpenAI GPT-6 Astra — 1.05M 컨텍스트",
+      "lead": "9/3 공개된 OpenAI 신모델. 초장문 컨텍스트가 핵심 스펙.",
+      "points": [
+        "**1.05M 입력 컨텍스트·128K 출력**. 대형 코드베이스·장문 문서 다발을 한 번에 물려 요약·크로스레퍼런스하는 작업에서 청킹 부담이 줄어든다.",
+        "가격 **$10/$50 per M**(캐시 읽기 $1, 캐시 쓰기 $12.50). 캐시 활용 시 반복 참조 비용을 크게 낮출 수 있어 장시간 에이전트 세션에 유리."
+      ],
+      "note": "모델 ID gpt-6-astra. 벤치는 각 벤더 자체 보고치 위주라 교차 검증 권장.",
+      "source": "llm-stats.com",
+      "url": "https://llm-stats.com/llm-updates"
+    }
+  ]
+}
