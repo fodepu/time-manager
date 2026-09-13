@@ -2383,7 +2383,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="164">
+<meta name="tm-version" content="165">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -2767,6 +2767,8 @@
   .lec-x { border:none; background:none; color: var(--text-muted); cursor:pointer; font-size:12px; padding:2px 4px; }
   .lec-x:hover { color: var(--warn); }
   .lec-wk-actions { display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-top:10px; }
+  .lec-chip.tb { background:#7c2d12; color:#fff; border-color:#7c2d12; }
+  .lec-tbrow { display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin:0 0 10px; padding:8px 12px; border:1px dashed var(--border,#e5e7eb); border-radius:12px; }
   .lec-chip.study { background:#0f172a; color:#fff; border-color:#0f172a; } .lec-chip.study small { opacity:.7; font-weight:600; margin-left:4px; }
   .study-stage { position:relative; min-height: calc(100vh - 120px); border-radius:14px; padding:40px 72px 96px; background: radial-gradient(1200px 700px at 20% 15%, hsl(var(--hue) 60% 22% / .9), transparent 60%), radial-gradient(900px 600px at 85% 85%, hsl(var(--hue) 50% 30% / .6), transparent 60%), #0b0b0d; color:#fff; overflow:hidden; }
   .study-stage .sy { color: hsl(var(--hue) 90% 72%); font-weight:800; padding:0 2px; }
@@ -10302,7 +10304,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     localLecs.forEach(function(l){ if(cname(l.course)!==cname(c)) return; if(out.some(function(x){return x.id===l.id;})) return; var lw=(l.week!=null)?+l.week:noteWeek(l); if((mid&&l.module===mid) || (w!=null && lw===w) || (mid==='misc' && lw==null && !l.module)) out.push({id:l.id,title:l.title,ready:false,status:l.status,date:l.date,mode:l.mode,pdf:l.pdf||''}); });
     return out.sort(function(a,b){ return String(a.id).localeCompare(String(b.id)); });
   }
-  function pdfsForWeek(c,mid,notes){ var local=weekPdfs.filter(function(p){ return p.course===c && ((p.week||'misc')===mid); }).sort(function(a,b){ return (a.at||0)-(b.at||0); });
+  function pdfsForWeek(c,mid,notes){ var books=weekPdfs.filter(function(p){ return p.course===c && p.week==='book'; }).map(function(p){ return Object.assign({}, p, {book:true}); }); var local=books.concat(weekPdfs.filter(function(p){ return p.course===c && ((p.week||'misc')===mid); }).sort(function(a,b){ return (a.at||0)-(b.at||0); }));
     var remote=(notes||[]).filter(function(n){ return n.studyPdf; }).map(function(n){ return { key:'r:'+n.id, name:'정리본 · '+String(n.title||'').replace(cname(c),'').trim(), url:'./'+n.studyPdf, remote:true, noteId:n.id }; });
     return remote.concat(local); }
   function noteForItem(title, notes){ var m=/(\d{1,2})\s*주차\s*(\d{1,2})\s*강/.exec(String(title||'')); if(!m) return null; var k=+m[2]; return notes.find(function(n){ return noteLec(n)===k; })||null; }
@@ -10373,6 +10375,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     else if(miscNotes.length||miscPdfs.length) mods.push({id:'misc', name:'주차 미지정', items:[]});
     var h=''; try{ sameClassGroup((localLecs||[]).filter(function(r){ return cname(r.course)===cname(c); })).forEach(function(grp){ var n=grp.reduce(function(a,r){ return a+(r.slides||[]).reduce(function(x,s){ return x+(s.segs||[]).length; },0); },0); h+='<div class="lec-resume">'+esc(grp[0].date)+' '+esc(cname(c))+' 녹음이 <b>'+grp.length+'개</b>로 흩어져 있어요 ('+n+'문장) <button type="button" class="lec-btn rec" data-merge="'+esc(grp.map(function(r){ return r.id; }).join(','))+'">하나로 합치기</button></div>'; }); }catch(e){}
     var rz=resumable(); if(rz){ var mins=Math.max(1,Math.round((Date.now()-new Date(rz.savedAt).getTime())/60000)); var nseg=(rz.slides||[]).reduce(function(a,s){ return a+((s.segs||[]).length); },0); h+='<div class="lec-resume">● 끊긴 녹음: <b>'+esc(rz.title||'')+'</b> · '+nseg+'문장 · '+mins+'분 전 저장 <button type="button" class="lec-btn rec" data-resume="'+esc(rz.id)+'">이어서 녹음</button> <button type="button" class="lec-btn" data-discard="'+esc(rz.id)+'">보관만</button></div>'; }
+    var tbs=weekPdfs.filter(function(p){ return p.course===c && p.week==='book'; }); h+='<div class="lec-tbrow">'+(tbs.length?tbs.map(function(p){ return '<span class="lec-file"><button type="button" class="lec-chip pdf tb" data-pdf="'+esc(p.key)+'" data-mid="book">'+ICO.book+'교과서 · '+esc(p.name)+'</button><button type="button" class="lec-x" data-delpdf="'+esc(p.key)+'" title="교과서 삭제">✕</button></span>'; }).join(''):'<span class="lec-muted">교과서 PDF를 넣으면 모든 주차 카드에 자동으로 나와요</span>')+'<button type="button" class="lec-btn" data-addpdf="book">'+ICO.plus+'교과서 넣기</button></div>';
     mods.forEach(function(m,i){
       var w=modWeek(m), isNow=(weekly && w===wk); var notes=(m.id==='misc')?miscNotes:notesForWeek(c,w,m.id); var pdfs=(m.id==='misc')?miscPdfs:pdfsForWeek(c,m.id,notes);
       var open=isNow || !weekly || (!mods.some(function(x){return modWeek(x)===wk;}) && i===0);
@@ -10385,7 +10388,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
       }
       var extra=notes.filter(function(n){ return !used[n.id]; });
       if(pdfs.length||extra.length){
-        h+='<div class="lec-wk-files">'+pdfs.map(function(p){ return '<span class="lec-file"><button type="button" class="lec-chip pdf'+(p.remote?' study':'')+'" data-pdf="'+esc(p.key)+'" data-mid="'+esc(m.id)+'">'+(p.remote?ICO.book:ICO.file)+esc(p.name)+'</button>'+(p.remote?'':'<button type="button" class="lec-x" data-delpdf="'+esc(p.key)+'" title="이 PDF 삭제">✕</button>')+'</span>'; }).join('')
+        h+='<div class="lec-wk-files">'+pdfs.map(function(p){ return '<span class="lec-file"><button type="button" class="lec-chip pdf'+(p.remote?' study':'')+(p.book?' tb':'')+'" data-pdf="'+esc(p.key)+'" data-mid="'+esc(m.id)+'">'+(p.remote||p.book?ICO.book:ICO.file)+(p.book?'교과서 · ':'')+esc(p.name)+'</button>'+(p.remote?'':'<button type="button" class="lec-x" data-delpdf="'+esc(p.key)+'" title="이 PDF 삭제">✕</button>')+'</span>'; }).join('')
           +extra.map(function(n){ return '<button type="button" class="lec-chip'+(n.ready?' on':'')+'" data-open="'+esc(n.id)+'" data-mid="'+esc(m.id)+'">'+(n.ready?ICO.note:ICO.mic)+esc(n.title)+(n.ready?'':' <small>'+(n.status==='sent'?'필기 만드는 중':n.status==='recording'?'녹음 중':'대본만')+'</small>')+'</button>'; }).join('')+'</div>';
       }
       var decks=studyIndex.filter(function(d){ return cname(d.course)===cname(c) && ((m.id&&d.module===m.id) || (w!=null && +d.week===w)); }); if(decks.length) h+='<div class="lec-wk-files">'+decks.map(function(d){ var st=studyState(d.id); var tot=d.slides||0, hid=(st.hide||[]).length; return '<span class="lec-file"><button type="button" class="lec-chip study on" data-study="'+esc(d.id)+'">'+ICO.book+esc(d.title)+(tot?' <small>'+Math.max(0,tot-hid)+'/'+tot+'</small>':'')+'</button></span>'; }).join('')+'</div>';
@@ -10420,8 +10423,8 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   // ---- 뷰어: PDF + 필기 나란히 ----
   var V={ pdf:null, page:1, total:0, note:null, notes:[], pdfs:[], mid:null, task:null };
   async function openView(noteId, mid, pdfKey){
-    var c=$('lecCourse').value||''; var m=cardsFor(c).find(function(x){ return x.id===mid; })||{id:mid,name:mid==='misc'?'주차 미지정':''}; var w=modWeek(m);
-    V.mid=mid; V.notes=(mid==='misc')?notesForWeek(c,null,'misc'):notesForWeek(c,w,mid); V.pdfs=pdfsForWeek(c,(mid==='misc')?'misc':mid,V.notes);
+    var c=$('lecCourse').value||''; var m=cardsFor(c).find(function(x){ return x.id===mid; })||{id:mid,name:mid==='misc'?'주차 미지정':(mid==='book'?'교과서':'')}; var w=modWeek(m);
+    V.mid=mid; V.notes=(mid==='misc')?notesForWeek(c,null,'misc'):notesForWeek(c,w,mid); V.pdfs=(mid==='book')?weekPdfs.filter(function(p){ return p.course===c && p.week==='book'; }):pdfsForWeek(c,(mid==='misc')?'misc':mid,V.notes);
     var note=noteId?V.notes.find(function(n){return n.id===noteId;}):null;
     if(!note && pdfKey){ var pk=V.pdfs.find(function(p){return p.key===pdfKey;}); if(pk&&pk.noteId) note=V.notes.find(function(n){ return n.id===pk.noteId; })||null; else if(pk) note=V.notes.find(function(n){ return n.pdf===pk.name && n.ready; })||V.notes.find(function(n){ return n.pdf===pk.name; })||null; }
     if(note && !pdfKey && note.studyPdf){ pdfKey='r:'+note.id; }
