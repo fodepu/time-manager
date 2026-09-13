@@ -1,0 +1,81 @@
+{
+  "date": "2026-09-13",
+  "generatedAt": "2026-09-13T15:18:03+09:00",
+  "urgent": null,
+  "items": [
+    {
+      "cat": "update",
+      "title": "Claude Code 2.1.269 — plugin eval + output-style 전환",
+      "lead": "9/11 릴리스. 플러그인 품질을 수치로 측정하는 명령과 세션별 출력 스타일 전환이 들어왔다.",
+      "points": [
+        "`claude plugin eval`로 내가 만든 플러그인/스킬을 재현 가능한 점수로 검증한다. 각 케이스는 **현실 프롬프트 + pass/fail grader** 조합이고, **플러그인 적용 3회 / 미적용 3회 = 케이스당 6런**을 돌려 JSON+HTML 리포트로 뽑는다. Dayble 스킬을 손볼 때 '고쳤더니 트리거가 나아졌나'를 감이 아니라 A/B 점수로 확인할 수 있다.",
+        "`/output-style [name]`으로 대화 중 출력 형식을 즉시 갈아끼운다. **Remote Control·클라우드·헤드리스 세션**에서도 먹으므로, 예약작업처럼 화면 없이 도는 세션의 출력 톤을 세션 단위로 강제할 수 있다.",
+        "Bash 툴이 파일을 편집하면 **변경 파일 diff**를 결과에 같이 보여준다 — 명령이 뭘 건드렸는지 즉시 검토."
+      ],
+      "note": "CLI 업데이트 후 `claude plugin eval --help`로 시작. eval 스위트(케이스+grader)는 직접 작성해야 함.",
+      "source": "code.claude.com",
+      "url": "https://code.claude.com/docs/en/changelog"
+    },
+    {
+      "cat": "model",
+      "title": "Claude Fable 5.1 — 캐시 read 75%↓, 에이전트 워크플로 비용 재계산",
+      "lead": "9/1 출시된 Fable 5.1/Mythos 5.1. 토큰 단가($10/$50)는 그대로지만 캐시 읽기가 크게 싸졌다.",
+      "points": [
+        "**캐시 read가 75% 인하돼 $0.25/M**. 같은 시스템프롬프트·문서를 반복 참조하는 작업일수록 이득이 커져, 일반 워크로드 **~25%**, **에이전트형 작업은 최대 45%** 절감. 긴 컨텍스트를 캐시에 얹고 여러 턴 돌리는 예약작업/파이프라인 설계가 경제적으로 유리해진다.",
+        "코딩·지식노동·과학연구용으로 세이프가드 수위만 다른 동일 모델(Fable=범용, Mythos=완화)이라, 용도에 맞춰 슬러그만 바꿔 호출하면 된다.",
+        "Claude Code의 **기본 Fable 모델**도 5.1로 승격 — 별도 설정 없이 최신 모델로 코딩."
+      ],
+      "note": "가격/모델 슬러그는 개발자 플랫폼 문서 기준. 프롬프트 캐싱을 안 쓰고 있었다면 지금이 도입 시점.",
+      "source": "anthropic.com",
+      "url": "https://www.anthropic.com/news"
+    },
+    {
+      "cat": "update",
+      "title": "Claude 개발자 플랫폼 — Managed Agents에 예산·데이터레지던시·GitHub 스킬",
+      "lead": "서버 호스팅 에이전트(Managed Agents) 세션에 운영 통제 장치가 붙었다.",
+      "points": [
+        "**budget controls**로 세션별 지출 상한을 걸어 에이전트 폭주 비용을 막고, **geo-pinned inference**로 추론 리전을 고정해 데이터 레지던시 요건을 맞춘다.",
+        "**GitHub에서 스킬을 로드**해 Managed Agents 세션에 재사용 능력을 주입 — 팀 공용 스킬 레포를 그대로 에이전트에 물릴 수 있다."
+      ],
+      "note": "Claude Developer Platform(구 콘솔) 대상. 셀프호스팅이 아니라 Anthropic이 세션 오케스트레이션을 맡는 경로.",
+      "source": "releasebot.io",
+      "url": "https://releasebot.io/updates/anthropic/claude-developer-platform"
+    },
+    {
+      "cat": "tool",
+      "title": "OpenAI Agents API 퍼블릭 베타 — Codex 하네스를 한 번의 호출로",
+      "lead": "9/10 공개. 에이전트 실행 인프라를 직접 안 짜고 API 한 통으로 위임한다.",
+      "points": [
+        "세션 **오케스트레이션·컨텍스트 압축·복구**를 OpenAI가 처리 — 긴 작업이 컨텍스트 한계에 걸려 끊기는 문제를 앱단에서 관리하지 않아도 된다.",
+        "**durable sessions**로 턴을 넘겨 작업을 이어가고 진행 상황을 스트리밍하며, **자체 툴과 MCP 서버**를 붙인다. Claude MCP로 붙여온 커넥터 자산을 OpenAI 에이전트에서도 재사용 가능."
+      ],
+      "note": "퍼블릭 베타. 호스팅 샌드박스·서브에이전트 포함, 하네스 사용료가 토큰과 별도로 붙는 구조.",
+      "source": "openai.com",
+      "url": "https://openai.com/products/release-notes/"
+    },
+    {
+      "cat": "tool",
+      "title": "OpenAI Deep Research — ChatGPT Work·Codex에서 인용된 산출물로",
+      "lead": "9/9부터 Deep Research가 Work와 Codex에 들어갔다.",
+      "points": [
+        "웹 + **내 파일 + 연결된 앱**을 함께 훑어 하나의 질문을 조사하고, **인용이 달린 편집 가능한 문서/슬라이드/스프레드시트/사이트**로 뽑아준다. '리서치→초안'을 한 흐름으로 끝내는 구성.",
+        "Codex 안에서도 돌아가므로, 코드 작업 맥락에서 스펙·레퍼런스 조사를 벗어나지 않고 처리하고 결과를 바로 문서로 남길 수 있다."
+      ],
+      "note": "ChatGPT Work/Codex 플랜 대상. 커넥터 연결 범위에 따라 조사 소스가 달라짐.",
+      "source": "openai.com",
+      "url": "https://openai.com/products/release-notes/"
+    },
+    {
+      "cat": "headline",
+      "title": "xAI — Grok 4.7 지연, grok-imagine 이미지 슬러그 정리",
+      "lead": "9/12 목표였던 Grok 4.7(2.1T)은 미출시로 밀렸고('며칠 더'), 이미지 API는 슬러그가 통폐합된다.",
+      "points": [
+        "**`grok-imagine-image-quality` 슬러그가 11/2 은퇴** — 요청은 자동으로 `grok-imagine-image-2.0`(quality=low)로 라우팅되며 요청/응답 형태는 그대로, **장당 단가는 더 낮아진다**. 해당 슬러그를 쓰는 코드는 동작은 유지되나 품질이 low로 떨어지니 명시적으로 quality를 지정해 둘 것.",
+        "Grok 4.7은 아직 model ID가 없어 지금 붙일 수 없다 — 4.6(500K 컨텍스트, Opus급 코딩)이 현행 플래그십."
+      ],
+      "note": "이미지 슬러그 변경은 11/2 발효. 4.7은 트래커상 '연기' 상태.",
+      "source": "releasebot.io",
+      "url": "https://releasebot.io/updates/xai/grok-build"
+    }
+  ]
+}
