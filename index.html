@@ -2383,7 +2383,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="163">
+<meta name="tm-version" content="164">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -9597,8 +9597,8 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
       el.innerHTML='<div class="tm-timer-top"><div class="tm-timer-ring"><div class="tm-timer-time" id="tmTimerTime">00:00</div></div><div class="tm-timer-label" id="tmTimerLabel"></div></div><div class="tm-timer-btns"><button type="button" data-t="pause" id="tmTimerPause">일시정지</button><button type="button" data-t="plus">+5분</button><button type="button" data-t="stop">종료</button></div>';
       document.body.appendChild(el); document.body.classList.add('tm-timer-on');
       el.addEventListener('click', function(ev){ var bt=ev.target.closest('[data-t]'); if(!bt) return; var t=bt.getAttribute('data-t'); if(t==='stop'||t==='close'){ tmTimerStop(); refreshAll(); } else if(t==='plus'){ if(TIMER.paused) TIMER.paused+=300000; else TIMER.end+=300000; TIMER.total+=300000; tmTimerSave(); tmTimerPaint(); } else if(t==='pause'){ if(TIMER.paused){ TIMER.end=Date.now()+TIMER.paused; TIMER.paused=0; bt.textContent='일시정지'; } else { TIMER.paused=Math.max(0,TIMER.end-Date.now()); bt.textContent='계속'; } tmTimerSave(); tmTimerPaint(); } }); }
-    document.getElementById('tmTimerLabel').textContent=TIMER.label; document.getElementById('tmTimerPause').textContent=TIMER.paused?'계속':'일시정지'; clearInterval(TIMER.tick); TIMER.tick=setInterval(tmTimerPaint, 2000); tmTimerPaint(); }
-  function tmTimerPaint(){ var el=document.getElementById('tmTimer'); if(!el||!TIMER.end) return; var left=TIMER.paused?TIMER.paused:(TIMER.end-Date.now()); if(left<=0){ tmTimerDone(); return; } var s10=Math.ceil(left/10000)*10; var mm=Math.floor(s10/60), ss=s10%60; document.getElementById('tmTimerTime').textContent=(mm<10?'0':'')+mm+':'+(ss<10?'0':'')+ss;
+    document.getElementById('tmTimerLabel').textContent=TIMER.label; document.getElementById('tmTimerPause').textContent=TIMER.paused?'계속':'일시정지'; clearInterval(TIMER.tick); TIMER.tick=setInterval(tmTimerPaint, 500); tmTimerPaint(); }
+  function tmTimerPaint(){ var el=document.getElementById('tmTimer'); if(!el||!TIMER.end) return; var left=TIMER.paused?TIMER.paused:(TIMER.end-Date.now()); if(left<=0){ tmTimerDone(); return; } var s=Math.ceil(left/1000); var mm=Math.floor(s/60), ss=s%60; document.getElementById('tmTimerTime').textContent=(mm<10?'0':'')+mm+':'+(ss<10?'0':'')+ss;
     var frac=Math.max(0, 1-Math.ceil(left/60000)*60000/Math.max(1,TIMER.total)); el.style.setProperty('--pct', Math.min(100, frac*100)+'%'); el.classList.toggle('paused', !!TIMER.paused); }
   function tmTimerDone(){ var el=document.getElementById('tmTimer'); clearInterval(TIMER.tick); TIMER.tick=null; TIMER.end=0; TIMER.paused=0; tmTimerSave(); tmEndSound(); document.title='⏰ 끝 — Dayble';
     if(el){ el.classList.add('done'); document.getElementById('tmTimerTime').textContent='끝'; el.querySelector('.tm-timer-btns').innerHTML='<button type="button" data-t="close">닫기</button>'; }
