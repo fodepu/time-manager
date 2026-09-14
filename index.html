@@ -2383,7 +2383,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="171">
+<meta name="tm-version" content="172">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -9793,7 +9793,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
       if(!ov._dragged) return; var b=s.a?nearestWord(info, ov, ev.clientX, ev.clientY):null;
       if(s.a && b){ var ws=flowWords(info); var i0=Math.min(s.a.fi,b.fi), i1=Math.max(s.a.fi,b.fi); var sel=ws.slice(i0,i1+1); var lineIdx=[]; sel.forEach(function(w){ if(w.li>=0 && lineIdx.indexOf(w.li)<0) lineIdx.push(w.li); });
         var ctx=(ov.id==='lecViewAnnot')?annCtxView():annCtxRec(); var m=TOOL.mode;
-        if(m==='hl') addMarks(ctx, lineIdx, 'highlight'); else if(m==='ul') addMarks(ctx, lineIdx, 'underline'); else if(m==='circle') addMarks(ctx, lineIdx.slice(0,1), 'circle'); else if(m==='note'){ var t=prompt('포스트잇 내용 (짧게):'); if(t&&t.trim()) addMarks(ctx,[lineIdx[0]],'',t.trim().slice(0,60)); }
+        if(m==='hl'||m==='ul'){ var spans={}; sel.forEach(function(w){ if(w.li<0) return; var sp=spans[w.li]||(spans[w.li]={x0:w.x,x1:w.x+w.w}); sp.x0=Math.min(sp.x0,w.x); sp.x1=Math.max(sp.x1,w.x+w.w); }); var l2=ctx.list().slice(); Object.keys(spans).forEach(function(li){ var sp=spans[li]; var L=info.lines[+li]; var full=L && (sp.x1-sp.x0)>=(L.w*0.9); l2.push({ line:+li, type:(m==='hl'?'highlight':'underline'), note:'', by:'me', x0:full?undefined:sp.x0, x1:full?undefined:sp.x1 }); }); ctx.save(l2); } else if(m==='circle') addMarks(ctx, lineIdx.slice(0,1), 'circle'); else if(m==='note'){ var t=prompt('포스트잇 내용 (짧게):'); if(t&&t.trim()) addMarks(ctx,[lineIdx[0]],'',t.trim().slice(0,60)); }
         else if(m==='eraser'){ var r=ov.getBoundingClientRect(); removeMarks(ctx, hitsInRect(ov, s.cx-r.left, s.cy-r.top, ev.clientX-r.left, ev.clientY-r.top)); }
         else { var ph=sel.map(function(w){ return w.text; }).join(' ').replace(/\s+/g,' ').trim(); if(ph) showWordTip(wrap, ev, ph); } }
       setTimeout(function(){ ov._dragged=false; },0); }
@@ -9832,7 +9832,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
         ctx.save(); ctx.strokeStyle='rgba(30,58,138,.45)'; ctx.lineWidth=Math.max(1,1.2*sx); ctx.beginPath(); ctx.moveTo(bx+bw-3*sx, by+bh-10*sx); ctx.lineTo(bx+bw-10*sx, by+bh-3*sx); ctx.moveTo(bx+bw-3*sx, by+bh-5*sx); ctx.lineTo(bx+bw-5*sx, by+bh-3*sx); ctx.stroke(); ctx.restore(); // 모서리 손잡이
         if(!a.note){ ctx.save(); ctx.strokeStyle='#60a5fa'; ctx.setLineDash([4*sx,3*sx]); ctx.lineWidth=1; ctx.strokeRect(bx+0.5,by+0.5,bw-1,bh-1); ctx.restore(); }
         hits.push({x:bx,y:by,w:bw,h:bh,idx:ai,free:true}); return; }
-      var L=info.lines[a.line]; if(!L) return; var x=L.x*sx, y=L.y*sy, w=L.w*sx, hh=L.h*sy; if(a.type) hits.push({x:x-6,y:y-4,w:w+12,h:hh+8,idx:ai});
+      var L=info.lines[a.line]; if(!L) return; var x=L.x*sx, y=L.y*sy, w=L.w*sx, hh=L.h*sy; if(a.x0!=null && a.x1!=null){ x=a.x0*sx; w=(a.x1-a.x0)*sx; } if(a.type) hits.push({x:x-6,y:y-4,w:w+12,h:hh+8,idx:ai});
       if(a.type==='highlight'){ ctx.fillStyle=ANN_COLORS.highlight; ctx.fillRect(x-2, y, w+4, hh); }
       else if(a.type==='underline'){ ctx.strokeStyle=ANN_COLORS.underline; ctx.lineWidth=Math.max(1.5, 2*sx); ctx.beginPath(); ctx.moveTo(x, y+hh-1); ctx.lineTo(x+w, y+hh-1); ctx.stroke(); }
       else if(a.type==='circle'){ ctx.strokeStyle=ANN_COLORS.circle; ctx.lineWidth=Math.max(1.5, 2*sx); ctx.beginPath(); ctx.ellipse(x+w/2, y+hh/2, w/2+8*sx, hh/2+6*sy, 0, 0, Math.PI*2); ctx.stroke(); }
