@@ -2383,7 +2383,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="166">
+<meta name="tm-version" content="167">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -2550,6 +2550,7 @@
   .lec-fs { padding-top:46px !important; box-sizing:border-box; position:fixed !important; inset:0 !important; z-index:900 !important; height:auto !important; max-height:none !important; min-height:0 !important; border-radius:0 !important; border:0 !important; background:#fff !important; margin:0 !important; }
   #lecDocWrap.lec-fs { padding-top:0 !important; }
   body.lec-fs-on { overflow:hidden; }
+  .lec-pagejump { width:56px; font:inherit; font-size:13px; padding:2px 4px; border:1px solid var(--border,#e5e7eb); border-radius:6px; text-align:center; }
   .lec-fs-nav { position:fixed; left:50%; bottom:14px; transform:translateX(-50%); z-index:901; display:inline-flex; align-items:center; gap:6px; white-space:nowrap; max-width:calc(100vw - 32px); background:rgba(255,255,255,.96); border:1px solid var(--border,#e5e7eb); border-radius:999px; padding:4px 6px; box-shadow:0 2px 10px rgba(0,0,0,.12); font-size:13px; font-weight:700; color:#374151; }
   .lec-fs-nav button { border:0; background:transparent; width:30px; height:30px; border-radius:999px; cursor:pointer; font-size:16px; color:#374151; flex-shrink:0; }
   .lec-fs-nav #lecFsPage { white-space:nowrap; flex-shrink:0; }
@@ -9703,6 +9704,12 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     var cur=isView?V.page:(isDoc?(S.viewPage||S.page||1):(S.page-(S.base||0))), tot=isView?(V.pdf&&V.pdf.numPages):(isDoc?'':S.total); p.textContent=cur+(tot?' / '+tot:''); }
   document.addEventListener('click',function(e){ var b=e.target.closest&&e.target.closest('[data-fs]'); if(!b) return; e.preventDefault(); fsToggle(fsWrapOf(b)); });
   document.addEventListener('keydown',function(e){ if(e.key==='Escape' && document.querySelector('.lec-fs')){ var tag=(e.target.tagName||'').toLowerCase(); if(tag==='textarea'||tag==='input') return; e.preventDefault(); fsToggle(document.querySelector('.lec-fs'), false); } });
+  // 쪽수 표시를 클릭하면 입력해서 이동
+  function bindPageJump(id, go, cur, tot){ var el=$(id); if(!el||el._pj) return; el._pj=true; el.title='클릭해서 쪽 번호 입력'; el.style.cursor='text';
+    el.addEventListener('click', function(){ if(el.querySelector('input')) return; var t=tot(); if(!t) return; var inp=document.createElement('input'); inp.type='number'; inp.min=1; inp.max=t; inp.value=cur(); inp.className='lec-pagejump'; el.textContent=''; el.appendChild(inp); el.appendChild(document.createTextNode(' / '+t)); inp.focus(); inp.select();
+      var done=false; function fin(ok){ if(done) return; done=true; var n=parseInt(inp.value,10); if(ok && n>=1 && n<=t) go(n); else el.textContent=cur()+' / '+t; }
+      inp.addEventListener('keydown', function(e){ e.stopPropagation(); if(e.key==='Enter'){ e.preventDefault(); fin(true); } else if(e.key==='Escape'){ fin(false); } });
+      inp.addEventListener('blur', function(){ setTimeout(function(){ fin(true); }, 0); }); }); }
   function zoomStep(which, dir){ var cur=(which==='view'?V.zoom:S.zoom)||1; setZoom(which, dir===0?1:(dir>0?cur*1.2:cur/1.2)); }
   function bindZoom(wrap, which){ if(!wrap||wrap._zoom) return; wrap._zoom=true;
     wrap.addEventListener('wheel',function(e){ if(!(e.ctrlKey||e.metaKey)) return; e.preventDefault(); var cur=(which==='view'?V.zoom:S.zoom)||1; var r=wrap.getBoundingClientRect(); setZoom(which, cur*Math.max(0.85, Math.min(1.18, Math.exp(-e.deltaY*0.01))), {x:e.clientX-r.left, y:e.clientY-r.top}); }, {passive:false});
@@ -9857,7 +9864,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
         function mv(ev){ var pct=Math.max(25, Math.min(80, (ev.clientX-r.left)/r.width*100)); grid.style.setProperty('--lec-split', pct.toFixed(1)+'%'); }
         function up(){ document.removeEventListener('mousemove',mv); document.removeEventListener('mouseup',up); sp.classList.remove('on'); try{ lsSet(lsKey('lec_split'), grid.style.getPropertyValue('--lec-split')); }catch(e){} try{ renderPage(); renderViewPage(); }catch(e){} }
         document.addEventListener('mousemove',mv); document.addEventListener('mouseup',up); }); }); }
-  function bindAnnClicks(){ bindTools(); setTool(TOOL.mode); bindSplits(); try{ bindZoom($('lecDropZone'),'rec'); var vc=$('lecViewCanvas'); if(vc) bindZoom(vc.parentNode,'view'); }catch(e){}
+  function bindAnnClicks(){ bindTools(); setTool(TOOL.mode); bindSplits(); try{ bindPageJump('lecPage', function(n){ goPage((S.base||0)+n); }, function(){ return S.page-(S.base||0); }, function(){ return S.pdf?S.total:0; }); bindPageJump('lecViewPage', function(n){ viewGo(n); }, function(){ return V.page; }, function(){ return V.pdf?V.total:0; }); }catch(e){} try{ bindZoom($('lecDropZone'),'rec'); var vc=$('lecViewCanvas'); if(vc) bindZoom(vc.parentNode,'view'); }catch(e){}
     var ov=$('lecAnnot'); if(ov && !ov._bound){ ov._bound=true; bindDragSelect(ov, function(){ return S.slideLines&&S.slideLines[S.page]; }); ov.addEventListener('click',function(ev){ if(ov._dragged) return; if(toolClick(annCtxRec(), ov, S.slideLines&&S.slideLines[S.page], ev)) return; var hi=annHitInfo(ov, ev); if(hi&&hi.free){ if(hi.conv) hi=convertNote(annCtxRec(), hi, ov, S.slideLines&&S.slideLines[S.page]); editFree(annCtxRec(), hi.idx, ov, S.slideLines&&S.slideLines[S.page]); return; } var i=annHitTest(ov, ev); if(i<0){ var info=S.slideLines&&S.slideLines[S.page]; var wd=wordAt(info&&info.words, info, ov, ev); if(wd) showWordTip(ov.parentNode, ev, wd.text); return; } var list=S.ann[S.page]||[]; var a=list[i]; if(!a) return; if(!confirm('이 표시를 지울까요?\n'+(a.note||a.type))) return; annCtxRec().save(list.filter(function(_,k){ return k!==i; })); }); }
     var vo=$('lecViewAnnot'); if(vo && !vo._bound){ vo._bound=true; bindDragSelect(vo, function(){ return V.lines; }); vo.addEventListener('click',function(ev){ if(vo._dragged) return; if(toolClick(annCtxView(), vo, V.lines, ev)) return; var hv=annHitInfo(vo, ev); if(hv&&hv.free){ if(hv.conv) hv=convertNote(annCtxView(), hv, vo, V.lines); editFree(annCtxView(), hv.idx, vo, V.lines); return; } var i=annHitTest(vo, ev); if(i<0){ var info=V.lines; var wd=wordAt(info&&info.words, info, vo, ev); if(wd) showWordTip(vo.parentNode, ev, wd.text); return; } var list=V.marks||[]; var a=list[i]; if(!a) return; if(!confirm('이 표시를 지울까요?\n'+(a.note||a.type))) return; annCtxView().save(list.filter(function(_,k){ return k!==i; })); }); }
   }
