@@ -2383,7 +2383,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="165">
+<meta name="tm-version" content="166">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -9559,7 +9559,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     try{ if(isOwner){ tmRecolorOwner(); tmRepairBlocks(); tmDedupeEntries(); tmFixDupColors(); } }catch(e){}
     try{ refreshAll(); }catch(e){}
     if(isOwner) setTimeout(tmRenderLms, 400);
-    if(isOwner){ window.tmIsOwner=true; setTimeout(function(){ tmTimerRestore(); tmPromptNow(false); }, 900); }
+    if(isOwner){ window.tmIsOwner=true; setTimeout(function(){ tmTimerRestore(); }, 900); }
   };
 
   // ---- 지금 블록 안내 (앱을 열면 지금 할 블록을 크게 묻고, 공부면 타이머·수업이면 강의노트로) ----
@@ -9607,9 +9607,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     try{ if('Notification' in window && Notification.permission==='granted') new Notification('타이머 끝', { body:TIMER.label }); }catch(e){} }
   function tmTimerRestore(){ try{ var t=JSON.parse(localStorage.getItem('tm_timer')||'null'); if(!t||!t.end) return; TIMER.end=t.end; TIMER.total=t.total||0; TIMER.label=t.label||''; TIMER.paused=t.paused||0; if(!TIMER.paused && TIMER.end<Date.now()){ TIMER.end=0; tmTimerSave(); return; } tmTimerShow(); }catch(e){} }
   window.tmTimerStart=tmTimerStart;
-  document.addEventListener('visibilitychange', function(){ if(document.visibilityState==='visible') setTimeout(function(){ tmPromptNow(false); }, 400); });
   (function(){ var fb=document.createElement('button'); fb.type='button'; fb.id='tmNowFab'; fb.className='tm-now-fab'; fb.title='지금 블록 타이머'; fb.innerHTML='<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2"/><path d="M9 2h6"/></svg>'; fb.addEventListener('click', function(){ tmPromptNow(true); }); document.body.appendChild(fb); setInterval(function(){ var show=window.tmIsOwner && (typeof currentMode==='undefined' || currentMode==='growth' || currentMode==='timetable' || !currentMode) && !document.body.classList.contains('lec-full'); fb.style.display=show?'':'none'; fb.classList.toggle('on', !!TIMER.end); }, 1000); })();
-  setInterval(function(){ if(document.visibilityState==='visible') tmPromptNow(false); }, 60000);
   function bindAll(){ bindHeader(); bindTodos(); }
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', bindAll); else bindAll();
 })();
