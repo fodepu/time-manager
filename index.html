@@ -2383,7 +2383,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="169">
+<meta name="tm-version" content="170">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -2574,6 +2574,9 @@
   .lec-postit { background:#bfdbfe; color:#1e3a8a; padding:4px 9px; border-radius:3px; font-size:13px; box-shadow:0 1px 3px rgba(0,0,0,.18); }
   .lec-exam { color:#92400e; font-size:13px; margin:4px 0; }
   .lec-wordtip { position:absolute; z-index:20; background:#111827; color:#fff; font-size:13px; padding:6px 10px; border-radius:8px; box-shadow:0 4px 14px rgba(0,0,0,.25); max-width:280px; pointer-events:none; }
+  .lec-wordtip .lec-tip-ask { pointer-events:auto; margin-left:8px; font:inherit; font-size:12px; font-weight:800; padding:2px 8px; border-radius:6px; border:1px solid rgba(255,255,255,.35); background:rgba(255,255,255,.12); color:#fff; cursor:pointer; }
+  .lec-wordtip.ask { max-width:520px !important; pointer-events:auto; }
+  .lec-wordtip .lec-tip-a { margin-top:6px; line-height:1.5; color:rgba(255,255,255,.92); font-weight:400; } .lec-wordtip .lec-tip-a strong { color:#fbbf24; }
   .lec-wordtip small { color:#9ca3af; display:block; font-size:11px; }
   .lec-doc { display:flex; flex-direction:column; min-height:0; height:100%; border:1px solid var(--border,#e5e7eb); border-radius:12px; background:var(--bg-soft,#f7f7f8); overflow:hidden; }
   .lec-doc-bar { display:flex; gap:8px; align-items:center; padding:8px 10px; font-size:12px; border-bottom:1px solid var(--border,#e5e7eb); background:var(--bg-card,#fff); }
@@ -9800,7 +9803,16 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     var tip=document.createElement('div'); tip.className='lec-wordtip'; tip.innerHTML='<b>'+escapeHtml(clean)+'</b><small>번역 중…</small>'; var r=wrap.getBoundingClientRect(); tip.style.left=Math.max(4,(ev.clientX-r.left+wrap.scrollLeft+8))+'px'; tip.style.top=Math.max(4,(ev.clientY-r.top+wrap.scrollTop-40))+'px'; wrap.appendChild(tip);
     tip.style.maxWidth='420px'; clearTimeout(_tipT); _tipT=setTimeout(function(){ try{ tip.remove(); }catch(e){} }, clean.length>30?12000:7000);
     try{ if(!S.translator && !S._trInit && 'Translator' in self){ S._trInit=true; var p=initTranslator(); await Promise.race([p, new Promise(function(res){ setTimeout(res,1200); })]); } }catch(e){}
-    var ko=''; try{ ko=await translate(clean); }catch(e){} if(!tip.parentNode) return; tip.innerHTML='<b>'+escapeHtml(clean)+'</b> '+escapeHtml(ko||'(번역 실패 — 인터넷 확인)'); clearTimeout(_tipT); _tipT=setTimeout(function(){ try{ tip.remove(); }catch(e){} }, clean.length>30?12000:7000); }
+    var ko=''; try{ ko=await translate(clean); }catch(e){} if(!tip.parentNode) return; tip.innerHTML='<b>'+escapeHtml(clean)+'</b> '+escapeHtml(ko||'(번역 실패 — 인터넷 확인)')+'<button type="button" class="lec-tip-ask" title="내 맥 Claude에게 이 부분 설명 요청">✱ 설명</button>'; clearTimeout(_tipT); _tipT=setTimeout(function(){ try{ tip.remove(); }catch(e){} }, clean.length>30?12000:7000);
+    tip.querySelector('.lec-tip-ask').addEventListener('mousedown', function(e){ e.preventDefault(); e.stopPropagation(); clearTimeout(_tipT); tipAsk(wrap, tip, clean, ko); }); }
+  async function tipAsk(wrap, tip, text, ko){ tip.classList.add('ask'); tip.innerHTML='<b>'+escapeHtml(text)+'</b><div class="lec-tip-a">✱ 설명 쓰는 중… (내 맥 Claude)</div>'; try{ await localPing(); if(!LOCAL.ok) throw new Error('도우미 꺼짐');
+      var inView=$('lecView')&&$('lecView').style.display!=='none'; var p=inView?V.page:(S.page||1); var st=inView?((V.note&&(V.note.slides||[]).find(function(s){ return +s.page===p; })||{}).slideText||''):((S.slideText&&S.slideText[p])||''); var course=cname((inView?($('lecCourse').value||''):S.course)||'');
+      var sys='너는 경희대 경제학과 학생의 개인 튜터다. 학생이 강의 슬라이드에서 드래그한 구절을 물어본다. 한국어로 5줄 이내, 핵심만, 슬라이드 맥락에 맞게. 수식은 유니코드. 마지막에 "확인:"으로 스스로 답해볼 한 문장. 굵게(**)와 줄바꿈만 사용.';
+      var user='[과목] '+course+'\n[슬라이드 텍스트]\n'+st.slice(0,1800)+'\n\n[학생이 드래그한 구절] '+text+(ko?' ('+ko+')':'')+'\n[질문] 이게 무슨 뜻이고 왜 중요한지 설명해줘.';
+      var a=String(await localCall(sys,user)).trim(); if(!tip.parentNode) return; tip.innerHTML='<b>'+escapeHtml(text)+'</b><div class="lec-tip-a">'+md(a)+'</div><button type="button" class="lec-tip-ask" data-save="1">포스트잇으로</button><button type="button" class="lec-tip-ask" data-close="1">닫기</button>';
+      tip.querySelector('[data-close]').addEventListener('mousedown', function(e){ e.preventDefault(); e.stopPropagation(); tip.remove(); });
+      tip.querySelector('[data-save]').addEventListener('mousedown', function(e){ e.preventDefault(); e.stopPropagation(); try{ var ov=wrap.querySelector('.lec-annot'); var info=inView?V.lines:(S.slideLines&&S.slideLines[S.page]); var ctx=inView?annCtxView():annCtxRec(); var l=ctx.list().slice(); var r=ov.getBoundingClientRect(), wr=wrap.getBoundingClientRect(); var fx=r.width/info.w, fy=r.height/info.h; var x=(parseFloat(tip.style.left)-(r.left-wr.left)-wrap.scrollLeft)/fx, y=(parseFloat(tip.style.top)-(r.top-wr.top)-wrap.scrollTop)/fy; l.push({ line:-1, type:'', note:a.replace(/\*\*/g,'').replace(/\n?확인:.*$/s,'').trim().slice(0,400), x:Math.max(0,x), y:Math.max(0,y), w:info.w*0.42, h:info.h*0.18, by:'me' }); ctx.save(l); tip.remove(); }catch(err){ showToast('포스트잇 저장 실패'); } });
+    }catch(e){ if(tip.parentNode) tip.innerHTML='<b>'+escapeHtml(text)+'</b><div class="lec-tip-a">설명을 못 받았어요: '+escapeHtml(e&&e.message||e)+'</div>'; _tipT=setTimeout(function(){ try{ tip.remove(); }catch(x){} }, 5000); } }
   function annHitTest(ov, ev){ var t=annHitInfo(ov, ev); return t?t.idx:-1; }
   function annHitInfo(ov, ev){ var hits=ov._hits||[]; var r=ov.getBoundingClientRect(); var x=(ev.clientX-r.left)*(ov.width/Math.max(1,r.width)), y=(ev.clientY-r.top)*(ov.height/Math.max(1,r.height));
     for(var i=hits.length-1;i>=0;i--){ var t=hits[i]; if(x>=t.x&&x<=t.x+t.w&&y>=t.y&&y<=t.y+t.h) return t; } return null; }
