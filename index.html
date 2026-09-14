@@ -2383,7 +2383,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="170">
+<meta name="tm-version" content="171">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -2468,7 +2468,6 @@
   .todo-block button.danger { color:#c62828; }
   .tt-rz { position:absolute; left:0; right:0; height:7px; cursor:ns-resize; z-index:2; }
   .tt-rz-t { top:0; } .tt-rz-b { bottom:0; }
-  .tt-block.done .tt-rz { display:none; }
   .tt-block.short .tt-rz { height:3px; } .tt-block.short .tt-rz-t { display:none; }
   .tt-block:hover .tt-rz-b::after, .tt-block:hover .tt-rz-t::after { content:''; position:absolute; left:50%; width:28px; height:3px; margin-left:-14px; border-radius:2px; background:rgba(0,0,0,.35); }
   .tt-block:hover .tt-rz-t::after { top:2px; } .tt-block:hover .tt-rz-b::after { bottom:2px; }
@@ -9024,7 +9023,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
       setTimeout(function(){ document.addEventListener('pointerdown', onDocDown); }, 0);
     }
     var armed=false, drag=null;
-    function canMove(){ return !isRec && b.values.check!==true; }
+    function canMove(){ return !isRec; } // 완료된 블록도 옮길 수 있음
     var rz=null;
     function rzStart(ev, side){ if(!canMove()) return; ev.preventDefault(); ev.stopPropagation(); try{ el.setPointerCapture(ev.pointerId); }catch(e){} var g=window.TT_G||{hourPx:56,sH:6}; rz={ side:side, s0:mins(b.start), e0:mins(b.end), y0:ev.clientY, g:g, ghost:document.createElement('div') }; if(rz.e0<=rz.s0) rz.e0=rz.s0+60;
       rz.ghost.className='tt-ghost'; rz.ghost.innerHTML='<div class="tt-ghost-t"></div>'; el.parentNode.appendChild(rz.ghost); el.classList.add('dragging'); rzMove(ev); }
