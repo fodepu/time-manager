@@ -35,7 +35,7 @@ function runClaude(system, user, noSys) {
     if (!noSys) args.push('--system-prompt', system);
     const p = spawn('claude', args, { stdio: ['pipe', 'pipe', 'pipe'], env: { ...process.env, PATH: (process.env.HOME + '/.local/bin:' + process.env.HOME + '/.claude/local:' + (process.env.PATH || '')), CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC: '1' } });
     let out = '', err = '';
-    const timer = setTimeout(() => { p.kill('SIGKILL'); reject(new Error('timeout (60s)')); }, 60000);
+    const timer = setTimeout(() => { p.kill('SIGKILL'); reject(new Error('timeout (150s)')); }, 150000);
     p.stdout.on('data', d => out += d);
     p.stderr.on('data', d => err += d);
     p.on('error', e => { clearTimeout(timer); reject(e); });
