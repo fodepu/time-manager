@@ -2383,7 +2383,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="167">
+<meta name="tm-version" content="168">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -9814,9 +9814,9 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
         var bx=a.x*sx, by=a.y*sy, bw=(a.w||160)*sx, bh=(a.h||50)*sy; var padx=6*sx, maxW=bw-padx*2, txt=String(a.note||'');
         function wrapAt(fp){ ctx.font='500 '+fp+'px Pretendard, -apple-system, sans-serif'; var rows=[]; txt.split(/\n/).forEach(function(par){ var words=par.split(/\s+/).filter(Boolean), line=''; if(!words.length){ rows.push(''); return; } words.forEach(function(wd){ var test=line?line+' '+wd:wd; if(ctx.measureText(test).width>maxW && line){ rows.push(line); line=wd; } else line=test; }); if(line) rows.push(line); }); return rows; }
         // 상자에 딱 맞는 가장 큰 글자 크기 탐색 (상자를 키우면 글자도 커짐)
-        var lo=Math.max(6,4*sx), hi=Math.max(lo+1, 60*sx), fp=lo, rows=wrapAt(lo); for(var it=0; it<12; it++){ var mid=(lo+hi)/2; var rr=wrapAt(mid); var fits=rr.length*mid*1.3+8*sy<=bh && rr.every(function(rw){ return ctx.measureText(rw).width<=maxW; }); if(fits){ fp=mid; rows=rr; lo=mid; } else hi=mid; } ctx.font='500 '+fp+'px Pretendard, -apple-system, sans-serif'; var lineH=fp*1.3; a._fp=fp/sx;
+        var lo=Math.max(6,4*sx), hi=Math.max(lo+1, 60*sx), fp=lo, rows=wrapAt(lo); for(var it=0; it<12; it++){ var mid=(lo+hi)/2; var rr=wrapAt(mid); var fits=rr.length*mid*1.25+4*sy<=bh && rr.every(function(rw){ return ctx.measureText(rw).width<=maxW; }); if(fits){ fp=mid; rows=rr; lo=mid; } else hi=mid; } ctx.font='500 '+fp+'px Pretendard, -apple-system, sans-serif'; var lineH=fp*1.25; a._fp=fp/sx;
         ctx.save(); ctx.shadowColor='rgba(0,0,0,0.22)'; ctx.shadowBlur=5*sx; ctx.shadowOffsetY=2*sx; ctx.fillStyle='#bfdbfe'; ctx.fillRect(bx, by, bw, bh); ctx.restore();
-        ctx.fillStyle='#1e3a8a'; ctx.textBaseline='top'; var cy=by+4*sy; rows.forEach(function(rw){ ctx.fillText(rw, bx+padx, cy); cy+=lineH; });
+        ctx.fillStyle='#1e3a8a'; ctx.textBaseline='top'; var cy=by+Math.max(3*sy, (bh-rows.length*lineH)/2+(lineH-fp)/2); rows.forEach(function(rw){ ctx.fillText(rw, bx+padx, cy); cy+=lineH; }); // 세로 가운데
         ctx.save(); ctx.strokeStyle='rgba(30,58,138,.45)'; ctx.lineWidth=Math.max(1,1.2*sx); ctx.beginPath(); ctx.moveTo(bx+bw-3*sx, by+bh-10*sx); ctx.lineTo(bx+bw-10*sx, by+bh-3*sx); ctx.moveTo(bx+bw-3*sx, by+bh-5*sx); ctx.lineTo(bx+bw-5*sx, by+bh-3*sx); ctx.stroke(); ctx.restore(); // 모서리 손잡이
         if(!a.note){ ctx.save(); ctx.strokeStyle='#60a5fa'; ctx.setLineDash([4*sx,3*sx]); ctx.lineWidth=1; ctx.strokeRect(bx+0.5,by+0.5,bw-1,bh-1); ctx.restore(); }
         hits.push({x:bx,y:by,w:bw,h:bh,idx:ai,free:true}); return; }
