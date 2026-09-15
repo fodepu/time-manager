@@ -1,0 +1,70 @@
+{
+  "date": "2026-09-15",
+  "generatedAt": "2026-09-15T08:59:36+09:00",
+  "urgent": null,
+  "items": [
+    {
+      "cat": "update",
+      "title": "Claude Code `claude plugin eval` — 플러그인·스킬을 점수로 A/B 검증 (v2.1.269)",
+      "lead": "플러그인/스킬이 실제로 효과가 있는지 재현 가능한 점수(JSON+HTML)로 측정하는 명령이 들어왔다.",
+      "points": [
+        "`claude plugin eval init`가 플러그인을 읽고 **현실적 프롬프트 + pass/fail 그레이더**로 된 케이스를 자동 제안·파일화(`evals/`)한다 — 스킬 description을 손본 뒤 '정말 나아졌나'를 감이 아니라 수치로 확인. 그레이더는 정규식/특정 툴 호출 여부/2차 모델 루브릭 판정 세 종류.",
+        "각 케이스 **기본 3회 실행**, 케이스 점수=그레이더 통과율의 평균, `--threshold`(기본 **1.0**) 넘으면 통과. 핵심은 **같은 케이스를 플러그인 없이 재실행**해 델타를 뽑는 것 — 스킬 트리거 정확도·description 문구 개선의 정량 근거가 된다.",
+        "Dayble처럼 스킬·예약작업을 여러 개 굴리는 구조에선, 스킬 하나 고칠 때마다 eval을 걸어 **다른 스킬 오발동(회귀)**을 잡는 안전망으로 쓸 수 있다."
+      ],
+      "note": "v2.1.269(9/11)부터. 상세 옵션은 `claude plugin eval --help`.",
+      "source": "releasebot.io",
+      "url": "https://releasebot.io/updates/anthropic/claude-code"
+    },
+    {
+      "cat": "tool",
+      "title": "Claude Managed Agents — GitHub 스킬 자동 로드 + 세션 예산 상한 + 인퍼런스 지역 고정",
+      "lead": "관리형 에이전트 세션에 스킬 배포·비용·데이터 위치 제어가 한꺼번에 붙었다.",
+      "points": [
+        "세션이 레포를 마운트하면 **루트 `.claude/skills`의 스킬을 세션 시작 시 자동 발견**한다 — 패키징/업로드 없이 레포에 커밋만 하면 그 세션이 바로 쓴다. Dayble 스킬을 레포 기반으로 두면 배포 파이프라인이 곧 스킬 배포가 된다.",
+        "**세션당 예산 하드캡**: 상한 도달 시 새 모델 호출을 멈추고 `budget_reached`로 정지(예산 조정하면 재개). 장시간 에이전트·배치가 폭주해 과금이 터지는 사고를 구조적으로 차단 — Deployment가 시작하는 각 세션에도 동일 예산이 적용된다.",
+        "**`inference_geo`로 인퍼런스 지역 고정**(에이전트 생성 시 또는 세션 단위 오버라이드). US-only는 2026-02-01 이후 모델 **1.1x 과금**, global은 표준가. 데이터 레지던시 요건이 있으면 세션별로 전환."
+      ],
+      "note": "Claude Developer Platform(관리형 에이전트) 전용. 일반 채팅/Claude Code 사용자엔 해당 없음.",
+      "source": "releasebot.io",
+      "url": "https://releasebot.io/updates/anthropic/claude-developer-platform"
+    },
+    {
+      "cat": "tool",
+      "title": "OpenAI Agents API 퍼블릭 베타 — 관리형 Codex 하네스로 에이전트 뼈대 위임 (9/10)",
+      "lead": "세션 오케스트레이션·컨텍스트 압축·복구를 OpenAI가 맡는 관리형 에이전트 API가 전체 개발자에게 열렸다.",
+      "points": [
+        "**durable sessions**로 턴을 넘겨 작업을 이어가고, 진행을 스트리밍하며, **자체 툴·MCP 서버를 연결**한다. 즉 에이전트 루프(compaction·recovery)를 직접 안 짜고 판단 로직과 툴만 얹으면 된다.",
+        "샌드박스는 **OpenAI 호스팅 또는 자체 인프라 연결** 선택. 호출은 표준 API 위에서 헤더 `OpenAI-Beta: agents=v1`로.",
+        "**API 자체 수수료 없음** — 쓴 모델 토큰 + 툴/컨테이너 사용분만 정상 과금. 기존 Codex 워크플로를 API로 옮길 때 추가 비용 장벽이 낮다."
+      ],
+      "note": "9/10 퍼블릭 베타, 전체 개발자 대상. Anthropic Managed Agents와 포지션이 정면으로 겹친다 — 비교 시 '하네스 위임 범위 + 과금 모델'을 축으로 볼 것.",
+      "source": "developers.openai.com",
+      "url": "https://developers.openai.com/api/docs/changelog"
+    },
+    {
+      "cat": "tool",
+      "title": "Claude 게시 아티팩트에 브라우저 탭 아이콘 자동 부여",
+      "lead": "게시된 아티팩트가 페이지 내용에 맞는 파비콘을 Claude가 골라 자동으로 단다.",
+      "points": [
+        "여러 아티팩트를 탭으로 열어두고 쓸 때 **파비콘만으로 구분**된다 — Dayble처럼 게시형 HTML 도구를 여러 개 운용하면 탭/즐겨찾기에서 식별이 쉬워진다.",
+        "별도 설정 없이 자동 — 페이지 내용에 맞춰 Claude가 아이콘을 선택한다."
+      ],
+      "note": "Claude Code 최근 업데이트에 포함. 게시 아티팩트에만 적용.",
+      "source": "releasebot.io",
+      "url": "https://releasebot.io/updates/anthropic/claude-code"
+    },
+    {
+      "cat": "headline",
+      "title": "xAI Grok 4.7 또 연기 — 9/15 현재 미출시, 머스크는 Grok 4.8(2.5T) 언급",
+      "lead": "9월 중순 목표였던 Grok 4.7이 API·모델 페이지·릴리스노트 어디에도 없고, 최신은 여전히 Grok 4.6(8/12).",
+      "points": [
+        "2.1T 파라미터·SpaceX 데이터·토큰 효율 개선은 **전부 미확인 주장** 수준. 9/13 머스크가 4.7 대신 **Grok 4.8(2.5T)**을 언급해 로드맵 자체가 유동적이다.",
+        "지금 코딩용으로 xAI를 쓴다면 **Grok 4.6이 사실상 현행 최신** — 4.7 출시를 전제로 파이프라인/벤치 계획을 세우지 말 것."
+      ],
+      "note": "9/15 KST 기준 미출시. 지금 취할 행동은 없음(관망).",
+      "source": "releasebot.io",
+      "url": "https://releasebot.io/updates/xai"
+    }
+  ]
+}
