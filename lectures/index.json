@@ -72,5 +72,17 @@
   "pdf": "LNCh1_Slides.pdf",
   "week": 2,
   "module": "wk2"
+ },
+ {
+  "id": "lec_2026-09-14_mu0u80tw",
+  "course": "거시경제학",
+  "title": "거시경제학 2주차 · LNCh2_Slides_180912",
+  "date": "2026-09-14",
+  "pages": 63,
+  "notesAt": "2026-09-14T23:59:54.103897Z",
+  "mode": "slides",
+  "pdf": "LNCh2_Slides_180912.pdf",
+  "week": 2,
+  "module": "wk2"
  }
 ]
