@@ -2383,7 +2383,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="177">
+<meta name="tm-version" content="178">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -9020,6 +9020,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
       if(!isRec && b.values.check!==true) items.push(['타이머 시작', function(){ if(window.tmPromptNow) tmPromptNow(true, b); }, 'play']);
       if(b.moved && !isRec) items.push(['이 시간으로 계속 (시간표에 저장)', function(){ var ref=entryForDate(date,b.id); var mv=ref&&ref.e.values&&ref.e.values.mv; if(!mv) return; var tm=(typeof loadTemplate==='function' && loadTemplate())||[]; var t=tm.find(function(x){ return x.id===b.id; }); if(t){ t.start=mv.s; t.end=mv.e; lsSet(lsKey('template'), tm); } var ce=(typeof entries!=='undefined')?entries.find(function(x){ return x.id===b.id; }):null; if(ce){ ce.start=mv.s; ce.end=mv.e; if(ce.values) delete ce.values.mv; if(typeof persist==='function') persist(); } if(ref&&ref.e.values){ delete ref.e.values.mv; ref.save(); } if(window.tmOnChange) tmOnChange(); showToast(b.label+' '+mv.s+'~'+mv.e+' 로 시간표에 저장됨'); refreshAll(); }, 'check']);
       if(b.moved && !isRec) items.push(['원래 시간으로 되돌리기', function(){ var ref=entryForDate(date,b.id); if(ref&&ref.e.values){ delete ref.e.values.mv; ref.save(); if(window.tmOnChange) tmOnChange(); refreshAll(); } }, 'edit']);
+      var _pr=(!isRec && String(b.id).indexOf('day_')!==0)?entryForDate(date,b.id):null; if(_pr && _pr.e && !_pr.e.pinned) items.push(['시간표에 고정 (매주 '+formatDate(date).day.slice(0,1)+'요일)', function(){ pinBlock(date,b); }, 'check']);
       items.push(['복사 (바로 뒤에 하나 더)', function(){ copyBlock(date,b); }, 'copy']);
       items.push([(b.id.indexOf('sched_')===0||b.id.indexOf('day_')===0)?'오늘만 삭제':'삭제', function(){ deleteBlockToday(date,b); }, 'trash', 'danger']);
       items.forEach(function(it){ var bt=document.createElement('button'); bt.type='button'; var lab=it[0], ic=it[2]||''; if(ic && typeof ICONS!=='undefined' && ICONS[ic]) bt.innerHTML='<svg class="tt-mi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">'+ICONS[ic]+'</svg><span></span>'; else bt.innerHTML='<span></span>'; bt.querySelector('span').textContent=lab; if(it[3]) bt.classList.add(it[3]); bt.addEventListener('click', function(ev){ ev.stopPropagation(); closeMenu(); it[1](); }); m.appendChild(bt); });
@@ -9035,7 +9036,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
       rz.ghost.className='tt-ghost'; rz.ghost.innerHTML='<div class="tt-ghost-t"></div>'; el.parentNode.appendChild(rz.ghost); el.classList.add('dragging'); rzMove(ev); }
     function rzMove(ev){ var g=rz.g; var dm=Math.round((ev.clientY-rz.y0)/g.hourPx*60/5)*5; var s=rz.s0, e=rz.e0; if(rz.side==='t'){ s=Math.max(g.sH*60, Math.min(rz.e0-10, rz.s0+dm)); } else { e=Math.min(1680, Math.max(rz.s0+10, rz.e0+dm)); } rz.s=s; rz.e=e;
       rz.ghost.style.top=((s-g.sH*60)/60*g.hourPx)+'px'; rz.ghost.style.height=Math.max(14,(e-s)/60*g.hourPx-1)+'px'; rz.ghost.querySelector('.tt-ghost-t').textContent=fmtM(s)+' ~ '+fmtM(e)+' ('+(e-s)+'분)'; }
-    function rzEnd(){ var r=rz; rz=null; try{ r.ghost.remove(); }catch(e){} el.classList.remove('dragging'); if(r.s===r.s0 && r.e===r.e0) return; var ref=entryForDate(date,b.id); if(!ref){ showToast('이 블록을 찾을 수 없어요'); return; } ref.e.values=ref.e.values||{}; ref.e.values.mv={ s:fmtM(r.s), e:fmtM(r.e) }; ref.save(); if(window.tmOnChange) tmOnChange(); showToast(b.label+' → '+fmtM(r.s)+'~'+fmtM(r.e)+' (오늘만)'); refreshAll(); }
+    function rzEnd(){ var r=rz; rz=null; try{ r.ghost.remove(); }catch(e){} el.classList.remove('dragging'); if(r.s===r.s0 && r.e===r.e0) return; applyTime(date,b,fmtM(r.s),fmtM(r.e),'길이 조절'); }
     el.addEventListener('pointerdown', function(ev){
       if(ev.button===2) return;
       var side=ev.target.getAttribute&&ev.target.getAttribute('data-rz'); if(side){ rzStart(ev, side); return; }
@@ -9049,7 +9050,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     function fmtM(m){ return pad(Math.floor(m/60))+':'+pad(m%60); }
     function moveDrag(ev){ var g=window.TT_G||{hourPx:56,sH:6}; var m=snapStart(ev); drag.ghost.style.top=((m-g.sH*60)/60*g.hourPx)+'px'; drag.ghost.querySelector('.tt-ghost-t').textContent=fmtM(m)+' ~ '+fmtM(m+drag.dur); drag.m=m; }
     function endDrag(){ var m=drag.m; try{ drag.ghost.remove(); }catch(e){} el.classList.remove('dragging'); var was=drag; drag=null; armed=false; if(m==null || m===mins(b.start)) return;
-      var ref=entryForDate(date,b.id); if(!ref){ showToast('이 블록을 찾을 수 없어요'); return; } ref.e.values=ref.e.values||{}; ref.e.values.mv={ s:fmtM(m), e:fmtM(m+was.dur) }; ref.save(); if(window.tmOnChange) tmOnChange(); showToast(b.label+' → '+fmtM(m)+'~'+fmtM(m+was.dur)+' (오늘만)'); refreshAll(); }
+      applyTime(date,b,fmtM(m),fmtM(m+was.dur),'이동'); }
     el.addEventListener('pointermove', function(ev){ if(rz){ ev.preventDefault(); rzMove(ev); return; } if(drag){ ev.preventDefault(); moveDrag(ev); return; } if(armed){ if(Math.abs(ev.clientY-sy)>6||Math.abs(ev.clientX-sx)>6) startDrag(ev); return; } if(Math.abs(ev.clientX-sx)>8||Math.abs(ev.clientY-sy)>8) cancel(); });
     el.addEventListener('pointerup', function(){ if(rz){ rzEnd(); longFired=true; setTimeout(function(){ longFired=false; },0); return; } if(drag){ endDrag(); return; } armed=false; cancel(); }); el.addEventListener('pointercancel', function(){ if(rz){ rz.s=rz.s0; rz.e=rz.e0; rzEnd(); } if(drag){ drag.m=null; endDrag(); } armed=false; cancel(); }); el.addEventListener('pointerleave', function(){ if(!drag && !armed) cancel(); });
     el.addEventListener('contextmenu', function(ev){ ev.preventDefault(); cancel(); armed=false; longFired=true; if(b.kind==='tasks' && !isRec){ closeMenu(); openTodos(date, b.id, b.label); } else openMenu(ev.clientX, ev.clientY); setTimeout(function(){ longFired=false; },0); });
@@ -9068,21 +9069,47 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     var s=mins(b.start), e=mins(b.end); var dur=Math.max(10, e-s); var ns=e, ne=e+dur; if(ne>1680){ ne=1680; ns=Math.max(0,1680-dur); }
     var src=entryForDate(date,b.id); var se=src?src.e:{};
     var blk={ id:'copy_'+Date.now().toString(36)+Math.random().toString(36).slice(2,5), label:b.label, start:fmtMin(ns), end:fmtMin(ne), category:b.category||'prep', color:b.color||'', kind:b.kind||'single', place:se.place||'', types:['check'], values:{}, pinned:false, goalMinutes:dur };
-    addOneOff(date, blk); refreshAll(); showToast(b.label+' 복사됨 → '+blk.start+'~'+blk.end+' (꾹 눌러 옮길 수 있어요)');
+    addOneOff(date, blk); refreshAll(); showToast(b.label+' 복사됨 → '+blk.start+'~'+blk.end+' (손잡이로 길이 조절 · ⌘Z 되돌리기)');
+    pushUndo(b.label+' 복사', function(){ removeOneOff(date, blk.id); refreshAll(); });
   }
   function deleteBlockToday(date,b){
     var ref=entryForDate(date,b.id); if(!ref){ showToast('이 블록을 찾을 수 없어요'); return; }
     var oneOff=(b.id.indexOf('sched_')!==0 && b.id.indexOf('day_')!==0);
     if(oneOff){
-      var removed=ref.e;
-      if(date===currentDate){ var i=entries.indexOf(removed); if(i>=0) entries.splice(i,1); persist(); }
-      else { var snap=snapshotFor(date); var j=snap.entries.findIndex(function(x){ return x.id===b.id; }); if(j>=0) snap.entries.splice(j,1); snap.savedAt=new Date().toISOString(); delete snap._synth; saveGrowth(date,snap); if(typeof scheduleSyncPush==='function') scheduleSyncPush(); if(window.tmOnChange) window.tmOnChange(); }
-      refreshAll(); undoToast(b.label+' 삭제됨', function(){ addOneOff(date, removed); refreshAll(); });
+      var removed=removeOneOff(date, b.id); if(!removed){ showToast('이 블록을 찾을 수 없어요'); return; }
+      refreshAll(); var u1=pushUndo(b.label+' 삭제', function(){ addOneOff(date, removed); refreshAll(); }); undoToast(b.label+' 삭제됨', function(){ runUndo(u1); });
     } else {
       ref.e.values=ref.e.values||{}; ref.e.values.skip=true; ref.save(); if(window.tmOnChange) tmOnChange(); refreshAll();
-      undoToast(b.label+' — 오늘 시간표에서만 뺐어요', function(){ var r2=entryForDate(date,b.id); if(r2&&r2.e.values){ delete r2.e.values.skip; r2.save(); if(window.tmOnChange) tmOnChange(); refreshAll(); } });
+      var u2=pushUndo(b.label+' 오늘만 삭제', function(){ var r2=entryForDate(date,b.id); if(r2&&r2.e.values){ delete r2.e.values.skip; r2.save(); if(window.tmOnChange) tmOnChange(); refreshAll(); } });
+      undoToast(b.label+' — 오늘 시간표에서만 뺐어요', function(){ runUndo(u2); });
     }
   }
+  function removeOneOff(date,id){
+    if(date===currentDate){ var i=entries.findIndex(function(x){ return x.id===id; }); if(i<0) return null; var r=entries.splice(i,1)[0]; persist(); return r; }
+    var snap=snapshotFor(date); var j=snap.entries.findIndex(function(x){ return x.id===id; }); if(j<0) return null; var r2=snap.entries.splice(j,1)[0]; snap.savedAt=new Date().toISOString(); delete snap._synth; saveGrowth(date,snap); if(typeof scheduleSyncPush==='function') scheduleSyncPush(); if(window.tmOnChange) window.tmOnChange(); return r2;
+  }
+  // 이동·길이 조절 공통: 하루짜리 블록(복사 등)은 자기 시간을 바로 바꾸고, 시간표 블록은 오늘만(values.mv)
+  function applyTime(date,b,s,e,what){
+    var ref=entryForDate(date,b.id); if(!ref){ showToast('이 블록을 찾을 수 없어요'); return; } var en=ref.e; var oneOff=(String(en.id||b.id).indexOf('day_')!==0 && !en.pinned); var prev;
+    if(oneOff){ prev={ start:en.start, end:en.end }; en.start=s; en.end=e; if(en.values&&en.values.mv) delete en.values.mv; en.goalMinutes=Math.max(0, mins(e)-mins(s)); }
+    else { prev={ mv:(en.values&&en.values.mv)?Object.assign({}, en.values.mv):null }; en.values=en.values||{}; en.values.mv={ s:s, e:e }; }
+    ref.save(); if(window.tmOnChange) tmOnChange(); showToast(b.label+' → '+s+'~'+e+(oneOff?'':' (오늘만)')); refreshAll();
+    pushUndo(b.label+' '+what, function(){ var r2=entryForDate(date,b.id); if(!r2) return; var x=r2.e; if(oneOff){ x.start=prev.start; x.end=prev.end; x.goalMinutes=Math.max(0, mins(prev.end)-mins(prev.start)); } else { x.values=x.values||{}; if(prev.mv) x.values.mv=prev.mv; else delete x.values.mv; } r2.save(); if(window.tmOnChange) tmOnChange(); refreshAll(); });
+  }
+  // 하루짜리 블록을 매주 그 요일 시간표(템플릿)에 고정
+  function pinBlock(date,b){
+    var ref=entryForDate(date,b.id); if(!ref){ showToast('이 블록을 찾을 수 없어요'); return; } var src=ref.e; var di=formatDate(date).dayIdx; var s=src.start, e=src.end;
+    var ne={ id:'sched_user_'+Date.now().toString(36)+Math.random().toString(36).slice(2,5), label:src.label, start:s, end:e, category:src.category||'prep', color:src.color||'', kind:src.kind||'single', place:src.place||'', types:['check'], values:{}, pinned:true, days:[di], alarm:'', alarmMessage:'', goalMinutes:Math.max(0, mins(e)-mins(s)) };
+    var removed=removeOneOff(date, b.id); entries.push(ne); persist(); refreshAll(); showToast(b.label+' — 매주 '+formatDate(date).day+' '+s+'~'+e+' 시간표에 고정');
+    pushUndo(b.label+' 고정', function(){ var i=entries.findIndex(function(x){ return x.id===ne.id; }); if(i>=0) entries.splice(i,1); try{ var tm=loadTemplate()||[]; lsSet(lsKey('template'), tm.filter(function(x){ return x.id!==ne.id; })); }catch(err){} if(removed) addOneOff(date, removed); persist(); refreshAll(); });
+  }
+  // 되돌리기 스택 (⌘Z / Ctrl+Z) — 시간표 조작만
+  var TT_UNDO=[];
+  function pushUndo(label,fn){ var u={ label:label, fn:fn }; TT_UNDO.push(u); if(TT_UNDO.length>40) TT_UNDO.shift(); return u; }
+  function runUndo(u){ var i=TT_UNDO.indexOf(u); if(i>=0) TT_UNDO.splice(i,1); try{ u.fn(); }catch(err){ console.warn('undo', err&&err.message); } }
+  function ttUndo(){ var u=TT_UNDO.pop(); if(!u){ showToast('되돌릴 게 없어요'); return false; } try{ u.fn(); }catch(err){ console.warn('undo', err&&err.message); } showToast('되돌림: '+u.label); return true; }
+  window.tmUndo=ttUndo;
+  document.addEventListener('keydown', function(e){ if(!(e.metaKey||e.ctrlKey) || e.shiftKey || e.altKey) return; var k=e.key; if(k!=='z' && k!=='Z' && k!=='ㅋ') return; if(typeof currentMode!=='undefined' && currentMode==='lecture') return; var tag=(e.target.tagName||'').toLowerCase(); if(tag==='input'||tag==='textarea'||tag==='select'||e.target.isContentEditable) return; if(!TT_UNDO.length) return; e.preventDefault(); ttUndo(); });
   function undoToast(msg, fn){
     var t=document.getElementById('toast'); if(!t){ showToast(msg); return; }
     t.textContent=''; var s=document.createElement('span'); s.textContent=msg+' '; var bt=document.createElement('button'); bt.type='button'; bt.className='toast-undo'; bt.textContent='되돌리기';
