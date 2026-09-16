@@ -1,0 +1,44 @@
+{
+  "date": "2026-09-16",
+  "generatedAt": "2026-09-16T09:01:36+09:00",
+  "urgent": null,
+  "items": [
+    {
+      "cat": "update",
+      "title": "Claude Code 2.1.271/272 — 샌드박스 네트워크 허용을 '명령 단위'로",
+      "lead": "auto 모드 샌드박스에서 명령이 필요로 하는 호스트를 그 명령에만 열어주는 per-command allowed_domains가 들어와, 자동 실행의 네트워크 노출 면적이 확 줄었다.",
+      "points": [
+        "Bash·PowerShell·Monitor에 **allowed_domains를 명령마다 부여** — curl 하나에 특정 호스트를 승인해도 **다음 명령까지 네트워크가 넓어지지 않는다**. 허용 목록이 세션이 아니라 명령에 붙으므로, 에이전트가 무심코 임의 호스트로 나가는 경로를 원천 차단.",
+        "**Remote 세션(클라우드·셀프호스트 러너)에 fast mode** — 호스트의 fast 설정이나 세션에서 `/fast`로 조직 허용 범위 내에서 즉시 적용. 원격 러너에 무거운 배치를 태울 때 응답 지연을 낮춘다.",
+        "서브에이전트 프런트매터에 **omitClaudeMd** 추가 — 커스텀·플러그인 서브에이전트를 user/project/local CLAUDE.md 없이 실행. 상위 CLAUDE.md 규칙이 서브에이전트 판단을 오염시키는 문제를 끊고 깨끗한 컨텍스트로 돌린다(관리 정책 파일은 그대로 로드)."
+      ],
+      "note": "시작 경로: 최신(2.1.272)으로 업데이트 후 auto 모드 샌드박싱 활성. per-command 허용은 명령과 함께 리뷰·승인되는 구조. /config 풀스크린 마우스 지원도 동반.",
+      "source": "code.claude.com",
+      "url": "https://code.claude.com/docs/en/changelog"
+    },
+    {
+      "cat": "tool",
+      "title": "Claude for Financial Advisors — 리서치·미팅준비·컴플라이언스를 스킬로 묶은 플러그인",
+      "lead": "재무자문 업무 전용 커넥터와 워크플로 스킬을 한 플러그인으로 묶어, 자문사의 반복 업무를 Claude 안에서 파이프라인화한다.",
+      "points": [
+        "커넥터로 리서치 소스를 붙이고, **미팅 준비 → 컴플라이언스 체크 → 후속(follow-up) → 문서화**를 스킬 단위로 실행. 매 고객마다 손으로 반복하던 준비·기록 루틴을 스킬 호출로 대체.",
+        "MCP 기반이라 이미 붙여둔 메일·캘린더·드라이브 커넥터와 한 세션에서 엮어 '조사→작성→기록'을 이어붙일 수 있다. 자문 도메인이 아니면 지금은 해당 없음."
+      ],
+      "note": "Anthropic 배포 플러그인. 규제 업무 특성상 컴플라이언스 스킬 산출물은 사람 검토를 전제로 사용.",
+      "source": "claude.com",
+      "url": "https://claude.com/blog-category/announcements"
+    },
+    {
+      "cat": "headline",
+      "title": "Googlebook 사전주문 9/21 개시 — Chromebook을 대체하는 Gemini 노트북",
+      "lead": "구글이 5월 공개한 Gemini 탑재 노트북 라인 'Googlebook'의 미국 사전주문이 9/21 오전(ET) 시작된다.",
+      "points": [
+        "판도 관점: Chromebook 전략을 접고 **Gemini 어시스턴트를 바닥부터 중심에 둔 OS/기기**로 전환하는 신호. 가격 **$999~**로 저가 크롬북과 다른 포지션.",
+        "지금 할 일은 없다 — 기기 구매·개발 대응은 실물·스펙 공개 후 판단. 본인 워크플로에 미치는 영향은 웹/모바일 Gemini 기능 롤아웃 속도가 실질 변수."
+      ],
+      "note": "미국 한정 사전주문 9/21. 실제 출하·상세 스펙은 이후 공개.",
+      "source": "releasebot.io",
+      "url": "https://releasebot.io/updates/google"
+    }
+  ]
+}
