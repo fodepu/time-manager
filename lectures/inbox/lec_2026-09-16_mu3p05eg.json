@@ -1,0 +1,2297 @@
+{
+ "id": "lec_2026-09-16_mu3p05eg",
+ "course": "거시경제학",
+ "title": "거시경제학 3주차 · LNCh2_Slides_180912",
+ "date": "2026-09-16",
+ "week": 3,
+ "module": "wk3",
+ "lang": "en",
+ "mode": "slides",
+ "pdf": "LNCh2_Slides_180912.pdf",
+ "pages": 63,
+ "duration": 4350,
+ "log": [
+  {
+   "t": 0,
+   "page": 1
+  },
+  {
+   "t": 19,
+   "page": 39
+  },
+  {
+   "t": 187,
+   "page": 40
+  },
+  {
+   "t": 249,
+   "page": 41
+  },
+  {
+   "t": 363,
+   "page": 43
+  },
+  {
+   "t": 403,
+   "page": 42
+  },
+  {
+   "t": 812,
+   "page": 43
+  },
+  {
+   "t": 828,
+   "page": 44
+  },
+  {
+   "t": 1115,
+   "page": 45
+  },
+  {
+   "t": 1347,
+   "page": 46
+  },
+  {
+   "t": 1628,
+   "page": 47
+  },
+  {
+   "t": 1655,
+   "page": 48
+  },
+  {
+   "t": 1743,
+   "page": 46
+  },
+  {
+   "t": 1754,
+   "page": 48
+  },
+  {
+   "t": 1761,
+   "page": 49
+  },
+  {
+   "t": 2154,
+   "page": 50
+  },
+  {
+   "t": 2169,
+   "page": 51
+  },
+  {
+   "t": 2225,
+   "page": 52
+  },
+  {
+   "t": 2375,
+   "page": 51
+  },
+  {
+   "t": 2379,
+   "page": 52
+  },
+  {
+   "t": 2920,
+   "page": 42
+  },
+  {
+   "t": 3129,
+   "page": 52
+  },
+  {
+   "t": 3183,
+   "page": 45
+  },
+  {
+   "t": 3185,
+   "page": 46
+  },
+  {
+   "t": 3191,
+   "page": 49
+  },
+  {
+   "t": 3210,
+   "page": 52
+  },
+  {
+   "t": 3789,
+   "page": 51
+  },
+  {
+   "t": 3800,
+   "page": 52
+  },
+  {
+   "t": 4016,
+   "page": 53
+  }
+ ],
+ "slides": [
+  {
+   "page": 1,
+   "en": "GDP measurement we talked about on Monday, this is just calculation for a certain year. So you can have it in many different years, for example, you can",
+   "ko": "GDP는 우리가 측정하는 것에 대해 이야기한 월요일에, 이건 그냥 계산일 뿐이에요. 특정 연도에 대한. 그래서 그걸 가질 수 있고 여러 다른 연도에, 예를 들어, 당신은",
+   "pdf": "LNCh2_Slides_180912.pdf",
+   "pdfPage": 1,
+   "slideText": "CHAPTER 2 Measurement 1 Hyung Sun Choi, Kyung Hee University",
+   "lines": {
+    "w": 720,
+    "h": 540,
+    "lines": [
+     {
+      "i": 0,
+      "text": "Hyung Sun Choi, Kyung Hee University 1",
+      "x": 390.74,
+      "y": 24.096000000000025,
+      "w": 275.8620000000001,
+      "h": 16.1736
+     },
+     {
+      "i": 1,
+      "text": "CHAPTER 2",
+      "x": 377.88,
+      "y": 423.36,
+      "w": 126.23940000000005,
+      "h": 32.153999999999996
+     },
+     {
+      "i": 2,
+      "text": "Measurement",
+      "x": 376.68,
+      "y": 486.33599999999996,
+      "w": 146.63124,
+      "h": 29.945999999999998
+     }
+    ]
+   },
+   "segs": [
+    {
+     "t": 7,
+     "page": 1,
+     "en": "GDP measurement we talked about on Monday, this is just calculation for a certain year. So you can have it in many different years, for example, you can",
+     "ko": "GDP는 우리가 측정하는 것에 대해 이야기한 월요일에, 이건 그냥 계산일 뿐이에요. 특정 연도에 대한. 그래서 그걸 가질 수 있고 여러 다른 연도에, 예를 들어, 당신은",
+     "src": "gemini"
+    }
+   ]
+  },
+  {
+   "page": 39,
+   "en": "have the GDP from 2004 and you can go back to 2000 three and have a 2000 two. And the GDP from 2021 to 2020 and all the way back to which is what we're giving you about. Okay? So any questions? No, no so Yeah. Um All right. All right. So today, what we are going to do is we're going to pick up a two year so are we turning years? Doesn't matter, which year it is, just the 2021 or 2021. Maybe it can be 19 625 and 1926 right? We like to capture some of the dynamics of GDP over the years. So that's what we are going to do and then once we So, it's a quantity of it's produced and it has each item has its own prices and that price fluctuates over time, correct? Right? But like I told, Apple is that price when up all the way from 2007 to 2006, yeah, I mean 20 years ago iPhone was relatively cheap, but then now it's more expensive one the the But it's iPhone 15 Ultra that's 1200. So no, 2000. So the price to me is the iPhone can see that the prices of Apple may change over the years, but the quantity of the output, the final changes over the years so overall you have a two different forces and working on the GDP. So you have to think both of them consideration to be calculated. So both Okay. So yeah. That's what it says over here. We like to compare GDP data in different time periods, for many purposes such as economic growth",
+   "ko": "가질 수 있어요 GDP를 2000년도부터 2004년도까지 그리고 다시 돌아갈 수 있어요 2000년도로 그리고 가질 수 있어요 2000년도 것을. 그리고 GDP는 2000년도부터 2021년도까지 그리고 2020년도까지 그리고 쭉 돌아가서 어떤 우리가 당신에게 제공하는 것입니다. 알겠죠? 그래서 질문 있으신가요? 아니요, 아니요, 그래서 네. 음 알겠습니다. 알겠습니다. 그래서 오늘 우리가 할 일은 우리가 2년 전으로 돌아가서 그러니까 우리가 연도를 바꾸는 건가요? 상관없어요, 어떤 연도든 그냥 2021년이나 2021년이면 돼요. 어쩌면 19년일 수도 있고 625 일 수도 있고 1926년일 수도 있죠, 그렇죠? 우리는 어떤 역동성을 포착하고 싶어요. GDP의 몇 년간의 변화를요. 그래서 그게 우리가 할 일이고, 그 다음엔 우리가 그래서, 그게 생산되는 양이고, 그리고 그게 각 항목마다 고유한 가격이 있고 그 가격이 시간이 지남에 따라 변동하잖아요, 그렇죠? 하지만 제가 말씀드렸듯이, 애플은 그게 그 가격이 언제 쭉 올라갔다가 언제부터 2007년부터 언제까지 2006년까지 네, 제 말은 20년 전에 아이폰이 비교적 저렴했는데, 지금은 그렇지 않잖아요. 더 비싸졌죠. 그게 그게 하지만 아이폰은 15 울트라가 그게 1200달러예요. 그래서 아니요, 2000달러예요. 그래서 그 가격이 저한테는 아이폰의 가격이에요. 볼 수 있듯이 가격이 애플의 가격이 변할 수 있어요, 시간이 지나면서, 하지만 그 생산량, 그 최종 변화는 시간이 지나면서 그래서 전반적으로 두 가지 다른 점이 있어요. 두 가지 힘이 있는데, 그게 작용하고 있는 거죠. GDP에. 그래서 생각해야 해요, 둘 다. 고려해야 해요. 계산하기 위해서요. 그래서 둘 다요. 네. 그래서 네. 그게 바로 여기 적혀 있는 거예요. 우리는 비교하는 것을 좋아해요. GDP 데이터를 다른 기간에 비교하는 것을요, 여러 가지 목적을 위해, 예를 들어",
+   "pdf": "LNCh2_Slides_180912.pdf",
+   "pdfPage": 39,
+   "slideText": "2. Nominal & Real GDP and Price Indices 2 - 39 © 2011 Pearson Addison - Wesley. All rights reserved. o Economists would like to compare GDP data in different time periods for many purposes such as economic growth, standard of living, and inflation . o Also, they are interested in the adjustment of the effect of inflation on GDP .",
+   "liveNotes": {
+    "notes": [
+     "서로 다른 시점의 **GDP**(GDP)를 비교하려는 목적: 경제성장(economic growth), 생활수준(standard of living), 인플레이션(inflation) 파악",
+     "**인플레이션**(inflation)이 GDP에 미치는 영향을 조정하는 데 관심",
+     "▶ 아이폰15 울트라 가격을 예로 들어 시점별 가격 변화 설명 (1200달러 → 2000달러)",
+     "▶ GDP에는 **가격 변화**와 **수량 변화**라는 두 가지 힘이 동시에 작용 → 계산 시 둘 다 고려해야 함"
+    ],
+    "summary": "명목·실질 GDP 비교 이유",
+    "exam": [],
+    "board": [],
+    "at": 1789538702037
+   },
+   "marks": [
+    {
+     "line": 5,
+     "type": "",
+     "note": "예시: 아이폰가격 비교"
+    }
+   ],
+   "lines": {
+    "w": 720,
+    "h": 540,
+    "lines": [
+     {
+      "i": 0,
+      "text": "2. Nominal & Real GDP and Price Indices",
+      "x": 49.2,
+      "y": 32.205999999999996,
+      "w": 654.5780640000002,
+      "h": 45.9816
+     },
+     {
+      "i": 1,
+      "text": "o Economists would like to compare GDP data in",
+      "x": 56.328,
+      "y": 141.05,
+      "w": 597.476,
+      "h": 27.599999999999998
+     },
+     {
+      "i": 2,
+      "text": "different time periods for many purposes such as",
+      "x": 81.528,
+      "y": 169.85000000000002,
+      "w": 572.3720000000001,
+      "h": 27.599999999999998
+     },
+     {
+      "i": 3,
+      "text": "economic growth, standard of living, and inflation .",
+      "x": 81.528,
+      "y": 198.64999999999998,
+      "w": 525.884,
+      "h": 27.599999999999998
+     },
+     {
+      "i": 4,
+      "text": "o Also, they are interested in the adjustment of the",
+      "x": 56.328,
+      "y": 270.19,
+      "w": 597.692,
+      "h": 27.599999999999998
+     },
+     {
+      "i": 5,
+      "text": "effect of inflation on GDP .",
+      "x": 81.528,
+      "y": 298.966,
+      "w": 269.890672,
+      "h": 27.627599999999997
+     },
+     {
+      "i": 6,
+      "text": "© 2011 Pearson Addison - Wesley. All rights reserved. 2 - 39",
+      "x": 168.86,
+      "y": 494.13599999999997,
+      "w": 354.36199999999997,
+      "h": 20.7
+     }
+    ]
+   },
+   "segs": [
+    {
+     "t": 20,
+     "page": 39,
+     "en": "have the GDP from 2004 and you can go back to 2000 three and have a 2000 two. And the GDP from 2021 to 2020 and all the way back to which is what we're giving you about. Okay? So any questions? No, no so Yeah. Um All right. All right. So today, what we are going to do is we're going to pick up a two year so are we turning years?",
+     "ko": "가질 수 있어요 GDP를 2000년도부터 2004년도까지 그리고 다시 돌아갈 수 있어요 2000년도로 그리고 가질 수 있어요 2000년도 것을. 그리고 GDP는 2000년도부터 2021년도까지 그리고 2020년도까지 그리고 쭉 돌아가서 어떤 우리가 당신에게 제공하는 것입니다. 알겠죠? 그래서 질문 있으신가요? 아니요, 아니요, 그래서 네. 음 알겠습니다. 알겠습니다. 그래서 오늘 우리가 할 일은 우리가 2년 전으로 돌아가서 그러니까 우리가 연도를 바꾸는",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 59,
+     "page": 39,
+     "en": "Doesn't matter, which year it is, just the 2021 or 2021. Maybe it can be 19 625 and 1926 right? We like to capture some of the dynamics of GDP over the years. So that's what we are going to do and then once we",
+     "ko": "건가요? 상관없어요, 어떤 연도든 그냥 2021년이나 2021년이면 돼요. 어쩌면 19년일 수도 있고 625 일 수도 있고 1926년일 수도 있죠, 그렇죠? 우리는 어떤 역동성을 포착하고 싶어요. GDP의 몇 년간의 변화를요. 그래서 그게 우리가 할 일이고, 그 다음엔 우리가",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 90,
+     "page": 39,
+     "en": "So, it's a quantity of it's produced and it has each item has its own prices and that price fluctuates over time, correct? Right? But like I told, Apple is that price when up all the way from 2007 to 2006, yeah, I mean 20 years ago iPhone was relatively cheap, but then now it's more expensive one the",
+     "ko": "그래서, 그게 생산되는 양이고, 그리고 그게 각 항목마다 고유한 가격이 있고 그 가격이 시간이 지남에 따라 변동하잖아요, 그렇죠? 하지만 제가 말씀드렸듯이, 애플은 그게 그 가격이 언제 쭉 올라갔다가 언제부터 2007년부터 언제까지 2006년까지 네, 제 말은 20년 전에 아이폰이 비교적 저렴했는데, 지금은 그렇지 않잖아요. 더 비싸졌죠. 그게",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 124,
+     "page": 39,
+     "en": "the But it's iPhone 15 Ultra that's",
+     "ko": "그게 하지만 아이폰은 15 울트라가 그게",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 130,
+     "page": 39,
+     "en": "1200. So no, 2000. So the price to me is the iPhone can see that the prices of Apple may change over the years, but the quantity of the output, the final changes over the years so overall you",
+     "ko": "1200달러예요. 그래서 아니요, 2000달러예요. 그래서 그 가격이 저한테는 아이폰의 가격이에요. 볼 수 있듯이 가격이 애플의 가격이 변할 수 있어요, 시간이 지나면서, 하지만 그 생산량, 그 최종 변화는 시간이 지나면서 그래서 전반적으로",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 155,
+     "page": 39,
+     "en": "have a two different forces and working on the GDP. So you have to think both of them consideration to be calculated. So both Okay. So yeah. That's what it says over here. We like to compare GDP data in different time periods, for many purposes such as economic growth",
+     "ko": "두 가지 다른 점이 있어요. 두 가지 힘이 있는데, 그게 작용하고 있는 거죠. GDP에. 그래서 생각해야 해요, 둘 다. 고려해야 해요. 계산하기 위해서요. 그래서 둘 다요. 네. 그래서 네. 그게 바로 여기 적혀 있는 거예요. 우리는 비교하는 것을 좋아해요. GDP 데이터를 다른 기간에 비교하는 것을요, 여러 가지 목적을 위해, 예를 들어",
+     "src": "gemini",
+     "ai": true
+    }
+   ]
+  },
+  {
+   "page": 40,
+   "en": "and the standard of living and inflation and especially interest is in the adjustment of the effect of inflation on GDP. Let me Okay. So yeah. What that means and first I will introduce how to calculate nominal GDP and real GDP. But I guess you already know how to do it. So should we introduce them? principles plus, so anyway, let me review for you. And then I will introduce the measurement of a price level. Okay. Okay. So we'll start with the consumer price index and GDP deflator. I will introduce two price indices. Then we'll give you a quiz about calculating CPI today at the end of the file. And for the formula too much, and then I will introduce the",
+   "ko": "경제 성장이나 생활 수준, 인플레이션 그리고 특히 관심이 있는 것은 조정입니다. 그 효과를 조정하는 것이죠. 인플레이션이 GDP에 미치는 영향에 대해서요. 네. 그래서 네. 그게 무슨 뜻이냐면 그리고 먼저 저는 소개할게요. 명목 GDP를 계산하는 방법을 그리고 실질 GDP를. 하지만 이미 어떻게 계산하는지 아시겠죠. 그럼 할까요? 소개할까요? 그들을? 원칙은 플러스니까, 어쨌든, 어쨌든 제가 복습해 드릴게요. 그리고 나서 측정 방법을 소개할게요. 물가 수준의. 네. 네. 그럼 먼저 소비자 물가 지수와 GDP 디플레이터에 대해 알아볼게요. 제가 소개할게요. 두 가지 물가 지수를요. 그리고 나서 예제를 하나 드릴게요, 계산에 대한 퀴즈를요. 오늘 수업 마지막에 할게요. 그리고 마지막으로 공식이 너무 많아서, 그리고 나서 제가 소개할게요. 문제를",
+   "pdf": "LNCh2_Slides_180912.pdf",
+   "pdfPage": 40,
+   "slideText": "To do list: o Nominal and Real GDP o Measures of the Price Level o Problems with measuring real GDP and the price level",
+   "liveNotes": {
+    "notes": [],
+    "summary": "명목·실질GDP 개요",
+    "exam": [],
+    "board": [],
+    "at": 1789538729975
+   },
+   "marks": [],
+   "lines": {
+    "w": 720,
+    "h": 540,
+    "lines": [
+     {
+      "i": 0,
+      "text": "To do list:",
+      "x": 61.2,
+      "y": 111.95600000000002,
+      "w": 101.285184,
+      "h": 27.627599999999997
+     },
+     {
+      "i": 1,
+      "text": "o Nominal and Real GDP",
+      "x": 61.2,
+      "y": 183.64999999999998,
+      "w": 274.944,
+      "h": 27.599999999999998
+     },
+     {
+      "i": 2,
+      "text": "o Measures of the Price Level",
+      "x": 61.2,
+      "y": 255.19,
+      "w": 322.656,
+      "h": 27.599999999999998
+     },
+     {
+      "i": 3,
+      "text": "o Problems with measuring real GDP and the price level",
+      "x": 61.2,
+      "y": 326.86,
+      "w": 601.176,
+      "h": 27.599999999999998
+     }
+    ]
+   },
+   "segs": [
+    {
+     "t": 188,
+     "page": 40,
+     "en": "and the standard of living and inflation and especially interest is in the adjustment of the effect of inflation on GDP. Let me Okay. So yeah.",
+     "ko": "경제 성장이나 생활 수준, 인플레이션 그리고 특히 관심이 있는 것은 조정입니다. 그 효과를 조정하는 것이죠. 인플레이션이 GDP에 미치는 영향에 대해서요. 네. 그래서 네.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 204,
+     "page": 40,
+     "en": "What that means and first I will introduce how to calculate nominal GDP and real GDP. But I guess you already know how to do it. So should we introduce them? principles plus, so anyway, let me review for you. And then I will introduce the measurement of a price level.",
+     "ko": "그게 무슨 뜻이냐면 그리고 먼저 저는 소개할게요. 명목 GDP를 계산하는 방법을 그리고 실질 GDP를. 하지만 이미 어떻게 계산하는지 아시겠죠. 그럼 할까요? 소개할까요? 그들을? 원칙은 플러스니까, 어쨌든, 어쨌든 제가 복습해 드릴게요. 그리고 나서 측정 방법을 소개할게요. 물가 수준의.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 226,
+     "page": 40,
+     "en": "Okay. Okay. So we'll start with the consumer price index and GDP deflator. I will introduce two price indices. Then we'll give you a quiz about calculating CPI today at the end of the file. And for the formula too much, and then I will introduce the",
+     "ko": "네. 네. 그럼 먼저 소비자 물가 지수와 GDP 디플레이터에 대해 알아볼게요. 제가 소개할게요. 두 가지 물가 지수를요. 그리고 나서 예제를 하나 드릴게요, 계산에 대한 퀴즈를요. 오늘 수업 마지막에 할게요. 그리고 마지막으로 공식이 너무 많아서, 그리고 나서 제가 소개할게요. 문제를",
+     "src": "gemini",
+     "ai": true
+    }
+   ]
+  },
+  {
+   "page": 41,
+   "en": "problems with measuring GDP and the price level. with an article for published in the Fed. in 1997 this year is also still meaningful. So, okay. Okay. And then we start with the notion, what is the price index? Okay. What is it? Price index is the weighted average of the prices of a set of goods and services produced in the economy over a period of time. So let me say price index, it includes all the goods and services produced in the economy. So it's not just a one price like the ice coffee you have or that ice coffee cost. Right? Like 9,000 won. So yeah, that's not the price index. It's the price of coffee. Okay? And then if the price index includes prices of all goods and services, then the price index is a measure of general price level. And then if the consumer price index and GDP deflator are Okay, so if so the general price measure or the general price level, and and given that I know, you can you can now talk about the inflation rate and the inflation rate is the rate of change in the price level from one period of time to another. Okay? So it's more like a persistent rate of change over periods. And inflation rate is by both or macro economists and then monetary authorities because if",
+   "ko": "측정하는 데 있어서의 문제점과 물가 수준에 대해. 기사와 함께요. 공공을 위해 연준에서 발표한. 2000 97년에 올해도 여전히 의미가 있어요. 그래서, 네. 네. 그리고 그런 다음 명목 개념으로 시작할게요, 물가 지수란 무엇인가요? 네. 무엇인가요? 물가 지수는 가중 평균한 가격의 평균입니다. 특정 상품 및 서비스의 가격을 경제에서 생산된 것을 일정 기간 동안 나타낸 것입니다. 그래서 제가 말하자면 물가 지수는 그것은 모든 상품을 포함하고 있으며 경제에서 생산된 것입니다. 그래서 단 하나의 가격이 아니라 아이스 커피처럼 또는 그 아이스 커피 가격이 아니라. 그렇죠? 예를 들어 9,000원처럼요. 그래서 네, 그건 물가 지수가 아니에요. 그건 커피 가격이죠. 알겠죠? 그리고 그 다음엔 만약 그 물가 지수가 모든 상품의 가격을 포함하고 있다면, 그러면 물가 지수는 일반적인 물가 수준의 척도입니다. 그리고 그런 다음 소비자 물가 지수와 GDP 디플레이터가 알겠죠? 그래서 만약 그래서 그 일반적인 물가 수준이나 일반적인 물가 수준은, 그리고 그리고 제가 알다시피, 이제 그에 대해 이야기할 수 있습니다. 인플레이션율과 인플레이션율은 물가 변동률입니다. 한 기간에서 다른 기간으로의 변화율입니다. 알겠죠? 그래서 이건 지속적인 변화율에 가깝습니다. 기간에 걸쳐서요. 그리고 인플레이션율은 그것은 둘 다에 의해 또는 거시경제학에서 그리고 통화 당국이 왜냐하면 만약",
+   "pdf": "LNCh2_Slides_180912.pdf",
+   "pdfPage": 41,
+   "slideText": "o A Price Index : A weighted average of the prices of a set of the goods and services produced in the economy over a period of time . If the price index includes prices of all goods and ser - vices, then that price index is a measure of the ge - neral price level . o The Inflation Rate : The rate of change in the price level from one period of time to another .",
+   "liveNotes": {
+    "notes": [
+     "**물가지수**(Price Index): 일정 기간 동안 경제 내에서 생산된 재화·서비스 가격의 가중평균",
+     "모든 재화·서비스 가격을 포함하면 **일반물가수준**(general price level) 측정치가 됨",
+     "**인플레이션율**(Inflation Rate): 한 시점에서 다른 시점으로의 물가수준 변화율",
+     "▶ 아이스커피 한 잔(9,000원) 같은 단일 가격이 아니라 모든 재화·서비스 가격을 포함한다고 예시로 설명",
+     "▶ **CPI**와 **GDP디플레이터**(GDP deflator)가 일반물가수준을 나타내는 대표적 지표라고 언급",
+     "▶ 인플레이션율은 거시경제학자와 통화당국(monetary authorities) 모두가 사용하는 지표라고 설명"
+    ],
+    "summary": "물가지수 정의",
+    "exam": [],
+    "board": [],
+    "at": 1789538909890
+   },
+   "marks": [
+    {
+     "line": 0,
+     "type": "",
+     "note": "예시: 아이스커피 9천원≠물가지수"
+    }
+   ],
+   "lines": {
+    "w": 720,
+    "h": 540,
+    "lines": [
+     {
+      "i": 0,
+      "text": "o A Price Index : A weighted average of the prices of a",
+      "x": 67.2,
+      "y": 104.99599999999998,
+      "w": 597.737344,
+      "h": 27.627599999999997
+     },
+     {
+      "i": 1,
+      "text": "set of the goods and services produced in the",
+      "x": 92.424,
+      "y": 133.85000000000002,
+      "w": 572.356,
+      "h": 27.599999999999998
+     },
+     {
+      "i": 2,
+      "text": "economy over a period of time .",
+      "x": 92.424,
+      "y": 162.64999999999998,
+      "w": 329.75800000000004,
+      "h": 27.599999999999998
+     },
+     {
+      "i": 3,
+      "text": "If the price index includes prices of all goods and ser -",
+      "x": 93.864,
+      "y": 217.346,
+      "w": 565.955992,
+      "h": 27.627599999999997
+     },
+     {
+      "i": 4,
+      "text": "vices, then that price index is a measure of the ge -",
+      "x": 93.864,
+      "y": 253.26999999999998,
+      "w": 536.1879999999999,
+      "h": 27.599999999999998
+     },
+     {
+      "i": 5,
+      "text": "neral price level .",
+      "x": 93.864,
+      "y": 289.03,
+      "w": 174.578,
+      "h": 27.599999999999998
+     },
+     {
+      "i": 6,
+      "text": "o The Inflation Rate : The rate of change in the price",
+      "x": 67.2,
+      "y": 360.7,
+      "w": 597.628,
+      "h": 27.599999999999998
+     },
+     {
+      "i": 7,
+      "text": "level from one period of time to another .",
+      "x": 92.424,
+      "y": 389.5,
+      "w": 423.028,
+      "h": 27.599999999999998
+     }
+    ]
+   },
+   "segs": [
+    {
+     "t": 250,
+     "page": 41,
+     "en": "problems with measuring GDP and the price level. with an article for published in the Fed. in 1997 this year is also still meaningful. So, okay. Okay. And then we start with the notion, what is the price index? Okay. What is it? Price index is the weighted average of the prices of a set of goods and services produced in the economy over a period of time.",
+     "ko": "측정하는 데 있어서의 문제점과 물가 수준에 대해. 기사와 함께요. 공공을 위해 연준에서 발표한. 2000 97년에 올해도 여전히 의미가 있어요. 그래서, 네. 네. 그리고 그런 다음 명목 개념으로 시작할게요, 물가 지수란 무엇인가요? 네. 무엇인가요? 물가 지수는 가중 평균한 가격의 평균입니다. 특정 상품 및 서비스의 가격을 경제에서 생산된 것을 일정 기간 동안 나타낸 것입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 285,
+     "page": 41,
+     "en": "So let me say price index, it includes all the goods and services produced in the economy. So it's not just a one price like the ice coffee you have or that ice coffee cost. Right? Like 9,000 won. So yeah, that's not the price index. It's the price of coffee. Okay?",
+     "ko": "그래서 제가 말하자면 물가 지수는 그것은 모든 상품을 포함하고 있으며 경제에서 생산된 것입니다. 그래서 단 하나의 가격이 아니라 아이스 커피처럼 또는 그 아이스 커피 가격이 아니라. 그렇죠? 예를 들어 9,000원처럼요. 그래서 네, 그건 물가 지수가 아니에요. 그건 커피 가격이죠. 알겠죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 313,
+     "page": 41,
+     "en": "And then if the price index includes prices of all goods and services, then the price index is a measure of general price level. And then if the consumer price index and GDP deflator are Okay, so if so the general price measure or the general price level, and and given that I know, you can you can now talk about the inflation",
+     "ko": "그리고 그 다음엔 만약 그 물가 지수가 모든 상품의 가격을 포함하고 있다면, 그러면 물가 지수는 일반적인 물가 수준의 척도입니다. 그리고 그런 다음 소비자 물가 지수와 GDP 디플레이터가 알겠죠? 그래서 만약 그래서 그 일반적인 물가 수준이나 일반적인 물가 수준은, 그리고 그리고 제가 알다시피, 이제 그에 대해 이야기할 수 있습니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 342,
+     "page": 41,
+     "en": "rate and the inflation rate is the rate of change in the price level from one period of time to another. Okay? So it's more like a persistent rate of change over periods. And inflation rate is by both or macro economists and then monetary authorities because if",
+     "ko": "인플레이션율과 인플레이션율은 물가 변동률입니다. 한 기간에서 다른 기간으로의 변화율입니다. 알겠죠? 그래서 이건 지속적인 변화율에 가깝습니다. 기간에 걸쳐서요. 그리고 인플레이션율은 그것은 둘 다에 의해 또는 거시경제학에서 그리고 통화 당국이 왜냐하면 만약",
+     "src": "gemini",
+     "ai": true
+    }
+   ]
+  },
+  {
+   "page": 42,
+   "en": "calculate inflation rate. So I will find out the nation is to calculate inflation. Okay? And so let's example suppose that sample example, so question number to get to the point. Let's find the inflation rate. Okay? So here's an example. We already have the table in the book. So then before you go down, let me explain the notation just so that I think people so okay, so this is the with goods and services produced in a hypothetical economy. So how many goods and services produced in this economy? Just goods and services in very small economy. There are only two goods, the economy with the apple and orange. Okay? And we only take care of couple of years. Year one and year two. Uh to share. Okay, so let's example. So let us know what you have. And in year one, we divided into quantity and price and produce two quantity and price. So here is the situation. So when you see the capital Q, the subscript one, that is the year quantity. So you have small letter P and that's the price. That's an apple. So Q1A Q1B that's the quantity of an apple in year one. Okay? And that's 50 of them. And do you get this Q1B what that would be? quantity of in year one. And we have it's a 100. And the price is consistent, so you have a subscript one, that's a year one and the subscript that means apple. So Q1A that's the price of an apple in year one. per unit. So it's $1. So one apple costs $1. And so we'll do the same, orange cost uh 8. And if we get to year two, Q2 to the A, that's the quantity of an apple produced in I think I know what you're talking about. So, you know, people, right? What do we have? that we have on one thing? on one way, but we need to evaluate GDP. We need to different ways to for example, here, so And I say y = c + i + g + nx, right? And then we get to the uh for example, the product of the post was GDP value of GDP. Okay, so 3.5 million and what was the unit? So the dollars, right? So we're not saying so the Y on on Monday, this was what? Was the nominal GDP, by saying it, but here today, it's different because the real quantity and nominal prices are both So so here we have to figure it out how to calculate GDP when we have a separate nominal price. So so here on like we should have some price index since some of it to make the location consistent with the Y on Monday. Okay? So so Yeah. So on Monday, when we had a Y the Y already had a price in it. But today, we're going to separate the quantity and the real which uh real quantity and nominal prices separate. And then instead of a Y, we are using Okay. So the equation should be, right? So we're thinking the Y we see from yesterday is the GDP we calculated from two times Q. Okay? So the equation comes and goes change over the years and depending on the questions, they changes, so so the whole point is when you see capital Y, it's the same thing, okay? Yeah. So 2.5 is going to be done. All right, so then how would you calculate nominal GDP? So the nominal GDP is basically you pick the quantity produced in your one and times the price of all that item in year one. So it's very straightforward. So so yeah. So in year one, you can calculate nominal GDP by multiplying P1 to the times Q1 to the A, which is what? So 30 units times $1 each and plus you will find out P1 to the Q1 to the that's the price of oranges per P 0.8 and 100 units produced. So if you calculate what's the value 50 times 1 and 50 and 100 times 8 cents is 8 dollars, you sum them up, you get 130. So that's the typical nominal GDP measure. And it's And for year two nominal GDP, straight forward, like what you have so you multiply the units some points off? So how about that? And that's it. And that's Does anyone need a pen? Yeah, you can talk and check your check GPT cloud or whatever. AI software can see but you have to show me your work. Yeah. Actually, show me your work. So right? Show me your work, not just the numbers. Explain how you did that. So show me. Can you print it? I mean this is everything that I'm going to see. You can write in English or Finally, we we stop over here. Well, you don't have to do a whole just the second row. Show me how to get the 58. 4 and show me how to get 100 and show me how you get the 71.2. percent. So increase by setting this year as the year two. So okay? It should be simple enough. You allowed to use the TI, you're allowed to use anyone want to do the Google? classes? Okay, you can use this. But show me who But uh So that's important part is right now is main is 19. number, yeah. Otherwise it's useless. So I don't know what to do with that. I'll just keep",
+   "ko": "알려드릴게요. 인플레이션율을. 그래서 저는 그 나라의 인플레이션율을 계산할 것입니다. 알겠죠? 그리고 그래서 예를 들어 가정해 봅시다. 예를 들어 샘플 예시로, 그래서 질문 번호 2번은 요점으로 넘어가서. 이제 인플레이션율을 구해봅시다. 알겠죠? 그래서 여기 예시가 있습니다. 이미 표가 교재에 있습니다. 그래서 그러면 넘어가기 전에 제가 먼저 설명해 드릴게요, 표기법을. 그냥 그래서 사람들이 그래서 알겠죠, 그래서 이건 바로 와 함께 상품과 서비스가 생산된 가상의 경제입니다. 그래서 얼마나 많은 상품과 서비스가 생산되었는지 이 경제에서? 그냥 상품과 서비스가 매우 적은 경제입니다. 두 가지 상품이 있는데, 그 경제에는 사과와 오렌지가 있습니다. 알겠죠? 그리고 우리는 몇 가지에만 신경 씁니다. 1년 차와 2년 차. 어, 공유할게요. 알겠죠, 그래서 예를 들어볼게요. 그래서 알려주세요. 무엇을 가지고 있는지. 그리고 1년 차에는, 우리는 수량으로 나누고 가격으로 나누고 두 가지 수량과 가격을 생산합니다. 그래서 여기는 상황입니다. 그래서 자본을 볼 때, 아래 첨자는 1이고, 그건 연도를 나타냅니다. 그래서 당신은 소문자 P를 가지고 있고, 그건 가격입니다. 그건 사과입니다. 그래서 Q1A Q1B 그건 수량입니다. 사과의 1년 차에. 알겠죠? 그리고 그건 50개입니다. 그리고 이거 이해되시나요? Q1B 그게 뭔지? 수량 의 1년 차에. 그리고 우리는 그건 100입니다. 그리고 가격은 가격은 일정하고, 그래서 아래 첨자 1, 그건 1년 차이고 아래 첨자 그건 사과를 의미합니다. 그래서 Q1A 그건 사과의 가격입니다. 1년 차에. 단위당. 그래서 1달러입니다. 그래서 사과 한 개에 1달러입니다. 그리고 우리는 똑같이 할 거예요, 그래서 오렌지 가격은 어 8달러입니다. 그리고 우리가 2년 차에 가면, Q2 A는, 그건 사과의 수량입니다. 2년 차에 무슨 말씀인지 아는 것 같아요. 그래서, 아시다시피, 사람들은, 그렇죠? 우리한테 뭐가 있죠? 우리가 한 가지 가지고 있는 게 뭐죠? 그 한 가지 방법으로, 하지만 우리는 평가해야 해요 GDP를. 우리는 다른 방법으로 예를 들어, 여기서는, 그래서 그리고 저는 y = c + i + g + nx라고 말해요, 그렇죠? 그리고 나서 우리는 어 예를 들어, 그 제품의 생산은 GDP 가치였어요. 좋아요, 그래서 3.5 백만이고 단위는 뭐였죠? 그래서 달러였죠, 그렇죠? 그래서 우리는 말하지 않아요 그래서 Y는 에 대해 월요일에, 이게 뭐였죠? 그건 명목 GDP였어요, 그렇게 말함으로써, 하지만 여기서는 오늘, 그건 달라요 왜냐하면 실질 수량과 명목 가격이 둘 다 그래서 그래서 여기서는 우리가 알아내야 해요 어떻게 계산하는지 GDP를 우리가 가지고 있을 때 별도의 명목 가격을. 그래서 그래서 여기서는 에 대해 우리가 어떤 것을 가져야 해요, 가격 인덱스, 왜냐하면 그 중 일부는 하기 위해서 위치를 일관성 있게 하기 위해 Y는 월요일에. 알겠죠? 그래서 그래서 네. 그래서 월요일에, 우리가 Y를 가졌을 때 Y는 이미 가격이 포함되어 있었어요. 하지만 오늘 우리는 수량과 실질 을 분리할 거예요. 어, 실질 수량과 명목 가격을 분리해요. 그리고 나서 대신에 Y가 아니라, 우리는 사용하고 있어요 알겠죠? 그래서 방정식은 이렇게 되어야 해요. 그렇죠? 그래서 우리는 생각하고 있어요, 우리가 보는 Y는 어제부터 인데 그건 우리가 계산한 GDP예요. 두 번의 Q에서. 알겠죠? 그래서 방정식은 이렇게 돼요. 그리고 시간이 지나면서 변해요. 그리고 질문에 따라, 그것들은 변하니까, 그래서 그래서 요점은 이 자본 Y를 볼 때, 그건 같은 거예요, 알겠죠? 네. 그래서 2.5 는 완료될 거예요. 좋아요, 그럼 어떻게 명목 GDP를 계산할까요? 그래서 명목 GDP는 기본적으로 기를 선택하는 거예요. 당신의 한 가지에서 생산된 것과 곱하기 가격을 모든 그 항목의 1년 차에. 그래서 매우 간단해요. 그래서 그래서 네. 그래서 1년 차에는, 명목 GDP를 계산할 수 있어요 어떻게? 곱해서 P1을 Q1에 곱하고 A에 곱해서, 그게 뭐죠? 그래서 30단위 곱하기 1달러 그리고 더하기 여러분은 P1을 Q1에 곱한 그게 바로 가격이에요. 오렌지당 0.8달러 그리고 100단위 생산된 것. 그래서 계산하면 가치가 얼마인지 50 곱하기 1 그리고 50달러 그리고 100 곱하기 8센트 는 8 달러, 합치면 130 입니다. 그래서 그게 일반적인 명목 GDP 측정입니다. 그리고 그건 그리고 2년 차에는 명목 GDP가 간단해요. 마치 여러분이 가진 것처럼 그래서 단위를 곱하고 있을까요? 점수를 좀 깎아서요. 어때요? 그리고 그게 다예요. 그리고 그게 다예요. 혹시 펜 필요한 사람 있나요? 네, 말씀하셔도 되고 확인하셔도 돼요. 챗GPT 클라우드나 뭐 그런 거요. AI 소프트웨어는 볼 수 있지만 여러분은 저한테 보여줘야 해요. 네. 사실, 저한테 보여주세요. 그래서 그렇죠? 작업을 보여주세요, 숫자만 말고. 설명해 보세요 어떻게 했는지. 그래서 보여주세요. 인쇄할 수 있을까요? 제 말은 이게 제가 한 전부예요. 제가 볼 건. 적을 수 있어요, 영어로 마침내, 우리는 여기서 멈췄어요. 음, 꼭 그렇게 다 할 필요는 없어요. 그냥 두 번째 줄만 보여주세요. 어떻게 58.4를 얻는지 보여주고, 어떻게 100을 얻는지 보여주세요. 그리고 어떻게 7을 얻는지 보여주세요. 퍼센트. 그래서 7% 증가로 설정해서 올해를 2년차로 하세요. 알겠죠? 이건 충분히 간단할 거예요. 당신은 TI를 사용할 수 있고, 사용할 수 있어요. 누가 구글을 해볼래요? 수업을? 알았어요, 이거 사용해도 돼요. 하지만 누가 보여주세요. 하지만 어 그래서 중요한 부분은 지금 메인 이 19라는 거예요. 네, 맞아요. 그렇지 않으면 그건 쓸모없어요. 그래서 어떻게 해야 할지 모르겠어요. 그냥 계속",
+   "pdf": "LNCh2_Slides_180912.pdf",
+   "pdfPage": 42,
+   "slideText": "Example of Nominal & Real GDP",
+   "liveNotes": {
+    "notes": [],
+    "summary": "명목·실질GDP 예제",
+    "exam": [],
+    "board": [],
+    "at": 1789541596733
+   },
+   "marks": [
+    {
+     "line": 0,
+     "type": "",
+     "note": "예제: 사과·오렌지 2재화 경제"
+    }
+   ],
+   "lines": {
+    "w": 720,
+    "h": 540,
+    "lines": [
+     {
+      "i": 0,
+      "text": "Example of Nominal & Real GDP",
+      "x": 55.2,
+      "y": 30.739999999999988,
+      "w": 528.5509200000001,
+      "h": 45.954
+     }
+    ]
+   },
+   "segs": [
+    {
+     "t": 404,
+     "page": 42,
+     "en": "calculate inflation rate. So I will find out the nation is to calculate inflation. Okay? And so let's example suppose that sample example, so question number to get to the point. Let's find the inflation rate. Okay? So here's an example. We already have the table in the book.",
+     "ko": "알려드릴게요. 인플레이션율을. 그래서 저는 그 나라의 인플레이션율을 계산할 것입니다. 알겠죠? 그리고 그래서 예를 들어 가정해 봅시다. 예를 들어 샘플 예시로, 그래서 질문 번호 2번은 요점으로 넘어가서. 이제 인플레이션율을 구해봅시다. 알겠죠? 그래서 여기 예시가 있습니다. 이미 표가 교재에 있습니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 427,
+     "page": 42,
+     "en": "So then before you go down, let me explain the notation just so that I think people so okay, so this is the with goods and services produced in a hypothetical",
+     "ko": "그래서 그러면 넘어가기 전에 제가 먼저 설명해 드릴게요, 표기법을. 그냥 그래서 사람들이 그래서 알겠죠, 그래서 이건 바로 와 함께 상품과 서비스가 생산된 가상의",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 445,
+     "page": 42,
+     "en": "economy. So how many goods and services produced in this economy? Just",
+     "ko": "경제입니다. 그래서 얼마나 많은 상품과 서비스가 생산되었는지 이 경제에서? 그냥",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 452,
+     "page": 42,
+     "en": "goods and services in very small economy. There are only two goods, the economy with the apple and orange. Okay? And we only take care of",
+     "ko": "상품과 서비스가 매우 적은 경제입니다. 두 가지 상품이 있는데, 그 경제에는 사과와 오렌지가 있습니다. 알겠죠? 그리고 우리는 몇 가지에만",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 467,
+     "page": 42,
+     "en": "couple of years. Year one and year two.",
+     "ko": "신경 씁니다. 1년 차와 2년 차.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 473,
+     "page": 42,
+     "en": "Uh to share. Okay, so let's example. So let us know what you have. And in year one, we divided into quantity and price and produce two quantity and price. So here is the situation. So when you",
+     "ko": "어, 공유할게요. 알겠죠, 그래서 예를 들어볼게요. 그래서 알려주세요. 무엇을 가지고 있는지. 그리고 1년 차에는, 우리는 수량으로 나누고 가격으로 나누고 두 가지 수량과 가격을 생산합니다. 그래서 여기는 상황입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 499,
+     "page": 42,
+     "en": "see the capital Q, the subscript one, that is the year quantity. So you have small letter P and that's the price. That's an apple. So Q1A Q1B that's the quantity of an apple in year one. Okay? And that's 50 of them. And do you get this Q1B what that would be? quantity of in year one. And we have it's a 100.",
+     "ko": "그래서 자본을 볼 때, 아래 첨자는 1이고, 그건 연도를 나타냅니다. 그래서 당신은 소문자 P를 가지고 있고, 그건 가격입니다. 그건 사과입니다. 그래서 Q1A Q1B 그건 수량입니다. 사과의 1년 차에. 알겠죠? 그리고 그건 50개입니다. 그리고 이거 이해되시나요? Q1B 그게 뭔지? 수량 의 1년 차에. 그리고 우리는 그건 100입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 526,
+     "page": 42,
+     "en": "And the price is consistent, so you have a subscript one, that's a year one and the subscript that means apple. So",
+     "ko": "그리고 가격은 가격은 일정하고, 그래서 아래 첨자 1, 그건 1년 차이고 아래 첨자 그건 사과를 의미합니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 539,
+     "page": 42,
+     "en": "Q1A that's the price of an apple in year one. per unit. So it's $1. So one apple costs $1. And so we'll do the same, orange cost uh 8. And if we get to year two, Q2 to the A, that's the quantity of an apple produced in",
+     "ko": "그래서 Q1A 그건 사과의 가격입니다. 1년 차에. 단위당. 그래서 1달러입니다. 그래서 사과 한 개에 1달러입니다. 그리고 우리는 똑같이 할 거예요, 그래서 오렌지 가격은 어 8달러입니다. 그리고 우리가 2년 차에 가면, Q2 A는, 그건 사과의 수량입니다. 2년 차에",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 574,
+     "page": 42,
+     "en": "I think I know what you're talking about. So, you know, people, right? What do we have? that we have on one thing? on one way, but we need to evaluate GDP. We need to different ways to for example, here, so",
+     "ko": "무슨 말씀인지 아는 것 같아요. 그래서, 아시다시피, 사람들은, 그렇죠? 우리한테 뭐가 있죠? 우리가 한 가지 가지고 있는 게 뭐죠? 그 한 가지 방법으로, 하지만 우리는 평가해야 해요 GDP를. 우리는 다른 방법으로 예를 들어, 여기서는, 그래서",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 603,
+     "page": 42,
+     "en": "And I say y = c + i + g + nx, right? And then we get to the uh for example, the product of the post was GDP value of GDP. Okay, so 3.5 million and what was the unit? So the dollars, right? So we're not saying so the Y on on Monday, this was what? Was the nominal GDP, by saying it, but here today, it's different because the real quantity and nominal prices are both So so here we have to figure it out how to calculate GDP when we have a separate nominal price.",
+     "ko": "그리고 저는 y = c + i + g + nx라고 말해요, 그렇죠? 그리고 나서 우리는 어 예를 들어, 그 제품의 생산은 GDP 가치였어요. 좋아요, 그래서 3.5 백만이고 단위는 뭐였죠? 그래서 달러였죠, 그렇죠? 그래서 우리는 말하지 않아요 그래서 Y는 에 대해 월요일에, 이게 뭐였죠? 그건 명목 GDP였어요, 그렇게 말함으로써, 하지만 여기서는 오늘, 그건 달라요 왜냐하면 실질 수량과 명목 가격이 둘 다 그래서 그래서 여기서는 우리가 알아내야 해요 어떻게 계산하는지 GDP를 우리가 가지고 있을 때 별도의 명목 가격을.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 651,
+     "page": 42,
+     "en": "So so here on like we should have some price index since some of it to make the location consistent with the Y on Monday. Okay? So so Yeah. So on Monday, when we had a Y the Y already had a price in it. But today, we're going to separate the quantity and the real which",
+     "ko": "그래서 그래서 여기서는 에 대해 우리가 어떤 것을 가져야 해요, 가격 인덱스, 왜냐하면 그 중 일부는 하기 위해서 위치를 일관성 있게 하기 위해 Y는 월요일에. 알겠죠? 그래서 그래서 네. 그래서 월요일에, 우리가 Y를 가졌을 때 Y는 이미 가격이 포함되어 있었어요. 하지만 오늘 우리는 수량과 실질 을 분리할 거예요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 683,
+     "page": 42,
+     "en": "uh real quantity and nominal prices separate. And then instead of a Y, we are using Okay. So the equation should be, right?",
+     "ko": "어, 실질 수량과 명목 가격을 분리해요. 그리고 나서 대신에 Y가 아니라, 우리는 사용하고 있어요 알겠죠? 그래서 방정식은 이렇게 되어야 해요. 그렇죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 699,
+     "page": 42,
+     "en": "So we're thinking the Y we see from yesterday is the GDP we calculated from two times Q. Okay? So the equation comes and goes change over the years and depending on the questions, they changes, so so the whole point is when you see capital Y, it's the same thing, okay?",
+     "ko": "그래서 우리는 생각하고 있어요, 우리가 보는 Y는 어제부터 인데 그건 우리가 계산한 GDP예요. 두 번의 Q에서. 알겠죠? 그래서 방정식은 이렇게 돼요. 그리고 시간이 지나면서 변해요. 그리고 질문에 따라, 그것들은 변하니까, 그래서 그래서 요점은 이 자본 Y를 볼 때, 그건 같은 거예요, 알겠죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 728,
+     "page": 42,
+     "en": "Yeah. So 2.5 is going to be done.",
+     "ko": "네. 그래서 2.5 는 완료될 거예요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 737,
+     "page": 42,
+     "en": "All right, so then how would you calculate nominal GDP? So the nominal GDP is basically you pick the quantity produced in your one and times the price of all that item in year one. So it's very straightforward. So so yeah. So in year one, you can calculate nominal GDP by multiplying P1 to the times Q1 to the A, which is what?",
+     "ko": "좋아요, 그럼 어떻게 명목 GDP를 계산할까요? 그래서 명목 GDP는 기본적으로 기를 선택하는 거예요. 당신의 한 가지에서 생산된 것과 곱하기 가격을 모든 그 항목의 1년 차에. 그래서 매우 간단해요. 그래서 그래서 네. 그래서 1년 차에는, 명목 GDP를 계산할 수 있어요 어떻게? 곱해서 P1을 Q1에 곱하고 A에 곱해서, 그게 뭐죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 774,
+     "page": 42,
+     "en": "So 30 units times $1 each and plus you will find out P1 to the Q1 to the that's the price of oranges per P 0.8 and 100 units produced. So if you calculate what's the value 50 times 1 and 50 and 100 times 8 cents is 8 dollars, you sum them up, you get 130. So that's the typical nominal GDP measure.",
+     "ko": "그래서 30단위 곱하기 1달러 그리고 더하기 여러분은 P1을 Q1에 곱한 그게 바로 가격이에요. 오렌지당 0.8달러 그리고 100단위 생산된 것. 그래서 계산하면 가치가 얼마인지 50 곱하기 1 그리고 50달러 그리고 100 곱하기 8센트 는 8 달러, 합치면 130 입니다. 그래서 그게 일반적인 명목 GDP 측정입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 802,
+     "page": 42,
+     "en": "And it's And for year two nominal GDP, straight forward, like what you have so you multiply the units",
+     "ko": "그리고 그건 그리고 2년 차에는 명목 GDP가 간단해요. 마치 여러분이 가진 것처럼 그래서 단위를 곱하고",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2923,
+     "page": 42,
+     "en": "some points off? So how about that? And that's it. And that's Does anyone need a pen?",
+     "ko": "있을까요? 점수를 좀 깎아서요. 어때요? 그리고 그게 다예요. 그리고 그게 다예요. 혹시 펜 필요한 사람 있나요?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2937,
+     "page": 42,
+     "en": "Yeah, you can talk and check your check GPT cloud or whatever. AI software can see but you have to show me your work. Yeah. Actually, show me your work.",
+     "ko": "네, 말씀하셔도 되고 확인하셔도 돼요. 챗GPT 클라우드나 뭐 그런 거요. AI 소프트웨어는 볼 수 있지만 여러분은 저한테 보여줘야 해요. 네. 사실, 저한테 보여주세요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2954,
+     "page": 42,
+     "en": "So right?",
+     "ko": "그래서 그렇죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2960,
+     "page": 42,
+     "en": "Show me your work, not just the numbers. Explain how you did that. So show me. Can you print",
+     "ko": "작업을 보여주세요, 숫자만 말고. 설명해 보세요 어떻게 했는지. 그래서 보여주세요. 인쇄할 수",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2971,
+     "page": 42,
+     "en": "it? I mean this is everything that I'm going to see. You can write in English or",
+     "ko": "있을까요? 제 말은 이게 제가 한 전부예요. 제가 볼 건. 적을 수 있어요, 영어로",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2985,
+     "page": 42,
+     "en": "Finally, we we stop over here.",
+     "ko": "마침내, 우리는 여기서 멈췄어요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2997,
+     "page": 42,
+     "en": "Well, you don't have to do a whole just the second row. Show me how to get the 58. 4 and show me how to get 100 and show me how you get the 71.2. percent. So increase by setting this year as the year two. So okay?",
+     "ko": "음, 꼭 그렇게 다 할 필요는 없어요. 그냥 두 번째 줄만 보여주세요. 어떻게 58.4를 얻는지 보여주고, 어떻게 100을 얻는지 보여주세요. 그리고 어떻게 7을 얻는지 보여주세요. 퍼센트. 그래서 7% 증가로 설정해서 올해를 2년차로 하세요. 알겠죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3020,
+     "page": 42,
+     "en": "It should be simple enough. You allowed to use the TI, you're allowed to use anyone want to do the Google? classes? Okay, you can use this. But show me who",
+     "ko": "이건 충분히 간단할 거예요. 당신은 TI를 사용할 수 있고, 사용할 수 있어요. 누가 구글을 해볼래요? 수업을? 알았어요, 이거 사용해도 돼요. 하지만 누가 보여주세요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3068,
+     "page": 42,
+     "en": "But uh",
+     "ko": "하지만 어",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3115,
+     "page": 42,
+     "en": "So that's important part is right now is main is 19. number, yeah. Otherwise it's useless. So I don't know what to do with that. I'll just keep",
+     "ko": "그래서 중요한 부분은 지금 메인 이 19라는 거예요. 네, 맞아요. 그렇지 않으면 그건 쓸모없어요. 그래서 어떻게 해야 할지 모르겠어요. 그냥 계속",
+     "src": "gemini",
+     "ai": true
+    }
+   ]
+  },
+  {
+   "page": 43,
+   "en": "the inflation rate is out of control, then the whole economy can be destroyed. And then so so we make we pay our attention to control the inflation rate over the course of time. Okay? And okay, so then okay. Let me just leave it at that. So next, I'm going to do today is we introduce how to calculate nominal and real GDP and introduce a couple of price measures, like price indices, and then we'll tell you how to times 1. 5 plus 120 units times 1.6 that's what you have here and you got the number 290. So okay? So far so good,",
+   "ko": "인플레이션율이 통제 불능 상태라면 그리고 그러면 전체 경제가 파괴될 수 있습니다. 그리고 그래서 그래서 우리는 만듭니다. 우리는 주의를 기울입니다. 인플레이션을 통제하기 위해 시간이 지남에 따라. 알겠죠? 그리고 알겠죠, 그래서 알겠죠. 그냥 여기서 끝낼게요. 그래서 다음에는 오늘 할 일은 바로 어떻게 계산하는지 명목 및 실질 GDP를 소개하고 몇 가지 물가 지수를 소개할게요, 예를 들어 물가 지수와 그리고 어떻게 계산하는지 1.3 달러를 곱하고 더하기 120 단위 곱하기 1.6달러 그게 여러분이 가진 것이고 그래서 290이라는 숫자가 나왔어요. 알겠죠? 지금까지는 괜찮아요,",
+   "pdf": "LNCh2_Slides_180912.pdf",
+   "pdfPage": 43,
+   "slideText": "",
+   "liveNotes": {
+    "notes": [
+     "**명목GDP**(nominal GDP) 계산: 수량×가격 곱해서 합산",
+     "120단위 × 1.6 항목 포함, 합계 290 산출"
+    ],
+    "summary": "명목GDP 계산예시",
+    "exam": [],
+    "board": [
+     "120×1.6 + (앞항목)×1.5 = 290"
+    ],
+    "at": 1789539327050
+   },
+   "marks": [],
+   "lines": {
+    "w": 720,
+    "h": 540,
+    "lines": []
+   },
+   "segs": [
+    {
+     "t": 364,
+     "page": 43,
+     "en": "the inflation rate is out of control, then the whole economy can be destroyed. And then so so we make we pay our attention to control the inflation rate over the course of time. Okay? And okay, so then okay. Let me just leave it at that. So next, I'm going to do today is we introduce how to calculate nominal and real GDP and introduce a couple of price measures, like price indices, and then we'll tell you how to",
+     "ko": "인플레이션율이 통제 불능 상태라면 그리고 그러면 전체 경제가 파괴될 수 있습니다. 그리고 그래서 그래서 우리는 만듭니다. 우리는 주의를 기울입니다. 인플레이션을 통제하기 위해 시간이 지남에 따라. 알겠죠? 그리고 알겠죠, 그래서 알겠죠. 그냥 여기서 끝낼게요. 그래서 다음에는 오늘 할 일은 바로 어떻게 계산하는지 명목 및 실질 GDP를 소개하고 몇 가지 물가 지수를 소개할게요, 예를 들어 물가 지수와 그리고 어떻게 계산하는지",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 812,
+     "page": 43,
+     "en": "times 1. 5 plus 120 units times 1.6 that's what you have here and you got the number 290. So okay? So far so good,",
+     "ko": "1.3 달러를 곱하고 더하기 120 단위 곱하기 1.6달러 그게 여러분이 가진 것이고 그래서 290이라는 숫자가 나왔어요. 알겠죠? 지금까지는 괜찮아요,",
+     "src": "gemini",
+     "ai": true
+    }
+   ]
+  },
+  {
+   "page": 44,
+   "en": "not fancy. Nothing you know, tricky. And now the question is, Yeah. Now, well, if you uh I don't want to mess around with the P also. But If you look at the calculation the formula, when we find out nominal GDP, what would you do? So let's say I equals one or two depending on the year, what would you do? Yeah. So year one I price of an apple times year I times the quantity of apples plus year I price of orange year I times the quantity of oranges. That's how you find the nominal GDP, correct? Yeah. But the question is, What happens to the price of an apple and price of an orange over the years? Uh as you see from the table, the price of an apple used to be 1 in year one, but it becomes 1.5 in year two. So what happened? 25 cents expensive now. And on the way, the quantity of apples produced in this economy increased by 30 units. So it's not like a one to one increase. Somehow apple produced 30 units, but the price increased by 0.25 dollars. And if you look at the oranges, it used to produce 100 units in year one, but now 20 more units produced in year two. However, the price of oranges somehow fell from 0.8 cents, 0.8 dollars in year one, to 1. 6 dollars in year two. So, we have so much different forces going on between the quantity of produced apples and oranges and the prices of apples and oranges over these two years. So, in other words, the driving forces in this economy is So, in the observed we have the figure out when you calculate the nominal GDP or the GDP in that matter, we like to income force forces of the change of GDP was an income from a change of prices or a change of the quantity produced. economy. So, it makes sense. So, yeah. Okay. So, This is what it means. So, the question would be how much of this increase in nominal GDP is accounted for by inflation and how much by a increase in the quantity of the good produced. Okay? So, this is what I mean by the so this is the point of the exercise and the change of the and the quantity itself is also so and we would like to know how much of this increase in GDP is accounted for by the return was Okay. Uh and I guess the this is it's a very straightforward. If you want to find out the percentage change in nominal GDP from year one to year two, we simply have a nominal GDP 2 divided by Uh, yeah, but time the idea has passed it, you know. It should be like this. Now, I mean, obviously too, I mean, that's not obviously what like to figure out the change is over to and what would be the baseline that the first year is. And then the uh But we just fractions so you can't simplify it down to but by once point once Yeah. Yeah. So okay. So let me move on. So So GDP",
+   "ko": "별거 아니에요. 아무것도 까다롭지 않아요. 그리고 이제 질문은, 네. 자, 그럼, 만약 어, 저는 장난치고 싶지 않아요, P도. 하지만 만약 계산을 보면 공식이, 우리가 명목을 찾을 때, 어떻게 하시겠어요? 그래서 예를 들어 제가 1이라고 하거나 2라고 할게요, 연도에 따라, 어떻게 하시겠어요? 네. 그래서 1년 차에는 오렌지 가격 곱하기 연도 I 곱하기 오렌지 수량 더하기 연도 I 가격 곱하기 오렌지 가격 연도 I 곱하기 오렌지 수량. 그렇게 명목 GDP를 구하는 거죠, 맞죠? 네. 하지만 질문은, 무슨 일이 일어나냐면 가격이 어떻게 되냐면 사과 가격이 오렌지 가격이 시간이 지나면서 어떻게 되나요? 어 보시다시피 표에서, 가격이 사과 가격이 예전에는 1달러였는데 1년 차에, 1.5달러가 돼요. 2년 차에는. 그래서 무슨 일이 일어났죠? 25센트가 지금 비싸졌어요. 그리고 가는 길에, 수량이 사과 수량이 이 기간 동안 이 경제에서 30개 늘어났어요. 그래서 1대 1 증가가 아니에요. 어쨌든 사과 생산량이 30개 늘었지만, 가격은 증가했어요. 얼마만큼? 0.25달러 만큼요. 그리고 오렌지 가격을 보면, 예전에는 생산량이 100단위였는데 1년 차에, 하지만 지금은 20개 더 생산되었어요. 2년 차에. 하지만 오렌지 가격은 어쩐지 0.8달러에서 0.6달러로 떨어졌어요. 1년 차에 0.8달러였는데, 1.6달러로 올랐어요. 2년 차에. 그래서, 너무 많은 다른 힘들이 작용하고 있어요. 사이에서 생산량과 사과 가격 그리고 오렌지, 그리고 사과 가격 사이에서요. 이 2년 동안. 그래서, 다시 말해, 원동력은 이 경제에서 입니다. 그래서, 관찰된 우리는 알아내야 합니다. 계산할 때 명목 GDP나 GDP를 그런 점에서 우리는 소득을 원동력으로 삼고 싶습니다. GDP 변화의 원동력이 소득의 변화에서 비롯된 것인지, 아니면 생산량의 변화에서 비롯된 것인지. 그래서, 말이 됩니다. 그래서, 네. 알겠습니다. 그래서, 이게 무슨 뜻이냐면, 질문은 이 중 얼마나 많은 부분이 명목 GDP의 증가에 기여했는지에 대한 것입니다. 인플레이션으로 인한 것인지, 아니면 새로운 실질 생산량의 증가로 인한 것인지. 생산된 재화의 양 말이죠. 그래서, 제가 말씀드리는 것은 이것이 이 문제의 핵심입니다. 그리고 변화의 그리고 수량 자체의 변화도 마찬가지입니다. 그래서 우리는 알고 싶습니다. 이 증가 중 얼마나 많은 부분이 GDP의 증가에 기여했는지에 대한 것입니다. 그리고 알겠습니다. 그리고 제 생각에는 그 이건 아주 간단한 것입니다. 만약 여러분이 명목 GDP의 변화율을 알고 싶다면, 1년 차에서 2년 차로 단순히 명목 GDP가 어, 네, 하지만 시간이 그 아이디어가 이미 지났잖아요. 이런 식이어야 해요. 자, 제 말은, 당연히 그렇지만, 제 말은, 그건 당연히 그런 게 아니잖아요. 알아내고 싶은 건 변화가 끝났다는 거예요. 그리고 뭐가 될지 기준선이 될지 말이죠. 첫 해에 그게 뭐예요. 그리고 어 하지만 우리는 그냥 분수니까 간단하게 줄일 수 없어요. 그러니까 하지만 그게 한 번에 포인트가 한 번에 네. 네. 그래서 알겠어요. 그럼 넘어가볼게요. 그래서 그래서 GDP는",
+   "pdf": "LNCh2_Slides_180912.pdf",
+   "pdfPage": 44,
+   "slideText": "",
+   "liveNotes": {
+    "notes": [
+     "**명목GDP**(Nominal GDP) 계산 설명 시작"
+    ],
+    "summary": "명목GDP 계산",
+    "exam": [],
+    "board": [],
+    "at": 1789540195379
+   },
+   "marks": [],
+   "lines": {
+    "w": 720,
+    "h": 540,
+    "lines": []
+   },
+   "segs": [
+    {
+     "t": 828,
+     "page": 44,
+     "en": "not fancy. Nothing you know, tricky. And now the question is, Yeah. Now, well, if you uh I don't want to mess around with the P also. But",
+     "ko": "별거 아니에요. 아무것도 까다롭지 않아요. 그리고 이제 질문은, 네. 자, 그럼, 만약 어, 저는 장난치고 싶지 않아요, P도. 하지만",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 846,
+     "page": 44,
+     "en": "If you look at the calculation the formula, when we find out nominal GDP, what would you do? So let's say I equals one or two depending on the year, what would you do? Yeah. So year one I price of an apple times year I times the quantity of apples plus year I price of orange year I times the quantity of oranges. That's how you find the nominal GDP, correct?",
+     "ko": "만약 계산을 보면 공식이, 우리가 명목을 찾을 때, 어떻게 하시겠어요? 그래서 예를 들어 제가 1이라고 하거나 2라고 할게요, 연도에 따라, 어떻게 하시겠어요? 네. 그래서 1년 차에는 오렌지 가격 곱하기 연도 I 곱하기 오렌지 수량 더하기 연도 I 가격 곱하기 오렌지 가격 연도 I 곱하기 오렌지 수량. 그렇게 명목 GDP를 구하는 거죠, 맞죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 874,
+     "page": 44,
+     "en": "Yeah. But the question is,",
+     "ko": "네. 하지만 질문은,",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 884,
+     "page": 44,
+     "en": "What happens to the price of an apple and price of an orange over the years?",
+     "ko": "무슨 일이 일어나냐면 가격이 어떻게 되냐면 사과 가격이 오렌지 가격이 시간이 지나면서 어떻게 되나요?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 895,
+     "page": 44,
+     "en": "Uh as you see from the table, the price of an apple used to be 1 in year one, but it becomes 1.5 in year two. So what happened? 25 cents expensive now. And on the way, the quantity of apples produced in this economy increased by 30 units. So it's not like a one to one increase.",
+     "ko": "어 보시다시피 표에서, 가격이 사과 가격이 예전에는 1달러였는데 1년 차에, 1.5달러가 돼요. 2년 차에는. 그래서 무슨 일이 일어났죠? 25센트가 지금 비싸졌어요. 그리고 가는 길에, 수량이 사과 수량이 이 기간 동안 이 경제에서 30개 늘어났어요. 그래서 1대 1 증가가 아니에요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 920,
+     "page": 44,
+     "en": "Somehow apple produced 30 units, but the price increased by 0.25 dollars. And if you look at the oranges, it used to produce 100 units in year one, but now 20 more units produced in year two. However, the price of oranges somehow fell from 0.8 cents, 0.8 dollars in year one, to 1.",
+     "ko": "어쨌든 사과 생산량이 30개 늘었지만, 가격은 증가했어요. 얼마만큼? 0.25달러 만큼요. 그리고 오렌지 가격을 보면, 예전에는 생산량이 100단위였는데 1년 차에, 하지만 지금은 20개 더 생산되었어요. 2년 차에. 하지만 오렌지 가격은 어쩐지 0.8달러에서 0.6달러로 떨어졌어요. 1년 차에 0.8달러였는데, 1.6달러로",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 951,
+     "page": 44,
+     "en": "6 dollars in year two. So, we have so much different forces going on between the quantity of produced apples and oranges and the prices of apples and oranges over these two years. So, in other words, the driving forces in this economy is So, in the observed we have the figure out when you calculate",
+     "ko": "올랐어요. 2년 차에. 그래서, 너무 많은 다른 힘들이 작용하고 있어요. 사이에서 생산량과 사과 가격 그리고 오렌지, 그리고 사과 가격 사이에서요. 이 2년 동안. 그래서, 다시 말해, 원동력은 이 경제에서 입니다. 그래서, 관찰된 우리는 알아내야 합니다. 계산할 때",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 973,
+     "page": 44,
+     "en": "the nominal GDP or the GDP in that matter, we like to income force forces of the change of GDP was an income from a change of prices or a change of the quantity produced. economy. So, it makes sense.",
+     "ko": "명목 GDP나 GDP를 그런 점에서 우리는 소득을 원동력으로 삼고 싶습니다. GDP 변화의 원동력이 소득의 변화에서 비롯된 것인지, 아니면 생산량의 변화에서 비롯된 것인지. 그래서, 말이 됩니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 992,
+     "page": 44,
+     "en": "So, yeah. Okay. So,",
+     "ko": "그래서, 네. 알겠습니다. 그래서,",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1001,
+     "page": 44,
+     "en": "This is what it means. So, the question would be how much of this increase in nominal GDP is accounted for by inflation and how much by a increase in the quantity of the good produced. Okay? So, this is what I mean by the so this is the point of the exercise and the change of the and the quantity itself is also so and we would like to know how much of this increase in GDP is accounted for by the return was Okay.",
+     "ko": "이게 무슨 뜻이냐면, 질문은 이 중 얼마나 많은 부분이 명목 GDP의 증가에 기여했는지에 대한 것입니다. 인플레이션으로 인한 것인지, 아니면 새로운 실질 생산량의 증가로 인한 것인지. 생산된 재화의 양 말이죠. 그래서, 제가 말씀드리는 것은 이것이 이 문제의 핵심입니다. 그리고 변화의 그리고 수량 자체의 변화도 마찬가지입니다. 그래서 우리는 알고 싶습니다. 이 증가 중 얼마나 많은 부분이 GDP의 증가에 기여했는지에 대한 것입니다. 그리고 알겠습니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1037,
+     "page": 44,
+     "en": "Uh and I guess the this is it's a very straightforward. If you want to find out the percentage change in nominal GDP from year one to year two, we simply have a nominal GDP 2 divided by",
+     "ko": "그리고 제 생각에는 그 이건 아주 간단한 것입니다. 만약 여러분이 명목 GDP의 변화율을 알고 싶다면, 1년 차에서 2년 차로 단순히 명목 GDP가",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1059,
+     "page": 44,
+     "en": "Uh, yeah, but time the idea has passed it, you know. It should be like this. Now, I mean, obviously too, I mean, that's not obviously what like to figure out the change is over to and what would be the baseline that the first year is. And then the uh But we just fractions so you can't simplify it down to but by once point",
+     "ko": "어, 네, 하지만 시간이 그 아이디어가 이미 지났잖아요. 이런 식이어야 해요. 자, 제 말은, 당연히 그렇지만, 제 말은, 그건 당연히 그런 게 아니잖아요. 알아내고 싶은 건 변화가 끝났다는 거예요. 그리고 뭐가 될지 기준선이 될지 말이죠. 첫 해에 그게 뭐예요. 그리고 어 하지만 우리는 그냥 분수니까 간단하게 줄일 수 없어요. 그러니까 하지만 그게 한 번에 포인트가",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1099,
+     "page": 44,
+     "en": "once Yeah. Yeah. So okay. So let me move on.",
+     "ko": "한 번에 네. 네. 그래서 알겠어요. 그럼 넘어가볼게요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1107,
+     "page": 44,
+     "en": "So",
+     "ko": "그래서",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1115,
+     "page": 44,
+     "en": "So GDP",
+     "ko": "그래서 GDP는",
+     "src": "gemini",
+     "ai": true
+    }
+   ]
+  },
+  {
+   "page": 45,
+   "en": "and this is the idea that we like to fix one of the variable as a constant and like to see what happens if the other variables So that means we want to pick the base year let's say for example, one and the base year means we only use the base year prices for both you know, calculating both GDP for year one and year two. So let me show you the example. straightforward. And real GDP in year one that has to be equal to nominal GDP in year one, which means so year one is the base year, that means when year one is the base year, we are going to pick up the prices in year one, so which is keep prices of the apple as a one dollar and the price of the orange is the 20 dollars. calculate in two different years real GDP. So first, P1 to be 8 times Q1 to be Q1 to be 4 times Q1 to be that's what the dollars, right? So we already did it. And what happens to the real GDP in year two? Instead of the P2, we're going to switch it into P1 to the 8 times Q1 to the quantity. Um, so prices for oranges we switch P2 to the P1 to P2 P2 to the one. So that's what the price of an apple in year one. That's a one dollar, right? So instead of wants to five be in the one there, but still we keep the 80 units from year two. And then we switch the price to 28. Uh, and then we keep the year two to use the oranges one 20 units. And then if you calculate that, what instead of six dollars and you remember was now in the year so so Yeah. Well, a future reference is let me add the numbers here. So if you calculate now in the year so what was the value? It was 30, but the now so Yeah. So 90 thank you. And if you compare the value, between the real GDP year two and having the base year one, that's 76 dollars. But nominal GDP in the year two is 292. Whereas the difference comes from the difference comes from the changes in prices of an apple and an orange. Right? So how would you know? And back out the price change effect on the and and see the percentage change in real GDP from year one to year two. That's how we do it like before, real GDP year two minus real GDP year one minus one times 100 and that's 25 percent. Okay? So So this is easy. Yeah. You know? Right?",
+   "ko": "그리고 이건 바로 아이디어예요. 우리가 고치고 싶은 것 중 하나는 변수인데 상수로 두고 그리고 보고 싶어요. 어떻게 되는지 다른 변수들이 어떻게 되는지 그래서 그 말은 우리가 선택하고 싶은 기준 연도는 예를 들어 연도 1년이고 기준 연도는 우리가 오직 이 기준 연도만 사용한다는 뜻이에요, 둘 다, 아시다시피, 계산하는 두 GDP 모두를 1년차와 2년차를요. 그래서 보여드릴게요. 예시를요. 간단해요. 그리고 실질 GDP는 1년차에 같아야 하고 명목 GDP는 1년차에 같아야 하니까 1년차가 기준 연도이고, 그 말은 1년차일 때가 기준 연도이고, 우리는 선택할 거예요. 그 1년차의 가격을 사용하고, 그래서 그게 유지하고 가격을 사과를 1달러로 하고 오렌지 가격을 20달러로 해요. 계산해 볼까요, 두 가지 다른 해의 실질 GDP를요. 그래서 첫째, P1은 8 곱하기 Q1이 8이고 Q1이 4 곱하기 Q1이 4이고 그게 바로 달러죠, 맞죠? 그래서 이미 했어요. 그리고 실질 GDP는 2년차에 어떻게 되나요? 대신에 P2 대신에 우리는 그걸 바꿀 거예요. P1으로 8 곱하기 Q1이 수량으로요. 음, 그래서 가격은 오렌지에 대해 P2를 P1으로 바꾸고 P2를 1로 바꿔요. 그래서 그게 사과 가격이고 1년차에. 그게 1달러고 맞죠? 그래서 대신에 원하는 건 5예요. 에 1달러에 있지만, 그래도 우리는 80을 유지해요. 2년차에서. 그리고 우리는 바꿉니다. 가격을 28로. 어, 그리고 우리는 2년차를 유지해요. 사용하기 위해 오렌지 120개를. 그리고 그걸 계산하면, 뭐가 대신에 6달러 그리고 기억하시겠지만 그건 이제 그 해에 있어서 그래서 네. 음, 나중에 참고할 건 제가 숫자를 더해볼게요. 그래서 계산해 보면 지금 그 해에 그래서 뭐 가치가 얼마였죠? 그건 30이었고, 하지만 지금은 그래서 네. 그래서 90 감사합니다. 그리고 가치를 비교하면 그건 실제 GDP 연도 2와 기준을 1년으로 했을 때, 그건 76 달러입니다. 하지만 명목 GDP는 2년차에 얼마였죠? 292입니다. 반면에 차이는 어디서 오냐면 차이는 어디서 오냐면 변화에서 옵니다. 사과 가격의 변화에서요. 그렇죠? 그럼 어떻게 알 수 있을까요? 그리고 다시 계산해 보면 가격 변화가 미치는 영향은 그리고 그리고 가격 변화를 백분율로 나타낸 실질 GDP가 1년차에서 2년차로 변한 것입니다. 그렇게 하는 방식은 이전과 똑같이 실질 GDP 2년차 빼기 실질 GDP 1년차 빼기 1 곱하기 100이고 그건 25 퍼센트입니다. 알겠죠? 그래서 그래서 이건 쉬워요. 네. 있잖아요? 그렇죠?",
+   "pdf": "LNCh2_Slides_180912.pdf",
+   "pdfPage": 45,
+   "slideText": "$1.00+ RGDP 1",
+   "liveNotes": {
+    "notes": [],
+    "summary": "실질GDP 계산 도입",
+    "exam": [],
+    "board": [],
+    "at": 1789539821157
+   },
+   "marks": [],
+   "lines": {
+    "w": 720,
+    "h": 540,
+    "lines": [
+     {
+      "i": 0,
+      "text": "$1.00+",
+      "x": 259.25,
+      "y": 272.35,
+      "w": 74.08799999999997,
+      "h": 27.599999999999998
+     },
+     {
+      "i": 1,
+      "text": "RGDP 1",
+      "x": 133.22,
+      "y": 410.836,
+      "w": 71.82,
+      "h": 27.627599999999997
+     }
+    ]
+   },
+   "segs": [
+    {
+     "t": 1116,
+     "page": 45,
+     "en": "and this is the idea that we like to fix one of the variable as a constant and like to see what happens if the other variables So that means we want to pick the base year let's say for example, one and the base year means we only use the base year prices for both you know, calculating both GDP for year one and year two.",
+     "ko": "그리고 이건 바로 아이디어예요. 우리가 고치고 싶은 것 중 하나는 변수인데 상수로 두고 그리고 보고 싶어요. 어떻게 되는지 다른 변수들이 어떻게 되는지 그래서 그 말은 우리가 선택하고 싶은 기준 연도는 예를 들어 연도 1년이고 기준 연도는 우리가 오직 이 기준 연도만 사용한다는 뜻이에요, 둘 다, 아시다시피, 계산하는 두 GDP 모두를 1년차와 2년차를요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1150,
+     "page": 45,
+     "en": "So let me show you the example. straightforward. And real GDP in year one that has to be equal to nominal GDP in year one, which means so year one is the base year, that means when year one is the base year, we are going to pick up the prices in year one, so which is keep prices of the apple as a one dollar and the price of the orange is the 20 dollars.",
+     "ko": "그래서 보여드릴게요. 예시를요. 간단해요. 그리고 실질 GDP는 1년차에 같아야 하고 명목 GDP는 1년차에 같아야 하니까 1년차가 기준 연도이고, 그 말은 1년차일 때가 기준 연도이고, 우리는 선택할 거예요. 그 1년차의 가격을 사용하고, 그래서 그게 유지하고 가격을 사과를 1달러로 하고 오렌지 가격을 20달러로 해요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1180,
+     "page": 45,
+     "en": "calculate in two different years real GDP. So first, P1 to be 8 times Q1 to be Q1 to be 4 times Q1 to be that's what the dollars, right? So we already did it. And what happens to the real GDP in year two? Instead of the P2, we're going to switch it into P1 to the 8 times Q1 to the quantity.",
+     "ko": "계산해 볼까요, 두 가지 다른 해의 실질 GDP를요. 그래서 첫째, P1은 8 곱하기 Q1이 8이고 Q1이 4 곱하기 Q1이 4이고 그게 바로 달러죠, 맞죠? 그래서 이미 했어요. 그리고 실질 GDP는 2년차에 어떻게 되나요? 대신에 P2 대신에 우리는 그걸 바꿀 거예요. P1으로 8 곱하기 Q1이 수량으로요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1207,
+     "page": 45,
+     "en": "Um, so prices for oranges we switch P2 to the P1 to P2 P2 to the one.",
+     "ko": "음, 그래서 가격은 오렌지에 대해 P2를 P1으로 바꾸고 P2를 1로 바꿔요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1219,
+     "page": 45,
+     "en": "So that's what the price of an apple in year one. That's a one dollar, right? So instead of wants to five be in the one there, but still we keep the 80 units from year two. And then we switch the price to 28. Uh, and then we keep the year two to use the oranges one 20 units.",
+     "ko": "그래서 그게 사과 가격이고 1년차에. 그게 1달러고 맞죠? 그래서 대신에 원하는 건 5예요. 에 1달러에 있지만, 그래도 우리는 80을 유지해요. 2년차에서. 그리고 우리는 바꿉니다. 가격을 28로. 어, 그리고 우리는 2년차를 유지해요. 사용하기 위해 오렌지 120개를.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1252,
+     "page": 45,
+     "en": "And then if you calculate that, what instead of six dollars",
+     "ko": "그리고 그걸 계산하면, 뭐가 대신에 6달러 그리고",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1263,
+     "page": 45,
+     "en": "and you remember was now in the year so so Yeah. Well, a future reference is let me add the numbers here. So if you calculate now in the year so what was the value? It was 30, but the now so Yeah. So 90 thank you. And if you compare the value, between the real GDP year two and having the base year one, that's 76 dollars.",
+     "ko": "기억하시겠지만 그건 이제 그 해에 있어서 그래서 네. 음, 나중에 참고할 건 제가 숫자를 더해볼게요. 그래서 계산해 보면 지금 그 해에 그래서 뭐 가치가 얼마였죠? 그건 30이었고, 하지만 지금은 그래서 네. 그래서 90 감사합니다. 그리고 가치를 비교하면 그건 실제 GDP 연도 2와 기준을 1년으로 했을 때, 그건 76 달러입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1294,
+     "page": 45,
+     "en": "But nominal GDP in the year two is 292. Whereas the difference comes from the difference comes from the changes in prices of an apple",
+     "ko": "하지만 명목 GDP는 2년차에 얼마였죠? 292입니다. 반면에 차이는 어디서 오냐면 차이는 어디서 오냐면 변화에서 옵니다. 사과 가격의",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1310,
+     "page": 45,
+     "en": "and an orange. Right? So how would you know? And back out the price change effect on the and and see the percentage change in real GDP from year one to year two. That's how we do it like before, real GDP year two minus real GDP year one minus one times 100 and that's 25 percent.",
+     "ko": "변화에서요. 그렇죠? 그럼 어떻게 알 수 있을까요? 그리고 다시 계산해 보면 가격 변화가 미치는 영향은 그리고 그리고 가격 변화를 백분율로 나타낸 실질 GDP가 1년차에서 2년차로 변한 것입니다. 그렇게 하는 방식은 이전과 똑같이 실질 GDP 2년차 빼기 실질 GDP 1년차 빼기 1 곱하기 100이고 그건 25 퍼센트입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1340,
+     "page": 45,
+     "en": "Okay? So So this is easy. Yeah. You know? Right?",
+     "ko": "알겠죠? 그래서 그래서 이건 쉬워요. 네. 있잖아요? 그렇죠?",
+     "src": "gemini",
+     "ai": true
+    }
+   ]
+  },
+  {
+   "page": 46,
+   "en": "And now, you know, let's switch the base year now and let's assume, let's accept the year two as a base year. Then what happens to the real GDP in year one? We switch the prices to the year two prices of an apple and an orange. So P2A times Q1 plus P2A plus P2B times Q120. And here you have a still keep the initial first year production of an apple, 50 units and but first year production of an orange 100 units. But now you use the prices from where? from year two. Yeah. So you have 22 2.5 dollars and this number is now different from what you got in before as a nominal GDP in year one. So And for the real GDP in year two, which is the year two, is the base year and the value would be 292 as a same. nominal GDP. And if you find out the percentage change in real GDP from year one to year two, one is year two is the base year, and it's still 120. percent. Uh, excuse me. What? The but All right. And so the first observation would be the 10th on which prices you'd pick the base year. The nominal GDP and the real GDP can be in the case of the values and second observation would be one. So here we need a base year. as a year too. Okay, let's see percentage change in real GDP. Okay. Yeah, three on the set, right? And so see the previous slide, what's the percentage change in real GDP from year one to two? And the base year is one. Okay. Yeah, 35%. Okay. So I think it is this is a new inflation rate. So how you know, changes in the real GDP. So how the GDP to which time, but depending on which price that you pick as a base year. The rate of change will be different. Right? Because the the nominal prices are different and they reflect different And now the economists come up with a better idea, since either year you pick as a base year and come up with a different rate of change, they make some confusion of course when you calculate Uh, and that's what we call chain waiting, of course. So the problem of changing is that the prices would be if you calculated the you know, year off from a BC year. I mean, this is the hypothetical economy which is just adjacent and years, right? You're one year too. But if you look at the lowest stage of the detail like one you see last time, from 1900 to 2000, or 2006, or whatever. And how many is this? So 160 years span. And for example, if I take base year in 1901 and try to calculate the 40 years and if this is the base year in 2005 and try to find out the thing earlier than 100, the number is lower. Big difference, right? But that's exactly what means over here. So problem of changing relative prices would be if you calculated the you know, year off from a base year like the one. You pick 2005 and try to calculate the year before. So uh it's a mess. So Um let me you what do you have so far? How do you calculate G1?",
+   "ko": "그리고 이제, 아시다시피, 기준 연도를 바꾸고 가정해 봅시다, 2년차를 기준으로 받아들여서 봅시다. 그러면 실질 GDP는 어떻게 되나요? 1년차에? 우리는 가격을 바꿉니다. 2년차 가격으로 사과와 오렌지 가격으로요. 그래서 P2A 곱하기 Q1 더하기 P2A 더하기 P2B 곱하기 Q120. 그리고 여기에는 여전히 유지되는 초기 첫해의 생산량이 있습니다. 사과 50 개와 하지만 첫해의 생산량은 오렌지 100개입니다. 하지만 이제 가격을 사용합니다. 어디서요? 2년차에서요. 네. 그래서 200 22 2.5 달러입니다. 그리고 이 숫자는 이제 이전과 다릅니다. 그 결과는 이전과 명목상으로 GDP가 1년차에. 그래서 그리고 2년차의 실질 GDP는, 2년차인데, 기준 연도라서 가치는 292가 됩니다. 똑같죠. 명목상으로 GDP가. 그리고 백분율을 찾아보면 실질 GDP의 1년차에서 2년차로의 변화는 2년차는 기준 연도이고, 그리고 여전히 120입니다. 백분율로요. 어, 죄송합니다. 뭐라고요? 그 하지만 다 알겠습니다. 그리고 그래서 첫 번째 관찰은 10년 차에 가격이 얼마인지 기준 연도를 선택하는 것입니다. 명목 GDP와 실질 GDP는 같을 수 있습니다. 예를 들어 값이 다르고 두 번째 관찰은 1이 될 것입니다. 그래서 여기서는 기준 연도가 필요합니다. 2년차로도요. 좋아요, 어디 한번 백분율을 찾아볼까요? 실질 GDP의 좋아요. 네, 3년차에 대한 거죠, 맞죠? 그리고 그래서 보시다시피 이전 슬라이드에서, 백분율 변화는 얼마인가요? 1년차에서 2년차로요? 그리고 기준 연도는 1입니다. 네. 네, 35%입니다. 네. 그래서 제 생각에는 이게 새로운 인플레이션율인 것 같아요. 그래서 어떻게, 실질 GDP의 변화가요. 그래서 어떻게 GDP가 어느 시점에 하지만 어떤 것에 따라 가격이 선택되는지에 따라 기준 연도가 됩니다. 변화율은 다를 것입니다. 그렇죠? 왜냐하면 그 그 명목 가격은 다르고 그것들은 다른 것을 반영합니다. 그리고 이제 그 경제학자들은 더 나은 아이디어를 냈는데, 왜냐하면 어느 해를 기준 연도로 선택하든 결과가 다른 변화율이 나오니까요, 그래서 그들은 약간의 혼란을 일으키죠, 물론 계산할 때요. 어, 그리고 그게 우리가 체인 웨이팅이라고 부르는 거죠. 그래서 체인징의 문제는 가격이 너무 비싸질 거라는 거예요, 만약 당신이 계산한다면, 그러니까 1년 전의 BC 년도요. 제 말은, 이건 가상의 경제인데, 그냥 인접해 있고 연도잖아요, 그렇죠? 당신도 1년 차이예요. 하지만 만약 당신이 가장 낮은 단계의 세부 사항을 보면 하나가 보이는데, 지난번에 봤던 거, 19 세기부터 에서 2000년까지, 아니면 2006년까지, 뭐 그런 식이죠. 그리고 이게 몇 개죠? 그래서 160 년의 기간이에요. 그리고 예를 들어, 제가 베이스를 1900년으로 잡고 2000년까지 계산하려고 하면, 그 40년은 그리고 만약 이게 베이스라면 2000년이 베이스고 2005년까지 계산하려고 하면, 더 이른 것을 찾을 수 있어요, 100년 전보다, 그 숫자는 더 낮아요. 큰 차이죠, 그렇죠? 하지만 그게 바로 제가 여기서 말하는 거예요. 그래서 체인징의 문제는 상대적인 가격이 만약 당신이 계산한다면, 그러니까 1년 전의 기준 연도 같은 거요. 당신이 2005년을 선택하고 계산하려고 하면, 그 전년도요. 그래서 어, 엉망이에요. 그래서 음, 제가 여러분께 어떻게 생각하시는지 여쭤볼게요? 어떻게 계산하시나요? G1을?",
+   "pdf": "LNCh2_Slides_180912.pdf",
+   "pdfPage": 46,
+   "slideText": "",
+   "liveNotes": {
+    "notes": [
+     "**실질GDP**(real GDP) 값은 **기준연도**(base year) 선택에 따라 달라짐",
+     "▶ 두 기준연도로 계산한 값 차이가 크다고 언급"
+    ],
+    "summary": "두 기준연도별 RGDP 비교",
+    "exam": [],
+    "board": [],
+    "at": 1789541607282
+   },
+   "marks": [],
+   "lines": {
+    "w": 720,
+    "h": 540,
+    "lines": []
+   },
+   "segs": [
+    {
+     "t": 1349,
+     "page": 46,
+     "en": "And now, you know, let's switch the base year now and let's assume, let's accept the year two as a base year. Then what happens to the real GDP in year one? We switch the prices to the year two prices of an apple and an orange. So P2A times Q1 plus P2A plus P2B times Q120.",
+     "ko": "그리고 이제, 아시다시피, 기준 연도를 바꾸고 가정해 봅시다, 2년차를 기준으로 받아들여서 봅시다. 그러면 실질 GDP는 어떻게 되나요? 1년차에? 우리는 가격을 바꿉니다. 2년차 가격으로 사과와 오렌지 가격으로요. 그래서 P2A 곱하기 Q1 더하기 P2A 더하기 P2B 곱하기 Q120.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1371,
+     "page": 46,
+     "en": "And here you have a still keep",
+     "ko": "그리고 여기에는 여전히 유지되는",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1379,
+     "page": 46,
+     "en": "the initial first year production of an apple, 50 units and but first year production of an orange 100 units. But now you use the prices from where? from year two. Yeah. So you have 22 2.5 dollars and this number is now different from what you got in before as a nominal GDP in year one.",
+     "ko": "초기 첫해의 생산량이 있습니다. 사과 50 개와 하지만 첫해의 생산량은 오렌지 100개입니다. 하지만 이제 가격을 사용합니다. 어디서요? 2년차에서요. 네. 그래서 200 22 2.5 달러입니다. 그리고 이 숫자는 이제 이전과 다릅니다. 그 결과는 이전과 명목상으로 GDP가 1년차에.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1404,
+     "page": 46,
+     "en": "So And for the real GDP in year two, which is the year two, is the base year and the value would be 292 as a same. nominal GDP. And if you find out the percentage change in real GDP from year one to year two, one is year two is the base year, and it's",
+     "ko": "그래서 그리고 2년차의 실질 GDP는, 2년차인데, 기준 연도라서 가치는 292가 됩니다. 똑같죠. 명목상으로 GDP가. 그리고 백분율을 찾아보면 실질 GDP의 1년차에서 2년차로의 변화는 2년차는 기준 연도이고, 그리고",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1434,
+     "page": 46,
+     "en": "still 120. percent.",
+     "ko": "여전히 120입니다. 백분율로요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1438,
+     "page": 46,
+     "en": "Uh, excuse me.",
+     "ko": "어, 죄송합니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1442,
+     "page": 46,
+     "en": "What? The but All right. And so the first observation would be the 10th on which prices you'd pick the base year. The nominal GDP and the real GDP can be in the case of the values and second observation would be one. So here we need a base year. as a year too. Okay, let's see percentage change in real GDP.",
+     "ko": "뭐라고요? 그 하지만 다 알겠습니다. 그리고 그래서 첫 번째 관찰은 10년 차에 가격이 얼마인지 기준 연도를 선택하는 것입니다. 명목 GDP와 실질 GDP는 같을 수 있습니다. 예를 들어 값이 다르고 두 번째 관찰은 1이 될 것입니다. 그래서 여기서는 기준 연도가 필요합니다. 2년차로도요. 좋아요, 어디 한번 백분율을 찾아볼까요? 실질 GDP의",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1471,
+     "page": 46,
+     "en": "Okay. Yeah, three on the set, right? And so see the previous slide, what's the percentage change in real GDP from year one to two? And the base year is one. Okay. Yeah, 35%. Okay. So I think it is this is a new inflation rate. So how you know, changes in the real GDP.",
+     "ko": "좋아요. 네, 3년차에 대한 거죠, 맞죠? 그리고 그래서 보시다시피 이전 슬라이드에서, 백분율 변화는 얼마인가요? 1년차에서 2년차로요? 그리고 기준 연도는 1입니다. 네. 네, 35%입니다. 네. 그래서 제 생각에는 이게 새로운 인플레이션율인 것 같아요. 그래서 어떻게, 실질 GDP의 변화가요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1500,
+     "page": 46,
+     "en": "So how the GDP to which time, but depending on which price that you pick as a base year. The rate of change will be different. Right? Because the the nominal prices are different and they reflect different And now the economists come up with a better idea, since either year you pick as a base year and come up with a different rate of change, they make some confusion of course when you calculate",
+     "ko": "그래서 어떻게 GDP가 어느 시점에 하지만 어떤 것에 따라 가격이 선택되는지에 따라 기준 연도가 됩니다. 변화율은 다를 것입니다. 그렇죠? 왜냐하면 그 그 명목 가격은 다르고 그것들은 다른 것을 반영합니다. 그리고 이제 그 경제학자들은 더 나은 아이디어를 냈는데, 왜냐하면 어느 해를 기준 연도로 선택하든 결과가 다른 변화율이 나오니까요, 그래서 그들은 약간의 혼란을 일으키죠, 물론 계산할 때요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1540,
+     "page": 46,
+     "en": "Uh, and that's what we call chain waiting, of course. So the problem of changing is that the prices would be if you calculated the you know, year off from a BC year. I mean, this is the hypothetical economy which is just adjacent and years, right? You're one year too.",
+     "ko": "어, 그리고 그게 우리가 체인 웨이팅이라고 부르는 거죠. 그래서 체인징의 문제는 가격이 너무 비싸질 거라는 거예요, 만약 당신이 계산한다면, 그러니까 1년 전의 BC 년도요. 제 말은, 이건 가상의 경제인데, 그냥 인접해 있고 연도잖아요, 그렇죠? 당신도 1년",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1565,
+     "page": 46,
+     "en": "But if you look at the lowest stage of the detail like one you see last time, from 1900 to 2000, or 2006, or whatever. And how many is this? So 160 years span. And for example, if I take base year in 1901 and try to calculate the 40 years and if this is the base year in 2005 and try to find out the thing earlier than 100, the number is lower.",
+     "ko": "차이예요. 하지만 만약 당신이 가장 낮은 단계의 세부 사항을 보면 하나가 보이는데, 지난번에 봤던 거, 19 세기부터 에서 2000년까지, 아니면 2006년까지, 뭐 그런 식이죠. 그리고 이게 몇 개죠? 그래서 160 년의 기간이에요. 그리고 예를 들어, 제가 베이스를 1900년으로 잡고 2000년까지 계산하려고 하면, 그 40년은 그리고 만약 이게 베이스라면 2000년이 베이스고 2005년까지 계산하려고 하면, 더 이른 것을 찾을 수 있어요, 100년 전보다, 그 숫자는 더 낮아요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1599,
+     "page": 46,
+     "en": "Big difference, right? But that's exactly what means over here. So problem of changing relative prices would be if you calculated the you know, year off from a base year like the one. You pick 2005 and try to calculate the year",
+     "ko": "큰 차이죠, 그렇죠? 하지만 그게 바로 제가 여기서 말하는 거예요. 그래서 체인징의 문제는 상대적인 가격이 만약 당신이 계산한다면, 그러니까 1년 전의 기준 연도 같은 거요. 당신이 2005년을 선택하고 계산하려고 하면, 그",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1623,
+     "page": 46,
+     "en": "before. So uh it's a mess. So",
+     "ko": "전년도요. 그래서 어, 엉망이에요. 그래서",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1746,
+     "page": 46,
+     "en": "Um let me you what do you have so far? How do you calculate G1?",
+     "ko": "음, 제가 여러분께 어떻게 생각하시는지 여쭤볼게요? 어떻게 계산하시나요? G1을?",
+     "src": "gemini",
+     "ai": true
+    }
+   ]
+  },
+  {
+   "page": 47,
+   "en": "uh they come up with better idea. which is the chaining of course. In other words, we call that a fisher index. And this is a useful tool to use no matter and what is the Fisher index? This is the chain ratio of real GDP in two years is two years is a geometric average of the ratios calculated using each year. One and two is the base. So let me show you. So don't worry too much about what is",
+   "ko": "어, 그들은 더 나은 아이디어를 내놓죠. 그게 바로 체인 웨이팅이죠. 다시 말해, 우리는 그걸 피셔 지수라고 불러요. 그리고 이건 유용한 도구예요. 어떤 경우든 그리고 피셔 지수가 뭐죠? 이건 체인 웨이팅 실질 GDP의 비율인데, 2년 동안의 비율이에요. 2년 동안은 기하 평균이에요. 뭐의 비율의 계산된 각 연도를 사용한 거예요. 1과 2는 기준이에요. 그럼 보여드릴게요. 그래서 너무 걱정하지 않으셔도 돼요,",
+   "pdf": "LNCh2_Slides_180912.pdf",
+   "pdfPage": 47,
+   "slideText": "(3) Chain - Weighting Approach The problem of changing relative prices would be severe if calculating RGDP in a year far from a base year. Thus, the Fisher index is a useful tool to ease the matter. The Fisher Index: The chain - weighted ratio of RGDP in the two years is a geometric average of the ratios calculated using each of years 1 and 2 as base years.",
+   "liveNotes": {
+    "notes": [
+     "**피셔지수**(Fisher Index): 1년과 2년을 각각 기준연도로 삼아 비율 계산",
+     "▶ 교수가 예시로 직접 계산 과정을 보여줄 예정이라고 언급"
+    ],
+    "summary": "피셔지수 도입",
+    "exam": [],
+    "board": [],
+    "at": 1789540232512
+   },
+   "marks": [],
+   "lines": {
+    "w": 720,
+    "h": 540,
+    "lines": [
+     {
+      "i": 0,
+      "text": "(3) Chain - Weighting Approach",
+      "x": 61.2,
+      "y": 116.99599999999998,
+      "w": 321.30651200000005,
+      "h": 27.627599999999997
+     },
+     {
+      "i": 1,
+      "text": "The problem of changing relative prices would be severe if",
+      "x": 61.2,
+      "y": 171.76999999999998,
+      "w": 621.528,
+      "h": 27.599999999999998
+     },
+     {
+      "i": 2,
+      "text": "calculating RGDP in a year far from a base year. Thus, the",
+      "x": 61.2,
+      "y": 200.546,
+      "w": 621.4768560000005,
+      "h": 27.627599999999997
+     },
+     {
+      "i": 3,
+      "text": "Fisher index is a useful tool to ease the matter.",
+      "x": 61.2,
+      "y": 229.39,
+      "w": 496.96800000000013,
+      "h": 27.599999999999998
+     },
+     {
+      "i": 4,
+      "text": "The Fisher Index: The chain - weighted ratio of RGDP in the",
+      "x": 61.2,
+      "y": 284.23,
+      "w": 623.662,
+      "h": 27.599999999999998
+     },
+     {
+      "i": 5,
+      "text": "two years is a geometric average of the ratios calculated",
+      "x": 61.2,
+      "y": 313.006,
+      "w": 599.6870880000005,
+      "h": 27.627599999999997
+     },
+     {
+      "i": 6,
+      "text": "using each of years 1 and 2 as base years.",
+      "x": 61.2,
+      "y": 341.86,
+      "w": 458.25600000000003,
+      "h": 27.599999999999998
+     }
+    ]
+   },
+   "segs": [
+    {
+     "t": 1628,
+     "page": 47,
+     "en": "uh they come up with better idea. which is the chaining of course. In other words, we call that a fisher index. And this is a useful tool to use no matter and what is the Fisher index? This is the chain ratio of real GDP in two years is two years is a geometric average of the ratios calculated using each year.",
+     "ko": "어, 그들은 더 나은 아이디어를 내놓죠. 그게 바로 체인 웨이팅이죠. 다시 말해, 우리는 그걸 피셔 지수라고 불러요. 그리고 이건 유용한 도구예요. 어떤 경우든 그리고 피셔 지수가 뭐죠? 이건 체인 웨이팅 실질 GDP의 비율인데, 2년 동안의 비율이에요. 2년 동안은 기하 평균이에요. 뭐의 비율의 계산된 각 연도를 사용한 거예요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1650,
+     "page": 47,
+     "en": "One and two is the base. So let me show you. So don't worry too much about what is",
+     "ko": "1과 2는 기준이에요. 그럼 보여드릴게요. 그래서 너무 걱정하지 않으셔도 돼요,",
+     "src": "gemini",
+     "ai": true
+    }
+   ]
+  },
+  {
+   "page": 48,
+   "en": "geometric average. I'll show you. So this is the Fisher index. So let me have a percentage changes is all the year one. I'll show this. That's the 35 percent so that's the one. So this is the Fisher index. And then you want 42 percent, that would be and if you have a different percentage changes from two different base years, why why don't we use just the geometric average to mix them all? and have just one number. And that number would be 1. Feel free to ask what's the in terms of percentage change. Yeah, that's the 23 percent. which is then G 1, 35 and 44 percent. Right? So G2, which is 31 percent. Okay? So uh we can use the different percentage by using the Fisher. So then uh Uh we can Okay, so here's the up with conditions. So what's G1? G1 is",
+   "ko": "기하 평균이 뭔지. 제가 보여드릴게요. 그래서 이게 피셔 지수예요. 그래서 제가 퍼센트를 변화시켜 볼게요. 모든 1년차예요. 이걸 보여드릴게요. 그게 35 퍼센트예요. 그래서 그게 하나예요. 그래서 이게 피셔 지수예요. 그리고 그 다음엔 42%를 원하는데, 그건 그리고 만약 당신이 다른 퍼센트를 변화시킨다면 두 가지 다른 기준 연도에서 시작하면, 왜 우리는 그냥 기하 평균을 사용하지 않을까요? 다 섞기 위해서? 그리고 딱 하나의 숫자를 갖는 거죠. 그리고 그 숫자는 바로 1이에요. 자유롭게 질문하세요. 뭐가 관점에서 퍼센트 변화가 무엇인지. 네, 그게 23 퍼센트예요. 그건 그러면 G 1, 35 그리고 44 퍼센트예요. 그렇죠? 그래서 G2, 그건 31 퍼센트예요. 알겠죠? 그래서 어, 우리는 다른 퍼센트를 사용할 수 있어요, 피셔를 사용해서. 그래서 그 다음엔 어, 어, 우리는 자, 그럼 여기 업데이트된 조건입니다. 그래서 G1은 뭐죠? G1은",
+   "pdf": "LNCh2_Slides_180912.pdf",
+   "pdfPage": 48,
+   "slideText": "",
+   "liveNotes": {
+    "notes": [
+     "**G1**·**G2**: 기준연도별 %변화가 다르게 산출됨(예: 23%, 35~44%, 31%)",
+     "두 비율의 **기하평균**(geometric average) → **피셔지수**(Fisher Index)",
+     "고정가중법 대비 기준연도 선택에 덜 민감함을 수치로 확인"
+    ],
+    "summary": "피셔지수 계산예시",
+    "exam": [],
+    "board": [],
+    "at": 1789540269072
+   },
+   "marks": [],
+   "lines": {
+    "w": 720,
+    "h": 540,
+    "lines": []
+   },
+   "segs": [
+    {
+     "t": 1655,
+     "page": 48,
+     "en": "geometric average. I'll show you. So this is the Fisher index. So let me have a percentage changes is all the year one. I'll show this. That's the 35 percent so that's the one. So this is the Fisher index. And then you want 42 percent, that would be and if you have a different percentage changes from two different base years, why why don't we use just the geometric average to mix them all?",
+     "ko": "기하 평균이 뭔지. 제가 보여드릴게요. 그래서 이게 피셔 지수예요. 그래서 제가 퍼센트를 변화시켜 볼게요. 모든 1년차예요. 이걸 보여드릴게요. 그게 35 퍼센트예요. 그래서 그게 하나예요. 그래서 이게 피셔 지수예요. 그리고 그 다음엔 42%를 원하는데, 그건 그리고 만약 당신이 다른 퍼센트를 변화시킨다면 두 가지 다른 기준 연도에서 시작하면, 왜 우리는 그냥 기하 평균을 사용하지 않을까요? 다 섞기 위해서?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1691,
+     "page": 48,
+     "en": "and have just one number. And that number would be 1. Feel free to ask what's the in terms of",
+     "ko": "그리고 딱 하나의 숫자를 갖는 거죠. 그리고 그 숫자는 바로 1이에요. 자유롭게 질문하세요. 뭐가 관점에서",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1705,
+     "page": 48,
+     "en": "percentage change. Yeah, that's the 23 percent. which is then G 1, 35 and 44 percent. Right? So G2, which is 31 percent. Okay? So uh we can use the different percentage by using the Fisher. So then uh",
+     "ko": "퍼센트 변화가 무엇인지. 네, 그게 23 퍼센트예요. 그건 그러면 G 1, 35 그리고 44 퍼센트예요. 그렇죠? 그래서 G2, 그건 31 퍼센트예요. 알겠죠? 그래서 어, 우리는 다른 퍼센트를 사용할 수 있어요, 피셔를 사용해서. 그래서 그 다음엔 어,",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1738,
+     "page": 48,
+     "en": "Uh we can Okay, so here's the up with conditions.",
+     "ko": "어, 우리는 자, 그럼 여기 업데이트된 조건입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1758,
+     "page": 48,
+     "en": "So what's G1? G1 is",
+     "ko": "그래서 G1은 뭐죠? G1은",
+     "src": "gemini",
+     "ai": true
+    }
+   ]
+  },
+  {
+   "page": 49,
+   "en": "the percentage rate of change of GDP when we have a year one as a base year. How do we get G1? So 5 4%. How did you get it? Yeah. So you you did two divided by the P. year one. minus one times what? times 100. That's how we got the G1. So this real GDP has a base year one. base year should be year one. Now, we're going to use this idea into this application here. What happens here is somehow we know the Fisher index 1.3 33 and the real GDP one is a 130. And the question is we don't know what the real GDP is. The GDP2 is and can you calculate real GDP in year two with the Fisher index and the real GDP in year one? Yes. You seem to apply this formula right here. And you can add the real GDP in year two. And that case, we don't even need to know what the base year is. So then Whatever the value of real GDP in year two is, which is still apply this. Okay. This formula, which is this is not even a formula, this is the notion of what? percentage change of some you know, uh uh time series data. So you have this, what should be the Fisher index? So 33 and 2 percent, correct? And then what do you know from the question? We have the year one is what? 100 30. And then from the question, so the question asks If you know the value of real GDP in year one is 130. And right? minus one times what? times and if you know the depreciation that the point is 100, Right? So what may have some doubts on my explanation. So now we'll take a sum, so fisher says it's a 1.333 not 33.3. percent. I want to have that number how would you get it? So simply the like 33 point two. 3% by 100 is 3 correct? Who true? So you so what's the decimal number of 33? 33% is um so so right? So that's the answer. Okay. So that's the answer. No, right? So what's wrong with my So let's say I'll do Let's say period I mean have a fisher index of 1.3 33. And 33. 3% that's sure, but then So, I'll show you how to do it. All right, so we got just a few Yeah. So then we'll put the coin, we need to screen, right? So we got we'll do the near too. We will 1.3 33 coins on the third house. So like the one to see from the slide. Yeah, we'll go. Okay. All right, and now let's take a look at some of the the round. between nominal GDP and chain weighted GDP. And the base year here lets us 2005. So before 2005, which GDPs for greater than the other? So yeah, real GDP is greater than nominal GDP because we're picking the base year in 2005. So what does it mean? Even before 2005, we calculate the real GDP. The price is all the 2005 and most likely the US experienced inflation over the years and the prices in the 2005 is more most likely more high like higher than the prices previous years. So real GDP is usually greater than nominal GDP if the 2005, but after words, if the assume that it's 3 years, this over the course of the year, over the course after If you have a If you have already done, but then uh I may suggest you to you know, the numbers. Like the the",
+   "ko": "퍼센트인데 변화율이 어떻게 되나요? GDP의 변화율은 1년 차를 기준 연도로 했을 때 어떻게 되나요? G1은? 그래서 5 4%입니다. 어떻게 구하셨나요? 네. 그래서 여러분은 두 개를 나누셨네요. P로. 1년 차로. 빼기 1 곱하기 뭐죠? 곱하기 100. 그렇게 G1을 구했어요. 그래서 이건 실질 GDP는 1년 차를 기준으로 해요. 기준 연도는 1년 차여야 해요. 자, 이제 이 아이디어를 활용해서 이 애플리케이션을 만들어 볼 거예요. 여기서 무슨 일이 일어나냐면, 어쨌든 우리는 피셔 지수가 1.3 33이고 실질 GDP가 1년 차가 130이라는 걸 알아요. 그리고 문제는 우리가 실질 GDP가 얼마인지 모른다는 거예요. GDP2는 얼마이고, 실질 GDP를 계산할 수 있나요? 2년 차에 피셔 지수와 실질 GDP를 가지고 1년 차에? 네. 당신은 이 공식을 바로 적용하시는 것 같네요. 그리고 더할 수 있어요. 실질 GDP를 더할 수 있어요. 2년 차에. 그리고 그게 사실이라면, 우리는 알 필요도 없어요. 기준 연도가 무엇인지. 그래서 어쨌든 그 가치는 실질 GDP 2년 차가 얼마든, 여전히 적용할 수 있다고. 네. 이 공식은, 이건 심지어 공식도 아니에요, 이건 개념이에요. 뭐에 대한? 퍼센트 변화율에 대한 거잖아요, 아시다시피. 어, 어 시계열 데이터 요. 그래서 여러분은 이걸 가지고, 뭐가 피셔 지수가 되어야 할까요? 그래서 33 그리고 2 퍼센트, 맞죠? 그리고 문제에서 무엇을 알 수 있나요? 우리는 1년 차를 가지고 있는데, 100 30이에요. 그리고 문제에서, 그래서 질문은 만약 당신이 실질 GDP의 가치가 1년 차에 130이라면, 그리고 맞죠? 빼기 1 곱하기 뭐죠? 곱하기 그리고 만약 당신이 그 감가상각을 안다면 그 포인트는 100이고, 그렇죠? 그래서 뭐죠? 약간의 의문이 있을 수 있죠, 제 설명에 대해서. 그래서 이제 합계를 구할게요, 그래서 피셔는 이게 1.333 이지 33.3이 아니라고 해요. 저는 그 숫자를 어떻게 얻을 수 있을까요? 그래서 간단히 그 33 점 2요. 3% 곱하기 100 은 3 맞죠? 누가 맞죠? 그래서 당신은 그래서 그래서 소수점은 33인가요? 33% 는 음 그래서 그래서 맞죠? 그래서 그게 정답이에요. 네. 그래서 그게 정답이에요. 아니죠? 그럼 제 설명에 뭐가 잘못된 거죠? 그래서 제가 해볼게요. 기간을 말하자면 피셔가 1.3의 지수를 가지고 있어요. 그리고 33. 3% 그건 확실하지만, 그러면 그래서, 제가 어떻게 하는지 보여드릴게요. 자, 그럼 이제 몇 가지만 네. 그럼 이제 동전을 넣고, 화면을 봐야겠죠? 그래서 이제 우리는 할 거예요 근처도요. 우리는 1.3 33 코인을 세 번째 집에. 그러니까 첫 번째 슬라이드에서 볼 수 있는 거요. 네, 갈게요. 알겠습니다. 자, 그리고 이제 한번 몇 가지를 살펴볼게요. 그 라운드를요. 명목상 GDP와 연쇄 가중 GDP 사이의. 그리고 여기서 기준 연도는 2005년입니다. 그래서 2005년 이전에는, 어떤 GDP가 더 높을까요? 다른 것보다? 그래서 네, 실질 GDP가 더 높아요. 명목 GDP보다 왜냐하면 기준 연도를 2005년으로 잡았으니까요. 그래서 무슨 뜻일까요? 심지어 2005년 이전에도, 우리는 실질 GDP를 계산합니다. 가격은 모두 2005년 이고 대부분 미국은 경험했을 거예요. 그 해 동안 인플레이션을 겪었고 그리고 2005년의 가격은 더 높아요. 아마도 더 높을 거예요. 높은 것처럼요. 다른 것보다 가격이 이전 해보다 그래서 실질 GDP는 보통 명목 GDP보다 더 높아요, 만약 2005년이라면, 하지만 그 이후에, 만약 3년이라고 가정하면, 이것은 그 기간 동안 의 그 해 동안, 2005년 만약 만약 이미 다 했다면, 하지만 그럼 제가 제안할 수도 있어요. 있잖아요, 그 숫자들. 예를 들어 그",
+   "pdf": "LNCh2_Slides_180912.pdf",
+   "pdfPage": 49,
+   "slideText": "[Application of the Fisher index] - Given g c , we can calculate RGDP in terms of the dollars of any year. Example: Suppose g c =1.333 and RGDP 1 =$130. Then, we can find out RGDP 2 = $130*1.333 = $173.29. - In Figure 2.1, RGDP grows at a lower rate than NGDP due to positive inflation.",
+   "liveNotes": {
+    "notes": [
+     "**피셔지수 적용**: g_c를 알면 RGDP를 다른 연도 달러 기준으로 환산 가능",
+     "예시: RGDP₁=$130, g_c=1.333 → RGDP₂=$130×1.333=$173.29",
+     "▶ g_c=1.333은 성장률 33.3%에 해당 ((g_c-1)×100)",
+     "인플레이션이 양(+)이면 NGDP가 RGDP보다 더 빠르게 증가 (Figure 2.1)"
+    ],
+    "summary": "피셔지수 적용 예시",
+    "exam": [],
+    "board": [
+     "g₁ = (Y₂/Y₁ − 1) × 100"
+    ],
+    "at": 1789541685090
+   },
+   "marks": [
+    {
+     "line": 3,
+     "type": "",
+     "note": "기준연도=1년차(year1)"
+    }
+   ],
+   "lines": {
+    "w": 720,
+    "h": 540,
+    "lines": [
+     {
+      "i": 0,
+      "text": "[Application of the Fisher index]",
+      "x": 61.2,
+      "y": 104.99599999999998,
+      "w": 335.0387040000001,
+      "h": 27.627599999999997
+     },
+     {
+      "i": 1,
+      "text": "- Given g c , we can calculate RGDP in terms of the dollars",
+      "x": 61.2,
+      "y": 159.76999999999998,
+      "w": 607.5559999999999,
+      "h": 27.599999999999998
+     },
+     {
+      "i": 2,
+      "text": "of any year.",
+      "x": 81.144,
+      "y": 195.64999999999998,
+      "w": 124.00799999999998,
+      "h": 27.599999999999998
+     },
+     {
+      "i": 3,
+      "text": "Example: Suppose g c =1.333 and RGDP 1 =$130. Then, we",
+      "x": 67.8,
+      "y": 250.39,
+      "w": 614.6380000000001,
+      "h": 27.599999999999998
+     },
+     {
+      "i": 4,
+      "text": "can find out RGDP 2 = $130*1.333 = $173.29.",
+      "x": 180.62,
+      "y": 286.27,
+      "w": 477.5780000000001,
+      "h": 27.599999999999998
+     },
+     {
+      "i": 5,
+      "text": "- In Figure 2.1, RGDP grows at a lower rate than NGDP",
+      "x": 61.2,
+      "y": 357.82,
+      "w": 590.304,
+      "h": 27.599999999999998
+     },
+     {
+      "i": 6,
+      "text": "due to positive inflation.",
+      "x": 81.144,
+      "y": 393.7,
+      "w": 250.65599999999995,
+      "h": 27.599999999999998
+     }
+    ]
+   },
+   "segs": [
+    {
+     "t": 1761,
+     "page": 49,
+     "en": "the percentage rate of change of GDP when we have a year one as a base year. How do we get G1? So 5 4%. How did you get it?",
+     "ko": "퍼센트인데 변화율이 어떻게 되나요? GDP의 변화율은 1년 차를 기준 연도로 했을 때 어떻게 되나요? G1은? 그래서 5 4%입니다. 어떻게 구하셨나요?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1780,
+     "page": 49,
+     "en": "Yeah. So you you did two divided by the P. year one. minus one times what? times 100. That's how we got the G1. So this real GDP has a base year one.",
+     "ko": "네. 그래서 여러분은 두 개를 나누셨네요. P로. 1년 차로. 빼기 1 곱하기 뭐죠? 곱하기 100. 그렇게 G1을 구했어요. 그래서 이건 실질 GDP는 1년 차를 기준으로 해요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1802,
+     "page": 49,
+     "en": "base year should be year one.",
+     "ko": "기준 연도는 1년 차여야 해요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1806,
+     "page": 49,
+     "en": "Now, we're going to use this idea into this application here. What happens here is somehow we know the Fisher index 1.3 33 and the real GDP one is a 130. And the question is we don't know what the real GDP is. The GDP2 is and can you calculate real GDP in year two with the Fisher index and the real GDP in year one?",
+     "ko": "자, 이제 이 아이디어를 활용해서 이 애플리케이션을 만들어 볼 거예요. 여기서 무슨 일이 일어나냐면, 어쨌든 우리는 피셔 지수가 1.3 33이고 실질 GDP가 1년 차가 130이라는 걸 알아요. 그리고 문제는 우리가 실질 GDP가 얼마인지 모른다는 거예요. GDP2는 얼마이고, 실질 GDP를 계산할 수 있나요? 2년 차에 피셔 지수와 실질 GDP를 가지고 1년 차에?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1833,
+     "page": 49,
+     "en": "Yes. You seem to apply this formula right here. And you can add the real GDP in year two. And that case, we don't even need to know what the base year is. So then Whatever the value of real GDP in year two is,",
+     "ko": "네. 당신은 이 공식을 바로 적용하시는 것 같네요. 그리고 더할 수 있어요. 실질 GDP를 더할 수 있어요. 2년 차에. 그리고 그게 사실이라면, 우리는 알 필요도 없어요. 기준 연도가 무엇인지. 그래서 어쨌든 그 가치는 실질 GDP 2년 차가 얼마든,",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1858,
+     "page": 49,
+     "en": "which is still apply this. Okay. This formula, which is this is not even a formula, this is the notion of what? percentage change of some you know, uh uh time series data. So you have this, what should be the Fisher index? So 33 and 2 percent, correct? And then what do you know from the question?",
+     "ko": "여전히 적용할 수 있다고. 네. 이 공식은, 이건 심지어 공식도 아니에요, 이건 개념이에요. 뭐에 대한? 퍼센트 변화율에 대한 거잖아요, 아시다시피. 어, 어 시계열 데이터 요. 그래서 여러분은 이걸 가지고, 뭐가 피셔 지수가 되어야 할까요? 그래서 33 그리고 2 퍼센트, 맞죠? 그리고 문제에서 무엇을 알 수 있나요?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1890,
+     "page": 49,
+     "en": "We have the year one is what? 100 30. And then from the question, so the question asks",
+     "ko": "우리는 1년 차를 가지고 있는데, 100 30이에요. 그리고 문제에서, 그래서 질문은",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1904,
+     "page": 49,
+     "en": "If you know",
+     "ko": "만약 당신이",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1908,
+     "page": 49,
+     "en": "the value of real GDP in year one is 130. And right? minus one times what? times and if you know the depreciation that the point is 100, Right? So what may have some doubts on my explanation. So now we'll take a sum, so fisher says it's a 1.333 not 33.3. percent.",
+     "ko": "실질 GDP의 가치가 1년 차에 130이라면, 그리고 맞죠? 빼기 1 곱하기 뭐죠? 곱하기 그리고 만약 당신이 그 감가상각을 안다면 그 포인트는 100이고, 그렇죠? 그래서 뭐죠? 약간의 의문이 있을 수 있죠, 제 설명에 대해서. 그래서 이제 합계를 구할게요, 그래서 피셔는 이게 1.333 이지 33.3이 아니라고 해요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1941,
+     "page": 49,
+     "en": "I want to have that number how would you get it?",
+     "ko": "저는 그 숫자를 어떻게 얻을 수 있을까요?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1949,
+     "page": 49,
+     "en": "So simply the like 33 point two. 3% by 100 is 3 correct? Who true?",
+     "ko": "그래서 간단히 그 33 점 2요. 3% 곱하기 100 은 3 맞죠? 누가 맞죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1970,
+     "page": 49,
+     "en": "So you so what's the decimal number of 33? 33% is um so so",
+     "ko": "그래서 당신은 그래서 그래서 소수점은 33인가요? 33% 는 음 그래서 그래서",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1996,
+     "page": 49,
+     "en": "right? So that's the answer. Okay. So that's the answer.",
+     "ko": "맞죠? 그래서 그게 정답이에요. 네. 그래서 그게 정답이에요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2000,
+     "page": 49,
+     "en": "No, right? So what's wrong with my",
+     "ko": "아니죠? 그럼 제 설명에 뭐가 잘못된 거죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2005,
+     "page": 49,
+     "en": "So let's say I'll do",
+     "ko": "그래서 제가 해볼게요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2009,
+     "page": 49,
+     "en": "Let's say period I mean have a fisher index of 1.3 33. And 33. 3% that's sure, but then",
+     "ko": "기간을 말하자면 피셔가 1.3의 지수를 가지고 있어요. 그리고 33. 3% 그건 확실하지만, 그러면",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2020,
+     "page": 49,
+     "en": "So, I'll show you how to do it.",
+     "ko": "그래서, 제가 어떻게 하는지 보여드릴게요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2035,
+     "page": 49,
+     "en": "All right, so we got just a few Yeah. So then we'll put the coin, we",
+     "ko": "자, 그럼 이제 몇 가지만 네. 그럼 이제 동전을 넣고,",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2045,
+     "page": 49,
+     "en": "need to screen, right? So we got we'll do the near too. We will 1.3 33 coins on the third house.",
+     "ko": "화면을 봐야겠죠? 그래서 이제 우리는 할 거예요 근처도요. 우리는 1.3 33 코인을 세 번째 집에.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2059,
+     "page": 49,
+     "en": "So like the one to see from the slide.",
+     "ko": "그러니까 첫 번째 슬라이드에서 볼 수 있는 거요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2082,
+     "page": 49,
+     "en": "Yeah, we'll go. Okay. All right, and now let's take a look at some of the the round. between nominal GDP and chain weighted GDP. And the base year here lets us 2005. So before 2005, which GDPs for greater than the other? So yeah, real GDP is greater than nominal GDP because we're picking the base year in 2005.",
+     "ko": "네, 갈게요. 알겠습니다. 자, 그리고 이제 한번 몇 가지를 살펴볼게요. 그 라운드를요. 명목상 GDP와 연쇄 가중 GDP 사이의. 그리고 여기서 기준 연도는 2005년입니다. 그래서 2005년 이전에는, 어떤 GDP가 더 높을까요? 다른 것보다? 그래서 네, 실질 GDP가 더 높아요. 명목 GDP보다 왜냐하면 기준 연도를 2005년으로",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2114,
+     "page": 49,
+     "en": "So what does it mean? Even before 2005, we calculate the real GDP. The price is all the 2005 and most likely the US experienced inflation over the years and the prices in the 2005 is more most likely more high like higher than the prices previous years. So real GDP is usually greater than nominal GDP if the 2005, but after words, if the assume that it's 3 years, this over the course of the year, over the course after",
+     "ko": "잡았으니까요. 그래서 무슨 뜻일까요? 심지어 2005년 이전에도, 우리는 실질 GDP를 계산합니다. 가격은 모두 2005년 이고 대부분 미국은 경험했을 거예요. 그 해 동안 인플레이션을 겪었고 그리고 2005년의 가격은 더 높아요. 아마도 더 높을 거예요. 높은 것처럼요. 다른 것보다 가격이 이전 해보다 그래서 실질 GDP는 보통 명목 GDP보다 더 높아요, 만약 2005년이라면, 하지만 그 이후에, 만약 3년이라고 가정하면, 이것은 그 기간 동안 의 그 해 동안, 2005년",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3195,
+     "page": 49,
+     "en": "If you have a If you have already done, but then uh I may suggest you to you know, the numbers. Like the the",
+     "ko": "만약 만약 이미 다 했다면, 하지만 그럼 제가 제안할 수도 있어요. 있잖아요, 그 숫자들. 예를 들어 그",
+     "src": "gemini",
+     "ai": true
+    }
+   ]
+  },
+  {
+   "page": 50,
+   "en": "2005, nominal GDP is greater than real GDP. Yeah. And now the price level in example. So here I'm going to introduce the measure of the price",
+   "ko": "이후에, 명목 GDP가 더 높아요. 실질 GDP보다. 네. 그리고 이제 가격 수준은 예시입니다. 그래서 여기서 저는 이 가격 수준의 척도를",
+   "pdf": "LNCh2_Slides_180912.pdf",
+   "pdfPage": 50,
+   "slideText": "Figure 2.1 NGDP and Chain - Weighted RGDP (Base year: 2005)",
+   "liveNotes": {
+    "notes": [
+     "**명목GDP**(NGDP)와 **연쇄가중 실질GDP**(Chain-Weighted RGDP)를 기준연도(Base year) 2005년 기준으로 비교한 그래프",
+     "인플레이션이 양(+)이므로 시간이 지날수록 NGDP가 RGDP보다 높게 나타남"
+    ],
+    "summary": "NGDP·RGDP 비교 그래프",
+    "exam": [],
+    "board": [],
+    "at": 1789540659167
+   },
+   "marks": [],
+   "lines": {
+    "w": 720,
+    "h": 540,
+    "lines": [
+     {
+      "i": 0,
+      "text": "Figure 2.1 NGDP and Chain - Weighted RGDP (Base year: 2005)",
+      "x": 49.2,
+      "y": 23.30000000000001,
+      "w": 619.97,
+      "h": 27.599999999999998
+     }
+    ]
+   },
+   "segs": [
+    {
+     "t": 2155,
+     "page": 50,
+     "en": "2005, nominal GDP is greater than real GDP. Yeah.",
+     "ko": "이후에, 명목 GDP가 더 높아요. 실질 GDP보다. 네.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2163,
+     "page": 50,
+     "en": "And now the price level in example. So here I'm going to introduce the measure of the price",
+     "ko": "그리고 이제 가격 수준은 예시입니다. 그래서 여기서 저는 이 가격 수준의 척도를",
+     "src": "gemini",
+     "ai": true
+    }
+   ]
+  },
+  {
+   "page": 51,
+   "en": "level. So first we have studied how to calculate nominal GDP and how to come up with the real GDP. by fixing prices of a certain year. And now given that two notions, we would like to come up with the measurement for the price level. First one is the implicit GDP price deflator. We call that the price of an aggregate output and consumer price index CPI. Okay. And have the measure of the price level. So All right, so implicit GDP deflator, the year used you got the nominal GDP example from this table. Over a certain year, and the real GDP divided",
+   "ko": "소개할게요. 먼저 우리는 공부했어요 어떻게 명목 GDP를 계산하는지, 그리고 어떻게 실질 GDP를 구하는지. 가격을 고정함으로써 특정 연도의. 그리고 이제 주어진 것은 두 가지 개념인데, 우리는 그 다음을 생각해보고 싶어요. 가격 수준에 대한 첫 번째는 바로 암시적 GDP 가격 디플레이터입니다. 우리는 그것을 가격 총합의 가격이라고 부르고, 그리고 소비자 가격 지수는 CPI입니다. 알겠습니다. 그리고 가지고 있는 것은 가격 수준의 척도입니다. 그래서 좋아요, 그래서 암시적 GDP 가격 디플레이터, 사용된 연도는 여러분이 얻은 명목 GDP와 예를 들어 이 표에서요. 특정 기간 동안, 그리고 실질 GDP를",
+   "pdf": "LNCh2_Slides_180912.pdf",
+   "pdfPage": 51,
+   "slideText": "The Price Level and Example o Two measures of the price level - Implicit GDP price deflator : a price of aggregate output - Consumer price index (CPI) : a cost of living",
+   "liveNotes": {
+    "notes": [
+     "▶ **명목GDP**(nominal GDP)와 **실질GDP**(real GDP, 기준연도 가격 고정)의 계산법을 복습한 뒤 **물가수준**(price level) 측정으로 넘어감"
+    ],
+    "summary": "물가수준 측정지표",
+    "exam": [],
+    "board": [],
+    "at": 1789540689786
+   },
+   "marks": [],
+   "lines": {
+    "w": 720,
+    "h": 540,
+    "lines": [
+     {
+      "i": 0,
+      "text": "The Price Level and Example",
+      "x": 55.2,
+      "y": 30.739999999999988,
+      "w": 456.2233200000001,
+      "h": 45.954
+     },
+     {
+      "i": 1,
+      "text": "o Two measures of the price level",
+      "x": 61.2,
+      "y": 165.05,
+      "w": 362.662,
+      "h": 27.599999999999998
+     },
+     {
+      "i": 2,
+      "text": "- Implicit GDP price deflator : a price of aggregate output",
+      "x": 87.864,
+      "y": 219.79000000000002,
+      "w": 593.236,
+      "h": 27.599999999999998
+     },
+     {
+      "i": 3,
+      "text": "- Consumer price index (CPI) : a cost of living",
+      "x": 87.864,
+      "y": 274.63,
+      "w": 475.9,
+      "h": 27.599999999999998
+     }
+    ]
+   },
+   "segs": [
+    {
+     "t": 2170,
+     "page": 51,
+     "en": "level. So first we have",
+     "ko": "소개할게요. 먼저",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2174,
+     "page": 51,
+     "en": "studied how to calculate nominal GDP and how to come up with the real GDP. by fixing prices of a certain year. And now given that two notions, we would like to come up with the measurement for the price level. First one is the implicit GDP price deflator. We call that the price of an aggregate output and consumer price index CPI.",
+     "ko": "우리는 공부했어요 어떻게 명목 GDP를 계산하는지, 그리고 어떻게 실질 GDP를 구하는지. 가격을 고정함으로써 특정 연도의. 그리고 이제 주어진 것은 두 가지 개념인데, 우리는 그 다음을 생각해보고 싶어요. 가격 수준에 대한 첫 번째는 바로 암시적 GDP 가격 디플레이터입니다. 우리는 그것을 가격 총합의 가격이라고 부르고, 그리고 소비자 가격 지수는 CPI입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2201,
+     "page": 51,
+     "en": "Okay. And have the measure of the price level. So All right, so implicit GDP deflator, the year used you got the nominal GDP example from this table. Over a certain year, and the real GDP divided",
+     "ko": "알겠습니다. 그리고 가지고 있는 것은 가격 수준의 척도입니다. 그래서 좋아요, 그래서 암시적 GDP 가격 디플레이터, 사용된 연도는 여러분이 얻은 명목 GDP와 예를 들어 이 표에서요. 특정 기간 동안, 그리고 실질 GDP를",
+     "src": "gemini",
+     "ai": true
+    }
+   ]
+  },
+  {
+   "page": 52,
+   "en": "nominal GDP by real GDP times 100. So if I lay out in terms of cost, this case the cost of a per unit at per unit prices divide by cost of a quantity at base year price. And times 100. So here we have a table 2.11 from our textbook. So given our example, here, And about nine different like six different numbers for year one, two, year two. So why don't you start to figure this out. I will give you five minutes. So why don't you do this? Uh for figure out how to get 100. and 160. 5.9 and for the taking a base year to how do you get 58. 4. And 100. So using chaining average to figure out how we can come up with this number by using one. by using this formula over here. Okay? So this is not the case. The formula is the next page. But I'd like you to have some time to think of what's going on. So I will give you like five minutes. Are you guys uh having fun? So they're like the numbers for year four. Um, I'm just going to have to Yeah, only. I know this is too mechanical for you since you have a caterer and what not. very helpful, loyal, and right next to you so we can get the number whenever you like, whichever you like, but still you have to but understand that the police station is back well, that can be high, I would say. Oh, by the way, any questions? All good? All right. I don't think so. And you're fine with me? Yeah? I don't know. So I start with this. Fine. Using this year you want let's calculate out how we get this by using the city. Like price calculator formula. So, which nominal GDP would you use? Nominal GDP? Yeah. Um you want to try? By the way, real GDP here. One but the base year should be what? Um year one. Okay. So then and what's the value of nominal GDP year one? So we're going to put it over here. Okay. All right, so the nominal GDP year one is 130. Okay. And what's the real GDP year one when the base year is year one? Um it's year two, isn't it? That's still $130. Okay, so the value of this It's just the one. So one kind of hundred with what? Yeah, one time 100 was the So and this would be your value function. And then how would you get the value of the 65 09? Here, what do you need? Nominal GDP? Year two? Okay, and real GDP? Year one? Okay. So year three. Okay, So we're on the six. So what do you need? What GDP do you what real GDP do you need? Here, here. Two, right? Because we are calculating number two. And that's nominal GDP divided by real GDP. Okay. Yes, sir. So, you Yeah, that's the next step. Very good. So here's you calculating real GDP here too. Then base year is one. Okay. Base year is year one, right? Makes sense? Then what's the value for that? Real GDP year two is a base year, year one. That's one 76. Right? So the bottom here denominator that's 176. So what's the top? The value for the top? Yeah. So I need to calculate you 192. And then after you lose times 100. Right? And then uh I don't have to calculate it, but I think that if you feel by 192 divided by 176 times 100 will give you what? Um 65 point9. Okay? Then And then the percentage change of this numbers would be what? It's just simply 16 5.9 divided by 100 minus one times one. times 100 gives you what? Yeah. So 65.9 percent and that's the GDP deflator. of this economy, which we set the base year as year one, right? And that's the inflation rate. 65 point9. percent. Uh change of a plan since you guys took so long. So you guys all have the piece of paper that I gave you already, right? So let me have a please. So anyway, take a piece of paper if you don't have it. I still have some. I can give it to you. And then prepare your pen and then write down your student ID and name. Yeah. Any questions? Okay. Right. Write down your name and student ID that I gave you. And your guess, right? Write down your student ID and name. Is it just one? Right? And then here. Like write that I did on the board. Now, the second row here, I'll be there. So figure out how to get 58. 4 and 100, right? So in your And Okay? And that would be you, please, and then I'll be there in 10 minutes. And you know, make things that's make just teaching. I'm going to read it. Can you use doing this. I mean So this is okay. So you know, put the first with this and then what do you have the time? So to do more, you can use the formula in the bottom, basically try to figure it out. So you get the numbers of the two years. Right? So show me you want to just pass the book. And let's pass to the next which would be like the our lottery today I calculated Google actually, let me look it up. Let's see if you can find it. And uh it's going to be an open book. Open notebook test. So You should be packed. You have a whole semester to help you can get. Not advanced, just But the problem is you have to be you have to be able to explain like you have like time to do it. Copy and paste it. You know what I mean? But the problem is the problem that is So if you have done with the numbers, that's fine, but the if you have a time, you can use the part B where the let's say the you want to control But the this year kind of changed that the real GDP the one would be a bit different from the GDP, right? So the where the numbers are, So, make sure that you have a you know, the rules. So Yeah, it was Right. So we have uh probably another minute. 8 minutes. Let me know once we're I guess. I don't need to join at all, but just I don't know. So now it's time for and understand consumer price index is being made index that the central bank uses to expect that that",
+   "ko": "명목 GDP로 나눈 것과 100을 곱한 것입니다. 그래서 제가 만약 이렇게 나열한다면 비용 면에서, 이 경우 비용은 단위당 단위당 가격으로 나누고 그리고 비용으로 나누면 수량은 가격으로 기준 연도 가격입니다. 그리고 100을 곱합니다. 그래서 여기 표가 있는데 표 2.11에서 우리 교과서에 있는 내용입니다. 그래서 우리 예시를 보면, 여기서는 그리고 약 9개의 다른 여섯 가지 다른 숫자가 1, 2, 2년 차에 있습니다. 그래서 계산을 시작해 보세요. 5분 드릴게요. 그래서 이거 해보시겠어요? 어 예를 들어 어떻게 계산하는지 알아내 보세요. 그리고 160. 5.9 그리고 그 다음은 기준 연도를 잡아서 어떻게 구하는지 58. 4. 그리고 100. 그래서 체이닝을 이용해 평균을 구해서 어떻게 할 수 있는지 이 숫자를 어떻게 구하는지 알아보세요. 1을 사용해서. 사용해서 이걸 여기 있는 공식으로. 알겠죠? 그래서 이건 사실이 아니에요. 공식은 다음 페이지에 있어요. 하지만 여러분이 좀 시간을 갖고 생각해 보셨으면 좋겠어요. 그래서 한 5분 드릴게요. 여러분, 여러분 즐거우신가요? 그래서 그들은 4년 차의 숫자예요. 음, 그냥 해야겠어요. 네, 그것뿐이에요. 이게 너무 기계적이라는 거 알아요, 당신은 케이터링 업체가 있고 하니까요. 정말 도움이 되고, 충성스럽고, 바로 옆에 있어서 우리가 번호를 받을 수 있어요, 언제든지. 원하실 때, 어떤 것이든 좋지만, 그래도 해야 해요. 이해해요, 경찰이 경찰서가 뒤에 있다는 걸, 그건 높을 수 있어요, 제가 보기엔. 아, 그나저나 질문 있으세요? 다 괜찮으세요? 알겠습니다. 아닌 것 같아요. 그리고 저랑 괜찮으시죠? 네? 모르겠어요. 그래서 제가 이걸로 시작할게요. 좋아요. 사용해서 올해는 원하시는 게 이거죠, 그럼 계산해 봅시다. 어떻게 이걸 얻을지 이걸 사용해서 도시를. 예를 들어 가격 계산기 공식. 그래서, 어떤 명목 GDP를 사용하시겠어요? 명목 GDP요? 네. 음 원하시는 게 있으세요? 그나저나 실질 GDP 여기요. 하나 하지만 기준 연도는 뭐가 되어야 할까요? 음 1년 차요. 네. 그래서 그러면 그리고 가치는 얼마인가요? 명목 GDP 1년 차? 그래서 여기다 둘게요. 네. 자, 그럼 명목 GDP 1년 차는 130입니다. 네. 그리고 실질 GDP 1년 차는 기준 연도가 1년 차일 때 얼마인가요? 1년 차죠, 그렇죠? 그건 여전히 130달러예요. 네, 그래서 이것의 가치는 그냥 하나예요. 그래서 100이라는 것과 무엇을? 네, 하나 곱하기 100은 그래서 그리고 이것은 될 거예요. 당신의 가치 함수가. 그리고 어떻게 그 값을 얻을 수 있을까요? 65 09을? 여기서, 뭐가 필요하세요? 명목 GDP? 1년 차요? 네, 그리고 실질 GDP? 1년 차요? 네. 그래서 3년 차요. 네, 그래서 6번이에요. 그래서 뭐가 필요하세요? 어떤 GDP를 어떤 실질 GDP를 필요하세요? 여기요, 여기요. 2번이죠? 왜냐하면 우리는 숫자를 계산하고 있으니까요. 그리고 그건 명목 GDP를 실질 GDP로 나눈 거예요. 네. 네, 알겠습니다. 그래서, 당신은 네, 그게 다음 단계예요. 아주 좋아요. 그래서 여기 당신이 계산하고 있는 실질 GDP는 여기도 마찬가지예요. 그럼 기준 연도는 1이에요. 네. 기준 연도는 연도 1이죠, 맞죠? 이해되시나요? 그럼 그 값은 얼마인가요? 실질 GDP는 연도 2는 기준 연도인 1년이에요. 그건 176이에요. 맞죠? 그래서 분모는 여기서는 분모가 176이에요. 그럼 분자는 얼마인가요? 분자의 값은? 네. 그래서 저는 계산해야 해요. 당신이 192를. 그리고 잃고 나면 곱하기 100을 해요. 맞죠? 그리고 계산할 필요가 없지만, 제 생각엔 만약 당신이 느낀다면 192로 나누고 176을 곱하면 뭐가 나오나요? 음 65 점 9. 알겠죠? 그럼 그리고 퍼센트 변화는 이것의 숫자는 무엇이 될까요? 그냥 단순히 16 5.9 나누기 100 빼기 1 곱하기 1. 곱하기 100 은 무엇이 되나요? 네. 그래서 65.9 퍼센트 그리고 그게 GDP 디플레이터입니다. 이 경제의, 우리가 설정한 기준 연도는 1년입니다. 1이죠, 맞죠? 그리고 그게 인플레이션율입니다. 65 점 9. 퍼센트. 어 변화는 계획의 변경이니까 여러분이 너무 오래 걸려서요. 그래서 여러분 모두 이 종이를 가지고 있죠? 제가 이미 드린 거, 맞죠? 그럼 제가 좀 볼게요. 어쨌든, 종이 한 장을 꺼내세요, 없으시면. 아직 좀 남았어요. 드릴게요. 그리고 펜을 준비하세요. 그리고 적어보세요. 학번을 그리고 이름을. 네. 혹시 질문 있으신가요? 네. 맞아요. 이름과 제가 드린 학번을 적으세요. 그리고 추측한 거, 맞죠? 학번을 적고 이름을 적으세요. 하나뿐인가요? 맞죠? 그리고 여기요. 예를 들어 적으세요. 제가 한 걸 칠판에 적으세요. 자, 두 번째 줄은 여기서는 제가 갈게요. 그러니까 어떻게 하면 58.4를 구하고 100을 구하는지 알아보세요. 그러니까 여러분의 그리고 알겠죠? 그리고 그게 당신이 될 거예요, 그리고 제가 10분 후에 갈게요. 그리고 아시다시피, 일을 그게 그냥 가르치는 거예요. 제가 읽을게요. 사용할 수 할게요. 제 말은 그래서 이건 괜찮아요. 그러니까, 숫자를 먼저 넣고 그 다음엔 시간이 어떻게 되나요? 그래서 더 하려면 더 할 수 있어요. 그 공식은 아래에 있고, 기본적으로 알아내려고 노력해보세요. 그래서 2년 동안의 숫자를 얻는 거죠, 맞죠? 그러니까 그냥 보여주세요. 책을 넘겨주세요. 그리고 자, 이제 다음으로 넘어가서 그건 아마 우리 복권 같은 걸 거예요. 제가 계산해봤는데 구글이 사실, 제가 찾아볼게요. 한번 찾아보세요. 그리고 이건 오픈북이 될 거예요. 오픈 노트북 시험이에요. 그래서 짐을 다 싸야 해요. 당신은 한 학기 내내 도움을 받을 수 있어요. 아니, 고급이 아니라, 그냥 하지만 문제는 당신이 준비되어 있어야 한다는 거예요. 당신은 설명할 수 있어야 해요. 시간이 있어야 해요. 복사해서 붙여넣으세요. 무슨 말인지 알죠? 하지만 문제는 그게 문제라는 거예요. 그래서 만약 숫자를 다 했다면, 괜찮아요, 하지만 만약 시간이 있다면, 그 파트 B를 사용할 수 있어요. 예를 들어 당신이 원한다면 제어할 수 있어요. 하지만 올해는 좀 바뀌어서 그게 실질 GDP가 그게 좀 다를 거예요. 명목과는 다르죠, 맞죠? 그래서 숫자가 어디에 있는지, 그래서, 확실히 가지고 있는지 확인하세요, 규칙을요. 그래서 네, 그랬어요. 네. 그래서 저희가 아마 1분 정도 더 남았어요. 8분. 준비되면 말씀해 주세요. 아마도요. 저는 참여할 필요가 없지만, 그냥 모르겠어요. 그래서 지금 이제 시간이에요. 그리고 이해하고 소비자를 가격 지수 가 발표되고 있어요. 지수가 중앙은행이 사용하는 예상하는 그게",
+   "pdf": "LNCh2_Slides_180912.pdf",
+   "pdfPage": 52,
+   "slideText": "",
+   "liveNotes": {
+    "notes": [
+     "**쪽지시험**(quiz) 진행 안내",
+     "펜 준비 → 학번·이름 기재 지시",
+     "▶ 표 둘째 줄에서 **58.4**와 **100** 값을 어떻게 구하는지 계산하도록 지시",
+     "▶ 교수님 10분 후 복귀 예정",
+     "▶ 파트 B는 시간 남으면 선택적으로 풀이 가능(올해 내용 일부 변경)"
+    ],
+    "summary": "물가수준 지표 비교",
+    "exam": [],
+    "board": [
+     "GDP Deflator = Nominal GDP / Real GDP",
+     "CPI = (당해가격 묶음비용 / 기준연도가격 묶음비용) × 100",
+     "GDP Deflator (year2) = 192/176 × 100",
+     "% change = (165.9/100 − 1) × 100 = 65.9%"
+    ],
+    "at": 1789542475196
+   },
+   "marks": [],
+   "lines": {
+    "w": 720,
+    "h": 540,
+    "lines": []
+   },
+   "segs": [
+    {
+     "t": 2226,
+     "page": 52,
+     "en": "nominal GDP by real GDP times 100. So",
+     "ko": "명목 GDP로 나눈 것과 100을 곱한 것입니다. 그래서",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2233,
+     "page": 52,
+     "en": "if I lay out in terms of cost, this case the cost of a per unit at per unit prices divide by cost of a quantity at base year price. And times 100. So here we have a table 2.11 from our textbook. So given our example, here, And about nine different like six different numbers for year one, two, year two.",
+     "ko": "제가 만약 이렇게 나열한다면 비용 면에서, 이 경우 비용은 단위당 단위당 가격으로 나누고 그리고 비용으로 나누면 수량은 가격으로 기준 연도 가격입니다. 그리고 100을 곱합니다. 그래서 여기 표가 있는데 표 2.11에서 우리 교과서에 있는 내용입니다. 그래서 우리 예시를 보면, 여기서는 그리고 약 9개의 다른 여섯 가지 다른 숫자가 1, 2, 2년 차에 있습니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2259,
+     "page": 52,
+     "en": "So why don't you start to figure this out.",
+     "ko": "그래서 계산을 시작해 보세요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2266,
+     "page": 52,
+     "en": "I will give you five minutes. So why don't you do this? Uh for figure out how to get 100. and 160. 5.9 and for the taking a base year to how do you get 58. 4. And 100. So using chaining average to figure out how we can come up with this number by using one. by using this formula over here.",
+     "ko": "5분 드릴게요. 그래서 이거 해보시겠어요? 어 예를 들어 어떻게 계산하는지 알아내 보세요. 그리고 160. 5.9 그리고 그 다음은 기준 연도를 잡아서 어떻게 구하는지 58. 4. 그리고 100. 그래서 체이닝을 이용해 평균을 구해서 어떻게 할 수 있는지 이 숫자를 어떻게 구하는지 알아보세요. 1을 사용해서. 사용해서 이걸 여기 있는 공식으로.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2297,
+     "page": 52,
+     "en": "Okay? So this is not the case. The formula is the next page. But I'd like you to have some time to think of what's going on.",
+     "ko": "알겠죠? 그래서 이건 사실이 아니에요. 공식은 다음 페이지에 있어요. 하지만 여러분이 좀 시간을 갖고 생각해 보셨으면 좋겠어요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2308,
+     "page": 52,
+     "en": "So I will give you like five minutes.",
+     "ko": "그래서 한 5분 드릴게요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2332,
+     "page": 52,
+     "en": "Are you guys uh having fun? So they're like the numbers for year four.",
+     "ko": "여러분, 여러분 즐거우신가요? 그래서 그들은 4년 차의 숫자예요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2491,
+     "page": 52,
+     "en": "Um, I'm just going to have to Yeah, only.",
+     "ko": "음, 그냥 해야겠어요. 네, 그것뿐이에요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2506,
+     "page": 52,
+     "en": "I know this is too mechanical for you since you have a caterer and what not. very helpful, loyal, and right next to you so we can get the number whenever you like, whichever you like, but still you have to but understand that the police station is back well, that can be high, I would say.",
+     "ko": "이게 너무 기계적이라는 거 알아요, 당신은 케이터링 업체가 있고 하니까요. 정말 도움이 되고, 충성스럽고, 바로 옆에 있어서 우리가 번호를 받을 수 있어요, 언제든지. 원하실 때, 어떤 것이든 좋지만, 그래도 해야 해요. 이해해요, 경찰이 경찰서가 뒤에 있다는 걸, 그건 높을 수 있어요, 제가 보기엔.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2546,
+     "page": 52,
+     "en": "Oh, by the way, any questions? All good? All right. I don't think so. And you're fine with me? Yeah? I don't know. So I start with this. Fine. Using this year you want let's calculate out how we get this by using the city. Like price calculator formula.",
+     "ko": "아, 그나저나 질문 있으세요? 다 괜찮으세요? 알겠습니다. 아닌 것 같아요. 그리고 저랑 괜찮으시죠? 네? 모르겠어요. 그래서 제가 이걸로 시작할게요. 좋아요. 사용해서 올해는 원하시는 게 이거죠, 그럼 계산해 봅시다. 어떻게 이걸 얻을지 이걸 사용해서 도시를. 예를 들어 가격 계산기 공식.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2576,
+     "page": 52,
+     "en": "So, which nominal GDP would you use? Nominal GDP? Yeah. Um you want to try? By the way, real GDP here. One but the base year should be what? Um year one. Okay. So then and what's the value of nominal GDP year one? So we're going to put it over here. Okay. All right, so the nominal GDP year one is 130.",
+     "ko": "그래서, 어떤 명목 GDP를 사용하시겠어요? 명목 GDP요? 네. 음 원하시는 게 있으세요? 그나저나 실질 GDP 여기요. 하나 하지만 기준 연도는 뭐가 되어야 할까요? 음 1년 차요. 네. 그래서 그러면 그리고 가치는 얼마인가요? 명목 GDP 1년 차? 그래서 여기다 둘게요. 네. 자, 그럼 명목 GDP 1년 차는 130입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2615,
+     "page": 52,
+     "en": "Okay.",
+     "ko": "네.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2619,
+     "page": 52,
+     "en": "And what's the real GDP year one when the base year is year one? Um it's year two, isn't it? That's still $130. Okay, so the value of this It's just the one.",
+     "ko": "그리고 실질 GDP 1년 차는 기준 연도가 1년 차일 때 얼마인가요? 1년 차죠, 그렇죠? 그건 여전히 130달러예요. 네, 그래서 이것의 가치는 그냥 하나예요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2641,
+     "page": 52,
+     "en": "So one kind of hundred with what? Yeah, one time 100 was the",
+     "ko": "그래서 100이라는 것과 무엇을? 네, 하나 곱하기 100은",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2653,
+     "page": 52,
+     "en": "So and this would be your value function. And then how would you get the value of the 65 09?",
+     "ko": "그래서 그리고 이것은 될 거예요. 당신의 가치 함수가. 그리고 어떻게 그 값을 얻을 수 있을까요? 65 09을?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2667,
+     "page": 52,
+     "en": "Here, what do you need? Nominal GDP? Year two? Okay, and real GDP? Year one? Okay. So year three. Okay,",
+     "ko": "여기서, 뭐가 필요하세요? 명목 GDP? 1년 차요? 네, 그리고 실질 GDP? 1년 차요? 네. 그래서 3년 차요. 네,",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2685,
+     "page": 52,
+     "en": "So we're on the six. So what do you need? What GDP do you what real GDP do you need? Here, here. Two, right?",
+     "ko": "그래서 6번이에요. 그래서 뭐가 필요하세요? 어떤 GDP를 어떤 실질 GDP를 필요하세요? 여기요, 여기요. 2번이죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2699,
+     "page": 52,
+     "en": "Because we are calculating number two. And that's nominal GDP divided by real GDP. Okay.",
+     "ko": "왜냐하면 우리는 숫자를 계산하고 있으니까요. 그리고 그건 명목 GDP를 실질 GDP로 나눈 거예요. 네.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2711,
+     "page": 52,
+     "en": "Yes, sir. So, you Yeah, that's the next step. Very good. So here's you calculating real GDP here too. Then base year is one. Okay. Base year is year one, right?",
+     "ko": "네, 알겠습니다. 그래서, 당신은 네, 그게 다음 단계예요. 아주 좋아요. 그래서 여기 당신이 계산하고 있는 실질 GDP는 여기도 마찬가지예요. 그럼 기준 연도는 1이에요. 네. 기준 연도는 연도 1이죠, 맞죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2739,
+     "page": 52,
+     "en": "Makes sense? Then what's the value for that? Real GDP year two is a base year, year one. That's one 76. Right? So the bottom here denominator that's 176. So what's the top? The value for the top? Yeah. So I need to calculate you 192. And then after you lose times 100.",
+     "ko": "이해되시나요? 그럼 그 값은 얼마인가요? 실질 GDP는 연도 2는 기준 연도인 1년이에요. 그건 176이에요. 맞죠? 그래서 분모는 여기서는 분모가 176이에요. 그럼 분자는 얼마인가요? 분자의 값은? 네. 그래서 저는 계산해야 해요. 당신이 192를. 그리고 잃고 나면 곱하기 100을 해요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2762,
+     "page": 52,
+     "en": "Right?",
+     "ko": "맞죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2766,
+     "page": 52,
+     "en": "And then uh I don't have to calculate it, but I think that if you feel by 192 divided by 176 times 100 will give you what? Um 65 point9. Okay? Then",
+     "ko": "그리고 계산할 필요가 없지만, 제 생각엔 만약 당신이 느낀다면 192로 나누고 176을 곱하면 뭐가 나오나요? 음 65 점 9. 알겠죠? 그럼",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2786,
+     "page": 52,
+     "en": "And then the percentage change of this numbers would be what? It's just simply 16 5.9 divided by 100 minus one times one. times 100 gives you what? Yeah. So 65.9 percent and that's the GDP deflator.",
+     "ko": "그리고 퍼센트 변화는 이것의 숫자는 무엇이 될까요? 그냥 단순히 16 5.9 나누기 100 빼기 1 곱하기 1. 곱하기 100 은 무엇이 되나요? 네. 그래서 65.9 퍼센트 그리고 그게 GDP 디플레이터입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2812,
+     "page": 52,
+     "en": "of this economy, which we set the base year as year one, right? And that's the inflation rate. 65 point9. percent. Uh change of a plan since you guys took so long. So you guys all have the piece of paper that I gave you already, right? So let me have a please. So anyway, take a piece of paper if you don't have it. I still have some. I can give it to you.",
+     "ko": "이 경제의, 우리가 설정한 기준 연도는 1년입니다. 1이죠, 맞죠? 그리고 그게 인플레이션율입니다. 65 점 9. 퍼센트. 어 변화는 계획의 변경이니까 여러분이 너무 오래 걸려서요. 그래서 여러분 모두 이 종이를 가지고 있죠? 제가 이미 드린 거, 맞죠? 그럼 제가 좀 볼게요. 어쨌든, 종이 한 장을 꺼내세요, 없으시면. 아직 좀 남았어요. 드릴게요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2844,
+     "page": 52,
+     "en": "And then prepare your pen and then write down your student ID and name.",
+     "ko": "그리고 펜을 준비하세요. 그리고 적어보세요. 학번을 그리고 이름을.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2856,
+     "page": 52,
+     "en": "Yeah. Any questions? Okay. Right. Write down your name and student ID that I gave you. And your guess, right?",
+     "ko": "네. 혹시 질문 있으신가요? 네. 맞아요. 이름과 제가 드린 학번을 적으세요. 그리고 추측한 거, 맞죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2873,
+     "page": 52,
+     "en": "Write down your student ID and name. Is it just one? Right? And then here. Like write",
+     "ko": "학번을 적고 이름을 적으세요. 하나뿐인가요? 맞죠? 그리고 여기요. 예를 들어 적으세요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2891,
+     "page": 52,
+     "en": "that I did on the board. Now, the second row here, I'll be there. So figure out how to get 58. 4 and 100, right? So in your And Okay?",
+     "ko": "제가 한 걸 칠판에 적으세요. 자, 두 번째 줄은 여기서는 제가 갈게요. 그러니까 어떻게 하면 58.4를 구하고 100을 구하는지 알아보세요. 그러니까 여러분의 그리고 알겠죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2908,
+     "page": 52,
+     "en": "And that would be you, please, and then I'll be there in 10 minutes. And you know, make things that's make just teaching. I'm going to read it. Can you use",
+     "ko": "그리고 그게 당신이 될 거예요, 그리고 제가 10분 후에 갈게요. 그리고 아시다시피, 일을 그게 그냥 가르치는 거예요. 제가 읽을게요. 사용할 수",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3130,
+     "page": 52,
+     "en": "doing this. I mean",
+     "ko": "할게요. 제 말은",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3217,
+     "page": 52,
+     "en": "So this is okay. So you know, put the first with this and then what do you have the time? So to do more, you can use the formula in the bottom, basically try to figure it out. So you get the numbers of the two years. Right? So show me you want to just pass the book.",
+     "ko": "그래서 이건 괜찮아요. 그러니까, 숫자를 먼저 넣고 그 다음엔 시간이 어떻게 되나요? 그래서 더 하려면 더 할 수 있어요. 그 공식은 아래에 있고, 기본적으로 알아내려고 노력해보세요. 그래서 2년 동안의 숫자를 얻는 거죠, 맞죠? 그러니까 그냥 보여주세요. 책을 넘겨주세요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3247,
+     "page": 52,
+     "en": "And let's pass to the next which would be like the our lottery today I calculated Google actually, let me look it up. Let's see if you can find it. And uh it's going to be an open book. Open notebook test. So",
+     "ko": "그리고 자, 이제 다음으로 넘어가서 그건 아마 우리 복권 같은 걸 거예요. 제가 계산해봤는데 구글이 사실, 제가 찾아볼게요. 한번 찾아보세요. 그리고 이건 오픈북이 될 거예요. 오픈 노트북 시험이에요. 그래서",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3272,
+     "page": 52,
+     "en": "You should be packed. You have a whole semester to help you can get. Not advanced, just But the problem is you have to be you have to be able to explain like you have like time to do it. Copy and paste it. You know what I mean?",
+     "ko": "짐을 다 싸야 해요. 당신은 한 학기 내내 도움을 받을 수 있어요. 아니, 고급이 아니라, 그냥 하지만 문제는 당신이 준비되어 있어야 한다는 거예요. 당신은 설명할 수 있어야 해요. 시간이 있어야 해요. 복사해서 붙여넣으세요. 무슨 말인지 알죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3355,
+     "page": 52,
+     "en": "But the problem is the problem that is",
+     "ko": "하지만 문제는 그게 문제라는 거예요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3361,
+     "page": 52,
+     "en": "So if you have done with the numbers, that's fine, but the if you have a time, you can use the part B where the let's say the you want to control But the this year kind of changed that the real GDP the one would be a bit different from the GDP, right? So the where the numbers are,",
+     "ko": "그래서 만약 숫자를 다 했다면, 괜찮아요, 하지만 만약 시간이 있다면, 그 파트 B를 사용할 수 있어요. 예를 들어 당신이 원한다면 제어할 수 있어요. 하지만 올해는 좀 바뀌어서 그게 실질 GDP가 그게 좀 다를 거예요. 명목과는 다르죠, 맞죠? 그래서 숫자가 어디에 있는지,",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3807,
+     "page": 52,
+     "en": "So, make sure that you have a you know, the rules. So",
+     "ko": "그래서, 확실히 가지고 있는지 확인하세요, 규칙을요. 그래서",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3917,
+     "page": 52,
+     "en": "Yeah, it was",
+     "ko": "네, 그랬어요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3992,
+     "page": 52,
+     "en": "Right. So we have uh probably another minute. 8 minutes. Let me know once we're I guess. I don't need to join at all, but just I don't know. So now it's time for and understand consumer price index is being made index that the central bank uses to expect that that",
+     "ko": "네. 그래서 저희가 아마 1분 정도 더 남았어요. 8분. 준비되면 말씀해 주세요. 아마도요. 저는 참여할 필요가 없지만, 그냥 모르겠어요. 그래서 지금 이제 시간이에요. 그리고 이해하고 소비자를 가격 지수 가 발표되고 있어요. 지수가 중앙은행이 사용하는 예상하는 그게",
+     "src": "gemini",
+     "ai": true
+    }
+   ]
+  },
+  {
+   "page": 53,
+   "en": "it's base rate will policy rate that you hear from the news. and the media. And the idea is that when you calculate the consumer price index, this is interesting. So let's look forward this first. So what you need to do is you have to figure out the postal base quantity the number it's not based price. base quantity at current price, current price divided by cost of base year quantity at base price P. 100. So you this is interesting that would calculate CPI, what is it? which is fixed. So the basket of goods and services in the base year. So before when you prepare this to GDP deflator we did not fix the basket of goods and services. We just let the basket of goods and services flow around the current year quantities. But the CPI here the fixes the fixes the basket of goods and services at the base year. So you kind of overstate inflation. on the over the course. And that the other way of on the other way I can explain this explicitly this formula assumes that consumers do not change their buying habits when relative prices changes occur. It's like when we have a philosophy and Apple iPhone Apple phones are cheaper than Samsung Galaxy very willing to drop my Samsung Galaxy and jumping to iPhone. So but here the CPI doesn't allow it. So when you calculate the CPI, assuming that base year is the year, so what do we fix? We not only fix the basket of prices, we also want, we also fix what? The quantity produced as a base year. Okay? So, new calculating this CPI in year one, that's 130 for sure because we fixed the quantities and prices in year one. We already calculated that's equal to the nominal prices in year one and you divide by the so the base year quantities the base year price. That's 130 as well. So and you round the CPI would be just 100. But this is interesting for the year two CPI the base year is the year one, so the quantities at the end the prices at the same time. So when you calculate the post base year quantities at the current price, so you just pick the base year quantities, but the current price on the side 1.6 what would be the value? The value would be Okay, kind of kind of doing the part B here. So the numerator is we have to have a 50 times the which price are we using? Price in year two. 1.25 plus 20 times that's the base year quantity 100. So times what? That 1.6 thank you. And we divide by Okay? here. That's in the bottom. That's just the also base year quantity is the base year price. That's 130. So I'm I'm using that for the base year quantity and base price. That's 100 plus 100 times 86. And as what do you get the numbers for this? For the top, point 220 2. 5 divided by 130. Okay? Yeah. So that's how you got the 170 something. And here the CPI, the percentage increase in CPI from year one to year two, that's a 71.4 percent. So if we find out the sum of prices in the next year, that's the total what's the inflation rate? The inflation rate is 71.4 percent. But in the previous slide, we figured out the inflation rate by using GDP deflator, using base year one, base year two, even even for the chain weighting average. the highest inflation rate is 71.2 percent. So",
+   "ko": "어 기준 금리가 정책 금리가 여러분이 뉴스에서 듣는. 그리고 언론에서. 그리고 아이디어는 그게 여러분이 계산할 때 소비자 물가 지수를, 이것은 흥미로워요. 그래서 앞으로 이것을 먼저 기대해 봅시다. 그래서 여러분이 해야 할 일은 우편 요금을 알아내야 하는 것인데, 그 숫자는 우편 요금에 기반하지 않아요. 우편 요금 기준 수량은 현재 가격으로 현재 가격으로 나누기 비용 기준 연도 수량에 기준 가격을 곱한 값 P. 100. 그래서 여러분은 이게 흥미로워요. 그게 계산할 거예요. CPI를, 그게 뭐죠? 그게 고정되어 있어요. 그래서 상품과 서비스 바구니는 기준 연도에 있어요. 그래서 이전에는 이걸 준비할 때 어떻게 GDP 디플레이터는 우리가 하지 않았던 고정된 상품과 서비스 바구니가 아니에요. 우리는 그냥 바구니가 상품과 서비스가 흐르도록 현재 연도에 맞췄어요. 하지만 CPI는 여기서 그 고정되어 있어요. 고정되어 있어요. 상품과 서비스 바구니가 기준 연도에 있어요. 그래서 좀 과대평가해요. 인플레이션을. 그에 따라. 그리고 그게 다른 방법은 그에 다른 방법으로 설명하자면 명시적으로 이 공식은 가정합니다. 소비자가 변하지 않는다고. 그들의 구매 습관을 상대 가격이 변할 때. 마치 우리가 어떤 철학을 가지고 애플 아이폰을 가지고 있을 때 애플 폰이 삼성 갤럭시보다 훨씬 기꺼이 제 삼성 갤럭시를 버리고 아이폰으로 갈아타는 것과 같아요. 그래서 하지만 여기서 CPI는 그걸 허용하지 않아요. 그래서 여러분이 CPI를 계산할 때, 가정하는 것은 기준 연도가 그 해라는 것이고, 그래서 무엇을 고정하나요? 우리는 단지 상품과 서비스 바구니를 고정할 뿐만 아니라, 우리는 또한 무엇을 고정하나요? 그 수량은 생산된 것으로 간주합니다. 기준 연도에. 알겠죠? 그래서, 새로운 계산법으로 이 CPI를 1년 차에 계산하면, 그게 130이 확실해요. 왜냐하면 수량과 가격을 1년 차에 고정했으니까요. 우리는 이미 계산했어요, 그게 같다는 것을 명목 GDP와 1년 차의 가격이 같고, 그리고 나누기 를 하면 그래서 기준 연도 수량은 기준 연도 가격 입니다. 그게 130이죠. 그래서 CPI를 반올림하면 그냥 100이 됩니다. 하지만 이건 2년 차에 흥미로운 점입니다. CPI는 기준 연도 는 1년 차입니다. 그래서 마지막에 수량은 가격은 동시에 그래서 계산할 때 포스트 기준 연도 이후의 수량을 현재 가격으로 계산하면, 그냥 기준 연도 수량을 선택하지만, 현재 가격은 옆에 있고 1.6 뭐가 값이 될까요? 그 값은 네, 약간 파트 B를 하고 있는 거예요. 그래서 분자는 우리가 가져야 할 게 있어요. 50 곱하기 어떤 가격을 사용하나요? 가격은 2년 차의 가격. 1.25 더하기 20 곱하기 그게 기준 연도 수량 100입니다. 그래서 곱하기 뭐죠? 그건 1.6 감사합니다. 그리고 나누기 알겠죠? 여기서. 그건 아래에 있어요. 그건 그냥 기준 연도 수량 이 기준입니다. 기준 연도 가격. 그건 130입니다. 그래서 저는 기준 연도에 그걸 사용하고 수량과 기준 가격을 사용합니다. 그게 100 더하기 100 곱하기 86입니다. 그리고 그리고 무엇을 얻나요? 이 숫자는 무엇인가요? 위쪽은, 포인트 220 2. 5 나누기 130. 알겠죠? 네. 그래서 그렇게 숫자를 얻은 거예요, 170 얼마. 그리고 여기서 CPI는, 퍼센트 증가율은 에서 1년 차에서 2년 차로, 그건 71.4 퍼센트입니다. 그래서 만약 찾으면 그 가격의 합계는 다음 해에, 그게 총 얼마인가요? 인플레이션율은? 인플레이션은 71.4 퍼센트입니다. 하지만 이전에는 슬라이드에서, 우리는 인플레이션을 계산했어요. GDP를 사용하여 GDP 디플레이터, 기준 연도 1년 차, 기준 연도 2년 차, 심지어 체인 가중 평균 에 대해서도요. 그 가장 높은 인플레이션율은 71.2 퍼센트입니다. 그래서",
+   "pdf": "LNCh2_Slides_180912.pdf",
+   "pdfPage": 53,
+   "slideText": "",
+   "liveNotes": {
+    "notes": [
+     "**CPI**(Consumer Price Index) = 고정 바스켓(base year quantities) → substitution bias 반영 못함",
+     "예시: Apple iPhone < Samsung Galaxy 가격 → 소비자는 전환 원함",
+     "∴ 실제 소비자 행동(대체) 미반영 → CPI 물가 왜곡",
+     "▶ CPI 계산: 기준연도 수량 고정 → 이후 각 시점 가격만 대입",
+     "▶ 예제 Part B 진행 중: 분자(numerator) 계산 후 분모로 나눠 CPI 산출"
+    ],
+    "summary": "CPI 대체편의 문제",
+    "exam": [],
+    "board": [],
+    "at": 1789542806185
+   },
+   "marks": [],
+   "lines": {
+    "w": 720,
+    "h": 540,
+    "lines": []
+   },
+   "segs": [
+    {
+     "t": 4016,
+     "page": 53,
+     "en": "it's base rate will policy rate that you hear from the news. and the media. And the idea is that when you calculate the consumer price index, this",
+     "ko": "어 기준 금리가 정책 금리가 여러분이 뉴스에서 듣는. 그리고 언론에서. 그리고 아이디어는 그게 여러분이 계산할 때 소비자 물가 지수를, 이것은",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4038,
+     "page": 53,
+     "en": "is interesting. So let's look forward this first. So what you need to do is you have to figure out the postal base quantity the number it's not based price. base quantity at current price, current price divided by cost of base year quantity at base price P. 100.",
+     "ko": "흥미로워요. 그래서 앞으로 이것을 먼저 기대해 봅시다. 그래서 여러분이 해야 할 일은 우편 요금을 알아내야 하는 것인데, 그 숫자는 우편 요금에 기반하지 않아요. 우편 요금 기준 수량은 현재 가격으로 현재 가격으로 나누기 비용 기준 연도 수량에 기준 가격을 곱한 값 P. 100.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4064,
+     "page": 53,
+     "en": "So you this is interesting that would calculate CPI, what is it? which is fixed. So the basket of goods and services in the base year. So before when you prepare this to GDP deflator we did not fix the basket of goods and services. We just let the basket of goods and services flow around the current year quantities.",
+     "ko": "그래서 여러분은 이게 흥미로워요. 그게 계산할 거예요. CPI를, 그게 뭐죠? 그게 고정되어 있어요. 그래서 상품과 서비스 바구니는 기준 연도에 있어요. 그래서 이전에는 이걸 준비할 때 어떻게 GDP 디플레이터는 우리가 하지 않았던 고정된 상품과 서비스 바구니가 아니에요. 우리는 그냥 바구니가 상품과 서비스가 흐르도록 현재 연도에 맞췄어요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4095,
+     "page": 53,
+     "en": "But the CPI here the fixes the fixes the basket of goods and services at the base year. So you kind of overstate inflation. on the over the course. And that the other way of on the other way I can explain this explicitly this formula assumes that consumers do not change their buying habits when relative prices changes occur.",
+     "ko": "하지만 CPI는 여기서 그 고정되어 있어요. 고정되어 있어요. 상품과 서비스 바구니가 기준 연도에 있어요. 그래서 좀 과대평가해요. 인플레이션을. 그에 따라. 그리고 그게 다른 방법은 그에 다른 방법으로 설명하자면 명시적으로 이 공식은 가정합니다. 소비자가 변하지 않는다고. 그들의 구매 습관을 상대 가격이 변할 때.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4126,
+     "page": 53,
+     "en": "It's like when we have a",
+     "ko": "마치 우리가 어떤",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4136,
+     "page": 53,
+     "en": "philosophy and Apple iPhone Apple phones are cheaper than Samsung Galaxy very willing to drop my Samsung Galaxy and jumping to iPhone. So but here the CPI doesn't allow it. So when you calculate the CPI, assuming that base year is the year, so what do we fix?",
+     "ko": "철학을 가지고 애플 아이폰을 가지고 있을 때 애플 폰이 삼성 갤럭시보다 훨씬 기꺼이 제 삼성 갤럭시를 버리고 아이폰으로 갈아타는 것과 같아요. 그래서 하지만 여기서 CPI는 그걸 허용하지 않아요. 그래서 여러분이 CPI를 계산할 때, 가정하는 것은 기준 연도가 그 해라는 것이고, 그래서 무엇을 고정하나요?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4162,
+     "page": 53,
+     "en": "We not only fix the basket of prices, we also want, we also fix what? The quantity produced as a base year. Okay? So, new calculating this CPI in year one, that's 130 for sure because we fixed the quantities and prices in year one. We already calculated that's equal to the nominal prices in year one and you divide by the so the base year quantities the base year price. That's 130 as well.",
+     "ko": "우리는 단지 상품과 서비스 바구니를 고정할 뿐만 아니라, 우리는 또한 무엇을 고정하나요? 그 수량은 생산된 것으로 간주합니다. 기준 연도에. 알겠죠? 그래서, 새로운 계산법으로 이 CPI를 1년 차에 계산하면, 그게 130이 확실해요. 왜냐하면 수량과 가격을 1년 차에 고정했으니까요. 우리는 이미 계산했어요, 그게 같다는 것을 명목 GDP와 1년 차의 가격이 같고, 그리고 나누기 를 하면 그래서 기준 연도 수량은 기준 연도 가격 입니다. 그게 130이죠.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4201,
+     "page": 53,
+     "en": "So and you round the CPI would be just 100. But this is interesting for the year",
+     "ko": "그래서 CPI를 반올림하면 그냥 100이 됩니다. 하지만 이건 2년 차에 흥미로운",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4209,
+     "page": 53,
+     "en": "two CPI the base year is the year one, so the quantities at the end the prices at the same time. So when you calculate the post base year quantities at the current price, so you just pick the base year quantities, but the current price on the side 1.6 what would be the value?",
+     "ko": "점입니다. CPI는 기준 연도 는 1년 차입니다. 그래서 마지막에 수량은 가격은 동시에 그래서 계산할 때 포스트 기준 연도 이후의 수량을 현재 가격으로 계산하면, 그냥 기준 연도 수량을 선택하지만, 현재 가격은 옆에 있고 1.6 뭐가 값이 될까요?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4231,
+     "page": 53,
+     "en": "The value would be",
+     "ko": "그 값은",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4236,
+     "page": 53,
+     "en": "Okay, kind of kind of doing the part B here. So the numerator is we have to have a 50 times the which price are we using? Price in year two. 1.25 plus 20 times that's the base year quantity 100. So times what? That 1.6 thank you. And we",
+     "ko": "네, 약간 파트 B를 하고 있는 거예요. 그래서 분자는 우리가 가져야 할 게 있어요. 50 곱하기 어떤 가격을 사용하나요? 가격은 2년 차의 가격. 1.25 더하기 20 곱하기 그게 기준 연도 수량 100입니다. 그래서 곱하기 뭐죠? 그건 1.6 감사합니다. 그리고",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4268,
+     "page": 53,
+     "en": "divide by Okay? here. That's in the bottom. That's just the also base year quantity is the base year price. That's 130. So I'm I'm using that for the base year quantity and base price. That's 100 plus 100 times 86. And as what do you get the numbers for this? For the top, point 220 2.",
+     "ko": "나누기 알겠죠? 여기서. 그건 아래에 있어요. 그건 그냥 기준 연도 수량 이 기준입니다. 기준 연도 가격. 그건 130입니다. 그래서 저는 기준 연도에 그걸 사용하고 수량과 기준 가격을 사용합니다. 그게 100 더하기 100 곱하기 86입니다. 그리고 그리고 무엇을 얻나요? 이 숫자는 무엇인가요? 위쪽은, 포인트 220 2.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4296,
+     "page": 53,
+     "en": "5 divided by 130. Okay? Yeah. So that's how you got the 170 something. And here the CPI, the percentage increase in CPI from year one to year two, that's a 71.4 percent. So if we find out the sum of prices in the next year, that's the total what's the inflation rate?",
+     "ko": "5 나누기 130. 알겠죠? 네. 그래서 그렇게 숫자를 얻은 거예요, 170 얼마. 그리고 여기서 CPI는, 퍼센트 증가율은 에서 1년 차에서 2년 차로, 그건 71.4 퍼센트입니다. 그래서 만약 찾으면 그 가격의 합계는 다음 해에, 그게 총 얼마인가요? 인플레이션율은?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4321,
+     "page": 53,
+     "en": "The inflation rate is 71.4 percent. But in the previous slide, we figured out the inflation rate by using GDP deflator, using base year one, base year two, even even for the chain weighting average. the highest inflation rate is 71.2 percent. So",
+     "ko": "인플레이션은 71.4 퍼센트입니다. 하지만 이전에는 슬라이드에서, 우리는 인플레이션을 계산했어요. GDP를 사용하여 GDP 디플레이터, 기준 연도 1년 차, 기준 연도 2년 차, 심지어 체인 가중 평균 에 대해서도요. 그 가장 높은 인플레이션율은 71.2 퍼센트입니다. 그래서",
+     "src": "gemini",
+     "ai": true
+    }
+   ]
+  }
+ ],
+ "savedAt": "2026-09-16T07:13:46.261Z"
+}
