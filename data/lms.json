@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-16T00:35:08.369Z",
+  "generatedAt": "2026-09-16T05:27:47.991Z",
   "source": "canvas",
   "user": "김주함(2025####72)",
   "courseFiles": {
@@ -44,14 +44,34 @@
         "name": "3주차",
         "position": 3,
         "unlock": null,
-        "items": []
+        "items": [
+          {
+            "type": "Page",
+            "title": "3주차_현장연구프로젝트",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/96922/modules/items/4785373"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "자료 게시판",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/96922/modules/items/4785388"
+          }
+        ]
       },
       {
         "id": "1529845",
         "name": "4주차",
         "position": 4,
         "unlock": null,
-        "items": []
+        "items": [
+          {
+            "type": "Page",
+            "title": "4주차 읽기자료_발전주의, 도시화, 기술만능주의 등",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/96922/modules/items/4787624"
+          }
+        ]
       },
       {
         "id": "1529846",
@@ -1515,14 +1535,7 @@
         "name": "3주차",
         "position": 3,
         "unlock": null,
-        "items": [
-          {
-            "type": "Assignment",
-            "title": "1차 개인 과제 제출",
-            "indent": 0,
-            "url": "https://khcanvas.khu.ac.kr/courses/97242/modules/items/4778504"
-          }
-        ]
+        "items": []
       },
       {
         "id": "1534965",
@@ -1535,6 +1548,12 @@
             "title": "발제1",
             "indent": 0,
             "url": "https://khcanvas.khu.ac.kr/courses/97242/modules/items/4778693"
+          },
+          {
+            "type": "Assignment",
+            "title": "1차 개인 과제 제출",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97242/modules/items/4788060"
           }
         ]
       },
@@ -1877,16 +1896,6 @@
       "files": []
     },
     {
-      "id": "a1497634",
-      "course": "창업과 thinking design",
-      "title": "1차 개인 과제 제출",
-      "due": "2026-09-18T09:00:00Z",
-      "submitted": false,
-      "url": "https://khcanvas.khu.ac.kr/courses/97242/assignments/1497634",
-      "body": "안녕하세요. 1차 과제 제출해 주시기 바랍니다. 주제 및 제출 시한은 아래와 같습니다. 1 차 성공한 스타트업 사례 분석 9 월 18 일 오후 6 시 모든 과제는 워드 문서로 e-campus 과제란에 제출해 주시면 됩니다. 제출시 파일명은 반드시 다음과 같이 하여 업로딩하시기 바랍니다. 파일명: (예시) 1차과제_제출자이름_제출자소속(00대-000학과) 과제 관련 문의 사항 있으면 연락 주시기 바랍니다. 고맙습니다.",
-      "files": []
-    },
-    {
       "id": "a1497657",
       "course": "창업과 thinking design",
       "title": "발제1",
@@ -1894,6 +1903,16 @@
       "submitted": false,
       "url": "https://khcanvas.khu.ac.kr/courses/97242/assignments/1497657",
       "body": "제출해 주세요.",
+      "files": []
+    },
+    {
+      "id": "a1499652",
+      "course": "창업과 thinking design",
+      "title": "1차 개인 과제 제출",
+      "due": "2026-09-28T14:59:59Z",
+      "submitted": false,
+      "url": "https://khcanvas.khu.ac.kr/courses/97242/assignments/1499652",
+      "body": "",
       "files": []
     },
     {
@@ -2045,6 +2064,42 @@
       "body": "반갑습니다. 이번 학기는 과제에 대한 답을 써서 제출하지 않습니다. 따라서 과제에 할당된 20% 점수는 모두에게 만점을 주겠습니다. 과제에는 매주 질문이 제공되기는 할텐데, 이에 대해 깊이 생각해보기 바랍니다. 이 질문들과 관련한 문제를 중간/기말고사에 일부 출제하도록 하겠습니다. 강의를 듣다가 의문이 있는 경우, 지금까지는 과제 제출시 질문도 함께 제출했습니다. 하지만 이번 학기는 질문이 있는 경우 인공지능 쿠옹샘에게 먼저 질문 하기를 권장합니다. 참고로 <모두를 위한 물리학>에 탑재된 쿠옹샘은 저희 강의자료로 학습이 된 상태입니다. 쿠옹샘을 활용하고도 의문이 해소되지 않는 경우 담당 튜터에게 질문을 하기 바랍니다. 이에 대해서는 따로 공지하겠습니다. 인공지능의 시대에도 자신의 두뇌로 깊이 생각하는 것만이 지식을 제대로 얻는 유일한 방법입니다. 매주 동영상 강의를 충실히 수강하고, 과제로 주어진 질문에 대해 답을 써서 제출하지는 않지만 깊이 생각해보는 시간을 갖길 바랍니다. 김상욱",
       "url": "https://khcanvas.khu.ac.kr/courses/97015/discussion_topics/478390",
       "files": []
+    },
+    {
+      "id": "n482010",
+      "course": "성찰과표현",
+      "title": "조 편성 및 발표 순서 안내",
+      "date": "2026-09-16T01:33:14Z",
+      "summary": "조 편성과 발표순서를 첨부파일로 올립니다. 반드시 확인하시기 바랍니다.",
+      "body": "조 편성과 발표순서를 첨부파일로 올립니다. 반드시 확인하시기 바랍니다.",
+      "url": "https://khcanvas.khu.ac.kr/courses/96662/discussion_topics/482010",
+      "files": [
+        {
+          "id": "9731504",
+          "name": "2026학년도 2학기 성찰과 표현 조 편성 및 발표순서(0900).hwpx",
+          "url": "https://khcanvas.khu.ac.kr/files/9731504/download?download_frd=1&verifier=jbCIvDJnNmmoMHULjGYD8CeUwEyBkZ5vrt4aAYvV",
+          "type": "application/haansofthwpx",
+          "size": 52422
+        }
+      ]
+    },
+    {
+      "id": "n479514",
+      "course": "창업과 thinking design",
+      "title": "발제 발표 순서 안내",
+      "date": "2026-09-16T05:00:00Z",
+      "summary": "첨부파일에서 본인 발제 발표 순서 확인하시고 준비해 주세요.",
+      "body": "첨부파일에서 본인 발제 발표 순서 확인하시고 준비해 주세요.",
+      "url": "https://khcanvas.khu.ac.kr/courses/97242/discussion_topics/479514",
+      "files": [
+        {
+          "id": "9698225",
+          "name": "창업과_Thinking_Design_10주_발제일정표.xlsx",
+          "url": "https://khcanvas.khu.ac.kr/files/9698225/download?download_frd=1&verifier=BKB1FNVIRbWR30vsDQYptVyZ8q2Wm9sZwEIbPkFK",
+          "type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "size": 15143
+        }
+      ]
     },
     {
       "id": "n479490",
