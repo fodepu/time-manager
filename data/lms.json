@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-16T05:27:47.991Z",
+  "generatedAt": "2026-09-16T10:09:40.258Z",
   "source": "canvas",
   "user": "김주함(2025####72)",
   "courseFiles": {
@@ -1751,7 +1751,7 @@
       "course": "계량경제학",
       "title": "Assignment1",
       "due": "2026-09-16T14:59:59Z",
-      "submitted": false,
+      "submitted": true,
       "url": "https://khcanvas.khu.ac.kr/courses/95551/assignments/1497825",
       "body": "assignment1.pdf",
       "files": [
