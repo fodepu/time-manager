@@ -1,0 +1,71 @@
+{
+  "date": "2026-09-17",
+  "generatedAt": "2026-09-17T13:54:53+09:00",
+  "urgent": null,
+  "items": [
+    {
+      "cat": "update",
+      "title": "Claude Code 2.1.273 — 데스크톱 앱에서 세션을 백그라운드로 '포크'",
+      "lead": "remote-control로 띄운 세션을 Claude 앱에서 포크하면 내 컴퓨터에서 도는 별도 백그라운드 세션이 생기고, MCP 서버가 끊겨 자동재연결까지 포기하면 알림이 뜬다.",
+      "points": [
+        "긴 작업 중인 세션을 **앱에서 fork → 원본은 그대로 두고 사본이 백그라운드로 병렬 실행**. 리팩터 하나를 돌려둔 채 같은 컨텍스트에서 갈래를 하나 더 파서 다른 접근을 동시에 시험하고, 나중에 결과 좋은 쪽만 취한다.",
+        "**MCP 서버가 세션 도중 끊기고 자동재연결이 실패하면 알림 + /mcp로 유도** — 커넥터가 조용히 죽어 도구 호출이 무응답으로 쌓이는 문제를 즉시 인지. 긴 에이전트 런에서 '왜 멈췄지'를 찾는 시간을 없앤다.",
+        "LLM 게이트웨이용 **x-claude-code-request-class·agent-type·compaction 힌트 헤더**(`CLAUDE_CODE_GATEWAY_HINT_HEADERS=1`) — 게이트웨이가 요청 종류·에이전트별로 라우팅·과금·레이트리밋을 분리. 팀 프록시로 Claude Code 트래픽을 관제한다면 세션 단위 관측성이 붙는다."
+      ],
+      "note": "2.1.273(9/15)로 업데이트 후 적용. 포크 세션의 remote-control 연동은 일부 이슈 보고가 있어 모바일/웹 노출은 확인 필요.",
+      "source": "code.claude.com",
+      "url": "https://code.claude.com/docs/en/changelog"
+    },
+    {
+      "cat": "tool",
+      "title": "Claude Managed Agents — 스킬을 GitHub에서 로드 + 추론 지역 고정 + 세션 예산",
+      "lead": "플랫폼의 Managed Agents가 스킬을 GitHub 레포에서 직접 마운트하고, 추론 실행 지역을 세션 단위로 고정하며, 예산 초과 시 세션을 자동 일시정지한다.",
+      "points": [
+        "**스킬을 agent의 skills 배열 대신 GitHub 레포 마운트로 주입** — 레포에 스킬을 커밋해두면 push 한 번으로 배포된 모든 에이전트 세션이 최신 스킬을 집는다. 스킬 버전을 코드처럼 PR·리뷰로 굴리는 워크플로가 가능.",
+        "**model.inference_geo에 \"us\"|\"global\"** — 에이전트 생성 시 또는 특정 세션만 추론 지역을 고정. 데이터 레지던시 요건이 있는 워크로드를 코드 수정 없이 세션 오버라이드로 미 지역에 묶는다.",
+        "**세션이 예산에 닿으면 budget_reached로 정지**(새 모델 요청 중단), 예산을 올리거나 없애면 재개. 배포에 예산을 걸면 그 배포가 여는 모든 세션에 동일 적용 — 폭주하는 에이전트의 비용 상한을 세션·배포 레벨에서 강제."
+      ],
+      "note": "Claude Developer Platform(platform.claude.com) Managed Agents 기능. agent는 모델·프롬프트·도구·MCP·스킬을 묶은 버전드 구성.",
+      "source": "platform.claude.com",
+      "url": "https://platform.claude.com/docs/en/release-notes/overview"
+    },
+    {
+      "cat": "model",
+      "title": "Grok 4.5 코딩 모델 + Grok Bot 엔터프라이즈 — 세일즈 커넥터 탑재",
+      "lead": "xAI가 개발자 상호작용 토큰으로 공동학습한 Grok 4.5 코딩 모델을 밀고, 자율 AI 워커 'Grok Bot'을 기업용으로 출시하며 세일즈 커넥터를 붙였다.",
+      "points": [
+        "Grok 4.5 코딩 모델은 Cursor와 **트릴리언 단위 개발자 토큰으로 공동학습** — 의도 파악·변경 추적·'지저분한 중간 단계' 처리에 강점을 주장. Cursor 등에서 리팩터·디버깅 루프에 붙여 성능을 직접 비교해볼 수 있다.",
+        "**Grok Bot이 Salesforce·HubSpot·Gong 세일즈 커넥터**와 접근·네트워크·감사 제어를 갖고 출시 — CRM/콜 기록을 읽어 후속 작업을 자율 수행하는 워커. Microsoft Copilot 안에도 Grok 모델이 들어가 Copilot 워크플로에서 바로 호출된다.",
+        "참고: Grok 4.7은 9/12 목표에서 재차 연기('며칠 더 필요') — 지금 대응할 것은 없고, 나온 뒤 벤치로 판단."
+      ],
+      "note": "x.ai/news 및 개발자 릴리스노트 기준. Grok 4.7 출시는 미확정.",
+      "source": "x.ai",
+      "url": "https://x.ai/news"
+    },
+    {
+      "cat": "tool",
+      "title": "OpenAI 관리형 Agents API 퍼블릭 베타 — 오케스트레이션·장기세션을 위임",
+      "lead": "OpenAI가 자율 에이전트의 오케스트레이션·장기 실행 세션·컨텍스트 관리를 대신 처리하는 관리형 Agents API를 퍼블릭 베타로 열었다(9/13).",
+      "points": [
+        "에이전트 루프·상태·컨텍스트 압축을 **API가 서버측에서 관리** — 직접 짜던 스텝 오케스트레이션과 세션 상태 저장을 걷어내고 목표·도구만 정의하면 된다.",
+        "샌드박스 컴퓨트를 **OpenAI·자체 인프라·Vercel·DigitalOcean** 중 선택 — 코드 실행형 에이전트를 원하는 실행 환경에 붙여 장기 배치 작업을 돌린다.",
+        "참고: OpenAI는 gpt-5.4-cyber를 폐기 예정 — **10/1 전까지 gpt-5.6-cyber로 마이그레이션** 필요(해당 모델 사용 시)."
+      ],
+      "note": "퍼블릭 베타. 관리형인 만큼 실행 위치·비용 구조를 파트너별로 확인하고 붙일 것.",
+      "source": "openai.com",
+      "url": "https://openai.com/news/"
+    },
+    {
+      "cat": "market",
+      "title": "ChatGPT에 '스폰서 에이전트' 테스트 — 에이전트 안에 광고가 들어온다",
+      "lead": "OpenAI가 ChatGPT 안에서 Wayfair·Angi를 초기 광고주로 스폰서 에이전트를 테스트 중(9/16).",
+      "points": [
+        "에이전트가 추천·행동하는 흐름에 광고주가 개입하는 구조 — **에이전트의 추천이 상업적 편향을 가질 수 있다**는 신호. 구매·예약을 에이전트에 맡기는 워크플로라면 결과의 중립성을 별도로 검증할 필요가 생긴다.",
+        "판도 관점에서만 짧게: 에이전트 상거래의 수익모델이 광고로 기우는 첫 대형 사례. 지금 내가 할 행동은 없다."
+      ],
+      "note": "테스트 단계, 초기 광고주 한정. 참고로 Anthropic은 Claude 제품에 광고를 넣지 않는다는 정책을 유지.",
+      "source": "openai.com",
+      "url": "https://openai.com/news/"
+    }
+  ]
+}
