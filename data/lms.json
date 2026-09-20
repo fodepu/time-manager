@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-20T07:50:23.827Z",
+  "generatedAt": "2026-09-20T12:44:43.269Z",
   "source": "canvas",
   "user": "김주함(2025####72)",
   "courseFiles": {
@@ -472,12 +472,6 @@
             "title": "lecture_week2_OLS_part1",
             "indent": 0,
             "url": "https://khcanvas.khu.ac.kr/courses/95551/modules/items/4784592"
-          },
-          {
-            "type": "ExternalTool",
-            "title": "exercise2026_NLSY_Mincer_regression",
-            "indent": 0,
-            "url": "https://khcanvas.khu.ac.kr/courses/95551/modules/items/4790657"
           }
         ]
       },
@@ -492,6 +486,12 @@
             "title": "lecture_week3_OLS_part2",
             "indent": 0,
             "url": "https://khcanvas.khu.ac.kr/courses/95551/modules/items/4790653"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "STATA and Python Example for Wage Regression (data: NLSY)",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/95551/modules/items/4790801"
           }
         ]
       },
