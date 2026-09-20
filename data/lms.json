@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-20T02:16:18.263Z",
+  "generatedAt": "2026-09-20T07:50:23.827Z",
   "source": "canvas",
   "user": "김주함(2025####72)",
   "courseFiles": {
@@ -472,6 +472,12 @@
             "title": "lecture_week2_OLS_part1",
             "indent": 0,
             "url": "https://khcanvas.khu.ac.kr/courses/95551/modules/items/4784592"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "exercise2026_NLSY_Mincer_regression",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/95551/modules/items/4790657"
           }
         ]
       },
@@ -480,7 +486,14 @@
         "name": "3주차",
         "position": 3,
         "unlock": null,
-        "items": []
+        "items": [
+          {
+            "type": "ExternalTool",
+            "title": "lecture_week3_OLS_part2",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/95551/modules/items/4790653"
+          }
+        ]
       },
       {
         "id": "1507909",
