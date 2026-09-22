@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-22T01:40:32.861Z",
+  "generatedAt": "2026-09-22T07:01:25.427Z",
   "source": "canvas",
   "user": "김주함(2025####72)",
   "courseFiles": {
@@ -70,6 +70,18 @@
             "title": "4주차 읽기자료_발전주의, 도시화, 기술만능주의 등",
             "indent": 0,
             "url": "https://khcanvas.khu.ac.kr/courses/96922/modules/items/4787624"
+          },
+          {
+            "type": "Page",
+            "title": "4주차_강의자료_위험사회와 도시 스트레스",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/96922/modules/items/4792321"
+          },
+          {
+            "type": "Assignment",
+            "title": "4주차_모둠토론내용 업로드",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/96922/modules/items/4792329"
           }
         ]
       },
@@ -1746,6 +1758,16 @@
     "창업과 thinking design"
   ],
   "assignments": [
+    {
+      "id": "a1500667",
+      "course": "리질리언스와지속가능한도시",
+      "title": "4주차_모둠토론내용 업로드",
+      "due": null,
+      "submitted": false,
+      "url": "https://khcanvas.khu.ac.kr/courses/96922/assignments/1500667",
+      "body": "모둠별 한 명이 토론 기록지 올려주세요.",
+      "files": []
+    },
     {
       "id": "a1497825",
       "course": "계량경제학",
