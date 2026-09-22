@@ -2384,7 +2384,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="180">
+<meta name="tm-version" content="181">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -2469,12 +2469,12 @@
   .todo-block button.danger { color:#c62828; }
   .tt-rz { position:absolute; left:0; right:0; height:9px; cursor:ns-resize; z-index:3; }
   .tt-rz-t { top:0; } .tt-rz-b { bottom:0; }
-  .tt-block.short .tt-rz { height:3px; } .tt-block.short .tt-rz-t { display:none; }
+  .tt-block.short .tt-rz { height:7px; } .tt-block.short .tt-rz-t { top:-3px; } .tt-block.short .tt-rz-b { bottom:-3px; }
   .tt-rz::after { content:''; position:absolute; left:50%; width:26px; height:3px; margin-left:-13px; border-radius:2px; background:rgba(0,0,0,.18); }
   .tt-rz-t::after { top:2px; } .tt-rz-b::after { bottom:2px; }
   .tt-block:hover .tt-rz::after { background:rgba(0,0,0,.45); width:34px; margin-left:-17px; }
   .tt-block.k-tasks .tt-rz::after { background:rgba(0,0,0,.25); }
-  .tt-block.short .tt-rz::after { display:none; }
+  .tt-block.short .tt-rz::after { display:none; } .tt-block.short:hover .tt-rz::after { display:block; height:2px; width:22px; margin-left:-11px; }
   .tt-block.dragging { opacity:.55; }
   .tt-ghost { position:absolute; left:0; right:0; z-index:30; pointer-events:none; border-radius:0; outline:2px solid #2563eb; background:rgba(37,99,235,.18); box-sizing:border-box; }
   .tt-ghost .tt-ghost-t { position:absolute; top:-18px; left:4px; font-size:11px; font-weight:800; color:#1d4ed8; background:#fff; padding:1px 6px; border-radius:6px; box-shadow:0 1px 4px rgba(0,0,0,.2); white-space:nowrap; }
@@ -8174,6 +8174,7 @@ function loadDate(date) {
       if (existing) {
         // values만 보존, 나머지는 template으로 덮어쓰기
         const preservedValues = existing.values || {};
+        if (preservedValues.skip && ((existing.start||'') !== (t.start||'') || (existing.end||'') !== (t.end||''))) delete preservedValues.skip; // v181: 시간 바뀐 블록은 '오늘만 삭제' 해제
         existing.label = t.label;
         existing.start = t.start || '';
         existing.end = t.end || '';
@@ -8876,7 +8877,13 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   function mergeTemplateInto(g, date){
     var tm = templateEntriesFor(date); var have={}; g.entries.forEach(function(e){ if(e&&e.id) have[e.id]=1; });
     var tmIds={}; tm.forEach(function(e){ tmIds[e.id]=1; });
-    tm.forEach(function(e){ if(!have[e.id]) g.entries.push(e); });
+    tm.forEach(function(e){
+      if(!have[e.id]){ g.entries.push(e); return; }
+      var ex=g.entries.find(function(x){ return x && x.id===e.id; }); if(!ex) return;
+      var timeChanged=(ex.start!==e.start || ex.end!==e.end);
+      ex.label=e.label; ex.start=e.start; ex.end=e.end; ex.category=e.category; ex.color=e.color; ex.kind=e.kind; ex.place=e.place; ex.days=e.days; ex.alarm=e.alarm; ex.pinned=true;
+      if(timeChanged && ex.values && ex.values.skip) delete ex.values.skip; // 시간표에서 시간을 바꿨으면 예전 '오늘만 삭제'는 무효
+    });
     g.entries = g.entries.filter(function(e){
       if(!e || e.pinned!==true) return true; var id=String(e.id||''); if(/^(copy_|once_)/.test(id)) return true; if(tmIds[id]) return true;
       var v=e.values||{}; if(v.check||v.mv||v.skip||Object.keys(v).length) return true; // 그날 손댄 흔적이 있으면 유지
