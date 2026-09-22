@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-22T12:43:35.512Z",
+  "generatedAt": "2026-09-22T17:26:03.949Z",
   "source": "canvas",
   "user": "김주함(2025####72)",
   "courseFiles": {
@@ -518,7 +518,26 @@
         "name": "4주차",
         "position": 4,
         "unlock": null,
-        "items": []
+        "items": [
+          {
+            "type": "ExternalTool",
+            "title": "Core_note_OLS_2026",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/95551/modules/items/4793205"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "quiz_ols_answer",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/95551/modules/items/4793248"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "quiz_ols",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/95551/modules/items/4793249"
+          }
+        ]
       },
       {
         "id": "1507910",
