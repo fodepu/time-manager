@@ -2361,7 +2361,8 @@
     line-height: 1.45;
   }
   .tm-auth-overlay{position:fixed;inset:0;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;z-index:99999;padding:24px;text-align:center}
-  .tm-auth-logo{font-size:24px;font-weight:900;letter-spacing:-.02em;color:var(--text)}
+  .tm-auth-logo{font-size:24px;font-weight:900;letter-spacing:-.02em;color:var(--text);display:flex;align-items:center;justify-content:center;gap:10px}
+  .tm-auth-icon{width:40px;height:40px;border-radius:11px;box-shadow:0 2px 8px rgba(0,0,0,.12)}
   .tm-auth-sub{font-size:13.5px;color:var(--text-soft);max-width:300px;line-height:1.6}
   .tm-login-btn{margin-top:8px;padding:12px 22px;border-radius:10px;border:1.5px solid var(--border-strong);background:var(--bg-elev);color:var(--text);font-family:inherit;font-size:14px;font-weight:700;cursor:pointer}
   .tm-login-btn:hover{background:var(--bg-hover)}
@@ -2383,7 +2384,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="178">
+<meta name="tm-version" content="180">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -2929,7 +2930,7 @@
 </head>
 <body class="tm-locked">
 <div class="tm-auth-overlay" id="tmAuthOverlay">
-  <div class="tm-auth-logo">🗓️ Dayble</div>
+  <div class="tm-auth-logo"><img src="icons/icon-192.png?v=2" alt="" class="tm-auth-icon">Dayble</div>
   <div class="tm-auth-sub">로그인하면 내 시간표가 내 계정에 저장되고, 모든 기기에서 동기화됩니다.</div>
   <div id="gsiButton"></div>
   <div class="tm-auth-err" id="tmAuthErr"></div>
@@ -8868,8 +8869,19 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   }
   function snapshotFor(date){
     var g = loadGrowth(date);
-    if(g && Array.isArray(g.entries)){ g.entries = (typeof tmFilterDead==='function')? tmFilterDead(g.entries, date) : g.entries; return g; }
+    if(g && Array.isArray(g.entries)){ g.entries = (typeof tmFilterDead==='function')? tmFilterDead(g.entries, date) : g.entries; try{ if(date >= toLocalDateStr(new Date())) mergeTemplateInto(g, date); }catch(e){} return g; }
     return { date:date, entries: templateEntriesFor(date), savedAt:new Date().toISOString(), _synth:true };
+  }
+  // v180: 저장된 날짜 스냅샷에도 이후 추가·변경된 시간표(템플릿) 블록을 반영 (오늘 이후 날짜만; 지난 날은 기록이므로 손대지 않음)
+  function mergeTemplateInto(g, date){
+    var tm = templateEntriesFor(date); var have={}; g.entries.forEach(function(e){ if(e&&e.id) have[e.id]=1; });
+    var tmIds={}; tm.forEach(function(e){ tmIds[e.id]=1; });
+    tm.forEach(function(e){ if(!have[e.id]) g.entries.push(e); });
+    g.entries = g.entries.filter(function(e){
+      if(!e || e.pinned!==true) return true; var id=String(e.id||''); if(/^(copy_|once_)/.test(id)) return true; if(tmIds[id]) return true;
+      var v=e.values||{}; if(v.check||v.mv||v.skip||Object.keys(v).length) return true; // 그날 손댄 흔적이 있으면 유지
+      return false; // 템플릿에서 요일이 바뀌어 이 날에 더 이상 해당하지 않는 블록
+    });
   }
   // 공지에서 감지한 휴강/보강 (data/lms.json changes) — 블록 이름과 과목명 대조
   function tmNormName(s){ return String(s||'').toLowerCase().replace(/\(sdgs\)|\s|[·ㆍ\-_()]/g,''); }
