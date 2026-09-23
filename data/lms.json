@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-23T12:28:14.157Z",
+  "generatedAt": "2026-09-23T17:21:25.036Z",
   "source": "canvas",
   "user": "김주함(2025####72)",
   "courseFiles": {
@@ -2162,6 +2162,24 @@
           "url": "https://khcanvas.khu.ac.kr/files/9731504/download?download_frd=1&verifier=jbCIvDJnNmmoMHULjGYD8CeUwEyBkZ5vrt4aAYvV",
           "type": "application/haansofthwpx",
           "size": 52422
+        }
+      ]
+    },
+    {
+      "id": "n483904",
+      "course": "창업과 thinking design",
+      "title": "1차 개인 과제에 참고할 수업자료",
+      "date": "2026-09-23T14:05:15Z",
+      "summary": "안녕하세요. 1~3주 수업자료 공유합니다. 추석연휴 즐겁게 보내세요:)",
+      "body": "안녕하세요. 1~3주 수업자료 공유합니다. 추석연휴 즐겁게 보내세요:)",
+      "url": "https://khcanvas.khu.ac.kr/courses/97242/discussion_topics/483904",
+      "files": [
+        {
+          "id": "9767184",
+          "name": "수업자료_1-3주.zip",
+          "url": "https://khcanvas.khu.ac.kr/files/9767184/download?download_frd=1&verifier=BtMUYkMfyjkNBFk7Pxl7Xm6EegqjfiJ3MYwMIYdU",
+          "type": "application/x-zip-compressed",
+          "size": 3448712
         }
       ]
     },
