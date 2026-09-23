@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-22T23:04:26.236Z",
+  "generatedAt": "2026-09-23T01:35:12.140Z",
   "source": "canvas",
   "user": "김주함(2025####72)",
   "courseFiles": {
@@ -2083,6 +2083,34 @@
           "url": "https://khcanvas.khu.ac.kr/files/9710656/download?download_frd=1&verifier=8X1tcRVHBNZh6xiE9NmIQJq604vBSE2FahlLmJKF",
           "type": "image/jpeg",
           "size": 224657
+        }
+      ]
+    },
+    {
+      "id": "n483453",
+      "course": "성찰과표현",
+      "title": "5주차 1강(9월 30일) 수업 안내",
+      "date": "2026-09-23T01:00:00Z",
+      "summary": "수업내용: 다시 가고 싶은 그곳 발표 발표자: 김재현, 신형준, 신지원, 김여진, 김최승, 문진영 *발표자는 9월 29일(화) 18:00까지 발표지를 e-campus 열린게시판에 올리기 바랍니다. *게시명은 '성명_다시 가고 싶은 그곳_글 제목'으로 하시기 바랍니다. *발표자 외 나머지 학생들은 발표지를 읽고 가지고 오시기 바랍니다.",
+      "body": "수업내용: 다시 가고 싶은 그곳 발표 발표자: 김재현, 신형준, 신지원, 김여진, 김최승, 문진영 *발표자는 9월 29일(화) 18:00까지 발표지를 e-campus 열린게시판에 올리기 바랍니다. *게시명은 '성명_다시 가고 싶은 그곳_글 제목'으로 하시기 바랍니다. *발표자 외 나머지 학생들은 발표지를 읽고 가지고 오시기 바랍니다.",
+      "url": "https://khcanvas.khu.ac.kr/courses/96662/discussion_topics/483453",
+      "files": []
+    },
+    {
+      "id": "n483455",
+      "course": "성찰과표현",
+      "title": "발표지 및 과제 작성 형식",
+      "date": "2026-09-23T01:00:00Z",
+      "summary": "아래 첨부된 파일의 형식에 따라 발표지와 과제를 작성하시기 바랍니다.",
+      "body": "아래 첨부된 파일의 형식에 따라 발표지와 과제를 작성하시기 바랍니다.",
+      "url": "https://khcanvas.khu.ac.kr/courses/96662/discussion_topics/483455",
+      "files": [
+        {
+          "id": "9758853",
+          "name": "발표지 과제 작성 방법.hwpx",
+          "url": "https://khcanvas.khu.ac.kr/files/9758853/download?download_frd=1&verifier=uKErvkljHmSwtUujfCwYMIpfJbum0rO7D5B2dsUg",
+          "type": "application/haansofthwpx",
+          "size": 28491
         }
       ]
     },
