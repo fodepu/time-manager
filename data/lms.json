@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-23T20:34:01.448Z",
+  "generatedAt": "2026-09-23T23:19:09.386Z",
   "source": "canvas",
   "user": "김주함(2025####72)",
   "courseFiles": {
@@ -443,6 +443,12 @@
             "title": "Assign1_UMacro_26F",
             "indent": 0,
             "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4766176"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "Assign1Sol_UMacro_26F",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4794234"
           },
           {
             "type": "ExternalTool",
