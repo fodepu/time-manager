@@ -1,0 +1,2404 @@
+{
+ "base": 1,
+ "docs": [
+  {
+   "name": "(PDF 없이 필기)",
+   "base": 0,
+   "total": 1,
+   "from": 0,
+   "nopdf": true
+  },
+  {
+   "name": "lecture_week2_OLS_part1.pdf",
+   "base": 1,
+   "total": 36,
+   "from": 59
+  }
+ ],
+ "weekId": "1507908",
+ "langCode": "en-US",
+ "id": "lec_2026-09-16_mu3fdf65",
+ "course": "계량경제학",
+ "title": "계량경제학 3주차",
+ "date": "2026-09-16",
+ "week": 3,
+ "module": "1507908",
+ "lang": "en",
+ "mode": "slides",
+ "pdf": "lecture_week2_OLS_part1.pdf",
+ "pdfs": [
+  {
+   "name": "(PDF 없이 필기)",
+   "base": 0,
+   "total": 1,
+   "from": 0,
+   "nopdf": true
+  },
+  {
+   "name": "lecture_week2_OLS_part1.pdf",
+   "base": 1,
+   "total": 36,
+   "from": 59
+  }
+ ],
+ "pages": 36,
+ "duration": 7219,
+ "log": [
+  {
+   "t": 0,
+   "page": 1
+  },
+  {
+   "t": 59,
+   "page": 2,
+   "pdf": "lecture_week2_OLS_part1.pdf"
+  },
+  {
+   "t": 65,
+   "page": 9
+  },
+  {
+   "t": 735,
+   "page": 9,
+   "resumed": true
+  },
+  {
+   "t": 1327,
+   "page": 11
+  },
+  {
+   "t": 2884,
+   "page": 24
+  }
+ ],
+ "slides": [
+  {
+   "page": 1,
+   "en": "Uh, but this question and the question and answer idea and possibility so and this you can prepare presentation in English and then we can discuss in language and I can help you. But it's a good opportunity. Okay? So we now focus on the property of awareness and this is what we thought that definition of awareness. Awareness is one estimator we we have used in analyzing data. Okay? And the definition of awareness is the amount of minimize the sum of square residue and uh we we want to find a linear function at function of constant and linear in X. X can be many variables here, we want",
+   "ko": "어, 하지만 이 질문은 그리고 그 질문은 질문과 답변 아이디어와 가능성 그래서 이것을 준비할 수 있습니다. 발표를 영어로 하고 그런 다음 네덜란드어로 토론할 수 있고 제가 도와드릴게요. 하지만 좋은 기회예요. 알겠죠? 그래서 우리는 이제 집중할 거예요. 재산의 인식과 이것이 우리가 생각한 인식의 정의입니다. 인식은 하나의 추정치이며 우리는 이것을 데이터 분석에 사용했습니다. 알겠죠? 그리고 인식의 정의는 실제 최소화해야 할 양입니다. 합계는 제곱의 합이며 잔차입니다. 그리고 어, 우리는 선형 함수를 찾고 싶습니다. 그 함수는 상수와 x에 대한 선형입니다. x는 여러 변수가 될 수 있는데, 여기서는",
+   "pdf": "(PDF 없이 필기)",
+   "pdfPage": 1,
+   "slideText": "",
+   "liveNotes": {
+    "notes": [
+     "**최소화**(minimize) 관련 언급"
+    ],
+    "summary": "최소화(minimize)",
+    "exam": [],
+    "board": [],
+    "at": 1789522360947
+   },
+   "marks": [],
+   "segs": [
+    {
+     "t": 5,
+     "page": 1,
+     "en": "Uh, but this question and the question and answer idea and possibility so and this you can prepare presentation in English and then we can discuss in language and I can help you. But it's a good opportunity.",
+     "ko": "어, 하지만 이 질문은 그리고 그 질문은 질문과 답변 아이디어와 가능성 그래서 이것을 준비할 수 있습니다. 발표를 영어로 하고 그런 다음 네덜란드어로 토론할 수 있고 제가 도와드릴게요. 하지만 좋은 기회예요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 27,
+     "page": 1,
+     "en": "Okay? So we now focus on the property of awareness and this is what we thought that definition of awareness. Awareness is one estimator we we have used in analyzing data. Okay? And the definition of awareness is the amount of",
+     "ko": "알겠죠? 그래서 우리는 이제 집중할 거예요. 재산의 인식과 이것이 우리가 생각한 인식의 정의입니다. 인식은 하나의 추정치이며 우리는 이것을 데이터 분석에 사용했습니다. 알겠죠? 그리고 인식의 정의는 실제 최소화해야",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 54,
+     "page": 1,
+     "en": "minimize the sum of square residue and uh we we want to find a linear function at function of constant and linear in X. X can be many variables here, we want",
+     "ko": "할 양입니다. 합계는 제곱의 합이며 잔차입니다. 그리고 어, 우리는 선형 함수를 찾고 싶습니다. 그 함수는 상수와 x에 대한 선형입니다. x는 여러 변수가 될 수 있는데, 여기서는",
+     "src": "gemini",
+     "ai": true
+    }
+   ]
+  },
+  {
+   "page": 9,
+   "en": "and then that is the uh the residue, which is the difference from the predicted value. We want to minimize the square sum of the square value of the residue. And therefore, the condition gives normal equations. And actually the normal equation uh the normal condition is a function of sample moment. And this A and B parameter. And what are the known variables the unknown variables are A and B. Our goal is to find this estimate as a function of sample moment, sample moment. Example what for example, a moment like that. The number we calculate from the sample. So that is easy, yes, and okay. But those are the but here. These are it always down to this relationship. The sample mean in the outcome variable is that plus the B hat our estimator. And time sample mean of X variable. And the sample of X is that. That's satisfied that. condition. We have two unknowns A and B and two equations and they are linear. So we can find one solution. We have one solution that satisfies. As long as they are not um linearly dependent. We which obviously is the case, but as long as we we are in a condition that uh Yeah, we can find the solution because it's a linear function. with respect to A and B. That's what matters to us. It can be a function of very complicated sample object like you know, here we have a square. We have a square. So X, the does not matter. It will be a number. Right? So here the unknown variable is A and B. And this equation is the equation we respect to A and B. So we really need to solve that. And then it gives us So the solution All right. We only need to divide by What we can write down one more So we need this. Once in your lifetime, and then and then then you can take it. Um, the formula you can take the formula later, but you can do this and this one time. So understand the definition of or that. And I actually if you are familiar with the backwards, okay? Then things are simpler. You don't have to calculate the estimate. I'll show you later. But we do this one time. Okay. Okay. How do you solve for A and B? You have to multiply X bar So the first equation, the first equation becomes X bar minus Y bar equals B X plus B X the X bar squared. Okay. So I I would like So X uh like okay. So we have to eliminate A. And then in order to solve for B, you have B X square bar. minus X bar squared. equals X Y bar minus X bar plus Okay. So B that is B. So these two linear equation is X Y bar minus X bar plus Okay. So And by the way, the equation example B Okay? So here, this is the estimator again. We don't have to understand how to calculate the linear regression. So B is the population object, right? So we relate that the population the relationship between A and X and Y. Can we represent this? Okay. And this is a population parameter. We want to estimate B, which represents happening in the population by looking at the sample. Once you draw a sample, they can always calculate X that the data X and Y. Right? And this is a formula for the sample. So this thing is an estimate. It is a formula for the sample. So estimate that is a used to get this, the true value beta. This is population parameter. And then estimator, this is a formula of observation so and that is a function of X and Y. And that once we have a sample, then we can actually calculate this number. which will give us as estimate. Okay. Okay? So this is just a particular function of point the way it is defined based on the very specific of the we want to find the linear association of the calculation data. The definition of A and X and Y, right? And then nice the this from the product that projection and the observation. So we like that is the clear of the the of the that is the definition. So OLS give me defined like that. And then this you can suggest many other functions. But what we learned that why this particular functional form has a desired property, You know, it's like, it's very desirable. Um, but I'm just thinking this is most like minimum requirement for us to have. Because I feel we want to have a good guest. And of course, like we want to have a or whatever. find the number that is around the population parameter. And once we calculate this, is is and if we do this many, many times, like 100 times, and the mean value realize that ahead, will be close to the population value that it be here. Okay. So really it's like that's the most okay. But then it doesn't matter. AB is perfectly fine. Okay? So now, that's how we derive that. So we derive how S is constructed based on this idea, right? And then this is the solution to this you know, this optimization problem. And then this more equations, can be represented as those two conditions. How? So you have UI had uh I want to say that how we get more equation, Okay? So, like these conditions, right? This is here for us to remember, right? So more equation, is it we create to say that the estimated value that sum of estimated should be equal to zero. Okay? Once we find now A and B, and the time all about the multiplication of X and if we at take a sum, it should be zero. Okay? This is easier for us to remember then uh more equation. Okay? Now, how do we get this? So UI had was Y I minus Y hat. What I had is what is predicted if following the estimated value, right? And then we the the first normal equation normal equation says that Y hat equals A plus B and X, right? So if normal equation is true, we can write down this equation. Okay? Right? Then we should apply and uh time And the we want to move the right hand side to the left hand side. This is a definition of a loop. So, of course, no matter like equations implies the summation already should be equal to zero. And I get another equation of the condition. Right? Um the sum is ready dealer with respect to it. Of course, the second Next time we walk, Rose, and you next time. Okay. being. So just Okay. I Oh, no, oh. It's wrong. Oh. That's weird. Okay. Okay. Okay. Oh, here, we want to divide this commission. So I think I'm going to ask you to divide this in the same way. I just to show you that they are because these conditions that we need to remember. So here, again, I can like this and this is the um this. We really move like this and that's fine. And that's fine. And then so and then okay. So you're going to do zero and this one the commission can be combined. So and it is excellent. I minus and then that. Okay. Let's figure it it goes to zero. And next time, we we're going to respect and we respect out one. I know but okay. And by the definition, this is our when we are given that we have to do this so that is So now we have the commission of our observation and that estimated residual the summation should be equal to zero. Okay? So Rose to conditions are found on the market and yeah. Okay. So so now from now on we can remember this. And then remember that that is from the location just simply the purchase of a condition with respect to A and B. Okay. And that is the sum of estimated residual should be equal to zero. So the multiplication of SI and the residual should be equal to zero. Okay. Okay. Um, okay. So population counterparty is like this. So that is showing us, so I don't know it's going to be. Um, what does that mean? So that is defined in the simple, right? In the sample we observe the outcome. And then if we have if we want to it's we assume that there is some relationship. In the sample, why okay. Next time, we'll then we can write down the formula that we do it and we might back. So that's what I'm done. This is what estimates. Okay? Now, what do you mean by population? An analogy is that, you know, we are talking we define what it's from the sample, but let's think about population. And then we want to have the projection of data. Okay? So then we can think about, you know, population relationship between Y and X as this. Is it just a way of we're thinking about the true data generating process? Okay? And then now, if we define how population, so what population we did sample or to estimate. So population is the projection of something. So population analogy is defined like that. And then value based. So population is a random process. So we can assume I and there is some probability. So expected value of that squared uh over population distribution. Should we be And then of course, condition is very comparable because expectation can be separated or factored out into the it is linear, right? So we can have this. We don't need to do this. I just saying that what I mean by population analogy. Then we have similar equation. But it is population uh versus the OLS. So we have expectation instead of sample. Okay? Because population we don't have the sample. So we can assume from uh I don't know to end. It's just a distribution. And then we can talk about expectation. You know what I mean? Nothing much, but it will be you know, next time we we can the underlying condition of whatever term. And the population analogy. So that's that will be used in the future. Okay? So now, we can define the population variance of X and U can be defined like this. If you don't know, you have to check. How to do that? You have to start from the covariance definition of covariance. So variance X U equals expected value of X minus U X minus the U This is the meaning of it. So you do it. So it's it can be written as like that. And because we know that in the population the expected value of U is zero. So variance and then this one also should be equal to zero. So the two modification in the population version says that expected value of U is zero, expected value of X is zero. So covariance between X and U becomes zero. So OLS guarantees that X said, when we say OLS, that is to assume that in the population, X and U is not correlated. Okay? So this is kind of assumption we impose on the distribution of the population. So only that is true, our OLS is valid. You know, um yeah. So it's a big uh new idea economically. How to distinguish them from the population and the modern means? Uh So it's okay, you cannot pull it out. Well, multiply Aha. So this is the one we do that, this was our solution. Right? So this is the estimate OLS estimator for the coefficient. We Uh, the slope, rather than doing it for so you can focus on the slope slope, and had these on the follow and if you look at it closely, that motivator is an actual variable. So motivator is a very of This is a definition. Definition of covariance is expected value of XY minus EXY. It's not the definition of this. relationship. So this one is actually the covariance definition. It does not matter whether it's a sample or population, covariance is just defined like that. And then this is a variance of the sample. Okay. So this is the formula for or divide covariance between XY by the variance of X. Doesn't make sense. I think it makes sense because what we want to see is the linear how X and Y are correlated. Linear relation means that we want to see the direction um to which they are they move together or not. So if they have linear relationship, then that should be captured by covariance. Right? Covariance is a measure of how to stand the linear relationship, whether they move together in the same direction or not. So how how they move together. If covariance is high, that means they uh they move together. Very so this moves. So, okay? So like linear relationship, obviously, uh is captured by covariance.",
+   "ko": "그리고 그것이 어, 잔차는 실제 값과의 차이인 예측값과 우리는 최소화하고 싶어요. 제곱의 합을 제곱의 합을 최소화하고 싶어요. 잔차의 그리고 따라서 조건은 정규 방정식을 제공합니다. 그리고 사실 정규 방정식은 어, 정규 방정식은 함수의 함수입니다. 표본의 모멘트입니다. 그리고 이 A와 B 매개변수입니다. 그리고 무엇이 알려진 변수인가요? 알려지지 않은 변수는 A와 B입니다. 우리의 목표는 이 A와 B의 추정치를 찾는 것입니다. 표본의 모멘트, 표본의 모멘트입니다. 예를 들어, 무엇이 예를 들어, 모멘트가 그런 식이죠. 그 숫자는 우리가 표본에서 계산한 것입니다. 그래서 그건 쉽죠, 네, 그리고 알겠습니다. 하지만 그것들은 여기 있습니다. 이것들은 그것입니다. 항상 이 관계에 달려 있습니다. 표본 평균은 결과 변수에서 입니다. 그것에 B 모자를 더한 것이 우리의 추정치입니다. 그리고 시간 표본 평균은 X 변수의 그리고 표본 평균은 X의 그것입니다. 그게 만족스럽습니다. 그 조건이요. 우리는 두 개의 미지수 A와 B가 있고 두 개의 방정식이 있으며 선형입니다. 그래서 우리는 하나의 해를 찾을 수 있습니다. 우리는 하나의 해를 만족합니다. 한편, 그것들이 음, 선형적으로 종속되지 않는 한, 우리는 분명히 그런 경우이지만, 한편, 우리가 어떤 상황에 있을 때, 그 어, 네, 우리는 해를 찾을 있습니다. 왜냐하면 이것은 선형 함수이기 때문입니다. 에 대한 A와 B입니다. 그것이 우리에게 중요한 것입니다. 그것은 변수의 함수일 수 있고 매우 복잡한 표본 객체일 수도 있습니다. 여기서는 우리가 제곱을 가지고 있습니다. 우리는 제곱을 가지고 있습니다. 그래서 X는 중요하지 않습니다. 그것은 숫자가 될 것입니다. 그렇죠? 그래서 여기서 미지수는 A와 B입니다. 그리고 이 방정식은 우리가 A에 대해 A와 B에 대한 방정식입니다. 그래서 우리는 정말 그것을 풀어야 합니다. 그리고 그것은 우리에게 줍니다. 그래서 해는 알겠습니다. 우리는 나누기만 하면 됩니다. 우리가 할 수 있는 것은 하나 더 적는 것입니다. 그래서 이게 필요해요. 한 번 평생에, 그리고 나서 그리고 나서 가져가시면 돼요. 음, 공식은 공식을 가져가시면 되지만, 이렇게 하고 한 번 할 수 있어요. 그래서 정의를 이해하세요. 그리고 그게 뭔지. 그리고 사실 만약 여러분이 익숙하다면 그 거꾸로 하는 것에, 알겠죠? 그러면 상황이 그래요. 더 간단해요. 여러분은 계산할 필요가 없어요. 추정치를 보여드릴게요. 나중에 보여드릴게요. 하지만 우리는 이걸 한 번 해요. 알겠습니다. 알겠습니다. A와 B를 어떻게 구하나요? 여러분은 곱해야 해요. X를 바를 그래서 첫 번째 방정식, 첫 번째 방정식은 이렇게 됩니다. X 바 마이너스 Y 바는 B와 같습니다. X 플러스 B X 그 X 바 제곱. 알겠습니다. 그래서 저는 하고 싶어요. 그래서 X 음, 알겠습니다. 그래서 우리는 해야 해요. 제거해야 해요. A를. 그리고 그런 다음 하기 위해서 B를 구하려면, 여러분은 B X 제곱 바. 마이너스 X 바 제곱. 는 X Y 바 마이너스 X 바 플러스 알겠습니다. 그래서 B 그게 B입니다. 그래서 이 두 선형 방정식은 X Y 바 마이너스 X 바 플러스 알겠습니다. 그래서 그리고 그런데, 방정식은 예제 B 알겠죠? 그래서 여기서, 이것은 추정량입니다. 다시. 우리는 어떻게 계산하는지 이해할 필요가 없어요. 선형 회귀를. 그래서 B는 모집단 객체입니다, 그렇죠? 그래서 우리는 그것을 모집단과 관계를 맺습니다. A와 X와 Y 사이의. 우리가 이것을 나타낼 수 있나요? 알겠습니다. 그리고 이것은 모집단 모수입니다. 우리는 추정하고 싶습니다. B를, 이것은 나타냅니다. 모집단에서 일어나는 일을 살펴보는 것으로 표본을 통해. 일단 표본을 추출하면 그들은 항상 계산할 수 있습니다. X 그 데이터가 X와 Y를. 맞죠? 그리고 이것은 공식입니다. 이것은 표본에 대한 것입니다. 그래서 이것은 추정치입니다. 이것은 공식입니다. 표본에 대한. 그래서 추정치입니다. 그것은 사용되는 것입니다. 얻기 위해 이것을, 참값을 베타를. 이것은 모집단 모수입니다. 그리고 추정량, 이것은 공식입니다. 관측값의 그래서 그리고 그것은 X와 Y의 함수입니다. 그리고 그것은 우리가 일단 표본을 가지면, 그러면 실제로 이 숫자를 계산할 수 있습니다. 이것은 우리에게 추정치를 제공합니다. 알겠습니다. 그렇죠? 그래서 이것은 단지 특정 점의 함수입니다. 그것이 정의된 방식에 따라, 그 매우 구체적인 것의 우리는 선형을 찾고 싶습니다. 그 계산의 데이터. 그 A와 X와 Y의 정의, 맞죠? 그리고 그 이것은 이 곱에서 나온 것입니다. 그 투영과 관측입니다. 그래서 우리는 그것이 명확한 것의 그 그것이 그 정의입니다. 그래서 OLS는 저에게 이렇게 정의됩니다. 그리고 이것은 당신이 제안할 수 있습니다. 다른 많은 함수들을. 하지만 우리가 배운 건, 왜 이 특정 기능적 형태가 원하는 속성을 가지고 있는지, 있잖아요, 그건 아주 바람직한 거예요. 음, 하지만 저는 이게 그냥 가장 뭐랄까, 최소한의 요건이라고 생각해요. 우리가 가져야 할. 왜냐하면 우리는 좋은 손님을 원하니까요. 그리고 물론, 우리는 좋은 걸 갖고 싶어 하잖아요. 숫자를 찾아서 그게 대략 인구 수와 비슷한 정도가 되도록 하는 거죠. 그리고 일단 이걸 계산하면, 그게 그리고 만약 우리가 이걸 여러 번 하면, 예를 들어 100번 하면, 그리고 평균값이 깨닫게 되는 거죠, 미리, 그게 될 거예요. 그게 인구와 비슷할 거예요. 여기 있는 게. 알겠죠. 그래서 정말 이건 마치 그게 가장 괜찮아요. 하지만 그건 중요하지 않아요. AB는 완벽하게 괜찮아요. 알겠죠? 그래서 이제, 그게 우리가 그걸 유도하는 방법이에요. 그래서 우리는 어떻게 S가 구성되는지 이 아이디어를 바탕으로 알겠죠? 그리고 이게 바로 이 문제의 해결책이에요. 아시다시피, 이 최적화 문제의. 그리고 그런 다음 이게 더 많은 방정식, 이 될 수 있어요. 그 두 가지로 표현될 수 있어요. 어떻게? 그래서 당신은 UI를 가지고 있었고 어 제가 말하고 싶은 건 우리가 어떻게 얻느냐는 거예요. 더 많은 방정식, 알겠죠? 그래서, 그러니까 이런 조건들이, 알겠죠? 이건 바로 여기 있는 거예요, 우리가 기억해야 할, 알겠죠? 그래서 더 많은 방정식, 우리가 만들어낸 건 그게 추정된 값이라는 거예요. 그게 합이 추정된 값과 같아야 한다는 거죠. 알겠죠? 일단 우리가 A를 찾으면 B도 찾을 수 있고, 그리고 시간도 다 곱셈에 관한 거니까 X와 만약 우리가 에 합을 구하면 그게 0이 되어야 해요. 알겠죠? 이게 더 기억하기 쉬워요. 그러면 어 더 많은 방정식. 알겠죠? 이제, 이걸 어떻게 얻을까요? 그래서 UI가 가지고 있던 건 Y I 마이너스 Y hat이었어요. 제가 가지고 있던 건 뭐냐면 예측된 값이에요. 만약 그 다음을 따라 추정된 값에 따라, 알겠죠? 그리고 우리는 첫 번째 정규 방정식은 정규 방정식은 말해요. Y hat은 A와 B를 더한 것과 같고 X와 같다고요, 알겠죠? 그래서 만약 정규 방정식이 맞다면, 우리는 이렇게 쓸 수 있어요. 이 방정식을. 알겠죠? 그렇죠? 그러면 우리는 적용하고 어 시간도 그리고 우리는 이동하고 오른쪽을 왼쪽으로 옮기고 싶어요. 이건 루프의 정의입니다. 그래서 물론, 방정식처럼 합이 이미 합산되어 있어야 한다는 것을 의미합니다. 그리고 또 다른 방정식을 얻습니다. 그렇죠? 음, 합은 이미 딜러가 에 대해 준비가 되어 있습니다. 물론, 그 다음엔 걸을 때, 로즈, 그리고 너는 다음에 하자. 알았어. 존재하는 것. 그래서 그냥 알았어. 나는 오, 아니, 오. 틀렸어. 오. 그게 이상해. 알았어. 알았어. 알았어. 오, 여기서는, 이걸 나누고 싶어요. 그래서 저는 그냥 당신에게 부탁할게요. 이걸 똑같이 나눠달라고. 그냥 보여드리려고 한 거예요, 그게 왜냐면 이 조건들이 우리가 해야 할 것들이니까요. 그래서 여기서는, 다시 이렇게 하고 이게 음 이거예요. 우리는 정말 이렇게 움직이고 그건 괜찮아요. 그리고 그건 괜찮아요. 그리고 그런 다음 그래서 그리고 나서 알았어. 그래서 당신은 0을 할 거고 이건 그 수수료는 될 수 있어요. 합쳐질 수 있어요. 그래서 아주 훌륭해요. 저는 마이너스 그리고 그런 다음 그거예요. 알았어. 한번 알아볼까? 그게 0으로 가. 그리고 다음엔, 우리 존중할 거야. 그리고 우리는 존중해. 하나. 나도 알아, 하지만 알았어. 그리고 정의에 따르면, 이게 우리 때야. 우리가 주어진 게 이걸 해야 한다는 거니까 그게 그래서 이제 우리는 수수료를 가지고 있어. 우리의 관찰 그리고 그 추정된 잔차 합계는 0이어야 해. 알았지? 그래서 로즈는 조건이 시장에서 발견돼. 그리고 응. 알았어. 그래서 이제 지금부터는 기억할 수 있어. 이걸. 그리고 그게 위치에서 온 그냥 단순히 조건의 구매라는 것을 기억해. 알았지? 그리고 그게 추정된 잔차의 합은 0이어야 해. 그래서 곱셈은 SI와 잔차의 곱은 0이어야 해. 알았지? 알았어. 음, 알았어. 그래서 모집단 거래 상대방은 이렇게 돼. 그래서 그건 보여주고 있어, 그래서 어떻게 될지 모르겠어. 음, 그게 무슨 뜻이야? 그래서 그건 정의돼 그 간단하게, 맞지? 그 간단하게 우리가 관찰한 것에서 결과가 나와. 그리고 만약 우리가 만약 우리가 원한다면 그건 우리가 가정하는 거야, 어떤 관계가 있다고. 그 샘플에서 는, 왜 알았어. 다음 번에는, 그러면 우리는 쓸 수 있어 그 우리가 이미 하는 공식을 적고 돌아갈 수도 있어. 그래서 그게 내가 한 일이야. 이게 추정치야. 알겠지? 자, 무슨 말이야, 모집단이? 비유하자면 그건 있잖아, 우리가 이야기하고 있는 건 우리가 샘플에서 정의한 거지만, 한번 모집단에 대해 생각해 보자. 그리고 우리는 예측을 하고 싶어. 데이터의. 알겠지? 그럼 우리는 생각해 볼 수 있어. 그러니까, 모집단 관계가 어떻게 되는지 Y와 X가 이렇다는 걸. 그냥 우리가 진짜 데이터에 대해 생각하는 방식인가요? 알겠지? 그리고 이제, 만약 우리가 정의한다면 어떻게 모집단, 그래서 어떤 모집단을 우리가 샘플링했거나 아니면 추정했는지. 그래서 모집단 은 예측이야. 어떤 것의. 그래서 모집단은 비유하자면 이렇게 정의돼. 그리고 가치 기반이야. 그래서 모집단은 확률 과정이야. 그래서 우리는 가정할 수 있어. 나는 그리고 어떤 확률이 있어. 그래서 기대값은 그 제곱의 어 모집단에 대한 분포야. 우리가 해야 할까? 그리고 물론, 조건은 매우 비슷해 왜냐하면 기대값은 될 수 있어, 어 분리되거나 인수분해될 수 있어, 그건 선형이니까, 그렇지? 그래서 우리는 이걸 가질 수 있어. 우리는 이걸 할 필요 없어. 내가 말하는 모집단은 비유야. 그러면 비슷한 게 있어. 방정식이. 하지만 그건 모집단이야. 어 대 OLS. 그래서 우리는 기대값 대신 샘플을 사용해. 알겠지? 왜냐하면 모집단은 우리가 샘플을 가지고 있지 않으니까. 그래서 우리는 가정할 수 있어, 어, 처음부터 끝까지. 그냥 분포야. 그리고 우리는 이야기할 수 있어. 기대값에 대해. 무슨 말인지 알겠어? 별거 아니지만, 그건 있잖아, 다음번에 우리가 할 수 있는 건 기본이 되는 조건이야. 어떤 용어든. 그리고 모집단은 비유야. 그래서 그게 사용될 거야 앞으로. 알겠지? 그래서 이제, 우리는 모집단 분산을 정의할 수 있어, X와 U의 이렇게 정의될 수 있어. 만약 여러분이 모른다면 확인해야 해. 어떻게 하냐고? 처음부터 공분산에서 시작해야 해. 공분산의 정의. 그래서 분산 X U는 기대값 과 같아. X 마이너스 U X 마이너스 그 U 이게 그 의미야. 그래서 너가 해. 그래서 이건 이렇게 쓸 수 있어. 그리고 우리가 알고 있듯이 모집단에서 그 U의 기대값은 0이야. 그래서 분산은 그리고 이것도 0과 같아야 해. 그래서 두 가지 수정은 에서 모집단에서 말하길 기대값은 U는 0이고, X의 기대값은 0이야. 그래서 공분산은 X와 U 사이가 0이 돼. 그래서 OLS는 보장해, X가 말했듯이, 우리가 OLS라고 말할 때, 그건 가정하는 거야 모집단에서 X와 U가 서로 상관관계가 없다는 거야. 알겠지? 그래서 이건 일종의 가정이야. 모집단의 분포에 대한. 그래서 그것만이 사실이고, 우리 OLS는 유효해. 알다시피, 음 네. 그래서 이건 큰 새로운 아이디어야. 경제적으로. 어떻게 그들을 모집단과 구별할 수 있을까? 어 그래서 이건 괜찮아, 넌 그걸 꺼낼 수 없어. 음, 곱해봐. 아하. 그래서 이건 우리가 그렇게 하는 거고, 이건 우리의 해결책이었어. 그렇지? 그래서 이건 OLS 추정량이야. 계수에 대한. 어, 경사면, 보다는 그래서 할 수 있도록 경사에 집중할 수 있게, 경사면, 그리고 이런 것들이 있었어요. 팔로우에 있고, 만약 자세히 보면, 그게 동기부여가 실제로 어떤 변수예요. 그래서 동기부여는 매우 이건 정의예요. 정의는 공분산의 정의는 기대값입니다. XY에서 EXY를 뺀 것입니다. 이게 정의가 아니에요. 관계가. 그래서 이건 사실 공분산의 정의입니다. 그것은 표본이든 모집단이든 상관없이 공분산은 이렇게 정의됩니다. 그리고 이건 표본의 분산입니다. 네. 그래서 이건 공식입니다. 또는 나누기 공분산 XY 사이의 값을 X의 분산으로 나눕니다. 말이 안 돼요. 제 생각엔 말이 되는 것 같아요. 왜냐하면 우리가 보고 싶은 것은 선형 X와 Y가 어떻게 상관관계가 있는지입니다. 선형 관계는 우리가 방향을 보고 싶다는 것을 의미합니다. 그들이 어떻게 움직이는지 입니다. 그래서 만약 그들이 선형 관계를 가지고 있다면, 그건 공분산으로 포착되어야 합니다. 그렇죠? 공분산은 측정값입니다. 선형 관계가 어떻게 움직이는지, 같이 움직이는지 아니면 같은 방향으로 움직이는지입니다. 그래서 어떻게 그들이 움직이는지 입니다. 만약 공분산이 높다면, 그건 그들이 어, 그들이 같이 움직인다는 뜻입니다. 매우 그래서 이건 움직입니다. 그래서, 알겠죠? 그래서 선형 관계, 또는 분명히, 어, 포착됩니다. 공분산으로.",
+   "pdf": "lecture_week2_OLS_part1.pdf",
+   "pdfPage": 8,
+   "slideText": "Least squares The least squares problem seeks ˆ a, ˆ b minimizing the sum of squared residuals SSR( a, b ) = N X i =1 ( y i − a − bx i ) 2 , (ˆ a, ˆ b ) = arg min a,b SSR( a, b ) . The first-order conditions are ∂ SSR(ˆ a, ˆ b ) ∂a = − 2 N X i =1 ( y i − ˆ a − ˆ bx i ) = 0 , ∂ SSR(ˆ a, ˆ b ) ∂b = − 2 N X i =1 x i ( y i − ˆ a − ˆ bx i ) = 0 . (Make sure you understand that the derivative of b 7 → ( y i − a − bx i ) 2 is − 2 x i ( y i − a − bx i ) .) SSR( a, b ) is convex, so the FOCs are sufficient: the minimum is unique and global. These FOCs are the normal equations . Sunha Myong (Kyung Hee University) OLS: the estimator 8 / 36",
+   "liveNotes": {
+    "notes": [
+     "▶ **공분산**(covariance)은 두 변수가 같은 방향으로 함께 움직이는 정도, 즉 선형관계의 강도를 나타내는 척도"
+    ],
+    "summary": "OLS 정규방정식 도출",
+    "exam": [],
+    "board": [
+     "ȳ = â + b̂x̄",
+     "x̄ȳ = âx̄ + b̂x̄²",
+     "b̂(x²̅ − x̄²) = xy̅ − x̄ȳ",
+     "b̂ = (xy̅ − x̄ȳ)/(x²̅ − x̄²)"
+    ],
+    "at": 1789523632421
+   },
+   "marks": [
+    {
+     "line": 21,
+     "type": "",
+     "note": "÷N → ȳ=â+b̂x̄ (표본평균관계)"
+    },
+    {
+     "line": 20,
+     "type": "",
+     "note": "두 방정식 선형독립해야 유일해"
+    }
+   ],
+   "lines": {
+    "w": 453.543,
+    "h": 255.118,
+    "lines": [
+     {
+      "i": 0,
+      "text": "Least squares",
+      "x": 8.504,
+      "y": 5.714800000000007,
+      "w": 78.22409012000001,
+      "h": 16.49813
+     },
+     {
+      "i": 1,
+      "text": "The least squares problem seeks a, ˆ ˆ b minimizing the sum of squared residuals",
+      "x": 10.908999999999999,
+      "y": 32.9359,
+      "w": 351.04260653,
+      "h": 12.545465
+     },
+     {
+      "i": 2,
+      "text": "X N",
+      "x": 137.421,
+      "y": 51.17289999999999,
+      "w": 15.757104040000002,
+      "h": 12.545465
+     },
+     {
+      "i": 3,
+      "text": "2",
+      "x": 217.124,
+      "y": 63.2439,
+      "w": 4.234514130000008,
+      "h": 9.165614999999999
+     },
+     {
+      "i": 4,
+      "text": "SSR( a, b ) = ( y i − a − bx i ) , (ˆ a, ˆ b ) = arg min SSR( a, b ) .",
+      "x": 78.942,
+      "y": 64.8099,
+      "w": 295.65954797999996,
+      "h": 12.545465
+     },
+     {
+      "i": 5,
+      "text": "a,b",
+      "x": 307.856,
+      "y": 75.1019,
+      "w": 10.47271139999998,
+      "h": 9.165614999999999
+     },
+     {
+      "i": 6,
+      "text": "i =1",
+      "x": 138.44799999999998,
+      "y": 80.83589999999998,
+      "w": 13.704004770000012,
+      "h": 9.165614999999999
+     },
+     {
+      "i": 7,
+      "text": "The first-order conditions are",
+      "x": 10.908999999999992,
+      "y": 96.1429,
+      "w": 132.75392881,
+      "h": 12.545465
+     },
+     {
+      "i": 8,
+      "text": "N",
+      "x": 215.29399999999998,
+      "y": 115.19789999999998,
+      "w": 6.721185329999997,
+      "h": 9.165614999999999
+     },
+     {
+      "i": 9,
+      "text": "∂ SSR(ˆ a, ˆ b ) X ˆ",
+      "x": 129.37099999999998,
+      "y": 118.51489999999998,
+      "w": 148.06054999999998,
+      "h": 12.545465
+     },
+     {
+      "i": 10,
+      "text": "= − 2 ( y i − a ˆ − bx i ) = 0 ,",
+      "x": 183.928,
+      "y": 125.89489999999998,
+      "w": 130.00554797999996,
+      "h": 12.545465
+     },
+     {
+      "i": 11,
+      "text": "∂a",
+      "x": 148.454,
+      "y": 133.37789999999998,
+      "w": 12.169101050000023,
+      "h": 12.545465
+     },
+     {
+      "i": 12,
+      "text": "i =1",
+      "x": 212.22699999999998,
+      "y": 141.92089999999996,
+      "w": 13.704004770000012,
+      "h": 9.165614999999999
+     },
+     {
+      "i": 13,
+      "text": "N",
+      "x": 215.29399999999998,
+      "y": 153.5339,
+      "w": 6.721185329999997,
+      "h": 9.165614999999999
+     },
+     {
+      "i": 14,
+      "text": "∂ SSR(ˆ a, ˆ b ) X ˆ",
+      "x": 129.37099999999995,
+      "y": 156.85189999999997,
+      "w": 159.4945500000001,
+      "h": 12.545465
+     },
+     {
+      "i": 15,
+      "text": "= − 2 x i ( y i − a ˆ − bx i ) = 0 .",
+      "x": 183.928,
+      "y": 164.2319,
+      "w": 141.44054798000002,
+      "h": 12.545465
+     },
+     {
+      "i": 16,
+      "text": "∂b",
+      "x": 148.997,
+      "y": 171.7149,
+      "w": 11.084736510000027,
+      "h": 12.545465
+     },
+     {
+      "i": 17,
+      "text": "i =1",
+      "x": 212.22699999999998,
+      "y": 180.25789999999998,
+      "w": 13.704004770000012,
+      "h": 9.165614999999999
+     },
+     {
+      "i": 18,
+      "text": "2",
+      "x": 319.4090000000001,
+      "y": 202.26219999999998,
+      "w": 3.9715790999999854,
+      "h": 8.01987
+     },
+     {
+      "i": 19,
+      "text": "(Make sure you understand that the derivative of b 7 → ( y i − a − bx i ) is − 2 x i ( y i − a − bx i ) .)",
+      "x": 32.727,
+      "y": 202.8894,
+      "w": 391.2310654200002,
+      "h": 11.45699
+     },
+     {
+      "i": 20,
+      "text": "SSR( a, b ) is convex, so the FOCs are sufficient: the minimum is unique and global. These FOCs",
+      "x": 32.727,
+      "y": 216.6454,
+      "w": 401.93420962000016,
+      "h": 11.45699
+     },
+     {
+      "i": 21,
+      "text": "are the normal equations .",
+      "x": 32.72699999999999,
+      "y": 228.60039999999998,
+      "w": 112.80861028,
+      "h": 11.45699
+     },
+     {
+      "i": 22,
+      "text": "Sunha Myong (Kyung Hee University) OLS: the estimator 8 / 36",
+      "x": 24.024,
+      "y": 246.4834,
+      "w": 424.19866592000005,
+      "h": 6.8742399999999995
+     }
+    ]
+   },
+   "segs": [
+    {
+     "t": 65,
+     "page": 9,
+     "en": "and then that is the uh",
+     "ko": "그리고 그것이 어,",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 73,
+     "page": 9,
+     "en": "the residue, which is the difference from the predicted value. We want to minimize the square sum of the square value of the residue. And therefore, the condition gives normal equations. And actually the normal equation uh the normal condition is a function of sample moment.",
+     "ko": "잔차는 실제 값과의 차이인 예측값과 우리는 최소화하고 싶어요. 제곱의 합을 제곱의 합을 최소화하고 싶어요. 잔차의 그리고 따라서 조건은 정규 방정식을 제공합니다. 그리고 사실 정규 방정식은 어, 정규 방정식은 함수의 함수입니다. 표본의 모멘트입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 95,
+     "page": 9,
+     "en": "And this A and B parameter. And what are the known variables the unknown variables are A and B. Our goal is to find this estimate as a function of sample moment, sample moment.",
+     "ko": "그리고 이 A와 B 매개변수입니다. 그리고 무엇이 알려진 변수인가요? 알려지지 않은 변수는 A와 B입니다. 우리의 목표는 이 A와 B의 추정치를 찾는 것입니다. 표본의 모멘트, 표본의 모멘트입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 113,
+     "page": 9,
+     "en": "Example what for example, a moment like that. The number we calculate from the sample. So that is easy, yes, and okay. But those are the but here. These are it always down to this relationship. The sample mean in the outcome variable is that plus the B hat our estimator.",
+     "ko": "예를 들어, 무엇이 예를 들어, 모멘트가 그런 식이죠. 그 숫자는 우리가 표본에서 계산한 것입니다. 그래서 그건 쉽죠, 네, 그리고 알겠습니다. 하지만 그것들은 여기 있습니다. 이것들은 그것입니다. 항상 이 관계에 달려 있습니다. 표본 평균은 결과 변수에서 입니다. 그것에 B 모자를 더한 것이 우리의 추정치입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 140,
+     "page": 9,
+     "en": "And time sample mean of X variable. And the sample of X is that. That's satisfied that. condition. We have two unknowns A and B and two equations and they are linear. So we can find one solution. We have one solution that satisfies. As long as",
+     "ko": "그리고 시간 표본 평균은 X 변수의 그리고 표본 평균은 X의 그것입니다. 그게 만족스럽습니다. 그 조건이요. 우리는 두 개의 미지수 A와 B가 있고 두 개의 방정식이 있으며 선형입니다. 그래서 우리는 하나의 해를 찾을 수 있습니다. 우리는 하나의 해를 만족합니다. 한편,",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 164,
+     "page": 9,
+     "en": "they are not um linearly dependent. We which obviously is the case, but",
+     "ko": "그것들이 음, 선형적으로 종속되지 않는 한, 우리는 분명히 그런 경우이지만,",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 172,
+     "page": 9,
+     "en": "as long as we we are in a condition that uh Yeah, we can find the solution because it's a linear function. with respect to A and B. That's what matters to us. It can be a function of very complicated sample object like you know, here we have a square. We have a square.",
+     "ko": "한편, 우리가 어떤 상황에 있을 때, 그 어, 네, 우리는 해를 찾을 있습니다. 왜냐하면 이것은 선형 함수이기 때문입니다. 에 대한 A와 B입니다. 그것이 우리에게 중요한 것입니다. 그것은 변수의 함수일 수 있고 매우 복잡한 표본 객체일 수도 있습니다. 여기서는 우리가 제곱을 가지고 있습니다. 우리는 제곱을",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 196,
+     "page": 9,
+     "en": "So X, the does not matter. It will be a number. Right? So here the unknown variable is A and B. And this equation is the equation we respect to A and B. So we really need to solve that. And then it gives us So the solution",
+     "ko": "가지고 있습니다. 그래서 X는 중요하지 않습니다. 그것은 숫자가 될 것입니다. 그렇죠? 그래서 여기서 미지수는 A와 B입니다. 그리고 이 방정식은 우리가 A에 대해 A와 B에 대한 방정식입니다. 그래서 우리는 정말 그것을 풀어야 합니다. 그리고 그것은 우리에게 줍니다. 그래서 해는",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 218,
+     "page": 9,
+     "en": "All right. We only need to divide by",
+     "ko": "알겠습니다. 우리는 나누기만 하면 됩니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 232,
+     "page": 9,
+     "en": "What we can write down one more",
+     "ko": "우리가 할 수 있는 것은 하나 더 적는 것입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 244,
+     "page": 9,
+     "en": "So we need this. Once in your lifetime, and then and then then you can take it. Um, the formula you can take the formula later, but you can do this and this one time. So understand the definition of or that. And I actually if you are familiar with the backwards, okay?",
+     "ko": "그래서 이게 필요해요. 한 번 평생에, 그리고 나서 그리고 나서 가져가시면 돼요. 음, 공식은 공식을 가져가시면 되지만, 이렇게 하고 한 번 할 수 있어요. 그래서 정의를 이해하세요. 그리고 그게 뭔지. 그리고 사실 만약 여러분이 익숙하다면 그 거꾸로 하는 것에, 알겠죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 267,
+     "page": 9,
+     "en": "Then things are simpler. You",
+     "ko": "그러면 상황이 그래요. 더 간단해요. 여러분은",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 276,
+     "page": 9,
+     "en": "don't have to calculate the estimate. I'll show you later. But we do this one time. Okay. Okay. How do you solve for A and B? You have to multiply X bar So the first equation, the first equation becomes X bar minus Y bar equals B X plus B X the X bar squared. Okay.",
+     "ko": "계산할 필요가 없어요. 추정치를 보여드릴게요. 나중에 보여드릴게요. 하지만 우리는 이걸 한 번 해요. 알겠습니다. 알겠습니다. A와 B를 어떻게 구하나요? 여러분은 곱해야 해요. X를 바를 그래서 첫 번째 방정식, 첫 번째 방정식은 이렇게 됩니다. X 바 마이너스 Y 바는 B와 같습니다. X 플러스 B X 그 X 바 제곱. 알겠습니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 304,
+     "page": 9,
+     "en": "So I I would like",
+     "ko": "그래서 저는 하고 싶어요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 310,
+     "page": 9,
+     "en": "So X uh like okay. So we have to eliminate A. And then in order to solve for B, you have B X square bar. minus X bar squared. equals X Y bar minus X bar plus Okay. So B that is B. So these two linear equation is X Y bar minus X bar plus Okay. So And by the way, the equation example B Okay?",
+     "ko": "그래서 X 음, 알겠습니다. 그래서 우리는 해야 해요. 제거해야 해요. A를. 그리고 그런 다음 하기 위해서 B를 구하려면, 여러분은 B X 제곱 바. 마이너스 X 바 제곱. 는 X Y 바 마이너스 X 바 플러스 알겠습니다. 그래서 B 그게 B입니다. 그래서 이 두 선형 방정식은 X Y 바 마이너스 X 바 플러스 알겠습니다. 그래서 그리고 그런데, 방정식은 예제 B 알겠죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 355,
+     "page": 9,
+     "en": "So here, this is the estimator again. We don't have to understand how to calculate the linear regression. So B is the population object, right? So we relate that the population the relationship between A and X and Y. Can we represent this?",
+     "ko": "그래서 여기서, 이것은 추정량입니다. 다시. 우리는 어떻게 계산하는지 이해할 필요가 없어요. 선형 회귀를. 그래서 B는 모집단 객체입니다, 그렇죠? 그래서 우리는 그것을 모집단과 관계를 맺습니다. A와 X와 Y 사이의. 우리가 이것을 나타낼 수 있나요?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 382,
+     "page": 9,
+     "en": "Okay. And this is a population parameter. We want to estimate B, which represents happening in the population by looking at the sample. Once you draw a sample, they can always calculate X that the data X and Y. Right? And this is a formula for the sample. So this",
+     "ko": "알겠습니다. 그리고 이것은 모집단 모수입니다. 우리는 추정하고 싶습니다. B를, 이것은 나타냅니다. 모집단에서 일어나는 일을 살펴보는 것으로 표본을 통해. 일단 표본을 추출하면 그들은 항상 계산할 수 있습니다. X 그 데이터가 X와 Y를. 맞죠? 그리고 이것은 공식입니다. 이것은 표본에 대한 것입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 410,
+     "page": 9,
+     "en": "thing is an estimate. It is a formula for the sample. So estimate that is a used to get this, the true value beta. This is population parameter. And then estimator, this is a formula of observation so and that is a function of X and Y. And that once we have a sample, then we can actually calculate this number.",
+     "ko": "그래서 이것은 추정치입니다. 이것은 공식입니다. 표본에 대한. 그래서 추정치입니다. 그것은 사용되는 것입니다. 얻기 위해 이것을, 참값을 베타를. 이것은 모집단 모수입니다. 그리고 추정량, 이것은 공식입니다. 관측값의 그래서 그리고 그것은 X와 Y의 함수입니다. 그리고 그것은 우리가 일단 표본을 가지면, 그러면 실제로",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 436,
+     "page": 9,
+     "en": "which will give us as estimate. Okay. Okay? So this is just a particular function of point the way it is defined based on the very specific of the we want to find the linear association of the calculation data. The definition of A and X and Y, right? And then nice the this from the product that projection and the observation.",
+     "ko": "이 숫자를 계산할 수 있습니다. 이것은 우리에게 추정치를 제공합니다. 알겠습니다. 그렇죠? 그래서 이것은 단지 특정 점의 함수입니다. 그것이 정의된 방식에 따라, 그 매우 구체적인 것의 우리는 선형을 찾고 싶습니다. 그 계산의 데이터. 그 A와 X와 Y의 정의, 맞죠? 그리고 그 이것은 이 곱에서 나온 것입니다. 그 투영과 관측입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 468,
+     "page": 9,
+     "en": "So we like that is the clear of the the of the that is the definition. So OLS give me defined like that. And then this you can suggest many other functions.",
+     "ko": "그래서 우리는 그것이 명확한 것의 그 그것이 그 정의입니다. 그래서 OLS는 저에게 이렇게 정의됩니다. 그리고 이것은 당신이 제안할 수 있습니다. 다른 많은 함수들을.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 487,
+     "page": 9,
+     "en": "But what we learned that why this particular functional form has a desired property,",
+     "ko": "하지만 우리가 배운 건, 왜 이 특정 기능적 형태가 원하는 속성을 가지고 있는지,",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 499,
+     "page": 9,
+     "en": "You know, it's like, it's very desirable. Um, but I'm just thinking this is most like minimum requirement for us to have. Because I feel we want to have a good guest. And of course, like we want to have a or whatever. find the number that is around the population parameter.",
+     "ko": "있잖아요, 그건 아주 바람직한 거예요. 음, 하지만 저는 이게 그냥 가장 뭐랄까, 최소한의 요건이라고 생각해요. 우리가 가져야 할. 왜냐하면 우리는 좋은 손님을 원하니까요. 그리고 물론, 우리는 좋은 걸 갖고 싶어 하잖아요. 숫자를 찾아서 그게 대략 인구 수와 비슷한 정도가 되도록 하는 거죠.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 520,
+     "page": 9,
+     "en": "And once we calculate this, is is and if we do this many, many times, like 100 times, and the mean value realize that ahead, will be close to the population value that it be here. Okay. So really it's like that's the most okay. But then it doesn't matter. AB is perfectly fine.",
+     "ko": "그리고 일단 이걸 계산하면, 그게 그리고 만약 우리가 이걸 여러 번 하면, 예를 들어 100번 하면, 그리고 평균값이 깨닫게 되는 거죠, 미리, 그게 될 거예요. 그게 인구와 비슷할 거예요. 여기 있는 게. 알겠죠. 그래서 정말 이건 마치 그게 가장 괜찮아요. 하지만 그건 중요하지 않아요. AB는 완벽하게 괜찮아요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 550,
+     "page": 9,
+     "en": "Okay? So now, that's how we derive that. So we",
+     "ko": "알겠죠? 그래서 이제, 그게 우리가 그걸 유도하는 방법이에요. 그래서",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 557,
+     "page": 9,
+     "en": "derive how S is constructed based on this idea, right? And then this is the solution to this you know, this optimization problem. And then this more equations, can be represented as those two conditions. How?",
+     "ko": "우리는 어떻게 S가 구성되는지 이 아이디어를 바탕으로 알겠죠? 그리고 이게 바로 이 문제의 해결책이에요. 아시다시피, 이 최적화 문제의. 그리고 그런 다음 이게 더 많은 방정식, 이 될 수 있어요. 그 두 가지로 표현될 수 있어요. 어떻게?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 579,
+     "page": 9,
+     "en": "So you have UI had uh I want to say that how we get more equation, Okay?",
+     "ko": "그래서 당신은 UI를 가지고 있었고 어 제가 말하고 싶은 건 우리가 어떻게 얻느냐는 거예요. 더 많은 방정식, 알겠죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 598,
+     "page": 9,
+     "en": "So, like these conditions, right? This",
+     "ko": "그래서, 그러니까 이런 조건들이, 알겠죠? 이건",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 606,
+     "page": 9,
+     "en": "is here for us to remember, right? So more equation, is it we create to say that the estimated value that sum of estimated should be equal to zero. Okay? Once we find now A and B, and the time all about the multiplication of X and if we at take a sum, it should be zero.",
+     "ko": "바로 여기 있는 거예요, 우리가 기억해야 할, 알겠죠? 그래서 더 많은 방정식, 우리가 만들어낸 건 그게 추정된 값이라는 거예요. 그게 합이 추정된 값과 같아야 한다는 거죠. 알겠죠? 일단 우리가 A를 찾으면 B도 찾을 수 있고, 그리고 시간도 다 곱셈에 관한 거니까 X와 만약 우리가 에 합을 구하면 그게 0이 되어야",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 632,
+     "page": 9,
+     "en": "Okay? This is easier for us to remember then uh more equation. Okay? Now, how do we get this? So UI had was Y I minus Y hat. What I had is what is predicted if following the estimated value, right? And then we the the first normal equation normal equation says that Y hat equals A plus B and X, right?",
+     "ko": "해요. 알겠죠? 이게 더 기억하기 쉬워요. 그러면 어 더 많은 방정식. 알겠죠? 이제, 이걸 어떻게 얻을까요? 그래서 UI가 가지고 있던 건 Y I 마이너스 Y hat이었어요. 제가 가지고 있던 건 뭐냐면 예측된 값이에요. 만약 그 다음을 따라 추정된 값에 따라, 알겠죠? 그리고 우리는 첫 번째 정규 방정식은 정규 방정식은 말해요. Y hat은 A와 B를 더한 것과 같고 X와 같다고요,",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 670,
+     "page": 9,
+     "en": "So if normal equation is true, we can write down this equation. Okay?",
+     "ko": "알겠죠? 그래서 만약 정규 방정식이 맞다면, 우리는 이렇게 쓸 수 있어요. 이 방정식을. 알겠죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 683,
+     "page": 9,
+     "en": "Right? Then we should apply and uh time",
+     "ko": "그렇죠? 그러면 우리는 적용하고 어 시간도",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 694,
+     "page": 9,
+     "en": "And the we want to move the right hand side to the left hand",
+     "ko": "그리고 우리는 이동하고 오른쪽을 왼쪽으로 옮기고",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 702,
+     "page": 9,
+     "en": "side.",
+     "ko": "싶어요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 709,
+     "page": 9,
+     "en": "This is a definition of a loop. So, of course, no matter like equations implies the summation already should be equal to zero. And I get another equation of the condition. Right? Um the sum is ready dealer with respect to it.",
+     "ko": "이건 루프의 정의입니다. 그래서 물론, 방정식처럼 합이 이미 합산되어 있어야 한다는 것을 의미합니다. 그리고 또 다른 방정식을 얻습니다. 그렇죠? 음, 합은 이미 딜러가 에 대해 준비가 되어 있습니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 732,
+     "page": 9,
+     "en": "Of course, the second",
+     "ko": "물론, 그",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 739,
+     "page": 9,
+     "en": "Next time we walk, Rose, and you next time. Okay.",
+     "ko": "다음엔 걸을 때, 로즈, 그리고 너는 다음에 하자. 알았어.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 749,
+     "page": 9,
+     "en": "being. So just Okay. I Oh,",
+     "ko": "존재하는 것. 그래서 그냥 알았어. 나는 오,",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 759,
+     "page": 9,
+     "en": "no, oh. It's wrong. Oh. That's weird. Okay. Okay. Okay. Oh, here, we want to divide this",
+     "ko": "아니, 오. 틀렸어. 오. 그게 이상해. 알았어. 알았어. 알았어. 오, 여기서는, 이걸 나누고",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 772,
+     "page": 9,
+     "en": "commission. So I think I'm going to ask you to divide this in the same way. I just to show you that they are because these conditions that we need to remember.",
+     "ko": "싶어요. 그래서 저는 그냥 당신에게 부탁할게요. 이걸 똑같이 나눠달라고. 그냥 보여드리려고 한 거예요, 그게 왜냐면 이 조건들이 우리가 해야 할 것들이니까요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 787,
+     "page": 9,
+     "en": "So here, again, I can like this and this is the um this.",
+     "ko": "그래서 여기서는, 다시 이렇게 하고 이게 음 이거예요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 817,
+     "page": 9,
+     "en": "We really move like this and that's fine. And that's fine. And then so and then",
+     "ko": "우리는 정말 이렇게 움직이고 그건 괜찮아요. 그리고 그건 괜찮아요. 그리고 그런 다음 그래서 그리고 나서",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 828,
+     "page": 9,
+     "en": "okay. So you're going to do zero and this one the commission can be",
+     "ko": "알았어. 그래서 당신은 0을 할 거고 이건 그 수수료는 될 수 있어요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 839,
+     "page": 9,
+     "en": "combined. So and it is excellent. I minus and then that.",
+     "ko": "합쳐질 수 있어요. 그래서 아주 훌륭해요. 저는 마이너스 그리고 그런 다음 그거예요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 849,
+     "page": 9,
+     "en": "Okay. Let's figure it it goes to zero. And next time, we we're going to respect and we respect out one. I know but okay. And by the definition, this is our when we are given that we have to do this so that is So now we have the commission of our observation and that estimated residual the summation should be equal to zero.",
+     "ko": "알았어. 한번 알아볼까? 그게 0으로 가. 그리고 다음엔, 우리 존중할 거야. 그리고 우리는 존중해. 하나. 나도 알아, 하지만 알았어. 그리고 정의에 따르면, 이게 우리 때야. 우리가 주어진 게 이걸 해야 한다는 거니까 그게 그래서 이제 우리는 수수료를 가지고 있어. 우리의 관찰 그리고 그 추정된 잔차 합계는 0이어야 해.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 877,
+     "page": 9,
+     "en": "Okay? So Rose to conditions are found on the market and yeah. Okay. So so now from now on we can remember this. And then remember that that is from the location just simply the purchase of a condition with respect to A and B. Okay. And that is the sum of estimated residual should be equal to zero. So the multiplication of SI and the residual should be equal to zero.",
+     "ko": "알았지? 그래서 로즈는 조건이 시장에서 발견돼. 그리고 응. 알았어. 그래서 이제 지금부터는 기억할 수 있어. 이걸. 그리고 그게 위치에서 온 그냥 단순히 조건의 구매라는 것을 기억해. 알았지? 그리고 그게 추정된 잔차의 합은 0이어야 해. 그래서 곱셈은 SI와 잔차의 곱은 0이어야 해.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 904,
+     "page": 9,
+     "en": "Okay.",
+     "ko": "알았지?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 910,
+     "page": 9,
+     "en": "Okay.",
+     "ko": "알았어.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 914,
+     "page": 9,
+     "en": "Um, okay. So population counterparty is like this. So that is showing us, so I don't know it's going to be. Um, what does that mean? So that is defined in the simple, right? In the sample we observe the outcome. And then if we have if we want to it's we assume that there is some relationship.",
+     "ko": "음, 알았어. 그래서 모집단 거래 상대방은 이렇게 돼. 그래서 그건 보여주고 있어, 그래서 어떻게 될지 모르겠어. 음, 그게 무슨 뜻이야? 그래서 그건 정의돼 그 간단하게, 맞지? 그 간단하게 우리가 관찰한 것에서 결과가 나와. 그리고 만약 우리가 만약 우리가 원한다면 그건 우리가 가정하는 거야, 어떤 관계가 있다고.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 946,
+     "page": 9,
+     "en": "In the",
+     "ko": "그 샘플에서",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 949,
+     "page": 9,
+     "en": "sample, why okay. Next time, we'll then we can write down the formula that we do it and we might back. So that's what I'm done. This is what estimates. Okay? Now, what do you mean by population? An analogy is that, you know, we are talking we define what it's from the sample, but let's think about population.",
+     "ko": "는, 왜 알았어. 다음 번에는, 그러면 우리는 쓸 수 있어 그 우리가 이미 하는 공식을 적고 돌아갈 수도 있어. 그래서 그게 내가 한 일이야. 이게 추정치야. 알겠지? 자, 무슨 말이야, 모집단이? 비유하자면 그건 있잖아, 우리가 이야기하고 있는 건 우리가 샘플에서 정의한 거지만, 한번 모집단에 대해 생각해",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 972,
+     "page": 9,
+     "en": "And then we want to have the projection of data. Okay? So then we can think about, you know, population relationship between Y and X as this.",
+     "ko": "보자. 그리고 우리는 예측을 하고 싶어. 데이터의. 알겠지? 그럼 우리는 생각해 볼 수 있어. 그러니까, 모집단 관계가 어떻게 되는지 Y와 X가 이렇다는 걸.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 990,
+     "page": 9,
+     "en": "Is it just a way of we're thinking about the true data generating process? Okay? And then now, if we define how population,",
+     "ko": "그냥 우리가 진짜 데이터에 대해 생각하는 방식인가요? 알겠지? 그리고 이제, 만약 우리가 정의한다면 어떻게 모집단,",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1003,
+     "page": 9,
+     "en": "so what population we did sample or to estimate. So population is the projection of something. So population analogy is defined like",
+     "ko": "그래서 어떤 모집단을 우리가 샘플링했거나 아니면 추정했는지. 그래서 모집단 은 예측이야. 어떤 것의. 그래서 모집단은 비유하자면 이렇게 정의돼.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1017,
+     "page": 9,
+     "en": "that. And then value based. So population is a random process. So we can assume I and there is some probability. So expected value of that squared uh over population distribution. Should we be And then of course, condition is very comparable because expectation can be separated or factored out into the it is linear, right?",
+     "ko": "그리고 가치 기반이야. 그래서 모집단은 확률 과정이야. 그래서 우리는 가정할 수 있어. 나는 그리고 어떤 확률이 있어. 그래서 기대값은 그 제곱의 어 모집단에 대한 분포야. 우리가 해야 할까? 그리고 물론, 조건은 매우 비슷해 왜냐하면 기대값은 될 수 있어, 어 분리되거나 인수분해될 수 있어, 그건 선형이니까,",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1042,
+     "page": 9,
+     "en": "So we can have this. We don't need to do this. I just saying that what I mean by population analogy. Then we have similar equation. But it is population uh versus the OLS. So we have expectation instead of sample. Okay? Because population we don't have the sample. So we can assume from uh",
+     "ko": "그렇지? 그래서 우리는 이걸 가질 수 있어. 우리는 이걸 할 필요 없어. 내가 말하는 모집단은 비유야. 그러면 비슷한 게 있어. 방정식이. 하지만 그건 모집단이야. 어 대 OLS. 그래서 우리는 기대값 대신 샘플을 사용해. 알겠지? 왜냐하면 모집단은 우리가 샘플을 가지고 있지 않으니까. 그래서 우리는 가정할 수 있어,",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1067,
+     "page": 9,
+     "en": "I don't know to end. It's just a distribution. And then we can talk about expectation. You know what I mean? Nothing much, but it will be you know, next time we we can the underlying condition of whatever term. And the population analogy. So that's that will be used in the future.",
+     "ko": "어, 처음부터 끝까지. 그냥 분포야. 그리고 우리는 이야기할 수 있어. 기대값에 대해. 무슨 말인지 알겠어? 별거 아니지만, 그건 있잖아, 다음번에 우리가 할 수 있는 건 기본이 되는 조건이야. 어떤 용어든. 그리고 모집단은 비유야. 그래서 그게 사용될 거야 앞으로.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1088,
+     "page": 9,
+     "en": "Okay?",
+     "ko": "알겠지?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1100,
+     "page": 9,
+     "en": "So now, we can define the population variance of X and U can be defined like this. If you don't know, you have to check. How to do that? You have to start from the covariance definition of covariance. So variance X U equals expected value of X minus U X minus the U This is the meaning of it.",
+     "ko": "그래서 이제, 우리는 모집단 분산을 정의할 수 있어, X와 U의 이렇게 정의될 수 있어. 만약 여러분이 모른다면 확인해야 해. 어떻게 하냐고? 처음부터 공분산에서 시작해야 해. 공분산의 정의. 그래서 분산 X U는 기대값 과 같아. X 마이너스 U X 마이너스 그 U 이게 그 의미야.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1129,
+     "page": 9,
+     "en": "So you do it. So it's it can be written as like that. And because we know that in the population the expected value of U is zero. So variance and then this one also should be equal to zero. So the two modification in the population version says that expected value of U is zero, expected value of X is zero.",
+     "ko": "그래서 너가 해. 그래서 이건 이렇게 쓸 수 있어. 그리고 우리가 알고 있듯이 모집단에서 그 U의 기대값은 0이야. 그래서 분산은 그리고 이것도 0과 같아야 해. 그래서 두 가지 수정은 에서 모집단에서 말하길 기대값은 U는 0이고, X의 기대값은 0이야.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1154,
+     "page": 9,
+     "en": "So covariance between X and U becomes zero. So OLS guarantees that X said, when we say",
+     "ko": "그래서 공분산은 X와 U 사이가 0이 돼. 그래서 OLS는 보장해, X가 말했듯이, 우리가 OLS라고",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1165,
+     "page": 9,
+     "en": "OLS, that is to assume that in the population,",
+     "ko": "말할 때, 그건 가정하는 거야 모집단에서 X와",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1172,
+     "page": 9,
+     "en": "X and U is not correlated. Okay? So this is kind of assumption we impose on the distribution of the population. So only that is true, our OLS is valid. You know, um yeah. So it's a big uh new idea economically. How to distinguish them from the population and the modern means?",
+     "ko": "U가 서로 상관관계가 없다는 거야. 알겠지? 그래서 이건 일종의 가정이야. 모집단의 분포에 대한. 그래서 그것만이 사실이고, 우리 OLS는 유효해. 알다시피, 음 네. 그래서 이건 큰 새로운 아이디어야. 경제적으로. 어떻게 그들을 모집단과 구별할 수 있을까?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1194,
+     "page": 9,
+     "en": "Uh So it's okay, you cannot pull it out.",
+     "ko": "어 그래서 이건 괜찮아, 넌 그걸 꺼낼 수 없어.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1203,
+     "page": 9,
+     "en": "Well, multiply Aha. So this is the one we do that, this was our solution. Right? So this is the estimate OLS estimator for the coefficient. We",
+     "ko": "음, 곱해봐. 아하. 그래서 이건 우리가 그렇게 하는 거고, 이건 우리의 해결책이었어. 그렇지? 그래서 이건 OLS 추정량이야. 계수에 대한.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1220,
+     "page": 9,
+     "en": "Uh, the slope, rather than doing it for so you can focus on the slope slope, and had these on the follow and if you look at it closely, that motivator is an actual variable. So motivator is a very of",
+     "ko": "어, 경사면, 보다는 그래서 할 수 있도록 경사에 집중할 수 있게, 경사면, 그리고 이런 것들이 있었어요. 팔로우에 있고, 만약 자세히 보면, 그게 동기부여가 실제로 어떤 변수예요. 그래서 동기부여는 매우",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1242,
+     "page": 9,
+     "en": "This is a definition. Definition of covariance is expected value of XY minus EXY. It's not the definition of this. relationship. So this one is actually the covariance definition. It does not matter whether it's a sample or population, covariance is just defined like that.",
+     "ko": "이건 정의예요. 정의는 공분산의 정의는 기대값입니다. XY에서 EXY를 뺀 것입니다. 이게 정의가 아니에요. 관계가. 그래서 이건 사실 공분산의 정의입니다. 그것은 표본이든 모집단이든 상관없이 공분산은 이렇게 정의됩니다. 그리고",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1263,
+     "page": 9,
+     "en": "And then this is a variance of the sample. Okay. So this is the formula for or divide covariance between XY by the variance of X. Doesn't make sense. I think it makes sense because what we want to see is the linear how X and Y are correlated. Linear relation means that we want to see the direction um to which they are they move together or not.",
+     "ko": "이건 표본의 분산입니다. 네. 그래서 이건 공식입니다. 또는 나누기 공분산 XY 사이의 값을 X의 분산으로 나눕니다. 말이 안 돼요. 제 생각엔 말이 되는 것 같아요. 왜냐하면 우리가 보고 싶은 것은 선형 X와 Y가 어떻게 상관관계가 있는지입니다. 선형 관계는 우리가 방향을 보고 싶다는 것을 의미합니다. 그들이 어떻게 움직이는지 입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1292,
+     "page": 9,
+     "en": "So if they have linear relationship, then that should be captured by covariance. Right?",
+     "ko": "그래서 만약 그들이 선형 관계를 가지고 있다면, 그건 공분산으로 포착되어야 합니다. 그렇죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1301,
+     "page": 9,
+     "en": "Covariance is a measure of how to stand the linear relationship, whether they move together in the same direction or not. So how how they move together. If covariance is high, that means they uh they move together. Very so this moves. So, okay? So like linear relationship, obviously, uh is captured by covariance.",
+     "ko": "공분산은 측정값입니다. 선형 관계가 어떻게 움직이는지, 같이 움직이는지 아니면 같은 방향으로 움직이는지입니다. 그래서 어떻게 그들이 움직이는지 입니다. 만약 공분산이 높다면, 그건 그들이 어, 그들이 같이 움직인다는 뜻입니다. 매우 그래서 이건 움직입니다. 그래서, 알겠죠? 그래서 선형 관계, 또는 분명히, 어, 포착됩니다. 공분산으로.",
+     "src": "gemini",
+     "ai": true
+    }
+   ]
+  },
+  {
+   "page": 11,
+   "en": "Right? But we have to divide that by the variance of X. So that is capturing the slope. So it makes sense. So the expression in textbook and other, you know, actually the formula, the or is just the conceptually covariance divided by variance. If you express that in the vector formula, it looks different, but it again tells us that it is a covariance divided by variance. So, what is the implication of this equation? Is it a linear equation? It's a projection. So we capture how how Y changes when X changes by one unit. And right? So usually, so there you can practice there are different processes you can make, you know, if you want to understand how your own changes by the education level, or your schooling. You can use the letter schooling and level of income. Right? That's one way to pose the linear relationship. Alternatively, you use you use the variable schooling, and variable on income. So you may transform the variable in a certain way, you think it's more want to understand. If you transform the variable into the log of income, that means you want to understand the elasticity, which means that how much 1% change in X translates into um percentage change in Y. If you want to understand the percentage change, you transform the variable in the log form, and you run OLS. with the transformed values, okay? And then that's a very typical case in economics, because why? If you just look at the data, it tends to be linear as well. It will be a linear one versus US dollar. The unit is very different, right? So if we just use the level, then it's a sensitive to the unit, but the application has to depends on the unit. So like a big, you know, if you bet high, it can also stand. Right? So it's not very easy for us to just grasp the units. So sometimes you just things are very sensitive to the unit. It's a it's a better to communicate if you transform that into the log function, then what you report is the percentage change. So that's usually the case in the regression. We we don't just look at the hourly wage, we know. We look at the log wage. And we see how So this is one type of variable can be age, can be education, and so on. Then something like that. So we see how much percentage change in X. translates into percentage change in Y. How we Okay, so why is A? A is actually the asset link. If we don't have the X term, then the best way to minimize the squared error, sum of squared error is just something. If we don't have control variable, then the best way to predict the best way to minimize the sum of squared error is just the same that this is our best estimate. What is that estimate? Now, once we have X variable, that means our slope And similarly, it's not so a common complicated thing, which means that sometimes we want to express that after uh we like so I thought it was X. We X we like. That was our original but we know that why I uh might also like equals zero. Uh is equal to Y sorry. And so the X plus minus A plus the B X. Right? So X plus X minus X. Plus minus X. So this is what I mean by it's not that important. So sometimes we want to do that, you know, uh it depends on your or whether it's convenient for you. Once you just want to see the distance from the sample mean, you can transpose your data already. and run the test. So the same thing. So same thing. And standardization is a we can even transform by dividing the raw value by the standard deviation of Y and we plus the correlation between X and Y. So the we can, you know, we just want to You know, we'll bet that. You know, we it is important to us in this case it proves that that's and the the unit should be between minus one to one and it is correlation. Okay, those are the small details. So okay. Uh so application of the class. So this is SNA. They found that constant is this much, but this is coefficient. There is indeed a negative uh coefficient. So like negative slope. Then it discuss whether this is significant or not. That is the next step. Okay, when we calculate the S, obviously we always find the number for A and B. It does not mean that B hat is statistically significant already. Okay? We can always get the coefficient, but the thing is that the error of that B hat the B hat which is different from zero, here, can be statistically significant or not. Okay? If this B hat we can actually this is the we estimate the value of B hat. by dividing variance by variance, right? But the we have to estimate the standard error of B hat. Okay? Because this is one sample realization. We need to talk about probability and likelihood, whether this will be replicated in the future, the way we can do is that we back out the the standard deviation of B hat and then if because B hat is already an estimate of, we the standard deviation of estimator is called the standard error. Okay? So we have to estimate how dispersed this can be. And standard error measures what does that measure? So from this sample, you are that B hat is minus 2.28. So if you repeat, it can be minus 1.9. If you repeat that, it can be zero. If you repeat that, it can be minus 3. So there can be some dispersion. of this B hat. If we do the experiment many times, then the extent of dispersion is measured by the estimate of the standard deviation of estimator. which is standard error. And then the formula how to estimate the standard error of this the estimator. And then if we get this standard error and we are ready to apply statistical inference, so we have to divide this coefficient by the standard error that is the standardization. And see whether this score is large enough. So we discussed that when we have some differences in the mean or any two numbers, the distance cannot tell us whether it is likely to happen in the future. How confident we can say that the difference is statistically meaningful. Now, the way to communicate is that, okay, if the effect at all, if the coefficient is zero, how likely would this occur or some outcome. We are doing the same thing. Here, I dividing this coefficient with the estimate of the standard error. We can translate this number to the Z score and calculate the likelihood. of observing our coefficient if there's no if the real relationship is zero. If the relationship is zero. So that's so we know this is the first step. We can always have the number which does not mean that this number is meaningful yet. We need the standard error and then calculate the P value. to check whether this number is likely to be in the in a way that if this number is difficult, if there's no relationship at all. Okay, let's suppose, let's estimate minus. intercept is zero. Okay. So all knowing uh this intercept is a very important. We assume that there is no intercept, then you are forcing to start from zero. Then you have a very different answer. In other words, to have a better prediction, we should allow a If we impose a equals zero, that's a very strong assumption. You will have a very different estimator. So we need to question. So uh this is the model. Okay. So Okay, but if so what do you mean? So once we have these estimation results, now we can calculate what this estimator if the population relationship really follows this estimation result. What should we observe for each uh for the final outcome in each district. So for instance, if this area the ratio is actually this number, then if the population relationship is zero, teacher ratio and uh uh the student score, this relationship, we should observe this as the predicted value of the score, right? But this is obviously different from the observed one. This is what the model says, if population has that linear relationship, and it will allow us to estimate uh indicate so numbers, then this is the predicted value of the test score, right? And it's a certain value in this area. So obviously, it does not coincide with the observed value. So how do you interpret the observed value and the difference between observed value and predicted value? We define that as the like the residual, but cannot explain by the model. And then that residual should be values like new head. You know, in this case, predict the zero. And right here may if we represent something else that we didn't include in X this is truly the ratio on top of that, with the other factors that affect the test score. And now this is not more than what we see here. So that's the reason why the deviation uh there is some differences between predicted value and observed value. scatter uh new again or you can do it in um by hand. And I actually share a data set with you. We can actually run a linear regression with easily. You have to try. You have to upload the folder and then ask the, you know, what where um to do to run the regression. on this folder and then Uh right here, it's not it's not a formula, but I'll share. So um Okay. Um, so I'm going to all the variants of outcome into predictive value and unpredictive variants. And then rationally, it would be why we can't decompose the observed variance variance in the underlying outcome into explain so why that is the predictive value or outcome when the model is true. So we can only calculate what we can, then we have OS estimator. And that estimates we can well, we uh SI and calculate the predictive value of Y. Right? That is what it is. And the Y hat is the true Y in this person. This is the actual test score. So we already have if you think about 400 60 something something, this really you know, distribution of a test score, right? So the variance is like, uh we can calculate. And then we say that we do that we can decompose the variance into the the explained by linear prediction and the cannot be explained by prediction. Okay? The the key here is that by definition, Y is the value plus residual. So the residual is defined by observation minus the predicted value, right? So this is by definition. And then if we have variance on a across the is actually variance a very variance of plus or variance XY. Right? Okay? But here, we need to show that we the covariance is zero. Then we can decompose that into those two components, right? So why that is the is the strong variance of Y hat, so some variance of U hat, then it assumes that the covariance is zero. How do we know that it comes from the model? So we have the OS from the construction, we know that covariance of Y and U hat by definition, this is uh, yeah. covariance is X covariance is XY. is XY. Right? So X hat minus X Y hat minus Y bar. And then U hat minus U bar. And then we know that U bar is already zero. So that's why covariance of Y hat, U hat is we can write that. Because U bar, okay, I will fix. So here, it has to be U bar, U hat minus U bar, but this is zero. So that's why we can write like that. And then here if we expand that, then why I hat, minus like we can we can have this one. And here, uh this is it has to be equal to zero. Why? And this is here. So why I equal to Y hat, as a and then because that A plus B X A A plus B X, then we have this condition, so that this equals to zero, this equals to zero. So this and everything equals to zero. This is zero because of course from condition. So that that conclusion is that the Y hat is U predicted value and residual are not correlated. That's the conclusion, okay? We do OLS estimator, we get that. Now the normal equation, this is the really the normal equation between Y hat and U hat. That's five assumption. It's not automatic. We just define OLS in such a way that satisfy two equation. One of the two normal equations are satisfied automatically. We have covariance between predicted value and residual zero. Then allows to be composed the entire variation in the data into two components. That you explain by OLS model and that cannot be explained by OLS model. And that is the the famous R square. R square you may have heard about R square in the estimation and then that is the from this equation. From this equation, we just define variance of Y as total sum of square. It's just a total sum of square divided by entire variation. And that can be explained are divided into explained sum of square. And uh sum of square Okay, on its part. And anything else, equals that. And then we arrange that and we can define R square as how much the variance of the data can be explained by OLS estimator. Um so we will do that. So OLS is really this. So R square, if R square is high, then means that the data can be well explained by linear projection. Okay? So please write that. If X and Y is very clear linear relationship, R square is sometimes it's not like that. Then we end up with some relationship, but R square is not big because the variation cannot be explained uh by because here this residual term is big. Here the residual term is small. So the value of the value of this residual is much bigger. If the beta is uh very dispersed, it does not it does not have a clear linear relationship. So I see it you may have heard about that that many people will put that as a rule of thumb. And then that model we will assume linear model. R square captures how linear it is. You can extend Y in the population. Okay? So if the underlying relationship between X and Y is not distribution is not linear, R square cannot be which is okay. Okay? So there is no guarantee that X and Y always have a linear relationship. That's our model. And then estimator tells us how how well our model can explain the distribution we observe in the sample. But that does not necessarily mean that R square uh if R square is big, then is a very good projection of data. If R square is not big, it's not the good projection, but you know, it's it's just like a problem is not when it's clear but still as long as beta or the is statistically significant, that is meaningful to us. Okay? So right? Standard error or the regression is So how do we estimate the standard error of the regression? We so sum the of the residual, which we calculate after we estimate Okay, so we have Camp who had which observation we saw all the squared variable you had and divided that by and then So why n minus 2 now? So we discussed that the the variance of the sample mean, in order to get that, we have to divide the variance by sample variance by n minus one. And then the whole problem also shows that why we are losing one degree of freedom. By setting up the sample mean, we already use a relationship in the distance, which is sample mean and each observation. So here, the reason why we have n minus 2 is because we have a constant and the slope. So we already used two equations. So we are losing two degrees of freedom. That's why we divided that by n minus 2. So if we have like a two variables and one constant, we have to divide that by n minus 3. Okay. If we have a K variables, plus a constant, then we have to divide it by n minus K minus one. But the logic follows. So this is useful if you understand the whole problem. Now it gets clear. Once you use the relationship in the data to pin that, so we have a then the variations in the sample has moved or it loses one degree. It has to satisfy such a number in order to make the sample mean equals to number. Okay. Um, okay. This is one example. So many ways of equation, I will I will share the code. And this this is I always say that you have multiple country and estimated in economics, we want to understand how the wage changes by characteristics of workers. So we can look at the data and choose different that might be relevant and we turn on So what is the learning? So So this is the learning that multiplication of weighted in our let's say that we knows the wage rate with preach to your productivity. Okay. What determines your productivity? Why some people are more productive than others? And it comes down to the wage rate which is your productivity. Okay. So by time, right? And the productivity can be different, you know, human capital is different. What is human capital? Human capital is the knowledge skills that is in the human being. So it is useful. So it can be accounted in the status, about to sleep. Uh how to write and so on. So useful skills, what is embedded in the human being. And whatever affects that skills, usually the production process can be considered as a determinant of the growth. So that is kind of logic. that we can see the data and choose from relevant characteristics. Do you believe that it will that we will be able to do it? One is education, right? Education is for sure of course, knowledge and skills used in the production process. So we also improve the",
+   "ko": "그렇죠? 하지만 우리는 그걸 나눠야 해요, 그 X의 분산으로. 그래서 그게 경사를 포착하는 것입니다. 그래서 말이 돼요. 그래서 이 표현은 교과서에 있고 다른, 뭐, 사실 그 공식은, 그 또는 은 그냥 개념적으로 공분산을 분산으로 나눈 것입니다. 만약 그걸 벡터로 표현하면, 다르게 보이지만, 결국 다시 우리에게 그것이 공분산이라는 것을 말해줍니다. 그래서, 이 결과의 의미는 무엇일까요? 이건 선형 방정식인가요? 이건 투영입니다. 그래서 우리는 어떻게 어떻게 Y가 변하는지 X가 한 단위 변할 때. 그리고 맞죠? 그래서 보통, 그래서 거기서 연습할 수 있어요. 거기에는 다른 과정들이 있는데, 뭐, 만약 당신이 어떻게 당신의 것이 변하는지 교육 수준에 따라 이해하고 싶다면, 당신은 사용할 수 있어요. 그 편지를 그리고 교육 수준과 소득을. 그렇죠? 그게 질문을 던지는 한 가지 방법입니다. 선형 관계를. 또는 당신은 당신이 사용하는 것을 사용합니다. 변수 교육, 그리고 변수 소득을. 네. 그래서 당신은 변환할 수 있습니다. 변수를 특정 방식으로, 그게 더 이해하고 싶다고 생각하는 방식으로요. 만약 당신이 변환하면, 변수를 로그로 변환하면, 그건 당신이 이해하고 싶다는 뜻입니다. 탄력성을, 즉 얼마나 1%가 X의 변화에 따라 변하는지 변환되는지입니다. 음 퍼센트 변화가 Y에 미치는 것입니다. 만약 당신이 이해하고 싶다면 퍼센트 변화를 이해하고 싶다면, 당신은 변환합니다. 변수를 로그 형식으로, 그리고 당신은 OLS를 실행합니다. 로그를 변환된 값으로요, 알겠죠? 그리고 그건 아주 전형적인 경우입니다. 경제학에서, 왜냐하면 그냥 로그를 보면, 그건 경향이 있습니다. 선형적이죠. 그것은 선형적일 것입니다. 그것은 선형적일 것입니다. 미국 달러와 비교해서. 단위는 매우 다릅니다, 그렇죠? 그래서 만약 우리가 그냥 수준을 사용하면, 그건 단위에 민감합니다, 하지만 적용은 해야 합니다. 그것은 단위에 따라 다릅니다. 그래서 큰, 그러니까 만약 당신이 크게 베팅하면, 그것도 가능합니다. 그렇죠? 그래서 우리가 그냥 이해하기가 쉽지 않아요. 그래서 때로는 그냥 상황이 단위에 매우 민감합니다. 그래서 그것은 더 나은 소통 방법입니다. 만약 당신이 그것을 로그 함수로 변환하면, 그러면 당신이 보고하는 것은 퍼센트 변화입니다. 그래서 그게 보통 경제학에서 회귀 분석의 경우입니다. 우리는 우리는 그냥 시간당 임금을 보는 게 아니라, 알잖아요. 우리는 로그를 봅니다. 로그 임금을. 그리고 어떻게 그래서 이건 한 가지 유형의 변수가 될 수 있습니다. 나이가 될 수도 있고, 교육이 될 수도 있고, 등등. 그러면 그런 것들요. 그래서 우리는 얼마나 퍼센트가 X에서 변하는지 변환되는지 봅니다. 퍼센트 변화가 Y에 미치는 것입니다. 어떻게 좋아요, 그럼 A는 왜죠? A는 사실상 자산 링크입니다. 만약 우리가 가지고 있지 않다면 X 항을, 그러면 가장 좋은 방법은 최소화하는 것입니다. 그 제곱된 오차, 합계는 제곱된 오차의 합계는 그냥 어떤 것입니다. 만약 우리가 통제 변수가 없다면 그게 가장 좋은 방법은 예측하는 것입니다. 가장 좋은 방법은 최소화하는 것입니다. 제곱된 오차의 합계는 그냥 똑같습니다. 이것이 우리의 최선의 추정치입니다. 그 추정치는 무엇인가요? 이제, 우리가 X 변수를 가지고 있다면, 그것은 우리의 기울기가 그리고 마찬가지로, 그것은 그렇게 어 흔한 복잡한 것이 아니며, 이는 때때로 우리가 표현하고 싶어하는 것을 의미합니다. 그 후에 어 우리가 좋아하듯이 그래서 저는 생각했어요 그게 X라고. 우리는 X가 우리가 좋아하는 것 같아요. 그게 우리의 원래 하지만 우리는 알고 있어요, 왜 제가 어쩌면 또한 좋아할 수도 있는 것은 0이라는 것을요. 어 는 같다 Y와 죄송합니다. 그래서 X는 더하기 빼기 A 더하기 그 B X. 맞죠? 그래서 X 더하기 X 빼기 X. 더하기 빼기 X. 그래서 이게 제가 말하는 그게 그렇게 중요하지 않다는 거예요. 그래서 때때로 우리는 그렇게 하고 싶어해요, 아시겠지만, 그건 여러분의 또는 그게 여러분에게 편리한지에 따라 달라요. 일단 여러분이 그냥 보고 싶어하는 거리는 표본에서 평균까지의 거리라면, 데이터를 이미 변환할 수 있고 실행할 수 있어요. 그래서 같은 거예요. 그래서 같은 거예요. 그리고 표준화는 우리가 심지어 변환할 수 있는 것은 나누는 것입니다. 원시 값을 표준 편차로 나누는 것입니다. 그리고 우리는 더하기 X와 Y의 상관관계입니다. 그래서 우리는, 아시다시피, 그냥 있잖아요, 우리 그거에 걸게요. 그게 우리한테 중요해요. 이 경우엔 그게 증명되죠. 그리고 그 부대는 사이에 있어야 해요, 마이너스 1에서 1 사이여야 하고, 그게 상관관계예요. 네, 그게 작은 세부 사항들이에요. 그래서 어, 그래서 그 적용은 수업에 대한 거예요. 그래서 이건 SNA예요. 그들은 상수가 이 정도라는 걸 발견했고, 하지만 이건 계수예요. 실제로 음의 계수가 있어요. 그래서 음의 기울기처럼요. 그러면 이게 유의미한지 논의해요. 그게 다음 단계예요. 자, 우리가 계산할 때 S를, 당연히 우리는 항상 A에 대한 숫자를 찾아요. 그건 의미하지 않아요. B hat가 통계적으로 유의미하다는 것을 의미하지 않아요. 알겠죠? 우리는 항상 계수를 얻을 수 있지만, 문제는 그게 그 오차가 B hat의 B hat가 다른 것과 다르다는 것이죠, 여기서, 통계적으로 유의미할 수도 있고 아닐 수도 있어요. 알겠죠? 만약 이 B hat가 우리는 실제로 이게 우리가 추정하는 B hat의 값이에요. 나누어서 분산을 나누어서 분산으로, 맞죠? 하지만 우리는 추정해야 해요, 표준 오차를 B hat의. 알겠죠? 왜냐하면 이게 하나의 표본 실현이기 때문이에요. 우리는 확률에 대해 이야기해야 하고, 이게 미래에 반복될 것인지, 그 방법은 우리가 다시 되돌아가는 거예요. 표준 편차를 B hat의 그리고 만약 왜냐하면 B hat는 이미 추정치이기 때문에, 우리는 표준 편차를 추정하는 것은 표준 오차라고 해요. 알겠죠? 그래서 우리는 추정해야 해요. 어떻게 분산되어 있는지 이것이 될 수 있는지. 그리고 표준 오차는 무엇을 측정하나요? 그래서 이 표본에서 여러분은 B hat가 마이너스 2.28이라는 것을 알 수 있어요. 그래서 반복하면, 마이너스 1.9가 될 수 있어요. 만약 반복하면, 0이 될 수 있어요. 만약 반복하면 마이너스 3이 될 수 있어요. 그래서 어느 정도 분산이 있을 수 있어요. 이 B hat의. 만약 우리가 실험을 여러 번 한다면, 그러면 그 분산의 정도는 무엇으로 측정되나요? 추정치의 표준 오차로 측정돼요. 추정치의 표준 오차로요. 그리고 공식은 어떻게 추정하는지 표준 오차를 어떻게 추정하는지 이 B hat의 추정치의 그리고 만약 우리가 이 표준 오차를 얻고 이제 적용할 준비가 되었다면 통계적 추론을 할 수 있어요, 그래서 우리는 이 계수를 표준 오차로 나누어야 해요. 표준 오차는 표준화예요. 그리고 이 Z 점수가 큰지 확인해요. 충분히. 그래서 우리는 논의했어요, 우리가 어떤 차이가 있을 때 평균이나 두 개의 숫자에서, 그 거리는 우리에게 말해주지 않아요, 그게 미래에 일어날 가능성이 있는지. 우리가 얼마나 확신할 수 있는지 그 차이가 통계적으로 유의미한지. 자, 그 방법은 의사소통하는 거예요, 그러니까 만약 그 효과가 전혀 없다면, 만약 계수가 0이라면, 얼마나 이런 일이 일어날 가능성이 있는지. 우리는 같은 일을 하고 있어요. 여기서, 저는 이 계수를 나누고 있습니다. 추정치로 표준 오차를요. 우리는 번역할 수 있어요, 이 숫자를 Z 점수로 그리고 계산할 수 있어요, 가능성을. 관찰할 확률을. 우리의 계수가 만약 없다면, 만약 실제 관계가 0이라면. 만약 관계가 0이라면. 그래서 우리는 이게 첫 번째 단계라는 걸 알아요. 우리는 항상 숫자를 가질 수 있고, 그게 의미하는 건 이 숫자가 아직 유의미하지 않다는 거예요. 우리는 표준 오차가 필요해요. 그리고 나서 P값을 계산해요. 확인하기 위해, 과연 이 숫자가 일어날 가능성이 있는지. 어떤 면에서 만약 이 숫자가 어렵다면, 만약 실제 관계가 전혀 없다면. 좋아요, 가정해 봅시다, 추정해 봅시다 마이너스를. 절편은 0입니다. 네. 그래서 모든 걸 알고 이 절편이 매우 중요하다는 걸. 우리는 가정합니다, 절편이 없다고. 그러면 당신은 강제로 시작하게 하는 거예요. 그러면 당신은 매우 다른 답을 얻게 돼요. 다시 말해, 더 나은 예측을 하려면 우리는 허용해야 해요. 만약 우리가 a가 0이라고 가정하면, 그건 매우 강력한 가정이에요. 당신은 매우 다른 추정치를 얻게 될 거예요. 그래서 우리는 질문해야 해요. 그래서 어, 이건 모델이에요. 네. 그래서 좋아요, 하지만 그렇다면 무슨 뜻인가요? 그래서 우리가 이 추정치를 얻으면, 이제 우리는 계산할 수 있어요. 이게 어떤 추정치인지 만약 모집단이 실제로 이렇다면 이 추정치를 따르는지. 무엇이 관찰되어야 하는가, 이 각각에 대해, 최종 결과에서 각 지역별로. 그래서 예를 들면, 만약 이 지역이 그 비율이 실제로 이 숫자라면, 그러면 만약 모집단 관계가 실제로 0이라면. 선생님 비율이 그리고 어 어 학생 점수, 이 관계는, 우리는 관찰해야 해요, 이 것을 예측된 값으로 그 점수를, 맞죠? 하지만 이건 분명히 다른 관찰된 값과 달라요. 이건 모델이 말하는 거예요, 만약 모집단이 그런 선형 관계를 가지고 있다면, 그리고 그건 우리가 추정할 수 있게 해줄 거예요. 어, 그렇게 나타내요. 그러면 이게 예측된 값이에요. 테스트 점수의 맞죠? 그리고 그건 이 상황에서 특정 값이에요. 그래서 분명히, 이건 일치하지 않아요, 관찰된 값과. 그럼 어떻게 관찰된 값을 해석하고 그 차이를 어떻게 해석해야 할까요? 관찰된 값과 예측된 값의 차이를? 우리는 그걸 잔차라고 불러요, 근데 설명할 수 없어요, 모델로. 그리고 그 잔차는 우리가 어, 이런 값들이어야 해요. 새로운 머리, 아시죠? 이 경우에, 0을 예측해요. 그리고 바로 여기에서 만약 우리가 무언가를 나타낸다면 그건 우리가 고려하지 않은 X에 포함된 것이고, 이것은 정말로 비율의 위에 있는 것이고, 다른 요인들과 함께 영향을 미치는 테스트 점수에 대한 것입니다. 그리고 이제 이것은 우리가 보는 것보다 더 많지 않아요. 그래서 그게 이유입니다, 편차가 어, 어떤 차이가 있는 것은 예측된 값과 관찰된 값 사이에. 산점도 어, 다시 새로운 거나 아니면 어, 음 로 할 수 있어요. 손으로. 그리고 제가 실제로 데이터 세트를 공유할게요. 우리가 실제로 선형 회귀를 실행할 수 있어요. 쉽게. 여러분은 시도해야 해요. 전체 데이터를 업로드하고 그런 다음 그, 아시죠, 어디에 어, 뭘 해야 할지, 어, 회귀를 실행할지. 이 데이터에 대해서 그리고 어, 바로 여기에서, 이건 아니에요, 공식이 아니라, 제가 공유할게요. 그래서 어, 음 네. 음, 그래서 저는 모든 변종에 대해 결과를 예측 모델로 만들고 예측 불가능한 변종으로 나눴어요. 그리고 합리적으로는, 그게 왜 우리가 분해할 수 없는지 관찰된 변동을 기저 결과로 나눌 수 없는지 설명하는 거니까, 왜 그런지 예측 가능한 가치인지 아니면 결과가 모델이 맞을 때인지. 그래서 우리는 오직 할 수 있는 것만 계산할 수 있고, 그러면 OS 추정치가 생겨요. 그리고 그 추정치로 우리는, 어, SI와 예측 가능한 Y의 값을 계산할 수 있죠. 그렇죠? 그게 바로 그거예요. 그리고 Y hat은 실제 이 사람의 Y예요. 이게 실제 시험 점수예요. 그래서 우리는 이미 만약 400 60 몇 점을 생각하면, 이 정말 아시다시피, 시험 점수의 분포가 맞죠? 그래서 분산은 어, 우리는 계산할 수 있어요. 그리고 우리는 이렇게 말해요. 우리가 분해할 수 있는 분산을 이렇게 나눌 수 있다고, 그 설명되는 선형 예측과 그리고 설명할 수 없는 것으로 나눌 수 있어요. 예측으로. 알겠죠? 여기서 핵심은 정의에 따르면, Y는 예측된 값이고 거기에 잔차를 더한 거예요. 그래서 잔차는 관찰된 값에서 예측된 값을 뺀 거죠, 맞죠? 그래서 이건 정의상 그래요. 그리고 만약 우리가 분산이 있다면 어, 전체에 걸쳐서 그건 사실 분산이 어, 매우 분산이 더해진 거나 분산이 XY. 맞죠? 알겠죠? 하지만 여기서, 우리는 보여줘야 해요. 우리가 공분산이 0이라는 것을. 그러면 우리는 그것을 두 가지 구성 요소로 나눌 수 있죠, 맞죠? 그래서 왜 그게 강한 분산인지 Y hat의, 그래서 어떤 분산이 U hat의, 그러면 공분산이 0이라는 것을 가정해요. 어떻게 우리가 그게 에서 온다는 것을 알 수 있을까요? 그래서 우리는 그 OS를 가지고 있어요. 구성에서, 우리는 공분산이 Y와 U hat의 정의에 따르면, 이것은 어, 네. 공분산은 X와 U의 공분산은 XY. 은 XY. 그렇죠? 그래서 X hat 빼기 X Y hat 빼기 Y 바. 그리고 U hat 빼기 U 바. 그리고 우리는 U 바가 이미 0이라는 것을 알아요. 그래서 Y와 U hat의 공분산은 우리가 그렇게 쓸 수 있어요. 왜냐하면 U 바는, 알겠어요, 고칠게요. 그래서 여기서, 이건 U 바여야 해요, U hat 빼기 U 바, 하지만 이건 0이에요. 그래서 그렇게 쓸 수 있는 거예요. 그리고 나서 여기서는 이걸 전개하면 그러면 왜 제가 U hat, 빼기 이렇게 우리는 우리는 이걸 가질 수 있어요. 그리고 여기서, 어 이건 어 이건 0이어야 해요. 왜죠? 그리고 이건 여기예요. 그래서 왜 제가 Y hat과 같고, 그리고 그리고 나서 왜냐하면 그게 A 더하기 B X A A 더하기 B X, 그러면 이 조건이 있고, 그래서 이게 0과 같고 이게 0과 같아요. 그래서 이것과 모든 것이 0과 같아요. 이건 0이에요. 왜냐하면 당연히 조건에서 그렇기 때문이죠. 그래서 그 결론은 Y가 Y hat이 U 예측값이고 잔차가 서로 관련이 없다는 것입니다. 그게 결론이에요, 알겠죠? 우리는 OLS 추정량을 구하고, 그걸 얻어요. 이제 정규 방정식은, 이게 정말 정규 방정식이에요. Y와 U hat 사이의. 그게 다섯 번째 가정이에요. 자동이 아니에요. 우리는 그냥 정의해요. OLS를 그런 식으로 정의해서 두 가지 정규 방정식을 만족해요. 두 가지 정규 방정식 중 하나가 만족되는데, 자동으로요. 우리는 공분산이 예측값과 잔차가 0이에요. 그러면 이게 가능해져요. 전체가 전체 변동이 데이터에서 두 가지 구성 요소로 나뉘는 거죠. 그게 OLS 모델로 설명되고 설명될 수 없는 부분이에요. 그리고 그게 바로 유명한 R 제곱이에요. R 제곱은 들어보셨을 수도 있는데 추정에서 그리고 나서 그게 바로 이 방정식에서 나온 거예요. 이 방정식에서 우리는 Y의 분산을 정의하는데, 총 제곱합은 그냥 총 합계예요. 제곱합은 나누기 전체 변동이에요. 그리고 그건 설명될 수 있는 부분으로 나뉘고, 설명된 제곱합이에요. 그리고 어 제곱합은 네, 그 자체로 요. 그리고 다른 건, 그게 같아요. 그리고 나서 그걸 정리하고 우리는 정의할 수 있어요. R 제곱을 얼마나 많은 변동이 데이터에서 설명될 수 있는지 OLS로 추정량으로. 음 그래서 우리는 그렇게 할 거예요. 그래서 OLS는 정말 이거예요. 그래서 R 제곱, 만약 R 제곱이 높으면, 그러면 데이터가 설명될 수 있다는 거예요. 잘 설명될 수 있다는 거예요. 선형 투영으로. 알겠죠? 그래서 그렇게 써주세요. 만약 X와 Y가 매우 명확한 선형 관계라면, R 제곱은 때때로 그렇지 않아요. 그러면 우리는 결국 어떤 관계를 맺게 되지만, R 제곱은 크지 않아요. 왜냐하면 변동이 설명될 수 없기 때문이죠. 왜냐하면 여기서 이 잔차항이 커요. 여기서 잔차항은 작아요. 그래서 R 제곱의 값은 이 잔차의 값보다 훨씬 큽니다. 만약 베타가 어 매우 분산되어 있다면, 그것은 명확한 선형 관계가 아닙니다. 그래서 저는 당신이 아마도 들어보셨을 거예요, 그게 많은 사람들이 그것을 경험 법칙으로 삼을 거예요. 그리고 그 모델은 우리가 선형이라고 가정할 거예요. R 제곱은 얼마나 선형인지 나타냅니다. Y를 모집단에서 확장할 수 있습니다. 알겠죠? 그래서 만약 기본이 되는 관계가 X와 Y 사이에 분포가 선형이 아니라면, R 제곱은 그것은 괜찮습니다. 알겠죠? 그래서 X와 Y가 항상 선형 관계를 갖는다는 보장은 없습니다. 그게 우리 모델입니다. 그리고 추정량은 우리에게 얼마나 우리 모델이 설명할 수 있는지 알려줍니다. 우리가 관찰한 표본의 분포를요. 하지만 그것이 반드시 R 제곱이 크다는 것을 의미하지는 않습니다. 만약 R 제곱이 크다면, 그것은 매우 좋은 데이터의 예측입니다. 만약 R 제곱이 크지 않다면, 그것은 좋은 예측이 아니지만, 아시다시피, 그것은 그냥 문제와 같은 것입니다. 언제 명확한지 하지만 여전히 베타가 또는 통계적으로 유의미하다면, 그것은 우리에게 의미가 있습니다. 그래서 맞죠? 표준 오차 또는 회귀 는 그래서 어떻게 표준 오차를 추정할까요? 우리는 그래서 제곱의 합을 잔차의 합을 구하는데, 이는 우리가 추정한 후에 자, 그럼 캠프가 있었는데, 어떤 관찰이 있었는지 우리가 모든 제곱된 변수를 봤고 그걸 나눈 다음 그래서 왜 이제 n-2인가요? 그래서 우리가 논의했듯이 그 그 표본의 분산은 그걸 얻기 위해서, 우리는 분산을 나누어야 합니다. 표본 분산을 n-1로. 그리고 전체 문제도 왜 우리가 하나를 잃고 있는지 보여줍니다. 왜냐하면 설정함으로써 표본 평균을, 우리는 이미 관계를 사용했기 때문에 그 안에서 거리를, 즉 표본 평균과 각 관찰값을. 그래서 여기서 우리가 n-2를 갖는 이유는 우리가 상수를 가지고 있고 그리고 기울기를 가지고 있기 때문입니다. 그래서 우리는 이미 두 개의 방정식을 사용했습니다. 그래서 우리는 두 개의 자유도를 잃고 있습니다. 그래서 우리가 그걸 n으로 나눈 것입니다. 그래서 만약 우리가 예를 들어 두 개의 변수와 하나의 상수가 있다면, 우리는 그걸 나눠야 합니다. n-3으로. 네. 만약 우리가 K개의 변수가 있다면, 거기에 하나의 상수가 있다면, 우리는 그걸 n-K로 나눠야 합니다. 하지만 논리는 같습니다. 그래서 이것은 전체적인 문제를 이해하면 유용합니다. 이제 명확해집니다. 일단 관계를 사용하면 데이터에서 그걸 고정하기 위해, 그래서 우리는 그러면 분산이 데이터의 변동이 표본에서 이동합니다. 또는 자유도를 잃습니다. 그것은 어떤 숫자를 만족해야 합니다. 그래야 표본 평균을 어떤 값과 같게 만들 수 있으니까요. 네. 음, 알겠습니다. 이게 한 가지 예시입니다. 그래서 방정식의 여러 가지 방법이 있는데, 제가 코드를 공유할게요. 그리고 이것은 이것은 제가 항상 말하는 건데 여러분은 여러 나라가 있고 추정치가 있는 경제학에서, 우리는 임금이 어떻게 변하는지 알고 싶어합니다. 그래서 우리는 볼 수 있습니다. 데이터를 그리고 다른 특성을 선택할 수 있습니다. 그리고 우리는 켜고 그래서 무엇을 배우나요? 그래서 그래서 이것이 우리가 곱셈을 가중치로 하는 것입니다. 예를 들어 우리가 임금을 알고 있고, 그것이 당신의 생산성과 관련이 있다면요. 무엇이 당신의 생산성을 결정하나요? 왜 어떤 사람들은 다른 사람들보다 더 생산적일까요? 그리고 그것은 임금 비율로 귀결되는데, 그것은 당신의 생산성입니다. 네. 그래서 시간에 따라, 그렇죠? 그리고 생산성은 다를 수 있습니다. 그리고 아시다시피, 인적 자본은 다릅니다. 인적 자본이란 무엇일까요? 인적 자본은 지식과 기술을 가진 사람입니다. 그래서 유용합니다. 그래서 그것은 회계에 반영될 수 있습니다, 잠들기 전에. 어, 어떻게 쓰고 등등. 그래서 유용한 기술, 무엇이 인간에게 내재되어 있는지. 그리고 그것에 영향을 끼치는 기술은, 주로 생산 과정입니다. 그것은 결정적인 요인으로 간주될 수 있습니다. 그래서 그것은 일종의 논리입니다. 우리가 데이터를 볼 수 있고 선택할 수 있다는 것입니다. 관련성 있는 특성 중에서. 당신은 그것이 우리가 할 수 있을 것이라고 믿습니까? 하나는 교육이죠, 맞죠? 교육은 확실히 지식과 기술이 사용되는 생산 과정입니다. 그래서 우리는 또한 교육을 개선하고",
+   "pdf": "lecture_week2_OLS_part1.pdf",
+   "pdfPage": 10,
+   "slideText": "The OLS estimator Multiply the first normal equation by ¯ x and subtract from the second: xy − ¯ x ¯ y = ˆ b \u0000 x 2 − ¯ x 2 \u0001 ⇐⇒ ˆ b = xy − ¯ x ¯ y x 2 − ¯ x 2 = Cov( X, Y ) Var( X ) = P i ( x i − ¯ x )( y i − ¯ y ) P i ( x i − ¯ x ) 2 , ˆ a = ¯ y − ˆ b ¯ x. The regression line has slope ˆ b and passes through the centroid (¯ x, ¯ y ) of the scatterplot. In SW’s notation: b β 1 = s XY /s 2 X and b β 0 = ¯ Y − b β 1 ¯ X . Note the parallel with Lecture 1: ¯ Y is the least squares estimator of μ Y (it solves min m P ( Y i − m ) 2 ); OLS is the same idea with a line instead of a constant. Sunha Myong (Kyung Hee University) OLS: the estimator 10 / 36",
+   "liveNotes": {
+    "notes": [],
+    "summary": "OLS 기울기 공식 도출",
+    "exam": [],
+    "board": [],
+    "at": 1789525169588
+   },
+   "marks": [
+    {
+     "line": 9,
+     "type": "",
+     "note": "예시: β̂=-2.28 (학급규모)"
+    },
+    {
+     "line": 0,
+     "type": "",
+     "note": "데이터셋 공유, 직접 회귀 실습"
+    },
+    {
+     "line": 5,
+     "type": "",
+     "note": "구성상 Cov(X,û)=0, 가정아님"
+    }
+   ],
+   "lines": {
+    "w": 453.543,
+    "h": 255.118,
+    "lines": [
+     {
+      "i": 0,
+      "text": "The OLS estimator",
+      "x": 8.504,
+      "y": 5.714800000000007,
+      "w": 112.47133876,
+      "h": 16.49813
+     },
+     {
+      "i": 1,
+      "text": "Multiply the first normal equation by x ¯ and subtract from the second:",
+      "x": 10.908999999999999,
+      "y": 51.6929,
+      "w": 319.26347818,
+      "h": 12.545465
+     },
+     {
+      "i": 2,
+      "text": "P",
+      "x": 320.55400000000003,
+      "y": 65.7689,
+      "w": 11.515645959999972,
+      "h": 12.545465
+     },
+     {
+      "i": 3,
+      "text": "\u0000 \u0001 xy − x ¯ y ¯ Cov( X, Y ) ( x i − x ¯ )( y i − y ¯ )",
+      "x": 98.23800000000001,
+      "y": 72.59489999999997,
+      "w": 311.16954899,
+      "h": 12.545465
+     },
+     {
+      "i": 4,
+      "text": "2 i",
+      "x": 133.774,
+      "y": 79.86590000000001,
+      "w": 201.17778517,
+      "h": 9.165614999999999
+     },
+     {
+      "i": 5,
+      "text": "xy − x ¯ y ¯ = ˆ b x 2 − x ¯ ⇐⇒ ˆ b = = = P ,",
+      "x": 39.91,
+      "y": 81.43090000000001,
+      "w": 373.7235479799999,
+      "h": 12.545465
+     },
+     {
+      "i": 6,
+      "text": "2",
+      "x": 388.89699999999993,
+      "y": 88.7019,
+      "w": 4.23451412999998,
+      "h": 9.165614999999999
+     },
+     {
+      "i": 7,
+      "text": "x 2 − x ¯ 2 Var( X ) i ( x i − x ¯ )",
+      "x": 199.179,
+      "y": 90.70089999999999,
+      "w": 189.7185489899999,
+      "h": 12.545465
+     },
+     {
+      "i": 8,
+      "text": "a ˆ = ¯ y − ˆ b x. ¯",
+      "x": 199.19699999999995,
+      "y": 114.54990000000001,
+      "w": 55.150098629999974,
+      "h": 12.545465
+     },
+     {
+      "i": 9,
+      "text": "The regression line has slope ˆ b and passes through the centroid (¯ x, y ¯ ) of the scatterplot.",
+      "x": 32.727,
+      "y": 151.1129,
+      "w": 403.2676136900001,
+      "h": 12.545465
+     },
+     {
+      "i": 10,
+      "text": "In SW’s notation: β b 1 = s XY /s 2 X and β b 0 = Y ¯ − β b 1 X ¯ .",
+      "x": 32.727,
+      "y": 167.6509,
+      "w": 244.54754798000002,
+      "h": 12.545465
+     },
+     {
+      "i": 11,
+      "text": "Note the parallel with Lecture 1: P Y ¯ is the least squares estimator of μ Y (it solves",
+      "x": 32.727,
+      "y": 184.1889,
+      "w": 372.22057939,
+      "h": 12.545465
+     },
+     {
+      "i": 12,
+      "text": "min m ( Y i − m ) 2 ); OLS is the same idea with a line instead of a constant.",
+      "x": 32.726999999999975,
+      "y": 197.7379,
+      "w": 347.3507637900001,
+      "h": 12.545465
+     },
+     {
+      "i": 13,
+      "text": "Sunha Myong (Kyung Hee University) OLS: the estimator 10 / 36",
+      "x": 24.024,
+      "y": 246.4834,
+      "w": 424.1985648,
+      "h": 6.8742399999999995
+     }
+    ]
+   },
+   "segs": [
+    {
+     "t": 1328,
+     "page": 11,
+     "en": "Right? But we have to divide that by the variance of X. So that is capturing the slope. So it makes sense.",
+     "ko": "그렇죠? 하지만 우리는 그걸 나눠야 해요, 그 X의 분산으로. 그래서 그게 경사를 포착하는 것입니다. 그래서 말이 돼요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1341,
+     "page": 11,
+     "en": "So the expression in textbook and",
+     "ko": "그래서 이 표현은 교과서에 있고",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1346,
+     "page": 11,
+     "en": "other, you know, actually the formula, the or is just the conceptually covariance divided by variance. If you express that in the vector formula, it looks different, but it again tells us that it is a covariance divided by variance.",
+     "ko": "다른, 뭐, 사실 그 공식은, 그 또는 은 그냥 개념적으로 공분산을 분산으로 나눈 것입니다. 만약 그걸 벡터로 표현하면, 다르게 보이지만, 결국 다시 우리에게 그것이 공분산이라는 것을 말해줍니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1368,
+     "page": 11,
+     "en": "So, what is the implication of this equation?",
+     "ko": "그래서, 이 결과의 의미는 무엇일까요?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1380,
+     "page": 11,
+     "en": "Is it a linear equation? It's a projection. So we capture how how Y changes when X changes by one unit. And right?",
+     "ko": "이건 선형 방정식인가요? 이건 투영입니다. 그래서 우리는 어떻게 어떻게 Y가 변하는지 X가 한 단위 변할 때. 그리고 맞죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1397,
+     "page": 11,
+     "en": "So usually, so there you can practice there are different processes you can make, you know, if you want to understand how your own changes by the education level, or your schooling. You can use the letter schooling and level of income. Right? That's one way to pose the linear relationship.",
+     "ko": "그래서 보통, 그래서 거기서 연습할 수 있어요. 거기에는 다른 과정들이 있는데, 뭐, 만약 당신이 어떻게 당신의 것이 변하는지 교육 수준에 따라 이해하고 싶다면, 당신은 사용할 수 있어요. 그 편지를 그리고 교육 수준과 소득을. 그렇죠? 그게 질문을 던지는 한 가지 방법입니다. 선형 관계를.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1419,
+     "page": 11,
+     "en": "Alternatively, you use you use the variable schooling, and variable on income. So you may transform the variable in a certain way, you think it's more want to understand. If you transform the variable into the log of income, that means you want to understand the elasticity, which means that how much 1% change in X translates into um percentage change in Y.",
+     "ko": "또는 당신은 당신이 사용하는 것을 사용합니다. 변수 교육, 그리고 변수 소득을. 네. 그래서 당신은 변환할 수 있습니다. 변수를 특정 방식으로, 그게 더 이해하고 싶다고 생각하는 방식으로요. 만약 당신이 변환하면, 변수를 로그로 변환하면, 그건 당신이 이해하고 싶다는 뜻입니다. 탄력성을, 즉 얼마나 1%가 X의 변화에 따라 변하는지 변환되는지입니다. 음 퍼센트 변화가 Y에 미치는 것입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1446,
+     "page": 11,
+     "en": "If you want to understand the percentage change, you transform the variable in the log form, and you run OLS. with the transformed values, okay? And then that's a very typical case in economics, because why? If you just look at the data, it tends to be linear as well. It will be a linear one versus US dollar.",
+     "ko": "만약 당신이 이해하고 싶다면 퍼센트 변화를 이해하고 싶다면, 당신은 변환합니다. 변수를 로그 형식으로, 그리고 당신은 OLS를 실행합니다. 로그를 변환된 값으로요, 알겠죠? 그리고 그건 아주 전형적인 경우입니다. 경제학에서, 왜냐하면 그냥 로그를 보면, 그건 경향이 있습니다. 선형적이죠. 그것은 선형적일 것입니다. 그것은 선형적일 것입니다. 미국 달러와 비교해서.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1474,
+     "page": 11,
+     "en": "The unit is very different, right? So if we just use the level, then it's a sensitive to the unit, but the application has to depends on the unit. So like a big, you know, if you bet high, it can also stand. Right? So it's not very easy for us to just grasp the units. So sometimes you just things are very sensitive to the unit.",
+     "ko": "단위는 매우 다릅니다, 그렇죠? 그래서 만약 우리가 그냥 수준을 사용하면, 그건 단위에 민감합니다, 하지만 적용은 해야 합니다. 그것은 단위에 따라 다릅니다. 그래서 큰, 그러니까 만약 당신이 크게 베팅하면, 그것도 가능합니다. 그렇죠? 그래서 우리가 그냥 이해하기가 쉽지 않아요. 그래서 때로는 그냥 상황이 단위에 매우 민감합니다. 그래서",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1498,
+     "page": 11,
+     "en": "It's a it's a better to communicate if you transform that into the log function, then what you report is the percentage change. So that's usually the case in the regression. We we don't just look at the hourly wage, we know. We",
+     "ko": "그것은 더 나은 소통 방법입니다. 만약 당신이 그것을 로그 함수로 변환하면, 그러면 당신이 보고하는 것은 퍼센트 변화입니다. 그래서 그게 보통 경제학에서 회귀 분석의 경우입니다. 우리는 우리는 그냥 시간당 임금을 보는 게 아니라, 알잖아요. 우리는",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1519,
+     "page": 11,
+     "en": "look at the log wage. And we see how",
+     "ko": "로그를 봅니다. 로그 임금을. 그리고 어떻게",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1530,
+     "page": 11,
+     "en": "So this is one type of variable can be age, can be education, and so on. Then something like that. So we see how much percentage change in X. translates into percentage change in Y. How we",
+     "ko": "그래서 이건 한 가지 유형의 변수가 될 수 있습니다. 나이가 될 수도 있고, 교육이 될 수도 있고, 등등. 그러면 그런 것들요. 그래서 우리는 얼마나 퍼센트가 X에서 변하는지 변환되는지 봅니다. 퍼센트 변화가 Y에 미치는 것입니다. 어떻게",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1551,
+     "page": 11,
+     "en": "Okay, so why is A? A is actually the asset link. If we don't have the X term, then the best way to minimize the squared error, sum of squared error is just something. If we don't have control variable, then the best way to predict the best way to minimize the sum of squared error is just the same that this is our best estimate.",
+     "ko": "좋아요, 그럼 A는 왜죠? A는 사실상 자산 링크입니다. 만약 우리가 가지고 있지 않다면 X 항을, 그러면 가장 좋은 방법은 최소화하는 것입니다. 그 제곱된 오차, 합계는 제곱된 오차의 합계는 그냥 어떤 것입니다. 만약 우리가 통제 변수가 없다면 그게 가장 좋은 방법은 예측하는 것입니다. 가장 좋은 방법은 최소화하는 것입니다. 제곱된 오차의 합계는 그냥 똑같습니다. 이것이 우리의 최선의 추정치입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1584,
+     "page": 11,
+     "en": "What is that estimate? Now, once we have X variable, that means our slope And similarly, it's not so a common complicated thing, which means that sometimes we want to express that after uh we like so I thought it was X. We X we like. That was our original but we know that why I uh might also like equals zero.",
+     "ko": "그 추정치는 무엇인가요? 이제, 우리가 X 변수를 가지고 있다면, 그것은 우리의 기울기가 그리고 마찬가지로, 그것은 그렇게 어 흔한 복잡한 것이 아니며, 이는 때때로 우리가 표현하고 싶어하는 것을 의미합니다. 그 후에 어 우리가 좋아하듯이 그래서 저는 생각했어요 그게 X라고. 우리는 X가 우리가 좋아하는 것 같아요. 그게 우리의 원래 하지만 우리는 알고 있어요, 왜 제가 어쩌면 또한 좋아할 수도 있는 것은 0이라는 것을요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1621,
+     "page": 11,
+     "en": "Uh is equal to Y sorry.",
+     "ko": "어 는 같다 Y와 죄송합니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1628,
+     "page": 11,
+     "en": "And so the X plus minus A",
+     "ko": "그래서 X는 더하기 빼기 A",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1637,
+     "page": 11,
+     "en": "plus the B",
+     "ko": "더하기 그 B",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1642,
+     "page": 11,
+     "en": "X. Right? So X plus X minus X. Plus minus X. So this is what I mean by it's not that important. So sometimes we want to do that, you know, uh it depends on your or whether it's convenient for you. Once you just want to see the distance from the sample mean, you can transpose your data already.",
+     "ko": "X. 맞죠? 그래서 X 더하기 X 빼기 X. 더하기 빼기 X. 그래서 이게 제가 말하는 그게 그렇게 중요하지 않다는 거예요. 그래서 때때로 우리는 그렇게 하고 싶어해요, 아시겠지만, 그건 여러분의 또는 그게 여러분에게 편리한지에 따라 달라요. 일단 여러분이 그냥 보고 싶어하는 거리는 표본에서 평균까지의 거리라면, 데이터를 이미 변환할",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1675,
+     "page": 11,
+     "en": "and run the test. So the same thing. So same thing. And standardization is a we can even transform by dividing the raw value by the standard deviation of Y and we plus the correlation between X and Y. So the we can, you know, we just want to",
+     "ko": "수 있고 실행할 수 있어요. 그래서 같은 거예요. 그래서 같은 거예요. 그리고 표준화는 우리가 심지어 변환할 수 있는 것은 나누는 것입니다. 원시 값을 표준 편차로 나누는 것입니다. 그리고 우리는 더하기 X와 Y의 상관관계입니다. 그래서 우리는, 아시다시피, 그냥",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1700,
+     "page": 11,
+     "en": "You know, we'll bet that. You know, we it is important to us in this case it proves that that's and the the unit should be between minus one to one and it is correlation.",
+     "ko": "있잖아요, 우리 그거에 걸게요. 그게 우리한테 중요해요. 이 경우엔 그게 증명되죠. 그리고 그 부대는 사이에 있어야 해요, 마이너스 1에서 1 사이여야 하고, 그게 상관관계예요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1716,
+     "page": 11,
+     "en": "Okay, those are the small details. So okay. Uh so application of the class. So this is SNA. They found that constant is this much, but this is coefficient. There is indeed a negative uh coefficient. So like negative slope. Then it discuss whether this is significant or not.",
+     "ko": "네, 그게 작은 세부 사항들이에요. 그래서 어, 그래서 그 적용은 수업에 대한 거예요. 그래서 이건 SNA예요. 그들은 상수가 이 정도라는 걸 발견했고, 하지만 이건 계수예요. 실제로 음의 계수가 있어요. 그래서 음의 기울기처럼요. 그러면 이게 유의미한지 논의해요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1739,
+     "page": 11,
+     "en": "That is the next step. Okay, when we calculate the S, obviously we always find the number for A and B. It does not mean that B hat is statistically significant already. Okay? We can always get the coefficient, but the thing is that the error of that B hat the B hat which is different from zero, here, can be statistically significant or not.",
+     "ko": "그게 다음 단계예요. 자, 우리가 계산할 때 S를, 당연히 우리는 항상 A에 대한 숫자를 찾아요. 그건 의미하지 않아요. B hat가 통계적으로 유의미하다는 것을 의미하지 않아요. 알겠죠? 우리는 항상 계수를 얻을 수 있지만, 문제는 그게 그 오차가 B hat의 B hat가 다른 것과 다르다는 것이죠, 여기서, 통계적으로 유의미할 수도 있고 아닐 수도 있어요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1771,
+     "page": 11,
+     "en": "Okay? If this B hat we can actually this is the we estimate the value of B hat. by dividing variance by variance, right? But the we have to estimate the standard error of B hat. Okay? Because this is one sample realization. We need to talk about probability and likelihood, whether this will be replicated in the future, the way we can do is that we back out the the standard deviation of B hat and then if because B hat is already an estimate of, we the standard deviation of estimator is called the standard error.",
+     "ko": "알겠죠? 만약 이 B hat가 우리는 실제로 이게 우리가 추정하는 B hat의 값이에요. 나누어서 분산을 나누어서 분산으로, 맞죠? 하지만 우리는 추정해야 해요, 표준 오차를 B hat의. 알겠죠? 왜냐하면 이게 하나의 표본 실현이기 때문이에요. 우리는 확률에 대해 이야기해야 하고, 이게 미래에 반복될 것인지, 그 방법은 우리가 다시 되돌아가는 거예요. 표준 편차를 B hat의 그리고 만약 왜냐하면 B hat는 이미 추정치이기 때문에, 우리는 표준 편차를 추정하는 것은 표준 오차라고 해요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1814,
+     "page": 11,
+     "en": "Okay? So we have to estimate how dispersed this can be. And standard error measures what does that measure? So from this sample, you are",
+     "ko": "알겠죠? 그래서 우리는 추정해야 해요. 어떻게 분산되어 있는지 이것이 될 수 있는지. 그리고 표준 오차는 무엇을 측정하나요? 그래서 이 표본에서 여러분은",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1835,
+     "page": 11,
+     "en": "that B hat is minus 2.28. So if you repeat, it can be minus 1.9. If you repeat that, it can be zero. If you repeat that, it can be minus 3. So there can be some dispersion. of this B hat. If we do the experiment many times, then the extent of dispersion is measured by the estimate of the standard deviation of estimator.",
+     "ko": "B hat가 마이너스 2.28이라는 것을 알 수 있어요. 그래서 반복하면, 마이너스 1.9가 될 수 있어요. 만약 반복하면, 0이 될 수 있어요. 만약 반복하면 마이너스 3이 될 수 있어요. 그래서 어느 정도 분산이 있을 수 있어요. 이 B hat의. 만약 우리가 실험을 여러 번 한다면, 그러면 그 분산의 정도는 무엇으로 측정되나요? 추정치의 표준 오차로 측정돼요. 추정치의",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1855,
+     "page": 11,
+     "en": "which is standard error. And then the formula how to estimate the standard error of this the estimator. And then if we get this standard error and we are ready to apply statistical inference, so we have to divide this coefficient by the standard error that is the standardization.",
+     "ko": "표준 오차로요. 그리고 공식은 어떻게 추정하는지 표준 오차를 어떻게 추정하는지 이 B hat의 추정치의 그리고 만약 우리가 이 표준 오차를 얻고 이제 적용할 준비가 되었다면 통계적 추론을 할 수 있어요, 그래서 우리는 이 계수를 표준 오차로 나누어야 해요. 표준 오차는 표준화예요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1878,
+     "page": 11,
+     "en": "And see whether this score is large enough. So we discussed that when we have some differences in the mean or any two numbers, the distance cannot tell us whether it is likely to happen in the future. How confident we can say that the difference is statistically meaningful.",
+     "ko": "그리고 이 Z 점수가 큰지 확인해요. 충분히. 그래서 우리는 논의했어요, 우리가 어떤 차이가 있을 때 평균이나 두 개의 숫자에서, 그 거리는 우리에게 말해주지 않아요, 그게 미래에 일어날 가능성이 있는지. 우리가 얼마나 확신할 수 있는지 그 차이가 통계적으로 유의미한지.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1899,
+     "page": 11,
+     "en": "Now, the way to communicate is that, okay, if the effect at all, if the coefficient is zero, how likely would this occur or some outcome. We are doing the same thing. Here, I dividing this coefficient with the estimate of the standard error. We can translate this number to the Z score and calculate the likelihood.",
+     "ko": "자, 그 방법은 의사소통하는 거예요, 그러니까 만약 그 효과가 전혀 없다면, 만약 계수가 0이라면, 얼마나 이런 일이 일어날 가능성이 있는지. 우리는 같은 일을 하고 있어요. 여기서, 저는 이 계수를 나누고 있습니다. 추정치로 표준 오차를요. 우리는 번역할 수 있어요, 이 숫자를 Z 점수로 그리고 계산할 수 있어요, 가능성을.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1923,
+     "page": 11,
+     "en": "of observing our coefficient if there's no if the real relationship is zero. If the relationship is zero. So that's so we know this is the first step. We can always have the number which does not mean that this number is meaningful yet. We need the standard error and then calculate the P value.",
+     "ko": "관찰할 확률을. 우리의 계수가 만약 없다면, 만약 실제 관계가 0이라면. 만약 관계가 0이라면. 그래서 우리는 이게 첫 번째 단계라는 걸 알아요. 우리는 항상 숫자를 가질 수 있고, 그게 의미하는 건 이 숫자가 아직 유의미하지 않다는 거예요. 우리는 표준 오차가 필요해요. 그리고 나서 P값을 계산해요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1946,
+     "page": 11,
+     "en": "to check whether this number is likely to be in the in a way that if this number is difficult, if there's no relationship at all. Okay, let's suppose, let's estimate minus. intercept is zero. Okay. So all knowing uh this intercept is a very important. We assume that there is no intercept, then you",
+     "ko": "확인하기 위해, 과연 이 숫자가 일어날 가능성이 있는지. 어떤 면에서 만약 이 숫자가 어렵다면, 만약 실제 관계가 전혀 없다면. 좋아요, 가정해 봅시다, 추정해 봅시다 마이너스를. 절편은 0입니다. 네. 그래서 모든 걸 알고 이 절편이 매우 중요하다는 걸. 우리는 가정합니다, 절편이 없다고. 그러면",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1985,
+     "page": 11,
+     "en": "are forcing to start from zero. Then you have a very different answer. In other words, to have a better prediction, we should allow a If we impose a equals zero, that's a very strong assumption. You will have a very different estimator. So we need to question. So uh this is the model.",
+     "ko": "당신은 강제로 시작하게 하는 거예요. 그러면 당신은 매우 다른 답을 얻게 돼요. 다시 말해, 더 나은 예측을 하려면 우리는 허용해야 해요. 만약 우리가 a가 0이라고 가정하면, 그건 매우 강력한 가정이에요. 당신은 매우 다른 추정치를 얻게 될 거예요. 그래서 우리는 질문해야 해요. 그래서 어, 이건 모델이에요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2000,
+     "page": 11,
+     "en": "Okay.",
+     "ko": "네.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2010,
+     "page": 11,
+     "en": "So",
+     "ko": "그래서",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2014,
+     "page": 11,
+     "en": "Okay, but if so what do you mean? So once we have these estimation results, now we can calculate what this estimator if the population relationship really follows this estimation result. What should we observe for each uh for the final outcome in each district.",
+     "ko": "좋아요, 하지만 그렇다면 무슨 뜻인가요? 그래서 우리가 이 추정치를 얻으면, 이제 우리는 계산할 수 있어요. 이게 어떤 추정치인지 만약 모집단이 실제로 이렇다면 이 추정치를 따르는지. 무엇이 관찰되어야 하는가, 이 각각에 대해, 최종 결과에서 각 지역별로.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2036,
+     "page": 11,
+     "en": "So for instance, if this area the ratio is actually this number, then if the population relationship is zero, teacher ratio and",
+     "ko": "그래서 예를 들면, 만약 이 지역이 그 비율이 실제로 이 숫자라면, 그러면 만약 모집단 관계가 실제로 0이라면. 선생님 비율이 그리고",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2052,
+     "page": 11,
+     "en": "uh uh the student score, this relationship, we should observe this as the predicted value of the score, right? But this is obviously different from the observed one. This is what the model",
+     "ko": "어 어 학생 점수, 이 관계는, 우리는 관찰해야 해요, 이 것을 예측된 값으로 그 점수를, 맞죠? 하지만 이건 분명히 다른 관찰된 값과 달라요. 이건 모델이",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2078,
+     "page": 11,
+     "en": "says, if population has that linear relationship, and it will allow us to estimate uh indicate so numbers, then this is the predicted value of the test score, right? And it's a certain value in this area. So obviously, it does not coincide with the observed value.",
+     "ko": "말하는 거예요, 만약 모집단이 그런 선형 관계를 가지고 있다면, 그리고 그건 우리가 추정할 수 있게 해줄 거예요. 어, 그렇게 나타내요. 그러면 이게 예측된 값이에요. 테스트 점수의 맞죠? 그리고 그건 이 상황에서 특정 값이에요. 그래서 분명히, 이건 일치하지 않아요, 관찰된 값과.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2094,
+     "page": 11,
+     "en": "So how do you interpret the observed value and the difference between observed value and predicted value? We define that as the like the residual, but cannot explain by the model. And then that residual should be values like new head. You know, in this case, predict the zero.",
+     "ko": "그럼 어떻게 관찰된 값을 해석하고 그 차이를 어떻게 해석해야 할까요? 관찰된 값과 예측된 값의 차이를? 우리는 그걸 잔차라고 불러요, 근데 설명할 수 없어요, 모델로. 그리고 그 잔차는 우리가 어, 이런 값들이어야 해요. 새로운 머리, 아시죠? 이 경우에, 0을 예측해요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2110,
+     "page": 11,
+     "en": "And right here may if we represent something else",
+     "ko": "그리고 바로 여기에서 만약 우리가 무언가를 나타낸다면 그건",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2130,
+     "page": 11,
+     "en": "that we didn't include in X this is truly the ratio on top of that, with the other factors that affect the test score. And now this is not more than what we see here. So that's the reason why the deviation uh there is some differences between predicted value and observed value.",
+     "ko": "우리가 고려하지 않은 X에 포함된 것이고, 이것은 정말로 비율의 위에 있는 것이고, 다른 요인들과 함께 영향을 미치는 테스트 점수에 대한 것입니다. 그리고 이제 이것은 우리가 보는 것보다 더 많지 않아요. 그래서 그게 이유입니다, 편차가 어, 어떤 차이가 있는 것은 예측된 값과 관찰된 값 사이에.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2142,
+     "page": 11,
+     "en": "scatter uh new again or you can do it in um by hand. And I actually share a data set with you. We can actually run a linear regression",
+     "ko": "산점도 어, 다시 새로운 거나 아니면 어, 음 로 할 수 있어요. 손으로. 그리고 제가 실제로 데이터 세트를 공유할게요. 우리가 실제로 선형 회귀를",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2159,
+     "page": 11,
+     "en": "with easily. You have to try. You have to upload the folder and then ask the, you know, what where um to do to run the regression. on this folder and then Uh right here, it's not it's not a formula, but I'll share. So um Okay.",
+     "ko": "실행할 수 있어요. 쉽게. 여러분은 시도해야 해요. 전체 데이터를 업로드하고 그런 다음 그, 아시죠, 어디에 어, 뭘 해야 할지, 어, 회귀를 실행할지. 이 데이터에 대해서 그리고 어, 바로 여기에서, 이건 아니에요, 공식이 아니라, 제가 공유할게요. 그래서 어, 음 네.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2183,
+     "page": 11,
+     "en": "Um, so I'm going to all the variants of outcome into predictive value and unpredictive variants. And then rationally, it would be why we can't decompose the observed variance variance in the underlying outcome into explain so why that is the predictive value or outcome when the model is true.",
+     "ko": "음, 그래서 저는 모든 변종에 대해 결과를 예측 모델로 만들고 예측 불가능한 변종으로 나눴어요. 그리고 합리적으로는, 그게 왜 우리가 분해할 수 없는지 관찰된 변동을 기저 결과로 나눌 수 없는지 설명하는 거니까, 왜 그런지 예측 가능한 가치인지 아니면 결과가 모델이 맞을 때인지.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2208,
+     "page": 11,
+     "en": "So we can only calculate what we can, then we have OS estimator. And that estimates we can well, we uh SI and calculate the predictive value of Y. Right? That is what it is. And the Y hat is the true Y in this person. This is the actual test score. So we already have if you think about 400 60 something something, this really you know, distribution of a test score, right?",
+     "ko": "그래서 우리는 오직 할 수 있는 것만 계산할 수 있고, 그러면 OS 추정치가 생겨요. 그리고 그 추정치로 우리는, 어, SI와 예측 가능한 Y의 값을 계산할 수 있죠. 그렇죠? 그게 바로 그거예요. 그리고 Y hat은 실제 이 사람의 Y예요. 이게 실제 시험 점수예요. 그래서 우리는 이미 만약 400 60 몇 점을 생각하면, 이 정말 아시다시피, 시험 점수의 분포가 맞죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2238,
+     "page": 11,
+     "en": "So the variance is like, uh we can calculate. And then we say that we do that we can decompose the variance into the the explained by linear prediction and the cannot be explained by prediction.",
+     "ko": "그래서 분산은 어, 우리는 계산할 수 있어요. 그리고 우리는 이렇게 말해요. 우리가 분해할 수 있는 분산을 이렇게 나눌 수 있다고, 그 설명되는 선형 예측과 그리고 설명할 수 없는 것으로 나눌 수 있어요. 예측으로.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2256,
+     "page": 11,
+     "en": "Okay? The the key here is that by definition, Y is the value plus residual. So the residual is defined by observation minus the predicted value, right? So this is by definition. And then if we have variance on a across the is actually variance a very",
+     "ko": "알겠죠? 여기서 핵심은 정의에 따르면, Y는 예측된 값이고 거기에 잔차를 더한 거예요. 그래서 잔차는 관찰된 값에서 예측된 값을 뺀 거죠, 맞죠? 그래서 이건 정의상 그래요. 그리고 만약 우리가 분산이 있다면 어, 전체에 걸쳐서 그건 사실 분산이 어, 매우",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2285,
+     "page": 11,
+     "en": "variance of plus or variance XY. Right?",
+     "ko": "분산이 더해진 거나 분산이 XY. 맞죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2294,
+     "page": 11,
+     "en": "Okay? But here, we need to show that we the covariance is zero. Then we can decompose that into those two components, right? So why that is the is the strong variance of Y hat, so some variance of",
+     "ko": "알겠죠? 하지만 여기서, 우리는 보여줘야 해요. 우리가 공분산이 0이라는 것을. 그러면 우리는 그것을 두 가지 구성 요소로 나눌 수 있죠, 맞죠? 그래서 왜 그게 강한 분산인지 Y hat의, 그래서 어떤",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2313,
+     "page": 11,
+     "en": "U hat, then it assumes that the covariance is zero. How do we know that it comes from the model? So we have the OS from the construction, we know that covariance of Y and U hat by definition, this is uh, yeah. covariance is X covariance is XY. is XY.",
+     "ko": "분산이 U hat의, 그러면 공분산이 0이라는 것을 가정해요. 어떻게 우리가 그게 에서 온다는 것을 알 수 있을까요? 그래서 우리는 그 OS를 가지고 있어요. 구성에서, 우리는 공분산이 Y와 U hat의 정의에 따르면, 이것은 어, 네. 공분산은 X와 U의 공분산은 XY. 은 XY.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2343,
+     "page": 11,
+     "en": "Right? So X hat minus X Y hat minus Y bar. And then U hat minus U bar. And then we know that U bar is already zero. So that's why covariance of Y hat, U hat is we can write that. Because U bar, okay, I will fix.",
+     "ko": "그렇죠? 그래서 X hat 빼기 X Y hat 빼기 Y 바. 그리고 U hat 빼기 U 바. 그리고 우리는 U 바가 이미 0이라는 것을 알아요. 그래서 Y와 U hat의 공분산은 우리가 그렇게 쓸 수 있어요. 왜냐하면 U 바는, 알겠어요, 고칠게요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2370,
+     "page": 11,
+     "en": "So here, it has to be U bar, U hat minus U bar, but this is zero. So that's why we can write like that. And then here if we expand that, then why I hat, minus like we can we can have this one. And here, uh this is it has to be equal to zero.",
+     "ko": "그래서 여기서, 이건 U 바여야 해요, U hat 빼기 U 바, 하지만 이건 0이에요. 그래서 그렇게 쓸 수 있는 거예요. 그리고 나서 여기서는 이걸 전개하면 그러면 왜 제가 U hat, 빼기 이렇게 우리는 우리는 이걸 가질 수 있어요. 그리고 여기서, 어 이건 어 이건 0이어야 해요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2399,
+     "page": 11,
+     "en": "Why? And this is here. So why I equal to Y hat, as a and then because that A plus B X A A plus B X, then we have this condition, so that this equals to zero, this equals to zero. So this and everything equals to zero. This is zero because of course from condition.",
+     "ko": "왜죠? 그리고 이건 여기예요. 그래서 왜 제가 Y hat과 같고, 그리고 그리고 나서 왜냐하면 그게 A 더하기 B X A A 더하기 B X, 그러면 이 조건이 있고, 그래서 이게 0과 같고 이게 0과 같아요. 그래서 이것과 모든 것이 0과 같아요. 이건 0이에요. 왜냐하면 당연히 조건에서",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2422,
+     "page": 11,
+     "en": "So that that conclusion is that the Y hat is U predicted value and residual are not correlated. That's the conclusion, okay? We do OLS estimator, we get that. Now the normal equation, this is the really the normal equation between Y hat and U hat. That's five assumption. It's not automatic. We just define OLS in such a way that satisfy two equation.",
+     "ko": "그렇기 때문이죠. 그래서 그 결론은 Y가 Y hat이 U 예측값이고 잔차가 서로 관련이 없다는 것입니다. 그게 결론이에요, 알겠죠? 우리는 OLS 추정량을 구하고, 그걸 얻어요. 이제 정규 방정식은, 이게 정말 정규 방정식이에요. Y와 U hat 사이의. 그게 다섯 번째 가정이에요. 자동이 아니에요. 우리는 그냥 정의해요. OLS를 그런 식으로 정의해서 두 가지 정규 방정식을 만족해요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2453,
+     "page": 11,
+     "en": "One of the two normal equations are satisfied automatically. We have covariance between predicted value and residual zero. Then allows to be composed the entire variation in the data into two components. That you explain by OLS model and that cannot be explained by OLS model. And that is the the famous R square.",
+     "ko": "두 가지 정규 방정식 중 하나가 만족되는데, 자동으로요. 우리는 공분산이 예측값과 잔차가 0이에요. 그러면 이게 가능해져요. 전체가 전체 변동이 데이터에서 두 가지 구성 요소로 나뉘는 거죠. 그게 OLS 모델로 설명되고 설명될 수 없는 부분이에요. 그리고 그게 바로 유명한 R 제곱이에요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2473,
+     "page": 11,
+     "en": "R square you may have heard about R square in the estimation and then that is the from this equation. From this equation, we just define variance of Y as total sum of square. It's just a total sum of square divided by entire variation. And that can be explained are divided into explained sum of square.",
+     "ko": "R 제곱은 들어보셨을 수도 있는데 추정에서 그리고 나서 그게 바로 이 방정식에서 나온 거예요. 이 방정식에서 우리는 Y의 분산을 정의하는데, 총 제곱합은 그냥 총 합계예요. 제곱합은 나누기 전체 변동이에요. 그리고 그건 설명될 수 있는 부분으로 나뉘고, 설명된 제곱합이에요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2494,
+     "page": 11,
+     "en": "And uh sum of square Okay, on its part. And anything else,",
+     "ko": "그리고 어 제곱합은 네, 그 자체로 요. 그리고 다른 건,",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2503,
+     "page": 11,
+     "en": "equals that. And then we arrange that and we can define R square as how much the variance of the data can be explained by OLS estimator. Um so we will do that. So OLS is really this.",
+     "ko": "그게 같아요. 그리고 나서 그걸 정리하고 우리는 정의할 수 있어요. R 제곱을 얼마나 많은 변동이 데이터에서 설명될 수 있는지 OLS로 추정량으로. 음 그래서 우리는 그렇게 할 거예요. 그래서 OLS는 정말 이거예요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2521,
+     "page": 11,
+     "en": "So R square, if R square is high, then means that the data can be well explained by linear projection. Okay? So please write that.",
+     "ko": "그래서 R 제곱, 만약 R 제곱이 높으면, 그러면 데이터가 설명될 수 있다는 거예요. 잘 설명될 수 있다는 거예요. 선형 투영으로. 알겠죠? 그래서 그렇게 써주세요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2535,
+     "page": 11,
+     "en": "If X and Y is very clear linear relationship, R square is sometimes it's not like that. Then",
+     "ko": "만약 X와 Y가 매우 명확한 선형 관계라면, R 제곱은 때때로 그렇지 않아요. 그러면",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2547,
+     "page": 11,
+     "en": "we end up with some relationship, but R square is not big because the variation cannot be explained uh by because here this residual term is big. Here the residual term is small. So the value of the value of this residual is much bigger. If the beta is uh very dispersed, it does not it does not have a clear linear relationship. So I see it you may have heard about that that many people will put that as a rule of thumb.",
+     "ko": "우리는 결국 어떤 관계를 맺게 되지만, R 제곱은 크지 않아요. 왜냐하면 변동이 설명될 수 없기 때문이죠. 왜냐하면 여기서 이 잔차항이 커요. 여기서 잔차항은 작아요. 그래서 R 제곱의 값은 이 잔차의 값보다 훨씬 큽니다. 만약 베타가 어 매우 분산되어 있다면, 그것은 명확한 선형 관계가 아닙니다. 그래서 저는 당신이 아마도 들어보셨을 거예요, 그게 많은 사람들이 그것을 경험 법칙으로 삼을 거예요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2581,
+     "page": 11,
+     "en": "And then that model we will assume linear model. R square captures how linear it is. You can extend Y in the population. Okay? So if the underlying relationship between X and Y is not distribution is not linear, R square cannot be which is okay. Okay? So there is no guarantee that X and Y always have a linear relationship.",
+     "ko": "그리고 그 모델은 우리가 선형이라고 가정할 거예요. R 제곱은 얼마나 선형인지 나타냅니다. Y를 모집단에서 확장할 수 있습니다. 알겠죠? 그래서 만약 기본이 되는 관계가 X와 Y 사이에 분포가 선형이 아니라면, R 제곱은 그것은 괜찮습니다. 알겠죠? 그래서 X와 Y가 항상 선형 관계를 갖는다는 보장은",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2599,
+     "page": 11,
+     "en": "That's our model. And then estimator tells us how how well our model can explain the distribution we observe in the sample. But that does not necessarily mean that R square uh if R square is big, then is a very good projection of data. If R square is not big, it's not the good projection, but you know, it's it's just like a problem is not when it's clear but still as long as beta or the is statistically significant, that is meaningful to us.",
+     "ko": "없습니다. 그게 우리 모델입니다. 그리고 추정량은 우리에게 얼마나 우리 모델이 설명할 수 있는지 알려줍니다. 우리가 관찰한 표본의 분포를요. 하지만 그것이 반드시 R 제곱이 크다는 것을 의미하지는 않습니다. 만약 R 제곱이 크다면, 그것은 매우 좋은 데이터의 예측입니다. 만약 R 제곱이 크지 않다면, 그것은 좋은 예측이 아니지만, 아시다시피, 그것은 그냥 문제와 같은 것입니다. 언제 명확한지 하지만 여전히 베타가 또는 통계적으로 유의미하다면, 그것은 우리에게",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2638,
+     "page": 11,
+     "en": "Okay? So right?",
+     "ko": "의미가 있습니다. 그래서 맞죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2644,
+     "page": 11,
+     "en": "Standard error or the regression is So how do we estimate the standard error of the regression? We so sum the of the residual, which we calculate after we estimate",
+     "ko": "표준 오차 또는 회귀 는 그래서 어떻게 표준 오차를 추정할까요? 우리는 그래서 제곱의 합을 잔차의 합을 구하는데, 이는 우리가 추정한 후에",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2662,
+     "page": 11,
+     "en": "Okay, so we have Camp who had which observation we saw all the squared variable you had and divided that by and then So why n minus 2 now? So we discussed that the the variance of the sample mean, in order to get that, we have to divide the variance by sample variance by n minus one.",
+     "ko": "자, 그럼 캠프가 있었는데, 어떤 관찰이 있었는지 우리가 모든 제곱된 변수를 봤고 그걸 나눈 다음 그래서 왜 이제 n-2인가요? 그래서 우리가 논의했듯이 그 그 표본의 분산은 그걸 얻기 위해서, 우리는 분산을 나누어야 합니다. 표본 분산을 n-1로.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2688,
+     "page": 11,
+     "en": "And then the whole problem also shows that why we are losing one degree of freedom. By setting up the sample mean, we already use a relationship in the distance, which is sample mean and each observation. So here, the reason why we have n minus 2 is because we have a constant and the slope.",
+     "ko": "그리고 전체 문제도 왜 우리가 하나를 잃고 있는지 보여줍니다. 왜냐하면 설정함으로써 표본 평균을, 우리는 이미 관계를 사용했기 때문에 그 안에서 거리를, 즉 표본 평균과 각 관찰값을. 그래서 여기서 우리가 n-2를 갖는 이유는 우리가 상수를 가지고 있고 그리고 기울기를 가지고",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2711,
+     "page": 11,
+     "en": "So we already used two equations. So we are losing two degrees of freedom. That's why we divided that by n minus 2. So if we have like a two variables and one constant, we have to divide that by n minus 3. Okay. If we have a K variables, plus a constant, then we have to divide it by n minus K minus one.",
+     "ko": "있기 때문입니다. 그래서 우리는 이미 두 개의 방정식을 사용했습니다. 그래서 우리는 두 개의 자유도를 잃고 있습니다. 그래서 우리가 그걸 n으로 나눈 것입니다. 그래서 만약 우리가 예를 들어 두 개의 변수와 하나의 상수가 있다면, 우리는 그걸 나눠야 합니다. n-3으로. 네. 만약 우리가 K개의 변수가 있다면, 거기에 하나의 상수가 있다면, 우리는 그걸 n-K로 나눠야 합니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2739,
+     "page": 11,
+     "en": "But the logic follows. So this is useful if you understand the whole problem. Now it gets clear. Once you use the relationship in the data to pin that, so we have a then the variations in the sample has moved or it loses one degree. It has to satisfy such a number in order to make the sample",
+     "ko": "하지만 논리는 같습니다. 그래서 이것은 전체적인 문제를 이해하면 유용합니다. 이제 명확해집니다. 일단 관계를 사용하면 데이터에서 그걸 고정하기 위해, 그래서 우리는 그러면 분산이 데이터의 변동이 표본에서 이동합니다. 또는 자유도를 잃습니다. 그것은 어떤 숫자를 만족해야 합니다. 그래야 표본 평균을",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2765,
+     "page": 11,
+     "en": "mean equals to number. Okay. Um, okay. This is one example. So many ways of equation, I will I will share the code. And this",
+     "ko": "어떤 값과 같게 만들 수 있으니까요. 네. 음, 알겠습니다. 이게 한 가지 예시입니다. 그래서 방정식의 여러 가지 방법이 있는데, 제가 코드를 공유할게요. 그리고 이것은",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2780,
+     "page": 11,
+     "en": "this is I always say that you have multiple country and estimated in economics, we want to understand how the wage changes by characteristics of workers. So we can look at the data and choose different",
+     "ko": "이것은 제가 항상 말하는 건데 여러분은 여러 나라가 있고 추정치가 있는 경제학에서, 우리는 임금이 어떻게 변하는지 알고 싶어합니다. 그래서 우리는 볼 수 있습니다. 데이터를 그리고 다른 특성을",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2800,
+     "page": 11,
+     "en": "that might be relevant and we turn on So what is the learning? So So this is the learning that multiplication of weighted in our let's say that we knows the wage rate with preach to your productivity. Okay. What determines your productivity? Why some people are more productive than others?",
+     "ko": "선택할 수 있습니다. 그리고 우리는 켜고 그래서 무엇을 배우나요? 그래서 그래서 이것이 우리가 곱셈을 가중치로 하는 것입니다. 예를 들어 우리가 임금을 알고 있고, 그것이 당신의 생산성과 관련이 있다면요. 무엇이 당신의 생산성을 결정하나요? 왜 어떤 사람들은 다른 사람들보다 더 생산적일까요?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2820,
+     "page": 11,
+     "en": "And it comes down to the wage rate which is your productivity. Okay. So by time, right? And the productivity can be different, you know, human capital is different. What is human capital? Human capital is the knowledge skills that is in the human being. So it is useful.",
+     "ko": "그리고 그것은 임금 비율로 귀결되는데, 그것은 당신의 생산성입니다. 네. 그래서 시간에 따라, 그렇죠? 그리고 생산성은 다를 수 있습니다. 그리고 아시다시피, 인적 자본은 다릅니다. 인적 자본이란 무엇일까요? 인적 자본은 지식과 기술을 가진 사람입니다. 그래서 유용합니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2842,
+     "page": 11,
+     "en": "So it can be accounted in the status, about to sleep. Uh how to write and so on. So useful skills, what is embedded in the human being. And whatever affects that skills, usually the production process can be considered as a determinant of the growth. So that is kind of logic.",
+     "ko": "그래서 그것은 회계에 반영될 수 있습니다, 잠들기 전에. 어, 어떻게 쓰고 등등. 그래서 유용한 기술, 무엇이 인간에게 내재되어 있는지. 그리고 그것에 영향을 끼치는 기술은, 주로 생산 과정입니다. 그것은 결정적인 요인으로 간주될 수 있습니다. 그래서 그것은 일종의 논리입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2863,
+     "page": 11,
+     "en": "that we can see the data and choose from relevant characteristics. Do you believe that it will that we will be able to do it? One is education, right?",
+     "ko": "우리가 데이터를 볼 수 있고 선택할 수 있다는 것입니다. 관련성 있는 특성 중에서. 당신은 그것이 우리가 할 수 있을 것이라고 믿습니까? 하나는 교육이죠, 맞죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2882,
+     "page": 11,
+     "en": "Education is for sure of course, knowledge and skills used in the production process. So we also improve the",
+     "ko": "교육은 확실히 지식과 기술이 사용되는 생산 과정입니다. 그래서 우리는 또한 교육을 개선하고",
+     "src": "gemini"
+    }
+   ]
+  },
+  {
+   "page": 24,
+   "en": "education. What else? So, you know, how your rating for change over time? I have a issue with you. So, you may start to pour your entry, you know, the job position. And the entry wage rate. is very different from your final wage rate. So wage rate at your prime age, is a lot higher. And the reason why you get higher wage rate in the in the later period, then may say you are more productive in the later period is because you know more skills. So we also improve experience in the education. So we understand how that component affect the productivity of the worker. So education and experience are two most important factors. Sometimes we say it proves uh stacks because in the so all this. Okay? Uh and then the interpretation we can be more sensitive, right? are careful? Uh so that would apply to another maybe there may be someone else. Everything is on average. We have to be very careful that we know how to estimate it. estimate the user. We have one number. That probably capture the group difference in the wage rate. Okay? So if you look at just estimate, estimation result, the the women's wage rate is 20 or 30% lower than the male counterpart. The way is that they are not it doesn't necessarily mean that they are less productive. In the experience is something else. Like their occupation choice. or they are career interruption. So the selection in the population can be different. So the way you do the preach, you should be very careful and know that we know that there are at the individual level, only there are outliers. What captures is the average relationship. Okay? It it is very informative. So we careful not to overinterpret the result. There must be someone who much, much more productive than male counterpart. And the other around, male can be also less productive. in a certain way. Okay? So it's also very, you know, you you can practice how to interpret the result. in the in such a context and then learn how to be more helpful when you interpret the assessment. And so that I will share with you. So how do we usually uh measure the experience? It would be best if we actually observe the behavior. But sometimes we don't have that information. Census we don't have a lot of the work was in the labor market. Sometimes they are also going inside the labor force, etc. So we often use potential measured by age minus uh six, like the schooling or the if we know their schooling years, if they get the 16 years of schooling, then we construct potential experience like uh age minus 16. Then that is constructed as a proxy for the labor market experience. So as yeah, the people are making the I mean, I share the same thing. I love data from 90s. until very recent. So this is really simple regression. You just run the for each year, you can see the trend. How the return to education changes over time. How the gender difference changes over time. And that's very important. And then in the data set, we have not only age and education, but also we have industry. And that would be interesting for you to explore. Okay. Okay, that's of course. How many of you are familiar with the vector representation? or the function? Other folks prove that they they share that they already talked the linear algebra like a vector. in your class, so you are supposed to do it. And this is is the the formula in vector representation is much cleaner. much more tractable. It's really useful, okay? So um But this is the vector vector representation. I already agreed about it. And even textbook, they like that notation back of course. And this is the easier for you to understand. So you have to uh try to the formula realize how this works. rather than the summation of X, X is much better. Because we don't know the control variable data even the linear regression you want to understand the relationship between education and earning and sex and earning and then experience and earning. You have a multiple variables. So it's hard to to express that in in a scalar way. But it's very clean. We the this formula. So uh in a vector form, the relationship linear relationship can be represented like this. And then what is X and Y? Okay? X is a typical uh control variable. Looks like one the first column always the constant. We have uh times K. Well, so matrix and this is constant. Yeah. Okay? And the variable to me education like X one and so on. Okay. So this is the formula. And then five Okay. So we can add more variables. If you want to add more control variables in the regression, okay? So here is number of um X rather than this. by the characteristics, like education and you want to uh understand the relationship of that variable, uh what else? Why? He's on it. On earning of individuals and we have the and years on to and So why beta plus is the model we have considered. That is true in the population. We want to assume this relationship between one of the variables and Y, the response, have a linear relationship. What means is that beta is uh beta has to be uh beta zero. beta one is okay. So this is the coefficient for each variable, each X variable. So that is why If we express this in the scalar way, then means it is a linear relationship of course. This is not the observation. This is supposed uh assumption um um And X A, I say. or X H. beta 2 X plus beta 3 something else, plus U. So this is a scalar way to represent the linear relationship. In a vector way, we can just write down this one. Right? Okay. This is the hypothesis that we have and this Oh, so it has to be true. So this is Yes. I mean, this is not right. Okay. So we have a case in one so this is a beta. Like X uh this is a transport. So this transport. So we change this into that. the whole matrix, the vector. And then that K so K is and X and and X the this is a one Okay. So that is Okay. Also by Okay. This is the K times X1 Okay, X is one so Okay. It is a way. I see. Okay. We cannot say so it has to be X. Okay. So the linear relationship, so we have X uh one one like that. X X one so X one X2 one, X 2 So this is the observation one of course individual. But they are characteristic and we are looking at K, we can characteristics. And then then beta Then this is K plus one. This is K plus one. times one, right? So we have n times one matrix on the left side. But what I'm saying is that the matrix that we look at the sample for each individual, this is individual one. And individual n. It's a characteristic one. So this is a constant if you take the characteristic K, and then uh the this one is X matrix and we really the Y matrix, Y one to the Y and we take this matrix we can estimate beta. And at the same time, C is continuous. So uh yeah, this is not it's not so difficult. But this is just the the order is important. And then okay, this expected value So that means that this is value. Y minus X beta is the residual. And then the sum of squared error to be divided by the output product, the the product of this two. Should be should be the mean. And of course And if you this one, explain why it's similar to the previous and explain why it's different or similar to the previous. So, is that it it is the same formula, just that it's written in a matrix. So, why do we need this? Let's do it one more time. Okay? So here, we we take partial derivative with respect to theta. Because theta is all coefficients. This is a vector. Theta has uh the coefficients for the constant which is the first characteristic equation, so it's a vector. The vector with we take a partial derivative with respect to with respect to that. Okay? Then uh we can just write the matrix algebra and we just just So, that if we rearrange this then we have this relationship. Uh if equation, then uh this is the formula. So again, or is a function of or something. Okay? And once you are given X, that's a matrix. Y is a matrix, you can always compute this number. Once you compute this number, you will get one K plus one dimensional number. This vector which will represent a coefficient for different variables. different characters. Uh it makes sense. Okay? And I think it's better for you to know this formula. And if you keep it, it's a covariance divided by variance. Questions? So, we just we have to remember this formula because here, we will be doing the simplest case. We will think about what is the error structure for different individuals are different. Now, we are assuming that everybody has the same distribution. And then the individual is also from the same distribution. So, that's simple. That's the simplest situation, but later, you will think that is a general we assume that the group of individuals across certain population share the same error structure, but that's related to different from other groups. It can be counted. It can be reduced as the differences or it can be like education level or etc. Whatever that you believe that there is some differences in the underlying characteristic, like we have a simple case. Then if you know the matrix formula, it is if you come to very simple, how to adjust it. Okay? But if you don't know that, there's uh I cannot handle scalar version of the formula how to deviate. From the simplest case. Okay? So, This one, I think if we look at, if we look at the matrix property, how to do it. And what if linearity have a problem? Multi linearity Now, these like the the software can detect this is a problem. And the multi linearity uh property can resist that. A could be have uh like X variables like the education age and so on. If X vector is very likely to have strong correlation with the other vector, it can be potential experience and age. Like construction, they are perfectly correlated, right? Because um uh conditional education, but if they are uh highly correlated, then it's difficult to calculate this inverse matrix. That's a mathematical uh very but then this that we don't have solution. for the OLS estimator. If X vector vectors are correlated, if they are perfectly correlated, then more than one A and B satisfy the same um equations. Okay? So for instance, if X plus X1 plus X2 equals what? One example is if if this is indicated by the name, what? If the OLS terms one, right? But they are perfectly correlated. That making us separate uh separately estimate the coefficient for this variable and that variable. The reason is that if you are if you have a perfectly linear relationship, then if we define this relationship, then we can rewrite that relationship like this. But we can find on that here estimate. So we cannot determine the coefficient because um perfect correlation and mathematically it's clear. The inverse function does not exist. If if the length is less than one, n. So it is not independent. Linearly independent, if the relationship uh one one row or relationship is scalar plus multiplication of the other equation, equation in the row, then there's more extra information on having additional additional Uh that is a bit abstract, but linearity is a problem. This is a problem. This is a very basic thing. So you need to check whether you include two variables we have some perfect correlation. One example is gender. If you include the male in the equation, you should not include female in the equation. If you include the male and female, together, then the rest, because of multiple linearity, the estimation is impossible. And then the software will tell you that there's a multiple linearity problem or you have to know that. So you have to include either male or female. Same, if you have some dummy variable, whether you have a car or not, you have to include college education only you should not include the the other do by the way, if you still some to one, you have to include only one. Okay? Well, how do you identify less than college? What is college education? Then maybe a perfectly uh correlated, right? So if you use the word, then it's zero. So then you have to choose only one variable. to be included in the estimation. And then that is related to the condition. And it's very clear mathematically, you understand the vector. Only if the rank condition fails, we cannot have the inverse matrix. So the inverse matrix. It has to be linearly independent. Two defined to have inverse matrix, okay? But I think that's the mathematical expression, but intuitively, using the same thing. So Ví dụ như là mỗi một số So, what are the things we have that we can do? It means not that. It's not the only solution. My job is to that's actually how we change laws and then exchange And that that means avoiding other things If we have a real problem, then that that Yeah. X education V H And this is not a podcast. In fact, it means that condition on all of us. How change happens, or whatever. And everybody knows linear relationship and we can have a scare and exists uh to um thought of power is okay. Uh then the implication is a little bit different. It's it's not uh typical situation. We we we all just look at the linear regression first. And it's pretty good enough. And and So, you know, like So, do you remember the beautiful way to detect heterogeneity at, okay? So, we discuss duration means that if we don't understand that we have the education, and we back of H, if we don't have this term, if we don't have this term, then we assume that the effect of H is constant without the education. But but if we think that the effect of H is or is different by education level, it's sensible to include this interaction term. The interaction term means that so if we include this term, then we assume that education increases, it has a direct effect on and also has an indirect effect of earning through with experience. Now, how much additional do you think the gain of students in the higher education? So, if you are interested in how to um how to practice how the complementary substitutability in this outcome, you better include this interaction term. So, like that. education and may have a direct effect, but if you don't understand how the effect changes by education, level, how the effect of age changes by education level, how the effect of education changes by age, you have to include this interaction term. So you include this one, the question says that you can have a direct effect, and then the effect of education on the other characteristics. And this is very practical thing. So in many cases we are interested in the gender differences, right? But then and we we only include the gender dummy, that everything is absolute in that dummy. But if we want to know that heterogeneous effect of education by gender, we have to include gender times education in the regression. We create that we can see how the return to education is different by gender. So if you want to detect any by different groups, you have to include in the regression. Uh, you know, transformation I already told you, it has just the percentage change. So this is very important in economics when you open you want to understand the elasticity, which means that what is the elasticity of consumption. What is the elasticity of the price with respect to the rate. The goal is to show that the rule which is uh independent of the dummy. This rate is a dummy. So one example is sex, right? One or zero. Kind of education or not. Not every variable takes a continuous values. Only in case continuous value, age can be continuous, but some variables are like that. categorical variables can be discrete, one or zero. And then that is, you know, can be included in the one or zero. And then we just run the regression. And then we interpret the coefficient. Uh, the dummy variable is that the effect of being in that group. What do you think? Okay? So if this is male, then the male then male's earning is on average higher by than female. So this beta can be interpreted as the difference. between the group dummy variable one and the group dummy variable zero. Uh, so that's the technique. Mhm. Yeah. So what is the hypothesis how to decompose the inequality? We can decompose the inequality by it can be explained by education in and the inequality is by the inequality in something else, like that. Okay, so if you have the estimated then estimates, then you can you can decompose the variance of the income. Okay? So today whether we just discuss how to do the construction and the methodology again, to the data. And then next week, we will talk about why the is",
+   "ko": "있습니다. 그러면 또 무엇이 있을까요? 그래서, 아시다시피, 당신의 등급이 시간이 지남에 따라 어떻게 변하는지? 저는 당신에게 문제가 있습니다. 그래서, 당신은 당신의 입력을 시작할 수 있습니다, 아시다시피, 직업 위치를. 그리고 입사 임금률은 매우 다릅니다. 당신의 최종 임금률과. 그래서 당신의 전성기 때의 임금률, 은 훨씬 높습니다. 그리고 그 이유가 당신이 더 높은 임금률을 받는 것은 나중에 더, 그러면 당신이 더 생산적이라고 말할 수 있습니다. 나중에 더 생산적인 것은 당신이 더 많은 기술을 알기 때문입니다. 그래서 우리는 또한 경험을 개선합니다. 교육에서. 그래서 우리는 어떻게 그 구성 요소가 생산에 영향을 미치는지 이해합니다. 그래서 교육과 경험은 가장 중요한 두 가지입니다. 때로는 그것이 증명한다고 말합니다. 그 이유는 나중에 이 모든 것이기 때문입니다. 알겠죠? 어, 그리고 해석은 우리가 더 많은 것을 느낄 수 있다는 것입니다, 맞죠? 조심스럽게? 어, 그래서 그것은 다른 사람에게도 적용될 수 있습니다. 그리고 모든 것은 평균입니다. 우리는 매우 조심해야 합니다. 우리가 그것을 어떻게 추정하는지 알아야 합니다. 우리는 하나의 숫자가 있습니다. 그것은 아마도 그룹의 임금 차이를 포착할 것입니다. 그렇죠? 그래서 만약 당신이 추정치만 본다면, 추정 결과는, 그 여성의 임금률은 20% 또는 30% 낮습니다. 남성보다 임금률을 계산하는 방식은 그것이 아니라는 것입니다. 그들이 덜 생산적이라는 뜻은 아닙니다. 그 경험은 다른 것입니다. 예를 들어 그들의 직업 선택. 또는 그들이 경력 단절이 있을 수 있습니다. 그래서 그 선택은 인구 내에서 다를 수 있습니다. 그래서 당신이 설교하는 방식은, 매우 조심해야 합니다. 그리고 우리가 알고 있는 것은 있다는 것입니다. 개인 수준에서 오직 이상치만 있다는 것입니다. 무엇이 포착하는 것은 평균적인 관계입니다. 알겠죠? 그것은 매우 유익합니다. 그래서 우리는 조심해야 합니다. 과도하게 해석하지 않도록. 알겠죠? 어딘가에 누군가가 있을 것입니다. 훨씬, 훨씬 더 생산적인 남성보다. 그리고 다른 한편으로는, 남성도 덜 생산적일 수 있습니다. 어떤 면에서는. 알겠죠? 그래서 그것은 또한 매우, 아시다시피, 당신은 당신은 연습할 수 있습니다. 어떻게 결과를 해석하는지. 그 그런 맥락에서 그리고 어떻게 하면 더 도움이 될 수 있는지 배울 수 있습니다. 결과를 해석할 때. 그리고 그래서 제가 여러분과 공유할 게요. 그럼 우리는 보통 어떻게 측정하나요? 그 경험을요? 그건 우리가 실제로 관찰하는 것이 가장 좋습니다. 하지만 때로는 그런 정보가 없을 때도 있습니다. 인구 조사에서는 많은 작업이 없어요. 그건 노동 시장에 있었어요. 때로는 그들도 또한 노동 시장에 들어가고 있습니다. 등등. 그래서 우리는 종종 잠재적인 경험을 측정하기 위해 나이 빼기 어 6, 예를 들어 학교 교육이나 만약 우리가 알고 있다면 그들의 학교 교육 연수, 만약 그들이 16년의 학교 교육을 받으면, 우리는 잠재력을 구성합니다. 예를 들어 어 나이 빼기 16. 그러면 그것은 구성됩니다. 대리 변수로 노동 시장 경험을 나타냅니다. 그래서 네, 그 사람들이 제 말은, 제가 같은 것을 공유한다는 뜻이에요. 저는 19 90년대 데이터를 아주 최근까지 좋아해요. 그래서 이것은 정말 간단한 회귀 분석입니다. 그냥 매년마다 실행하면, 볼 수 있습니다. 추세를. 어떻게 교육에 대한 수익이 시간이 지남에 따라 변하는지. 어떻게 성별 차이가 시간이 지남에 따라 변하는지. 그리고 그건 매우 중요합니다. 그리고 데이터 세트에는 나이뿐만 아니라 교육도 있지만, 또한 우리는 산업도 있습니다. 그리고 그건 흥미로울 것입니다. 여러분이 탐구해 볼 만한. 알겠죠? 네, 그건 물론이죠. 여러분 중 몇 분이 그 벡터 표현에 익숙하신가요? 아니면 함수인가요? 다른 사람들은 증명해요 그들이 공유한다는 것을 이미 이야기했다는 것을, 선형적인 대수학 같은 것을요. 수업 시간에, 그래서 당신은 학생들에게 하라고 하는 거죠. 그리고 이것은 그 그 공식은 벡터에서 표현 방식인데 훨씬 더 깔끔해요. 훨씬 더 다루기 쉬워요. 정말 유용해요, 알겠죠? 그래서 음 하지만 이게 벡터 벡터 표현 방식이에요. 저는 이미 동의했어요. 그리고 교과서에서도, 그들은 그런 표기법을 좋아해요. 그리고 이것은 여러분이 이해하기 더 쉬워요. 그래서 여러분은 어, 노력해야 해요, 그 공식에 대해 깨달아야 해요, 이게 어떻게 작동하는지. 보다는 합계가 아니라 X, X 가 훨씬 더 나아요. 왜냐하면 우리는 제어 변수를 모르니까요. 심지어 선형 회귀도 여러분이 원하면 이해해야 해요, 관계를 교육과 소득 사이의 관계를 그리고 성별과 소득 그리고 경력과 소득의 관계를. 여러분은 여러 변수를 가지고 있어요. 그래서 어려워요, 그걸 표현하기가. 그걸 어떤 스칼라 방식으로. 하지만 아주 깔끔해요. 우리는 그 이 공식을. 그래서 어, 어떤 벡터 형태에서는, 그 관계가 선형 관계가 될 수 있어요. 이렇게. 그리고 X와 Y는 무엇인가요? 알겠죠? X는 전형적인 어 제어 변수예요. 마치 하나처럼 첫 번째 열이 항상 상수예요. 우리는 어 곱하기 K예요. 음, 그래서 행렬 그리고 이것은 상수예요. 네. 알겠죠? 그리고 그 변수는 저에게는 교육 X처럼 하나 등등이에요. 알겠습니다. 그래서 이게 공식이에요. 그리고 그런 다음 5 알겠습니다. 그래서 우리는 더 많은 변수를 추가할 수 있어요. 만약 더 많은 것을 추가하고 싶다면 회귀 분석에, 알겠죠? 그래서 여기서는 숫자가 몇 개인지 음 X 보다는 이게 더 나아요. 참고로 특성별로, 예를 들어 교육 그리고 당신이 어 이해하고 싶다면 관계를 그 변수의, 어 또 뭐가 있죠? 왜? 그는 하고 있어요. 하고 있는 개인의 소득 그리고 우리는 그리고 연수 에 대한 그리고 그리고 그래서 왜 베타 벡터 플러스 는 우리가 가지고 있는 모델입니다. 그게 사실이에요 모집단에서. 우리는 이 관계가 하나의 변수와 Y 사이의 관계가 선형이라고 가정하고 싶습니다. 즉, 베타가 는 어 베타는 어 베타 제로여야 합니다. 베타 원은 괜찮아요. 그래서 이게 계수입니다. 각 변수에 대한, 각 X 변수에 대한. 그래서 만약 우리가 이것을 스칼라 방식으로 표현한다면, 그것은 선형 관계입니다. 물론이죠. 이것은 관측값이 아닙니다. 이것은 가정입니다. 음 음 그리고 X A, 제가 말했듯이. 또는 X H. 베타 2 X 플러스 베타 3 뭐 이런 식이고, 플러스 U입니다. 그래서 이것은 스칼라 방식으로 선형 관계를 나타내는 것입니다. 벡터 방식으로는, 그냥 이렇게 쓸 수 있습니다. 그렇죠? 네. 이것은 가설입니다. 우리가 가지고 있는 그리고 이것은 아, 그래서 그게 사실이어야 해요. 그래서 이것은 네. 제 말은, 이게 틀렸다는 거예요. 네. 그래서 우리는 어떤 경우를 가지고 있는데 그래서 이것은 베타입니다. 예를 들어 X 어 이것은 운송입니다. 그래서 이것은 운송입니다. 그래서 우리는 이것을 로 바꿉니다. 전체 행렬, 그 벡터. 그리고 그것은 K 그래서 K 는 그리고 X 그리고 그리고 X 그 이것은 하나입니다. 네. 그래서 그게 네. 또한 에 의해 네. 이것은 K 곱하기 X1 네, X 는 하나입니다. 그래서 네. 그것은 하나의 방법입니다. 알겠습니다. 네. 우리는 그렇게 말할 수 없습니다. 그것은 반드시 X여야 합니다. 네. 그래서 선형 관계, 그래서 우리는 X 어 하나 하나 이렇게요. X X 하나 그래서 X 하나 X2 하나, X 2 그래서 이것은 관측값 하나, 물론 개별적이죠. 하지만 그것들은 특징적이고 우리는 K를 보고 있습니다, 특징을. 그리고 나서 베타 그럼 이건 K 플러스 1입니다. 이건 K 플러스 1입니다. 곱하기 1이죠, 맞죠? 그래서 우리는 n 곱하기 1 행렬이 왼쪽에 있어요. 하지만 제가 말하는 것은 행렬이 우리가 보는 것은 각 샘플에 대한 것이고, 이것은 개별적인 것입니다. 그리고 개별적인 n. 이것은 특징적인 것입니다. 그래서 이것은 상수이고 만약 여러분이 특징 K를 취하면, 그리고 그 이것은 X 행렬입니다. 그리고 우리는 정말로 Y 행렬, Y 1부터 Y 까지 그리고 우리는 이 행렬을 취해서 추정할 수 있습니다. 베타를. 그리고 동시에, C는 연속적입니다. 그래서 어 네, 이건 아니에요, 그렇게 어렵지 않아요. 하지만 이건 그냥 순서가 중요해요. 그리고 나서 알았어요, 이건 기대값 그래서 이건 값이라는 뜻입니다. Y 빼기 X 베타 는 잔차입니다. 그리고 나서 합은 오차 제곱의 합을 나누는 것은 출력값 곱, 그 그 곱은 이 두 가지입니다. 되어야 합니다. 되어야 합니다. 평균이. 그리고 만약에 이거라면, 설명해 주세요 왜 이게 비슷한지 이전 거랑 그리고 왜 이게 다른지 또는 비슷한지 설명해 주세요. 그래서, 그게 같은 건가요? 그냥 다른 방식으로 쓰여진 거죠. 그래서, 왜 이게 필요할까요? 한 번 더 해볼게요. 알겠죠? 그래서 여기서는, 우리가 편미분을 에 대해 구하고 세타에 대해 구해요. 왜냐하면 세타는 모든 계수이기 때문이죠. 이건 벡터예요. 세타는 어, 계수들을 가지고 있어요. 상수와 그리고 첫 번째 특성인 특성 방정식, 그래서 벡터예요. 벡터는 와 함께 우리가 편미분을 에 대해 구하고 에 대해 구해요. 알겠죠? 그러면 어, 우리는 그냥 행렬을 쓰고 그냥 그냥 그래서, 그게 만약 우리가 이걸 재배열하면 그러면 이런 관계가 돼요. 어, 방정식이라면, 그러면 이게 그 공식이에요. 그래서 다시, 또는 은 함수입니다. 의 함수이거나 뭐 그런 거죠. 알겠죠? 그리고 일단 주어지면 X가, 그건 행렬이에요. Y는 행렬이고, 항상 계산할 수 있어요. 이 숫자를. 일단 계산하면 이 숫자를 얻게 될 거예요. 하나의 K 플러스 1 차원 숫자를. 이 벡터는 무엇을 나타낼 것인가 하면 다른 변수들에 대한 계수입니다. 다른 문자들. 어, 말이 되죠? 알겠죠? 그리고 제 생각엔 이게 여러분이 이걸 아는 게 더 좋을 것 같아요. 그리고 만약 이걸 유지하면, 그건 공분산을 분산으로 나눈 거예요. 질문 있으신가요? 그래서, 우리는 이 공식을 기억해야 해요 왜냐하면 여기서, 우리는 간단한 경우를 할 거예요. 우리는 무엇이 오차 구조인지 다른 개인들에 대해 다른지 생각해 볼 거예요. 이제, 우리는 모든 사람이 같은 분포를 가지고 있다고 가정하고 있어요. 그리고 개인도 같은 분포에서 왔어요. 그래서, 그건 간단해요. 그게 가장 간단한 상황이지만, 나중에, 여러분은 그게 일반적인 거라고 가정하고 있어요. 그룹의 개인들이 특정 인구 집단에 걸쳐 같은 오차 구조를 공유한다고 하지만 그건 다른 그룹과는 다르다는 것과 관련이 있어요. 계산될 수 있어요. 줄어들 수 있어요. 차이가 있거나 아니면 뭐 예를 들어 교육 수준이 다르거나 등등. 어쨌든 여러분이 믿기에 어떤 차이가 있다고 생각하는 기저 특성에서 예를 들어 우리가 간단한 경우를 가지고 있어요. 그러면 만약 여러분이 행렬을 안다면, 그건 만약 여러분이 아주 간단하게 어떻게 조정하는지 알겠죠? 알겠죠? 하지만 그걸 모른다면, 어, 저는 다룰 수 없어요. 스칼라 버전은 그 공식이 어떻게 벗어나는지. 가장 간단한 경우에서. 알겠죠? 그래서, 이건 제 생각엔 만약 우리가 보면, 만약 우리가 행렬을 보면, 어떻게 하는지. 그리고 만약 선형성이 문제가 있다면? 다중 선형성 자, 이 것들은 소프트웨어 가 감지할 수 있어요, 이게 문제라는 걸. 그리고 다중 선형성은 어, 속성 이 그걸 견딜 수 있어요. A는 가질 수 있어요 어, 예를 들어 X 변수들, 예를 들어 교육 나이 그리고 등등. 만약 X 벡터가 매우 그럴듯하다면 그럴 가능성이 높다면 다른 벡터와 강한 상관관계가 있을 수 있고, 잠재적인 경험과 나이가 될 수 있어요. 예를 들어 건설업, 그들은 완벽하게 상관관계가 있죠, 그렇죠? 왜냐하면 음 어 조건부 교육이지만, 만약 그들이 어, 매우 상관관계가 있다면, 그러면 어렵죠 계산하기가 이 역행렬을 계산하기가. 그건 수학적인 어, 매우 하지만 그러면 이것은 우리가 가지고 있지 않다는 거예요. 그 OLS 추정량에 대해서. 만약 X 벡터가 벡터들이 상관관계가 있다면, 만약 그들이 완벽하게 상관관계가 있다면, 그러면 하나 이상의 A와 B가 그 동일한 음 방정식을 만족해요. 알겠죠? 그래서 예를 들어, 만약 X 더하기 X1 더하기 X2가 무엇이라면? 한 가지 예는 만약 만약 이것이 표시된다면 이름으로, 무엇이? 만약 OLS 항들이 하나죠, 그렇죠? 하지만 그들은 완벽하게 상관관계가 있어요. 그건 우리를 분리하게 어 따로따로 추정하게 해요. 계수를 이 변수에 대해 그리고 저 변수에 대해. 이유는 만약 당신이 만약 당신이 완벽하게 선형적인 관계를 가지고 있다면, 그러면 만약 우리가 이것을 정의한다면, 그러면 우리는 그 관계를 이렇게 다시 쓸 수 있어요. 하지만 우리는 그것에 대해 여기서 추정할 수 있어요. 그래서 우리는 결정할 수 없어요. 계수를 왜냐하면 음 완벽하게 상관관계가 있죠. 그리고 수학적으로 분명해요. 그 역행렬 함수는 존재하지 않아요. 만약 만약 길이가 보다 작다면 n. 그래서 독립적이지 않아요. 선형적으로 독립적이라면, 만약 그 관계가 어 하나 하나의 행이 또는 관계가 있다면 스칼라 더하기 다른 것의 곱셈 또는 다른 방정식, 그리고 그 방정식은 행에 있고, 그러면 더 많은 추가 정보가 있는 거예요. 추가적인 추가적인 어, 그건 좀 추상적이지만, 하지만 선형성은 문제예요. 이건 문제예요. 이건 아주 기본적인 거예요. 그래서 확인해야 해요. 포함하는지 두 개의 변수를 우리가 가지고 있는 어떤 완벽한 상관관계. 한 가지 예는 성별입니다. 만약 남성을 포함하고 방정식에 넣는다면, 여성은 포함하지 않아야 합니다. 만약 남성을 포함하고 여성을 포함한다면, 나머지는, 다중 공선성 때문에, 그 추정치는 불가능합니다. 그리고 소프트웨어가 알려줄 거예요, 다중 공선성이 있거나 그걸 알아야 한다고. 그래서 둘 중 하나를 포함해야 해요. 남성이나 여성. 마찬가지로, 만약 어떤 더미 변수가 있다면, 자동차가 있는지 없는지, 당신은 자동차가 있는 것과 대학 교육을 포함해야 해요. 당신은 포함하지 않아야 합니다. 그 다른 것은 그런데, 만약 여전히 일부를 하나로 포함해야 해요. 하나만. 알겠죠? 음, 어떻게 식별하나요? 대학 미만은요? 대학 교육은 무엇인가요? 그러면 아마도 완벽하게 어 상관관계가 있죠, 그렇죠? 그래서 그 단어를 사용하면 0이 돼요. 그래서 둘 중 하나만 선택해야 해요. 포함될 추정치에. 그리고 그건 조건과 관련이 있어요. 그리고 수학적으로 아주 명확해요, 이해가 되죠, 벡터를. 오직 계급이 실패하면, 우리는 할 수 없어요, 역행렬을. 그래서 역행렬을. 그것은 선형적으로 독립적이어야 해요. 두 개의 정의된 역행렬을 가지려면. 알겠죠? 하지만 제 생각엔 그게 수학적인 표현이고, 하지만 직관적으로는 사용하는 것은 똑같아요. 그래서 예를 들어 각 번호마다 그래서, 우리가 할 수 있는 것들은 무엇일까요? 그게 아니라는 뜻이에요. 그게 유일한 해결책은 아니에요. 제 일은 사실 그게 어떻게 우리가 법을 바꾸고 교환하는지 에 대한 것입니다. 그리고 그건 다른 것들을 피하는 것을 의미합니다. 만약 우리가 정말 문제가 있다면, 그러면 그게 네. X 교육 V H 그리고 이건 팟캐스트가 아니에요. 사실, 그건 조건이 우리 모두에게 있다는 뜻이에요. 어떻게 변화가 일어나는지, 또는 뭐 그런 거요. 그리고 모두가 선형 관계가 있다는 걸 알고 있고, 우리는 공포를 느끼고 존재할 수 있어요. 음, 권력에 대한 생각은 괜찮아요. 음, 그러면 그 의미는 조금 달라요. 그건 어, 일반적인 상황이 아니에요. 우리는 우리 모두 그냥 그 선형 회귀를 먼저 봐요. 그리고 그건 꽤 괜찮아요. 그리고 그리고 그래서, 아시다시피 그래서, 기억나세요? 아름다운 감지 방법이요. 이질성을 감지하는 방법, 알겠죠? 그래서, 우리는 지속 시간이 의미하는 것은 만약 우리가 이해하지 못하면 우리에게 교육이 있다는 것이고, 우리는 H의 뒤로, 만약 우리가 이 항이 없다면, 만약 우리가 이 항이 없다면, 그러면 우리는 H의 효과가 H의 효과가 일정하다고 가정합니다. 그 교육 없이. 하지만 하지만 만약 우리가 그렇게 생각한다면 H의 효과가 일정하다고 가정하거나 다르다고 가정하면 교육 수준에 따라 다르다면, 그것은 포함하는 것이 합리적입니다. 이 상호작용 항을요. 상호작용 항은 그러니까 만약 우리가 이 항을 포함하면, 그러면 우리는 교육이 증가하면, 그것이 직접적인 효과가 있다고 가정하고, 또한 간접적인 효과도 있다고 가정합니다. 에 대한 간접적인 효과는 경험과 함께입니다. 자, 얼마나 추가적인 것이라고 생각하시나요? 학생들의 더 높은 교육에서의 이득은? 그래서, 만약 여러분이 어떻게 음, 권력을 어떻게 실천하는지 에 관심이 있다면, 그 보완적인 대체 가능성은 이 문맥에서 결과에 대해, 여러분은 이 상호작용 항을 포함하는 것이 좋습니다. 그래서, 교육과 그리고 아마도 직접적인 효과가 있을 수 있지만, 만약 여러분이 효과가 어떻게 변하는지 이해하지 못한다면, 교육 수준에 따라 어떻게 H의 효과가 교육 수준에 따라 변하는지, 어떻게 교육의 효과가 나이에 따라 변하는지, 여러분은 이 상호작용을 포함해야 합니다. 그래서 이 것을 포함하면, 질문은 여러분이 직접적인 효과를 가질 수 있고, 그런 다음 교육이 다른 것에 미치는 효과입니다. 그리고 이것은 매우 실용적인 것입니다. 그래서 많은 경우에 우리는 성별이 다르다는 것에 관심이 있죠? 하지만 그리고 우리는 오직 성별 더미만 포함하면, 모든 것이 절대적이라는 뜻이 됩니다. 하지만 우리가 이질적인 교육 효과를 알고 싶다면, 우리는 성별 더미를 포함해야 합니다. 교육과 함께 회귀 분석에. 우리는 그것을 만들고 어떻게 수익률이 교육에 따라 다른지 볼 수 있습니다. 그래서 만약 여러분이 어떤 이질적인 것을 감지하고 싶다면, 여러분은 회귀 분석에 포함해야 합니다. 어, 아시다시피, 변환은 이미 말씀드렸듯이, 그냥 백분율 변화만 있습니다. 그래서 이것은 경제학에서 매우 중요합니다. 여러분이 임금의 탄력성을 이해하고 싶을 때, 즉 소비의 탄력성이 무엇인지 알고 싶을 때입니다. 가격의 탄력성은 무엇인지에 대한 것입니다. 목표는 보여주는 것입니다. 그 규칙이 그것은 어, 더미와는 독립적이라는 것입니다. 이 비율은 더미 변수입니다. 그래서 한 가지 예는 다음과 같습니다. 성별이죠, 1 또는 0. 일종의 교육 여부입니다. 모든 변수가 연속적인 값을 갖는 것은 아닙니다. 오직 연속적인 값인 경우에만, 나이는 연속적일 수 있지만, 일부 변수는 그렇습니다. 범주형 변수입니다. 범주형 변수는 이산적일 수 있습니다, 1 또는 0. 그리고 그것은, 아시다시피, 회귀 분석에 포함될 수 있습니다. 그리고 우리는 그냥 회귀 분석을 실행합니다. 그리고 계수를 해석합니다. 어, 더미 변수는 이것입니다. 효과는 그 그룹에 속해 있다는 것입니다. 어떻게 생각하세요? 알겠죠? 그래서 만약 이것이 남성이라면 그러면 그 남성은 그러면 남성의 소득은 평균적으로 더 높습니다. 여성보다 그래서 이 베타는 다음과 같이 해석할 수 있습니다. 사이의 그룹 간의 더미 변수 1과 그룹 더미 변수 0 사이의 어, 그래서 그게 그 기법입니다. 음. 네. 그래서 가설은 무엇인가요? 어떻게 분해하는지 불평등을? 우리는 분해할 수 있습니다. 불평등을 통해 그것은 설명될 수 있습니다. 교육에 의해 그리고 불평등은 어, 그에 의해 불평등은 다른 것, 예를 들어 그런 것과 같습니다. 알겠죠? 그래서 만약 여러분이 추정된 값을 가지고 있다면, 그러면 추정치를 분해할 수 있습니다. 분산의 소득을. 알겠죠? 그래서 오늘은 뭐랄까, 우리가 그냥 어떻게 하는지 논의하고 구성을 그리고 방법론을 다시 한번, 그 데이터에 대해. 그리고 다음 주에는, 우리는 왜 그게",
+   "pdf": "lecture_week2_OLS_part1.pdf",
+   "pdfPage": 23,
+   "slideText": "Definition We want to learn about the link between Y and variables X 1 , . . . , X K . The simplest relationship is linear: Y = a + b 1 X 1 + b 2 X 2 + · · · + b K X K . This is the regression of the dependent variable Y on regressors X 1 , . . . , X K with an intercept. Example: the Mincer wage equation (data: U.S. CPS). Y = log income; the regressors capture human capital — X 1 years of education, X 2 potential experience, X 3 its square, and so on. Why we need it. In the class-size regression, u contains family income, English learners, teacher quality. . . all plausibly correlated with STR. Multiple regression is how we take some of them out of u and put them on the right-hand side. Sunha Myong (Kyung Hee University) OLS: the estimator 23 / 36",
+   "liveNotes": {
+    "notes": [
+     "▶ **더미변수**(dummy variable): 상호배타적 범주는 하나만 포함(기준범주 필요, 다중공선성 방지)",
+     "▶ 설명변수 간 **선형독립**(linearly independent) 필요 → 더미변수 완전상관 시 행렬식=0, **계수조건**(rank condition) 위반, 역행렬(inverse matrix) 존재 안 함",
+     "▶ 교육의 효과가 성별에 따라 다르면 **상호작용항**(interaction term) 포함해 탐지해야 함(성별더미만 쓰면 효과 흡수됨)",
+     "▶ **로그변환**(log transformation)=퍼센트 변화 → **탄력성**(elasticity) 해석에 사용, 예: 소비의 탄력성",
+     "▶ 더미변수 예: 성별더미(남성=1)의 계수(β)=남성이 여성보다 평균적으로 소득이 높은 정도(그룹 간 평균차이로 해석)"
+    ],
+    "summary": "다중회귀 정의·더미해석",
+    "exam": [],
+    "board": [],
+    "at": 1789526756070
+   },
+   "marks": [
+    {
+     "line": 8,
+     "type": "",
+     "note": "예:성별더미→20~30%낮음"
+    },
+    {
+     "line": 6,
+     "type": "",
+     "note": "경력변수: 선택효과 주의"
+    },
+    {
+     "line": 3,
+     "type": "",
+     "note": "β 벡터화→편미분,정규방정식"
+    }
+   ],
+   "lines": {
+    "w": 453.543,
+    "h": 255.118,
+    "lines": [
+     {
+      "i": 0,
+      "text": "Definition",
+      "x": 8.504,
+      "y": 5.714800000000007,
+      "w": 56.9687602,
+      "h": 16.49813
+     },
+     {
+      "i": 1,
+      "text": "We want to learn about the link between Y and variables X 1 , . . . , X K . The simplest",
+      "x": 10.908999999999999,
+      "y": 49.97990000000001,
+      "w": 387.13378235000005,
+      "h": 12.545465
+     },
+     {
+      "i": 2,
+      "text": "relationship is linear:",
+      "x": 10.909000000000049,
+      "y": 63.528900000000014,
+      "w": 93.57935071,
+      "h": 12.545465
+     },
+     {
+      "i": 3,
+      "text": "Y = a + b 1 X 1 + b 2 X 2 + · · · + b K X K .",
+      "x": 139.44500000000005,
+      "y": 77.07790000000003,
+      "w": 174.65354797999993,
+      "h": 12.545465
+     },
+     {
+      "i": 4,
+      "text": "This is the regression of the dependent variable Y on regressors X 1 , . . . , X K with an intercept.",
+      "x": 10.908999999999992,
+      "y": 97.10290000000003,
+      "w": 431.72870345000007,
+      "h": 12.545465
+     },
+     {
+      "i": 5,
+      "text": "Example: the Mincer wage equation (data: U.S. CPS). Y = log income; the regressors",
+      "x": 10.909000000000049,
+      "y": 130.17890000000003,
+      "w": 413.22753856,
+      "h": 12.545465
+     },
+     {
+      "i": 6,
+      "text": "capture human capital — X 1 years of education, X 2 potential experience, X 3 its square, and",
+      "x": 10.909000000000049,
+      "y": 143.72790000000003,
+      "w": 425.70823724999997,
+      "h": 12.545465
+     },
+     {
+      "i": 7,
+      "text": "so on.",
+      "x": 10.909000000000049,
+      "y": 157.27690000000004,
+      "w": 27.390568280000004,
+      "h": 12.545465
+     },
+     {
+      "i": 8,
+      "text": "Why we need it. In the class-size regression, u contains family income, English learners,",
+      "x": 10.909000000000049,
+      "y": 176.80390000000003,
+      "w": 408.1906995,
+      "h": 12.545465
+     },
+     {
+      "i": 9,
+      "text": "teacher quality. . . all plausibly correlated with STR. Multiple regression is how we take some",
+      "x": 10.909000000000049,
+      "y": 190.35290000000003,
+      "w": 424.0432624599998,
+      "h": 12.545465
+     },
+     {
+      "i": 10,
+      "text": "of them out of u and put them on the right-hand side.",
+      "x": 10.909000000000049,
+      "y": 203.90290000000005,
+      "w": 249.73323225000001,
+      "h": 12.545465
+     },
+     {
+      "i": 11,
+      "text": "Sunha Myong (Kyung Hee University) OLS: the estimator 23 / 36",
+      "x": 24.024,
+      "y": 246.4834,
+      "w": 424.1985648,
+      "h": 6.8742399999999995
+     }
+    ]
+   },
+   "segs": [
+    {
+     "t": 2885,
+     "page": 24,
+     "en": "education. What else? So, you know, how your rating for change over time? I have a issue with you. So, you may start to pour your entry, you know, the job position. And the entry wage rate. is very different from your final wage rate. So wage rate at your prime age, is a lot higher.",
+     "ko": "있습니다. 그러면 또 무엇이 있을까요? 그래서, 아시다시피, 당신의 등급이 시간이 지남에 따라 어떻게 변하는지? 저는 당신에게 문제가 있습니다. 그래서, 당신은 당신의 입력을 시작할 수 있습니다, 아시다시피, 직업 위치를. 그리고 입사 임금률은 매우 다릅니다. 당신의 최종 임금률과. 그래서 당신의 전성기 때의 임금률, 은 훨씬 높습니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2907,
+     "page": 24,
+     "en": "And the reason why you get higher wage rate in the in the later period, then may say you are more productive in the later period is because you know more skills. So we also improve experience in the education. So we understand how that component affect the productivity of the worker.",
+     "ko": "그리고 그 이유가 당신이 더 높은 임금률을 받는 것은 나중에 더, 그러면 당신이 더 생산적이라고 말할 수 있습니다. 나중에 더 생산적인 것은 당신이 더 많은 기술을 알기 때문입니다. 그래서 우리는 또한 경험을 개선합니다. 교육에서. 그래서 우리는 어떻게 그 구성 요소가 생산에 영향을 미치는지 이해합니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2929,
+     "page": 24,
+     "en": "So education and experience are two most important",
+     "ko": "그래서 교육과 경험은 가장 중요한 두 가지입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2937,
+     "page": 24,
+     "en": "factors. Sometimes we say it proves uh stacks because in the so all this. Okay? Uh and then the interpretation we can be more sensitive, right? are careful? Uh so that would apply to another maybe there may be someone else. Everything is on average. We have to be very careful that we know how to estimate it.",
+     "ko": "때로는 그것이 증명한다고 말합니다. 그 이유는 나중에 이 모든 것이기 때문입니다. 알겠죠? 어, 그리고 해석은 우리가 더 많은 것을 느낄 수 있다는 것입니다, 맞죠? 조심스럽게? 어, 그래서 그것은 다른 사람에게도 적용될 수 있습니다. 그리고 모든 것은 평균입니다. 우리는 매우 조심해야 합니다. 우리가 그것을 어떻게 추정하는지",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2957,
+     "page": 24,
+     "en": "estimate the user. We have one number. That probably capture the group difference in the wage rate. Okay? So if you look at just estimate, estimation result, the the women's wage rate is 20 or 30% lower than the male counterpart. The way is that they are not it doesn't necessarily mean that they are less productive.",
+     "ko": "알아야 합니다. 우리는 하나의 숫자가 있습니다. 그것은 아마도 그룹의 임금 차이를 포착할 것입니다. 그렇죠? 그래서 만약 당신이 추정치만 본다면, 추정 결과는, 그 여성의 임금률은 20% 또는 30% 낮습니다. 남성보다 임금률을 계산하는 방식은 그것이 아니라는 것입니다. 그들이 덜 생산적이라는 뜻은 아닙니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2978,
+     "page": 24,
+     "en": "In the experience is something else. Like their occupation choice. or they are career interruption. So the selection in the population can be different. So the way you do the preach, you should be very careful and know that we know that there are at the individual level, only there are outliers.",
+     "ko": "그 경험은 다른 것입니다. 예를 들어 그들의 직업 선택. 또는 그들이 경력 단절이 있을 수 있습니다. 그래서 그 선택은 인구 내에서 다를 수 있습니다. 그래서 당신이 설교하는 방식은, 매우 조심해야 합니다. 그리고 우리가 알고 있는 것은 있다는 것입니다. 개인 수준에서 오직 이상치만 있다는 것입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2997,
+     "page": 24,
+     "en": "What captures is the average relationship. Okay? It it is very",
+     "ko": "무엇이 포착하는 것은 평균적인 관계입니다. 알겠죠? 그것은 매우",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3011,
+     "page": 24,
+     "en": "informative. So we careful not to overinterpret the result. There must be someone who much, much more productive than male counterpart. And the other around, male can be also less productive. in a certain way. Okay? So it's also very, you know, you you can practice how to interpret the result.",
+     "ko": "유익합니다. 그래서 우리는 조심해야 합니다. 과도하게 해석하지 않도록. 알겠죠? 어딘가에 누군가가 있을 것입니다. 훨씬, 훨씬 더 생산적인 남성보다. 그리고 다른 한편으로는, 남성도 덜 생산적일 수 있습니다. 어떤 면에서는. 알겠죠? 그래서 그것은 또한 매우, 아시다시피, 당신은 당신은 연습할 수 있습니다. 어떻게 결과를 해석하는지.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3038,
+     "page": 24,
+     "en": "in the in such a context and then learn how to be more helpful when you interpret the assessment. And so that I will share with you. So how do we usually uh measure the experience? It would be best if we actually observe the behavior. But sometimes we don't have that information.",
+     "ko": "그 그런 맥락에서 그리고 어떻게 하면 더 도움이 될 수 있는지 배울 수 있습니다. 결과를 해석할 때. 그리고 그래서 제가 여러분과 공유할 게요. 그럼 우리는 보통 어떻게 측정하나요? 그 경험을요? 그건 우리가 실제로 관찰하는 것이 가장 좋습니다. 하지만 때로는 그런 정보가 없을",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3058,
+     "page": 24,
+     "en": "Census we don't have a lot of the work was in the labor market. Sometimes they are also going inside the labor force, etc. So we often use potential measured by age minus uh six, like the schooling or the if we know their schooling years, if they get the 16 years of schooling, then we construct potential experience like uh age minus 16.",
+     "ko": "때도 있습니다. 인구 조사에서는 많은 작업이 없어요. 그건 노동 시장에 있었어요. 때로는 그들도 또한 노동 시장에 들어가고 있습니다. 등등. 그래서 우리는 종종 잠재적인 경험을 측정하기 위해 나이 빼기 어 6, 예를 들어 학교 교육이나 만약 우리가 알고 있다면 그들의 학교 교육 연수, 만약 그들이 16년의 학교 교육을 받으면, 우리는 잠재력을 구성합니다. 예를 들어 어 나이 빼기 16.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3084,
+     "page": 24,
+     "en": "Then that is constructed as a proxy for the labor market experience. So as yeah, the people are making the I mean, I share the same thing. I love data from 90s. until very recent. So this is really simple regression. You just run the for each year, you can see the trend.",
+     "ko": "그러면 그것은 구성됩니다. 대리 변수로 노동 시장 경험을 나타냅니다. 그래서 네, 그 사람들이 제 말은, 제가 같은 것을 공유한다는 뜻이에요. 저는 19 90년대 데이터를 아주 최근까지 좋아해요. 그래서 이것은 정말 간단한 회귀 분석입니다. 그냥 매년마다 실행하면, 볼 수 있습니다. 추세를.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3112,
+     "page": 24,
+     "en": "How the return to education changes over time. How the gender difference changes over time. And that's very important. And then in the data set, we have not only age and education, but also we have industry. And that would be interesting for you to explore. Okay.",
+     "ko": "어떻게 교육에 대한 수익이 시간이 지남에 따라 변하는지. 어떻게 성별 차이가 시간이 지남에 따라 변하는지. 그리고 그건 매우 중요합니다. 그리고 데이터 세트에는 나이뿐만 아니라 교육도 있지만, 또한 우리는 산업도 있습니다. 그리고 그건 흥미로울 것입니다. 여러분이 탐구해 볼 만한. 알겠죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3131,
+     "page": 24,
+     "en": "Okay, that's of course. How many of you are familiar with the vector representation? or the function?",
+     "ko": "네, 그건 물론이죠. 여러분 중 몇 분이 그 벡터 표현에 익숙하신가요? 아니면 함수인가요?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3144,
+     "page": 24,
+     "en": "Other folks prove that they they share that they already talked the linear algebra like a vector. in your class, so you are supposed to do it. And this is is the the formula in vector representation is much cleaner. much more tractable. It's really useful, okay?",
+     "ko": "다른 사람들은 증명해요 그들이 공유한다는 것을 이미 이야기했다는 것을, 선형적인 대수학 같은 것을요. 수업 시간에, 그래서 당신은 학생들에게 하라고 하는 거죠. 그리고 이것은 그 그 공식은 벡터에서 표현 방식인데 훨씬 더 깔끔해요. 훨씬 더 다루기 쉬워요. 정말 유용해요, 알겠죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3175,
+     "page": 24,
+     "en": "So um",
+     "ko": "그래서 음",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3179,
+     "page": 24,
+     "en": "But this is the vector vector representation. I already agreed about it. And even textbook, they like that notation back of course. And this is the easier for you to understand. So you have to uh try to the formula realize how this works. rather than the summation of X, X is much better. Because we don't know the control variable data even the linear regression you want to understand the relationship between education and earning and sex and earning and then experience and earning. You have a multiple variables.",
+     "ko": "하지만 이게 벡터 벡터 표현 방식이에요. 저는 이미 동의했어요. 그리고 교과서에서도, 그들은 그런 표기법을 좋아해요. 그리고 이것은 여러분이 이해하기 더 쉬워요. 그래서 여러분은 어, 노력해야 해요, 그 공식에 대해 깨달아야 해요, 이게 어떻게 작동하는지. 보다는 합계가 아니라 X, X 가 훨씬 더 나아요. 왜냐하면 우리는 제어 변수를 모르니까요. 심지어 선형 회귀도 여러분이 원하면 이해해야 해요, 관계를 교육과 소득 사이의 관계를 그리고 성별과 소득 그리고 경력과 소득의 관계를. 여러분은 여러 변수를 가지고",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3221,
+     "page": 24,
+     "en": "So it's hard to to express that in in a scalar way. But it's very clean. We the this formula. So uh in a vector form, the relationship linear relationship can be represented like this. And then what is X and Y?",
+     "ko": "있어요. 그래서 어려워요, 그걸 표현하기가. 그걸 어떤 스칼라 방식으로. 하지만 아주 깔끔해요. 우리는 그 이 공식을. 그래서 어, 어떤 벡터 형태에서는, 그 관계가 선형 관계가 될 수 있어요. 이렇게. 그리고 X와 Y는 무엇인가요?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3254,
+     "page": 24,
+     "en": "Okay? X is a typical uh control variable. Looks like one the first column always the constant. We have uh times K. Well, so matrix and this is constant. Yeah. Okay? And the variable to me education like X one and so on. Okay. So this is the formula. And then five Okay.",
+     "ko": "알겠죠? X는 전형적인 어 제어 변수예요. 마치 하나처럼 첫 번째 열이 항상 상수예요. 우리는 어 곱하기 K예요. 음, 그래서 행렬 그리고 이것은 상수예요. 네. 알겠죠? 그리고 그 변수는 저에게는 교육 X처럼 하나 등등이에요. 알겠습니다. 그래서 이게 공식이에요. 그리고 그런 다음 5 알겠습니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3293,
+     "page": 24,
+     "en": "So we can add more variables. If you want to add more control variables in the regression, okay? So here is number of um X rather than this. by the characteristics, like education and you want to uh understand the relationship of that variable, uh what else? Why?",
+     "ko": "그래서 우리는 더 많은 변수를 추가할 수 있어요. 만약 더 많은 것을 추가하고 싶다면 회귀 분석에, 알겠죠? 그래서 여기서는 숫자가 몇 개인지 음 X 보다는 이게 더 나아요. 참고로 특성별로, 예를 들어 교육 그리고 당신이 어 이해하고 싶다면 관계를 그 변수의, 어 또 뭐가 있죠? 왜?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3321,
+     "page": 24,
+     "en": "He's on it. On earning of individuals and we have the and years on to and",
+     "ko": "그는 하고 있어요. 하고 있는 개인의 소득 그리고 우리는 그리고 연수 에 대한 그리고 그리고",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3335,
+     "page": 24,
+     "en": "So why beta plus is the model we have considered. That is true in the population. We want to assume this relationship between one of the variables and Y, the response, have a linear relationship. What means is that beta is uh beta has to be uh beta zero. beta one is okay.",
+     "ko": "그래서 왜 베타 벡터 플러스 는 우리가 가지고 있는 모델입니다. 그게 사실이에요 모집단에서. 우리는 이 관계가 하나의 변수와 Y 사이의 관계가 선형이라고 가정하고 싶습니다. 즉, 베타가 는 어 베타는 어 베타 제로여야 합니다. 베타 원은 괜찮아요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3364,
+     "page": 24,
+     "en": "So this is the coefficient for each variable, each X variable. So that is why If we express this in the scalar way, then means it is a linear relationship of course. This is not the observation. This is supposed uh assumption um um And X A, I say. or X H. beta 2 X plus beta 3 something else, plus U. So this is a scalar way to represent the linear relationship.",
+     "ko": "그래서 이게 계수입니다. 각 변수에 대한, 각 X 변수에 대한. 그래서 만약 우리가 이것을 스칼라 방식으로 표현한다면, 그것은 선형 관계입니다. 물론이죠. 이것은 관측값이 아닙니다. 이것은 가정입니다. 음 음 그리고 X A, 제가 말했듯이. 또는 X H. 베타 2 X 플러스 베타 3 뭐 이런 식이고, 플러스 U입니다. 그래서 이것은 스칼라 방식으로 선형 관계를 나타내는",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3398,
+     "page": 24,
+     "en": "In a vector way, we can just write down this one. Right?",
+     "ko": "것입니다. 벡터 방식으로는, 그냥 이렇게 쓸 수 있습니다. 그렇죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3406,
+     "page": 24,
+     "en": "Okay. This is the hypothesis that we have and this",
+     "ko": "네. 이것은 가설입니다. 우리가 가지고 있는 그리고 이것은",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3415,
+     "page": 24,
+     "en": "Oh, so it has to be true. So this is Yes. I mean, this is not right. Okay. So we have a case in one so this is a beta. Like X uh this is a transport. So this transport. So we change this into that. the whole matrix, the vector. And then that K so K is and X and and X the this is a one Okay.",
+     "ko": "아, 그래서 그게 사실이어야 해요. 그래서 이것은 네. 제 말은, 이게 틀렸다는 거예요. 네. 그래서 우리는 어떤 경우를 가지고 있는데 그래서 이것은 베타입니다. 예를 들어 X 어 이것은 운송입니다. 그래서 이것은 운송입니다. 그래서 우리는 이것을 로 바꿉니다. 전체 행렬, 그 벡터. 그리고 그것은 K 그래서 K 는 그리고 X 그리고 그리고 X 그 이것은 하나입니다. 네.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3462,
+     "page": 24,
+     "en": "So that is Okay. Also by Okay.",
+     "ko": "그래서 그게 네. 또한 에 의해 네.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3472,
+     "page": 24,
+     "en": "This is the K times X1",
+     "ko": "이것은 K 곱하기 X1",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3480,
+     "page": 24,
+     "en": "Okay, X is one so Okay. It is a way. I see. Okay. We cannot say so it has to be X.",
+     "ko": "네, X 는 하나입니다. 그래서 네. 그것은 하나의 방법입니다. 알겠습니다. 네. 우리는 그렇게 말할 수 없습니다. 그것은 반드시 X여야 합니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3501,
+     "page": 24,
+     "en": "Okay. So the linear relationship, so we have X uh one one like that. X X one so X one X2 one, X 2 So this is the observation one of course individual. But they are characteristic and we are looking at K, we can characteristics. And then then beta Then this is K plus one. This is K plus one.",
+     "ko": "네. 그래서 선형 관계, 그래서 우리는 X 어 하나 하나 이렇게요. X X 하나 그래서 X 하나 X2 하나, X 2 그래서 이것은 관측값 하나, 물론 개별적이죠. 하지만 그것들은 특징적이고 우리는 K를 보고 있습니다, 특징을. 그리고 나서 베타 그럼 이건 K 플러스 1입니다. 이건 K 플러스 1입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3540,
+     "page": 24,
+     "en": "times one, right? So we have n times one matrix on the left side. But what I'm saying is that the matrix that we look at the sample for each individual, this is individual one. And individual n. It's a characteristic one. So this is a constant if you take the characteristic K, and then uh the this one is X matrix and we really the Y matrix, Y one to the Y and we take this matrix we can estimate beta.",
+     "ko": "곱하기 1이죠, 맞죠? 그래서 우리는 n 곱하기 1 행렬이 왼쪽에 있어요. 하지만 제가 말하는 것은 행렬이 우리가 보는 것은 각 샘플에 대한 것이고, 이것은 개별적인 것입니다. 그리고 개별적인 n. 이것은 특징적인 것입니다. 그래서 이것은 상수이고 만약 여러분이 특징 K를 취하면, 그리고 그 이것은 X 행렬입니다. 그리고 우리는 정말로 Y 행렬, Y 1부터 Y 까지 그리고 우리는 이 행렬을 취해서 추정할 수 있습니다. 베타를.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3582,
+     "page": 24,
+     "en": "And at the same time, C is continuous. So uh yeah, this is not it's not so difficult. But this is just the the order is important.",
+     "ko": "그리고 동시에, C는 연속적입니다. 그래서 어 네, 이건 아니에요, 그렇게 어렵지 않아요. 하지만 이건 그냥 순서가 중요해요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3597,
+     "page": 24,
+     "en": "And then okay, this expected value So that means that this is value. Y minus X beta is the residual. And then the sum of squared error to be divided by the output product, the the product of this two. Should be should be the mean. And of course",
+     "ko": "그리고 나서 알았어요, 이건 기대값 그래서 이건 값이라는 뜻입니다. Y 빼기 X 베타 는 잔차입니다. 그리고 나서 합은 오차 제곱의 합을 나누는 것은 출력값 곱, 그 그 곱은 이 두 가지입니다. 되어야 합니다. 되어야 합니다. 평균이.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3623,
+     "page": 24,
+     "en": "And if you this one, explain why it's similar to the previous and explain why it's different or similar to the previous. So, is that it it is the same formula, just that it's written in a matrix. So, why do we need this? Let's do it one more time. Okay? So here, we we take partial derivative with respect to theta.",
+     "ko": "그리고 만약에 이거라면, 설명해 주세요 왜 이게 비슷한지 이전 거랑 그리고 왜 이게 다른지 또는 비슷한지 설명해 주세요. 그래서, 그게 같은 건가요? 그냥 다른 방식으로 쓰여진 거죠. 그래서, 왜 이게 필요할까요? 한 번 더 해볼게요. 알겠죠? 그래서 여기서는, 우리가 편미분을 에 대해 구하고 세타에 대해 구해요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3648,
+     "page": 24,
+     "en": "Because theta is all coefficients. This is a",
+     "ko": "왜냐하면 세타는 모든 계수이기 때문이죠.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3653,
+     "page": 24,
+     "en": "vector. Theta has uh the coefficients for the constant which is the first characteristic equation, so it's a vector. The vector with we take a partial derivative with respect to with respect to that. Okay? Then uh we can just write the matrix algebra and we just just So, that if we rearrange this then we have this relationship.",
+     "ko": "이건 벡터예요. 세타는 어, 계수들을 가지고 있어요. 상수와 그리고 첫 번째 특성인 특성 방정식, 그래서 벡터예요. 벡터는 와 함께 우리가 편미분을 에 대해 구하고 에 대해 구해요. 알겠죠? 그러면 어, 우리는 그냥 행렬을 쓰고 그냥 그냥 그래서, 그게 만약 우리가 이걸 재배열하면 그러면 이런 관계가 돼요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3679,
+     "page": 24,
+     "en": "Uh if equation, then uh this is the formula. So again, or is a function of or something. Okay? And once you are given X, that's a matrix. Y is a matrix, you can always compute this number. Once you compute this number, you will get one K plus one dimensional number.",
+     "ko": "어, 방정식이라면, 그러면 이게 그 공식이에요. 그래서 다시, 또는 은 함수입니다. 의 함수이거나 뭐 그런 거죠. 알겠죠? 그리고 일단 주어지면 X가, 그건 행렬이에요. Y는 행렬이고, 항상 계산할 수 있어요. 이 숫자를. 일단 계산하면 이 숫자를 얻게 될 거예요. 하나의 K 플러스 1 차원 숫자를.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3708,
+     "page": 24,
+     "en": "This vector which will represent a coefficient for different variables. different characters. Uh it makes sense. Okay? And I think it's better for you",
+     "ko": "이 벡터는 무엇을 나타낼 것인가 하면 다른 변수들에 대한 계수입니다. 다른 문자들. 어, 말이 되죠? 알겠죠? 그리고 제 생각엔 이게 여러분이",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3722,
+     "page": 24,
+     "en": "to know this formula. And if you keep it, it's a covariance divided by variance. Questions? So, we just we have to remember this formula because here, we will be doing the simplest case. We will think about what is the error structure for different individuals are different.",
+     "ko": "이걸 아는 게 더 좋을 것 같아요. 그리고 만약 이걸 유지하면, 그건 공분산을 분산으로 나눈 거예요. 질문 있으신가요? 그래서, 우리는 이 공식을 기억해야 해요 왜냐하면 여기서, 우리는 간단한 경우를 할 거예요. 우리는 무엇이 오차 구조인지 다른 개인들에 대해 다른지 생각해",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3744,
+     "page": 24,
+     "en": "Now, we are assuming that everybody has the same distribution.",
+     "ko": "볼 거예요. 이제, 우리는 모든 사람이 같은 분포를 가지고 있다고",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3750,
+     "page": 24,
+     "en": "And then the individual is also from the same distribution. So, that's simple. That's the simplest situation, but later, you will think that is a general we assume that the group of individuals across certain population share the same error structure, but that's related to different from other groups.",
+     "ko": "가정하고 있어요. 그리고 개인도 같은 분포에서 왔어요. 그래서, 그건 간단해요. 그게 가장 간단한 상황이지만, 나중에, 여러분은 그게 일반적인 거라고 가정하고 있어요. 그룹의 개인들이 특정 인구 집단에 걸쳐 같은 오차 구조를 공유한다고 하지만 그건 다른 그룹과는 다르다는",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3768,
+     "page": 24,
+     "en": "It can be counted. It can be reduced as the differences or it can be like education level or etc. Whatever that you believe that there is some differences in the underlying characteristic, like we have a simple case. Then if you know the matrix formula, it is if you come to very simple, how to adjust it.",
+     "ko": "것과 관련이 있어요. 계산될 수 있어요. 줄어들 수 있어요. 차이가 있거나 아니면 뭐 예를 들어 교육 수준이 다르거나 등등. 어쨌든 여러분이 믿기에 어떤 차이가 있다고 생각하는 기저 특성에서 예를 들어 우리가 간단한 경우를 가지고 있어요. 그러면 만약 여러분이 행렬을 안다면, 그건 만약 여러분이 아주 간단하게 어떻게 조정하는지 알겠죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3797,
+     "page": 24,
+     "en": "Okay?",
+     "ko": "알겠죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3800,
+     "page": 24,
+     "en": "But if you don't know that, there's uh I cannot handle scalar version of the formula how to deviate. From the simplest case. Okay? So, This one, I think if we look at, if we look at the matrix property, how to do it. And what if linearity have a problem? Multi linearity Now, these like the the software can detect this is a problem.",
+     "ko": "하지만 그걸 모른다면, 어, 저는 다룰 수 없어요. 스칼라 버전은 그 공식이 어떻게 벗어나는지. 가장 간단한 경우에서. 알겠죠? 그래서, 이건 제 생각엔 만약 우리가 보면, 만약 우리가 행렬을 보면, 어떻게 하는지. 그리고 만약 선형성이 문제가 있다면? 다중 선형성 자, 이 것들은 소프트웨어 가 감지할 수 있어요, 이게 문제라는",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3832,
+     "page": 24,
+     "en": "And the multi linearity uh property can resist that. A could be have uh like X variables like the education age and so on. If X vector is very likely to have strong correlation with the other vector, it can be potential experience and age. Like construction, they are perfectly correlated, right?",
+     "ko": "걸. 그리고 다중 선형성은 어, 속성 이 그걸 견딜 수 있어요. A는 가질 수 있어요 어, 예를 들어 X 변수들, 예를 들어 교육 나이 그리고 등등. 만약 X 벡터가 매우 그럴듯하다면 그럴 가능성이 높다면 다른 벡터와 강한 상관관계가 있을 수 있고, 잠재적인 경험과 나이가 될 수 있어요. 예를 들어 건설업, 그들은 완벽하게 상관관계가 있죠,",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3858,
+     "page": 24,
+     "en": "Because um uh conditional education, but if they are uh highly",
+     "ko": "그렇죠? 왜냐하면 음 어 조건부 교육이지만, 만약 그들이 어, 매우",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3868,
+     "page": 24,
+     "en": "correlated, then it's difficult to calculate this inverse matrix.",
+     "ko": "상관관계가 있다면, 그러면 어렵죠 계산하기가 이 역행렬을 계산하기가.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3877,
+     "page": 24,
+     "en": "That's a mathematical uh very but then this that we don't have solution. for the OLS estimator. If X vector vectors are correlated, if they are perfectly correlated, then more than one A and B satisfy the same um equations. Okay? So for instance, if X plus X1 plus X2 equals what?",
+     "ko": "그건 수학적인 어, 매우 하지만 그러면 이것은 우리가 가지고 있지 않다는 거예요. 그 OLS 추정량에 대해서. 만약 X 벡터가 벡터들이 상관관계가 있다면, 만약 그들이 완벽하게 상관관계가 있다면, 그러면 하나 이상의 A와 B가 그 동일한 음 방정식을 만족해요. 알겠죠? 그래서 예를 들어, 만약 X 더하기 X1 더하기 X2가 무엇이라면?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3904,
+     "page": 24,
+     "en": "One example is if if this is indicated by the name, what? If the OLS terms one, right? But they are perfectly correlated. That making us separate uh separately estimate the coefficient for this variable and that variable. The reason is that if you are if you have a perfectly linear relationship, then if we define this relationship, then we can rewrite that relationship like this.",
+     "ko": "한 가지 예는 만약 만약 이것이 표시된다면 이름으로, 무엇이? 만약 OLS 항들이 하나죠, 그렇죠? 하지만 그들은 완벽하게 상관관계가 있어요. 그건 우리를 분리하게 어 따로따로 추정하게 해요. 계수를 이 변수에 대해 그리고 저 변수에 대해. 이유는 만약 당신이 만약 당신이 완벽하게 선형적인 관계를 가지고 있다면, 그러면 만약 우리가 이것을 정의한다면, 그러면 우리는 그 관계를 이렇게 다시 쓸 수",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3940,
+     "page": 24,
+     "en": "But we can find on that here estimate. So we cannot determine the coefficient because um perfect correlation and mathematically it's clear. The inverse function does not exist. If if the length is less than one, n. So it",
+     "ko": "있어요. 하지만 우리는 그것에 대해 여기서 추정할 수 있어요. 그래서 우리는 결정할 수 없어요. 계수를 왜냐하면 음 완벽하게 상관관계가 있죠. 그리고 수학적으로 분명해요. 그 역행렬 함수는 존재하지 않아요. 만약 만약 길이가 보다 작다면 n. 그래서",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3973,
+     "page": 24,
+     "en": "is not independent. Linearly independent, if the relationship uh one one row or relationship is scalar plus multiplication of the other equation, equation in the",
+     "ko": "독립적이지 않아요. 선형적으로 독립적이라면, 만약 그 관계가 어 하나 하나의 행이 또는 관계가 있다면 스칼라 더하기 다른 것의 곱셈 또는 다른 방정식, 그리고 그 방정식은",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3994,
+     "page": 24,
+     "en": "row, then there's more extra information on having additional additional Uh that is a bit abstract, but linearity is a problem. This is a problem. This is a very basic thing. So you need to check whether you include two variables we have some perfect correlation.",
+     "ko": "행에 있고, 그러면 더 많은 추가 정보가 있는 거예요. 추가적인 추가적인 어, 그건 좀 추상적이지만, 하지만 선형성은 문제예요. 이건 문제예요. 이건 아주 기본적인 거예요. 그래서 확인해야 해요. 포함하는지 두 개의 변수를 우리가 가지고 있는 어떤 완벽한 상관관계.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4018,
+     "page": 24,
+     "en": "One example is gender. If you include the male in the equation, you should not include female in the equation. If you include the male and female, together, then the rest, because of multiple linearity, the estimation is impossible. And then the software will tell you that there's a multiple linearity problem or you have to know that.",
+     "ko": "한 가지 예는 성별입니다. 만약 남성을 포함하고 방정식에 넣는다면, 여성은 포함하지 않아야 합니다. 만약 남성을 포함하고 여성을 포함한다면, 나머지는, 다중 공선성 때문에, 그 추정치는 불가능합니다. 그리고 소프트웨어가 알려줄 거예요, 다중 공선성이 있거나 그걸 알아야 한다고.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4034,
+     "page": 24,
+     "en": "So you have to include either male or female. Same, if you have some dummy variable, whether you have a car or not, you have to include college education only you should not include the the other do by the way, if you still some to one, you have to include only one.",
+     "ko": "그래서 둘 중 하나를 포함해야 해요. 남성이나 여성. 마찬가지로, 만약 어떤 더미 변수가 있다면, 자동차가 있는지 없는지, 당신은 자동차가 있는 것과 대학 교육을 포함해야 해요. 당신은 포함하지 않아야 합니다. 그 다른 것은 그런데, 만약 여전히 일부를 하나로 포함해야 해요. 하나만.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4053,
+     "page": 24,
+     "en": "Okay?",
+     "ko": "알겠죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4056,
+     "page": 24,
+     "en": "Well, how do you identify less than college? What is college education? Then maybe",
+     "ko": "음, 어떻게 식별하나요? 대학 미만은요? 대학 교육은 무엇인가요? 그러면 아마도",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4066,
+     "page": 24,
+     "en": "a perfectly uh correlated, right? So if you use the word, then it's zero. So then you have to choose only one variable. to be included in the estimation. And then that is related to the condition. And it's very clear mathematically, you understand the vector. Only if the rank condition fails, we cannot have the inverse matrix. So the inverse matrix.",
+     "ko": "완벽하게 어 상관관계가 있죠, 그렇죠? 그래서 그 단어를 사용하면 0이 돼요. 그래서 둘 중 하나만 선택해야 해요. 포함될 추정치에. 그리고 그건 조건과 관련이 있어요. 그리고 수학적으로 아주 명확해요, 이해가 되죠, 벡터를. 오직 계급이 실패하면, 우리는 할 수 없어요, 역행렬을. 그래서 역행렬을.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4087,
+     "page": 24,
+     "en": "It has to be linearly independent. Two defined to have inverse matrix, okay? But I think that's the mathematical expression, but intuitively, using the same thing. So",
+     "ko": "그것은 선형적으로 독립적이어야 해요. 두 개의 정의된 역행렬을 가지려면. 알겠죠? 하지만 제 생각엔 그게 수학적인 표현이고, 하지만 직관적으로는 사용하는 것은 똑같아요. 그래서",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4103,
+     "page": 24,
+     "en": "Ví dụ như là mỗi một số",
+     "ko": "예를 들어 각 번호마다",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4111,
+     "page": 24,
+     "en": "So, what are the things we have that we can do? It means not that. It's not the only solution.",
+     "ko": "그래서, 우리가 할 수 있는 것들은 무엇일까요? 그게 아니라는 뜻이에요. 그게 유일한 해결책은 아니에요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4120,
+     "page": 24,
+     "en": "My job is to that's actually how we change laws and then exchange",
+     "ko": "제 일은 사실 그게 어떻게 우리가 법을 바꾸고 교환하는지 에 대한 것입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4127,
+     "page": 24,
+     "en": "And that that means avoiding other things If we have a real problem, then that that Yeah. X education",
+     "ko": "그리고 그건 다른 것들을 피하는 것을 의미합니다. 만약 우리가 정말 문제가 있다면, 그러면 그게 네. X 교육",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4142,
+     "page": 24,
+     "en": "V H",
+     "ko": "V H",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4152,
+     "page": 24,
+     "en": "And this is not a podcast. In fact, it means that condition on all of us. How change happens, or whatever. And everybody knows linear relationship and we can have a scare and exists uh to um thought of power is okay. Uh then the implication is a little bit different. It's it's not uh typical situation.",
+     "ko": "그리고 이건 팟캐스트가 아니에요. 사실, 그건 조건이 우리 모두에게 있다는 뜻이에요. 어떻게 변화가 일어나는지, 또는 뭐 그런 거요. 그리고 모두가 선형 관계가 있다는 걸 알고 있고, 우리는 공포를 느끼고 존재할 수 있어요. 음, 권력에 대한 생각은 괜찮아요. 음, 그러면 그 의미는 조금 달라요. 그건 어, 일반적인 상황이 아니에요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4182,
+     "page": 24,
+     "en": "We we we all just look at the linear regression first. And it's pretty good enough. And and So, you know, like So, do you remember the beautiful way to detect heterogeneity at, okay? So, we discuss duration means that if we don't understand that we have the education, and we back of H, if we don't have this term, if we don't have this term, then we assume that the effect of H is constant without the education.",
+     "ko": "우리는 우리 모두 그냥 그 선형 회귀를 먼저 봐요. 그리고 그건 꽤 괜찮아요. 그리고 그리고 그래서, 아시다시피 그래서, 기억나세요? 아름다운 감지 방법이요. 이질성을 감지하는 방법, 알겠죠? 그래서, 우리는 지속 시간이 의미하는 것은 만약 우리가 이해하지 못하면 우리에게 교육이 있다는 것이고, 우리는 H의 뒤로, 만약 우리가 이 항이 없다면, 만약 우리가 이 항이 없다면, 그러면 우리는 H의 효과가 H의 효과가 일정하다고 가정합니다. 그 교육 없이.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4227,
+     "page": 24,
+     "en": "But but if we think that the effect of H is or is different by education level, it's sensible to include this interaction term. The interaction term means that so if we include this term, then we assume that education increases, it has a direct effect on and also has an indirect effect of earning through with experience.",
+     "ko": "하지만 하지만 만약 우리가 그렇게 생각한다면 H의 효과가 일정하다고 가정하거나 다르다고 가정하면 교육 수준에 따라 다르다면, 그것은 포함하는 것이 합리적입니다. 이 상호작용 항을요. 상호작용 항은 그러니까 만약 우리가 이 항을 포함하면, 그러면 우리는 교육이 증가하면, 그것이 직접적인 효과가 있다고 가정하고, 또한 간접적인 효과도 있다고 가정합니다. 에 대한 간접적인 효과는 경험과 함께입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4256,
+     "page": 24,
+     "en": "Now, how much additional do you think the gain of students in the higher education? So, if you are interested in how to um how to practice how the complementary substitutability in this outcome, you better include this interaction term. So, like that. education and may have a direct effect, but if you don't understand how the effect changes by education, level, how the effect of age changes by education level, how the effect of education changes by age, you have to include this interaction term.",
+     "ko": "자, 얼마나 추가적인 것이라고 생각하시나요? 학생들의 더 높은 교육에서의 이득은? 그래서, 만약 여러분이 어떻게 음, 권력을 어떻게 실천하는지 에 관심이 있다면, 그 보완적인 대체 가능성은 이 문맥에서 결과에 대해, 여러분은 이 상호작용 항을 포함하는 것이 좋습니다. 그래서, 교육과 그리고 아마도 직접적인 효과가 있을 수 있지만, 만약 여러분이 효과가 어떻게 변하는지 이해하지 못한다면, 교육 수준에 따라 어떻게 H의 효과가 교육 수준에 따라 변하는지, 어떻게 교육의 효과가 나이에 따라 변하는지, 여러분은 이 상호작용을 포함해야 합니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4297,
+     "page": 24,
+     "en": "So you include this",
+     "ko": "그래서 이",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4300,
+     "page": 24,
+     "en": "one, the question says that you can have a direct effect, and then the effect of education on the other characteristics. And this is very practical thing. So in many cases we are interested in the gender differences, right? But then and we we only include the gender dummy, that everything is absolute in that dummy.",
+     "ko": "것을 포함하면, 질문은 여러분이 직접적인 효과를 가질 수 있고, 그런 다음 교육이 다른 것에 미치는 효과입니다. 그리고 이것은 매우 실용적인 것입니다. 그래서 많은 경우에 우리는 성별이 다르다는 것에 관심이 있죠? 하지만 그리고 우리는 오직 성별 더미만 포함하면, 모든 것이 절대적이라는 뜻이 됩니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4323,
+     "page": 24,
+     "en": "But if we want to know that heterogeneous effect of education by gender, we have to include gender times education in the regression. We create that we can see how the return",
+     "ko": "하지만 우리가 이질적인 교육 효과를 알고 싶다면, 우리는 성별 더미를 포함해야 합니다. 교육과 함께 회귀 분석에. 우리는 그것을 만들고 어떻게 수익률이",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4334,
+     "page": 24,
+     "en": "to education is different by gender. So if you want to detect any by different groups, you have to include in the regression. Uh, you know, transformation I already told you, it has just the percentage change. So this is very important in economics when you open you want to understand the elasticity, which means that what is the elasticity of consumption. What is the elasticity of the price with respect to the rate. The goal is to show that the rule which is uh independent of the dummy.",
+     "ko": "교육에 따라 다른지 볼 수 있습니다. 그래서 만약 여러분이 어떤 이질적인 것을 감지하고 싶다면, 여러분은 회귀 분석에 포함해야 합니다. 어, 아시다시피, 변환은 이미 말씀드렸듯이, 그냥 백분율 변화만 있습니다. 그래서 이것은 경제학에서 매우 중요합니다. 여러분이 임금의 탄력성을 이해하고 싶을 때, 즉 소비의 탄력성이 무엇인지 알고 싶을 때입니다. 가격의 탄력성은 무엇인지에 대한 것입니다. 목표는 보여주는 것입니다. 그 규칙이 그것은 어, 더미와는 독립적이라는 것입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4368,
+     "page": 24,
+     "en": "This rate is a dummy. So one example is sex, right? One or zero. Kind of education or not. Not every variable takes a continuous values. Only in case continuous value, age can be continuous, but some variables are like that. categorical variables can be discrete, one or zero.",
+     "ko": "이 비율은 더미 변수입니다. 그래서 한 가지 예는 다음과 같습니다. 성별이죠, 1 또는 0. 일종의 교육 여부입니다. 모든 변수가 연속적인 값을 갖는 것은 아닙니다. 오직 연속적인 값인 경우에만, 나이는 연속적일 수 있지만, 일부 변수는 그렇습니다. 범주형 변수입니다. 범주형 변수는 이산적일 수 있습니다, 1 또는",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4391,
+     "page": 24,
+     "en": "And then that is, you know, can be included in the one or zero. And then we just",
+     "ko": "0. 그리고 그것은, 아시다시피, 회귀 분석에 포함될 수 있습니다. 그리고 우리는",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4397,
+     "page": 24,
+     "en": "run the regression. And then we interpret the coefficient. Uh, the dummy variable is that the effect of being in that group. What do you think? Okay? So if this is male, then the male then male's earning is on average higher by than female. So this beta can be interpreted as the difference.",
+     "ko": "그냥 회귀 분석을 실행합니다. 그리고 계수를 해석합니다. 어, 더미 변수는 이것입니다. 효과는 그 그룹에 속해 있다는 것입니다. 어떻게 생각하세요? 알겠죠? 그래서 만약 이것이 남성이라면 그러면 그 남성은 그러면 남성의 소득은 평균적으로 더 높습니다. 여성보다 그래서 이 베타는 다음과 같이 해석할 수 있습니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4421,
+     "page": 24,
+     "en": "between the group",
+     "ko": "사이의 그룹 간의",
+     "src": "gemini"
+    },
+    {
+     "t": 4426,
+     "page": 24,
+     "en": "dummy variable one and the group dummy variable zero. Uh, so that's the technique. Mhm.",
+     "ko": "더미 변수 1과 그룹 더미 변수 0 사이의 어, 그래서 그게 그 기법입니다. 음.",
+     "src": "gemini"
+    },
+    {
+     "t": 4435,
+     "page": 24,
+     "en": "Yeah. So what is the hypothesis how to decompose the inequality? We can decompose the inequality by it can be explained by education in and the inequality is by the inequality in something else, like that. Okay, so if you",
+     "ko": "네. 그래서 가설은 무엇인가요? 어떻게 분해하는지 불평등을? 우리는 분해할 수 있습니다. 불평등을 통해 그것은 설명될 수 있습니다. 교육에 의해 그리고 불평등은 어, 그에 의해 불평등은 다른 것, 예를 들어 그런 것과 같습니다. 알겠죠?",
+     "src": "gemini"
+    },
+    {
+     "t": 4458,
+     "page": 24,
+     "en": "have the estimated then estimates, then you can you can decompose the variance of the income. Okay? So today whether we just discuss how to do the construction and the methodology again, to the data. And then next week, we will talk about why the is",
+     "ko": "그래서 만약 여러분이 추정된 값을 가지고 있다면, 그러면 추정치를 분해할 수 있습니다. 분산의 소득을. 알겠죠? 그래서 오늘은 뭐랄까, 우리가 그냥 어떻게 하는지 논의하고 구성을 그리고 방법론을 다시 한번, 그 데이터에 대해. 그리고 다음 주에는, 우리는 왜 그게",
+     "src": "gemini"
+    }
+   ]
+  }
+ ],
+ "savedAt": "2026-09-16T03:32:01.695Z"
+}
