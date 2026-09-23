@@ -2384,7 +2384,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="184">
+<meta name="tm-version" content="185">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -10335,6 +10335,8 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
       // 잠정 문장이 8초 넘게 확정되지 않으면 강제로 확정 처리 (한국어에서 자주 멈춤)
       try{ if(S.running){ if(S.lastInterim!==S._pi){ S._pi=S.lastInterim; S._piAt=Date.now(); } else if(S.lastInterim && Date.now()-(S._piAt||0)>8000){ var t=S.lastInterim; S.lastInterim=''; S._pi=''; addFinal(t,''); try{ S.rec.abort(); }catch(e){} } } }catch(e){} if(S.running && S.rec && !S.lastInterim && Date.now()-S.lastResultAt>60000){ S.lastResultAt=Date.now(); try{ S.rec.abort(); }catch(e){} } },1000); saveLocal();
   }
+  document.addEventListener('visibilitychange', function(){ try{ if(document.hidden && S.id) saveLocal(); }catch(e){} });
+  window.addEventListener('pagehide', function(){ try{ if(S.id) saveLocal(); }catch(e){} });
   function stopAll(){
     try{ if(aiEngine() && S.running){ aiTick(true); } }catch(e){}
     S.running=false; clearInterval(S.tick); clearTimeout(S.restartTimer); try{ if(S.rec){ S.rec.onend=null; S.rec.stop(); } }catch(e){} try{ gemStop(); }catch(e){} stopAudio(); try{ if(S.wake){ S.wake.release(); S.wake=null; } }catch(e){}
@@ -10345,7 +10347,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   function pageLabel(p){ if(S.online) return '구간 '+p; var d=docOf(p); return ((S.docs&&S.docs.length>1)?d.name.replace(/\.pdf$/i,'')+' · ':'')+(p-d.base)+'쪽'; }
   function payload(){ var slides=Object.keys(S.slides).map(Number).sort(function(a,b){return a-b;}).map(function(p){ var sl=S.slides[p]; return { page:p, en:sl.segs.map(function(s){return (S.lang==='ko-KR')?'':(s.fix||s.en);}).join(' '), ko:sl.segs.map(function(s){return (S.lang==='ko-KR')?(s.fix||s.ko):s.ko;}).join(' '), pdf:docOf(p).name, pdfPage:p-docOf(p).base, slideText:(S.slideText&&S.slideText[p])||'', liveNotes:(S.live&&S.live[p])||undefined, docHtml:(S.docEdits&&S.docEdits[p])||undefined, docNotes:(S.docNotes&&S.docNotes[p]&&S.docNotes[p].length)?S.docNotes[p]:undefined, marks:(S.ann&&S.ann[p])||undefined, lines:(S.slideLines&&S.slideLines[p])?{w:S.slideLines[p].w,h:S.slideLines[p].h,lines:S.slideLines[p].lines}:undefined, segs:sl.segs }; });
     return { id:S.id, course:S.course, title:S.title, date:S.date, week:(S.weekNo!=null?S.weekNo:undefined), module:(S.week&&S.week!=='misc'?S.week:undefined), lang:(S.lang==='ko-KR'?'ko':'en'), mode:(S.online?'online':'slides'), pdf:S.pdfName, pdfs:(S.docs&&S.docs.length>1)?S.docs:undefined, pages:S.total, duration:nowT(), log:S.log, slides:slides, savedAt:new Date().toISOString() }; }
-  function saveLocal(){ if(!S.id) return; idbPut('lec', Object.assign({status:S.running?'recording':'saved', curPage:S.page, base:S.base||0, docs:S.docs||[], weekId:S.week||'misc', langCode:S.lang}, payload())).catch(function(){}); }
+  function saveLocal(){ if(!S.id) return; idbPut('lec', Object.assign({status:S.running?'recording':'saved', savedAt:new Date().toISOString(), curPage:S.page, base:S.base||0, docs:S.docs||[], weekId:S.week||'misc', langCode:S.lang}, payload())).catch(function(){}); }
   // 끊긴 녹음(새로고침·탭 닫힘) 이어가기
   function resumable(){ var now=Date.now(); return (localLecs||[]).filter(function(r){ return r.status==='recording' && r.savedAt && (now-new Date(r.savedAt).getTime())<3*3600*1000 && !(S.running && S.id===r.id); }).sort(function(a,b){ return new Date(b.savedAt)-new Date(a.savedAt); })[0]||null; }
 
@@ -10429,7 +10431,14 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   // ---- 주차학습 홈 (과목 → 주차 → PDF·필기) ----
   var notesIndex=null, weekPdfs=[], localLecs=[], studyIndex=[];
   async function fetchIndex(){ try{ var r=await fetch('./lectures/index.json?v='+Date.now(),{cache:'no-store'}); notesIndex=r.ok?await r.json():[]; }catch(e){ notesIndex=[]; } if(!Array.isArray(notesIndex)) notesIndex=[]; try{ var r2=await fetch('./lectures/study/index.json?v='+Date.now(),{cache:'no-store'}); studyIndex=r2.ok?await r2.json():[]; }catch(e){ studyIndex=[]; } if(!Array.isArray(studyIndex)) studyIndex=[]; }
-  async function loadLocal(){ try{ weekPdfs=await idbAll('pdf'); }catch(e){ weekPdfs=[]; } try{ localLecs=await idbAll('lec'); }catch(e){ localLecs=[]; } }
+  async function loadLocal(){ try{ weekPdfs=await idbAll('pdf'); }catch(e){ weekPdfs=[]; } try{ localLecs=await idbAll('lec'); }catch(e){ localLecs=[]; } try{ flushUnsent(); }catch(e){} }
+  var _flushing=false;
+  async function flushUnsent(){ if(_flushing||!token()) return; _flushing=true; try{ var sent=0;
+    for(var i=0;i<localLecs.length;i++){ var o=localLecs[i]; if(!o||o.status==='sent'||!(o.slides||[]).length) continue; if(S.running && S.id===o.id) continue;
+      if(o.status==='recording' && o.savedAt && Date.now()-new Date(o.savedAt).getTime()<10*60*1000) continue; // 다른 탭에서 진행 중일 수 있음
+      var ok=await sendRec(Object.assign({}, o, {status:'saved'}), true); if(ok) sent++; }
+    if(sent){ showToast('보내지 못했던 녹음 '+sent+'개 필기 요청 보냄 ✓'); try{ localLecs=await idbAll('lec'); }catch(e){} }
+  }catch(e){} _flushing=false; }
   function cname(c){ return String(c||'').replace(/^\(SDGs\)/,''); }
   function esc(s){ return escapeHtml(String(s==null?'':s)); }
   function md(s){ return (window.tmMd||function(x){ return '<p class="md-p">'+escapeHtml(String(x||''))+'</p>'; })(s); }
