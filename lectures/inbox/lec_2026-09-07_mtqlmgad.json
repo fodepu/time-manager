@@ -1,0 +1,661 @@
+{
+ "id": "lec_2026-09-07_mtqlmgad",
+ "course": "계량경제학",
+ "title": "계량경제학 1주차 · lecture_week1_random_variables",
+ "date": "2026-09-07",
+ "week": 1,
+ "module": "1507906",
+ "lang": "en",
+ "mode": "slides",
+ "pdf": "lecture_week1_random_variables.pdf",
+ "pages": 46,
+ "duration": 776,
+ "log": [
+  {
+   "t": 0,
+   "page": 22
+  },
+  {
+   "t": 164,
+   "page": 23
+  },
+  {
+   "t": 219,
+   "page": 24
+  },
+  {
+   "t": 222,
+   "page": 25
+  },
+  {
+   "t": 322,
+   "page": 26
+  },
+  {
+   "t": 323,
+   "page": 27
+  }
+ ],
+ "slides": [
+  {
+   "page": 22,
+   "en": "if it is cute then this way that we have a lot more mass on the right thing so if you take the mean it seems like a minute is very high but when it comes to the income of the 50% high of the individual is lower than the mean and this is very important feature in one week it's not informative about the the center of the living of the average household average household is represented by the median household for instance if you look at the house or who is income is in the media the household living standard is different from the average income okay because everything home can be really high if we have a lot of millions they increase the average income if you look at those who are at the medium so if we have a more ecology then GDP may not reflect the sender the baby of the average house there is a greater discrete Pacific green medium and medium and 4 variance is defined like that so if you have two variables whether they move in the same direction or opposite direction so the way to measure is that we recognize X bar which is a simple mean why I might as well and then we multiply those two numbers and click on average and if we pick up whoever he is and divide it by 10 yard error 10:30 a.m. so correlation is the standardized in a way that four various we have numbers here so if X1 takes a dollar from many programs so here the unique is still there so we will change the unit of four videos but once we stand or not we only look at the you know the number between 0 and 1 for this month so how to standardize with divide the number by standard deviation of x we can standard between",
+   "ko": "귀엽다면 이렇게 하면 우리가 옳은 일에 훨씬 더 많은 질량을 가질 수 있으므로 평균을 취하면 1분이 매우 높은 것 같습니다. 그러나 개인의 50% 높은 소득에 관해서는 평균보다 낮고 이것은 일주일 만에 매우 중요한 특징입니다 평균 가구의 생활 중심에 대한 정보가 아닙니다. 평균 가구는 중위 가구로 표시됩니다. 집에 있는 모든 것이 정말 높을 수 있기 때문에 수백만이 있다면 평균 소득이 증가합니다. 중간에 있는 사람들을 보면 따라서 우리가 더 많은 생태를 가지고 있다면 GDP가 평균 집의 보낸 사람을 반영하지 않을 수 있습니다. 및 4 분산 두 개의 변수가 있는 경우 다음과 같이 정의됩니다. 그들이 같은 방향으로 움직이는지 반대 방향으로 움직이는지 측정하는 방법은 우리가 x bar를 인식하는 것입니다. 그리고 우리가 그 사람을 집어 들고 10야드 오류로 나누면 오전 10시 30분 따라서 상관 관계는 4가지 다양한 방식으로 표준화되어 있습니다. 그래서 여기에 고유한 것이 여전히 존재하므로 4개의 비디오 단위를 변경할 것입니다. 그러나 우리가 서 있거나 그렇지 않으면 이번 달의 0과 1 사이의 숫자만 알 수 있으므로 x의 표준 편차로 숫자를 나누는 방법으로 표준화하는 방법 우리는 할 수 있습니다 사이의 표준",
+   "slideText": "Are economic variables normally distributed? Average hourly earnings of U.S. full-time workers, by education level and sex. Every panel is skewed to the right : a long upper tail, so the mean exceeds the median. Do you think earnings are normally distributed? If you had only n = 10 observations from one of these distributions, would you feel comfortable assuming normality? Source: Stock & Watson, Introduction to Econometrics , 4th ed. (Global Edition) — Figure 2.4 Sunha Myong Introduction and Review September 2026 22 / 46",
+   "segs": [
+    {
+     "t": 15,
+     "page": 22,
+     "en": "if it is cute then this way that we have a lot more mass on the right thing so if you take the mean it seems like a minute is very high",
+     "ko": "귀엽다면 이렇게 하면 우리가 옳은 일에 훨씬 더 많은 질량을 가질 수 있으므로 평균을 취하면 1분이 매우 높은 것 같습니다."
+    },
+    {
+     "t": 29,
+     "page": 22,
+     "en": "but when it comes to the income of the 50% high of the individual is lower than the mean and this is very important feature in one week",
+     "ko": "그러나 개인의 50% 높은 소득에 관해서는 평균보다 낮고 이것은 일주일 만에 매우 중요한 특징입니다"
+    },
+    {
+     "t": 38,
+     "page": 22,
+     "en": "it's not informative about the the center of the living of the average household",
+     "ko": "평균 가구의 생활 중심에 대한 정보가 아닙니다."
+    },
+    {
+     "t": 52,
+     "page": 22,
+     "en": "average household is represented by the median household for instance if you look at the house or who is income is in the media the household living standard is different from the average income",
+     "ko": "평균 가구는 중위 가구로 표시됩니다."
+    },
+    {
+     "t": 65,
+     "page": 22,
+     "en": "okay because everything home can be really high if we have a lot of millions they increase the average income if you look at those who are at the medium",
+     "ko": "집에 있는 모든 것이 정말 높을 수 있기 때문에 수백만이 있다면 평균 소득이 증가합니다. 중간에 있는 사람들을 보면",
+     "raw": "okay because everything home can be really high if we have a lot of millions they increase the average income if you look at those who are at the medium levels"
+    },
+    {
+     "t": 80,
+     "page": 22,
+     "en": "so if we have a more ecology then GDP may not reflect the sender the baby of the average house there is a greater discrete Pacific green medium and medium",
+     "ko": "따라서 우리가 더 많은 생태를 가지고 있다면 GDP가 평균 집의 보낸 사람을 반영하지 않을 수 있습니다."
+    },
+    {
+     "t": 84,
+     "page": 22,
+     "en": "and 4 variance",
+     "ko": "및 4 분산"
+    },
+    {
+     "t": 90,
+     "page": 22,
+     "en": "is defined like that so if you have two variables",
+     "ko": "두 개의 변수가 있는 경우 다음과 같이 정의됩니다.",
+     "raw": "is defined like that so if you have a two variables"
+    },
+    {
+     "t": 113,
+     "page": 22,
+     "en": "whether they move in the same direction or opposite direction so the way to measure is that we recognize X bar which is a simple mean why I might as well and then we multiply those two numbers and click on average",
+     "ko": "그들이 같은 방향으로 움직이는지 반대 방향으로 움직이는지 측정하는 방법은 우리가 x bar를 인식하는 것입니다."
+    },
+    {
+     "t": 119,
+     "page": 22,
+     "en": "and if we pick up whoever he is and divide it by 10 yard error",
+     "ko": "그리고 우리가 그 사람을 집어 들고 10야드 오류로 나누면"
+    },
+    {
+     "t": 138,
+     "page": 22,
+     "en": "10:30 a.m. so correlation is the standardized in a way that four various we have numbers here so if X1 takes a dollar from many programs",
+     "ko": "오전 10시 30분 따라서 상관 관계는 4가지 다양한 방식으로 표준화되어 있습니다.",
+     "raw": "10:30 a.m. so correlation is the standardized in a way that four various we have numbers here so if X1 takes a dollar from many calculate program"
+    },
+    {
+     "t": 144,
+     "page": 22,
+     "en": "so here the unique is still there so we will change the unit of four videos",
+     "ko": "그래서 여기에 고유한 것이 여전히 존재하므로 4개의 비디오 단위를 변경할 것입니다."
+    },
+    {
+     "t": 158,
+     "page": 22,
+     "en": "but once we stand or not we only look at the you know the number between 0 and 1 for this month so how to standardize with divide the number by standard deviation of x",
+     "ko": "그러나 우리가 서 있거나 그렇지 않으면 이번 달의 0과 1 사이의 숫자만 알 수 있으므로 x의 표준 편차로 숫자를 나누는 방법으로 표준화하는 방법"
+    },
+    {
+     "t": 159,
+     "page": 22,
+     "en": "we can",
+     "ko": "우리는 할 수 있습니다"
+    },
+    {
+     "t": 163,
+     "page": 22,
+     "en": "standard between",
+     "ko": "사이의 표준"
+    }
+   ]
+  },
+  {
+   "page": 23,
+   "en": "all right and one thing about correlation is that correlation is useful if they move in the same direction so here probably it has a hospital Corporation right if it's increases why tend to increase how about this the description how about that they are not for a lady at all we don't see any are related in certain way",
+   "ko": "괜찮아 그리고 상관 관계에 대한 한 가지는 상관 관계가 같은 방향으로 이동하는 경우 유용하므로 여기에서 아마도 병원 기업이 증가하면 증가하는 경향이 있는 이유가 될 것입니다. 이것은 어떤가요? 설명 그들은 여성을위한 것이 아닙니다. 우리는 아무 것도 볼 수 없습니다. 특정 방식으로 관련되어 있습니다",
+   "slideText": "Covariance The (empirical) covariance of two variables X and Y for which we have observations { ( x i , y i ) , i = 1 , · · · , N } (like consumption and income) is Cov ( X , Y ) = 1 N Σ N i =1 x i y i − x · y = xy − x · y = 1 N Σ N i =1 ( x i − x )( y i − y ) Note that the covariance of the centered variables is equal to that of the uncentered variables: Cov ( X , Y ) = Cov ( X − x , Y − y ). Its units are units of X times units of Y — which is why we usually report the correlation instead. Sunha Myong Introduction and Review September 2026 23 / 46",
+   "segs": [
+    {
+     "t": 178,
+     "page": 23,
+     "en": "all right",
+     "ko": "괜찮아"
+    },
+    {
+     "t": 191,
+     "page": 23,
+     "en": "and one thing about correlation is that correlation is useful if they move in the same direction so here probably it has a hospital Corporation right if it's increases why tend to increase",
+     "ko": "그리고 상관 관계에 대한 한 가지는 상관 관계가 같은 방향으로 이동하는 경우 유용하므로 여기에서 아마도 병원 기업이 증가하면 증가하는 경향이 있는 이유가 될 것입니다."
+    },
+    {
+     "t": 193,
+     "page": 23,
+     "en": "how about this",
+     "ko": "이것은 어떤가요?"
+    },
+    {
+     "t": 207,
+     "page": 23,
+     "en": "the description how about that they are not for a lady at all we don't see any",
+     "ko": "설명 그들은 여성을위한 것이 아닙니다. 우리는 아무 것도 볼 수 없습니다."
+    },
+    {
+     "t": 219,
+     "page": 23,
+     "en": "are related in certain way",
+     "ko": "특정 방식으로 관련되어 있습니다"
+    }
+   ]
+  },
+  {
+   "page": 25,
+   "en": "we see very clear kind of pump shape and pepper but if we calculate the correlation it gives us a few because the correlation can only capture whether they are positive for a lady here correlation cannot detect the underlying relationship so in this case correlation is not helpful for us to understand whether they are related or not they are related the correlation cannot accept okay oh yeah and this one so I start from a very casual example of a teacher explain and then I show you how we do some hypothesis testing will I explain fully about why we have to do that but that's kind of reason and here I provided some background knowledge about is a way to make a compelling confusion out of the paper matters okay so it's a bit different",
+   "ko": "우리는 매우 명확한 종류의 펌프 모양과 후추를 봅니다. 그러나 우리가 상관 관계를 계산하면 우리에게 몇 가지를 제공합니다. 상관 관계가 여성에게 긍정적인지 여부만 캡처할 수 있기 때문에 상관 관계는 기본 관계를 감지할 수 없습니다. 따라서 이 경우 상관 관계는 관련성이 있는지 여부를 이해하는 데 도움이되지 않습니다. 그들은 상관 관계가 수락할 수 없습니다 괜찮아 아, 그리고 이것은 그래서 나는 선생님이 설명하는 아주 캐주얼한 예에서 시작합니다. 그런 다음 가설 테스트를 수행하는 방법을 보여줍니다. 우리가 왜 그렇게 해야 하는지에 대해 완전히 설명할 수 있지만 그것이 일종의 이유이며 여기에서 나는 종이 문제에서 설득력있는 혼란을 만드는 방법입니다. 그래서 그것은 약간입니다 다른",
+   "slideText": "The correlation coefficient measures linear association (a) Corr = +0 . 9: strong positive linear association. (b) Corr = − 0 . 8: strong negative linear association. (c) Corr = 0: no association at all. (d) Corr = 0 — but X and Y are perfectly related , just not linearly. Moral: zero correlation does not mean independence. Always plot your data before trusting a single number. Source: Stock & Watson, Introduction to Econometrics , 4th ed. (Global Edition) — Figure 2.5 Sunha Myong Introduction and Review September 2026 25 / 46",
+   "segs": [
+    {
+     "t": 224,
+     "page": 25,
+     "en": "we see very clear kind of pump shape and pepper",
+     "ko": "우리는 매우 명확한 종류의 펌프 모양과 후추를 봅니다."
+    },
+    {
+     "t": 229,
+     "page": 25,
+     "en": "but if we calculate the correlation it gives us a few",
+     "ko": "그러나 우리가 상관 관계를 계산하면 우리에게 몇 가지를 제공합니다.",
+     "raw": "but if we calculate the correlation it gives us assume"
+    },
+    {
+     "t": 247,
+     "page": 25,
+     "en": "because the correlation can only capture whether they are positive for a lady here correlation cannot detect the underlying relationship",
+     "ko": "상관 관계가 여성에게 긍정적인지 여부만 캡처할 수 있기 때문에 상관 관계는 기본 관계를 감지할 수 없습니다."
+    },
+    {
+     "t": 255,
+     "page": 25,
+     "en": "so in this case correlation is not helpful for us to understand whether they are related or not",
+     "ko": "따라서 이 경우 상관 관계는 관련성이 있는지 여부를 이해하는 데 도움이되지 않습니다."
+    },
+    {
+     "t": 259,
+     "page": 25,
+     "en": "they are related the correlation cannot accept",
+     "ko": "그들은 상관 관계가 수락할 수 없습니다",
+     "raw": "they are relating the correlation cannot affect"
+    },
+    {
+     "t": 264,
+     "page": 25,
+     "en": "okay",
+     "ko": "괜찮아"
+    },
+    {
+     "t": 269,
+     "page": 25,
+     "en": "oh yeah and this one",
+     "ko": "아, 그리고 이것은"
+    },
+    {
+     "t": 278,
+     "page": 25,
+     "en": "so I start from a very casual example of a teacher explain",
+     "ko": "그래서 나는 선생님이 설명하는 아주 캐주얼한 예에서 시작합니다."
+    },
+    {
+     "t": 283,
+     "page": 25,
+     "en": "and then I show you how we do some hypothesis testing",
+     "ko": "그런 다음 가설 테스트를 수행하는 방법을 보여줍니다."
+    },
+    {
+     "t": 295,
+     "page": 25,
+     "en": "will I explain fully about why we have to do that but that's kind of reason and here I provided some background knowledge about",
+     "ko": "우리가 왜 그렇게 해야 하는지에 대해 완전히 설명할 수 있지만 그것이 일종의 이유이며 여기에서 나는",
+     "raw": "will I explain fully about why we have to do that but that's kind of reason and here I provided some background knowledge of our"
+    },
+    {
+     "t": 313,
+     "page": 25,
+     "en": "is a way to make a compelling confusion out of the paper matters okay",
+     "ko": "종이 문제에서 설득력있는 혼란을 만드는 방법입니다.",
+     "raw": "is a way to make a compelling confusion out of the data malice okay"
+    },
+    {
+     "t": 315,
+     "page": 25,
+     "en": "so it's a bit",
+     "ko": "그래서 그것은 약간입니다"
+    },
+    {
+     "t": 319,
+     "page": 25,
+     "en": "different",
+     "ko": "다른"
+    }
+   ]
+  },
+  {
+   "page": 27,
+   "en": "and the reason is that the hypothesis test and the all those alysis based on probability the losing is the base of the probability Theory what he did here is very you may think that all this is very much theoretical reasoning why we're doing this you need to understand how probability works how to calculate the likelihood of observing the same option in the face so randomly here random list a lot of times okay random means that observation X1 and X2 are not related at all so it's a completely independent so your observation from the first and your observation of the first one so they randomly choose houses and then they ask for questions but that's a Randomness if they choose house award who behave well who walk alone more hours intentionally that sample over represents certain populations we really distort our understanding of the distribution of the entire population the sample choose correct randomly the household of different characters if we choose household food work to work like 40 hours per week then that simple does not represent the population of the Korean language So Random place is very important to make the distribution which has all possible entities of Interest and so if in our example our population is all School District in California not only 420 Street population and then concentrily we believe the population has a large number in vehicle is large number and random variable position the probability I said that we have two individuals with no signaling one individual believe in one sibling one individual reason 2 Series right this is the history and this is a probability density so this is a histogram we can convert a distance to probably density and the probability of observing 0 number 8 402 hours in one number is one of the cartoon 63 this is the property together it's from the government what is the cumulative distribution this is the probability density functions and this can be represented as a tumor activity distribution function same information can be defined a differently now I want to calculate the probability of observing number of receiving which is equal to or less than 0 so people the probability observing driving X which takes certain number number X or +75 and this number can be 012 so what I mean is that the probability of number of possibility less than equal to 0 what is the probability we have only this case right because there is no negative number of receiving we have two individuals so it's a one of two or before that is this one what is the probability of the number of receiving less than or equal to one so the total number of population is 4 what is the number of individual is less than equal to what but that's not all they're the two there are two individuals for The Sibling is less than one zero so in total it is 3/4 so here",
+   "ko": "그리고 그 이유는 가설과 그 모든 것이 확률을 기반으로 한 분석 지는 것은 의 기초입니다 확률 이론 그가 여기서 한 일은 매우 이 모든 것이 매우 중요하다고 생각할 수도 있습니다 우리가 이것을 하는 이유 이론적 추론 확률이 어떻게 작동하는지 이해해야 합니다 얼굴에서 동일한 옵션을 관찰할 가능성을 계산하는 방법 그래서 무작위로 여기에 무작위 목록을 많이 나열하십시오 괜찮아 무작위는 관측 X1과 X2가 전혀 관련이 없으므로 완전히 독립적이므로 처음부터 관찰합니다. 그리고 첫 번째 관찰 그래서 그들은 무작위로 집을 선택합니다 그런 다음 그들은 질문을 합니다 그러나 그들이 의도적으로 더 많은 시간을 걸어가는 집 상을 선택하는 것은 무작위성입니다. 샘플 무작위로 올바른 것을 선택하십시오 다른 캐릭터의 가정 우리가 가정을 선택하는 경우 음식 작업 주당 40시간 정도 일하면 그 단순함이 한국어의 인구를 나타내지 않으므로 임의의 장소가 매우 중요합니다. 배포를 만들기 위해 관심 있는 모든 엔티티가 있습니다 과 따라서 우리의 예에서 우리의 인구가 캘리포니아의 모든 학군인 경우 420 Street뿐만 아니라 인구 그런 다음 집중적으로 우리는 차량에 인구가 많은 수가 많고 확률 변수 위치가 많다고 생각합니다. 확률 나는 우리에게 신호를 보내지 않는 두 사람이 있다고 말했습니다. 이것이 역사입니다 그리고 이것은 확률 밀도이므로 히스토그램입니다. 우리는 거리를 아마도 밀도와 0 숫자 8을 관찰할 확률로 변환할 수 있습니다. 402시간 하나의 숫자는 1입니다 만화의 63 이것은 함께 속성입니다 정부에서 온 것입니다 누적 분포는 무엇입니까 이것은 확률입니다 밀도 함수 그리고 이것은 종양 활동 분포 함수로 나타낼 수 있습니다. 동일한 정보를 다르게 정의할 수 있습니다. 이제 0보다 작은 수신 횟수를 관찰할 확률을 계산하고 싶습니다. 그래서 사람들 확률 관찰 운전 엑스 걸리는 것 특정 숫자 숫자 x 또는 +75 그리고 이 숫자는 012일 수 있으므로 내 말은 가능성의 수의 확률이 0보다 작음 확률은 얼마입니까? 우리는 이 경우만 있습니다 수신의 음수가 없기 때문입니다 우리에게는 두 명의 개인이 있습니다 그래서 그것은 둘 중 하나 또는 이전입니다 이것이 바로 수신 횟수의 확률입니다. 1보다 작거나 같습니다 따라서 총 인구 수는 4입니다. 개인의 수는 무엇보다 작습니다. 하지만 그게 다가 아닙니다 그들은 두 사람입니다. 그래서 여기에",
+   "slideText": "Randomness Data are best thought as the outcome of a random experiment. A survey involves a lot of randomness. A random experiment is unpredictable. In order to model randomness we use probability theory. Population vs. sample. The population is the group of all possible entities of interest (all California school districts); we think of it as infinitely large. A random variable Y is a numerical summary of a random outcome (a district’s average test score, its STR). Sunha Myong Introduction and Review September 2026 27 / 46",
+   "segs": [
+    {
+     "t": 333,
+     "page": 27,
+     "en": "and the reason is that the hypothesis test and the all those",
+     "ko": "그리고 그 이유는 가설과 그 모든 것이",
+     "raw": "and the reason is that the hypotheist test and the all those an"
+    },
+    {
+     "t": 335,
+     "page": 27,
+     "en": "alysis based on probability",
+     "ko": "확률을 기반으로 한 분석"
+    },
+    {
+     "t": 338,
+     "page": 27,
+     "en": "the losing is the base of the",
+     "ko": "지는 것은 의 기초입니다"
+    },
+    {
+     "t": 338,
+     "page": 27,
+     "en": "probability Theory",
+     "ko": "확률 이론"
+    },
+    {
+     "t": 343,
+     "page": 27,
+     "en": "what he did here is very",
+     "ko": "그가 여기서 한 일은 매우"
+    },
+    {
+     "t": 349,
+     "page": 27,
+     "en": "you may think that all this is very much",
+     "ko": "이 모든 것이 매우 중요하다고 생각할 수도 있습니다"
+    },
+    {
+     "t": 359,
+     "page": 27,
+     "en": "theoretical reasoning why we're doing this you need to understand how probability works",
+     "ko": "우리가 이것을 하는 이유 이론적 추론 확률이 어떻게 작동하는지 이해해야 합니다"
+    },
+    {
+     "t": 376,
+     "page": 27,
+     "en": "how to calculate the likelihood of observing the same option in the face",
+     "ko": "얼굴에서 동일한 옵션을 관찰할 가능성을 계산하는 방법"
+    },
+    {
+     "t": 378,
+     "page": 27,
+     "en": "so randomly",
+     "ko": "그래서 무작위로",
+     "raw": "so randomness"
+    },
+    {
+     "t": 385,
+     "page": 27,
+     "en": "here random list a lot of times",
+     "ko": "여기에 무작위 목록을 많이 나열하십시오"
+    },
+    {
+     "t": 391,
+     "page": 27,
+     "en": "okay",
+     "ko": "괜찮아"
+    },
+    {
+     "t": 405,
+     "page": 27,
+     "en": "random means that observation X1 and X2 are not related at all so it's a completely independent so your observation from the first",
+     "ko": "무작위는 관측 X1과 X2가 전혀 관련이 없으므로 완전히 독립적이므로 처음부터 관찰합니다."
+    },
+    {
+     "t": 411,
+     "page": 27,
+     "en": "and your observation of the first one",
+     "ko": "그리고 첫 번째 관찰",
+     "raw": "and your observation of the first one to anything"
+    },
+    {
+     "t": 424,
+     "page": 27,
+     "en": "so they randomly choose houses",
+     "ko": "그래서 그들은 무작위로 집을 선택합니다"
+    },
+    {
+     "t": 426,
+     "page": 27,
+     "en": "and then they ask for questions",
+     "ko": "그런 다음 그들은 질문을 합니다"
+    },
+    {
+     "t": 450,
+     "page": 27,
+     "en": "but that's a Randomness if they choose house award who behave well who walk alone more hours intentionally that sample over represents certain populations we really distort our understanding of the distribution of the entire population",
+     "ko": "그러나 그들이 의도적으로 더 많은 시간을 걸어가는 집 상을 선택하는 것은 무작위성입니다."
+    },
+    {
+     "t": 452,
+     "page": 27,
+     "en": "the sample",
+     "ko": "샘플"
+    },
+    {
+     "t": 455,
+     "page": 27,
+     "en": "choose correct randomly",
+     "ko": "무작위로 올바른 것을 선택하십시오"
+    },
+    {
+     "t": 458,
+     "page": 27,
+     "en": "the household of different characters",
+     "ko": "다른 캐릭터의 가정"
+    },
+    {
+     "t": 465,
+     "page": 27,
+     "en": "if we choose household",
+     "ko": "우리가 가정을 선택하는 경우"
+    },
+    {
+     "t": 466,
+     "page": 27,
+     "en": "food work",
+     "ko": "음식 작업"
+    },
+    {
+     "t": 474,
+     "page": 27,
+     "en": "to work like 40 hours per week then that simple does not represent the population of the Korean language So Random place is very important",
+     "ko": "주당 40시간 정도 일하면 그 단순함이 한국어의 인구를 나타내지 않으므로 임의의 장소가 매우 중요합니다.",
+     "raw": "to work like 40 hours per week then that simple does not represent the population of the Korean language right so Random place is very important"
+    },
+    {
+     "t": 486,
+     "page": 27,
+     "en": "to make the distribution",
+     "ko": "배포를 만들기 위해",
+     "raw": "to make the distribution representation"
+    },
+    {
+     "t": 496,
+     "page": 27,
+     "en": "which has all possible entities of Interest",
+     "ko": "관심 있는 모든 엔티티가 있습니다"
+    },
+    {
+     "t": 498,
+     "page": 27,
+     "en": "and",
+     "ko": "과"
+    },
+    {
+     "t": 509,
+     "page": 27,
+     "en": "so if in our example our population is all School District in California not only 420 Street",
+     "ko": "따라서 우리의 예에서 우리의 인구가 캘리포니아의 모든 학군인 경우 420 Street뿐만 아니라",
+     "raw": "so if in our example our population is all School District in California not only 420 Central District"
+    },
+    {
+     "t": 522,
+     "page": 27,
+     "en": "population",
+     "ko": "인구"
+    },
+    {
+     "t": 532,
+     "page": 27,
+     "en": "and then concentrily we believe the population has a large number in vehicle is large number and random variable position",
+     "ko": "그런 다음 집중적으로 우리는 차량에 인구가 많은 수가 많고 확률 변수 위치가 많다고 생각합니다."
+    },
+    {
+     "t": 582,
+     "page": 27,
+     "en": "the probability",
+     "ko": "확률"
+    },
+    {
+     "t": 605,
+     "page": 27,
+     "en": "I said that we have two individuals with no signaling one individual believe in one sibling one individual reason 2 Series right",
+     "ko": "나는 우리에게 신호를 보내지 않는 두 사람이 있다고 말했습니다."
+    },
+    {
+     "t": 607,
+     "page": 27,
+     "en": "this is the history",
+     "ko": "이것이 역사입니다"
+    },
+    {
+     "t": 613,
+     "page": 27,
+     "en": "and this is a probability density so this is a histogram",
+     "ko": "그리고 이것은 확률 밀도이므로 히스토그램입니다.",
+     "raw": "and this is a probability density so this is a history program"
+    },
+    {
+     "t": 624,
+     "page": 27,
+     "en": "we can convert a distance to probably density and the probability of observing 0 number 8",
+     "ko": "우리는 거리를 아마도 밀도와 0 숫자 8을 관찰할 확률로 변환할 수 있습니다."
+    },
+    {
+     "t": 626,
+     "page": 27,
+     "en": "402 hours",
+     "ko": "402시간"
+    },
+    {
+     "t": 631,
+     "page": 27,
+     "en": "in one number is one",
+     "ko": "하나의 숫자는 1입니다"
+    },
+    {
+     "t": 634,
+     "page": 27,
+     "en": "of the cartoon",
+     "ko": "만화의",
+     "raw": "of the fortunum and number possibly equal"
+    },
+    {
+     "t": 637,
+     "page": 27,
+     "en": "63 this is the property together",
+     "ko": "63 이것은 함께 속성입니다"
+    },
+    {
+     "t": 645,
+     "page": 27,
+     "en": "it's from the government",
+     "ko": "정부에서 온 것입니다"
+    },
+    {
+     "t": 653,
+     "page": 27,
+     "en": "what is the cumulative distribution this is the probability",
+     "ko": "누적 분포는 무엇입니까 이것은 확률입니다"
+    },
+    {
+     "t": 657,
+     "page": 27,
+     "en": "density functions",
+     "ko": "밀도 함수"
+    },
+    {
+     "t": 677,
+     "page": 27,
+     "en": "and this can be represented as a tumor activity distribution function same information can be defined a differently now I want to calculate the probability of observing number of receiving which is equal to or less than 0",
+     "ko": "그리고 이것은 종양 활동 분포 함수로 나타낼 수 있습니다. 동일한 정보를 다르게 정의할 수 있습니다. 이제 0보다 작은 수신 횟수를 관찰할 확률을 계산하고 싶습니다."
+    },
+    {
+     "t": 682,
+     "page": 27,
+     "en": "so people",
+     "ko": "그래서 사람들"
+    },
+    {
+     "t": 687,
+     "page": 27,
+     "en": "the probability",
+     "ko": "확률",
+     "raw": "nature is the probability"
+    },
+    {
+     "t": 691,
+     "page": 27,
+     "en": "observing",
+     "ko": "관찰"
+    },
+    {
+     "t": 694,
+     "page": 27,
+     "en": "driving",
+     "ko": "운전",
+     "raw": "jerving"
+    },
+    {
+     "t": 695,
+     "page": 27,
+     "en": "X",
+     "ko": "엑스"
+    },
+    {
+     "t": 698,
+     "page": 27,
+     "en": "which takes",
+     "ko": "걸리는 것"
+    },
+    {
+     "t": 701,
+     "page": 27,
+     "en": "certain number",
+     "ko": "특정 숫자"
+    },
+    {
+     "t": 705,
+     "page": 27,
+     "en": "number X or +75",
+     "ko": "숫자 x 또는 +75"
+    },
+    {
+     "t": 717,
+     "page": 27,
+     "en": "and this number can be 012 so what I mean is that the probability of number of possibility",
+     "ko": "그리고 이 숫자는 012일 수 있으므로 내 말은 가능성의 수의 확률이"
+    },
+    {
+     "t": 721,
+     "page": 27,
+     "en": "less than equal to 0 what is the probability",
+     "ko": "0보다 작음 확률은 얼마입니까?"
+    },
+    {
+     "t": 725,
+     "page": 27,
+     "en": "we have only this case right",
+     "ko": "우리는 이 경우만 있습니다"
+    },
+    {
+     "t": 729,
+     "page": 27,
+     "en": "because there is no negative number of receiving",
+     "ko": "수신의 음수가 없기 때문입니다"
+    },
+    {
+     "t": 731,
+     "page": 27,
+     "en": "we have two individuals",
+     "ko": "우리에게는 두 명의 개인이 있습니다"
+    },
+    {
+     "t": 737,
+     "page": 27,
+     "en": "so it's a one of two or before",
+     "ko": "그래서 그것은 둘 중 하나 또는 이전입니다"
+    },
+    {
+     "t": 743,
+     "page": 27,
+     "en": "that is this one what is the probability of the number of receiving",
+     "ko": "이것이 바로 수신 횟수의 확률입니다."
+    },
+    {
+     "t": 746,
+     "page": 27,
+     "en": "less than or equal to one",
+     "ko": "1보다 작거나 같습니다"
+    },
+    {
+     "t": 755,
+     "page": 27,
+     "en": "so the total number of population is 4 what is the number of individual is less than equal to what",
+     "ko": "따라서 총 인구 수는 4입니다. 개인의 수는 무엇보다 작습니다."
+    },
+    {
+     "t": 762,
+     "page": 27,
+     "en": "but that's not all",
+     "ko": "하지만 그게 다가 아닙니다"
+    },
+    {
+     "t": 771,
+     "page": 27,
+     "en": "they're the two there are two individuals for The Sibling is less than one zero so in total it is 3/4",
+     "ko": "그들은 두 사람입니다."
+    },
+    {
+     "t": 774,
+     "page": 27,
+     "en": "so",
+     "ko": "그래서"
+    },
+    {
+     "t": 776,
+     "page": 27,
+     "en": "here",
+     "ko": "여기에"
+    }
+   ]
+  }
+ ],
+ "savedAt": "2026-09-07T02:18:34.204Z"
+}
