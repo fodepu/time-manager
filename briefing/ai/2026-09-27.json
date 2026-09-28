@@ -1,0 +1,30 @@
+{
+  "date": "2026-09-27",
+  "generatedAt": "2026-09-27T08:30:00+09:00",
+  "urgent": null,
+  "items": [
+    {
+      "cat": "model",
+      "title": "NaiveAI Naive-N0.5-Flash — MIT 라이선스 309B MoE, 1M 컨텍스트에 ~2,000 tok/s",
+      "lead": "베이징 스타트업 NaiveAI가 상업 이용 자유로운 MIT 라이선스로 309B MoE(활성 15.5B) 오픈 모델을 공개했다.",
+      "points": [
+        "**활성 15.5B로 309B 규모 지식을 쓰되 추론 비용은 소형급** — 자체 추론 스택으로 최대 ~2,000 tok/s 주장. 슬라이딩윈도 39층 + 희소 어텐션 9층 구조로 **네이티브 1M 컨텍스트**를 싸게 처리한다.",
+        "**MIT 라이선스(가중치 공개)라 자가호스팅에 제약이 없다** — 사내 GPU로 대용량 문서·로그 파이프라인을 돌리려는 팀에 라이선스 걱정 없이 붙일 수 있는 오픈 선택지."
+      ],
+      "note": "9/27 공개, MIT 라이선스. 실사용 정확도는 자기 태스크로 검증 필요.",
+      "source": "aiweekly.co",
+      "url": "https://aiweekly.co/ai-news-today"
+    },
+    {
+      "cat": "market",
+      "title": "Stanford HomeBody — GPT-6 Astra를 휴머노이드에 직결, VLA 정책층을 건너뛴다",
+      "lead": "스탠퍼드 TML 랩이 GPT-6 Astra를 Unitree G1 로봇에 직접 연결해, 통상의 비전-언어-행동(VLA) 정책층 없이 환경 탐색·디지털 트윈 생성을 시연했다.",
+      "points": [
+        "**전용 로봇 정책 모델을 학습시키는 대신 범용 프론티어 모델을 카메라 피드에 직접 물려 로봇을 움직인다** — 로보틱스가 '데이터 수집→VLA 학습'에서 '프롬프트·툴 설계'로 옮겨갈 수 있음을 보여준다. 로봇 앱을 LLM 에이전트처럼 짜는 방향의 신호."
+      ],
+      "note": "9/27 연구 데모. 상용 제품 아님 — 기법·방향의 참고.",
+      "source": "aiweekly.co",
+      "url": "https://aiweekly.co/ai-news-today"
+    }
+  ]
+}

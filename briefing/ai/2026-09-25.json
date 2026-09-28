@@ -1,0 +1,41 @@
+{
+  "date": "2026-09-25",
+  "generatedAt": "2026-09-25T08:30:00+09:00",
+  "urgent": null,
+  "items": [
+    {
+      "cat": "tool",
+      "title": "Claude 플러그인 개발자 포털 — 제출·자동검증·심사추적·사용분석까지 한 흐름",
+      "lead": "9/25 개발자 포털이 열려, MCP 커넥터·플러그인 번들을 Claude 디렉터리에 직접 제출하고 배포 후 사용 현황까지 추적할 수 있다.",
+      "points": [
+        "**MCP 커넥터 단품 또는 MCP+스킬 번들을 제출→자동 안전 스캔→심사 상태 추적→배포 후 제품 표면별 설치·사용 분석** — 사내 도구를 팀에 배포하거나 외부 공개할 때 심사 파이프라인을 새로 짤 필요가 없다."
+      ],
+      "note": "9/25 유료 플랜 개발자 대상, Claude·Claude Code에 수 주에 걸쳐 롤아웃.",
+      "source": "anthropic.com",
+      "url": "https://www.anthropic.com/news"
+    },
+    {
+      "cat": "tool",
+      "title": "OpenAI Codex 0.157 — GPT-6 Sol·Luna 탑재 + 전체화면 전사·대화 포크('f')",
+      "lead": "Codex가 GPT-6 Sol/Luna를 모델 선택기에 추가하고, 전체화면 전사 기본화와 대화 분기(fork) 단축키를 넣었다.",
+      "points": [
+        "**모델 선택기에서 GPT-6 Sol/Luna로 전환해 기존 Codex 워크플로 그대로 신모델을 물린다** — 레이트리밋 프롬프트는 Luna 권장, Amazon Bedrock 경유도 지원돼 사내 AWS에서 쓸 수 있다.",
+        "**'f' 키로 대화를 그 지점에서 포크** — 한 세션에서 여러 해법을 갈라 병렬 시험하고, 전체화면 전사로 긴 에이전트 출력을 통째로 본다. 유니코드 렌더·음성 안정성·파일 업로드 신뢰성 수정 동반."
+      ],
+      "note": "9/25 Codex 0.157.0. 데스크톱/CLI 업데이트 후 사용.",
+      "source": "openai.com",
+      "url": "https://releasebot.io/updates/openai"
+    },
+    {
+      "cat": "update",
+      "title": "ChatGPT 보안 이력(Security History) — 로그인·MFA 변경을 직접 감사",
+      "lead": "9/25 설정에 계정 로그인/로그아웃·다중인증 변경 이력을 시간·위치·기기와 함께 보여주는 보안 이력이 추가됐다.",
+      "points": [
+        "**Settings > Security and login에서 내 계정 접속 이력을 직접 확인** — 공용·기업 환경에서 계정 도용·비정상 접속을 스스로 점검할 수 있다. 일부 위치·기기 정보는 근사치일 수 있음."
+      ],
+      "note": "9/25 ChatGPT 전반. 설정 내 보안 탭.",
+      "source": "openai.com",
+      "url": "https://releasebot.io/updates/openai"
+    }
+  ]
+}

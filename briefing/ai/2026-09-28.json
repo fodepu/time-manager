@@ -1,0 +1,79 @@
+{
+  "date": "2026-09-28",
+  "generatedAt": "2026-09-28T09:08:40+09:00",
+  "urgent": null,
+  "items": [
+    {
+      "cat": "model",
+      "title": "Claude Opus 5.5 — 40% 싼 값에 Opus 5 넘는 에이전트 코딩, Claude Code 기본 모델로",
+      "lead": "9/22 나온 새 플래그십. Opus 5 대비 전형 비용 40%↓·출력 30% 빠르고, Claude Code의 기본 Opus로 이미 깔려 지금 열면 이걸 쓰고 있다.",
+      "points": [
+        "**1M 토큰 컨텍스트 + 상시 적응형 사고(끌 수 없음)**로 대형 레포·긴 문서를 통째로 물려 '탐색→계획→수정'을 한 세션에서 끝낸다. thinking on/off 분기가 사라져, 에이전트 루프에서 reasoning 토글 로직을 지우고 단일 경로로 단순화할 수 있다.",
+        "**입력 $4 / 출력 $20 / 캐시읽기 $0.20**(100만 토큰) — 캐시 히트가 많은 반복 에이전트 워크로드에서 특히 유리해, Sonnet으로 내리던 작업 일부를 비용 부담 없이 Opus 급으로 되돌릴 수 있다. 급하면 **Fast 모드 $8/$40**로 지연을 더 줄인다.",
+        "**Bedrock·Vertex·Azure 전 플랫폼 동시 제공, Claude Code 기본값** — 별도 설정 없이 최신 모델로 코딩하려면 Claude Code를 최신으로 올리기만 하면 된다."
+      ],
+      "note": "9/22 출시. 모델 ID claude-opus-5-5. API·Bedrock·Vertex·Azure·Claude Code에서 사용, 적응형 사고 비활성화 불가.",
+      "source": "platform.claude.com",
+      "url": "https://platform.claude.com/docs/en/models/opus-5-5/overview"
+    },
+    {
+      "cat": "model",
+      "title": "OpenAI GPT-6 Sol·Luna — API 값 절반, Sol이 Opus 5를 9% 비용으로 앞선다(주장)",
+      "lead": "9/22 나온 GPT-6 라인. GPT-5.6 대비 API 가격 50%↓, Sol은 AutomationBench에서 Opus 5를 9% 비용으로 능가한다고 주장 — 비용 라우팅을 다시 짤 근거.",
+      "points": [
+        "**Sol=고성능·저비용 에이전트/자동화용, Luna=초저가 대량 처리용.** Luna는 전작 대비 58% 저렴 + 오류 ~50% 감소. 대량 분류·추출·에이전트 스텝처럼 '싸고 충분히 정확'이 관건인 작업을 **Luna로 내리고, 판단이 중요한 스텝만 Sol로 올리는 2단 라우팅**이 실용선.",
+        "**Codex·API(gpt-6-sol / gpt-6-luna)·ChatGPT Work·데스크톱에서 즉시 사용**, 캐싱 효율·사용량 한도도 상향. 기존 GPT-5.6 파이프라인은 모델 ID만 바꿔 A/B로 태스크당 완료비용을 재보면 된다."
+      ],
+      "note": "9/22 출시. 벤치는 벤더 주장이므로 자기 태스크로 검증 권장. 플랜별 접근 상이(Luna는 Free/Go도).",
+      "source": "openai.com",
+      "url": "https://openai.com/index/introducing-gpt-6-sol-and-luna/"
+    },
+    {
+      "cat": "update",
+      "title": "GPT-6 프롬프트 캐싱 개편 — 캐시 토큰 최대 90% 할인·30분 유지 + 캐시 대시보드",
+      "lead": "GPT-6과 함께 캐싱이 대폭 강화돼, 긴 시스템 프롬프트·툴 정의를 재사용하는 워크로드의 실비용을 구조적으로 낮출 수 있게 됐다.",
+      "points": [
+        "**캐시된 토큰 최대 90% 할인 + 캐시 윈도 30분**으로 같은 컨텍스트를 반복 호출하는 에이전트·RAG·챗봇의 입력 비용이 급감. **명시적 캐시 브레이크포인트**로 캐시 범위를 직접 지정하고, **추론 강도를 캐시를 깨지 않고** 조절해 '싸게 캐시 + 필요 스텝만 깊게 사고'를 조합한다.",
+        "**캐싱 대시보드 + 미스 진단 + 프리워밍**으로 히트율을 측정·개선 — 시스템/툴 정의를 프롬프트 앞단에 고정하고 가변부를 뒤로 미는 캐시 친화 설계가 곧바로 비용으로 돌아온다."
+      ],
+      "note": "GPT-6 대상, OpenAI API. 히트율은 프롬프트 구조에 좌우되므로 고정부를 앞단에 배치.",
+      "source": "openai.com",
+      "url": "https://openai.com/news/"
+    },
+    {
+      "cat": "tool",
+      "title": "Claude 마켓플레이스 — 2,000+ 커넥터·에이전트를 한 창구에서 붙인다",
+      "lead": "9/23 오픈. 필요한 SaaS 연동·에이전트를 직접 구현하지 않고 검색해 바로 추가하는 단일 창구.",
+      "points": [
+        "**2,000개 이상 커넥터·플러그인·에이전트를 탐색해 팀 Claude에 즉시 연결** — 캘린더·CRM·드라이브 연동을 자체 개발 대신 마켓에서 붙이고, 빌더는 커넥터·에이전트를 등록하거나 파트너 네트워크에 합류한다.",
+        "**일부 유료 에이전트·제품은 Anthropic 약정 지출(committed spend)의 일부로 결제 가능** — 별도 조달·계약 없이 기존 팀 예산 안에서 도입해 볼 수 있다."
+      ],
+      "note": "9/23 전 플랫폼 오픈. Claude·Claude Code에서 커넥터·플러그인 추가.",
+      "source": "anthropic.com",
+      "url": "https://www.anthropic.com/news"
+    },
+    {
+      "cat": "tool",
+      "title": "Claude for Slack — 채널 안에서 내 개인 커넥터(캘린더·드라이브·CRM)를 쓴다",
+      "lead": "9/24부터 Slack 채널에서 Claude를 부를 때 채널 공용 도구와 별개로 본인 계정의 개인 커넥터에 접근시킬 수 있다.",
+      "points": [
+        "**채널에서 '내 캘린더 보고 이 스레드 참석자에게 회의 잡아줘' 식으로 개인 연동을 그 자리에서 사용** — DM으로 옮기지 않고 채널 맥락 그대로 처리한다. 첫 사용 시 권한을 묻고 이후 그 스레드에서는 기억한다.",
+        "**Review 모드(게시 전 승인)와 Auto 모드(민감 내용 아니면 자동 게시) 선택** — 공개 채널엔 Review로 오답 방어, 잡무 자동화엔 Auto로. Enterprise는 관리자가 전원 Review 강제 가능."
+      ],
+      "note": "Team 플랜부터 롤아웃 중, Enterprise 후속. Slack 채널에서 Claude 호출 시.",
+      "source": "anthropic.com",
+      "url": "https://www.anthropic.com/news"
+    },
+    {
+      "cat": "update",
+      "title": "Claude API Inline Tools(베타) — 대화 도중 도구를 추가해도 프롬프트 캐시가 안 깨진다",
+      "lead": "대화 중간의 system 메시지 안에서 도구를 정의할 수 있게 돼, 툴 세트를 바꾸느라 캐시를 통째로 날리던 낭비를 없앤다.",
+      "points": [
+        "**tool_addition 블록으로 도중에 도구를 추가·수정·버전업** — 지금까지는 tools를 바꾸면 캐시가 무효화돼 긴 컨텍스트를 다시 물어야 했다. 이제 세션을 이어가며 '이 단계부터 이 도구 추가' 식 동적 툴 주입이 가능해, 단계별로 도구가 달라지는 에이전트를 캐시를 유지한 채 굴린다."
+      ],
+      "note": "Claude API 베타, 헤더 inline-tools-2026-09-15. 대화 중 system 메시지 내 tool_addition으로 정의.",
+      "source": "platform.claude.com",
+      "url": "https://platform.claude.com/docs"
+    }
+  ]
+}
