@@ -2384,7 +2384,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="186">
+<meta name="tm-version" content="187">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -2471,6 +2471,8 @@
   .tt-rz-t { top:0; } .tt-rz-b { bottom:0; }
   @keyframes pgInUp{from{transform:translateY(28px);opacity:.35}to{transform:none;opacity:1}} @keyframes pgInDown{from{transform:translateY(-28px);opacity:.35}to{transform:none;opacity:1}} canvas.pg-in-up{animation:pgInUp .22s ease-out} canvas.pg-in-down{animation:pgInDown .22s ease-out}
 .lec-dropzone.flow, .lec-view-canvas.flow { flex-direction:column; align-items:flex-start; justify-content:flex-start; overflow:auto; }
+.lec-dropzone.flow.has-pdf, .lec-view-canvas.flow { padding-top:8px; }
+.lec-dropzone.flow > .lec-tools, .lec-view-canvas.flow > .lec-tools { position:sticky; top:8px; left:8px; order:-1; align-self:flex-start; margin:0 0 8px 8px; z-index:20; }
 .lec-dropzone.flow > canvas:not(.lec-annot), .lec-view-canvas.flow > canvas:not(.lec-annot) { margin:0 auto 12px auto !important; flex:none; }
 .lec-dropzone.flow.has-pdf:not(.lec-fs) { max-height:calc(100vh - 150px); }
 body.lec-full .lec-dropzone.flow { max-height:none; }
