@@ -1,4 +1,22 @@
 {
+ "savedAt": "2026-09-25T03:19:16.269Z",
+ "base": 29,
+ "docs": [
+  {
+   "name": "LNCh3_Slides.pdf",
+   "base": 0,
+   "total": 29,
+   "from": 0
+  },
+  {
+   "name": "Ch4_Sum_w_Figures.pdf",
+   "base": 29,
+   "total": 22,
+   "from": 17869
+  }
+ ],
+ "weekId": "wk4",
+ "langCode": "en-US",
  "id": "lec_2026-09-23_mudfffdz",
  "course": "거시경제학",
  "title": "계량경제학 4주차",
@@ -23,7 +41,7 @@
   }
  ],
  "pages": 22,
- "duration": 19847,
+ "duration": 179274,
  "log": [
   {
    "t": 0,
@@ -5147,6 +5165,5 @@
     }
    ]
   }
- ],
- "savedAt": "2026-09-23T07:02:08.833Z"
+ ]
 }
