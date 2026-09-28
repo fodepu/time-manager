@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-28T07:55:17.432Z",
+  "generatedAt": "2026-09-28T16:14:21.624Z",
   "source": "canvas",
   "user": "김주함(2025####72)",
   "courseFiles": {
@@ -2007,7 +2007,7 @@
       "course": "창업과 thinking design",
       "title": "1차 개인 과제 제출",
       "due": "2026-09-28T14:59:59Z",
-      "submitted": false,
+      "submitted": true,
       "url": "https://khcanvas.khu.ac.kr/courses/97242/assignments/1499652",
       "body": "제출해 주세요.",
       "files": []
@@ -2027,7 +2027,7 @@
       "course": "창업과 thinking design",
       "title": "2차 개인 과제 제출",
       "due": "2026-09-30T08:59:59Z",
-      "submitted": false,
+      "submitted": true,
       "url": "https://khcanvas.khu.ac.kr/courses/97242/assignments/1497651",
       "body": "2차 과제 제출해 주세요. 파일 형식은 1차 과제와 같습니다.",
       "files": []
