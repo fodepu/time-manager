@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-29T15:13:09.182Z",
+  "generatedAt": "2026-09-29T20:04:22.046Z",
   "source": "canvas",
   "user": "김주함(2025####72)",
   "courseFiles": {
@@ -596,6 +596,12 @@
             "title": "Core_note_heteroskedasticity_2026",
             "indent": 0,
             "url": "https://khcanvas.khu.ac.kr/courses/95551/modules/items/4795851"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "Core_note_panel_2026",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/95551/modules/items/4798474"
           }
         ]
       },
