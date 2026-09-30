@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-29T23:49:23.256Z",
+  "generatedAt": "2026-09-30T02:54:43.416Z",
   "source": "canvas",
   "user": "김주함(2025####72)",
   "courseFiles": {
@@ -2036,16 +2036,6 @@
       "files": []
     },
     {
-      "id": "a1497651",
-      "course": "창업과 thinking design",
-      "title": "2차 개인 과제 제출",
-      "due": "2026-09-30T08:59:59Z",
-      "submitted": true,
-      "url": "https://khcanvas.khu.ac.kr/courses/97242/assignments/1497651",
-      "body": "2차 과제 제출해 주세요. 파일 형식은 1차 과제와 같습니다.",
-      "files": []
-    },
-    {
       "id": "a1497675",
       "course": "창업과 thinking design",
       "title": "발제3",
@@ -2053,6 +2043,16 @@
       "submitted": false,
       "url": "https://khcanvas.khu.ac.kr/courses/97242/assignments/1497675",
       "body": "제출해 주세요.",
+      "files": []
+    },
+    {
+      "id": "a1497651",
+      "course": "창업과 thinking design",
+      "title": "2차 개인 과제 제출",
+      "due": "2026-10-06T05:59:59Z",
+      "submitted": true,
+      "url": "https://khcanvas.khu.ac.kr/courses/97242/assignments/1497651",
+      "body": "2차 과제 제출해 주세요. 파일 형식은 1차 과제와 같습니다.",
       "files": []
     },
     {
@@ -2220,6 +2220,24 @@
           "url": "https://khcanvas.khu.ac.kr/files/9731504/download?download_frd=1&verifier=jbCIvDJnNmmoMHULjGYD8CeUwEyBkZ5vrt4aAYvV",
           "type": "application/haansofthwpx",
           "size": 52422
+        }
+      ]
+    },
+    {
+      "id": "n485323",
+      "course": "창업과 thinking design",
+      "title": "9월 29일 수업자료",
+      "date": "2026-09-30T01:44:27Z",
+      "summary": "공유합니다.",
+      "body": "공유합니다.",
+      "url": "https://khcanvas.khu.ac.kr/courses/97242/discussion_topics/485323",
+      "files": [
+        {
+          "id": "9795254",
+          "name": "수업자료_9월 29일.zip",
+          "url": "https://khcanvas.khu.ac.kr/files/9795254/download?download_frd=1&verifier=vZ5txHsWZs9S7bbw6VYlE5hdyUsrmyyXSVsUXLml",
+          "type": "application/x-zip-compressed",
+          "size": 7288401
         }
       ]
     },
