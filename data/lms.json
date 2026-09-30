@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T02:54:43.416Z",
+  "generatedAt": "2026-09-30T09:08:06.676Z",
   "source": "canvas",
   "user": "김주함(2025####72)",
   "courseFiles": {
@@ -462,6 +462,12 @@
             "title": "Assign2_UMacro_26F",
             "indent": 0,
             "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4766179"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "Assign2Sol_UMacro_26F",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4799279"
           }
         ]
       },
@@ -473,15 +479,15 @@
         "items": [
           {
             "type": "ExternalTool",
-            "title": "Exam1_UM1_2024F_SCD",
+            "title": "(Revised!) Exam1_UM1_2024SP_rev_SCD",
             "indent": 0,
-            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4795196"
+            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4799275"
           },
           {
             "type": "ExternalTool",
-            "title": "Exam1_UM1_2024SP_SCD",
+            "title": "Exam1_UM1_2024F_SCD",
             "indent": 0,
-            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4795199"
+            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4795196"
           }
         ]
       }
@@ -2175,6 +2181,42 @@
       "summary": "1. The CARBON-NEUTRAL midterm exam 1 will take place from 15:00 to 16:00 (60 minutes) on Monday, October 12, 2026. You may take the test at YOUR PREFERRED LOCATION. 2. The exam will cover Math Review, Chapters 1 - 3, Chapter 4 up to page 14…",
       "body": "1. The CARBON-NEUTRAL midterm exam 1 will take place from 15:00 to 16:00 (60 minutes) on Monday, October 12, 2026. You may take the test at YOUR PREFERRED LOCATION. 2. The exam will cover Math Review, Chapters 1 - 3, Chapter 4 up to page 142 , and all materials on our class website. 3. The exam will be posted on our class website at 14:55. 4. All answers MUST be HANDWRITTEN and clearly LEGIBLE. 5. REMEMBER to provide your FULL NAME and STUDENT ID in your answer solution. 6. Once you are ready to submit your answer solution, email it to me ( hyungsunchoi.work@gmail.com ) BY 16:00, following the `Email-Submission Guide'. LATE SUBMISSION will NOT be accepted. 7. It will be an open-book and notebook exam. Also, you may use a calculator or computer software if necessary. 8. [IMPORTANT] NO PLAGIARISM. You must submit your OWN work. DO NOT copy and paste sentences or paragraphs directly from other sources for your answer in the exam. Using them without attribution is PLAGIARISM. If I find one, you will get ZERO points for the exam and an F as a final grade. 9. No solution will be provided for the past exams. If you have further questions or suggestions, please contact me. Sun",
       "url": "https://khcanvas.khu.ac.kr/courses/95555/discussion_topics/484920",
+      "files": []
+    },
+    {
+      "id": "n485358",
+      "course": "계량경제학",
+      "title": "Midterm Oct 21 During class time",
+      "date": "2026-09-30T03:12:33Z",
+      "summary": "Midterm will be taken on Oct 21 during the regular class time.",
+      "body": "Midterm will be taken on Oct 21 during the regular class time.",
+      "url": "https://khcanvas.khu.ac.kr/courses/95551/discussion_topics/485358",
+      "files": []
+    },
+    {
+      "id": "n485357",
+      "course": "계량경제학",
+      "title": "Make up class on Monday Oct 5 (regular class time, attendance is optional)",
+      "date": "2026-09-30T03:10:39Z",
+      "summary": "Hi all, Monday is a holiday but we will have a live zoom session as a make up class during the regular class time. Attendance is optional and all will be considered as attended . I will share the recorded session so you can watch the video …",
+      "body": "Hi all, Monday is a holiday but we will have a live zoom session as a make up class during the regular class time. Attendance is optional and all will be considered as attended . I will share the recorded session so you can watch the video at your convenience. For those who want to join the live session, click the link. https://khu-ac.zoom.us/j/87522410957 I plan to demonstrate actual OLS regression with data. Best, Sunha",
+      "url": "https://khcanvas.khu.ac.kr/courses/95551/discussion_topics/485357",
+      "files": [
+        {
+          "name": "https://khu-ac.zoom.us/j/87522410957",
+          "url": "https://khu-ac.zoom.us/j/87522410957",
+          "external": true
+        }
+      ]
+    },
+    {
+      "id": "n485456",
+      "course": "성찰과표현",
+      "title": "과제1 과제 제출 및 합평 안내",
+      "date": "2026-09-30T06:29:27Z",
+      "summary": "과제1 제출 안내 주제: 다시 가고 싶은 그곳 제출 마감: 10월 5일(월) 23:59 제출처: 다음 카페 각 조 방 과제 제출 형식: 성명_다시 가고 싶은 그곳_글 제목 *반드시 첨부파일로 제출할 것(PDF제출 불허, 한글이나 워드로 작성해서 올릴 것) *편집 형식은 열린게시판에 올려둔 ‘발표지 및 과제 제출 양식’을 따를 것 *발표자는 반드시 수정하여 올릴 것 과제1 합평 안내 합평마감: 10월 9일(목) 23:59 *각 …",
+      "body": "과제1 제출 안내 주제: 다시 가고 싶은 그곳 제출 마감: 10월 5일(월) 23:59 제출처: 다음 카페 각 조 방 과제 제출 형식: 성명_다시 가고 싶은 그곳_글 제목 *반드시 첨부파일로 제출할 것(PDF제출 불허, 한글이나 워드로 작성해서 올릴 것) *편집 형식은 열린게시판에 올려둔 ‘발표지 및 과제 제출 양식’을 따를 것 *발표자는 반드시 수정하여 올릴 것 과제1 합평 안내 합평마감: 10월 9일(목) 23:59 *각 조원의 글에 대하여 댓글 형식으로 할 것 *공감, 조언, 격려의 내용으로 할 것. *최소 3줄 이상 작성할 것.",
+      "url": "https://khcanvas.khu.ac.kr/courses/96662/discussion_topics/485456",
       "files": []
     },
     {
