@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T09:08:06.676Z",
+  "generatedAt": "2026-09-30T16:00:27.450Z",
   "source": "canvas",
   "user": "김주함(2025####72)",
   "courseFiles": {
@@ -465,9 +465,9 @@
           },
           {
             "type": "ExternalTool",
-            "title": "Assign2Sol_UMacro_26F",
+            "title": "(REVISED!) Assign2Sol_UMacro_26F",
             "indent": 0,
-            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4799279"
+            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4799428"
           }
         ]
       },
@@ -2248,24 +2248,6 @@
       ]
     },
     {
-      "id": "n482010",
-      "course": "성찰과표현",
-      "title": "조 편성 및 발표 순서 안내",
-      "date": "2026-09-16T01:33:14Z",
-      "summary": "조 편성과 발표순서를 첨부파일로 올립니다. 반드시 확인하시기 바랍니다.",
-      "body": "조 편성과 발표순서를 첨부파일로 올립니다. 반드시 확인하시기 바랍니다.",
-      "url": "https://khcanvas.khu.ac.kr/courses/96662/discussion_topics/482010",
-      "files": [
-        {
-          "id": "9731504",
-          "name": "2026학년도 2학기 성찰과 표현 조 편성 및 발표순서(0900).hwpx",
-          "url": "https://khcanvas.khu.ac.kr/files/9731504/download?download_frd=1&verifier=jbCIvDJnNmmoMHULjGYD8CeUwEyBkZ5vrt4aAYvV",
-          "type": "application/haansofthwpx",
-          "size": 52422
-        }
-      ]
-    },
-    {
       "id": "n485323",
       "course": "창업과 thinking design",
       "title": "9월 29일 수업자료",
@@ -2310,24 +2292,6 @@
       "body": "안녕하세요. 문의하는 분들 많아 전체 공지합니다. 발표순서 보시면 3주부터 시작해서 13주까지로 정리되어 있는데 3주를 9월 21일 제출, 22일 발표로 생각하시면 됩니다. 지난 강의 시간 중 발제를 추석 이후부터라고 공지했는데 날짜 착오로 그리 공지한 것이니 정정합니다. 발제 과제는 매주 진행되다 중간시험 기간에 한주 거르고, 다시 이어지다 12월 7, 8일에 제출 및 발표 완료됩니다. 책 1은 아이디어불패, 책 2는 회복탄력성입니다. 한 주간 잘 마무리하세요!",
       "url": "https://khcanvas.khu.ac.kr/courses/97242/discussion_topics/482382",
       "files": []
-    },
-    {
-      "id": "n479514",
-      "course": "창업과 thinking design",
-      "title": "발제 발표 순서 안내",
-      "date": "2026-09-16T05:00:00Z",
-      "summary": "첨부파일에서 본인 발제 발표 순서 확인하시고 준비해 주세요.",
-      "body": "첨부파일에서 본인 발제 발표 순서 확인하시고 준비해 주세요.",
-      "url": "https://khcanvas.khu.ac.kr/courses/97242/discussion_topics/479514",
-      "files": [
-        {
-          "id": "9698225",
-          "name": "창업과_Thinking_Design_10주_발제일정표.xlsx",
-          "url": "https://khcanvas.khu.ac.kr/files/9698225/download?download_frd=1&verifier=BKB1FNVIRbWR30vsDQYptVyZ8q2Wm9sZwEIbPkFK",
-          "type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-          "size": 15143
-        }
-      ]
     }
   ]
 }
