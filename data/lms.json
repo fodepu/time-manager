@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-02T23:53:22.772Z",
+  "generatedAt": "2026-10-03T02:49:59.099Z",
   "source": "canvas",
   "user": "김주함(2025####72)",
   "courseFiles": {
@@ -2244,6 +2244,24 @@
           "url": "https://khcanvas.khu.ac.kr/files/9758853/download?download_frd=1&verifier=uKErvkljHmSwtUujfCwYMIpfJbum0rO7D5B2dsUg",
           "type": "application/haansofthwpx",
           "size": 28491
+        }
+      ]
+    },
+    {
+      "id": "n486201",
+      "course": "창업과 thinking design",
+      "title": "기말 프로젝트_팀구성",
+      "date": "2026-10-03T02:00:00Z",
+      "summary": "안녕하세요. 요청사항 반영된 팀구성입니다. 첨부파일 확인하세요. 요청 반영되지 않은 분, 명단에 이름이 없는 분 있다면 메일( lleia@naver.com )로 알려주세요. 연휴 즐겁게 보내세요!",
+      "body": "안녕하세요. 요청사항 반영된 팀구성입니다. 첨부파일 확인하세요. 요청 반영되지 않은 분, 명단에 이름이 없는 분 있다면 메일( lleia@naver.com )로 알려주세요. 연휴 즐겁게 보내세요!",
+      "url": "https://khcanvas.khu.ac.kr/courses/97242/discussion_topics/486201",
+      "files": [
+        {
+          "id": "9813117",
+          "name": "팀구성_기말 프로젝트.docx",
+          "url": "https://khcanvas.khu.ac.kr/files/9813117/download?download_frd=1&verifier=i48kWu5PFnH8Hkt4oLaKgJ8SXjXfG8bK684Qdrc6",
+          "type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+          "size": 16540
         }
       ]
     },
