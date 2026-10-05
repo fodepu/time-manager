@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-05T02:10:17.070Z",
+  "generatedAt": "2026-10-05T09:18:16.094Z",
   "source": "canvas",
   "user": "김주함(2025####72)",
   "courseFiles": {
@@ -616,7 +616,14 @@
         "name": "6주차",
         "position": 6,
         "unlock": null,
-        "items": []
+        "items": [
+          {
+            "type": "ExternalTool",
+            "title": "Make up class for Oct 5 (Introduction to Data Sets and STATA)",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/95551/modules/items/4802045"
+          }
+        ]
       },
       {
         "id": "1507912",
