@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-06T00:28:30.122Z",
+  "generatedAt": "2026-10-06T06:40:57.964Z",
   "source": "canvas",
   "user": "김주함(2025####72)",
   "courseFiles": {
@@ -100,7 +100,7 @@
         "items": [
           {
             "type": "Page",
-            "title": "6주차_읽기자료_인류세와 도시 위기",
+            "title": "6주차_읽기자료_인류세, 성장지상주의, 지구자산화 등",
             "indent": 0,
             "url": "https://khcanvas.khu.ac.kr/courses/96922/modules/items/4793856"
           },
@@ -109,6 +109,18 @@
             "title": "6주차_[과제1] 리딩노트 제출(~10/6, 12시까지)_인류세와 도시 위기",
             "indent": 0,
             "url": "https://khcanvas.khu.ac.kr/courses/96922/modules/items/4793894"
+          },
+          {
+            "type": "Page",
+            "title": "6주차_강의자료_인류세_성장주의, 지구적 자산화 등",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/96922/modules/items/4802710"
+          },
+          {
+            "type": "Assignment",
+            "title": "6주차_모둠토의내용",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/96922/modules/items/4802715"
           }
         ]
       },
@@ -562,6 +574,12 @@
             "title": "lecture_week3_OLS_part2_v2",
             "indent": 0,
             "url": "https://khcanvas.khu.ac.kr/courses/95551/modules/items/4790959"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "Play Kahoot! challenge: Interpreting Regression Coefficients",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/95551/modules/items/4803061"
           }
         ]
       },
@@ -588,6 +606,12 @@
             "title": "quiz_ols",
             "indent": 0,
             "url": "https://khcanvas.khu.ac.kr/courses/95551/modules/items/4793249"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "Play Kahoot! challenge: Core Concepts od OLA",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/95551/modules/items/4803058"
           }
         ]
       },
@@ -605,9 +629,15 @@
           },
           {
             "type": "ExternalTool",
-            "title": "Core_note_panel_2026",
+            "title": "Play Kahoot! challenge: heteroskedasticity",
             "indent": 0,
-            "url": "https://khcanvas.khu.ac.kr/courses/95551/modules/items/4798474"
+            "url": "https://khcanvas.khu.ac.kr/courses/95551/modules/items/4803053"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "Core_note_panel_2026_longer version",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/95551/modules/items/4803184"
           }
         ]
       },
@@ -622,6 +652,12 @@
             "title": "Make up class for Oct 5 (Introduction to Data Sets and STATA)",
             "indent": 0,
             "url": "https://khcanvas.khu.ac.kr/courses/95551/modules/items/4802045"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "Core_note_ovb_panel_2026",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/95551/modules/items/4803216"
           }
         ]
       },
@@ -1867,6 +1903,16 @@
       "submitted": false,
       "url": "https://khcanvas.khu.ac.kr/courses/96922/assignments/1500667",
       "body": "모둠별 한 명이 토론 기록지 올려주세요.",
+      "files": []
+    },
+    {
+      "id": "a1503032",
+      "course": "리질리언스와지속가능한도시",
+      "title": "6주차_모둠토의내용",
+      "due": null,
+      "submitted": false,
+      "url": "https://khcanvas.khu.ac.kr/courses/96922/assignments/1503032",
+      "body": "조별 한 명이 모둠 토의 기록지 올려주세요.",
       "files": []
     },
     {
