@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-07T09:30:29.946Z",
+  "generatedAt": "2026-10-07T16:49:10.967Z",
   "source": "canvas",
   "user": "김주함(2025####72)",
   "courseFiles": {
@@ -2226,16 +2226,6 @@
   ],
   "notices": [
     {
-      "id": "n483806",
-      "course": "리질리언스와지속가능한도시",
-      "title": "5주차(9/29) 강의실 변경 안내",
-      "date": "2026-09-23T06:52:24Z",
-      "summary": "5주차는 초청 특강이 진행됩니다. 넓은 공간이 필요하여 강의실을 305호로 변경하였으니, 수업 참여에 차질 없기를 바랍니다.",
-      "body": "5주차는 초청 특강이 진행됩니다. 넓은 공간이 필요하여 강의실을 305호로 변경하였으니, 수업 참여에 차질 없기를 바랍니다.",
-      "url": "https://khcanvas.khu.ac.kr/courses/96922/discussion_topics/483806",
-      "files": []
-    },
-    {
       "id": "n486999",
       "course": "거시경제학",
       "title": "Flash Office Hours on October 8, 2026",
@@ -2332,30 +2322,20 @@
       "files": []
     },
     {
-      "id": "n483453",
-      "course": "성찰과표현",
-      "title": "5주차 1강(9월 30일) 수업 안내",
-      "date": "2026-09-23T01:00:00Z",
-      "summary": "수업내용: 다시 가고 싶은 그곳 발표 발표자: 김재현, 신형준, 신지원, 김여진, 김최승, 문진영 *발표자는 9월 29일(화) 18:00까지 발표지를 e-campus 열린게시판에 올리기 바랍니다. *게시명은 '성명_다시 가고 싶은 그곳_글 제목'으로 하시기 바랍니다. *발표자 외 나머지 학생들은 발표지를 읽고 가지고 오시기 바랍니다.",
-      "body": "수업내용: 다시 가고 싶은 그곳 발표 발표자: 김재현, 신형준, 신지원, 김여진, 김최승, 문진영 *발표자는 9월 29일(화) 18:00까지 발표지를 e-campus 열린게시판에 올리기 바랍니다. *게시명은 '성명_다시 가고 싶은 그곳_글 제목'으로 하시기 바랍니다. *발표자 외 나머지 학생들은 발표지를 읽고 가지고 오시기 바랍니다.",
-      "url": "https://khcanvas.khu.ac.kr/courses/96662/discussion_topics/483453",
-      "files": []
-    },
-    {
-      "id": "n483455",
-      "course": "성찰과표현",
-      "title": "발표지 및 과제 작성 형식",
-      "date": "2026-09-23T01:00:00Z",
-      "summary": "아래 첨부된 파일의 형식에 따라 발표지와 과제를 작성하시기 바랍니다.",
-      "body": "아래 첨부된 파일의 형식에 따라 발표지와 과제를 작성하시기 바랍니다.",
-      "url": "https://khcanvas.khu.ac.kr/courses/96662/discussion_topics/483455",
+      "id": "n487272",
+      "course": "창업과 thinking design",
+      "title": "10월 6일 수업자료",
+      "date": "2026-10-07T11:41:55Z",
+      "summary": "공유합니다.",
+      "body": "공유합니다.",
+      "url": "https://khcanvas.khu.ac.kr/courses/97242/discussion_topics/487272",
       "files": [
         {
-          "id": "9758853",
-          "name": "발표지 과제 작성 방법.hwpx",
-          "url": "https://khcanvas.khu.ac.kr/files/9758853/download?download_frd=1&verifier=uKErvkljHmSwtUujfCwYMIpfJbum0rO7D5B2dsUg",
-          "type": "application/haansofthwpx",
-          "size": 28491
+          "id": "9839730",
+          "name": "10월 6일 수업자료.zip",
+          "url": "https://khcanvas.khu.ac.kr/files/9839730/download?download_frd=1&verifier=L8t4PvLF1K41xjWX9o2C7QMtwZT0n9Q85Btd9TNE",
+          "type": "application/x-zip-compressed",
+          "size": 210599
         }
       ]
     },
@@ -2392,24 +2372,6 @@
           "url": "https://khcanvas.khu.ac.kr/files/9795254/download?download_frd=1&verifier=vZ5txHsWZs9S7bbw6VYlE5hdyUsrmyyXSVsUXLml",
           "type": "application/x-zip-compressed",
           "size": 7288401
-        }
-      ]
-    },
-    {
-      "id": "n483904",
-      "course": "창업과 thinking design",
-      "title": "1차 개인 과제에 참고할 수업자료",
-      "date": "2026-09-23T14:05:15Z",
-      "summary": "안녕하세요. 1~3주 수업자료 공유합니다. 추석연휴 즐겁게 보내세요:)",
-      "body": "안녕하세요. 1~3주 수업자료 공유합니다. 추석연휴 즐겁게 보내세요:)",
-      "url": "https://khcanvas.khu.ac.kr/courses/97242/discussion_topics/483904",
-      "files": [
-        {
-          "id": "9767184",
-          "name": "수업자료_1-3주.zip",
-          "url": "https://khcanvas.khu.ac.kr/files/9767184/download?download_frd=1&verifier=BtMUYkMfyjkNBFk7Pxl7Xm6EegqjfiJ3MYwMIYdU",
-          "type": "application/x-zip-compressed",
-          "size": 3448712
         }
       ]
     }
