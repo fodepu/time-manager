@@ -1,0 +1,2524 @@
+{
+ "id": "lec_2026-10-07_muxpc8f2",
+ "course": "거시경제학",
+ "title": "거시경제학 6주차",
+ "date": "2026-10-07",
+ "week": 6,
+ "module": "wk6",
+ "lang": "en",
+ "mode": "online",
+ "pdf": "",
+ "pages": 19,
+ "duration": 5064,
+ "log": [
+  {
+   "t": 0,
+   "page": 1
+  },
+  {
+   "t": 5,
+   "page": 1,
+   "resumed": true
+  },
+  {
+   "t": 9,
+   "page": 2
+  },
+  {
+   "t": 9,
+   "page": 3
+  },
+  {
+   "t": 309,
+   "page": 4
+  },
+  {
+   "t": 609,
+   "page": 5
+  },
+  {
+   "t": 909,
+   "page": 6
+  },
+  {
+   "t": 1209,
+   "page": 7
+  },
+  {
+   "t": 1509,
+   "page": 8
+  },
+  {
+   "t": 1809,
+   "page": 9
+  },
+  {
+   "t": 2109,
+   "page": 10
+  },
+  {
+   "t": 2409,
+   "page": 11
+  },
+  {
+   "t": 2709,
+   "page": 12
+  },
+  {
+   "t": 3009,
+   "page": 13
+  },
+  {
+   "t": 3309,
+   "page": 14
+  },
+  {
+   "t": 3609,
+   "page": 15
+  },
+  {
+   "t": 3909,
+   "page": 16
+  },
+  {
+   "t": 4209,
+   "page": 17
+  },
+  {
+   "t": 4509,
+   "page": 18
+  },
+  {
+   "t": 5054,
+   "page": 19
+  }
+ ],
+ "slides": [
+  {
+   "page": 1,
+   "en": "I loaded the application",
+   "ko": "제가 그",
+   "pdf": "Core_note_ovb_panel_2026.pdf",
+   "pdfPage": 1,
+   "slideText": "Worked Example: NLSY79 Introductory Econometrics Omitted Variables and Panel Regressions A worked example with the NLSY79 wage data Introductory Econometrics Road map The wage data we use in the lab is a panel : 36 , 908 observations on 5 , 198 men, each seen about seven times. That single fact drives everything in this note. Ability — the classic omitted variable in a wage regression — does not change over time, so it is exactly the unit effect c i of Core Notes 3. We first measure the omitted variable bias directly, by putting the AFQT score in and taking it out. We then ask what the panel estimators of Core Notes 3 would do instead, and find that the obvious answer does not work here — for a reason worth understanding. Contents 1 The data and the question 1 2 The omitted variable: putting AFQT in and taking it out 2 2.1 The ladder . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2.2 Checking it against the formula . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3 2.3 The same thing with degree dummies . . . . . . . . . . . . . . . . . . . . . . . . . . 3 3 The same data is a panel 4 4 What fixed effects can and cannot do here 4 5 The menu of panel regressions 5 6 Why cluster(Id) and not the default 5 7 Quick self-check 6 1 The data and the question The estimation sample is NLSY79 men, after the selection filters in the do-file. Each row is a person-year : one man in one survey year. 1",
+   "liveNotes": {
+    "notes": [
+     "▶ **GLS**(Generalized Least Squares) 아이디어: 오차 구조를 가정·추정 → 식을 변환하면 오차 구조가 좋아짐(Ω 문제 해소) → 변환된 식에 **OLS** 적용",
+     "▶ GLS를 반드시 알아야 한다고 강조",
+     "▶ 패널에서는 개인마다 서로 다른 **개인효과**(individual effect)를 허용한다고 설명",
+     "▶ **클러스터**(cluster) 구조가 있는 경우의 오차 구조(Ω)를 이전 분석과 연결해 설명",
+     "▶ 편의(bias) 논의와 별개로 데이터만 보고 질문을 던져 보자고 함"
+    ],
+    "summary": "NLSY79 패널 예제 시작, GLS 복습",
+    "exam": [],
+    "board": [
+     "X′Ω⁻¹X",
+     "X′Ω⁻¹y"
+    ],
+    "at": 1791353043742
+   },
+   "marks": [
+    {
+     "line": 23,
+     "type": "",
+     "note": "do-file 경로 설정 주의"
+    },
+    {
+     "line": 6,
+     "type": "",
+     "note": "표본작아 검정력 부족"
+    },
+    {
+     "line": 9,
+     "type": "",
+     "note": "경력·결혼상태=시간가변변수"
+    }
+   ],
+   "lines": {
+    "w": 612,
+    "h": 792,
+    "lines": [
+     {
+      "i": 0,
+      "text": "Worked Example: NLSY79 Introductory Econometrics",
+      "x": 72,
+      "y": 34.111899999999956,
+      "w": 468.0003899999999,
+      "h": 12.545465
+     },
+     {
+      "i": 1,
+      "text": "Omitted Variables and Panel Regressions",
+      "x": 130.617,
+      "y": 68.73259999999998,
+      "w": 350.7689396200002,
+      "h": 19.79771
+     },
+     {
+      "i": 2,
+      "text": "A worked example with the NLSY79 wage data",
+      "x": 183.98899999999998,
+      "y": 93.51879999999993,
+      "w": 244.01758720000015,
+      "h": 13.748479999999999
+     },
+     {
+      "i": 3,
+      "text": "Introductory Econometrics",
+      "x": 247.46899999999997,
+      "y": 117.03139999999992,
+      "w": 117.05855748000002,
+      "h": 11.45699
+     },
+     {
+      "i": 4,
+      "text": "Road map",
+      "x": 83.403,
+      "y": 156.8609,
+      "w": 56.450228859999996,
+      "h": 12.545465
+     },
+     {
+      "i": 5,
+      "text": "The wage data we use in the lab is a panel : 36 , 908 observations on 5 , 198 men, each seen about",
+      "x": 83.403,
+      "y": 181.19389999999996,
+      "w": 445.1903730399998,
+      "h": 12.545465
+     },
+     {
+      "i": 6,
+      "text": "seven times. That single fact drives everything in this note. Ability — the classic omitted",
+      "x": 83.40299999999996,
+      "y": 194.74289999999993,
+      "w": 445.20037099999973,
+      "h": 12.545465
+     },
+     {
+      "i": 7,
+      "text": "variable in a wage regression — does not change over time, so it is exactly the unit effect c i of",
+      "x": 83.40299999999996,
+      "y": 208.2918999999999,
+      "w": 445.19537095999993,
+      "h": 12.545465
+     },
+     {
+      "i": 8,
+      "text": "Core Notes 3. We first measure the omitted variable bias directly, by putting the AFQT score",
+      "x": 83.40299999999996,
+      "y": 221.8408999999999,
+      "w": 445.1970982699997,
+      "h": 12.545465
+     },
+     {
+      "i": 9,
+      "text": "in and taking it out. We then ask what the panel estimators of Core Notes 3 would do instead,",
+      "x": 83.40299999999996,
+      "y": 235.39089999999985,
+      "w": 445.19273462999973,
+      "h": 12.545465
+     },
+     {
+      "i": 10,
+      "text": "and find that the obvious answer does not work here — for a reason worth understanding.",
+      "x": 83.40299999999996,
+      "y": 248.93989999999982,
+      "w": 432.0319963899996,
+      "h": 12.545465
+     },
+     {
+      "i": 11,
+      "text": "Contents",
+      "x": 72,
+      "y": 293.3188,
+      "w": 63.05298361999999,
+      "h": 16.49813
+     },
+     {
+      "i": 12,
+      "text": "1 The data and the question 1",
+      "x": 72,
+      "y": 327.1919,
+      "w": 468.00148090999994,
+      "h": 12.545465
+     },
+     {
+      "i": 13,
+      "text": "2 The omitted variable: putting AFQT in and taking it out 2",
+      "x": 72,
+      "y": 357.62789999999995,
+      "w": 468.00475364,
+      "h": 12.545465
+     },
+     {
+      "i": 14,
+      "text": "2.1 The ladder . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2",
+      "x": 88.364,
+      "y": 377.15489999999994,
+      "w": 451.63564908999945,
+      "h": 12.545465
+     },
+     {
+      "i": 15,
+      "text": "2.2 Checking it against the formula . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3",
+      "x": 88.364,
+      "y": 396.68089999999995,
+      "w": 451.63564908999945,
+      "h": 12.545465
+     },
+     {
+      "i": 16,
+      "text": "2.3 The same thing with degree dummies . . . . . . . . . . . . . . . . . . . . . . . . . . 3",
+      "x": 88.364,
+      "y": 416.20789999999994,
+      "w": 451.6389218199994,
+      "h": 12.545465
+     },
+     {
+      "i": 17,
+      "text": "3 The same data is a panel 4",
+      "x": 72,
+      "y": 446.6438999999999,
+      "w": 468.00475364,
+      "h": 12.545465
+     },
+     {
+      "i": 18,
+      "text": "4 What fixed effects can and cannot do here 4",
+      "x": 72,
+      "y": 477.0798999999999,
+      "w": 468.00257182000007,
+      "h": 12.545465
+     },
+     {
+      "i": 19,
+      "text": "5 The menu of panel regressions 5",
+      "x": 72,
+      "y": 507.51589999999993,
+      "w": 468.00475364,
+      "h": 12.545465
+     },
+     {
+      "i": 20,
+      "text": "6 Why cluster(Id) and not the default 5",
+      "x": 72,
+      "y": 537.9518999999999,
+      "w": 468.00420399999996,
+      "h": 12.545465
+     },
+     {
+      "i": 21,
+      "text": "7 Quick self-check 6",
+      "x": 72,
+      "y": 568.3879,
+      "w": 468.00148090999994,
+      "h": 12.545465
+     },
+     {
+      "i": 22,
+      "text": "1 The data and the question",
+      "x": 72,
+      "y": 611.2778,
+      "w": 211.6150577200001,
+      "h": 16.49813
+     },
+     {
+      "i": 23,
+      "text": "The estimation sample is NLSY79 men, after the selection filters in the do-file. Each row is a",
+      "x": 72,
+      "y": 645.0449,
+      "w": 468.0025718199995,
+      "h": 12.545465
+     },
+     {
+      "i": 24,
+      "text": "person-year : one man in one survey year.",
+      "x": 72,
+      "y": 658.5939,
+      "w": 198.05430035,
+      "h": 12.545465
+     },
+     {
+      "i": 25,
+      "text": "1",
+      "x": 303.273,
+      "y": 740.9718999999999,
+      "w": 5.454549999999983,
+      "h": 12.545465
+     }
+    ]
+   },
+   "segs": [
+    {
+     "t": 5,
+     "page": 1,
+     "en": "I loaded the application",
+     "ko": "제가 그",
+     "src": "gemini",
+     "ai": true
+    }
+   ]
+  },
+  {
+   "page": 3,
+   "en": "And here, this is the updated returning them announcement. So let me go over this. So this is a carbon neutral return exam, which basically I'm not going to go into any that exam. First, you have to prepare your solution sheets. But that is not going to bring any papers with me so if you want to write down the solutions on a paper with a pen, and then scan it and send it to me and you need to bring your own papers. for answers. So anyway, so this is basically people this exam. So it's a carbon neutral exam will take place from 3 pm to 4 pm, which is during our class, so class we will for 15 minutes on Monday, October 12th, which is next Monday, and and this is important, you need to take the test, you preferred location. So the classroom is reserved, so you can take the exam in this classroom and then as I said, I will show up the exam so that I will get some questions if you have any and if you want to take the other prices, so the exam that's fine. You can have you know, you can reserve other spaces for the exam and then yeah. That's cool. So again, this is a person exam, but for your preference, you can take the location. Take the exam in other location. Number two, the exam will cover over the last review and I checked the one through three and the chapter four up to page 142, which is later. Let's maximize the maximization problem and any materials that I posted in the campus. And then the exam will be posted on our website at 4 5, so you know where I'm going to also that here. So weekly learning and then we will see the stuff that I posted and now here. So the first have you will see this is the test that you can find exam. So I haven't posted the PDF file of the so eventually it will show up here. You just click the weekly learning and you will find the exam. The exam questions will be posted in a PDF format so you can download it if you want or you can just see it. So consider this that's fine. And And the exam will be posted after that's fine. Okay. Okay, and this is important. Number four, the answers must be hand written and clearly legible. So here, again, I added this last week. You should bring your own sheets of paper for the exam if you do not use an electronic device to write your answers. So please bring your piece of paper if you plan to write your solutions down by pen. And uh, of course, you can use iPads, tablets or any writing tools, the laptops. So that you can make your solutions electronically and then save it as a PDF file and then send it to me. And put them together in the attachment. Okay? And please make sure that you add two full name and student ID numbers in your solutions. That's pretty much. Okay? Once you are ready to submit your answer solution, email it to me here. So this email submission tonight, like the one you submitted your homework. homework assignments. And then 600 that's the deadline. So 600 it means my side of the time as long as I got your solutions by 600 59 seconds, I will take it on time submission. But if I receive your email, 1601 or two seconds, that I will consider it as a late submission. So make sure that you send it on time. And again, this is the time in my time, all right? So it's possible that people argue that hey, here's my capture and my screen capture that I pushed the send button at 1559 or one second, but it doesn't matter where you push the button as long as I get my your email within the time limit. So finally",
+   "ko": "그리고 여기, 이건 업데이트된 내용인데, 그 발표에 대한 거예요. 그래서 제가 이걸 설명해 드릴게요. 그래서 이건 탄소 중립 반환 시험인데, 기본적으로 제가 자세히 설명하지 않을게요. 그 시험에 대해서요. 첫째, 여러분은 준비해야 합니다. 솔루션 시트를요. 하지만 그게 어떤 서류도 가져오지 않을 거니까, 만약 솔루션을 종이에 적고 싶다면 펜으로 적으세요. 그리고 스캔해서 저한테 보내주시면 되고, 여러분은 직접 종이를 가져와야 합니다. 답을 위해서요. 그래서 어쨌든, 이건 기본적으로 사람들이 이 시험을 보는 거예요. 그래서 탄소 중립 시험은 진행될 예정입니다. 오후 3시부터 4시까지입니다. 이는 우리 수업 시간 중이라서, 수업은 6시까지 15분 동안 월요일에, 10월 12일에, 다음 주 월요일에, 그리고 이건 중요한 점인데, 시험을 봐야 하고, 선호하는 장소에서 봐야 해요. 그래서 교실은 이 교실에서 예약되어 있으니까, 여기서 시험을 볼 수 있어요. 그리고 아까 말씀드린 것처럼, 제가 나타나서 시험을 볼 수 있도록 할게요. 그래서 질문을 받으려고 해요. 그리고 만약 다른 시험을 보고 싶다면, 다른 시험을 볼 수 있어요. 괜찮아요. 그렇게 하셔도 돼요. 아시다시피, 다른 장소를 예약할 수 있어요. 시험을 위해서요. 네. 멋지네요. 그래서 다시 말씀드리지만, 이건 개인 시험이지만, 여러분의 편의를 위해 다른 곳에서 시험을 볼 수 있어요. 시험을 보세요. 다른 곳에서요. 두 번째, 시험은 다룰 것입니다. 지난 리뷰를 검토했고, 1번부터 3번까지 확인했고, 4장은 142페이지까지, 나중에요. 최대화해 봅시다. 최대화 문제와 제가 게시한 모든 자료를요. 그리고 시험은 게시될 것입니다. 우리 수업 웹사이트에 4시에 5분에, 그래서 제가 어디로 가는지 아시겠죠? 또한 그것도 여기 있습니다. 그래서 주간 학습을 하고 그 다음에 볼 것입니다. 제가 게시한 것과 지금 여기입니다. 그래서 첫 번째는 가지고 계실 것입니다. 이것이 찾을 수 있는 시험입니다. 그래서 아직 게시하지 않은 PDF 파일은 그래서 결국 여기에 나타날 것입니다. 그냥 클릭하시면 주간 학습이 나오고 시험을 찾을 수 있습니다. 시험 문제는 게시될 것입니다. PDF 형식으로 제공되므로 원하시면 다운로드할 수 있고, 또는 그냥 볼 수 있습니다. 그래서 이것을 괜찮다고 생각하세요. 그리고 그리고 시험은 게시될 것입니다. 후에 괜찮아요. 알겠습니다. 그리고 이것은 중요합니다. 네 번째, 답안은 수기로 작성하고 명확하게 읽을 수 있어야 합니다. 그래서 여기, 다시, 제가 지난주에 추가했어요. 여러분은 직접 종이를 가져와야 합니다. 시험을 위해, 만약 전자 기기를 사용하지 않고 답을 적으려면 요. 그래서 꼭 가져오세요. 종이 한 장을요. 만약 여러분이 계획하고 있다면요. 답을 적을 계획이라면요. 펜으로 적을 거라면요. 그리고, 물론, 여러분은 아이패드를 사용할 수 있고, 태블릿이나 어떤 필기 도구든 사용할 수 있습니다. 노트북도요. 그래서 여러분이 답을 작성할 수 있도록 전자적으로 작성하고 저장할 수 있습니다. PDF 파일로 저장하고 저에게 보내주세요. 그리고 그것들을 하나로 묶어서 첨부해 주세요. 알겠죠? 그리고 꼭 확인해 주세요. 여러분이 두 개의 전체 이름과 학번을 적어주세요. 답안에. 그게 다예요. 알겠죠? 준비가 다 되면 제출할 준비가 되면, 저에게 이메일로 보내주세요. 여기로. 그래서 이 이메일은 제출용입니다. 오늘 밤, 지난번처럼요. 여러분이 제출한 숙제처럼요. 숙제 과제요. 그리고 그런 다음 600 그게 마감일입니다. 그래서 600 은 의미합니다. 제 시간의 측면에서 제가 받은 한 여러분의 답안을 6시까지 받으면 6시 59분까지 제가 받을게요. 제시간에 제출한 것으로요. 하지만 만약 제가 여러분의 이메일을 받으면, 16시 1분이나 2분 후에 받으면, 제가 그걸 지각으로 간주할게요. 그래서 꼭 확인해 주세요. 제시간에 보내도록. 그리고 다시, 이게 제 시간입니다. 알겠죠? 그래서 사람들이 주장할 수도 있어요. 야, 여기 내 캡처본이야. 그리고 제 화면 캡처본인데 제가 전송 버튼을 15분에 눌렀어요. 그리고 1초 후에, 하지만 어디서 보내든 상관없어요. 버튼을 누르는 것이 제가 제 답안을 받으면 돼요. 이메일로. 시간 내에. 그래서 마지막으로",
+   "pdf": "Core_note_ovb_panel_2026.pdf",
+   "pdfPage": 3,
+   "slideText": "",
+   "liveNotes": {
+    "notes": [
+     "**시험 공지**(exam announcement) 업데이트본 안내",
+     "▶ 시험 때 **풀이 용지**(solution sheets) 각자 준비 — 교수는 종이를 가져오지 않음",
+     "▶ 펜으로 풀이 작성 시 종이 지참 필수; 아이패드·태블릿 등 필기 기기도 사용 가능",
+     "▶ 펜으로 종이에 풀이 작성 → scan → 교수에게 전송",
+     "▶ 스캔본들을 하나의 첨부파일로 합쳐 제출; 풀이에 **성명·학번** 반드시 기재",
+     "▶ 마감(deadline) 6시: 6:00:59까지 도착한 이메일은 제때 제출로 인정, 6:01 이후 도착은 지각 처리 예상"
+    ],
+    "summary": "시험 제출 방식과 마감 안내",
+    "exam": [
+     "시험 풀이: 종이에 펜으로 작성 → 스캔 → 하나의 첨부파일로 이메일 제출, 성명·학번 기재",
+     "마감 6시 (6:00:59까지 도착 인정, 6:01 이후 지각)"
+    ],
+    "board": [],
+    "at": 1791353331985
+   },
+   "marks": [],
+   "segs": [
+    {
+     "t": 11,
+     "page": 3,
+     "en": "And here, this is the updated returning them announcement. So let me go over this. So this is a carbon neutral return exam, which basically I'm not going to go into any that exam.",
+     "ko": "그리고 여기, 이건 업데이트된 내용인데, 그 발표에 대한 거예요. 그래서 제가 이걸 설명해 드릴게요. 그래서 이건 탄소 중립 반환 시험인데, 기본적으로 제가 자세히 설명하지 않을게요. 그 시험에 대해서요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 29,
+     "page": 3,
+     "en": "First, you have to prepare your solution sheets. But that is not going to bring any papers with me so if you want to write down the solutions on a paper with a pen, and then scan it and send it to me and you need to bring your own papers. for answers. So anyway, so this is basically people this exam. So it's a carbon neutral exam will take place from 3 pm to 4 pm, which is during our class, so class we will for 15 minutes on Monday, October 12th, which is next Monday, and and this is important, you need to take the test, you",
+     "ko": "첫째, 여러분은 준비해야 합니다. 솔루션 시트를요. 하지만 그게 어떤 서류도 가져오지 않을 거니까, 만약 솔루션을 종이에 적고 싶다면 펜으로 적으세요. 그리고 스캔해서 저한테 보내주시면 되고, 여러분은 직접 종이를 가져와야 합니다. 답을 위해서요. 그래서 어쨌든, 이건 기본적으로 사람들이 이 시험을 보는 거예요. 그래서 탄소 중립 시험은 진행될 예정입니다. 오후 3시부터 4시까지입니다. 이는 우리 수업 시간 중이라서, 수업은 6시까지 15분 동안 월요일에, 10월 12일에, 다음 주 월요일에, 그리고 이건 중요한 점인데, 시험을 봐야 하고,",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 65,
+     "page": 3,
+     "en": "preferred location. So the classroom is reserved, so you can take the exam in this classroom and then as I said, I will show up the exam so that I will get some questions if you have any and if you want to take the other prices, so the exam that's fine. You can have you know, you can reserve other spaces for the exam and then yeah.",
+     "ko": "선호하는 장소에서 봐야 해요. 그래서 교실은 이 교실에서 예약되어 있으니까, 여기서 시험을 볼 수 있어요. 그리고 아까 말씀드린 것처럼, 제가 나타나서 시험을 볼 수 있도록 할게요. 그래서 질문을 받으려고 해요. 그리고 만약 다른 시험을 보고 싶다면, 다른 시험을 볼 수 있어요. 괜찮아요. 그렇게 하셔도 돼요. 아시다시피, 다른 장소를 예약할 수 있어요. 시험을 위해서요. 네.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 95,
+     "page": 3,
+     "en": "That's cool. So again, this is a person exam, but for your preference, you can take the location. Take the exam in other location. Number two, the exam will cover",
+     "ko": "멋지네요. 그래서 다시 말씀드리지만, 이건 개인 시험이지만, 여러분의 편의를 위해 다른 곳에서 시험을 볼 수 있어요. 시험을 보세요. 다른 곳에서요. 두 번째, 시험은 다룰 것입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 112,
+     "page": 3,
+     "en": "over the last review and I checked the one through three and the chapter four up to page 142, which is later. Let's maximize the maximization problem and any materials that I posted in the campus. And then the exam will be posted on our website at 4 5, so you know where I'm going to also that here. So weekly learning and then we will see the stuff that I posted and now here.",
+     "ko": "지난 리뷰를 검토했고, 1번부터 3번까지 확인했고, 4장은 142페이지까지, 나중에요. 최대화해 봅시다. 최대화 문제와 제가 게시한 모든 자료를요. 그리고 시험은 게시될 것입니다. 우리 수업 웹사이트에 4시에 5분에, 그래서 제가 어디로 가는지 아시겠죠? 또한 그것도 여기 있습니다. 그래서 주간 학습을 하고 그 다음에 볼 것입니다. 제가 게시한 것과 지금 여기입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 145,
+     "page": 3,
+     "en": "So the first have you will see this is the test that you can find exam. So I haven't posted the PDF file of the so eventually it will show up here. You just click the weekly learning and you will find the exam. The exam questions will be posted in a PDF format so you can download it if you want or you can just see it.",
+     "ko": "그래서 첫 번째는 가지고 계실 것입니다. 이것이 찾을 수 있는 시험입니다. 그래서 아직 게시하지 않은 PDF 파일은 그래서 결국 여기에 나타날 것입니다. 그냥 클릭하시면 주간 학습이 나오고 시험을 찾을 수 있습니다. 시험 문제는 게시될 것입니다. PDF 형식으로 제공되므로 원하시면 다운로드할 수 있고, 또는 그냥 볼 수 있습니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 170,
+     "page": 3,
+     "en": "So consider this that's fine. And",
+     "ko": "그래서 이것을 괜찮다고 생각하세요. 그리고",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 177,
+     "page": 3,
+     "en": "And the exam will be posted after that's fine. Okay. Okay, and this is important. Number four, the answers must be hand written and clearly legible. So here, again, I added this last week. You should bring your own sheets of paper for the exam if you do not use an electronic device to write your answers.",
+     "ko": "그리고 시험은 게시될 것입니다. 후에 괜찮아요. 알겠습니다. 그리고 이것은 중요합니다. 네 번째, 답안은 수기로 작성하고 명확하게 읽을 수 있어야 합니다. 그래서 여기, 다시, 제가 지난주에 추가했어요. 여러분은 직접 종이를 가져와야 합니다. 시험을 위해, 만약 전자 기기를 사용하지 않고 답을 적으려면 요. 그래서",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 200,
+     "page": 3,
+     "en": "So please bring your piece of paper if you plan to write your solutions down by pen. And uh, of course, you can use iPads, tablets or any writing tools, the laptops. So that you can make your solutions electronically and then save it as a PDF file and then send it to me.",
+     "ko": "꼭 가져오세요. 종이 한 장을요. 만약 여러분이 계획하고 있다면요. 답을 적을 계획이라면요. 펜으로 적을 거라면요. 그리고, 물론, 여러분은 아이패드를 사용할 수 있고, 태블릿이나 어떤 필기 도구든 사용할 수 있습니다. 노트북도요. 그래서 여러분이 답을 작성할 수 있도록 전자적으로 작성하고 저장할 수 있습니다. PDF 파일로 저장하고 저에게 보내주세요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 223,
+     "page": 3,
+     "en": "And put them together in the attachment. Okay? And please make sure that you add two full name and student ID numbers in your solutions. That's pretty much. Okay? Once you are ready to submit your answer solution, email it to me here. So this email submission tonight, like the one you submitted your homework.",
+     "ko": "그리고 그것들을 하나로 묶어서 첨부해 주세요. 알겠죠? 그리고 꼭 확인해 주세요. 여러분이 두 개의 전체 이름과 학번을 적어주세요. 답안에. 그게 다예요. 알겠죠? 준비가 다 되면 제출할 준비가 되면, 저에게 이메일로 보내주세요. 여기로. 그래서 이 이메일은 제출용입니다. 오늘 밤, 지난번처럼요. 여러분이 제출한 숙제처럼요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 247,
+     "page": 3,
+     "en": "homework assignments. And then 600 that's the deadline. So 600 it means my",
+     "ko": "숙제 과제요. 그리고 그런 다음 600 그게 마감일입니다. 그래서 600 은 의미합니다. 제",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 259,
+     "page": 3,
+     "en": "side of the time as long as I got your solutions by 600 59 seconds, I will take it on time submission. But if I receive your email, 1601 or two seconds, that I will consider it as a late submission. So make sure that you send it on time. And again, this is the time in my time, all right?",
+     "ko": "시간의 측면에서 제가 받은 한 여러분의 답안을 6시까지 받으면 6시 59분까지 제가 받을게요. 제시간에 제출한 것으로요. 하지만 만약 제가 여러분의 이메일을 받으면, 16시 1분이나 2분 후에 받으면, 제가 그걸 지각으로 간주할게요. 그래서 꼭 확인해 주세요. 제시간에 보내도록. 그리고 다시, 이게 제 시간입니다. 알겠죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 284,
+     "page": 3,
+     "en": "So it's possible that people argue that hey, here's my capture and my screen capture that I pushed the send button at 1559 or one second, but it doesn't matter where you push the button as long as I get my your email within the time limit. So finally",
+     "ko": "그래서 사람들이 주장할 수도 있어요. 야, 여기 내 캡처본이야. 그리고 제 화면 캡처본인데 제가 전송 버튼을 15분에 눌렀어요. 그리고 1초 후에, 하지만 어디서 보내든 상관없어요. 버튼을 누르는 것이 제가 제 답안을 받으면 돼요. 이메일로. 시간 내에. 그래서 마지막으로",
+     "src": "gemini",
+     "ai": true
+    }
+   ]
+  },
+  {
+   "page": 4,
+   "en": "the submission is not a late submission. And then of course, in principle, I said here that late submission will not be accepted, but that's in principle, but please if you think that that you want to submission but it will be late, please send it to me. Okay? Do not give up and make somehow solve it. I will do it right. Okay? So yeah. Any questions? Okay, number six, that's all plain and clear. Is that clear? Now, Okay, then. Uh and number seven, this is this is why you can't I allow you to take exam in other locations because it's going to be an open book open note exam. And then you may use calculator or computer to software if it's necessary. So yeah, I use AI ChatGPT and other things. complexity or whatever. Uh thought, yeah, you should you know, but I'm not recommending So I think you've already seen the past exams that I posted in the channel. I don't think it's why the idea to straight go to the software and ask them stuff. I don't think it works if you're not just discussion for you to answer them. So okay? So Again, let me So what I think is for your own sake, so for example, let's say find one and then, you know, the equations look like Y is equal plus Y plus I don't know, whatever. Uh minus one. equals to And how would you solve this? The two of this question to the AI, you will give you the answer and I don't know, but I'll be honest. How would you find out the answer for this? So I use that. What do you call it? Uh so you know what the question is and you know, you calculator, yeah, or you need a calculator. You get the answer. So how do you find out the answer? So I mean, I should do the problem and minus three, so minus one plus minus three equals square minus four uh plus four, yeah. So this is your answer, right? So I guess the AI software will spit this out within five seconds, right? So you know, But if let's say this is 10 point question, okay? And points and then this is the problem that I And why and this is given equation, if you took down an answer like this, I'm going to cut off 0.7 out of it. So okay, so the point of this example is for you to give me discussion of why you got this answer. And the meaning of this, so you provide economic means to situations of this nature. Even though this is simple math, right? So and I don't think AI still cannot do. So exactly, it may give you some fraction of the answer. Right? Okay. And I I guess my task is then I'll just stop. Take a look at this. And then please not screenshot to AI and ask it. to solve the problem. I don't think you could do it. And my suggestion would be advice would be, please take my lectures and all kinds of test and the sample problems that I put in the you know, first and then please we just don't ask it. And try to solve the problem. And just if you think that you could solve it, then you can do it. So let's do it. Okay. So given the so okay. Okay. So the answer should work this is an open book and open book then so remember that. And then one more thing, it is an open book and open book usually the questions are talk about the tools to use, right? So okay. So let's go. And the hint that I can give you is what's the three steps of economic",
+   "ko": "제출은 그렇지 않아요. 지각 제출이 아니에요. 그리고 물론, 원칙적으로, 제가 여기서 말했듯이 지각 제출은 허용되지 않을 것이지만, 그건 원칙적으로 그렇고, 제발 만약 여러분이 그렇게 생각한다면 제출하고 싶다면 하지만 늦을 것 같다면, 저에게 보내주세요. 알겠죠? 포기하지 말고 계속 어떻게든 해결하세요. 제가 제대로 할게요. 알겠죠? 그래서 네. 질문 있으신가요? 네, 6번 그게 다예요. 아주 명확하죠. 이해되셨나요? 자, 네, 그럼. 어 그리고 3번 이건 이게 바로 제가 허용할 수 없는 이유예요. 다른 곳에서 시험을 볼 수 없는 이유죠. 왜냐하면 오픈북 오픈 노트 시험이기 때문이에요. 그리고 계산기를 사용하거나 컴퓨터를 사용할 수 있어요. 필요하다면요. 그래서 네, 저는 AI를 사용해서 ChatGPT 및 다른 것들을 사용해요. 복잡성 같은 것들이요. 어 생각, 네, 여러분은 아시다시피, 하지만 저는 추천하지 않아요. 그래서 제 생각엔 이미 보셨겠지만 과거 시험들을 제가 채널에 올렸잖아요. 저는 그게 왜 그런지 모르겠어요. 바로 AI로 가는 게 소프트웨어고 그들에게 물어보는 게 아니에요. 그게 효과가 있을지 모르겠어요, 만약 그냥이 아니라면. 토론을 위한 것이 아니라면요. 그래서 알겠죠? 그래서 다시 한번, 다시 말씀드릴게요. 그래서 제 생각엔 여러분의 자신을 위해서, 그러니까 예를 들어, 찾아보세요 그리고 그 다음에, 아시잖아요, 방정식들이 이렇게 보이면 Y는 플러스 Y 플러스 뭐 모르겠어요, 아무튼. 어 마이너스 1. 는 와 같다. 그리고 이걸 어떻게 풀까요? 두 개의 이 질문은 AI에게 물어보고, 당신에게 답을 줄 텐데 저는 모르겠어요, 하지만 솔직히 말할게요. 어떻게 알아낼 수 있을까요? 이 문제의 답을? 그래서 저는 그걸 사용해요. 뭐라고 부르죠? 어 그래서 아시다시피 질문이 뭔지 그리고 아시잖아요, 당신은 계산기, 네, 아니면 계산기가 필요해요. 답을 얻을 수 있죠. 그래서 어떻게 알아낼 수 있을까요? 답을? 그러니까 제 말은, 제가 해야 할 건 문제를 풀고 마이너스 3, 그러니까 마이너스 1 플러스 마이너스 3은 제곱 마이너스 4 어 플러스 4, 네. 그래서 이건 당신의 답이죠, 맞죠? 그래서 제 생각엔 AI가 소프트웨어가 이걸 뱉어낼 거예요, 5초 안에, 맞죠? 그래서 아시다시피, 하지만 만약 이게 10 점짜리 문제라면, 알겠죠? 그리고 점수랑 이게 문제예요. 제가 그리고 왜 그리고 이건 주어진 방정식인데, 만약 이런 답을 적었다면, 저는 0.7점을 깎을 거예요. 그래서 알았어요, 그러니까 이 예제의 요점은 이거예요. 여러분이 저에게 왜 그렇게 답을 얻었는지에 대한 논의와 이것의 의미, 그래서 여러분이 경제적 수단을 제공하는 상황에 대한 것입니다. 비록 이것이 간단한 수학이지만, 그렇죠? 그래서 저는 AI가 아직 할 수 없다고 생각해요. 그래서 정확히, 그것은 당신에게 어떤 분수를 줄 수도 있어요. 그렇죠? 네. 그리고 제 생각엔 제 과제는 그러면 그냥 멈출게요. 이걸 보세요. 그리고 제발 그러지 마세요. 스크린샷을 AI에 보내고 물어보지 마세요. 문제를 풀라고. 저는 당신이 할 수 없을 거라고 생각해요. 그리고 제 제안은 조언일 거예요. 제발 제 강의를 듣고 온갖 것들을 시험 그리고 샘플 문제를 제가 넣은 것들을 아시다시피, 먼저 그리고 나서 제발 그냥 하지 마세요. 그리고 문제를 풀려고 노력하세요. 그리고 그냥 만약 당신이 풀 수 있다고 생각한다면, 할 수 있어요. 그래서 해봅시다. 네. 그래서 주어진 그래서 알았어요. 네. 그래서 답은 이게 오픈 북이고 오픈 북이니까 그래서 그걸 기억하세요. 그리고 한 가지 더, 이건 오픈 북이고 오픈 북이니까 보통 질문은 이야기하는 도구에 대한 것입니다. 그렇죠? 그래서 알았어요. 그럼 시작합시다. 그리고 제가 드릴 수 있는 힌트는 세 가지 경제적",
+   "pdf": "Core_note_ovb_panel_2026.pdf",
+   "pdfPage": 4,
+   "slideText": "",
+   "liveNotes": {
+    "notes": [
+     "지각 제출(late submission)이 아닌 경우에 대한 설명 중 (문맥 불완전)",
+     "▶ 교수가 \"제대로 처리하겠다\"고 확인함 (맥락 불명확)",
+     "▶ 교수가 해당 방식은 \"안 될 것 같다\"고 언급 (맥락 불명확)",
+     "▶ 계산기로 풀면 답은 나오고, AI 소프트웨어도 몇 초 안에 같은 답을 냄",
+     "▶ 답 자체보다 **왜 그 답이 나왔는지**와 그 **의미**(economic meaning)를 논의해 쓰는 것이 요구됨",
+     "▶ 문제를 스크린샷 찍어 AI에 풀게 하지 말 것 — 그렇게는 못 풀 것이라고 경고"
+    ],
+    "summary": "오픈북 시험 안내",
+    "exam": [
+     "시험은 오픈북(open book) 방식 — 문제 난이도는 높을 수 있음 (문장 미완)"
+    ],
+    "board": [],
+    "at": 1791353638990
+   },
+   "marks": [
+    {
+     "line": 0,
+     "type": "",
+     "note": "AI 스크린샷 풀이 금지, 샘플문제 활용"
+    }
+   ],
+   "segs": [
+    {
+     "t": 309,
+     "page": 4,
+     "en": "the submission is not a late submission. And then of course, in principle, I said here that late submission will not be accepted, but that's in principle, but please if you think that that you want to submission but it will be late, please send it to me. Okay? Do not give up and make somehow solve it.",
+     "ko": "제출은 그렇지 않아요. 지각 제출이 아니에요. 그리고 물론, 원칙적으로, 제가 여기서 말했듯이 지각 제출은 허용되지 않을 것이지만, 그건 원칙적으로 그렇고, 제발 만약 여러분이 그렇게 생각한다면 제출하고 싶다면 하지만 늦을 것 같다면, 저에게 보내주세요. 알겠죠? 포기하지 말고 계속 어떻게든 해결하세요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 332,
+     "page": 4,
+     "en": "I will do it right. Okay? So yeah. Any questions? Okay, number six, that's all plain and clear. Is that clear? Now, Okay, then. Uh and number seven, this is this is why you can't I allow you to take exam in other locations because it's going to be an open book open note exam.",
+     "ko": "제가 제대로 할게요. 알겠죠? 그래서 네. 질문 있으신가요? 네, 6번 그게 다예요. 아주 명확하죠. 이해되셨나요? 자, 네, 그럼. 어 그리고 3번 이건 이게 바로 제가 허용할 수 없는 이유예요. 다른 곳에서 시험을 볼 수 없는 이유죠. 왜냐하면 오픈북 오픈 노트 시험이기",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 359,
+     "page": 4,
+     "en": "And then you may use calculator or computer to software if it's necessary. So yeah, I use AI ChatGPT and other things. complexity or whatever. Uh thought, yeah, you should you know, but I'm not recommending So I think you've already seen the past exams that I posted in the channel. I don't think it's why the idea to straight go to the software and ask them stuff.",
+     "ko": "때문이에요. 그리고 계산기를 사용하거나 컴퓨터를 사용할 수 있어요. 필요하다면요. 그래서 네, 저는 AI를 사용해서 ChatGPT 및 다른 것들을 사용해요. 복잡성 같은 것들이요. 어 생각, 네, 여러분은 아시다시피, 하지만 저는 추천하지 않아요. 그래서 제 생각엔 이미 보셨겠지만 과거 시험들을 제가 채널에 올렸잖아요. 저는 그게 왜 그런지 모르겠어요. 바로 AI로 가는 게 소프트웨어고 그들에게 물어보는 게 아니에요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 392,
+     "page": 4,
+     "en": "I don't think it works if you're not just discussion for you to answer them. So okay? So",
+     "ko": "그게 효과가 있을지 모르겠어요, 만약 그냥이 아니라면. 토론을 위한 것이 아니라면요. 그래서 알겠죠? 그래서",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 406,
+     "page": 4,
+     "en": "Again, let me So what I think is for your own sake, so for example, let's say find one and then, you know, the equations look like Y is equal plus Y plus I don't know, whatever. Uh minus one. equals to And how would you solve this? The two of this question to the AI, you will give you the answer and I don't know, but I'll be honest.",
+     "ko": "다시 한번, 다시 말씀드릴게요. 그래서 제 생각엔 여러분의 자신을 위해서, 그러니까 예를 들어, 찾아보세요 그리고 그 다음에, 아시잖아요, 방정식들이 이렇게 보이면 Y는 플러스 Y 플러스 뭐 모르겠어요, 아무튼. 어 마이너스 1. 는 와 같다. 그리고 이걸 어떻게 풀까요? 두 개의 이 질문은 AI에게 물어보고, 당신에게 답을 줄 텐데 저는 모르겠어요, 하지만 솔직히 말할게요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 435,
+     "page": 4,
+     "en": "How would you find out the answer for this?",
+     "ko": "어떻게 알아낼 수 있을까요? 이 문제의 답을?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 441,
+     "page": 4,
+     "en": "So I use that. What do you call it? Uh so you know what the question is and you know, you calculator, yeah, or you need a calculator. You get the answer. So how do you find out the answer? So I mean, I should do the problem and minus three, so minus one plus minus three equals square minus four uh plus four, yeah.",
+     "ko": "그래서 저는 그걸 사용해요. 뭐라고 부르죠? 어 그래서 아시다시피 질문이 뭔지 그리고 아시잖아요, 당신은 계산기, 네, 아니면 계산기가 필요해요. 답을 얻을 수 있죠. 그래서 어떻게 알아낼 수 있을까요? 답을? 그러니까 제 말은, 제가 해야 할 건 문제를 풀고 마이너스 3, 그러니까 마이너스 1 플러스 마이너스 3은 제곱 마이너스 4 어 플러스 4, 네.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 468,
+     "page": 4,
+     "en": "So this is your answer, right? So I guess the AI software will spit this out within five seconds, right? So you know, But if let's say this is 10 point question, okay? And points and then this is the problem that I",
+     "ko": "그래서 이건 당신의 답이죠, 맞죠? 그래서 제 생각엔 AI가 소프트웨어가 이걸 뱉어낼 거예요, 5초 안에, 맞죠? 그래서 아시다시피, 하지만 만약 이게 10 점짜리 문제라면, 알겠죠? 그리고 점수랑 이게 문제예요. 제가",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 493,
+     "page": 4,
+     "en": "And why and this is given equation, if you took down an answer like this, I'm going to cut off 0.7 out of it. So okay, so the point of this example is",
+     "ko": "그리고 왜 그리고 이건 주어진 방정식인데, 만약 이런 답을 적었다면, 저는 0.7점을 깎을 거예요. 그래서 알았어요, 그러니까 이 예제의 요점은 이거예요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 512,
+     "page": 4,
+     "en": "for you to give me discussion of why you got this answer. And the meaning of this, so you provide economic means to situations of this nature. Even though this is simple math, right? So and I don't think AI still cannot do. So exactly, it may give you some fraction of the answer.",
+     "ko": "여러분이 저에게 왜 그렇게 답을 얻었는지에 대한 논의와 이것의 의미, 그래서 여러분이 경제적 수단을 제공하는 상황에 대한 것입니다. 비록 이것이 간단한 수학이지만, 그렇죠? 그래서 저는 AI가 아직 할 수 없다고 생각해요. 그래서 정확히, 그것은 당신에게 어떤 분수를 줄 수도 있어요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 527,
+     "page": 4,
+     "en": "Right? Okay. And I I guess my task is then I'll just stop. Take a look at",
+     "ko": "그렇죠? 네. 그리고 제 생각엔 제 과제는 그러면 그냥 멈출게요. 이걸 보세요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 541,
+     "page": 4,
+     "en": "this. And then please not screenshot to AI and ask it. to solve the problem. I don't think you could do it. And my suggestion would be advice would be, please take my lectures and all kinds of test and the sample problems that I put in the you know, first and then please we just don't ask it. And try to solve the problem.",
+     "ko": "그리고 제발 그러지 마세요. 스크린샷을 AI에 보내고 물어보지 마세요. 문제를 풀라고. 저는 당신이 할 수 없을 거라고 생각해요. 그리고 제 제안은 조언일 거예요. 제발 제 강의를 듣고 온갖 것들을 시험 그리고 샘플 문제를 제가 넣은 것들을 아시다시피, 먼저 그리고 나서 제발 그냥 하지 마세요. 그리고 문제를 풀려고 노력하세요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 568,
+     "page": 4,
+     "en": "And just if you think that you could solve it, then you can do it. So let's do it. Okay. So given the so okay. Okay. So the answer should work this is an open book and open book then so",
+     "ko": "그리고 그냥 만약 당신이 풀 수 있다고 생각한다면, 할 수 있어요. 그래서 해봅시다. 네. 그래서 주어진 그래서 알았어요. 네. 그래서 답은 이게 오픈 북이고 오픈 북이니까 그래서",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 592,
+     "page": 4,
+     "en": "remember that. And then one more thing, it is an open book and open book usually the questions are talk about the tools to use, right? So okay. So let's go. And the hint that I can give you is what's the three steps of economic",
+     "ko": "그걸 기억하세요. 그리고 한 가지 더, 이건 오픈 북이고 오픈 북이니까 보통 질문은 이야기하는 도구에 대한 것입니다. 그렇죠? 그래서 알았어요. 그럼 시작합시다. 그리고 제가 드릴 수 있는 힌트는 세 가지 경제적",
+     "src": "gemini",
+     "ai": true
+    }
+   ]
+  },
+  {
+   "page": 5,
+   "en": "analysis? That's right. And you just can answer what's the three steps of economic analysis? Right? And I assume that okay. That's question number one. I don't know. How many points that I put that I don't remember. So number eight, the most important number of all of this announcement not fighter please do not copy and paste. So you must say your own word to not copy and paste sentences or paragraphs directly from other sources. For example, quoting AI and using them without attribution is plagiarism. If I find one, you get zero points and your final grade will be so you don't want to do it. And number nine, this questions will provide for the test questions. So my final comments on the exam is this. This exam is unique in a sense that uh you have to submit your solutions in a PDF form and you put them in an attachment of the email. So you have to submit the email submission of your solutions. That's unique and then that's the part of the exam as well. So my advice would be to not try to solve all the questions. But I think that I would do try to answer as much as possible as the most important thing to do is submit on time. Okay. So usually I take five to 10 points. Uh for the late submission. So it's like 30% weight on the grade. It's like uh 1.5 to three points off from the final grade. and that's so you hire a homework so homework grades are gone. So they don't submit them on time. on time. So do not try to answer as much as possible. I don't think it will and I don't know. Okay. And then the way I did not help you before. So some final things. Okay. So is it good? Okay. So I don't know. I don't know. So I think three points here. So that's the class if you want to take it. So that's the solution. Okay. So and then the rest of the class and after the class All right, so let me move on to today. I will not finish off the as we were talking about migration problem. What we have done Last time, last time I explained how to construct optimize migration problem. Okay, and this is the solution. Okay. So let's go to that. And then I can guarantee that the the first exam will be the question about constructing optimization problem. In the past them. So make sure that you can you know, construct optimize problem for yourself. So so objective function and constraints for the difference so you have to adjust that, but you have to have this condition. And so consumer is in what? And consumption is and what's the three axis? Okay, the first consumption is more better. So the price is preferred and you have no more budget, right? And then this is the utility function that you can function of or the supply. So this preference is not and so which is consumer. Okay, the constraint and usually the on the left hand side. revenue on the right hand side. And that's the first term. And then I would like and then that's it. So that's So supply and demand, and then that's it. Yeah. So you're going to come and keep some taxes. So on the revenue side, you're going to have minus one taxes. So this is the And then but that would be the same variable. Yeah, and something and measure, right? And you may put labor supply as well, but labor supply usually is determined by the time constraint too. And then how would you like the break the taxation on",
+   "ko": "분석의 단계는 무엇인가요? 맞아요. 그리고 당신은 그냥 대답할 수 있어요. 경제적 분석의 세 단계는 무엇인가요? 맞죠? 그리고 저는 그렇게 생각해요. 알았어요. 그게 첫 번째 질문이에요. 모르겠어요. 몇 점인지 제가 그걸 넣었는지 모르겠어요. 기억이 안 나요. 그래서 8번, 가장 중요한 숫자는 이 발표의 파이터가 아니라 제발 복사해서 붙여넣지 마세요. 그래서 여러분은 자신의 말로 복사해서 붙여넣지 않도록 해야 해요. 문장이나 문단을 다른 출처에서 직접 가져오지 마세요. 예를 들어, AI를 인용하는 것과 그것을 사용하는 것은 표절입니다. 만약 제가 하나라도 찾으면, 0점을 받고 최종 성적은 그러니까 그렇게 하지 마세요. 그리고 9번, 이 질문은 시험을 위한 것입니다. 맞죠? 그래서 제 마지막 시험에 대한 코멘트는 이렇습니다. 이 시험은 독특합니다. 어떤 면에서냐면 여러분이 제출해야 한다는 것입니다. 솔루션을 PDF 형식으로 제출해야 하고 그것들을 첨부 파일로 제출해야 합니다. 그래서 여러분은 이메일을 제출해야 하고 여러분의 솔루션을 제출해야 합니다. 그게 독특하고 그게 시험의 일부입니다. 그래서 제 조언은 너무 모든 문제를 풀려고 하지 말라는 것입니다. 하지만 저는 제가 할 것 같아요. 모든 질문에 답하려고 노력할 거예요, 가능한 한 가장 중요한 것을 하는 것이죠. 그래서 제출하는 것이죠. 제시간에. 알겠습니다. 그래서 보통 저는 5분에서 10점 정도를 받아요. 어, 늦은 제출에 대해서요. 그래서 30% 정도의 비중을 차지해요. 그러니까 어, 1.5에서 2점 정도예요. 3점 정도 최종 점수에서 깎여요. 그리고 그게 다예요. 그래서 여러분이 숙제를 고용하면 숙제 점수는 사라져요. 그래서 그들은 제시간에 제출하지 않아요. 제시간에. 그래서 가능한 한 많이 답하려고 하지 마세요. 저는 그게 그리고 저는 모르겠어요. 알겠습니다. 그리고 제가 전에 도와주지 않았던 것. 그래서 몇 가지 최종 것들. 알겠습니다. 그래서 괜찮나요? 알겠습니다. 그래서 모르겠어요. 모르겠어요. 그래서 저는 3점 정도가 답이라고 생각해요. 그래서 그게 수업이에요, 듣고 싶으시면. 그래서 그게 솔루션입니다. 알겠습니다. 그래서 그리고 나머지 수업은 그리고 수업이 끝나고 알겠습니다, 그럼 오늘로 넘어갈게요. 저는 끝내지 않을 거예요. 우리가 하던 대로 이주 문제에 대해 이야기하고 있었으니까요. 우리가 한 것은 지난번에, 지난번에 제가 어떻게 구성하는지 설명했어요. 최적화하는 이주 문제에 대해. 알겠습니다, 그리고 이게 솔루션입니다. 알겠습니다. 그래서 다음으로 넘어가겠습니다. 그리고 저는 보장할 수 있어요. 그 그 첫 번째 시험은 아마 그 질문이 구성하는 것에 대한 최적화 문제일 가능성이 높아요. 과거에는 그랬어요. 그래서 여러분이 할 수 있는지 확인하세요. 구성하는 것을요. 최적화하는 것을요, 여러분의 스스로. 그래서 그래서 목적 함수는 제약 조건과 함께 차이가 있으니까 여러분은 조정해야 하지만, 여러분은 이것을 갖춰야 합니다. 그리고 그래서 소비자는 무엇에 있나요? 그리고 소비는 그리고 무엇이 세 가지 축인가요? 알겠습니다, 첫 번째는 소비는 더 나은 것입니다. 그래서 가격은 선호되고 더 이상 예산이 없죠, 그렇죠? 그리고 이게 효용 함수인데 여러분이 함수로 만들 수 있거나 또는 공급입니다. 그래서 이 선호도는 그렇지 않아요. 그리고 그래서 그것은 소비자입니다. 알겠습니다, 제약 조건은 그리고 보통 지출은 왼쪽에 있습니다. 수입은 오른쪽에 있습니다. 그리고 그게 첫 번째 항입니다. 그리고 저는 할 것 같아요. 그리고 그게 다예요. 그래서 그게 다예요. 그래서 공급은 수요와 공급, 그리고 그게 다예요. 네. 그래서 당신은 와서 계속할 거예요. 약간의 세금을요. 그래서 수입 쪽에서는, 당신은 마이너스 1의 세금을 갖게 돼요. 그래서 이것은 바로 그리고 하지만 그건 똑같을 거예요. 네, 그리고 뭔가 그리고 측정이죠, 맞죠? 그리고 노동 공급을 넣을 수도 있지만, 노동 공급은 보통 입니다. 결정됩니다. 에 의해 시간 제약도요. 그리고 어떻게 하시겠어요? 휴식 시간을 어떻게 과세할지",
+   "pdf": "Core_note_ovb_panel_2026.pdf",
+   "pdfPage": 5,
+   "slideText": "",
+   "liveNotes": {
+    "notes": [
+     "▶ 경제 분석의 **세 단계**(three steps of economic analysis)를 학생들이 답할 수 있다고 전제하고 복습 질문을 던짐",
+     "▶ 복습 질문들이 **시험 문제**(test questions)로 출제됨",
+     "▶ 이 수업만의 고유한(unique) 내용이 시험 범위에 해당한다고 언급",
+     "▶ 조언: 모든 문제를 다 풀려 하지 말고 최대한 답하되, **제때 제출**(submit on time)이 가장 중요",
+     "▶ **지각 제출**(late submission) 감점: 5~10점, 성적 비중 30% 기준 최종 성적 1.5~3점 감점",
+     "▶ 지난 시간에 **최적화 문제**(optimization problem) 설정법을 설명했고, 이번에 그 **해**(solution)를 제시함"
+    ],
+    "summary": "시험 조언 및 최적화 문제 해",
+    "exam": [
+     "복습 질문이 시험 문제로 출제됨; 이 수업 고유 내용이 범위",
+     "제때 제출이 가장 중요; 지각 시 5~10점 감점(성적 비중 30% 기준 최종 1.5~3점)"
+    ],
+    "board": [],
+    "at": 1791353930983
+   },
+   "marks": [],
+   "segs": [
+    {
+     "t": 609,
+     "page": 5,
+     "en": "analysis? That's right. And you just can answer what's the three steps of economic analysis? Right? And I assume that okay. That's question number one. I don't know. How many points that I put that I don't remember. So number eight, the most important number of all of this announcement not fighter please do not copy and paste. So you must say your own word to not copy and paste sentences or paragraphs directly from other sources.",
+     "ko": "분석의 단계는 무엇인가요? 맞아요. 그리고 당신은 그냥 대답할 수 있어요. 경제적 분석의 세 단계는 무엇인가요? 맞죠? 그리고 저는 그렇게 생각해요. 알았어요. 그게 첫 번째 질문이에요. 모르겠어요. 몇 점인지 제가 그걸 넣었는지 모르겠어요. 기억이 안 나요. 그래서 8번, 가장 중요한 숫자는 이 발표의 파이터가 아니라 제발 복사해서 붙여넣지 마세요. 그래서 여러분은 자신의 말로 복사해서 붙여넣지 않도록 해야 해요. 문장이나 문단을 다른 출처에서 직접 가져오지 마세요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 642,
+     "page": 5,
+     "en": "For example, quoting AI and using them without attribution is plagiarism. If I find one, you get zero points and your final grade will be so you don't want to",
+     "ko": "예를 들어, AI를 인용하는 것과 그것을 사용하는 것은 표절입니다. 만약 제가 하나라도 찾으면, 0점을 받고 최종 성적은 그러니까 그렇게",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 656,
+     "page": 5,
+     "en": "do it. And number nine, this questions will provide for the test questions. So my final comments on the exam is this. This exam is unique in a sense that uh you have to submit your solutions in a PDF form and you put them in an attachment of the email. So you have to submit the email submission of your solutions.",
+     "ko": "하지 마세요. 그리고 9번, 이 질문은 시험을 위한 것입니다. 맞죠? 그래서 제 마지막 시험에 대한 코멘트는 이렇습니다. 이 시험은 독특합니다. 어떤 면에서냐면 여러분이 제출해야 한다는 것입니다. 솔루션을 PDF 형식으로 제출해야 하고 그것들을 첨부 파일로 제출해야 합니다. 그래서 여러분은 이메일을 제출해야 하고 여러분의 솔루션을 제출해야",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 679,
+     "page": 5,
+     "en": "That's unique and then that's the part of the exam",
+     "ko": "합니다. 그게 독특하고 그게 시험의 일부입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 693,
+     "page": 5,
+     "en": "as well. So my advice would be to not try to solve all the questions. But I think that I would do try to answer as much as possible as the most important thing to do is submit on time. Okay.",
+     "ko": "그래서 제 조언은 너무 모든 문제를 풀려고 하지 말라는 것입니다. 하지만 저는 제가 할 것 같아요. 모든 질문에 답하려고 노력할 거예요, 가능한 한 가장 중요한 것을 하는 것이죠. 그래서 제출하는 것이죠. 제시간에. 알겠습니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 703,
+     "page": 5,
+     "en": "So usually I take five to 10 points. Uh for the late submission. So it's like 30% weight on the grade. It's like uh 1.5 to three points off from the final grade. and that's so you hire a homework so homework grades are gone. So they don't submit them on time. on time.",
+     "ko": "그래서 보통 저는 5분에서 10점 정도를 받아요. 어, 늦은 제출에 대해서요. 그래서 30% 정도의 비중을 차지해요. 그러니까 어, 1.5에서 2점 정도예요. 3점 정도 최종 점수에서 깎여요. 그리고 그게 다예요. 그래서 여러분이 숙제를 고용하면 숙제 점수는 사라져요. 그래서 그들은 제시간에 제출하지 않아요. 제시간에.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 726,
+     "page": 5,
+     "en": "So do not try to answer as much as possible. I don't think it will and I don't know. Okay. And then the way I did not help you before. So some final things. Okay. So is it good? Okay. So I don't know. I don't know. So I think three points here. So that's the class if you want to take it.",
+     "ko": "그래서 가능한 한 많이 답하려고 하지 마세요. 저는 그게 그리고 저는 모르겠어요. 알겠습니다. 그리고 제가 전에 도와주지 않았던 것. 그래서 몇 가지 최종 것들. 알겠습니다. 그래서 괜찮나요? 알겠습니다. 그래서 모르겠어요. 모르겠어요. 그래서 저는 3점 정도가 답이라고 생각해요. 그래서 그게 수업이에요, 듣고 싶으시면.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 754,
+     "page": 5,
+     "en": "So that's the solution. Okay. So and then the rest of the class and after the class All right, so let me move on to today. I will not finish off the as we were talking about migration problem. What we have done",
+     "ko": "그래서 그게 솔루션입니다. 알겠습니다. 그래서 그리고 나머지 수업은 그리고 수업이 끝나고 알겠습니다, 그럼 오늘로 넘어갈게요. 저는 끝내지 않을 거예요. 우리가 하던 대로 이주 문제에 대해 이야기하고 있었으니까요. 우리가 한 것은",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 774,
+     "page": 5,
+     "en": "Last time, last time I explained how to construct optimize migration problem. Okay, and this is the solution. Okay. So let's go to that. And then I can guarantee that the the first exam will be the question about constructing optimization problem. In the past them. So make sure that you can you know, construct optimize problem for yourself. So so",
+     "ko": "지난번에, 지난번에 제가 어떻게 구성하는지 설명했어요. 최적화하는 이주 문제에 대해. 알겠습니다, 그리고 이게 솔루션입니다. 알겠습니다. 그래서 다음으로 넘어가겠습니다. 그리고 저는 보장할 수 있어요. 그 그 첫 번째 시험은 아마 그 질문이 구성하는 것에 대한 최적화 문제일 가능성이 높아요. 과거에는 그랬어요. 그래서 여러분이 할 수 있는지 확인하세요. 구성하는 것을요. 최적화하는 것을요, 여러분의 스스로. 그래서 그래서",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 815,
+     "page": 5,
+     "en": "objective function and constraints for the difference so you have to adjust that, but you have to have this condition. And so consumer is in what? And consumption is and what's the three axis? Okay, the first consumption is more better. So the price is preferred and you have no more budget, right?",
+     "ko": "목적 함수는 제약 조건과 함께 차이가 있으니까 여러분은 조정해야 하지만, 여러분은 이것을 갖춰야 합니다. 그리고 그래서 소비자는 무엇에 있나요? 그리고 소비는 그리고 무엇이 세 가지 축인가요? 알겠습니다, 첫 번째는 소비는 더 나은 것입니다. 그래서 가격은 선호되고 더 이상 예산이 없죠, 그렇죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 833,
+     "page": 5,
+     "en": "And then this is the utility function that you can function of or the supply. So this preference is not and so which is consumer. Okay, the constraint and usually the on the left hand side. revenue on the right hand side. And that's the first term. And then I would like and then",
+     "ko": "그리고 이게 효용 함수인데 여러분이 함수로 만들 수 있거나 또는 공급입니다. 그래서 이 선호도는 그렇지 않아요. 그리고 그래서 그것은 소비자입니다. 알겠습니다, 제약 조건은 그리고 보통 지출은 왼쪽에 있습니다. 수입은 오른쪽에 있습니다. 그리고 그게 첫 번째 항입니다. 그리고 저는 할 것 같아요. 그리고",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 863,
+     "page": 5,
+     "en": "that's it. So that's So supply and demand, and then that's it. Yeah. So you're going to come and keep some taxes. So on the revenue side, you're going to have minus one taxes. So this is the And then but that would be the same variable. Yeah, and something and measure, right?",
+     "ko": "그게 다예요. 그래서 그게 다예요. 그래서 공급은 수요와 공급, 그리고 그게 다예요. 네. 그래서 당신은 와서 계속할 거예요. 약간의 세금을요. 그래서 수입 쪽에서는, 당신은 마이너스 1의 세금을 갖게 돼요. 그래서 이것은 바로 그리고 하지만 그건 똑같을 거예요. 네, 그리고 뭔가 그리고 측정이죠, 맞죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 892,
+     "page": 5,
+     "en": "And you may put labor supply as well, but labor supply usually is determined by the time constraint too.",
+     "ko": "그리고 노동 공급을 넣을 수도 있지만, 노동 공급은 보통 입니다. 결정됩니다. 에 의해 시간 제약도요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 905,
+     "page": 5,
+     "en": "And then how would you like the break the taxation on",
+     "ko": "그리고 어떻게 하시겠어요? 휴식 시간을 어떻게 과세할지",
+     "src": "gemini"
+    }
+   ]
+  },
+  {
+   "page": 6,
+   "en": "optimization? So like here, right? After still the the the value of time minus here. So this would be the budget constraint and that's it. That's it. That's the constraint. And that's the budget constraint. Yeah, so that would be the minus so that, right? Okay. Um Okay, so what's the equation So anyway, this is the the first step of the analysis here. This is the model. So so so this is So what we're going to do is now, and what's the second step? Yeah, so I mean we're doing all the substitution. So, let's see. We're going to talk about this thing, right? So, we're going to talk about Maybe we should So, I was on the Twitter and I was like, okay, we're going to talk about this. And so and and there are conditions to play, right? You can't just do this thing, right? You should know that. Right? I'll give you an example. You should know that. Something has to be done. Now, the problem with the podcast on my end, right? And this would be condition. Uh, I guess you could take my economics or math or what not. This is an exercise condition. It's a technical condition. So she has to in order to do the supposed to stop. Right? Yeah. So um that's a good But so what the there's that. Right? Yeah. So there's going to be a comparison and analysis and No, I don't know what you mean. I don't know. So I heard you got you guys got another okay, you also have fire, right? What else do you have? So you have a national holiday, you just celebrate it. And holidays. So you have next up, you need to study economics or math. I don't know. All right. Number three. Perform not. Yeah. Okay. So you have to study economics. Yeah. Okay. So um that's a Okay. So um So we move on to the study and analysis and why do you like to ask you why not? There are no rules and there are there are you can do it. So, now, the globalization problem, there are no rules and that's not just a theory, this is it. But there are lucky events that consume. So All right. Okay. So make up. Sure. So what and And yes, sir. Yeah, I'm just capital, you know, anything else? So I was work H And you know, Yeah. Okay, okay. And then what I did, we were both Yeah, consumption region and labor. Okay?",
+   "ko": "최적화하시겠어요? 그러니까 여기죠, 맞죠? 여전히 그 후에 그 가치는 시간 마이너스 여기입니다. 그래서 이것은 예산 제약이 될 것이고 그게 다예요. 그게 다예요. 그게 제약 조건입니다. 그리고 그게 예산 제약입니다. 네, 그래서 그게 마이너스니까 그렇죠? 알겠습니다. 음 알겠습니다. 그래서 뭐가 방정식이죠? 그래서 어쨌든, 이게 첫 번째 단계입니다. 여기서 분석의 이게 모델입니다. 그래서 그래서 이것은 입니다. 그래서 우리가 할 것은 이제, 그리고 두 번째 단계는 무엇인가요? 네, 그러니까 제 말은 우리가 모든 대체를 하고 있다는 거예요. 그래서, 어디 보자. 우리는 에 대해 이야기할 거예요. 이거에 대해서, 그렇죠? 그래서, 우리는 이야기할 거예요. 아마도 우리는 그래서, 제가 트위터에 있었는데 제가 생각했죠, 그래, 우리는 이야기할 거예요. 그리고 그래서 그리고 그리고 조건이 있어요. 플레이하려면, 그렇죠? 그냥 할 수 없어요, 이 일을, 그렇죠? 당신은 그걸 알아야 해요. 그렇죠? 예를 들어볼게요. 당신은 그걸 알아야 해요. 뭔가 해야 해요. 자, 이제 팟캐스트의 문제는 제 쪽에서는, 그렇죠? 그리고 이건 그럴 거예요. 조건이죠. 어, 제 생각엔 제 말을 경제학이나 수학이나 뭐 그런 걸 들을 수 있겠네요. 이건 운동 조건이에요. 기술적인 조건이에요. 그래서 그녀는 하기 위해서 해야 해요. 해야 할 일을 멈춰야 해요. 그렇죠? 네. 그래서 음 그건 좋은 하지만 그래서 뭐가 있냐면 그게 있어요. 그렇죠? 네. 그래서 비교가 있을 거예요, 분석과 그리고 아니요, 무슨 말씀인지 모르겠어요. 모르겠어요. 그래서 당신이 다른 걸 얻었다고 들었어요, 당신은 불도 있죠, 맞죠? 또 뭐가 있죠? 그래서 당신은 국경일이 있고, 그냥 축하해요. 그리고 휴일이요. 그래서 당신은 다음으로, 경제학이나 수학을 공부해야 해요. 모르겠어요. 알겠습니다. 세 번째는 이거예요. 공연을 하지 마세요. 네. 알겠습니다. 그래서 당신은 경제학을 공부해야 해요. 네. 알겠습니다. 그래서 음 그건 알겠습니다. 그래서 음 그래서 우리는 다음으로 넘어가서 연구와 분석을 하고 그리고 왜 당신은 좋아하나요? 당신에게 물어보는 것을 왜 안 되나요? 규칙이 없어요. 그리고 그리고 그리고 할 수 있어요. 그래서, 이제, 세계화는 문제예요, 규칙이 없어요. 그리고 그건 그냥 이론이 아니라, 이게 다예요. 하지만 운이 좋은 사건들이 있어요. 그래서 알겠습니다. 네. 그러니까 화해하세요. 물론이죠. 그래서 뭐가 그리고 그리고 네, 알겠습니다. 네, 저는 그냥 자본이에요, 아시죠, 다른 거 없나요? 그래서 저는 H에서 일했어요. 그리고 아시다시피, 네. 알겠습니다. 네. 그리고 제가 한 일은, 우리 둘 다 네, 소비 지역은 그리고 노동입니다. 알겠죠?",
+   "pdf": "Core_note_ovb_panel_2026.pdf",
+   "pdfPage": 6,
+   "slideText": "",
+   "liveNotes": {
+    "notes": [
+     "▶ 트위터(Twitter)에서 본 내용을 계기로 이야기를 시작 (본 주제 도입 단계)",
+     "▶ \"알고 있어야 한다\"고 반복 강조하며 예시를 들기 시작, \"뭔가 조치가 필요하다\"는 문제의식 제시",
+     "▶ 팟캐스트(podcast) 관련 문제를 언급하며 이를 하나의 '조건'(condition)으로 제시하려 함",
+     "▶ 학생들에게 \"불(fire)도 있죠, 그 밖에 또 뭐가 있나요?\"라고 물으며 예시를 들게 함",
+     "▶ 세 번째 항목으로 넘어가 **연구와 분석**(study and analysis) 단계로 진입"
+    ],
+    "summary": "연구와 분석 단계 진입",
+    "exam": [],
+    "board": [],
+    "at": 1791354235611
+   },
+   "marks": [],
+   "segs": [
+    {
+     "t": 909,
+     "page": 6,
+     "en": "optimization? So like here, right? After still the the the value of time minus here. So this would be the budget constraint and that's it. That's it. That's the constraint. And that's the budget constraint. Yeah, so that would be the minus so that, right?",
+     "ko": "최적화하시겠어요? 그러니까 여기죠, 맞죠? 여전히 그 후에 그 가치는 시간 마이너스 여기입니다. 그래서 이것은 예산 제약이 될 것이고 그게 다예요. 그게 다예요. 그게 제약 조건입니다. 그리고 그게 예산 제약입니다. 네, 그래서 그게 마이너스니까 그렇죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 938,
+     "page": 6,
+     "en": "Okay. Um",
+     "ko": "알겠습니다. 음",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 945,
+     "page": 6,
+     "en": "Okay, so what's the equation So anyway, this is the the first step of the analysis here. This is the model. So so so this is So what we're going to do is now, and what's the second step? Yeah, so I mean we're doing all the substitution.",
+     "ko": "알겠습니다. 그래서 뭐가 방정식이죠? 그래서 어쨌든, 이게 첫 번째 단계입니다. 여기서 분석의 이게 모델입니다. 그래서 그래서 이것은 입니다. 그래서 우리가 할 것은 이제, 그리고 두 번째 단계는 무엇인가요? 네, 그러니까 제 말은 우리가 모든 대체를 하고 있다는 거예요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 974,
+     "page": 6,
+     "en": "So, let's see. We're going to talk about this thing, right? So, we're going to talk about Maybe we should",
+     "ko": "그래서, 어디 보자. 우리는 에 대해 이야기할 거예요. 이거에 대해서, 그렇죠? 그래서, 우리는 이야기할 거예요. 아마도 우리는",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 991,
+     "page": 6,
+     "en": "So, I was on the Twitter and I was like, okay, we're going to talk about this. And so and and there are conditions to play, right? You can't just do this thing, right?",
+     "ko": "그래서, 제가 트위터에 있었는데 제가 생각했죠, 그래, 우리는 이야기할 거예요. 그리고 그래서 그리고 그리고 조건이 있어요. 플레이하려면, 그렇죠? 그냥 할 수 없어요, 이 일을, 그렇죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1010,
+     "page": 6,
+     "en": "You should know that. Right? I'll give you an example. You should know that. Something has to be done.",
+     "ko": "당신은 그걸 알아야 해요. 그렇죠? 예를 들어볼게요. 당신은 그걸 알아야 해요. 뭔가 해야 해요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1023,
+     "page": 6,
+     "en": "Now, the problem with the podcast on my end, right? And this would be condition.",
+     "ko": "자, 이제 팟캐스트의 문제는 제 쪽에서는, 그렇죠? 그리고 이건 그럴 거예요. 조건이죠.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1042,
+     "page": 6,
+     "en": "Uh, I guess you could take my economics or math or what not. This is an exercise condition. It's a technical condition. So she has to in order to do the supposed to stop. Right? Yeah. So um that's a good But so what the there's that. Right? Yeah. So there's going to be a comparison and analysis and No, I don't know what you mean.",
+     "ko": "어, 제 생각엔 제 말을 경제학이나 수학이나 뭐 그런 걸 들을 수 있겠네요. 이건 운동 조건이에요. 기술적인 조건이에요. 그래서 그녀는 하기 위해서 해야 해요. 해야 할 일을 멈춰야 해요. 그렇죠? 네. 그래서 음 그건 좋은 하지만 그래서 뭐가 있냐면 그게 있어요. 그렇죠? 네. 그래서 비교가 있을 거예요, 분석과 그리고 아니요, 무슨 말씀인지 모르겠어요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1076,
+     "page": 6,
+     "en": "I don't know.",
+     "ko": "모르겠어요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1092,
+     "page": 6,
+     "en": "So I heard you got you guys got another okay, you also have fire, right? What else do you have? So you have a national holiday, you just celebrate it. And holidays. So you have next up, you need to study economics or math.",
+     "ko": "그래서 당신이 다른 걸 얻었다고 들었어요, 당신은 불도 있죠, 맞죠? 또 뭐가 있죠? 그래서 당신은 국경일이 있고, 그냥 축하해요. 그리고 휴일이요. 그래서 당신은 다음으로, 경제학이나 수학을 공부해야 해요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1111,
+     "page": 6,
+     "en": "I don't know. All right. Number three. Perform not. Yeah. Okay. So you have to study economics. Yeah. Okay. So um that's a",
+     "ko": "모르겠어요. 알겠습니다. 세 번째는 이거예요. 공연을 하지 마세요. 네. 알겠습니다. 그래서 당신은 경제학을 공부해야 해요. 네. 알겠습니다. 그래서 음 그건",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1129,
+     "page": 6,
+     "en": "Okay. So um So we move on to the study and analysis and why do you like to ask you why not? There are no rules and there are there are you can do it.",
+     "ko": "알겠습니다. 그래서 음 그래서 우리는 다음으로 넘어가서 연구와 분석을 하고 그리고 왜 당신은 좋아하나요? 당신에게 물어보는 것을 왜 안 되나요? 규칙이 없어요. 그리고 그리고 그리고 할 수 있어요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1164,
+     "page": 6,
+     "en": "So, now, the globalization problem, there are no rules and that's not just a theory, this is it. But there are lucky events that consume. So All right. Okay. So make up. Sure. So what and And yes, sir. Yeah, I'm just capital, you know, anything else? So I was work H And you know, Yeah.",
+     "ko": "그래서, 이제, 세계화는 문제예요, 규칙이 없어요. 그리고 그건 그냥 이론이 아니라, 이게 다예요. 하지만 운이 좋은 사건들이 있어요. 그래서 알겠습니다. 네. 그러니까 화해하세요. 물론이죠. 그래서 뭐가 그리고 그리고 네, 알겠습니다. 네, 저는 그냥 자본이에요, 아시죠, 다른 거 없나요? 그래서 저는 H에서 일했어요. 그리고 아시다시피, 네.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1197,
+     "page": 6,
+     "en": "Okay, okay. And then what I did, we were both",
+     "ko": "알겠습니다. 네. 그리고 제가 한 일은, 우리 둘 다",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1205,
+     "page": 6,
+     "en": "Yeah, consumption region and labor. Okay?",
+     "ko": "네, 소비 지역은 그리고 노동입니다. 알겠죠?",
+     "src": "gemini"
+    }
+   ]
+  },
+  {
+   "page": 7,
+   "en": "So so uh somehow can I uh No. No, we were just doing that as an exercise. But first thing is, when I act or when you study economics, any theory of on the optimization of power, they are either endogenous or exogenous. So here the choice variables that I put consumption region and labor supply, could you design it? So assuming this, how much to consume, how much to injure, and how much to supply to the firm. So they are choice variables. Yes. So we define consumer, how much to do it, right? And how about this, wage and capital and wage, these are the given variables. So consumer cannot adjust it or what do you call it? Okay? So All right. So makes sense? That's what it means. So that Yeah. All right, so the competitiveness analysis is all about you know, uh study the aspects of change in the exogenous variables on the endogenous variables. So we want to know how much endogenous variables change changes Okay? And there's a change in the exogenous variable. Okay, so for example, we want to know how much consumption changes when there is a change in the labor wage we want to know how much region would respond to a change in the hourly wage. We want to know how much labor supply would respond to the change in the hourly wage. Okay. All right. So so Yeah, and the uh starting point, I like to suppose interview or I have this if there is an increase in I or uh there's a decrease. And um Okay. Lump sum tax. Okay? This is an easy one. So I don't know. I don't know. Yeah. All right, so I think this is about this. Let's go down. So the then really and I have to come forward about this like date harsh on them. That's why we usually examine average like between 25 to 35. I'll first not worry about this. So find out a grade that usually I'm not How do I say it? I'm just telling you to have just experience past you know, this question about how I give away the rates. I'm not commenting on this class. You have to study, but usually I give away one and 50% I'll give you a student an A plus. And now, all right, so let's get to it. If I cannot get into the top 50%, I usually give away a plus. So, which means if you just catch up stuff, you know, Uh, how about this? Let's just assume we were at least we okay? And if you do well, then you will get process. That's how how we will do it. So the whole point of this is that and try to show how much you studied and how much you understand. So the final grades is you don't have you don't have to worry too much about it. So we can think that as long as you submit all the homework assignments, you show up in class regularly, and you took the exam even though you got out of five points out of 100, you will you will be fine. You will get at least C. So that's how I designed the class. Complex but Yeah.",
+   "ko": "그래서 그래서 어쨌든 제가 어 아니요. 아니요, 저희는 그냥 연습으로 한 거예요. 하지만 첫 번째는, 제가 연기하거나 공부할 때 경제학을, 어떤 이론이든 그 위에 최적화에 대한 것이라면, 그들은 내생적이거나 외생적입니다. 그래서 여기서 선택 변수는 제가 넣은 소비 지역과 노동 공급입니다. 혹시 설계해 주실 수 있나요? 그래서 이걸 가정하면, 얼마나 소비하고, 얼마나 다치고, 얼마나 공급할지 결정하는 거죠. 그래서 그것들은 선택 변수입니다. 네. 그래서 우리는 소비자가 얼마나 할지 정의하죠, 그렇죠? 그리고 이건 어때요, 임금과 자본, 그리고 임금, 이것들은 주어진 변수입니다. 그래서 소비자는 할 수 없어요. 조정하거나 아니면 뭐라고 하죠? 알겠죠? 그래서 알겠습니다. 그래서 이해가 되시나요? 그런 뜻이에요. 그래서 그게 네. 알겠습니다, 그래서 경쟁력은 분석은 모두 있잖아요, 어 연구하는 측면을 변화하는 외생적 변수의 변화를 보는 거죠. 내생적 변수에 대한. 그래서 우리는 내생적 변수가 얼마나 변하는지 알고 싶어요. 알겠죠? 그리고 변화가 있을 때 외생적 변수에 변화가 있을 때. 네, 그래서 예를 들어, 우리는 얼마나 소비가 변하는지 알고 싶어요, 변화가 있을 때 노동 임금이 변할 때 얼마나 지역이 변화에 반응하는지 알고 싶어요. 우리는 노동 공급이 얼마나 반응할지 알고 싶어요. 시간당 임금의 변화에 대해. 네. 알겠습니다. 그래서 그래서 네, 그리고 어 시작할 때, 저는 보통 가정하고 싶어요. 인터뷰를 하거나 이런 게 있어요, 만약 증가가 있다면 저는 또는 어 감소가 있어요. 그리고 음 알겠습니다. 일시불 세금. 알겠죠? 이건 쉬운 거예요. 그래서 모르겠어요. 모르겠어요. 네. 좋아요, 그럼 이건 대략 이 정도인 것 같아요. 내려가 봅시다. 그래서 그 다음은 정말 그리고 저는 와야 해요, 이 부분에 대해서는 날짜가 가혹해요. 그래서 저희가 보통 검토하는 평균은 예를 들어 25세에서 35세 사이입니다. 제가 먼저 이 부분은 걱정하지 않을게요. 그래서 보통 등급을 찾아보세요. 저는 어떻게 말해야 할까요? 그냥 말씀드리는 건데 가지고 계신 경험을 바탕으로 아시다시피, 이 질문에 대해 제가 어떻게 요금을 정하는지 말씀드리는 거예요. 저는 이 수업에 대해 언급하는 게 아니에요. 공부해야 하지만, 보통 저는 요금을 정해요. 하나는 50% 제가 학생에게 A+를 줄게요. 그리고 이제, 알겠습니다, 그럼 시작해 보죠. 제가 들어갈 수 없다면 상위 50%에 들지 못하면, 보통 저는 A+를 줘요. 그래서, 이건 만약 당신이 따라잡는다면 그런 것들을, 있잖아요, 어, 이건 어때요? 그냥 우리가 적어도 우리 괜찮다고 가정해 볼까요? 그리고 당신이 잘하면, 그러면 과정을 얻게 될 거예요. 그게 우리가 할 방식이에요. 그래서 이 전체의 요점은 이거예요. 그리고 얼마나 공부했는지 보여주려고 하고, 얼마나 이해하는지 보여주려고 하는 거예요. 그래서 최종 성적은 당신은 너무 걱정할 필요가 없어요. 그래서 우리는 이렇게 생각할 수 있어요, 당신이 모든 숙제를 제출하고 과제를 제출하면 수업에 정기적으로 참석하고, 그리고 시험을 봤다면 비록 점수가 5점 만점에 몇 점이 나왔더라도 당신은 괜찮을 거예요. 당신은 적어도 C를 받을 거예요. 그래서 제가 수업을 그렇게 설계했어요. 복잡한 하지만 네.",
+   "pdf": "Core_note_ovb_panel_2026.pdf",
+   "pdfPage": 7,
+   "slideText": "",
+   "liveNotes": {
+    "notes": [
+     "**소비**(consumption)의 임금 반응: 시간당 임금(hourly wage) 변화 → 소비 변화 크기",
+     "▶ 예시: 임금 변화에 소비가 얼마나 반응하는지 추정하려는 질문",
+     "▶ 성적 관련 언급: 과제 전부 제출 + 규칙적 출석 + 시험 응시 시 조건 충족 (문장 진행 중)"
+    ],
+    "summary": "임금에 대한 소비 반응, 성적 조건 언급",
+    "exam": [
+     "과제(homework assignments) 전부 제출 + 수업 규칙적 출석 + (시험 응시) 조건 언급 — 문장이 끝나지 않아 세부 내용 확인 필요"
+    ],
+    "board": [],
+    "at": 1791354534707
+   },
+   "marks": [],
+   "segs": [
+    {
+     "t": 1209,
+     "page": 7,
+     "en": "So so uh somehow can I uh No. No, we were just doing that as an exercise. But first thing is, when I act or when you study economics, any theory of on the optimization of power, they are either endogenous or exogenous. So here the choice variables that I put consumption region and labor supply, could you design it?",
+     "ko": "그래서 그래서 어쨌든 제가 어 아니요. 아니요, 저희는 그냥 연습으로 한 거예요. 하지만 첫 번째는, 제가 연기하거나 공부할 때 경제학을, 어떤 이론이든 그 위에 최적화에 대한 것이라면, 그들은 내생적이거나 외생적입니다. 그래서 여기서 선택 변수는 제가 넣은 소비 지역과 노동 공급입니다. 혹시 설계해 주실 수 있나요?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1242,
+     "page": 7,
+     "en": "So assuming this, how much to consume, how much to injure, and how much to supply to the firm. So they are choice variables. Yes. So we define consumer, how much to do it, right? And how about this, wage and capital and wage, these are the given variables. So consumer cannot",
+     "ko": "그래서 이걸 가정하면, 얼마나 소비하고, 얼마나 다치고, 얼마나 공급할지 결정하는 거죠. 그래서 그것들은 선택 변수입니다. 네. 그래서 우리는 소비자가 얼마나 할지 정의하죠, 그렇죠? 그리고 이건 어때요, 임금과 자본, 그리고 임금, 이것들은 주어진 변수입니다. 그래서 소비자는 할 수 없어요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1269,
+     "page": 7,
+     "en": "adjust it or what do you call it? Okay? So All right. So makes sense? That's what it means. So that Yeah. All right, so the competitiveness analysis is all about you know, uh study the aspects of change in the exogenous variables on the endogenous variables. So we want to know how much endogenous variables change changes Okay?",
+     "ko": "조정하거나 아니면 뭐라고 하죠? 알겠죠? 그래서 알겠습니다. 그래서 이해가 되시나요? 그런 뜻이에요. 그래서 그게 네. 알겠습니다, 그래서 경쟁력은 분석은 모두 있잖아요, 어 연구하는 측면을 변화하는 외생적 변수의 변화를 보는 거죠. 내생적 변수에 대한. 그래서 우리는 내생적 변수가 얼마나 변하는지 알고 싶어요. 알겠죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1303,
+     "page": 7,
+     "en": "And there's a change in the exogenous variable.",
+     "ko": "그리고 변화가 있을 때 외생적 변수에 변화가 있을 때.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1311,
+     "page": 7,
+     "en": "Okay, so for example,",
+     "ko": "네, 그래서 예를 들어,",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1315,
+     "page": 7,
+     "en": "we want to know how much consumption changes when there is a change in the labor wage we want to know how much region would respond to a change in the hourly wage. We want to know how much labor supply would respond to the change in the hourly wage.",
+     "ko": "우리는 얼마나 소비가 변하는지 알고 싶어요, 변화가 있을 때 노동 임금이 변할 때 얼마나 지역이 변화에 반응하는지 알고 싶어요. 우리는 노동 공급이 얼마나 반응할지 알고 싶어요. 시간당 임금의 변화에 대해.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1337,
+     "page": 7,
+     "en": "Okay.",
+     "ko": "네.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1340,
+     "page": 7,
+     "en": "All right. So so Yeah, and the uh starting point, I like to suppose interview or I have this if there is an increase in I or uh there's a decrease. And um Okay. Lump sum tax. Okay? This is an easy one. So",
+     "ko": "알겠습니다. 그래서 그래서 네, 그리고 어 시작할 때, 저는 보통 가정하고 싶어요. 인터뷰를 하거나 이런 게 있어요, 만약 증가가 있다면 저는 또는 어 감소가 있어요. 그리고 음 알겠습니다. 일시불 세금. 알겠죠? 이건 쉬운 거예요. 그래서",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1374,
+     "page": 7,
+     "en": "I don't know. I don't know.",
+     "ko": "모르겠어요. 모르겠어요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1383,
+     "page": 7,
+     "en": "Yeah.",
+     "ko": "네.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1387,
+     "page": 7,
+     "en": "All right, so I think this is about this. Let's go down. So the then really and I have to come forward about this like date harsh on them. That's why we usually examine average like between 25 to 35. I'll first not worry about this. So find out a grade that usually I'm not How do I say it?",
+     "ko": "좋아요, 그럼 이건 대략 이 정도인 것 같아요. 내려가 봅시다. 그래서 그 다음은 정말 그리고 저는 와야 해요, 이 부분에 대해서는 날짜가 가혹해요. 그래서 저희가 보통 검토하는 평균은 예를 들어 25세에서 35세 사이입니다. 제가 먼저 이 부분은 걱정하지 않을게요. 그래서 보통 등급을 찾아보세요. 저는 어떻게 말해야 할까요?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1421,
+     "page": 7,
+     "en": "I'm just telling you to have just experience past you know, this question about how I give away the rates. I'm not commenting on this class. You have to study, but usually I give away one and 50% I'll give you a student an A plus. And now, all right, so let's get to it. If I cannot get into the top 50%, I usually give away a plus.",
+     "ko": "그냥 말씀드리는 건데 가지고 계신 경험을 바탕으로 아시다시피, 이 질문에 대해 제가 어떻게 요금을 정하는지 말씀드리는 거예요. 저는 이 수업에 대해 언급하는 게 아니에요. 공부해야 하지만, 보통 저는 요금을 정해요. 하나는 50% 제가 학생에게 A+를 줄게요. 그리고 이제, 알겠습니다, 그럼 시작해 보죠. 제가 들어갈 수 없다면 상위 50%에 들지 못하면, 보통 저는 A+를 줘요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1455,
+     "page": 7,
+     "en": "So, which means if you just catch up stuff, you know,",
+     "ko": "그래서, 이건 만약 당신이 따라잡는다면 그런 것들을, 있잖아요,",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1463,
+     "page": 7,
+     "en": "Uh, how about this? Let's just assume we were at least we okay? And if you do well, then you will get process. That's how how we will do it. So the whole point of this is that and try to show how much you studied and how much you understand. So the final grades is you don't have you don't have to worry too much about it.",
+     "ko": "어, 이건 어때요? 그냥 우리가 적어도 우리 괜찮다고 가정해 볼까요? 그리고 당신이 잘하면, 그러면 과정을 얻게 될 거예요. 그게 우리가 할 방식이에요. 그래서 이 전체의 요점은 이거예요. 그리고 얼마나 공부했는지 보여주려고 하고, 얼마나 이해하는지 보여주려고 하는 거예요. 그래서 최종 성적은 당신은 너무 걱정할 필요가 없어요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1488,
+     "page": 7,
+     "en": "So we can think that as long as you submit all the homework assignments, you show up in class regularly, and you took the exam even though you got out of five points out of 100, you will you will be fine. You will get at least C. So that's how I designed the class. Complex but Yeah.",
+     "ko": "그래서 우리는 이렇게 생각할 수 있어요, 당신이 모든 숙제를 제출하고 과제를 제출하면 수업에 정기적으로 참석하고, 그리고 시험을 봤다면 비록 점수가 5점 만점에 몇 점이 나왔더라도 당신은 괜찮을 거예요. 당신은 적어도 C를 받을 거예요. 그래서 제가 수업을 그렇게 설계했어요. 복잡한 하지만 네.",
+     "src": "gemini",
+     "ai": true
+    }
+   ]
+  },
+  {
+   "page": 8,
+   "en": "Of course, yeah. I mean, this is I don't think it's just comfortable. But still, try to feel comfortable in class and try to learn some stuff and then as long as you pay attention and then submit assignments and then you know, you regularly on time, then you will be fine. Okay? So Oh, I just want to And then this is English class, so I'm not going to put on a the 50 percent is just an example. I could be using 50% of you guys so I don't know. And then you know, so you know, pushing you to get to all the homework assignments. All right, so uh Okay. It sounds like I'm a business man, right? bargaining with the grades. Yeah. All right, so for example, suppose But high increases it. Um, high to apply to Okay? Let's say here I'm recycling this picture. Okay, let's say it's pi one. Okay? Which means the budget constraint that initial budget constraint we have is C equal omega times H plus we have a pi one and minus K. Um, yeah. And oh yeah, I still value the 10 points here. That's the point. Um, kind of this. Yeah. That's assume All right, minus T is positive, okay? So then what's happening to the budget constraint? If the pi1 decreases to pi 2, the budget constraint now looks like given all the variables constant, what's changing? pi 1 changes to what? Yeah, pi2. And point of so So if you compare this budget constraint with the new dividend income, which is reduced from pi1, to pi2, compare this to the initial budget constraint, which one has a greater disposable income? Yeah, the second one, so you increase, right? So here pi1 is greater than pi1 that disposable income. which is that's the still plus pi2 minus T is what? So then so the initial so disposable income is pi1. Is that correct? Yeah, yeah. So assuming that the other variables constant, so comparing the changes in the price, first, right? So in terms of the disposable income, disposable income increases. Right? And then then disposable income increases what? Does it mean? So a consumer gets higher income. In other words, the consumer comes richer. Right? And we call that the debt effect as a positive income. And there there arise the this. How does it affect the budget? Okay? Uh then so I'd like you to show this effect on the diagram here. How would you change initial budget constraint? Yes, we are Okay. So this thank you. pi1 becomes pi2, which is greater than pi 1. So the the value when DJ goes zero at the greater than initial value, right? So the budget constraint will shift so the value of here and then what happens to the point? pi1 minus T. Yes, pi2. is greater than pi 1. So the long term tax constant that before",
+   "ko": "물론이죠, 네. 제 말은, 이건 그냥 편안한 것 같아요. 하지만 그래도, 편안하게 느끼려고 노력하고 수업 시간에 배우려고 노력하고, 어떤 것들을 배우고, 그리고 수업료를 내고 주의를 기울이면 제출하면 과제를 제출하고 그러면, 정기적으로 제시간에 하면, 그러면 괜찮을 거예요. 알겠죠? 그래서 아, 그냥 하고 싶었어요. 그리고 이건 영어 수업이니까, 그래서 제가 굳이 50 퍼센트는 그냥 예시예요. 제가 50%를 사용하고 있을 수도 있고, 그래서 잘 모르겠어요. 그리고 있잖아요, 그래서 있잖아요, 여러분을 밀어붙이는 건 모든 숙제를 다 하도록 하는 거예요. 알겠죠? 그래서 어 알겠습니다. 마치 제가 비즈니스맨 같네요, 그렇죠? 성적과 흥정하는 것 같아요. 네. 알겠습니다, 그래서 예를 들어, 가정해 봅시다. 하지만 높게 증가하는 거예요. 음, 높게 지원하려면 알겠죠? 예를 들어 여기에서 저는 이걸 재활용하고 있어요. 이 사진을. 자, 예를 들어 파이 원이라고 해볼게요. 알겠죠? 즉, 예산 제약이 초기 예산 제약이 우리가 가지고 있는 것은 C는 오메가 곱하기 H 더하기 우리가 가지고 있는 것은 파이 원이고 음, 네. 그리고 아, 네, 저는 여전히 10점을 중요하게 생각해요. 그게 핵심이죠. 음, 약간 이런 거예요. 네. 그게 가정이죠. 자, 마이너스 T는 양수예요, 알겠죠? 그래서 그 다음엔 어떻게 되는 거죠, 예산 제약이? 만약 파이1이 파이2로 감소하면 예산 제약은 이제 이렇게 보여요. 다른 모든 변수가 고정되어 있을 때, 뭐가 변하나요? 파이 1이 파이 2로 변하면? 네, 파이2로요. 그리고 점은 그래서 그래서 만약 이걸 비교하면 예산 제약이 이전과 비교해서 새로운 배당 소득이 생기면, 그게 줄어들어서 파이1에서 파이2로, 이걸 이전과 비교하면 초기 예산 제약 중 어느 것이 더 큰 가처분 소득이 더 많나요? 네, 두 번째가 더 많아요, 그래서 증가하는 거죠, 맞죠? 그래서 여기서 파이1이 파이1보다 크고, 가처분 소득이 더 많아요. 그건 그게 핵심이죠. 여전히 플러스 파이2 마이너스 T는 뭐죠? 그래서 그래서 초기 그래서 가처분 소득이 파이1이에요. 맞나요? 네, 네. 그래서 다른 변수들이 고정되어 있을 때, 그래서 가격 변화를 비교하면, 먼저, 맞죠? 그래서 가처분 소득 측면에서, 가처분 소득이 증가해요. 그렇죠? 그리고 그 다음엔 가처분 소득이 증가해요. 뭐가? 무슨 뜻이죠? 그래서 소비자가 얻게 돼요. 더 높은 소득을. 다시 말해 소비자가 오게 돼요. 더 부유해져요. 그렇죠? 그리고 그걸 부채 효과라고 해요, 긍정적인 소득으로요. 그리고 거기서 발생하는 것은 이거예요. 어떻게 그게 영향을 미치나요? 예산에? 알겠죠? 어, 그러면 그래서 여러분이 보여주셨으면 좋겠어요, 이 효과를 다이어그램에 나타내 주세요. 어떻게 초기 예산 제약을 바꾸시겠어요? 네, 우리는 알겠죠? 그래서 감사합니다. 파이1이 파이2가 되는데, 이건 파이1보다 커요. 그래서 그 값이 DJ가 0이 될 때 그 초기보다 큰 값이죠, 맞죠? 그래서 예산 제약이 이동할 거예요. 그래서 여기 값이 그리고 나서 그 다음엔 어떻게 되나요? 파이1 마이너스 T는. 네, 파이2. 는 파이1보다 커요. 그래서 긴 장기 세금 상수가 이전보다",
+   "pdf": "Core_note_ovb_panel_2026.pdf",
+   "pdfPage": 8,
+   "slideText": "",
+   "liveNotes": {
+    "notes": [
+     "**예산제약**(budget constraint): π₁이 π₂로 감소 → 다른 변수는 일정, 예산선이 이동/변화 (칠판 설명)",
+     "▶ 칠판: 2기 소득항 '… + π₂ − T'가 무엇인지 학생에게 되물으며 전개",
+     "▶ 다른 변수 일정(other variables constant) 가정 하에 가격 변화부터 비교 → **가처분소득**(disposable income) 관점에서 설명 시작",
+     "▶ −T가 양수(positive)라고 언급",
+     "▶ 가격 하락 시 소비자는 더 부유해짐(richer) → 이를 'debt …'라고 부르기 시작 (문장 이어짐)",
+     "▶ 학생에게 이 효과를 그래프에 그려 처음 예산제약이 어떻게 변하는지 보이라고 요구"
+    ],
+    "summary": "π₁ 감소 시 예산제약 변화",
+    "exam": [],
+    "board": [
+     "π₁ → π₂ (π₁ 감소, 나머지 변수 일정)",
+     "… + π₂ − T"
+    ],
+    "at": 1791354837822
+   },
+   "marks": [],
+   "segs": [
+    {
+     "t": 1509,
+     "page": 8,
+     "en": "Of course, yeah. I mean, this is I don't think it's just comfortable. But still, try to feel comfortable in class and try to learn some stuff and then as long as you pay attention and then submit assignments and then you know, you regularly on time, then you will be fine.",
+     "ko": "물론이죠, 네. 제 말은, 이건 그냥 편안한 것 같아요. 하지만 그래도, 편안하게 느끼려고 노력하고 수업 시간에 배우려고 노력하고, 어떤 것들을 배우고, 그리고 수업료를 내고 주의를 기울이면 제출하면 과제를 제출하고 그러면, 정기적으로 제시간에 하면, 그러면 괜찮을 거예요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1527,
+     "page": 8,
+     "en": "Okay? So Oh, I just want to And then this is English class, so I'm not going to put on a the 50 percent is just an example. I could be using 50% of you guys so I don't know. And then you know, so you know, pushing you to get to all the homework assignments. All right, so uh Okay.",
+     "ko": "알겠죠? 그래서 아, 그냥 하고 싶었어요. 그리고 이건 영어 수업이니까, 그래서 제가 굳이 50 퍼센트는 그냥 예시예요. 제가 50%를 사용하고 있을 수도 있고, 그래서 잘 모르겠어요. 그리고 있잖아요, 그래서 있잖아요, 여러분을 밀어붙이는 건 모든 숙제를 다 하도록 하는 거예요. 알겠죠? 그래서 어 알겠습니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1560,
+     "page": 8,
+     "en": "It sounds like I'm a business man, right? bargaining with the grades. Yeah. All right, so for example, suppose",
+     "ko": "마치 제가 비즈니스맨 같네요, 그렇죠? 성적과 흥정하는 것 같아요. 네. 알겠습니다, 그래서 예를 들어, 가정해 봅시다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1573,
+     "page": 8,
+     "en": "But high increases it. Um, high to apply to Okay? Let's say here I'm recycling this picture. Okay, let's say it's pi one. Okay? Which means the budget constraint that initial budget constraint we have is C equal omega times H plus we have a pi one and minus K.",
+     "ko": "하지만 높게 증가하는 거예요. 음, 높게 지원하려면 알겠죠? 예를 들어 여기에서 저는 이걸 재활용하고 있어요. 이 사진을. 자, 예를 들어 파이 원이라고 해볼게요. 알겠죠? 즉, 예산 제약이 초기 예산 제약이 우리가 가지고 있는 것은 C는 오메가 곱하기 H 더하기 우리가 가지고 있는 것은 파이 원이고",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1608,
+     "page": 8,
+     "en": "Um, yeah. And oh yeah, I still value the 10 points here. That's the point. Um, kind of this. Yeah. That's assume",
+     "ko": "음, 네. 그리고 아, 네, 저는 여전히 10점을 중요하게 생각해요. 그게 핵심이죠. 음, 약간 이런 거예요. 네. 그게 가정이죠.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1625,
+     "page": 8,
+     "en": "All right, minus T is positive, okay?",
+     "ko": "자, 마이너스 T는 양수예요, 알겠죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1631,
+     "page": 8,
+     "en": "So then what's happening to the budget constraint? If the pi1 decreases to pi 2, the budget constraint now looks like given all the variables constant, what's changing? pi 1 changes to what? Yeah, pi2. And point of so So if you compare this budget constraint with the new dividend income, which is reduced from pi1, to pi2, compare this to the initial budget constraint, which one has a greater disposable income?",
+     "ko": "그래서 그 다음엔 어떻게 되는 거죠, 예산 제약이? 만약 파이1이 파이2로 감소하면 예산 제약은 이제 이렇게 보여요. 다른 모든 변수가 고정되어 있을 때, 뭐가 변하나요? 파이 1이 파이 2로 변하면? 네, 파이2로요. 그리고 점은 그래서 그래서 만약 이걸 비교하면 예산 제약이 이전과 비교해서 새로운 배당 소득이 생기면, 그게 줄어들어서 파이1에서 파이2로, 이걸 이전과 비교하면 초기 예산 제약 중 어느 것이 더 큰 가처분 소득이 더 많나요?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1674,
+     "page": 8,
+     "en": "Yeah, the second one, so you increase, right? So here pi1 is greater than pi1 that disposable income.",
+     "ko": "네, 두 번째가 더 많아요, 그래서 증가하는 거죠, 맞죠? 그래서 여기서 파이1이 파이1보다 크고, 가처분 소득이 더 많아요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1688,
+     "page": 8,
+     "en": "which is that's the still plus pi2 minus T is what? So then so the initial so disposable income is pi1. Is that correct? Yeah, yeah.",
+     "ko": "그건 그게 핵심이죠. 여전히 플러스 파이2 마이너스 T는 뭐죠? 그래서 그래서 초기 그래서 가처분 소득이 파이1이에요. 맞나요? 네, 네.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1706,
+     "page": 8,
+     "en": "So assuming that the other variables constant, so comparing the changes in the price, first, right? So in terms of the disposable income, disposable income increases. Right? And then then disposable income increases what? Does it mean? So a consumer gets higher income.",
+     "ko": "그래서 다른 변수들이 고정되어 있을 때, 그래서 가격 변화를 비교하면, 먼저, 맞죠? 그래서 가처분 소득 측면에서, 가처분 소득이 증가해요. 그렇죠? 그리고 그 다음엔 가처분 소득이 증가해요. 뭐가? 무슨 뜻이죠? 그래서 소비자가 얻게 돼요. 더 높은 소득을.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1730,
+     "page": 8,
+     "en": "In other words, the consumer comes richer. Right? And we call that the debt effect as a positive income. And there there arise the this. How does it affect the budget?",
+     "ko": "다시 말해 소비자가 오게 돼요. 더 부유해져요. 그렇죠? 그리고 그걸 부채 효과라고 해요, 긍정적인 소득으로요. 그리고 거기서 발생하는 것은 이거예요. 어떻게 그게 영향을 미치나요? 예산에?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1750,
+     "page": 8,
+     "en": "Okay?",
+     "ko": "알겠죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1754,
+     "page": 8,
+     "en": "Uh then so",
+     "ko": "어, 그러면 그래서",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1760,
+     "page": 8,
+     "en": "I'd like you to show this effect on the diagram here. How would you change initial budget constraint?",
+     "ko": "여러분이 보여주셨으면 좋겠어요, 이 효과를 다이어그램에 나타내 주세요. 어떻게 초기 예산 제약을 바꾸시겠어요?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1772,
+     "page": 8,
+     "en": "Yes, we are Okay. So this thank you. pi1 becomes pi2, which is greater than pi 1. So the the value when DJ goes zero at the greater than initial value, right? So the budget constraint will shift so the value of here and then what happens to the point? pi1 minus T.",
+     "ko": "네, 우리는 알겠죠? 그래서 감사합니다. 파이1이 파이2가 되는데, 이건 파이1보다 커요. 그래서 그 값이 DJ가 0이 될 때 그 초기보다 큰 값이죠, 맞죠? 그래서 예산 제약이 이동할 거예요. 그래서 여기 값이 그리고 나서 그 다음엔 어떻게 되나요? 파이1 마이너스 T는.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1799,
+     "page": 8,
+     "en": "Yes, pi2. is greater than pi 1. So the long term tax constant that before",
+     "ko": "네, 파이2. 는 파이1보다 커요. 그래서 긴 장기 세금 상수가 이전보다",
+     "src": "gemini",
+     "ai": true
+    }
+   ]
+  },
+  {
+   "page": 9,
+   "en": "the kink point becomes what? Yeah. Yeah. Kink point kink is from pi1 minus T to pi2 minus T. here like this. Right? And there a change in the slope of the budget line. Right? That's the slope of the budget constraint. That's minus omega, right? But then the change is in pi1, it's the minus omega. Right? You know, so uh slope These constant so the budget constraint shifts upward, strictly speaking. So here you have value or budget constraint you know, so in terms of change, it seems like the budget constraint shifts upward. Okay? So that means that consumer gets more feasible set. How much? So that's much the so so that the change in the area that I've made, these are the extra feasible sets that consumer gets and there is a increase in the income. Yeah. And that means so you have a difference curve, let's say this is I not. Then it would be let's say this is for me. Another indifference curve, what? touch this budget constraint. two, right? Let's say this is another. Right? And then what's the new equilibrium or what's the condition? using let's say the initial equilibrium location at one star and C1 star. And now the new equilibrium location is at L2 star and C2 star. Right? And yeah, so eventually it by the positive income effect, what do you have? Consumption and increase this So so C1 star goes to C2 star and leisure increases as well. increases, right? So and L1 star to L2 star. Right? And that happens to the point, right? What happens to this? So this is a point, right? Yeah. Maybe that's a point, who's calling weight and the the consumer just mind who is the judge? That would be clearly the consumer. These are the things you're great that this is going to come up to the point. Do you think this is do you think this And Uh and then Oh, okay. Okay. Right? No. First, So there probably uh and Yeah. No. Yeah. And then you're going to ask Yeah. No. So Let's leave it by the last year. Just what would be the initial thought? Yeah, H minus one, the initial labor supply would be H minus L1 start. on the graph.",
+   "ko": "꺾이는 지점 전에는 어떻게 되나요? 네. 네. 꺾이는 지점은 꺾이는 것은 파이1에서 마이너스 T에서 파이2 마이너스 T로. 이렇게요. 맞죠? 그리고 거기에는 변화가 있어요. 예산선의 기울기에. 맞죠? 그게 예산선의 기울기예요. 그건 마이너스 오메가죠, 맞죠? 그런데 변화는 파이 1에 있고, 마이너스 오메가예요. 맞죠? 아시다시피, 그래서 어 기울기는 이것들은 상수이고 그래서 예산 제약은 위로 이동하고, 엄밀히 말하면. 그래서 여기에는 값이 있어요. 또는 예산 제약이 있고, 아시다시피, 그래서 측면에서 변화는, 마치 예산 제약이 위로 이동하는 것 같아요. 알겠죠? 그래서 그건 소비자가 얻는다는 뜻이에요. 더 많은 실행 가능한 집합을 얻는다는 뜻이에요. 그래서 그건 훨씬 더 그래서 그래서 변화가 제가 만든 영역에서 일어났는데, 이것들이 추가적인 실행 가능한 집합으로 소비자가 얻는 것이고 증가가 소득에 있습니다. 네. 그리고 그건 그래서 당신이 차이가 있다는 뜻이에요, 예를 들어 이게 I not이라고 해보죠. 그러면 그건 예를 들어 이게 저를 위한 것이라고 해보죠. 또 다른 무차별 곡선은, 뭐죠? 접하는 것, 이것은 예산 제약에 접합니다. 두 번째죠, 맞죠? 이게 다른 것이라고 해보죠. 맞죠? 그리고 그 다음엔 새로운 균형점이나 조건이 뭐죠? 사용해서 예를 들어 초기 균형 위치는 원스타에 있고 C1스타에 있어요. 그리고 이제 새로운 균형 위치는 L2 스타에 있고 C2스타에 있어요. 맞죠? 그리고 네, 그래서 결국에는 그게 그 긍정적인 소득 효과로, 무엇을 얻게 되나요? 소비는 그리고 증가합니다. 이것은 그래서 그래서 C1스타는 C2스타로 가고 여가는 증가합니다. 또한. 증가하죠, 맞죠? 그래서 그리고 L1스타는 L2스타로 가요. 맞죠? 그리고 그건 그 다음엔 어떻게 되나요, 맞죠? 그 다음엔 어떻게 되나요? 그래서 이건 요점이죠, 맞죠? 네. 아마 그게 요점일 수도 있겠네요, 누가 무게를 재고 있고 소비자가 그냥 신경 쓰지 않는 사람 누가 심판인가요? 그건 분명히 소비자일 거예요. 이런 것들이 당신이 이 점이 좋다는 점이 나올 거예요. 그 다음엔 어떻게 되나요? 당신은 이게 당신은 이게 라고 생각하나요? 그리고 어 그리고 오, 알겠어요. 알겠어요. 맞죠? 아니요. 먼저, 그래서 거기 아마도 어 그리고 네. 아니요. 네. 그리고 나서 물어볼 거예요. 네. 아니요. 그래서 그냥 이쯤에서 마무리하죠. 그냥 뭐가 초기 단계가 될까요? 네, H 마이너스 1, 초기 노동 공급은 H 마이너스 L1 시작. 그래프에서.",
+   "pdf": "Core_note_ovb_panel_2026.pdf",
+   "pdfPage": 9,
+   "slideText": "",
+   "liveNotes": {
+    "notes": [
+     "**꺾임점**(kink point)이 π₁ − T 에서 π₂ − T 로 이동",
+     "▶ 꺾임점 이동에 따라 **여가**(leisure)도 증가: L1* → L2*"
+    ],
+    "summary": "꺾임점 이동과 여가 증가",
+    "exam": [],
+    "board": [
+     "kink: π₁ − T → π₂ − T",
+     "L₁* → L₂*"
+    ],
+    "at": 1791355129367
+   },
+   "marks": [],
+   "segs": [
+    {
+     "t": 1810,
+     "page": 9,
+     "en": "the kink point becomes what? Yeah. Yeah. Kink point kink is from pi1 minus T to pi2 minus T. here like this. Right? And there a change in the slope of the budget line. Right? That's the slope of the budget constraint. That's minus omega, right? But then the change is in pi1, it's the minus omega.",
+     "ko": "꺾이는 지점 전에는 어떻게 되나요? 네. 네. 꺾이는 지점은 꺾이는 것은 파이1에서 마이너스 T에서 파이2 마이너스 T로. 이렇게요. 맞죠? 그리고 거기에는 변화가 있어요. 예산선의 기울기에. 맞죠? 그게 예산선의 기울기예요. 그건 마이너스 오메가죠, 맞죠? 그런데 변화는 파이 1에 있고, 마이너스 오메가예요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1837,
+     "page": 9,
+     "en": "Right? You know, so uh slope These constant so the budget constraint shifts upward, strictly speaking. So here you have value or budget constraint you know, so in terms of change, it seems like the budget constraint shifts upward. Okay? So that means that consumer gets more feasible set.",
+     "ko": "맞죠? 아시다시피, 그래서 어 기울기는 이것들은 상수이고 그래서 예산 제약은 위로 이동하고, 엄밀히 말하면. 그래서 여기에는 값이 있어요. 또는 예산 제약이 있고, 아시다시피, 그래서 측면에서 변화는, 마치 예산 제약이 위로 이동하는 것 같아요. 알겠죠? 그래서 그건 소비자가 얻는다는 뜻이에요. 더 많은 실행 가능한 집합을",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1872,
+     "page": 9,
+     "en": "How much? So that's much the so so that the change in the area that I've made, these are the extra feasible sets that consumer gets and there is a increase in the income. Yeah. And that means so you have a difference curve, let's say this is I not. Then it would be let's say this is for me.",
+     "ko": "얻는다는 뜻이에요. 그래서 그건 훨씬 더 그래서 그래서 변화가 제가 만든 영역에서 일어났는데, 이것들이 추가적인 실행 가능한 집합으로 소비자가 얻는 것이고 증가가 소득에 있습니다. 네. 그리고 그건 그래서 당신이 차이가 있다는 뜻이에요, 예를 들어 이게 I not이라고 해보죠. 그러면 그건 예를 들어 이게 저를 위한 것이라고",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1899,
+     "page": 9,
+     "en": "Another indifference curve, what? touch this budget constraint. two, right? Let's say this is another. Right?",
+     "ko": "해보죠. 또 다른 무차별 곡선은, 뭐죠? 접하는 것, 이것은 예산 제약에 접합니다. 두 번째죠, 맞죠? 이게 다른 것이라고 해보죠. 맞죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1932,
+     "page": 9,
+     "en": "And then what's the new equilibrium or what's the condition? using let's say the initial equilibrium location at one star and C1 star. And now the new equilibrium location is at L2 star and C2 star. Right? And yeah, so eventually it by the positive income effect, what do you have?",
+     "ko": "그리고 그 다음엔 새로운 균형점이나 조건이 뭐죠? 사용해서 예를 들어 초기 균형 위치는 원스타에 있고 C1스타에 있어요. 그리고 이제 새로운 균형 위치는 L2 스타에 있고 C2스타에 있어요. 맞죠? 그리고 네, 그래서 결국에는 그게 그 긍정적인 소득 효과로, 무엇을 얻게 되나요?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1958,
+     "page": 9,
+     "en": "Consumption and increase this So so C1 star goes to C2 star and",
+     "ko": "소비는 그리고 증가합니다. 이것은 그래서 그래서 C1스타는 C2스타로 가고",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1971,
+     "page": 9,
+     "en": "leisure increases as well. increases, right? So and L1 star to L2 star. Right? And that happens to the point, right?",
+     "ko": "여가는 증가합니다. 또한. 증가하죠, 맞죠? 그래서 그리고 L1스타는 L2스타로 가요. 맞죠? 그리고 그건 그 다음엔 어떻게 되나요, 맞죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1997,
+     "page": 9,
+     "en": "What happens to this? So this is a point, right? Yeah. Maybe that's a point, who's calling weight and the the consumer just mind who is the judge? That would be clearly the consumer. These are the things you're great that this is going to come up to the point. Do you think this is do you think this",
+     "ko": "그 다음엔 어떻게 되나요? 그래서 이건 요점이죠, 맞죠? 네. 아마 그게 요점일 수도 있겠네요, 누가 무게를 재고 있고 소비자가 그냥 신경 쓰지 않는 사람 누가 심판인가요? 그건 분명히 소비자일 거예요. 이런 것들이 당신이 이 점이 좋다는 점이 나올 거예요. 그 다음엔 어떻게 되나요? 당신은 이게 당신은 이게 라고 생각하나요?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2028,
+     "page": 9,
+     "en": "And Uh and then",
+     "ko": "그리고 어 그리고",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2035,
+     "page": 9,
+     "en": "Oh, okay. Okay. Right? No. First,",
+     "ko": "오, 알겠어요. 알겠어요. 맞죠? 아니요. 먼저,",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2050,
+     "page": 9,
+     "en": "So there probably uh and",
+     "ko": "그래서 거기 아마도 어 그리고",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2062,
+     "page": 9,
+     "en": "Yeah.",
+     "ko": "네.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2066,
+     "page": 9,
+     "en": "No.",
+     "ko": "아니요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2080,
+     "page": 9,
+     "en": "Yeah. And then you're going to ask Yeah. No. So",
+     "ko": "네. 그리고 나서 물어볼 거예요. 네. 아니요. 그래서",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2089,
+     "page": 9,
+     "en": "Let's leave it by the last year. Just what would be the initial thought?",
+     "ko": "그냥 이쯤에서 마무리하죠. 그냥 뭐가 초기 단계가 될까요?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2098,
+     "page": 9,
+     "en": "Yeah, H minus one, the initial labor supply would be",
+     "ko": "네, H 마이너스 1, 초기 노동 공급은",
+     "src": "gemini"
+    },
+    {
+     "t": 2105,
+     "page": 9,
+     "en": "H minus L1 start. on the graph.",
+     "ko": "H 마이너스 L1 시작. 그래프에서.",
+     "src": "gemini"
+    }
+   ]
+  },
+  {
+   "page": 10,
+   "en": "Yeah, this is one. Yeah, this is good. Yeah, so yeah, that's the so the distance between H Yeah, that's the start, right? So this is the and one start. Yes. And how would you describe the new labor supply which is the start of the equals H minus L2 start, right? Oh, I'll do it. But it's a difference between H and L2 start, this is N2 so. So make sure that you know, you're able to uh like the equation not any information like stop solution. That's the point. So decreases start and on start into Okay? All right. So yeah, which exogenous variable is changing in this example? the cost of science. Yeah, we have the effect of increase in increase in this income. And then How many exogenous variables do we have? Three. Right? Assumption and measure and labor supply. So what happened? If we did an income increase, consumer consume more and enjoying leisure. But work less. That's we call it positive income effect. So intuitively speaking, the consumer get richer, right? higher dividend higher income, so consumer take more leisure and work less. That's all. So we find out this is the solution. All right. Thank you. Is this good? Yeah. Um let me Yeah. That's a technical minutes. So that's the structure. Because next but the second one looks this would be a little more complicated than this. So make sure that people got this. về một cái vấn đề đó. Đấy. All right, so uh first we'll talk about this one. Then we have better ones. I'm not sure why I can't handle that one. So So what do you mean by that? Um, next advice. So this is here. Okay. the function. And no. Let's say This is like the constraint to want to go about the plan, right? And here Omega one page plus pie. minus heat. So we're going to next along with the hourly so let's just say it's a one. And here was the amount of consumption of pi minus heat. So let's just assume pi minus heat is the and here is the so let's this curve let's say it's a one. Okay? So the initial equilibrium would be omega one starts here, C1 starts here, okay? Okay. Oh yeah, I just um",
+   "ko": "네, 이건 하나예요. 네, 이건 좋아요. 네, 그래서 네, 그게 그래서 거리는 사이의 H 네, 그게 시작이죠, 그렇죠? 그래서 이게 그리고 하나는 시작. 네. 그리고 어떻게 설명하시겠어요? 그 새로운 노동 공급은 그리고 시작은 그 H와 L2의 시작이죠, 그렇죠? 아, 제가 할게요. 하지만 차이가 있어요. H와 L2의 시작, 이건 N2 그래서. 그래서 아시다시피, 할 수 있어야 해요. 그러니까 방정식이 어떤 정보도 멈추지 않도록 하는 거죠. 그게 핵심이에요. 그래서 감소하면 시작해요. 그리고 시작할 때 로 들어가요. 알겠죠? 알겠습니다. 그래서 네, 어떤 외생 변수가 변하고 있나요? 이 예시에서? 과학 비용이요. 네, 우리는 효과가 있어요. 증가하면 증가해요. 증가해요. 이 소득이. 그리고 몇 개의 외생 변수가 있나요? 세 개요. 그렇죠? 가정 그리고 측정 그리고 노동 공급. 그래서 무슨 일이 일어났나요? 만약 우리가 소득이 증가하면, 소비자는 소비를 더 많이 하고 여가를 즐기죠. 하지만 일을 덜 해요. 그게 우리가 말하는 거예요. 긍정적인 소득 효과예요. 그래서 직관적으로 말하자면, 소비자는 더 부자가 되죠, 그렇죠? 배당금이 더 높고 소득이 더 높으니까, 소비자는 여가를 더 많이 하고 일을 덜 해요. 그게 다예요. 그래서 이걸 알아냈어요. 이건 해결책이에요. 알겠습니다. 감사합니다. 이거 괜찮나요? 네. 음, 잠시만요. 네. 그건 기술적인 시간이에요. 그래서 그게 구조예요. 왜냐하면 다음은 하지만 두 번째는 이렇게 될 것 같아요. 조금 더 복잡할 것 같아요. 그래서 사람들이 이걸 이해했는지 확인하세요. 어떤 문제에 대해서요. 네. 좋아요, 그럼 첫 번째로 이것에 대해 이야기해 볼게요. 그다음엔 더 좋은 것들이 있어요. 왜 그런지 모르겠지만 그걸 다룰 수 없네요. 그래서 그래서 그게 무슨 뜻이죠? 음, 다음은 조언이에요. 그래서 이건 여기 있어요. 네. 기능이에요. 그리고 아니요. 예를 들어 이건 마치 제약 조건 같은 건데, 가고 싶어하는 것에 대한 거죠. 그렇죠? 그리고 여기는 오메가 한 페이지 플러스 파이. 마이너스 열. 그래서 우리는 할 거예요. 다음은 시간당 그러니까 그냥 이건 하나라고 할게요. 그리고 여기는 이건 양이었어요. 파이 소비량 마이너스 열. 그러니까 그냥 파이 마이너스 열이 그리고 여기는 그래서 그럼 이 곡선은 그냥 하나라고 할게요. 알겠죠? 그래서 초기 균형은 이렇게 될 거예요. 오메가 1은 여기서 시작해서, C1은 여기서 시작해요, 알겠죠? 아 맞다, 그냥 음",
+   "pdf": "Core_note_ovb_panel_2026.pdf",
+   "pdfPage": 10,
+   "slideText": "",
+   "liveNotes": {
+    "notes": [
+     "예시 문제: 어떤 **외생변수**(exogenous variable)가 변하는가?",
+     "답: the cost of science (음성인식 불확실, 확인 필요)",
+     "효과: **소득**(income) 증가 → **소비**(consumption) 증가 + **여가**(leisure) 증가",
+     "▶ 소득 증가 시 소비자는 소비도 늘리고 여가도 더 누림 (이후 반론 'But…' 이어짐)",
+     "▶ 이 문제의 풀이 구조를 짚음 → 다음(두 번째) 문제는 이보다 더 복잡하다고 예고",
+     "▶ **예산제약**(budget constraint)을 언급하며 기호 ω₁ 설명 시작 (음성인식 불확실)"
+    ],
+    "summary": "외생변수 변화와 소득·소비·여가 효과",
+    "exam": [],
+    "board": [],
+    "at": 1791355432002
+   },
+   "marks": [],
+   "segs": [
+    {
+     "t": 2111,
+     "page": 10,
+     "en": "Yeah, this is one.",
+     "ko": "네, 이건 하나예요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2116,
+     "page": 10,
+     "en": "Yeah, this is good. Yeah, so yeah, that's the so the distance between H",
+     "ko": "네, 이건 좋아요. 네, 그래서 네, 그게 그래서 거리는 사이의 H",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2134,
+     "page": 10,
+     "en": "Yeah, that's the start, right? So this is the and one start.",
+     "ko": "네, 그게 시작이죠, 그렇죠? 그래서 이게 그리고 하나는 시작.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2154,
+     "page": 10,
+     "en": "Yes. And how would you describe the new labor supply which is the start of the equals H minus L2 start, right? Oh, I'll do it. But it's a difference between H and L2 start, this is N2 so.",
+     "ko": "네. 그리고 어떻게 설명하시겠어요? 그 새로운 노동 공급은 그리고 시작은 그 H와 L2의 시작이죠, 그렇죠? 아, 제가 할게요. 하지만 차이가 있어요. H와 L2의 시작, 이건 N2 그래서.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2179,
+     "page": 10,
+     "en": "So make sure that you know,",
+     "ko": "그래서 아시다시피,",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2184,
+     "page": 10,
+     "en": "you're able to uh like the equation not any information like stop solution. That's the point. So decreases start and on start into Okay?",
+     "ko": "할 수 있어야 해요. 그러니까 방정식이 어떤 정보도 멈추지 않도록 하는 거죠. 그게 핵심이에요. 그래서 감소하면 시작해요. 그리고 시작할 때 로 들어가요. 알겠죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2203,
+     "page": 10,
+     "en": "All right. So yeah, which exogenous variable is changing in this example? the cost of science. Yeah, we have the effect of increase in increase in this income. And then How many exogenous variables do we have? Three. Right? Assumption and measure and labor supply.",
+     "ko": "알겠습니다. 그래서 네, 어떤 외생 변수가 변하고 있나요? 이 예시에서? 과학 비용이요. 네, 우리는 효과가 있어요. 증가하면 증가해요. 증가해요. 이 소득이. 그리고 몇 개의 외생 변수가 있나요? 세 개요. 그렇죠? 가정 그리고 측정 그리고 노동 공급.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2233,
+     "page": 10,
+     "en": "So what happened? If we did an income increase, consumer consume more and enjoying leisure. But work less. That's we call it positive income effect. So intuitively speaking, the consumer get richer, right? higher dividend higher income, so consumer take more leisure and work less.",
+     "ko": "그래서 무슨 일이 일어났나요? 만약 우리가 소득이 증가하면, 소비자는 소비를 더 많이 하고 여가를 즐기죠. 하지만 일을 덜 해요. 그게 우리가 말하는 거예요. 긍정적인 소득 효과예요. 그래서 직관적으로 말하자면, 소비자는 더 부자가 되죠, 그렇죠? 배당금이 더 높고 소득이 더 높으니까, 소비자는 여가를 더 많이 하고 일을 덜 해요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2259,
+     "page": 10,
+     "en": "That's all. So we find out this is the solution.",
+     "ko": "그게 다예요. 그래서 이걸 알아냈어요. 이건 해결책이에요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2268,
+     "page": 10,
+     "en": "All right. Thank you.",
+     "ko": "알겠습니다. 감사합니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2273,
+     "page": 10,
+     "en": "Is this good? Yeah.",
+     "ko": "이거 괜찮나요? 네.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2278,
+     "page": 10,
+     "en": "Um let me Yeah.",
+     "ko": "음, 잠시만요. 네.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2289,
+     "page": 10,
+     "en": "That's a technical minutes. So that's the structure. Because next but the second one looks this would be a little more complicated than this. So make sure that people got this.",
+     "ko": "그건 기술적인 시간이에요. 그래서 그게 구조예요. 왜냐하면 다음은 하지만 두 번째는 이렇게 될 것 같아요. 조금 더 복잡할 것 같아요. 그래서 사람들이 이걸 이해했는지 확인하세요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2326,
+     "page": 10,
+     "en": "về một cái vấn đề đó. Đấy. All right, so uh first we'll talk about this one. Then we have better ones. I'm not sure why I can't handle that one. So",
+     "ko": "어떤 문제에 대해서요. 네. 좋아요, 그럼 첫 번째로 이것에 대해 이야기해 볼게요. 그다음엔 더 좋은 것들이 있어요. 왜 그런지 모르겠지만 그걸 다룰 수 없네요. 그래서",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2345,
+     "page": 10,
+     "en": "So what do you mean by that? Um, next advice. So this is here. Okay. the function. And no. Let's say",
+     "ko": "그래서 그게 무슨 뜻이죠? 음, 다음은 조언이에요. 그래서 이건 여기 있어요. 네. 기능이에요. 그리고 아니요. 예를 들어",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2359,
+     "page": 10,
+     "en": "This is like the constraint to want to go about the plan, right? And here Omega one page plus pie. minus heat. So we're going to next along with the hourly so let's just say it's a one. And here was the amount of consumption of pi minus heat. So let's just assume pi minus heat is the and here is the so let's this curve let's say it's a one.",
+     "ko": "이건 마치 제약 조건 같은 건데, 가고 싶어하는 것에 대한 거죠. 그렇죠? 그리고 여기는 오메가 한 페이지 플러스 파이. 마이너스 열. 그래서 우리는 할 거예요. 다음은 시간당 그러니까 그냥 이건 하나라고 할게요. 그리고 여기는 이건 양이었어요. 파이 소비량 마이너스 열. 그러니까 그냥 파이 마이너스 열이 그리고 여기는 그래서 그럼 이 곡선은 그냥 하나라고 할게요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2395,
+     "page": 10,
+     "en": "Okay? So the initial equilibrium would be omega one starts here, C1 starts here, okay? Okay. Oh yeah, I just um",
+     "ko": "알겠죠? 그래서 초기 균형은 이렇게 될 거예요. 오메가 1은 여기서 시작해서, C1은 여기서 시작해요, 알겠죠? 아 맞다, 그냥 음",
+     "src": "gemini",
+     "ai": true
+    }
+   ]
+  },
+  {
+   "page": 11,
+   "en": "Oh, I just have what I forget and And then next so we have this you know, stop this. This is more important. So when you draw the difference curve, How many? Which is correct one with the other one? Which one is the wrong one? So here So example one, right? In difference curve, difference curve two, and here in difference curve three, and here vậy difference curve two here and difference curve five. So there are five difference curves. I'm not that. All right, so five how many difference curves are correct and how many wrong? Thì ở đây let's thì correct one then incorrect one. Which one is correct? Ừ. Ừ. Number one Number two. All right. How about number three? Uh here. Let's suppose B goes on here. I'm certain. It depends. Okay, so how about number three? And incorrect, correct. It depends. Incorrect. All right. How about number four? Is number four correct? It depends. Incorrect or wrong, it depends. Incorrect. All right. And how about number five? Correct. Correct, incorrect. It depends. Incorrect. Okay. So, Any other opinion? Any other uh In my numbers, so the rule, we need to rule All right. So number one and two so three basically here, even in this picture, the difference is what? Usually when you have a consumption leisure, obviously you can function When you take a look at the measured bond, keep in mind that same with the level, the tilt function generally is downward sloping like this, right? And how many assets do you remember? So preferences are, right? That's the first axiom. And sometimes you more better. And so that's the preference. three. Right? You know, no one wants But it doesn't matter whether it looks like number one here, or you can be letter, so it can kind of you know, it's flat. So the marginal rate of substitution in number two would be always smaller than the marginal rate of substitution for number difference curve number one for any leisure point like but they are still okay because number one and two are satisfied with the three axioms. Okay? So let me get rid of number one and two. So this picture is Yeah. We got that. And then I think I remember the other three. Uh, what's number three? Number three. So it looks like this, right? Is it quick one? Uh you know, So let me review the you know, example. For the Cobb Douglas utility function, Number three, it's not the correct one to draw. So when the utility function looks like the Cobb Douglas utility function, it's going to be like number one and two. That's the standard indifference curve. And this is the general utility function you ever see. And number three, is in fact however, not correct. It's the number three here. Number three it depends. on the shape of the utility function. So this is just the",
+   "ko": "아, 그냥 제가 잊어버린 것과 그리고 다음은 우리가 가지고 있는 이거예요. 그러니까, 이거 멈춰요. 이게 더 중요해요. 그래서 차이 곡선을 그릴 때, 몇 개요? 어떤 게 맞나요? 다른 거랑요? 어떤 게 틀린 건가요? 그래서 여기는 그래서 예시 1번, 맞죠? 차이 곡선에서, 차이 곡선 2, 그리고 여기는 차이 곡선 3에서, 그리고 여기는 그래서 차이 곡선 2 여기는 그리고 차이 곡선 5. 그래서 다섯 개의 차이 곡선이 있어요. 저는 그렇지 않아요. 좋아요, 그럼 다섯 개 몇 개가 차이 곡선이 맞나요? 그리고 몇 개가 틀렸나요? 그래서 여기는 자, 그럼 맞는 거는 그리고 틀린 거는. 어떤 게 맞나요? 네. 네. 1번은 2번. 알겠습니다. 3번은 어때요? 어, 여기요. 가정해 봅시다. B가 여기로 간다고. 확실해요. 상황에 따라 다르죠. 자, 그럼 3번은 어때요? 그리고 틀렸고, 맞았고. 상황에 따라 다르죠. 틀렸어요. 알겠습니다. 4번은 어때요? 4번은 맞나요? 상황에 따라 다르거나 틀렸어요. 상황에 따라 다르죠. 틀렸어요. 알겠습니다. 그리고 5번은 어때요? 맞아요. 맞고, 틀렸고. 상황에 따라 다르죠. 틀렸어요. 네. 그래서, 다른 의견 있으신가요? 다른 어, 제 번호에서는, 그러니까 규칙은, 우리가 규칙을 정해야 해요. 알겠습니다. 그래서 1번은 그리고 2번은 그래서 3번은 기본적으로 여기고, 이 그림에서도 마찬가지예요. 차이점은 뭐죠? 보통 어떤 것을 소비할 때 여가 활동을 하면, 당연히 기능할 이것을 측정된 채권으로 볼 때, 같은 수준의 것이라는 점을 명심하세요. 기울기 기능은 일반적으로 하향식이고 이렇게 기울어져 있죠, 그렇죠? 그리고 얼마나 많은 자산을 기억하시나요? 그래서 선호도는 그렇죠? 그게 첫 번째입니다. 공리죠. 그리고 때로는 더 나은 것이죠. 그리고 그래서 그게 선호도입니다. 셋. 그렇죠? 아시다시피, 아무도 원하지 않아요. 하지만 그게 1번처럼 보이든, 아니면 당신이 글자일 수도 있고, 그래서 일종의 있잖아요, 평평해요. 그래서 한계 대체율은 2번에서 이렇게 될 것입니다. 항상 한계 대체율보다 작을 것입니다. 1번의 한계 대체율보다요. 무차별 곡선 1번은 어떤 여가 지점에서도 마찬가지입니다. 하지만 여전히 괜찮아요, 왜냐하면 1번과 2번은 만족스럽기 때문에 3번과 같은 세 가지 공리를 만족합니다. 알겠죠? 그럼 1번과 2번을 지울게요. 그래서 이 그림은 네. 이해했어요. 그리고 제가 기억하기로는 다른 세 가지도요. 어, 3번이 뭐죠? 3번. 그래서 이렇게 보이죠, 그렇죠? 이게 빠른 건가요? 어 아시다시피, 그래서 복습해 볼게요. 아시다시피, 예시를요. 그 콥-더글라스 효용 함수는, 3번, 그건 올바른 그림이 아니에요. 그래서 효용 함수가 이렇게 생겼을 때, 콥-더글라스 효용 함수는 이렇게 생길 것입니다. 1번과 2번처럼요. 그게 표준적인 무차별 곡선입니다. 그리고 이것은 일반적인 효용 함수입니다. 여러분이 보시는. 그리고 3번은, 사실 하지만, 올바르지 않아요. 그건 3번입니다. 여기서는. 3번은 상황에 따라 다릅니다. 그 효용 함수의 모양에 따라 다릅니다. 그래서 이것은 그냥",
+   "pdf": "Core_note_ovb_panel_2026.pdf",
+   "pdfPage": 11,
+   "slideText": "",
+   "liveNotes": {
+    "notes": [
+     "**무차별곡선**(indifference curve) 5개를 그려 놓고 설명",
+     "▶ 5개 중 맞는 것과 틀린 것을 학생들에게 골라 보게 함 (퀴즈 형식)",
+     "▶ 맞는 곡선으로 1번이 먼저 지목됨",
+     "▶ 점 B의 위치를 곡선 위에 가정해 가며 설명",
+     "▶ 3번 곡선은 그리기에 올바르지 않음(incorrect), 4번도 결론은 틀림",
+     "▶ **콥-더글라스 효용함수**(Cobb-Douglas utility function) → 1번·2번 같은 **표준 무차별곡선**(standard indifference curve)"
+    ],
+    "summary": "콥-더글라스 → 표준 무차별곡선 1·2번",
+    "exam": [],
+    "board": [],
+    "at": 1791355727499
+   },
+   "marks": [],
+   "segs": [
+    {
+     "t": 2413,
+     "page": 11,
+     "en": "Oh, I just have what I forget and And then next so we have this you know, stop this. This is more important. So when you draw the difference curve, How many? Which is correct one with the other one? Which one is the wrong one? So here So example one, right? In difference curve,",
+     "ko": "아, 그냥 제가 잊어버린 것과 그리고 다음은 우리가 가지고 있는 이거예요. 그러니까, 이거 멈춰요. 이게 더 중요해요. 그래서 차이 곡선을 그릴 때, 몇 개요? 어떤 게 맞나요? 다른 거랑요? 어떤 게 틀린 건가요? 그래서 여기는 그래서 예시 1번, 맞죠? 차이 곡선에서,",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2441,
+     "page": 11,
+     "en": "difference curve two, and here in difference curve three, and here vậy difference curve two here and",
+     "ko": "차이 곡선 2, 그리고 여기는 차이 곡선 3에서, 그리고 여기는 그래서 차이 곡선 2 여기는 그리고",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2457,
+     "page": 11,
+     "en": "difference curve five. So there are five difference curves.",
+     "ko": "차이 곡선 5. 그래서 다섯 개의 차이 곡선이 있어요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2462,
+     "page": 11,
+     "en": "I'm not that. All right, so five how many difference curves are correct and how many wrong? Thì ở đây let's thì correct one then incorrect one. Which one is correct? Ừ. Ừ. Number one Number two. All right. How about number three?",
+     "ko": "저는 그렇지 않아요. 좋아요, 그럼 다섯 개 몇 개가 차이 곡선이 맞나요? 그리고 몇 개가 틀렸나요? 그래서 여기는 자, 그럼 맞는 거는 그리고 틀린 거는. 어떤 게 맞나요? 네. 네. 1번은 2번. 알겠습니다. 3번은 어때요?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2492,
+     "page": 11,
+     "en": "Uh here. Let's suppose B goes on here.",
+     "ko": "어, 여기요. 가정해 봅시다. B가 여기로 간다고.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2499,
+     "page": 11,
+     "en": "I'm certain.",
+     "ko": "확실해요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2503,
+     "page": 11,
+     "en": "It depends.",
+     "ko": "상황에 따라 다르죠.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2507,
+     "page": 11,
+     "en": "Okay, so how about number three? And incorrect, correct. It depends. Incorrect. All right.",
+     "ko": "자, 그럼 3번은 어때요? 그리고 틀렸고, 맞았고. 상황에 따라 다르죠. 틀렸어요. 알겠습니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2516,
+     "page": 11,
+     "en": "How about number four? Is number four correct? It depends. Incorrect or wrong, it depends. Incorrect. All right. And how about number five? Correct. Correct, incorrect. It depends. Incorrect. Okay. So,",
+     "ko": "4번은 어때요? 4번은 맞나요? 상황에 따라 다르거나 틀렸어요. 상황에 따라 다르죠. 틀렸어요. 알겠습니다. 그리고 5번은 어때요? 맞아요. 맞고, 틀렸고. 상황에 따라 다르죠. 틀렸어요. 네. 그래서,",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2540,
+     "page": 11,
+     "en": "Any other opinion? Any other uh",
+     "ko": "다른 의견 있으신가요? 다른 어,",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2548,
+     "page": 11,
+     "en": "In my numbers, so the rule, we need to rule All right. So number one and two so three basically here, even in this picture, the difference is what? Usually when you have a consumption leisure, obviously you can function",
+     "ko": "제 번호에서는, 그러니까 규칙은, 우리가 규칙을 정해야 해요. 알겠습니다. 그래서 1번은 그리고 2번은 그래서 3번은 기본적으로 여기고, 이 그림에서도 마찬가지예요. 차이점은 뭐죠? 보통 어떤 것을 소비할 때 여가 활동을 하면, 당연히 기능할",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2570,
+     "page": 11,
+     "en": "When you take a look at the measured bond, keep in mind that same with the level, the tilt function generally is downward sloping like this, right? And how many assets do you remember? So preferences are, right? That's the first axiom. And sometimes you more better.",
+     "ko": "이것을 측정된 채권으로 볼 때, 같은 수준의 것이라는 점을 명심하세요. 기울기 기능은 일반적으로 하향식이고 이렇게 기울어져 있죠, 그렇죠? 그리고 얼마나 많은 자산을 기억하시나요? 그래서 선호도는 그렇죠? 그게 첫 번째입니다. 공리죠. 그리고 때로는 더 나은 것이죠.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2595,
+     "page": 11,
+     "en": "And so that's the preference.",
+     "ko": "그리고 그래서 그게 선호도입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2602,
+     "page": 11,
+     "en": "three. Right? You know, no one wants",
+     "ko": "셋. 그렇죠? 아시다시피, 아무도 원하지 않아요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2608,
+     "page": 11,
+     "en": "But it doesn't matter whether it looks like number one here, or you can be letter, so it can kind of you know, it's flat. So the marginal rate of substitution in number two would be always smaller than the marginal rate of substitution for number difference curve number one for any leisure point like but they are still okay because number one and two are satisfied with the three axioms.",
+     "ko": "하지만 그게 1번처럼 보이든, 아니면 당신이 글자일 수도 있고, 그래서 일종의 있잖아요, 평평해요. 그래서 한계 대체율은 2번에서 이렇게 될 것입니다. 항상 한계 대체율보다 작을 것입니다. 1번의 한계 대체율보다요. 무차별 곡선 1번은 어떤 여가 지점에서도 마찬가지입니다. 하지만 여전히 괜찮아요, 왜냐하면 1번과 2번은 만족스럽기 때문에 3번과 같은 세 가지 공리를",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2641,
+     "page": 11,
+     "en": "Okay? So let me get rid of number one and two. So this picture is Yeah. We got that. And then I think I remember the other three. Uh, what's number three? Number three. So it looks like this, right? Is it quick one? Uh you know, So let me review the you know, example.",
+     "ko": "만족합니다. 알겠죠? 그럼 1번과 2번을 지울게요. 그래서 이 그림은 네. 이해했어요. 그리고 제가 기억하기로는 다른 세 가지도요. 어, 3번이 뭐죠? 3번. 그래서 이렇게 보이죠, 그렇죠? 이게 빠른 건가요? 어 아시다시피, 그래서 복습해 볼게요. 아시다시피, 예시를요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2668,
+     "page": 11,
+     "en": "For the Cobb Douglas utility function,",
+     "ko": "그 콥-더글라스 효용 함수는,",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2674,
+     "page": 11,
+     "en": "Number three, it's not the correct one to draw. So when the utility function looks like the Cobb Douglas utility function, it's going to be like number one and two. That's the standard indifference curve. And this is the general utility function you ever see. And number three, is in fact however, not correct.",
+     "ko": "3번, 그건 올바른 그림이 아니에요. 그래서 효용 함수가 이렇게 생겼을 때, 콥-더글라스 효용 함수는 이렇게 생길 것입니다. 1번과 2번처럼요. 그게 표준적인 무차별 곡선입니다. 그리고 이것은 일반적인 효용 함수입니다. 여러분이 보시는. 그리고 3번은, 사실 하지만, 올바르지 않아요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2697,
+     "page": 11,
+     "en": "It's the number three here. Number three it depends. on the shape of the utility function. So this is just the",
+     "ko": "그건 3번입니다. 여기서는. 3번은 상황에 따라 다릅니다. 그 효용 함수의 모양에 따라 다릅니다. 그래서 이것은 그냥",
+     "src": "gemini"
+    }
+   ]
+  },
+  {
+   "page": 12,
+   "en": "advanced one, but the Okay. There is another term we call quasi linear utility function. So here, what's possible? And in the difference curve number three, leisure can be one. Zero right? So that means if you have a indifference curve utility function, example, it's like natural log C plus L. That's possible, right? You can be zero. So the marginal utility of leisure is not always you know, close to infinity and then I told you, right? So this is the one of the functional form you may see in other classes. Okay? And this called called that this is called quasi linear utility function. This is a special case. So anyway, what I'm saying is number three can be correct in this difference curve depending on the utility function. the form of the utility function. Okay? And so this is false. All right, and this is this is the important one for get rid of it. So this is why I'm So some time and effort to explain this. So for homework number one, so that some students have a difference curve looks like this. That was number four, right? Also there is another student who drew And difference curve like this. I think this is number five. Are you only number four and number five? I mean, I'm compared to mind difference curve here, it is one of the like this. like what's wrong with the number four and five? So let's start with the number four. What's wrong with the difference curve number four? Uh, this Right. So we check theorem violated in this case. More that is violated here, right? Oh, you should let's pick a point here, let's say point A. Let's pick a point here and point B. So let's say, let's look at some bundle. That's an A and B, correct? So yeah. And what's the consumption bundle like point B? Let's say out the answer. And clearly point B has greater consumption which is CB is greater than CA. Right? And so that means danger. Now is smaller than LB. So at point B, compared to point A, for consumption and leisure point B has much more consumption, much more leisure. So they end up staying on the same difference curve, which means the utility level has to be same, which violates the first axiom. So this violates the first one. And more better looks Okay? So you want to draw a difference curve I mean, I know my picture is bad, but still for the example, assignment you should you want to try to draw the difference curve as that was something that's possible. cannot have this upwards sloping for this. indifference curve. Now, same reason, if you have this type indifference curve, what's wrong with this? It's a number five. Which violated number five? So, what's that violated? Is it hit point A or point B? Point A is on LA and B is on B. So, and so point B and sometimes these are always put together. So don't want to have this type of indifference curve because it's So make sure that your indifference curve is down with something like this. And then this can't be possible if the utility function is this. Right? And this so and any indifference curve",
+   "ko": "고급형입니다. 하지만 그 알겠습니다. 거기에는 우리가 준선형이라고 부르는 또 다른 용어가 있습니다. 그래서 여기서, 무엇이 가능할까요? 그리고 그 무차별 곡선 3번은 여가는 1이 될 수 있습니다. 0 맞죠? 그래서 만약 당신이 무차별 곡선을 가지고 있고 효용 함수가 있다면, 예를 들어, 자연 로그와 같고 C 플러스 L입니다. 그건 가능하죠, 그렇죠? 0이 될 수 있습니다. 그래서 여가의 한계 효용은 항상 그렇지 않아요. 아시다시피, 무한대에 가깝고, 그리고 제가 말씀드렸죠, 그렇죠? 그래서 이것은 여러분이 보시는 함수 형태 중 하나일 수 있습니다. 다른 수업에서요. 알겠죠? 그리고 이것은 이것이 라고 불립니다. 준선형 효용 함수라고요. 이것은 특별한 경우입니다. 어쨌든, 제가 말씀드리고 싶은 것은 번호 3번은 이 경우에 맞을 수 있습니다. 어떤 효용 함수에 따라 다르죠. 효용 함수의 형태에 따라요. 알겠죠? 그리고 이것은 거짓입니다. 자, 그리고 이것은 이것이 중요한 것입니다. 무엇을 위해서요? 없애버리세요. 그래서 이것이 제가 말씀드리는 이유입니다. 그래서 시간과 노력을 들여 설명하는 것입니다. 그래서 숙제 1번은, 그래서 그것이 어떤 학생들은 차이 곡선을 이렇게 가지고 있습니다. 그게 4번이었어요. 그렇죠? 또한 다른 학생이 그린 것이 있습니다. 그리고 차이 곡선이 이렇게 생겼습니다. 이건 5번인 것 같아요. 여러분, 4번만 5번인가요? 제 말은, 제 것과 비교했을 때 여기 차이 곡선은, 이건 이런 것 중 하나입니다. 뭐가 4번과 5번이 잘못된 거죠? 그럼 4번부터 시작해 볼까요. 4번 차이 곡선은 뭐가 문제죠? 어, 이거는 맞아요. 그래서 우리는 정리를 위반했는지 확인합니다. 이 경우에. 더 중요한 것은 여기서 위반되었다는 거죠, 그렇죠? 오, 당신은 자, 골라봅시다. 여기 한 점을 골라봅시다, 예를 들어 A점. 여기 한 점을 골라봅시다, 그리고 B점. 그래서 말하자면, 어떤 것을 살펴보죠. 번들을요. 그건 A이고 B죠, 맞죠? 그래서 네. 그리고 소비는 어떤 번들인가요? B점처럼요? 말해봅시다. 정답을요. 그리고 분명히 B점은 가지고 있습니다. 더 큰 소비를 즉 CB가 CA보다 큽니다. 그렇죠? 그래서 그건 위험하다는 뜻입니다. 이제 LB보다 작습니다. 그래서 B점에서, A점과 비교했을 때, 소비는 그리고 여가는 B점이 훨씬 더 많은 소비와 훨씬 더 많은 여가를 가지고 있습니다. 그래서 그들은 결국 같은 차이 곡선에 머물게 되는데, 이는 효용 수준이 같아야 한다는 것을 의미하며, 이는 첫 번째를 위반합니다. 첫 번째 공리요. 그래서 이것은 첫 번째를 위반합니다. 그리고 더 나은 모습은 알겠죠? 그래서 여러분은 차이 곡선을 그리고 싶어합니다. 제 말은, 제 그림이 나쁘다는 건 알지만, 그래도 예시를 위해서, 과제에서 여러분은 차이 곡선을 그리려고 노력해야 합니다. 그게 가능한 일이었으니까요. 이런 우상향은 있을 수 없어요. 이건. 무차별 곡선. 자, 같은 이유로, 만약 이런 형태의 무차별 곡선이 있다면, 뭐가 문제일까요? 5번이에요. 어떤 것이 위반되었나요? 5번이요? 그래서, 뭐가 위반된 거죠? 이건 적중했나요? A점인가요, B점인가요? A점 은 LA에 있고 B는 B에 있어요. 그래서, 그리고 그래서 B점은 그리고 때로는 이것들이 항상 함께 놓여요. 그래서 이런 형태의 무차별 곡선은 원하지 않아요. 왜냐하면 그래서 확실히 여러분의 무차별 곡선이 아래로 향하도록 하세요. 그리고 이건 불가능해요. 만약 효용 함수가 이것이라면요. 그렇죠? 그리고 이것은 그래서 어떤 무차별 곡선도",
+   "pdf": "Core_note_ovb_panel_2026.pdf",
+   "pdfPage": 12,
+   "slideText": "",
+   "liveNotes": {
+    "notes": [
+     "**준선형 효용함수**(quasi-linear utility function) 소개 시작",
+     "▶ 준선형 효용함수의 경우에 정리(theorem)가 위배되는지 확인해 봄",
+     "▶ 위배되는 것이 A점인지 B점인지 질문; A는 L_A 위, B는 L_B 위에 있는 점",
+     "▶ **무차별곡선**(indifference curve)을 그려 보라고 함 (과제 관련 언급)",
+     "▶ 무차별곡선 상 두 점의 관계를 보면 \"이건 불가능하다\"는 결론 도출 (모순)",
+     "▶ 5번 문제를 언급"
+    ],
+    "summary": "준선형 효용함수와 정리 위배 여부 확인",
+    "exam": [],
+    "board": [],
+    "at": 1791356038943
+   },
+   "marks": [],
+   "segs": [
+    {
+     "t": 2709,
+     "page": 12,
+     "en": "advanced one, but the",
+     "ko": "고급형입니다. 하지만 그",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2715,
+     "page": 12,
+     "en": "Okay. There is another term we call quasi linear utility function.",
+     "ko": "알겠습니다. 거기에는 우리가 준선형이라고 부르는 또 다른 용어가 있습니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2724,
+     "page": 12,
+     "en": "So here, what's possible? And in the difference curve number three, leisure can be one. Zero right? So that means if you have a indifference curve utility function, example, it's like natural log C plus L. That's possible, right? You can be zero. So the marginal utility of leisure is not always you know, close to infinity and then I told you, right?",
+     "ko": "그래서 여기서, 무엇이 가능할까요? 그리고 그 무차별 곡선 3번은 여가는 1이 될 수 있습니다. 0 맞죠? 그래서 만약 당신이 무차별 곡선을 가지고 있고 효용 함수가 있다면, 예를 들어, 자연 로그와 같고 C 플러스 L입니다. 그건 가능하죠, 그렇죠? 0이 될 수 있습니다. 그래서 여가의 한계 효용은 항상 그렇지 않아요. 아시다시피, 무한대에 가깝고, 그리고 제가 말씀드렸죠, 그렇죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2759,
+     "page": 12,
+     "en": "So this is the one of the functional form you may see in other classes. Okay? And this called called that this is called quasi linear utility function. This is a special case. So anyway, what I'm saying is number three can be correct in this difference curve depending on the utility function.",
+     "ko": "그래서 이것은 여러분이 보시는 함수 형태 중 하나일 수 있습니다. 다른 수업에서요. 알겠죠? 그리고 이것은 이것이 라고 불립니다. 준선형 효용 함수라고요. 이것은 특별한 경우입니다. 어쨌든, 제가 말씀드리고 싶은 것은 번호 3번은 이 경우에 맞을 수 있습니다. 어떤 효용 함수에 따라 다르죠.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2783,
+     "page": 12,
+     "en": "the form of the utility function. Okay? And so this is false. All right, and this is this is the important one for get rid of it. So this is why I'm So some time and effort to explain this. So for homework number one, so that some students have a difference curve looks like this.",
+     "ko": "효용 함수의 형태에 따라요. 알겠죠? 그리고 이것은 거짓입니다. 자, 그리고 이것은 이것이 중요한 것입니다. 무엇을 위해서요? 없애버리세요. 그래서 이것이 제가 말씀드리는 이유입니다. 그래서 시간과 노력을 들여 설명하는 것입니다. 그래서 숙제 1번은, 그래서 그것이 어떤 학생들은 차이 곡선을 이렇게 가지고 있습니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2811,
+     "page": 12,
+     "en": "That was number four, right? Also there is another student who drew And difference curve like this. I think this is number five. Are you only number four and number five? I mean, I'm compared to mind difference curve here, it is one of the like this. like what's wrong with the number four and five?",
+     "ko": "그게 4번이었어요. 그렇죠? 또한 다른 학생이 그린 것이 있습니다. 그리고 차이 곡선이 이렇게 생겼습니다. 이건 5번인 것 같아요. 여러분, 4번만 5번인가요? 제 말은, 제 것과 비교했을 때 여기 차이 곡선은, 이건 이런 것 중 하나입니다. 뭐가 4번과 5번이 잘못된 거죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2838,
+     "page": 12,
+     "en": "So let's start with the number four. What's wrong with the difference curve number four?",
+     "ko": "그럼 4번부터 시작해 볼까요. 4번 차이 곡선은 뭐가 문제죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2852,
+     "page": 12,
+     "en": "Uh, this Right. So we check theorem violated in this case. More that is violated here, right? Oh, you should let's pick a point here, let's say point A. Let's pick a point here and point B. So let's say, let's look at some bundle. That's an A and B, correct? So yeah.",
+     "ko": "어, 이거는 맞아요. 그래서 우리는 정리를 위반했는지 확인합니다. 이 경우에. 더 중요한 것은 여기서 위반되었다는 거죠, 그렇죠? 오, 당신은 자, 골라봅시다. 여기 한 점을 골라봅시다, 예를 들어 A점. 여기 한 점을 골라봅시다, 그리고 B점. 그래서 말하자면, 어떤 것을 살펴보죠. 번들을요. 그건 A이고 B죠, 맞죠? 그래서 네.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2879,
+     "page": 12,
+     "en": "And what's the consumption bundle like point B? Let's say out the answer. And clearly point B has greater consumption which is CB is greater than CA. Right? And so that means danger. Now is smaller than LB. So at point B, compared to point A, for consumption and leisure point B has much more consumption, much more leisure. So they end up staying on the same difference curve, which means the utility level has to be same, which violates the first axiom.",
+     "ko": "그리고 소비는 어떤 번들인가요? B점처럼요? 말해봅시다. 정답을요. 그리고 분명히 B점은 가지고 있습니다. 더 큰 소비를 즉 CB가 CA보다 큽니다. 그렇죠? 그래서 그건 위험하다는 뜻입니다. 이제 LB보다 작습니다. 그래서 B점에서, A점과 비교했을 때, 소비는 그리고 여가는 B점이 훨씬 더 많은 소비와 훨씬 더 많은 여가를 가지고 있습니다. 그래서 그들은 결국 같은 차이 곡선에 머물게 되는데, 이는 효용 수준이 같아야 한다는 것을 의미하며, 이는 첫 번째를 위반합니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2918,
+     "page": 12,
+     "en": "So this violates the first one. And more better looks",
+     "ko": "첫 번째 공리요. 그래서 이것은 첫 번째를 위반합니다. 그리고 더 나은 모습은",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2928,
+     "page": 12,
+     "en": "Okay? So you want to draw a difference curve I mean, I know my picture is bad, but still for the example, assignment you should you want to try to draw the difference curve as that was something that's possible. cannot have this upwards sloping for this. indifference curve. Now, same reason, if you have this type indifference curve, what's wrong with this?",
+     "ko": "알겠죠? 그래서 여러분은 차이 곡선을 그리고 싶어합니다. 제 말은, 제 그림이 나쁘다는 건 알지만, 그래도 예시를 위해서, 과제에서 여러분은 차이 곡선을 그리려고 노력해야 합니다. 그게 가능한 일이었으니까요. 이런 우상향은 있을 수 없어요. 이건. 무차별 곡선. 자, 같은 이유로, 만약 이런 형태의 무차별 곡선이 있다면, 뭐가 문제일까요?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2956,
+     "page": 12,
+     "en": "It's a number five.",
+     "ko": "5번이에요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2960,
+     "page": 12,
+     "en": "Which violated number five?",
+     "ko": "어떤 것이 위반되었나요? 5번이요?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2970,
+     "page": 12,
+     "en": "So, what's that violated? Is it hit point A or point B? Point A is on LA and B is on B. So, and so point B and sometimes these are always put together. So don't want to have this type of indifference curve because it's So make sure that your indifference curve is down with something like this.",
+     "ko": "그래서, 뭐가 위반된 거죠? 이건 적중했나요? A점인가요, B점인가요? A점 은 LA에 있고 B는 B에 있어요. 그래서, 그리고 그래서 B점은 그리고 때로는 이것들이 항상 함께 놓여요. 그래서 이런 형태의 무차별 곡선은 원하지 않아요. 왜냐하면 그래서 확실히 여러분의 무차별 곡선이 아래로 향하도록 하세요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2999,
+     "page": 12,
+     "en": "And then this can't be possible if the utility function is this. Right? And this so and any indifference curve",
+     "ko": "그리고 이건 불가능해요. 만약 효용 함수가 이것이라면요. 그렇죠? 그리고 이것은 그래서 어떤 무차별 곡선도",
+     "src": "gemini",
+     "ai": true
+    }
+   ]
+  },
+  {
+   "page": 13,
+   "en": "can always happen. So we're going to go over the for example, so Uh, so uh I don't know. So we have the straight line. So we have So parallel to the or the max uh uh uh so what what's wrong with this? Let's talk about this question. Let me explain that. So Next question. All right. Mr. Shin, just asked me why the budget difference curved. Uh it looks like this extreme line, right? So to the X axis on this, right? Is this possible? It is possible if we have a specific functional form that say the the Uh so this the utility function the difference curve only to be perpendicular to each other like this. And is this perpendicular at the equal amount? This is the to the function. And in this case, C and L are perfect complements but you matter we you would have you more than one leader when you get the one you need up consumption because you utility doesn't change. However, in this problem, if you have a general utility function and draw like this, this leads to one. It's like that, right? If it is a general utility function. So this type of indifference curve holds only when the utility function is where on here. Otherwise, you general information this type of difference curve violates the monotone. Okay. And uh makes sense. Okay. So yeah, in the world. I think I had it now. So the whole point is those three please make sure your indifference curve is downward sloping if you have a look like this. I have to cut some points off. So please make sure that that the picture right, you know, picture that is that's all. Okay. So uh All right. So hopefully uh uh you know, I mean, we were waiting. So suppose if let's start. from the scratch. Initially, uh okay. economy uh so today's uh and pointing it Okay. So let's do it. See one star and one star. You with that. That's the equilibrium. So condition at point A that's the necessary condition is Right, then point A, the marginal rate of substitution of uh star for C1 star equals what? Yeah, like that one. But this would be the equilibrium condition for it. Yeah. So now suppose the wage increases. Um, okay. So one is doing So what happened here is that the hourly wage increases. Okay. Then what? Number one, What",
+   "ko": "항상 일어날 수 있어요. 그래서 우리는 넘어갈 거예요. 예를 들어, 그래서 어, 그래서 어 잘 모르겠어요. 그래서 우리는 직선을 가지고 있어요. 그래서 우리는 가지고 있어요. 그래서 평행한 것에 또는 최대 어 어 어 그래서 뭐가 뭐가 문제일까요? 이것에 대해 이야기해 봅시다. 이 질문에 대해 설명해 드릴게요. 그래서 다음 질문. 알겠습니다. 신 선생님, 방금 저한테 왜 예산이 차이가 나는지 물어보셨어요. 어, 이거 보니까 극단적인 선이네요, 그렇죠? 그래서 X축에 대한 거죠, 그렇죠? 이게 가능한가요? 가능합니다. 만약 우리가 특정 기능적 형태가 있다면, 예를 들어 그 어, 그래서 이 효용 함수가 차이가 나는 곡선이 수직이 되려면 서로 이렇게 되어야 해요. 그리고 이게 C점에서 수직인가요? 이건 함수에 대한 것입니다. 그리고 이 경우, C와 L은 완벽한 보완재입니다. 하지만 당신은 우리가 당신이 가질 것 더 많은 것보다 하나가 리더가 될 때 필요한 것을 얻게 되면 소비를 늘리기 때문에 효용이 변하지 않습니다. 하지만, 이 문제에서는 만약 당신이 일반적인 효용 함수를 가지고 이렇게 그리면, 이것은 하나로 이어집니다. 마치 그런 거죠, 그렇죠? 일반적인 효용 함수라면요. 그래서 이런 종류의 무차별 곡선이 성립합니다. 오직 효용 함수가 일 때만요. 어디서 여기에서. 그렇지 않으면, 일반적인 정보가 이 종류의 무차별 곡선은 위반됩니다. 단조성을. 알겠습니다. 그리고 어, 이해가 되네요. 알겠습니다. 그래서 네, 세상에서요. 제 생각엔 이제 된 것 같아요. 그래서 요점은 그 세 가지 꼭 확인해 주세요, 당신의 무차별 곡선이 우하향하는지 이렇게 생겼다면요. 저는 점수를 좀 깎아야 해요. 그래서 꼭 확인해 주세요. 그림이 맞는지, 아시죠, 아시죠, 그 그림이 그게 다예요. 알겠습니다. 그래서 어, 자, 알겠습니다. 그래서 바라건대 어, 어, 당신이 아시죠, 제 말은, 우리가 기다리고 있었어요. 그래서 만약 시작합시다. 처음부터. 처음에는, 어, 알겠습니다. 경제가 어, 그래서 오늘의 어, 그리고 가리키는 것 알겠습니다. 그럼 해봅시다. C1을 보고 L 1을 보세요. 당신은 와 함께 그게. 그게 균형점입니다. 그래서 점 A에서의 조건은 그게 필요 조건입니다. 맞아요, 그럼 점 A, 한계 대체율은 소비에 대한 것입니다. 어, 별 C1에 대한 별은 무엇과 같나요? 네, 그런 거요. 하지만 이건 균형점일 거예요. 그것에 대한 조건이죠. 네. 자, 이제 가정해 봅시다. 임금이 오릅니다. 음, 알겠습니다. 그래서 하나는 뭐냐면 하고 있는 거죠. 그래서 어떻게 됐냐면 시간당 임금이 오릅니다. 네. 그럼 어떻게 되나요? 첫째, 무슨",
+   "pdf": "Core_note_ovb_panel_2026.pdf",
+   "pdfPage": 13,
+   "slideText": "",
+   "liveNotes": {
+    "notes": [
+     "▶ 질문: **예산제약**(budget constraint)이 왜 곡선 형태인가?",
+     "▶ 특정 **함수 형태**(functional form)를 가정하면 곡선 형태 도출이 가능하다고 설명 시작",
+     "▶ 함수에 대한 **접선**(tangent)을 그려 같은 양 지점에서 수직인지 짚어봄",
+     "▶ 어떤 형태의 **무차별곡선**(indifference curve)은 **단조성**(monotonicity)을 위반한다고 언급",
+     "▶ 변화 사례: **시간당 임금**(hourly wage)이 상승하는 경우를 분석 시작, 효과를 번호별로 설명 예정"
+    ],
+    "summary": "임금 상승 시 효과 분석 시작",
+    "exam": [],
+    "board": [],
+    "at": 1791356337055
+   },
+   "marks": [],
+   "segs": [
+    {
+     "t": 3009,
+     "page": 13,
+     "en": "can always happen. So we're going to go over the for example, so",
+     "ko": "항상 일어날 수 있어요. 그래서 우리는 넘어갈 거예요. 예를 들어, 그래서",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3020,
+     "page": 13,
+     "en": "Uh, so uh I don't know.",
+     "ko": "어, 그래서 어 잘 모르겠어요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3027,
+     "page": 13,
+     "en": "So we have the straight line. So we have So parallel to the or the max uh uh uh so what what's wrong with this? Let's talk about this question. Let me explain that. So",
+     "ko": "그래서 우리는 직선을 가지고 있어요. 그래서 우리는 가지고 있어요. 그래서 평행한 것에 또는 최대 어 어 어 그래서 뭐가 뭐가 문제일까요? 이것에 대해 이야기해 봅시다. 이 질문에 대해 설명해 드릴게요. 그래서",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3052,
+     "page": 13,
+     "en": "Next question. All right. Mr. Shin, just asked me why the budget difference curved.",
+     "ko": "다음 질문. 알겠습니다. 신 선생님, 방금 저한테 왜 예산이 차이가 나는지 물어보셨어요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3062,
+     "page": 13,
+     "en": "Uh it looks like this extreme line, right? So to the X axis on this, right? Is this possible?",
+     "ko": "어, 이거 보니까 극단적인 선이네요, 그렇죠? 그래서 X축에 대한 거죠, 그렇죠? 이게 가능한가요?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3081,
+     "page": 13,
+     "en": "It is possible if we have a specific functional form that say the the Uh so this the utility function the difference curve only to be perpendicular to each other like this.",
+     "ko": "가능합니다. 만약 우리가 특정 기능적 형태가 있다면, 예를 들어 그 어, 그래서 이 효용 함수가 차이가 나는 곡선이 수직이 되려면 서로 이렇게 되어야 해요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3097,
+     "page": 13,
+     "en": "And is this perpendicular at the equal amount? This is the to the function. And in this case, C and L are perfect complements but you matter we you would have you more than one leader when you get the one you need up consumption because you utility doesn't change.",
+     "ko": "그리고 이게 C점에서 수직인가요? 이건 함수에 대한 것입니다. 그리고 이 경우, C와 L은 완벽한 보완재입니다. 하지만 당신은 우리가 당신이 가질 것 더 많은 것보다 하나가 리더가 될 때 필요한 것을 얻게 되면 소비를 늘리기 때문에 효용이 변하지 않습니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3121,
+     "page": 13,
+     "en": "However, in this problem, if you have a general utility function and draw like this, this leads to one. It's like that, right? If it is a general utility function. So this type of indifference curve holds only when the utility function is where on here.",
+     "ko": "하지만, 이 문제에서는 만약 당신이 일반적인 효용 함수를 가지고 이렇게 그리면, 이것은 하나로 이어집니다. 마치 그런 거죠, 그렇죠? 일반적인 효용 함수라면요. 그래서 이런 종류의 무차별 곡선이 성립합니다. 오직 효용 함수가 일 때만요. 어디서 여기에서.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3158,
+     "page": 13,
+     "en": "Otherwise, you general information this type of difference curve violates the monotone. Okay. And uh makes sense. Okay. So yeah, in the world. I think I had it now. So the whole point is those three please make sure your indifference curve is downward sloping if you have a look like this.",
+     "ko": "그렇지 않으면, 일반적인 정보가 이 종류의 무차별 곡선은 위반됩니다. 단조성을. 알겠습니다. 그리고 어, 이해가 되네요. 알겠습니다. 그래서 네, 세상에서요. 제 생각엔 이제 된 것 같아요. 그래서 요점은 그 세 가지 꼭 확인해 주세요, 당신의 무차별 곡선이 우하향하는지 이렇게 생겼다면요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3169,
+     "page": 13,
+     "en": "I have to cut some points off. So please make sure that that the picture right, you know, picture that is that's all. Okay. So uh All right. So hopefully uh uh you know, I mean, we were waiting. So suppose if",
+     "ko": "저는 점수를 좀 깎아야 해요. 그래서 꼭 확인해 주세요. 그림이 맞는지, 아시죠, 아시죠, 그 그림이 그게 다예요. 알겠습니다. 그래서 어, 자, 알겠습니다. 그래서 바라건대 어, 어, 당신이 아시죠, 제 말은, 우리가 기다리고 있었어요. 그래서 만약",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3203,
+     "page": 13,
+     "en": "let's start. from the scratch. Initially, uh okay. economy uh so today's uh and pointing it Okay. So let's do it. See one star and one star. You with that. That's the equilibrium. So condition at point A that's the necessary condition is",
+     "ko": "시작합시다. 처음부터. 처음에는, 어, 알겠습니다. 경제가 어, 그래서 오늘의 어, 그리고 가리키는 것 알겠습니다. 그럼 해봅시다. C1을 보고 L 1을 보세요. 당신은 와 함께 그게. 그게 균형점입니다. 그래서 점 A에서의 조건은 그게 필요 조건입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3236,
+     "page": 13,
+     "en": "Right, then point A, the marginal rate of substitution of uh star for C1 star equals what? Yeah, like that one. But this would be the equilibrium condition for it. Yeah.",
+     "ko": "맞아요, 그럼 점 A, 한계 대체율은 소비에 대한 것입니다. 어, 별 C1에 대한 별은 무엇과 같나요? 네, 그런 거요. 하지만 이건 균형점일 거예요. 그것에 대한 조건이죠. 네.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3258,
+     "page": 13,
+     "en": "So now suppose",
+     "ko": "자, 이제 가정해 봅시다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3263,
+     "page": 13,
+     "en": "the wage increases. Um, okay. So one is doing So what happened here is that the hourly wage increases. Okay.",
+     "ko": "임금이 오릅니다. 음, 알겠습니다. 그래서 하나는 뭐냐면 하고 있는 거죠. 그래서 어떻게 됐냐면 시간당 임금이 오릅니다. 네.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3293,
+     "page": 13,
+     "en": "Then what?",
+     "ko": "그럼 어떻게 되나요?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3298,
+     "page": 13,
+     "en": "Number one,",
+     "ko": "첫째,",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3308,
+     "page": 13,
+     "en": "What",
+     "ko": "무슨",
+     "src": "gemini"
+    }
+   ]
+  },
+  {
+   "page": 14,
+   "en": "happens to the budget line? So we call this the substitution effect. So like I said first, the substitution effect the it starts with the equilibrium condition. All marginal rate of substitution, now one star for C1 star equals what? Omega one to act. And now what happens? So now this worker consumer gets higher wage. Now, the Omega 2 and Omega 2 is greater than Omega 1. So when the wage rate increases from Omega 1 to Omega 2, the income effect is what? So the equilibrium condition with the new wage rate that happening. At point A, the marginal rate of substitution of the for C1 star is now smaller than Omega 2. Correct? And what does it mean? Yeah, it's not that steeper than economically what does it mean? So if a worker gets higher wage rate that means that opportunity cost of in doing another unit of leisure gets more expensive. Right? Because now you have to give up wage too, which is greater than wage one. So what happens is that the has to adjust. We at point A we were at substitution and ratio becomes a marginal utility in a way too. That's the way to effect. So let me rephrase this. So when increases, that means the opportunity cost of Also, so you know, so you know, Okay, so what do we do? You wanna you do you see that an increase labor supply right? So here the new equilibrium condition would be the demand on labor supply now starts to stop. I'm going to explain this later, but as to equal, right? So you have a new equilibrium condition. So there's a discrepancy. So Then you know what you do with that? happening? the labor supply as the increase. So the supply and the increases So that that so so that means the region increases, the marginal is the measure. increases And basically what that was just something But I'm trying to say that you need to do this. But that was the point of this. And so changes in the way and if we force the market to do this, then that's right? And And then when you pull if you end up the last five this stops institution more like this. So it by the way, I think higher wage, look more that than normal wage, you get more money income. So nobody will have more but have more income. I think so. But it's like that. You know, people it's more like Asian mind, right? The wage goes up or I want to work work, work, work, work here, I change my next my so it's more like And then I'll always use this since you're in Korea, so this is the Korean",
+   "ko": "일이 일어나냐면 예산선에? 그래서 이걸 대체 효과라고 부릅니다. 그래서 제가 처음에 말했듯이, 대체 효과는 이것은 초기 균형 조건에서 시작합니다. 모든 한계 대체율은 어, 이제 별 하나는 C1에 대한 별은 무엇과 같나요? 오메가 하나가 행동합니다. 그리고 이제 무슨 일이 일어나나요? 그래서 이제 이 노동자는 소비자는 더 높은 임금을 받습니다. 자, 이제 오메가 2는 그리고 오메가 2는 오메가 1보다 큽니다. 그래서 그래서 임금률이 오르면 오메가 1에서 오메가 2로, 소득이 효과는 무엇인가요? 그래서 균형 조건은 새로운 임금률로 이렇게 됩니다. 점 A에서, 한계 대체율은 소비에 대한 것입니다. C1에 대한 별은 이제 더 작아졌습니다. 오메가 2보다. 맞죠? 그리고 그게 무슨 뜻인가요? 네, 경제학에서 그렇게 가파르지 않은데, 무슨 뜻인가요? 그래서 만약 노동자가 더 높은 임금을 받으면 그건 무슨 뜻인가요? 기회 비용이 다른 단위를 하는 데 드는 여가 비용이 더 많아집니다. 비싸집니다. 그렇죠? 왜냐하면 이제 포기해야 하는 임금도 있는데, 이건 임금 1보다 큽니다. 그래서 어떻게 되냐면 이렇게 됩니다. 해야 합니다. 조정해야 합니다. 우리는 점 A에서 있었는데 대체와 비율이 한계가 되는 거죠. 그것도 마찬가지로요. 그게 방법입니다. 효과가. 그래서 제가 다시 말해볼게요. 그래서 임금률이 오르면, 그건 그 기회 비용이 또한, 그래서 아시다시피, 그래서 당신이 아시다시피, 좋아요, 그럼 어떻게 하죠? 당신은 당신은 보시나요? 그게 증가한다는 것을 노동 공급이 맞죠? 그래서 여기서는 새로운 새로운 균형은 다음과 같을 것입니다. 노동에 대한 수요가 공급을 이제 시작합니다. 그래서 멈춥니다. 나중에 설명해 볼 텐데, 하지만 같다는 거죠, 맞죠? 그래서 새로운 균형 상태가 됩니다. 그래서 불일치가 있습니다. 그래서 그럼 당신이 무엇을 하는지 아시죠? 무슨 일이 일어나고 있는지? 노동 공급이 증가함에 따라. 그래서 공급이 그리고 그 증가가 그래서 그게 그래서 그래서 그건 그 지역이 증가하면, 한계는 측정값입니다. 증가하면 그리고 기본적으로 그게 뭐였냐면 그냥 어떤 거였어요. 하지만 제가 말하려는 건 당신이 이걸 해야 한다는 거예요. 하지만 그게 바로 이 요점이었어요. 그리고 그래서 변화는 방식에 있어서 그리고 만약 우리가 시장을 강제로 변화시키면 어떻게 될까요? 그러면 그게 바로 맞죠? 그리고 그리고 당길 때 만약 결국 마지막 다섯 개가 멈추면 기관은 더 이렇게 될 것 같아요. 그래서 그게 그런데, 제 생각엔 더 높은 임금이, 더 많이 보일 것 같아요. 보통보다 더 높은 임금을 받으면, 더 많은 소득을 얻게 되죠. 그래서 아무도 더 많이 갖지 않겠지만 더 많이 소득을 얻게 되죠. 제 생각엔 그래요. 하지만 그런 식이에요. 아시잖아요, 사람들은 더 이렇게 아시아인처럼 생각하잖아요, 그렇죠? 임금은 올라가고 아니면 더 일하고, 일하고, 일하고, 여기서 일하고, 제 생각을 바꾸고 그래서 더 그런 식이에요. 그리고 나서 저는 항상 이걸 사용할 거예요, 한국에 계시니까, 그래서 이게 한국",
+   "pdf": "Core_note_ovb_panel_2026.pdf",
+   "pdfPage": 14,
+   "slideText": "",
+   "liveNotes": {
+    "notes": [
+     "**대체효과**(substitution effect): 가격 변화로 예산선(budget line)이 바뀔 때 나타나는 효과",
+     "▶ 노동자 = 소비자, 임금(wage) 상승 상황을 가정: ω₁ → ω₂ (ω₂ > ω₁)",
+     "▶ 임금 상승 → 예산선이 더 가팔라짐(steeper)",
+     "▶ 임금↑ → 여가(leisure) 1단위의 **기회비용**(opportunity cost)이 커짐",
+     "▶ 새 예산선의 A점에서 C₁*에 대한 **한계대체율**(MRS)이 새 기울기에 맞게 조정되어야 한다고 설명 (A점 = 대체효과 설명 중)",
+     "▶ 대체효과로 **노동공급**(labor supply)이 증가함을 결론으로 짚음"
+    ],
+    "summary": "임금 상승의 대체효과",
+    "exam": [],
+    "board": [
+     "ω₂ > ω₁"
+    ],
+    "at": 1791356623207
+   },
+   "marks": [],
+   "segs": [
+    {
+     "t": 3309,
+     "page": 14,
+     "en": "happens to the budget line? So we call this the substitution effect. So like I said first, the substitution effect the it starts with the equilibrium condition. All marginal rate of substitution, now one star for C1 star equals what? Omega one to act. And now what happens?",
+     "ko": "일이 일어나냐면 예산선에? 그래서 이걸 대체 효과라고 부릅니다. 그래서 제가 처음에 말했듯이, 대체 효과는 이것은 초기 균형 조건에서 시작합니다. 모든 한계 대체율은 어, 이제 별 하나는 C1에 대한 별은 무엇과 같나요? 오메가 하나가 행동합니다. 그리고 이제 무슨 일이 일어나나요?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3335,
+     "page": 14,
+     "en": "So now this worker consumer gets higher wage.",
+     "ko": "그래서 이제 이 노동자는 소비자는 더 높은 임금을 받습니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3343,
+     "page": 14,
+     "en": "Now, the Omega 2 and Omega 2 is greater than Omega 1. So when the wage rate increases from Omega 1 to Omega 2, the income effect is what? So the equilibrium condition with the new wage rate that happening.",
+     "ko": "자, 이제 오메가 2는 그리고 오메가 2는 오메가 1보다 큽니다. 그래서 그래서 임금률이 오르면 오메가 1에서 오메가 2로, 소득이 효과는 무엇인가요? 그래서 균형 조건은 새로운 임금률로 이렇게 됩니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3371,
+     "page": 14,
+     "en": "At point A, the marginal rate of substitution of the for C1 star is now",
+     "ko": "점 A에서, 한계 대체율은 소비에 대한 것입니다. C1에 대한 별은 이제",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3384,
+     "page": 14,
+     "en": "smaller than Omega 2. Correct? And what does it mean?",
+     "ko": "더 작아졌습니다. 오메가 2보다. 맞죠? 그리고 그게 무슨 뜻인가요?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3388,
+     "page": 14,
+     "en": "Yeah, it's not that steeper than economically what does it mean? So if a worker gets higher wage rate that means that opportunity cost of in doing another unit of leisure gets more expensive. Right? Because now you have to give up wage too, which is greater than wage one.",
+     "ko": "네, 경제학에서 그렇게 가파르지 않은데, 무슨 뜻인가요? 그래서 만약 노동자가 더 높은 임금을 받으면 그건 무슨 뜻인가요? 기회 비용이 다른 단위를 하는 데 드는 여가 비용이 더 많아집니다. 비싸집니다. 그렇죠? 왜냐하면 이제 포기해야 하는 임금도 있는데, 이건 임금 1보다",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3412,
+     "page": 14,
+     "en": "So what happens is that the has to adjust. We at point A we were at substitution and ratio becomes a marginal utility in a way too. That's the way to effect. So let me rephrase this. So when increases, that means the opportunity cost of",
+     "ko": "큽니다. 그래서 어떻게 되냐면 이렇게 됩니다. 해야 합니다. 조정해야 합니다. 우리는 점 A에서 있었는데 대체와 비율이 한계가 되는 거죠. 그것도 마찬가지로요. 그게 방법입니다. 효과가. 그래서 제가 다시 말해볼게요. 그래서 임금률이 오르면, 그건 그 기회 비용이",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3445,
+     "page": 14,
+     "en": "Also, so you know, so you know,",
+     "ko": "또한, 그래서 아시다시피, 그래서 당신이 아시다시피,",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3454,
+     "page": 14,
+     "en": "Okay, so what do we do? You wanna you do you see that an increase labor supply right? So here the new equilibrium condition would be",
+     "ko": "좋아요, 그럼 어떻게 하죠? 당신은 당신은 보시나요? 그게 증가한다는 것을 노동 공급이 맞죠? 그래서 여기서는 새로운 새로운 균형은 다음과 같을 것입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3474,
+     "page": 14,
+     "en": "the demand on labor supply now starts to stop. I'm going to explain this later, but as to equal, right? So you have a new equilibrium condition. So there's a discrepancy. So Then you know what you do with that? happening?",
+     "ko": "노동에 대한 수요가 공급을 이제 시작합니다. 그래서 멈춥니다. 나중에 설명해 볼 텐데, 하지만 같다는 거죠, 맞죠? 그래서 새로운 균형 상태가 됩니다. 그래서 불일치가 있습니다. 그래서 그럼 당신이 무엇을 하는지 아시죠? 무슨 일이 일어나고 있는지?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3499,
+     "page": 14,
+     "en": "the labor supply",
+     "ko": "노동 공급이",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3505,
+     "page": 14,
+     "en": "as the increase. So the supply and the increases",
+     "ko": "증가함에 따라. 그래서 공급이 그리고 그 증가가",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3517,
+     "page": 14,
+     "en": "So that that so so that means the region increases, the marginal is the measure. increases",
+     "ko": "그래서 그게 그래서 그래서 그건 그 지역이 증가하면, 한계는 측정값입니다. 증가하면",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3531,
+     "page": 14,
+     "en": "And basically what that was just something",
+     "ko": "그리고 기본적으로 그게 뭐였냐면 그냥 어떤 거였어요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3544,
+     "page": 14,
+     "en": "But I'm trying to say that you need to do this. But that was the point of this. And so changes in the way and if we force the market to do this, then that's right? And And then when you pull if you end up the last five this stops institution more like this. So it by the way, I think higher wage, look more that than normal wage, you get more money income.",
+     "ko": "하지만 제가 말하려는 건 당신이 이걸 해야 한다는 거예요. 하지만 그게 바로 이 요점이었어요. 그리고 그래서 변화는 방식에 있어서 그리고 만약 우리가 시장을 강제로 변화시키면 어떻게 될까요? 그러면 그게 바로 맞죠? 그리고 그리고 당길 때 만약 결국 마지막 다섯 개가 멈추면 기관은 더 이렇게 될 것 같아요. 그래서 그게 그런데, 제 생각엔 더 높은 임금이, 더 많이 보일 것 같아요. 보통보다 더 높은 임금을 받으면, 더 많은 소득을",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3581,
+     "page": 14,
+     "en": "So nobody will have more but have more income. I think so. But it's like that. You know, people it's more like Asian mind, right? The wage goes up or I want to work work, work, work, work here, I change my next my so it's more like And then I'll always use this since you're in Korea, so this is the Korean",
+     "ko": "얻게 되죠. 그래서 아무도 더 많이 갖지 않겠지만 더 많이 소득을 얻게 되죠. 제 생각엔 그래요. 하지만 그런 식이에요. 아시잖아요, 사람들은 더 이렇게 아시아인처럼 생각하잖아요, 그렇죠? 임금은 올라가고 아니면 더 일하고, 일하고, 일하고, 여기서 일하고, 제 생각을 바꾸고 그래서 더 그런 식이에요. 그리고 나서 저는 항상 이걸 사용할 거예요, 한국에 계시니까, 그래서 이게 한국",
+     "src": "gemini",
+     "ai": true
+    }
+   ]
+  },
+  {
+   "page": 15,
+   "en": "way. So there is a expression in Korea about this institution. Does anyone know this? Right? So this is kind of like a system that institution like. Who do you think the it's basically make hay when sun shines. That's it, right? So it's so like housing price going up people got panicked and tried to buy buy house when it's at least the rule. So the notice of the date. So it's like that. So not the end of the day. Yes. It's not funny. I try. Right? Then you go And that's a one way to look at the effect of the increasing wage. And there's another effect in this case. So now number two, we call this positive income effect. Okay, I'll follow you. I still do that. I think wage is up. I like to get more income, so people look at So that constraint if the wage one and now with the wage look, so it's right? So here, you have a wage one wage two we labor income, right? If you compare labor income, given the same amount of labor, supply, which labor income is greater? Yeah. So rice crop the new aging income is greater than the old income, correct? Yeah. So which if the wage rate increases, this labor income increases. This labor income increases. And we call this effect as And what if called this the positive effect. So positive income effect. So positive income effect is really helpful before. on top of consumption. So labor income increases, so consumption increases. What happens to leisure? Yeah, leisure increases. And what happens to the labor supply? Yeah, labor supply increases. Okay? So we have a some different response. of the exogenous variables. And there's a change in what's the wage rate. Okay? So depending on the consumer's preferences, the consumer can get this shock, which is the increase in the wage rate as a positive income effect. Or like person like me, I may work more if I can get a higher wage, so which means that my preference is more keen to substitution. So the overall you could have a overall effect means Okay? What happens? Consumption increases. Leisure increases. Okay? What happens to leisure? Leisure may if substitution effect dominates, positive income effect what happens? And what happens to leisure if substitution effect is dominated by positive income effect. So depending on which effect is greater, the response of leisure changes, right? Okay? So uh",
+   "ko": "방식이에요. 그래서 이런 표현이 있어요, 한국에 이 기관에 대한 표현이요. 혹시 아시는 분 계신가요? 그렇죠? 그래서 이건 일종의 시스템인데 기관이 좋아하는 거예요. 누가 그럴 것 같나요? 그건 기본적으로 해가 날 때 건초를 만드는 거예요. 그게 다예요, 그렇죠? 그래서 그건 주택 가격이 오르는 것과 비슷해요. 사람들이 당황해서 사려고 했어요. 집을 사려고 할 때, 그게 적어도 규칙이에요. 그래서 그 공지사항은 날짜에 대한 거예요. 그래서 그런 식이에요. 그래서 끝이 아니라 그날의 끝이. 네. 웃기지 않아요. 노력하고 있어요. 그렇죠? 그럼 가세요. 그리고 그건 한 가지 방법이에요. 이렇게 보는 효과는 그게 증가하는 임금의 효과예요. 그리고 이 상황에서 또 다른 효과가 있어요. 그래서 이제 두 번째는, 우리가 이걸 긍정적인 소득 효과라고 불러요. 좋아요, 따라갈게요. 저는 여전히 그렇게 해요. 임금이 올랐다고 생각해요. 저는 더 많은 소득을 얻고 싶으니까, 사람들은 그걸 봐요. 그래서 그 제약이 임금이 오르고 이제 임금이 오르면, 그래서 그건 맞죠? 그래서 여기서는, 당신은 임금 하나를 임금 둘을 우리는 노동을 소득으로 얻죠, 그렇죠? 비교해 보면 노동 소득을, 주어진 같은 양의 노동으로, 공급이, 어떤 노동이 더 많은 소득을 얻을까요? 네. 그래서 쌀 작물은 새로운 고령화 소득이 이전 고령화 소득보다 많죠, 그렇죠? 네. 그래서 어떤 게 만약 임금률이 상승하면, 이 노동 소득은 증가합니다. 이 노동 소득은 증가합니다. 그리고 우리는 이 효과를 라고 부릅니다. 그리고 무엇이 만약 이것을 긍정적인 효과라고 부릅니다. 그래서 긍정적인 소득 효과입니다. 그래서 긍정적인 소득 효과는 정말 도움이 됩니다. 예전에. 소비에 더해서요. 그래서 노동 소득이 증가하고, 그래서 소비가 증가합니다. 무슨 일이 여가에 일어나나요? 네, 여가가 증가합니다. 그리고 무슨 일이 일어나나요? 그 노동 공급에? 네, 노동 공급이 증가합니다. 알겠죠? 그래서 우리는 어떤 다른 반응이 있습니다. 그 외생적 변수의. 그리고 변화가 있습니다. 무엇이 임금률인지. 알겠죠? 그래서 소비자의 선호도에 따라, 소비자는 할 수 있습니다. 이것을 얻을 수 있는데, 이것은 임금률의 상승으로 인한 긍정적인 소득 효과입니다. 또는 사람처럼 저 같은 사람은, 제가 더 일할 수도 있어요, 만약 더 높은 임금을 받을 수 있다면, 그래서 제 선호도는 대체에 더 민감합니다. 그래서 전반적으로 당신은 가질 수 있습니다. 전반적인 효과는 의미합니다. 알겠죠? 무슨 일이 일어나나요? 소비는 증가합니다. 여가가 증가합니다. 알겠죠? 여가에는 무슨 일이 일어나나요? 여가는 만약 대체가 더 지배적이라면 긍정적인 소득 효과가 무슨 일이 일어나나요? 그리고 대체가 더 지배적이라면 여가는 긍정적인 소득 효과에 의해 지배됩니다. 그래서 어떤 효과가 더 큰지에 따라, 그 여가의 반응은 변하죠, 그렇죠? 알겠죠? 그래서 어",
+   "pdf": "Core_note_ovb_panel_2026.pdf",
+   "pdfPage": 15,
+   "slideText": "",
+   "liveNotes": {
+    "notes": [
+     "새로운 소득(new income) vs 기존 소득(old income) 비교하며 질문",
+     "**긍정적 소득효과**(positive income effect): 소득 변화가 가져오는 효과에 붙인 이름",
+     "▶ positive income effect가 분석에 매우 유용하다고 언급",
+     "▶ labor income ↑ → consumption ↑, leisure도 ↑ (소득효과로 여가 증가)",
+     "▶ **외생변수**(exogenous variables)의 변화에 따라 반응이 달라진다고 언급",
+     "▶ 소비자 **선호**(preferences)에 따라 임금률(wage rate) 상승 충격을 positive income effect로 받아들일 수도, 그렇지 않을 수도 있음 (교수 본인 예시로 이어짐)"
+    ],
+    "summary": "소득효과와 여가 반응",
+    "exam": [],
+    "board": [],
+    "at": 1791356946633
+   },
+   "marks": [],
+   "segs": [
+    {
+     "t": 3609,
+     "page": 15,
+     "en": "way. So there is a expression in Korea about this institution. Does anyone know this?",
+     "ko": "방식이에요. 그래서 이런 표현이 있어요, 한국에 이 기관에 대한 표현이요. 혹시 아시는 분 계신가요?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3634,
+     "page": 15,
+     "en": "Right? So this is kind of like a system that institution like. Who do you think the it's basically make hay when sun shines. That's it, right? So it's so like housing price going up people got panicked and tried to buy buy house when it's at least the rule. So the notice of the date. So it's like that.",
+     "ko": "그렇죠? 그래서 이건 일종의 시스템인데 기관이 좋아하는 거예요. 누가 그럴 것 같나요? 그건 기본적으로 해가 날 때 건초를 만드는 거예요. 그게 다예요, 그렇죠? 그래서 그건 주택 가격이 오르는 것과 비슷해요. 사람들이 당황해서 사려고 했어요. 집을 사려고 할 때, 그게 적어도 규칙이에요. 그래서 그 공지사항은 날짜에 대한 거예요. 그래서 그런 식이에요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3663,
+     "page": 15,
+     "en": "So not the end of the day. Yes. It's not funny. I try. Right? Then you go And that's a one way to look at the effect of the increasing wage. And there's another effect in this case. So now number two, we call this positive income effect.",
+     "ko": "그래서 끝이 아니라 그날의 끝이. 네. 웃기지 않아요. 노력하고 있어요. 그렇죠? 그럼 가세요. 그리고 그건 한 가지 방법이에요. 이렇게 보는 효과는 그게 증가하는 임금의 효과예요. 그리고 이 상황에서 또 다른 효과가 있어요. 그래서 이제 두 번째는, 우리가 이걸 긍정적인 소득 효과라고 불러요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3692,
+     "page": 15,
+     "en": "Okay, I'll follow you. I still do that. I think wage is up. I like to get more income, so people look at So that constraint if the wage one and now with the wage look, so it's right? So here, you have a wage one wage two we labor income, right?",
+     "ko": "좋아요, 따라갈게요. 저는 여전히 그렇게 해요. 임금이 올랐다고 생각해요. 저는 더 많은 소득을 얻고 싶으니까, 사람들은 그걸 봐요. 그래서 그 제약이 임금이 오르고 이제 임금이 오르면, 그래서 그건 맞죠? 그래서 여기서는, 당신은 임금 하나를 임금 둘을 우리는 노동을 소득으로 얻죠, 그렇죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3722,
+     "page": 15,
+     "en": "If you compare labor income, given the same amount of labor, supply, which labor income is greater?",
+     "ko": "비교해 보면 노동 소득을, 주어진 같은 양의 노동으로, 공급이, 어떤 노동이 더 많은 소득을 얻을까요?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3734,
+     "page": 15,
+     "en": "Yeah. So rice crop the new aging income is greater than the old income, correct? Yeah. So which if the wage rate increases, this labor income increases. This labor income increases.",
+     "ko": "네. 그래서 쌀 작물은 새로운 고령화 소득이 이전 고령화 소득보다 많죠, 그렇죠? 네. 그래서 어떤 게 만약 임금률이 상승하면, 이 노동 소득은 증가합니다. 이 노동 소득은 증가합니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3762,
+     "page": 15,
+     "en": "And we call this effect as",
+     "ko": "그리고 우리는 이 효과를 라고 부릅니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3768,
+     "page": 15,
+     "en": "And what if called this the positive effect. So positive income effect. So positive income effect is really helpful before.",
+     "ko": "그리고 무엇이 만약 이것을 긍정적인 효과라고 부릅니다. 그래서 긍정적인 소득 효과입니다. 그래서 긍정적인 소득 효과는 정말 도움이 됩니다. 예전에.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3788,
+     "page": 15,
+     "en": "on top of consumption.",
+     "ko": "소비에 더해서요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3792,
+     "page": 15,
+     "en": "So labor income increases, so consumption increases. What happens to leisure? Yeah, leisure increases. And what happens to the labor supply? Yeah, labor supply increases.",
+     "ko": "그래서 노동 소득이 증가하고, 그래서 소비가 증가합니다. 무슨 일이 여가에 일어나나요? 네, 여가가 증가합니다. 그리고 무슨 일이 일어나나요? 그 노동 공급에? 네, 노동 공급이 증가합니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3814,
+     "page": 15,
+     "en": "Okay? So we have a some different response. of the exogenous variables. And there's a change in what's the wage rate. Okay?",
+     "ko": "알겠죠? 그래서 우리는 어떤 다른 반응이 있습니다. 그 외생적 변수의. 그리고 변화가 있습니다. 무엇이 임금률인지. 알겠죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3832,
+     "page": 15,
+     "en": "So depending on the consumer's preferences, the consumer can get this shock, which is the increase in the wage rate as a positive income effect. Or like person like me, I may work more if I can get a higher wage, so which means that my preference is more keen to substitution.",
+     "ko": "그래서 소비자의 선호도에 따라, 소비자는 할 수 있습니다. 이것을 얻을 수 있는데, 이것은 임금률의 상승으로 인한 긍정적인 소득 효과입니다. 또는 사람처럼 저 같은 사람은, 제가 더 일할 수도 있어요, 만약 더 높은 임금을 받을 수 있다면, 그래서 제 선호도는 대체에 더 민감합니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3853,
+     "page": 15,
+     "en": "So the overall you could have a",
+     "ko": "그래서 전반적으로 당신은 가질 수 있습니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3862,
+     "page": 15,
+     "en": "overall effect means Okay? What happens? Consumption increases.",
+     "ko": "전반적인 효과는 의미합니다. 알겠죠? 무슨 일이 일어나나요? 소비는 증가합니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3872,
+     "page": 15,
+     "en": "Leisure increases. Okay? What happens to leisure?",
+     "ko": "여가가 증가합니다. 알겠죠? 여가에는 무슨 일이 일어나나요?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3882,
+     "page": 15,
+     "en": "Leisure may if substitution effect dominates, positive income effect what happens? And what happens to leisure if substitution effect is dominated by positive income effect.",
+     "ko": "여가는 만약 대체가 더 지배적이라면 긍정적인 소득 효과가 무슨 일이 일어나나요? 그리고 대체가 더 지배적이라면 여가는 긍정적인 소득 효과에 의해 지배됩니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3899,
+     "page": 15,
+     "en": "So depending on which effect is greater, the response of leisure changes, right? Okay? So uh",
+     "ko": "그래서 어떤 효과가 더 큰지에 따라, 그 여가의 반응은 변하죠, 그렇죠? 알겠죠? 그래서 어",
+     "src": "gemini",
+     "ai": true
+    }
+   ]
+  },
+  {
+   "page": 16,
+   "en": "after you have the blanket, Yeah, and substitution effect is greater than positive income effect. That means the substitution effect over here has a greater impact on the consumer. So the leisure increases, right? Yeah. And if positive income effect is greater than the leisure increases, So right? Yeah. Right? So how about I do this? have the substitution effect. And what happens to the leisure supply curve? Yeah, the other way around, right? The labor supply curve substitute substitution effect greater than income effect, what happens to the labor supply? We got to go around. So what happens to the labor supply? So this increases, right? Yeah. And yeah. All right. So far any questions? Okay, so let me show you how to draw this picture then. So, here the slope of the object and would be minus one ratio, right? So omega goes up, what happens? It gets steeper like this, so it rotates giving the point here. So this minus doesn't change it all. So that I going to be another in this case, you know, like one or two. And let's say this point B right? So the change from point A to point B that's the overall effect here. So and A to point B is that's the overall effect. And then if you look at the point here, point A and B, and let's say this is L3 start and C3 start. So you see, here, in the picture, right? So we just increase the assumption increase, right? So which dominates the other? Yeah, so substitution effect dominates, right? So then you have a picture with you, you have to pin down which effect dominates so to make things come consistent with your picture and your discussion. You have to have this result of the other cases. So you shouldn't have this either. to make things consistent with your picture. And finally, all right, that that okay, that's the overall effect and how can I compose this over into substitution and income. So this is how you do it. So you draw the imaginary model of substitution parallel to this budget constraint on initial difference curve. So which then going to be a imaginary budget line, that's the marginal substitution and that's let's say this point B. And this point B here, let's say and C start. Then the change is from point A to point B. So that's the substitution effect and the change is between point point B, like B to point B, that's the income effect. So okay? So so that's how you decompose the income and substitution effect. And then again for your exam, you say if there is any comparative static analysis, question, you have to make sure that the your picture and your discussion is consistent. You cannot just increase this happens with this happens with the have to make consistent discussion with the and a solution. All right, I think I'm done. Okay, all right, so so that would be and yeah.",
+   "ko": "당신이 그 담요를 가진 후에, 네, 그리고 대체는 더 크면 긍정적인 소득 효과보다. 그건 대체 효과가 여기서는 더 큰 영향을 미친다는 뜻이에요. 그래서 여가 가 늘어나죠, 그렇죠? 네. 그리고 만약 긍정적인 소득 효과가 더 크면 여가보다 늘어나면, 그래서 그렇죠? 네. 그렇죠? 그럼 제가 이렇게 할까요? 대체 효과가 있어요. 그리고 여가에는 어떤 일이 일어나나요? 네, 반대 방향이죠, 그렇죠? 노동 공급이 곡선이 대체되죠. 대체 효과가 소득 효과보다 크면, 어떻게 되나요? 노동 공급이? 우리가 돌아가야 해요. 그래서 노동 공급은 어떻게 되나요? 그래서 이게 늘어나죠, 그렇죠? 네. 그리고 네. 알겠습니다. 지금까지 질문 있나요? 네, 그럼 어떻게 하는지 보여드릴게요. 이 그림을 그리는 방법을요. 그래서, 여기 기울기가 물체의 기울기와 마이너스가 될 거예요. 비율이, 맞죠? 그래서 오메가는 올라가고, 무슨 일이 일어나죠? 더 가파르게 되죠, 그래서 이렇게 회전하면서 여기 점이 생겨요. 그래서 이 마이너스 는 전혀 변하지 않아요. 그래서 제가 또 다른 이 경우에 아시다시피, 하나나 둘처럼요. 그리고 이 점 B가 맞죠? 그래서 변화는 점 A에서 점 B로의 변화는 전체적으로 이런 효과가 있어요. 그래서 그리고 A에서 점 B로의 변화는 그게 전체적인 효과예요. 그리고 이제 이 점을 보면, 점 A와 B, 그리고 이게 L3라고 하고 시작하고 C3가 시작한다고 해보죠. 그래서 보시다시피, 여기서, 그림에서, 그렇죠? 그래서 우리는 그냥 증가시키고 가정을 증가시키죠, 맞죠? 그래서 어느 것이 다른 것을 지배하나요? 네, 그래서 대체 효과가 지배하죠, 맞죠? 그래서 그러면 그림이 있는데 당신은 핀을 꽂아야 해요. 어떤 효과가 지배하는지 그래서 일이 일어나게 하려면 일관성이 있어야 하고 당신의 논의와도 맞아야 해요. 이게 있어야 해요, 결과가. 다른 경우도요. 그래서 당신은 이것도 가지면 안 돼요. 그렇게 하려면 일관성이 있어야 해요, 당신의 그림과. 그리고 마지막으로, 알았어요, 그게 알았어요, 그게 전체적인 효과이고 어떻게 이걸 구성할 수 있을까요? 대체와 소득으로요. 그래서 이렇게 하는 거예요. 그래서 가상의 모델을 그리고 대체 효과를 평행하게 이 새로운 예산 제약선에 맞춰서 그리는 거예요. 초기 무차별 곡선에 맞춰서요. 그래서 그게 가상의 예산선이 되고, 그게 한계 대체율이 되고 그게 이 점이라고 해보죠. 그리고 이 점 B는, 그러니까 그리고 C 시작이죠. 그러면 변화는 점 A에서 점 A로의 로 점 B로. 그래서 그게 대체 효과이고 변화는 사이예요. 점 점 B, B에서 점 B로, 그게 소득 효과예요. 그래서 알겠죠? 그래서 그렇게 분해하는 거예요. 소득과 대체 효과를요. 그리고 다시 여러분의 시험을 위해, 만약 어떤 것이 있다면 비교 정학적 분석이라면, 질문은, 반드시 당신의 그림과 당신의 논의가 일관성이 있어야 해요. 당신은 그냥 증가시킬 수 없어요, 이게 이렇게 되고 저렇게 된다고 해야 해요. 일관성 있는 논의를 해야 해요. 그리고 해결책을요. 알겠습니다, 제 생각엔 다 된 것 같아요. 네, 알겠습니다, 그래서 그게 그리고 네.",
+   "pdf": "Core_note_ovb_panel_2026.pdf",
+   "pdfPage": 16,
+   "slideText": "",
+   "liveNotes": {
+    "notes": [
+     "**대체효과**(substitution effect)가 양(+)의 **소득효과**(income effect)보다 큼 → 소비자에게 미치는 영향은 대체효과 우세",
+     "▶ 예산제약(budget constraint)을 구한 뒤 효과를 비교하는 흐름",
+     "▶ 그림에서 어느 효과가 우세한지(which effect dominates) 확정해야 한다고 강조",
+     "▶ 그림상 B점까지의 이동이 대체효과(substitution effect), 점 사이의 변화로 설명",
+     "▶ 이어서 여가 공급곡선(leisure supply curve) 변화와 그 결과 노동공급(labor supply) 변화를 질문으로 제기, 설명이 그림과 일관되어야 한다고 언급"
+    ],
+    "summary": "대체효과 vs 소득효과, 노동공급",
+    "exam": [],
+    "board": [],
+    "at": 1791357237575
+   },
+   "marks": [],
+   "segs": [
+    {
+     "t": 3909,
+     "page": 16,
+     "en": "after you have the blanket,",
+     "ko": "당신이 그 담요를 가진 후에,",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3917,
+     "page": 16,
+     "en": "Yeah, and substitution effect is greater than positive income effect. That means the substitution effect over here has a greater impact on the consumer. So the leisure increases, right? Yeah. And if positive income effect is greater than the leisure increases, So right?",
+     "ko": "네, 그리고 대체는 더 크면 긍정적인 소득 효과보다. 그건 대체 효과가 여기서는 더 큰 영향을 미친다는 뜻이에요. 그래서 여가 가 늘어나죠, 그렇죠? 네. 그리고 만약 긍정적인 소득 효과가 더 크면 여가보다 늘어나면, 그래서 그렇죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3941,
+     "page": 16,
+     "en": "Yeah.",
+     "ko": "네.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3949,
+     "page": 16,
+     "en": "Right? So how about I do this?",
+     "ko": "그렇죠? 그럼 제가 이렇게 할까요?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3961,
+     "page": 16,
+     "en": "have the substitution effect.",
+     "ko": "대체 효과가 있어요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3966,
+     "page": 16,
+     "en": "And what happens to the leisure supply curve? Yeah, the other way around, right? The labor supply curve substitute substitution effect greater than income effect, what happens to the labor supply? We got to go around.",
+     "ko": "그리고 여가에는 어떤 일이 일어나나요? 네, 반대 방향이죠, 그렇죠? 노동 공급이 곡선이 대체되죠. 대체 효과가 소득 효과보다 크면, 어떻게 되나요? 노동 공급이? 우리가 돌아가야 해요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3989,
+     "page": 16,
+     "en": "So what happens to the labor supply? So this increases, right? Yeah.",
+     "ko": "그래서 노동 공급은 어떻게 되나요? 그래서 이게 늘어나죠, 그렇죠? 네.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3997,
+     "page": 16,
+     "en": "And yeah.",
+     "ko": "그리고 네.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4004,
+     "page": 16,
+     "en": "All right. So far any questions?",
+     "ko": "알겠습니다. 지금까지 질문 있나요?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4012,
+     "page": 16,
+     "en": "Okay, so let me show you how to draw this picture then. So, here the slope of the object and would be minus one ratio, right? So omega goes up, what happens? It gets steeper like this, so it rotates giving the point here. So this minus doesn't change it all. So that I going to be another in this case, you know, like one or two.",
+     "ko": "네, 그럼 어떻게 하는지 보여드릴게요. 이 그림을 그리는 방법을요. 그래서, 여기 기울기가 물체의 기울기와 마이너스가 될 거예요. 비율이, 맞죠? 그래서 오메가는 올라가고, 무슨 일이 일어나죠? 더 가파르게 되죠, 그래서 이렇게 회전하면서 여기 점이 생겨요. 그래서 이 마이너스 는 전혀 변하지 않아요. 그래서 제가 또 다른 이 경우에 아시다시피, 하나나 둘처럼요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4041,
+     "page": 16,
+     "en": "And let's say this point B right? So the change from point A to point B that's the overall effect here. So and A to point B is that's the overall effect. And then if you look at the point here, point A and B, and let's say this is L3 start and C3 start. So you see, here, in the picture, right?",
+     "ko": "그리고 이 점 B가 맞죠? 그래서 변화는 점 A에서 점 B로의 변화는 전체적으로 이런 효과가 있어요. 그래서 그리고 A에서 점 B로의 변화는 그게 전체적인 효과예요. 그리고 이제 이 점을 보면, 점 A와 B, 그리고 이게 L3라고 하고 시작하고 C3가 시작한다고 해보죠. 그래서 보시다시피, 여기서, 그림에서, 그렇죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4072,
+     "page": 16,
+     "en": "So we just increase the assumption increase, right? So which dominates the other?",
+     "ko": "그래서 우리는 그냥 증가시키고 가정을 증가시키죠, 맞죠? 그래서 어느 것이 다른 것을 지배하나요?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4083,
+     "page": 16,
+     "en": "Yeah, so substitution effect dominates, right? So then you have a picture with you, you have to pin down which effect dominates so to make things come consistent with your picture and your discussion. You have to have this result of the other cases. So you shouldn't have this either.",
+     "ko": "네, 그래서 대체 효과가 지배하죠, 맞죠? 그래서 그러면 그림이 있는데 당신은 핀을 꽂아야 해요. 어떤 효과가 지배하는지 그래서 일이 일어나게 하려면 일관성이 있어야 하고 당신의 논의와도 맞아야 해요. 이게 있어야 해요, 결과가. 다른 경우도요. 그래서 당신은 이것도 가지면 안 돼요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4107,
+     "page": 16,
+     "en": "to make things consistent with your picture. And finally, all right, that that okay, that's the overall effect and how can I compose this over into substitution and income. So this is how you do it. So you draw the imaginary model of substitution parallel to this budget constraint on initial difference curve. So which then going to be a imaginary budget line, that's the marginal substitution and that's let's say this point B.",
+     "ko": "그렇게 하려면 일관성이 있어야 해요, 당신의 그림과. 그리고 마지막으로, 알았어요, 그게 알았어요, 그게 전체적인 효과이고 어떻게 이걸 구성할 수 있을까요? 대체와 소득으로요. 그래서 이렇게 하는 거예요. 그래서 가상의 모델을 그리고 대체 효과를 평행하게 이 새로운 예산 제약선에 맞춰서 그리는 거예요. 초기 무차별 곡선에 맞춰서요. 그래서 그게 가상의 예산선이 되고, 그게 한계 대체율이 되고 그게 이 점이라고 해보죠.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4143,
+     "page": 16,
+     "en": "And this point B here, let's say and C start. Then the change is from point A",
+     "ko": "그리고 이 점 B는, 그러니까 그리고 C 시작이죠. 그러면 변화는 점 A에서 점 A로의",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4155,
+     "page": 16,
+     "en": "to point B. So that's the substitution effect and the change is between point point B, like B to point B, that's the income effect. So okay? So so that's how you decompose the income and substitution effect. And then again for your exam, you say if there is any comparative static analysis, question, you have to make sure that the your picture and your discussion is consistent. You cannot just increase this happens with this happens with the have to make consistent discussion with the and a solution.",
+     "ko": "로 점 B로. 그래서 그게 대체 효과이고 변화는 사이예요. 점 점 B, B에서 점 B로, 그게 소득 효과예요. 그래서 알겠죠? 그래서 그렇게 분해하는 거예요. 소득과 대체 효과를요. 그리고 다시 여러분의 시험을 위해, 만약 어떤 것이 있다면 비교 정학적 분석이라면, 질문은, 반드시 당신의 그림과 당신의 논의가 일관성이 있어야 해요. 당신은 그냥 증가시킬 수 없어요, 이게 이렇게 되고 저렇게 된다고 해야 해요. 일관성 있는 논의를 해야 해요. 그리고 해결책을요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4199,
+     "page": 16,
+     "en": "All right, I think I'm done. Okay, all right, so so that would be and yeah.",
+     "ko": "알겠습니다, 제 생각엔 다 된 것 같아요. 네, 알겠습니다, 그래서 그게 그리고 네.",
+     "src": "gemini",
+     "ai": true
+    }
+   ]
+  },
+  {
+   "page": 17,
+   "en": "And we see we see um okay. All right.",
+   "ko": "그리고 우리는 우리는 음 알겠습니다. 네.",
+   "pdf": "Core_note_ovb_panel_2026.pdf",
+   "pdfPage": 17,
+   "slideText": "",
+   "liveNotes": {
+    "notes": [],
+    "summary": "",
+    "exam": [],
+    "board": [],
+    "at": 1791357287483
+   },
+   "marks": [],
+   "segs": [
+    {
+     "t": 4209,
+     "page": 17,
+     "en": "And we see we see um okay. All right.",
+     "ko": "그리고 우리는 우리는 음 알겠습니다. 네.",
+     "src": "gemini",
+     "ai": true
+    }
+   ]
+  }
+ ],
+ "savedAt": "2026-10-07T07:28:18.218Z"
+}
