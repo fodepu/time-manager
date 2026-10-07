@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-06T23:09:18.441Z",
+  "generatedAt": "2026-10-07T02:32:13.106Z",
   "source": "canvas",
   "user": "김주함(2025####72)",
   "courseFiles": {
@@ -129,7 +129,14 @@
         "name": "7주차",
         "position": 7,
         "unlock": null,
-        "items": []
+        "items": [
+          {
+            "type": "Page",
+            "title": "7주차_읽기자료_리질리언스 사고",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/96922/modules/items/4804137"
+          }
+        ]
       },
       {
         "id": "1529849",
