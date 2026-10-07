@@ -1,4 +1,16 @@
 {
+ "savedAt": "2026-10-07T03:37:36.789Z",
+ "base": 0,
+ "docs": [
+  {
+   "name": "Core_note_ovb_panel_2026.pdf",
+   "base": 0,
+   "total": 6,
+   "from": 0
+  }
+ ],
+ "weekId": "1507911",
+ "langCode": "en-US",
  "id": "lec_2026-10-07_muxfmkzm",
  "course": "계량경제학",
  "title": "계량경제학 6주차 · Core_note_ovb_panel_2026",
@@ -9,7 +21,7 @@
  "mode": "slides",
  "pdf": "Core_note_ovb_panel_2026.pdf",
  "pages": 6,
- "duration": 7542,
+ "duration": 7545,
  "log": [
   {
    "t": 0,
@@ -1810,6 +1822,5 @@
     }
    ]
   }
- ],
- "savedAt": "2026-10-07T03:37:33.712Z"
+ ]
 }
