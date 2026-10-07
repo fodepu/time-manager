@@ -1,4 +1,9 @@
 {
+ "savedAt": "2026-10-06T08:43:22.194Z",
+ "base": 0,
+ "docs": [],
+ "weekId": "1534967",
+ "langCode": "ko-KR",
  "id": "lec_2026-10-06_muwbc7za",
  "course": "창업과 thinking design",
  "title": "창업과 thinking design 6주차",
@@ -9,7 +14,7 @@
  "mode": "online",
  "pdf": "",
  "pages": 24,
- "duration": 7155,
+ "duration": 7158,
  "log": [
   {
    "t": 0,
@@ -7110,6 +7115,5 @@
     }
    ]
   }
- ],
- "savedAt": "2026-10-06T08:43:19.060Z"
+ ]
 }
