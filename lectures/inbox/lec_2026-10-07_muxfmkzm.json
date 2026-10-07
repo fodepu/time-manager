@@ -1,0 +1,1815 @@
+{
+ "id": "lec_2026-10-07_muxfmkzm",
+ "course": "계량경제학",
+ "title": "계량경제학 6주차 · Core_note_ovb_panel_2026",
+ "date": "2026-10-07",
+ "week": 6,
+ "module": "1507911",
+ "lang": "en",
+ "mode": "slides",
+ "pdf": "Core_note_ovb_panel_2026.pdf",
+ "pages": 6,
+ "duration": 7542,
+ "log": [
+  {
+   "t": 0,
+   "page": 1
+  }
+ ],
+ "slides": [
+  {
+   "page": 1,
+   "en": "at every second of the show, they have. So they are obviously momentarily there. But I think it is also important for you to know we take that is representativity. Okay? all the population, because the majority of representativity is credible. for us to talk about anything about calculation. Okay? So there are pros and cons. I think it's a very interesting to do a survey but I know there are some studies available out there. They are okay, but the survey they they think about data collection from a survey there is a selection bias. because of the response. Okay? So it's not very representativity, but the data from statistics of Korea or national longitudinal study of youth, they are designed to represent the population. And also the data provide the weights. for each individual, so that uh apply the weights uh recover the population distribution. So that's the reason why I think that if you are serious, uh about being an analyst, you really have to know data set available for different countries. Okay? So Korea, has a lot of data, also from Bank of Korea also provide a lot of macro data. And if you really want to design some policy, you usually need to use the micro data, understanding how different individuals make different choices in their countries and financial condition. So that's something you can explore further. And I really encourage you to download and look at the data and read once during this semester. because that makes a huge difference. Um, so so now the now one workers, who is better at negotiating. They will not teach you how to do how where to find the data, how to conduct the project. They just say we need this, you know, analysis for this presentation. We need to design a better marketing strategy for this population. And then they you who have to do all the analysis. So you need to be familiar, you know, you should familiarize yourself to, you know, oh, all these stuff, I have been this data set etc, etc. So you really need to get exposed to different data set. And also so like our team project, I think the point is I want to push you guys to do a little bit of data analysis, however, um simply it is okay. I will just talk about it. I I post uh when I when to you guys, just the report the project and initial intention was I wanted to be a theorist. But I found it so fascinating to look at the data and discuss issues, so I changed and it was really hard for me. You know, that the initial project is there. Or instance, you have to specify the directory of the file. How to save the file in the directory how to copy and paste. the directory to the code file, so that the code can reach out to the right data. So those are nothing. But you may find it, you know, uh complicated initially. So you have to you have to pass that stage. So that you feel confident. And you know, they feel like a pressure and we can talk about it. And then the the the the panel is I show you. And then this is why you know, the mostly study is red. In later, I say, because there is a data which we discussed today. And then it follows more than like a pool that and then it's always heavy, because of that, they borrow individuals. Since 99, until now, so so the individual in the data set they ages. And at that point, that uh the permissions and choice is and now some of them are reaching 60. Okay? So we can observe that any higher like choices and you know, outcomes change over time. So that is really unique data set. The downside is that uh the sample size is not not so big. So it's hard to get the power. And if you want to do something very specific test, but the scale is very nice. All right. So I may have the opportunity to show how to run the code. using Python. Because Python is the program I use. You can do it by using your circle. Okay? Um But set up you have to go to the web. I already explained this to you. So I'm talking about this data. This is the new school is Taylor. So for uh nutrition, analysis. So there is a data code. So you just do the R for the next. But Python is not complicated, but the the setup is two file. Which allows you to write all the code from the beginning until the end. And then by one Let's think about how we can change uh change the line experience. Also it can be education related, it could be related, educational day that today helps them break, you know, and then how would that affect the line of the outcome. Uh it can also be the idea of marriage outcome, so 000 and then suddenly when they get you know, they become the married status. married status. change the 0 to one, the you know, they they got married in that particular year. And we can also detect whether they got divorced because we can collect that information. So we can reach information about what happened to an individual over time. So we can do that. So obviously, Can you data? So much better that of course that's the data. So, And observation of what and individual at uh seeing the time Let's say maybe maybe four or they said, crosssectional data. And then that we have many individuals but that information is not at one time period. So census, is a crosssectional data. We don't follow individuals over time. So the many data set that is crosssectional, and then it tells it's a good crosssectional leading to a survey. You know, it is much more complicated. You have to follow individual over 15 years. So that's a so that's usually data is a small sample size. And crosssectional data is a larger sample size. But the unique feature of panel data is that we can follow one individual and individuals are different. So it can come when we think of bias, if we look at that, we can crosssectional data. But name means exactly And the structure of there are and units or individuals at it can be on and over time period. If every unit has the same number of observation, we call that balanced panel. If the observation the length of observation period is different for different units, it's unbalanced panel. Which is complicated. It complicates. The analysis is further, but we focus on balanced panel. Right. And panel and this T is the same or period. Okay? And now, this is the model we consider. to analyze the X and Y of a population now, uh is that we don't understand how X changes Y and we want to think about is really this. And this is our choice of model. Suppose that there is starting relationship but if we have a phenomenon, that never suppose that you this is it. Okay? So the reason is that individual I Remember that, you know, in the old days, we may have limited variable bias. Like probability, first and then the which is not affected by the other survey. Or the state may have direct effect on the outcome. And then the test is almost impossible to control all the other factors. that affect Y. So it's very hard to hard not to have only the variable bias. But it is it is you know, probably experimental study, then by design, you know, there's no omitted variable bias. But if we use the cross sectional data, which is almost impossible not to have omitted variable bias. And then okay? So if we allow that, then in this case, the omitted variable bias that is specific to this individual is written as CI. Whatever that common component represents, we allow that in individual share some common characteristics of course different of course observation from the point. Okay? So if my see, you can consider this as a variable. or personality. trait. This is the version of it. So I was not have a T. Okay? CI is common for the same unit. So that represents individual fixed effect. Meanwhile, this um here fixed effect. which means that whatever characteristic the is is common to this individual. It does not vary over time. Okay? For example, is ability or intelligence. Whatever that is not observed in the data. And does not change over time. Okay? So now, the object is the CI the unobserved individual effect. Think about the that does not change over time. Okay? So when it comes to the panel, analysis, it can be like very specific response like a culture, maybe society, etc. Uh it's not can be but so this is our model. So we're going to model the relationship between X and Y by after allowing the individual effect. And then we have to write down that model that this having seen I there, this is our model or allows individual effects. Okay? Oh, this is an example and I suppose. So individual I and the characteristic and alpha. And then we assume that this unobservable, so we will never be able to observe CI directly. But let's say that this is our model. Okay, the true value, we're going to observe but then there must be some fixed effect that is the common individual. So like they have a period but this common characteristic does not change. Okay? So we don't observe this. If we can observe this and everything is easy, whereas we don't have the key problem is that we don't observe CI. Okay? So how to treat CI? So our first question about how to use panel data to estimate data. Uh we're related to how should we treat CI. And then how the presence of the C affect our estimation. estimators for us to recall very linear relationship and then move through different estimate estimation for instance or estimator and can be considered as a specific model or general general model. Okay? That means that if we have the individual data, we want to translate our original problem to like this. Which means that this is sample mean, sample mean, sample mean. Okay? We want to translate original problem such that now our variable has some mean, which means that we want to write down what we want to like we want to construct minus the what I got. So this is sample mean. So we will subtract sample mean at individual data. And treat this as a new variable. So we do the same thing for each contributor. And that is uh that is transform model. from the original model. Now let's explain why we have to do that. Now we know that we know if this is over there, then this is biased. And let's say we are is is to So this is biased. Okay? It's expected that we will have X like because we assume, right? Remember? I will I happy to repeat this thing. So we need to so this is true. So sometimes So in order to have that equal to the of the population, we need to make sure that X prime X inverse X prime equal to zero. So if And is not zero, then this whole thing is not zero. So unless it will be biased. That's the reason why if we have only individual data, And just to remind you, we in fact that the estimator from OLS will be different from the population parameter. And you know what? Because we have seen idea in the for sure, we have only variables, if we don't do something, that's the reason why we want to eliminate the impact of the state on our estimate. The way how we eliminate depends on the fact how much we how much show the C component and the estimate. Okay? So actually if we you know, this one uh We jump first to this specific point, the effect and the random effect and then go back to look at this equation. This one is there for us to fit three different approaches into one formula. But actually, it's okay because this is just the pool OLS. Pool OLS treat the same zero means it's just just OLS. So the pool OLS ignores the panel structure and time. You know, just you know, you just panel data. If you choose that, the pool OLS is the formula you can go with that. And then your job is to depend that this is supposed to pool OLS. And in fact, requires you to show the error structure as a following property. Okay? In this case, even though we have this estimate, but it's a danger. We assume that we still assume this assumption. And CI stays inside the VIT. Okay? So, if we assume that we need assume that that this is the and condition is zero, it's it's then OLS is a better. Okay, in order to have a panel data, if you need to three is I don't know, it's like really more but I don't know, but that that is a complicated method. What can you do? Well, I how we did to you on the something like that. And then there's a completely but then that should not change over time. So it's a hard to think about it. And it's completely independent of uh the with error. But we believe that the is okay. But I think it's a better to think about that if the is hard to depend, okay? If we believe that this is the effect, is correlated with error. Aha. So this is the key. So the if we education is supporting it, then it is panel data. Okay? Okay? CI is also the population and CI is not zero. Then the exciting information is violated. So this is a bias. Why this is violated? Because it's expected when we do Excel. Okay? So let's go. Okay. I don't know. It represents truly random component. Is it truly random? Okay, so this is by design. meeting the condition, such that it's truly random. And this is it. But if totally population is not zero, the condition is violated. because correlation means CI can be represented as a function of X. So it's not. Okay? So if there is a correlation, then it's not and who the OLS will be biased. So in this example, who the OLS is that the slope is 3.6 one. Okay, so two variables, so we I may like take data set in this note. But true relationship is two. But if we run the OLS, apply the just X inverse X Y, you will have data which And then we see the only way to we are vulnerable. See, the only way to vulnerable is to be vulnerable. And that is my X that people say that can never be added as control. Right? So we we we we we usually we vulnerable. So sometimes people think that they exist very they are vulnerable. to include in a specification. So the to add that variable into the specification. And that is simple. But if you think about the true effect, it's a known data. that can capture the eye. Then uh it's a fundamental problem. So this problem I I don't know. Okay, how to do that? So the way to do this is the bias. It is the immediate effect. So the the mediator characteristic is it. Okay? So we need to use alternative as a strategy to recover the data. Okay, if we lose the data, then the monitor structure and just applying X inverse Y, then we will have bias estimate. Okay? So then But fixed effect is okay? Fixed effect is that if we look at one individual, one one Let's say that we are looking at individual I. Basically, the problem is that on that If we observe those two, can we eliminate that? How to If we subtract that, Let's see, will we cancel that? Okay? So we don't do that. So another way is that if we have the observation, CI, that is Right? So we need you need that equation. Like like here, this is the one way of using the observation. I subtract the effect. Or that is we have the observation problem. or individual one, then we can calculate Y uh individual, right? Okay, so we do right now Y minus Y bar, you said the Y and this is basically the which is the same as CI because it's fixed. So if we do doing then just equation says that we can estimate by component. Is it okay? So if we rewrite the equation, then we have Y minus Y bar, new alpha is related to X minus X, which is something we can calculate. So this is minus See, that there. So we don't have to worry about the anymore. If we translate the original model, this So we eliminated this. Yeah, right. So what do you do? We treat these as a new alpha variable, treat that as new X variable. and apply the OLS. Okay? So let's say this is the Y tilde, Y tilde, X tilde, and then beta fixed effect. estimator. Yes, after translate, and X tilde, X tilde, and X tilde, Y tilde. So now the output estimate for the then and it will be exactly the same as population parameter beta. Because we eliminated still. So it's not very complicated. If we have if we allow individual have a fixed effect, and we have the number of observation for that individual, then we can see that uh we have to that fixed effect to have same effect for individual. So we don't care. So the only information uh so the fixed effect cannot explain the variation of the Y outcome over time. Okay? And X can change by over time. So whatever changes across time, uh is because see CI doesn't change over time. We have to use reading or observation. So reading very suppose this is a median variance. Okay? Okay, So this is reading observation. And then we need individual variables. With this one individual, and sometimes this individual work like 20 hours, in period two, 25 hours, and 15 hours, but time change, the study returns over time, but the motivation already is fixed over time. So what I change over time can explain the bias. This should be explain the bias. What we change of course over time for this particular individual. That is the idea. So really the question is what that exactly, because we complete and we need to see Okay. So we have the example, so this is that fixed effect, the after training, the which is the patient. Then we have one point And the thing is that this is different from who that expectation which is that should be the same as that. This is one observation, right? So it is not exactly the same as two, but in principle, in theory, if we have many many samples, and take the average, it has to be equal to that. So Okay? And then the post and post, is a we complete the eliminated, we need to effect. So we don't need to worry about, we need to worry about this problem at all. But if you think about what the points what is the points? But everything is conflicting. We are we're we're we're we need variations only. You want to recover that but we don't compare X and Y, which is of course because of leaders. We want to recover that. Do we only use a how X and Y change, we need to do. Because this model says that it doesn't make any sense to compare or of course individuals, individuals are two different. So the case study So the rule is you know, completely eliminate the you approach that we compare how changes, over time, or a particular So so that is recover only from individual variation over time. And this is the number of variation between used to estimate that is much smaller. Right? Previously the process of variation we used and to recover how changes in X translate into changes in Y. Right? So then in other words, this is the the individual effect, we choose fixed effect estimate and this is that we completely uh we completely give up. using cross individual variation. Because this they are different. in terms of a CI. So we just choose how Y changes on X without. That's basically that. estimate. So the policy is that um This model every difference between units so we just discard we don't use that variation. It can be important to some extent, but we ignore completely for the sake of addressing this omitted variable bias. Okay? Okay? Please guys. The unit effect never appears, okay? the time variant reverse becomes a common zero. This is a post, okay? So the policy is that we want to understand how education affects wage. But if you run a fixed effect model, and you have education is fixed at the age of 22, then education does not change over time. So we cannot estimate beta education from fixed effect. Okay? This is important. This is the practical for you. For you to remember that. Okay? Fixed effect model is good because you know, by design, we precisely address the presence of omitted variable effect. unobservable but the cost is that we cannot uh estimate it. Right? Or the time we invarium And then we we next why can the education or can be can characteristic whatever. If it is fixed, then maybe with that, why why X is always the same as X, so when we appear from specification, so we cannot recover the relationship between and characteristic. And why? Okay. Hi, and then we show up out. So we cannot estimate that. So only the variation I think beta, the result that we observe over time is almost nothing that or the meaning, but we can discuss. So, well, of course, sometimes fixed effect is hard to prove that estimators to explain the variation in why, if X changes to within individual, then the variation is too small, why variation having variation is true because if you remember, the standard error is inverse function of variation. If you have more variation in X, we can estimate beta more precisely. But the standard error of beta shrinks by the variation of X. Okay? And then if we have small variation within individual, then over time, then means that beta will be estimated imprecisely, which means that standard error of beta will be larger. Because X prime X is smaller. variance is smaller. And then measuring the error is unifying the meaning of the signal only the I uh yeah. So measuring the error of the any measurement error, the relative importance of this UI minus UI is becomes greater and then if there is a measurement error, then that will generate a lot of bias. And now let me move to fixed estimate. Okay. Then data uh there's a something some code or like How to ask the software to run fixed effect model. It's a very simple. I think. So this uh I'm using more advanced command. Uh high demand fixed effect fixed effect. or anything else. So just some very simple command. So you just need to specify I want fixed effect model. Then data will automatically generate every variable. at the beginning, and then Why did that happen? So random effect says that um they don't completely eliminate so they partially eliminate But here, it said, if the center is zero, if the data is zero, who would who who or Um, you know, and I don't know, they they're not the least food. or uh um this is valid only if the fixed effect is completely random. So with respect to X. Okay? Or so CI cannot be random characteristics. It can be the the road or color this mix. I don't know that we think they are but if the data completely matches the fixed and this then we don't need to worry about CI. Then we can just run it. They are referring to color or preference or season. I completely in the dark. So, we can't use a stereo for OS. But if we believe that I had had a characteristic that is that of productivity, or why men were in trouble, we cannot use OS. But if that is wrong, this is a fixed fact. We completely eliminate I mean, like if we choose that point one, that is fixed effect. So if that equals one, this becomes zero. And then whatever is characteristic also disappears from the specification. If that is zero, and one, that is the fixed effect. So the fixed effect requires certain assumptions as well. to be valid. If you want to claim that our random effect estimator is unbiased, it means that we claim that the individual fixed effect is conditional on all characteristics or all observation of this individual over T period is zero. This is a very strong assumption. So this is your preference for color. See? Food is um even if that is the case, we can assume that this model with R random effect. What is the difference between RE and full random effect model and full OLS? RE and Yeah. And that's correct. Only that. Okay. Then so see, that's the thing. If you don't assume this one, it's condition. So, we allow individuals have fixed effect. But error structure cannot be stochastic. Which means that but okay, we know. Okay. Okay. Omega is what? Um Omega is how you right? Okay. Okay. And you say that is quantitative. So Only one one. Then sigma one is variance of you one. Sigma one two is variance of individual one error term. And second period error term. Okay. Okay. So error structure is important. And if you allow CI, if there is CI, then this error structure of the even though we just looked at individual eyes, you know, but those are not those diagram is not zero because CI generate some correlation outcome. And then correlation is this error structure opposite to Okay, so this diagram is not zero. So this is different from pooled or pooled or is that it it's not also zero. Because this is from assumption. We allow that the error structure within individual is zero. But it's not zero. We can apply the to to have a efficient estimator for that. Oh, we stop. Questions? Okay. So the error structure is not like this but like this. Even though there is no correlation, of course, individual having CI or I think it's a very difficult to think about the question. He did Sigma T T Sigma T is the variance of new by Sigma I that is is the variance of new one. one. new one. And the one. I I think so this is the more like this. This is individual one. I don't Yeah, the key point individual uh the Uh this side, okay? And this is fine. And the ones of course the error term the variance is not one. And the Sigma one to one is we still look at the individual, so the correlation between the correlation and second observation. Okay? So we can have this. Matrix for individual one, matrix for individual two and so on. And this diagram is not zero. So we can we I don't know what this is better. So correlation is variance is we Uh one is is individual ones. I don't know I don't know is not zero. Because obviously I knows I do I do. Okay? So this is not zero. So our error structure in our model as always, we are now individual have a fixed effect, like a fixed effect that we can we cannot have a homoscedastic error structure. So we have to adjust our error. How to do that? So one way is to do the cross analysis, remember? The previous analysis, if we have a cluster, uh the group structure, that that error structure within that cluster has some correlation non zero correlation. We can adjust that standard error or the beta OLS. So by applying different estimator, the equation for cluster analysis. In the in the case beta is the same as the because exactly the same. Cluster analysis and heteroscedastic error term, we still use OLS. X prime X inverse X prime Y or we adjust standard error or error beta or X. Okay? And then the way we adjust is um I already discussed last time because like I said the structure X prime X inverse X And, um, yeah. And the way that he decided to perform the data. And so that was one way. This is alternative way. This is borrowing. This is more related to the BS. This is not robust at all approach. We are not applying to GLS. to estimate data. So this time, means that we are going to transform the equation by certain factor. Omega. or P. So that uh if we know that structure, we can decompose the error structure and then transform the equation and then apply the OLS. So there are this is GLS. If you remember, uh okay. And if you uh the Omega depends if we know we know Omega, then Omega is or Omega can be decomposed by P matrix and then we transform this as X and this is going to be our new equation and then apply OLS. So this transformation will give us the efficient estimator. That's the idea behind the GLS. And then we need to know the GLS. Okay? So we are gonna think about specific error structure and then if we estimate that error structure, then we can transform the equation by multiplying certain factor. And then apply the OLS. So then the here GLS the coefficient is not anymore X inverse X Y. So this X prime omega inverse X prime and This was the the the specification of GLS that I like. Okay? So we are doing exactly the same thing. We treat data error structure like a problem for GLS. We pretend that we know the error structure and then estimate that error structure based on certain model. And then multiply the factor and then transform the data and then you know, estimate this one. recover the data. Um, Okay. So GLS is not biased. Okay? After we transform, it's still okay. But we know about this uh hold So this is not efficient. Okay? So OLS is not efficient, but at uh the standard error of the estimate does not have the smallest variance. If we apply OLS, so in order to achieve efficiency, which means that we want to find out estimator that is the linear and and on top of that has the smallest variance we have to use GLS. Okay? GLS will give us the estimator with the smallest variance. Okay? I think it's enough for me to understand what it is. And so that's GLS. And how do we transform this? Very particular. And uh there's a very good thing random model, we choose a very particular data. So to achieve efficiency, and that is, then this is a very useful. We are idea is that this is our original error structure. for individual I, so is a thing which is sigma variance of sigma I square. And if they are independent, then the is the same for all the variables. is not zero. That is a problem, right? But if we transform, the equation is and we don't have a very nice uh error structure. like this. And we can apply OLS after that. And then you don't need to understand the detail, but this is a trick. So if we want to find a very specific weight, such that our error structure transformed uh the error structure was transformed, has exactly zero or diagonal component. So we choose a data to be able to have the zero diagonal and component of the new this is the transformed error. And you know, this is the you don't need to worry about that. And then we apply OLS. So again, so the process is that in order to achieve So that is just a function is that it's just a so you know, we choose this. Okay? And in order to calculate that, that you need to know sigma square. and sigma C square, which is the variance of individual fixed effect or characteristic and variance of completely random component. We know yet. We have to estimate sigma C and sigma U. to estimate sigma hat hat Once you know sigma hat, we use that that hat to transform the equation like this. We have the like this. And then estimate the the the So this entire thing has zero and zero or or or component. Like we use this particular data. And though CI is there, we make the data so that all is you can solve that and then that variation is just some noise curious. This is here. And the process is we still don't know sigma. Which way we have to use the data and has to be estimated. So sigma can be calculated once we know sigma U and sigma C. Now we know sigma C we have to estimate it. From the data. And the idea is that from the fixed effect residual, which you use only individual variation, we recover the level of the random You know, this statement completely eliminates the DEI. So the variation, so why the fixed statement is so completely non-conforming or so and So you I see my youth is from the fixed statement. Okay, this is the basic principle of the fixed statement. Then the use of the adjective and calculate this number, it will give you Sigma U estimator. Sigma U is not normal. So we have to estimate what kind of variation of use, we don't know. So fixed effect model of course. And fixed effect model the the variation is from within the variation. So this is the beginning of the variation. And then calculate the ratio, of course, the data E you get the number for each of the variation, right? And then apply this formula, we are losing the degree of freedom and minus um and plus in the case after that, we use um we we apply the pool and this is the total of the entire part, like CI is doing. And as we before, we use the residual residual is the variation we can have in our sample and divide that by right number of degree of freedom, we are losing and that is the pool or less. So I estimate for the variance of the C. is the the estimated value of from pool minus estimate the variance of U from the fixed effect model. So we can estimate C Sigma C and Sigma from the data. And then once we know Sigma C and Sigma U, we can estimate the number in the formula. Then we know which share, like which weight we have to use. And translate the original equation by using estimated that part. And then or less, that will give you the equation estimate. And but we completely did Okay. Okay, let's stop here and question. So, I will not ask you too much details. Well, this is the variation. Don't you worry about that. I know you understand what's going on. Okay? After going on here is that, we depend data is supposed to allow individual fixed effect. So CI is there. It's a sensor that will have that model. And then once we have that, which model is super and then which model we use uh the better estimator for linear position, right? So does it not satisfy fine, because as long as we have the CI whereas bias, okay? So we need to choose either fixed and random effect. Uh so fixed effect, whereas okay? Um So fixed effect is when we completely eliminate CI. So we need the error variable uh by subtracting something. And random effect, we take some weight and apply the weight when we uh subtract the mean. Something like that. So we need to observation. So that. And that weight is very important. It looks like that. You know, in order for us to have zero heteroscedasticity in the model, and this one, we need to estimate so we need to uh we can estimate this for fixed effect model and this from school or and to mind those two, put the fixed effect model, okay? And combine those two, we can estimate that and then apply that number in the model of that is random effect. So random effect so change is the question as well. Because now it's is different from or. So fixed effect also have a different coefficient, which is why because we the data, so we have a different coefficient. depending on which we are we are using. And the the one thing I want to mention is that sometimes just use cluster analysis with the OLS. Right? But So sometimes just use is Sometimes because that always uh we can actually use use with we or so and that uh we need to turn on analysis. And in this case, let the OLS it does not change. It will be cluster analysis. estimate better or better. So we have more accurate. standard error of this. So it's a slightly better than just to use OLS and so we are not cluster cluster the standard error. So this is not the case. We need to you don't need to at least you have to have a cluster on it. And then we have to and it's very hard to think about the situation where is valid. See, I you know, one of the things characteristic should not be related to X and Y. Okay, that's very difficult to think of. Uh think of. So the typical case is when you have data, we stick to fixed effect and random effect. But actually to be honest, fixed effect is more popular. Because why? So typically choice is fixed effect model. But I design you can completely address the variable of bias, right? So and another thing is that um Random effect random effect model requires variable to be exogenous assumption to be valid. This is very strong. Fixed effect, we don't need any assumption regarding the relationship between CI and X IT. Because we just eliminate no matter how they are related. Actually, we can subtract. And then we just use a So, we've been using this one chat to make a big model that but to um for for that or are that is unbiased is it? biasness. And we want to make our the unbiased. We need a very strong assumption. assumption. So we have a lot of tools and writing. Okay. This means that conditional the characteristic of individual over time, CI is that expected value is zero. Okay. Okay. This is very strong assumption. Okay. So it has to be something like Okay. Um um So the frequency is okay? But I don't know what that means. So this is this a strong? So rather than sticking to the random effect model, because we are not going to help to show show it's making the practical approach is we just use fixed model. We don't need the assumption. We don't the relationship between C and U. Even though we lose something, even though we cannot estimate the relationship with time and the characteristic, and our we cannot do that, the fixed effect model, but we don't need assumption or something. Okay? But sometimes we if we want to understand the relationship between time and the characteristic, like uh education and or now the rate then we have to use random effect model. Okay? Um I have it. So if I ask, what should I do? Okay? Um Uh we're not asking you to buy. I just said that. But more so I I shared the concept. Please website. Okay. I don't want you to understand the concept for now. Any questions? Let's see. Let's do it together. I will share it. So I think the last time I did this, I think it was a little bit too. If we have that, and to do the fixed effect model, uh we just need to think about what is the value of the cluster. We know as a individual level, like a panel data, or obviously you have to cluster by individual, but we have to include fixed effect by individual that that is the best, but if you don't have that, you know, you may include uh how to like a fixed effect. Also, so that the fixed effect, something like that. So when you have a panel data, depending on what you do, if you change, the which fixed effect you want to include, so in some some survey data, they collect panel data, so individual, who belongs to certain households. So we know how the wage rate of the husband over time, the wage rate of the wife over time is if if you're interested in the household decision, you include household fixed effect. 뭐 어 I think that is it. We don't know. Just this is a question. 오케이. 그럼 이제 뭐지? 그럼 마지막으로 뉴 Oh, we already show or about why the question was not changed, but we cluster. So that or uh the Yes. So those instead of the error, the coefficient per se. You don't need to change the other. Or if you change this, you reduce some transformation like fixed effect model. And random effect model, or S, and we have the deep of the back. Which is not only that, also the but the transformation in the data also achieve the same. Right? You have the estimator is always the same. Okay. I will I will stop. Okay. 이제 뭐지? 그럼 어 Yes, not observed. But it doesn't change over time. So we know which doesn't change over time. So it just our classification whatever the data that doesn't change, we'll like the Y on variable. That is considered as that. All right. So Well, let's ask and nothing to do with bias. Let's ask just go by the data and you know, the infrastructure different. Okay? I'll just do that. Okay. So the blue protein okay? And then the final, we don't our our probability",
+   "ko": "매 순간 쇼에서, 그들은 가지고 있어요. 그래서 그들은 분명히 잠시 동안 거기에 있어요. 하지만 제 생각엔 그게 또한 중요하다고 생각해요. 당신이 알아야 할 것은 우리가 그것을 받아들인다는 것입니다. 알겠죠? 모든 인구가, 왜냐하면 대다수의 대표성은 더 신뢰할 수 있습니다. 우리가 어떤 것에 대해 이야기하려면 계산에 대해 이야기해야 합니다. 알겠죠? 그래서 장단점이 있어요. 제 생각엔 아주 흥미로운 설문조사라고 생각하지만, 몇 가지 연구가 있다는 걸 알아요. 괜찮지만, 설문조사는 그들이 생각하기에 데이터 수집은 설문조사에서 오는 선택 편향이 있습니다. 응답 때문에요. 알겠죠? 그래서 그다지 대표성이 없지만, 하지만 통계청 데이터는 한국이나 국가 종단 연구 데이터는, 그들은 설계되어 있어요. 대표성을 띠도록 그리고 또한 데이터는 제공합니다. 가중치를. 각 개인에 대해, 그래서 어 적용합니다. 가중치를 어 복구합니다. 인구 분포를 복구합니다. 그래서 그게 제가 생각하는 이유입니다. 만약 진지하다면, 어, 분석가가 되는 것에 대해, 정말 알아야 할 것은 데이터가 어떻게 구성되어 있는지, 다양한 국가에 대해 알겠죠? 그래서 한국, 은 데이터가 많고, 또한 한국은행에서도 많은 거시 데이터를 제공합니다. 그리고 만약 여러분이 정말로 정책을 설계하고 싶다면, 보통 미시 데이터를 사용해야 합니다, 이해하는 것이죠, 다른 개인들이 어떻게 다른 선택을 하는지 그들의 국가에서 그리고 재정 상태에 대해. 그래서 그게 여러분이 할 수 있는 것입니다. 더 자세히. 그리고 저는 정말 여러분이 다운로드 하고 살펴보기를 권장합니다. 그리고 읽어보세요. 이번 학기 중에 한 번. 왜냐하면 그게 큰 차이를 만들기 때문이죠. 음, 그래서 이제 이제 이제 하나는 노동자들, 누가 더 잘하는지 협상에 대해. 그들은 어떻게 하는지 가르쳐주지 않을 거예요. 어디서 데이터를 찾는지, 어떻게 프로젝트를 수행하는지 말이죠. 그들은 그냥 우리가 이런 분석이 필요하다고 말해요. 이 발표를 위해서요. 우리는 더 나은 마케팅 전략을 설계해야 합니다, 이 인구를 위해서요. 그리고 그들은 여러분에게 누가 모든 일을 해야 하는지 말합니다. 그래서 여러분은 익숙해져야 합니다, 아시다시피, 여러분은 스스로 익숙해져야 합니다, 아시다시피, 오, 이 모든 것들, 저는 이 데이터셋을 등등등. 그래서 여러분은 정말로 익숙해져야 합니다, 다양한 데이터셋에. 그리고 또한 그래서 저희 팀 프로젝트처럼, 제 생각엔 요점은 제가 여러분을 밀어붙여서 조금이라도 데이터 분석을 하게 하려는 것이지만, 음, 간단히 말해서 괜찮아요. 저는 그냥 그것에 대해 이야기할게요. 제가 어, 제가 언제 여러분에게 말씀드릴 때, 그냥 보고서 프로젝트를 그리고 초기 의도를 저는 제가 이론가가 되고 싶었어요. 하지만 저는 그게 너무 매력적이라서 데이터를 보는 게 흥미로웠고 문제를 논의하는 게 좋아서 바꿨어요. 그리고 그게 저한테는 정말 힘들었어요. 아시다시피, 초기 프로젝트가 있잖아요. 아니면 예를 들어, 디렉토리를 지정해야 하잖아요. 파일의 경로를 어떻게 저장하는지 그 디렉토리에 어떻게 복사하는지 붙여넣는지. 그 디렉토리에 어떻게 그 코드 파일에, 그래서 그 코드가 도달할 수 있도록 올바른 데이터에. 그래서 그런 건 아무것도 아니에요. 하지만 여러분은 알게 될 거예요, 어, 초기에는 복잡하다고 느낄 수 있어요. 그래서 여러분은 해야 해요. 그 단계를 넘어야 해요. 그래야 여러분이 편안함을 느낄 수 있어요. 그리고 아시다시피, 그들은 압박감을 느끼는 것 같고 우리는 그것에 대해 이야기할 수 있어요. 그리고 그 그 패널은 제가 보여드릴게요. 그리고 이게 바로 아시다시피, 대부분의 연구는 빨간색이에요. 그리고 나중에, 제가 말하길, 왜냐하면 거기에 데이터가 있는데, 오늘 우리가 논의한 거예요. 그리고 나서 그 이상으로 마치 수영장처럼 그리고 항상 무거워요, 그래서 그들은 개별적으로 빌려요. 19 99년 이후로, 지금까지, 그래서 그래서 개인이 데이터 세트에서 그들은 나이가 들어요. 그리고 그 시점에서, 그 어, 권한이 그리고 선택이 이고 이제 그들 중 일부는 도달하고 있어요. 60세에. 알겠죠? 그래서 우리는 그보다 높은 어떤 것을 관찰할 수 있어요. 선택은 그리고 아시다시피, 결과가 시간이 지나면서 변해요. 그래서 그건 정말 독특해요. 데이터 세트예요. 단점은 그게 어, 표본 크기가 작지 않다는 거예요. 그렇게 크지 않아요. 그래서 얻기가 어려워요. 그 힘을 얻기가. 그리고 만약 여러분이 뭔가를 하고 싶다면 아주 구체적인 테스트를 하고 싶다면, 하지만 규모가 아주 좋아요. 알겠습니다. 그래서 저는 기회가 있을지도 몰라요, 어떻게 코드를 실행하는지 보여줄 기회가. 파이썬을 사용해서. 왜냐하면 파이썬은 제가 항상 사용하는 프로그램이니까요. 여러분은 여러분의 서클을 사용해서 할 수 있어요. 알겠죠? 음 하지만 설정은 여러분이 웹으로 가야 해요. 저는 이미 여러분에게 설명했어요. 설정은 그래서 제가 이 이야기를 하고 있어요. 이게 바로 새로운 학교 테일러예요. 그래서 어, 어, 영양에 대해서는, 분석입니다. 그래서 데이터 코드가 있어요. 그래서 그냥 이렇게 하면 돼요. R을 다음으로. 하지만 파이썬은 복잡하지 않아요, 하지만 설정은 두 개의 파일이에요. 어떤 것을 작성할 수 있게 해주는 모든 코드를 처음부터 끝까지 작성할 수 있게 해줘요. 그리고 나서 어, 하나씩 어떻게 바꿀 수 있을지, 어, 라인 경험을 바꿔볼지 생각해 봐요. 또한 교육 관련일 수도 있고, 교육 관련 날일 수도 있고, 오늘이 그들이 휴식을 취하는 데 도움이 되고, 그러면 그게 라인에 어떤 영향을 미칠지 생각해 봐요. 또한 이런 아이디어일 수도 있어요. 결혼 결과에 대한 것일 수도 있고, 000 그리고 갑자기 그들이 알다시피, 그들이 그들이 결혼한 상태가 되는 거죠. 결혼한 상태. 변화를 0에서 1로, 알다시피, 그들이 결혼을 했고 그 특정 해에 그리고 우리는 또한 그들이 이혼했는지 감지할 수 있습니다. 왜냐하면 우리는 그 정보를 수집할 수 있으니까요. 그래서 우리는 도달할 수 있습니다. 무엇에 대한 정보에 대해 시간이 지남에 따라 그래서 우리는 그렇게 할 수 있습니다. 그래서 분명히, 할 수 있나요? 데이터? 훨씬 더 나은 그건 물론 그게 데이터죠. 그래서, 그리고 관찰은 무엇에 대한 것이고 그리고 개인은 ~에 어 보는 것은 시간입니다. 가령 아마도 아마도 네 명 혹은 그들이 말하길, 횡단면 데이터라고 했어요. 그리고 나서 우리는 많은 개인을 가지고 있지만 그 정보는 한 시점에 있는 데이터가 아닙니다. 그래서 인구 조사는 횡단면 데이터입니다. 우리는 개인을 시간의 흐름에 따라 추적하지 않습니다. 그래서 많은 데이터 세트가 횡단면 이고, 그리고 그것은 좋은 것이라고 말합니다. 횡단면 데이터는 ~로 이어집니다. 설문조사로. 아시다시피, 훨씬 더 복잡합니다. 당신은 개인을 시간의 흐름에 따라 15년 동안 추적해야 합니다. 그래서 그건 보통 데이터가 작은 표본 크기입니다. 그리고 횡단면 데이터는 더 큰 표본 크기입니다. 하지만 독특한 특징은 패널 데이터의 특징은 우리가 한 개인을 추적할 수 있고 개인은 다르다는 것입니다. 그래서 그것은 올 수 있습니다. 우리가 생각할 때 편향에 대해, 만약 우리가 그것을 본다면, 횡단면 데이터입니다. 하지만 이름 은 정확히 그리고 구조는 거기에 그리고 단위는 또는 개인은 ~에 그것은 ~에 있을 수 있고 그리고 시간 기간에 걸쳐 있습니다. 만약 모든 단위가 같은 수의 관찰을 가지고 있다면, 우리는 그것을 균형 잡힌 패널이라고 부릅니다. 만약 관찰이 다르다면 그 길이는 관찰의 길이는 기간은 각기 다릅니다. 그것은 불균형 패널입니다. 이는 복잡합니다. 복잡해집니다. 분석이 더 나아가지만, 우리는 균형 잡힌 패널에 집중합니다. 맞아요. 그리고 패널은 그리고 이 T는 같은 것입니다. 또는 기간입니다. 알겠죠? 그리고 이제, 이것은 모델입니다. 우리가 고려하는. 분석하기 위해 X와 Y의 인구 집단을 이제, 어, 우리가 이해하지 못하는 것은 X가 어떻게 Y를 변화시키고 우리가 생각하고 싶은 것은 정말 이것입니다. 그리고 이것이 우리의 모델 선택입니다. 만약 어떤 시작점이 있다고 가정해 봅시다. 하지만 만약 우리가 어떤 현상을 가지고 있다면, 결코 가정하지 마세요. 당신이 이것을 하는 것입니다. 알겠죠? 그래서 그 이유는 개인이 나 기억하세요 그, 아시겠지만, 옛날에는 우리가 제한된 변수를 가지고 있었을 수도 있어요. 예를 들어 확률처럼요. 첫 번째는 그리고 그 다음에는 그게 영향을 받지 않는 다른 것들에 의해. 또는 그 상태가 결과에 직접적인 영향을 미칠 수도 있어요. 그리고 그 테스트는 거의 불가능합니다. 모든 다른 변수들을 통제하는 것은. Y에 영향을 미치는. 그래서 그게 매우 어렵습니다. 오직 변수 편향만 가지지 않기가. 하지만 그건 아시다시피, 아마도 실험적인 연구라면, 설계상, 아시다시피, 누락된 변수 편향은 없습니다. 하지만 우리가 횡단면 데이터를 사용하면, 거의 불가능합니다. 누락된 변수 편향이 없을 수 없죠. 그리고 알겠죠? 그래서 우리가 그걸 허용한다면, 그러면 이 경우에, 누락된 변수 편향은 이 특정 개인에게 해당하는 것은 다음과 같이 표기됩니다. 그게 무엇이든 공통적인 요소는 무엇을 나타내든, 우리는 그것을 허용합니다. 개인은 어떤 공통적인 특성을 공유합니다. 물론 다른 물론 다른 관찰에서 온 것입니다. 알겠죠? 그래서 만약 제 보세요, 당신은 이것을 변수로 간주할 수 있습니다. 또는 성격 특성. 이것이 그 버전입니다. 그래서 저는 T를 가지고 있지 않았습니다. 알겠죠? CI는 공통적입니다. 그 같은 단위에 대해. 그래서 그것은 개인의 고정된 효과를 나타냅니다. 한편, 이것은 음 여기서는 고정된 효과입니다. 즉, 무엇이든 특성이 그 은 이 개인에게 공통적입니다. 그것은 시간이 지나도 변하지 않습니다. 알겠죠? 예를 들어, 능력은 또는 지능입니다. 데이터에서 관찰되지 않는 모든 것. 그리고 시간이 지나도 변하지 않는 것. 알겠죠? 그래서 이제, 대상은 CI입니다. 관찰되지 않는 개인의 효과입니다. 생각해보세요, 변하지 않는 것을요. 알겠죠? 그래서 패널 데이터에 대해 말하자면, 분석은 다음과 같을 수 있습니다. 매우 구체적인 반응처럼요. 문화나, 어쩌면 사회, 등등. 어, 그건 할 수 없어요. 그건 하지만 그래서 이건 우리 모델입니다. 그래서 우리는 모델링할 것입니다. X와 Y의 관계를 그 후에 허용함으로써 개인의 효과를. 그리고 나서 그 모델을 적어야 해요, 이게 있다는 것을요. 제가 거기서 본 것처럼, 이게 우리 모델이거나 허용하는 개인 효과입니다. 알겠죠? 오, 이건 예시이고 제 생각엔 그래요. 그래서 개인 효과는 그리고 특성은 알파입니다. 그리고 나서 우리는 이게 관찰되지 않는 것이기 때문에 우리는 결코 CI를 직접 관찰할 수 없을 것입니다. 하지만 이게 우리의 모델이라고 가정해 봅시다. 알겠죠? 진짜 값은, 우리는 관찰할 것입니다. 하지만 거기에는 어떤 고정된 효과가 있고 그게 바로 공통적인 개인입니다. 그러니까 그들은 기간이 있고 하지만 이 공통적인 특성은 변하지 않습니다. 알겠죠? 그래서 우리는 이걸 관찰하지 않습니다. 만약 우리가 이걸 관찰할 수 있고 모든 것이 쉽다면, 반면에 우리는 가지고 있지 않아요, 핵심 문제는 우리가 CI를 관찰하지 않는다는 것입니다. 알겠죠? 그래서 CI를 어떻게 처리할까요? 그래서 우리의 첫 번째 질문은 어떻게 패널을 사용할지에 대한 것입니다. 데이터를 추정하기 위해. 어, 우리는 어떻게 CI를 처리해야 할지에 대한 것입니다. 그리고 어떻게 C의 존재가 우리의 추정에 영향을 미치는지. 저희가 기억해내기 위한 아주 선형적인 관계를 그리고 그 다음에는 이동해서 다른 추정치들을 살펴보겠습니다. 예를 들어, 또는 추정치 그리고 고려될 수 있습니다. 특정적인 모델로 또는 일반적인 모델로요. 알겠죠? 즉, 만약 우리가 그 개별적인 데이터가 있다면, 우리는 우리의 원래 문제를 이렇게 바꾸고 싶어요. 즉, 이것은 표본 평균이고 표본 평균, 표본 평균입니다. 알겠죠? 우리는 번역하고 싶어요, 원래 문제를 이렇게 바꿔서 이제 우리 변수가 어떤 값을 가지도록 하고 싶어요, 즉, 우리 는 번역하고 싶어요, 원래 문제를 이렇게 쓰고 싶어요. 우리는 구성하고 싶어요, 빼기 제가 얻은 것을. 그래서 이것은 표본 평균입니다. 그래서 우리는 뺄 것입니다. 표본 평균을 그리고 개별 데이터에서. 그리고 이것을 새로운 변수로 취급합니다. 그래서 우리는 각 항목에 대해 똑같이 합니다. 그리고 그것이 어 그것이 변환 모델입니다. 원래 모델에서 변환한 것입니다. 이제 왜 이렇게 해야 하는지 설명해 드릴게요. 이제 우리는 알아요, 만약 이것이 저기에 있다면, 그러면 이것은 편향된 것입니다. 그리고 우리가 이렇다고 가정해 봅시다. 즉, 그래서 이것은 편향된 것입니다. 알겠죠? 이것은 예상대로 우리가 가질 것입니다. X 같은 것을 왜냐하면 우리가 가정하니까, 그렇죠? 기억나시죠? 저는 제가 기꺼이 반복할게요. 이 일을. 그래서 우리는 그래서 이것은 입니다. 사실입니다. 그래서 때때로 그래서 우리가 그것을 갖기 위해 그것과 같게 하려면 모집단의 우리는 확실히 해야 합니다. X 프라임이 X 역행렬 X 프라임이 0이 되도록. 그래서 만약 그리고 0이 아니라면, 그러면 이것은 전체가 0이 아닙니다. 그래서 편향되지 않을 것입니다. 이것이 바로 우리가 만약 개별 데이터만 가지고 있다면, 그리고 다시 한번 말씀드리지만, 우리는 사실 추정치가 OLS에서 나온 것은 다를 것입니다. 모집단 매개변수와는. 그리고 그거 아세요? 왜냐하면 우리는 아이디어를 봤으니까요. 예를 들어, 우리는 개별 데이터만 가지고 있다면, 우리가 아무것도 하지 않으면, 그것이 우리가 제거하고 싶은 이유입니다. 상태가 우리 추정에 미치는 영향. 우리가 제거하는 방법은 어떤 사실에 달려 있습니다. 우리가 얼마나 얼마나 C 구성 요소가 그리고 그게 추정에 미치는 영향입니다. 알겠죠? 그래서 사실 우리가 알다시피, 이거는 어 우리는 먼저 이 특정 지점으로 넘어가서, 그 효과와 무작위 효과, 그리고 다시 이 부분을 살펴보겠습니다. 이 방정식은 이겁니다. 거기에 우리가 맞추기 위한 것입니다. 세 가지 다른 접근 방식을 하나로 합치기 위한 것입니다. 하지만 사실, 괜찮아요. 왜냐하면 이건 그냥 풀 OLS거든요. 풀 OLS는 취급합니다. 동일하게 0은 그냥 그냥 OLS라는 뜻입니다. 그래서 풀 OLS는 패널 구조를 무시하고 그리고 시간도 무시합니다. 그냥 알다시피, 그냥 패널 데이터예요. 만약 그걸 선택하면, 풀 OLS는 여러분이 사용할 수 있는 공식입니다. 그리고 여러분이 할 일은 그것에 의존하는 것입니다. 이것이 원래는 풀 OLS라는 뜻입니다. 그리고 사실, 요구하는 것은 여러분이 보여줘야 하는 것은 오차 구조입니다. 마치 다음과 같은 속성처럼요. 알겠죠? 이 경우에 비록 우리가 이 추정치를 가지고 있지만, 하지만 이것은 위험합니다. 우리는 가정합니다. 우리는 여전히 이 가정을 가정합니다. 그리고 CI는 그대로 유지됩니다. 그 VIT 안에. 알겠죠? 그래서, 만약 우리가 가정한다면 우리는 필요합니다. 가정해야 합니다. 그것을 이것이 원래는 그 그리고 조건부 기대값이 0이면, 그것은 그것은 그러면 OLS는 더 낫습니다. 알겠죠, 패널 데이터를 가지려면, 만약 여러분이 세 가지를 해야 한다면 저는 모르겠어요, 정말 더 하지만 저는 모르겠어요, 하지만 그건 복잡한 방법입니다. 무엇을 할 수 있나요? 글쎄요, 어떻게 우리가 당신에게 한 것처럼 그런 식이죠. 그리고 완전히 하지만 그건 시간이 지나도 변하지 않아야 합니다. 그래서 생각하기 어렵습니다. 그리고 완전히 독립적입니다. 어 그 오차와 함께. 하지만 우리는 믿습니다. 그 괜찮아요. 하지만 제 생각엔 그게 더 나은 것 같아요. 만약 그게 의존하기 어렵다면, 알겠죠? 만약 우리가 믿는다면 이것이 효과라면, 그것은 상관관계가 있습니다. 오차와. 아하. 그래서 이것이 핵심입니다. 그래서 만약 우리가 교육이 지원하고 있다면 그러면 그것은 입니다. 패널 데이터입니다. 알겠죠? 알겠죠? CI는 또한 그 인구는 그리고 CI는 0이 아닙니다. 그러면 흥미로운 정보는 위반됩니다. 그래서 이것은 편향입니다. 왜 이것이 위반될까요? 왜냐하면 예상되기 때문입니다. 우리가 엑셀을 할 때. 알겠죠? 그래서 이제 가봅시다. 알겠습니다. 모르겠어요. 그것은 진정으로 무작위적인 요소를 나타냅니다. 정말 무작위인가요? 알겠습니다, 그래서 이것은 의도된 것입니다. 조건을 충족하여, 진정으로 무작위적입니다. 그리고 이것이 전부입니다. 하지만 만약 완전히 인구가 0이 아니라면, 조건이 위반됩니다. 상관관계는 CI가 X의 함수로 표현될 수 있다는 것을 의미합니다. 그래서 아니에요. 알겠죠? 그래서 만약 상관관계가 있다면, 그것은 아니고 OLS가 편향될 것입니다. 그래서 이 예에서는 전부 OLS가 기울기가 3.6이고 하나입니다. 알겠습니다, 그래서 두 변수, 그래서 우리는 저는 아마도 데이터 세트를 이 노트에서 가져올 수 있습니다. 하지만 진정한 관계는 2입니다. 하지만 우리가 OLS를 실행하면, 적용하면 그냥 X 역행렬 X Y, 그러면 데이터가 그리고 나서 우리는 유일한 방법이 우리가 취약하다는 것임을 알게 됩니다. 보세요, 취약해지는 유일한 방법은 취약해지는 것입니다. 그리고 그것이 제 X입니다. 사람들이 절대 그럴 수 없다고 하는 통제입니다. 그렇죠? 그래서 우리는 우리는 보통 우리는 취약합니다. 그래서 가끔 사람들은 그들이 존재한다고 생각하지만 그들은 취약합니다. 특정 사양에 포함하기 위해서요. 그래서 추가하는 것은 그 변수를 사양에 포함하는 것입니다. 그리고 그것은 간단합니다. 하지만 진정한 효과를 생각해보면, 그것은 알려진 데이터입니다. 눈길을 사로잡을 수 있는. 그러면 어, 그것은 근본적인 문제입니다. 그래서 이 문제는 제가 잘 모르겠어요. 좋아요, 어떻게 해야 할까요? 그래서 이렇게 하는 방법은 편향입니다. 그것은 입니다. 즉각적인 효과입니다. 그래서 그 매개 변수는 특성입니다. 그것은 입니다. 알겠죠? 그래서 우리는 해야 합니다. 대안을 사용해야 합니다. 대안으로 전략을 회복하기 위해 데이터를. 좋아요, 만약 우리가 데이터를 잃으면, 그러면 모니터는 구조와 그냥 적용하는 것은 X 역 Y, 그러면 우리는 편향 추정치를 얻게 됩니다. 알겠죠? 그래서 그러면 하지만 고정된 효과는 괜찮아요? 고정 효과는 만약 우리가 하나의 개인을 보면, 하나의 하나 예를 들어 우리가 개인을 보고 있다고 해봅시다. 기본적으로 문제는 이것입니다. 만약 우리가 그들을 관찰하면 두 가지를 제거할 수 있을까요? 어떻게 해야 할까요? 만약 우리가 빼면 그건, 자, 그럼 우리가 그걸 취소할까요? 알겠죠? 그래서 우리는 그렇게 하지 않아요. 그래서 다른 방법은 우리가 가지고 있다면 그 관찰을, CI, 그것은 그렇죠? 그래서 우리는 당신이 그것이 필요해요. 그 방정식이요. 마치 여기처럼, 이것은 입니다. 한 가지 방법은 사용하는 것입니다. 그 관찰을. 저는 그 효과를 뺍니다. 아니면 그건 우리가 관찰을 가지고 있다면 문제입니다. 또는 개인 하나, 그러면 우리는 Y를 계산할 수 있습니다. 개인, 맞죠? 좋아요, 그래서 우리는 지금 Y를 빼기 Y 바, 당신이 Y 그리고 이것은 기본적으로 어떤 것이 같은 CI와 같기 때문에 고정되어 있습니다. 그래서 우리가 하고 있다면 그러면 그냥 방정식에 따르면 우리는 추정할 수 있습니다. 무엇으로 구성 요소별로. 맞나요? 그래서 우리가 방정식을 다시 쓰면, 그러면 우리는 Y 빼기 Y 바, 새로운 알파 는 관련이 있습니다. X 빼기 X, 이것은 우리가 추정할 수 있는 것입니다. 그래서 이것은 빼기 보세요, 저기요. 그래서 우리는 편향에 대해 걱정할 필요가 없습니다. 만약 우리가 전체를 번역한다면, 이것은 그래서 우리는 이것을 제거했습니다. 네, 맞아요. 그래서 어떻게 하죠? 우리는 이것들을 새로운 알파 변수로 취급하고, 그것을 새로운 X 변수로 취급하고 적용합니다. OLS를. 알겠죠? 그럼 이게 Y라고 해보죠, 그러면 Y 틸다, X 틸다, 그리고 베타 고정 효과. 추정량. 네, 번역한 후에, 그리고 X 틸다, X 틸다, 그리고 X 틸다, Y 틸다. 이제 출력은 추정치 에 대한 것입니다. 그러면 그리고 그것은 정확히 와 같을 것입니다. 모집단 모수와 베타. 왜냐하면 우리는 제거했기 때문입니다. 그래서 그렇게 복잡하지 않습니다. 만약 우리가 허용한다면 개인이 고정된 효과를 갖도록, 그리고 우리가 관측치의 수가 그에 대해 충분하다면 그 개인에 대해, 그러면 우리는 볼 수 있습니다. 어, 우리는 그것을 고정 효과로 가져야 합니다. 같은 효과를 개인에게. 그래서 우리는 신경 쓰지 않습니다. 그래서 유일한 정보는 어, 그래서 고정 효과는 할 수 없습니다. 변동을 설명할 수 없습니다. 의 Y 결과의 시간에 따른. 알겠죠? 그리고 X는 변할 수 있습니다. 시간에 따라. 그래서 시간에 따라 변하는 것은 어, 정보입니다. 왜냐하면 보세요, CI는 시간에 따라 변하지 않습니다. 우리는 읽기를 사용해야 하거나 관측해야 합니다. 그래서 읽기는 매우 이것이 중앙값이라고 가정해 봅시다. 알겠죠? 알겠죠, 그래서 이것은 읽기입니다. 관측입니다. 그리고 우리는 개별 변수가 필요합니다. 이 한 명의 개인으로, 그리고 때로는 이것이 이 개인이 마치 20시간처럼, 그리고 2기에는, 25 시간, 그리고 15 시간, 하지만 시간 변경, 연구가 다시 돌아오지만, 하지만 동기는 이미 시간이 지나도 고정되어 있습니다. 그래서 제가 시간이 지나면서 바꾸는 것이 편향을 설명할 수 있습니다. 이것은 편향을 설명해야 합니다. 우리가 물론 시간이 지나면서 이 특정 개인에 대해 그렇습니다. 그것이 아이디어입니다. 그래서 정말 질문은 무엇인가입니다. 그것이 정확히 무엇인지, 왜냐하면 우리는 완료하고 볼 필요가 있기 때문입니다. 네. 그래서 예시가 있는데, 이것은 그 사람이 고정되어 있다는 것입니다. 고정 효과, 훈련 후, 이것은 환자입니다. 그리고 우리는 한 가지 요점이 있습니다. 그리고 중요한 점은 이것이 누구와 다른 기대인지 입니다. 그것은 같아야 한다는 것입니다. 이것은 하나의 관찰이죠, 맞죠? 그래서 이것은 정확히 2와 같지 않지만, 원칙적으로는 이론적으로는 우리가 많은 많은 샘플을 가지고 있다면, 그리고 평균을 내면 그것은 같아야 합니다. 그래서 알겠죠? 그리고 사후 그리고 사후, 이것은 우리가 완료하고 제거해야 하는 것입니다. 그래서 우리는 걱정할 필요가 없습니다, 우리는 이것에 대해 걱정해야 합니다. 하지만 만약 여러분이 무엇에 대해 생각한다면, 그 점들은 무엇인가요? 하지만 모든 것이 상충돼요. 우리는 우리는 우리는 우리는 우리는 변형만 필요해요. 당신은 그걸 회복하고 싶지만 우리는 비교하지 않아요. X와 Y를, 물론 리더들 때문이죠. 우리는 그걸 회복하고 싶어요. 우리는 어떻게 하는지 만 사용하나요? X와 Y가 어떻게 변하는지, 우리는 해야 해요. 왜냐하면 이 모델은 말이 안 된다고 해요. 비교하거나 물론 개인들은, 개인들은 두 가지가 달라요. 그래서 그 사례 연구는 그래서 규칙은 아시다시피, 완전히 제거하는 거예요. 당신은 그 접근 방식을 비교하고 어떻게 결과가 변하는지, 시간이 지나면서 또는 어떤 특정 그래서 그래서 그게 오직 에서만 회복하는 거예요. 개인 변형이 시간이 지나면서. 그리고 이것이 수의 변형입니다. 사용된 것들 사이에서 추정하는 것이 훨씬 작습니다. 그렇죠? 이전에는 변형 과정이 우리가 사용한 것과 어떻게 회복하는지 변화하는지 X에서 어떻게 변하는지 Y로 변하는지. 그렇죠? 그래서 다시 말해, 이것은 그 개인의 효과입니다, 우리는 고정 효과를 선택하고 이것은 이것이 우리가 완전히 어 우리는 완전히 포기합니다. 사용하는 것을 교차 개인 변형을 사용합니다. 왜냐하면 이것은 그들이 다르기 때문입니다. CI 측면에서. 그래서 우리는 그냥 선택합니다. 어떻게 Y가 변하는지 X에 대해 없이. 그게 기본적으로 그거예요. 추정치. 그래서 정책은 이것입니다. 음 이것은 모든 차이를 단위 간에 그래서 우리는 그냥 버립니다. 우리는 그 변형을 사용하지 않아요. 그것은 어떤 사람들에게는 중요할 수 있지만, 우리는 완전히 무시합니다. 무엇을 위해서냐면 해결하기 위해서입니다. 이 누락된 변수 편향을. 알겠죠? 알겠죠? 제발요. 단위 효과는 절대 나타나지 않아요, 알겠죠? 시간 변동 역전은 공통적인 0이 됩니다. 이것은 게시물입니다, 알겠죠? 그래서 정책은 우리가 교육이 어떻게 되는지 영향을 미치는지 임금에. 하지만 만약 고정 효과 모델을 실행하고, 교육이 고정되어 있다면, 22세에 그러면 교육은 변하지 않아요. 그래서 우리는 추정할 수 없어요. 베타 교육을 고정 효과에서. 알겠죠? 이것은 중요합니다. 이것이 실질적인 것입니다. 당신에게. 기억해야 할 것은. 알겠죠? 고정 효과 모델은 좋지만 아시다시피, 설계상, 우리는 정확하게 해결합니다. 누락된 변수 효과의 존재를. 관찰할 수 없는 하지만 비용은 우리가 할 수 없다는 거예요. 추정할 수 없어요. 그렇죠? 아니면 그 시간 우리가 불변량 그리고 나서 우리는 다음으로 왜 교육이 또는 될 수 있는지 또는 특성 등등. 만약 고정되어 있다면, 그러면 아마도 그걸로, 왜 왜 X는 항상 X와 같고, 그래서 우리가 나타날 때 사양에서, 그래서 우리는 복구할 수 없어요, 관계를 불변량과 특성 사이의. 그리고 왜? 네. 안녕하세요, 그리고 나서 우리가 나타나요. 그래서 우리는 추정할 수 없어요. 그래서 변동성만 제 생각에는 베타, 그리고 우리가 얻은 결과는 시간이 지남에 따라 거의 아무것도 아니라는 것, 또는 의미, 하지만 우리는 논의할 수 있어요. 그래서, 음, 물론 가끔은 고정 효과가 어렵기도 한데, 그러면 그게 추정치라는 것을 증명하기 어려워요. 왜냐하면, 만약 X가 변하면 그 안에서 개인별로, 그러면 변동성이 너무 작아서, 왜 변동성이 있는 것은 사실이에요, 왜냐하면 기억하시겠지만, 표준 오차는 변동성의 역함수예요. 만약 변동성이 더 많으면 X에서 우리는 추정할 수 있어요. 베타를 더 정확하게. 하지만 베타의 표준 오차는 줄어들어요. 그 변동성에 의해, 즉 X의 변동성에 의해. 알겠죠? 그리고 만약 변동성이 작으면 개인 내에서, 그러면 시간이 지나면서, 그러면 베타는 더 정확하게 추정되지 않을 것이고, 이는 표준 오차가 베타의 표준 오차가 될 것이라는 것을 의미합니다. 왜냐하면 X 프라임 X가 더 작기 때문입니다. 분산이 더 작습니다. 그리고 측정하는 것은 오차를 측정하는 것은 의미를 통합하는 것이지만, 오직 신호만 저는 어 네. 그래서 오차를 측정하는 것은 어떤 측정의 오차든, 상대적인 중요성은 이 UI의 마이너스 UI 는 됩니다. 더 커집니다. 그리고 나서 만약 측정 오차가 있다면, 그러면 그럴 것입니다. 많은 편향이 발생합니다. 이제 고정 추정치로 넘어가겠습니다. 네. 그러면 데이터는 어 어떤 것이 있는데 어떤 코드가 또는 뭐 같은 어떻게 하면 물어볼 수 있을까요, 소프트웨어에 고정 효과를 실행하는 방법은요. 아주 간단해요. 제 생각에는. 그래서 어 저는 더 고급 명령어를 사용하고 있어요. 어, 고성능 고정 효과 고정 효과. 아니면 다른 거요. 그래서 그냥 아주 간단한 명령어예요. 그래서 그냥 지정하면 돼요, 고정 효과 모델을 원한다고. 그러면 데이터가 자동으로 생성될 거예요. 모든 변수가. 그때 처음에, 그리고 나서 왜 그런 일이 일어났을까요? 그래서 무작위 효과는 이렇게 말해요. 음, 그들은 완전히 제거하지 않아요. 그래서 그들은 부분적으로 제거해요. 하지만 여기서는, 그것이 말하길, 만약 중심이 0이라면, 데이터가 0이라면, 누가 할까요? 누가 누가 또는 음, 있잖아요, 그리고 저는 모르겠어요, 그들은 가장 음식이 아니에요. 아니면 어 음 이건 유효해요 오직 고정 효과가 완전히 무작위일 때만요. 그래서 X에 대해서요. 알겠죠? 아니면 CI는 무작위일 수 없어요. 특성이. 그건 그럴 수 있어요. 그 길이나 색깔이 이 조합이에요. 저는 우리가 그들이 그렇다고 생각하지만 데이터가 완전히 고정과 일치하면 그리고 이 그러면 우리는 걱정할 필요가 없어요. 그러면 그냥 실행하면 돼요. 그들은 언급하고 있어요, 색깔을 또는 선호도를 완전히 깜깜했어요. 그래서, 우리는 사용할 수 없어요. 스테레오를 OS용으로. 하지만 우리가 믿는다면 제가 어떤 특성을 가지고 있었다면, 그건 생산성이라는 것이거나, 왜 남자들이 곤경에 처했는지, 우리는 OS를 사용할 수 없어요. 하지만 그게 틀렸다면, 이건 확정된 사실이에요. 우리는 완전히 제거합니다. 제 말은, 우리가 그 점을 선택한다면 그건 고정된 효과입니다. 그래서 만약 그게 1과 같다면, 이건 0이 됩니다. 그리고 무엇이든 특성이라면 그것도 사라집니다. 사양에서. 만약 그게 0이라면, 그리고 1이라면, 그건 고정된 효과입니다. 그래서 고정된 효과는 필요합니다. 특정 가정이 필요합니다. 유효하려면 말이죠. 만약 여러분이 우리의 랜덤 효과 추정치가 편향되지 않았다고 주장하고 싶다면, 그건 우리가 주장하는 것이고, 개인의 고정 효과가 조건부로 모든 특성에 대해 또는 모든 관측치에 대해 이 개인이 시간이 지남에 따라 T 기간 동안 0이라는 것입니다. 이것은 매우 강력한 가정입니다. 그래서 이것은 여러분의 색상 선호도입니다. 아시겠죠? 음식 은 음 설령 그게 그렇다 하더라도, 우리는 가정할 수 있습니다. 그 모델이 와 함께 R 랜덤 효과. 차이점은 무엇인가요? RE와 전체 랜덤 효과 모델의 차이점은 무엇인가요? RE와 네. 그리고 그게 맞아요. 그것뿐이에요. 알겠습니다. 그럼 그래서 보세요, 그게 문제예요. 만약 여러분이 가정하지 않는다면 이것을, 그건 조건입니다. 그래서, 우리는 개인이 고정 효과를 갖도록 합니다. 하지만 오차 구조는 그럴 수 없습니다. 확률적일 수 없죠. 즉, 그 말은 하지만 알겠습니다, 우리는 알아요. 알겠습니다. 알겠습니다. 오메가는 무엇인가요? 음 오메가는 어떻게 당신이 맞죠? 알겠습니다. 알겠습니다. 그리고 당신은 말하죠 그게 라고요. 정량적이라고. 그래서 그것뿐이에요. 하나만 하나만요. 그럼 시그마 1은 분산입니다. 당신의 하나. 시그마 1 2 는 분산입니다. 당신의 개인의 하나 오차항입니다. 그리고 두 번째 기간 오차항입니다. 알겠습니다. 알겠습니다. 그래서 오차 구조는 중요합니다. 그리고 만약 CI를 허용한다면, 만약 어떤 CI가 있다면, 그러면 이 오차 구조는 다이어그램의 비록 우리가 방금 살펴봤지만 개별적인 눈을, 아시잖아요, 하지만 그것들은 그 다이어그램이 0이 아니기 때문에 CI가 생성됩니다. 어떤 상관관계 결과가. 그리고 상관관계는 이것입니다. 이 오차 구조는 반대입니다. 알겠습니다, 그래서 이 다이어그램은 0이 아닙니다. 그래서 이것은 풀링이나 풀링과는 다릅니다. 즉, 그것은 그것이 또한 0이 아니라는 것입니다. 왜냐하면 이것은 가정에서 나온 것이기 때문입니다. 우리는 그것을 허용합니다. 오차 구조가 개별적인 것은 0이라고. 하지만 그것은 0이 아닙니다. 우리는 적용할 수 있습니다. 그 에 대해 가지고 있는 효율적인 추정치를 위해. 아, 멈췄네요. 질문 있으신가요? 네. 그래서 오차 구조는 이런 게 아니에요. 하지만 이런 거예요. 비록 상관관계가 없더라도, 물론, 개별적인 CI를 가지거나 제 생각에는 매우 어려운 것 같아요. 질문에 대해. 그는 했어요. 시그마 T 시그마 T는 분산입니다. 새로운 에 의한 시그마 I 그건 이것은 분산입니다. 새로운 것의. 것의. 새로운 것의. 그리고 그 것의. 저는 그렇게 생각해요. 이것이 더 그런 것 같아요. 이것은 개별적인 것입니다. 저는 모르겠어요. 네, 핵심은 개별적인 어 그 어 이쪽은, 알겠죠? 그리고 이것은 괜찮아요. 그리고 그 것들은 물론 오차항은 분산이 1이 아닙니다. 그리고 그 시그마 1에서 1은 우리가 여전히 개별적인 것을 보니까, 그래서 상관관계는 그 상관관계는 그리고 두 번째 관측입니다. 알겠죠? 그래서 우리는 이것을 가질 수 있습니다. 행렬 개별적인 것, 행렬 개별적인 두 번째 등등. 그리고 이 다이어그램은 0이 아닙니다. 그래서 우리는 할 수 있습니다. 우리는 모르겠어요. 이게 뭔지 더 나은지. 그래서 상관관계는 입니다. 분산은 입니다. 우리는 어 하나 는 입니다. 개별적인 것들입니다. 저는 모르겠어요. 저는 모르겠어요. 는 0이 아닙니다. 왜냐하면 분명히 저는 알고 있어요. 제가 그래요. 제가 그래요. 알겠죠? 그래서 이건 0이 아닙니다. 그래서 우리 오류 구조가 우리 모델에서 항상 그렇듯이, 우리는 이제 개별적인 고정된 효과를 가지고 있어요, 우리가 할 수 있는 고정된 효과를 가질 수 없는 동분산성 오류 구조입니다. 그래서 우리는 조정해야 합니다. 우리의 오류를요. 어떻게 하냐면 요. 그래서 한 가지 방법은 하는 것입니다. 하지만 교차 분석을 하는 것입니다, 기억하시죠? 이전 분석에서 만약 우리가 클러스터가 있다면, 어 그룹 구조가 있다면, 그 오류 구조가 그 클러스터 내에 있다면 어떤 상관관계가 0이 아닌 것입니다. 우리는 조정할 수 있습니다. 그 표준 오차나 베타 OLS를요. 그래서 이렇게 다른 추정량을 적용하여, 방정식이 클러스터에 대해 어떻게 되는지. 그 경우에 는 베타 는 OLS와 동일합니다. 왜냐하면 정확히 같기 때문입니다. 클러스터 분석과 이분산성 오류는 우리가 여전히 베타 OLS를 사용합니다. X 프라임 X 역행렬 X 프라임 Y 또는 표준 오차를 조정하거나 베타 또는 X를 조정합니다. 알겠죠? 그리고 우리가 조정하는 방법은 음 제가 이미 논의했어요. 지난번에 왜냐하면 제가 말했듯이 그리고, 음, 네. 그리고 그가 결정한 방식은 데이터를 처리하는 것이었어요. 그래서 그게 한 가지 방법이었고, 이건 대안적인 방법이에요. 이건 차용하는 거예요. 이건 더 관련이 있어요. BS랑. 이건 견고하지 않아요. 전혀 그런 접근이 아니에요. 우리는 적용하지 않아요, GLS에. 추정하기 위해 데이터를. 그래서 이번에는, 의미하는 바는 우리가 변환할 것이라는 것입니다. 방정식을 특정 요인으로. 오메가. 또는 P. 그래서 어, 만약 우리가 그 구조를 안다면, 우리는 오차 구조를 분해하고 그런 다음 변환할 수 있습니다. 그리고 나서 OLS를 적용합니다. 그래서 이것은 GLS입니다. 기억하시겠지만, 어 네. 그리고 만약 당신이 어 그 오메가 는 만약 우리가 안다면 우리가 안다면 오메가를, 그러면 오메가는 또는 오메가는 분해될 수 있습니다. P 행렬로 그리고 그런 다음 우리는 이것을 변환하고 이것을 X 그리고 이것은 우리의 새로운 방정식이 될 것이고, 그런 다음 OLS를 적용합니다. 그래서 이 변환은 우리가 우리에게 효율적인 추정치를 제공할 것입니다. 그것이 GLS의 기본 아이디어입니다. 그리고 나서 우리는 GLS를 알아야 합니다. 알겠죠? 그래서 우리는 특정 오차 구조에 대해 생각해 볼 것이고, 그런 다음 만약 우리가 그 오차 구조를 추정한다면, 그러면 우리는 변환할 수 있습니다. 방정식을 특정 요인을 곱해서. 그리고 나서 OLS를 적용합니다. 그래서 그러면 여기서 GLS는 계수가 더 이상 X 역행렬 X Y가 아닙니다. 그래서 이것은 X 프라임 오메가 역행렬 X 프라임 그리고 이것은 바로 그 그 사양 GLS의 제가 좋아하는 것입니다. 알겠죠? 그래서 우리는 정확히 똑같은 것을 하고 있습니다. 우리는 데이터를 오차 구조를 마치 GLS의 문제처럼 다룹니다. 우리는 오차 구조를 알고 있는 척하고, 그런 다음 그 오차 구조를 추정합니다. 특정 모델을 기반으로. 그리고 나서 그 요인을 곱하고, 그런 다음 데이터를 변환합니다. 그리고 나서, 아시다시피, 이것을 추정합니다. 데이터를 복구합니다. 음, 네. 그래서 GLS는 편향되지 않았습니다. 알겠죠? 우리가 변환한 후에는 여전히 괜찮습니다. 하지만 우리는 이것에 대해 알고 있습니다. 어 잠깐만요. 그래서 이것은 아니에요. 효율적이지 않아요. 알겠죠? 그래서 OLS는 효율적이지 않지만, 하지만 어 표준 오차는 추정치에 대한 것이 아니에요. 가장 작은 분산이 아니에요. 만약 우리가 OLS를 적용하면, 그래서 효율성을 달성하기 위해, 즉 우리는 무엇을 찾고 싶은지 알고 싶습니다. 그것은 선형이고 게다가 가장 작은 분산을 가진 추정치를 사용해야 합니다. 알겠죠? GLS는 우리에게 추정치를 제공할 것입니다. 가장 작은 분산으로요. 알겠죠? 제 생각엔 제가 이해하기에 충분한 것 같아요. 그리고 그래서 그게 GLS입니다. 그리고 어떻게 변환하냐면 이걸요? 아주 특별해요. 그리고 어 아주 좋은 게 있어요. 무작위 모델에서, 우리는 아주 특정한 데이터를 선택합니다. 그래서 효율성을 달성하기 위해, 그리고 그건, 그러면 이건 매우 유용합니다. 아이디어는 이것이 우리의 원래의 오차 구조라는 것입니다. 개별 I에 대해, 그래서 이것은 어떤 것이며 그것은 시그마 분산입니다. 시그마 I의 제곱입니다. 그리고 만약 그것들이 독립적이라면, 그러면 그것은 동일합니다. 모든 변수에 대해. 그것은 0이 아닙니다. 그것은 문제죠, 그렇죠? 하지만 우리가 변환하면, 방정식은 그리고 우리는 아주 좋지 않은 어 오차 구조를 가지고 있습니다. 이렇게요. 그리고 우리는 OLS를 적용할 수 있습니다. 그리고 나면 이해할 필요가 없지만, 이건 요령입니다. 그래서 만약 우리가 아주 특정한 가중치를 찾고 싶다면, 우리의 오차 구조가 변환된 어 오차 구조가 변환되었고, 정확히 0이거나 대각선이 아닌 성분들이 있습니다. 그래서 우리는 데이터를 선택하여 0을 가질 수 있는 대각선 및 새로운 성분을 갖도록 합니다. 이것이 변환된 오차입니다. 그리고 아시다시피, 이것이 걱정할 필요가 없는 것입니다. 그리고 그런 다음 OLS를 적용합니다. 그래서 다시, 그래서 그 과정은 이렇습니다. 즉, 효율성을 달성하기 위해 그래서 그건 그냥 함수일 뿐이고, 그러니까, 우리는 이걸 선택합니다. 알겠죠? 그리고 그걸 계산하기 위해, 그건 알아야 합니다. 시그마 제곱을요. 그리고 시그마 C 제곱, 즉 분산입니다. 개별 I의 고정된 효과 또는 특성이고 분산입니다. 완전히 무작위 성분의. 우리는 아직 모릅니다. 우리는 추정해야 합니다. 시그마 C 그리고 시그마 U를. 추정하기 위해 시그마 헷을 헷을 일단 알면 시그마 헷을, 우리는 그걸 사용해서 변환합니다. 방정식을 이렇게 요. 우리는 가지고 있습니다. 이렇게요. 그리고 나서 추정합니다. 그 그 그래서 이 전체 것이 가지고 있습니다. 제로 그리고 제로 또는 또는 또는 성분. 마치 우리가 사용하는 이 특정 데이터처럼요. 그리고 비록 CI가 있지만, 우리는 만들어요 데이터를 그래서 모든 것이 해결할 수 있고, 그런 다음 그게 변동이 그냥 어떤 노이즈가 됩니다. 궁금하네요. 이게 여기 있어요. 그리고 과정은 여전히 시그마를 모른다는 것입니다. 어떤 방식으로 데이터를 사용하고 추정해야 한다는 것입니다. 그래서 시그마는 계산될 수 있습니다. 일단 시그마를 알고 시그마 C를 알면요. 이제 우리는 시그마 C를 알고 있으니 우리는 그것을 추정해야 합니다. 데이터에서요. 그리고 아이디어는 이것으로부터 고정된 효과 잔차에서, 당신이 오직 개별 변동을 사용하는 것, 우리는 복구합니다. 분산을 수준에서 있잖아요, 이 말은 완전히 배제합니다. DEI를요. 그래서 그 변형은, 그래서 왜 고정된 진술이 당신의 완전히 비순응적인가요? 아니면 그래서 그리고 그래서 당신은 제 젊음이 그 고정된 진술에서 왔다는 거죠. 알겠어요, 이게 이 고정된 진술의 기본 원칙입니다. 그럼 형용사의 사용과 이 숫자를 계산하면, 당신에게 시그마 U를 줄 것입니다. 시그마 U는 정규 분포가 아닙니다. 그래서 우리는 추정해야 합니다. 어떤 종류의 변동이 사용되는지, 우리는 모릅니다. 그래서 고정 효과 모델이죠, 물론. 그리고 고정 효과 모델은 그 그 변동은 그 안에서 변동에서 나옵니다. 그래서 이것이 변동의 시작입니다. 그리고 그런 다음 비율을 계산하면, 물론 데이터는 E 당신은 각 변동에 대한 숫자를 얻게 되죠, 그렇죠? 그리고 이 공식을 적용하면, 우리는 자유도를 잃게 되고 빼게 됩니다. 음 그리고 플러스인 경우에 그 후에 우리는 사용합니다. 음 우리는 적용합니다. 풀 회귀를 그리고 이것이 전체의 전체 부분입니다, 마치 CI 가 하는 것처럼요. 그리고 우리가 전에 했던 것처럼, 우리는 잔차를 사용합니다. 잔차 제곱은 변동입니다. 우리가 우리 샘플에서 가질 수 있는 것이고, 그것을 적절한 수의 자유도로 나누면, 우리는 잃게 되고 그것이 풀이거나 그 이하입니다. 그래서 저는 추정합니다. 분산에 대해 C. 는 그 그 추정된 변동의 값은 풀 회귀에서 빼기 추정된 분산은 U의 분산에서 고정 효과 모델을 뺀 것입니다. 그래서 우리는 C를 추정할 수 있습니다. 시그마 C와 시그마는 데이터에서 나옵니다. 그리고 일단 시그마 C와 시그마 U를 알면, 우리는 그 숫자를 추정할 수 있습니다. 공식에서. 그러면 우리는 어떤 몫인지 알 수 있습니다, 예를 들어 어떤 가중치를 사용해야 하는지. 그리고 원래 방정식을 번역합니다. 사용함으로써 추정된 그 부분을. 그리고 대략, 그것이 당신에게 그 방정식을 추정하게 합니다. 그리고 하지만 우리는 완전히 했습니다. 알겠습니다. 자, 여기서 멈추고 질문할게요. 그래서, 저는 너무 자세한 건 묻지 않을게요. 음, 이게 변동입니다. 걱정하지 마세요. 저는 당신이 왜 그런지 이해하고 있다는 걸 알아요. 알겠죠? 계속 진행한 후에 이렇습니다, 우리는 데이터가 개인을 허용해야 한다는 것을 알 수 있습니다. 개인 효과를요. 그래서 CI가 거기에 있습니다. 그것은 그것을 가질 센서입니다. 그리고 일단 우리가 그것을 가지면, 어떤 모델이 슈퍼이고 어떤 모델이 우리가 사용하는지 어, 그 더 나은 추정치를 선형 위치에 대해, 맞죠? 그래서 이것이 만족하지 않나요? 괜찮아요, 왜냐하면 우리가 신뢰 구간을 가지고 있는 반면에 편향은, 알겠죠? 그래서 우리는 고정된 효과와 무작위 효과 중 하나를 선택해야 해요. 어, 그래서 고정 효과는, 반면에 알겠죠? 음 그래서 고정 효과는 우리가 완전히 제거할 때입니다. 그래서 우리는 필요합니다. 그 오차 변수가 어, 빼는 것으로 무언가를. 그리고 무작위 효과는, 우리가 어떤 가중치를 두고 그 가중치를 적용할 때 우리가 어, 빼는 것입니다. 그런 식이죠. 그래서 우리는 관측치를 필요로 합니다. 그래서 그리고 그 가중치는 매우 중요합니다. 이렇게 보입니다. 아시다시피, 우리가 가지려면 제로 이분산성이 모델에 있어야 하고, 그리고 이것은, 우리가 추정해야 하니까, 그래서 우리는 어, 우리는 이것을 추정할 수 있습니다. 고정 효과 모델에 대해, 그리고 이것은 에서 학교에서 또는 그리고 염두에 두어야 할 것은, 넣는 것입니다. 고정 효과를 넣는 것입니다, 알겠죠? 그리고 그 두 가지를 결합하면, 우리는 그것을 추정할 수 있고, 그런 다음 그 숫자를 모델에 적용합니다. 그것은 무작위 효과입니다. 그래서 무작위 효과는 그래서 변화는 그 질문이기도 합니다. 왜냐하면 이제는 다릅니다. 에서 또는. 그래서 고정 효과 모델도 다른 계수를 가지고, 그래서 우리가 그 데이터를, 그래서 우리는 다른 계수를 가지고 있습니다. 어떤 모델을 사용하느냐에 따라 다릅니다. 그리고 그 한 가지 제가 언급하고 싶은 것은 때때로 그냥 군집 분석을 사용해서 OLS를 합니다. 맞죠? 하지만 그래서 때때로 그냥 사용하세요 는 때때로 왜냐하면 그게 항상 우리는 실제로 사용할 수 있어요, OLS를 사용해서 우리는 또는 그래서 그리고 그 어, 우리는 켜야 합니다. 분석을. 그리고 이 경우, OLS가 되게 하세요. 그것은 변하지 않습니다. 그것은 군집 분석이 될 것입니다. 추정하고 더 나은 또는 더 나은. 그래서 우리는 더 정확합니다. 표준 오차가 이것의. 그래서 그것은 약간 더 나은 것입니다, 그냥 OLS를 사용하는 것보다 그리고 그래서 우리는 군집이 아닙니다. 군집 표준 오차를 그래서 이것은 그렇지 않습니다. 우리는 당신이 필요합니다. 당신은 적어도 당신은 해야 합니다. 클러스터가 있어야 합니다. 그리고 나서 우리는 OLS를 해야 하고 그리고 생각하기 매우 어려운 상황입니다. 그런 상황은 유효합니다. 보세요, 저는 아시다시피, 한 가지는 특징적인 것은 그렇지 않아야 합니다. X와 Y와 관련이 없어야 합니다. 알겠습니다, 그것은 생각하기 매우 어렵습니다. 어 생각해보세요. 그래서 전형적인 경우는 당신이 데이터를 가지고 있을 때, 우리는 고정된 효과를 고수합니다. 그리고 무작위 효과를. 하지만 사실 솔직히 말해서, 고정 효과가 더 인기가 있습니다. 왜냐하면 왜냐하면요? 그래서 일반적으로 선택은 는 고정 효과 모델입니다. 하지만 제가 설계한 것은 당신이 완전히 해결할 수 있습니다. 편향의 변수를, 그렇죠? 그래서 그리고 또 다른 점은 음 무작위 효과는 무작위 효과 모델은 변수가 고정되어야 한다는 가정이 유효해야 합니다. 이것은 매우 강력합니다. 고정 효과는, 우리는 어떤 가정도 필요하지 않습니다. 관계에 대한 CI와 X 사이의 관계에 대해서요. 왜냐하면 우리는 그냥 그들이 어떻게 관련되어 있든 상관없이 제거하니까요. 사실, 우리는 뺄 수 있습니다. 그리고 그런 다음 우리는 그래서 저희는 이 채팅 을 사용해서 큰 모델을 만들고 있는데, 하지만 음 뭐 예를 들어 그런 거요. 아니면 아니면 그게 편향되지 않은 건가요? 편향성. 그리고 저희는 저희의 편향되지 않게 하고 싶어요. 아주 강력한 가정이 필요해요. 가정. 그래서 저희는 많은 도구를 가지고 글을 써요. 네. 이것은 조건부 가 특성이 개인의 시간이 지남에 따라, CI가 예상되는 값이 0이라는 것입니다. 네. 네. 이것은 매우 강력한 가정입니다. 네. 그래서 어떤 것과 같아야 해요. 네. 음 음 그래서 빈도가 입니다. 괜찮죠? 하지만 그게 무슨 뜻인지 모르겠어요. 그래서 이게 강한가요? 그래서 고수하는 것보다 랜덤 효과 모델을 고수하는 것보다, 왜냐하면 우리는 보여주려고 하는 게 아니니까요. 그게 만들어지고 있다는 것을요. 실용적인 접근은 우리가 그냥 고정 효과 모델을 사용하는 것입니다. 우리는 가정이 필요하지 않아요. 우리는 C와 U 사이의 관계가 필요하지 않아요. 비록 우리가 뭔가를 잃더라도, 비록 우리가 관계를 추정할 수 없더라도 시간과 특성과의 관계를 그리고 우리의 그것을 할 수 없더라도, 고정 효과 모델은, 하지만 우리는 필요하지 않아요. 가정이나 그런 것들이요. 괜찮죠? 하지만 때로는 우리가 만약 이해하고 싶다면 관계를 시간과 특성과의 관계를 알고 싶다면, 어 교육 그리고 아니면 이제 비율 그러면 우리는 랜덤 효과 모델을 사용해야 해요. 괜찮죠? 음 저는 가지고 있어요. 그래서 제가 물어보면, 뭘 해야 할까요? 괜찮죠? 음 어, 저희는 구매를 요청하는 게 아니에요. 방금 그렇게 말했어요. 하지만 더 그래서 저는 개념을 공유했어요. 제발 웹사이트를. 네. 저는 여러분이 개념을 이해하기를 바라지 않아요. 질문 있으신가요? 어디 보자. 같이 해봐요. 제가 공유할게요. 그래서 지난번에 했을 때는 좀 그랬던 것 같아요. 만약 우리가 그걸 가지고 있다면, 그리고 고정 효과 모델을 하려면, 어 그냥 생각해 볼 필요가 있어요. 무엇이 그 값인지 말이죠. 우리는 알고 있어요. 개인으로서 말이죠. 예를 들어 패널 데이터처럼, 아니면 분명히 여러분은 클러스터 단위로 해야 해요, 하지만 우리는 고정 효과를 개인별로 포함해야 해요. 그게 가장 좋지만, 만약 그게 없다면, 아시다시피, 여러분은 어, 어떻게 고정 효과를 넣을지 생각해야 해요. 또한, 고정 효과가, 그런 식이죠. 그래서 패널 데이터가 있을 때, 어떤 것을 하느냐에 따라 다르지만, 만약 여러분이 바꾼다면, 그 어떤 고정 효과를 사용하고 싶은지에 따라, 그래서 예를 들어 어떤 경우에는 어떤 설문 조사 데이터에서는, 그들은 패널 데이터를 수집하니까, 개인별로, 누가 속해 있는지 특정 가구에. 그래서 우리는 어떻게 임금률이 남편의 임금률이 시간이 지남에 따라 어떻게 변하는지, 아내의 임금률이 시간이 지남에 따라 어떻게 변하는지, 만약 여러분이 가구의 결정에 관심이 있다면, 가구 고정 효과를 포함합니다. 제 생각엔 그게 다인 것 같아요. 우리는 그렇지 않아요. 모르겠어요. 그냥 이건 질문이에요. 아, 우리 이미 보여줬어요. 아니면 뭐에 대해 왜 질문이 아니었는지 에 대해, 하지만 우리는 클러스터링해요. 그래서 아니면 어 그 네. 그래서 그런 것들은 대신에 오차 대신, 계수가 그 자체로요. 여러분은 다른 것을 바꿀 필요가 없어요. 아니면 만약 여러분이 이것을 바꾸면, 변환을 좀 줄일 수 있어요, 예를 들어 고정 효과 모델처럼요. 그리고 확률 효과 모델, 아니면 S, 그리고 우리는 깊은 뒷면이 있어요. 그건 단지 그것뿐만 아니라, 또한 하지만 데이터의 변환은 또한 동일한 결과를 얻습니다. 그렇죠? 여러분은 추정치가 항상 동일합니다. 네. 저는 그만할게요. 네. 네, 관찰되지 않았어요. 하지만 시간이 지나도 변하지 않아요. 그래서 우리는 어떤 것이 시간이 지나도 변하지 않는지 알아요. 그래서 우리의 분류는 데이터가 무엇이든 변하지 않는 것은 우리가 Y를 변수로 생각할 거예요. 그것은 로 간주됩니다. 알겠습니다. 그래서 음, 그럼 물어보고 아무 상관없는 편향에 대해 물어보자. 그냥 데이터대로 하고 그리고 알다시피, 그 인프라가 다르다. 알겠죠? 그냥 그렇게 할게요. 네. 그래서 파란색 단백질은 괜찮죠? 그리고 마지막으로, 우리는 우리의 우리의 확률은",
+   "pdf": "Core_note_ovb_panel_2026.pdf",
+   "pdfPage": 1,
+   "slideText": "Worked Example: NLSY79 Introductory Econometrics Omitted Variables and Panel Regressions A worked example with the NLSY79 wage data Introductory Econometrics Road map The wage data we use in the lab is a panel : 36 , 908 observations on 5 , 198 men, each seen about seven times. That single fact drives everything in this note. Ability — the classic omitted variable in a wage regression — does not change over time, so it is exactly the unit effect c i of Core Notes 3. We first measure the omitted variable bias directly, by putting the AFQT score in and taking it out. We then ask what the panel estimators of Core Notes 3 would do instead, and find that the obvious answer does not work here — for a reason worth understanding. Contents 1 The data and the question 1 2 The omitted variable: putting AFQT in and taking it out 2 2.1 The ladder . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2.2 Checking it against the formula . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3 2.3 The same thing with degree dummies . . . . . . . . . . . . . . . . . . . . . . . . . . 3 3 The same data is a panel 4 4 What fixed effects can and cannot do here 4 5 The menu of panel regressions 5 6 Why cluster(Id) and not the default 5 7 Quick self-check 6 1 The data and the question The estimation sample is NLSY79 men, after the selection filters in the do-file. Each row is a person-year : one man in one survey year. 1",
+   "liveNotes": {
+    "notes": [
+     "▶ **GLS**(Generalized Least Squares) 아이디어: 오차 구조를 가정·추정 → 식을 변환하면 오차 구조가 좋아짐(Ω 문제 해소) → 변환된 식에 **OLS** 적용",
+     "▶ GLS를 반드시 알아야 한다고 강조",
+     "▶ 패널에서는 개인마다 서로 다른 **개인효과**(individual effect)를 허용한다고 설명",
+     "▶ **클러스터**(cluster) 구조가 있는 경우의 오차 구조(Ω)를 이전 분석과 연결해 설명",
+     "▶ 편의(bias) 논의와 별개로 데이터만 보고 질문을 던져 보자고 함"
+    ],
+    "summary": "GLS와 패널 오차구조, 데이터 중심 접근",
+    "exam": [],
+    "board": [
+     "X′Ω⁻¹X",
+     "X′Ω⁻¹y"
+    ],
+    "at": 1791341030611
+   },
+   "marks": [
+    {
+     "line": 23,
+     "type": "",
+     "note": "do-file 경로 설정 주의"
+    },
+    {
+     "line": 6,
+     "type": "",
+     "note": "표본작아 검정력 부족"
+    },
+    {
+     "line": 9,
+     "type": "",
+     "note": "경력·결혼상태=시간가변변수"
+    }
+   ],
+   "lines": {
+    "w": 612,
+    "h": 792,
+    "lines": [
+     {
+      "i": 0,
+      "text": "Worked Example: NLSY79 Introductory Econometrics",
+      "x": 72,
+      "y": 34.111899999999956,
+      "w": 468.0003899999999,
+      "h": 12.545465
+     },
+     {
+      "i": 1,
+      "text": "Omitted Variables and Panel Regressions",
+      "x": 130.617,
+      "y": 68.73259999999998,
+      "w": 350.7689396200002,
+      "h": 19.79771
+     },
+     {
+      "i": 2,
+      "text": "A worked example with the NLSY79 wage data",
+      "x": 183.98899999999998,
+      "y": 93.51879999999993,
+      "w": 244.01758720000015,
+      "h": 13.748479999999999
+     },
+     {
+      "i": 3,
+      "text": "Introductory Econometrics",
+      "x": 247.46899999999997,
+      "y": 117.03139999999992,
+      "w": 117.05855748000002,
+      "h": 11.45699
+     },
+     {
+      "i": 4,
+      "text": "Road map",
+      "x": 83.403,
+      "y": 156.8609,
+      "w": 56.450228859999996,
+      "h": 12.545465
+     },
+     {
+      "i": 5,
+      "text": "The wage data we use in the lab is a panel : 36 , 908 observations on 5 , 198 men, each seen about",
+      "x": 83.403,
+      "y": 181.19389999999996,
+      "w": 445.1903730399998,
+      "h": 12.545465
+     },
+     {
+      "i": 6,
+      "text": "seven times. That single fact drives everything in this note. Ability — the classic omitted",
+      "x": 83.40299999999996,
+      "y": 194.74289999999993,
+      "w": 445.20037099999973,
+      "h": 12.545465
+     },
+     {
+      "i": 7,
+      "text": "variable in a wage regression — does not change over time, so it is exactly the unit effect c i of",
+      "x": 83.40299999999996,
+      "y": 208.2918999999999,
+      "w": 445.19537095999993,
+      "h": 12.545465
+     },
+     {
+      "i": 8,
+      "text": "Core Notes 3. We first measure the omitted variable bias directly, by putting the AFQT score",
+      "x": 83.40299999999996,
+      "y": 221.8408999999999,
+      "w": 445.1970982699997,
+      "h": 12.545465
+     },
+     {
+      "i": 9,
+      "text": "in and taking it out. We then ask what the panel estimators of Core Notes 3 would do instead,",
+      "x": 83.40299999999996,
+      "y": 235.39089999999985,
+      "w": 445.19273462999973,
+      "h": 12.545465
+     },
+     {
+      "i": 10,
+      "text": "and find that the obvious answer does not work here — for a reason worth understanding.",
+      "x": 83.40299999999996,
+      "y": 248.93989999999982,
+      "w": 432.0319963899996,
+      "h": 12.545465
+     },
+     {
+      "i": 11,
+      "text": "Contents",
+      "x": 72,
+      "y": 293.3188,
+      "w": 63.05298361999999,
+      "h": 16.49813
+     },
+     {
+      "i": 12,
+      "text": "1 The data and the question 1",
+      "x": 72,
+      "y": 327.1919,
+      "w": 468.00148090999994,
+      "h": 12.545465
+     },
+     {
+      "i": 13,
+      "text": "2 The omitted variable: putting AFQT in and taking it out 2",
+      "x": 72,
+      "y": 357.62789999999995,
+      "w": 468.00475364,
+      "h": 12.545465
+     },
+     {
+      "i": 14,
+      "text": "2.1 The ladder . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2",
+      "x": 88.364,
+      "y": 377.15489999999994,
+      "w": 451.63564908999945,
+      "h": 12.545465
+     },
+     {
+      "i": 15,
+      "text": "2.2 Checking it against the formula . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3",
+      "x": 88.364,
+      "y": 396.68089999999995,
+      "w": 451.63564908999945,
+      "h": 12.545465
+     },
+     {
+      "i": 16,
+      "text": "2.3 The same thing with degree dummies . . . . . . . . . . . . . . . . . . . . . . . . . . 3",
+      "x": 88.364,
+      "y": 416.20789999999994,
+      "w": 451.6389218199994,
+      "h": 12.545465
+     },
+     {
+      "i": 17,
+      "text": "3 The same data is a panel 4",
+      "x": 72,
+      "y": 446.6438999999999,
+      "w": 468.00475364,
+      "h": 12.545465
+     },
+     {
+      "i": 18,
+      "text": "4 What fixed effects can and cannot do here 4",
+      "x": 72,
+      "y": 477.0798999999999,
+      "w": 468.00257182000007,
+      "h": 12.545465
+     },
+     {
+      "i": 19,
+      "text": "5 The menu of panel regressions 5",
+      "x": 72,
+      "y": 507.51589999999993,
+      "w": 468.00475364,
+      "h": 12.545465
+     },
+     {
+      "i": 20,
+      "text": "6 Why cluster(Id) and not the default 5",
+      "x": 72,
+      "y": 537.9518999999999,
+      "w": 468.00420399999996,
+      "h": 12.545465
+     },
+     {
+      "i": 21,
+      "text": "7 Quick self-check 6",
+      "x": 72,
+      "y": 568.3879,
+      "w": 468.00148090999994,
+      "h": 12.545465
+     },
+     {
+      "i": 22,
+      "text": "1 The data and the question",
+      "x": 72,
+      "y": 611.2778,
+      "w": 211.6150577200001,
+      "h": 16.49813
+     },
+     {
+      "i": 23,
+      "text": "The estimation sample is NLSY79 men, after the selection filters in the do-file. Each row is a",
+      "x": 72,
+      "y": 645.0449,
+      "w": 468.0025718199995,
+      "h": 12.545465
+     },
+     {
+      "i": 24,
+      "text": "person-year : one man in one survey year.",
+      "x": 72,
+      "y": 658.5939,
+      "w": 198.05430035,
+      "h": 12.545465
+     },
+     {
+      "i": 25,
+      "text": "1",
+      "x": 303.273,
+      "y": 740.9718999999999,
+      "w": 5.454549999999983,
+      "h": 12.545465
+     }
+    ]
+   },
+   "segs": [
+    {
+     "t": 6,
+     "page": 1,
+     "en": "at every second of the show, they have. So they are obviously momentarily there. But I think it is also important for you to know we take that is representativity. Okay? all the population, because the majority of representativity is credible. for us to talk about anything about calculation.",
+     "ko": "매 순간 쇼에서, 그들은 가지고 있어요. 그래서 그들은 분명히 잠시 동안 거기에 있어요. 하지만 제 생각엔 그게 또한 중요하다고 생각해요. 당신이 알아야 할 것은 우리가 그것을 받아들인다는 것입니다. 알겠죠? 모든 인구가, 왜냐하면 대다수의 대표성은 더 신뢰할 수 있습니다. 우리가 어떤 것에 대해 이야기하려면 계산에 대해",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 33,
+     "page": 1,
+     "en": "Okay? So there are pros and cons. I think it's a very interesting to do a survey but I know there are some studies available out there. They are okay, but the survey they they think about data collection from a survey there is a selection bias. because of the response.",
+     "ko": "이야기해야 합니다. 알겠죠? 그래서 장단점이 있어요. 제 생각엔 아주 흥미로운 설문조사라고 생각하지만, 몇 가지 연구가 있다는 걸 알아요. 괜찮지만, 설문조사는 그들이 생각하기에 데이터 수집은 설문조사에서 오는 선택 편향이 있습니다. 응답 때문에요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 54,
+     "page": 1,
+     "en": "Okay? So it's not very representativity, but the data from statistics of Korea or national longitudinal study of youth, they are",
+     "ko": "알겠죠? 그래서 그다지 대표성이 없지만, 하지만 통계청 데이터는 한국이나 국가 종단 연구 데이터는, 그들은 설계되어",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 70,
+     "page": 1,
+     "en": "designed to represent the population. And also the data provide",
+     "ko": "있어요. 대표성을 띠도록 그리고 또한 데이터는 제공합니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 81,
+     "page": 1,
+     "en": "the weights. for each individual, so that uh apply the weights uh recover the population distribution. So that's the reason why I think that if you are serious, uh about being an analyst, you really have to know data set available for different countries. Okay? So Korea, has a lot of data, also from Bank of Korea also provide a lot of macro data.",
+     "ko": "가중치를. 각 개인에 대해, 그래서 어 적용합니다. 가중치를 어 복구합니다. 인구 분포를 복구합니다. 그래서 그게 제가 생각하는 이유입니다. 만약 진지하다면, 어, 분석가가 되는 것에 대해, 정말 알아야 할 것은 데이터가 어떻게 구성되어 있는지, 다양한 국가에 대해 알겠죠? 그래서 한국, 은 데이터가 많고, 또한 한국은행에서도 많은 거시 데이터를 제공합니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 107,
+     "page": 1,
+     "en": "And if you really want to design some policy, you usually need to use the micro data, understanding how different individuals make different choices in their countries and financial condition. So that's something you can explore further. And I really encourage you to download and look at the data and read once during this semester.",
+     "ko": "그리고 만약 여러분이 정말로 정책을 설계하고 싶다면, 보통 미시 데이터를 사용해야 합니다, 이해하는 것이죠, 다른 개인들이 어떻게 다른 선택을 하는지 그들의 국가에서 그리고 재정 상태에 대해. 그래서 그게 여러분이 할 수 있는 것입니다. 더 자세히. 그리고 저는 정말 여러분이 다운로드 하고 살펴보기를 권장합니다. 그리고 읽어보세요. 이번 학기 중에 한 번.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 141,
+     "page": 1,
+     "en": "because that makes a huge difference. Um,",
+     "ko": "왜냐하면 그게 큰 차이를 만들기 때문이죠.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 146,
+     "page": 1,
+     "en": "so so now the now one workers, who is better at",
+     "ko": "음, 그래서 이제 이제 이제 하나는 노동자들, 누가 더 잘하는지",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 162,
+     "page": 1,
+     "en": "negotiating. They will not teach you how to do how where to find the data, how to conduct the project. They just say we need this, you know, analysis for this presentation. We need to design a better marketing strategy for this",
+     "ko": "협상에 대해. 그들은 어떻게 하는지 가르쳐주지 않을 거예요. 어디서 데이터를 찾는지, 어떻게 프로젝트를 수행하는지 말이죠. 그들은 그냥 우리가 이런 분석이 필요하다고 말해요. 이 발표를 위해서요. 우리는 더 나은 마케팅 전략을 설계해야",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 184,
+     "page": 1,
+     "en": "population. And then they you who have",
+     "ko": "합니다, 이 인구를 위해서요. 그리고 그들은 여러분에게 누가",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 191,
+     "page": 1,
+     "en": "to do all the analysis. So you need to be familiar, you know, you should familiarize yourself to, you know, oh, all these stuff, I have been this data set etc, etc. So you really need to get exposed to different data",
+     "ko": "모든 일을 해야 하는지 말합니다. 그래서 여러분은 익숙해져야 합니다, 아시다시피, 여러분은 스스로 익숙해져야 합니다, 아시다시피, 오, 이 모든 것들, 저는 이 데이터셋을 등등등. 그래서 여러분은 정말로 익숙해져야 합니다, 다양한",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 208,
+     "page": 1,
+     "en": "set.",
+     "ko": "데이터셋에.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 212,
+     "page": 1,
+     "en": "And",
+     "ko": "그리고",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 215,
+     "page": 1,
+     "en": "also so like our team project, I think the point is I want to push you guys to do a little bit of",
+     "ko": "또한 그래서 저희 팀 프로젝트처럼, 제 생각엔 요점은 제가 여러분을 밀어붙여서 조금이라도",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 225,
+     "page": 1,
+     "en": "data analysis, however, um simply it is okay. I will just talk about it. I I post uh when I when to you guys, just the report the project and initial intention was I wanted to be a theorist.",
+     "ko": "데이터 분석을 하게 하려는 것이지만, 음, 간단히 말해서 괜찮아요. 저는 그냥 그것에 대해 이야기할게요. 제가 어, 제가 언제 여러분에게 말씀드릴 때, 그냥 보고서 프로젝트를 그리고 초기 의도를 저는 제가 이론가가 되고 싶었어요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 249,
+     "page": 1,
+     "en": "But I found it so fascinating to look at the data and discuss issues, so I changed",
+     "ko": "하지만 저는 그게 너무 매력적이라서 데이터를 보는 게 흥미로웠고 문제를 논의하는 게 좋아서 바꿨어요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 267,
+     "page": 1,
+     "en": "and it was really hard for me. You know, that the initial project is there. Or instance, you have to specify the directory of the file. How to save the file in the directory how to",
+     "ko": "그리고 그게 저한테는 정말 힘들었어요. 아시다시피, 초기 프로젝트가 있잖아요. 아니면 예를 들어, 디렉토리를 지정해야 하잖아요. 파일의 경로를 어떻게 저장하는지 그 디렉토리에 어떻게",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 283,
+     "page": 1,
+     "en": "copy and paste. the directory to the code file, so that the code can reach out to the right data. So those are nothing. But",
+     "ko": "복사하는지 붙여넣는지. 그 디렉토리에 어떻게 그 코드 파일에, 그래서 그 코드가 도달할 수 있도록 올바른 데이터에. 그래서 그런 건 아무것도 아니에요. 하지만",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 302,
+     "page": 1,
+     "en": "you may find",
+     "ko": "여러분은",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 305,
+     "page": 1,
+     "en": "it, you know,",
+     "ko": "알게 될 거예요,",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 308,
+     "page": 1,
+     "en": "uh complicated initially. So you have to you have to pass that stage. So that you feel confident. And you know, they feel like a pressure and we can talk about it. And then the the the the panel is I show you. And then this is why you know, the mostly study is red.",
+     "ko": "어, 초기에는 복잡하다고 느낄 수 있어요. 그래서 여러분은 해야 해요. 그 단계를 넘어야 해요. 그래야 여러분이 편안함을 느낄 수 있어요. 그리고 아시다시피, 그들은 압박감을 느끼는 것 같고 우리는 그것에 대해 이야기할 수 있어요. 그리고 그 그 패널은 제가 보여드릴게요. 그리고 이게 바로 아시다시피, 대부분의 연구는 빨간색이에요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 339,
+     "page": 1,
+     "en": "In later, I say, because there is a data which we discussed today.",
+     "ko": "그리고 나중에, 제가 말하길, 왜냐하면 거기에 데이터가 있는데, 오늘 우리가 논의한 거예요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 351,
+     "page": 1,
+     "en": "And then it follows more than like a pool that and then it's always heavy, because of that, they borrow individuals. Since 99,",
+     "ko": "그리고 나서 그 이상으로 마치 수영장처럼 그리고 항상 무거워요, 그래서 그들은 개별적으로 빌려요. 19 99년 이후로,",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 366,
+     "page": 1,
+     "en": "until now, so so the individual",
+     "ko": "지금까지, 그래서 그래서 개인이",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 375,
+     "page": 1,
+     "en": "in the data set they",
+     "ko": "데이터 세트에서 그들은",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 379,
+     "page": 1,
+     "en": "ages. And at that point, that uh the permissions and choice is and now some of them are reaching 60. Okay? So we can observe that any higher like choices and you know, outcomes change over time. So that is really unique data set. The downside is that uh the sample size is not not so big.",
+     "ko": "나이가 들어요. 그리고 그 시점에서, 그 어, 권한이 그리고 선택이 이고 이제 그들 중 일부는 도달하고 있어요. 60세에. 알겠죠? 그래서 우리는 그보다 높은 어떤 것을 관찰할 수 있어요. 선택은 그리고 아시다시피, 결과가 시간이 지나면서 변해요. 그래서 그건 정말 독특해요. 데이터 세트예요. 단점은 그게 어, 표본 크기가 작지 않다는 거예요. 그렇게 크지",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 413,
+     "page": 1,
+     "en": "So it's hard to get the power. And",
+     "ko": "않아요. 그래서 얻기가 어려워요. 그 힘을 얻기가. 그리고",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 419,
+     "page": 1,
+     "en": "if you want to do something very specific test, but the scale is very nice.",
+     "ko": "만약 여러분이 뭔가를 하고 싶다면 아주 구체적인 테스트를 하고 싶다면, 하지만 규모가 아주 좋아요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 429,
+     "page": 1,
+     "en": "All right. So I may have the opportunity to show how to run the code. using Python. Because Python is the program I use. You can do it by using your circle. Okay? Um But set up you have to go to the web. I already explained this to you. So I'm talking about this data. This is the new school is Taylor.",
+     "ko": "알겠습니다. 그래서 저는 기회가 있을지도 몰라요, 어떻게 코드를 실행하는지 보여줄 기회가. 파이썬을 사용해서. 왜냐하면 파이썬은 제가 항상 사용하는 프로그램이니까요. 여러분은 여러분의 서클을 사용해서 할 수 있어요. 알겠죠? 음 하지만 설정은 여러분이 웹으로 가야 해요. 저는 이미 여러분에게 설명했어요. 설정은 그래서 제가 이 이야기를 하고 있어요. 이게 바로 새로운 학교 테일러예요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 454,
+     "page": 1,
+     "en": "So for uh nutrition, analysis. So there is a data code. So you just do the R for the next. But Python is not complicated, but the the setup is two file. Which allows you to write all the code from the beginning until the end.",
+     "ko": "그래서 어, 어, 영양에 대해서는, 분석입니다. 그래서 데이터 코드가 있어요. 그래서 그냥 이렇게 하면 돼요. R을 다음으로. 하지만 파이썬은 복잡하지 않아요, 하지만 설정은 두 개의 파일이에요. 어떤 것을 작성할 수 있게 해주는 모든 코드를 처음부터 끝까지 작성할 수 있게 해줘요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 477,
+     "page": 1,
+     "en": "And then by one",
+     "ko": "그리고 나서 어, 하나씩",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 485,
+     "page": 1,
+     "en": "Let's think about how we can change uh change the line experience. Also it can be education related, it could be related, educational day that today helps them break, you know, and then how would that affect the line of the outcome. Uh it can also be the idea of marriage outcome, so 000 and then suddenly when they get you know, they become the married status.",
+     "ko": "어떻게 바꿀 수 있을지, 어, 라인 경험을 바꿔볼지 생각해 봐요. 또한 교육 관련일 수도 있고, 교육 관련 날일 수도 있고, 오늘이 그들이 휴식을 취하는 데 도움이 되고, 그러면 그게 라인에 어떤 영향을 미칠지 생각해 봐요. 또한 이런 아이디어일 수도 있어요. 결혼 결과에 대한 것일 수도 있고, 000 그리고 갑자기 그들이 알다시피, 그들이 그들이 결혼한 상태가 되는 거죠.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 509,
+     "page": 1,
+     "en": "married status. change the 0 to one, the you know, they they got married in that particular year. And we can also detect whether they got divorced because we can collect that information. So we can reach information about what happened to an individual over time.",
+     "ko": "결혼한 상태. 변화를 0에서 1로, 알다시피, 그들이 결혼을 했고 그 특정 해에 그리고 우리는 또한 그들이 이혼했는지 감지할 수 있습니다. 왜냐하면 우리는 그 정보를 수집할 수 있으니까요. 그래서 우리는 도달할 수 있습니다. 무엇에 대한 정보에 대해 시간이 지남에 따라",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 527,
+     "page": 1,
+     "en": "So we can do that. So obviously, Can you data? So much better that of course that's the data. So,",
+     "ko": "그래서 우리는 그렇게 할 수 있습니다. 그래서 분명히, 할 수 있나요? 데이터? 훨씬 더 나은 그건 물론 그게 데이터죠. 그래서,",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 546,
+     "page": 1,
+     "en": "And observation of what and",
+     "ko": "그리고 관찰은 무엇에 대한 것이고",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 555,
+     "page": 1,
+     "en": "individual at uh",
+     "ko": "그리고 개인은 ~에 어",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 566,
+     "page": 1,
+     "en": "seeing the time Let's say maybe maybe four or they said, crosssectional data. And then that we have many individuals but that information is not at one time period. So census, is a crosssectional data. We don't follow individuals over time. So the many data set that is crosssectional, and then it tells it's a good crosssectional leading to a survey.",
+     "ko": "보는 것은 시간입니다. 가령 아마도 아마도 네 명 혹은 그들이 말하길, 횡단면 데이터라고 했어요. 그리고 나서 우리는 많은 개인을 가지고 있지만 그 정보는 한 시점에 있는 데이터가 아닙니다. 그래서 인구 조사는 횡단면 데이터입니다. 우리는 개인을 시간의 흐름에 따라 추적하지 않습니다. 그래서 많은 데이터 세트가 횡단면 이고, 그리고 그것은 좋은 것이라고 말합니다. 횡단면 데이터는 ~로 이어집니다. 설문조사로.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 585,
+     "page": 1,
+     "en": "You know, it is much more complicated. You have to follow individual over 15 years. So that's a so that's usually data is a small sample size. And crosssectional data is a larger sample size. But the unique feature of panel data is that we can follow one individual and individuals are different.",
+     "ko": "아시다시피, 훨씬 더 복잡합니다. 당신은 개인을 시간의 흐름에 따라 15년 동안 추적해야 합니다. 그래서 그건 보통 데이터가 작은 표본 크기입니다. 그리고 횡단면 데이터는 더 큰 표본 크기입니다. 하지만 독특한 특징은 패널 데이터의 특징은 우리가 한 개인을 추적할 수 있고 개인은 다르다는 것입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 609,
+     "page": 1,
+     "en": "So it can come when we think of bias, if we look at that, we can crosssectional data. But name means exactly",
+     "ko": "그래서 그것은 올 수 있습니다. 우리가 생각할 때 편향에 대해, 만약 우리가 그것을 본다면, 횡단면 데이터입니다. 하지만 이름 은 정확히",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 625,
+     "page": 1,
+     "en": "And the structure of there are and units or individuals at it can be on and over time period. If every unit has the same number of observation, we call that balanced panel. If the observation the length of observation period is different for different units, it's unbalanced panel.",
+     "ko": "그리고 구조는 거기에 그리고 단위는 또는 개인은 ~에 그것은 ~에 있을 수 있고 그리고 시간 기간에 걸쳐 있습니다. 만약 모든 단위가 같은 수의 관찰을 가지고 있다면, 우리는 그것을 균형 잡힌 패널이라고 부릅니다. 만약 관찰이 다르다면 그 길이는 관찰의 길이는 기간은 각기 다릅니다. 그것은 불균형 패널입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 652,
+     "page": 1,
+     "en": "Which is complicated. It complicates. The analysis is further, but we focus on balanced panel. Right. And panel and this T is the same or period. Okay?",
+     "ko": "이는 복잡합니다. 복잡해집니다. 분석이 더 나아가지만, 우리는 균형 잡힌 패널에 집중합니다. 맞아요. 그리고 패널은 그리고 이 T는 같은 것입니다. 또는 기간입니다. 알겠죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 674,
+     "page": 1,
+     "en": "And now, this is the model we consider. to analyze the X and Y of a population now, uh is that we don't understand how X changes Y and we want to think about is really this. And this is our choice of model. Suppose that there is starting relationship but if we have a phenomenon, that never suppose that you this is it.",
+     "ko": "그리고 이제, 이것은 모델입니다. 우리가 고려하는. 분석하기 위해 X와 Y의 인구 집단을 이제, 어, 우리가 이해하지 못하는 것은 X가 어떻게 Y를 변화시키고 우리가 생각하고 싶은 것은 정말 이것입니다. 그리고 이것이 우리의 모델 선택입니다. 만약 어떤 시작점이 있다고 가정해 봅시다. 하지만 만약 우리가 어떤 현상을 가지고 있다면, 결코 가정하지 마세요. 당신이 이것을 하는 것입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 710,
+     "page": 1,
+     "en": "Okay? So the reason is that individual I Remember that, you know, in the old days, we may have limited variable bias. Like probability, first and then the which is not affected by the other survey. Or the state may have direct effect on the outcome. And then the test is almost impossible to control all the other factors.",
+     "ko": "알겠죠? 그래서 그 이유는 개인이 나 기억하세요 그, 아시겠지만, 옛날에는 우리가 제한된 변수를 가지고 있었을 수도 있어요. 예를 들어 확률처럼요. 첫 번째는 그리고 그 다음에는 그게 영향을 받지 않는 다른 것들에 의해. 또는 그 상태가 결과에 직접적인 영향을 미칠 수도 있어요. 그리고 그 테스트는 거의 불가능합니다. 모든 다른 변수들을 통제하는 것은.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 741,
+     "page": 1,
+     "en": "that affect Y. So it's very hard to hard not to have only the variable bias. But it is it is you know, probably experimental study, then by design, you know, there's no omitted variable bias. But if we use the cross sectional data, which is almost impossible not to have omitted variable bias.",
+     "ko": "Y에 영향을 미치는. 그래서 그게 매우 어렵습니다. 오직 변수 편향만 가지지 않기가. 하지만 그건 아시다시피, 아마도 실험적인 연구라면, 설계상, 아시다시피, 누락된 변수 편향은 없습니다. 하지만 우리가 횡단면 데이터를 사용하면, 거의 불가능합니다. 누락된 변수 편향이 없을",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 763,
+     "page": 1,
+     "en": "And then okay? So if we allow that, then in this case, the omitted variable bias that is specific to this individual is written as CI. Whatever that common component represents, we allow that in individual share some common characteristics of course different of course observation from the point.",
+     "ko": "수 없죠. 그리고 알겠죠? 그래서 우리가 그걸 허용한다면, 그러면 이 경우에, 누락된 변수 편향은 이 특정 개인에게 해당하는 것은 다음과 같이 표기됩니다. 그게 무엇이든 공통적인 요소는 무엇을 나타내든, 우리는 그것을 허용합니다. 개인은 어떤 공통적인 특성을 공유합니다. 물론 다른 물론 다른 관찰에서 온 것입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 789,
+     "page": 1,
+     "en": "Okay? So if my see, you can consider this as a variable. or personality. trait. This is the version of it. So I was not have a T. Okay? CI is common for the same unit. So that represents individual fixed effect. Meanwhile, this um here fixed effect. which means that whatever characteristic the is is common to this individual. It does not vary over time.",
+     "ko": "알겠죠? 그래서 만약 제 보세요, 당신은 이것을 변수로 간주할 수 있습니다. 또는 성격 특성. 이것이 그 버전입니다. 그래서 저는 T를 가지고 있지 않았습니다. 알겠죠? CI는 공통적입니다. 그 같은 단위에 대해. 그래서 그것은 개인의 고정된 효과를 나타냅니다. 한편, 이것은 음 여기서는 고정된 효과입니다. 즉, 무엇이든 특성이 그 은 이 개인에게 공통적입니다. 그것은 시간이 지나도 변하지",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 828,
+     "page": 1,
+     "en": "Okay? For example, is ability or intelligence.",
+     "ko": "않습니다. 알겠죠? 예를 들어, 능력은 또는 지능입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 840,
+     "page": 1,
+     "en": "Whatever that is not observed in the data. And does not change over time. Okay? So now, the object is the CI the unobserved individual effect. Think about the that does not change over time. Okay? So when it comes to the panel, analysis, it can be like very specific response like a culture, maybe society, etc.",
+     "ko": "데이터에서 관찰되지 않는 모든 것. 그리고 시간이 지나도 변하지 않는 것. 알겠죠? 그래서 이제, 대상은 CI입니다. 관찰되지 않는 개인의 효과입니다. 생각해보세요, 변하지 않는 것을요. 알겠죠? 그래서 패널 데이터에 대해 말하자면, 분석은 다음과 같을 수 있습니다. 매우 구체적인 반응처럼요. 문화나, 어쩌면 사회, 등등.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 867,
+     "page": 1,
+     "en": "Uh it's not can be but so this is our model. So we're going to model the relationship between X and Y by after allowing the individual effect. And then we have to write down that model that this having seen I there, this is our model or allows individual effects.",
+     "ko": "어, 그건 할 수 없어요. 그건 하지만 그래서 이건 우리 모델입니다. 그래서 우리는 모델링할 것입니다. X와 Y의 관계를 그 후에 허용함으로써 개인의 효과를. 그리고 나서 그 모델을 적어야 해요, 이게 있다는 것을요. 제가 거기서 본 것처럼, 이게 우리 모델이거나 허용하는 개인 효과입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 891,
+     "page": 1,
+     "en": "Okay?",
+     "ko": "알겠죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 895,
+     "page": 1,
+     "en": "Oh, this is an example and I suppose. So individual I and the characteristic and alpha. And then we assume that this unobservable, so we will never be able to observe CI directly. But let's say that this is our model. Okay, the true value, we're going to observe but then there must be some fixed effect that is the common individual.",
+     "ko": "오, 이건 예시이고 제 생각엔 그래요. 그래서 개인 효과는 그리고 특성은 알파입니다. 그리고 나서 우리는 이게 관찰되지 않는 것이기 때문에 우리는 결코 CI를 직접 관찰할 수 없을 것입니다. 하지만 이게 우리의 모델이라고 가정해 봅시다. 알겠죠? 진짜 값은, 우리는 관찰할 것입니다. 하지만 거기에는 어떤 고정된 효과가 있고 그게 바로 공통적인 개인입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 924,
+     "page": 1,
+     "en": "So like they have a period but this common characteristic does not change. Okay? So we don't observe this. If we can observe this and everything is easy, whereas we don't have the key problem is that we don't observe CI. Okay? So how to treat CI? So our first question about how to use panel data to estimate data.",
+     "ko": "그러니까 그들은 기간이 있고 하지만 이 공통적인 특성은 변하지 않습니다. 알겠죠? 그래서 우리는 이걸 관찰하지 않습니다. 만약 우리가 이걸 관찰할 수 있고 모든 것이 쉽다면, 반면에 우리는 가지고 있지 않아요, 핵심 문제는 우리가 CI를 관찰하지 않는다는 것입니다. 알겠죠? 그래서 CI를 어떻게 처리할까요? 그래서 우리의 첫 번째 질문은 어떻게 패널을 사용할지에 대한 것입니다. 데이터를 추정하기",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 952,
+     "page": 1,
+     "en": "Uh we're related to how should we treat CI. And then how the presence of the C affect our estimation.",
+     "ko": "위해. 어, 우리는 어떻게 CI를 처리해야 할지에 대한 것입니다. 그리고 어떻게 C의 존재가 우리의 추정에 영향을 미치는지.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 966,
+     "page": 1,
+     "en": "estimators for us to recall very linear relationship and",
+     "ko": "저희가 기억해내기 위한 아주 선형적인 관계를 그리고",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 974,
+     "page": 1,
+     "en": "then move through different estimate estimation for instance or estimator and can be considered as a specific model or general general model. Okay?",
+     "ko": "그 다음에는 이동해서 다른 추정치들을 살펴보겠습니다. 예를 들어, 또는 추정치 그리고 고려될 수 있습니다. 특정적인 모델로 또는 일반적인 모델로요. 알겠죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 992,
+     "page": 1,
+     "en": "That means that if we have the individual data, we want to translate our original problem to like this. Which means that this is sample mean, sample mean, sample mean. Okay? We want to translate original problem such that now our",
+     "ko": "즉, 만약 우리가 그 개별적인 데이터가 있다면, 우리는 우리의 원래 문제를 이렇게 바꾸고 싶어요. 즉, 이것은 표본 평균이고 표본 평균, 표본 평균입니다. 알겠죠? 우리는 번역하고 싶어요, 원래 문제를 이렇게 바꿔서 이제",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1021,
+     "page": 1,
+     "en": "variable has some mean, which means that we want to write down what we want to like we want to construct minus the what I got.",
+     "ko": "우리 변수가 어떤 값을 가지도록 하고 싶어요, 즉, 우리 는 번역하고 싶어요, 원래 문제를 이렇게 쓰고 싶어요. 우리는 구성하고 싶어요, 빼기 제가 얻은 것을.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1032,
+     "page": 1,
+     "en": "So this is sample mean. So we will subtract sample mean at individual data. And treat this as a new variable. So we do the same thing for each contributor. And that is uh that is transform model. from the original model. Now let's explain why we have to do that. Now we know that we know if this is over there, then this is biased.",
+     "ko": "그래서 이것은 표본 평균입니다. 그래서 우리는 뺄 것입니다. 표본 평균을 그리고 개별 데이터에서. 그리고 이것을 새로운 변수로 취급합니다. 그래서 우리는 각 항목에 대해 똑같이 합니다. 그리고 그것이 어 그것이 변환 모델입니다. 원래 모델에서 변환한 것입니다. 이제 왜 이렇게 해야 하는지 설명해 드릴게요. 이제 우리는 알아요, 만약 이것이 저기에 있다면, 그러면 이것은 편향된 것입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1058,
+     "page": 1,
+     "en": "And let's say we are is is to So this is biased. Okay? It's expected that we will have X like because we assume, right? Remember? I will I happy to repeat this thing. So we need to so this is true. So sometimes",
+     "ko": "그리고 우리가 이렇다고 가정해 봅시다. 즉, 그래서 이것은 편향된 것입니다. 알겠죠? 이것은 예상대로 우리가 가질 것입니다. X 같은 것을 왜냐하면 우리가 가정하니까, 그렇죠? 기억나시죠? 저는 제가 기꺼이 반복할게요. 이 일을. 그래서 우리는 그래서 이것은 입니다. 사실입니다. 그래서 때때로",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1094,
+     "page": 1,
+     "en": "So in order to have that equal to the of the population, we need to make sure that X prime X inverse X prime equal to zero. So if And is not zero, then this whole thing",
+     "ko": "그래서 우리가 그것을 갖기 위해 그것과 같게 하려면 모집단의 우리는 확실히 해야 합니다. X 프라임이 X 역행렬 X 프라임이 0이 되도록. 그래서 만약 그리고 0이 아니라면, 그러면 이것은 전체가",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1118,
+     "page": 1,
+     "en": "is not zero. So unless it will be biased. That's the reason why if we have only individual data, And just to remind you, we in fact that the estimator from OLS will be different from the population parameter. And you know what? Because we have seen idea in the for sure, we have only variables,",
+     "ko": "0이 아닙니다. 그래서 편향되지 않을 것입니다. 이것이 바로 우리가 만약 개별 데이터만 가지고 있다면, 그리고 다시 한번 말씀드리지만, 우리는 사실 추정치가 OLS에서 나온 것은 다를 것입니다. 모집단 매개변수와는. 그리고 그거 아세요? 왜냐하면 우리는 아이디어를 봤으니까요. 예를 들어, 우리는 개별 데이터만 가지고 있다면,",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1148,
+     "page": 1,
+     "en": "if we don't do something, that's the reason why we want to eliminate the impact of the state on our estimate. The way how we eliminate depends on the fact how much we how much show the C component and the estimate. Okay? So actually if we you know, this one uh We jump first to this specific point, the effect and the random effect and then go back to look at this equation. This one is there for us to fit three different approaches into one formula.",
+     "ko": "우리가 아무것도 하지 않으면, 그것이 우리가 제거하고 싶은 이유입니다. 상태가 우리 추정에 미치는 영향. 우리가 제거하는 방법은 어떤 사실에 달려 있습니다. 우리가 얼마나 얼마나 C 구성 요소가 그리고 그게 추정에 미치는 영향입니다. 알겠죠? 그래서 사실 우리가 알다시피, 이거는 어 우리는 먼저 이 특정 지점으로 넘어가서, 그 효과와 무작위 효과, 그리고 다시 이 부분을 살펴보겠습니다. 이 방정식은 이겁니다. 거기에 우리가 맞추기 위한 것입니다. 세 가지 다른 접근 방식을 하나로 합치기 위한 것입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1189,
+     "page": 1,
+     "en": "But actually, it's okay because this is just the pool OLS. Pool OLS treat the same zero means it's just just OLS.",
+     "ko": "하지만 사실, 괜찮아요. 왜냐하면 이건 그냥 풀 OLS거든요. 풀 OLS는 취급합니다. 동일하게 0은 그냥 그냥 OLS라는 뜻입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1203,
+     "page": 1,
+     "en": "So the pool OLS ignores the panel structure and time. You know, just you know, you just panel data. If you choose that, the pool OLS is the formula you can go with that. And then your job is to depend that this is supposed to pool OLS. And in fact, requires you to show the error structure as a following property.",
+     "ko": "그래서 풀 OLS는 패널 구조를 무시하고 그리고 시간도 무시합니다. 그냥 알다시피, 그냥 패널 데이터예요. 만약 그걸 선택하면, 풀 OLS는 여러분이 사용할 수 있는 공식입니다. 그리고 여러분이 할 일은 그것에 의존하는 것입니다. 이것이 원래는 풀 OLS라는 뜻입니다. 그리고 사실, 요구하는 것은 여러분이 보여줘야 하는 것은 오차 구조입니다. 마치 다음과 같은 속성처럼요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1231,
+     "page": 1,
+     "en": "Okay?",
+     "ko": "알겠죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1239,
+     "page": 1,
+     "en": "In this case, even though we have this estimate, but it's a danger. We assume that we still assume this assumption. And CI stays inside the VIT. Okay? So, if we assume that we need assume that that this is the and condition is zero, it's it's then OLS is a better.",
+     "ko": "이 경우에 비록 우리가 이 추정치를 가지고 있지만, 하지만 이것은 위험합니다. 우리는 가정합니다. 우리는 여전히 이 가정을 가정합니다. 그리고 CI는 그대로 유지됩니다. 그 VIT 안에. 알겠죠? 그래서, 만약 우리가 가정한다면 우리는 필요합니다. 가정해야 합니다. 그것을 이것이 원래는 그 그리고 조건부 기대값이 0이면, 그것은 그것은 그러면 OLS는 더 낫습니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1271,
+     "page": 1,
+     "en": "Okay, in order to have a panel data, if you need to three is I don't know, it's like really more but I don't know, but that that is a complicated method. What can you do? Well, I how we did to you on the something like that. And then there's a completely but then that should not change over time.",
+     "ko": "알겠죠, 패널 데이터를 가지려면, 만약 여러분이 세 가지를 해야 한다면 저는 모르겠어요, 정말 더 하지만 저는 모르겠어요, 하지만 그건 복잡한 방법입니다. 무엇을 할 수 있나요? 글쎄요, 어떻게 우리가 당신에게 한 것처럼 그런 식이죠. 그리고 완전히 하지만 그건 시간이 지나도 변하지 않아야 합니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1295,
+     "page": 1,
+     "en": "So it's a hard to think about it. And it's completely independent of uh the with error. But we believe that the is okay. But I think it's a better to think about that if the is hard to depend, okay? If we believe that this is the effect, is correlated with error.",
+     "ko": "그래서 생각하기 어렵습니다. 그리고 완전히 독립적입니다. 어 그 오차와 함께. 하지만 우리는 믿습니다. 그 괜찮아요. 하지만 제 생각엔 그게 더 나은 것 같아요. 만약 그게 의존하기 어렵다면, 알겠죠? 만약 우리가 믿는다면 이것이 효과라면, 그것은 상관관계가 있습니다. 오차와.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1319,
+     "page": 1,
+     "en": "Aha. So this is the key. So the if we education is supporting it, then it is panel data. Okay? Okay?",
+     "ko": "아하. 그래서 이것이 핵심입니다. 그래서 만약 우리가 교육이 지원하고 있다면 그러면 그것은 입니다. 패널 데이터입니다. 알겠죠? 알겠죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1339,
+     "page": 1,
+     "en": "CI is also the population and CI is not zero. Then the exciting information is violated. So this is a bias. Why this is violated? Because it's expected when we do Excel. Okay? So let's go. Okay.",
+     "ko": "CI는 또한 그 인구는 그리고 CI는 0이 아닙니다. 그러면 흥미로운 정보는 위반됩니다. 그래서 이것은 편향입니다. 왜 이것이 위반될까요? 왜냐하면 예상되기 때문입니다. 우리가 엑셀을 할 때. 알겠죠? 그래서 이제 가봅시다. 알겠습니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1375,
+     "page": 1,
+     "en": "I don't know. It represents truly random component. Is it truly random? Okay, so this is by design.",
+     "ko": "모르겠어요. 그것은 진정으로 무작위적인 요소를 나타냅니다. 정말 무작위인가요? 알겠습니다, 그래서 이것은 의도된 것입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1387,
+     "page": 1,
+     "en": "meeting the condition, such that it's truly random. And this is it. But if totally population is not zero, the condition is violated.",
+     "ko": "조건을 충족하여, 진정으로 무작위적입니다. 그리고 이것이 전부입니다. 하지만 만약 완전히 인구가 0이 아니라면, 조건이 위반됩니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1404,
+     "page": 1,
+     "en": "because correlation means CI can be represented as a function of X. So it's not. Okay? So if there is a correlation, then it's not and who the OLS will be biased. So in this example, who the OLS is that the slope is 3.6 one. Okay, so two variables, so we I may like take data set in this note.",
+     "ko": "상관관계는 CI가 X의 함수로 표현될 수 있다는 것을 의미합니다. 그래서 아니에요. 알겠죠? 그래서 만약 상관관계가 있다면, 그것은 아니고 OLS가 편향될 것입니다. 그래서 이 예에서는 전부 OLS가 기울기가 3.6이고 하나입니다. 알겠습니다, 그래서 두 변수, 그래서 우리는 저는 아마도 데이터 세트를 이 노트에서 가져올",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1433,
+     "page": 1,
+     "en": "But true relationship is two. But if we run the OLS, apply the just X inverse X Y, you will have data which",
+     "ko": "수 있습니다. 하지만 진정한 관계는 2입니다. 하지만 우리가 OLS를 실행하면, 적용하면 그냥 X 역행렬 X Y, 그러면 데이터가",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1448,
+     "page": 1,
+     "en": "And then we see the only way to we are vulnerable. See, the only way to vulnerable is to be vulnerable. And that is my X that people say that can never be added as control. Right? So we we we we we usually we vulnerable. So sometimes people think that they exist very they are vulnerable.",
+     "ko": "그리고 나서 우리는 유일한 방법이 우리가 취약하다는 것임을 알게 됩니다. 보세요, 취약해지는 유일한 방법은 취약해지는 것입니다. 그리고 그것이 제 X입니다. 사람들이 절대 그럴 수 없다고 하는 통제입니다. 그렇죠? 그래서 우리는 우리는 보통 우리는 취약합니다. 그래서 가끔 사람들은 그들이 존재한다고 생각하지만 그들은 취약합니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1476,
+     "page": 1,
+     "en": "to include in a specification. So the to add that variable into the specification. And that is simple. But if you think about the true effect, it's a known data. that can capture the eye. Then uh it's a fundamental problem. So this problem I I don't know. Okay, how to do that? So the way to do this",
+     "ko": "특정 사양에 포함하기 위해서요. 그래서 추가하는 것은 그 변수를 사양에 포함하는 것입니다. 그리고 그것은 간단합니다. 하지만 진정한 효과를 생각해보면, 그것은 알려진 데이터입니다. 눈길을 사로잡을 수 있는. 그러면 어, 그것은 근본적인 문제입니다. 그래서 이 문제는 제가 잘 모르겠어요. 좋아요, 어떻게 해야 할까요? 그래서 이렇게 하는 방법은",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1503,
+     "page": 1,
+     "en": "is the bias. It is the immediate effect. So the the mediator characteristic is it. Okay? So we need to use alternative as a strategy to recover the data. Okay, if we lose the data, then the monitor structure and just applying X inverse Y, then we will have bias estimate.",
+     "ko": "편향입니다. 그것은 입니다. 즉각적인 효과입니다. 그래서 그 매개 변수는 특성입니다. 그것은 입니다. 알겠죠? 그래서 우리는 해야 합니다. 대안을 사용해야 합니다. 대안으로 전략을 회복하기 위해 데이터를. 좋아요, 만약 우리가 데이터를 잃으면, 그러면 모니터는 구조와 그냥 적용하는 것은 X 역 Y, 그러면 우리는 편향 추정치를",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1536,
+     "page": 1,
+     "en": "Okay? So then But fixed effect is okay? Fixed effect is that if we look at one individual, one one Let's say that we are looking at individual I.",
+     "ko": "얻게 됩니다. 알겠죠? 그래서 그러면 하지만 고정된 효과는 괜찮아요? 고정 효과는 만약 우리가 하나의 개인을 보면, 하나의 하나 예를 들어 우리가 개인을 보고 있다고 해봅시다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1564,
+     "page": 1,
+     "en": "Basically, the problem is that on that",
+     "ko": "기본적으로 문제는 이것입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1572,
+     "page": 1,
+     "en": "If we observe those two, can we eliminate that? How to If we subtract that, Let's see, will we cancel that? Okay? So we don't do that. So another way is that if we have the observation,",
+     "ko": "만약 우리가 그들을 관찰하면 두 가지를 제거할 수 있을까요? 어떻게 해야 할까요? 만약 우리가 빼면 그건, 자, 그럼 우리가 그걸 취소할까요? 알겠죠? 그래서 우리는 그렇게 하지 않아요. 그래서 다른 방법은 우리가 가지고 있다면 그 관찰을,",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1602,
+     "page": 1,
+     "en": "CI, that is",
+     "ko": "CI, 그것은",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1607,
+     "page": 1,
+     "en": "Right?",
+     "ko": "그렇죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1611,
+     "page": 1,
+     "en": "So we need you need that equation. Like like here, this is the one way of using the observation. I subtract the effect. Or that is we have the observation problem. or individual one, then we can calculate Y uh individual, right? Okay, so we do right now Y minus Y bar, you said the Y and this is basically the which is the same as CI because it's fixed.",
+     "ko": "그래서 우리는 당신이 그것이 필요해요. 그 방정식이요. 마치 여기처럼, 이것은 입니다. 한 가지 방법은 사용하는 것입니다. 그 관찰을. 저는 그 효과를 뺍니다. 아니면 그건 우리가 관찰을 가지고 있다면 문제입니다. 또는 개인 하나, 그러면 우리는 Y를 계산할 수 있습니다. 개인, 맞죠? 좋아요, 그래서 우리는 지금 Y를 빼기 Y 바, 당신이 Y 그리고 이것은 기본적으로 어떤 것이 같은 CI와 같기 때문에 고정되어",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1651,
+     "page": 1,
+     "en": "So if we do doing then just equation says that we can estimate by component. Is it okay? So if we rewrite the equation, then we have Y minus Y bar, new alpha is related to X minus X, which is something we can calculate. So this is minus See, that there. So we don't have to worry about the anymore.",
+     "ko": "있습니다. 그래서 우리가 하고 있다면 그러면 그냥 방정식에 따르면 우리는 추정할 수 있습니다. 무엇으로 구성 요소별로. 맞나요? 그래서 우리가 방정식을 다시 쓰면, 그러면 우리는 Y 빼기 Y 바, 새로운 알파 는 관련이 있습니다. X 빼기 X, 이것은 우리가 추정할 수 있는 것입니다. 그래서 이것은 빼기 보세요, 저기요. 그래서 우리는 편향에 대해 걱정할 필요가 없습니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1685,
+     "page": 1,
+     "en": "If we translate the original model, this So we eliminated this.",
+     "ko": "만약 우리가 전체를 번역한다면, 이것은 그래서 우리는 이것을 제거했습니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1695,
+     "page": 1,
+     "en": "Yeah, right.",
+     "ko": "네, 맞아요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1700,
+     "page": 1,
+     "en": "So what do you do? We treat these as a new alpha variable, treat that as new X variable. and apply the OLS. Okay? So let's say this is the Y tilde, Y tilde, X tilde, and then beta fixed effect. estimator. Yes, after translate, and X tilde, X tilde, and X tilde, Y tilde. So now the output estimate for the then and it will be exactly the same as population parameter beta.",
+     "ko": "그래서 어떻게 하죠? 우리는 이것들을 새로운 알파 변수로 취급하고, 그것을 새로운 X 변수로 취급하고 적용합니다. OLS를. 알겠죠? 그럼 이게 Y라고 해보죠, 그러면 Y 틸다, X 틸다, 그리고 베타 고정 효과. 추정량. 네, 번역한 후에, 그리고 X 틸다, X 틸다, 그리고 X 틸다, Y 틸다. 이제 출력은 추정치 에 대한 것입니다. 그러면 그리고 그것은 정확히 와 같을 것입니다. 모집단 모수와 베타.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1745,
+     "page": 1,
+     "en": "Because we eliminated still. So it's not very complicated. If we have if we allow individual have a fixed effect, and we have the number of observation for that individual, then we can see that uh we have to that fixed effect to have same effect for individual. So we don't care.",
+     "ko": "왜냐하면 우리는 제거했기 때문입니다. 그래서 그렇게 복잡하지 않습니다. 만약 우리가 허용한다면 개인이 고정된 효과를 갖도록, 그리고 우리가 관측치의 수가 그에 대해 충분하다면 그 개인에 대해, 그러면 우리는 볼 수 있습니다. 어, 우리는 그것을 고정 효과로 가져야 합니다. 같은 효과를 개인에게. 그래서 우리는 신경 쓰지",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1767,
+     "page": 1,
+     "en": "So the only information uh so the fixed effect cannot explain the variation of the Y outcome over time. Okay? And X can change by over time. So whatever changes across time, uh is because see CI doesn't change over time. We have to use reading or observation.",
+     "ko": "않습니다. 그래서 유일한 정보는 어, 그래서 고정 효과는 할 수 없습니다. 변동을 설명할 수 없습니다. 의 Y 결과의 시간에 따른. 알겠죠? 그리고 X는 변할 수 있습니다. 시간에 따라. 그래서 시간에 따라 변하는 것은 어, 정보입니다. 왜냐하면 보세요, CI는 시간에 따라 변하지 않습니다. 우리는 읽기를 사용해야 하거나 관측해야 합니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1801,
+     "page": 1,
+     "en": "So reading very suppose this is a median variance. Okay? Okay, So this is reading observation. And then we need individual variables. With this one individual, and sometimes this individual work like 20 hours, in period two, 25 hours, and 15 hours, but time change, the study returns over time, but the motivation already is fixed over time. So what I change over time can explain the bias.",
+     "ko": "그래서 읽기는 매우 이것이 중앙값이라고 가정해 봅시다. 알겠죠? 알겠죠, 그래서 이것은 읽기입니다. 관측입니다. 그리고 우리는 개별 변수가 필요합니다. 이 한 명의 개인으로, 그리고 때로는 이것이 이 개인이 마치 20시간처럼, 그리고 2기에는, 25 시간, 그리고 15 시간, 하지만 시간 변경, 연구가 다시 돌아오지만, 하지만 동기는 이미 시간이 지나도 고정되어 있습니다. 그래서 제가 시간이 지나면서 바꾸는 것이 편향을 설명할 수",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1842,
+     "page": 1,
+     "en": "This should be explain the bias. What we change of course over time for this particular individual. That is the idea. So really the question is what that exactly, because we complete and we need to see",
+     "ko": "있습니다. 이것은 편향을 설명해야 합니다. 우리가 물론 시간이 지나면서 이 특정 개인에 대해 그렇습니다. 그것이 아이디어입니다. 그래서 정말 질문은 무엇인가입니다. 그것이 정확히 무엇인지, 왜냐하면 우리는 완료하고 볼 필요가 있기 때문입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1861,
+     "page": 1,
+     "en": "Okay. So we have the example, so this is that fixed effect, the after training, the which is the patient. Then we have one point",
+     "ko": "네. 그래서 예시가 있는데, 이것은 그 사람이 고정되어 있다는 것입니다. 고정 효과, 훈련 후, 이것은 환자입니다. 그리고 우리는 한 가지 요점이 있습니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1877,
+     "page": 1,
+     "en": "And the thing is that this is different from who that expectation which is that should be the same as that. This is one observation, right? So it is not exactly the same as two, but in principle, in theory, if we have many many samples, and take the average, it has to be equal to that.",
+     "ko": "그리고 중요한 점은 이것이 누구와 다른 기대인지 입니다. 그것은 같아야 한다는 것입니다. 이것은 하나의 관찰이죠, 맞죠? 그래서 이것은 정확히 2와 같지 않지만, 원칙적으로는 이론적으로는 우리가 많은 많은 샘플을 가지고 있다면, 그리고 평균을 내면 그것은 같아야 합니다. 그래서",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1898,
+     "page": 1,
+     "en": "So Okay? And then the post and post, is a we complete the eliminated, we need to effect. So we don't need to worry about, we need to worry about this problem at all. But if you think about what the points what is the points?",
+     "ko": "알겠죠? 그리고 사후 그리고 사후, 이것은 우리가 완료하고 제거해야 하는 것입니다. 그래서 우리는 걱정할 필요가 없습니다, 우리는 이것에 대해 걱정해야 합니다. 하지만 만약 여러분이 무엇에 대해 생각한다면, 그 점들은 무엇인가요?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1927,
+     "page": 1,
+     "en": "But everything is conflicting. We are we're we're we're we need variations only. You want to recover that but we don't compare X and Y, which is of course because of leaders. We want to recover that. Do we only use a how X and Y change, we need to do. Because this model says that it doesn't make any sense to compare or of course individuals, individuals are two different. So the case study So the rule is you know, completely eliminate the you approach that we compare how changes, over time, or a particular So so that",
+     "ko": "하지만 모든 것이 상충돼요. 우리는 우리는 우리는 우리는 우리는 변형만 필요해요. 당신은 그걸 회복하고 싶지만 우리는 비교하지 않아요. X와 Y를, 물론 리더들 때문이죠. 우리는 그걸 회복하고 싶어요. 우리는 어떻게 하는지 만 사용하나요? X와 Y가 어떻게 변하는지, 우리는 해야 해요. 왜냐하면 이 모델은 말이 안 된다고 해요. 비교하거나 물론 개인들은, 개인들은 두 가지가 달라요. 그래서 그 사례 연구는 그래서 규칙은 아시다시피, 완전히 제거하는 거예요. 당신은 그 접근 방식을 비교하고 어떻게 결과가 변하는지, 시간이 지나면서 또는 어떤 특정 그래서 그래서",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1976,
+     "page": 1,
+     "en": "is recover only from individual variation over time. And this is the number of variation between used to estimate that is much smaller. Right? Previously the process of variation we used and to recover how changes in X translate into changes in Y. Right? So then in other words, this is the the individual effect, we choose fixed effect estimate and this is that we completely uh we completely give up.",
+     "ko": "그게 오직 에서만 회복하는 거예요. 개인 변형이 시간이 지나면서. 그리고 이것이 수의 변형입니다. 사용된 것들 사이에서 추정하는 것이 훨씬 작습니다. 그렇죠? 이전에는 변형 과정이 우리가 사용한 것과 어떻게 회복하는지 변화하는지 X에서 어떻게 변하는지 Y로 변하는지. 그렇죠? 그래서 다시 말해, 이것은 그 개인의 효과입니다, 우리는 고정 효과를 선택하고 이것은 이것이 우리가 완전히 어 우리는 완전히 포기합니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2016,
+     "page": 1,
+     "en": "using cross individual variation. Because this they are different. in terms of a CI. So we just choose how Y changes on X without. That's basically that. estimate. So the policy is that um",
+     "ko": "사용하는 것을 교차 개인 변형을 사용합니다. 왜냐하면 이것은 그들이 다르기 때문입니다. CI 측면에서. 그래서 우리는 그냥 선택합니다. 어떻게 Y가 변하는지 X에 대해 없이. 그게 기본적으로 그거예요. 추정치. 그래서 정책은 이것입니다. 음",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2041,
+     "page": 1,
+     "en": "This model every difference between units so we just discard we don't use that variation. It can be important to some extent, but we ignore completely for the sake of addressing this omitted variable bias. Okay? Okay? Please guys.",
+     "ko": "이것은 모든 차이를 단위 간에 그래서 우리는 그냥 버립니다. 우리는 그 변형을 사용하지 않아요. 그것은 어떤 사람들에게는 중요할 수 있지만, 우리는 완전히 무시합니다. 무엇을 위해서냐면 해결하기 위해서입니다. 이 누락된 변수 편향을. 알겠죠? 알겠죠? 제발요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2063,
+     "page": 1,
+     "en": "The unit effect never appears, okay? the time variant reverse becomes a common zero. This is a post, okay? So the policy is that we want to understand how education affects wage.",
+     "ko": "단위 효과는 절대 나타나지 않아요, 알겠죠? 시간 변동 역전은 공통적인 0이 됩니다. 이것은 게시물입니다, 알겠죠? 그래서 정책은 우리가 교육이 어떻게 되는지 영향을 미치는지 임금에.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2085,
+     "page": 1,
+     "en": "But if you run a fixed effect model, and you have education is fixed at the age of 22, then education does not change over time. So we cannot estimate beta education from fixed effect. Okay? This is important. This is the practical for you. For you to remember that.",
+     "ko": "하지만 만약 고정 효과 모델을 실행하고, 교육이 고정되어 있다면, 22세에 그러면 교육은 변하지 않아요. 그래서 우리는 추정할 수 없어요. 베타 교육을 고정 효과에서. 알겠죠? 이것은 중요합니다. 이것이 실질적인 것입니다. 당신에게. 기억해야 할 것은.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2107,
+     "page": 1,
+     "en": "Okay? Fixed effect model is good because you know, by design, we precisely address the presence of omitted variable effect. unobservable but the cost is that we cannot uh estimate it. Right? Or the time we invarium And then we we next why can the education or can be can characteristic whatever.",
+     "ko": "알겠죠? 고정 효과 모델은 좋지만 아시다시피, 설계상, 우리는 정확하게 해결합니다. 누락된 변수 효과의 존재를. 관찰할 수 없는 하지만 비용은 우리가 할 수 없다는 거예요. 추정할 수 없어요. 그렇죠? 아니면 그 시간 우리가 불변량 그리고 나서 우리는 다음으로 왜 교육이 또는 될 수 있는지 또는 특성 등등.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2142,
+     "page": 1,
+     "en": "If it is fixed, then maybe with that, why why X is always the same as X, so when we appear from specification, so we cannot recover the relationship between and characteristic. And why?",
+     "ko": "만약 고정되어 있다면, 그러면 아마도 그걸로, 왜 왜 X는 항상 X와 같고, 그래서 우리가 나타날 때 사양에서, 그래서 우리는 복구할 수 없어요, 관계를 불변량과 특성 사이의. 그리고 왜?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2165,
+     "page": 1,
+     "en": "Okay. Hi, and then we show up out. So we cannot estimate that. So only the variation I think beta, the result that we observe over time is almost nothing that or the meaning, but we can discuss. So, well, of course, sometimes fixed effect is hard to prove that estimators to explain the variation in why, if X changes to within individual, then the variation is too small, why variation having variation is true because if you remember, the standard error is inverse function of variation.",
+     "ko": "네. 안녕하세요, 그리고 나서 우리가 나타나요. 그래서 우리는 추정할 수 없어요. 그래서 변동성만 제 생각에는 베타, 그리고 우리가 얻은 결과는 시간이 지남에 따라 거의 아무것도 아니라는 것, 또는 의미, 하지만 우리는 논의할 수 있어요. 그래서, 음, 물론 가끔은 고정 효과가 어렵기도 한데, 그러면 그게 추정치라는 것을 증명하기 어려워요. 왜냐하면, 만약 X가 변하면 그 안에서 개인별로, 그러면 변동성이 너무 작아서, 왜 변동성이 있는 것은 사실이에요, 왜냐하면 기억하시겠지만, 표준 오차는 변동성의 역함수예요. 만약",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2208,
+     "page": 1,
+     "en": "If you have more variation in X, we can estimate beta more precisely. But the standard error of beta shrinks by the variation of X. Okay? And then if we have small variation within individual, then over time, then means that beta will be estimated imprecisely, which means that standard error of beta will be larger.",
+     "ko": "변동성이 더 많으면 X에서 우리는 추정할 수 있어요. 베타를 더 정확하게. 하지만 베타의 표준 오차는 줄어들어요. 그 변동성에 의해, 즉 X의 변동성에 의해. 알겠죠? 그리고 만약 변동성이 작으면 개인 내에서, 그러면 시간이 지나면서, 그러면 베타는 더 정확하게 추정되지 않을 것이고, 이는 표준 오차가 베타의 표준 오차가 될 것이라는 것을 의미합니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2234,
+     "page": 1,
+     "en": "Because X prime X is smaller.",
+     "ko": "왜냐하면 X 프라임 X가 더 작기 때문입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2240,
+     "page": 1,
+     "en": "variance is smaller. And then measuring the error is unifying the meaning of the signal only the I uh yeah. So measuring the error of the any measurement error, the relative importance of this UI minus UI is becomes greater and then if there is a measurement error, then that will generate a lot of bias.",
+     "ko": "분산이 더 작습니다. 그리고 측정하는 것은 오차를 측정하는 것은 의미를 통합하는 것이지만, 오직 신호만 저는 어 네. 그래서 오차를 측정하는 것은 어떤 측정의 오차든, 상대적인 중요성은 이 UI의 마이너스 UI 는 됩니다. 더 커집니다. 그리고 나서 만약 측정 오차가 있다면, 그러면 그럴 것입니다. 많은 편향이 발생합니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2274,
+     "page": 1,
+     "en": "And now let me move to fixed estimate. Okay.",
+     "ko": "이제 고정 추정치로 넘어가겠습니다. 네.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2283,
+     "page": 1,
+     "en": "Then data uh there's a something some code or like",
+     "ko": "그러면 데이터는 어 어떤 것이 있는데 어떤 코드가 또는 뭐 같은",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2294,
+     "page": 1,
+     "en": "How to ask the software to run fixed effect model. It's a very simple. I think. So this uh I'm using more advanced command. Uh high demand fixed effect fixed effect. or anything else. So just some very simple command. So you just need to specify I want fixed effect model.",
+     "ko": "어떻게 하면 물어볼 수 있을까요, 소프트웨어에 고정 효과를 실행하는 방법은요. 아주 간단해요. 제 생각에는. 그래서 어 저는 더 고급 명령어를 사용하고 있어요. 어, 고성능 고정 효과 고정 효과. 아니면 다른 거요. 그래서 그냥 아주 간단한 명령어예요. 그래서 그냥 지정하면 돼요, 고정 효과 모델을",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2318,
+     "page": 1,
+     "en": "Then data will automatically generate every variable. at the beginning, and then",
+     "ko": "원한다고. 그러면 데이터가 자동으로 생성될 거예요. 모든 변수가. 그때 처음에, 그리고 나서",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2330,
+     "page": 1,
+     "en": "Why did that happen? So random effect says that um they don't completely eliminate so they partially eliminate But here, it said, if the center is zero, if the data is zero, who would who who or",
+     "ko": "왜 그런 일이 일어났을까요? 그래서 무작위 효과는 이렇게 말해요. 음, 그들은 완전히 제거하지 않아요. 그래서 그들은 부분적으로 제거해요. 하지만 여기서는, 그것이 말하길, 만약 중심이 0이라면, 데이터가 0이라면, 누가 할까요? 누가 누가 또는",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2359,
+     "page": 1,
+     "en": "Um, you know, and I don't know, they they're not the least food. or uh um this is valid only if the fixed effect is completely random. So with respect to X. Okay? Or so CI cannot be random characteristics. It can be the the road or color this mix. I don't know that we think they are but if the data completely matches the fixed and this then we don't need to worry about CI.",
+     "ko": "음, 있잖아요, 그리고 저는 모르겠어요, 그들은 가장 음식이 아니에요. 아니면 어 음 이건 유효해요 오직 고정 효과가 완전히 무작위일 때만요. 그래서 X에 대해서요. 알겠죠? 아니면 CI는 무작위일 수 없어요. 특성이. 그건 그럴 수 있어요. 그 길이나 색깔이 이 조합이에요. 저는 우리가 그들이 그렇다고 생각하지만 데이터가 완전히 고정과 일치하면 그리고 이 그러면 우리는 걱정할 필요가 없어요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2399,
+     "page": 1,
+     "en": "Then we can just run it. They are referring to color or preference or season. I",
+     "ko": "그러면 그냥 실행하면 돼요. 그들은 언급하고 있어요, 색깔을 또는 선호도를",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2408,
+     "page": 1,
+     "en": "completely in the dark. So, we can't use a stereo for OS. But if we believe that I had had a characteristic that is that of productivity, or why men were in trouble, we cannot use OS. But if that is wrong, this is a fixed fact. We completely eliminate I mean, like if we choose that point one, that is fixed effect.",
+     "ko": "완전히 깜깜했어요. 그래서, 우리는 사용할 수 없어요. 스테레오를 OS용으로. 하지만 우리가 믿는다면 제가 어떤 특성을 가지고 있었다면, 그건 생산성이라는 것이거나, 왜 남자들이 곤경에 처했는지, 우리는 OS를 사용할 수 없어요. 하지만 그게 틀렸다면, 이건 확정된 사실이에요. 우리는 완전히 제거합니다. 제 말은, 우리가 그 점을 선택한다면 그건 고정된 효과입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2437,
+     "page": 1,
+     "en": "So if that equals one, this becomes zero. And then whatever is characteristic also disappears from the specification. If that is zero, and one, that is the fixed effect. So the fixed effect requires certain assumptions as well. to be valid. If you want to claim that our random effect estimator is unbiased, it means that we claim that the individual fixed effect is conditional on all characteristics or all observation of this individual over T period is zero. This is a very strong assumption.",
+     "ko": "그래서 만약 그게 1과 같다면, 이건 0이 됩니다. 그리고 무엇이든 특성이라면 그것도 사라집니다. 사양에서. 만약 그게 0이라면, 그리고 1이라면, 그건 고정된 효과입니다. 그래서 고정된 효과는 필요합니다. 특정 가정이 필요합니다. 유효하려면 말이죠. 만약 여러분이 우리의 랜덤 효과 추정치가 편향되지 않았다고 주장하고 싶다면, 그건 우리가 주장하는 것이고, 개인의 고정 효과가 조건부로 모든 특성에 대해 또는 모든 관측치에 대해 이 개인이 시간이 지남에 따라 T 기간 동안 0이라는 것입니다. 이것은 매우 강력한 가정입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2481,
+     "page": 1,
+     "en": "So this is your preference for color. See? Food is um even if that is the case, we can assume that this model with R random effect. What is the difference between RE and full random effect model and full OLS? RE and",
+     "ko": "그래서 이것은 여러분의 색상 선호도입니다. 아시겠죠? 음식 은 음 설령 그게 그렇다 하더라도, 우리는 가정할 수 있습니다. 그 모델이 와 함께 R 랜덤 효과. 차이점은 무엇인가요? RE와 전체 랜덤 효과 모델의 차이점은 무엇인가요? RE와",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2514,
+     "page": 1,
+     "en": "Yeah. And that's correct.",
+     "ko": "네. 그리고 그게 맞아요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2520,
+     "page": 1,
+     "en": "Only that. Okay. Then so see, that's the thing. If you don't assume this one, it's condition. So, we allow individuals have fixed effect. But error structure cannot be stochastic. Which means that but okay, we know. Okay. Okay.",
+     "ko": "그것뿐이에요. 알겠습니다. 그럼 그래서 보세요, 그게 문제예요. 만약 여러분이 가정하지 않는다면 이것을, 그건 조건입니다. 그래서, 우리는 개인이 고정 효과를 갖도록 합니다. 하지만 오차 구조는 그럴 수 없습니다. 확률적일 수 없죠. 즉, 그 말은 하지만 알겠습니다, 우리는 알아요. 알겠습니다. 알겠습니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2556,
+     "page": 1,
+     "en": "Omega is what? Um Omega is how you right? Okay. Okay. And you say that is quantitative. So Only one one. Then sigma one is variance of you one. Sigma one two is variance of individual one error term. And second period error term. Okay. Okay. So error structure is important.",
+     "ko": "오메가는 무엇인가요? 음 오메가는 어떻게 당신이 맞죠? 알겠습니다. 알겠습니다. 그리고 당신은 말하죠 그게 라고요. 정량적이라고. 그래서 그것뿐이에요. 하나만 하나만요. 그럼 시그마 1은 분산입니다. 당신의 하나. 시그마 1 2 는 분산입니다. 당신의 개인의 하나 오차항입니다. 그리고 두 번째 기간 오차항입니다. 알겠습니다. 알겠습니다. 그래서 오차 구조는 중요합니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2598,
+     "page": 1,
+     "en": "And if you allow CI, if there is CI, then this error structure of the even though we just looked at individual eyes, you know, but those are not those diagram is not zero because CI generate some correlation outcome. And then correlation is this error structure opposite to Okay, so this diagram is not zero. So this is different from pooled or pooled or is that it it's not also zero.",
+     "ko": "그리고 만약 CI를 허용한다면, 만약 어떤 CI가 있다면, 그러면 이 오차 구조는 다이어그램의 비록 우리가 방금 살펴봤지만 개별적인 눈을, 아시잖아요, 하지만 그것들은 그 다이어그램이 0이 아니기 때문에 CI가 생성됩니다. 어떤 상관관계 결과가. 그리고 상관관계는 이것입니다. 이 오차 구조는 반대입니다. 알겠습니다, 그래서 이 다이어그램은 0이 아닙니다. 그래서 이것은 풀링이나 풀링과는 다릅니다. 즉, 그것은 그것이 또한 0이 아니라는",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2636,
+     "page": 1,
+     "en": "Because this is from assumption. We allow that the error structure within individual is zero. But it's not zero. We can apply the to to have a efficient estimator for that. Oh, we stop. Questions? Okay.",
+     "ko": "것입니다. 왜냐하면 이것은 가정에서 나온 것이기 때문입니다. 우리는 그것을 허용합니다. 오차 구조가 개별적인 것은 0이라고. 하지만 그것은 0이 아닙니다. 우리는 적용할 수 있습니다. 그 에 대해 가지고 있는 효율적인 추정치를 위해. 아, 멈췄네요. 질문 있으신가요? 네.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2674,
+     "page": 1,
+     "en": "So the error structure is not like this but like this. Even though there is no correlation, of course, individual having CI or",
+     "ko": "그래서 오차 구조는 이런 게 아니에요. 하지만 이런 거예요. 비록 상관관계가 없더라도, 물론, 개별적인 CI를 가지거나",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2689,
+     "page": 1,
+     "en": "I think it's a very difficult to think about the question. He did Sigma T T Sigma T is the variance of new by",
+     "ko": "제 생각에는 매우 어려운 것 같아요. 질문에 대해. 그는 했어요. 시그마 T 시그마 T는 분산입니다. 새로운 에 의한",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2706,
+     "page": 1,
+     "en": "Sigma I that is is the variance of new one. one. new one. And the one. I I think so this is the more like this. This is individual one. I don't Yeah, the key point individual uh the",
+     "ko": "시그마 I 그건 이것은 분산입니다. 새로운 것의. 것의. 새로운 것의. 그리고 그 것의. 저는 그렇게 생각해요. 이것이 더 그런 것 같아요. 이것은 개별적인 것입니다. 저는 모르겠어요. 네, 핵심은 개별적인 어 그",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2736,
+     "page": 1,
+     "en": "Uh this side, okay? And this is fine. And the ones of course the error term the variance is not one. And the Sigma one to one is we still look at the individual, so the correlation between the correlation and second observation. Okay? So we can have this. Matrix for individual one, matrix for individual two and so on.",
+     "ko": "어 이쪽은, 알겠죠? 그리고 이것은 괜찮아요. 그리고 그 것들은 물론 오차항은 분산이 1이 아닙니다. 그리고 그 시그마 1에서 1은 우리가 여전히 개별적인 것을 보니까, 그래서 상관관계는 그 상관관계는 그리고 두 번째 관측입니다. 알겠죠? 그래서 우리는 이것을 가질 수 있습니다. 행렬 개별적인 것, 행렬 개별적인 두 번째 등등.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2764,
+     "page": 1,
+     "en": "And this diagram is not zero. So we can we I don't know what this is better. So correlation is variance is we Uh one is is individual ones. I don't know I don't know is not zero. Because obviously I knows I do I do. Okay? So this is not zero. So our error structure in our model as always, we are now individual have a fixed effect, like a fixed effect that we can we cannot have a homoscedastic error structure.",
+     "ko": "그리고 이 다이어그램은 0이 아닙니다. 그래서 우리는 할 수 있습니다. 우리는 모르겠어요. 이게 뭔지 더 나은지. 그래서 상관관계는 입니다. 분산은 입니다. 우리는 어 하나 는 입니다. 개별적인 것들입니다. 저는 모르겠어요. 저는 모르겠어요. 는 0이 아닙니다. 왜냐하면 분명히 저는 알고 있어요. 제가 그래요. 제가 그래요. 알겠죠? 그래서 이건 0이 아닙니다. 그래서 우리 오류 구조가 우리 모델에서 항상 그렇듯이, 우리는 이제 개별적인 고정된 효과를 가지고 있어요, 우리가 할 수 있는 고정된 효과를 가질 수 없는 동분산성 오류 구조입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2816,
+     "page": 1,
+     "en": "So we have to adjust our error. How to do that?",
+     "ko": "그래서 우리는 조정해야 합니다. 우리의 오류를요. 어떻게 하냐면 요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2825,
+     "page": 1,
+     "en": "So one way is to do the cross analysis, remember? The previous analysis, if we have a cluster, uh the group structure, that that error structure within that cluster has some correlation non zero correlation. We can adjust that standard error or the beta OLS. So by applying different estimator, the equation for cluster analysis.",
+     "ko": "그래서 한 가지 방법은 하는 것입니다. 하지만 교차 분석을 하는 것입니다, 기억하시죠? 이전 분석에서 만약 우리가 클러스터가 있다면, 어 그룹 구조가 있다면, 그 오류 구조가 그 클러스터 내에 있다면 어떤 상관관계가 0이 아닌 것입니다. 우리는 조정할 수 있습니다. 그 표준 오차나 베타 OLS를요. 그래서 이렇게 다른 추정량을 적용하여, 방정식이 클러스터에 대해 어떻게 되는지.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2856,
+     "page": 1,
+     "en": "In the in the case beta is the same as the because exactly the same. Cluster analysis and heteroscedastic error term, we still use OLS. X prime X inverse X prime Y or we adjust standard error or error beta or X. Okay? And then the way we adjust is um I already discussed last time because like I said the structure X prime X inverse X",
+     "ko": "그 경우에 는 베타 는 OLS와 동일합니다. 왜냐하면 정확히 같기 때문입니다. 클러스터 분석과 이분산성 오류는 우리가 여전히 베타 OLS를 사용합니다. X 프라임 X 역행렬 X 프라임 Y 또는 표준 오차를 조정하거나 베타 또는 X를 조정합니다. 알겠죠? 그리고 우리가 조정하는 방법은 음 제가 이미 논의했어요. 지난번에 왜냐하면 제가 말했듯이",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2889,
+     "page": 1,
+     "en": "And, um, yeah. And the way that he decided to perform the data. And so that was one way. This is alternative way. This is borrowing. This is more related to the BS. This is not robust at all approach. We are not applying to GLS. to estimate data. So this time, means that we are going to transform the equation by certain factor.",
+     "ko": "그리고, 음, 네. 그리고 그가 결정한 방식은 데이터를 처리하는 것이었어요. 그래서 그게 한 가지 방법이었고, 이건 대안적인 방법이에요. 이건 차용하는 거예요. 이건 더 관련이 있어요. BS랑. 이건 견고하지 않아요. 전혀 그런 접근이 아니에요. 우리는 적용하지 않아요, GLS에. 추정하기 위해 데이터를. 그래서 이번에는, 의미하는 바는 우리가 변환할 것이라는 것입니다. 방정식을 특정 요인으로.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2920,
+     "page": 1,
+     "en": "Omega. or P. So that uh if we know that structure, we can decompose the error structure and then transform the equation and then apply the OLS. So there are this is GLS. If you remember, uh okay.",
+     "ko": "오메가. 또는 P. 그래서 어, 만약 우리가 그 구조를 안다면, 우리는 오차 구조를 분해하고 그런 다음 변환할 수 있습니다. 그리고 나서 OLS를 적용합니다. 그래서 이것은 GLS입니다. 기억하시겠지만, 어 네.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2941,
+     "page": 1,
+     "en": "And if you uh the Omega depends if we know we know Omega, then Omega is or Omega can be decomposed by P matrix and then we transform this as X and this is going to be our new equation and then apply OLS. So this transformation will give us the efficient estimator.",
+     "ko": "그리고 만약 당신이 어 그 오메가 는 만약 우리가 안다면 우리가 안다면 오메가를, 그러면 오메가는 또는 오메가는 분해될 수 있습니다. P 행렬로 그리고 그런 다음 우리는 이것을 변환하고 이것을 X 그리고 이것은 우리의 새로운 방정식이 될 것이고, 그런 다음 OLS를 적용합니다. 그래서 이 변환은 우리가 우리에게 효율적인 추정치를 제공할",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2974,
+     "page": 1,
+     "en": "That's the",
+     "ko": "것입니다. 그것이",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2990,
+     "page": 1,
+     "en": "idea behind the GLS. And then we need to know the GLS. Okay? So we are gonna think about specific error structure and then if we estimate that error structure, then we can transform the equation by multiplying certain factor. And then apply the OLS. So then the here GLS the coefficient is not anymore X inverse X Y.",
+     "ko": "GLS의 기본 아이디어입니다. 그리고 나서 우리는 GLS를 알아야 합니다. 알겠죠? 그래서 우리는 특정 오차 구조에 대해 생각해 볼 것이고, 그런 다음 만약 우리가 그 오차 구조를 추정한다면, 그러면 우리는 변환할 수 있습니다. 방정식을 특정 요인을 곱해서. 그리고 나서 OLS를 적용합니다. 그래서 그러면 여기서 GLS는 계수가 더 이상 X 역행렬 X Y가 아닙니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3002,
+     "page": 1,
+     "en": "So this",
+     "ko": "그래서 이것은",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3007,
+     "page": 1,
+     "en": "X prime omega inverse X prime and This was the the the specification of GLS that I like. Okay? So we are doing exactly the same thing. We treat data error structure like a problem for GLS. We pretend that we know the error structure and then estimate that error structure based on certain model.",
+     "ko": "X 프라임 오메가 역행렬 X 프라임 그리고 이것은 바로 그 그 사양 GLS의 제가 좋아하는 것입니다. 알겠죠? 그래서 우리는 정확히 똑같은 것을 하고 있습니다. 우리는 데이터를 오차 구조를 마치 GLS의 문제처럼 다룹니다. 우리는 오차 구조를 알고 있는 척하고, 그런 다음 그 오차 구조를 추정합니다. 특정 모델을 기반으로.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3036,
+     "page": 1,
+     "en": "And then multiply the factor and then transform the data and then you know, estimate this one. recover the data.",
+     "ko": "그리고 나서 그 요인을 곱하고, 그런 다음 데이터를 변환합니다. 그리고 나서, 아시다시피, 이것을 추정합니다. 데이터를 복구합니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3049,
+     "page": 1,
+     "en": "Um,",
+     "ko": "음,",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3063,
+     "page": 1,
+     "en": "Okay.",
+     "ko": "네.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3067,
+     "page": 1,
+     "en": "So GLS",
+     "ko": "그래서 GLS는",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3072,
+     "page": 1,
+     "en": "is not biased. Okay? After we transform, it's still okay. But we know about this uh hold So this is not efficient.",
+     "ko": "편향되지 않았습니다. 알겠죠? 우리가 변환한 후에는 여전히 괜찮습니다. 하지만 우리는 이것에 대해 알고 있습니다. 어 잠깐만요. 그래서 이것은 아니에요. 효율적이지 않아요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3089,
+     "page": 1,
+     "en": "Okay? So OLS is not efficient, but at uh the standard error of the estimate does not have the smallest variance. If we apply OLS, so in order to achieve efficiency, which means that we want to find out estimator that is the linear and and on top of that has the smallest variance we have to use GLS.",
+     "ko": "알겠죠? 그래서 OLS는 효율적이지 않지만, 하지만 어 표준 오차는 추정치에 대한 것이 아니에요. 가장 작은 분산이 아니에요. 만약 우리가 OLS를 적용하면, 그래서 효율성을 달성하기 위해, 즉 우리는 무엇을 찾고 싶은지 알고 싶습니다. 그것은 선형이고 게다가 가장 작은 분산을 가진 추정치를 사용해야 합니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3115,
+     "page": 1,
+     "en": "Okay? GLS will give us the estimator with the smallest variance. Okay? I think it's enough for me to understand what it is. And so that's GLS. And how do we transform this? Very particular. And uh there's a very good thing random model, we choose a very particular data.",
+     "ko": "알겠죠? GLS는 우리에게 추정치를 제공할 것입니다. 가장 작은 분산으로요. 알겠죠? 제 생각엔 제가 이해하기에 충분한 것 같아요. 그리고 그래서 그게 GLS입니다. 그리고 어떻게 변환하냐면 이걸요? 아주 특별해요. 그리고 어 아주 좋은 게 있어요. 무작위 모델에서, 우리는 아주 특정한 데이터를 선택합니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3147,
+     "page": 1,
+     "en": "So to achieve efficiency, and that is, then this is a very useful. We are idea is that this is our original error structure. for individual I, so is a thing which is sigma variance of sigma I square. And if they are independent, then the is the same for all the variables.",
+     "ko": "그래서 효율성을 달성하기 위해, 그리고 그건, 그러면 이건 매우 유용합니다. 아이디어는 이것이 우리의 원래의 오차 구조라는 것입니다. 개별 I에 대해, 그래서 이것은 어떤 것이며 그것은 시그마 분산입니다. 시그마 I의 제곱입니다. 그리고 만약 그것들이 독립적이라면, 그러면 그것은 동일합니다. 모든 변수에 대해.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3177,
+     "page": 1,
+     "en": "is not zero.",
+     "ko": "그것은 0이 아닙니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3182,
+     "page": 1,
+     "en": "That is a problem, right? But if we transform, the equation is and we don't have a very nice uh error structure. like this. And we can apply OLS after that. And then you don't need to understand the detail, but this is a trick. So if we want to find a very specific weight, such that our error structure transformed uh the error structure was transformed, has",
+     "ko": "그것은 문제죠, 그렇죠? 하지만 우리가 변환하면, 방정식은 그리고 우리는 아주 좋지 않은 어 오차 구조를 가지고 있습니다. 이렇게요. 그리고 우리는 OLS를 적용할 수 있습니다. 그리고 나면 이해할 필요가 없지만, 이건 요령입니다. 그래서 만약 우리가 아주 특정한 가중치를 찾고 싶다면, 우리의 오차 구조가 변환된 어 오차 구조가 변환되었고, 정확히",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3217,
+     "page": 1,
+     "en": "exactly zero or diagonal component. So we choose a data to be able to have the zero diagonal and component of the new this is the transformed error. And you know, this is the you don't need to worry about that. And",
+     "ko": "0이거나 대각선이 아닌 성분들이 있습니다. 그래서 우리는 데이터를 선택하여 0을 가질 수 있는 대각선 및 새로운 성분을 갖도록 합니다. 이것이 변환된 오차입니다. 그리고 아시다시피, 이것이 걱정할 필요가 없는 것입니다. 그리고",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3237,
+     "page": 1,
+     "en": "then we apply OLS. So again, so the process is that in order to achieve So that is just a function is that it's just a so you know, we choose this. Okay? And in order to calculate that, that you need to know sigma square. and sigma C square, which is the variance of individual fixed effect or characteristic and variance of completely random component.",
+     "ko": "그런 다음 OLS를 적용합니다. 그래서 다시, 그래서 그 과정은 이렇습니다. 즉, 효율성을 달성하기 위해 그래서 그건 그냥 함수일 뿐이고, 그러니까, 우리는 이걸 선택합니다. 알겠죠? 그리고 그걸 계산하기 위해, 그건 알아야 합니다. 시그마 제곱을요. 그리고 시그마 C 제곱, 즉 분산입니다. 개별 I의 고정된 효과 또는 특성이고 분산입니다. 완전히 무작위 성분의.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3270,
+     "page": 1,
+     "en": "We know yet. We have to estimate sigma C and sigma U. to estimate sigma hat hat Once you know sigma hat, we use that that hat to transform the equation like this. We have the like this. And then estimate the the the",
+     "ko": "우리는 아직 모릅니다. 우리는 추정해야 합니다. 시그마 C 그리고 시그마 U를. 추정하기 위해 시그마 헷을 헷을 일단 알면 시그마 헷을, 우리는 그걸 사용해서 변환합니다. 방정식을 이렇게 요. 우리는 가지고 있습니다. 이렇게요. 그리고 나서 추정합니다. 그 그",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3302,
+     "page": 1,
+     "en": "So this entire thing has zero and zero or or or component. Like we use this particular data. And though CI is there, we make the data so that all is you can solve that and then that variation is just some noise curious.",
+     "ko": "그래서 이 전체 것이 가지고 있습니다. 제로 그리고 제로 또는 또는 또는 성분. 마치 우리가 사용하는 이 특정 데이터처럼요. 그리고 비록 CI가 있지만, 우리는 만들어요 데이터를 그래서 모든 것이 해결할 수 있고, 그런 다음 그게 변동이 그냥 어떤 노이즈가 됩니다. 궁금하네요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3339,
+     "page": 1,
+     "en": "This is here. And the process is we still don't know sigma. Which way we have to use the data and has to be estimated. So sigma can be calculated once we know sigma U and sigma C. Now we know sigma C we have to estimate it. From the data. And the idea is that from the fixed effect residual, which you use only individual variation, we recover the level of the random",
+     "ko": "이게 여기 있어요. 그리고 과정은 여전히 시그마를 모른다는 것입니다. 어떤 방식으로 데이터를 사용하고 추정해야 한다는 것입니다. 그래서 시그마는 계산될 수 있습니다. 일단 시그마를 알고 시그마 C를 알면요. 이제 우리는 시그마 C를 알고 있으니 우리는 그것을 추정해야 합니다. 데이터에서요. 그리고 아이디어는 이것으로부터 고정된 효과 잔차에서, 당신이 오직 개별 변동을 사용하는 것, 우리는 복구합니다. 분산을 수준에서",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3370,
+     "page": 1,
+     "en": "You know, this statement completely eliminates the DEI. So the variation, so why the fixed statement is so completely non-conforming or so and So you I see my youth is from the fixed statement. Okay, this is the basic principle of the fixed statement. Then the use of the adjective and calculate this number, it will give you Sigma U estimator.",
+     "ko": "있잖아요, 이 말은 완전히 배제합니다. DEI를요. 그래서 그 변형은, 그래서 왜 고정된 진술이 당신의 완전히 비순응적인가요? 아니면 그래서 그리고 그래서 당신은 제 젊음이 그 고정된 진술에서 왔다는 거죠. 알겠어요, 이게 이 고정된 진술의 기본 원칙입니다. 그럼 형용사의 사용과 이 숫자를 계산하면, 당신에게 시그마 U를 줄 것입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3400,
+     "page": 1,
+     "en": "Sigma U is not normal. So we have to estimate what kind of variation of use, we don't know. So fixed effect model of course. And fixed effect model the the variation is from within the variation. So this is the beginning of the variation. And then calculate the ratio, of course, the data E you get the number for each of the variation, right? And then apply this formula, we are losing the degree of freedom and minus um and plus in the case after that, we use um",
+     "ko": "시그마 U는 정규 분포가 아닙니다. 그래서 우리는 추정해야 합니다. 어떤 종류의 변동이 사용되는지, 우리는 모릅니다. 그래서 고정 효과 모델이죠, 물론. 그리고 고정 효과 모델은 그 그 변동은 그 안에서 변동에서 나옵니다. 그래서 이것이 변동의 시작입니다. 그리고 그런 다음 비율을 계산하면, 물론 데이터는 E 당신은 각 변동에 대한 숫자를 얻게 되죠, 그렇죠? 그리고 이 공식을 적용하면, 우리는 자유도를 잃게 되고 빼게 됩니다. 음 그리고 플러스인 경우에 그 후에 우리는 사용합니다. 음",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3443,
+     "page": 1,
+     "en": "we we apply the pool and this is the total of the entire part, like CI is doing. And as we before, we use the residual residual is the variation we can have in our sample and divide that by right number of degree of freedom, we are losing and that is the pool or less.",
+     "ko": "우리는 적용합니다. 풀 회귀를 그리고 이것이 전체의 전체 부분입니다, 마치 CI 가 하는 것처럼요. 그리고 우리가 전에 했던 것처럼, 우리는 잔차를 사용합니다. 잔차 제곱은 변동입니다. 우리가 우리 샘플에서 가질 수 있는 것이고, 그것을 적절한 수의 자유도로 나누면, 우리는 잃게 되고 그것이 풀이거나 그 이하입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3468,
+     "page": 1,
+     "en": "So I estimate for the variance of the C. is the the estimated value of from pool minus estimate the variance of U from the fixed effect model. So we can estimate C Sigma C and Sigma from the data. And then once we know Sigma C and Sigma U, we can estimate the number in the formula.",
+     "ko": "그래서 저는 추정합니다. 분산에 대해 C. 는 그 그 추정된 변동의 값은 풀 회귀에서 빼기 추정된 분산은 U의 분산에서 고정 효과 모델을 뺀 것입니다. 그래서 우리는 C를 추정할 수 있습니다. 시그마 C와 시그마는 데이터에서 나옵니다. 그리고 일단 시그마 C와 시그마 U를 알면, 우리는 그 숫자를 추정할 수 있습니다. 공식에서.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3496,
+     "page": 1,
+     "en": "Then we know which share, like which weight we have to use. And translate the original equation by using estimated that part. And then or less, that will give you the equation estimate. And but we completely did Okay.",
+     "ko": "그러면 우리는 어떤 몫인지 알 수 있습니다, 예를 들어 어떤 가중치를 사용해야 하는지. 그리고 원래 방정식을 번역합니다. 사용함으로써 추정된 그 부분을. 그리고 대략, 그것이 당신에게 그 방정식을 추정하게 합니다. 그리고 하지만 우리는 완전히 했습니다. 알겠습니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3522,
+     "page": 1,
+     "en": "Okay, let's stop here and question. So, I will not ask you too much details.",
+     "ko": "자, 여기서 멈추고 질문할게요. 그래서, 저는 너무 자세한 건 묻지 않을게요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3566,
+     "page": 1,
+     "en": "Well, this is the variation. Don't you worry about that. I know you understand what's going on. Okay? After going on here is that, we depend data is supposed to allow individual fixed effect. So CI is there. It's a sensor that will have that model. And then once we have that, which model is super and then which model we use uh the better estimator for linear position, right?",
+     "ko": "음, 이게 변동입니다. 걱정하지 마세요. 저는 당신이 왜 그런지 이해하고 있다는 걸 알아요. 알겠죠? 계속 진행한 후에 이렇습니다, 우리는 데이터가 개인을 허용해야 한다는 것을 알 수 있습니다. 개인 효과를요. 그래서 CI가 거기에 있습니다. 그것은 그것을 가질 센서입니다. 그리고 일단 우리가 그것을 가지면, 어떤 모델이 슈퍼이고 어떤 모델이 우리가 사용하는지 어, 그 더 나은 추정치를 선형 위치에 대해, 맞죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3588,
+     "page": 1,
+     "en": "So does it not satisfy fine, because as long as we have the CI whereas bias, okay? So we need to choose either fixed and random effect. Uh so fixed effect, whereas okay? Um So fixed effect is when we completely eliminate CI. So we need the error variable uh by subtracting something.",
+     "ko": "그래서 이것이 만족하지 않나요? 괜찮아요, 왜냐하면 우리가 신뢰 구간을 가지고 있는 반면에 편향은, 알겠죠? 그래서 우리는 고정된 효과와 무작위 효과 중 하나를 선택해야 해요. 어, 그래서 고정 효과는, 반면에 알겠죠? 음 그래서 고정 효과는 우리가 완전히 제거할 때입니다. 그래서 우리는 필요합니다. 그 오차 변수가 어, 빼는 것으로 무언가를.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3612,
+     "page": 1,
+     "en": "And random effect, we take some weight and apply the weight when we uh subtract the mean. Something like that. So we need to observation. So that. And that weight is very important. It looks like that. You know, in order for us to have zero heteroscedasticity in the model, and",
+     "ko": "그리고 무작위 효과는, 우리가 어떤 가중치를 두고 그 가중치를 적용할 때 우리가 어, 빼는 것입니다. 그런 식이죠. 그래서 우리는 관측치를 필요로 합니다. 그래서 그리고 그 가중치는 매우 중요합니다. 이렇게 보입니다. 아시다시피, 우리가 가지려면 제로 이분산성이 모델에 있어야 하고, 그리고",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3638,
+     "page": 1,
+     "en": "this one, we need to estimate so we need to uh we can estimate this for fixed effect model and this from school or and to mind those two, put the fixed effect model, okay? And combine those two, we can estimate that and then apply that number in the model of that is random effect.",
+     "ko": "이것은, 우리가 추정해야 하니까, 그래서 우리는 어, 우리는 이것을 추정할 수 있습니다. 고정 효과 모델에 대해, 그리고 이것은 에서 학교에서 또는 그리고 염두에 두어야 할 것은, 넣는 것입니다. 고정 효과를 넣는 것입니다, 알겠죠? 그리고 그 두 가지를 결합하면, 우리는 그것을 추정할 수 있고, 그런 다음 그 숫자를 모델에 적용합니다. 그것은 무작위 효과입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3657,
+     "page": 1,
+     "en": "So random effect so change is the question as well. Because now it's is different from or. So fixed effect also have a different coefficient, which is why because we the data, so we have a different coefficient. depending on which we are we are using. And the the one thing I want to mention is that sometimes just use cluster analysis with the OLS.",
+     "ko": "그래서 무작위 효과는 그래서 변화는 그 질문이기도 합니다. 왜냐하면 이제는 다릅니다. 에서 또는. 그래서 고정 효과 모델도 다른 계수를 가지고, 그래서 우리가 그 데이터를, 그래서 우리는 다른 계수를 가지고 있습니다. 어떤 모델을 사용하느냐에 따라 다릅니다. 그리고 그 한 가지 제가 언급하고 싶은 것은 때때로 그냥 군집 분석을 사용해서 OLS를 합니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3685,
+     "page": 1,
+     "en": "Right? But",
+     "ko": "맞죠? 하지만",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3689,
+     "page": 1,
+     "en": "So sometimes just use is",
+     "ko": "그래서 때때로 그냥 사용하세요 는",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3701,
+     "page": 1,
+     "en": "Sometimes because that always uh we can actually use use with we or so and that uh we need to turn on analysis. And in this case, let the OLS it does not change. It will be cluster analysis. estimate better or better. So we have more accurate. standard error of this. So it's a slightly better than just to use OLS and so we are not cluster cluster the standard",
+     "ko": "때때로 왜냐하면 그게 항상 우리는 실제로 사용할 수 있어요, OLS를 사용해서 우리는 또는 그래서 그리고 그 어, 우리는 켜야 합니다. 분석을. 그리고 이 경우, OLS가 되게 하세요. 그것은 변하지 않습니다. 그것은 군집 분석이 될 것입니다. 추정하고 더 나은 또는 더 나은. 그래서 우리는 더 정확합니다. 표준 오차가 이것의. 그래서 그것은 약간 더 나은 것입니다, 그냥 OLS를 사용하는 것보다 그리고 그래서 우리는 군집이 아닙니다. 군집 표준 오차를",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3749,
+     "page": 1,
+     "en": "error. So this is not the case. We need to you don't need to at least you have to have a cluster on it.",
+     "ko": "그래서 이것은 그렇지 않습니다. 우리는 당신이 필요합니다. 당신은 적어도 당신은 해야 합니다. 클러스터가 있어야 합니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3761,
+     "page": 1,
+     "en": "And then we have to and it's very hard to think about the situation where is valid. See, I you know, one of the things characteristic should not be related to X and Y. Okay, that's very difficult to think of. Uh think of. So the typical case is when you have data, we stick to fixed effect and random effect.",
+     "ko": "그리고 나서 우리는 OLS를 해야 하고 그리고 생각하기 매우 어려운 상황입니다. 그런 상황은 유효합니다. 보세요, 저는 아시다시피, 한 가지는 특징적인 것은 그렇지 않아야 합니다. X와 Y와 관련이 없어야 합니다. 알겠습니다, 그것은 생각하기 매우 어렵습니다. 어 생각해보세요. 그래서 전형적인 경우는 당신이 데이터를 가지고 있을 때, 우리는 고정된 효과를 고수합니다. 그리고 무작위",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3790,
+     "page": 1,
+     "en": "But actually to be honest, fixed effect is more popular.",
+     "ko": "효과를. 하지만 사실 솔직히 말해서, 고정 효과가 더 인기가 있습니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3796,
+     "page": 1,
+     "en": "Because why? So typically choice is fixed effect model. But I design you can completely address the variable of bias, right? So and another thing is that um",
+     "ko": "왜냐하면 왜냐하면요? 그래서 일반적으로 선택은 는 고정 효과 모델입니다. 하지만 제가 설계한 것은 당신이 완전히 해결할 수 있습니다. 편향의 변수를, 그렇죠? 그래서 그리고 또 다른 점은 음",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3820,
+     "page": 1,
+     "en": "Random effect random effect model requires variable to be exogenous assumption to be valid. This is very strong. Fixed effect, we don't need any assumption regarding the relationship between CI and X IT. Because we just eliminate no matter how they are related.",
+     "ko": "무작위 효과는 무작위 효과 모델은 변수가 고정되어야 한다는 가정이 유효해야 합니다. 이것은 매우 강력합니다. 고정 효과는, 우리는 어떤 가정도 필요하지 않습니다. 관계에 대한 CI와 X 사이의 관계에 대해서요. 왜냐하면 우리는 그냥 그들이 어떻게 관련되어 있든 상관없이 제거하니까요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3843,
+     "page": 1,
+     "en": "Actually, we can subtract. And then we just use a",
+     "ko": "사실, 우리는 뺄 수 있습니다. 그리고 그런 다음 우리는",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3852,
+     "page": 1,
+     "en": "So, we've been using this one chat to make a big model that but to um for for that or are that is unbiased is it? biasness. And we want to make our the unbiased. We need a very strong assumption.",
+     "ko": "그래서 저희는 이 채팅 을 사용해서 큰 모델을 만들고 있는데, 하지만 음 뭐 예를 들어 그런 거요. 아니면 아니면 그게 편향되지 않은 건가요? 편향성. 그리고 저희는 저희의 편향되지 않게 하고 싶어요. 아주 강력한 가정이 필요해요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3877,
+     "page": 1,
+     "en": "assumption. So we have a lot of tools and writing. Okay.",
+     "ko": "가정. 그래서 저희는 많은 도구를 가지고 글을 써요. 네.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3885,
+     "page": 1,
+     "en": "This means that conditional the characteristic of individual over time, CI is that expected value is zero. Okay. Okay. This is very strong assumption. Okay. So it has to be something like",
+     "ko": "이것은 조건부 가 특성이 개인의 시간이 지남에 따라, CI가 예상되는 값이 0이라는 것입니다. 네. 네. 이것은 매우 강력한 가정입니다. 네. 그래서 어떤 것과 같아야 해요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3907,
+     "page": 1,
+     "en": "Okay. Um um",
+     "ko": "네. 음 음",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3916,
+     "page": 1,
+     "en": "So the frequency is okay? But I don't know what that means. So this is this a strong? So rather than sticking to the random effect model, because we are not going to help to show show it's making the practical approach is we just use fixed model. We don't need the assumption.",
+     "ko": "그래서 빈도가 입니다. 괜찮죠? 하지만 그게 무슨 뜻인지 모르겠어요. 그래서 이게 강한가요? 그래서 고수하는 것보다 랜덤 효과 모델을 고수하는 것보다, 왜냐하면 우리는 보여주려고 하는 게 아니니까요. 그게 만들어지고 있다는 것을요. 실용적인 접근은 우리가 그냥 고정 효과 모델을 사용하는 것입니다. 우리는",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3938,
+     "page": 1,
+     "en": "We don't the relationship between C and U. Even though we lose something, even though we cannot estimate the relationship with time and the characteristic, and our we cannot do that, the fixed effect model, but we don't need assumption or something. Okay? But sometimes we if we want to understand the relationship between time and the characteristic, like",
+     "ko": "가정이 필요하지 않아요. 우리는 C와 U 사이의 관계가 필요하지 않아요. 비록 우리가 뭔가를 잃더라도, 비록 우리가 관계를 추정할 수 없더라도 시간과 특성과의 관계를 그리고 우리의 그것을 할 수 없더라도, 고정 효과 모델은, 하지만 우리는 필요하지 않아요. 가정이나 그런 것들이요. 괜찮죠? 하지만 때로는 우리가 만약 이해하고 싶다면 관계를 시간과 특성과의 관계를 알고 싶다면,",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3969,
+     "page": 1,
+     "en": "uh education and or now the rate",
+     "ko": "어 교육 그리고 아니면 이제 비율",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3976,
+     "page": 1,
+     "en": "then we have to use random effect model. Okay?",
+     "ko": "그러면 우리는 랜덤 효과 모델을 사용해야 해요. 괜찮죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3985,
+     "page": 1,
+     "en": "Um I have it.",
+     "ko": "음 저는 가지고 있어요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4043,
+     "page": 1,
+     "en": "So if I ask, what should I do? Okay? Um",
+     "ko": "그래서 제가 물어보면, 뭘 해야 할까요? 괜찮죠? 음",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4056,
+     "page": 1,
+     "en": "Uh we're not asking you to buy. I just said that. But more so I I shared the concept. Please website. Okay. I don't want you to understand the concept for now.",
+     "ko": "어, 저희는 구매를 요청하는 게 아니에요. 방금 그렇게 말했어요. 하지만 더 그래서 저는 개념을 공유했어요. 제발 웹사이트를. 네. 저는 여러분이 개념을 이해하기를 바라지 않아요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4068,
+     "page": 1,
+     "en": "Any questions? Let's see. Let's do it together. I will share it.",
+     "ko": "질문 있으신가요? 어디 보자. 같이 해봐요. 제가 공유할게요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4078,
+     "page": 1,
+     "en": "So I think the last time I did this, I think it was a little bit too. If we have that, and to do the fixed effect model, uh we just need to think about what is the value of the cluster. We know as a individual level, like a panel data, or obviously you have to cluster by individual, but we have to include fixed effect by individual that that is the best, but if you don't have that, you know, you may include uh how to like a fixed effect.",
+     "ko": "그래서 지난번에 했을 때는 좀 그랬던 것 같아요. 만약 우리가 그걸 가지고 있다면, 그리고 고정 효과 모델을 하려면, 어 그냥 생각해 볼 필요가 있어요. 무엇이 그 값인지 말이죠. 우리는 알고 있어요. 개인으로서 말이죠. 예를 들어 패널 데이터처럼, 아니면 분명히 여러분은 클러스터 단위로 해야 해요, 하지만 우리는 고정 효과를 개인별로 포함해야 해요. 그게 가장 좋지만, 만약 그게 없다면, 아시다시피, 여러분은 어, 어떻게 고정 효과를 넣을지 생각해야",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4111,
+     "page": 1,
+     "en": "Also, so that the fixed effect, something like that. So when you have a panel data, depending on what you do, if you change, the which fixed effect you want to include, so in some some survey data, they collect panel data, so individual, who belongs to certain households. So we know how the wage rate of the husband over time, the wage rate of the wife over time is if if you're interested in the household decision, you include household fixed effect.",
+     "ko": "해요. 또한, 고정 효과가, 그런 식이죠. 그래서 패널 데이터가 있을 때, 어떤 것을 하느냐에 따라 다르지만, 만약 여러분이 바꾼다면, 그 어떤 고정 효과를 사용하고 싶은지에 따라, 그래서 예를 들어 어떤 경우에는 어떤 설문 조사 데이터에서는, 그들은 패널 데이터를 수집하니까, 개인별로, 누가 속해 있는지 특정 가구에. 그래서 우리는 어떻게 임금률이 남편의 임금률이 시간이 지남에 따라 어떻게 변하는지, 아내의 임금률이 시간이 지남에 따라 어떻게 변하는지, 만약 여러분이 가구의 결정에 관심이 있다면, 가구 고정 효과를 포함합니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4167,
+     "page": 1,
+     "en": "뭐 어 I think that is it. We don't know. Just this is a question.",
+     "ko": "제 생각엔 그게 다인 것 같아요. 우리는 그렇지 않아요. 모르겠어요. 그냥 이건 질문이에요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4182,
+     "page": 1,
+     "en": "오케이. 그럼 이제 뭐지? 그럼 마지막으로 뉴 Oh, we already show or about why the question was not changed, but we cluster. So that or uh the Yes. So those instead of the error, the coefficient per se. You don't need to change the other. Or if you change this, you reduce some transformation like fixed effect model.",
+     "ko": "아, 우리 이미 보여줬어요. 아니면 뭐에 대해 왜 질문이 아니었는지 에 대해, 하지만 우리는 클러스터링해요. 그래서 아니면 어 그 네. 그래서 그런 것들은 대신에 오차 대신, 계수가 그 자체로요. 여러분은 다른 것을 바꿀 필요가 없어요. 아니면 만약 여러분이 이것을 바꾸면, 변환을 좀 줄일 수 있어요, 예를 들어 고정 효과 모델처럼요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4215,
+     "page": 1,
+     "en": "And random effect model, or S, and we have the deep of the back. Which is not only that, also the but the transformation in the data also achieve the same. Right? You have the estimator is always the same.",
+     "ko": "그리고 확률 효과 모델, 아니면 S, 그리고 우리는 깊은 뒷면이 있어요. 그건 단지 그것뿐만 아니라, 또한 하지만 데이터의 변환은 또한 동일한 결과를 얻습니다. 그렇죠? 여러분은 추정치가 항상 동일합니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4236,
+     "page": 1,
+     "en": "Okay. I will I will stop. Okay.",
+     "ko": "네. 저는 그만할게요. 네.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4266,
+     "page": 1,
+     "en": "이제 뭐지? 그럼 어 Yes, not observed. But it doesn't change over time. So we know which doesn't change over time. So it just our classification whatever the data that doesn't change, we'll like the Y on variable. That is considered as that.",
+     "ko": "네, 관찰되지 않았어요. 하지만 시간이 지나도 변하지 않아요. 그래서 우리는 어떤 것이 시간이 지나도 변하지 않는지 알아요. 그래서 우리의 분류는 데이터가 무엇이든 변하지 않는 것은 우리가 Y를 변수로 생각할 거예요. 그것은 로 간주됩니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4294,
+     "page": 1,
+     "en": "All right. So",
+     "ko": "알겠습니다. 그래서",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4305,
+     "page": 1,
+     "en": "Well, let's ask and nothing to do with bias. Let's ask just go by the data and you know, the infrastructure different. Okay? I'll just do that. Okay. So the blue protein okay? And then the final, we don't our our probability",
+     "ko": "음, 그럼 물어보고 아무 상관없는 편향에 대해 물어보자. 그냥 데이터대로 하고 그리고 알다시피, 그 인프라가 다르다. 알겠죠? 그냥 그렇게 할게요. 네. 그래서 파란색 단백질은 괜찮죠? 그리고 마지막으로, 우리는 우리의 우리의 확률은",
+     "src": "gemini",
+     "ai": true
+    }
+   ]
+  }
+ ],
+ "savedAt": "2026-10-07T03:37:33.712Z"
+}
