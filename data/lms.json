@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-10T10:01:44.203Z",
+  "generatedAt": "2026-10-10T15:55:06.165Z",
   "source": "canvas",
   "user": "김주함(2025####72)",
   "courseFiles": {
@@ -685,7 +685,14 @@
         "name": "7주차",
         "position": 7,
         "unlock": null,
-        "items": []
+        "items": [
+          {
+            "type": "ExternalTool",
+            "title": "Core_note_rct_2026",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/95551/modules/items/4806583"
+          }
+        ]
       },
       {
         "id": "1507913",
