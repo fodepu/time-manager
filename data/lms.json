@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-11T09:06:35.908Z",
+  "generatedAt": "2026-10-11T15:50:49.148Z",
   "source": "canvas",
   "user": "김주함(2025####72)",
   "courseFiles": {
@@ -668,12 +668,6 @@
           },
           {
             "type": "ExternalTool",
-            "title": "Core_note_ovb_panel_2026",
-            "indent": 0,
-            "url": "https://khcanvas.khu.ac.kr/courses/95551/modules/items/4803216"
-          },
-          {
-            "type": "ExternalTool",
             "title": "Play Kahoot! challenge: panel data analysis",
             "indent": 0,
             "url": "https://khcanvas.khu.ac.kr/courses/95551/modules/items/4804173"
@@ -688,9 +682,15 @@
         "items": [
           {
             "type": "ExternalTool",
+            "title": "Core_note_causal_2026",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/95551/modules/items/4806983"
+          },
+          {
+            "type": "ExternalTool",
             "title": "Core_note_rct_2026",
             "indent": 0,
-            "url": "https://khcanvas.khu.ac.kr/courses/95551/modules/items/4806583"
+            "url": "https://khcanvas.khu.ac.kr/courses/95551/modules/items/4806998"
           }
         ]
       },
