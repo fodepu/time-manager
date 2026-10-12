@@ -1,4 +1,16 @@
 {
+ "savedAt": "2026-10-12T00:25:16.700Z",
+ "base": 0,
+ "docs": [
+  {
+   "name": "Core_note_ovb_panel_2026.pdf",
+   "base": 0,
+   "total": 6,
+   "from": 0
+  }
+ ],
+ "weekId": "wk6",
+ "langCode": "en-US",
  "id": "lec_2026-10-07_muxpc8f2",
  "course": "거시경제학",
  "title": "거시경제학 6주차",
@@ -9,7 +21,7 @@
  "mode": "online",
  "pdf": "",
  "pages": 19,
- "duration": 5064,
+ "duration": 411683,
  "log": [
   {
    "t": 0,
@@ -2519,6 +2531,5 @@
     }
    ]
   }
- ],
- "savedAt": "2026-10-07T07:28:18.218Z"
+ ]
 }
