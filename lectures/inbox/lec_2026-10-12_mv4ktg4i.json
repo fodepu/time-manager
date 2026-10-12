@@ -1,0 +1,1877 @@
+{
+ "id": "lec_2026-10-12_mv4ktg4i",
+ "course": "계량경제학",
+ "title": "계량경제학 6주차",
+ "date": "2026-10-12",
+ "week": 6,
+ "module": "1507911",
+ "lang": "en",
+ "mode": "slides",
+ "pdf": "Core_note_ovb_panel_2026.pdf",
+ "pages": 6,
+ "duration": 15478,
+ "log": [
+  {
+   "t": 0,
+   "page": 1
+  },
+  {
+   "t": 245,
+   "page": 1,
+   "resumed": true
+  }
+ ],
+ "slides": [
+  {
+   "page": 1,
+   "en": "simple question, we need to on the same answer. Really? or it will be answer. Probably. Uh or some people ask questions. So like uh I would provide all the questions. from the and then share it with you. But if you want to do it, or yourself, you can just do it. questions. But my name is David, it will be 100% exactly the same. It will be similar. Now, as you see the questions, uh 20% will be based on Hold on, first. which we discussed today. And then from today, we will have the actual table. from the table. Okay? So I want you to be able to interpret some numbers. from the table. Don't worry. I will walk through uh or the or the small details. I'm the the number in the table. and interpret the table. So that will be that will be another 20%. Uh I don't know which um or so. It can be also some words as you know. And I can show you something with the or or coefficient, right? And the error, I can ask you what the statistic or not. I would ask you whether you need to interpret that at the table. Okay? So income and I may ask you what exactly the coefficient does not hold. Like, you know, we have a variable like obesity, and coefficient maybe something like that. So those are so basically the skill is for you to know to interpret the table. So something like will be about 20%. of the percent. So questionable However, I will ask you to identify like some condition. So going from the standard deviation to have an unbiasedness. So the definition of unbiasedness consists of and you know, um What do you mean by OLS is robust? So you need to understand it. And then I will ask you uh the coefficient. Like you know, a matrix. So we don't need to interpret uh calculate the inverse of matrix. We don't for me, if the dependent is beyond the 2 by 2, calculating the inverse matrix takes a long time. So that is the not directly. But you need to understand the formula. So it is possible, so you cannot bring any cheat sheet, but I want you to remember that at least what is and OLS. Next time, X prime X, and it's something you really need to understand. Okay? I remember. That is one thing. And we should remember. I I don't encourage students to memorize stuff, but that is something you need to understand. Okay, today we will talk about causal inference and then we will talk about different methods to show causal uh causal effects. Okay? And this is more application. Uh more of the application. And then this application about what? application to prove exogeneity. And let me mention before, in order to have OLS estimator, unbiased, we need to satisfy exogeneity. We said exogeneity is key for 아니 딱 좀 파라미터가 that's the configuration, right? So, by now, we've discussed the size and like the equation, which means that conditional on any X value, the expected value of error is always zero. Okay? That was exactly. And that is also related to the you know, another way to interpret that is if that condition does not hold, we say that we have a biased problem. Which means that the error term and X variable are correlated, and the expected value of error term conditional on X is not equal to zero. Then the OLS is biased. And then I want you to understand that you need to know why it is uh related because OLS is X and X inverse and Y and X and Y can be written as X prime X inverse X prime X beta plus X prime X inverse X prime U. So OLS is that. Plus the expected value of X prime X inverse X prime U. Okay? I don't know if you're following. So, and this is a very important Okay, first X prime Y and the vector of U, right? is the uh covariance divided by variance, but still, if you have more than one, control variable, that's your formula is three minutes. And it is X prime X inverse X prime X beta. So plus U. And this is beta. Plus X prime X inverse X prime U. That's what I'm saying. You know, if you want to make the expectation of this is the same as the population parameter, the expected value of the beta and additional term, X prime X inverse X prime U, should be equal to zero. And exactly we can have that if we have this conditional that conditional on X value, the expected value of U equals to zero. If this condition holds, then the expectation this will become that's a condition for unbiasedness, right? So something we have discussed so far, which is very important, unbiasedness is very desirable property. If it is biased, we cannot say much about what the population means. Okay? We our purpose is to recover the parameter in the population. If our estimate is biased, which means that you expectation is different from the then there's a error in the equation. So, you know, talk about what it means uh about having our OLS estimator. And this is related to the what we call the value of bias. If our calculation relationship is looks like this, then exactly means that if we know X, if we know X, then all the outcome within X that this interpretation zero. So we can say X, for instance, can be highly education. And high education that exactly means that if we know uh if they are highly education, then this expectation is zero. If they are high education, their expected value of outcome is equal to zero. Okay? If the selection bias So if the underlying relationship is you something's ability, then you expected value can be higher or lower. Who choose to college? So this will be violated. So once we have omitted variable, in new term, and that affects X, then the condition is not satisfied. So this condition is expected value is equal to zero. That condition will be violated. And then OLS is no longer unbiased. Now, we so so what what how is it related to the consequence? He said, that how to in the three that is related to um uh causal inference is more better defined. If we consider a situation that there is some treatment. So one of the center how the treatment has causal effect on the outcome. Then that is our goal. So if we have that situation, and then if we believe that this condition is satisfied, then then that means that um that means our estimate can be interpreted as causal effect. So more specifically, many times, um So we will talk about causal inference uh you know, on the field, okay? Um, okay. So I said that this is condition I said. It's very hard to prove. We have to argue. that our satisfy this conditional expectation equal to this assumption. I our really only it's really not I'm really not buying this of course. But how can you show that this will this is very difficult. If you don't have any um I mean specifically I don't know how to decide your experiment. condition. Uh it is very likely that you complain that um very. Why? Okay, we we try to which we definitely could affect and their outcome but that is not captured in the data. In principle it would be possible not to have omitted a variable if we even though you control many, many control variables, still you cannot argue logically that you have not omitted a variable. Is it just so is it a lot like the best like for many, many variables, that's okay, that's not so bad, but it's not perfect. You cannot still argue causality. In order to be able to claim that, you need to find a certain design. that guarantees that this condition holds. Okay, so you And I mentioned that I see T randomized control trial is a design. that guarantees that this is the case. I are RCT is something like that. Um, so I I think I maybe this like this but it's experiment to to show the treatment effect of medicine for instance, we recruit or the individuals and then we divide them randomly into treatment group and control group. Okay. And treatment group receive the medicine control group doesn't receive the medicine or receive a placebo. Okay? So what our idea is that we're going to estimate the treatment effect of medicine by comparing the outcome after they take after this experiment, right? So if this medicine has a significant treatment effect, the outcome of this treated group will receive significantly different from the outcome of the control group. Okay? And here, the key is that if we divide our sample uh you know, they are voluntary applications, and I'm going to be tweaky. And I want to be, you know, I don't want to be if we take that account in this assignment, our analysis fails, so to satisfy this, the RCT is not working. RCT is valid only if we divide the sample randomly. into two groups. How the randomness helps? Well, suppose this assignment is, so in the RCT, we determine the number of the treated group is the same as the outcome of untreated. This is a treatment. So we know that this value one if they are tricky. takes value zero if they are not tricky. So we designated condition in this case means that given the treatment assignment, they are under characteristics should be exactly the same or whatever. This is the value of exactly the same means the same as the residual in expectation zero. Okay? Uh so why does this help? I decide, if you know, two groups have the exactly the same on the characteristic, then then the only difference between those two groups on the practice is the treatment. Anything else? If we randomly divide the groups, so that we made sure that two groups in expectation have the same distribution of U, then the only difference between those two groups is the treatment. Only there was shared characteristics. So randomness allow us to do that. So if we randomly divide them and if we have a large enough sample, then their education level is also characteristics, but also the other characteristics. Well, it be randomly divided into two groups. So they will have on average the same characteristics. It's like if you pulls ahead like a the probability of having head and take is the same point. So if you now doing that, the sampling process we can divide them randomly. And the most we know that the difference is the truth, how we can say that any difference in their outcome is entirely attributed to the treatment. Okay? So that's why RCT provide a very clear idea identifying application, let's say, and then that identification here is so this kind of Okay? So I made sure that this condition holds and RCT, so the only difference between those two groups is the treatment. So whenever we observe we compare those two data sets, but we didn't take the medicine in the population. we cannot say they have exactly the same characteristic on average. Those who choose to take the medicine in the outside of the lab, they may have a reason why they're out of the lab, you know, they search for medicine. and took it. Right? So there must be a reason why they chose to do so. And then they are characteristics will be different. from those who didn't take. So voluntary choice does not help. It's a confounding. There is a selection bias. So we can So by this condition, only two randomization is we have people and by design we have to randomly divide. So if you understand that, that means the core idea is and that is not the to not. Well, because is so I will talk about this uh formula. definition of the here. Okay. So, the is about uh like about um I will just do it. Uh D is an indicator whether I is a treatment or not. So when you talk about, we always consider certain situations that we want to cover the treatment effect. So So uh um Okay. Like the is the relationship between the temperature and I don't know. But something else. Okay. But we may not be very interested in the causal effect of temperature or uh And temperature and the humidity, I don't know. So that is something, you know, just we want to understand the correlation. But causation matters if we are specific question in our mind. We want to understand the treatment effect. So this is the narrowly defined causal effect. So okay. So I is a dummy variable which takes a value one if the unit is treated, zero if they are not treated. What is this? This is a training course, small class. Uh tutor and uh and okay. Medicine. And and there is a concept of potential outcome. So when you discuss causal effect, potential outcome is for each unit, we have outcome that would occur under each possible treatment state. Whether or not the state happens. This is important. So for potential outcome is let's say this is the outcome. Oh, about the teacher and then the student. And then potential outcome is a hypothetical outcome. So there are three months, okay? Uh you can just say that's a outcome. Oh, in the earlier, can we get back to by? the treatment, right? So it can be uh we And then why I know this outcome Oh, the the treatment, what I see is the outcome who have the treatment. So this like hypothetical. Right? We added because in the we also only one. So if the individual actually took the medicine, we don't know what would have happened to them individual, we if the individual chose not to take, chose not to take the medicine. Right? So potential outcome is that we don't know what would have happened on side. Do you understand what would have happened if this person chose not to do this thing. So why I say this person actually choose one, why I is not observable, but we still want to think about the hypothetical outcome. Okay? So this one, we can define so this is the definition. So individual of this is defined by the difference of this potential outcome between treated and untreated. So we fix individual I and then we compare the potential outcome. Uh the right? So this is the treatment is a son, right? So you can consider this before, right? The active treatment is assigned to be the one that is the and but there can be some true effect to this individual, right? We don't observe that, but we can think about it. Okay? We can write down the true effect like what I want. And they are fixed at the level of the unit. It's fixed for each individual, they are unique. But potential outcome. Okay? Now, if I have high or low, then treatment doesn't create them. You don't need to say whether or not you have to see. Right? So individual effect is there. Okay? Okay? So this is an example. So for each individual, uh suppose that, suppose that this is not known to us. So suppose that this is potential outcome. When they choose zero, and this is individual, we have a six individuals. And then we have potential outcome when they choose zero or one. For each individual, we can think about it. Then potential outcome theoretically, right? And then the difference is treatment effect, that is specific to each individual. And this is then let's say that they are assigned to treatment only one to three is assigned to treatment. And then 456 is not assigned. Then what we observe is We observe this. We don't observe this. We observe this. We don't observe this. in the data. We observe only the potential outcome. Then they treatment. I said. So this is what is observed in the data. If we take directly observe, the potential outcome, zero and one, treatment effect is straightforward. We can just subtract Y1 minus Y to recover the treatment effect. For each individual. But we don't observe potential outcome for each individual. So because one individual is zero at the same time, so it's impossible. for us. to recover the treatment effect at that individual level. Now we can recover is treatment effect at the group level. Those who are assigned to be treated and assigned to be not treated, we can say something about there average effect. Okay? Right? Okay, so this is what we have, right? So Y is that And the pose is the two two components. This one is the variable and they are putting the and they are the the right? And then if they are not if they are if if they are not treated, this will become one. And then this is going to be the Y observer. So Y is to the variable if they are treated or not, the formation of those two is going to be the Y outcome. So the treatment is something like a switch. If they are treated, they observe Y1, if they are not treated, they observe Y2. And the why the is called as how complex. So because it's not factor we don't observe, but we can think about. What would have happened to this person if the person is assigned to the big one. So All right. So you do not confuse like this. Why I is not the outcome of untreated people. It's defined for everyone. Even the treated person would have potential outcome. of Y0. This is a hypothetical outcome of treated individual if the person is Okay. This is not a real life. Like this this experiment, it exists. Would it change uh you know, a sign something the potential outcome of this experiment? Uh you depend on the next assignment. So immediately the letter followed up, you know, in fact, it is impossible. We don't know the half of your information. What if you know, is it that? So they call it it's a missing data problem. Okay? I think that's already. So we don't have to input all of our information. Do this. If you know it's not a sign, that is the actual that definition of the children in class, okay? So why do we estimate? So um every unit one potential outcome is missing. So now I is a level observer for anyone. How high is the children? Not even data. The size of the sample does not matter. It's nothing to do with whether we can observe both potential outcomes or not. We need a level observer potential outcome. for both we need the world and we do zero for any individual. We don't have so many people. On the other hand, we repeat the you know, ICT. And then which is sometimes this person is assigned to zero and assigned to one, but we made directly we can observe potential outcome. So if we only one time study, we will never observe both. Okay? So individual level, it's impossible. But uh every method is so we could the missing column or and then we report that. So we can define average treatment effect. Which is the the difference in the potential outcome of all the individuals, minus the potential outcome of when they when they are treated and when they are not treated. So we say the difference in the potential outcome for entire individuals. Okay? And uh average treatment effect on treated. We say conditional expected expectation, we can we perform some group for treaty. And then take a expected difference in the potential outcome. So you may ask, do you observe this? You don't observe this. We can define, okay? Average treatment effect like this. We will, we cover, but I zero the data, but this is the definition of the children. Okay? For each individual, we define how I write, expected value of Y. Of course, the leaders is the average treatment effect. We will define that conditional on among those who are treated is ATT. Average treatment effect on treated. ATU. is average treatment effect on untreated. So the average treatment effect, it really have P share of individuals who are treated and average treatment effect is some of those if they are treated, they follow P that is ATT. Right? treated, average treatment effect on the treated. We have this probability that average treatment effect on untreated. So the average treatment is the summation of those two. By now, we just define based on the definition of the effect. We need an estimate of ATT. It's just that definition. And this is like a weighted average of the conditional on treated. This is the expected value of all the treatment effect of that group. This is the expected value of the on treated group. So the overall treatment effect would be the summation of those two. So if we release we going inside only the is the same for treated and ATT and ATU does not coincide. So we will agree on that. It will be different. If ATT and ATU are different. Okay? And that's the problem. The if if we think about this, and why 1 minus is quality premium? Then if we believe that the probability of whether the kind of or not is the treatment effect of that group is the same, then we can recover this average treatment effect. But if we believe that this average effect of treated is different from the average effect of untreated, then it means that there is a selection bias. It just hang on there. I'll I'll explain what it means. So this is just a mechanical definition. And this does say uh okay, is the so at least on individual treated what that means. We say we use constant situation to make things simple and clear. So we which means that if we want to be consistent, so we make an assumption of what this treatment means, but characteristics of this treatment that we can estimate is that no interference means that the outcome does not depend on the other users treatment. So there is some spillover effect. So on that and this treatment is not at the individual level. But the data influencing each other, then but influence becomes much more complicated. We cannot apply the simple method to the problem. Okay? So, suppose that there is someality, there is a part of the data that are correlated. Then the outcome will be much higher for every user, but that is not the direct effect of my own participation or my own outcome. It is a interaction with other people. So it's contaminated. And then another assumption is that no conversion of treatment. So the treatment means the same thing for everyone. Even if participation means different for each user, we didn't control which party they attended to. And the time of the party matters, then you're in trouble. Okay? So that means the setting is that this treatment is something like a medicine. It is the individual specific. There is no spillover. And then it is the homogeneous treatment. It's not heterogeneous. If the treatment is something like a education, or my relation to another country, then huge heterogeneity in terms of what type of treatment we receive, right? In that case, uh the the analysis should be much more complicated. These are some assumptions and then so to justify or the doing, So now after this, we can talk about this, okay? So potential outcome to regression. So now, our outcome, remember is the why But I still want my but I don't know. Right? You can be we right, this is the one to do it. And this is a treatment. And this is a potential. You can potential outcome. This is not treatable. This is treatable. And we always we have one, I plus the one one minus one. That is the basic equation. And we define the difference in the potential outcome for each individual as a potential treatment. All this individual, right? So this is kind of. So uh just to revisiting a relationship between Y and potential outcome. We have this relationship. that individual level observation of that outcome is a function of the potential outcome for this individual. Then this individual does not get treatment. And at least we we define for every individual we have a they are actually treated. This is a hypothetical data, the potential outcome. And plus the treatment that individual time to the data get actually treated or not. Okay? So if you rewrite this, as a regression, we can add a header and relationship between treatment and outcome. So this is an ID error. So Y error and then Y is a function of treatment and this is a constant, which we the potential outcome of the treatment. So this is this equation is from the definition of the potential and potential outcome. And then we rewrite this definition in the regression linear regression model, we can rewrite this like that. And then what we have is outcome is constant. And coefficient of constant and how is a coefficient for this variable, which is variable. If treated, not treated. So this is the actual actually variable. So they are treated, it takes the value one. Not treated, zero. And error term. So we can be written as a OLS equation. And why the actually this part of Y equal right, this proposal effect as a formula, based on the definition of the outcome. Okay? So first we define this equation now, our job is to use the data to report how Okay? Under which condition, is unbiased. Our estimate or how OLS Okay, so let's calculate. parameter. So here, we if you look closely, how does not okay. So I mean, I mention, we kept whatever we talked about the data that we did before. So we just move that that has a common property and that is what we number of parameters. That characterize the relationship between and the population. So it does not have an eye. You next I will move up the best we can do is which is a defined that how which is the same for everybody. and try to estimate the Okay? This is our method. How do we estimate So this is a true true uh true true true D. And exactly our X will be the same as this true expectation. That means that if you repeat this experiment many, many, many times and calculate inverse here D prime D prime inverse D prime Y. If we do that many, many, many times and then get the average number, it should be equal to if the exact condition holds. Okay? So the condition actually means that the ratio is the same, ratio is equal to zero, right? So that condition means condition of X expected value of U is equal to zero. Right? And then if we we rewrite this, so we we plug in Y here, This is because we we throw to saying that the condition of X potential outcome all with is exactly same as the conditional value of outcome, potential outcome. Uh not treated. We we have indeed not treated. So this is condition. So UI is Y minus minus minus Uh this is condition. Okay? concept theory, then think about that. Uh regarding so actual treatment value the potential potential potential outcome of zero. is the same. Same. So this means that if you do this, we have so right? It was a comparing potential outcome versus and potential outcome is nothing to do with they are actually treating or not. It's like hypothetical value, right? So if we compare the potential outcome of those who are actually treated and those who are not, like those who are not treated actually, but that is actually the same. That is equivalent to comparison. Okay? Okay. Um, but if we really take the equation and then uh um the first time is equal to So the assignment doesn't have any information about all the potential. Okay? If we use the potential outcome and use the information to assign people from groups, then this is effectively equal. But this means that this assignment was completely independent of their potential outcome. So the expected value is independent of this assignment. So it means you is uh is independent of the Okay. You know why why this is not independent distribution if A and B have independent distribution? The probability can be like that. Only if they are But yes, I'm independent. And what the health recommendation of probability would be or A, is the probability is like that. And because Yeah, but A and B are the same. A and B are independent. So to be both of them, it's that that would be exactly the same as A. So, we can also assign the potential outcome does not change. Let's say exactly this assignment is totally the potential potential outcome. So, if A and B are the same, and Y here, and this is the same. A is assignment is independent over there, assigning potential outcome, then that we can only do this. expected value of Y is So, for me, uh I can calculate the average treatment effect. This is the treatment effect, right? So, suppose we know the potential outcome, then we can actually, this is like that. But we don't know. If you can never observe, then if that's known, how then we can calculate average treatment effect. So, three individuals and three individuals have 10. So we can assign, we know the potential outcome, how data. Then average you know this too. with the same weight, it gives us the same point of five. That is the true treatment effect. Okay? But if you look at the average on treated, they are five. Average on untreated, they are 10. And the probability is what happened? Then the ratio is the summation to give us exactly seven, 7.5, which verify our equation before. Um and we can also say that example that you know, this is the kind of education. This is the initial score and this is what they are. This is the test score they have without education. or they are like you know, and any activity and this is the work of activity after they get the education. Uh so in this case, the treatment effect for those who actually have quality education, is smaller than those who didn't choose to go to the college, right? Uh if the quality education is greater treatment effect on those who are lower ability, we may know this situation. Okay? Uh but what about So, so the treatment effect can be different by groups. In this case, if there is some uh data like a positive selection, which means that the social initial level negative impact on the treatment anyhow, so that is what I'd tell. Uh that can we know? This is what it means. Okay? So, these This is very useful. If we just calculate the difference in the outcome by between few months and this is average outcome. of treatment right? This is average outcome of the control group. If we take the night difference, this can be composed into two parts. Okay? How do we get this? This is so this is the problem. Why? Do you know? Yes. Why? So, this is something we need to calculate when we are given a data. We have this information. So we can calculate and why outcome on and the why outcome on control. Okay? So we can subtract those two numbers. And we are given that 25. Okay? This is 25. Okay? Now, comparison between treatment and control. And we just subtract Remember this is this Why? Right? Why? Do you know why? So we subtract Y0 from Y1. Is it true? No, we don't have information on treatment. We only observe potential outcome if actually they are treated. Okay? So why is it equal to Y? Why? Why? Why? Right? If we do average, of the outcome on treated, control group, is Y IC. Why do you want to do? You know, to suppose that Y is zero. Plus, Why did I subtract expected variable Y zero conditional on D1? And plus Okay? This Why is that? plus I guess. So subtract and add the same number. to the original equation. to divide some interesting equation. on purpose, okay? So okay, and add the same number here. This is the original equation. And this is what I add. This is I add subtract and add the same one. Okay? But if I do so, I can reorder this equation such that I can write down this and the second term and the first term is Y one conditional on what is the difference between Y one minus Y0? Second term, is what is the expected variable Y0 conditional on D1 is zero, or D1 is zero. So we can call this as the difference is two parts. The first part is actually the average treatment effect on treated. The second part is selection bias, which means that outcome, I think, was two groups that happened to be assigned it. The second part is a zero. Because we we based on the randomized control, then we can say that their potential outcome has nothing to do with the day they were assigned. So the second term will be zero in expectation. So, now we difference will have us average treatment effect of the treat. That is the beauty of ICT. We can make sure we can we can conclude that by design, the second term is zero. Then it goes and says that my comparison if the outcome variable between two groups is is accurately reflecting is accurately capturing the average treatment effect of the treat. So, in this example, this is difference in the average outcome. 75 versus 50. But the average treatment effect on the treated here is is is five plus selection bias. which is 20. So it is that there original So we'll take it without the condition is by the way. So now difference between the outcome reflect those two components. If we don't have like a ICT, then we cannot everything, the ATT is different from difference. But if we make sure that this is zero, the ICT and ATT is equal to the difference. So ICT In practice, what do you do with the based on the you need to present the result is the treatment, we can confidently say that any difference in their outcome will be a attributed to the treatment. That is what we say. And then this proves that the based on the So, by randomization works, so if assignment is independent of the uh potential outcome, then this will be that is that regardless of their assignment, the potential outcome is potential outcome when they are treated will be the same. It does not depend on the I, completely independent. So that allows us to recover uh average treatment effect. Because here the This is the water observed in the data. So observed data is a condition on the what is the outcome? conditional on the what is the outcome? This is the average outcome treated. Treatment too. This is the average outcome. So, on treatment. or control. Okay? We get it. And this is an IV difference. But if this is satisfied, here, the second term is appears. So, we can recover a ATT. But in this case, ATT is exactly the same as ATT do. And ATT. Right? Because why? We independent assignment those three object will be the same. And ATT is the same as ATT you. Regardless of whether they are treated or not, average treatment effect will be the same. We because assignment is has nothing to do with whether they are treated or not. Okay? So, or these are the same. So I think we have to recover ATE, average treatment effect. So, more than ATT, ATT is average treatment effect. Uh that we observe in the ICT is that average treatment effect uh average treatment effect of the entire population is exactly the same as average treatment effect of the treated and average treatment effect of untreated. Because by design treatment has nothing to do with their potential outcome. They are treatment effect. So we can recover the treatment effect by uh by comparing the mean difference. Let's continue. What is the application now? But I think the application is easier for you to to budget it. I see. Okay. Same equation, right? We the ICT, we make sure that the second term disappears. And ATT is equal to ATT and ATT. So, in the linear regression, and the that top one, or S, base, the expectation, same as the bottom term. of the treatment. So, this is one example. Uh So linear, yeah, linear. So, this paper is really cool. Because because when they think about market failure, people have market failure. And and this is also related to the job we're getting the market outcome. But there are so many different uh factors that can contribute to explaining the gender gap. And then you have tests where they information, which contribute to the gender gap. Okay? So information means that females don't have better information about what they can do. They are constrained. So to some extent, what's available out there, they don't know. So that's why they try and they don't have the capital. And they have lower So they don't test this particular channel. And this is very very difficult. Like if you have a observation of your data, how do you prove that there exists information that would contribute to the gender gap in the market outcome. It's very hard. Okay, what we did is they used ICT and then they do the information session to female population. So they have many, many villages and they randomized at the village level. So the village one is in the treatment group, village two, two is in the uh control group. So they have a many villages and they divide the village into treatment and control, but they believe in the treatment to be reached and the researchers went to the village and had some information session about the people sector. So people sector is a business process outsourcing. And that was fast to growing industry in developing countries. It's basically about typing in Very simple documentation and which is is a little difficult, but the calculation. And then to the video, is popular in this case. But the the PDF reading area, they don't know about this. New learning sector. So what I need to do is that, okay, so PDF reading area, they don't know this. opportunity. Now, they have a certain level of education, they can work. at least growing sector with a high pay. high paid jobs. Okay? So what I did is that they especially talked about this sector and the information information session and only three groups learned about this sector. And let's see. So we're thinking about what kind of occupation you can take, information is number one, because it costs it's very easy to fix the problem. It is the problem of information information information It's better than financial question. Like you need to relax financial question in the market. You have to provide a role or you have to provide a subsidy. It's costly. But it it has to it has something to do with the information. It's much cheaper. So I think identifying that information question explains the certain outcome that is really like low so it's a very um practical. Um for us to try to understand whether information is out there. So another example is that in the US, I created college application is very complicated. The more so is very expensive. But at the same time, the government to provide a very rich and very heterogeneous scholarship. And you don't apply for scholarship. The students need to know exactly they have to apply for certain scholarship. And what is the qualification and etc, etc, right? So that is a lot of information. If you students really need scholarship, like from less to family, they don't have that information. So actually they need a very simple experiment at the national level. They just provide a template to everybody. And actually, it's significant to increase. the enrollment rate of the students. And application to the scholarship and success rate. So that's a really sign because you know, popular is not that expensive. We say less expensive than like the financial question. If you want to provide a role, I like to or reduce tuition is expensive. How about is not expensive. And then what they help is just giving them information and individuals try to apply the scholarship and then they get the scholarship for themselves. It is because it's scholarship. So information question is very interesting question. Uh that is part of it. So they check whether the female India face this information question. And then the underlying motivation is that the labor participation rate of the female population in Korea is about 60 or 65%. So we see 65%. The same thing for India. It was 20%. Is one third of the countries. So for the female labor force participation is very very important issue in India. So I want to see provide a simple information about BPO sector can change their labor force participation rate. Okay? And this is a role I think this is interesting the more or less that context. So here, the these people show to you the average characteristic of the entire sample. And control group, that is the control group and the treatment group and the difference between those two. Um I want you to think about what this table is for. So here, uh it's nothing to do with the labor market. This is about their characteristic. where they live, but then they are away from Delhi, the household characteristic, but what they do is they compare the average characteristic of control and treatment group. And the the pool column test the mean difference between those two groups. the sample mean we can test whether they are the same or not based on the test statistics. Okay? So this is the result. And the difference in the characteristic between control group and treatment group, this number, you know, this number is a row number in the mean difference. If we calculate the average of the from Delhi, it's 130 in control group, 100. But 28 in treatment group, and this this has to be the difference between those two number and then like they didn't write down the the force is, yeah. So it has to be the difference between those two number. Exactly. But the problem is whether the difference is statistically different or not. And the mean difference divided by standard error, is very small. So mean difference is actual difference in the mean value. But we don't care about the actual difference. We care about whether that is statistically significant or not. In order to judge that, we have to calculate the T statistics. And then that involves calculating the standard variance. And this is the we have we have to divide the coefficient by standard error and the ratio is not P value. In order to say that, the difference is statistically significant from zero, the value has to be around two. If it is around two, 1.96 is significant at 5%. If it is 1.67 something like that, that is significant at 10%. But this ratio is not. That's it. So it's not statistically significant. Okay? So what finally in this table is that the characteristic of control group and treatment group is not statistically is it a good news or a bad news? This is not about the alpha. This is about the on the mind features. Okay? So the features. We cannot compare the but and this is the control group. So the and then the background and then our conclusion is that if we compare the characteristics, they are comparable. Is it a good news or bad news? It's very good. It's good news. Right? Okay. So of course. You said, so or randomization is not. So in order to make sure that two groups are exactly the same, and basically proves that in the data, we cannot tell any differences. between two groups. So it confirms So two groups are comparable. They are exactly the same on average, the only difference is the treatment. We cannot directly test on observable characteristics, but at least we can compare observable characteristics and show that they are statistically the same. So it is balanced check. So is every RCT We need to provide this table. So we said that we need to provide this for those who are the randomization is completed. So we have to prove that we did actually randomize. So balance check, this thing must be included in any RCT. paper. After that, now we are talking about difference in the outcome, we because of the treatment. Yeah, attributed to the treatment. So the second table, so is you probably need all the table, this is a result table. This is the treatment effect. So what they looked at is the panel data, the outcome is the treatment and we use the outcome for men. And the randomly distributed the information session they through the mail. So men here is men is here supposed to see whether there's a possible effect or there's some spillover effect in the town. Okay? They are not supposed to get information. They are not supposed to get treatment effect. They are not invited. But if they are invited, but we want to see whether their outcomes are significantly different between treatment and control group. And then what do we report in the table is not the constant, but the coefficient in front of the treatment variable. Treatment dummy. Okay? So this coefficient tells us uh the is corresponds to You know, we like why is why is this plus that? So plus that beta is most important coefficient in when you want to understand the treatment effect because we want to understand how the outcome changes by D. That is treatment effect, right? So here this is beta. Well, or that here. So this is whether they are employed in this BPO sector. So employment probability among treated uh this is like not so how much treated groups employment rate is different from that of control group. Control group this is alpha. or A here. A the control group mean. So if they didn't get the treatment information session, only 0.4%. of the uh female of this age group they work at the public sector. Once they get the information session and 50, then those who are 46. more likely. So work at the public sector. Okay? So here, 0. 04 is control group. Okay? And 0. 046 is the difference. We tweet uh treatment and control group. So this is that. Okay? So this is same as that. So this is that. Okay? So Remember this coefficient usually reported that difference. Like treatment effect, you know, the difference, the difference. Okay? about how the outcome changes by the treatment. So this is conventional we usually report. beta, which captures the difference in the outcome. between two groups. So how do we interpret So if they don't get the treatment, then only 0.4% of the individual who are in that age group work at the public sector. But if they are treated, they are 46 percent more likely. than the control group. to to work at the public sector. So what does that mean? Now, share or female A is between this uh who work at the public sector. So what uh no, treatment. What is the data? So what This is the fact. If they didn't get the information session, this group is like they are this much more likely to work at the public sector. So in the later there's a 5% among treated group who work at the public sector. So the data, the number of the data, we have to add it up, like a constant. And the difference, beta, alpha plus beta to understand the level. But but beta tells us the difference. So you can guess this. So this is alpha. What happened to control group? This is treatment group. This is alpha plus beta. The difference is For for writing, I understand. So if I just write down the B press in the Y outcome, okay? This is a control group, this is treatment group. We have we observed those too. And then beta, treatment effect is the difference in the mean outcome. Alpha is is the uh what would happen if they don't get treatment. This is control group. So if you want to recover, the probability of employment for treatment group we have to add alpha to that. Okay. I will continue. Let's see.",
+   "ko": "간단한 질문인데, 우리가 같은 생각이어야 해요. 정말요? 아니면 대답이 될 거예요. 아마도요. 어, 아니면 어떤 사람들은 질문을 하죠. 그래서 어 제가 제공할 모든 질문을요. 에서 그 그리고 나서 공유하는 거죠. 하지만 만약 당신이 하고 싶다면, 아니면 직접, 그냥 하셔도 돼요. 질문을요. 하지만 제 이름은 데이비드이고, 100% 정확할 거예요. 완전히 똑같아요. 비슷할 거예요. 이제, 보시다시피 질문들을 보면, 어, 20%는 될 거예요. 기반으로 할 거예요. 잠깐만요. 우리가 오늘 논의한 것. 그리고 나서 오늘부터는, 우리가 실제 표를 가질 거예요. 그 표에서요. 알겠죠? 그래서 저는 당신이 할 수 있기를 바라요, 몇 가지 숫자를 해석하는 것을요. 그 표에서. 걱정하지 마세요. 제가 안내해 드릴게요, 아니면 세부적인 사항들을요. 어쨌든 그 숫자는 표에 있는 거예요. 그리고 표를 해석하는 거죠. 그래서 그게 될 거예요. 그게 또 다른 20%가 될 거예요. 어, 어떤 게 음 아니면 뭐 그런 거죠. 그럴 수 있어요. 또한 어떤 단어들이나 아시다시피요. 그리고 제가 보여드릴 수 있어요, 어떤 것을요. 아니면 아니면 계수, 맞죠? 그리고 오차, 제가 물어볼 수 있어요, 통계가 맞는지 아닌지. 제가 물어볼게요, 당신이 해야 하는지 해석해야 하는지 그 자리에서요. 그 표에서. 알겠죠? 그래서 소득은 그리고 제가 물어볼 수 있어요, 정확히 그 계수가 성립하지 않는다고요. 예를 들어, 우리가 변수가 있는데, 예를 들어 비만처럼, 그리고 계수가 아마도 그런 식이죠. 그래서 그런 것들이에요. 그래서 기본적으로 그 기술은 당신이 해석할 수 있도록 하는 거예요. 그 표를요. 그래서 어떤 것 같은 거요. 그게 약 20%가 될 거예요. 그 중의 퍼센트가요. 그래서 의심스러운 하지만, 제가 물어볼게요, 당신이 식별하도록 예를 들어 어떤 조건 같은 거요. 그래서 표준 편차에서 편향되지 않은 것을 갖는 거죠. 그래서 편향되지 않은 것의 정의는 다음과 같아요. 그리고 아시다시피, 음 무슨 뜻인가요? OLS가 강력하다는 게? 그래서 당신은 이해해야 해요. 그리고 제가 물어볼게요, 어, 그 계수. 예를 들어 행렬 같은 거요. 그래서 우리는 할 필요가 없어요. 해석할 필요가 없어요. 역행렬을 계산할 필요가 없어요. 우리는 저한테는, 종속변수가 2바2를 넘어서면, 역행렬을 계산하는 것은 시간이 오래 걸려요. 그래서 그게 아니에요. 직접적으로는. 하지만 당신은 공식을 이해해야 해요. 그래서 가능해요, 그래서 당신은 어떤 컨닝 페이퍼도 가져올 수 없지만, 저는 당신이 기억하기를 바라요, 적어도 무엇인지, 그리고 OLS가 무엇인지. 다음 번에는 X 프라임 X, 그리고 이건 정말 이해해야 해요. 알겠죠? 기억해요. 그게 한 가지예요. 그리고 우리는 기억해야 해요. 저는 학생들이 외우는 것을 권장하지 않지만, 그건 당신이 정말 이해해야 할 부분이에요. 알겠죠? 자, 오늘은 인과 관계에 대해 이야기할 거예요. 그리고 나서 다른 방법에 대해 이야기할 거예요. 인과 관계를 보여주는 방법이죠. 인과 관계 효과. 알겠죠? 그리고 이건 더 응용에 가까워요. 어, 더 응용에 가까워요. 그리고 이건 무엇에 대한 응용인지 알겠죠? 증명하기 위한 외생성 응용. 그리고 제가 전에 말씀드렸듯이, OLS가 추정치가 되려면, 편향되지 않아야 하고, 우리는 외생성을 만족해야 해요. 우리는 외생성이 핵심이라고 그게 설정이잖아요, 그렇죠? 그래서, 지금쯤이면 저희가 크기에 대해 논의했고, 방정식도 이야기했으니까, 조건부로 어떤 X 값이든 기대값은 어떤 오류의 기대값은 항상 0입니다. 알겠죠? 그게 정확히 그랬어요. 그리고 그건 또한 뭐와 관련이 있냐면 아시다시피, 다른 방법으로 해석하자면 만약 그 조건이 성립하지 않는다면, 우리는 편향된 문제가 있다고 말합니다. 즉, 그건 오차가 그리고 X 변수가 상관관계가 있다는 뜻이고, 기대값은 오차항이 X에 조건부로 0이 아니라는 뜻입니다. 그러면 OLS는 편향되어 있습니다. 그리고 이제 여러분이 이해하셨으면 좋겠는데, 왜 그런지 알아야 해요. 어, 관련이 있는 이유는 OLS가 X에 그리고 X 역행렬에 그리고 Y에 그리고 X에 그리고 Y는 X 프라임 X 역행렬 X 프라임 X 베타로 쓸 수 있고, X 프라임 X 역행렬 X 프라임 U로 쓸 수 있어요. 그래서 OLS는 그겁니다. 게다가 기대값은 X 프라임 X 역행렬 X 프라임 U입니다. 알겠죠? 모르겠어요. 따라오고 계신지. 그래서, 이건 아주 중요한 자, 먼저 X 프라임 Y는 그리고 벡터 U죠, 맞죠? 그건 어 공분산 나누기 분산, 하지만 여전히, 만약 하나 이상이라면, 통제 변수가, 그게 여러분의 공식이고 3분입니다. 그리고 그건 X 프라임 X 역행렬 X 프라임 X 베타입니다. 그래서 더하기 U. 그리고 이건 베타입니다. 더하기 X 프라임 X 역행렬 X 프라임 U. 그게 제가 말하는 거예요. 아시다시피, 만약 기대값을 이것과 같게 만들고 싶다면, 그 모집단 모수와 기대값은 그 베타의 기대값과 추가적인 항, 즉 X 프라임 X 역행렬 X 프라임 U가 0과 같아야 합니다. 그리고 정확히 그렇게 할 수 있습니다. 만약 우리가 이것을 가지고 있다면 조건부로 그 조건이 X에 조건부로 0이라면, 기대값은 U의 기대값은 0과 같습니다. 만약 이 조건이 성립한다면, 그러면 기대값은 이것이 될 것입니다. 그게 조건입니다. 편향되지 않음의, 그렇죠? 그래서 우리가 논의한 것 중 하나인데, 매우 중요합니다. 편향되지 않음은 매우 바람직한 속성입니다. 만약 편향되어 있다면, 우리는 모집단에 대해 별로 말할 수 없습니다. 알겠죠? 우리의 목적은 복구하는 것입니다. 모집단의 모수를요. 만약 우리의 추정치가 편향되어 있다면, 즉, 여러분이 기대값이 모집단과 다르다면, 그러면 오차가 방정식에 있는 것입니다. 그래서, 아시다시피, 그게 무슨 뜻인지 어, 우리에게 OLS 추정치가 있다는 것에 대해. 그리고 이것은 뭐와 관련이 있냐면 우리가 편향의 값이라고 부르는 것입니다. 만약 우리의 계산이 관계가 이렇게 보인다면 그리고 정확히 의미하는 것은 만약 우리가 X를 안다면, 만약 우리가 X를 안다면, 그러면 X 내의 모든 결과는 그것은 이 해석이 0이라는 것입니다. 그래서 우리는 말할 수 있습니다. X, 예를 들어, 매우 교육적일 수 있습니다. 그리고 고등 교육은 그것이 정확히 의미하는 것은 만약 우리가 안다면 어 만약 그들이 매우 교육적이라면 그러면 이 기대값은 0입니다. 만약 그들이 고등 교육이라면, 그들의 기대 값은 결과는 0과 같습니다. 알겠죠? 만약 선택 편향이 그래서 만약 기저에 깔린 관계가 당신이라면 어떤 능력이라면, 그러면 당신이 기대하는 값은 매우 높거나 낮을 수 있습니다. 누가 대학을 선택할까요? 그래서 이것은 위반될 것입니다. 그래서 일단 누락된 변수가 있으면, 새로운 용어로, 그리고 그것이 X에 영향을 미치면, 그러면 조건이 충족되지 않습니다. 그래서 이 조건은 기대값이 0과 같다는 것입니다. 그 조건은 위반될 것입니다. 그리고 OLS는 더 이상 편향되지 않습니다. 자, 우리는 그래서 그래서 무엇이 어떻게 관련이 있냐면 결과와요? 그는 말했습니다, 그게 어떻게 그 세 가지 그것은 즉 뭐와 관련이 있냐면 음 어 인과 추론은 더 잘 정의되어 있습니다. 만약 우리가 고려한다면 어떤 상황을 어떤 처치가 있다고. 그래서 그 중심 중 하나는 어떻게 그 처치가 결과에 인과적 효과가 있는지입니다. 그러면 그것이 우리의 목표입니다. 그래서 만약 그런 상황이라면, 그리고 만약 우리가 믿는다면 이 조건이 충족된다면, 그러면 그것은 의미합니다. 음 그것은 우리의 추정치가 해석될 수 있다는 것을 의미합니다. 그래서 더 구체적으로, 여러 번, 음 그래서 우리는 인과 추론에 대해 이야기할 것입니다. 당신이 아시다시피, 현장에서, 알겠죠? 음, 알겠습니다. 그래서 제가 말했듯이 이것은 조건입니다. 제가 말했듯이. 그것은 매우 어렵습니다. 증명하기가. 우리는 해야 합니다. 논쟁해야 합니다. 그게 우리의 만족을 이 조건에 맞추는 것입니다. 기대는 이것과 같습니다. 이 가정과. 저는 우리의 정말로 오직 그것은 정말 저는 정말 이것을 사지 않을 것입니다. 물론. 하지만 어떻게 보여줄 수 있나요, 이것이 이것이 매우 어렵다는 것을. 만약 당신이 어떤 것도 가지고 있지 않다면 제 말은 구체적으로 어떻게 해야 할지 모르겠어요. 당신의 실험을. 조건을. 어, 그것은 매우 그럴 것 같아요, 당신이 불평하는 것이. 그게 음 매우. 왜요? 알겠습니다, 우리는 우리는 노력합니다. 어느 것이 우리가 확실히 영향을 미칠 수 있고 그들의 결과는 하지만 그것은 데이터에 포착되지 않습니다. 원칙적으로는 불가능할 것입니다. 변수를 누락하지 않는 것이 만약 당신이 비록 많은 것을 통제하더라도, 많은 통제 변수가 있더라도, 여전히 당신은 주장할 수 없습니다. 논리적으로 변수를 누락하지 않았다고. 그냥 그래서 그게 가장 좋은 것과 같아서 많은, 많은 변수에 대해, 괜찮아요, 그건 그렇게 나쁘지 않지만, 완벽하지는 않아요. 여전히 인과 관계를 주장할 수 없습니다. 하기 위해서는 주장할 수 있어야 합니다, 그러기 위해서는 특정한 디자인을 찾아야 합니다. 그것은 이 조건이 성립함을 보장합니다. 알겠습니다, 그리고 제가 언급했듯이 저는 T가 무작위 대조 시험이 디자인이라고 말씀드렸어요. 그게 보장하는 것은 이것이 사실이라는 점입니다. 저는 RCT가 그런 것이라고 생각해요. 음, 그래서 저는 제가 아마도 이것이 이런 것 같다고 생각하지만, 실험은 보여주기 위한 것이고, 약의 치료 효과를 예를 들어, 우리는 모집합니다. 또는 개인들을 모집하고 그런 다음 우리는 나눕니다. 그들을 무작위로 치료 그룹과 대조 그룹으로 나눕니다. 네. 그리고 치료 그룹은 받습니다. 약을 대조 그룹은 약을 받지 않습니다. 또는 위약을 받습니다. 알겠죠? 그래서 우리의 생각은 우리가 추정할 것이라는 것입니다. 약의 치료 효과를 비교함으로써 결과를 그들이 이것을 복용한 후의 결과죠, 그렇죠? 그래서 만약 이 약이 유의미한 치료 효과가 있다면 결과는 이 치료받은 그룹이 더 잘 받을 것입니다. 대조 그룹의 결과와는 다르게 말이죠. 알겠죠? 그리고 여기서, 핵심은 우리가 샘플을 나눈다면 어, 아시다시피, 그들은 자발적으로 신청한 것이고, 그리고 저는 이것을 수정할 것입니다. 그리고 저는 아시다시피, 저는 수정하고 싶지 않아요. 만약 우리가 그 계정을 이 할당에 포함한다면, 우리의 분석은 실패합니다, 그래서 이 조건을 충족하기 위해 RCT는 작동하지 않습니다. RCT는 유효합니다. 우리가 샘플을 무작위로 나눌 때만요. 두 그룹으로 어떻게 무작위성이 도움이 될까요? 음, 이 할당이 예를 들어, RCT에서 우리는 결정합니다. 그 수를 치료받은 그룹의 는 와 같습니다. 결과는 치료받지 않은 것입니다. 이것은 치료입니다. 그래서 우리는 알고 있습니다. 이 값 1이 그들이 까다롭다면 값을 취한다는 것을, 그렇지 않다면 0을 취한다는 것을. 그래서 우리는 이 조건에서 지정한 것은 즉, 주어진 치료 할당에 따라, 그들은 특성상 다음과 같아야 합니다. 정확히 같거나 어쨌든 그렇습니다. 이것이 정확히 같은 값이라는 것은 잔차와 같다는 것을 의미하며, 기대값은 0입니다. 알겠죠? 어, 그래서 왜 이것이 도움이 될까요? 제가 결정합니다, 만약 두 그룹이 정확히 같은 것을 가지고 있다면, 특성상, 그러면 그러면 두 그룹 간의 유일한 차이점은 실습에서 치료입니다. 다른 거 있나요? 우리가 무작위로 그룹을 나누면, 그래서 두 그룹이 기대값에서 동일한 것을 가지게 된다면, U의 분포가 그러면 두 그룹 간의 유일한 차이점은 치료입니다. 다른 것은 오직 공유된 특성뿐이었습니다. 그래서 무작위성은 우리가 이것을 할 수 있게 해줍니다. 그래서 우리가 그들을 무작위로 나누고 충분히 큰 샘플이 있다면, 그들의 교육 수준은 또한 특성이지만, 또한 다른 특성들도 그렇습니다. 글쎄요, 무작위로 나누면 두 그룹으로 나뉘게 됩니다. 그래서 그들은 평균적으로 같은 특성을 갖게 됩니다. 마치 앞서 나가는 것과 같습니다. 확률은 갖게 될 확률은 앞면이 나올 확률과 같고 같은 점입니다. 그래서 지금 그렇게 하고 있다면, 샘플링은 우리가 나눌 수 있는 과정입니다. 그리고 우리가 가장 잘 아는 것은 차이가 진실이라는 것입니다, 어떻게 우리가 어떤 차이든 그들의 결과에 있는 것은 전적으로 그 진실에 기인한 것입니다. 알겠죠? 그래서 RCT가 매우 명확한 것을 제공합니다. 아이디어는 식별하는 것입니다. 예를 들어, 그리고 나서 그 식별은 여기서 너무 이런 종류의 알겠죠? 그래서 저는 확실히 이 조건이 유지되고 RCT가 그래서 유일한 차이는 두 그룹 사이의 차이는 치료입니다. 그래서 우리가 어떤 우리는 그 두 데이터를 비교하고 있지만, 약을 복용하지는 않았어요. 우리는 그들이 정확히 똑같다고 말할 수는 없어요. 평균적으로. 약을 복용하기로 선택한 사람들은 실험실 밖에서 그들은 그럴 만한 이유가 있을 수 있어요. 아시다시피, 그들은 약을 찾죠. 그리고 복용했어요. 그렇죠? 그래서 그들이 약을 선택한 이유가 있을 거예요. 그리고 그들은 특성이 다를 거예요. 약을 복용하지 않은 사람들과는요. 그래서 자발적인 선택은 도움이 되지 않아요. 그것은 교란 요인입니다. 선택 편향이 있죠. 그래서 우리는 그래서 이 조건에 따라, 오직 두 가지 무작위 배정만이 가능합니다. 우리는 사람들을 그리고 설계에 따라 무작위로 나눠야 합니다. 그래서 그걸 이해하신다면, 그게 핵심 아이디어라는 뜻입니다. 그리고 그것은 ~하기 위한 것이 아닙니다. 음, 왜냐하면 너무 그래서 저는 이 부분에 대해 이야기할 거예요. 공식에 대해. 정의에 대해. 그 여기에서. 네. 그래서, 이것은 어, 대략 음 그냥 할게요. 어, D 는 지표입니다. I가 치료인지 아닌지. 그래서 이야기할 때, 우리는 항상 특정 상황을 고려합니다. 우리가 다루고 싶은 치료를 그래서 그래서 어 음 네. 예를 들어 어 그 관계는 그 온도와 그리고 모르겠어요. 하지만 다른 것. 네. 하지만 우리는 별로 관심이 없을 수도 있어요. 온도와 또는 어 그리고 온도와 그리고 그 습도, 모르겠어요. 그래서 그것은, 아시다시피, 그냥 우리가 상관관계를 이해하고 싶은 거예요. 하지만 인과관계는 우리가 특정 질문을 가지고 있을 때 중요해요. 우리는 치료 효과를 이해하고 싶어요. 그래서 이것은 좁은 의미의 인과 효과입니다. 그래서 알겠습니다. 그래서 저는 더미 변수입니다. 이 변수는 해당 단위가 치료를 받으면 1, 받지 않으면 0입니다. 이게 무엇일까요? 이것은 교육 과정이고, 소규모 수업입니다. 어 튜터가 그리고 어 그리고 알겠습니다. 약. 그리고 그리고 개념이 있습니다. 잠재적 결과라는. 그래서 인과 효과를 논의할 때, 잠재적 결과는 각 단위에 대해, 우리는 결과가 있을 것이라고 각 상황에서 가능한 치료 조건 하에서. 그렇든 아니든 그 상태가 발생합니다. 이것은 중요합니다. 그래서 잠재적 결과는 예를 들어 이것이 결과라고 해봅시다. 아, 선생님과 그리고 그 다음은 학생입니다. 그리고 잠재적 결과는 가상의 결과입니다. 그래서 세 가지가 있습니다, 알겠죠? 어, 그냥 이렇게 말할 수 있어요, 그건 결과라고요. 오, 그 아까, 다시 돌아가도 될까요? 치료에 대해서, 그렇죠? 그래서 그럴 수 있어요. 어, 우리는 그리고 왜 제가 이걸 아냐면 이 결과는 오, 그 치료, 제가 보는 건 결과예요. 누가 가지고 있느냐는 거죠. 그래서 이건 마치 가상의 것 같아요. 그렇죠? 우리는 여기에 추가했어요. 왜냐하면 그 안에는 우리도 하나뿐이니까요. 그래서 만약 개인이 실제로 약을 먹었다면, 우리는 무슨 일이 일어날지 모릅니다. 그 개인에게, 만약 그 개인이 약을 먹지 않기로 선택했다면, 약을 먹지 않기로 선택했다면, 그렇죠? 그래서 잠재적 결과는 그게 무슨 일이 일어날지 모른다는 것입니다. 그쪽에서는. 이해가 되시나요? 무슨 일이 일어났을지 만약 이 사람이 약을 먹지 않기로 선택했다면 어떻게 됐을지. 그래서 제가 왜 말하냐면 이 사람이 실제로 하나를 선택했는지, 왜 제가 관찰할 수 없는지, 하지만 우리는 여전히 가상의 결과에 대해 생각하고 싶습니다. 알겠죠? 그래서 이건 우리가 정의할 수 있어요. 그래서 이게 정의입니다. 그래서 개인에게 이 치료의 개인은 이 차이로 정의됩니다. 이 잠재적 결과는 치료받은 것과 받지 않은 것의 차이입니다. 그래서 우리는 개인 I를 고정하고 그리고 잠재적 결과를 비교합니다. 어, 그 그렇죠? 그래서 이건 치료 조건에 대한 아들이에요, 그렇죠? 그래서 이걸 이전으로 생각할 수 있어요, 그렇죠? 적극적인 치료는 할당된 것이고 그것이 그리고 하지만 몇 가지가 있을 수 있어요 진정한 효과는 이 특정 개인에게 있는 거죠, 그렇죠? 우리는 그걸 관찰할 수 없지만, 생각해 볼 수 있어요. 그렇죠? 우리는 제가 원하는 것처럼 진정한 효과를 적을 수 있어요. 그리고 그것들은 단위 수준에서 고정되어 있어요. 그것은 각 개인에게 고정되어 있고, 고유합니다. 하지만 잠재적 결과는 그렇죠? 자, 만약 제가 높거나 낮다면, 그러면 치료는 만들어내지 않아요 그것들을. 당신은 그것이 무엇인지 말할 필요가 없어요. 그렇죠? 그래서 개인의 효과가 거기에 있어요. 그렇죠? 그렇죠? 그래서 이건 예시예요. 그래서 각 개인에게, 어 가정해 봅시다. 그래서, 가정해 봅시다. 이것은 우리에게 알려져 있지 않아요. 그래서 가정해 봅시다. 이것은 잠재적 결과입니다. 그들이 0을 선택하면, 그리고 이것은 개인적이고, 우리는 6을 가진 개인들이 있습니다. 그리고 우리는 잠재적 결과를 그들이 0을 선택하거나 1을 선택할 때 가집니다. 각 개인에 대해 생각해 볼 수 있어요. 그러면 잠재적 결과는 이론적으로, 그렇죠? 그리고 차이는 치료 효과입니다, 그것은 각 개인에게 특정한 것입니다. 그리고 이것은 어 그럼 이렇게 말해 봅시다. 그들은 치료에 할당되었고, 1에서 3까지만 치료에 할당되었습니다. 그리고 4, 5, 6은 할당되지 않았습니다. 그러면 우리가 관찰하는 것은 무엇인가요? 우리는 관찰합니다. 이것을. 우리는 이것을 관찰하지 않습니다. 우리는 이것을 관찰합니다. 우리는 이것을 관찰하지 않습니다. 데이터에서요. 우리는 오직 파트 잠재적 결과를 관찰합니다. 그러면 그들은 치료입니다. 제가 말했죠. 그래서 이건 관찰되는 것입니다. 데이터에서요. 만약 우리가 가져간다면 직접적으로 관찰하면, 잠재적 결과는 어, 0과 1, 치료 효과는 간단합니다. 그냥 빼면 돼요. Y 1 빼기 Y 0 을 해서 치료 효과를 복구할 수 있습니다. 각 개인에 대해. 하지만 우리는 관찰하지 않아요, 잠재적 결과를 각 개인에 대해. 그래서 하나는 0이고 동시에, 그래서 불가능합니다. 우리에게는. 치료 효과를 복구하는 것은 그 개인 수준에서 불가능합니다. 이제 우리는 복구할 수 있는 것은 그 수준에서의 치료 효과입니다. 그룹 수준에서. 할당된 사람들은 치료를 받게 되고 할당된 사람들은 치료를 받지 않게 되는데, 우리는 그것에 대해 말할 수 있습니다. 평균 효과입니다. 그렇죠? 그렇죠? 자, 그래서 이것은 우리가 가진 것이죠, 그렇죠? 그래서 Y 는 실제 그리고 포즈는 두 가지 요소입니다. 이건 그 변수입니다. 그리고 그들은 그들의 그리고 그들은 그 그 맞죠? 그리고 만약 그들이 만약 그들이 만약 그들이 치료받지 않으면, 이것은 하나가 될 것입니다. 그리고 이것은 Y가 될 것입니다. 관찰자. 그래서 Y는 ~하기 위한 것입니다. 변수는 치료를 받거나 그렇지 않거나, 그들의 형성은 두 가지가 될 것입니다. Y 결과가. 그래서 치료는 일종의 스위치 같은 것입니다. 치료를 받으면, 그들은 관찰합니다. Y1을, 치료를 받지 않으면, Y2를 관찰합니다. 그리고 왜 Y가 어떻게 복잡한지. 그래서 왜냐하면 그건 요인이 아니니까 우리는 관찰하지 않지만, 생각할 수 있습니다. 어떤 일이 이 사람에게 일어났을까, 만약 그 사람이 배정되었다면 큰 것에. 그래서 알겠습니다. 그래서 당신은 혼동하지 않습니다. 이렇게요. 왜 제가 Y가 치료의 결과가 아닌지. 그건 모든 사람에 대해 정의됩니다. 치료를 받은 사람도 잠재적인 결과가 있을 것입니다. Y의 결과가. 이것은 가상의 치료받은 사람의 결과입니다. 만약 그 사람이 네. 이건 실제가 아니에요. 그러니까 이 실험은 실제로 존재해요. 그게 뭐랄까, 어떤 징조를 바꿀까요? 잠재적인 결과가 이 실험의? 어 당신이 어떤 것에 의존하느냐에 따라 다음 과제가 결정돼요. 그래서 바로 편지가 이어졌어요, 사실, 그건 불가능해요. 우리는 당신의 정보의 절반도 몰라요. 만약 당신이 알다시피, 그게 맞다면? 그래서 그들은 그걸 누락된 데이터 문제라고 불러요. 알겠죠? 제 생각엔 그게 이미예요. 그래서 우리는 우리의 모든 정보를 입력할 필요가 없어요. 이렇게 하세요. 만약 당신이 그게 징조가 아니라는 걸 안다면, 그게 실제 아이들의 정의예요. 알겠죠? 그럼 왜 우리가 추정하죠? 그래서 음 모든 단위가 하나의 잠재적 결과가 누락돼요. 그래서 이제 저는 관찰 수준이에요. 누구에게나. 얼마나 높나요? 아이들은? 심지어 데이터도 아니에요. 그 크기는 샘플의 크기는 중요하지 않아요. 아무것도 아니에요. 우리가 관찰할 수 있는지와는 상관없어요. 두 잠재적 결과 중 하나를 관찰해야 해요. 우리는 관찰자 수준의 잠재적 결과가 필요해요. 우리는 둘 다 필요하고, 우리는 아무것도 안 해요. 우리는 그렇게 많은 정보를 가지고 있지 않아요. 반면에 우리는 반복해요. 그, 아시죠, ICT를. 그리고 나서 그건 때때로 이 사람이 0에 할당되고 1에 할당되지만, 우리는 직접적으로 관찰할 수 있는 잠재적 결과를 얻어요. 그래서 만약 우리가 한 번만 연구한다면, 우리는 결코 둘 다 관찰할 수 없어요. 알겠죠? 그래서 개인 수준에서는, 불가능해요. 하지만 어 모든 방법은 그래서 우리는 누락된 열이나 그리고 나서 우리는 보고해요. 그걸. 그래서 우리는 평균을 정의할 수 있어요. 평균 치료 효과죠. 그건 차이예요. 잠재적 결과의 모든 개인들의, 빼기 잠재적 결과의 그들이 치료를 받았을 때와 받지 않았을 때의 차이예요. 그래서 우리는 차이가 잠재적 결과의 전체에 대한 것이라고 말해요. 알겠죠? 그리고 어 평균 치료 효과는 치료받은 사람들에게 나타나요. 조건부 기대값은 우리가 할 수 있어요. 우리는 몇 가지 그룹을 수행해요. 조약을 위해. 그리고 나서 기대값을 구해요. 잠재적 결과의 차이. 그래서 물어볼 수 있어요, 이걸 관찰하나요? 아니요. 이걸 관찰하지 않아요. 우리는 정의할 수 있어요, 알겠죠? 평균 치료 효과는 이렇습니다. 우리는 다룰 거예요, 하지만 저는 데이터를 0으로 만들지만, 이게 정의입니다. 아이들의. 알겠죠? 각 개인에 대해, 우리는 어떻게 제가 쓰는지 정의합니다, 기대값은 Y입니다. 물론, 리더들은 평균 치료 효과입니다. 우리는 정의할 것입니다 그 조건부 기대값은 치료받은 사람들 중에서 ATT입니다. 평균 치료 효과는 치료받은 사람들에게 나타납니다. ATU는 평균 치료 효과입니다. 에 대한 치료받지 않은 사람들. 그래서 평균 치료 효과는, 정말 가지고 있습니다. P는 개인의 비율을 나타내며, 치료받은 사람들과 평균 치료 효과입니다. 그 중 일부는 치료를 받으면 그들은 P를 따릅니다. 즉 ATT입니다. 그렇죠? 치료받은, 평균 치료 효과는 치료받은 사람들에게. 우리는 이 확률을 가지고 있습니다. 평균 치료 효과는 치료받지 않은 사람들에게. 그래서 평균 치료 효과는 합계입니다. 그 두 가지의. 지금쯤이면, 우리는 정의합니다. 정의에 따라 효과를. 우리는 추정치가 필요합니다. ATT. 그냥 정의일 뿐입니다. 그리고 이것은 마치 가중 평균과 같습니다. 조건부 기대값에 대한. 이것은 기대값입니다. 모든 모든 그 그룹의 치료 효과입니다. 이것은 기대값입니다. 치료받은 사람들에 대한. 그래서 전체 치료 효과는 그 두 가지의 합계입니다. 그래서 우리가 발표하면 우리는 안으로 들어가서 오직 치료받은 사람들에게만 동일하다면 ATT와 ATU는 일치하지 않습니다. 그래서 우리는 그것에 동의할 것입니다. 다를 것입니다. 만약 ATT가 와 ATU가 다르다면. 알겠죠? 그리고 그것이 문제입니다. 그 만약 우리가 생각한다면 이것에 대해, 그리고 왜 1 빼기 는 품질 프리미엄인가요? 그러면 우리가 믿는다면 확률이 어떤 종류의 것인지 아닌지가 그 그룹의 치료 효과와 같다는 것을, 그러면 우리는 이것을 복구할 수 있습니다. 평균 치료 효과를. 하지만 우리가 믿는다면 이 평균 효과가 치료받은 사람들과 다르다면 치료받지 않은 사람들의 평균 효과와, 그러면 선택 편향이 있다는 뜻입니다. 그냥 거기 있어 보세요. 제가 그게 무슨 뜻인지 설명할게요. 그래서 이건 그냥 기계적인 정의입니다. 그리고 이것은 말합니다. 어 알겠죠, 이것은 그래서 적어도 에 대한 개인 치료 그게 무슨 뜻인지. 우리는 우리가 일정한 상황을 사용하여 상황을 단순하고 명확하게 만듭니다. 그래서 우리가 일관성을 유지하고 싶다면, 그래서 우리는 가정을 합니다. 이 치료가 무엇을 의미하는지, 하지만 이 치료의 특성은 우리가 추정할 수 있다는 것입니다. 즉, 간섭이 없다는 것은 결과가 다른 사람들에게 의존하지 않는다는 것입니다. 따라서 약간의 파급 효과가 있습니다. 그래서 그 점에 대해 이 치료는 그렇지 않다는 것입니다. 하지만 데이터는 서로 영향을 주니까, 하지만 영향력이 훨씬 더 복잡해집니다. 우리는 적용할 수 없습니다. 간단한 방법을 적용할 수 없습니다. 알겠죠? 그래서, 어떤 공통성이 있다고 가정해 봅시다. 그 부분은 데이터의 일부이며 상관관계가 있습니다. 그러면 결과는 훨씬 더 모든 사람에게 더 높겠지만, 그것은 직접적인 효과가 아니라 제 참여나 제 결과에 대한 것입니다. 이것은 다른 사람들과의 상호작용입니다. 그래서 오염된 것입니다. 그리고 또 다른 가정은 모든 전환이 없다는 것입니다. 그래서 치료는 모든 사람에게 같은 것을 의미합니다. 비록 참여가 사람마다 다르더라도 말이죠, 우리는 통제하지 않았습니다. 어떤 파티에 참석했는지. 그리고 파티 시간도 중요합니다, 그러면 곤란해집니다. 알겠죠? 그래서 그 말은 상황이 이 치료가 마치 약과 같다는 것입니다. 그것은 개인별로 다릅니다. 파급 효과는 없습니다. 그리고 그것은 동질적인 치료입니다. 그렇지 않아요. 만약 치료가 마치 교육과 같다면, 또는 제 다른 나라와의 관계라면, 그러면 엄청난 이질성이 어떤 종류의 치료를 받는지에 따라 다르겠죠? 그런 경우, 어, 그 분석은 훨씬 더 복잡해야 합니다. 이것들은 몇 가지 가정들인데, 그리고 그래서 정당화하기 위해서 또는 하는 일에 대해, 그래서 이제 이 후에, 우리는 이야기할 수 있습니다, 알겠죠? 그래서 잠재적 결과는 회귀 분석입니다. 그래서 이제, 우리의 결과는, 기억하시겠지만 그건 왜냐하면 하지만 여전히 제 것을 원해요. 잘 모르겠어요. 그렇죠? 우리는 맞을 수 있고, 이게 할 일이에요. 그리고 이건 치료법이에요. 그리고 이건 가능성이에요. 당신은 잠재적인 결과를 얻을 수 있어요. 이건 치료할 수 없어요. 이건 치료할 수 있어요. 그리고 우리는 항상 우리가 가진 하나, 저는 플러스 그리고 하나는 하나 빼기 하나예요. 그게 기본적인 방정식이에요. 그리고 우리는 차이를 정의합니다. 잠재적인 결과에 대해 각 개인을 잠재적인 치료법으로 정의합니다. 이 모든 개인이, 그렇죠? 그래서 이건 일종의. 그래서 그냥 다시 한번 관계를 살펴보면 Y와 잠재적 결과 사이의 관계입니다. 우리는 이 관계를 가지고 있습니다. 그 개인 수준의 관찰 결과는 함수입니다. 잠재적인 결과의 함수입니다. 이 개인에 대한. 그러면 이 개인은 치료를 받지 않습니다. 그리고 적어도 우리는 우리는 정의합니다. 모든 개인에 대해 우리는 그들이 실제로 치료를 받았는지 여부를 알 수 있습니다. 이것은 가상의 데이터이며, 잠재적인 결과입니다. 그리고 치료법은 그 개인이 시간을 들여 데이터를 얻는 것입니다. 실제로 치료를 받았는지 여부죠. 그래서 이걸 다시 쓰면, 로 회귀 분석으로, 우리는 헤더를 추가할 수 있고 그리고 관계를 치료와 결과 사이의 관계를 설정할 수 있습니다. 그래서 이것은 ID 오류입니다. 그래서 Y 오류는 그리고 나서 Y 는 함수입니다. 치료와 그리고 이것은 상수입니다, 우리가 잠재적인 결과는 치료의 결과입니다. 그래서 이 방정식은 정의에서 잠재적인 결과의 정의와 잠재적인 결과에서 나온 것입니다. 그리고 우리는 이 정의를 다시 씁니다. 그리고 회귀 분석에서 선형 회귀 모델에서, 우리는 이것을 다시 쓸 수 있습니다. 그리고 우리가 가진 것은 결과는 상수입니다. 그리고 상수항의 계수는 그리고 어떻게 가 계수인지 에 대한 것입니다. 이 변수에 대해, 즉 변수입니다. 만약 치료를 받았다면, 치료를 받지 않았다면. 그래서 이것이 실제 회귀 분석입니다. 변수입니다. 그래서 그들은 치료를 받았고, 값은 1입니다. 치료를 받지 않았다면 0입니다. 그리고 오차항입니다. 그래서 우리는 OLS로 쓸 수 있습니다. 그리고 왜 실제로 Y의 이 부분은 Y와 같고, 맞죠, 이 제안은 효과로서 공식으로, 정의에 기반하여 잠재적인 결과입니다. 알겠죠? 그래서 먼저 우리는 이 방정식을 정의하고, 이제 우리의 일은 데이터를 사용하여 어떻게 알겠죠? 어떤 조건에서 가 인가요? 편향되지 않았습니다. 우리의 추정치는 또는 어떻게 OLS 좋아요, 그럼 계산해 봅시다. 매개변수를. 그래서 여기서, 우리는 만약 여러분이 자세히 보면, 어떻게 그렇지 않은지 알 수 있습니다. 그래서 제 말은, 제가 언급했듯이, 우리는 우리가 이야기했던 모든 것을 유지했습니다. 그래서 우리는 그냥 이동합니다. 그것을 그게 공통적인 속성을 가지고 있고 그리고 그것이 우리가 수많은 매개변수입니다. 그것은 그 관계를 특징짓습니다. 그리고 모집단을. 그래서 그것은 눈이 없습니다. 다음은 제가 가장 좋은 우리가 할 수 있는 것은 이것입니다. 정의된 그것이 어떻게 모든 사람에게 같은지. 그리고 추정하려고 노력합니다. 알겠죠? 이것이 우리의 방법입니다. 어떻게 추정할까요? 그래서 이것은 진정한 진정한 어 진정한 어 진정한 어 진정한 D입니다. 그리고 정확히 우리의 X는 될 것입니다. 와 동일합니다. 이것은 진정한 기대값입니다. 즉, 만약 여러분이 이 실험을 반복한다면 여러 번, 여러 번, 여러 번 계산하면 역행렬은 여기서 D 프라임은 D 프라임은 역행렬은 D 프라임 Y입니다. 만약 우리가 그렇게 한다면 여러 번, 여러 번, 여러 번 하고 평균값을 구하면, 그것은 와 같아야 합니다. 만약 정확한 조건이 성립한다면. 알겠죠? 그래서 조건은 실제로 의미하는 것은 비율이 같다는 것입니다, 비율이 0과 같다는 것이죠, 맞죠? 그래서 그 조건은 조건이 X의 기대값이 U의 기대값이 0과 같다는 것입니다. 그렇죠? 그리고 만약 우리가 다시 쓰면 그래서 우리는 대입합니다. Y는 여기에서, 이것은 우리가 던지기 때문입니다. 즉, 조건이 X의 잠재적 결과가 모두 와 함께 입니다. 정확히 조건부 값과 같습니다. 결과, 잠재적 결과. 어 치료받지 않은. 우리는 실제로 치료받지 않았습니다. 그래서 이것은 조건입니다. 그래서 UI 는 Y 빼기 빼기 빼기 어 이것은 조건입니다. 알겠죠? 개념 이론, 그러면 그것에 대해 생각해 보세요. 어 관련해서 그래서 실제 치료는 값은 그 잠재적 잠재적 잠재적 결과 의 0입니다. 같습니다. 같습니다. 그래서 이것은 만약 여러분이 이렇게 하면, 우리는 그래서 맞죠? 그건 잠재적 결과를 비교하는 것이었습니다. 그리고 잠재적 결과는 아무 상관이 없어요, 그들이 실제로 치료를 하든 안 하든 말이죠. 이건 가상의 값이죠, 그렇죠? 그래서 만약 우리가 비교한다면 잠재적 결과와 실제로 치료를 받은 사람들과 그렇지 않은 사람들을 비교하면, 치료를 받지 않은 사람들은 사실, 하지만 그건 사실 같습니다. 그건 뭐와 같냐면 비교와 같습니다. 알겠죠? 네. 음, 하지만 만약 우리가 정말 방정식을 가져와서 어 음 첫 번째 시간은 뭐와 같습니다. 그래서 할당은 아무런 정보가 없어요, 모든 잠재적 결과에 대한. 알겠죠? 만약 우리가 잠재적 결과를 사용하고 그 정보를 사용하여 할당한다면 그룹에서 사람들을 뽑는다면, 이것은 사실상 같습니다. 하지만 이것은 이 할당이 완전히 독립적이라는 것을 의미합니다. 그들의 잠재적 결과에 대해. 그래서 기대값은 독립적입니다. 이 할당과. 그래서 이것은 당신이 이라는 것을 의미합니다. 어 독립적이라는 것을 의미합니다. 네. 왜 그런지 아세요? 이게 왜 독립적이지 않은 분포인지 A와 B가 독립적인 분포를 가지고 있다면? 확률은 될 수 있습니다. 그렇게 될 수 있습니다. 하지만 네, 저는 독립적이에요. 그리고 건강 권장 사항은 확률적으로 어떨지 아니면 A, 그게 확률이에요. 그러니까 그런 거죠. 그리고 네, 하지만 A와 B는 같아요. A와 B는 독립적이에요. 그래서 둘 다 되려면, 그건 그게 될 거예요. 정확히 A와 같아요. 그래서, 우리는 또한 할당할 수 있어요. 그 잠재적 결과는 변하지 않아요. 가령 정확히 이 할당이 완전히 잠재적 결과라고 해봅시다. 그래서, A와 B가 같다면, 그리고 Y가 여기 있고, 이게 같다면. A는 할당된 것이고 독립적이에요. 저기서는, 잠재적 결과를 할당하는 것이고, 그러면 우리는 오직 이것만 할 수 있어요. 기대값은 Y의 값은 그래서 저한테는, 어 저는 계산할 수 있어요. 평균 치료 효과를요. 이게 치료 효과인데, 그렇죠? 그래서 우리가 잠재적 결과를 안다면, 그러면 실제로, 이건 그런 거예요. 하지만 우리는 모르죠. 만약 당신이 절대 관찰할 수 없다면, 그러면 그게 알려져 있다면, 어떻게 그러면 우리는 평균 치료 효과를 계산할 수 있어요. 그래서 세 명의 개인이 그리고 세 명의 개인이 10을 가지고 있어요. 그래서 우리는 할당할 수 있고, 우리는 잠재적 결과를 알고, 데이터가 어떻게 되는지 알 수 있어요. 그러면 평균도 알 수 있죠. 같은 가중치로, 그것은 우리에게 같은 5라는 점을 줍니다. 그것이 진정한 치료 효과입니다. 알겠죠? 하지만 평균 치료 효과를 보면, 그들은 5입니다. 평균 치료받지 않은 사람들은 5입니다. 그리고 확률은 무슨 일이 일어났나요? 그러면 비율은 합계가 되어 우리에게 정확히 7을 줍니다, 7.5, 그것이 확인해 줍니다 우리의 방정식이 이전과 같다는 것을. 음 그리고 우리는 또한 이렇게 말할 수 있어요, 예를 들어 이것은 이런 교육입니다. 이것은 초기 점수이고 이것은 그들이 무엇인지입니다. 이것은 시험 점수이고 그것은 교육이 없을 때의 점수이거나 그들은 당신이 알다시피, 그리고 어떤 활동이든 그리고 이것은 그 활동의 결과입니다. 그들이 교육을 받은 후에. 어 그래서 이 경우에, 치료 효과는 그들에게 실제로 있는 양질의 교육은, 더 작습니다. 교육을 받지 않은 사람들보다 대학에 가기로 선택한 사람들보다, 그렇죠? 만약 양질의 교육이 더 크다면 치료 효과는 더 낮은 사람들에게 더 클 수 있습니다, 우리는 이 상황을 알 수 있습니다. 알겠죠? 하지만 무엇에 대해 그래서, 그래서 치료 효과는 그룹에 따라 다를 수 있습니다. 이 경우에, 만약 어떤 데이터가 긍정적인 선택이라면, 이는 사회적 초기 수준이 부정적인 치료 효과에 영향을 미치므로, 그것이 제가 말씀드릴 것입니다. 어, 그건 우리가 알 수 있나요? 이것은 무엇인가요? 이런 뜻입니다. 알겠죠? 그래서, 이것들은 이것은 매우 유용합니다. 만약 우리가 그냥 계산한다면 그 차이를 결과에서 계산하면 몇몇 달과 이것은 평균 결과입니다. 치료의 맞죠? 이것은 평균 결과입니다. 만약 우리가 밤을 차이를 계산하면, 이것은 분해될 수 있습니다. 두 부분으로. 알겠죠? 이걸 어떻게 얻을까요? 이것은 그래서 이게 문제입니다. 왜냐하면? 당신은 아시나요? 네. 왜냐하면? 그래서, 이것은 우리가 계산해야 할 것입니다. 우리가 데이터를 받았을 때. 우리는 이 정보를 가지고 있습니다. 그래서 우리는 계산할 수 있고 왜 결과가 치료에 그리고 왜 결과가 치료에 영향을 미치는지. 알겠죠? 그래서 우리는 그 두 숫자를 뺄 수 있습니다. 그리고 우리는 그것이 25라는 것을 알고 있습니다. 알겠죠? 이것은 25입니다. 자, 비교는 치료와 대조군 사이입니다. 그리고 우리는 그냥 뺍니다. 기억하세요. 이것은 이것입니다. 왜냐하면? 그렇죠? 왜냐하면? 왜 그런지 아시나요? 그래서 우리는 Y0를 Y1에서 뺍니다. 이게 사실인가요? 아니요, 우리는 치료에 대한 정보가 없습니다. 우리는 잠재적인 결과를 관찰합니다. 만약 실제로 그들이 치료를 받는다면요. 그래서 왜 Y와 같을까요? 왜냐하면? 왜냐하면? 왜냐하면? 그렇죠? 만약 우리가 밤을 평균을 낸다면, 결과의 평균은 치료받은 사람들의 대조군, 은 Y IC입니다. 왜 하고 싶으세요? 아시다시피, ~하기 위해서 가정하면 Y가 0이라고. 게다가, 왜 제가 기대되는 변수 Y를 0에서 뺐을까요? 조건부로 D1에서? 그리고 더하기 알겠죠? 이것은 왜 그렇죠? 더하기 그런 것 같아요. 그래서 빼고 같은 숫자를 더해요. 그 원래 방정식에. 나누기 어떤 흥미로운 방정식으로. 일부러요, 알겠죠? 그래서 알겠죠, 그리고 같은 숫자를 여기 더해요. 이게 원래 방정식이에요. 그리고 이게 제가 더한 거예요. 이게 제가 빼고 같은 숫자를 더한 거예요. 알겠죠? 하지만 그렇게 하면, 저는 이걸 재정렬할 수 있어요. 그래서 저는 이렇게 쓸 수 있어요. 그리고 두 번째 항은 그리고 첫 번째 항은 입니다. Y 1 조건부로 무엇이 Y와 Y0의 차이인가요? 두 번째 항, 은 무엇인가요? 기대되는 변수 Y0 조건부로 D1에서? 0이고, 또는 D1이 0입니다. 그래서 우리는 이것을 라고 부를 수 있어요. 그리고 차이는 두 부분입니다. 첫 번째 부분은 사실 평균 치료 효과입니다. 두 번째 부분은 선택 편향입니다, 결과적으로, 제 생각에는 두 그룹이 우연히 배정된 것 같아요. 두 번째는 0이라는 것입니다. 왜냐하면 저희는 무작위 배정된 것을 기반으로 했고, 그러면 이렇게 말할 수 있습니다. 그들의 잠재적 결과는 그들이 배정된 날과 아무 관련이 없다는 것입니다. 그래서 두 번째 항은 기대값으로 0이 됩니다. 그래서, 이제 우리는 차이를 가지게 될 것이고 평균 치료 효과를 얻게 됩니다. 그것이 ICT의 장점입니다. 우리는 확실히 우리는 할 수 있습니다. 우리는 결론을 내릴 수 있습니다. 설계상, 두 번째 항은 0입니다. 그러면 그들은 이렇게 말합니다. 제 비교는 결과 변수가 두 그룹 간에 다르다면 그것은 정확하게 반영하고 있는 것입니다. 평균 치료 효과를 정확하게 포착하고 있습니다. 그래서, 이 예시에서 이것은 평균의 차이입니다. 75 대 50입니다. 하지만 평균은 치료 효과는 치료받은 사람들에게 여기서는 입니다. 5입니다. 더하기 선택 편향입니다. 그건 20입니다. 그래서 거기에는 원래 그래서 우리는 그것을 조건 없이 받아들일 것입니다. 그런데요. 그래서 이제 이 두 그룹 간의 결과 차이는 반영합니다. 그 두 가지 요소를. 만약 우리가 가지고 있지 않다면 예를 들어 ICT 같은 것이 없다면, 우리는 모든 것을 할 수 없습니다. ATT는 9와 다릅니다. 하지만 우리가 확실히 한다면 이것은 입니다. 0입니다. ICT는 그리고 ATT는 와 같습니다. 그래서 ICT는 실제로, 여러분은 무엇을 기반으로 제시해야 하나요? 결과는 치료이고, 우리는 자신 있게 어떤 차이든 그들의 결과에서 나타나는 것은 치료 때문이라고 말할 수 있습니다. 그것이 우리가 말하는 것입니다. 그리고 이것은 증명합니다. 그 기반으로 한 그래서, 무작위 배정이 작동하므로, 만약 배정이 독립적이라면 그 어 잠재적 결과와 그러면 이것은 될 것입니다. 즉, 그것은 상관없이 그들의 배정과 상관없이 잠재적 결과는 잠재적 결과입니다. 그들이 치료받을 때의 결과는 같습니다. 그것은 I에 의존하지 않으며, 완전히 독립적입니다. 그래서 그것은 우리가 복구할 수 있게 해줍니다. 평균 치료 효과를. 왜냐하면 여기서 이것이 바로 관찰된 데이터입니다. 그래서 관찰된 데이터는 조건부입니다. 무엇이 결과인가요? 조건부입니다. 무엇이 결과인가요? 이것은 평균입니다. 평균 결과입니다. 치료받은 사람. 치료도 마찬가지. 이것은 평균 결과입니다. 그래서, 치료에 대해서는. 또는 통제에 대해서는. 알겠죠? 이해했어요. 그리고 이건 IV 차이입니다. 하지만 만약 이게 만족스럽다면, 여기서는 두 번째 항이 나타납니다. 그래서, 우리는 복구할 수 있습니다. ATT를. 하지만 이 경우에는 ATT가 정확히 ATT와 같습니다. 그리고 ATT. 맞죠? 왜냐하면? 우리는 독립적인 할당을 그 세 가지를 객체로 동일하게 할 것입니다. 그리고 ATT는 ATT와 같습니다. 그리고 그들이 치료를 받든 안 받든 상관없이, 평균은 치료 효과가 같을 것입니다. 왜냐하면 할당은 그들이 치료를 받든 안 받든 상관없기 때문입니다. 알겠죠? 그래서, 또는 이것들이 같습니다. 그래서 제 생각엔 우리가 ATT를 복구해야 한다고 생각합니다. 그래서, ATT보다 더 많은 ATT, ATT는 평균 치료 효과입니다. 어 우리가 관찰하는 것은 ICT에서 입니다. 평균은 치료 효과가 어 평균 치료 효과는 전체 인구의 정확히 평균 치료 효과와 같습니다. 치료받은 사람과 평균 치료 효과는 치료받지 않은 사람과 같습니다. 왜냐하면 설계상 치료는 그들의 잠재적 결과와 관련이 없습니다. 그들은 치료 효과입니다. 그래서 우리는 치료 효과를 복구할 수 있습니다. 어 비교함으로써 평균 차이를 비교함으로써. 계속해 봅시다. 무엇이 지금 적용되나요? 하지만 제 생각에 적용이 더 쉬울 것 같아요. 그래서 예산을 짜는 게요. 저는 알겠어요. 알겠습니다. 같은 방정식이죠? 우리는 ICT, 우리는 확실히 두 번째 항이 사라지게 합니다. 그리고 ATT는 ATT와 같습니다. 그리고 ATT. 그래서, 그럼 선형 회귀에서, 그리고 그 맨 위쪽 거요, 또는 S, 베이스, 그 기대값, 와 같습니다. 아래쪽 항과요. 의 치료의. 그래서, 이게 한 가지 예입니다. 어 그래서 선형, 네, 선형. 그래서, 이 논문은 정말 멋져요. 왜냐하면 왜냐하면 그들이 시장 실패에 대해 생각할 때, 사람들은 시장 실패를 겪습니다. 그리고 이건 또한 우리가 일자리를 얻는 시장 결과와도 관련이 있습니다. 하지만 너무 많은 요인이 기여할 수 있습니다. 그리고 성별 격차를 설명하는 데요. 그리고 테스트가 있는데, 여기서 그들은 정보를 제공하는데, 이는 기여합니다. 성별 격차에 말이죠. 알겠죠? 그래서 정보는 의미합니다. 여성들이 가지고 있지 않다는 것을 더 나은 정보가 없다는 것을 의미합니다. 그들은 제약이 있습니다. 그래서 어느 정도는, 무엇이 이용 가능한지, 그들은 모릅니다. 그래서 그들이 시도하는 것입니다. 그리고 그들은 자본이 없습니다. 그리고 그들은 더 낮은 그래서 그들은 이것을 테스트하지 않습니다. 이 특정 채널을요. 그리고 이것은 매우 어렵습니다. 예를 들어, 데이터에 대한 관찰이 있다면, 어떻게 증명할 수 있나요? 정보가 존재한다는 것을 증명할 수 있나요? 시장의 성별 격차에 기여하는 것은 매우 어렵습니다. 자, 우리가 한 것은 그들이 ICT를 사용하고 그런 다음 그들이 정보 세션을 진행합니다. 여성들에게 말이죠. 그래서 그들은 아주 많은 마을을 가지고 있고, 그들은 마을 단위로 무작위로 배정했습니다. 그래서 마을 하나는 치료 그룹에, 마을 둘은 통제 그룹에 속합니다. 통제 그룹에 속합니다. 그래서 그들은 많은 마을을 가지고 있고, 그들은 마을을 치료 그룹과 통제 그룹으로 나누지만, 그들은 치료가 도달할 수 있다고 믿고 연구자들은 마을에 가서 그리고 정보를 제공했습니다. 무엇에 대한 정보냐면, 사람 부문에 대한 것입니다. 그래서 사람 부문은 비즈니스 프로세스 아웃소싱입니다. 그리고 그것은 빠르게 성장하는 산업이었습니다. 개발도상국에서. 이것은 기본적으로 매우 간단한 문서화와 그것이 무엇인지 조금 어렵지만, 계산은요. 그리고 영상으로 넘어가서, 그건 인기 있는 경우입니다. 하지만 PDF 읽기 영역은, 그들은 모르고 있어요. 새로운 학습 분야입니다. 그래서 제가 해야 할 일은 그거예요, 알겠죠, 그래서 PDF 읽기 영역은, 그들은 모르고 있어요. 기회죠. 자, 그들은 어느 정도 수준의 교육을 받았고, 일할 수 있어요. 적어도 성장하는 곳에서 높은 급여를 받으며. 고임금 일자리. 알겠죠? 그래서 제가 한 일은 그들이 특히 이야기한 것은 이것에 대한 분야이고 그 정보는 그 정보는 정보 세션에서 그리고 오직 세 그룹만 배웠어요. 이 분야에 대해. 그리고 어디 보자. 그래서 우리는 어떤 종류의 직업을 가질 수 있는지, 정보화 가 1순위이고, 왜냐하면 그것은 비용이 매우 고치기 쉽고 문제를 해결할 수 있어요. 그것은 정보의 문제이고, 정보의 문제예요. 그게 금융보다 나아요. 예를 들어, 당신은 재정적으로 여유가 있어야 해요. 시장에서. 당신은 역할을 제공하거나 보조금을 제공해야 해요. 비용이 많이 들죠. 하지만 그것은 정보와 관련이 있어요. 훨씬 저렴해요. 그래서 제 생각엔 식별하는 것이 그 정보가 문제라는 것을 설명해 줍니다. 특정 결과가 무엇인지 정말 낮은 그래서 매우 음 실용적입니다. 음 우리에게는 이해하려고 노력하는 것이 정보가 결과인지 아는 것입니다. 그래서 또 다른 예로 미국에서 저는 대학 지원서가 매우 복잡하다는 것을 알게 되었어요. 더군다나 매우 비싸죠. 하지만 동시에 정부가 매우 풍부한 그리고 매우 이질적인 장학금을 제공합니다. 그리고 장학금을 신청하지 않아요. 학생들은 그냥 알아야 해요. 그들이 어떤 특정 장학금을 신청해야 하는지, 그리고 자격 요건은 무엇인지, 등등, 그렇죠? 그래서 그것은 많은 정보입니다. 만약 학생들이 정말 장학금이 필요하다면, 예를 들어 저소득층 가정은, 그 정보가 없어요. 그래서 사실 그들은 매우 간단한 실험이 필요해요. 국가 차원에서. 그들은 그냥 템플릿을 제공해서 모두에게 줍니다. 그리고 사실, 그것은 증가하는 데 중요합니다. 등록률을 높이는 것이 중요합니다. 그리고 지원서와 장학금, 그리고 성공률. 그래서 그것은 정말 중요한 신호입니다. 왜냐하면 인기 있는 것은 그렇게 비싸지 않아요. 우리는 금융 문제보다 덜 비싸다고 말합니다. 만약 당신이 역할을 제공하고 싶다면, 저는 등록금을 줄이는 것이 비싸다고 생각합니다. 어떻게 하면 비싸지 않을까요? 그리고 그들이 돕는 것은 그냥 그들에게 정보를 주고 개인이 지원하려고 노력하는 것이고, 그러면 그들은 장학금을 받게 됩니다. 이것은 왜냐하면 장학금이기 때문입니다. 그래서 정보 질문은 매우 흥미롭습니다. 질문입니다. 어, 그건 그 중 일부입니다. 그래서 그들은 확인합니다. 여성이 인도에서 이 정보 질문에 직면하는지. 그리고 근본적인 동기는 노동 참여가 그들의 여성의 인구 비율이 한국에서 약 60% 또는 65%입니다. 그래서 우리는 65%를 봅니다. 그 같은 것이 인도에도 적용됩니다. 20%였습니다. 이것은 3분의 1입니다. 그 국가들의. 그래서 여성의 노동 참여율은 매우 중요한 문제입니다. 그래서 저는 간단한 정보를 제공하고 싶습니다. BPO 부문이 어떻게 변할 수 있는지 그들의 노동 참여를 바꿀 수 있는지에 대해. 알겠죠? 그리고 이것은 제가 생각하기에 흥미로운 점은 대략 그런 맥락입니다. 그래서 여기서, 그 이 사람들은 보여줍니다 여러분에게 평균 특성을 보여줍니다. 전체 샘플의. 그리고 통제 그룹, 즉 통제 그룹은 그리고 치료 그룹과 그 차이를 보여줍니다. 음 여러분이 이 표가 무엇을 위한 것인지 생각해 보길 바랍니다. 그래서 여기서, 어, 이건 노동 시장과는 관련이 없습니다. 이것은 그들의 특성에 관한 것입니다. 어디에 사는지, 하지만 그들은 델리에서 멀리 떨어져 있고, 가구 특성, 하지만 그들이 하는 것은 그들이 평균 특성을 비교하는 것입니다. 통제 및 치료 그룹. 그리고 그 풀은 테스트 평균을 검증합니다. 그 두 그룹 간의. 표본 평균은 우리가 검증할 수 있습니다. 그들이 같은지 아닌지 검정 통계량을 바탕으로. 알겠죠? 그래서 이것이 결과입니다. 그리고 그 차이는 인도에서 특성의 차이는 통제 그룹과 치료 그룹 간에 그리고 이 숫자는 아시다시피, 이 숫자는 평균 차이의 행 번호입니다. 만약 우리가 평균을 계산하면 전체 델리에서 온 것은 100 30이고, 통제 그룹에서는 100입니다. 하지만 28은 치료 그룹에서, 그리고 이것은 이것이 그 두 숫자 사이의 차이여야 하고, 그리고 그들은 적지 않았습니다. 그 그 힘은 네. 그래서 그것은 그 차이여야 생각해보길 바랍니다. 그래서 정확히. 하지만 문제는 그 차이가 통계적으로 다른지 아닌지입니다. 그리고 평균 차이를 표준 오차로 나눈 값, 은 매우 작습니다. 그래서 평균 차이는 입니다. 실제 차이는 평균에서 입니다. 하지만 우리는 실제 차이에는 관심이 없습니다. 우리는 그 차이가 통계적으로 유의미한지 아닌지 궁금합니다. 이를 판단하기 위해 우리는 t-값을 계산해야 합니다. 그리고 그것은 표준 오차를 계산하는 것을 포함합니다. 그리고 이것은 그 우리는 우리는 계수를 표준 오차로 나누어야 하고 그 비율이 P값이 아닙니다. 통계적으로 유의미하다고 말하려면 차이가 통계적으로 유의미하다는 밝히려면, 차이는 0이어야 합니다. 약 2 정도여야 합니다. 만약 약 2라면, 1.96 은 유의미한 5%입니다. 만약 1.6 7이라면 그것은 유의미한 10%입니다. 하지만 이 비율은 아닙니다. 그게 다입니다. 그래서 통계적으로 유의미하지 않습니다. 알겠죠? 그럼 마지막으로 이 표에서 알 수 있는 것은 특성이 통제 그룹과 실험 그룹이 통계적으로 유의미하지 않다는 것입니다. 이게 좋은 소식인가요, 아니면 나쁜 소식인가요? 이건 알파에 대한 게 아닙니다. 이건 에 대한 것입니다. 마음의 특징에 대한 것입니다. 알겠죠? 그래서 특징입니다. 우리는 비교할 수 없습니다. 하지만 이것은 통제 그룹입니다. 그래서 그리고 배경은 그리고 우리의 결론은 만약 우리가 관찰된 특성을 비교하면, 그것들은 비교할 수 있습니다. 이게 좋은 소식인가요, 아니면 나쁜 소식인가요? 그건 아주 좋습니다. 좋은 소식입니다. 그렇죠? 네. 그래서 물론이죠. 당신이 말했듯이, 또는 무작위 배정은 아닙니다. 그래서 두 그룹이 확실히 똑같다는 것을 확인하기 위해, 그리고 기본적으로 이것은 데이터에서 우리가 어떤 유의미한 차이도 말할 수 없다는 것을 증명합니다. 그래서 그래서 두 그룹은 비슷합니다. 그들은 평균적으로 정확히 같고, 유일한 차이점은 치료입니다. 우리는 직접적으로 관찰 가능한 특성을 테스트할 수는 없지만, 적어도 관찰 가능한 특성을 비교하고 그것들이 통계적으로 같다는 것을 보여줄 수 있습니다. 그래서 균형이 맞는지 확인합니다. 그래서 모든 것이 RCT인가요? 우리는 이 표를 제공해야 합니다. 그래서 우리는 이 표를 제공해야 한다고 말했습니다. 나머지 사람들에게는 무작위 배정이 완료되었습니다. 그래서 우리는 실제로 무작위로 배정했다는 것을 증명해야 합니다. 그래서 균형 확인, 이 부분은 반드시 포함되어야 합니다. 어떤 RCT에서든요. 논문에서요. 그 후 에, 이제 우리는 어떤 결과의 차이에 대해 이야기하고 있습니다. 치료 때문에요. 네, 그것은 치료 때문입니다. 그래서 두 번째 표는, 그래서 이것은 아마도 모든 것이 필요할 것입니다, 이 표는, 이것은 결과 표입니다. 이것은 치료 효과입니다. 그래서 그들이 살펴본 것은 패널 데이터, 결과 는 치료이고 우리는 결과를 남성에게 사용합니다. 그리고 무작위로 배정된 정보를 그들이 받은 정보 세션을 통해 메일로 보냈습니다. 그래서 여기 남성들은 남성은 여기 있고 원래는 차이가 있는지 확인해야 합니다. 아니면 어떤 파급 효과가 있는지 확인해야 합니다. 그들은 정보를 얻으면 안 됩니다. 그들은 정보를 얻으면 안 됩니다. 그들은 초대받지 않았습니다. 하지만 만약 그들이 초대받았다면, 하지만 우리는 그들의 결과가 통계적으로 다른지 확인하고 싶습니다. 치료 그룹과 대조군 사이에서요. 그리고 우리는 논문에 무엇을 보고해야 하는가 하면 그게 아니라 상수입니다. 하지만 앞에 있는 계수입니다. 치료 앞에 있는 변수입니다. 치료 더미. 알겠죠? 그래서 이 계수는 우리에게 어, 그 는 해당합니다. 있잖아요, 우리는 왜 그런지 왜 그런지 이게 플러스인지 궁금해요. 그래서 플러스인지 궁금해요. 베타 는 가장 중요한 계수입니다. 이해하고 싶을 때 치료 효과를 이해하고 싶기 때문입니다. 어떻게 결과가 변하는지 D에 따라. 그것은 치료 효과죠, 맞죠? 그래서 여기 이것은 베타입니다. 음, 아니면 여기입니다. 그래서 이것은 그들이 고용되었는지 이 BPO 부문에. 그래서 고용은 확률입니다. 중에서 치료받은 어, 이것은 별로 얼마나 치료받은 그룹의 고용 비율이 다른지 대조군과 비교하는 것입니다. 대조군은 이것은 알파입니다. 또는 여기 A. A 대조군 평균입니다. 그래서 만약 그들이 치료 정보를 받지 않았다면, 오직 0.4%입니다. 그 중 여성의 이 연령대에서 그들은 공공 부문에서 일합니다. 일단 그들이 정보 세션을 받고 50, 그러면 그들은 그들은 46. 더 가능성이 높습니다. 그래서 공공 부문에서 일합니다. 알겠죠? 그래서 여기, 0. 04 는 대조군입니다. 알겠죠? 그리고 0. 046 은 그 차이입니다. 우리는 트윗합니다. 어 치료 및 대조군입니다. 그래서 이것은 그것입니다. 알겠죠? 그래서 이것은 그것과 같습니다. 그래서 이것은 그것입니다. 알겠죠? 그래서 기억하세요 이 계수는 보통 보고된 바에 따르면 그 차이입니다. 예를 들어 치료 효과, 아시다시피 그 차이, 그 차이입니다. 알겠죠? 결과가 어떻게 변하는지에 대한 것입니다. 그래서 이것은 우리가 보통 보고하는 것입니다. 베타, 즉 차이를 포착하는 것입니다. 두 그룹 간의. 그래서 어떻게 해석해야 할까요? 그래서 그들이 치료를 받지 않으면, 오직 0.4% 만이 그 그룹에 속한 개인 중 이 연령대에서 공공 부문에서 일합니다. 하지만 그들이 치료를 받으면, 그들은 46 퍼센트 더 가능성이 높습니다. 대조군보다. 그래서 공공 부문에서 일합니다. 그래서 그게 무슨 뜻이죠? 자, 공유하세요 또는 여성 A 는 사이입니다. 이 어 누가 일하는지 에서 공공 부문에서. 그래서 무엇이 어 아니요, 치료입니다. 그게 무엇인가요? 데이터가? 그래서 무엇이 이것이 사실입니다. 만약 그들이 정보 세션을 받지 않았다면, 이 그룹은 그들이 이만큼 더 공공 부문에서 일할 가능성이 높습니다. 그래서 나중에 5% 더 많은 치료받은 사람들 중 공공 부문에서 일하는 사람입니다. 그래서 데이터, 데이터의 수는, 우리가 합쳐야 해요, 상수처럼. 그리고 그 차이, 베타, 알파 플러스 베타가 수준을 이해하는 것입니다. 하지만 하지만 베타는 우리에게 차이를 말해줍니다. 그래서 이것을 추측할 수 있습니다. 그래서 이것은 알파입니다. 무슨 일이 일어났나요? 대조군에게? 이것은 치료군입니다. 이것은 알파 플러스 베타입니다. 그 차이는 입니다. 예를 들어 글쓰기에서는, 이해합니다. 그래서 만약 제가 그냥 적는다면 B를 누르는 것을 Y 결과로, 알겠죠? 이것은 대조군 이고, 이것은 치료군입니다. 우리는 그것들을 관찰했습니다. 그리고 베타, 치료 효과는 차이입니다. 평균 결과의 차이입니다. 알파 는 입니다. 어, 뭐라고 해야 할까요, 만약 그들이 치료를 받지 않는다면요. 이것은 대조군입니다. 그래서 만약 회복하고 싶다면, 그 취업 확률은 치료군에게는 알파를 더해야 합니다. 그렇죠. 알겠습니다. 계속할게요. 어디 보자.",
+   "pdf": "Core_note_ovb_panel_2026.pdf",
+   "pdfPage": 1,
+   "slideText": "Worked Example: NLSY79 Introductory Econometrics Omitted Variables and Panel Regressions A worked example with the NLSY79 wage data Introductory Econometrics Road map The wage data we use in the lab is a panel : 36 , 908 observations on 5 , 198 men, each seen about seven times. That single fact drives everything in this note. Ability — the classic omitted variable in a wage regression — does not change over time, so it is exactly the unit effect c i of Core Notes 3. We first measure the omitted variable bias directly, by putting the AFQT score in and taking it out. We then ask what the panel estimators of Core Notes 3 would do instead, and find that the obvious answer does not work here — for a reason worth understanding. Contents 1 The data and the question 1 2 The omitted variable: putting AFQT in and taking it out 2 2.1 The ladder . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2.2 Checking it against the formula . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3 2.3 The same thing with degree dummies . . . . . . . . . . . . . . . . . . . . . . . . . . 3 3 The same data is a panel 4 4 What fixed effects can and cannot do here 4 5 The menu of panel regressions 5 6 Why cluster(Id) and not the default 5 7 Quick self-check 6 1 The data and the question The estimation sample is NLSY79 men, after the selection filters in the do-file. Each row is a person-year : one man in one survey year. 1",
+   "liveNotes": {
+    "notes": [
+     "▶ 슬라이드와 무관하게 통제집단/처치집단 설명: 통제집단의 고용확률 + α = 처치집단의 고용확률",
+     "현재 슬라이드는 NLSY79 로드맵: **패널자료**(panel data) 36,908 관측치, 5,198명 — 데이터 설명 시작"
+    ],
+    "summary": "통제·처치집단 고용확률",
+    "exam": [],
+    "board": [
+     "X′Ω⁻¹X",
+     "X′Ω⁻¹y",
+     "E[u|X] = 0",
+     "D_i = 1 (처치), D_i = 0 (비처치)",
+     "Y₁ − Y₀",
+     "P(처치집단) = P(통제집단) + α"
+    ],
+    "at": 1791773084535
+   },
+   "marks": [
+    {
+     "line": 23,
+     "type": "",
+     "note": "do-file 경로 설정 주의"
+    },
+    {
+     "line": 6,
+     "type": "",
+     "note": "표본작아 검정력 부족"
+    },
+    {
+     "line": 9,
+     "type": "",
+     "note": "경력·결혼상태=시간가변변수"
+    }
+   ],
+   "lines": {
+    "w": 612,
+    "h": 792,
+    "lines": [
+     {
+      "i": 0,
+      "text": "Worked Example: NLSY79 Introductory Econometrics",
+      "x": 72,
+      "y": 34.111899999999956,
+      "w": 468.0003899999999,
+      "h": 12.545465
+     },
+     {
+      "i": 1,
+      "text": "Omitted Variables and Panel Regressions",
+      "x": 130.617,
+      "y": 68.73259999999998,
+      "w": 350.7689396200002,
+      "h": 19.79771
+     },
+     {
+      "i": 2,
+      "text": "A worked example with the NLSY79 wage data",
+      "x": 183.98899999999998,
+      "y": 93.51879999999993,
+      "w": 244.01758720000015,
+      "h": 13.748479999999999
+     },
+     {
+      "i": 3,
+      "text": "Introductory Econometrics",
+      "x": 247.46899999999997,
+      "y": 117.03139999999992,
+      "w": 117.05855748000002,
+      "h": 11.45699
+     },
+     {
+      "i": 4,
+      "text": "Road map",
+      "x": 83.403,
+      "y": 156.8609,
+      "w": 56.450228859999996,
+      "h": 12.545465
+     },
+     {
+      "i": 5,
+      "text": "The wage data we use in the lab is a panel : 36 , 908 observations on 5 , 198 men, each seen about",
+      "x": 83.403,
+      "y": 181.19389999999996,
+      "w": 445.1903730399998,
+      "h": 12.545465
+     },
+     {
+      "i": 6,
+      "text": "seven times. That single fact drives everything in this note. Ability — the classic omitted",
+      "x": 83.40299999999996,
+      "y": 194.74289999999993,
+      "w": 445.20037099999973,
+      "h": 12.545465
+     },
+     {
+      "i": 7,
+      "text": "variable in a wage regression — does not change over time, so it is exactly the unit effect c i of",
+      "x": 83.40299999999996,
+      "y": 208.2918999999999,
+      "w": 445.19537095999993,
+      "h": 12.545465
+     },
+     {
+      "i": 8,
+      "text": "Core Notes 3. We first measure the omitted variable bias directly, by putting the AFQT score",
+      "x": 83.40299999999996,
+      "y": 221.8408999999999,
+      "w": 445.1970982699997,
+      "h": 12.545465
+     },
+     {
+      "i": 9,
+      "text": "in and taking it out. We then ask what the panel estimators of Core Notes 3 would do instead,",
+      "x": 83.40299999999996,
+      "y": 235.39089999999985,
+      "w": 445.19273462999973,
+      "h": 12.545465
+     },
+     {
+      "i": 10,
+      "text": "and find that the obvious answer does not work here — for a reason worth understanding.",
+      "x": 83.40299999999996,
+      "y": 248.93989999999982,
+      "w": 432.0319963899996,
+      "h": 12.545465
+     },
+     {
+      "i": 11,
+      "text": "Contents",
+      "x": 72,
+      "y": 293.3188,
+      "w": 63.05298361999999,
+      "h": 16.49813
+     },
+     {
+      "i": 12,
+      "text": "1 The data and the question 1",
+      "x": 72,
+      "y": 327.1919,
+      "w": 468.00148090999994,
+      "h": 12.545465
+     },
+     {
+      "i": 13,
+      "text": "2 The omitted variable: putting AFQT in and taking it out 2",
+      "x": 72,
+      "y": 357.62789999999995,
+      "w": 468.00475364,
+      "h": 12.545465
+     },
+     {
+      "i": 14,
+      "text": "2.1 The ladder . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2",
+      "x": 88.364,
+      "y": 377.15489999999994,
+      "w": 451.63564908999945,
+      "h": 12.545465
+     },
+     {
+      "i": 15,
+      "text": "2.2 Checking it against the formula . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3",
+      "x": 88.364,
+      "y": 396.68089999999995,
+      "w": 451.63564908999945,
+      "h": 12.545465
+     },
+     {
+      "i": 16,
+      "text": "2.3 The same thing with degree dummies . . . . . . . . . . . . . . . . . . . . . . . . . . 3",
+      "x": 88.364,
+      "y": 416.20789999999994,
+      "w": 451.6389218199994,
+      "h": 12.545465
+     },
+     {
+      "i": 17,
+      "text": "3 The same data is a panel 4",
+      "x": 72,
+      "y": 446.6438999999999,
+      "w": 468.00475364,
+      "h": 12.545465
+     },
+     {
+      "i": 18,
+      "text": "4 What fixed effects can and cannot do here 4",
+      "x": 72,
+      "y": 477.0798999999999,
+      "w": 468.00257182000007,
+      "h": 12.545465
+     },
+     {
+      "i": 19,
+      "text": "5 The menu of panel regressions 5",
+      "x": 72,
+      "y": 507.51589999999993,
+      "w": 468.00475364,
+      "h": 12.545465
+     },
+     {
+      "i": 20,
+      "text": "6 Why cluster(Id) and not the default 5",
+      "x": 72,
+      "y": 537.9518999999999,
+      "w": 468.00420399999996,
+      "h": 12.545465
+     },
+     {
+      "i": 21,
+      "text": "7 Quick self-check 6",
+      "x": 72,
+      "y": 568.3879,
+      "w": 468.00148090999994,
+      "h": 12.545465
+     },
+     {
+      "i": 22,
+      "text": "1 The data and the question",
+      "x": 72,
+      "y": 611.2778,
+      "w": 211.6150577200001,
+      "h": 16.49813
+     },
+     {
+      "i": 23,
+      "text": "The estimation sample is NLSY79 men, after the selection filters in the do-file. Each row is a",
+      "x": 72,
+      "y": 645.0449,
+      "w": 468.0025718199995,
+      "h": 12.545465
+     },
+     {
+      "i": 24,
+      "text": "person-year : one man in one survey year.",
+      "x": 72,
+      "y": 658.5939,
+      "w": 198.05430035,
+      "h": 12.545465
+     },
+     {
+      "i": 25,
+      "text": "1",
+      "x": 303.273,
+      "y": 740.9718999999999,
+      "w": 5.454549999999983,
+      "h": 12.545465
+     }
+    ]
+   },
+   "segs": [
+    {
+     "t": 4,
+     "page": 1,
+     "en": "simple question, we need to on the same answer. Really? or it will be answer. Probably. Uh or some people ask questions. So like uh I would provide all the questions. from the and then share it with you. But if you want to do it, or yourself, you can just do it.",
+     "ko": "간단한 질문인데, 우리가 같은 생각이어야 해요. 정말요? 아니면 대답이 될 거예요. 아마도요. 어, 아니면 어떤 사람들은 질문을 하죠. 그래서 어 제가 제공할 모든 질문을요. 에서 그 그리고 나서 공유하는 거죠. 하지만 만약 당신이 하고 싶다면, 아니면 직접, 그냥 하셔도 돼요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 27,
+     "page": 1,
+     "en": "questions. But my name is David,",
+     "ko": "질문을요. 하지만 제 이름은 데이비드이고,",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 36,
+     "page": 1,
+     "en": "it will be 100% exactly the same. It will be similar. Now, as you see the questions, uh 20% will be based on Hold on, first. which we discussed today. And then from today, we will have the actual table. from the table. Okay? So I want you to be able to interpret some numbers.",
+     "ko": "100% 정확할 거예요. 완전히 똑같아요. 비슷할 거예요. 이제, 보시다시피 질문들을 보면, 어, 20%는 될 거예요. 기반으로 할 거예요. 잠깐만요. 우리가 오늘 논의한 것. 그리고 나서 오늘부터는, 우리가 실제 표를 가질 거예요. 그 표에서요. 알겠죠? 그래서 저는 당신이 할 수 있기를 바라요, 몇 가지",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 57,
+     "page": 1,
+     "en": "from the table. Don't worry. I will walk through uh or the or the small details. I'm the the number in the table. and interpret the table. So that will be that will be another",
+     "ko": "숫자를 해석하는 것을요. 그 표에서. 걱정하지 마세요. 제가 안내해 드릴게요, 아니면 세부적인 사항들을요. 어쨌든 그 숫자는 표에 있는 거예요. 그리고 표를 해석하는 거죠. 그래서 그게 될 거예요. 그게 또 다른",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 74,
+     "page": 1,
+     "en": "20%. Uh I don't know which um or so. It can be also some words as you know. And I can show you something with the or or coefficient, right? And the error, I can ask you what the statistic or not. I would ask you whether you need to interpret that at the table. Okay?",
+     "ko": "20%가 될 거예요. 어, 어떤 게 음 아니면 뭐 그런 거죠. 그럴 수 있어요. 또한 어떤 단어들이나 아시다시피요. 그리고 제가 보여드릴 수 있어요, 어떤 것을요. 아니면 아니면 계수, 맞죠? 그리고 오차, 제가 물어볼 수 있어요, 통계가 맞는지 아닌지. 제가 물어볼게요, 당신이 해야 하는지 해석해야 하는지 그 자리에서요. 그 표에서. 알겠죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 100,
+     "page": 1,
+     "en": "So income and I may ask you what exactly the coefficient does not hold. Like, you know, we have a variable like obesity, and coefficient maybe something like that. So those are so basically the skill is for you to know to interpret the table. So something like will be about 20%.",
+     "ko": "그래서 소득은 그리고 제가 물어볼 수 있어요, 정확히 그 계수가 성립하지 않는다고요. 예를 들어, 우리가 변수가 있는데, 예를 들어 비만처럼, 그리고 계수가 아마도 그런 식이죠. 그래서 그런 것들이에요. 그래서 기본적으로 그 기술은 당신이 해석할 수 있도록 하는 거예요. 그 표를요. 그래서 어떤 것 같은 거요. 그게 약 20%가 될 거예요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 125,
+     "page": 1,
+     "en": "of the percent. So questionable However, I will ask you to identify like some condition. So going from the standard deviation to have an unbiasedness. So the definition of unbiasedness consists of and you know, um What do you mean by OLS is robust? So you need to understand it.",
+     "ko": "그 중의 퍼센트가요. 그래서 의심스러운 하지만, 제가 물어볼게요, 당신이 식별하도록 예를 들어 어떤 조건 같은 거요. 그래서 표준 편차에서 편향되지 않은 것을 갖는 거죠. 그래서 편향되지 않은 것의 정의는 다음과 같아요. 그리고 아시다시피, 음 무슨 뜻인가요? OLS가 강력하다는 게? 그래서 당신은 이해해야 해요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 154,
+     "page": 1,
+     "en": "And then I will ask you uh the coefficient. Like you know, a matrix. So we don't need to interpret uh calculate the inverse of matrix. We don't for me, if the dependent is beyond the 2 by 2, calculating the inverse matrix takes a long time. So that is the not directly.",
+     "ko": "그리고 제가 물어볼게요, 어, 그 계수. 예를 들어 행렬 같은 거요. 그래서 우리는 할 필요가 없어요. 해석할 필요가 없어요. 역행렬을 계산할 필요가 없어요. 우리는 저한테는, 종속변수가 2바2를 넘어서면, 역행렬을 계산하는 것은 시간이 오래 걸려요. 그래서 그게 아니에요. 직접적으로는.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 180,
+     "page": 1,
+     "en": "But you need to understand the formula. So it is possible, so you cannot bring any cheat sheet, but I want you to remember that at least what is and OLS. Next time, X prime X, and it's something you really need to understand. Okay? I remember. That is one thing.",
+     "ko": "하지만 당신은 공식을 이해해야 해요. 그래서 가능해요, 그래서 당신은 어떤 컨닝 페이퍼도 가져올 수 없지만, 저는 당신이 기억하기를 바라요, 적어도 무엇인지, 그리고 OLS가 무엇인지. 다음 번에는 X 프라임 X, 그리고 이건 정말 이해해야 해요. 알겠죠? 기억해요. 그게 한 가지예요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 199,
+     "page": 1,
+     "en": "And we should remember. I I don't encourage students to memorize stuff, but that is something you need to understand. Okay, today we will talk about causal inference and then we will talk about different methods to show causal uh causal effects. Okay?",
+     "ko": "그리고 우리는 기억해야 해요. 저는 학생들이 외우는 것을 권장하지 않지만, 그건 당신이 정말 이해해야 할 부분이에요. 알겠죠? 자, 오늘은 인과 관계에 대해 이야기할 거예요. 그리고 나서 다른 방법에 대해 이야기할 거예요. 인과 관계를 보여주는 방법이죠. 인과 관계 효과. 알겠죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 223,
+     "page": 1,
+     "en": "And this is more application. Uh more of the application. And then this application about what? application to prove exogeneity. And let me mention before, in order to have OLS estimator, unbiased, we need to satisfy exogeneity. We said exogeneity is key for",
+     "ko": "그리고 이건 더 응용에 가까워요. 어, 더 응용에 가까워요. 그리고 이건 무엇에 대한 응용인지 알겠죠? 증명하기 위한 외생성 응용. 그리고 제가 전에 말씀드렸듯이, OLS가 추정치가 되려면, 편향되지 않아야 하고, 우리는 외생성을 만족해야 해요. 우리는 외생성이 핵심이라고",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 250,
+     "page": 1,
+     "en": "아니 딱 좀 파라미터가 that's the configuration, right? So, by now, we've discussed the size and like the equation, which means that conditional on any X value, the expected value of error is always zero. Okay? That was exactly. And that is also related to the you know, another way to interpret that is if that condition does not hold, we say that we have a biased problem.",
+     "ko": "그게 설정이잖아요, 그렇죠? 그래서, 지금쯤이면 저희가 크기에 대해 논의했고, 방정식도 이야기했으니까, 조건부로 어떤 X 값이든 기대값은 어떤 오류의 기대값은 항상 0입니다. 알겠죠? 그게 정확히 그랬어요. 그리고 그건 또한 뭐와 관련이 있냐면 아시다시피, 다른 방법으로 해석하자면 만약 그 조건이 성립하지 않는다면, 우리는 편향된 문제가 있다고 말합니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 280,
+     "page": 1,
+     "en": "Which means that the error term and X variable are correlated, and the expected value of error term conditional on X is not equal to zero. Then the OLS is biased. And then I want you to understand that you need to know why it is uh related because OLS is X and X inverse and Y and X and Y can be written as X prime X inverse X prime X beta plus X prime X inverse X prime U.",
+     "ko": "즉, 그건 오차가 그리고 X 변수가 상관관계가 있다는 뜻이고, 기대값은 오차항이 X에 조건부로 0이 아니라는 뜻입니다. 그러면 OLS는 편향되어 있습니다. 그리고 이제 여러분이 이해하셨으면 좋겠는데, 왜 그런지 알아야 해요. 어, 관련이 있는 이유는 OLS가 X에 그리고 X 역행렬에 그리고 Y에 그리고 X에 그리고 Y는 X 프라임 X 역행렬 X 프라임 X 베타로 쓸 수 있고, X 프라임 X 역행렬 X 프라임 U로 쓸 수 있어요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 315,
+     "page": 1,
+     "en": "So OLS is that. Plus the expected value of X prime X inverse X prime U. Okay? I don't know if you're following. So, and this is a very important",
+     "ko": "그래서 OLS는 그겁니다. 게다가 기대값은 X 프라임 X 역행렬 X 프라임 U입니다. 알겠죠? 모르겠어요. 따라오고 계신지. 그래서, 이건 아주 중요한",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 335,
+     "page": 1,
+     "en": "Okay, first X prime Y and the vector of U, right? is the uh covariance divided by variance, but still, if you have more than one, control variable, that's your formula is three minutes. And it is X prime X inverse X prime X beta. So plus U. And this is beta. Plus X prime X inverse X prime U. That's what I'm saying. You know, if you want to make the expectation of this is the same as the population parameter, the expected value of the beta and additional term, X prime X inverse X prime U, should be equal to zero.",
+     "ko": "자, 먼저 X 프라임 Y는 그리고 벡터 U죠, 맞죠? 그건 어 공분산 나누기 분산, 하지만 여전히, 만약 하나 이상이라면, 통제 변수가, 그게 여러분의 공식이고 3분입니다. 그리고 그건 X 프라임 X 역행렬 X 프라임 X 베타입니다. 그래서 더하기 U. 그리고 이건 베타입니다. 더하기 X 프라임 X 역행렬 X 프라임 U. 그게 제가 말하는 거예요. 아시다시피, 만약 기대값을 이것과 같게 만들고 싶다면, 그 모집단 모수와 기대값은 그 베타의 기대값과 추가적인 항, 즉 X 프라임 X 역행렬 X 프라임 U가 0과 같아야 합니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 379,
+     "page": 1,
+     "en": "And exactly we can have that if we have this conditional that conditional on X value, the expected value of U equals to zero. If this condition holds, then the expectation this will become that's a condition for unbiasedness, right? So something we have discussed so far, which is very important, unbiasedness is very desirable property. If it is biased, we cannot say much about what the population means.",
+     "ko": "그리고 정확히 그렇게 할 수 있습니다. 만약 우리가 이것을 가지고 있다면 조건부로 그 조건이 X에 조건부로 0이라면, 기대값은 U의 기대값은 0과 같습니다. 만약 이 조건이 성립한다면, 그러면 기대값은 이것이 될 것입니다. 그게 조건입니다. 편향되지 않음의, 그렇죠? 그래서 우리가 논의한 것 중 하나인데, 매우 중요합니다. 편향되지 않음은 매우 바람직한 속성입니다. 만약 편향되어 있다면, 우리는 모집단에 대해 별로 말할 수 없습니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 408,
+     "page": 1,
+     "en": "Okay? We our purpose is to recover the parameter in the population. If our estimate is biased, which means that you expectation is different from the then there's a error in the equation. So, you know, talk about what it means uh about having our OLS estimator.",
+     "ko": "알겠죠? 우리의 목적은 복구하는 것입니다. 모집단의 모수를요. 만약 우리의 추정치가 편향되어 있다면, 즉, 여러분이 기대값이 모집단과 다르다면, 그러면 오차가 방정식에 있는 것입니다. 그래서, 아시다시피, 그게 무슨 뜻인지 어, 우리에게 OLS 추정치가 있다는 것에 대해.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 435,
+     "page": 1,
+     "en": "And this is related to the what we call the value of bias. If our calculation relationship is looks like this, then exactly means that if we know X, if we know X, then all the outcome within X that this interpretation zero. So we can say X, for instance, can be highly education.",
+     "ko": "그리고 이것은 뭐와 관련이 있냐면 우리가 편향의 값이라고 부르는 것입니다. 만약 우리의 계산이 관계가 이렇게 보인다면 그리고 정확히 의미하는 것은 만약 우리가 X를 안다면, 만약 우리가 X를 안다면, 그러면 X 내의 모든 결과는 그것은 이 해석이 0이라는 것입니다. 그래서 우리는 말할 수 있습니다. X, 예를 들어, 매우 교육적일 수 있습니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 464,
+     "page": 1,
+     "en": "And high education that exactly means that if we know uh if they are highly education, then this expectation is zero. If they are high education, their expected value of outcome is equal to zero. Okay? If the selection bias So if the underlying relationship is you something's ability, then you expected value can be higher or lower.",
+     "ko": "그리고 고등 교육은 그것이 정확히 의미하는 것은 만약 우리가 안다면 어 만약 그들이 매우 교육적이라면 그러면 이 기대값은 0입니다. 만약 그들이 고등 교육이라면, 그들의 기대 값은 결과는 0과 같습니다. 알겠죠? 만약 선택 편향이 그래서 만약 기저에 깔린 관계가 당신이라면 어떤 능력이라면, 그러면 당신이 기대하는 값은 매우 높거나 낮을 수 있습니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 497,
+     "page": 1,
+     "en": "Who choose to college? So this will be violated. So once we have omitted variable, in new term, and that affects X, then the condition is not satisfied. So this condition is expected value is equal to zero. That condition will be violated. And then OLS is no longer unbiased.",
+     "ko": "누가 대학을 선택할까요? 그래서 이것은 위반될 것입니다. 그래서 일단 누락된 변수가 있으면, 새로운 용어로, 그리고 그것이 X에 영향을 미치면, 그러면 조건이 충족되지 않습니다. 그래서 이 조건은 기대값이 0과 같다는 것입니다. 그 조건은 위반될 것입니다. 그리고 OLS는 더 이상 편향되지 않습니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 527,
+     "page": 1,
+     "en": "Now, we so so what what how is it related to the consequence? He said, that",
+     "ko": "자, 우리는 그래서 그래서 무엇이 어떻게 관련이 있냐면 결과와요? 그는 말했습니다, 그게",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 540,
+     "page": 1,
+     "en": "how to in the three that is related to um uh causal inference is more better defined. If we consider a situation that there is some treatment. So one of the center how the treatment has causal effect on the outcome. Then that is our goal. So if we have that situation, and then if we believe that this condition is satisfied, then then that means that um that means our estimate can be interpreted as causal effect.",
+     "ko": "어떻게 그 세 가지 그것은 즉 뭐와 관련이 있냐면 음 어 인과 추론은 더 잘 정의되어 있습니다. 만약 우리가 고려한다면 어떤 상황을 어떤 처치가 있다고. 그래서 그 중심 중 하나는 어떻게 그 처치가 결과에 인과적 효과가 있는지입니다. 그러면 그것이 우리의 목표입니다. 그래서 만약 그런 상황이라면, 그리고 만약 우리가 믿는다면 이 조건이 충족된다면, 그러면 그것은 의미합니다. 음 그것은 우리의 추정치가 해석될 수 있다는 것을 의미합니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 581,
+     "page": 1,
+     "en": "So more specifically, many times, um",
+     "ko": "그래서 더 구체적으로, 여러 번, 음",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 588,
+     "page": 1,
+     "en": "So we will talk about causal inference uh you know, on the field, okay?",
+     "ko": "그래서 우리는 인과 추론에 대해 이야기할 것입니다. 당신이 아시다시피, 현장에서, 알겠죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 616,
+     "page": 1,
+     "en": "Um, okay.",
+     "ko": "음, 알겠습니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 625,
+     "page": 1,
+     "en": "So I said that this is condition I said. It's very hard to prove. We have to argue. that our satisfy this conditional expectation equal to this assumption. I our really only it's really not I'm really not buying this of course. But how can you show that this will this is very difficult.",
+     "ko": "그래서 제가 말했듯이 이것은 조건입니다. 제가 말했듯이. 그것은 매우 어렵습니다. 증명하기가. 우리는 해야 합니다. 논쟁해야 합니다. 그게 우리의 만족을 이 조건에 맞추는 것입니다. 기대는 이것과 같습니다. 이 가정과. 저는 우리의 정말로 오직 그것은 정말 저는 정말 이것을 사지 않을 것입니다. 물론. 하지만 어떻게 보여줄 수 있나요, 이것이 이것이 매우 어렵다는 것을.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 656,
+     "page": 1,
+     "en": "If you don't have any um I mean specifically I don't know how to decide your experiment. condition. Uh it is very likely that you complain that um",
+     "ko": "만약 당신이 어떤 것도 가지고 있지 않다면 제 말은 구체적으로 어떻게 해야 할지 모르겠어요. 당신의 실험을. 조건을. 어, 그것은 매우 그럴 것 같아요, 당신이 불평하는 것이. 그게 음",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 677,
+     "page": 1,
+     "en": "very. Why? Okay, we we try to which we definitely could affect and their outcome but that is not captured in the data. In principle it would be possible not to have omitted a variable if we even though you control many, many control variables, still you cannot argue logically that you have not omitted a variable.",
+     "ko": "매우. 왜요? 알겠습니다, 우리는 우리는 노력합니다. 어느 것이 우리가 확실히 영향을 미칠 수 있고 그들의 결과는 하지만 그것은 데이터에 포착되지 않습니다. 원칙적으로는 불가능할 것입니다. 변수를 누락하지 않는 것이 만약 당신이 비록 많은 것을 통제하더라도, 많은 통제 변수가 있더라도, 여전히 당신은 주장할 수 없습니다. 논리적으로 변수를 누락하지 않았다고.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 707,
+     "page": 1,
+     "en": "Is it just so is it a lot like the best like for many, many variables, that's okay, that's not so bad, but it's not perfect. You cannot still argue causality. In order to be able to claim that, you need to find a certain design. that guarantees that this condition holds.",
+     "ko": "그냥 그래서 그게 가장 좋은 것과 같아서 많은, 많은 변수에 대해, 괜찮아요, 그건 그렇게 나쁘지 않지만, 완벽하지는 않아요. 여전히 인과 관계를 주장할 수 없습니다. 하기 위해서는 주장할 수 있어야 합니다, 그러기 위해서는 특정한 디자인을 찾아야 합니다. 그것은 이 조건이 성립함을 보장합니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 726,
+     "page": 1,
+     "en": "Okay, so you",
+     "ko": "알겠습니다,",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 731,
+     "page": 1,
+     "en": "And I mentioned that I see T randomized control trial is a design. that guarantees that this is the case. I are RCT is something like that. Um, so I I think I maybe this like this but it's experiment to to show the treatment effect of medicine for instance, we recruit or the individuals and then we divide them randomly into treatment group and control group.",
+     "ko": "그리고 제가 언급했듯이 저는 T가 무작위 대조 시험이 디자인이라고 말씀드렸어요. 그게 보장하는 것은 이것이 사실이라는 점입니다. 저는 RCT가 그런 것이라고 생각해요. 음, 그래서 저는 제가 아마도 이것이 이런 것 같다고 생각하지만, 실험은 보여주기 위한 것이고, 약의 치료 효과를 예를 들어, 우리는 모집합니다. 또는 개인들을 모집하고 그런 다음 우리는 나눕니다. 그들을 무작위로 치료 그룹과 대조 그룹으로 나눕니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 764,
+     "page": 1,
+     "en": "Okay. And treatment group receive the medicine control group doesn't receive the medicine or receive a placebo. Okay? So what our idea is that we're going to estimate the treatment effect of medicine by comparing the outcome after they take after this experiment, right?",
+     "ko": "네. 그리고 치료 그룹은 받습니다. 약을 대조 그룹은 약을 받지 않습니다. 또는 위약을 받습니다. 알겠죠? 그래서 우리의 생각은 우리가 추정할 것이라는 것입니다. 약의 치료 효과를 비교함으로써 결과를 그들이 이것을 복용한 후의 결과죠, 그렇죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 786,
+     "page": 1,
+     "en": "So if this medicine has a significant treatment effect, the outcome of this treated group will receive significantly different from the outcome of the control group. Okay? And here, the key is that if we divide our sample uh you know, they are voluntary applications, and I'm going to be tweaky.",
+     "ko": "그래서 만약 이 약이 유의미한 치료 효과가 있다면 결과는 이 치료받은 그룹이 더 잘 받을 것입니다. 대조 그룹의 결과와는 다르게 말이죠. 알겠죠? 그리고 여기서, 핵심은 우리가 샘플을 나눈다면 어, 아시다시피, 그들은 자발적으로 신청한 것이고, 그리고 저는 이것을 수정할 것입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 810,
+     "page": 1,
+     "en": "And I want to be, you know, I don't want to be if we take that account in this assignment, our analysis fails, so to satisfy this, the RCT is not working. RCT is valid only if we divide the sample randomly. into two groups. How the randomness helps? Well, suppose this assignment is, so in the RCT, we determine the number of",
+     "ko": "그리고 저는 아시다시피, 저는 수정하고 싶지 않아요. 만약 우리가 그 계정을 이 할당에 포함한다면, 우리의 분석은 실패합니다, 그래서 이 조건을 충족하기 위해 RCT는 작동하지 않습니다. RCT는 유효합니다. 우리가 샘플을 무작위로 나눌 때만요. 두 그룹으로 어떻게 무작위성이 도움이 될까요? 음, 이 할당이 예를 들어, RCT에서 우리는 결정합니다. 그 수를",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 841,
+     "page": 1,
+     "en": "the treated group is the same as the outcome of untreated. This is a treatment. So we know that this value one if they are tricky. takes value zero if they are not tricky. So we designated condition in this case means that given the treatment assignment, they are under characteristics should be exactly the same or whatever. This is the value of exactly the same means the same as the residual in expectation zero.",
+     "ko": "치료받은 그룹의 는 와 같습니다. 결과는 치료받지 않은 것입니다. 이것은 치료입니다. 그래서 우리는 알고 있습니다. 이 값 1이 그들이 까다롭다면 값을 취한다는 것을, 그렇지 않다면 0을 취한다는 것을. 그래서 우리는 이 조건에서 지정한 것은 즉, 주어진 치료 할당에 따라, 그들은 특성상 다음과 같아야 합니다. 정확히 같거나 어쨌든 그렇습니다. 이것이 정확히 같은 값이라는 것은 잔차와 같다는 것을 의미하며, 기대값은 0입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 873,
+     "page": 1,
+     "en": "Okay? Uh so why does this help? I decide, if you know, two groups have the exactly the same on the characteristic, then then the only difference between those two groups on the practice is the treatment. Anything else? If we randomly divide the groups, so that we made sure that two groups in expectation have the same distribution of U, then the only difference between those two groups is the treatment.",
+     "ko": "알겠죠? 어, 그래서 왜 이것이 도움이 될까요? 제가 결정합니다, 만약 두 그룹이 정확히 같은 것을 가지고 있다면, 특성상, 그러면 그러면 두 그룹 간의 유일한 차이점은 실습에서 치료입니다. 다른 거 있나요? 우리가 무작위로 그룹을 나누면, 그래서 두 그룹이 기대값에서 동일한 것을 가지게 된다면, U의 분포가 그러면 두 그룹 간의 유일한 차이점은 치료입니다. 다른",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 906,
+     "page": 1,
+     "en": "Only there was shared characteristics. So randomness allow us to do that. So if we randomly divide them and if we have a large enough sample, then their education level is also characteristics, but also the other characteristics. Well, it be randomly divided into two groups. So they will have on average the same characteristics. It's like if you pulls ahead like a the probability of having head and take is the same point.",
+     "ko": "것은 오직 공유된 특성뿐이었습니다. 그래서 무작위성은 우리가 이것을 할 수 있게 해줍니다. 그래서 우리가 그들을 무작위로 나누고 충분히 큰 샘플이 있다면, 그들의 교육 수준은 또한 특성이지만, 또한 다른 특성들도 그렇습니다. 글쎄요, 무작위로 나누면 두 그룹으로 나뉘게 됩니다. 그래서 그들은 평균적으로 같은 특성을 갖게 됩니다. 마치 앞서 나가는 것과 같습니다. 확률은 갖게 될 확률은 앞면이 나올 확률과 같고 같은 점입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 935,
+     "page": 1,
+     "en": "So if you now doing that, the sampling process we can divide them randomly. And the most we know that the difference is the truth, how we can say that any difference in their outcome is entirely attributed to the treatment. Okay? So that's why RCT provide a very clear idea identifying application, let's say, and then that identification here is so this kind of Okay?",
+     "ko": "그래서 지금 그렇게 하고 있다면, 샘플링은 우리가 나눌 수 있는 과정입니다. 그리고 우리가 가장 잘 아는 것은 차이가 진실이라는 것입니다, 어떻게 우리가 어떤 차이든 그들의 결과에 있는 것은 전적으로 그 진실에 기인한 것입니다. 알겠죠? 그래서 RCT가 매우 명확한 것을 제공합니다. 아이디어는 식별하는 것입니다. 예를 들어, 그리고 나서 그 식별은 여기서 너무 이런 종류의 알겠죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 966,
+     "page": 1,
+     "en": "So I made sure that this condition holds and RCT, so the only difference between those two groups is the treatment. So whenever we observe",
+     "ko": "그래서 저는 확실히 이 조건이 유지되고 RCT가 그래서 유일한 차이는 두 그룹 사이의 차이는 치료입니다. 그래서 우리가 어떤",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 986,
+     "page": 1,
+     "en": "we compare those two data sets, but we didn't take the medicine in the population. we cannot say they have exactly the same characteristic on average. Those who choose to take the medicine in the outside of the lab, they may have a reason why they're out of the lab, you know, they search for medicine.",
+     "ko": "우리는 그 두 데이터를 비교하고 있지만, 약을 복용하지는 않았어요. 우리는 그들이 정확히 똑같다고 말할 수는 없어요. 평균적으로. 약을 복용하기로 선택한 사람들은 실험실 밖에서 그들은 그럴 만한 이유가 있을 수 있어요. 아시다시피, 그들은 약을 찾죠.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1006,
+     "page": 1,
+     "en": "and took it. Right? So there must be a reason why they chose to do so. And then they are characteristics will be different. from those who didn't take. So voluntary choice does not help. It's a confounding. There is a selection bias. So we can So by this condition, only two randomization is we have people and by design we have to randomly divide.",
+     "ko": "그리고 복용했어요. 그렇죠? 그래서 그들이 약을 선택한 이유가 있을 거예요. 그리고 그들은 특성이 다를 거예요. 약을 복용하지 않은 사람들과는요. 그래서 자발적인 선택은 도움이 되지 않아요. 그것은 교란 요인입니다. 선택 편향이 있죠. 그래서 우리는 그래서 이 조건에 따라, 오직 두 가지 무작위 배정만이 가능합니다. 우리는 사람들을 그리고 설계에 따라 무작위로 나눠야 합니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1035,
+     "page": 1,
+     "en": "So if you understand that, that means the core idea is and that is not the to not. Well, because is so I will talk about this uh formula. definition of the here. Okay.",
+     "ko": "그래서 그걸 이해하신다면, 그게 핵심 아이디어라는 뜻입니다. 그리고 그것은 ~하기 위한 것이 아닙니다. 음, 왜냐하면 너무 그래서 저는 이 부분에 대해 이야기할 거예요. 공식에 대해. 정의에 대해. 그 여기에서. 네.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1062,
+     "page": 1,
+     "en": "So, the is about uh like about um",
+     "ko": "그래서, 이것은 어, 대략 음",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1070,
+     "page": 1,
+     "en": "I will just do it. Uh D is an indicator whether I is a treatment or not. So when you talk about, we always consider certain situations that we want to cover the treatment effect. So So uh um Okay. Like the is the relationship between the temperature and I don't know.",
+     "ko": "그냥 할게요. 어, D 는 지표입니다. I가 치료인지 아닌지. 그래서 이야기할 때, 우리는 항상 특정 상황을 고려합니다. 우리가 다루고 싶은 치료를 그래서 그래서 어 음 네. 예를 들어 어 그 관계는 그 온도와 그리고 모르겠어요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1101,
+     "page": 1,
+     "en": "But something else. Okay. But we may not be very interested in the causal effect of temperature or uh And temperature and the humidity, I don't know. So that is something, you know, just we want to understand the correlation.",
+     "ko": "하지만 다른 것. 네. 하지만 우리는 별로 관심이 없을 수도 있어요. 온도와 또는 어 그리고 온도와 그리고 그 습도, 모르겠어요. 그래서 그것은, 아시다시피, 그냥 우리가 상관관계를 이해하고",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1124,
+     "page": 1,
+     "en": "But causation matters if we are specific question in our mind. We want to understand the treatment effect. So this is the narrowly defined causal effect. So okay. So I is a dummy variable which takes a value one if the unit is treated, zero if they are not treated.",
+     "ko": "싶은 거예요. 하지만 인과관계는 우리가 특정 질문을 가지고 있을 때 중요해요. 우리는 치료 효과를 이해하고 싶어요. 그래서 이것은 좁은 의미의 인과 효과입니다. 그래서 알겠습니다. 그래서 저는 더미 변수입니다. 이 변수는 해당 단위가 치료를 받으면 1, 받지 않으면 0입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1142,
+     "page": 1,
+     "en": "What is this? This is a training course, small class. Uh tutor and uh and okay. Medicine. And and there is a concept of potential outcome. So when you discuss causal effect, potential outcome is for each unit, we have outcome that would occur under each possible treatment state.",
+     "ko": "이게 무엇일까요? 이것은 교육 과정이고, 소규모 수업입니다. 어 튜터가 그리고 어 그리고 알겠습니다. 약. 그리고 그리고 개념이 있습니다. 잠재적 결과라는. 그래서 인과 효과를 논의할 때, 잠재적 결과는 각 단위에 대해, 우리는 결과가 있을 것이라고 각 상황에서 가능한 치료 조건 하에서.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1168,
+     "page": 1,
+     "en": "Whether or not the state happens. This is important. So for potential outcome is let's say this is the outcome. Oh, about the teacher and then the student. And then potential outcome is a hypothetical outcome. So there are three months, okay? Uh you can just say that's a outcome.",
+     "ko": "그렇든 아니든 그 상태가 발생합니다. 이것은 중요합니다. 그래서 잠재적 결과는 예를 들어 이것이 결과라고 해봅시다. 아, 선생님과 그리고 그 다음은 학생입니다. 그리고 잠재적 결과는 가상의 결과입니다. 그래서 세 가지가 있습니다, 알겠죠? 어, 그냥 이렇게 말할 수 있어요, 그건 결과라고요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1193,
+     "page": 1,
+     "en": "Oh, in the earlier, can we get back to by? the treatment, right? So it can be uh we And then why I know this outcome Oh, the the treatment, what I see is the outcome who have the treatment. So this like hypothetical. Right? We added because in the we also only one.",
+     "ko": "오, 그 아까, 다시 돌아가도 될까요? 치료에 대해서, 그렇죠? 그래서 그럴 수 있어요. 어, 우리는 그리고 왜 제가 이걸 아냐면 이 결과는 오, 그 치료, 제가 보는 건 결과예요. 누가 가지고 있느냐는 거죠. 그래서 이건 마치 가상의 것 같아요. 그렇죠? 우리는 여기에 추가했어요. 왜냐하면 그 안에는 우리도 하나뿐이니까요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1226,
+     "page": 1,
+     "en": "So if the individual actually took the medicine, we don't know what would have happened to them individual, we if the individual chose not to take, chose not to take the medicine. Right? So potential outcome is that we don't know what would have happened on side.",
+     "ko": "그래서 만약 개인이 실제로 약을 먹었다면, 우리는 무슨 일이 일어날지 모릅니다. 그 개인에게, 만약 그 개인이 약을 먹지 않기로 선택했다면, 약을 먹지 않기로 선택했다면, 그렇죠? 그래서 잠재적 결과는 그게 무슨 일이 일어날지 모른다는 것입니다. 그쪽에서는.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1245,
+     "page": 1,
+     "en": "Do you understand what would have happened if this person chose not to do this thing. So why I say this person actually choose one, why I is not observable, but we still want to think about the hypothetical outcome. Okay? So this one, we can define so this is the definition.",
+     "ko": "이해가 되시나요? 무슨 일이 일어났을지 만약 이 사람이 약을 먹지 않기로 선택했다면 어떻게 됐을지. 그래서 제가 왜 말하냐면 이 사람이 실제로 하나를 선택했는지, 왜 제가 관찰할 수 없는지, 하지만 우리는 여전히 가상의 결과에 대해 생각하고 싶습니다. 알겠죠? 그래서 이건 우리가 정의할 수 있어요. 그래서 이게 정의입니다. 그래서",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1267,
+     "page": 1,
+     "en": "So individual of this is defined by the difference of this potential outcome between treated and untreated. So we fix individual I and then we compare the potential outcome. Uh the right?",
+     "ko": "개인에게 이 치료의 개인은 이 차이로 정의됩니다. 이 잠재적 결과는 치료받은 것과 받지 않은 것의 차이입니다. 그래서 우리는 개인 I를 고정하고 그리고 잠재적 결과를 비교합니다. 어, 그 그렇죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1285,
+     "page": 1,
+     "en": "So this is the treatment is a son, right? So you can consider this before, right?",
+     "ko": "그래서 이건 치료 조건에 대한 아들이에요, 그렇죠? 그래서 이걸 이전으로 생각할 수 있어요, 그렇죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1295,
+     "page": 1,
+     "en": "The active treatment is assigned to be the one that is the and but there can be some true effect to this individual, right? We don't observe that, but we can think about it. Okay? We can write down the true effect like what I want. And they are fixed at the level of the unit.",
+     "ko": "적극적인 치료는 할당된 것이고 그것이 그리고 하지만 몇 가지가 있을 수 있어요 진정한 효과는 이 특정 개인에게 있는 거죠, 그렇죠? 우리는 그걸 관찰할 수 없지만, 생각해 볼 수 있어요. 그렇죠? 우리는 제가 원하는 것처럼 진정한 효과를 적을 수 있어요. 그리고 그것들은 단위 수준에서 고정되어",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1312,
+     "page": 1,
+     "en": "It's fixed for each individual, they are unique. But potential outcome. Okay? Now, if I have high or low, then treatment doesn't create them. You don't need to say whether or not you have to see. Right? So individual effect is there. Okay? Okay?",
+     "ko": "있어요. 그것은 각 개인에게 고정되어 있고, 고유합니다. 하지만 잠재적 결과는 그렇죠? 자, 만약 제가 높거나 낮다면, 그러면 치료는 만들어내지 않아요 그것들을. 당신은 그것이 무엇인지 말할 필요가 없어요. 그렇죠? 그래서 개인의 효과가 거기에 있어요. 그렇죠? 그렇죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1340,
+     "page": 1,
+     "en": "So this is an example. So for each individual, uh suppose that, suppose that this is not known to us. So suppose that this is potential outcome. When they choose zero, and this is individual, we have a six individuals. And then we have potential outcome when they choose zero or one.",
+     "ko": "그래서 이건 예시예요. 그래서 각 개인에게, 어 가정해 봅시다. 그래서, 가정해 봅시다. 이것은 우리에게 알려져 있지 않아요. 그래서 가정해 봅시다. 이것은 잠재적 결과입니다. 그들이 0을 선택하면, 그리고 이것은 개인적이고, 우리는 6을 가진 개인들이 있습니다. 그리고 우리는 잠재적 결과를 그들이 0을 선택하거나 1을",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1361,
+     "page": 1,
+     "en": "For each individual, we can think about it. Then potential outcome theoretically, right? And then the difference is treatment effect, that is specific to each individual. And this is then let's say that they are assigned to treatment only one to three is assigned to treatment.",
+     "ko": "선택할 때 가집니다. 각 개인에 대해 생각해 볼 수 있어요. 그러면 잠재적 결과는 이론적으로, 그렇죠? 그리고 차이는 치료 효과입니다, 그것은 각 개인에게 특정한 것입니다. 그리고 이것은 어 그럼 이렇게 말해 봅시다. 그들은 치료에 할당되었고, 1에서 3까지만 치료에 할당되었습니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1379,
+     "page": 1,
+     "en": "And then 456 is not assigned. Then what we observe is We observe this. We don't observe this. We observe this.",
+     "ko": "그리고 4, 5, 6은 할당되지 않았습니다. 그러면 우리가 관찰하는 것은 무엇인가요? 우리는 관찰합니다. 이것을. 우리는 이것을 관찰하지 않습니다. 우리는 이것을 관찰합니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1396,
+     "page": 1,
+     "en": "We don't observe this. in the data. We observe only the potential outcome. Then they treatment. I said. So this is what is observed in the data. If we take directly observe, the potential outcome, zero and one, treatment effect is straightforward. We can just subtract Y1 minus Y to recover the treatment effect.",
+     "ko": "우리는 이것을 관찰하지 않습니다. 데이터에서요. 우리는 오직 파트 잠재적 결과를 관찰합니다. 그러면 그들은 치료입니다. 제가 말했죠. 그래서 이건 관찰되는 것입니다. 데이터에서요. 만약 우리가 가져간다면 직접적으로 관찰하면, 잠재적 결과는 어, 0과 1, 치료 효과는 간단합니다. 그냥 빼면 돼요. Y 1 빼기 Y 0 을 해서 치료 효과를 복구할 수 있습니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1422,
+     "page": 1,
+     "en": "For each individual. But we don't observe potential outcome for each individual. So because one individual is zero at the same time, so it's impossible. for us. to recover the treatment effect at that individual level. Now we can recover is treatment effect at the group level.",
+     "ko": "각 개인에 대해. 하지만 우리는 관찰하지 않아요, 잠재적 결과를 각 개인에 대해. 그래서 하나는 0이고 동시에, 그래서 불가능합니다. 우리에게는. 치료 효과를 복구하는 것은 그 개인 수준에서 불가능합니다. 이제 우리는 복구할 수 있는 것은 그 수준에서의 치료 효과입니다. 그룹 수준에서.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1444,
+     "page": 1,
+     "en": "Those who are assigned to be treated and assigned to be not treated, we can say something about there average effect. Okay?",
+     "ko": "할당된 사람들은 치료를 받게 되고 할당된 사람들은 치료를 받지 않게 되는데, 우리는 그것에 대해 말할 수 있습니다. 평균 효과입니다. 그렇죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1457,
+     "page": 1,
+     "en": "Right? Okay, so this is what we have, right? So Y is that",
+     "ko": "그렇죠? 자, 그래서 이것은 우리가 가진 것이죠, 그렇죠? 그래서 Y 는 실제",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1467,
+     "page": 1,
+     "en": "And the pose is the two two components. This one is the variable and they are putting the and they are the the right? And then if they are not if they are if if they are not treated, this will become one. And then this is going to be the Y observer. So Y is to the variable if they are treated or not, the formation of those two is going to be the Y outcome.",
+     "ko": "그리고 포즈는 두 가지 요소입니다. 이건 그 변수입니다. 그리고 그들은 그들의 그리고 그들은 그 그 맞죠? 그리고 만약 그들이 만약 그들이 만약 그들이 치료받지 않으면, 이것은 하나가 될 것입니다. 그리고 이것은 Y가 될 것입니다. 관찰자. 그래서 Y는 ~하기 위한 것입니다. 변수는 치료를 받거나 그렇지 않거나, 그들의 형성은 두 가지가 될 것입니다. Y 결과가.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1504,
+     "page": 1,
+     "en": "So the treatment is something like a switch. If they are treated, they observe Y1, if they are not treated, they observe Y2. And the why the is called as how complex. So because it's not factor we don't observe, but we can think about. What would have happened to this person if the person is assigned to the big one.",
+     "ko": "그래서 치료는 일종의 스위치 같은 것입니다. 치료를 받으면, 그들은 관찰합니다. Y1을, 치료를 받지 않으면, Y2를 관찰합니다. 그리고 왜 Y가 어떻게 복잡한지. 그래서 왜냐하면 그건 요인이 아니니까 우리는 관찰하지 않지만, 생각할 수 있습니다. 어떤 일이 이 사람에게 일어났을까, 만약 그 사람이 배정되었다면 큰 것에.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1533,
+     "page": 1,
+     "en": "So",
+     "ko": "그래서",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1539,
+     "page": 1,
+     "en": "All right. So you do not confuse like this. Why I is not the outcome of untreated people. It's defined for everyone. Even the treated person would have potential outcome. of Y0. This is a hypothetical outcome of treated individual if the person is",
+     "ko": "알겠습니다. 그래서 당신은 혼동하지 않습니다. 이렇게요. 왜 제가 Y가 치료의 결과가 아닌지. 그건 모든 사람에 대해 정의됩니다. 치료를 받은 사람도 잠재적인 결과가 있을 것입니다. Y의 결과가. 이것은 가상의 치료받은 사람의 결과입니다. 만약 그 사람이",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1571,
+     "page": 1,
+     "en": "Okay. This is not a real life. Like this this experiment, it exists. Would it change uh you know, a sign something the potential outcome of this experiment? Uh you depend on the next assignment.",
+     "ko": "네. 이건 실제가 아니에요. 그러니까 이 실험은 실제로 존재해요. 그게 뭐랄까, 어떤 징조를 바꿀까요? 잠재적인 결과가 이 실험의? 어 당신이 어떤 것에 의존하느냐에 따라 다음 과제가 결정돼요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1592,
+     "page": 1,
+     "en": "So immediately the letter followed up, you know, in fact, it is impossible. We don't know the half of your information. What if you know, is it that? So they call it it's a missing data problem. Okay? I think that's already. So we don't have to input all of our information.",
+     "ko": "그래서 바로 편지가 이어졌어요, 사실, 그건 불가능해요. 우리는 당신의 정보의 절반도 몰라요. 만약 당신이 알다시피, 그게 맞다면? 그래서 그들은 그걸 누락된 데이터 문제라고 불러요. 알겠죠? 제 생각엔 그게 이미예요. 그래서 우리는 우리의 모든 정보를 입력할 필요가 없어요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1610,
+     "page": 1,
+     "en": "Do this. If you know it's not a sign, that is the actual that definition of the children in class, okay? So why do we estimate? So um every unit one potential outcome is missing. So now I is a level observer for anyone. How high is the children?",
+     "ko": "이렇게 하세요. 만약 당신이 그게 징조가 아니라는 걸 안다면, 그게 실제 아이들의 정의예요. 알겠죠? 그럼 왜 우리가 추정하죠? 그래서 음 모든 단위가 하나의 잠재적 결과가 누락돼요. 그래서 이제 저는 관찰 수준이에요. 누구에게나. 얼마나 높나요? 아이들은?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1632,
+     "page": 1,
+     "en": "Not even data. The size of the sample does not matter. It's nothing to do with whether we can observe both potential outcomes or not. We need a level observer potential outcome. for both we need the world and we do zero for any individual. We don't have so many people.",
+     "ko": "심지어 데이터도 아니에요. 그 크기는 샘플의 크기는 중요하지 않아요. 아무것도 아니에요. 우리가 관찰할 수 있는지와는 상관없어요. 두 잠재적 결과 중 하나를 관찰해야 해요. 우리는 관찰자 수준의 잠재적 결과가 필요해요. 우리는 둘 다 필요하고, 우리는 아무것도 안 해요. 우리는 그렇게 많은 정보를 가지고 있지 않아요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1652,
+     "page": 1,
+     "en": "On the other hand, we repeat the you know, ICT. And then which is sometimes this person is assigned to zero and assigned to one, but we made directly we can observe potential outcome. So if we only one time study, we will never observe both. Okay? So individual level, it's impossible.",
+     "ko": "반면에 우리는 반복해요. 그, 아시죠, ICT를. 그리고 나서 그건 때때로 이 사람이 0에 할당되고 1에 할당되지만, 우리는 직접적으로 관찰할 수 있는 잠재적 결과를 얻어요. 그래서 만약 우리가 한 번만 연구한다면, 우리는 결코 둘 다 관찰할 수 없어요. 알겠죠? 그래서 개인 수준에서는, 불가능해요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1673,
+     "page": 1,
+     "en": "But uh every method is so we could the missing column or and then we report that. So we can define average treatment effect. Which is the the difference in the potential outcome of all the individuals, minus the potential outcome of when they when they are treated and when they are not treated.",
+     "ko": "하지만 어 모든 방법은 그래서 우리는 누락된 열이나 그리고 나서 우리는 보고해요. 그걸. 그래서 우리는 평균을 정의할 수 있어요. 평균 치료 효과죠. 그건 차이예요. 잠재적 결과의 모든 개인들의, 빼기 잠재적 결과의 그들이 치료를 받았을 때와 받지 않았을 때의 차이예요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1698,
+     "page": 1,
+     "en": "So we say the difference in the potential outcome for entire individuals. Okay? And uh average treatment effect on treated. We say conditional expected expectation, we can we perform some group for treaty. And then take a expected difference in the potential outcome.",
+     "ko": "그래서 우리는 차이가 잠재적 결과의 전체에 대한 것이라고 말해요. 알겠죠? 그리고 어 평균 치료 효과는 치료받은 사람들에게 나타나요. 조건부 기대값은 우리가 할 수 있어요. 우리는 몇 가지 그룹을 수행해요. 조약을 위해. 그리고 나서 기대값을 구해요. 잠재적 결과의 차이.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1723,
+     "page": 1,
+     "en": "So you may ask, do you observe this? You don't observe this. We can define, okay? Average treatment effect like this. We will, we cover, but I zero the data, but this is the definition of the children. Okay? For each individual, we define how I write, expected value of Y.",
+     "ko": "그래서 물어볼 수 있어요, 이걸 관찰하나요? 아니요. 이걸 관찰하지 않아요. 우리는 정의할 수 있어요, 알겠죠? 평균 치료 효과는 이렇습니다. 우리는 다룰 거예요, 하지만 저는 데이터를 0으로 만들지만, 이게 정의입니다. 아이들의. 알겠죠? 각 개인에 대해, 우리는 어떻게 제가 쓰는지 정의합니다, 기대값은 Y입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1744,
+     "page": 1,
+     "en": "Of course, the leaders is the average treatment effect. We will define that conditional on among those who are treated is ATT. Average treatment effect on treated. ATU. is average treatment effect on untreated.",
+     "ko": "물론, 리더들은 평균 치료 효과입니다. 우리는 정의할 것입니다 그 조건부 기대값은 치료받은 사람들 중에서 ATT입니다. 평균 치료 효과는 치료받은 사람들에게 나타납니다. ATU는 평균 치료 효과입니다. 에 대한 치료받지 않은 사람들.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1767,
+     "page": 1,
+     "en": "So the average treatment effect, it really have P share of individuals who are treated and average treatment effect is some of those if they are treated, they follow P that is ATT. Right? treated, average treatment effect on the treated. We have this probability that average treatment effect on untreated.",
+     "ko": "그래서 평균 치료 효과는, 정말 가지고 있습니다. P는 개인의 비율을 나타내며, 치료받은 사람들과 평균 치료 효과입니다. 그 중 일부는 치료를 받으면 그들은 P를 따릅니다. 즉 ATT입니다. 그렇죠? 치료받은, 평균 치료 효과는 치료받은 사람들에게. 우리는 이 확률을 가지고 있습니다. 평균 치료 효과는 치료받지 않은 사람들에게.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1793,
+     "page": 1,
+     "en": "So the average treatment is the summation of",
+     "ko": "그래서 평균 치료 효과는 합계입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1800,
+     "page": 1,
+     "en": "those two. By now, we just define based on the definition of the effect. We need an estimate of ATT. It's just that definition.",
+     "ko": "그 두 가지의. 지금쯤이면, 우리는 정의합니다. 정의에 따라 효과를. 우리는 추정치가 필요합니다. ATT. 그냥 정의일 뿐입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1809,
+     "page": 1,
+     "en": "And this is like a weighted average of the conditional on treated. This is the expected value of all the",
+     "ko": "그리고 이것은 마치 가중 평균과 같습니다. 조건부 기대값에 대한. 이것은 기대값입니다. 모든 모든",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1825,
+     "page": 1,
+     "en": "treatment effect of that group. This is the expected value of the on treated group. So the overall treatment effect would be the summation of those two.",
+     "ko": "그 그룹의 치료 효과입니다. 이것은 기대값입니다. 치료받은 사람들에 대한. 그래서 전체 치료 효과는 그 두 가지의 합계입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1839,
+     "page": 1,
+     "en": "So if we release we going inside only the is the same for treated and",
+     "ko": "그래서 우리가 발표하면 우리는 안으로 들어가서 오직 치료받은 사람들에게만 동일하다면",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1851,
+     "page": 1,
+     "en": "ATT and ATU does not coincide. So we will agree on that. It will be different. If ATT and ATU are different. Okay? And that's the problem. The if if we think about this, and why 1 minus is quality premium? Then if we believe that the probability of whether the kind of or not is the treatment effect of that group is the same, then we can recover this average treatment effect. But if we believe that this average effect of treated is different from the average effect of untreated, then it means that there is a selection bias.",
+     "ko": "ATT와 ATU는 일치하지 않습니다. 그래서 우리는 그것에 동의할 것입니다. 다를 것입니다. 만약 ATT가 와 ATU가 다르다면. 알겠죠? 그리고 그것이 문제입니다. 그 만약 우리가 생각한다면 이것에 대해, 그리고 왜 1 빼기 는 품질 프리미엄인가요? 그러면 우리가 믿는다면 확률이 어떤 종류의 것인지 아닌지가 그 그룹의 치료 효과와 같다는 것을, 그러면 우리는 이것을 복구할 수 있습니다. 평균 치료 효과를. 하지만 우리가 믿는다면 이 평균 효과가 치료받은 사람들과 다르다면 치료받지 않은 사람들의 평균 효과와, 그러면 선택 편향이 있다는 뜻입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1898,
+     "page": 1,
+     "en": "It just hang on there. I'll I'll explain what it means. So this is just a mechanical definition. And this does say uh",
+     "ko": "그냥 거기 있어 보세요. 제가 그게 무슨 뜻인지 설명할게요. 그래서 이건 그냥 기계적인 정의입니다. 그리고 이것은 말합니다. 어",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1913,
+     "page": 1,
+     "en": "okay, is the so at least on individual treated what that means. We say we use constant situation to make things simple and clear. So we which means that if we want to be consistent, so we make an assumption of what this treatment means, but characteristics of this treatment that we can estimate is that no interference means that the outcome does not depend on the other users treatment. So there is some spillover effect.",
+     "ko": "알겠죠, 이것은 그래서 적어도 에 대한 개인 치료 그게 무슨 뜻인지. 우리는 우리가 일정한 상황을 사용하여 상황을 단순하고 명확하게 만듭니다. 그래서 우리가 일관성을 유지하고 싶다면, 그래서 우리는 가정을 합니다. 이 치료가 무엇을 의미하는지, 하지만 이 치료의 특성은 우리가 추정할 수 있다는 것입니다. 즉, 간섭이 없다는 것은 결과가 다른 사람들에게 의존하지 않는다는 것입니다. 따라서 약간의 파급 효과가 있습니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1945,
+     "page": 1,
+     "en": "So on that and this treatment is not at the individual level. But the data influencing each other, then but influence becomes much more complicated. We cannot apply the simple method to the problem. Okay? So, suppose that there is someality, there is a part of the data that are correlated.",
+     "ko": "그래서 그 점에 대해 이 치료는 그렇지 않다는 것입니다. 하지만 데이터는 서로 영향을 주니까, 하지만 영향력이 훨씬 더 복잡해집니다. 우리는 적용할 수 없습니다. 간단한 방법을 적용할 수 없습니다. 알겠죠? 그래서, 어떤 공통성이 있다고 가정해 봅시다. 그 부분은 데이터의 일부이며 상관관계가 있습니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1968,
+     "page": 1,
+     "en": "Then the outcome will be much higher for every user, but that is not the direct effect of my own participation or my own outcome. It is a interaction with other people. So it's contaminated. And then another assumption is that no conversion of treatment. So the treatment means the same thing for everyone.",
+     "ko": "그러면 결과는 훨씬 더 모든 사람에게 더 높겠지만, 그것은 직접적인 효과가 아니라 제 참여나 제 결과에 대한 것입니다. 이것은 다른 사람들과의 상호작용입니다. 그래서 오염된 것입니다. 그리고 또 다른 가정은 모든 전환이 없다는 것입니다. 그래서 치료는 모든 사람에게 같은 것을",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1989,
+     "page": 1,
+     "en": "Even if participation means different for each user, we didn't control which party they attended to. And the time of the party matters, then you're in trouble. Okay? So that means the setting is that this treatment is something like a medicine. It is the individual specific.",
+     "ko": "의미합니다. 비록 참여가 사람마다 다르더라도 말이죠, 우리는 통제하지 않았습니다. 어떤 파티에 참석했는지. 그리고 파티 시간도 중요합니다, 그러면 곤란해집니다. 알겠죠? 그래서 그 말은 상황이 이 치료가 마치 약과 같다는 것입니다. 그것은 개인별로 다릅니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2008,
+     "page": 1,
+     "en": "There is no spillover. And then it is the homogeneous treatment. It's not heterogeneous. If the treatment is something like a education, or my relation to another country, then huge heterogeneity in terms of what type of treatment we receive, right? In that case, uh the the analysis should be much more complicated.",
+     "ko": "파급 효과는 없습니다. 그리고 그것은 동질적인 치료입니다. 그렇지 않아요. 만약 치료가 마치 교육과 같다면, 또는 제 다른 나라와의 관계라면, 그러면 엄청난 이질성이 어떤 종류의 치료를 받는지에 따라 다르겠죠? 그런 경우, 어, 그 분석은 훨씬 더 복잡해야 합니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2029,
+     "page": 1,
+     "en": "These are some assumptions and then so to justify or the doing, So now after this, we can talk about this, okay? So potential outcome to regression. So now, our outcome, remember is the why",
+     "ko": "이것들은 몇 가지 가정들인데, 그리고 그래서 정당화하기 위해서 또는 하는 일에 대해, 그래서 이제 이 후에, 우리는 이야기할 수 있습니다, 알겠죠? 그래서 잠재적 결과는 회귀 분석입니다. 그래서 이제, 우리의 결과는, 기억하시겠지만 그건 왜냐하면",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2053,
+     "page": 1,
+     "en": "But I still want my but I don't know. Right? You can be we right, this is the one to do it. And this is a treatment. And this is a potential. You can potential outcome. This is not treatable. This is treatable. And we always we have one, I plus the one one minus one.",
+     "ko": "하지만 여전히 제 것을 원해요. 잘 모르겠어요. 그렇죠? 우리는 맞을 수 있고, 이게 할 일이에요. 그리고 이건 치료법이에요. 그리고 이건 가능성이에요. 당신은 잠재적인 결과를 얻을 수 있어요. 이건 치료할 수 없어요. 이건 치료할 수 있어요. 그리고 우리는 항상 우리가 가진 하나, 저는 플러스 그리고 하나는 하나 빼기 하나예요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2079,
+     "page": 1,
+     "en": "That is the basic equation. And we define the difference in the potential outcome for each individual as a potential treatment. All this individual, right? So this is kind of. So uh just to revisiting a relationship between Y and potential outcome. We have this relationship.",
+     "ko": "그게 기본적인 방정식이에요. 그리고 우리는 차이를 정의합니다. 잠재적인 결과에 대해 각 개인을 잠재적인 치료법으로 정의합니다. 이 모든 개인이, 그렇죠? 그래서 이건 일종의. 그래서 그냥 다시 한번 관계를 살펴보면 Y와 잠재적 결과 사이의 관계입니다. 우리는 이 관계를",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2100,
+     "page": 1,
+     "en": "that individual level observation of that outcome is a function of the potential outcome for this individual. Then this individual does not get treatment. And at least we we define for every individual we have a they are actually treated. This is a hypothetical data, the potential outcome. And plus the treatment that individual time to the data get actually treated or not.",
+     "ko": "가지고 있습니다. 그 개인 수준의 관찰 결과는 함수입니다. 잠재적인 결과의 함수입니다. 이 개인에 대한. 그러면 이 개인은 치료를 받지 않습니다. 그리고 적어도 우리는 우리는 정의합니다. 모든 개인에 대해 우리는 그들이 실제로 치료를 받았는지 여부를 알 수 있습니다. 이것은 가상의 데이터이며, 잠재적인 결과입니다. 그리고 치료법은 그 개인이 시간을 들여 데이터를 얻는 것입니다. 실제로",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2130,
+     "page": 1,
+     "en": "Okay? So if you rewrite this, as a regression, we can add a header and relationship between treatment and outcome. So this is an ID error. So Y error and then Y is a function of treatment and this is a constant, which we the potential outcome of the treatment.",
+     "ko": "치료를 받았는지 여부죠. 그래서 이걸 다시 쓰면, 로 회귀 분석으로, 우리는 헤더를 추가할 수 있고 그리고 관계를 치료와 결과 사이의 관계를 설정할 수 있습니다. 그래서 이것은 ID 오류입니다. 그래서 Y 오류는 그리고 나서 Y 는 함수입니다. 치료와 그리고 이것은 상수입니다, 우리가 잠재적인 결과는 치료의 결과입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2160,
+     "page": 1,
+     "en": "So this is this equation is from the definition of the potential and potential outcome. And then we rewrite this definition in the regression linear regression model, we can rewrite this like that. And then what we have is outcome is constant. And coefficient of constant and how is a coefficient for this variable, which is variable.",
+     "ko": "그래서 이 방정식은 정의에서 잠재적인 결과의 정의와 잠재적인 결과에서 나온 것입니다. 그리고 우리는 이 정의를 다시 씁니다. 그리고 회귀 분석에서 선형 회귀 모델에서, 우리는 이것을 다시 쓸 수 있습니다. 그리고 우리가 가진 것은 결과는 상수입니다. 그리고 상수항의 계수는 그리고 어떻게 가 계수인지 에 대한 것입니다. 이 변수에 대해, 즉 변수입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2189,
+     "page": 1,
+     "en": "If treated, not treated. So this is the actual actually",
+     "ko": "만약 치료를 받았다면, 치료를 받지 않았다면. 그래서 이것이 실제 회귀 분석입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2202,
+     "page": 1,
+     "en": "variable. So they are treated, it takes the value one. Not treated, zero. And error term. So we can be written as a OLS equation. And why the actually this part of Y equal right, this proposal effect as a formula, based on the definition of the outcome. Okay? So first we define this equation now, our job is to use the data to report how Okay?",
+     "ko": "변수입니다. 그래서 그들은 치료를 받았고, 값은 1입니다. 치료를 받지 않았다면 0입니다. 그리고 오차항입니다. 그래서 우리는 OLS로 쓸 수 있습니다. 그리고 왜 실제로 Y의 이 부분은 Y와 같고, 맞죠, 이 제안은 효과로서 공식으로, 정의에 기반하여 잠재적인 결과입니다. 알겠죠? 그래서 먼저 우리는 이 방정식을 정의하고, 이제 우리의 일은 데이터를 사용하여 어떻게 알겠죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2227,
+     "page": 1,
+     "en": "Under which condition, is unbiased. Our estimate or how OLS",
+     "ko": "어떤 조건에서 가 인가요? 편향되지 않았습니다. 우리의 추정치는 또는 어떻게 OLS",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2238,
+     "page": 1,
+     "en": "Okay, so let's calculate. parameter. So here, we if you look closely, how does not okay. So I mean, I mention, we kept whatever we talked about the data that we did before. So we just move that that has a common property and that is what we number of parameters.",
+     "ko": "좋아요, 그럼 계산해 봅시다. 매개변수를. 그래서 여기서, 우리는 만약 여러분이 자세히 보면, 어떻게 그렇지 않은지 알 수 있습니다. 그래서 제 말은, 제가 언급했듯이, 우리는 우리가 이야기했던 모든 것을 유지했습니다. 그래서 우리는 그냥 이동합니다. 그것을 그게 공통적인 속성을 가지고 있고 그리고 그것이 우리가 수많은 매개변수입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2266,
+     "page": 1,
+     "en": "That characterize the relationship between and the population.",
+     "ko": "그것은 그 관계를 특징짓습니다. 그리고 모집단을.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2275,
+     "page": 1,
+     "en": "So it does not have an eye. You next I will move up the best we can do is which is a defined that how which is the same for everybody. and try to estimate the",
+     "ko": "그래서 그것은 눈이 없습니다. 다음은 제가 가장 좋은 우리가 할 수 있는 것은 이것입니다. 정의된 그것이 어떻게 모든 사람에게 같은지. 그리고 추정하려고 노력합니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2289,
+     "page": 1,
+     "en": "Okay? This is our method. How do we estimate So this is a true true uh true true true D. And exactly our X will be the same as this true expectation. That means that if you repeat this experiment many, many, many times and calculate inverse here D prime D prime inverse D prime Y.",
+     "ko": "알겠죠? 이것이 우리의 방법입니다. 어떻게 추정할까요? 그래서 이것은 진정한 진정한 어 진정한 어 진정한 어 진정한 D입니다. 그리고 정확히 우리의 X는 될 것입니다. 와 동일합니다. 이것은 진정한 기대값입니다. 즉, 만약 여러분이 이 실험을 반복한다면 여러 번, 여러 번, 여러 번 계산하면 역행렬은 여기서 D 프라임은 D 프라임은 역행렬은 D 프라임 Y입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2316,
+     "page": 1,
+     "en": "If we do that many, many, many times and then get the average number, it should be equal to if the exact condition holds. Okay? So the condition actually means that the ratio is the same, ratio is equal to zero, right? So that condition means condition of X expected value of U is equal to zero.",
+     "ko": "만약 우리가 그렇게 한다면 여러 번, 여러 번, 여러 번 하고 평균값을 구하면, 그것은 와 같아야 합니다. 만약 정확한 조건이 성립한다면. 알겠죠? 그래서 조건은 실제로 의미하는 것은 비율이 같다는 것입니다, 비율이 0과 같다는 것이죠, 맞죠? 그래서 그 조건은 조건이 X의 기대값이 U의 기대값이 0과 같다는 것입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2341,
+     "page": 1,
+     "en": "Right? And then if we we rewrite this, so we we plug in Y here,",
+     "ko": "그렇죠? 그리고 만약 우리가 다시 쓰면 그래서 우리는 대입합니다. Y는 여기에서,",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2351,
+     "page": 1,
+     "en": "This is because we we throw to saying that the condition of X potential outcome all with is exactly same as the conditional value of outcome, potential outcome. Uh not treated. We we have indeed not treated.",
+     "ko": "이것은 우리가 던지기 때문입니다. 즉, 조건이 X의 잠재적 결과가 모두 와 함께 입니다. 정확히 조건부 값과 같습니다. 결과, 잠재적 결과. 어 치료받지 않은. 우리는 실제로 치료받지 않았습니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2376,
+     "page": 1,
+     "en": "So this is condition.",
+     "ko": "그래서 이것은 조건입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2381,
+     "page": 1,
+     "en": "So UI is Y minus minus minus",
+     "ko": "그래서 UI 는 Y 빼기 빼기 빼기",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2407,
+     "page": 1,
+     "en": "Uh this is condition. Okay? concept theory, then think about that. Uh regarding so actual treatment value the potential potential potential outcome of zero. is the same. Same. So this means that if you do this, we have so right?",
+     "ko": "어 이것은 조건입니다. 알겠죠? 개념 이론, 그러면 그것에 대해 생각해 보세요. 어 관련해서 그래서 실제 치료는 값은 그 잠재적 잠재적 잠재적 결과 의 0입니다. 같습니다. 같습니다. 그래서 이것은 만약 여러분이 이렇게 하면, 우리는 그래서 맞죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2439,
+     "page": 1,
+     "en": "It was a comparing potential outcome versus and potential outcome is nothing to do with they are actually treating or not. It's like hypothetical value, right? So if we compare the potential outcome of those who are actually treated and those who are not, like those who are not treated actually, but that is actually the same.",
+     "ko": "그건 잠재적 결과를 비교하는 것이었습니다. 그리고 잠재적 결과는 아무 상관이 없어요, 그들이 실제로 치료를 하든 안 하든 말이죠. 이건 가상의 값이죠, 그렇죠? 그래서 만약 우리가 비교한다면 잠재적 결과와 실제로 치료를 받은 사람들과 그렇지 않은 사람들을 비교하면, 치료를 받지 않은 사람들은 사실, 하지만 그건 사실 같습니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2465,
+     "page": 1,
+     "en": "That is equivalent to comparison. Okay? Okay. Um, but if we really take the equation and then uh um the first time is equal to So the assignment doesn't have any information about all the potential. Okay? If we use the potential outcome and use the information to assign people from groups, then this is effectively equal.",
+     "ko": "그건 뭐와 같냐면 비교와 같습니다. 알겠죠? 네. 음, 하지만 만약 우리가 정말 방정식을 가져와서 어 음 첫 번째 시간은 뭐와 같습니다. 그래서 할당은 아무런 정보가 없어요, 모든 잠재적 결과에 대한. 알겠죠? 만약 우리가 잠재적 결과를 사용하고 그 정보를 사용하여 할당한다면 그룹에서 사람들을 뽑는다면, 이것은 사실상 같습니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2499,
+     "page": 1,
+     "en": "But this means that this assignment was completely independent of their potential outcome. So the expected value is independent of this assignment. So it means you is uh is independent of the Okay. You know why why this is not independent distribution if A and B have independent distribution?",
+     "ko": "하지만 이것은 이 할당이 완전히 독립적이라는 것을 의미합니다. 그들의 잠재적 결과에 대해. 그래서 기대값은 독립적입니다. 이 할당과. 그래서 이것은 당신이 이라는 것을 의미합니다. 어 독립적이라는 것을 의미합니다. 네. 왜 그런지 아세요? 이게 왜 독립적이지 않은 분포인지 A와 B가 독립적인 분포를 가지고 있다면?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2526,
+     "page": 1,
+     "en": "The probability can be like that. Only if they are",
+     "ko": "확률은 될 수 있습니다. 그렇게 될 수 있습니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2534,
+     "page": 1,
+     "en": "But yes, I'm independent. And what the health recommendation of probability would be or A, is the probability is like that. And because",
+     "ko": "하지만 네, 저는 독립적이에요. 그리고 건강 권장 사항은 확률적으로 어떨지 아니면 A, 그게 확률이에요. 그러니까 그런 거죠. 그리고",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2548,
+     "page": 1,
+     "en": "Yeah, but A and B are the same. A and B are independent. So to be both of them, it's that that would be exactly the same as A. So, we can also assign the potential outcome does not change. Let's say exactly this assignment is totally the potential potential outcome.",
+     "ko": "네, 하지만 A와 B는 같아요. A와 B는 독립적이에요. 그래서 둘 다 되려면, 그건 그게 될 거예요. 정확히 A와 같아요. 그래서, 우리는 또한 할당할 수 있어요. 그 잠재적 결과는 변하지 않아요. 가령 정확히 이 할당이 완전히 잠재적 결과라고 해봅시다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2576,
+     "page": 1,
+     "en": "So, if A and B are the same, and Y here, and this is the same. A is assignment is independent over there, assigning potential outcome, then that we can only do this. expected value of Y is",
+     "ko": "그래서, A와 B가 같다면, 그리고 Y가 여기 있고, 이게 같다면. A는 할당된 것이고 독립적이에요. 저기서는, 잠재적 결과를 할당하는 것이고, 그러면 우리는 오직 이것만 할 수 있어요. 기대값은 Y의 값은",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2602,
+     "page": 1,
+     "en": "So, for me, uh I can calculate the average treatment effect. This is the treatment effect, right? So, suppose we know the potential outcome, then we can actually, this is like that. But we don't know. If you can never observe, then if that's known, how then we can calculate average treatment effect.",
+     "ko": "그래서 저한테는, 어 저는 계산할 수 있어요. 평균 치료 효과를요. 이게 치료 효과인데, 그렇죠? 그래서 우리가 잠재적 결과를 안다면, 그러면 실제로, 이건 그런 거예요. 하지만 우리는 모르죠. 만약 당신이 절대 관찰할 수 없다면, 그러면 그게 알려져 있다면, 어떻게 그러면 우리는 평균 치료 효과를 계산할 수",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2626,
+     "page": 1,
+     "en": "So, three individuals and three individuals have 10. So we can assign, we know the potential outcome, how data. Then average you know this too. with the same weight, it gives us the same point of five. That is the true treatment effect. Okay? But if you look at the average on treated, they are five.",
+     "ko": "있어요. 그래서 세 명의 개인이 그리고 세 명의 개인이 10을 가지고 있어요. 그래서 우리는 할당할 수 있고, 우리는 잠재적 결과를 알고, 데이터가 어떻게 되는지 알 수 있어요. 그러면 평균도 알 수 있죠. 같은 가중치로, 그것은 우리에게 같은 5라는 점을 줍니다. 그것이 진정한 치료 효과입니다. 알겠죠? 하지만 평균 치료 효과를 보면, 그들은 5입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2650,
+     "page": 1,
+     "en": "Average on untreated, they are 10. And the probability is what happened? Then the ratio is the summation to give us exactly seven, 7.5, which verify our equation before. Um and we can also say that example that you know, this is the kind of education. This is the initial score and this is what they are. This is the test score they have without education.",
+     "ko": "평균 치료받지 않은 사람들은 5입니다. 그리고 확률은 무슨 일이 일어났나요? 그러면 비율은 합계가 되어 우리에게 정확히 7을 줍니다, 7.5, 그것이 확인해 줍니다 우리의 방정식이 이전과 같다는 것을. 음 그리고 우리는 또한 이렇게 말할 수 있어요, 예를 들어 이것은 이런 교육입니다. 이것은 초기 점수이고 이것은 그들이 무엇인지입니다. 이것은 시험 점수이고 그것은 교육이 없을",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2679,
+     "page": 1,
+     "en": "or they are like you know, and any activity and this is the work of activity after they get the education. Uh so in this case, the treatment effect for those who actually have quality education, is smaller than those who didn't choose to go to the college, right?",
+     "ko": "때의 점수이거나 그들은 당신이 알다시피, 그리고 어떤 활동이든 그리고 이것은 그 활동의 결과입니다. 그들이 교육을 받은 후에. 어 그래서 이 경우에, 치료 효과는 그들에게 실제로 있는 양질의 교육은, 더 작습니다. 교육을 받지 않은 사람들보다 대학에 가기로 선택한",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2700,
+     "page": 1,
+     "en": "Uh if the quality education is greater treatment effect on those who are lower ability, we may know this situation. Okay? Uh but what about So, so the treatment effect can be different by groups. In this case, if there is some uh data like a positive selection, which means that the social initial level negative impact on the treatment anyhow, so that is what I'd tell.",
+     "ko": "사람들보다, 그렇죠? 만약 양질의 교육이 더 크다면 치료 효과는 더 낮은 사람들에게 더 클 수 있습니다, 우리는 이 상황을 알 수 있습니다. 알겠죠? 하지만 무엇에 대해 그래서, 그래서 치료 효과는 그룹에 따라 다를 수 있습니다. 이 경우에, 만약 어떤 데이터가 긍정적인 선택이라면, 이는 사회적 초기 수준이 부정적인 치료 효과에 영향을 미치므로, 그것이 제가 말씀드릴 것입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2730,
+     "page": 1,
+     "en": "Uh that can we know? This is what it means. Okay? So, these This is very useful. If we just calculate the difference in the outcome by between few months and this is average outcome. of treatment right? This is average outcome of the control group. If we take the night difference, this can be composed into two parts.",
+     "ko": "어, 그건 우리가 알 수 있나요? 이것은 무엇인가요? 이런 뜻입니다. 알겠죠? 그래서, 이것들은 이것은 매우 유용합니다. 만약 우리가 그냥 계산한다면 그 차이를 결과에서 계산하면 몇몇 달과 이것은 평균 결과입니다. 치료의 맞죠? 이것은 평균 결과입니다. 만약 우리가 밤을 차이를 계산하면, 이것은 분해될 수 있습니다. 두 부분으로.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2768,
+     "page": 1,
+     "en": "Okay?",
+     "ko": "알겠죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2780,
+     "page": 1,
+     "en": "How do we get this? This is so this is the problem. Why? Do you know? Yes. Why? So, this is something we need to calculate when we are given a data. We have this information. So we can calculate and why outcome on and the why outcome on control. Okay? So we can subtract those two numbers.",
+     "ko": "이걸 어떻게 얻을까요? 이것은 그래서 이게 문제입니다. 왜냐하면? 당신은 아시나요? 네. 왜냐하면? 그래서, 이것은 우리가 계산해야 할 것입니다. 우리가 데이터를 받았을 때. 우리는 이 정보를 가지고 있습니다. 그래서 우리는 계산할 수 있고 왜 결과가 치료에 그리고 왜 결과가 치료에 영향을 미치는지. 알겠죠? 그래서 우리는 그 두 숫자를 뺄",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2807,
+     "page": 1,
+     "en": "And we are given that 25. Okay? This is 25. Okay? Now, comparison between treatment and control. And we just subtract Remember this is this",
+     "ko": "수 있습니다. 그리고 우리는 그것이 25라는 것을 알고 있습니다. 알겠죠? 이것은 25입니다. 자, 비교는 치료와 대조군 사이입니다. 그리고 우리는 그냥 뺍니다. 기억하세요. 이것은 이것입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2828,
+     "page": 1,
+     "en": "Why? Right? Why? Do you know why?",
+     "ko": "왜냐하면? 그렇죠? 왜냐하면? 왜 그런지 아시나요?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2843,
+     "page": 1,
+     "en": "So we subtract Y0 from Y1.",
+     "ko": "그래서 우리는 Y0를 Y1에서 뺍니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2860,
+     "page": 1,
+     "en": "Is it true? No, we don't have information on treatment. We only observe potential outcome if actually they are treated. Okay? So why is it equal to Y? Why? Why? Why? Right? If we do average, of the outcome on treated, control group, is Y IC.",
+     "ko": "이게 사실인가요? 아니요, 우리는 치료에 대한 정보가 없습니다. 우리는 잠재적인 결과를 관찰합니다. 만약 실제로 그들이 치료를 받는다면요. 그래서 왜 Y와 같을까요? 왜냐하면? 왜냐하면? 왜냐하면? 그렇죠? 만약 우리가 밤을 평균을 낸다면, 결과의 평균은 치료받은 사람들의 대조군, 은 Y IC입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2889,
+     "page": 1,
+     "en": "Why do you want to do? You know, to suppose that Y is zero.",
+     "ko": "왜 하고 싶으세요? 아시다시피, ~하기 위해서 가정하면 Y가 0이라고.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2899,
+     "page": 1,
+     "en": "Plus,",
+     "ko": "게다가,",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2909,
+     "page": 1,
+     "en": "Why did I subtract expected variable Y zero conditional on D1? And plus Okay? This",
+     "ko": "왜 제가 기대되는 변수 Y를 0에서 뺐을까요? 조건부로 D1에서? 그리고 더하기 알겠죠? 이것은",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2928,
+     "page": 1,
+     "en": "Why is that?",
+     "ko": "왜 그렇죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2933,
+     "page": 1,
+     "en": "plus I guess. So subtract and add the same number. to the original equation.",
+     "ko": "더하기 그런 것 같아요. 그래서 빼고 같은 숫자를 더해요. 그 원래 방정식에.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2945,
+     "page": 1,
+     "en": "to divide some interesting equation. on purpose, okay? So okay, and add the same number here.",
+     "ko": "나누기 어떤 흥미로운 방정식으로. 일부러요, 알겠죠? 그래서 알겠죠, 그리고 같은 숫자를 여기 더해요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2957,
+     "page": 1,
+     "en": "This is the original equation. And this is what I add. This is I add subtract and add the same one. Okay? But if I do so, I can reorder this equation such that",
+     "ko": "이게 원래 방정식이에요. 그리고 이게 제가 더한 거예요. 이게 제가 빼고 같은 숫자를 더한 거예요. 알겠죠? 하지만 그렇게 하면, 저는 이걸 재정렬할 수 있어요. 그래서",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2974,
+     "page": 1,
+     "en": "I can write down this and the second term and the first term is Y one conditional on what is the difference between Y one minus Y0? Second term, is what is the expected variable Y0 conditional on D1 is zero, or D1 is zero. So we can call this as the difference is two parts.",
+     "ko": "저는 이렇게 쓸 수 있어요. 그리고 두 번째 항은 그리고 첫 번째 항은 입니다. Y 1 조건부로 무엇이 Y와 Y0의 차이인가요? 두 번째 항, 은 무엇인가요? 기대되는 변수 Y0 조건부로 D1에서? 0이고, 또는 D1이 0입니다. 그래서 우리는 이것을 라고 부를 수 있어요. 그리고 차이는 두 부분입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3004,
+     "page": 1,
+     "en": "The first part is actually the average treatment effect on treated. The second part is selection bias, which means that",
+     "ko": "첫 번째 부분은 사실 평균 치료 효과입니다. 두 번째 부분은 선택 편향입니다,",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3016,
+     "page": 1,
+     "en": "outcome, I think, was two groups that happened to be assigned it. The second part is a zero. Because we we based on the randomized control, then we can say that their potential outcome has nothing to do with the day they were assigned. So the second term will be zero in expectation.",
+     "ko": "결과적으로, 제 생각에는 두 그룹이 우연히 배정된 것 같아요. 두 번째는 0이라는 것입니다. 왜냐하면 저희는 무작위 배정된 것을 기반으로 했고, 그러면 이렇게 말할 수 있습니다. 그들의 잠재적 결과는 그들이 배정된 날과 아무 관련이 없다는 것입니다. 그래서 두 번째 항은 기대값으로 0이",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3036,
+     "page": 1,
+     "en": "So, now we difference will have us average treatment effect of the treat. That is the beauty of ICT. We can make sure we can we can conclude that by design, the second term is zero. Then it goes and says that my comparison if the outcome variable between two groups is is accurately reflecting is accurately capturing the average treatment effect of the treat.",
+     "ko": "됩니다. 그래서, 이제 우리는 차이를 가지게 될 것이고 평균 치료 효과를 얻게 됩니다. 그것이 ICT의 장점입니다. 우리는 확실히 우리는 할 수 있습니다. 우리는 결론을 내릴 수 있습니다. 설계상, 두 번째 항은 0입니다. 그러면 그들은 이렇게 말합니다. 제 비교는 결과 변수가 두 그룹 간에 다르다면 그것은 정확하게 반영하고 있는 것입니다. 평균 치료 효과를 정확하게 포착하고 있습니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3071,
+     "page": 1,
+     "en": "So, in this example, this is difference in the average outcome. 75 versus 50. But the average treatment effect on the treated here is is is five plus selection bias. which is 20. So it is that there original So we'll take it without the condition is by the way.",
+     "ko": "그래서, 이 예시에서 이것은 평균의 차이입니다. 75 대 50입니다. 하지만 평균은 치료 효과는 치료받은 사람들에게 여기서는 입니다. 5입니다. 더하기 선택 편향입니다. 그건 20입니다. 그래서 거기에는 원래 그래서 우리는 그것을 조건 없이 받아들일 것입니다. 그런데요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3098,
+     "page": 1,
+     "en": "So now difference between the outcome reflect those two components. If we don't have like a ICT, then we cannot everything, the ATT is different from difference. But if we make sure that this is zero, the ICT and ATT is equal to the difference. So ICT In practice, what do you do with the based on the you need to present the result is the treatment, we can confidently say that any difference in their outcome will be a attributed to the treatment. That is what we say.",
+     "ko": "그래서 이제 이 두 그룹 간의 결과 차이는 반영합니다. 그 두 가지 요소를. 만약 우리가 가지고 있지 않다면 예를 들어 ICT 같은 것이 없다면, 우리는 모든 것을 할 수 없습니다. ATT는 9와 다릅니다. 하지만 우리가 확실히 한다면 이것은 입니다. 0입니다. ICT는 그리고 ATT는 와 같습니다. 그래서 ICT는 실제로, 여러분은 무엇을 기반으로 제시해야 하나요? 결과는 치료이고, 우리는 자신 있게 어떤 차이든 그들의 결과에서 나타나는 것은 치료 때문이라고 말할 수 있습니다. 그것이 우리가 말하는",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3138,
+     "page": 1,
+     "en": "And then this proves that the based on the",
+     "ko": "것입니다. 그리고 이것은 증명합니다. 그 기반으로 한",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3147,
+     "page": 1,
+     "en": "So, by randomization works, so if assignment is independent of the uh potential outcome, then this will be that is that regardless of their assignment, the potential outcome is potential outcome when they are treated will be the same. It does not depend on the I, completely independent. So that allows us to recover uh average treatment effect.",
+     "ko": "그래서, 무작위 배정이 작동하므로, 만약 배정이 독립적이라면 그 어 잠재적 결과와 그러면 이것은 될 것입니다. 즉, 그것은 상관없이 그들의 배정과 상관없이 잠재적 결과는 잠재적 결과입니다. 그들이 치료받을 때의 결과는 같습니다. 그것은 I에 의존하지 않으며, 완전히 독립적입니다. 그래서 그것은 우리가 복구할 수 있게 해줍니다. 평균 치료 효과를.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3177,
+     "page": 1,
+     "en": "Because here the This is the water observed in the data. So observed data is a condition on the what is the outcome? conditional on the what is the outcome? This is the average outcome",
+     "ko": "왜냐하면 여기서 이것이 바로 관찰된 데이터입니다. 그래서 관찰된 데이터는 조건부입니다. 무엇이 결과인가요? 조건부입니다. 무엇이 결과인가요? 이것은 평균입니다. 평균 결과입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3196,
+     "page": 1,
+     "en": "treated. Treatment too.",
+     "ko": "치료받은 사람. 치료도 마찬가지.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3201,
+     "page": 1,
+     "en": "This is the average outcome. So, on treatment. or control. Okay? We get it. And this is an IV difference. But if this is satisfied, here, the second term is appears. So, we can recover a ATT. But in this case, ATT is exactly the same as ATT do. And ATT. Right? Because why?",
+     "ko": "이것은 평균 결과입니다. 그래서, 치료에 대해서는. 또는 통제에 대해서는. 알겠죠? 이해했어요. 그리고 이건 IV 차이입니다. 하지만 만약 이게 만족스럽다면, 여기서는 두 번째 항이 나타납니다. 그래서, 우리는 복구할 수 있습니다. ATT를. 하지만 이 경우에는 ATT가 정확히 ATT와 같습니다. 그리고 ATT. 맞죠? 왜냐하면?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3233,
+     "page": 1,
+     "en": "We independent assignment those three object will be the same. And ATT is the same as ATT you. Regardless of whether they are treated or not, average treatment effect will be the same. We because assignment is has nothing to do with whether they are treated or not.",
+     "ko": "우리는 독립적인 할당을 그 세 가지를 객체로 동일하게 할 것입니다. 그리고 ATT는 ATT와 같습니다. 그리고 그들이 치료를 받든 안 받든 상관없이, 평균은 치료 효과가 같을 것입니다. 왜냐하면 할당은 그들이 치료를 받든 안 받든 상관없기",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3252,
+     "page": 1,
+     "en": "Okay? So, or these are the same. So I think we have to recover ATE, average treatment effect. So, more than ATT, ATT is average treatment effect. Uh that we observe in the ICT is that average treatment effect uh average treatment effect of the entire population is exactly the same as average treatment effect of the treated and average treatment effect of untreated.",
+     "ko": "때문입니다. 알겠죠? 그래서, 또는 이것들이 같습니다. 그래서 제 생각엔 우리가 ATT를 복구해야 한다고 생각합니다. 그래서, ATT보다 더 많은 ATT, ATT는 평균 치료 효과입니다. 어 우리가 관찰하는 것은 ICT에서 입니다. 평균은 치료 효과가 어 평균 치료 효과는 전체 인구의 정확히 평균 치료 효과와 같습니다. 치료받은 사람과 평균 치료 효과는 치료받지 않은 사람과",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3282,
+     "page": 1,
+     "en": "Because by design treatment has nothing to do with their potential outcome. They are treatment effect. So we can recover the treatment effect by uh by comparing the mean difference.",
+     "ko": "같습니다. 왜냐하면 설계상 치료는 그들의 잠재적 결과와 관련이 없습니다. 그들은 치료 효과입니다. 그래서 우리는 치료 효과를 복구할 수 있습니다. 어 비교함으로써 평균 차이를 비교함으로써.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3299,
+     "page": 1,
+     "en": "Let's continue. What is the application now?",
+     "ko": "계속해 봅시다. 무엇이 지금 적용되나요?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3315,
+     "page": 1,
+     "en": "But I think the application is easier for you to to budget it.",
+     "ko": "하지만 제 생각에 적용이 더 쉬울 것 같아요. 그래서 예산을 짜는 게요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3323,
+     "page": 1,
+     "en": "I see.",
+     "ko": "저는 알겠어요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3330,
+     "page": 1,
+     "en": "Okay. Same equation, right? We the ICT, we make sure that the second term disappears. And ATT is equal to ATT and ATT. So, in the linear regression, and the that top one, or S, base, the expectation, same as the bottom term. of the treatment.",
+     "ko": "알겠습니다. 같은 방정식이죠? 우리는 ICT, 우리는 확실히 두 번째 항이 사라지게 합니다. 그리고 ATT는 ATT와 같습니다. 그리고 ATT. 그래서, 그럼 선형 회귀에서, 그리고 그 맨 위쪽 거요, 또는 S, 베이스, 그 기대값, 와 같습니다. 아래쪽 항과요. 의 치료의.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3367,
+     "page": 1,
+     "en": "So, this is one example. Uh So linear, yeah, linear. So, this paper is really cool. Because because when they think about market failure, people have market failure. And and this is also related to the job we're getting the market outcome. But there are so many different uh factors that can contribute to explaining the gender gap.",
+     "ko": "그래서, 이게 한 가지 예입니다. 어 그래서 선형, 네, 선형. 그래서, 이 논문은 정말 멋져요. 왜냐하면 왜냐하면 그들이 시장 실패에 대해 생각할 때, 사람들은 시장 실패를 겪습니다. 그리고 이건 또한 우리가 일자리를 얻는 시장 결과와도 관련이 있습니다. 하지만 너무 많은 요인이 기여할 수 있습니다. 그리고 성별 격차를",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3399,
+     "page": 1,
+     "en": "And then you have tests where they information, which contribute to the gender gap. Okay? So information means that females don't have better information about what they can do. They are constrained. So to some extent, what's available out there, they don't know. So that's why they try and they don't have the capital.",
+     "ko": "설명하는 데요. 그리고 테스트가 있는데, 여기서 그들은 정보를 제공하는데, 이는 기여합니다. 성별 격차에 말이죠. 알겠죠? 그래서 정보는 의미합니다. 여성들이 가지고 있지 않다는 것을 더 나은 정보가 없다는 것을 의미합니다. 그들은 제약이 있습니다. 그래서 어느 정도는, 무엇이 이용 가능한지, 그들은 모릅니다. 그래서 그들이 시도하는 것입니다. 그리고 그들은 자본이 없습니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3425,
+     "page": 1,
+     "en": "And they have lower So they don't test this particular channel. And this is very very difficult. Like if you have a observation of your data, how do you prove that there exists information that would contribute to the gender gap in the market outcome. It's very hard.",
+     "ko": "그리고 그들은 더 낮은 그래서 그들은 이것을 테스트하지 않습니다. 이 특정 채널을요. 그리고 이것은 매우 어렵습니다. 예를 들어, 데이터에 대한 관찰이 있다면, 어떻게 증명할 수 있나요? 정보가 존재한다는 것을 증명할 수 있나요? 시장의 성별 격차에 기여하는 것은 매우 어렵습니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3445,
+     "page": 1,
+     "en": "Okay, what we did is they used ICT and then they do the information session to female population. So they have many, many villages and they randomized at the village level. So the village one is in the treatment group, village two, two is in the uh control group.",
+     "ko": "자, 우리가 한 것은 그들이 ICT를 사용하고 그런 다음 그들이 정보 세션을 진행합니다. 여성들에게 말이죠. 그래서 그들은 아주 많은 마을을 가지고 있고, 그들은 마을 단위로 무작위로 배정했습니다. 그래서 마을 하나는 치료 그룹에, 마을 둘은 통제 그룹에 속합니다. 통제 그룹에 속합니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3466,
+     "page": 1,
+     "en": "So they have a many villages and they divide the village into treatment and control, but they believe in the treatment to be reached and the researchers went to the village and had some information session about the people sector. So people sector is a business process outsourcing.",
+     "ko": "그래서 그들은 많은 마을을 가지고 있고, 그들은 마을을 치료 그룹과 통제 그룹으로 나누지만, 그들은 치료가 도달할 수 있다고 믿고 연구자들은 마을에 가서 그리고 정보를 제공했습니다. 무엇에 대한 정보냐면, 사람 부문에 대한 것입니다. 그래서 사람 부문은 비즈니스 프로세스",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3485,
+     "page": 1,
+     "en": "And that was fast to growing industry in developing countries. It's basically about typing in",
+     "ko": "아웃소싱입니다. 그리고 그것은 빠르게 성장하는 산업이었습니다. 개발도상국에서. 이것은 기본적으로",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3496,
+     "page": 1,
+     "en": "Very simple documentation and which is is a little difficult, but the calculation. And then to the video, is popular in this case. But the the PDF reading area, they don't know about this. New learning sector. So what I need to do is that, okay, so PDF reading area, they don't know this.",
+     "ko": "매우 간단한 문서화와 그것이 무엇인지 조금 어렵지만, 계산은요. 그리고 영상으로 넘어가서, 그건 인기 있는 경우입니다. 하지만 PDF 읽기 영역은, 그들은 모르고 있어요. 새로운 학습 분야입니다. 그래서 제가 해야 할 일은 그거예요, 알겠죠, 그래서 PDF 읽기 영역은, 그들은 모르고",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3523,
+     "page": 1,
+     "en": "opportunity. Now, they have a certain level of education, they can work. at least growing sector with a high pay. high paid jobs. Okay? So what I did is that they especially talked about this sector and the information information session and only three groups learned about this sector.",
+     "ko": "있어요. 기회죠. 자, 그들은 어느 정도 수준의 교육을 받았고, 일할 수 있어요. 적어도 성장하는 곳에서 높은 급여를 받으며. 고임금 일자리. 알겠죠? 그래서 제가 한 일은 그들이 특히 이야기한 것은 이것에 대한 분야이고 그 정보는 그 정보는 정보 세션에서 그리고 오직 세 그룹만 배웠어요. 이 분야에 대해.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3550,
+     "page": 1,
+     "en": "And let's see. So we're thinking about what kind of occupation you can take, information is number one, because it costs it's very easy to fix the problem. It is the problem of information information information It's better than financial question. Like you need to relax financial question in the market. You have to provide a role or you have to provide a subsidy. It's costly.",
+     "ko": "그리고 어디 보자. 그래서 우리는 어떤 종류의 직업을 가질 수 있는지, 정보화 가 1순위이고, 왜냐하면 그것은 비용이 매우 고치기 쉽고 문제를 해결할 수 있어요. 그것은 정보의 문제이고, 정보의 문제예요. 그게 금융보다 나아요. 예를 들어, 당신은 재정적으로 여유가 있어야 해요. 시장에서. 당신은 역할을 제공하거나 보조금을 제공해야 해요. 비용이",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3580,
+     "page": 1,
+     "en": "But it it has to it has something to do with the information. It's much cheaper. So I think identifying that information question explains the certain outcome that is really like low so it's a very um practical. Um for us to try to understand whether information is out there. So another example is that in the US, I created college application is very complicated.",
+     "ko": "많이 들죠. 하지만 그것은 정보와 관련이 있어요. 훨씬 저렴해요. 그래서 제 생각엔 식별하는 것이 그 정보가 문제라는 것을 설명해 줍니다. 특정 결과가 무엇인지 정말 낮은 그래서 매우 음 실용적입니다. 음 우리에게는 이해하려고 노력하는 것이 정보가 결과인지 아는 것입니다. 그래서 또 다른 예로 미국에서 저는 대학 지원서가 매우 복잡하다는",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3608,
+     "page": 1,
+     "en": "The more so is very expensive. But at the same time, the government to provide a very rich and very heterogeneous scholarship. And you don't apply for scholarship. The students need to know exactly they have to apply for certain scholarship. And what is the qualification and etc, etc, right?",
+     "ko": "것을 알게 되었어요. 더군다나 매우 비싸죠. 하지만 동시에 정부가 매우 풍부한 그리고 매우 이질적인 장학금을 제공합니다. 그리고 장학금을 신청하지 않아요. 학생들은 그냥 알아야 해요. 그들이 어떤 특정 장학금을 신청해야 하는지, 그리고 자격 요건은 무엇인지, 등등,",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3629,
+     "page": 1,
+     "en": "So that is a lot of information. If you students really need scholarship, like from less to family, they don't have that information. So actually they need a very simple experiment at the national level. They just provide a template to everybody. And actually, it's significant to increase.",
+     "ko": "그렇죠? 그래서 그것은 많은 정보입니다. 만약 학생들이 정말 장학금이 필요하다면, 예를 들어 저소득층 가정은, 그 정보가 없어요. 그래서 사실 그들은 매우 간단한 실험이 필요해요. 국가 차원에서. 그들은 그냥 템플릿을 제공해서 모두에게 줍니다. 그리고 사실, 그것은 증가하는 데 중요합니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3653,
+     "page": 1,
+     "en": "the enrollment rate of the students. And application to the scholarship and success rate. So that's a really sign because you know, popular is not that expensive. We say less expensive than like the financial question. If you want to provide a role, I like to or reduce tuition is expensive.",
+     "ko": "등록률을 높이는 것이 중요합니다. 그리고 지원서와 장학금, 그리고 성공률. 그래서 그것은 정말 중요한 신호입니다. 왜냐하면 인기 있는 것은 그렇게 비싸지 않아요. 우리는 금융 문제보다 덜 비싸다고 말합니다. 만약 당신이 역할을 제공하고 싶다면, 저는 등록금을 줄이는 것이 비싸다고",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3673,
+     "page": 1,
+     "en": "How about is not expensive. And then what they help is just giving them information and individuals try to apply the scholarship and then they get the scholarship for themselves. It is because it's scholarship. So information question is very interesting question.",
+     "ko": "생각합니다. 어떻게 하면 비싸지 않을까요? 그리고 그들이 돕는 것은 그냥 그들에게 정보를 주고 개인이 지원하려고 노력하는 것이고, 그러면 그들은 장학금을 받게 됩니다. 이것은 왜냐하면 장학금이기 때문입니다. 그래서 정보 질문은 매우 흥미롭습니다. 질문입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3690,
+     "page": 1,
+     "en": "Uh that is part of it. So they check whether the female India face this information question. And then the underlying motivation is that the labor participation rate of the female population in Korea is about 60 or 65%. So we see 65%. The same thing for India. It was 20%.",
+     "ko": "어, 그건 그 중 일부입니다. 그래서 그들은 확인합니다. 여성이 인도에서 이 정보 질문에 직면하는지. 그리고 근본적인 동기는 노동 참여가 그들의 여성의 인구 비율이 한국에서 약 60% 또는 65%입니다. 그래서 우리는 65%를 봅니다. 그 같은 것이 인도에도 적용됩니다. 20%였습니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3717,
+     "page": 1,
+     "en": "Is one third of the countries. So for the female labor force participation is very very important issue in India. So I want to see provide a simple information about BPO sector can change their labor force participation rate. Okay? And this is a role I think this is interesting the more or less that context.",
+     "ko": "이것은 3분의 1입니다. 그 국가들의. 그래서 여성의 노동 참여율은 매우 중요한 문제입니다. 그래서 저는 간단한 정보를 제공하고 싶습니다. BPO 부문이 어떻게 변할 수 있는지 그들의 노동 참여를 바꿀 수 있는지에 대해. 알겠죠? 그리고 이것은 제가 생각하기에 흥미로운 점은 대략 그런 맥락입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3743,
+     "page": 1,
+     "en": "So here, the these people show to you the average characteristic of the entire sample. And control group, that is the control group and the treatment group and the difference between those two. Um I want you to think about what this table is for. So here, uh it's nothing to do with the labor market. This is about their characteristic.",
+     "ko": "그래서 여기서, 그 이 사람들은 보여줍니다 여러분에게 평균 특성을 보여줍니다. 전체 샘플의. 그리고 통제 그룹, 즉 통제 그룹은 그리고 치료 그룹과 그 차이를 보여줍니다. 음 여러분이 이 표가 무엇을 위한 것인지 생각해 보길 바랍니다. 그래서 여기서, 어, 이건 노동 시장과는 관련이 없습니다. 이것은 그들의 특성에",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3774,
+     "page": 1,
+     "en": "where they live, but then they are away from Delhi, the household characteristic, but what they do is they compare the average characteristic of control and treatment group. And the the pool column test the mean difference between those two groups. the sample mean we can test whether they are the same or not based on the test statistics.",
+     "ko": "관한 것입니다. 어디에 사는지, 하지만 그들은 델리에서 멀리 떨어져 있고, 가구 특성, 하지만 그들이 하는 것은 그들이 평균 특성을 비교하는 것입니다. 통제 및 치료 그룹. 그리고 그 풀은 테스트 평균을 검증합니다. 그 두 그룹 간의. 표본 평균은 우리가 검증할 수 있습니다. 그들이 같은지 아닌지 검정 통계량을",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3797,
+     "page": 1,
+     "en": "Okay? So this is the result. And the difference in the characteristic between control group and treatment group, this number, you know, this number is a row number in the mean difference. If we calculate the average of the from Delhi, it's 130 in control group, 100.",
+     "ko": "바탕으로. 알겠죠? 그래서 이것이 결과입니다. 그리고 그 차이는 인도에서 특성의 차이는 통제 그룹과 치료 그룹 간에 그리고 이 숫자는 아시다시피, 이 숫자는 평균 차이의 행 번호입니다. 만약 우리가 평균을 계산하면 전체 델리에서 온 것은 100 30이고, 통제 그룹에서는 100입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3820,
+     "page": 1,
+     "en": "But 28 in treatment group, and this this has to be the difference between those two number and then like they didn't write down the the force is, yeah. So it has to be the difference between those two number. Exactly. But the problem is whether the difference is statistically different or not.",
+     "ko": "하지만 28은 치료 그룹에서, 그리고 이것은 이것이 그 두 숫자 사이의 차이여야 하고, 그리고 그들은 적지 않았습니다. 그 그 힘은 네. 그래서 그것은 그 차이여야 생각해보길 바랍니다. 그래서 정확히. 하지만 문제는 그 차이가 통계적으로 다른지 아닌지입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3843,
+     "page": 1,
+     "en": "And the mean difference divided by standard error, is very small. So mean difference is actual difference in the mean value. But we don't care about the actual difference. We care about whether that is statistically significant or not. In order to judge that, we have to calculate the T statistics.",
+     "ko": "그리고 평균 차이를 표준 오차로 나눈 값, 은 매우 작습니다. 그래서 평균 차이는 입니다. 실제 차이는 평균에서 입니다. 하지만 우리는 실제 차이에는 관심이 없습니다. 우리는 그 차이가 통계적으로 유의미한지 아닌지 궁금합니다. 이를 판단하기 위해 우리는 t-값을 계산해야 합니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3868,
+     "page": 1,
+     "en": "And then that involves calculating the standard variance. And this is the we have we have to divide the coefficient by standard error and the ratio is not P value. In order to say that, the difference is statistically significant from zero, the value has to be around two.",
+     "ko": "그리고 그것은 표준 오차를 계산하는 것을 포함합니다. 그리고 이것은 그 우리는 우리는 계수를 표준 오차로 나누어야 하고 그 비율이 P값이 아닙니다. 통계적으로 유의미하다고 말하려면 차이가 통계적으로 유의미하다는 밝히려면, 차이는 0이어야 합니다. 약 2 정도여야",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3889,
+     "page": 1,
+     "en": "If it is around two, 1.96 is significant at 5%. If it is 1.67 something like that, that is significant at 10%. But this ratio is not. That's it. So it's not statistically significant. Okay? So what finally in this table is that the characteristic of control group and treatment group is not statistically is it a good news or a bad news?",
+     "ko": "합니다. 만약 약 2라면, 1.96 은 유의미한 5%입니다. 만약 1.6 7이라면 그것은 유의미한 10%입니다. 하지만 이 비율은 아닙니다. 그게 다입니다. 그래서 통계적으로 유의미하지 않습니다. 알겠죠? 그럼 마지막으로 이 표에서 알 수 있는 것은 특성이 통제 그룹과 실험 그룹이 통계적으로 유의미하지 않다는 것입니다. 이게 좋은 소식인가요, 아니면 나쁜 소식인가요?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3919,
+     "page": 1,
+     "en": "This is not about the alpha. This is about the on the mind features. Okay? So the features. We cannot compare the but and this is the control group. So the and then the background and then our conclusion is that if we compare the characteristics, they are comparable.",
+     "ko": "이건 알파에 대한 게 아닙니다. 이건 에 대한 것입니다. 마음의 특징에 대한 것입니다. 알겠죠? 그래서 특징입니다. 우리는 비교할 수 없습니다. 하지만 이것은 통제 그룹입니다. 그래서 그리고 배경은 그리고 우리의 결론은 만약 우리가 관찰된 특성을 비교하면, 그것들은 비교할",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3940,
+     "page": 1,
+     "en": "Is it a good news or bad news? It's very good.",
+     "ko": "수 있습니다. 이게 좋은 소식인가요, 아니면 나쁜 소식인가요? 그건 아주 좋습니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3949,
+     "page": 1,
+     "en": "It's good news. Right? Okay. So of course. You said, so or randomization is not. So in order to make sure that two groups are exactly the same, and basically proves that in the data, we cannot tell any differences. between two groups. So it confirms",
+     "ko": "좋은 소식입니다. 그렇죠? 네. 그래서 물론이죠. 당신이 말했듯이, 또는 무작위 배정은 아닙니다. 그래서 두 그룹이 확실히 똑같다는 것을 확인하기 위해, 그리고 기본적으로 이것은 데이터에서 우리가 어떤 유의미한 차이도 말할 수 없다는 것을 증명합니다. 그래서",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3976,
+     "page": 1,
+     "en": "So two groups are comparable. They are exactly the same on average, the only difference is the treatment. We cannot directly test on observable characteristics, but at least we can compare observable characteristics and show that they are statistically the same.",
+     "ko": "그래서 두 그룹은 비슷합니다. 그들은 평균적으로 정확히 같고, 유일한 차이점은 치료입니다. 우리는 직접적으로 관찰 가능한 특성을 테스트할 수는 없지만, 적어도 관찰 가능한 특성을 비교하고 그것들이 통계적으로 같다는 것을 보여줄",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 3993,
+     "page": 1,
+     "en": "So it is balanced check. So is every RCT We need to provide this table. So we said that we need to provide this for those who are the randomization is",
+     "ko": "수 있습니다. 그래서 균형이 맞는지 확인합니다. 그래서 모든 것이 RCT인가요? 우리는 이 표를 제공해야 합니다. 그래서 우리는 이 표를 제공해야 한다고 말했습니다. 나머지 사람들에게는 무작위",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4011,
+     "page": 1,
+     "en": "completed. So we have to prove that we did actually randomize. So balance check, this thing must be included in any RCT. paper. After that, now we are talking about difference in the outcome, we because of the treatment. Yeah, attributed to the treatment. So the second table, so is you probably need all the table, this is a result table.",
+     "ko": "배정이 완료되었습니다. 그래서 우리는 실제로 무작위로 배정했다는 것을 증명해야 합니다. 그래서 균형 확인, 이 부분은 반드시 포함되어야 합니다. 어떤 RCT에서든요. 논문에서요. 그 후 에, 이제 우리는 어떤 결과의 차이에 대해 이야기하고 있습니다. 치료 때문에요. 네, 그것은 치료 때문입니다. 그래서 두 번째 표는, 그래서 이것은 아마도 모든 것이 필요할 것입니다, 이 표는, 이것은 결과 표입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4037,
+     "page": 1,
+     "en": "This is the treatment effect.",
+     "ko": "이것은 치료 효과입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4044,
+     "page": 1,
+     "en": "So what they looked at is the panel data, the outcome is the treatment and we use the outcome for men. And the randomly distributed the information session they through the mail. So men here is men is here supposed to see whether there's a possible effect or there's some spillover effect in the town. Okay?",
+     "ko": "그래서 그들이 살펴본 것은 패널 데이터, 결과 는 치료이고 우리는 결과를 남성에게 사용합니다. 그리고 무작위로 배정된 정보를 그들이 받은 정보 세션을 통해 메일로 보냈습니다. 그래서 여기 남성들은 남성은 여기 있고 원래는 차이가 있는지 확인해야 합니다. 아니면 어떤 파급 효과가 있는지 확인해야 합니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4067,
+     "page": 1,
+     "en": "They are not supposed to get information. They are not supposed to get treatment effect. They are not invited. But if they are invited, but we want to see whether their outcomes are significantly different between treatment and control group. And then what do we report in the table is not the constant, but the coefficient in front of the treatment variable.",
+     "ko": "그들은 정보를 얻으면 안 됩니다. 그들은 정보를 얻으면 안 됩니다. 그들은 초대받지 않았습니다. 하지만 만약 그들이 초대받았다면, 하지만 우리는 그들의 결과가 통계적으로 다른지 확인하고 싶습니다. 치료 그룹과 대조군 사이에서요. 그리고 우리는 논문에 무엇을 보고해야 하는가 하면 그게 아니라 상수입니다. 하지만 앞에 있는 계수입니다. 치료 앞에 있는 변수입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4093,
+     "page": 1,
+     "en": "Treatment dummy. Okay? So this coefficient tells us uh the is corresponds to",
+     "ko": "치료 더미. 알겠죠? 그래서 이 계수는 우리에게 어, 그 는 해당합니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4105,
+     "page": 1,
+     "en": "You know, we like why is why is this plus that? So plus that beta is most important coefficient in when you want to understand the treatment effect because we want to understand how the outcome changes by D. That is treatment effect, right? So here this is beta.",
+     "ko": "있잖아요, 우리는 왜 그런지 왜 그런지 이게 플러스인지 궁금해요. 그래서 플러스인지 궁금해요. 베타 는 가장 중요한 계수입니다. 이해하고 싶을 때 치료 효과를 이해하고 싶기 때문입니다. 어떻게 결과가 변하는지 D에 따라. 그것은 치료 효과죠, 맞죠? 그래서 여기 이것은 베타입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4132,
+     "page": 1,
+     "en": "Well, or that here. So this is whether they are employed in this BPO sector. So employment probability among treated uh",
+     "ko": "음, 아니면 여기입니다. 그래서 이것은 그들이 고용되었는지 이 BPO 부문에. 그래서 고용은 확률입니다. 중에서 치료받은 어,",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4151,
+     "page": 1,
+     "en": "this is like not so how much treated groups employment rate is different from that of control group. Control group this is alpha. or A here. A the control group mean. So if they didn't get the treatment information session, only 0.4%. of the uh female of this age group they work at the public sector.",
+     "ko": "이것은 별로 얼마나 치료받은 그룹의 고용 비율이 다른지 대조군과 비교하는 것입니다. 대조군은 이것은 알파입니다. 또는 여기 A. A 대조군 평균입니다. 그래서 만약 그들이 치료 정보를 받지 않았다면, 오직 0.4%입니다. 그 중 여성의 이 연령대에서 그들은 공공 부문에서 일합니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4174,
+     "page": 1,
+     "en": "Once",
+     "ko": "일단",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4179,
+     "page": 1,
+     "en": "they get the information session and 50, then those who are 46. more likely. So work at the public sector. Okay?",
+     "ko": "그들이 정보 세션을 받고 50, 그러면 그들은 그들은 46. 더 가능성이 높습니다. 그래서 공공 부문에서 일합니다. 알겠죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4190,
+     "page": 1,
+     "en": "So here, 0. 04 is",
+     "ko": "그래서 여기, 0. 04 는",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4199,
+     "page": 1,
+     "en": "control group. Okay? And 0. 046 is the difference. We tweet uh treatment and control group. So this is that. Okay? So this is same as that.",
+     "ko": "대조군입니다. 알겠죠? 그리고 0. 046 은 그 차이입니다. 우리는 트윗합니다. 어 치료 및 대조군입니다. 그래서 이것은 그것입니다. 알겠죠? 그래서 이것은 그것과 같습니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4223,
+     "page": 1,
+     "en": "So this is that. Okay? So Remember this coefficient usually reported that difference. Like treatment effect, you know, the difference, the difference. Okay? about how the outcome changes by the treatment. So this is conventional we usually report. beta, which captures the difference in the outcome.",
+     "ko": "그래서 이것은 그것입니다. 알겠죠? 그래서 기억하세요 이 계수는 보통 보고된 바에 따르면 그 차이입니다. 예를 들어 치료 효과, 아시다시피 그 차이, 그 차이입니다. 알겠죠? 결과가 어떻게 변하는지에 대한 것입니다. 그래서 이것은 우리가 보통 보고하는 것입니다. 베타, 즉 차이를 포착하는 것입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4249,
+     "page": 1,
+     "en": "between two groups. So how do we interpret So if they don't get the treatment, then only 0.4% of the individual who are in that age group work at the public sector. But if they are treated, they are 46 percent more likely. than the control group. to to work at the public sector.",
+     "ko": "두 그룹 간의. 그래서 어떻게 해석해야 할까요? 그래서 그들이 치료를 받지 않으면, 오직 0.4% 만이 그 그룹에 속한 개인 중 이 연령대에서 공공 부문에서 일합니다. 하지만 그들이 치료를 받으면, 그들은 46 퍼센트 더 가능성이 높습니다. 대조군보다. 그래서 공공 부문에서 일합니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4271,
+     "page": 1,
+     "en": "So what does that mean? Now, share or female A is between this uh who work at the public sector. So what uh",
+     "ko": "그래서 그게 무슨 뜻이죠? 자, 공유하세요 또는 여성 A 는 사이입니다. 이 어 누가 일하는지 에서 공공 부문에서. 그래서 무엇이 어",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4295,
+     "page": 1,
+     "en": "no, treatment. What is the data? So what This is the fact. If they didn't get the information session, this group is like they are this much more likely to work at the public sector. So in the later there's a 5% among treated group who work at the public sector.",
+     "ko": "아니요, 치료입니다. 그게 무엇인가요? 데이터가? 그래서 무엇이 이것이 사실입니다. 만약 그들이 정보 세션을 받지 않았다면, 이 그룹은 그들이 이만큼 더 공공 부문에서 일할 가능성이 높습니다. 그래서 나중에 5% 더 많은 치료받은 사람들 중 공공 부문에서 일하는 사람입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4319,
+     "page": 1,
+     "en": "So the data, the number of the data, we have to add it up, like a constant. And the difference, beta, alpha plus beta to understand the level. But but beta tells us the difference. So you can guess this. So this is alpha. What happened to control group? This is treatment group.",
+     "ko": "그래서 데이터, 데이터의 수는, 우리가 합쳐야 해요, 상수처럼. 그리고 그 차이, 베타, 알파 플러스 베타가 수준을 이해하는 것입니다. 하지만 하지만 베타는 우리에게 차이를 말해줍니다. 그래서 이것을 추측할 수 있습니다. 그래서 이것은 알파입니다. 무슨 일이 일어났나요? 대조군에게? 이것은 치료군입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4340,
+     "page": 1,
+     "en": "This is alpha plus beta. The difference is",
+     "ko": "이것은 알파 플러스 베타입니다. 그 차이는 입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4347,
+     "page": 1,
+     "en": "For for writing, I understand. So if I just write down the B press in the Y outcome, okay? This is a control group, this is treatment group. We have we observed those too. And then beta, treatment effect is the difference in the mean outcome. Alpha is is the uh what would happen if they don't get treatment.",
+     "ko": "예를 들어 글쓰기에서는, 이해합니다. 그래서 만약 제가 그냥 적는다면 B를 누르는 것을 Y 결과로, 알겠죠? 이것은 대조군 이고, 이것은 치료군입니다. 우리는 그것들을 관찰했습니다. 그리고 베타, 치료 효과는 차이입니다. 평균 결과의 차이입니다. 알파 는 입니다. 어, 뭐라고 해야 할까요, 만약 그들이 치료를 받지",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 4371,
+     "page": 1,
+     "en": "This is control group. So if you want to recover, the probability of employment for treatment group we have to add alpha to that. Okay. I will continue. Let's see.",
+     "ko": "않는다면요. 이것은 대조군입니다. 그래서 만약 회복하고 싶다면, 그 취업 확률은 치료군에게는 알파를 더해야 합니다. 그렇죠. 알겠습니다. 계속할게요. 어디 보자.",
+     "src": "gemini",
+     "ai": true
+    }
+   ]
+  }
+ ],
+ "savedAt": "2026-10-12T05:49:35.635Z"
+}
