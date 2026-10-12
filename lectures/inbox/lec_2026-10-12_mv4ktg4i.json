@@ -1,4 +1,16 @@
 {
+ "savedAt": "2026-10-12T05:49:35.634Z",
+ "base": 0,
+ "docs": [
+  {
+   "name": "Core_note_ovb_panel_2026.pdf",
+   "base": 0,
+   "total": 6,
+   "from": 0
+  }
+ ],
+ "weekId": "1507911",
+ "langCode": "en-US",
  "id": "lec_2026-10-12_mv4ktg4i",
  "course": "계량경제학",
  "title": "계량경제학 6주차",
@@ -1872,6 +1884,5 @@
     }
    ]
   }
- ],
- "savedAt": "2026-10-12T05:49:35.635Z"
+ ]
 }
