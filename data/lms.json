@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-14T00:44:17.147Z",
+  "generatedAt": "2026-10-14T05:36:37.189Z",
   "source": "canvas",
   "user": "김주함(2025####72)",
   "courseFiles": {
@@ -1922,7 +1922,7 @@
       "course": "리질리언스와지속가능한도시",
       "title": "7주차_모둠 토론 기록지 업로드",
       "due": null,
-      "submitted": false,
+      "submitted": true,
       "url": "https://khcanvas.khu.ac.kr/courses/96922/assignments/1504228",
       "body": "모둠별 한 명이 토론 기록지 올리세요.",
       "files": []
@@ -2218,6 +2218,16 @@
     }
   ],
   "notices": [
+    {
+      "id": "n488913",
+      "course": "거시경제학",
+      "title": "Pop up Office Hours on Today (October 14, 2026)",
+      "date": "2026-10-14T01:48:21Z",
+      "summary": "Dear Students, My office will be open to you today from 12:00 to 13:00 (Wednesday, October 14, 2026). Feel free to swing by if you have any inquiries. Cheers, Sun",
+      "body": "Dear Students, My office will be open to you today from 12:00 to 13:00 (Wednesday, October 14, 2026). Feel free to swing by if you have any inquiries. Cheers, Sun",
+      "url": "https://khcanvas.khu.ac.kr/courses/95555/discussion_topics/488913",
+      "files": []
+    },
     {
       "id": "n486999",
       "course": "거시경제학",
