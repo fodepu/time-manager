@@ -1,0 +1,54 @@
+{
+  "date": "2026-10-11",
+  "generatedAt": "2026-10-11T08:30:00+09:00",
+  "urgent": null,
+  "items": [
+    {
+      "cat": "tool",
+      "title": "Microsoft Work IQ 프리뷰 — Copilot·에이전트를 Dynamics 365·Power Platform 실데이터에 연결",
+      "lead": "Copilot과 에이전트를 **Dynamics 365·Power Platform의 라이브 비즈니스 데이터**에 붙이는 프리뷰, 10월 롤아웃 시작.",
+      "points": [
+        "견적-투-캐시처럼 **마찰 큰 프로세스 한두 개를 매핑**하고, 실데이터에 켜기 전 에이전트 권한·지표를 먼저 정의하라.",
+        "Work IQ 설정 자체를 **보안 레이어로 취급**하고 행위를 감사 가능하게 둬라."
+      ],
+      "note": "프리뷰. GA 시점·가격 미공개.",
+      "source": "aiagentstore.ai",
+      "url": "https://aiagentstore.ai/ai-agent-news/this-week"
+    },
+    {
+      "cat": "update",
+      "title": "Gemini — 모델별 사고량(Low·Medium·High) 수동 설정",
+      "lead": "Gemini 앱에서 Flash-Lite·Flash·Pro 각각에 **사고 레벨**을, Pro엔 Deep Think까지 고르는 설정이 10월 초 조용히 추가됐다.",
+      "points": [
+        "쉬운 작업은 Low로 돌려 **지연·비용을 줄이고**, 추론이 필요한 작업만 High/Deep Think로 올려 작업별 사고량을 손수 조절한다.",
+        "모델 자동선택에 맡기던 것을 **작업 성격에 맞춰 수동 튜닝**하는 워크플로로 — 배치성 단순작업과 심층분석을 분리 운용."
+      ],
+      "note": "Google AI Pro·Ultra 한정. Deep Think는 Pro 모델에서만. 앱 기준이며 API 적용은 불명.",
+      "source": "jetstream.blog",
+      "url": "https://jetstream.blog/en/google-gemini-thinking-level-setting-october-2026/"
+    },
+    {
+      "cat": "headline",
+      "title": "Nous Research — 오픈소스 Hermes의 기업판 출시",
+      "lead": "$1.5B 밸류·$90M 시리즈B를 배경으로, 오픈소스 Hermes 에이전트의 **기업용 버전**을 Slack·Telegram·WhatsApp 등 채널에 배포.",
+      "points": [
+        "지원 트리아지·내부 요청 같은 **고볼륨 워크플로 하나**를 접근 경계를 정해 파일럿하라.",
+        "채팅 네트워크 간 **데이터 격리·에이전트별 권한·로깅**을 평가 포인트로."
+      ],
+      "note": "채널 배포형. 가격 미공개.",
+      "source": "aiagentstore.ai",
+      "url": "https://aiagentstore.ai/ai-agent-news/this-week"
+    },
+    {
+      "cat": "market",
+      "title": "Sierra PAP — 고객 에이전트↔기업 상호작용 개방형 표준 시동",
+      "lead": "Meta·Shopify·Stripe·Walmart가 참여해, 고객 에이전트가 **자신을 식별하고 기업과 거래**하게 하는 개방형 표준(Personal Agent Protocol) 추진.",
+      "points": [
+        "지금은 **깔끔하고 문서화된 API를 갖춰두는 것**이 준비 — 나중에 PAP로 노출하면 된다."
+      ],
+      "note": "10/10 기준 PAP v0.1 스펙 미출시, 벤더들은 독자 확장 사용 중.",
+      "source": "aiagentstore.ai",
+      "url": "https://aiagentstore.ai/ai-agent-news/this-week"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "date": "2026-10-12",
+  "generatedAt": "2026-10-12T08:30:00+09:00",
+  "urgent": null,
+  "items": [
+    {
+      "cat": "tool",
+      "title": "OpenAI Dots — 대화 사이에도 계속 일하는 GPT-6 Astra 상시 에이전트",
+      "lead": "사용자가 정한 목표를 **대화가 끝난 뒤에도** 자기 클라우드 컴퓨터와 지속 메모리로 추진하는 상시 에이전트.",
+      "points": [
+        "리서치 종합·백로그 정리처럼 **끝이 열린 연속 작업**을 하나 맡기면 세션을 띄워두지 않아도 백그라운드로 진행해 결과를 쌓는다. '한 번 묻고 답받기'에서 '맡겨두기'로 전환.",
+        "지속 메모리로 **맥락이 세션 간 유지**돼 매번 배경을 다시 붙여넣을 필요가 없다. 가드레일과 성공지표를 먼저 정의해 투입하라."
+      ],
+      "note": "구독형, Pro·Business Premium 초기 롤아웃. 유럽은 Pro 이용 제한. 승인·고객 응대 같은 고위험 단계엔 사람 검토를 끼워라.",
+      "source": "aiagentstore.ai",
+      "url": "https://aiagentstore.ai/ai-agent-news/this-week"
+    },
+    {
+      "cat": "tool",
+      "title": "Cisco Webex 에이전틱 AI — 미팅·통화에 자율 에이전트 투입",
+      "lead": "직원이 Webex 스페이스·미팅·통화에 **자율 에이전트를 초대**해 캘린더·문서·외부앱을 가로지르는 다단계 작업을 시키는 프레임워크.",
+      "points": [
+        "미팅 준비·통화 후 작업 생성 같은 **좁은 범위부터** 붙여 오류율·채택률을 추적하라.",
+        "사람 감독·감사 추적이 포함 — 승인·고객 에스컬레이션에 에이전트를 바로 붙이는 건 보류."
+      ],
+      "note": "고위험 단계는 신중히. 가격 미공개.",
+      "source": "aiagentstore.ai",
+      "url": "https://aiagentstore.ai/ai-agent-news/this-week"
+    },
+    {
+      "cat": "headline",
+      "title": "Google — Gemini 워크플레이스 에이전트 공개, Gemini 4 내부 테스트",
+      "lead": "기업 팀용 Gemini 워크플레이스 에이전트를 내놓으면서 **Gemini 4 모델을 내부 테스트** 중인 정황.",
+      "points": [
+        "명확한 목표를 건 구조화된 파일럿으로 돌려보되, 설문상 다수 조직이 **자사 에이전틱 성숙도를 과대평가**한다는 점을 감안해 기대치를 보정하라."
+      ],
+      "note": "Gemini 4는 미출시·내부 단계. 가격 미공개.",
+      "source": "aiagentstore.ai",
+      "url": "https://aiagentstore.ai/ai-agent-news/this-week"
+    },
+    {
+      "cat": "market",
+      "title": "자율 에이전트 보안 — Kaspersky·Gambit·RSA 동시 경고",
+      "lead": "Kaspersky의 에이전트 보안 리포트, Gambit의 자동화 해킹 서비스 적발, RSA의 **Agent ID** 거버넌스 플랫폼이 한 주에 몰렸다.",
+      "points": [
+        "시스템·네트워크 접근 권한을 가진 에이전트를 **인벤토리화하고 최소권한을 적용**하라 — 에이전트 레지스트리/거버넌스 툴 파일럿이 다음 수순."
+      ],
+      "note": "에이전트 수가 늘수록 권한 관리가 실무 리스크로 부상.",
+      "source": "aiagentstore.ai",
+      "url": "https://aiagentstore.ai/ai-agent-news/this-week"
+    }
+  ]
+}

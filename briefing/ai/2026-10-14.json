@@ -1,0 +1,72 @@
+{
+  "date": "2026-10-14",
+  "generatedAt": "2026-10-14T13:08:51+09:00",
+  "urgent": {
+    "text": "Claude 엔터프라이즈: 내일(10/15) Docs·Slides·Design이 전 조직 기본 ON, Dashboards·Motion은 조직설정 > Artifacts에서 수동 ON. 관리자라면 오늘 권한·템플릿 범위를 점검하라.",
+    "source": "anthropic.com"
+  },
+  "items": [
+    {
+      "cat": "tool",
+      "title": "Claude Dashboards — 데이터 창고에 자연어로 묻는 실시간 대시보드",
+      "lead": "BigQuery·Snowflake·Databricks·Redshift·ClickHouse·Salesforce에 직접 붙어, 질문 한 줄로 **자동 갱신 대시보드**를 세우는 유료 플랜 베타.",
+      "points": [
+        "'이번 주 신규가입 vs 지난달'처럼 물으면 Claude가 쿼리를 짜고 차트를 세운 뒤 데이터가 바뀔 때마다 갱신한다. BI 대시보드 초안을 **SQL 없이** 대화로 끝낸다.",
+        "각 차트가 **생성 쿼리와 마지막 갱신 시각**을 노출하고 숫자를 클릭하면 쿼리가 열린다. 'AI 블랙박스'가 아니라 감사 가능한 산출물로 쓸 수 있다.",
+        "완성본을 **Hex·Grafana·Sigma·Mixpanel·PostHog·Amplitude·Omni**로 넘겨 심화 분석을 잇는다. 탐색은 Claude, 운영 대시보드는 기존 BI로 분업."
+      ],
+      "note": "유료 플랜 베타. 엔터프라이즈는 조직설정 > Artifacts에서 기본 OFF라 관리자가 켜야 한다. Looker·Tableau·monday.com 연결 예정.",
+      "source": "unite.ai",
+      "url": "https://www.unite.ai/anthropic-launches-claude-dashboards-and-motion-takes-docs-out-of-beta/"
+    },
+    {
+      "cat": "tool",
+      "title": "Claude Motion — 코드로 그리는 편집 가능한 설명 애니메이션",
+      "lead": "메시지창에 **/motion**으로 여는, 프롬프트를 짧은 애니메이션 영상으로 만드는 Team·Enterprise 베타.",
+      "points": [
+        "분기보고서 30초 요약, 보드덱 차트 콜아웃, 온보딩 제품 투어를 **영상 생성 모델 없이** 코드로 렌더 — 가짜 footage나 AI 인물이 없어 기업 심의에 안전하다.",
+        "텍스트·차트·숫자·타이밍을 **낱개로 수정**한다. '3분기 숫자만 교체' 식 재수정이 되므로 재생성 리스크 없이 버전을 돌린다.",
+        "**MP4로 내보내거나 Runway·Descript·HeyGen·Luma·invideo**에서 이어 편집. 설명영상 초안을 사내에서 끝내고 외부 툴로 마감."
+      ],
+      "note": "Team·Enterprise 베타, 조직설정에서 수동 활성화. Canva·Captions 연동 예정.",
+      "source": "unite.ai",
+      "url": "https://www.unite.ai/anthropic-launches-claude-dashboards-and-motion-takes-docs-out-of-beta/"
+    },
+    {
+      "cat": "tool",
+      "title": "OpenAI Dots — 대화 사이에도 계속 일하는 GPT-6 Astra 상시 에이전트",
+      "lead": "사용자가 정한 목표를 **대화가 끝난 뒤에도** 자기 클라우드 컴퓨터와 지속 메모리로 추진하는 상시 에이전트.",
+      "points": [
+        "리서치 종합·백로그 정리처럼 **끝이 열린 연속 작업**을 하나 맡기면 세션을 띄워두지 않아도 백그라운드로 진행해 결과를 쌓는다. '한 번 묻고 답받기'에서 '맡겨두기'로 전환.",
+        "지속 메모리로 **맥락이 세션 간 유지**돼 매번 배경을 다시 붙여넣을 필요가 없다. 가드레일과 성공지표를 먼저 정의해 투입하라."
+      ],
+      "note": "구독형, Pro·Business Premium 초기 롤아웃. 유럽은 Pro 이용 제한. 승인·고객 응대 같은 고위험 단계엔 사람 검토를 끼워라.",
+      "source": "aiagentstore.ai",
+      "url": "https://aiagentstore.ai/ai-agent-news/this-week"
+    },
+    {
+      "cat": "model",
+      "title": "Meta Muse Wonder / Wonder Full — '액티브 메모리' 프런티어 모델",
+      "lead": "Meta Superintelligence Lab이 Muse 에이전트에 넣는 두 프런티어 모델로, **장기 회상(active memory)**과 코딩 역량을 전면에 내세운다.",
+      "points": [
+        "긴 프로젝트의 맥락 유지, 반복 코딩처럼 **메모리 의존도가 높은 작업**을 현재 세팅과 **토큰당 비용·회상 정확도**로 벤치마크해 교체 가치를 가늠하라.",
+        "단발 Q&A보다 **여러 세션에 걸친 에이전트 작업**에서 차이가 나는 설계 — 짧은 작업엔 과투자."
+      ],
+      "note": "Muse 에이전트 파일럿 신청 경로로 접근. 가격·제약 미공개 — 벤치마크 없이 전면 도입은 보류.",
+      "source": "aiagentstore.ai",
+      "url": "https://aiagentstore.ai/ai-agent-news/this-week"
+    },
+    {
+      "cat": "update",
+      "title": "Gemini — 모델별 사고량(Low·Medium·High) 수동 설정",
+      "lead": "Gemini 앱에서 Flash-Lite·Flash·Pro 각각에 **사고 레벨**을, Pro엔 Deep Think까지 고르는 설정이 10월 초 조용히 추가됐다.",
+      "points": [
+        "쉬운 작업은 Low로 돌려 **지연·비용을 줄이고**, 추론이 필요한 작업만 High/Deep Think로 올려 작업별 사고량을 손수 조절한다.",
+        "모델 자동선택에 맡기던 것을 **작업 성격에 맞춰 수동 튜닝**하는 워크플로로 — 배치성 단순작업과 심층분석을 분리 운용."
+      ],
+      "note": "Google AI Pro·Ultra 한정. Deep Think는 Pro 모델에서만. 앱 기준이며 API 적용은 불명.",
+      "source": "jetstream.blog",
+      "url": "https://jetstream.blog/en/google-gemini-thinking-level-setting-october-2026/"
+    }
+  ]
+}
