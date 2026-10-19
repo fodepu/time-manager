@@ -1,0 +1,55 @@
+{
+  "date": "2026-10-16",
+  "generatedAt": "2026-10-19T14:07:57+09:00",
+  "urgent": null,
+  "items": [
+    {
+      "cat": "update",
+      "title": "Claude Code Review 정식 출시 — PR마다 자동으로 도는 리뷰어",
+      "lead": "Team·Enterprise 조직이 GitHub App을 붙이면 새 **Pull Request마다 Claude가 자동으로 리뷰**를 다는 기능이 GA로 전환됐다(10/15).",
+      "points": [
+        "리뷰 깊이를 리포지토리별로 **Quick·Standard·Deep** 3단계로 건다. 보일러플레이트 많은 저장소는 Quick, 결제·인증 같은 핵심 경로는 Deep으로 지정해 **리뷰 비용과 꼼꼼함을 코드 경로별로 분리**한다.",
+        "리뷰 1건이 프리뷰 때 ~20분에서 **6~10분**으로 단축돼 머지 대기열을 막지 않는다. 봇이 사소한 지적을 1차로 걷어내고 사람 리뷰어는 설계 판단에 집중하는 분업이 성립한다.",
+        "관리자가 Claude Code 설정에서 켜고 GitHub App 설치 후 대상 저장소만 선택한다. **조직 단위로 리뷰 정책을 중앙 통제**한다."
+      ],
+      "note": "Team·Enterprise 전용. 자격 되는 엔터프라이즈는 2027/1/15까지 최소 $10,000 크레딧 신청 가능(클레임 후 30일 만료). 좌석당 가격 비공개.",
+      "source": "releasebot.io",
+      "url": "https://releasebot.io/updates/anthropic/claude"
+    },
+    {
+      "cat": "update",
+      "title": "Opus 5.5 fast mode 정식 전환 — 베타 헤더 없이 저지연 호출",
+      "lead": "Opus 5.5의 **fast mode가 리서치 프리뷰를 벗어나**, 액세스 신청이나 `fast-mode-2026-02-01` 베타 헤더 없이 바로 쓸 수 있게 됐다(10/15).",
+      "points": [
+        "Start·Build·Scale 티어에 **fast mode 기본 레이트리밋**이 붙었다. 지연에 민감한 대화형·에이전트 루프를 품질 저하 없이 Opus 5.5 그대로 저지연으로 돌리는 전환이다.",
+        "Azure의 Microsoft Foundry 배포판에서도 fast mode가 열려, **Azure 종속 환경에서도 동일한 저지연 Opus**를 쓴다. 멀티클라우드 팀이 provider별로 모델을 갈아끼울 필요가 줄었다."
+      ],
+      "note": "Opus 5·Opus 4.8 fast mode는 아직 프리뷰라 베타 헤더 필요. 전환 대상은 Opus 5.5 한정.",
+      "source": "releasebot.io",
+      "url": "https://releasebot.io/updates/anthropic/claude-developer-platform"
+    },
+    {
+      "cat": "tool",
+      "title": "Claude API OpenTelemetry 트레이싱 — 호출을 자사 관측 백엔드로",
+      "lead": "Messages API 요청과 Managed Agents 세션을 **OpenTelemetry 스팬으로 내보내** 자사 관측(observability) 백엔드에서 추적하는 베타가 열렸다(10/14).",
+      "points": [
+        "Python·TypeScript·C#·Go·Java·PHP·Ruby SDK가 스팬을 직접 방출한다. Datadog·Grafana 같은 **기존 APM에 LLM 호출을 그대로 얹어** 지연·실패·토큰 소비를 앱 트레이스 한 화면에서 본다.",
+        "Claude Console에 OpenTelemetry 목적지를 추가하면 API 스팬이 흘러온다. 에이전트가 **어느 단계에서 느려지고 어디서 재시도하는지**를 코드 수정 없이 계측한다."
+      ],
+      "note": "베타. 스팜 방출은 SDK 버전에 의존.",
+      "source": "releasebot.io",
+      "url": "https://releasebot.io/updates/anthropic/claude-developer-platform"
+    },
+    {
+      "cat": "headline",
+      "title": "Google, 지식노동용 '유니버설 에이전트' 공개 — 아직 미출시",
+      "lead": "분석·자료생성·코드 실행을 한 에이전트가 처리하고 각 에이전트에 **암호화 신원**을 부여해 Agent Gateway로 통제하는 구상(10/16). 단, **공개 전**.",
+      "points": [
+        "각 에이전트에 **고유 암호 신원 + 격리 샌드박스 + 게이트웨이 통제**를 묶은 방향이 핵심 — '에이전트를 거버넌스 대상으로 다룬다'는 업계 공통 패턴(World ID·Perplexity SPACE와 같은 흐름)."
+      ],
+      "note": "발표 시점 미출시. 출시 대기.",
+      "source": "aiagentstore.ai",
+      "url": "https://aiagentstore.ai/ai-agent-news/this-week"
+    }
+  ]
+}

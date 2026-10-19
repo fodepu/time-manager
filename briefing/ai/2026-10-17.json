@@ -1,0 +1,57 @@
+{
+  "date": "2026-10-17",
+  "generatedAt": "2026-10-19T14:07:57+09:00",
+  "urgent": {
+    "text": "OpenCode 콘솔 사용자라면 유출 통지 여부를 확인하고, 노출된 API 키를 오늘 안에 폐기·재발급하라.",
+    "source": "aiweekly.co"
+  },
+  "items": [
+    {
+      "cat": "model",
+      "title": "DeepSeek V4.1-Flash-1017 — MIT 1M 컨텍스트 + 라이브 웹 검색 API",
+      "lead": "DeepSeek가 **MIT 라이선스**로 공개한 552B MoE 모델의 10/17 체크포인트. 1M 토큰 컨텍스트에 **Search·Fetch API**(라이브 웹 검색/본문 수집)를 얹었다.",
+      "points": [
+        "가중치가 MIT라 **자체 호스팅·파인튜닝·상업적 재배포**에 제약이 없다. 1M 컨텍스트 모델을 사내 인프라에 올려 데이터 외부 유출 없이 전체 리포지토리·장문서 분석에 쓴다.",
+        "모델에 붙은 **Search·Fetch API로 실시간 웹 검색·본문 수집**을 성공 요청당 $0.75/1,000건(계정당 5 RPS)에 처리한다. 별도 검색 파이프라인 없이 최신 정보를 끌어오는 에이전트를 구성한다.",
+        "이전 Flash 대비 **KV 캐시를 약 25% 수준으로 축소**해, 긴 컨텍스트를 반복 조회하는 장기 에이전트 루프의 메모리·비용 부담이 줄었다."
+      ],
+      "note": "Hugging Face 공개. 라이브 검색은 성공 요청당 과금, 계정당 5 RPS 제한.",
+      "source": "aiweekly.co",
+      "url": "https://aiweekly.co/ai-news-today"
+    },
+    {
+      "cat": "tool",
+      "title": "Perplexity SPACE — 에이전트 작업을 microVM에 가두는 오픈소스 샌드박스",
+      "lead": "Perplexity가 **Computer 에이전트의 런타임**을 오픈소스로 공개(10/17). 각 에이전트 작업을 **Firecracker microVM 하나씩**에 격리하고 자격증명·아웃바운드 트래픽을 따로 통제한다.",
+      "points": [
+        "에이전트가 돌리는 코드· 호출을 **작업 단위 microVM에 가둬**, 한 작업이 뚫려도 호스트와 다른 작업으로 번지지 않는다. 신뢰 못 할 코드를 실행하는 에이전트를 자체 클러스터에서 안전하게 돌리는 기반이다.",
+        "**자격증명 주입과 이그레스(outbound)를 분리 제어**한다. 에이전트에 API 키를 넘기되 '어디로 나갈 수 있는지'를 VM 경계에서 막아, 데이터 반출 경로를 코드가 아니라 인프라에서 통제한다."
+      ],
+      "note": "공개 리뷰·사용 목적 배포(reported). 비프로덕션에서 격리·이그레스 요건 검증 후 투입 권장. 공식 저장소는 Perplexity 채널에서 확인.",
+      "source": "aiagentstore.ai",
+      "url": "https://aiagentstore.ai/ai-agent-news/this-week"
+    },
+    {
+      "cat": "headline",
+      "title": "OpenCode API 키 유출 — 콘솔 사용자 1.4% 영향, 키 즉시 폐기 권고",
+      "lead": "OpenCode가 '대규모 distillation 공격'으로 **API 키가 유출**돼 콘솔 사용자 1.4%가 영향받았다고 통지(10/17). 키 폐기·비밀번호 변경을 권고.",
+      "points": [
+        "영향 통지를 받았다면 **노출 키를 즉시 폐기·재발급**하고, 그 키로 돌던 자동화·에이전트 호출 로그에서 이상 사용을 점검하라. 키 하드코딩을 비밀관리자로 옮기는 계기."
+      ],
+      "note": "OpenCode 콘솔 사용자 대상. 영향 범위 1.4%.",
+      "source": "aiweekly.co",
+      "url": "https://aiweekly.co/ai-news-today"
+    },
+    {
+      "cat": "market",
+      "title": "서비스들, 서드파티 AI 에이전트 차단 확산",
+      "lead": "The Verge 취재: Amazon이 Meta Muse를 9/20부터 차단, Yelp는 유료 데이터 라이선스 프로그램에서만 에이전트 허용, Delta는 서드파티 에이전트와 계약 없음(10/17).",
+      "points": [
+        "Meta Muse·Grok·OpenAI Dots/Instinct 사용자가 **작업 실패**를 보고. '에이전트가 아무 사이트나 긁어 대행'하는 설계는 깨지는 중 — 공식 API·데이터 라이선스가 있는 경로로 좁혀 설계해야 한다."
+      ],
+      "note": "사이트별 정책 상이.",
+      "source": "aiweekly.co",
+      "url": "https://aiweekly.co/ai-news-today"
+    }
+  ]
+}

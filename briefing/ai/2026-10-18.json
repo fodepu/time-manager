@@ -1,0 +1,54 @@
+{
+  "date": "2026-10-18",
+  "generatedAt": "2026-10-19T14:07:57+09:00",
+  "urgent": null,
+  "items": [
+    {
+      "cat": "tool",
+      "title": "World ID for Agents — 사람이 에이전트에 '검증된 신원'을 위임",
+      "lead": "Money20/20에서 공개한 **World ID for Agents(AgentKit)**. 사람이 자신의 검증된 'Proof'를 AI 에이전트에 위임해, 에이전트가 사람을 대신해 신원 증명이 필요한 작업을 수행하게 한다(10/18).",
+      "points": [
+        "에이전트가 **'진짜 사람이 위임했다'는 증명**을 들고 움직이므로, 봇·에이전트를 막는 서비스 앞에서 '정당한 대리 요청'임을 입증하는 통로가 된다. 에이전트 신원 발급·검증 레이어를 직접 만들지 않고 붙인다.",
+        "설계 파트너로 OpenExchange·Bain Capital·VanEck·Outtake가 이름을 올려, **금융·거래 영역의 에이전트 신원 검증**이 먼저 돈다. World ID for Zoom은 동시에 GA 전환."
+      ],
+      "note": "구체 은행 고객·가격·일정 미공개.",
+      "source": "aiweekly.co",
+      "url": "https://aiweekly.co/ai-news-today"
+    },
+    {
+      "cat": "market",
+      "title": "차스슈왑·JP모건, 무단 AI 에이전트 차단 공식화",
+      "lead": "슈왑과 JP모건이 **고객 자금을 움직이려는 무단 AI 에이전트를 차단**한다고 밝혔다. 슈왑은 주당 '수십 건' 시도를 막는다고(10/18).",
+      "points": [
+        "'에이전트에 계좌를 맡겨 자동 송금'류는 **은행 단에서 막히는 게 기본값**이 됐다. 금융 작업 자동화는 공식 위임·인증(에이전트 신원 체계)을 전제로 설계해야 실제로 통과한다."
+      ],
+      "note": "은행별 정책. 승인된 에이전트·오픈뱅킹 경로가 아니면 자금 이동 불가 전제.",
+      "source": "aiweekly.co",
+      "url": "https://aiweekly.co/ai-news-today"
+    },
+    {
+      "cat": "model",
+      "title": "DeepSeek V4.1-Flash-1017 — MIT 1M 컨텍스트 + 라이브 웹 검색 API",
+      "lead": "DeepSeek가 **MIT 라이선스**로 공개한 552B MoE 모델의 10/17 체크포인트. 1M 토큰 컨텍스트에 **Search·Fetch API**(라이브 웹 검색/본문 수집)를 얹었다.",
+      "points": [
+        "가중치가 MIT라 **자체 호스팅·파인튜닝·상업적 재배포**에 제약이 없다. 1M 컨텍스트 모델을 사내 인프라에 올려 데이터 외부 유출 없이 전체 리포지토리·장문서 분석에 쓴다.",
+        "모델에 붙은 **Search·Fetch API로 실시간 웹 검색·본문 수집**을 성공 요청당 $0.75/1,000건(계정당 5 RPS)에 처리한다. 별도 검색 파이프라인 없이 최신 정보를 끌어오는 에이전트를 구성한다.",
+        "이전 Flash 대비 **KV 캐시를 약 25% 수준으로 축소**해, 긴 컨텍스트를 반복 조회하는 장기 에이전트 루프의 메모리·비용 부담이 줄었다."
+      ],
+      "note": "Hugging Face 공개. 라이브 검색은 성공 요청당 과금, 계정당 5 RPS 제한.",
+      "source": "aiweekly.co",
+      "url": "https://aiweekly.co/ai-news-today"
+    },
+    {
+      "cat": "headline",
+      "title": "OpenAI API에 미공개 'aurora' 모델 ID 3종 등장",
+      "lead": "aurora-red/green/blue-alpha 3종이 OpenAI API에 나타남(10/18). red는 503(용량), green·blue는 404 — **문서·가격 없이 아직 사용 불가**.",
+      "points": [
+        "차기 모델 사전 배선으로 보이나 **지금 호출해도 못 쓴다**. 신모덨 대비 통합을 준비한다면 모델 ID를 하드코딩하지 말고 `GET /models`로 동적 조회하는 패턴을 유지하라."
+      ],
+      "note": "문서·체인지로그 미공개. 사용 시점 불명.",
+      "source": "aiweekly.co",
+      "url": "https://aiweekly.co/ai-news-today"
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "date": "2026-10-19",
+  "generatedAt": "2026-10-19T14:07:57+09:00",
+  "urgent": null,
+  "items": [
+    {
+      "cat": "update",
+      "title": "Claude Code Review 정식 출시 — PR마다 자동으로 도는 리뷰어",
+      "lead": "Team·Enterprise 조직이 GitHub App을 붙이면 새 **Pull Request마다 Claude가 자동으로 리뷰**를 다는 기능이 GA로 전환됐다(10/15).",
+      "points": [
+        "리뷰 깊이를 리포지토리별로 **Quick·Standard·Deep** 3단계로 건다. 보일러플레이트 많은 저장소는 Quick, 결제·인증 같은 핵심 경로는 Deep으로 지정해 **리뷰 비용과 꼼꼼함을 코드 경로별로 분리**한다.",
+        "리뷰 1건이 프리뷰 때 ~20분에서 **6~10분**으로 단축돼 머지 대기열을 막지 않는다. 봇이 사소한 지적을 1차로 걷어내고 사람 리뷰어는 설계 판단에 집중하는 분업이 성립한다.",
+        "관리자가 Claude Code 설정에서 켜고 GitHub App 설치 후 대상 저장소만 선택한다. **조직 단위로 리뷰 정책을 중앙 통제**한다."
+      ],
+      "note": "Team·Enterprise 전용. 자격 되는 엔터프라이즈는 2027/1/15까지 최소 $10,000 크레딧 신청 가능(클레임 후 30일 만료). 좌석당 가격 비공개.",
+      "source": "releasebot.io",
+      "url": "https://releasebot.io/updates/anthropic/claude"
+    },
+    {
+      "cat": "update",
+      "title": "Opus 5.5 fast mode 정식 전환 — 베타 헤더 없이 저지연 호출",
+      "lead": "Opus 5.5의 **fast mode가 리서치 프리뷰를 벗어나**, 액세스 신청이나 `fast-mode-2026-02-01` 베타 헤더 없이 바로 쓸 수 있게 됐다(10/15).",
+      "points": [
+        "Start·Build·Scale 티어에 **fast mode 기본 레이트리밋**이 붙었다. 지연에 민감한 대화형·에이전트 루프를 품질 저하 없이 Opus 5.5 그대로 저지연으로 돌리는 전환이다.",
+        "Azure의 Microsoft Foundry 배포판에서도 fast mode가 열려, **Azure 종속 환경에서도 동일한 저지연 Opus**를 쓴다. 멀티클라우드 팀이 provider별로 모델을 갈아끼울 필요가 줄었다."
+      ],
+      "note": "Opus 5·Opus 4.8 fast mode는 아직 프리뷰라 베타 헤더 필요. 전환 대상은 Opus 5.5 한정.",
+      "source": "releasebot.io",
+      "url": "https://releasebot.io/updates/anthropic/claude-developer-platform"
+    },
+    {
+      "cat": "model",
+      "title": "DeepSeek V4.1-Flash-1017 — MIT 1M 컨텍스트 + 라이브 웹 검색 API",
+      "lead": "DeepSeek가 **MIT 라이선스**로 공개한 552B MoE 모델의 10/17 체크포인트. 1M 토큰 컨텍스트에 **Search·Fetch API**(라이브 웹 검색/본문 수집)를 얹었다.",
+      "points": [
+        "가중치가 MIT라 **자체 호스팅·파인튜닝·상업적 재배포**에 제약이 없다. 1M 컨텍스트 모델을 사내 인프라에 올려 데이터 외부 유출 없이 전체 리포지토리·장문서 분석에 쓴다.",
+        "모델에 붙은 **Search·Fetch API로 실시간 웹 검색·본문 수집**을 성공 요청당 $0.75/1,000건(계정당 5 RPS)에 처리한다. 별도 검색 파이프라인 없이 최신 정보를 끌어오는 에이전트를 구성한다.",
+        "이전 Flash 대비 **KV 캐시를 약 25% 수준으로 축소**해, 긴 컨텍스트를 반복 조회하는 장기 에이전트 루프의 메모리·비용 부담이 줄었다."
+      ],
+      "note": "Hugging Face 공개. 라이브 검색은 성공 요청당 과금, 계정당 5 RPS 제한.",
+      "source": "aiweekly.co",
+      "url": "https://aiweekly.co/ai-news-today"
+    },
+    {
+      "cat": "tool",
+      "title": "Perplexity SPACE — 에이전트 작업을 microVM에 가두는 오픈소스 샌드박스",
+      "lead": "Perplexity가 **Computer 에이전트의 런타임**을 오픈소스로 공개(10/17). 각 에이전트 작업을 **Firecracker microVM 하나씩**에 격리하고 자격증명·아웃바운드 트래픽을 따로 통제한다.",
+      "points": [
+        "에이전트가 돌리는 코드· 호출을 **작업 단위 microVM에 가둬**, 한 작업이 뚫려도 호스트와 다른 작업으로 번지지 않는다. 신뢰 못 할 코드를 실행하는 에이전트를 자체 클러스터에서 안전하게 돌리는 기반이다.",
+        "**자격증명 주입과 이그레스(outbound)를 분리 제어**한다. 에이전트에 API 키를 넘기되 '어디로 나갈 수 있는지'를 VM 경계에서 막아, 데이터 반출 경로를 코드가 아니라 인프라에서 통제한다."
+      ],
+      "note": "공개 리뷰·사용 목적 배포(reported). 비프로덕션에서 격리·이그레스 요건 검증 후 투입 권장. 공식 저장소는 Perplexity 채널에서 확인.",
+      "source": "aiagentstore.ai",
+      "url": "https://aiagentstore.ai/ai-agent-news/this-week"
+    },
+    {
+      "cat": "tool",
+      "title": "World ID for Agents — 사람이 에이전트에 '검증된 신원'을 위임",
+      "lead": "Money20/20에서 공개한 **World ID for Agents(AgentKit)**. 사람이 자신의 검증된 'Proof'를 AI 에이전트에 위임해, 에이전트가 사람을 대신해 신원 증명이 필요한 작업을 수행하게 한다(10/18).",
+      "points": [
+        "에이전트가 **'진짜 사람이 위임했다'는 증명**을 들고 움직이므로, 봇·에이전트를 막는 서비스 앞에서 '정당한 대리 요청'임을 입증하는 통로가 된다. 에이전트 신원 발급·검증 레이어를 직접 만들지 않고 붙인다.",
+        "설계 파트너로 OpenExchange·Bain Capital·VanEck·Outtake가 이름을 올려, **금융·거래 영역의 에이전트 신원 검증**이 먼저 돈다. World ID for Zoom은 동시에 GA 전환."
+      ],
+      "note": "구체 은행 고객·가격·일정 미공개.",
+      "source": "aiweekly.co",
+      "url": "https://aiweekly.co/ai-news-today"
+    },
+    {
+      "cat": "market",
+      "title": "차스슈왑·JP모건, 무단 AI 에이전트 차단 공식화",
+      "lead": "슈왑과 JP모건이 **고객 자금을 움직이려는 무단 AI 에이전트를 차단**한다고 밝혔다. 슈왑은 주당 '수십 건' 시도를 막는다고(10/18).",
+      "points": [
+        "'에이전트에 계좌를 맡겨 자동 송금'류는 **은행 단에서 막히는 게 기본값**이 됐다. 금융 작업 자동화는 공식 위임·인증(에이전트 신원 체계)을 전제로 설계해야 실제로 통과한다."
+      ],
+      "note": "은행별 정책. 승인된 에이전트·오픈뱅킹 경로가 아니면 자금 이동 불가 전제.",
+      "source": "aiweekly.co",
+      "url": "https://aiweekly.co/ai-news-today"
+    }
+  ]
+}
