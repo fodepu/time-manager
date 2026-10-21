@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T00:46:37.281Z",
+  "generatedAt": "2026-10-21T05:32:02.553Z",
   "source": "canvas",
   "user": "김주함(2025####72)",
   "courseFiles": {
@@ -1945,6 +1945,16 @@
           "text": "Introduction to Econometrics Problem Set 1 Problem Set 1 Random Variables, Sampling, and the Central Limit Theorem Introduction to Econometrics Sunha Myong, Kyung Hee University September 2026 Reading: Stock & Watson, Chapters 2–3. Submission: answers must be handwritten. Write on your own paper, label every part clearly (e.g. “2(b)”), put your name and student ID on the first page, and upload a single scanned PDF . Please keep your writing legible. Problem 1. The Variance Identity (a) Let X have mean μ X = E [ X ]. Starting from the definition Var( X ) = E [( X − μ X ) 2 ], expand the square and use the linearity of expectations to prove that Var( X ) = E [ X 2 ] − ( E [ X ]) 2 . (b) Let X be the number of job offers a graduating senior receives: x 0 1 2 3 Pr( X = x ) 0.20 0.40 0.30 0.10 Compute E [ X ], E [ X 2 ], Var( X ), and the standard deviation σ X . Problem 2. A Joint Distribution Draw a worker at random from the population aged 25–34. Let X = 1 if the worker has a four-year college degree ( X = 0 otherwise), and Y = 1 if the worker is employed full time ( Y = 0 otherwise). The joint distribution is: Y = 0 Y = 1 Total X = 0 (no degree) 0.15 0.35 0.50 X = 1 (degree) 0.07 0.43 0.50 Total 0.22 0.78 1.00 The four numbers in the table are the joint probabilities: for example, Pr( X = 1 , Y = 1) = 0 . 43 means 43% of this population both holds a degree and works full time. The four blank cells are what you will fill in below. 1\nIntroduction to Econometrics Problem Set 1 (a) The marginal distribution of X is the distribution of X on its own, ignoring Y entirely. You get it by summing the joint probabilities across all values of the other variable: Pr( X = x ) = X y Pr( X = x, Y = y ) , Pr( Y = y ) = X x Pr( X = x, Y = y ) . So the marginal distribution of X is the row totals (the right-hand column), and the marginal distribution of Y is the column totals (the bottom row). Fill in all four blank cells, check that each marginal sums to 1, and say in words what Pr( X = 1) means. (b) Compute Pr( Y = 1 | X = 1) and Pr( Y = 1 | X = 0), and interpret the difference in one sentence. (c) Compute Cov( X, Y ). Problem 3. CDF and PDF (a) Define the cumulative distribution function F X ( x ). Then state the two formulas linking F X to the density f X of a continuous random variable. (b) Let X be the fraction of the year a worker is employed, with density f X ( x ) = 3 x 2 for 0 ≤ x ≤ 1 and 0 otherwise. (i) Verify R 1 0 f X ( x ) dx = 1. (ii) Find F X ( x ) for 0 ≤ x ≤ 1. (iii) Compute Pr(0 . 5 < X ≤ 0 . 8) using the CDF. (iv) Compute E [ X ]. Problem 4. Why Divide by n − 1 ? Let X 1 , . . . , X n be i.i.d. with mean μ and variance σ 2 , and let ¯ X = 1 n n X i =1 X i , s 2 X = 1 n − 1 n X i =1 ( X i − ¯ X ) 2 . (a) Show that E [ ¯ X ] = μ and Var( ¯ X ) = σ 2 /n . Where is independence used? (b) You may use the algebraic identity n X i =1 ( X i − μ ) 2 = n X i =1 ( X i − ¯ X ) 2 + n ( ¯ X − μ ) 2 . Take expectations on both sides and use part (a) to show that E \u0002 P i ( X i − ¯ X ) 2 \u0003 = ( n − 1) σ 2 . Conclude that E [ s 2 X ] = σ 2 , and state what the bias would be if we divided by n instead. (c) In one or two sentences, give the “degrees of freedom” intuition. Why does using ¯ X in place of the unknown μ make the sum of squared deviations too small ? (d) Five workers report years of experience: 3 , 5 , 6 , 8 , 8. Compute ¯ X , P i ( X i − ¯ X ) 2 , s 2 X , s X , and the estimated standard error c SE( ¯ X ) = s X / √ n . 2\nIntroduction to Econometrics Problem Set 1 Problem 5. What Makes a Good Estimator? (a) Define estimator and estimate . Why is an estimator a random variable while an estimate is just a number? (b) Any function of the data is an estimator, but most are bad ones. For an i.i.d. sample with mean μ and variance σ 2 , consider ˆ μ 1 = ¯ X, ˆ μ 2 = X 1 , ˆ μ 3 = 7 . Find E [ˆ μ j ] and Var(ˆ μ j ) for each, and say which are unbiased. (c) Both ˆ μ 1 and ˆ μ 2 are unbiased. Which is better, and why? What happens to each as n → ∞ ? (d) ˆ μ 3 = 7 has zero variance — the smallest possible. Explain in one or two sentences why it is still a bad estimator. 3"
         }
       ]
+    },
+    {
+      "id": "a1505943",
+      "course": "계량경제학",
+      "title": "midterm",
+      "due": null,
+      "submitted": true,
+      "url": "https://khcanvas.khu.ac.kr/courses/95551/assignments/1505943",
+      "body": "",
+      "files": []
     },
     {
       "id": "a1492416",
