@@ -2384,7 +2384,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="188">
+<meta name="tm-version" content="189">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -10069,7 +10069,47 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     try{ rec.start(); }catch(e){ status('음성인식 시작 실패: '+e.message,'err'); return false; }
     S.rec=rec; return true;
   }
+  // ---- 용어 교정: PDF·과목 용어집으로 음성인식 오인식 바로잡기 (기기 내 인식 편향이 안 될 때도 동작) ----
+  var TERM_CONFUSE=[ // 과목 무관, 자주 틀리는 소리 → 정답 (뒤 단어 조건)
+    [/\bcasual (effect|effects|inference|relationship|relation|impact|interpretation|claim|question|analysis|mechanism|link)\b/gi, 'causal $1'],
+    [/\bcasualty\b(?= (is|of|vs|versus|and))/gi, 'causality'],
+    [/\b(?:o l s|o\.l\.s\.?|oh l s|all less|o less)\b/gi, 'OLS'],
+    [/\bhetero ?s(?:k|c|ch)h?[ei]?d(?:u|a|ul)?s?tic(ity)?\b/gi, 'heteroskedastic$1'],
+    [/\bhomo ?s(?:k|c|ch)h?[ei]?d(?:u|a|ul)?s?tic(ity)?\b/gi, 'homoskedastic$1'],
+    [/\b(?:and|in) ?dodge(?:e|i)?nous\b/gi, 'endogenous'], [/\bex ?dodge(?:e|i)?nous\b/gi, 'exogenous'],
+    [/\bdiscontinue (?:it|it's|its|ity)\b/gi, 'discontinuity'], [/\bdis continuity\b/gi, 'discontinuity'], [/\binstrument all\b/gi, 'instrumental'],
+    [/\bunbiased ness\b/gi, 'unbiasedness'], [/\bregress or\b/gi, 'regressor'], [/\bco variance\b/gi, 'covariance']
+  ];
+  var _tfCache={sig:'',terms:[]};
+  function termBank(){ // 과목 용어 + PDF 학습 용어집 + PDF 본문 2~3단어 반복 구절
+    var c=S.course||$('lecCourse').value||''; var b=null; try{ b=deckBrief(); }catch(e){}
+    var sig=c+'|'+Object.keys(S.slideText||{}).length+'|'+(b&&b.glossary?b.glossary.length:0); if(_tfCache.sig===sig) return _tfCache.terms;
+    var set={}; function add(t){ t=String(t||'').replace(/\s*\(.*?\)\s*/g,' ').replace(/[^A-Za-z0-9\- ]/g,' ').replace(/\s+/g,' ').trim(); if(t.length<5) return; set[t.toLowerCase()]=t; }
+    courseTerms().forEach(function(x){ add(x.split('=')[0]); });
+    if(b&&b.glossary) b.glossary.forEach(function(x){ add(x.en); });
+    var st=S.slideText||{}, freq={};
+    Object.keys(st).forEach(function(p){ var w=(String(st[p]).match(/[A-Za-z][A-Za-z\-]+/g)||[]); for(var n=2;n<=3;n++) for(var i=0;i+n<=w.length;i++){ var g=w.slice(i,i+n); if(g.some(function(x){ return x.length<3; })) continue; var k=g.join(' ').toLowerCase(); freq[k]=(freq[k]||0)+1; } (String(st[p]).match(/[A-Za-z][A-Za-z\-]{6,}/g)||[]).forEach(function(x){ var k=x.toLowerCase(); freq[k]=(freq[k]||0)+1; }); });
+    Object.keys(freq).forEach(function(k){ if(freq[k]>=2) add(k); });
+    var terms=Object.keys(set).map(function(k){ return {k:k, out:set[k], n:k.split(' ').length, sk:skel(k)}; });
+    _tfCache={sig:sig, terms:terms}; return terms; }
+  function skel(s){ return String(s).toLowerCase().replace(/[^a-z ]/g,'').replace(/ph/g,'f').replace(/ck|q/g,'k').replace(/[sz]+/g,'s').replace(/(.)\1+/g,'$1').replace(/\B[aeiouy]+/g,''); }
+  function lev(a,b){ if(a===b) return 0; var m=a.length,n=b.length; if(!m) return n; if(!n) return m; var prev=new Array(n+1),cur=new Array(n+1); for(var j=0;j<=n;j++) prev[j]=j; for(var i=1;i<=m;i++){ cur[0]=i; for(var j2=1;j2<=n;j2++){ cur[j2]=Math.min(prev[j2]+1,cur[j2-1]+1,prev[j2-1]+(a[i-1]===b[j2-1]?0:1)); } var t=prev; prev=cur; cur=t; } return prev[n]; }
+  var COMMON={'the':1,'and':1,'this':1,'that':1,'with':1,'have':1,'about':1,'which':1,'there':1,'their':1,'would':1,'could':1,'should':1,'really':1,'actually':1,'because':1,'something':1,'everything':1,'people':1,'different':1,'important':1,'question':1,'example':1,'another':1,'between':1,'without':1,'probably':1,'understand':1};
+  function fixTerms(text){
+    if(!text || S.lang==='ko-KR') return text; var out=text;
+    TERM_CONFUSE.forEach(function(r){ out=out.replace(r[0], r[1]); });
+    var terms=termBank(); if(!terms.length) return out;
+    var words=out.split(/\s+/), res=[], i=0;
+    while(i<words.length){ var done=false;
+      for(var n=3;n>=1 && !done;n--){ if(i+n>words.length) continue; var win=words.slice(i,i+n); var core=win.join(' ').replace(/[^A-Za-z\- ]/g,'').toLowerCase().trim(); if(!core) continue; if(n===1 && (core.length<7 || COMMON[core])) continue;
+        var best=null, bs=0; var ws=skel(core);
+        for(var t=0;t<terms.length;t++){ var T=terms[t]; if(T.n!==n && !(n>=2 && Math.abs(T.n-n)===1)) continue; if(T.k===core){ best=null; bs=1; break; } if(Math.abs(T.k.length-core.length)>Math.max(3,T.k.length*0.3)) continue;
+          var s1=1-lev(core,T.k)/Math.max(core.length,T.k.length), s2=1-lev(ws,T.sk)/Math.max(ws.length,T.sk.length||1); var s=Math.max(s1, s2*0.97); if(T.n!==n){ var a1=core.replace(/ /g,''), a2=T.k.replace(/ /g,''); s=1-lev(a1,a2)/Math.max(a1.length,a2.length); if(s<0.92) continue; } if(s>bs){ bs=s; best=T; } }
+        if(best && bs>=(n===1?0.86:0.8)){ var tail=(win[win.length-1].match(/[^A-Za-z\-]+$/)||[''])[0]; res.push(best.out+tail); i+=n; done=true; } else if(bs===1){ res.push.apply(res, win); i+=n; done=true; } }
+      if(!done){ res.push(words[i]); i++; } }
+    return res.join(' '); }
   function addFinal(text, raw){
+    try{ var _fx=fixTerms(text); if(_fx!==text){ raw=raw||text; text=_fx; S.termFixes=(S.termFixes||0)+1; } }catch(e){}
     var p=recPage(), sl=slide(p); S.lastResultAt=Date.now(); raw=(raw||'').trim(); if(raw===text) raw='';
     // 언어 설정이 실제 강의 언어와 다르면 안내 (한국어 모드인데 영어가 계속 잡히거나 그 반대)
     try{ S.langSample=(S.langSample||'')+' '+text; if(S.langSample.length>120 && !S.langWarned){ var lat=(S.langSample.match(/[A-Za-z]/g)||[]).length, han=(S.langSample.match(/[가-힣]/g)||[]).length; if(S.lang==='ko-KR' && lat>han*2){ S.langWarned=true; status('영어로 들리는 것 같아요 — 상단 언어 버튼을 영어로 바꾸면 훨씬 정확해져요','err'); } else if(S.lang==='en-US' && han>lat*2){ S.langWarned=true; status('한국어로 들리는 것 같아요 — 상단 언어 버튼을 한국어로 바꾸세요','err'); } } }catch(e){}
@@ -10156,7 +10196,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     if(nts.length||exs.length||bds.length||(S.running&&aiEngine())){ h+='<details class="lec-notes-live"'+(lsGet(lsKey('lec_notes_open'))===0?'':' open')+'><summary>✱ 요점 · 슬라이드 '+(p-(S.base||0))+(nts.length?' <small>'+nts.length+'줄</small>':'')+'</summary>'+(bds.length?'<div class="lec-board"><span class="lec-board-tag">✎ 판서</span>'+bds.map(function(b,bi){ return '<div class="lec-board-l"><span>'+mdInline(b)+'</span><button type="button" class="lec-board-x" data-bp="'+p+'" data-bi="'+bi+'" title="삭제">✕</button></div>'; }).join('')+'</div>':'')+(nts.length||exs.length?'<ul>'+nts.map(function(n){ return '<li>'+mdInline(n)+'</li>'; }).join('')+exs.map(function(x){ return '<li class="ex">⚠ '+escapeHtml(x)+'</li>'; }).join('')+'</ul>':'<div class="lec-doc-wait">'+(AI.busy?'Claude 필기 중…':'20초마다 갱신 — 아직 없음')+'</div>')+'</details>'; } }
     var all=allSegs(); var hidden=Math.max(0, all.length-150); if(hidden) h+='<div class="lec-divider">이전 '+hidden+'문장은 접힘 (저장돼 있어요)</div>'; var lastPg=null;
     all.slice(-150).forEach(function(s){ if(s.page!==lastPg){ lastPg=s.page; h+='<div class="lec-divider">'+escapeHtml(pageLabel(s.page))+'</div>'; } var main=(S.lang==='ko-KR')?(rawMode&&s.raw?s.raw:(s.fix||s.ko)):(s.ko?s.ko:''); h+='<div class="lec-seg"><span class="lec-ts">'+fmtT(s.t||0)+'</span><div class="lec-segbody"><div class="lec-ko">'+(main?sentHtml(main):'<span class="lec-wait">번역 중…</span>')+'</div>'+(S.lang!=='ko-KR'&&showEn?'<div class="lec-en'+(s.src==='gemini'?' gem':(s.fix&&!rawMode?' fixed':''))+'">'+sentHtml(s.src==='gemini'?s.en:(rawMode&&s.raw?s.raw:(s.fix||s.en)))+'</div>':'')+(rawMode&&s.raw&&S.lang==='ko-KR'?'<div class="lec-en">확정: '+escapeHtml(s.ko)+'</div>':'')+'</div></div>'; });
-    if(S.lastInterim) h+='<div class="lec-seg interim live"><span class="lec-ts">'+fmtT(nowT())+'</span><div class="lec-segbody"><div class="lec-ko">'+escapeHtml(S.lastInterim)+' <span class="lec-cursor">▍</span></div></div></div>';
+    if(S.lastInterim) h+='<div class="lec-seg interim live"><span class="lec-ts">'+fmtT(nowT())+'</span><div class="lec-segbody"><div class="lec-ko">'+escapeHtml((function(){ try{ return fixTerms(S.lastInterim); }catch(e){ return S.lastInterim; } })())+' <span class="lec-cursor">▍</span></div></div></div>';
     var stick=(box.scrollHeight-box.scrollTop-box.clientHeight)<60; box.innerHTML=h; if(stick||!S.userScrolled) box.scrollTop=box.scrollHeight;
   }
 
