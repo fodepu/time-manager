@@ -2384,7 +2384,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="189">
+<meta name="tm-version" content="190">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -3155,7 +3155,7 @@ canvas.pg-in-up, canvas.pg-in-down { animation:none; }
             <div class="lec-drop-hint">PDF를 여기에 드래그하거나 "PDF 열기"<br><small>PDF 없이 시작하면 5분마다 구간 자동 분할, → 키로 수동 분할</small></div>
           </div>
           <div class="lec-board-bar"><span class="lec-board-tag">✎ 판서</span><input type="text" id="lecBoardIn" placeholder="판서 대충 적고 Enter"><button type="button" class="lec-btn" id="lecBoardGo">전송</button></div>
-          <div class="lec-nav"><button type="button" class="lec-btn" id="lecPrev">←</button><span id="lecPage">–</span><button type="button" class="lec-btn" id="lecNext">→</button><span class="lec-hint">키보드 ← → / Space</span><span class="lec-nav-ai"><button type="button" class="lec-btn" id="lecClearAnn" title="이 쪽의 형광펜·동그라미·포스트잇을 모두 지웁니다">표시 지우기</button><button type="button" class="lec-btn" id="lecGemBtn" title="Google AI Studio 무료 Gemini 키를 넣으면 대본·번역이 1~2초 만에 실시간으로 나와요">✦ Gemini 꺼짐</button><button type="button" class="lec-btn" id="lecAiBtn" title="맥의 Dayble 도우미가 켜져 있으면 Claude가 슬라이드 맥락으로 실시간 필기">✱ 도우미 꺼짐</button></span></div>
+          <div class="lec-nav"><button type="button" class="lec-btn" id="lecPrev">←</button><span id="lecPage">–</span><button type="button" class="lec-btn" id="lecNext">→</button><button type="button" class="lec-btn" id="lecAutoTrack" title="교수님 말을 슬라이드 글자와 비교해 해당 쪽으로 자동으로 넘겨요. 직접 ← →로 넘기면 20초 동안 쉬어요">🎯 자동 넘김</button><span class="lec-hint">키보드 ← → / Space</span><span class="lec-nav-ai"><button type="button" class="lec-btn" id="lecClearAnn" title="이 쪽의 형광펜·동그라미·포스트잇을 모두 지웁니다">표시 지우기</button><button type="button" class="lec-btn" id="lecGemBtn" title="Google AI Studio 무료 Gemini 키를 넣으면 대본·번역이 1~2초 만에 실시간으로 나와요">✦ Gemini 꺼짐</button><button type="button" class="lec-btn" id="lecAiBtn" title="맥의 Dayble 도우미가 켜져 있으면 Claude가 슬라이드 맥락으로 실시간 필기">✱ 도우미 꺼짐</button></span></div>
         </div>
         <div class="lec-split" data-split="lecMain" title="드래그해서 비율 조절"></div>
         <div class="lec-right"><div class="lec-live" id="lecLive"><div class="lms-empty">녹음을 시작하면 이 슬라이드의 대본과 번역이 여기에 실시간으로 쌓입니다.</div></div></div>
@@ -9997,9 +9997,27 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   function recPage(){ return (S.online||!S.recPage)?(S.page||1):S.recPage; } // 대본을 붙일 쪽: 2.5초 이상 머문 슬라이드
   function goPage(n){
     if(S.online){ var vp=S.viewPage||S.page; if(n<vp){ if(vp>1){ S.viewPage=vp-1; $('lecPage').textContent='구간 '+S.viewPage+' / '+S.page; _docSig=''; renderLive(); } return; } if(vp<S.page){ S.viewPage=vp+1; $('lecPage').textContent='구간 '+S.viewPage+(S.viewPage<S.page?' / '+S.page:''); _docSig=''; renderLive(); return; } S.page=S.page+1; S.total=S.page; S.viewPage=S.page; S.lastCut=nowT(); if(S.running) S.log.push({t:nowT(), page:S.page}); $('lecPage').textContent='구간 '+S.page; _docSig=''; renderLive(); return; }
-    if(!S.pdf) return; var b0=S.base||0; n=Math.max(b0+1,Math.min(b0+S.total,n)); if(n===S.page) return; var prev=S.page; S.page=n; try{ var _w=$('lecCanvas').parentNode; var _o=(arguments[1]||{}); pgSave(_w,prev); pgPlan(_w,n,_o.pos,_o.dir||(n>prev?1:-1),_o.off); }catch(e){} renderPage(); renderLive(); try{ fsPaint(); }catch(e){}
+    if(!S.pdf) return; var b0=S.base||0; n=Math.max(b0+1,Math.min(b0+S.total,n)); if(n===S.page) return; var prev=S.page; if(!S._autoNav) S._manualNavAt=Date.now(); S.page=n; try{ var _w=$('lecCanvas').parentNode; var _o=(arguments[1]||{}); pgSave(_w,prev); pgPlan(_w,n,_o.pos,_o.dir||(n>prev?1:-1),_o.off); }catch(e){} renderPage(); renderLive(); try{ fsPaint(); }catch(e){}
     clearTimeout(S._settleT); S._settleT=setTimeout(function(){ if(S.page!==n) return; if(S.recPage===n) return; S.recPage=n; if(S.running) S.log.push({t:nowT(), page:n}); renderLive(); try{ gemSendContext(); }catch(e){} }, 2500);
     if(S.running && aiEngine()){ var keep=S.page; S.page=prev; aiTick(true).then(function(){ S.page=keep; renderLive(); }); S.page=keep; } }
+  // ---- 자동 슬라이드 따라가기: 최근 대본과 슬라이드 글자를 비교해 교수님이 말하는 쪽으로 넘김 ----
+  var AT={on:true, cand:0, hits:0, lastMove:0, idx:null, sig:''};
+  try{ AT.on=localStorage.getItem('lec_autotrack')!=='0'; }catch(e){}
+  var AT_STOP={'this':1,'that':1,'with':1,'from':1,'have':1,'which':1,'about':1,'their':1,'there':1,'these':1,'those':1,'what':1,'when':1,'where':1,'would':1,'could':1,'should':1,'than':1,'then':1,'they':1,'them':1,'into':1,'over':1,'more':1,'most':1,'some':1,'such':1,'each':1,'also':1,'only':1,'very':1,'will':1,'been':1,'were':1,'does':1,'because':1,'just':1,'like':1,'okay':1,'right':1,'yeah':1,'gonna':1,'here':1,'your':1,'know':1,'think':1,'going':1,'really':1,'thing':1,'things':1,'something':1,'want':1,'well':1,'look':1,'need':1,'make':1,'then':1,'same':1,'other':1,'many':1,'much':1,'mean':1};
+  function atToks(s){ return (String(s||'').toLowerCase().match(/[a-z][a-z\-]{3,}|\d+(?:\.\d+)?/g)||[]).filter(function(w){ return !AT_STOP[w]; }).map(function(w){ return w.replace(/(ies)$/,'y').replace(/(es|s)$/,'').replace(/(ing|ed)$/,''); }); }
+  function atIndex(){ var st=S.slideText||{}; var sig=Object.keys(st).length+':'+(S.pdfName||''); if(AT.idx&&AT.sig===sig) return AT.idx; var pages={}, df={}, N=0; Object.keys(st).forEach(function(p){ var set={}; atToks(st[p]).forEach(function(w){ set[w]=1; }); var ks=Object.keys(set); pages[p]=set; pages[p]._n=ks.length; if(ks.length) N++; ks.forEach(function(w){ df[w]=(df[w]||0)+1; }); }); var idf={}; Object.keys(df).forEach(function(w){ idf[w]=Math.log(1+N/df[w]); }); AT.idx={pages:pages, idf:idf}; AT.sig=sig; return AT.idx; }
+  function atScore(p, heard){ var ix=atIndex(), pg=ix.pages[p]; if(!pg||pg._n<3) return 0; var s=0; Object.keys(heard).forEach(function(w){ if(pg[w]) s+=ix.idf[w]*Math.min(heard[w],3); }); return s/Math.sqrt(pg._n+4); }
+  function atTick(){
+    if(!AT.on || !S.running || !S.pdf || S.online || !S.slideText) return; if(S.lang==='ko-KR') return;
+    var now=nowT(); if(Date.now()-(S._manualNavAt||0)<20000) return; if(Date.now()-AT.lastMove<8000) return;
+    var txt=allSegs().filter(function(s){ return (s.t||0)>=now-40; }).map(function(s){ return s.en||''; }).join(' ')+' '+(S.lastInterim||'');
+    var heard={}; atToks(txt).forEach(function(w){ heard[w]=(heard[w]||0)+1; }); if(Object.keys(heard).length<4) return;
+    var b0=S.base||0, cur=S.page||1, best=cur, bs=atScore(cur,heard), cs=bs;
+    for(var p=Math.max(b0+1,cur-2); p<=Math.min(b0+S.total,cur+4); p++){ if(p===cur) continue; var sc=atScore(p,heard)*(p<cur?0.85:1)*(p>cur+1?0.92:1); if(sc>bs){ bs=sc; best=p; } }
+    if(best===cur || bs<0.9 || bs<cs*1.5+0.25){ AT.cand=0; AT.hits=0; return; }
+    if(AT.cand===best) AT.hits++; else { AT.cand=best; AT.hits=1; }
+    if(AT.hits>=2){ AT.cand=0; AT.hits=0; AT.lastMove=Date.now(); S._autoNav=true; try{ goPage(best,{dir:best>cur?1:-1}); }finally{ S._autoNav=false; } showToast('🎯 자동으로 '+(best-b0)+'쪽으로 넘겼어요 (← → 로 되돌리면 20초 쉼)'); } }
+  function paintAtBtn(){ var b=$('lecAutoTrack'); if(!b) return; b.textContent=AT.on?'🎯 자동 넘김 켜짐':'🎯 자동 넘김 꺼짐'; b.classList.toggle('on',AT.on); }
   function autoCut(){ if(!S.online||!S.running) return; if(nowT()-S.lastCut>=ONLINE_AUTO_SEC){ S.viewPage=S.page; goPage(S.page+1); } }
 
   // ---- 번역기: Chrome Translator API → 폴백(웹) ----
@@ -10726,6 +10744,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     var drop=$('lecDropZone'); ['dragenter','dragover'].forEach(function(ev){ drop.addEventListener(ev,function(e){ e.preventDefault(); drop.classList.add('over'); }); }); ['dragleave','drop'].forEach(function(ev){ drop.addEventListener(ev,function(e){ e.preventDefault(); drop.classList.remove('over'); }); });
     drop.addEventListener('drop',function(e){ var f=e.dataTransfer.files&&e.dataTransfer.files[0]; if(f&&/pdf$/i.test(f.name)) f.arrayBuffer().then(function(b){ openPdfBytes(b,f.name,true); }); else showToast('PDF 파일만 열 수 있어요'); });
     try{ $('lecBoardGo').addEventListener('click',boardAsk); $('lecBoardIn').addEventListener('keydown',function(e){ if(e.key==='Enter'){ e.preventDefault(); boardAsk(); } e.stopPropagation(); }); }catch(e){}
+    try{ paintAtBtn(); $('lecAutoTrack').addEventListener('click',function(){ AT.on=!AT.on; try{ localStorage.setItem('lec_autotrack',AT.on?'1':'0'); }catch(e){} paintAtBtn(); showToast(AT.on?'자동 넘김 켜짐':'자동 넘김 꺼짐'); }); setInterval(function(){ try{ atTick(); }catch(e){} }, 4000); }catch(e){}
     $('lecPrev').addEventListener('click',function(){ goPage(S.page-1); }); $('lecNext').addEventListener('click',function(){ goPage(S.page+1); });
     window.addEventListener('keydown',function(e){ if(currentMode!=='lecture') return; var tag=(e.target.tagName||'').toLowerCase(); if(tag==='input'||tag==='textarea'||tag==='select') return; if(tag==='button' && e.key===' ') return;
       var inView=$('lecView').style.display!=='none'; var go=inView?viewGo:goPage; var cur=inView?V.page:S.page;
