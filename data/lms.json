@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28T02:28:17.180Z",
+  "generatedAt": "2026-10-28T08:50:51.040Z",
   "source": "canvas",
   "user": "김주함(2025####72)",
   "courseFiles": {
@@ -669,7 +669,14 @@
         "name": "9주차",
         "position": 9,
         "unlock": null,
-        "items": []
+        "items": [
+          {
+            "type": "ExternalTool",
+            "title": "Core_note_did_2026",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/95551/modules/items/4817176"
+          }
+        ]
       },
       {
         "id": "1507915",
@@ -2251,6 +2258,16 @@
     }
   ],
   "notices": [
+    {
+      "id": "n492365",
+      "course": "거시경제학",
+      "title": "Concerning Class Participation Roll Call",
+      "date": "2026-10-28T07:30:48Z",
+      "summary": "Dear Students, I forgot to check the class participation. I will give everyone 1 point for today, and I will also take a makeup class participation check-in next Monday. Cheers, Sun",
+      "body": "Dear Students, I forgot to check the class participation. I will give everyone 1 point for today, and I will also take a makeup class participation check-in next Monday. Cheers, Sun",
+      "url": "https://khcanvas.khu.ac.kr/courses/95555/discussion_topics/492365",
+      "files": []
+    },
     {
       "id": "n492166",
       "course": "거시경제학",
