@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-01T16:57:18.886Z",
+  "generatedAt": "2026-11-01T20:55:44.853Z",
   "source": "canvas",
   "user": "김주함(2025####72)",
   "courseFiles": {
@@ -476,6 +476,26 @@
             "title": "Assign3_UMacro_26F",
             "indent": 0,
             "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4807756"
+          }
+        ]
+      },
+      {
+        "id": "1507977",
+        "name": "Past Test Questions",
+        "position": 8,
+        "unlock": null,
+        "items": [
+          {
+            "type": "ExternalTool",
+            "title": "Exam2_UM1_2024F_SCD",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4819756"
+          },
+          {
+            "type": "ExternalTool",
+            "title": "Exam2_UM1_2024SP_SCD",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4819757"
           }
         ]
       }
