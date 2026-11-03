@@ -1,4 +1,16 @@
 {
+ "savedAt": "2026-10-29T15:45:43.713Z",
+ "base": 0,
+ "docs": [
+  {
+   "name": "Core_note_rct_2026.pdf",
+   "base": 0,
+   "total": 12,
+   "from": 0
+  }
+ ],
+ "weekId": "1507914",
+ "langCode": "en-US",
  "id": "lec_2026-10-28_mvrfspr4",
  "course": "계량경제학",
  "title": "계량경제학 9주차 · Core_note_rct_2026",
@@ -9,7 +21,7 @@
  "mode": "slides",
  "pdf": "Core_note_rct_2026.pdf",
  "pages": 12,
- "duration": 25459,
+ "duration": 137732,
  "log": [
   {
    "t": 0,
@@ -866,15 +878,25 @@
      "**누적분포**(cumulative distribution): 처치 곡선이 통제 곡선보다 오른쪽 → 분포 전체가 상향 이동",
      "중앙값 출석률: 통제 약 65% vs 처치 약 85%, 50% 미만 왼쪽 꼬리 소멸",
      "결석률 약 42% → 22%, 평가 종료 후에도 유지 (Figure 11, 학교 군집 SE)",
-     "▶ 패널 B는 하위표본(subsample), 패널 C는 그 하위표본 내 처치효과; 패널 D·E는 기초 성취가 높은 아이들에서 효과가 더 큼",
-     "시험점수는 **사전·중간·사후 시험**(pre-/mid-/post-test)으로 측정"
+     "▶ 하위집단 분석: 사전점수 하위 절반은 교사 인센티브 효과 무의미(특히 장기), 상위 절반은 +0.32SD → 평균 효과는 우수 학생이 견인, 부진 학생엔 다른 자원 필요",
+     "▶ RCT 표 구조: 패널 A 전체 효과 → 하위집단별 효과(이질성 heterogeneity)",
+     "▶ **CDF**(누적분포함수) F(x)=P(X≤x), PDF와 같은 정보, 항상 증가, 점프 크기=그 값의 확률질량. 예) 형제자매 0,1,2 = 1,2,1명 → 1/4, 3/4, 1"
     ],
-    "summary": "출석 분포 이동과 하위표본 패널 설명",
+    "summary": "CDF 읽기와 이중차분 소개",
     "exam": [],
-    "board": [],
-    "at": 1793152769456
+    "board": [
+     "F(x) = P(X ≤ x)",
+     "DID = D1 − D2 = (뭄바이 전후 변화) − (뉴델리 전후 변화) = 200 − 150 = 50"
+    ],
+    "at": 1793176504782
    },
-   "marks": [],
+   "marks": [
+    {
+     "line": 13,
+     "type": "",
+     "note": "부진 학생: 인센티브 무효, 상위 +0.32SD"
+    }
+   ],
    "lines": {
     "w": 612,
     "h": 792,
@@ -1119,805 +1141,920 @@
      "page": 9,
      "en": "So those who took oral test are those who are um who were uh weak in their academic preparation level. They couldn't read.",
      "ko": "읽을 수 없기 때문이에요. 그래서 구술 시험을 본 사람들은 음 누구냐면 어 약한 학업적 준비 수준이었어요. 그들은 읽을 수 없었어요.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 1782,
      "page": 9,
      "en": "And then this is our entire sample. We can classify subgroup based on their online characteristic. If you look at the the keys who took the oral test, people the treatment, then they usually have low initial Okay, test score. Then they they they have weaker academic preparation level.",
      "ko": "그리고 이것은 우리의 전체 표본입니다. 우리는 하위 그룹을 그들의 온라인 특성에 따라 분류할 수 있습니다. 만약 여러분이 구술 시험을 본 사람들을 보면, 그들은 치료를 받았고, 보통 낮은 초기 점수를 가지고 있어요, 알겠죠? 시험 점수가. 그러면 그들은 그들은 학업적 준비가 더 약해요.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 1806,
      "page": 9,
      "en": "But if we look at them, the improvement is very clear. The treatment effect is significant. But if we look at those who took the written test, so we are those who are more prepared, even before the three months, and if we look at the those who already took the written test, but uh",
      "ko": "하지만 그들을 보면, 그들의 향상은 매우 뚜렷합니다. 치료 효과는 상당합니다. 하지만 만약 우리가 필기 시험을 본 사람들을 보면, 그래서 우리는 더 많은 사람들을 준비하고, 심지어 그 전에도 3개월 동안, 그리고 우리가 그 이미 필기 시험을 본 사람들을 보면, 어",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 1835,
      "page": 9,
      "en": "Yeah, we still have some treatment effect. Yeah. So it does not matter that much whether they took the, you know, oral test and written test. Although the math test score in the in the in the short term outcome is less significant, but I think the comparison between DNA is more interesting.",
      "ko": "네, 저희는 여전히 치료 효과가 있습니다. 네. 그래서 상관없어요. 그들이 필기 시험을 봤는지, 구술 시험을 봤는지는. 비록 수학 시험은 점수가 짧은 기간 결과에서는 덜 중요하지만, 하지만 제 생각에는 비교가 DNA 사이에서 더 흥미롭습니다.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 1858,
      "page": 9,
      "en": "So now we divide the sample into those who had above median test score before the treatment, and below the median test score. So this is below median rank in the pretest and those who are bottom half in the pre-treatment. And then what you can see is that if they were at the bottom, so so like even B and C, I I will go back to B and C, but if we look at those who are not ready, like who are who belong to the bottom half, the treatment effect especially in the long run is not statistically significant.",
      "ko": "그래서 이제 샘플을 나누어 보겠습니다. 이미 이상을 받은 사람들과 치료 전 중앙값 이상의 점수를 받은 사람들과 그 이하의 점수를 받은 사람들로요. 그래서 이건 필기 시험의 중앙값 이하이고, 하위 절반에 속하는 사람들입니다. 치료 전에는요. 그리고 여기서 볼 수 있는 것은, 만약 그들이 하위권이었다면, 그래서 그러니까 B와 C도 마찬가지로 제가 다시 B와 C로 돌아가겠지만, 만약 우리가 이미 준비되지 않은 사람들을 보면, 예를 들어 하위권에 속하는 사람들은, 치료 전에는 치료 효과가 특히 장기적으로 는 통계적으로 유의미하지 않습니다.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 1907,
      "page": 9,
      "en": "Okay, if we look at the subsample, and if we look at those who have lower test score before the treatment, simply providing financial incentive to the teacher cannot improve their test score. They need something else. Okay? So simply asking teacher to come to the",
      "ko": "자, 만약 우리가 하위 표본을 보면, 그리고 만약 우리가 더 낮은 시험 점수를 받은 사람들을 보면, 단순히 제공하는 것은 재정적 인센티브를 교사에게 제공하는 것은 그들의 시험 점수를 향상시킬 수 없습니다. 그들은 다른 것이 필요합니다. 알겠죠? 그래서 단순히 교사에게 학교에",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 1930,
      "page": 9,
      "en": "And then, um, like over there, uh skills. Okay? But if you look at those who are above me, the treatment is very clear. So the second thing is very large. See?",
      "ko": "그리고 나서, 음, 저기서, 어, 기술. 알겠죠? 하지만 그런 것들을 보면 저보다 위에 있는 사람들, 대우가 정말 명확해요. 그래서 두 번째는 매우 커요. 보이죠?",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 1947,
      "page": 9,
      "en": "0.32 standard deviation improvement in the past score, if teacher received the incentive, and then this estimation is we compare the mean of of students in the treatment and control group, condition on them, mean in the uh top half of the initial score distribution.",
      "ko": "0.32 표준 편차 개선이 지난 점수에서, 만약 교사가 그 인센티브를 받았다면, 그리고 이 추정치는 우리가 비교하는 것은 평균 값입니다. 그 학생들의 치료 및 대조 그룹의 평균을 비교하고, 그리고 그들의 평균을 비교합니다. 어, 상위 절반의 초기 점수 분포에서요.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 1971,
      "page": 9,
      "en": "Okay? If students are already very good, then teacher incentive can improve their scores significantly and align. But if students belong to bottom half, the financial incentive cannot help. So the this table is a very typical structure in the RCT, we first report the overall treatment effect.",
      "ko": "알겠죠? 만약 학생들이 이미 매우 우수하다면, 교사 인센티브는 그들의 점수를 크게 향상시킬 수 있고 일치할 수 있습니다. 하지만 학생들이 하위 절반에 속한다면, 재정적 인센티브는 도움이 되지 않습니다. 그래서 이 표는 매우 전형적인 구조입니다. RCT에서요, 먼저 전체적인 치료 효과를 보고합니다.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 1992,
      "page": 9,
      "en": "which is panel A. The overall treatment effect and next step is that we can look at the treatment effect at different groups. Okay? So now we compare below median and above median and the we found that this treatment the reason why average effect was significant is because it was it has a large treatment effect among those who are relatively better, already. But if the students are struggling, then financial incentive to the teacher cannot change their uh test score.",
      "ko": "이는 패널 A입니다. 전체적인 치료 효과는 그리고 다음으로 우리가 살펴볼 수 있는 것은 치료 효과가 어떻게 다른지입니다. 다른 그룹에서요. 알겠죠? 그래서 이제 우리는 비교합니다. 중앙값 미만과 중앙값 이상, 그리고 이 치료가 그 이유가 평균 효과가 유의미한 것은 그것이 큰 치료 효과를 가지고 있기 때문입니다. 상대적으로 더 나은 사람들, 이미. 하지만 학생들이 어려움을 겪고 있다면, 재정적 인센티브는 교사에게 그들의 점수를 바꿀 수 없습니다. 시험 점수를요.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 2027,
      "page": 9,
      "en": "Which is which makes sense, right? So and then understanding this heterogeneity is helpful because now we can say that oh, so providing financial to the teacher has limited impact on students who are struggling. Maybe there's something else to improve their test score.",
      "ko": "이는 이것은 말이 되죠, 그렇죠? 그래서 그리고 이것을 이해하는 것은 이질성을 이해하는 데 도움이 됩니다. 이제 우리는 말할 수 있습니다. 오, 그러니까 교사에게 재정적 지원을 제공하는 것은 학생들에게 제한적인 영향만 미칩니다. 아마 그들의 점수를 향상시키기 위해 다른",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 2046,
      "page": 9,
      "en": "It may be more like a direct like resources available to them. Like a sub teacher or assistant or something else. Okay? So that's it. So um Hmm. This is another basic skill. which is useful for you to understand. So just introduce what this graph is. Okay? This is called uh Have you heard about CD app?",
      "ko": "방법이 있을 수 있습니다. 더 직접적인 것일 수도 있습니다. 예를 들어 그들에게 제공되는 자원 같은 것들요. 보조 교사나 조교 같은 것들요. 알겠죠? 그래서 그게 다예요. 그래서 음 음. 이것은 또 다른 기본적인 기술입니다. 이것은 여러분이 이해하는 데 유용합니다. 그래서 그냥 소개하자면 이 그래프가 무엇을 의미하는지입니다. 알겠죠? 이것은 소위 어 혹시 들어보셨나요? CD 앱?",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 2079,
      "page": 9,
      "en": "What is the CD?",
      "ko": "CD가 뭐죠?",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 2087,
      "page": 9,
      "en": "Human cumulative distribution function. And then can you define CD? Whenever we have a data, it actually we can define CD. Whenever we have a distribution, we can define CD. And then for instance, suppose that we have data on the number of students by the number of students.",
      "ko": "인간 누적 분포 함수입니다. 그리고 CD를 정의할 수 있나요? 우리가 데이터를 가지고 있을 때, 사실 우리는 CD를 정의할 수 있습니다. 우리가 분포를 가지고 있을 때, CD를 정의할 수 있습니다. 그리고 예를 들어, 우리가 데이터가 있다고 생각해 봅시다. 학생 수에 대한 데이터가 있는데, 학생 수별로요.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 2106,
      "page": 9,
      "en": "number of siblings. Zero one two and this is number of students. Okay? So suppose that we have one, two, one individuals. In the data, depending on they they are number of siblings. So only child and the children with one sibling, and children with two siblings.",
      "ko": "형제자매 수. 0 1 2 그리고 이것은 학생 수입니다. 알겠죠? 그래서 가정해 봅시다. 우리가 1, 2, 1 명의 개인. 데이터에서, 무엇에 따라 그들이 형제자매 수인지. 그래서 외동은 그리고 형제가 한 명인 아이들, 그리고 형제가 두 명인 아이들.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 2133,
      "page": 9,
      "en": "Okay? We are given this data, how do we describe this distribution? The the first is we describe this pattern based on histogram. How about histogram? Histogram is when we have different values of the outcome. We say is number of sibling. And X axis is number of sibling, Y axis is number of observation.",
      "ko": "알겠죠? 우리에게 이 데이터가 주어졌고, 어떻게 이 분포를 설명할까요? 그 첫 번째는 표준 편차는 우리가 이 분포를 설명하고 히스토그램을 기반으로 합니다. 히스토그램은 어때요? 히스토그램은 우리가 다른 값들을 가질 때입니다. 우리는 형제자매 수라고 말합니다. 그리고 X축은 형제자매 수이고, Y축은 학생 수입니다. 관측값의",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 2160,
      "page": 9,
      "en": "One one two, one. This is histogram. Okay? Histogram shows us the uh which outcome has the more observations. So it's equivalent for us to know the density function. probability density function. What is the which outcome has a high share? in the population. Okay?",
      "ko": "수입니다. 1 2, 1. 이것은 히스토그램입니다. 알겠죠? 히스토그램은 우리에게 어, 어떤 결과가 가장 많은 관측값을 가지는지 보여줍니다. 그래서 우리가 밀도를 아는 것과 같습니다. 확률 밀도 함수입니다. 무엇이 어떤 결과가 가장 높은 점유율을 가지는지 인구 중에서. 알겠죠?",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 2184,
      "page": 9,
      "en": "So this is histogram.",
      "ko": "그래서 이것은 히스토그램입니다.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 2189,
      "page": 9,
      "en": "So if we divide histogram by the total number of observation, which is four, then we change this into the probability",
      "ko": "그래서 우리가 히스토그램을 총 인원수로 나누면 관측값의 수인데, 그게 4명이고, 그러면 우리는 이것을 확률로 바꿉니다.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 2203,
      "page": 9,
      "en": "density function. Okay? And then this is the",
      "ko": "밀도 함수입니다. 알겠죠? 그리고 이것은 그",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 2212,
      "page": 9,
      "en": "So the sum of the probability density over the entire uh domain should be equal to one. This is a probability density function. So that is a kind of easy for your eyes. So you have seen a lot of distribution, so distribution is actually probability density function.",
      "ko": "그래서 확률 밀도 함수의 합은 전체에 걸쳐 어, 도메인에서 같아야 합니다. 1과. 이것은 확률 밀도 함수입니다. 그래서 그것은 일종의 눈에 보기 쉬운 것입니다. 그래서 여러분은 많은 분포를 보셨고, 그래서 분포는 사실 확률 밀도",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 2230,
      "page": 9,
      "en": "which is equivalent like which has equivalent information of histogram. Although histogram may not give you the share, but then you can see the pattern. Okay? Then what is the cumulative distribution function? This is actually contains exactly the same information as probability density function.",
      "ko": "함수입니다. 이는 마치 어떤 것이 동등한 정보를 가진 히스토그램과 같습니다. 비록 히스토그램이 여러분에게 점유율을 제공하지 않더라도, 패턴을 볼 수 있습니다. 알겠죠? 그러면 누적 분포 함수는 무엇인가요? 이것은 사실 정확히 같은 정보를 담고 있습니다. 확률 밀도 함수와.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 2251,
      "page": 9,
      "en": "But we just represent that in a cumulative. So the definition is that it is the probability that certain X variable uh where which is same or smaller than certain number. X. Okay? So for instance, like how what how many what is the share of individuals whose number of sibling is less than or equal to zero.",
      "ko": "하지만 우리는 그것을 누적된 형태로 나타냅니다. 그래서 정의는 그것이 확률이라는 것입니다. 어떤 특정 X 변수가 어, 어디에 있는지, 즉 같은지 아니면 더 작은지 특정 숫자보다. X. 알겠죠? 그래서 예를 들어, 이런 식이죠. 어떻게 무엇이 얼마나 많은 것이 점유율이 얼마인가요? 개인 중에서 형제자매 수가 얼마인 또는 그 이하인 사람의 비율은?",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 2281,
      "page": 9,
      "en": "How many? Okay? Or I think we talk about probability, let's count. Now, how many? Only one. As number of sibling So the",
      "ko": "얼마나 많은가요? 알겠죠? 아니면 제 생각에는 우리가 확률에 대해 이야기하고 있으니까, 세어봅시다. 자, 몇 명인가요? 오직 한 명. 형제자매 수가 그래서 그",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 2301,
      "page": 9,
      "en": "which is equal to two or more. So",
      "ko": "어떤 것이냐면 같아요. 둘 이상. 그래서",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 2312,
      "page": 9,
      "en": "zero. What one? Yeah. If it is smaller than or equal to zero, we have only one in the data. If it is smaller than or equal to one, how many individuals do we have?",
      "ko": "영. 뭐 하나? 네. 만약 더 작다면 또는 0과 같다면, 데이터에는 하나밖에 없어요. 만약 1보다 작거나 같다면, 몇 명이 있나요?",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 2332,
      "page": 9,
      "en": "That includes all obviously these individuals and these individuals. I said the smaller or equal to Okay? So we have three individuals. Okay? If I ask how many individuals have siblings, which is smaller than or equal to two, everybody. Four. So that is a cumulative count.",
      "ko": "그건 모두 포함해요. 분명히 이 사람들은 그리고 이 사람들은요. 제가 더 작은 또는 같다고 했어요. 알겠죠? 그래서 우리는 세 명의 사람이 있어요. 알겠죠? 만약 제가 몇 명의 사람이 형제자매가 있는지 물어본다면, 이는 2보다 작거나 같다는 뜻이죠. 모두요. 네 명. 그래서 그건 누적 개수입니다.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 2356,
      "page": 9,
      "en": "All individuals whose X variable takes a certain value, or smaller than a certain value. So if we take the if we divide this by the number of entire sample, then that gives us the the density. This is a cumulative the distribution. So it gives one two uh zero.",
      "ko": "모든 개인이 X 변수가 특정 값을 가지는 또는 더 작은 값을 가지는. 그래서 만약 우리가 이것을 나누면 전체 수로 전체 표본으로, 그러면 그것은 우리에게 그 밀도를 줍니다. 이것은 누적 분포입니다. 그래서 그것은 1을 2를 어 0을",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 2390,
      "page": 9,
      "en": "one two and the cumulative distribution uh this number is four. Cumulative distribution of taking X equal to one or smaller than",
      "ko": "1 2 그리고 누적 분포는 어 이 숫자는 어 4입니다. 누적 분포는 취하는 X가 1이거나 그보다 작을",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 2412,
      "page": 9,
      "en": "Wait, but",
      "ko": "잠깐만요, 그런데",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 2417,
      "page": 9,
      "en": "And",
      "ko": "그리고",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 2421,
      "page": 9,
      "en": "Wait, two is the maximum number and this is the But the share of observation the number of siblings is smaller than equal to two, this is what? So this is cumulative distribution function. So cumulative distribution function is just the probability the same information as a distribution or a probability density function, but it just adds those two.",
      "ko": "잠깐만요, 2가 최대 숫자이고 이게 하지만 그 점유율은 관찰의 형제자매의 수가 더 적고 2 이하일 때, 이게 뭐죠? 그래서 이건 누적 분포입니다. 그래서 누적 분포 함수는 그냥 확률 같은 정보가 있는 것과 같습니다. 분포나 확률 밀도 함수이지만, 그냥 그 두 개를 더한",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 2447,
      "page": 9,
      "en": "cumulative and so that's why it will be always increasing. increasing. So here, uh what you can learn is that the probability density at this point is the difference between those two. Right? Because the reason why there's some jump on at the CDF function at some point is because there's some mass of individual foods equal to that number.",
      "ko": "것입니다. 누적 그리고 그래서 그게 될 것입니다. 항상 증가하는 것입니다. 증가하는 것입니다. 그래서 여기서는, 여러분이 배울 수 있는 것은 확률이 확률 밀도 함수에서 이 지점에서의 차이가 그 두 개의 차이라는 것입니다. 그렇죠? 왜냐하면 그 이유는 어떤 점프가 있는 것은 CDF 함수가 어떤 지점에서 그런 이유는 어떤 질량이 개별 음식에 그 수와 같기 때문입니다.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 2480,
      "page": 9,
      "en": "Right? So it's always increasing.",
      "ko": "그렇죠? 그래서 항상 증가하는 것입니다.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 2486,
      "page": 9,
      "en": "And the difference between those two number represents the probability density. that belongs to that particular range. Okay? So this is just a technical, but actually if you are at the financial sector, so this distribution matters a lot. So there were this lot about property of this distribution. Of course, the stochastic dominance and etc. and then things which depending on the underlying structure. So I think it's useful for you to understand this thing, okay? And then it has the same information as a probability density",
      "ko": "그리고 그 두 개의 차이는 그 숫자가 나타내는 것은 확률 밀도 입니다. 그것은 그 특정 범위에 속합니다. 알겠죠? 그래서 이것은 그냥 기술적인 것이지만, 사실 여러분이 유한한 금융 부문에 있다면, 그래서 이 분포가 매우 중요합니다. 그래서 이것에 대한 속성에 대해 많은 이야기가 있었습니다. 물론, 확률적 우위 등등이 있고, 그 다음에는 기초 자산에 따라 달라지는 것들이죠. 그래서 제 생각에는 이것이 여러분에게 유용할 것 같습니다. 알겠죠? 그리고 이것은 확률 밀도와 같은 정보를 가지고",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 2521,
      "page": 9,
      "en": "function. It's a basic part of the statistics. But yeah. So like at this table, at this graph, just shows us the CDF of attendance rate of control group and treatment group. Okay? So after we discuss the general let me see the app. We can interpret this graph, okay?",
      "ko": "있습니다. 이것은 기본적인 부분입니다. 통계학의. 하지만 네. 그래서 이 표에서, 이 그래프에서, 그냥 보여주는 것은 CDF 의 출석률입니다. 통제 가능한 그룹과 치료 그룹의. 알겠죠? 그래서 우리가 일반적인 것에 대해 논의한 후 앱을 볼게요. 우리는 이 그래프를 해석할 수",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 2542,
      "page": 9,
      "en": "And the question of CDF is uh it's just mathematical, but definition is not fancy. Okay? So now, what we can learn from here is that we can actually once we are given our observation of teacher attendance rate from the treatment group and the control group, like this, we can draw histogram or so we can draw some CDF, right?",
      "ko": "있습니다. 그리고 CDF에 대한 질문은 그냥 수학적인 것이지만, 정의는 별로 대단하지 않아요. 알겠죠? 그래서 이제, 여기서 배울 수 있는 것은 우리가 실제로 일단 우리가 우리 자신의 관찰을 교사의 출석률로 가지고 치료 그룹에서 그리고 통제 그룹에서, 이렇게, 우리는 그릴 수 있습니다. 히스토그램이나 그래서 우리는 몇 가지 CDF를 그릴 수 있죠?",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 2570,
      "page": 9,
      "en": "It's just a name. This just description of the distribution of the data. So we we describe the distribution of teacher attendance rate for the control group and for the treatment group. So this is a treatment group.",
      "ko": "그냥 이름일 뿐이에요. 이것은 그냥 분포에 대한 설명입니다. 그래서 우리는 우리는 설명합니다. 분포를 데이터의 교사 출석률의 분포를 통제 그룹과 치료 그룹에 대해. 그래서 이것은 치료 그룹입니다.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 2589,
      "page": 9,
      "en": "Like color, the sky blue is control group. Okay?",
      "ko": "예를 들어 색상, 하늘색은 통제 그룹이고 알겠죠?",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 2601,
      "page": 9,
      "en": "And then here, what you can see is that let's pick attendance rate 50, which means that you know, the the attendance rate of the teacher during the certain period is 50%. Okay? Right. The share of teachers",
      "ko": "그리고 여기서, 여러분이 볼 수 있는 것은 골라보자는 것입니다. 출석률을 50으로, 이는 아시다시피, 출석률이 교사의 수업 중 출석률이 특정 기간 동안 50%라는 것입니다. 알겠죠? 네. 그 공유는 어 교사들의",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 2623,
      "page": 9,
      "en": "in the control group,",
      "ko": "그 통제 그룹에서,",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 2628,
      "page": 9,
      "en": "those attendance rates we can see is that let's then let's or equal to 50 is what? Okay? So we have to look at the control group, which is yeah. Okay. Okay. And then the way we read this sheet is just read the Y value. Okay? So the share of teachers in the control group was the frequency is less than or equal to 50 is about 20%.",
      "ko": "그 출석률은 우리가 볼 수 있는 것은 그것은 그러면 해보자는 것이거나 같다는 것입니다. 50은 무엇인가요? 알겠죠? 그래서 우리는 다시 통제 그룹을 봐야 하는데, 그것은 네. 알겠습니다. 알겠습니다. 그리고 우리가 이 시트를 읽는 방법은 그냥 Y축을 읽는 것입니다. 알겠죠? 그래서 교사들의 비율은 통제 그룹에서 빈도수가 미만이라는 것입니다. 50은 약 20%입니다.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 2671,
      "page": 9,
      "en": "Okay? If we look at that for the treatment group, the share of teachers whose attendance rate is smaller than or equal to 50, it's almost zero. So if we look at the treatment group, there's almost no teacher in the treatment group who came to school less than half of 50%.",
      "ko": "알겠죠? 그걸 보면 치료 그룹의 경우, 교사들의 비율은 출석률이 50 이하인 경우, 거의 0입니다. 그래서 치료 그룹을 보면, 거의 교사가 없는 것입니다. 치료 그룹에서 온 교사가 학교에 덜 온 50% 미만입니다.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 2690,
      "page": 9,
      "en": "So which means most of teachers in the treatment group came to school uh more than like more than 50% of the time. So okay, already we can see that treatment group has a higher attendance rate. Okay? So the entire distribution is shifted to the right. So there are more mass on the treatment group whose attendance rate is higher.",
      "ko": "그래서 대부분의 교사가 치료 그룹에서 학교에 왔다는 것입니다. 더 많이, 예를 들어 50% 이상입니다. 그래서 알겠습니다, 이미 우리는 치료 그룹이 더 높은 출석률을 보인다는 것을 알 수 있습니다. 알겠죠? 그래서 전체 분포가 오른쪽으로 이동했습니다. 그래서 더 많은 질량이 치료 그룹에 있고, 출석률이 더 높습니다.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 2730,
      "page": 9,
      "en": "Okay? Okay, so we can see that treatment where in the treatment group really small share of teachers have attendance rate less than 70%. Okay? Then means that large number of teachers have attendance rate at least 70%. So how do we know what is the share of teachers whose attendance rate is at least 70% in the treatment group? We have to read this number, right?",
      "ko": "알겠죠? 알겠습니다, 그래서 우리는 치료가 치료 그룹에서 어디에 정말 적은 비율의 교사들이 출석률이 70% 미만입니다. 알겠죠? 그러면 많은 수의 교사들이 출석률이 적어도 70%라는 것입니다. 그럼 어떻게 교사들의 비율을 알 수 있을까요? 적어도 70% 인 치료 그룹에서요? 우리는 이 숫자를 읽어야 하죠,",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 2758,
      "page": 9,
      "en": "So 1 minus CDF is like this.",
      "ko": "그렇죠? 그래서 1 빼기 CDF는 이렇습니다.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 2765,
      "page": 9,
      "en": "Okay? This is CDF, right? So this is attendance rate. And this is certain number. So this is 70%. Then this is almost like like this. 70%",
      "ko": "알겠죠? 이것은 CDF죠, 그렇죠? 그래서 이것은 출석률입니다. 그리고 이것은 특정 숫자입니다. 그래서 이것은 70%입니다. 그러면 이것은 또는 거의 이렇습니다. 70%",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 2785,
      "page": 9,
      "en": "in the control group, treatment group, okay? Which means that 80% of the treatment group teachers have at least 70% of attendance. Okay? So like the this graph is is here to to help to introduce the CDL. Sometimes it the result is described like this. This distribution and I think we should be Okay?",
      "ko": "통제 그룹에서, 치료 그룹에서, 알겠죠? 즉 80% 이상의 치료 그룹이 교사들이 최소한 70%의 출석률을 보인다는 뜻입니다. 알겠죠? 그래서 이 그래프는 더 여기에 도움이 되기 위해 소개하는 것입니다. CDL을. 때로는 결과가 설명되기도 합니다. 이렇게. 이 분포는 그리고 저는 우리가 해야 한다고 생각합니다. 알겠죠?",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 2815,
      "page": 9,
      "en": "That's it. So we will move to different scene. Okay? Questions about that? So, um",
      "ko": "그게 다예요. 그래서 우리는 다른 장면으로 넘어갈게요. 알겠죠? 질문 있으신가요? 그래서, 음",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 2828,
      "page": 9,
      "en": "Okay.",
      "ko": "네.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 2832,
      "page": 9,
      "en": "Now we're going to move to So I I think I introduce some application because you knew a previously for a group code, right? Yeah. So",
      "ko": "이제 우리는 넘어갈 거예요. 그래서 저는 생각해요 제가 몇 가지를 소개할게요. 애플리케이션을 왜냐하면 여러분이 아셨으니까 이전에 그룹 코드를 위해, 맞죠? 네. 그래서",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 2849,
      "page": 9,
      "en": "So we can so we can switch the input methodology and application.",
      "ko": "그래서 우리는 그래서 우리는 입력을 전환할 수 있고 애플리케이션도요.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 2863,
      "page": 9,
      "en": "Now we move on to this.",
      "ko": "이제 다음으로 넘어갈게요.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 2876,
      "page": 9,
      "en": "And I think it is so clean. identification which means that how to um to it is the best way to",
      "ko": "그리고 저는 그게 정말 깔끔하다고 생각해요. 식별은 어떻게 음 어떻게 그것은 가장 좋은 방법입니다.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 2890,
      "page": 9,
      "en": "to believe that, oh, it's not the condition course. Why is it course? by design, RCT, randomization, make sure that the division between control and treatment group is random. Okay? So, any so that's the key to define, you know, to to show cause or relationship because then we can make sure that two groups is different only in terms of treatment.",
      "ko": "그걸 믿는다는 게, 아, 그게 조건이 아니라는 거죠. 왜 그게 조건이죠? 그건 설계상, RCT, 무작위 배정, 확실히 그 구분이 대조군과 실험군 사이에서 무작위라는 거죠. 알겠죠? 그래서, 어떤 그게 바로 핵심입니다. 정의하는 데 있어서, 그러니까 인과 관계를 보여주거나 관계를 보여주는 거죠. 왜냐하면 그래야 두 그룹이 다르다는 것을 확실히 할 수 있으니까요.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 2919,
      "page": 9,
      "en": "What other things are exactly the same because they are divided randomly. But so that's a good thing. So RCT is considered the best way to prove the causal relationship. But what is the downside of RCT?",
      "ko": "다른 것들은 정확히 똑같다는 거죠. 왜냐하면 무작위로 나뉘었으니까요. 하지만 그게 좋은 점이에요. 그래서 RCT는 가장 좋은 방법으로 여겨져요. 증명하는 데 있어서 인과 관계를요. 하지만 RCT의 단점은 무엇일까요?",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 2942,
      "page": 9,
      "en": "Or is it fancy? Okay? So it's actually designed the period or it could repeat and then that post compared to the analysis using the available data that is discussed. And then like you need some, you know, skills, you know, this is not simple test could be designed, you know, this experiment etc.",
      "ko": "아니면 멋진가요? 알겠죠? 그래서 사실은 설계된 기간 동안 또는 반복될 수 있고 그러면 그게 사후에 비교되는 거죠. 분석과 비교해서요. 이용 가능한 데이터를 사용해서요. 논의된. 그리고 마치 당신이 어떤, 뭐랄까, 기술이 필요한 것처럼, 이건 간단한 테스트가 될 수 있어요, 아시다시피, 이 실험 등등.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 2967,
      "page": 9,
      "en": "Right? So that's one thing. But that is not the only one.",
      "ko": "그렇죠? 그래서 그게 한 가지고요. 하지만 그게 전부는 아니에요.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 2974,
      "page": 9,
      "en": "Sometimes the government implement a certain policy, but there goal is not to prove causality. Their goal is whatever, you know, they think it's, you know, it is useful, so they want to implement and then help the people, right? So there are tons of those policies out there, but it's not based on RCT.",
      "ko": "가끔은 정부가 특정 정책을 시행하는데, 하지만 거기에는 목표가 인과 관계를 증명하는 것이 아니에요. 그들의 목표는 뭐든 간에, 그들이 생각하기에 그게, 뭐랄까, 유용하니까 시행하고 싶어하고, 사람들을 돕고 싶어하는 거죠, 맞죠? 그래서 그런 정책들이 많이 있지만, 그건 RCT에 기반한",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 2994,
      "page": 9,
      "en": "But it's already done. Would you like to learn about whether it was effective or not? If you want to learn the whether that it is existing policy, or the policy that has implemented before actually had any causal effects or not, that would be useful. It would be it is not based on RCT, do you want to learn?",
      "ko": "게 아니에요. 하지만 이미 시행되었죠. 그럼 그 정책이 효과적이었는지에 대해 알고 싶으신가요? 만약 알고 싶으시다면, 그 그게 유용한지 여부를 알고 싶으시다면, 또는 이미 시행된 정책이 효과가 있었는지 알고 싶으시다면, 인과 관계가 있었는지 없었는지, 그게 유용할 수 있어요. 그건 RCT에 기반한 게 아니지만, 알고 싶으신가요?",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 3017,
      "page": 9,
      "en": "Right? If we share about the existing and the reason of the causal effect in the estimation, then we may know, oh, we can answer to any questions. We can only answer to RCT, then our scope of the standing will tremendously then uh we can very narrow and very small.",
      "ko": "그렇죠? 만약 우리가 공유한다면 그게 기존의 것이라면 그리고 그 정책의 이유라면 인과 관계에 대한 추정에서, 그러면 우리는 아, 우리는 다른 어떤 질문에도 답할 수 있어요. 우리는 RCT에만 답할 수 있고, 그러면 우리의 범위는 그 상태가 엄청나게 그러면 어, 우리는 매우 좁고 매우 작을 수 있어요.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 3040,
      "page": 9,
      "en": "Because you know, there's only a few RCT available out there. This is mostly and then the government they don't have RCT. They just do that. Right? So if you want to learn something about real policies, we need to think about how we can evaluate those the causal effects of those policies.",
      "ko": "왜냐하면, 아시다시피, 이용 가능한 RCT가 몇 개 없거든요. 이건 주로 그리고 정부가 가지고 있지 않은 RCT예요. 그들은 그냥 그렇게 해요. 그렇죠? 그래서 만약 당신이 무언가에 대해 배우고 싶다면, 우리는 어떻게 생각해야 할지 고민해야 해요. 그 정책들을 어떻게 평가할지 인과 관계를요.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 3059,
      "page": 9,
      "en": "which is not done based on RCT. So actually RCT is becomes more popular recently because more researchers can do that and then they appreciate this clear identification idea. But additionally, there are different ways. to to show the causal effect of some treatment.",
      "ko": "그건 RCT에 기반하지 않은 것이에요. 그래서 사실 RCT는 더 많이 사용되고 있어요, 최근에. 왜냐하면 더 많은 연구자들이 그렇게 할 수 있고, 그들은 그것을 높이 평가하기 때문이에요. 이 명확한 식별 아이디어는. 하지만 추가적으로, 다른 방법들도 있어요. 보여주기 위해서 인과 관계의 효과를 보여주기 위해서요.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 3084,
      "page": 9,
      "en": "So deeper difference is one of the most most frequently used method. other than IV and it's a kind of traditional uh but it helps to understand the effect of certain policy. Okay? So one example is a hypothetical example but this is a kind of you know, a related to the policy.",
      "ko": "그래서 더 깊은 차이는 그 중 하나가 가장 자주 사용되는 방법입니다. 다른 방법으로는 IV와 일종의 전통적인 방법입니다. 하지만 이해하는 데 도움이 됩니다. 어떤 치료의 효과를 이해하는 데요. 알겠죠? 그래서 한 가지 예는 가상의 예인데, 이것은 일종의 뭐랄까, 관련된 정책입니다.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 3107,
      "page": 9,
      "en": "But what we may be interested in is school free lunch and the student outcome. So we understand the free lunch program. The causal effect of the free lunch program, but government they don't care about causal inference. They just did it. But we want to understand this.",
      "ko": "하지만 우리가 할 수 있는 것은 학교 무료 점심입니다. 그리고 학생의 결과입니다. 그래서 우리는 무료 점심 프로그램을 이해합니다. 무료 점심 프로그램의 인과 효과, 하지만 정부는 그들이 학교에 대해 신경 쓰지 않아요. 그들은 그냥 했어요. 하지만 우리는 이것을 이해하고 싶어요.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 3127,
      "page": 9,
      "en": "Okay? So we cannot based on RCT, we cannot assumption. We have to uh you know, think of something else, think of something else. So how So suppose that Mumbai introduced free school lunch in 2006 and you want to want the effect on the test score. Test score is observed in 2005 and 2007. This is a hypothetical example.",
      "ko": "알겠죠? 그래서 우리는 RCT를 기반으로 할 수 없고, 우리는 가정을 해야 해요. 어, 그러니까 다른 것을 생각해야 해요, 다른 것을 생각해야 해요. 그래서 어떻게 그래서 가정해 봅시다, 뭄바이가 무료 학교 점심을 2006년에 도입했고, 당신은 그 시험 점수에 미치는 효과를 원해요. 시험 점수는 2001년에 관찰되고 2007년에 관찰돼요. 이것은 가상의 예입니다.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 3154,
      "page": 9,
      "en": "How is your life to measure whether Okay? We know the test score of the student before and after free lunch program. If free lunch program was effective, would we observe that test score increased over time? Right? So the first thing you want to understand, you want to see is that whether the test score of students in Mumbai has improved over time.",
      "ko": "어떻게 당신의 삶이 측정될 수 있을까요? 알겠죠? 우리는 시험 점수를 알고 있고, 학생이 전과 후에 무료 점심 프로그램의 결과를 알고 있어요. 만약 무료 점심 프로그램이 효과적이었다면, 우리는 그 차이를 관찰할 수 있을까요? 시험 점수가 시간이 지남에 따라 증가했나요? 그래서 첫 번째로 이해하고 싶은 것은, 당신이 보고 싶은 것은 시험 점수가 오르는지 뭄바이의 학생들의 시험 점수가 어떻게 변했는지입니다. 시간이 지남에 따라 향상되었는지.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 3186,
      "page": 9,
      "en": "If it didn't, then probably uh we're not, you know, we're not very hopeful or positive. Suppose that there was some improvement. in the test score. Okay, can you state that that is the evidence? of the causal effect of program. So no.",
      "ko": "만약 그렇지 않다면, 아마도 어, 우리는 그게 아니라는 것을 알 수 있고, 우리는 별로 희망적이지 않거나 긍정적이지 않아요. 만약 어떤 개선이 있었다면, 시험 점수에 개선이 있었다면. 알겠죠? 그럼 이렇게 말할 수 있나요? 그게 증거인가요? 인과 관계의 효과에 대한 증거인가요? 그래서 아니요.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 3212,
      "page": 9,
      "en": "We know that the free lunch program was introduced in 2006 and we know their score before and after the free lunch program. Okay? And we found that their test score on average increased over time. And somebody said that, oh, see the test score increased over time. This is the reason that we have to give credit to free lunch program for this improvement.",
      "ko": "우리는 무료 점심 프로그램이 2006년에 도입되었고, 우리는 그들의 점수가 그 전과 후에 어떻게 변했는지 알고 있어요. 알겠죠? 그리고 우리는 발견했어요. 그들의 시험 점수가 평균적으로 시간이 지남에 따라 증가했다는 것을. 그리고 누군가 말했죠, 오, 시험 점수가 시간이 지남에 따라 증가했어. 이것이 우리가 해야 할 일이야. 크레딧을 줘야 해. 무료 점심 프로그램에 이 개선에 대해.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 3237,
      "page": 9,
      "en": "Okay? And this is because free lunch program has a causal effect on the test score. Then you look suspicious because I don't I don't buy that. Why? Why not? Test score improved over time. And we know that in between free lunch program was implemented. But still we are not so confident to say that they improved. They just improved by program, right?",
      "ko": "알겠죠? 그리고 이것은 왜냐하면 무료 점심 프로그램이 시험 점수에 인과 효과가 있기 때문이에요. 그럼 당신은 의심스러워 보여요. 왜냐하면 저는 그걸 믿지 않거든요. 왜? 왜 안 되죠? 시험 점수가 시간이 지남에 따라 향상되었어요. 그리고 우리는 그 사이에 무료 점심 프로그램이 시행되었다는 것을 알아요. 하지만 여전히 우리는 그렇게 확신할 수 없어요. 그들이 향상되었다고. 그들은 그냥 프로그램으로 향상된 거죠, 맞죠?",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 3267,
      "page": 9,
      "en": "with common sense. I know you think why not? What is the common sense? that you would you know, have some counter argument somebody said that. And then you see a lot of news articles talk about like this. You know, program was introduced and then we see the outcome over time and it has improved, so that then still this program had a very good effect on society.",
      "ko": "상식적으로요. 당신이 생각하는 건 알아요. 왜 안 되냐고? 상식적으로 뭐죠? 당신이 할 거라는 거 알잖아요, 좀 반박할 게 있다는 거 누군가 말했죠. 그리고 많은 사람들이 뉴스 기사에서 이렇게 말하는 걸 볼 수 있어요. 아시다시피, 프로그램이 도입되었고 그 후 결과를 시간이 지나면서 보게 되고 향상되었으니 그래서 여전히 이 프로그램이 효과가 있었다는 건 아주 좋은 사회적 효과가 있었다는",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 3293,
      "page": 9,
      "en": "And it's a common argument. What is the what is the performance here?",
      "ko": "거죠. 그리고 그건 흔한 주장이에요. 무엇이 성과인가요? 여기서?",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 3301,
      "page": 9,
      "en": "Is the free lunch program only change? that this experienced over time? It happened in 2006. And then we are measuring test score between 2005 and said. Would they experience some changes, changes during the period? Other than free lunch program. But this is it possible that local economy may have some changes over time? So local economy like even they have some boom in the local economy, that parents got richer and then they have like invest in private education not the you know, from the free lunch program. So that's why",
      "ko": "무료 점심 프로그램이 유일한 변화인가요? 이 연구가 겪은 것이 시간이 지나면서인가요? 그게 2006년에 발생했어요. 그리고 우리는 2006년과 2005년 사이의 시험 점수를 측정하고 있어요. 그들이 어떤 변화를 겪었을까요, 그 기간 동안의 변화를요? 그 외에 무료 점심 프로그램 말고. 하지만 이게 가능할까요? 그들이 지역 경제가 어쩌면 어떤 변화가 있었을 수도 있잖아요? 그래서 지역 경제가 설령 그들이 지역에서 어떤 호황을 누렸더라도, 부모들이 더 부유해지고 그래서 그들이 투자와 같은 사립 교육에 투자하게 되었다면 그게 아니라 무료 점심 프로그램 때문이 아니라면요. 그래서",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 3343,
      "page": 9,
      "en": "you know, they have higher score. Or they did better. So they have they can focus more on the class. That's why their test score improved. Or there are some like you know, other policies implemented in this area other than free lunch program. That is the very common.",
      "ko": "아시다시피, 그들이 더 높은 점수를 받은 거죠. 아니면 그들이 더 잘했거나요. 그래서 그들은 더 집중할 수 있어요. 수업에. 그래서 그들의 시험 점수가 향상된 거죠. 아니면 어떤 그러니까, 다른 정책들이 시행되었을 수도 있죠, 이 지역에서. 무료 점심 프로그램 말고. 그게 아주 흔한 일이죠.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 3362,
      "page": 9,
      "en": "And then that is something you really have to think when we talk. Once once people",
      "ko": "그리고 그건 당신이 정말로 해야 할 생각이에요, 우리가 이야기할 때. 일단 사람들이",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 3371,
      "page": 9,
      "en": "This is a this is a part of the environment and then we come here different the people and after, but if you check just really it's very possible that other policies also implementing the same policy. Like, you know, if you think about fertility, there are tons of policies implemented at the same time.",
      "ko": "이건 이건 환경의 일부이고 우리는 여기 다른 사람들과 그 후에 오지만, 만약 당신이 확인한다면 그냥 정말로 그럴 가능성이 매우 높아요. 다른 정책들도 똑같이 시행하고 있어요. 예를 들어, 당신이 출산에 대해 생각해보면, 수많은 정책들이 동시에 시행되고 있어요.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 3390,
      "page": 9,
      "en": "Right? So like here, freelance program is one policy. But we never know whether there are other policies implemented during this period as well. So just looking at before and after change in the test score of this treated group is not enough. So if that were enough, we would state difference estimate.",
      "ko": "그렇죠? 그래서 여기처럼, 프리랜서 프로그램은 하나의 정책이에요. 하지만 우리는 다른 정책들이 시행되고 있는지 알 수 없어요. 이 기간 동안에. 그래서 그냥 보는 것만으로는 전후를 비교해서 변화를 알 수 없어요. 이 치료받은 그룹의 점수만으로는 충분하지 않아요. 그래서 만약 그게 충분하다면 우리는 차이를 말할 수 있어요. 하지만",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 3413,
      "page": 9,
      "en": "But our estimate the name is a difference in differences. So we need to find another difference. Okay? So the logic is that. So why is that? So we have to look at the second difference. And then the first like this is our logic. So we found some difference before and after the treatment, but that difference may capture two things.",
      "ko": "우리의 추정치는 이름은 차이입니다. 차이의 차이. 그래서 우리는 다른 것을 찾아야 해요. 알겠죠? 그래서 논리는 이렇습니다. 그래서 왜 그럴까요? 그래서 우리는 두 번째 차이를 봐야 해요. 그리고 첫 번째는 이것이 우리의 논리입니다. 그래서 우리는 몇 가지 차이를 발견했어요. 치료 전후에. 하지만 그 차이는 두 가지를 포함할",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 3440,
      "page": 9,
      "en": "The first difference is that actually the corner effect of the program. That is the program. But but that is not the only component that can explain the change in the test score in this area. There can be something else, which is secular trend. We call that secular trend.",
      "ko": "수 있어요. 첫 번째 차이는 실제로 코너 효과라는 것입니다. 그것이 프로그램입니다. 하지만 하지만 그것은 유일한 것이 아닙니다. 구성 요소는 설명할 수 있는 것은 시험 점수의 변화입니다. 이 지역에서요. 다른 것이 있을 수 있는데, 그것은 세속적인 추세입니다. 우리는 그것을 세속적 추세라고 부릅니다.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 3470,
      "page": 9,
      "en": "But it includes everything. Whatever that changes over time in this area. Well, all the shots. And you know, things. that explains that has independent explanation on the test score difference over time. That is called a secular trend. And this secular trend we cannot rule out because you know, uh freelance program is one thing, but this group also experienced something else.",
      "ko": "하지만 그것은 모든 것을 포함합니다. 그게 무엇이든 시간이 지나면서 이 지역에서 변하는 것. 음, 모든 샷들. 그리고 뭐, 그런 것들. 그게 설명하는 것은 독립적으로 설명할 수 있는 것입니다. 시험 점수에 대한 시간 경과에 따른 차이입니다. 그것을 세속적 추세라고 부릅니다. 그리고 이 세속적 추세는 우리가 배제할 수 없어요. 왜냐하면, 어, 프리랜서 프로그램은 한 가지이지만, 이 그룹도 경험했거든요. 다른 무언가를.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 3502,
      "page": 9,
      "en": "during the same period. Whatever something else may have a direct impact on their test score. We need to So if we Okay? attribute all the difference to the freelance program, we may overstate the effect of the freelance program. Okay? So we need to control, we need to estimate what would be the difference.",
      "ko": "같은 기간 동안에. 그게 무엇이든 직접적인 영향을 미칠 수 있어요. 그들의 시험 점수에. 우리는 그래서 만약 우리가 알겠죠? 귀속시킨다면 모든 차이를 프리랜서 프로그램에 귀속시킨다면, 우리는 그 효과를 과대평가할 수 있어요. 알겠죠? 그래서 우리는 통제해야 하고, 추정해야 해요. 무엇이 차이일지 말이죠.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 3527,
      "page": 9,
      "en": "If you know, the trend like that is what would be the change in the test score in this area if there were not. the freelance program. If we know that, then that can be our estimate for the trend, secular trend. Once we know that, then we can just subtract subtract the trend from the first difference to estimate the treatment.",
      "ko": "만약 아신다면, 그 추세는 예를 들어 그게 무엇이 될지 시험 점수의 변화는 이 지역에서 만약 그렇지 않다면. 프리랜서 프로그램은. 우리가 그걸 안다면, 그러면 그게 우리의 추정치가 될 수 있어요, 세속적 추세에 대한. 일단 그걸 알면, 우리는 그냥 뺄 수 있어요. 뺄 수 있어요. 그 추세를 에서 첫 번째 차이를 빼서 추정할 수 있어요. 그 치료를.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 3556,
      "page": 9,
      "en": "So the difference difference here is that we want to estimate the trend. Secular trend. The effect of secular trend is This is like what um like",
      "ko": "그래서 여기서의 차이의 차이는 우리가 추정하고 싶은 것은 추세입니다. 세속적 추세. 그 효과는 세속적 추세의 효과는 이건 마치 뭐랄까 음 같은 거예요.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 3588,
      "page": 9,
      "en": "那我也覺得確實 推論的 對。",
      "ko": "그럼 저도 확실히 추론한 게 맞아요.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 3606,
      "page": 9,
      "en": "那其實 就是像 Hypothesis testing. This is different from what actually happened. This is counter factual, which means it's not factual. On the factual situation, it or hypothetically, uh the situation and which would have happened to me, but they were no so therefore relative program was actually introduced.",
      "ko": "그럼 사실 이건 마치 가설 같은 거예요. 이건 다른 실제로 일어난 것과는 달라요. 이건 반대되는 사실인데, 그건 사실이 아니라는 뜻이에요. 사실적인 상황에서는, 그건 또는 가설적으로는, 어 그 상황은 그리고 어떤 일이 일어났을지 저에게, 하지만 그들은 없었기 때문에 따라서 상대적으로 프로그램은 실제로 도입되었습니다.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 3638,
      "page": 9,
      "en": "So we would never know this situation. We would never be able to observe what would have happened. to if they didn't implement it. So we don't know, but this is like a potential outcome. So we don't observe potential outcome of if there's no program. But we can define that, we want to estimate this potential outcome by finding out other groups who may have information, the potential outcome of it.",
      "ko": "그래서 우리는 절대 알 수 없어요, 이 상황을. 우리는 절대 관찰할 수 없어요, 무슨 일이 일어났을지. 누구에게 만약 그들이 시행하지 않았다면 그래서 우리는 모르죠, 하지만 이건 잠재적인 결과 같은 거예요. 그래서 우리는 관찰하지 않아요 잠재적인 결과를 만약 프로그램이 없다면. 하지만 우리는 그것을 정의할 수 있고, 우리는 이 잠재적인 결과를 추정하고 싶어요. 알아내는 것으로요. 다른 그룹들이 정보를 가지고 있을 수 있는, 잠재적인 결과는 무엇인지.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 3674,
      "page": 9,
      "en": "So like the secular trend to understand the theory, what is the secular trend? What is the secular trend? What would be the change in the outcome if there were not program. So the And that is counter factual. It didn't happen. We would never be able to observe that directly.",
      "ko": "그래서 세속적 추세를 이해하기 위해, 세속적 추세란 무엇인가요? 세속적 추세란? 무엇이 변화일까요? 만약 결과가 없었다면. 프로그램이. 그래서 그 그리고 그건 반대되는 사실이에요. 그건 일어나지 않았어요. 우리는 절대 관찰할 수 없을 거예요, 그 직접적으로는.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 3698,
      "page": 9,
      "en": "It's like a potential outcome. Which is like a hypothetical hypothetical the effect. of secular trend. So if we ever know the trend, which is called D2, then subtract D2 from D1, this is the difference in differences. We can estimate D hat. So the key is how do we estimate the secular trend?",
      "ko": "이건 마치 잠재적인 결과예요. 그건 마치 가설적인 가설적인 그 효과예요. 세속적 추세의. 그래서 우리가 언젠가 이 추세를 알게 된다면, D2라고 불리는, 그러면 빼서 D2를 D1에서, 이것이 차이의 차이입니다. 우리는 D를 추정할 수 있어요. 그래서 핵심은 어떻게 세속적 추세를 추정하느냐는 것입니다.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 3729,
      "page": 9,
      "en": "The effect of secular trend.",
      "ko": "세속적 추세의 효과.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 3734,
      "page": 9,
      "en": "Questions? Okay. So let's move on. Let's move on. Okay. So let's find out. Uh this one is as I did it.",
      "ko": "질문 있으신가요? 네. 그럼 넘어가죠. 넘어가죠. 네. 그래서 알아봅시다. 어, 이건 제가 한 것처럼요.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 3749,
      "page": 9,
      "en": "Okay, I'll so about that. Uh yeah, yes. There is a story about that. Thank you for letting me know.",
      "ko": "네, 제가 그럼 그에 대해 말씀드릴게요. 어, 네, 맞아요. 그에 대한 이야기가 있어요. 알려주셔서 감사합니다.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 3899,
      "page": 9,
      "en": "Ready? Okay.",
      "ko": "준비됐어? 알았어.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 3907,
      "page": 9,
      "en": "Let's try it down. I'll take one thing. And the key idea of the process is like we estimate the from other than truth. And then use that. as like a hypothesis for what would have happened to the where it were in fact. And then that can help us to isolate the problem.",
      "ko": "한번 해보자. 내가 하나 가져갈게. 그리고 핵심은 이 과정의 핵심 은 우리가 추정하는 거야. 다른 것보다 진실을. 그리고 그걸 사용하는 거야. 마치 가설처럼. 추정을 위한 무슨 일이 일어났을지 에 대한 그게 어디에 있었는지 사실대로. 그리고 그게 우리가 격리하는 데 도움이 될 수 있어. 문제를.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 3933,
      "page": 9,
      "en": "True. Okay. So the key is how cool because I show that everybody has a score. before and after two areas. So Mumbai is our treatment group. And then we have another group.",
      "ko": "맞아. 알았어. 그래서 핵심은 얼마나 멋진지 왜냐하면 내가 보여주거든 모두가 점수가 있다는 걸 전과 후로 두 영역에서. 그래서 뭄바이는 우리의 실험군이야. 그리고 우리는 또 다른 그룹이 있어.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 3953,
      "page": 9,
      "en": "And so we knew that it",
      "ko": "그래서 우리는 그것이",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 3960,
      "page": 9,
      "en": "So New Delhi is a used as a control group.",
      "ko": "그래서 뉴델리는 대조군으로 사용돼.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 3966,
      "page": 9,
      "en": "Which means that the Mumbai and New Delhi were very different. But underlying",
      "ko": "이것은 즉 뭄바이 와 뉴델리가 매우 달랐다는 거야. 하지만 근본적인",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 3976,
      "page": 9,
      "en": "assumption, when you use this as a difference in difference is that the what would have happened to Mumbai without the program, can be learned from what had happened to them. Because the New Delhi didn't have the program. And New Delhi and Mumbai are kind of comparable in many other aspects.",
      "ko": "가정은, 사용할 때 이것을 차이로 보는 것은 뭄바이 에 무슨 일이 일어났을지 에 대한 프로그램이 없는 것은 배울 수 있어. 무슨 일이 일어났는지 에 대한 것에서 말이야. 왜냐하면 뉴델리는 프로그램이 없었으니까. 그리고 뉴델리와 뭄바이는 어느 정도 많은 면에서 비슷하거든.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 3994,
      "page": 9,
      "en": "So we use New Delhi as a control group. Which is like a we do the counterfactual here. has a score change in Mumbai without program. So we look at other area, which is comparable to Mumbai, and this is the one we chose in New Delhi. And New Delhi group, they are comparable.",
      "ko": "그래서 우리는 뉴델리를 대조군으로 사용해. 그건 마치 우리가 관찰하는 반사실적 인 거야. 점수가 변했어 뭄바이에서 프로그램 없이 말이야. 그래서 우리는 봐 다른 지역을, 그건 뭄바이와 비교할 수 있고, 이게 우리가 뉴델리에서 선택한 거야. 그리고 뉴델리는 그 그룹은 비교할 수 있어.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 4022,
      "page": 9,
      "en": "Once they are comparable, then New Delhi didn't have a program. Then what we observe in New Delhi can be used as estimate for what would have happened to Mumbai without the program. So the score difference before and after in New Delhi, but before and after 2006 in New Delhi is used as the estimate for the secular trend.",
      "ko": "일단 비교가 되면, 뉴델리는 프로그램이 없었어. 그러면 우리가 관찰한 것은 뉴델리에서 사용될 수 있어. 추정치로 무슨 일이 일어났을지 에 대한 뭄바이에 대한 프로그램 없이. 그래서 그 점수 차이는 전과 후로 뉴델리에서 말이야, 하지만 전과 후 2006년 뉴델리에서 사용되는 것은 마치 추정치로 일반적인 추세에 대한 거야.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 4049,
      "page": 9,
      "en": "So uh control group, so yeah.",
      "ko": "그래서 어 대조군이니까, 그래.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 4074,
      "page": 9,
      "en": "This is",
      "ko": "이것은",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 4079,
      "page": 9,
      "en": "use identification assumption. So this patient was assumption.",
      "ko": "식별을 사용한다는 가정입니다. 그래서 이것은 환자가 이전에 가정이었다는 것입니다.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 4089,
      "page": 9,
      "en": "So, people are different, so you establish the under our assumption that that you then change. It's a thought. estimate",
      "ko": "그래서 사람들은 다르니까, 당신은 우리 아래에 있는 가정을 세우고 그게 당신이 그러면 바뀐다는 것입니다. 그건 생각이에요. 추정치죠.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 4108,
      "page": 9,
      "en": "for the security trend. that we have observed in without treatment. Okay? Does that make sense? This assumption right? So like a many people say, yeah, you know, you move out so different or I don't buy your story. So that is a typical response. So you really need to be careful choosing which control group.",
      "ko": "그 보안에 대한 추세입니다. 우리가 관찰한 바에 따르면 그게 없어도 치료가 됩니다. 알겠죠? 이해가 되시나요? 이번에는 이 가정이 맞죠? 그래서 마치 많은 사람들이 말하듯이, 네, 당신이 이사하면 너무 다르거나 당신의 말을 믿지 않아요. 그래서 그건 전형적인 반응입니다. 그래서 당신은 어떤 것을 선택할지 정말 신중해야 합니다.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 4124,
      "page": 9,
      "en": "to use to come this people that you are different and difference actually is a very different, very estimate for the causal effect of treatment. But just to demonstrate what uh why we need to do a control and treatment group, the difference difference I I choose you really.",
      "ko": "어떤 대조군을 사용할지 말이죠. 이 사람들이 당신이 다르다고 말하고 차이가 있다고 할 때 실제로 그건 매우 다르고, 매우 추정치입니다. 인과 효과에 대한 추정치입니다. 하지만 그냥 보여드리기 위해서입니다. 무엇이 어 왜 우리가 왜 해야 하는지 대조군과 실험군을 해야 하는지, 그 차이가 제가 당신을 선택한 이유입니다.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 4157,
      "page": 9,
      "en": "Okay? So like what you have observed in is the same as what we have observed in without treatment. So what you have observed in but difference or over time is the test score increase by 150. But what you observe in by the difference in test score over time is 200.",
      "ko": "알겠죠? 그래서 당신이 관찰한 바에 따르면 똑같다는 것입니다. 우리가 관찰한 것과 치료 없이도 똑같습니다. 그래서 당신이 관찰한 바에 따르면 다르지만 또는 시간이 지나면서 테스트 점수가 100점 증가했습니다. 하지만 당신이 관찰한 바에 따르면 테스트 점수의 차이는 시간이 지나면서 200점입니다.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 4181,
      "page": 9,
      "en": "Okay? So if you just look at Mumbai, then we may say that oh, the preliminary program and increase average test score by 200. But then, if we believe that New Delhi's progress is a good estimate, for what would happen to Mumbai without the program, then even with the program, New Delhi's students show some progress in test score over time by 150.",
      "ko": "알겠죠? 그래서 뭄바이만 보면, 우리는 오, 라고 말할 수 있습니다. 예비 프로그램과 평균 테스트 점수 증가가 200점이라고요. 하지만, 우리가 뉴델리가 프로그램이 좋은 것이라고 믿는다면, 추정치죠. 무엇이 뭄바이에 일어날지 프로그램 없이, 그러면 프로그램이 있어도, 뉴델리의 학생들은 보여줍니다. 테스트 점수가 시간이 지나면서 150점 증가했습니다.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 4212,
      "page": 9,
      "en": "So that is a something that is independent of the treatment. So we should not give that like that, you know, we should not attribute that difference to the treatment. So the real treatment effect is the difference between those two, which is 50. So but we cannot explain by secular trend.",
      "ko": "그래서 그것은 내재된 것과는 독립적인 것입니다. 그래서 우리는 그것을 그렇게 주면 안 됩니다. 아시다시피, 우리는 그 차이를 치료 탓으로 돌려서는 안 됩니다. 그래서 실제 치료 효과는 그 두 가지의 차이입니다, 즉 50이죠. 그래서 하지만 우리는 설명할 수 없습니다. 세속적인 추세로는.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 4232,
      "page": 9,
      "en": "A is interpreted as the treatment effect. of the preliminary program. So graphically it looks like that. This is what you observed in New Delhi, which is our control group. This is the treatment group. Okay? So they they are just some differences between those two groups, but it does not matter what matters is how that difference changes over time.",
      "ko": "어 해석은 치료의 효과로 해석됩니다. 그 예비 프로그램의 그래서 그래프로 보면 그렇게 보입니다. 이것은 당신이 관찰한 바에 따르면 뉴델리에서 일어난 일인데, 이것이 우리의 대조군입니다. 이것은 치료군입니다. 알겠죠? 그래서 그들은 단지 약간의 차이가 있을 뿐인데, 그 두 그룹 사이에는 하지만 그건 중요하지 않고 중요한 것은 그 차이가 시간이 지남에 따라",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 4259,
      "page": 9,
      "en": "Or the difference is like a New Delhi's difference here is the secular trend. So we believe that whatever we observed over time, in the Mumbai, the if we use this as a secular trend, then we subtract this much as a secular trend, we only attribute this much as the treatment.",
      "ko": "어떻게 변하느냐입니다. 또는 그 차이가 뉴델리처럼 여기서는 세속적인 추세라는 것입니다. 그래서 우리는 다음과 같이 믿습니다. 우리가 관찰한 것이 시간이 지남에 따라 그 안에서 뭄바이에서 그 만약 우리가 이것을 세속적인 추세로 사용한다면, 그러면 우리는 이것을 이만큼 뺍니다. 세속적인 추세로, 우리는 이것을 치료의 효과로만 돌립니다.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 4284,
      "page": 9,
      "en": "So the key idea of difference in difference is that we kill something or something will happen to be the treatment. If we look at what happened in the control, if you define the Delhi control, who have a very similar characteristics, but as you can feel, it is summarize on that strong assumption that New Delhi is a good control.",
      "ko": "그래서 핵심 아이디어는 차이의 차이인데, 우리가 무언가를 죽이거나 무슨 일이 일어나면 그것이 치료가 됩니다. 만약 우리가 대조군에서 일어난 일을 본다면, 델리의 대조군을 정의한다면, 그들은 매우 비슷한 특성을 가지고 있는데, 하지만 보시다시피 느끼실 수 있듯이, 그것은 매우 요약하자면 강력한 가정입니다. 즉, 뉴델리는 좋은 대조군입니다.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 4313,
      "page": 9,
      "en": "But the number of people, do you have to show that New Delhi and Mumbai has the similar trend before the treatment and critically, they also have to defend your assumption that New Delhi",
      "ko": "하지만 사람들의 수는, 보여줘야 하나요? 음, 뉴델리는 그리고 뭄바이는 가지고 있습니다. 비슷한 치료 전 추세를 그리고 결정적으로, 그들은 또한 당신의 가정을 방어해야 합니다. 즉, 뉴델리는",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 4334,
      "page": 9,
      "en": "Yeah, seriously. So, difference difference the idea is very clear, right? Simple, but is the you need to put a lot of effort to convince people that your choice of country is valid. So, because the entire estimation relies on the assumption that the trend can be observed from the control.",
      "ko": "네, 진짜로요. 그래서 차이점은 뭐냐면 그 아이디어는 아주 명확해요, 그렇죠? 간단하고, 하지만 당신이 해야 할 일은 많은 노력을 기울여야 한다는 거예요. 사람들이 당신이 선택한 나라가 가치 있다는 것을 설득하기 위해서요. 그래서, 왜냐하면 전체 추정치가 의존하기 때문에요. 그 가정은 그 추세가 관찰될 수 있다는 것이죠.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 4366,
      "page": 9,
      "en": "So that's about these parallel trends. So like once you understood this example, this is good enough. And then this is general for polarization of identification assumption. In the DID, which I'll discuss next week. Okay? Plus, this means",
      "ko": "그래서 그게 이 평행한 추세에 대한 것입니다. 그래서 일단 당신이 이 예시를 이해했다면, 이걸로 충분해요. 그리고 이건 일반적인 것입니다. 양극화에 대한 식별에 대한 가정입니다. DID 에서, 어떤 것을 다음에 논의할 것입니다. 알겠죠? 게다가, 이건 의미합니다.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     }
    ]
   },
@@ -2688,6 +2825,5 @@
     }
    ]
   }
- ],
- "savedAt": "2026-10-28T08:34:31.642Z"
+ ]
 }
