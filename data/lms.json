@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03T12:13:30.627Z",
+  "generatedAt": "2026-11-03T19:40:52.999Z",
   "source": "canvas",
   "user": "김주함(2025####72)",
   "courseFiles": {
@@ -722,7 +722,14 @@
         "name": "10주차",
         "position": 10,
         "unlock": null,
-        "items": []
+        "items": [
+          {
+            "type": "ExternalTool",
+            "title": "Core_note_iv_2026",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/95551/modules/items/4821775"
+          }
+        ]
       },
       {
         "id": "1507916",
