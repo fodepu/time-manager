@@ -1,4 +1,16 @@
 {
+ "savedAt": "2026-11-04T07:22:22.068Z",
+ "base": 0,
+ "docs": [
+  {
+   "name": "Ch5_Sum_w_Figures.pdf",
+   "base": 0,
+   "total": 25,
+   "from": 0
+  }
+ ],
+ "weekId": "wk10",
+ "langCode": "en-US",
  "id": "lec_2026-11-04_mw1pjfe5",
  "course": "거시경제학",
  "title": "거시경제학 10주차 · Ch5_Sum_w_Figures",
@@ -9,7 +21,7 @@
  "mode": "slides",
  "pdf": "Ch5_Sum_w_Figures.pdf",
  "pages": 25,
- "duration": 329,
+ "duration": 4918,
  "log": [
   {
    "t": 0,
@@ -19,13 +31,726 @@
    "t": 320,
    "page": 5,
    "resumed": true
+  },
+  {
+   "t": 320,
+   "page": 1,
+   "resumed": true
+  },
+  {
+   "t": 329,
+   "page": 5
+  },
+  {
+   "t": 3281,
+   "page": 3
   }
  ],
  "slides": [
   {
+   "page": 3,
+   "en": "says which variables are endogenous. Let's remember. Get you a handout. Yeah. C's endogenous variables given else? Yes. Lee J is endogenous variables given what else? Yes, employment is endogenous variables given shows that the labor demand equal labor supply and what other variables? You have the real wager and what else? Yeah. So the total output and anything else? Yeah. So the long with proportional tax rate that's in that Yes, government expenditure G, is there anything else? Uh capital includes we here we ignore this so with a linear technology so uh yeah the total factory z is there any n Given variables, anything else? Hi. Oh pi should be popular. Yeah. and the, right? So yeah. So which means one of the small exercise? In between for the bright. So what it means is when you take a look at the circle G, here look at this. For example, L star is a satin or indaginate. Exogenous. How about T? It's a endogenous, right? So here N to the F star and C star all the same. The hex is embedded in the solutions. So which means these are not your final solutions set. You have to figure out the key in terms of a G, Z, and an H. Okay, and now I will show you how to do it. So now what do we need? We have to exploit the government budget constraint. So in the government budget constraint cap government expenditure equals what? So tax rate times omega times H minus L, correct? getting good equilibrium, but bad equilibrium what happens? P times the wage rate is V, right? and the H minus L star me to it. And so here this. The quality is bad equilibrium. Okay? and the do we know the value for H minus L stock? Do we know the value of H minus L stock? Yes, we're Where is it? It's over here, right? So I can replace this to what? K times E times what? Yeah, one minus T times E. Okay. So that the thing now. Uh I don't need them anymore. So eventually I can come up with the capital G equals what? So z squared times the t times or minus t. If I remove the parentheses, I can get what? Z squared times the t minus the z squared times t squared. Okay? So, you know, let's move the, you know, move all the variables given one side. So I get I get here the zero equals z squared t squared minus z squared t squared. Yeah. Am I doing fine? Okay, so Let me stop here and let me ask you the same question. When you have this uh circle I need another English course for myself. I'm running out of my English. Alright, so here now let's take a look, you know, take a look at whether these variables are endogenous and exogenous of Z. Is it exogenous? Endogenous? Exogenous. How about G? Endogenous. How about the G? Exogenous. Is it is there any endogenous variables given than P no, so which means if you solve their equation for P the answer consists of purely within given exogenous variables and that's your answer. And This is quadratic formula. Quadratic quadratic function, right? And you know how to solve their. Yeah, yeah, it is a quadratic function, so you apply quadratic formula. Yeah? No? Okay. Good. Never heard of quadratic formula before? You good? All right. So by using quadratic formula, okay, I'm not telling I'm not gonna over that the Formula looks like right. So I'm going to just start giving you the answer. So he equals Z square is the bottom. Minus two, I guess. Yeah. Minus P, so the z square plus minus square root z. D square of square that's a z four minus. For z square g. So if any if anyone doesn't know that the quadratic formula is, that should be a good formula. and the it looks like we have a common factor z square everywhere, like Your keys. the laffer and the square, right? Yeah, so I can rewrite that change. Value over here that key star equals what? Z. Square and the plus minus the z times square root z square minus g divide by Two times leave teleport with this ocean. I think I'm supposed to do it. That's true. Thank you. Or then we can't add long for the in here when we have what? But the numerator it says z plus minus z square minus b by by and the would be your value added then you have to double check Since we have a plus and minus all together in the solutions. And also this tax rate lies where? Lies between zero and one, so you have to impose some restrictions, you know, by you know solving Okay? And so put some restrictions on Z and G the relationship and let's say this as uh what is it, H I circle I so from circle G and I you can get the you have the final answer for C star L star and the labor supply star Which would be that's my deployment, and the you know that the weight rate is a z. And of course, here from the I you know that the E star is. And once you know that the N star is, the output would be the Z. Z times n star is all the like value in this and just mathematical. and the I will physically the solutions on a graph. It's like this. So here you have the Lapa curve between the hex rate between zero and one. And here is tax revenue. And the lava curve I just erased it was the G, the zero equal g. And if you pick this on a graph, you want to have this type of bell shape function here. and the would be revenue over bar. And since we put a restriction on G here, so you finally get the answer as of point A and point B as We did o May. And here's the thing star. That's coming from here at 29. The smaller value would be T A star and the larger value. would be the key star because of the plus minus here. and the this is a quadratic function so you could find out that the key max that can maximize government revenue. as well by you know taking the derivative of this function. and the finally once you know that the t a star and the b star Or we could have this competitive equilibrium we just had before, right? Like this, as a we had a on A here and on B here, then you can find out the values. Okay, I'm starting and paste numbers in. Okay. All right. So five more minutes. So let me quickly ask you Which stage are we in so far by solving this math mat for example? So, what are the three steps of economics analysis? Step one: set up the model. So we set the model off with an example. What was a step two? determined equilibrium allocation, which I did over here, and what's a step three? Yeah, perform comparative static analysis and haven't done it yet. and the again, what are given exogenous variables? exogenous variables such G and Z and the. So this T star. consists of a Z and G and of course the first of them all purely consists of uh exactly variables so if you want to perform comparative static analysis you can have whether they are changing in Z could be positive, then uh you see how the variables you know moving around and especially the Lava curve here. I guess the maximum revenue will go up like this. So the Lava curve Will you know expand like a balloon so that the maximum revenue will grow up. And that's intuitively very consistent because if the Z increase What does it mean? The technological innovation could be done for the production so the firm can produce more than before. That means the government can have a create a tax collection. And that's what's happening in Korea right now, right? The Korean government says since we export so much semiconducts to other to foreign countries we have so much tax collected from consumers So that the can have uh you know they have a higher extra it from these two from a course here in this model takes on the fund doesn't take access in this model, yes. speech okay any questions okay next monday i will start with a public and the you may go have a good day uh",
+   "ko": "어떤 변수가 내생적이라고 말합니다. 기억합시다. 유인물을 받으십시오. 네. C의 내생적 변수가 주어졌습니까? 네. Lee J는 다른 무엇을 감안할 때 내생 변수입니까? 예, 고용은 노동이 내생적 변수임을 보여줍니다. 수요 균등한 노동 공급과 다른 변수는 무엇입니까? 당신은 진짜 내기를 가지고 있고 다른 것은 무엇입니까? 네. 그래서 총 출력과 다른 것이 있습니까? 네. 따라서 비례 세율과 함께 길면 예, 정부 지출 G, 다른 것이 있습니까? uh 자본이 여기에 포함되어 있습니다. 우리는 이것을 무시하므로 선형 기술을 사용하여 uh 예 전체 공장 z가 있습니다. 주어진 변수, 다른 것이 있습니까? 안녕. 오 파이는 인기가 있어야합니다. 네. 그리고, 그렇지? 그래. 그렇다면 작은 운동 중 하나는 무엇을 의미합니까? 밝은 사이에. 그래서 그것이 의미하는 바는 당신이 원 G를 볼 때 여기에서 이것을보십시오. 예를 들어, L star는 새틴 또는 indaginate입니다. 외인성. T는 어떻습니까? 내생적이죠? 그래서 여기 n에 F 별과 C 별이 모두 동일합니다. 헥스 솔루션에 포함되어 있습니다. 따라서 이것이 최종 솔루션 세트가 아님을 의미합니다. G, Z, H의 관점에서 키를 파악해야 합니다. 좋습니다. 이제 어떻게 하는지 알려 드리겠습니다. 이제 무엇이 필요합니까? 우리는 정부 예산 제약을 활용해야 합니다. 그래서 정부 예산 제약에서 정부 지출은 무엇과 같습니까? 그래서 세율은 오메가 곱하기 h 빼기 l, 맞습니까? 좋은 평형을 얻지만 나쁜 평형을 얻습니다. 어떻게 됩니까? P 곱하기 임금률은 V, 맞습니까? 그리고 H 마이너스 L 별. 그리고 여기까지. 품질이 나쁜 평형입니다. 알았어? 그리고 우리는 H 빼기 주식의 가치를 알고 있습니까? H 빼기 주식의 가치를 알고 있습니까? 예, 우리는 그것은 어디에 있습니까? 여기, 맞죠? 그래서 나는 이것을 무엇으로 바꿀 수 있습니까? K 곱하기 E 곱하기 무엇? 예, 1 마이너스 t 곱하기 e. 알았어. 그래서 지금 일. 어, 더 이상 필요하지 않습니다. 그래서 결국 나는 대문자 G가 무엇인지 생각해낼 수 있습니까? 따라서 z는 t 곱하기 와 마이너스 t를 제곱합니다. 괄호를 제거하면 무엇을 얻을 수 있습니까? z 제곱 t 에서 z 제곱 곱하기 t 제곱. 알았어? 그래서, 당신도 알다시피, 한쪽으로 주어진 모든 변수를 이동합시다. 그래서 나는 여기에서 0이 z 제곱 t 제곱에서 z 제곱 t 제곱과 같다는 것을 얻습니다. 네. 나는 잘 지내고 있습니까? 좋아, 그래서 여기서 멈추고 같은 질문을 드리겠습니다. 이 uh 원이 있을 때 나 자신을 위한 또 다른 영어 과정이 필요합니다. 영어가 부족합니다. 자, 이제 여기를 살펴보겠습니다. 이러한 변수는 내생적이고 Z의 외인성입니다. 외인성입니까? 내생? 외인성. G는 어떻습니까? 내생적. G는 어떻습니까? 외인성. .보다 주어진 내생 변수가 있습니까? P 아니오, 즉, P에 대한 방정식을 풀면 답은 순전히 주어진 외생 변수 내에서 구성되며 그것이 당신의 대답입니다. 과 이것은 2차 공식입니다. 이차 2차 함수, 맞죠? 그리고 당신은 그들의 해결 방법을 알고 있습니다. 예, 예, 2차 함수이므로 2차 공식을 적용합니다. 네? 아니? 알았어. 좋은. 이전에 2차 공식에 대해 들어본 적이 없습니까? 당신은 좋은? 좋아. 그래서 2차 공식을 사용하여, 알겠습니다. 공식이 맞는 것 같습니다. 그래서 나는 당신에게 대답을 제공하기 시작할 것입니다. 그래서 그는 동등합니다 Z제곱은 바닥입니다. 마이너스 2인 것 같아요. 네. 마이너스 p, 그래서 z 제곱 더하기 마이너스 제곱근 z. D 제곱의 제곱 Z 4 마이너스입니다. Z 스퀘어 G의 경우. 따라서 2차 공식이 있다는 것을 모르는 사람이 있다면 좋은 공식이어야 합니다. 그리고 그것은 우리가 모든 곳에 공통 요소 z 제곱이있는 것처럼 보입니다. 당신의 열쇠. 래퍼와 광장, 맞죠? 네, 그래서 그 변화를 다시 쓸 수 있습니다. 여기 핵심 별이 무엇과 같은 가치가 있습니까? 지. 정사각형 및 플러스 마이너스 z 시간 제곱근 z 제곱 마이너스 g로 나누기 이 바다와 함께 두 번 텔레포트를 떠납니다. 해야 한다고 생각합니다. 사실입니다. 감사합니다. 아니면 우리가 무엇을 가지고 있을 때 여기에 IN을 오래 추가할 수 없습니까? 그러나 분자는 z 더하기 빼기 z 제곱 마이너스 b by by by by by 부가 값이 되면 다시 확인해야 합니다. 솔루션에 플러스 마이너스가 모두 함께 있기 때문입니다. 또한 이 세율은 어디에 있습니까? 0과 1 사이에 있으므로 몇 가지 제한 사항을 적용해야 합니다. 알았어? 그래서 z와 g의 관계에 몇 가지 제한을 두고 이것을 uh is is it, h 나는 Circle G에서 I So에 동그라미를 치면 당신은 C Star L Star와 Labor Supply Star에 대한 최종 답을 얻을 수 있습니다. 그것이 내 배포이고 가중치가 z라는 것을 알고 있습니다. 그리고 물론, 여기에서 나는 E 별이 있다는 것을 알고 있습니다. 그리고 일단 n 별이 is라는 것을 알게 되면 출력은 z가 될 것입니다. Z Times N Star는 이것에서 모두 같은 값이며 수학적입니다. 그리고 i는 물리적으로 그래프에 솔루션을 제공합니다. 이렇습니다. 그래서 여기에 0과 1 사이의 16 진수 사이의 LAPA 곡선이 있습니다. 그리고 여기에 세금 수입이 있습니다. 그리고 방금 지운 용암 곡선은 g, 0은 g와 같습니다. 그래프에서 이것을 선택하면 여기에서 이러한 유형의 종 모양 기능을 원합니다. 그리고 바에 대한 수익이 될 것입니다. 그리고 여기에 G에 제한을 두었으므로 마침내 A와 점 B의 답을 얻을 수 있습니다. 우리는 O 5월을 했다. 그리고 여기 별이 있습니다. 그것은 29에서 여기에서 오는 것입니다. 더 작은 값은 t 별과 더 큰 값이 될 것입니다. 여기서 플러스 마이너스 때문에 핵심 스타가 될 것입니다. 그리고 이것은 2차 기능이므로 정부 수익을 극대화할 수 있는 키 최대값을 알 수 있습니다. 또한 이 기능의 파생어를 사용한다는 것을 알고 있습니다. 그리고 마침내 당신이 t 별과 b 별을 알게되면 아니면 이전에 가졌던 경쟁 균형을 가질 수 있습니다. 그렇죠? 이와 같이 A로 여기와 B에 A가 있으면 값을 찾을 수 있습니다. 알겠습니다. 숫자를 시작하고 붙여넣고 있습니다. 알겠습니다. 좋아. 그래서 5분 더. 그래서 빨리 물어보겠습니다 예를 들어 이 수학 매트를 푸는 지금까지 우리는 어느 단계에 있습니까? 그렇다면 경제 분석의 세 단계는 무엇입니까? 1단계: 모델을 설정합니다. 그래서 우리는 예를 들어 모델을 설정했습니다. 2단계는 무엇이었습니까? 내가 여기에서 한 결정된 평형 할당과 3단계는 무엇입니까? 예, 비교 정적 분석을 수행하고 아직 수행하지 않았습니다. 그리고 다시, 외생 변수는 무엇입니까? g 및 z와 같은 외인성 변수. 그래서 이 t 별. z와 g로 구성되며 물론 첫 번째는 모두 uh 정확히 변수로 구성되어 있으므로 비교 정적 분석을 수행하려는 경우 변경 여부를 확인할 수 있습니다. z는 양수일 수 있습니다. 그러면, 당신이 알고 있는 변수, 특히 여기에서 용암 곡선이 어떻게 움직이는지 알 수 있습니다. 최대수익은 이렇게 올라갈 것 같아요. 그래서 용암 곡선 최대 수익이 증가할 수 있도록 풍선처럼 확장을 알 수 있습니까? z가 증가하면 직관적으로 매우 일관성이 있습니다. 그것은 무엇을 의미합니까? 기술 혁신은 생산을 위해 수행될 수 있으므로 기업이 이전보다 더 많이 생산할 수 있습니다. 이는 정부가 세금 징수를 만듭니다. 그리고 그것이 지금 한국에서 일어나고 있는 일입니다. 그렇죠? 한국 정부는 우리가 다른 나라에 너무 많은 반도체를 수출하기 때문에 소비자로부터 징수되는 세금이 너무 많다고 말합니다. 그래서 당신은 그들이 이 모델에서 이 모델에서 펀드를 차지하지 않는 이 모델의 과정에서 이 두 가지의 더 높은 추가 정보를 가지고 있다는 것을 알 수 있습니다. 그렇습니다. 스피치 괜찮습니다 질문이 있습니다 다음주 월요일에 나는 대중으로 시작하고 당신은 좋은 하루를 보낼 수 있습니다 uh",
+   "pdf": "Ch5_Sum_w_Figures.pdf",
+   "pdfPage": 3,
+   "slideText": "Hyung Sun Choi 2 II With lump-sum taxes II.1 Competitive Equilibrium (C.E.) Definition: A C.E. is a set of endogenous variables, { c, l, N, Y, T, w } , given exogenous variables, { G, z, K } such that the followings satisfy: 1. Consumers solve their optimization problems. max c,l u ( c, l ) subject to c = w ( h − l ) + π − T . 2. Firms solve their optimization problems: given K , max N d zF ( K, N d ) − wN d , 3. The Government satisfies the budget constraint, G = T . 4. Markets clear. (a) Labor Market: h − l = N d = N and w would be determined. (b) Goods Market: c + G = zF ( K, N ).",
+   "lines": {
+    "w": 612,
+    "h": 792,
+    "lines": [
+     {
+      "i": 0,
+      "text": "Hyung Sun Choi 2",
+      "x": 54.9602,
+      "y": 55.493800000000036,
+      "w": 467.9352918000001,
+      "h": 16.49813
+     },
+     {
+      "i": 1,
+      "text": "II With lump-sum taxes",
+      "x": 54.96020000000004,
+      "y": 88.4176,
+      "w": 262.2336157944249,
+      "h": 23.76199
+     },
+     {
+      "i": 2,
+      "text": "II.1 Competitive Equilibrium (C.E.)",
+      "x": 54.96020000000004,
+      "y": 139.02460000000002,
+      "w": 320.00221686021825,
+      "h": 19.79771
+     },
+     {
+      "i": 3,
+      "text": "Definition: A C.E. is a set of endogenous variables, { c, l, N, Y, T, w } , given",
+      "x": 54.96020000000004,
+      "y": 176.57390000000004,
+      "w": 468.1104016204302,
+      "h": 16.49813
+     },
+     {
+      "i": 4,
+      "text": "exogenous variables, { G, z, K } such that the followings satisfy:",
+      "x": 54.96089999999998,
+      "y": 201.8936999999999,
+      "w": 386.08787831936417,
+      "h": 16.49813
+     },
+     {
+      "i": 5,
+      "text": "1. Consumers solve their optimization problems.",
+      "x": 72.12039999999996,
+      "y": 239.33389999999991,
+      "w": 299.32709938720416,
+      "h": 16.49813
+     },
+     {
+      "i": 6,
+      "text": "max u ( c, l )",
+      "x": 274.32039999999995,
+      "y": 278.6936999999999,
+      "w": 64.491736,
+      "h": 16.49813
+     },
+     {
+      "i": 7,
+      "text": "c,l",
+      "x": 282.24031999999994,
+      "y": 292.3174899999999,
+      "w": 10.048516163524766,
+      "h": 11.457036
+     },
+     {
+      "i": 8,
+      "text": "subject to c = w ( h − l ) + π − T .",
+      "x": 90.00057999999996,
+      "y": 318.05389999999994,
+      "w": 199.8483602,
+      "h": 16.49813
+     },
+     {
+      "i": 9,
+      "text": "2. Firms solve their optimization problems: given K ,",
+      "x": 72.12011999999993,
+      "y": 355.37379999999996,
+      "w": 327.52792020000004,
+      "h": 16.49813
+     },
+     {
+      "i": 10,
+      "text": "( )",
+      "x": 280.9201699999999,
+      "y": 383.09382,
+      "w": 50.0107696,
+      "h": 16.49813
+     },
+     {
+      "i": 11,
+      "text": "d d",
+      "x": 318.72014999999993,
+      "y": 393.23749999999995,
+      "w": 58.100522799999965,
+      "h": 11.457036
+     },
+     {
+      "i": 12,
+      "text": "max zF K, N − wN ,",
+      "x": 231.72021999999996,
+      "y": 394.734,
+      "w": 149.44793019999994,
+      "h": 16.49813
+     },
+     {
+      "i": 13,
+      "text": "N d",
+      "x": 237.96044999999995,
+      "y": 409.19766,
+      "w": 13.262386899999996,
+      "h": 11.457036
+     },
+     {
+      "i": 14,
+      "text": "3. The Government satisfies the budget constraint, G = T .",
+      "x": 72.12032999999985,
+      "y": 440.09378,
+      "w": 363.2878202,
+      "h": 16.49813
+     },
+     {
+      "i": 15,
+      "text": "4. Markets clear.",
+      "x": 72.12032999999985,
+      "y": 477.41368,
+      "w": 105.16737698155217,
+      "h": 16.49813
+     },
+     {
+      "i": 16,
+      "text": "d",
+      "x": 278.04014999999987,
+      "y": 513.9573800000001,
+      "w": 5.180572799999993,
+      "h": 11.457036
+     },
+     {
+      "i": 17,
+      "text": "(a) Labor Market: h − l = N = N and w would be determined.",
+      "x": 96.00042999999985,
+      "y": 514.7339800000001,
+      "w": 399.4071035396364,
+      "h": 16.49813
+     },
+     {
+      "i": 18,
+      "text": "(b) Goods Market: c + G = zF ( K, N ).",
+      "x": 95.16015999999985,
+      "y": 546.1737800000001,
+      "w": 243.88795380527,
+      "h": 16.49813
+     }
+    ]
+   },
+   "segs": [
+    {
+     "t": 3297,
+     "page": 3,
+     "en": "says which variables are endogenous. Let's remember. Get you a handout. Yeah. C's endogenous variables given else?",
+     "ko": "어떤 변수가 내생적이라고 말합니다. 기억합시다. 유인물을 받으십시오. 네. C의 내생적 변수가 주어졌습니까?",
+     "raw": "says which variables are endogenous. Let's remember. Get you a handout. Yeah. C's endogenous variables. What else?",
+     "src": "parakeet"
+    },
+    {
+     "t": 3311,
+     "page": 3,
+     "en": "Yes. Lee J is endogenous variables given what else? Yes, employment is endogenous variables given shows that the labor",
+     "ko": "네. Lee J는 다른 무엇을 감안할 때 내생 변수입니까? 예, 고용은 노동이 내생적 변수임을 보여줍니다.",
+     "raw": "Yes. Lee J is endogenous variables. And what else? Yes, employment is endogenous variables, which shows that uh labor",
+     "src": "parakeet"
+    },
+    {
+     "t": 3326,
+     "page": 3,
+     "en": "demand equal labor supply and what other variables? You have the real wager and what else?",
+     "ko": "수요 균등한 노동 공급과 다른 변수는 무엇입니까? 당신은 진짜 내기를 가지고 있고 다른 것은 무엇입니까?",
+     "raw": "demand equal label supply and what other variables? You have the real wager and what else?",
+     "src": "parakeet"
+    },
+    {
+     "t": 3340,
+     "page": 3,
+     "en": "Yeah. So the total output and anything else? Yeah. So the long with proportional tax rate that's in that",
+     "ko": "네. 그래서 총 출력과 다른 것이 있습니까? 네. 따라서 비례 세율과 함께 길면",
+     "raw": "Yeah. So the total output and anything else? Yeah. So the long the proportional hex rate that's in that",
+     "src": "parakeet"
+    },
+    {
+     "t": 3355,
+     "page": 3,
+     "en": "Yes, government expenditure G, is there anything else?",
+     "ko": "예, 정부 지출 G, 다른 것이 있습니까?",
+     "src": "parakeet"
+    },
+    {
+     "t": 3369,
+     "page": 3,
+     "en": "Uh capital includes we here we ignore this so with a linear technology so uh yeah the total factory z is there any n",
+     "ko": "uh 자본이 여기에 포함되어 있습니다. 우리는 이것을 무시하므로 선형 기술을 사용하여 uh 예 전체 공장 z가 있습니다.",
+     "src": "parakeet"
+    },
+    {
+     "t": 3372,
+     "page": 3,
+     "en": "Given variables, anything else?",
+     "ko": "주어진 변수, 다른 것이 있습니까?",
+     "raw": "Given variable, anything else?",
+     "src": "parakeet"
+    },
+    {
+     "t": 3403,
+     "page": 3,
+     "en": "Hi. Oh pi should be popular. Yeah. and the, right? So yeah. So which means one of the small exercise?",
+     "ko": "안녕. 오 파이는 인기가 있어야합니다. 네. 그리고, 그렇지? 그래. 그렇다면 작은 운동 중 하나는 무엇을 의미합니까?",
+     "raw": "Hi. Oh pi should be popular. Yeah. And H, right? So yeah. So which means one of the small exercise?",
+     "src": "parakeet"
+    },
+    {
+     "t": 3418,
+     "page": 3,
+     "en": "In between for the bright. So what it means is when you take a look at the circle G, here look at this. For example, L star is a satin or indaginate.",
+     "ko": "밝은 사이에. 그래서 그것이 의미하는 바는 당신이 원 G를 볼 때 여기에서 이것을보십시오. 예를 들어, L star는 새틴 또는 indaginate입니다.",
+     "src": "parakeet"
+    },
+    {
+     "t": 3432,
+     "page": 3,
+     "en": "Exogenous. How about T? It's a endogenous, right? So here N to the F star and C star all the same. The hex",
+     "ko": "외인성. T는 어떻습니까? 내생적이죠? 그래서 여기 n에 F 별과 C 별이 모두 동일합니다. 헥스",
+     "src": "parakeet"
+    },
+    {
+     "t": 3447,
+     "page": 3,
+     "en": "is embedded in the solutions. So which means these are not your final solutions set. You have to figure out the key in terms of a G, Z, and an H. Okay, and now I will show you how to do it.",
+     "ko": "솔루션에 포함되어 있습니다. 따라서 이것이 최종 솔루션 세트가 아님을 의미합니다. G, Z, H의 관점에서 키를 파악해야 합니다. 좋습니다. 이제 어떻게 하는지 알려 드리겠습니다.",
+     "raw": "is embedded in the solution. So which means these are not your final solution set. You have to figure out the key in terms of a G, Z, and an H. Okay, and now I will show you how to do it.",
+     "src": "parakeet"
+    },
+    {
+     "t": 3462,
+     "page": 3,
+     "en": "So now what do we need? We have to exploit the government budget constraint.",
+     "ko": "이제 무엇이 필요합니까? 우리는 정부 예산 제약을 활용해야 합니다.",
+     "src": "parakeet"
+    },
+    {
+     "t": 3478,
+     "page": 3,
+     "en": "So in the government budget constraint cap government expenditure equals what? So tax rate times omega times H minus L, correct?",
+     "ko": "그래서 정부 예산 제약에서 정부 지출은 무엇과 같습니까? 그래서 세율은 오메가 곱하기 h 빼기 l, 맞습니까?",
+     "raw": "So in this government budget constraint cap government expenditure equals what? So tax rate times omega times H minus L, correct?",
+     "src": "parakeet"
+    },
+    {
+     "t": 3493,
+     "page": 3,
+     "en": "getting good equilibrium, but bad equilibrium what happens? P times the wage rate is V, right? and the H minus L star me to it. And so here this.",
+     "ko": "좋은 평형을 얻지만 나쁜 평형을 얻습니다. 어떻게 됩니까? P 곱하기 임금률은 V, 맞습니까? 그리고 H 마이너스 L 별. 그리고 여기까지.",
+     "raw": "getting to equilibrium, but in equilibrium what happens? P times the wage rate is V, right? And then H minus L star me to it. And so here this.",
+     "src": "parakeet"
+    },
+    {
+     "t": 3508,
+     "page": 3,
+     "en": "The quality is bad equilibrium. Okay? and the do we know the value for H minus L stock? Do we know the value of H minus L stock? Yes, we're",
+     "ko": "품질이 나쁜 평형입니다. 알았어? 그리고 우리는 H 빼기 주식의 가치를 알고 있습니까? H 빼기 주식의 가치를 알고 있습니까? 예, 우리는",
+     "raw": "The quality is in equilibrium. Okay? And then do we know the value for H minus L stock? Do we know the value of H minus L stock? Yes, we're",
+     "src": "parakeet"
+    },
+    {
+     "t": 3523,
+     "page": 3,
+     "en": "Where is it? It's over here, right? So I can replace this to what? K times E times what? Yeah, one minus T times E.",
+     "ko": "그것은 어디에 있습니까? 여기, 맞죠? 그래서 나는 이것을 무엇으로 바꿀 수 있습니까? K 곱하기 E 곱하기 무엇? 예, 1 마이너스 t 곱하기 e.",
+     "src": "parakeet"
+    },
+    {
+     "t": 3538,
+     "page": 3,
+     "en": "Okay. So that the thing now. Uh I don't need them anymore.",
+     "ko": "알았어. 그래서 지금 일. 어, 더 이상 필요하지 않습니다.",
+     "raw": "Okay. So that's the thing now. Uh I don't need them anymore.",
+     "src": "parakeet"
+    },
+    {
+     "t": 3553,
+     "page": 3,
+     "en": "So eventually I can come up with the capital G equals what?",
+     "ko": "그래서 결국 나는 대문자 G가 무엇인지 생각해낼 수 있습니까?",
+     "src": "parakeet"
+    },
+    {
+     "t": 3567,
+     "page": 3,
+     "en": "So z squared times the t times or minus t. If I remove the parentheses, I can get what? Z squared times the t minus the z squared times t squared. Okay?",
+     "ko": "따라서 z는 t 곱하기 와 마이너스 t를 제곱합니다. 괄호를 제거하면 무엇을 얻을 수 있습니까? z 제곱 t 에서 z 제곱 곱하기 t 제곱. 알았어?",
+     "src": "parakeet"
+    },
+    {
+     "t": 3583,
+     "page": 3,
+     "en": "So, you know, let's move the, you know, move all the variables given one side. So I get I get here the zero equals z squared t squared minus z squared t squared.",
+     "ko": "그래서, 당신도 알다시피, 한쪽으로 주어진 모든 변수를 이동합시다. 그래서 나는 여기에서 0이 z 제곱 t 제곱에서 z 제곱 t 제곱과 같다는 것을 얻습니다.",
+     "raw": "So, you know, let's move the, you know, move all the variables in one side. So I get I get here the zero equals z squared t squared minus z squared t squared.",
+     "src": "parakeet"
+    },
+    {
+     "t": 3591,
+     "page": 3,
+     "en": "Yeah. Am I doing fine?",
+     "ko": "네. 나는 잘 지내고 있습니까?",
+     "src": "parakeet"
+    },
+    {
+     "t": 3592,
+     "page": 3,
+     "en": "Okay, so",
+     "ko": "좋아, 그래서",
+     "src": "parakeet"
+    },
+    {
+     "t": 3608,
+     "page": 3,
+     "en": "Let me stop here and let me ask you the same question. When you have this uh circle",
+     "ko": "여기서 멈추고 같은 질문을 드리겠습니다. 이 uh 원이 있을 때",
+     "src": "parakeet"
+    },
+    {
+     "t": 3624,
+     "page": 3,
+     "en": "I need another English course for myself. I'm running out of my English. Alright, so here now let's take a look, you know, take a look at whether",
+     "ko": "나 자신을 위한 또 다른 영어 과정이 필요합니다. 영어가 부족합니다. 자, 이제 여기를 살펴보겠습니다.",
+     "src": "parakeet"
+    },
+    {
+     "t": 3639,
+     "page": 3,
+     "en": "these variables are endogenous and exogenous of Z. Is it exogenous? Endogenous? Exogenous. How about G? Endogenous. How about the G? Exogenous. Is it is there any endogenous variables given than",
+     "ko": "이러한 변수는 내생적이고 Z의 외인성입니다. 외인성입니까? 내생? 외인성. G는 어떻습니까? 내생적. G는 어떻습니까? 외인성. .보다 주어진 내생 변수가 있습니까?",
+     "raw": "these variables are endogenous and exogenous of Z. Is it exogenous? Endogenous? Exogenous. How about G? Endogenous. How about the G? Exogenous. Is it is there any endogenous variables other than",
+     "src": "parakeet"
+    },
+    {
+     "t": 3653,
+     "page": 3,
+     "en": "P no, so which means if you solve their equation for P the answer consists of purely within given exogenous variables and that's your answer.",
+     "ko": "P 아니오, 즉, P에 대한 방정식을 풀면 답은 순전히 주어진 외생 변수 내에서 구성되며 그것이 당신의 대답입니다.",
+     "raw": "P no, so which means if you solve this equation for P the answer consists of purely within that exogenous variables and that's your answer.",
+     "src": "parakeet"
+    },
+    {
+     "t": 3655,
+     "page": 3,
+     "en": "And",
+     "ko": "과",
+     "src": "parakeet"
+    },
+    {
+     "t": 3671,
+     "page": 3,
+     "en": "This is quadratic formula. Quadratic quadratic function, right? And you know how to solve their.",
+     "ko": "이것은 2차 공식입니다. 이차 2차 함수, 맞죠? 그리고 당신은 그들의 해결 방법을 알고 있습니다.",
+     "raw": "This is quadratic formula. Quadratic quadratic function, right? And you know how to solve this.",
+     "src": "parakeet"
+    },
+    {
+     "t": 3685,
+     "page": 3,
+     "en": "Yeah, yeah, it is a quadratic function, so you apply quadratic formula.",
+     "ko": "예, 예, 2차 함수이므로 2차 공식을 적용합니다.",
+     "src": "parakeet"
+    },
+    {
+     "t": 3695,
+     "page": 3,
+     "en": "Yeah? No? Okay. Good. Never heard of quadratic formula before?",
+     "ko": "네? 아니? 알았어. 좋은. 이전에 2차 공식에 대해 들어본 적이 없습니까?",
+     "src": "parakeet"
+    },
+    {
+     "t": 3710,
+     "page": 3,
+     "en": "You good? All right. So by using quadratic formula, okay, I'm not telling I'm not gonna over that the",
+     "ko": "당신은 좋은? 좋아. 그래서 2차 공식을 사용하여, 알겠습니다.",
+     "raw": "You good? All right. So by using quadratic formula, okay, I'm not telling I'm not gonna over what the",
+     "src": "parakeet"
+    },
+    {
+     "t": 3718,
+     "page": 3,
+     "en": "Formula looks like right. So I'm going to just start giving you the answer. So he equals",
+     "ko": "공식이 맞는 것 같습니다. 그래서 나는 당신에게 대답을 제공하기 시작할 것입니다. 그래서 그는 동등합니다",
+     "src": "parakeet"
+    },
+    {
+     "t": 3734,
+     "page": 3,
+     "en": "Z square is the bottom. Minus two, I guess. Yeah. Minus P, so the z square plus minus square root z.",
+     "ko": "Z제곱은 바닥입니다. 마이너스 2인 것 같아요. 네. 마이너스 p, 그래서 z 제곱 더하기 마이너스 제곱근 z.",
+     "src": "parakeet"
+    },
+    {
+     "t": 3742,
+     "page": 3,
+     "en": "D square of square that's a z four minus.",
+     "ko": "D 제곱의 제곱 Z 4 마이너스입니다.",
+     "src": "parakeet"
+    },
+    {
+     "t": 3746,
+     "page": 3,
+     "en": "For z square g.",
+     "ko": "Z 스퀘어 G의 경우.",
+     "src": "parakeet"
+    },
+    {
+     "t": 3761,
+     "page": 3,
+     "en": "So if any if anyone doesn't know that the quadratic formula is, that should be a good formula. and the it looks like we have a common factor z square everywhere, like",
+     "ko": "따라서 2차 공식이 있다는 것을 모르는 사람이 있다면 좋은 공식이어야 합니다. 그리고 그것은 우리가 모든 곳에 공통 요소 z 제곱이있는 것처럼 보입니다.",
+     "raw": "So if any if anyone doesn't know what the quadratic formula is, that should be a good formula. And then it looks like we have a common factor z square everywhere, like",
+     "src": "parakeet"
+    },
+    {
+     "t": 3763,
+     "page": 3,
+     "en": "Your keys.",
+     "ko": "당신의 열쇠.",
+     "src": "parakeet"
+    },
+    {
+     "t": 3771,
+     "page": 3,
+     "en": "the laffer and the square, right?",
+     "ko": "래퍼와 광장, 맞죠?",
+     "raw": "The four and the square, right?",
+     "src": "parakeet"
+    },
+    {
+     "t": 3779,
+     "page": 3,
+     "en": "Yeah, so I can rewrite that change.",
+     "ko": "네, 그래서 그 변화를 다시 쓸 수 있습니다.",
+     "src": "parakeet"
+    },
+    {
+     "t": 3792,
+     "page": 3,
+     "en": "Value over here that key star equals what? Z.",
+     "ko": "여기 핵심 별이 무엇과 같은 가치가 있습니까? 지.",
+     "src": "parakeet"
+    },
+    {
+     "t": 3801,
+     "page": 3,
+     "en": "Square and the plus minus the z times square root z square minus g divide by",
+     "ko": "정사각형 및 플러스 마이너스 z 시간 제곱근 z 제곱 마이너스 g로 나누기",
+     "raw": "Square and then plus minus the z times square root z square minus g divide by",
+     "src": "parakeet"
+    },
+    {
+     "t": 3807,
+     "page": 3,
+     "en": "Two times leave teleport with this ocean.",
+     "ko": "이 바다와 함께 두 번 텔레포트를 떠납니다.",
+     "src": "parakeet"
+    },
+    {
+     "t": 3818,
+     "page": 3,
+     "en": "I think I'm supposed to do it.",
+     "ko": "해야 한다고 생각합니다.",
+     "src": "parakeet"
+    },
+    {
+     "t": 3834,
+     "page": 3,
+     "en": "That's true. Thank you. Or then we can't add long for the in here when we have what?",
+     "ko": "사실입니다. 감사합니다. 아니면 우리가 무엇을 가지고 있을 때 여기에 IN을 오래 추가할 수 없습니까?",
+     "src": "parakeet"
+    },
+    {
+     "t": 3848,
+     "page": 3,
+     "en": "But the numerator it says z plus minus z square minus b by by and the would be your value added then you have to double check",
+     "ko": "그러나 분자는 z 더하기 빼기 z 제곱 마이너스 b by by by by by 부가 값이 되면 다시 확인해야 합니다.",
+     "raw": "But the numerator it says z plus minus z square minus b by by and this would be your value. And then you have to double check",
+     "src": "parakeet"
+    },
+    {
+     "t": 3864,
+     "page": 3,
+     "en": "Since we have a plus and minus all together in the solutions. And also this tax rate lies where? Lies between zero and one, so you have to impose some restrictions, you know, by you know solving",
+     "ko": "솔루션에 플러스 마이너스가 모두 함께 있기 때문입니다. 또한 이 세율은 어디에 있습니까? 0과 1 사이에 있으므로 몇 가지 제한 사항을 적용해야 합니다.",
+     "raw": "Since we have a plus and minus all together in the solution. And also this text rate lies where? Lies between zero and one, so you have to impose some restrictions, you know, by you know solving",
+     "src": "parakeet"
+    },
+    {
+     "t": 3866,
+     "page": 3,
+     "en": "Okay?",
+     "ko": "알았어?",
+     "src": "parakeet"
+    },
+    {
+     "t": 3881,
+     "page": 3,
+     "en": "And so put some restrictions on Z and G the relationship and let's say this as uh what is it, H",
+     "ko": "그래서 z와 g의 관계에 몇 가지 제한을 두고 이것을 uh is is it, h",
+     "src": "parakeet"
+    },
+    {
+     "t": 3897,
+     "page": 3,
+     "en": "I circle I so from circle G and I you can get the you have the final answer for C star L star and the labor supply star",
+     "ko": "나는 Circle G에서 I So에 동그라미를 치면 당신은 C Star L Star와 Labor Supply Star에 대한 최종 답을 얻을 수 있습니다.",
+     "raw": "I circle I so from circle G and I you can get the you have the final answer for C star L star and uh label supply star",
+     "src": "parakeet"
+    },
+    {
+     "t": 3911,
+     "page": 3,
+     "en": "Which would be that's my deployment, and the you know that the weight rate is a z. And of course, here from the I you know that the E star is. And once you know that the N star is, the output would be the Z.",
+     "ko": "그것이 내 배포이고 가중치가 z라는 것을 알고 있습니다. 그리고 물론, 여기에서 나는 E 별이 있다는 것을 알고 있습니다. 그리고 일단 n 별이 is라는 것을 알게 되면 출력은 z가 될 것입니다.",
+     "raw": "Which would be that's my deployment, and then you know that the weight rate is a z. And of course, here from the I you know what the E star is. And once you know what the N star is, the output would be the Z.",
+     "src": "parakeet"
+    },
+    {
+     "t": 3927,
+     "page": 3,
+     "en": "Z times n star is all the like value in this and just mathematical. and the I will physically the solutions on a graph.",
+     "ko": "Z Times N Star는 이것에서 모두 같은 값이며 수학적입니다. 그리고 i는 물리적으로 그래프에 솔루션을 제공합니다.",
+     "raw": "Z times n star is all the like value in this and just mathematical. And uh I will physically the solutions on a graph.",
+     "src": "parakeet"
+    },
+    {
+     "t": 3942,
+     "page": 3,
+     "en": "It's like this. So here you have the Lapa curve between the hex rate between zero and one. And here is tax revenue.",
+     "ko": "이렇습니다. 그래서 여기에 0과 1 사이의 16 진수 사이의 LAPA 곡선이 있습니다. 그리고 여기에 세금 수입이 있습니다.",
+     "raw": "It's like this. So here you have the Lapa curve between the hex rate between zero and one. And here is the revenue.",
+     "src": "parakeet"
+    },
+    {
+     "t": 3949,
+     "page": 3,
+     "en": "And the lava curve I just erased it was the G, the zero equal g.",
+     "ko": "그리고 방금 지운 용암 곡선은 g, 0은 g와 같습니다.",
+     "src": "parakeet"
+    },
+    {
+     "t": 3963,
+     "page": 3,
+     "en": "And if you pick this on a graph, you want to have this type of bell shape function here.",
+     "ko": "그래프에서 이것을 선택하면 여기에서 이러한 유형의 종 모양 기능을 원합니다.",
+     "src": "parakeet"
+    },
+    {
+     "t": 3978,
+     "page": 3,
+     "en": "and the would be revenue over bar. And since we put a restriction on G here, so you finally get the answer as of point A and point B as",
+     "ko": "그리고 바에 대한 수익이 될 것입니다. 그리고 여기에 G에 제한을 두었으므로 마침내 A와 점 B의 답을 얻을 수 있습니다.",
+     "raw": "And this would be revenue over bar. And since we put a restriction on G here, so you finally get the answer as of point A and point B as",
+     "src": "parakeet"
+    },
+    {
+     "t": 3993,
+     "page": 3,
+     "en": "We did o May. And here's the thing star. That's coming from here at 29. The smaller value would be T A star and the larger value.",
+     "ko": "우리는 O 5월을 했다. 그리고 여기 별이 있습니다. 그것은 29에서 여기에서 오는 것입니다. 더 작은 값은 t 별과 더 큰 값이 될 것입니다.",
+     "src": "parakeet"
+    },
+    {
+     "t": 4005,
+     "page": 3,
+     "en": "would be the key star because of the plus minus here.",
+     "ko": "여기서 플러스 마이너스 때문에 핵심 스타가 될 것입니다.",
+     "src": "parakeet"
+    },
+    {
+     "t": 4019,
+     "page": 3,
+     "en": "and the this is a quadratic function so you could find out that the key max that can maximize government revenue.",
+     "ko": "그리고 이것은 2차 기능이므로 정부 수익을 극대화할 수 있는 키 최대값을 알 수 있습니다.",
+     "raw": "And then this is a quadratic function so you could find out the the key max that can maximize government revenue.",
+     "src": "parakeet"
+    },
+    {
+     "t": 4034,
+     "page": 3,
+     "en": "as well by you know taking the derivative of this function. and the finally once you know that the t a star and the b star",
+     "ko": "또한 이 기능의 파생어를 사용한다는 것을 알고 있습니다. 그리고 마침내 당신이 t 별과 b 별을 알게되면",
+     "raw": "as well by you know taking the derivative of this function. And then finally once you know the the t a star and t b star",
+     "src": "parakeet"
+    },
+    {
+     "t": 4048,
+     "page": 3,
+     "en": "Or we could have this competitive equilibrium we just had before, right? Like this, as a we had a on A here and on B here, then you can find out the values.",
+     "ko": "아니면 이전에 가졌던 경쟁 균형을 가질 수 있습니다. 그렇죠? 이와 같이 A로 여기와 B에 A가 있으면 값을 찾을 수 있습니다.",
+     "src": "parakeet"
+    },
+    {
+     "t": 4064,
+     "page": 3,
+     "en": "Okay, I'm starting and paste numbers in. Okay. All right. So five more minutes. So let me quickly ask you",
+     "ko": "알겠습니다. 숫자를 시작하고 붙여넣고 있습니다. 알겠습니다. 좋아. 그래서 5분 더. 그래서 빨리 물어보겠습니다",
+     "src": "parakeet"
+    },
+    {
+     "t": 4079,
+     "page": 3,
+     "en": "Which stage are we in so far by solving this math mat for example? So, what are the three steps of economics analysis? Step one: set up the model. So we set the model off with an example.",
+     "ko": "예를 들어 이 수학 매트를 푸는 지금까지 우리는 어느 단계에 있습니까? 그렇다면 경제 분석의 세 단계는 무엇입니까? 1단계: 모델을 설정합니다. 그래서 우리는 예를 들어 모델을 설정했습니다.",
+     "raw": "Which stage are we in so far by solving this math mat for example? So, what are the three steps of economic analysis? Step one: set up the model. So we set the model off with an example.",
+     "src": "parakeet"
+    },
+    {
+     "t": 4094,
+     "page": 3,
+     "en": "What was a step two? determined equilibrium allocation, which I did over here, and what's a step three? Yeah, perform comparative static analysis and haven't done it yet.",
+     "ko": "2단계는 무엇이었습니까? 내가 여기에서 한 결정된 평형 할당과 3단계는 무엇입니까? 예, 비교 정적 분석을 수행하고 아직 수행하지 않았습니다.",
+     "raw": "What was a step two? Determine equilibrium allocation, which I did over here, and what's a step three? Yeah, perform comparative static analysis and haven't done it yet.",
+     "src": "parakeet"
+    },
+    {
+     "t": 4109,
+     "page": 3,
+     "en": "and the again, what are given exogenous variables? exogenous variables such G and Z and the. So this T star.",
+     "ko": "그리고 다시, 외생 변수는 무엇입니까? g 및 z와 같은 외인성 변수. 그래서 이 t 별.",
+     "raw": "And then again, what are the exogenous variables? Exogenous variables are G and Z and H. So this T star.",
+     "src": "parakeet"
+    },
+    {
+     "t": 4124,
+     "page": 3,
+     "en": "consists of a Z and G and of course the first of them all purely consists of uh exactly variables so if you want to perform comparative static analysis you can have whether they are changing",
+     "ko": "z와 g로 구성되며 물론 첫 번째는 모두 uh 정확히 변수로 구성되어 있으므로 비교 정적 분석을 수행하려는 경우 변경 여부를 확인할 수 있습니다.",
+     "raw": "consists of a Z and G and of course the rest of them all purely consists of uh exactly variable so if you want to perform parative static analysis you can have whether they are changing",
+     "src": "parakeet"
+    },
+    {
+     "t": 4139,
+     "page": 3,
+     "en": "in Z could be positive, then uh you see how the variables you know moving around and especially the Lava curve here. I guess the maximum revenue will go up like this. So the Lava curve",
+     "ko": "z는 양수일 수 있습니다. 그러면, 당신이 알고 있는 변수, 특히 여기에서 용암 곡선이 어떻게 움직이는지 알 수 있습니다. 최대수익은 이렇게 올라갈 것 같아요. 그래서 용암 곡선",
+     "src": "parakeet"
+    },
+    {
+     "t": 4154,
+     "page": 3,
+     "en": "Will you know expand like a balloon so that the maximum revenue will grow up. And that's intuitively very consistent because if the Z increase",
+     "ko": "최대 수익이 증가할 수 있도록 풍선처럼 확장을 알 수 있습니까? z가 증가하면 직관적으로 매우 일관성이 있습니다.",
+     "src": "parakeet"
+    },
+    {
+     "t": 4169,
+     "page": 3,
+     "en": "What does it mean? The technological innovation could be done for the production so the firm can produce more than before. That means the government can have a",
+     "ko": "그것은 무엇을 의미합니까? 기술 혁신은 생산을 위해 수행될 수 있으므로 기업이 이전보다 더 많이 생산할 수 있습니다. 이는 정부가",
+     "src": "parakeet"
+    },
+    {
+     "t": 4184,
+     "page": 3,
+     "en": "create a tax collection. And that's what's happening in Korea right now, right? The Korean government says since we export so much semiconducts to other to foreign countries we have so much tax collected from consumers",
+     "ko": "세금 징수를 만듭니다. 그리고 그것이 지금 한국에서 일어나고 있는 일입니다. 그렇죠? 한국 정부는 우리가 다른 나라에 너무 많은 반도체를 수출하기 때문에 소비자로부터 징수되는 세금이 너무 많다고 말합니다.",
+     "raw": "create a tax collection. And that's what's happening in Korea right now, right? The Korean government says since we export so much semiconducts to other to foreign countries we have so much tax collected from consumer",
+     "src": "parakeet"
+    },
+    {
+     "t": 4199,
+     "page": 3,
+     "en": "So that the can have uh you know they have a higher extra it from these two from a course here in this model takes on the fund doesn't take access in this model, yes.",
+     "ko": "그래서 당신은 그들이 이 모델에서 이 모델에서 펀드를 차지하지 않는 이 모델의 과정에서 이 두 가지의 더 높은 추가 정보를 가지고 있다는 것을 알 수 있습니다. 그렇습니다.",
+     "raw": "So that they can have uh you know they have a higher extra it from these two from a course here in this model takes on the fund doesn't take access in this model, yes.",
+     "src": "parakeet"
+    },
+    {
+     "t": 4917,
+     "page": 3,
+     "en": "speech okay any questions okay next monday i will start with a public and the you may go have a good day uh",
+     "ko": "스피치 괜찮습니다 질문이 있습니다 다음주 월요일에 나는 대중으로 시작하고 당신은 좋은 하루를 보낼 수 있습니다 uh",
+     "raw": "speech okay any questions okay next monday i will start with a public and then you may go have a good day uh",
+     "src": "parakeet"
+    }
+   ]
+  },
+  {
    "page": 5,
-   "en": "All right, so um I'm going to finish off professional proportional taxes today and maybe well, I'm not going to Oh, before today, I just want to get this thing out. completed. for you so that I will finish off the stock today and then I will give you the math examples. a couple students asked us on Monday So let's start with the comparing the competitive And the slide what does it say about the",
-   "ko": "자, 그럼 음 제가 마무리할게요. 전문적으로 비례하는 세금에 대해 오늘 이야기하고 아마도 음, 저는 아, 오늘 전에, 그냥 이걸 먼저 끝내고 싶어요. 완료했어요. 당신을 위해서요. 그래서 제가 마무리할게요. 오늘 주식을 끝내고 나서 수학 문제를 드릴게요. 몇 가지 학생들이 질문을 했어요, 월요일에. 그래서 컴퓨터부터 시작해 볼까요?  그리고 그 슬라이드는 뭐라고 말하고 있나요?",
+   "en": "All right, so um I'm going to finish off professional proportional taxes today and maybe well, I'm not going to Oh, before today, I just want to get this thing out. completed. for you so that I will finish off the stock today and then I will give you the math examples. a couple students asked us on Monday So let's start with the comparing the competitive Here, marginal rate of substitution of leader for consumption equals to what? is equals to yeah marginal product of labor equals marginal rate of transformation of use of consumption right and the is the case Among consumers and producers and the government. So they don't have endogenous work to have this condition. to be the medium between these two conditions. The marginal substitution and marginal product of length. And Oh by the way, uh I I will announce the test in transfers space with the and the I think I have a two classes to announce it in person, so don't worry too much about it. And the format wanna be the same as the first one. So it's going to be a carbon neutral exam so then you can take any location you want and the it's a particular answers to minus and the the stuff that covers for test two includes chapter four. I mean yeah I mean we we had a check-up up to page one forty two, something like that. But uh in order to get understand the chapter file you have to know what's going on in post check of four. Yeah, well we said you have no simulation now that's This time and chapter five, right? So this I think you have or eight months still and chapter five, I'll get to stuff to study for the test school. and the uh you have a past exams in the campus. and the I do log a couple hints time so then uh anyone numbers here would be yeah okay. for not what I request that for anything. Alright, any more questions? We good? Uh all right. So now get back to with proportional taxes on labor income. So the complexity is clear to you when you talk about when you talk about it, which point would be competitive. So this would be the competitive equilibrium with the long with proportional taxes and what would be the good equilibrium condition of it. and the what? Are we not ready about no? Let's have an over here. So here we make to the C A star, L a star, and how do conditions look like according to the proportion of taxes on laboring submarine on subscription of labor force consumption equals avoid it Okay. And how about the recovering condition for firm? What was the marginal product of labor or the rate of transformation? Since we know the this x-ray lies between zero and one specifically so the marginal rate of substitution which equals one minus three times a z is general smaller that the value z. So You can see that the are not identical. In other words, So the marginal product of labor has a speed of scope and the marginal of transformation. So now if you compare competitive equilibrium between point J and the one that you got from with proportional active case, the difference would be there's no Z or the value hits the marginal substitution equals to the marginal product valuation. Okay? And because of a T here, like between 0 and 1. and the proportional taxes exposed labor to moderate or prostitution, in other words, rights the identification positive sign between modern prostitution and modern power. Well technically speaking the point A, that the green point. And according the first and second multiple economics theorem here, the point A is what? Your location is inequation in other words how about point is this c star and l star efficient or inefficient yeah it is efficient because The KIPS marginal substitution equals marginal product of labor. Okay. And for this here, proportional tax is may ask, then what would be the optimal allocation? that would be only read over here if you know if it's feasible. But we given with proportional taxes, point B is not feasible for competitive P All right. Are you a question for this? Okay, so let me rephrase the question which I already answered. So if you have a point A, does uh first fundamental theorem of the both books on A or not. Fundamental theorem doesn't hold food from A We have a plenty of items that you have to cannot use. May I move on? Yeah. No, yes. So maybe one or not. Yeah, okay, so I don't think I and the slides for a moment, so let me come back to this when I need it. And here's the line on her. So we start started with the government budget constraint, which means capital D equals the total amount of taxes, tax collection. that can government has like this, right? I remember. and the you know given substitution effect and an income effect. Increase in T may increase in measure or decrease in visure, right? So one mean go over the subject and the come to one more time, I go. I have some problems. This one will be um one of the one. Yeah, that's not gonna work for the take one. You want me to go over the substitution and inconnect one of I will watch us move off one time. It'll look like I'm right. So here intuition. So let's assume, suppose he increase. Okay, from I don't know, T1 to T2. So the text trade we have here shows that the T1 is smaller than T2. and the uh According to competitive equilibrium, you know, depicted in this picture, a point A has to be satisfies with what? A marginal rate of What is this? Marginal level substitution of consumption, which is one minus T times a Z. And also, if you look at the consumer's budget constraint, budget constraint says it's a one minus. T times Z times H minus L. Right? So there are two equations having what? Leisure and the over. together. So here we have a D, here we have a L. Okay. Make sense? And I will give you mathematical examples after this, but don't worry too much about it. But the conceptually speaking of the modular of the T and something equals one minus T and G. Okay. So if T increase from T one to T two, let's say it's is T1, I minus T1, this is O minus T one. What happens over here? The value for O minus T1 times the Z becomes O minus T two times Z. Is it true? Inequality. The inequality correct? Has to be flipped, yeah, it should be flipped. So what does it mean? The of relative price of leisure, which is for my Smaller that the marginal rate of substitution of leisure for consumption with T1. So that means relative price for leisure is now yeah. gets cheaper than cheaper with the T two. So that means people like to do what? Since the tax rate is greater than So the consumers has a one center to work or less incentive to work. Less incentive to work. So here Oh, I'm sorry. And And you can see over here too, right? Even though it's an optimal case, let's say EL star, what would be the equivalent condition at this point? This is the case, you can think it as a t equal one. So you can clearly see that people A more leisure than an optimal level. But anyway, leisure goes up. And what happens to here? If he goes up, what happens? The laboring. becomes what? Or if the laffer income? Labor income decreases, correct? If labor income decreases What you factorized? Yeah, negative income factorizes. So what happens to leisure? Leisure goes. Down, right? So what do we call this effect? Yeah, substitution effect. So we have a two-opposite effect when there is a change in a T. The substitution effect says one case, but the income effect says yes. So if we apply this intuition to the government revenue over here, so So let's take a look at the government revenue for for So let me say the right hand side of this project constrained film revenue, P times D times H minus L P. Right? So according to our Having this revenue, which one is increasing? Yeah, the key is increasing, right? But then what happens to the reason over here? If substitution effect is greater than negative. Yeah, should increase right. So here you look at this T times the Z, H minus L C and if Substitution effect dominates the negative input effect. When T increase, Lt increasing, so altogether, each method L should Yeah, should decrease, right? So it looks like if a if the government increase the tax rate, the tax base tends to decrease when the substitution effect dominates the income. So it is possible that the the manifest of a change in the government revenue may go down. Right? So I'm not saying it's always go down. What I'm saying is it's possible. So when the government increase tack the tax rate, it usually expects to have more tax collections, right? But here because of a endogenous adjustment, you can think this here the changes over here you can think of endogenous adjustment right for the consumers to you know have the monitor substitution you know moving around then you know because of that the government tax revenue and impact can go down. However, if the negative income effect increase, dominates the other So T times D times H minus L T here that the T increase, what happens to the L T? Yeah, it decreases. So overall what happens to the laffer income tax rate increase. So here in this case, you know when tax rate increase increase the tax rate weight increase, so the government So what's the conclusion? The conclusion is The relationship between the tax rate and the revenue is not monotonic. In fact, it's non-linear. Okay? So let me Yeah, I always have this feature back for and you don't think it's a good idea. So if the tax revenue and the tax rate the relationship here is nonlinear. that the whole idea. Okay. So and the relationship we call the Lava curve. So here we have the x ray lines between zero and one. Okay. and the tax revenue is a zero. And the doesn't equal one can be the L. So we pick the biggest revenue ever and let's say like the location and the TMAX. and the is the one that contained say the reviving of the heart like this. Okay? and the I showed you you on Monday that the government spending is likely smaller that the maximum revenue the tax revenue for the government. So for example, if The government expenditure which is exogenous in a given states somewhere between zero and the revenue of a bar. Then uh how many possible x rates the government can choose. Yeah, there are two Possible tax rate for the government to achieve point A, and let's say this is a tax rate A. And here this is the tax rate A. and the we often call the Ta is small. than uh T D. So we often call this is the good text phrase and the is bad text phrase. All right, so Yeah, PPF is speaker. So let's say it's just PPF. And can you describe the perspective loop room of the TA and the T B onograph? So I will give you five minutes for trying to figure it out and the uh I will point a student and the he or she can come down and the show it on a book. Yeah, I would do it. So that's fine. Five minutes. Oh no, I move everything. Oh yeah. Hands up. Once they have an honor solving the question on the voice. No one. How about I throw uh extra points for that? Me solving the problems for you. Can I get the extra credit? All right, so how would you do it? So let me start with that the So let's say the project constraint wanna be like this guy. and the what's the flow of this project constraint when the capture is too late? Yes, minus one minus three eight times Z, right? that the slope, right? And what's the slope of the C TR That's a so-called PPM. Yeah, it's minus. So how could you show the fluid for the other constraint with the TA. that the point where the other constraint crosses with the PTF, right? and the the difference curve does one. Yeah. This is the IA and different screws. And let's say, you know, let's make the location consistent. Let's say this bad equilibrium point A. Okay. And now at point A here I will get back to this. At point A Right, so I have LA here and C A start here. So at point A we have uh point C A and L A star. What would be bad equilibrium condition? Would be what? Upon a ordinary of substitution of the token. One minus T A times D, right? and the what's the marginal? product of labor equals marginal transformation of medium of transfunction. Right? and the how do you show The case with the higher tax rate, what happens with the polygon in the slope? Yeah since P D is greater than P A for the slope gets deeper. What like the right? So I use the floor. and the right and the it looks like it. So minus one minus right. And where would be the total metric base? Somewhere here, right? Let's make consistent the point D and here is the indifference curve touching point B and let's say this is ID. And clearly the utility level at ID is more than IH, right? That's a C V star and all this star. Here, however, bad equilibrium computations are a bit different because now the this economy has a different text right. So kind of V and enforced marginal product of labor, enforced marginal transformation of a LCOLC. Okay? I money supply they are not identical so that you know both all occasions are in a But which allocation is preferred to the other? Yeah, point aim, right? Because the indifference curve point A, that's an IA and indifference curve point B. It's an IB. Clearly utility level is you know greater in point I easy difference curve I so point A is clearly Prefer to the point B if The government can choose between PA and P E. And a government is kind of voluntary to consume. That's a baseline assumption. I mean it's a government illegal. somehow that the C but the government is indifferent, right? Anyway you will get the government standing. All right. Any questions? Is it good? So now I will show you how to get this value here. I the TA or the LA and the C A by solving the Problems over here, okay? So I mean any questions? Okay. So we can Right, so let's get back to the example here. So I specify the utility function. Okay. and the this utility function has a V name. We call this is a quasi-linear utility function. So but you don't have to know the technical term, but uh just for your information. we call this is quasi linear. Utility function. So here quasi means like uh almost linear. So if you look at this utility function, right? So we have uh this level utility level here you do have to be to the utility function, right? So between the relationship between the consumption and the utility level and the leisure and the utility level, which value has a linear relationship with the level utility capital group. Yeah. the laffer is linearly related to capital U, right? However, the C here has a power one half on in the superscript. So this C, the relationship C and U, they are. non linear. So that's why we call that a silver function and not a linear. So it's quasi linear silver function. So and let me explain you know for the features once we move on. But the thing is when we have this quasi-linear sort of function, the laffer can in fact possibly be zero. But in this case it can make things easier I'm not gonna assume it. So I will start with a strict inequality for me, right? Okay, so that's good. And that the example for the utility function. And here we still have linear production function we have seen and the would be the consumer's problems. Okay, and the and the here is here is the forms problems and Number four would be solutions. So let me solve their consumer's problems first. So what do we need to solve their problems? We have to get what? Constraint, we have one here, and the what do we need uh other than but the constraint? So we have to find out that the marginal rate of substitution of function, right? And how do you define larger error substitution of this function? You have this, right? In the first week? Too long ago, yes. Um marginal utility of leisure on marginal utility of leisure. Yeah, very good perfect. and the given our utility function, how do you get marginal utility of leisure? What do you do? You take the type of uh level utility with respect to L and not the value. Yeah, it's just in L there, so the value would be one, right? bottom in the denominator how would you find marginal utility of consumption? Yeah you take the derivative of that so you have a number two as a coefficient and the power comes down as a one half right and the here you have a C and the power one half stays and you take the minus one right yeah and the And eventually what do you get? You got two cancels out. And what's the value for this? This is minus one half. So you have one. Over C minus one half, correct? Yeah. and the this I can say this is a C one half, the minus sign can swift here. and the marginal rate of substitution has to equal to that the slope of the budget constraint, which would be 1 minus t times what? C omega, right? So we have bad equilibrium condition here. C one half, C to the one half equals one minus t times omega. Okay? and the and the we have another condition we need. We have another condition for solving C and L in a blue button over there, which is project constraint. And you know, let's label. Let's say this is circle A and the is circle B. Welcome back here, son. And that's consumers problems. N number three. Firm's problems. So the firm maximizes profit, which is just E minus omega. and the the enter the V tried choosing and the the T. and the one would be idea with the nine. Multiple transition for the comments. You have to find our marginal power double average event, right? From this. What's the production function here? That's linear, right? Y equals z times n to the d. So what's the marginal product of labor demand? Yeah, it's a z, right? Okay. and the G has to be equal to that the marginal cost of labor demand, right? And what's the marginal cost of labor demand? that the way so it equals wage. So this would be the equivalent wage. Okay, and let's say this is uh condition circle C. And move on. Don't ask just to point. Alright, so from circle A, E, and C. We know that the equilibrium with rate is the Z. So we can replace omega into Z, and the here we know that if waging wage star Z, the profit would be what? Profit equilibrium would be zero as well. So we start with EA. The consumers has budget constraint of 1 minus P times omega times H minus L plus pi, but now we know that pi Omega is a z so that we have one minus t times a z times h minus m. That's what you have after plugging this value. budget constraint and for a circle B we bad equilibrium condition c one half equals log minus times omega but we can replace it to z okay Oh yeah. So we have our two foundations ready over here and over here. Bear with me. You're almost done. So here, since we have a power one hat hanging around in the laffer hand side, but we are not that much familiar with this. So let's, you know, multiply C one half. I mean, you know, square on both sides what you get. That C equals what? One minus P times Z square, right? Can I say this? Yeah, and so let's say this is uh This is a brand new equation circle D and the is uh circle E, right? And Remove C in circle B and circle D. Right? Yeah. How do you remove them? Yeah, I mean they are identical, so you put here one minus t times the z times h minus l equals t right from circle b which is equal to what? One minus t Kind of easy where we're going to be able to do So far, so good. Yeah. No complaints? complain as soon as you find some problems here. Alright, so we have what? We have a common factor in the laffer in both sides, which is one minus t times a v. Right. So what can we do? You can yeah. Okay. So eventually we have H minus L equals one minus E times And what's an L value of L L star? That's H minus 1 minus in times 2 Sorry. and the how can you stand down these starts? No, let's do the easy one because how would you scandal the labor supply? Start with just the one. H minus L star so h minus L star means L minus C time will be correct. Then how do you define C star? This space over here, right? Yeah. So this car is just uh One minus t times the z squared that's your th slot. Okay, so and before we moving on, let's assume this is the circle L C F. And we have here a set of solutions so far we get. That's uh circle for the first one. Oh yeah Now it's a different time. You could I mean many of you think that the why is it What what is he doing on the board? Covering all the sets for us? Well, we could just uh type in a chat GPT and we can get the answers for you. That's true. You can use Chat GPT to calculate this. But you know that the double check whether Chat GPT gives you the correct answer you know how it goes. So since you guys are ready or there is the laffer your information. Before we keep moving on. So this equilibrium with we do you know calculate bad equilibrium with solve their optimization problems, let's talk about the endogenous variables given the model given exogenous variables. So when we have with proportional taxes, the competitive equation",
+   "ko": "자, 그럼 음 제가 마무리할게요. 전문적으로 비례하는 세금에 대해 오늘 이야기하고 아마도 음, 저는 아, 오늘 전에, 그냥 이걸 먼저 끝내고 싶어요. 완료했어요. 당신을 위해서요. 그래서 제가 마무리할게요. 오늘 주식을 끝내고 나서 수학 문제를 드릴게요. 몇 가지 학생들이 질문을 했어요, 월요일에. 그래서 컴퓨터부터 시작해 볼까요?  여기에서 소비에 대한 리더의 한계 대체율은 무엇과 동일합니까? 예와 동일합니다. 소비자와 생산자와 정부 사이에서. 따라서 그들은 이 상태를 가질 내인성 작업이 없습니다. 이 두 조건 사이의 매개체가 됩니다. 길이의 한계 대체 및 한계 곱. 과 아 그건 그렇고, uh 나는 전송 공간에서 테스트를 발표하고 내가 가지고 있다고 생각합니다. 직접 발표하는 2개의 클래스이므로 너무 걱정하지 마십시오. 그리고 형식은 첫 번째 형식과 동일합니다. 따라서 탄소 중립 시험이 될 것이므로 원하는 위치와 마이너스에 대한 특정 답변이며 테스트 2를 다루는 항목에는 4장이 포함됩니다. 내 말은 예 내 말은 우리가 142페이지까지 검진을 받았다는 뜻입니다. 그러나 챕터 파일을 이해하려면 4의 포스트 체크에서 무슨 일이 일어나고 있는지 알아야 합니다. 예, 우리는 당신이 지금 시뮬레이션이 없다고 말했습니다. 이번에는 5장 맞죠? 그래서 나는 당신이 아직 8개월이 있고 5장이 남았다고 생각합니다. 시험 학교에서 공부할 물건. 그리고 어, 당신은 캠퍼스에서 과거 시험이 있습니다. 그리고 나는 몇 가지 힌트 시간을 기록하므로 여기에 숫자가 있을 것입니다. 내가 무엇을 요구하는 것이 아닙니다. 알겠습니다. 질문이 더 있습니까? 우리 좋은? 어 알았어. 이제 노동 소득에 대한 비례 세금으로 돌아가십시오. 따라서 당신이 그것에 대해 이야기할 때 복잡성은 당신에게 분명합니다. 어떤 점은 경쟁력이 있을 것입니다. 따라서 이것은 비례 세금과 긴 시간과 경쟁 균형이 될 것이며 그것의 좋은 평형 상태. 그리고 무엇? 우리는 아니오에 대해 준비되지 않았습니까? 여기에서 합시다. 그래서 여기에서 우리는 C 별, L A 별을 만들고 어떻게 노동력 소비 청약에 대한 노동 잠수함에 대한 세금 비율에 따른 조건은 동일합니다. 피하십시오. 알았어. 그리고 기업의 회복 조건은 어떻습니까? 노동의 한계생산물이나 변형률은 무엇인가? 이 엑스선은 0과 1 사이에 있다는 것을 알고 있기 때문에 특히 1에서 3의 3을 3배에 해당하는 치환의 한계율은 z 값보다 일반적으로 작습니다. 그래서 동일하지 않다는 것을 알 수 있습니다. 말 그대로, 따라서 노동의 한계 곱은 범위의 속도와 변형의 한계를 가지고 있습니다. 이제 경쟁 균형을 비교한다면 비례 활성 케이스에서 얻은 점 j와 점 사이에 차이가 없습니다. z 또는 값이 한계 대체에 도달하면 한계 제품 평가와 같습니다. 알았어? 0과 1 사이의 t가 있기 때문입니다. 그리고 비례세는 노동당을 온건하거나 매춘에 노출시켰고, 다시 말해 현대 매춘과 현대 권력 사이의 식별 긍정적인 신호를 권리로 삼는 것입니다. 기술적으로 말하자면, 그 녹색 점 A. 그리고 여기에서 첫 번째와 두 번째 다중 경제학 정리에 따르면 점 A는 무엇입니까? 귀하의 위치는 즉, 이 C 별과 L 별은 효율적이거나 비효율적입니다. 예, 효율적이기 때문에 KIPS 한계 대체는 노동의 한계 곱과 같습니다. 알았어. 그리고 여기에서 비례세가 질문할 수 있습니다. 그러면 최적의 할당은 무엇입니까? 그것이 가능한지 안다면 여기에서만 읽을 것입니다. 그러나 우리는 비례 세금으로 주었으므로, 포인트 B는 경쟁적인 p에 대해 실현 가능하지 않습니다. 좋아. 당신은 이것에 대한 질문입니까? 좋아, 내가 이미 대답한 질문을 다시 말하겠습니다. 따라서 점 A가 있으면 uh A에 관한 두 책의 첫 번째 기본 정리. 기본 정리는 우리는 당신이 사용할 수없는 많은 품목을 가지고 있습니다. 계속 진행해도 될까요? 네. 아니요, 그렇습니다. 그래서 아마도 하나 또는 그렇지 않을 것입니다. 네, 알겠습니다. 저와 슬라이드는 잠시 생각하지 않습니다. 그러니 필요할 때 다시 돌아가도록 하겠습니다. 그리고 여기 그녀의 라인이 있습니다. 그래서 우리는 자본 D가 세금, 세금 징수의 총액과 같다는 것을 의미하는 정부 예산 제약으로 시작합니다. 정부가 이런 식으로 할 수 있지 않습니까? 나는 기억한다. 그리고 당신이 알고 있는 대체 효과와 소득 효과. t의 증가는 측정의 증가 또는 감소의 수 있습니다. 맞습니까? 그래서 하나는 주제를 살펴보고 한 번 더 가십시오. 몇 가지 문제가 있습니다. 이것은 하나 중 하나가 될 것입니다. 예, 그것은 Take One을 위해 작동하지 않을 것입니다. 당신은 내가 대체를 검토하고 다음 중 하나를 연결하기를 원합니다. 나는 우리가 한 번 움직이는 것을 지켜볼 것입니다. 내가 옳은 것처럼 보일 것입니다. 그래서 여기 직관. 그가 증가했다고 가정해 봅시다. 알겠습니다. T1에서 T2까지입니다. 따라서 여기에 있는 텍스트 거래는 T1이 T2보다 작다는 것을 보여줍니다. 그리고 어 이 그림에 묘사된 경쟁 균형에 따르면 A점은 무엇을 만족해야 합니까? 의 한계율 이것은 무엇입니까? 소비의 한계 수준 대체는 1에서 z의 곱하기입니다. 또한 소비자의 예산 제약을 보면 예산 제약에 따르면 1 마이너스라고 말합니다. t 곱하기 z 곱하기 h 빼기 l. 맞습니까? 그래서 두 가지 방정식이 있습니다. 여가와 끝. 함께. 그래서 여기에 D가 있고 여기에 L이 있습니다. 알겠습니다. 의미가 있습니까? 그리고 이 후에 수학적 예를 들겠습니다. 하지만 너무 걱정하지 마십시오. 그러나 T의 모듈식과 무언가에 대해 개념적으로 말하는 것은 1 빼기 T와 G와 같습니다. 좋습니다. 따라서 t가 1에서 t 2로 증가하면 다음과 같이 가정해 보겠습니다. T1, I 마이너스 T1, 이것은 O 마이너스 T 1입니다. 여기서 무슨 일이? o 마이너스 t1에 대한 값은 z가 o 마이너스 t가 2번 z가 됩니다. 사실인가요? 불평등. 부등식이 맞습니까? 뒤집어야 합니다. 예, 뒤집어야 합니다. 그래서 그것은 무엇을 의미합니까? 내 것을 위한 여가의 상대 가격 T1으로 소비를 여가로 대체하는 한계율보다 작습니다. 그래서 그것은 여가에 대한 상대 가격이 이제 예를 의미합니다. T 2로 저렴하게 싼다. 그래서 사람들이 무엇을 하기를 좋아한다는 뜻입니까? 세율이 따라서 소비자는 일할 센터가 하나이거나 일할 동기가 적습니다. 일할 동기가 적습니다. 그래서 여기 아, 죄송합니다. 과 그리고 여기도 보이죠? 최적의 경우라고 해도 El Star라고 합시다. 이 시점에서 동등한 조건은 무엇입니까? 이것은 T와 같은 것으로 생각할 수 있습니다. 그래서 당신은 사람들을 분명히 볼 수 있습니다 최적의 수준보다 더 많은 여가. 그러나 어쨌든 여가는 올라갑니다. 그리고 여기서 무슨 일이? 그가 올라가면 어떻게 됩니까? 노동. 무엇이 됩니까? 아니면 래퍼 수입인가? 노동소득이 감소했죠? 노동 소득이 감소하는 경우 당신은 무엇을 인수? 예, 마이너스 소득이 인수분해됩니다. 그렇다면 여가는 어떻게 됩니까? 여가는 간다. 아래로, 그렇지? 그래서 우리는 이 효과를 무엇이라고 부르나요? 네, 대체 효과입니다. 따라서 T에 변화가 있을 때 우리는 2-반대 효과를 갖습니다. 대체 효과는 한 경우를 말하지만 소득 효과는 yes라고 말합니다. 따라서 이 직관을 여기에서 정부 수입에 적용한다면, 그럼 정부 수입을 살펴보자. 그래서 이 프로젝트의 오른쪽이 영화 수익을 제한한다고 말하겠습니다. 그래서 우리 에 따르면 이 수익이 있는데 어느 것이 증가하고 있습니까? 그래, 키가 증가하고 있지, 그렇지? 그런데 여기 이유는 어떻게 됩니까? 대체 효과가 음수보다 큰 경우. 네, 맞아야 합니다. 그래서 여기에서 이 t 곱하기 z, h 빼기 l c 및 if를 봅니다. 대체 효과가 부정적인 입력 효과를 지배합니다. t가 증가할 때, lt가 증가할 때, 따라서 각 방법 l은 네, 줄여야겠죠? 따라서 정부가 세율을 인상하면 대체 효과가 소득을 지배할 때 과세 기반이 감소하는 경향이 있는 것처럼 보입니다. 따라서 정부 수입의 변화가 나타날 수 있습니다. 그렇지? 그래서 나는 그것이 항상 내려가고 있다고 말하는 것이 아닙니다. 내가 말하는 것은 그것이 가능하다는 것입니다. 따라서 정부가 세금을 인상하면 일반적으로 더 많은 세금 징수가 예상됩니다. 그렇죠? 하지만 내생적 조정 때문에 여기에서 이것을 생각할 수 있습니다. 여기에서 변경 사항을 생각할 수 있습니다. 소비자가 알고 있는 내생적 조정을 생각할 수 있습니다. 그러면 정부의 세수와 영향이 줄어들 수 있기 때문에 알 수 있습니다. 그러나 마이너스 소득 효과가 증가하면 다른 쪽을 지배합니다. 따라서 t 곱하기 h 빼기 여기서 t가 증가하면 l t는 어떻게 됩니까? 네, 감소합니다. 그래서 전반적으로 Laffer 소득세율 인상은 어떻게 됩니까? 따라서 이 경우 세율이 증가하면 세율 가중치가 증가할 때 정부가 그래서 결론은? 결론은 세율과 수익의 관계는 단조롭지 않습니다. 사실 비선형입니다. 알았어? 그러니 보자 예, 저는 항상 이 기능을 다시 사용하고 있으며 좋은 생각이 아니라고 생각합니다. 따라서 세수와 세율이 여기에서 관계라면 비선형입니다. 전체 아이디어. 알았어. 그래서 우리가 용암 곡선이라고 부르는 관계. 그래서 여기에 X선 라인이 있습니다 0과 1 사이. 알았어. 그리고 세수는 0입니다. 그리고 하나는 L이 될 수 있습니다. 그래서 우리는 사상 최대의 수익을 선택하고 위치와 Tmax와 같이 말하겠습니다. 그리고 이와 같은 마음의 소생을 담고 있는 사람입니다. 알았어? 그리고 내가 당신에게 보여주었습니다 월요일에 정부 지출이 정부의 최대 수입 세수보다 작을 가능성이 높습니다. 예를 들어, if 0과 술집 수익 사이 어딘가에 주어진 주에서 외생적인 정부 지출. 그렇다면 정부가 선택할 수 있는 x 요금이 얼마나 되는지. 네, 두 가지가 있습니다 정부가 A 포인트를 달성할 수 있는 가능한 세율과 이것이 세율 A라고 가정해 보겠습니다. 여기에 세율 A가 있습니다. 그리고 우리가 종종 TA라고 부르는 것은 작습니다. Uh T D. 그래서 우리는 종종 이것을 좋은 텍스트 구이고 나쁜 텍스트 구라고 부릅니다. 좋아, 그래서 네, PPF는 스피커입니다. 그래서 그냥 PPF라고 합시다. 그리고 TA와 T B onograph의 Perspective Loop Room을 설명할 수 있습니까? 그래서 나는 당신에게 그것을 알아내려고 노력하는 것에 대해 5분을 주고, 어 나는 학생과 그 또는 그녀가 내려와 책에 그것을 보여줄 수 있는 것을 가리킬 것입니다. 네, 그렇게 하겠습니다. 괜찮습니다. 다섯 분. 아니, 나는 모든 것을 움직인다. 아 그래. 손을 들어. 일단 그들이 목소리에 대한 질문을 해결하는 명예를 갖게 됩니다. 아무도. 내가 그것에 대해 추가 포인트를 던지는 것은 어떻습니까? 내가 당신을 위해 문제를 해결합니다. 추가 크레딧을 받을 수 있나요? 좋아, 그럼 어떻게 하시겠습니까? 그럼 시작하겠습니다 프로젝트 제약이 이 사람처럼 되고 싶다고 가정해 보겠습니다. 캡처가 너무 늦었을 때 이 프로젝트 제약 조건의 흐름은 무엇입니까? 예, 마이너스 1 빼기 3 8번 z 맞죠? 그 경사 맞죠? 그리고 C TR의 기울기는 얼마입니까? 소위 PPM입니다. 네, 마이너스입니다. 그렇다면 어떻게 유체를 보여줄 수 있습니까? ta와의 다른 제약 조건에 대해. 다른 제약 조건이 PTF와 교차하는 지점이죠? 그리고 차이 곡선이 하나를 수행합니다. 네. 이것은 IA와 다른 나사입니다. 그리고 위치를 일관되게 만들자. 이 나쁜 평형점 A를 가정해 봅시다. 알겠습니다. 그리고 이제 A 지점에서 나는 이것으로 돌아갈 것입니다. A 지점에서 맞습니다. 그래서 저는 여기에 LA가 있고 여기에서 시작합니다. 그래서 A 지점에서 우리는 uh point C A와 L A STAR를 가지고 있습니다. 나쁜 평형 상태는 무엇입니까? 무엇이 될까요? 토큰을 대체하는 일반. 1 빼기 t 곱하기 d, 맞죠? 그리고 한계는 무엇입니까? 노동의 곱은 초능동 매체의 한계 변환과 같습니다. 그렇지? 그리고 당신은 어떻게 보여? 세율이 높은 경우 경사면의 다각형은 어떻게 됩니까? 네, P D가 P보다 크므로 기울기가 깊어집니다. 권리는 어떻습니까? 그래서 저는 바닥을 사용합니다. 그리고 오른쪽과 그것처럼 보입니다. 그래서 마이너스 1 마이너스 오른쪽. 그리고 총 메트릭 기반은 어디에 있습니까? 여기 어딘가, 그렇지? 점 D를 일관되게 합시다. 여기에 무차별곡선 접촉점 B가 있고 이것이 id라고 가정해 봅시다. 그리고 분명히 id의 유틸리티 수준은 IH보다 많습니다. 맞죠? 그것은 C V 스타와 이 모든 별입니다. 그러나 여기서는 이 경제가 다른 텍스트 권리를 갖기 때문에 나쁜 평형 계산이 약간 다릅니다. 그래서 종류의 v와 노동의 집행된 한계 곱, LCOLC의 강제 한계 변환. 알았어? i 화폐 공급 그들은 동일하지 않으므로 모든 경우가 그러나 어떤 할당이 다른 할당보다 선호됩니까? 예, 포인트 목표, 맞죠? 무차별 곡선 때문입니다 점 A, 그것은 IA와 무차별 곡선 점 B입니다. 그것은 IB입니다. 분명히 효용 수준은 점 i 쉬운 차이 곡선 i에서 더 크다는 것을 알고 있으므로 점 A는 분명히 의 경우 B 지점을 선호합니다 정부는 PA와 P E 중 하나를 선택할 수 있으며 정부는 일종의 자발적인 소비입니다. 그것이 기본 가정입니다. 정부가 불법이라는 뜻입니다. C이지만 정부는 무관심하다는 것, 그렇죠? 어쨌든 당신은 정부를 유지하게 될 것입니다. 좋아. 질문이 있습니까? 좋은가요? 이제 여기에서 이 값을 얻는 방법을 보여 드리겠습니다. i ta 또는 la 및 c a 여기 문제, 알았지? 그래서 질문이 있습니까? 알았어. 그래서 우리는 할 수있다 자, 그럼 여기서 예시로 돌아가 보겠습니다. 그래서 나는 유틸리티 기능을 지정합니다. 알았어. 이 유틸리티 함수에는 V 이름이 있습니다. 우리는 이것을 준선형 유틸리티 함수라고 부릅니다. 따라서 기술 용어를 알 필요는 없지만 정보를 위해. 우리는 이것을 준 선형이라고 부릅니다. 유틸리티 기능. 따라서 여기서 quasi는 uh와 같은 것을 의미합니다. 거의 선형입니다. 이 유틸리티 기능을 보면 맞습니까? 그래서 우리는 uh 이 수준의 유틸리티 수준을 가지고 있습니다. 당신은 유틸리티 기능에 있어야합니다. 맞습니까? 그래서 사이에 소비와 효용수준과 여가와 효용수준의 관계, 가치는 효용자본집단과 선형관계를 갖는다. 네. 래퍼는 자본 u와 선형적으로 관련이 있습니다. 맞죠? 그러나 여기의 C는 위 첨자에서 반쪽의 힘을 가지고 있습니다. 그래서 이 c, 관계 c와 u는 그렇습니다. 비선형. 그래서 우리는 그것을 선형이 아닌 은색 함수라고 부릅니다. 그래서 그것은 준 선형 실버 함수입니다. 그래서 내가 당신이 알고 설명하겠습니다 일단 우리가 계속 진행하는 기능. 그러나 문제는 우리가 이러한 준선형 함수를 가질 때 Laffer가 실제로 0일 수 있다는 것입니다. 그러나 이 경우 일을 더 쉽게 만들 수 있습니다 나는 그것을 가정하지 않을 것입니다. 그래서 나는 나를 위한 엄격한 불평등으로 시작할 것입니다. 그렇죠? 좋아요, 그래서 좋습니다. 그리고 유틸리티 함수의 예입니다. 그리고 여기 우리는 여전히 가지고 있습니다 우리가 본 선형 생산 기능과 소비자의 문제가 될 것입니다. 좋아, 그리고 여기에는 양식 문제와 네 번째는 해결책이 될 것입니다. 그래서 먼저 소비자의 문제를 해결하겠습니다. 그렇다면 그들의 문제를 해결하기 위해 무엇이 필요합니까? 우리는 무엇을 얻어야 합니까? 제약 조건, 여기에 하나가 있으며 제약 조건 외에 무엇이 필요합니까? 그래서 우리는 대체의 한계 대체율을 알아내야 한다. 기능, 맞죠? 그리고 이 함수의 더 큰 오류 대체를 어떻게 정의합니까? 당신은 이것을 가지고, 그렇지? 첫 주에? 너무 오래전에 그렇습니다. 음 여가의 한계 효용에 대한 여가의 한계 효용. 네, 아주 좋습니다. 그리고 주어진 우리의 효용 기능, 여가의 한계 효용을 얻는 방법은 무엇입니까? 당신은 무엇을합니까? 값이 아닌 L에 대해 UH 레벨 유틸리티의 유형을 취합니다. 예, 거기에 L에만 있으므로 값이 하나가 될 것입니다. 맞죠? 분모의 맨 아래 소비의 한계 효용을 어떻게 찾을 수 있습니까? 예, 당신은 그 파생물을 취하므로 계수와 거듭제곱으로 숫자 2를 갖습니다. 반쪽 오른쪽으로 내려오고 여기에서 C가 있고 힘이 절반이 유지되고 마이너스를 오른쪽으로 가져갑니다. 예 그리고 그리고 결국 무엇을 얻습니까? 2개의 취소가 있습니다. 그리고 이것의 가치는 무엇입니까? 이것은 마이너스 반입니다. 그래서 당신은 하나가 있습니다. C 빼기 반 이상, 맞습니까? 네. 그리고 이것은 내가 말할 수 있는 이것은 c 1/2이고, 마이너스 기호는 여기에서 빨라질 수 있습니다. 그리고 한계 대체율은 예산 제약의 기울기와 같아야 하며, 이는 1에서 1을 뺀 시간입니다. 오메가 맞죠? 그래서 우리는 여기에 나쁜 평형 상태가 있습니다. C 1/2, C에서 1/2은 오메가를 1에서 뺀 것과 같습니다. 알았어? 그리고 그리고 우리에게 필요한 또 다른 조건이 있습니다. 거기에 파란색 버튼으로 C와 L을 풀기 위한 또 다른 조건이 있습니다. 이는 프로젝트 제약입니다. 그리고 알다시피, 라벨을 붙이자. 이것이 원 A이고 IS 원 B라고 가정해 봅시다. 다시 오신 것을 환영합니다, 아들. 그리고 그것은 소비자 문제입니다. n 세 번째. 기업의 문제. 따라서 회사는 이익을 극대화합니다. 이는 E에서 오메가를 뺀 것입니다. 그리고 V는 선택을 시도했고 T. 그리고 하나는 9와 함께 아이디어가 될 것입니다. 댓글에 대한 다중 전환. 우리의 한계 전력 이중 평균 이벤트를 찾아야 합니다. 그렇죠? 이것에서. 여기서 생산 기능은 무엇입니까? 선형이죠? y는 z 곱하기 n과 d와 같습니다. 그렇다면 노동 수요의 한계 곱은 무엇입니까? 네, Z입니다. 맞죠? 알았어. 그리고 G는 노동 수요의 한계 비용과 같아야 합니다. 그렇죠? 그리고 노동 수요의 한계 비용은 얼마입니까? 그렇게 해서 임금과 동일합니다. 따라서 이것은 동등한 임금이 될 것입니다. 좋아, 이것이 uh 조건 서클 c라고 가정 해 봅시다. 그리고 계속 진행합니다. 지적만 하지 말자. 좋아, 원 A, E, C에서. 우리는 비율과의 평형이 Z라는 것을 알고 있습니다. 그래서 우리는 Omega를 Z로 대체할 수 있으며, 여기서 우리는 임금 별 Z를 수행하면 이익이 어떻게 될까요? 이익 평형도 0이 될 것입니다. 그래서 우리는 EA로 시작합니다. 소비자의 예산 제약은 1에서 P 배 오메가 곱하기 H 빼기 L + PI이지만 이제 우리는 PI를 알고 있습니다. 오메가는 z이므로 1 마이너스 t 곱하기 a z 곱하기 h 빼기 m. 이 값을 연결한 후 가지고 있는 것입니다. 예산 제약 및 원 B에 대해 우리는 나쁜 평형 상태 C 1 절반은 로그 빼기 시간 오메가와 같지만 z로 바꿀 수 있습니다. 아 그래. 그래서 우리는 여기저기서 우리의 두 가지 기초를 준비했습니다. 나와 함께 참아. 거의 끝났습니다. 그래서 여기에서 우리는 Laffer 손 쪽에 매달려 있는 Power One 모자가 있기 때문에 그러나 우리는 이것에 대해 그다지 익숙하지 않습니다. 그래서, 당신도 알다시피, C를 1/2로 곱합시다. 내 말은, 알다시피, 당신이 얻는 것을 양면에서 제곱하십시오. 그 C는 무엇과 같습니까? 원 마이너스 P Times Z Square 맞죠? 내가 이것을 말할 수 있습니까? 예, 이것이 uh라고 가정 해 봅시다 이것은 완전히 새로운 방정식 원 D이고 Uh Circle E입니다. 맞습니까? 과 원 B와 원 D에서 C를 제거합니다. 맞습니까? 네. 어떻게 제거합니까? 예, 내 말은 그것들이 동일하다는 것을 의미합니다. 그래서 여기에 z 곱하기 h 빼기 l의 1을 빼기 곱하면 b를 원 b에서 오른쪽과 같습니다. 이것은 무엇과 같습니다. 1 마이너스 t 우리가 할 수 있는 쉬운 일 지금까지는 너무 좋습니다. 네. 불만이 없습니까? 여기에서 몇 가지 문제를 발견하는 즉시 불평하십시오. 좋아, 그래서 우리는 무엇을 가지고 있습니까? 우리는 양쪽의 Laffer에 공통 요소가 있으며, 이는 V를 1에서 1로 뺀 것입니다. 맞아. 그래서 우리는 무엇을 할 수 있습니까? 당신은 할 수 있습니다. 알았어. 그래서 결국 우리는 h 마이너스 l이 1 마이너스 e와 같습니다. 그리고 l l star의 l 값은 얼마입니까? 그것은 h에서 1을 빼는 시간 2의 마이너스입니다 죄송합니다. 그리고 이러한 시작을 어떻게 참을 수 있습니까? 아니요, 노동 공급을 어떻게 스캔할 것이기 때문에 쉬운 일을 합시다. 하나로 시작하십시오. H 마이너스 L 별 그래서 H 마이너스 L 별은 L 마이너스 C 시간이 정확함을 의미합니다. 그렇다면 C 별을 어떻게 정의합니까? 여기 이 공간, 맞죠? 네. 그래서 이 차는 그냥 uh 입니다 1 마이너스 t의 z 제곱이 귀하의 슬롯입니다. 자, 그리고 계속 진행하기 전에 이것이 Circle L C F라고 가정하고 여기까지 우리가 얻을 수 있는 일련의 솔루션이 있습니다. 첫 번째 UH Circle입니다. 오 예, 지금은 다른 시간입니다. 당신은 많은 사람들이 왜 그렇게 생각하는지 말할 수 있습니다 그는 게시판에서 무엇을 하고 있습니까? 우리를 위해 모든 세트를 커버? 글쎄, 우리는 채팅 GPT를 입력하고 당신을 위해 답을 얻을 수 있습니다. 사실입니다. 채팅 GPT를 사용하여 계산할 수 있습니다. 그러나 채팅 GPT가 정답을 제공하는지 다시 확인한다는 것을 알고 있습니다. 어떻게 되는지 알아요. 그래서 너희들이 준비가 되었거나 거기에 당신의 정보가 있기 때문입니다. 계속 진행하기 전에. 따라서 우리는 최적화 문제를 해결하여 나쁜 평형을 계산한다는 것을 알고 있는 이 평형을 알고 있습니다. 외인성 변수가 주어진 모델에 주어진 내생 변수에 대해 이야기해 보겠습니다. 따라서 비례세를 가지고 있을 때 경쟁 방정식은",
    "pdf": "Ch5_Sum_w_Figures.pdf",
    "pdfPage": 5,
    "slideText": "Competitive Equilibrium",
@@ -73,14 +798,1364 @@
      "src": "gemini"
     },
     {
-     "t": 325,
+     "t": 336,
      "page": 5,
-     "en": "And the slide what does it say about the",
-     "ko": "그리고 그 슬라이드는 뭐라고 말하고 있나요?",
-     "src": "gemini"
+     "en": "Here, marginal rate of substitution of leader for consumption equals to what?",
+     "ko": "여기에서 소비에 대한 리더의 한계 대체율은 무엇과 동일합니까?",
+     "src": "parakeet"
+    },
+    {
+     "t": 350,
+     "page": 5,
+     "en": "is equals to yeah marginal product of labor equals marginal rate of transformation of use of consumption right and the is the case",
+     "ko": "예와 동일합니다.",
+     "raw": "is equals to yeah marginal product of labor equals marginal rate of transformation of use of consumption right and this is the case",
+     "src": "parakeet"
+    },
+    {
+     "t": 365,
+     "page": 5,
+     "en": "Among consumers and producers and the government. So they don't have endogenous work to have this condition.",
+     "ko": "소비자와 생산자와 정부 사이에서. 따라서 그들은 이 상태를 가질 내인성 작업이 없습니다.",
+     "src": "parakeet"
+    },
+    {
+     "t": 381,
+     "page": 5,
+     "en": "to be the medium between these two conditions. The marginal substitution and marginal product of length. And",
+     "ko": "이 두 조건 사이의 매개체가 됩니다. 길이의 한계 대체 및 한계 곱. 과",
+     "src": "parakeet"
+    },
+    {
+     "t": 396,
+     "page": 5,
+     "en": "Oh by the way, uh I I will announce the test in transfers space with the and the I think I have a",
+     "ko": "아 그건 그렇고, uh 나는 전송 공간에서 테스트를 발표하고 내가 가지고 있다고 생각합니다.",
+     "raw": "Oh by the way, uh I I will announce the test in transfer space with the and then I think I have a",
+     "src": "parakeet"
+    },
+    {
+     "t": 411,
+     "page": 5,
+     "en": "two classes to announce it in person, so don't worry too much about it. And the format wanna be the same as the first one. So it's going to be a carbon neutral exam so then you can take any",
+     "ko": "직접 발표하는 2개의 클래스이므로 너무 걱정하지 마십시오. 그리고 형식은 첫 번째 형식과 동일합니다. 따라서 탄소 중립 시험이 될 것이므로",
+     "src": "parakeet"
+    },
+    {
+     "t": 426,
+     "page": 5,
+     "en": "location you want and the it's a particular answers to minus and the the stuff that covers for test two includes chapter four. I mean yeah",
+     "ko": "원하는 위치와 마이너스에 대한 특정 답변이며 테스트 2를 다루는 항목에는 4장이 포함됩니다. 내 말은 예",
+     "raw": "location you want and then it's a particular answers to minus and uh the stuff that covers for test two includes chapter four. I mean yeah",
+     "src": "parakeet"
+    },
+    {
+     "t": 441,
+     "page": 5,
+     "en": "I mean we we had a check-up up to page one forty two, something like that. But uh in order to get understand the chapter file you have to know what's going on in post check of four. Yeah, well we said you have no simulation now that's",
+     "ko": "내 말은 우리가 142페이지까지 검진을 받았다는 뜻입니다. 그러나 챕터 파일을 이해하려면 4의 포스트 체크에서 무슨 일이 일어나고 있는지 알아야 합니다. 예, 우리는 당신이 지금 시뮬레이션이 없다고 말했습니다.",
+     "src": "parakeet"
+    },
+    {
+     "t": 456,
+     "page": 5,
+     "en": "This time and chapter five, right? So this I think you have or eight months still and chapter five, I'll get to",
+     "ko": "이번에는 5장 맞죠? 그래서 나는 당신이 아직 8개월이 있고 5장이 남았다고 생각합니다.",
+     "src": "parakeet"
+    },
+    {
+     "t": 471,
+     "page": 5,
+     "en": "stuff to study for the test school. and the uh you have a past exams in the campus. and the I do log a couple hints time so then uh anyone numbers here would be yeah okay.",
+     "ko": "시험 학교에서 공부할 물건. 그리고 어, 당신은 캠퍼스에서 과거 시험이 있습니다. 그리고 나는 몇 가지 힌트 시간을 기록하므로 여기에 숫자가 있을 것입니다.",
+     "raw": "stuff to study for the test school. And then uh you have a past exams in the campus. And then I do log a couple hints time so then uh anyone numbers here would be yeah okay.",
+     "src": "parakeet"
+    },
+    {
+     "t": 486,
+     "page": 5,
+     "en": "for not what I request that for anything. Alright, any more questions? We good? Uh all right.",
+     "ko": "내가 무엇을 요구하는 것이 아닙니다. 알겠습니다. 질문이 더 있습니까? 우리 좋은? 어 알았어.",
+     "src": "parakeet"
+    },
+    {
+     "t": 501,
+     "page": 5,
+     "en": "So now get back to with proportional taxes on labor income. So the complexity is clear to you when you talk about when you talk about it, which point would be competitive.",
+     "ko": "이제 노동 소득에 대한 비례 세금으로 돌아가십시오. 따라서 당신이 그것에 대해 이야기할 때 복잡성은 당신에게 분명합니다. 어떤 점은 경쟁력이 있을 것입니다.",
+     "raw": "So now get back to the proportional taxes on labor income. So the complexity is clear to you when you talk about when you talk about it, which point would be competitive.",
+     "src": "parakeet"
+    },
+    {
+     "t": 515,
+     "page": 5,
+     "en": "So this would be the competitive equilibrium with the long with proportional taxes and what would be the",
+     "ko": "따라서 이것은 비례 세금과 긴 시간과 경쟁 균형이 될 것이며",
+     "raw": "So this would be the competitive equilibrium with the long the proportional taxes and what would be the",
+     "src": "parakeet"
+    },
+    {
+     "t": 531,
+     "page": 5,
+     "en": "good equilibrium condition of it. and the what? Are we not ready about no? Let's have an over here.",
+     "ko": "그것의 좋은 평형 상태. 그리고 무엇? 우리는 아니오에 대해 준비되지 않았습니까? 여기에서 합시다.",
+     "raw": "So equilibrium condition of it. And then what? Are we not ready about no? Let's have an over here.",
+     "src": "parakeet"
+    },
+    {
+     "t": 545,
+     "page": 5,
+     "en": "So here we make to the C A star, L a star, and how do",
+     "ko": "그래서 여기에서 우리는 C 별, L A 별을 만들고 어떻게",
+     "src": "parakeet"
+    },
+    {
+     "t": 561,
+     "page": 5,
+     "en": "conditions look like according to the proportion of taxes on laboring submarine on subscription of labor force consumption equals avoid it",
+     "ko": "노동력 소비 청약에 대한 노동 잠수함에 대한 세금 비율에 따른 조건은 동일합니다. 피하십시오.",
+     "raw": "conditions look like according to the proportion of taxes on laboring submarine on subscription of labor for consumption equals avoid it",
+     "src": "parakeet"
+    },
+    {
+     "t": 576,
+     "page": 5,
+     "en": "Okay.",
+     "ko": "알았어.",
+     "src": "parakeet"
+    },
+    {
+     "t": 591,
+     "page": 5,
+     "en": "And how about the recovering condition for firm? What was the marginal product of labor or the rate of transformation?",
+     "ko": "그리고 기업의 회복 조건은 어떻습니까? 노동의 한계생산물이나 변형률은 무엇인가?",
+     "src": "parakeet"
+    },
+    {
+     "t": 606,
+     "page": 5,
+     "en": "Since we know the this x-ray lies between zero and one",
+     "ko": "이 엑스선은 0과 1 사이에 있다는 것을 알고 있기 때문에",
+     "src": "parakeet"
+    },
+    {
+     "t": 621,
+     "page": 5,
+     "en": "specifically so the marginal rate of substitution which equals one minus three times a z is general smaller that the value z. So",
+     "ko": "특히 1에서 3의 3을 3배에 해당하는 치환의 한계율은 z 값보다 일반적으로 작습니다. 그래서",
+     "raw": "specifically so the marginal rate of substitution which equals one minus three times a z is generally smaller than the value z. So",
+     "src": "parakeet"
+    },
+    {
+     "t": 636,
+     "page": 5,
+     "en": "You can see that the are not identical. In other words,",
+     "ko": "동일하지 않다는 것을 알 수 있습니다. 말 그대로,",
+     "raw": "You can see that they are not identical. In other words,",
+     "src": "parakeet"
+    },
+    {
+     "t": 651,
+     "page": 5,
+     "en": "So the marginal product of labor has a speed of scope and the marginal of transformation. So now if you compare competitive equilibrium",
+     "ko": "따라서 노동의 한계 곱은 범위의 속도와 변형의 한계를 가지고 있습니다. 이제 경쟁 균형을 비교한다면",
+     "src": "parakeet"
+    },
+    {
+     "t": 666,
+     "page": 5,
+     "en": "between point J and the one that you got from with proportional active case, the difference would be there's no",
+     "ko": "비례 활성 케이스에서 얻은 점 j와 점 사이에 차이가 없습니다.",
+     "raw": "between point J and the one that you got from the proportional active case, the difference would be there's no",
+     "src": "parakeet"
+    },
+    {
+     "t": 681,
+     "page": 5,
+     "en": "Z or the value hits the marginal substitution equals to the marginal product valuation. Okay? And because of a T here, like between 0 and 1.",
+     "ko": "z 또는 값이 한계 대체에 도달하면 한계 제품 평가와 같습니다. 알았어? 0과 1 사이의 t가 있기 때문입니다.",
+     "src": "parakeet"
+    },
+    {
+     "t": 696,
+     "page": 5,
+     "en": "and the proportional taxes exposed labor to moderate or prostitution, in other words, rights the identification positive sign between modern prostitution and modern power.",
+     "ko": "그리고 비례세는 노동당을 온건하거나 매춘에 노출시켰고, 다시 말해 현대 매춘과 현대 권력 사이의 식별 긍정적인 신호를 권리로 삼는 것입니다.",
+     "raw": "And this proportional taxes exposed labor to moderate or prostitution, in other words, rights the identification positive sign between modern prostitution and modern power.",
+     "src": "parakeet"
+    },
+    {
+     "t": 711,
+     "page": 5,
+     "en": "Well technically speaking the point A, that the green point. And according the first and second multiple economics theorem here, the point A is what? Your location is",
+     "ko": "기술적으로 말하자면, 그 녹색 점 A. 그리고 여기에서 첫 번째와 두 번째 다중 경제학 정리에 따르면 점 A는 무엇입니까? 귀하의 위치는",
+     "raw": "Well technically speaking the point A, that's the green point. And according to first and second multiple economics theorem here, the point A is what? Your location is",
+     "src": "parakeet"
+    },
+    {
+     "t": 726,
+     "page": 5,
+     "en": "inequation in other words how about point is this c star and l star efficient or inefficient yeah it is efficient because",
+     "ko": "즉, 이 C 별과 L 별은 효율적이거나 비효율적입니다. 예, 효율적이기 때문에",
+     "src": "parakeet"
+    },
+    {
+     "t": 741,
+     "page": 5,
+     "en": "The KIPS marginal substitution equals marginal product of labor. Okay. And for this here, proportional tax is may ask, then what would be the optimal allocation?",
+     "ko": "KIPS 한계 대체는 노동의 한계 곱과 같습니다. 알았어. 그리고 여기에서 비례세가 질문할 수 있습니다. 그러면 최적의 할당은 무엇입니까?",
+     "raw": "The KIPS marginal substitution equals marginal product of labor. Okay. And for this here, proportional text is may ask, then what would be the optimal location?",
+     "src": "parakeet"
+    },
+    {
+     "t": 756,
+     "page": 5,
+     "en": "that would be only read over here if you know if it's feasible. But we given with proportional taxes, point B is not feasible for competitive P",
+     "ko": "그것이 가능한지 안다면 여기에서만 읽을 것입니다. 그러나 우리는 비례 세금으로 주었으므로, 포인트 B는 경쟁적인 p에 대해 실현 가능하지 않습니다.",
+     "raw": "that would be only read over here if you know if it's feasible. But we given the proportional taxes, point B is not feasible for competitive P",
+     "src": "parakeet"
+    },
+    {
+     "t": 771,
+     "page": 5,
+     "en": "All right. Are you a question for this? Okay, so let me rephrase the question which I already answered. So if you have a point A, does uh",
+     "ko": "좋아. 당신은 이것에 대한 질문입니까? 좋아, 내가 이미 대답한 질문을 다시 말하겠습니다. 따라서 점 A가 있으면 uh",
+     "src": "parakeet"
+    },
+    {
+     "t": 786,
+     "page": 5,
+     "en": "first fundamental theorem of the both books on A or not. Fundamental theorem doesn't hold food from A",
+     "ko": "A에 관한 두 책의 첫 번째 기본 정리. 기본 정리는",
+     "src": "parakeet"
+    },
+    {
+     "t": 801,
+     "page": 5,
+     "en": "We have a plenty of items that you have to cannot use.",
+     "ko": "우리는 당신이 사용할 수없는 많은 품목을 가지고 있습니다.",
+     "src": "parakeet"
+    },
+    {
+     "t": 816,
+     "page": 5,
+     "en": "May I move on? Yeah. No, yes. So maybe one or not.",
+     "ko": "계속 진행해도 될까요? 네. 아니요, 그렇습니다. 그래서 아마도 하나 또는 그렇지 않을 것입니다.",
+     "src": "parakeet"
+    },
+    {
+     "t": 827,
+     "page": 5,
+     "en": "Yeah, okay, so I don't think I and the slides for a moment, so let me come back to this when I need it.",
+     "ko": "네, 알겠습니다. 저와 슬라이드는 잠시 생각하지 않습니다. 그러니 필요할 때 다시 돌아가도록 하겠습니다.",
+     "raw": "Yeah, okay, so I don't think I need the slides for a moment, so let me come back to this when I need it.",
+     "src": "parakeet"
+    },
+    {
+     "t": 842,
+     "page": 5,
+     "en": "And here's the line on her.",
+     "ko": "그리고 여기 그녀의 라인이 있습니다.",
+     "src": "parakeet"
+    },
+    {
+     "t": 862,
+     "page": 5,
+     "en": "So we start started with the government budget constraint, which means capital D equals the total amount of taxes, tax collection.",
+     "ko": "그래서 우리는 자본 D가 세금, 세금 징수의 총액과 같다는 것을 의미하는 정부 예산 제약으로 시작합니다.",
+     "src": "parakeet"
+    },
+    {
+     "t": 877,
+     "page": 5,
+     "en": "that can government has like this, right? I remember. and the you know given substitution effect and an income effect.",
+     "ko": "정부가 이런 식으로 할 수 있지 않습니까? 나는 기억한다. 그리고 당신이 알고 있는 대체 효과와 소득 효과.",
+     "raw": "that can government has like this, right? I remember. And then you know given substitution effect and an income effect.",
+     "src": "parakeet"
+    },
+    {
+     "t": 892,
+     "page": 5,
+     "en": "Increase in T may increase in measure or decrease in visure, right? So one mean go over the subject and the come to one more time, I go.",
+     "ko": "t의 증가는 측정의 증가 또는 감소의 수 있습니다. 맞습니까? 그래서 하나는 주제를 살펴보고 한 번 더 가십시오.",
+     "raw": "Increase in T may increase in measure or decrease in visure, right? So one mean go over the subject and then come to one more time, I go.",
+     "src": "parakeet"
+    },
+    {
+     "t": 907,
+     "page": 5,
+     "en": "I have some problems. This one will be um one of the one. Yeah, that's not gonna work for the take one. You want me to go over the substitution and inconnect one of",
+     "ko": "몇 가지 문제가 있습니다. 이것은 하나 중 하나가 될 것입니다. 예, 그것은 Take One을 위해 작동하지 않을 것입니다. 당신은 내가 대체를 검토하고 다음 중 하나를 연결하기를 원합니다.",
+     "src": "parakeet"
+    },
+    {
+     "t": 922,
+     "page": 5,
+     "en": "I will watch us move off one time. It'll look like I'm right.",
+     "ko": "나는 우리가 한 번 움직이는 것을 지켜볼 것입니다. 내가 옳은 것처럼 보일 것입니다.",
+     "src": "parakeet"
+    },
+    {
+     "t": 937,
+     "page": 5,
+     "en": "So here intuition. So let's assume, suppose he increase.",
+     "ko": "그래서 여기 직관. 그가 증가했다고 가정해 봅시다.",
+     "raw": "So here intuition. So let's assume, suppose he increases.",
+     "src": "parakeet"
+    },
+    {
+     "t": 952,
+     "page": 5,
+     "en": "Okay, from I don't know, T1 to T2. So the text trade we have here shows that the T1 is smaller than T2. and the uh",
+     "ko": "알겠습니다. T1에서 T2까지입니다. 따라서 여기에 있는 텍스트 거래는 T1이 T2보다 작다는 것을 보여줍니다. 그리고 어",
+     "raw": "Okay, from I don't know, T1 to T2. So the text trade we have here shows that the T1 is smaller than T2. And then uh",
+     "src": "parakeet"
+    },
+    {
+     "t": 966,
+     "page": 5,
+     "en": "According to competitive equilibrium, you know, depicted in this picture, a point A has to be satisfies with what? A marginal rate of",
+     "ko": "이 그림에 묘사된 경쟁 균형에 따르면 A점은 무엇을 만족해야 합니까? 의 한계율",
+     "raw": "According to competitive equilibrium, you know, depicted in this picture, a point A has to be satisfied with what? A marginal rate of",
+     "src": "parakeet"
+    },
+    {
+     "t": 982,
+     "page": 5,
+     "en": "What is this? Marginal level substitution of consumption, which is one minus T times a Z. And also, if you look at the consumer's budget constraint, budget constraint says it's a one minus.",
+     "ko": "이것은 무엇입니까? 소비의 한계 수준 대체는 1에서 z의 곱하기입니다. 또한 소비자의 예산 제약을 보면 예산 제약에 따르면 1 마이너스라고 말합니다.",
+     "src": "parakeet"
+    },
+    {
+     "t": 997,
+     "page": 5,
+     "en": "T times Z times H minus L. Right? So there are two equations having what? Leisure and the over.",
+     "ko": "t 곱하기 z 곱하기 h 빼기 l. 맞습니까? 그래서 두 가지 방정식이 있습니다. 여가와 끝.",
+     "raw": "T times Z times H minus L. Right? So there are two equations having what? Leisure and T over.",
+     "src": "parakeet"
+    },
+    {
+     "t": 1012,
+     "page": 5,
+     "en": "together. So here we have a D, here we have a L. Okay. Make sense? And I will give you mathematical examples after this, but don't worry too much about it.",
+     "ko": "함께. 그래서 여기에 D가 있고 여기에 L이 있습니다. 알겠습니다. 의미가 있습니까? 그리고 이 후에 수학적 예를 들겠습니다. 하지만 너무 걱정하지 마십시오.",
+     "src": "parakeet"
+    },
+    {
+     "t": 1027,
+     "page": 5,
+     "en": "But the conceptually speaking of the modular of the T and something equals one minus T and G. Okay. So if T increase from T one to T two, let's say it's",
+     "ko": "그러나 T의 모듈식과 무언가에 대해 개념적으로 말하는 것은 1 빼기 T와 G와 같습니다. 좋습니다. 따라서 t가 1에서 t 2로 증가하면 다음과 같이 가정해 보겠습니다.",
+     "raw": "But the conceptually speaking of the modular of the T and something equals one minus T and G. Okay. So if T increases from T one to T two, let's say it's",
+     "src": "parakeet"
+    },
+    {
+     "t": 1042,
+     "page": 5,
+     "en": "is T1, I minus T1, this is O minus T one. What happens over here? The value for O minus T1 times the Z becomes O minus T two times Z.",
+     "ko": "T1, I 마이너스 T1, 이것은 O 마이너스 T 1입니다. 여기서 무슨 일이? o 마이너스 t1에 대한 값은 z가 o 마이너스 t가 2번 z가 됩니다.",
+     "src": "parakeet"
+    },
+    {
+     "t": 1053,
+     "page": 5,
+     "en": "Is it true? Inequality. The inequality correct?",
+     "ko": "사실인가요? 불평등. 부등식이 맞습니까?",
+     "src": "parakeet"
+    },
+    {
+     "t": 1068,
+     "page": 5,
+     "en": "Has to be flipped, yeah, it should be flipped. So what does it mean? The of relative price of leisure, which is for my",
+     "ko": "뒤집어야 합니다. 예, 뒤집어야 합니다. 그래서 그것은 무엇을 의미합니까? 내 것을 위한 여가의 상대 가격",
+     "raw": "Has to be flipped, yeah, it should be flipped. So what does it mean? The of relative price of leisures, which is for my",
+     "src": "parakeet"
+    },
+    {
+     "t": 1083,
+     "page": 5,
+     "en": "Smaller that the marginal rate of substitution of leisure for consumption with T1. So that means relative price for leisure is now yeah.",
+     "ko": "T1으로 소비를 여가로 대체하는 한계율보다 작습니다. 그래서 그것은 여가에 대한 상대 가격이 이제 예를 의미합니다.",
+     "raw": "Smaller than the marginal rate of substitution of leisure for consumption with T1. So that means relative price for leisure is now yeah.",
+     "src": "parakeet"
+    },
+    {
+     "t": 1098,
+     "page": 5,
+     "en": "gets cheaper than cheaper with the T two. So that means people like to do what? Since the tax rate is greater than",
+     "ko": "T 2로 저렴하게 싼다. 그래서 사람들이 무엇을 하기를 좋아한다는 뜻입니까? 세율이",
+     "src": "parakeet"
+    },
+    {
+     "t": 1113,
+     "page": 5,
+     "en": "So the consumers has a one center to work or less incentive to work. Less incentive to work. So here",
+     "ko": "따라서 소비자는 일할 센터가 하나이거나 일할 동기가 적습니다. 일할 동기가 적습니다. 그래서 여기",
+     "raw": "So the consumer has a one center to work or less incentive to work. Less incentive to work. So here",
+     "src": "parakeet"
+    },
+    {
+     "t": 1128,
+     "page": 5,
+     "en": "Oh, I'm sorry. And",
+     "ko": "아, 죄송합니다. 과",
+     "src": "parakeet"
+    },
+    {
+     "t": 1143,
+     "page": 5,
+     "en": "And you can see over here too, right? Even though it's an optimal case, let's say EL star, what would be the equivalent condition at this point?",
+     "ko": "그리고 여기도 보이죠? 최적의 경우라고 해도 El Star라고 합시다. 이 시점에서 동등한 조건은 무엇입니까?",
+     "src": "parakeet"
+    },
+    {
+     "t": 1158,
+     "page": 5,
+     "en": "This is the case, you can think it as a t equal one. So you can clearly see that people",
+     "ko": "이것은 T와 같은 것으로 생각할 수 있습니다. 그래서 당신은 사람들을 분명히 볼 수 있습니다",
+     "src": "parakeet"
+    },
+    {
+     "t": 1173,
+     "page": 5,
+     "en": "A more leisure than an optimal level. But anyway, leisure goes up. And what happens to here? If he goes up, what happens? The laboring.",
+     "ko": "최적의 수준보다 더 많은 여가. 그러나 어쨌든 여가는 올라갑니다. 그리고 여기서 무슨 일이? 그가 올라가면 어떻게 됩니까? 노동.",
+     "src": "parakeet"
+    },
+    {
+     "t": 1188,
+     "page": 5,
+     "en": "becomes what? Or if the laffer income? Labor income decreases, correct? If labor income decreases",
+     "ko": "무엇이 됩니까? 아니면 래퍼 수입인가? 노동소득이 감소했죠? 노동 소득이 감소하는 경우",
+     "raw": "becomes what? Or if the labor income? Labor income decreases, correct? If labor income decreases",
+     "src": "parakeet"
+    },
+    {
+     "t": 1203,
+     "page": 5,
+     "en": "What you factorized? Yeah, negative income factorizes.",
+     "ko": "당신은 무엇을 인수? 예, 마이너스 소득이 인수분해됩니다.",
+     "src": "parakeet"
+    },
+    {
+     "t": 1218,
+     "page": 5,
+     "en": "So what happens to leisure? Leisure goes. Down, right? So what do we call this effect? Yeah, substitution effect.",
+     "ko": "그렇다면 여가는 어떻게 됩니까? 여가는 간다. 아래로, 그렇지? 그래서 우리는 이 효과를 무엇이라고 부르나요? 네, 대체 효과입니다.",
+     "src": "parakeet"
+    },
+    {
+     "t": 1233,
+     "page": 5,
+     "en": "So we have a two-opposite effect when there is a change in a T. The substitution effect says one case, but the income effect says yes.",
+     "ko": "따라서 T에 변화가 있을 때 우리는 2-반대 효과를 갖습니다. 대체 효과는 한 경우를 말하지만 소득 효과는 yes라고 말합니다.",
+     "src": "parakeet"
+    },
+    {
+     "t": 1247,
+     "page": 5,
+     "en": "So if we apply this intuition to the government revenue over here, so",
+     "ko": "따라서 이 직관을 여기에서 정부 수입에 적용한다면,",
+     "src": "parakeet"
+    },
+    {
+     "t": 1263,
+     "page": 5,
+     "en": "So let's take a look at the government revenue for for",
+     "ko": "그럼 정부 수입을 살펴보자.",
+     "src": "parakeet"
+    },
+    {
+     "t": 1278,
+     "page": 5,
+     "en": "So let me say the right hand side of this project constrained film revenue, P times D times H minus L P. Right? So according to our",
+     "ko": "그래서 이 프로젝트의 오른쪽이 영화 수익을 제한한다고 말하겠습니다. 그래서 우리 에 따르면",
+     "src": "parakeet"
+    },
+    {
+     "t": 1296,
+     "page": 5,
+     "en": "Having this revenue, which one is increasing? Yeah, the key is increasing, right? But then what happens to the reason over here? If substitution effect is greater than negative.",
+     "ko": "이 수익이 있는데 어느 것이 증가하고 있습니까? 그래, 키가 증가하고 있지, 그렇지? 그런데 여기 이유는 어떻게 됩니까? 대체 효과가 음수보다 큰 경우.",
+     "src": "parakeet"
+    },
+    {
+     "t": 1311,
+     "page": 5,
+     "en": "Yeah, should increase right. So here you look at this T times the Z, H minus L C and if",
+     "ko": "네, 맞아야 합니다. 그래서 여기에서 이 t 곱하기 z, h 빼기 l c 및 if를 봅니다.",
+     "src": "parakeet"
+    },
+    {
+     "t": 1326,
+     "page": 5,
+     "en": "Substitution effect dominates the negative input effect. When T increase, Lt increasing, so altogether, each method L should",
+     "ko": "대체 효과가 부정적인 입력 효과를 지배합니다. t가 증가할 때, lt가 증가할 때, 따라서 각 방법 l은",
+     "raw": "Substitution effect dominates the negative input effect. When T increases, Lt increasing, so altogether, each method L should",
+     "src": "parakeet"
+    },
+    {
+     "t": 1341,
+     "page": 5,
+     "en": "Yeah, should decrease, right? So it looks like if a if the government increase the tax rate, the tax base tends to decrease when the substitution effect dominates the income.",
+     "ko": "네, 줄여야겠죠? 따라서 정부가 세율을 인상하면 대체 효과가 소득을 지배할 때 과세 기반이 감소하는 경향이 있는 것처럼 보입니다.",
+     "raw": "Yeah, should decrease, right? So it looks like if a if the government increases the tax rate, the tax base tends to decrease when the substitution effect dominates the income.",
+     "src": "parakeet"
+    },
+    {
+     "t": 1356,
+     "page": 5,
+     "en": "So it is possible that the the manifest of a change in the government revenue may go down. Right? So I'm not saying it's always go down. What I'm saying is it's possible.",
+     "ko": "따라서 정부 수입의 변화가 나타날 수 있습니다. 그렇지? 그래서 나는 그것이 항상 내려가고 있다고 말하는 것이 아닙니다. 내가 말하는 것은 그것이 가능하다는 것입니다.",
+     "raw": "So it is possible that uh the manifest of a change in the government revenue may go down. Right? So I'm not saying it's always go down. What I'm saying is it's possible.",
+     "src": "parakeet"
+    },
+    {
+     "t": 1371,
+     "page": 5,
+     "en": "So when the government increase tack the tax rate, it usually expects to have more tax collections, right? But here because of a endogenous adjustment,",
+     "ko": "따라서 정부가 세금을 인상하면 일반적으로 더 많은 세금 징수가 예상됩니다. 그렇죠? 하지만 내생적 조정 때문에",
+     "raw": "So when the government increases tack the tax rate, it usually expects to have more tax collections, right? But here because of a endogenous adjustment,",
+     "src": "parakeet"
+    },
+    {
+     "t": 1386,
+     "page": 5,
+     "en": "you can think this here the changes over here you can think of endogenous adjustment right for the consumers to you know have the monitor substitution you know moving around",
+     "ko": "여기에서 이것을 생각할 수 있습니다. 여기에서 변경 사항을 생각할 수 있습니다. 소비자가 알고 있는 내생적 조정을 생각할 수 있습니다.",
+     "raw": "you can think this here the changes over here you can think of indogenous adjustment right for the consumers to you know have the monitor substitution you know moving around",
+     "src": "parakeet"
+    },
+    {
+     "t": 1401,
+     "page": 5,
+     "en": "then you know because of that the government tax revenue and impact can go down. However, if the negative income effect increase, dominates the other",
+     "ko": "그러면 정부의 세수와 영향이 줄어들 수 있기 때문에 알 수 있습니다. 그러나 마이너스 소득 효과가 증가하면 다른 쪽을 지배합니다.",
+     "raw": "then you know because of that the government tax revenue and impact can go down. However, if the negative income effect increases, dominates the other",
+     "src": "parakeet"
+    },
+    {
+     "t": 1416,
+     "page": 5,
+     "en": "So T times D times H minus L T here that the T increase, what happens to the L T? Yeah, it decreases. So overall",
+     "ko": "따라서 t 곱하기 h 빼기 여기서 t가 증가하면 l t는 어떻게 됩니까? 네, 감소합니다. 그래서 전반적으로",
+     "raw": "So T times D times H minus L T here that the T increases, what happens to the L T? Yeah, it decreases. So overall",
+     "src": "parakeet"
+    },
+    {
+     "t": 1431,
+     "page": 5,
+     "en": "what happens to the laffer income tax rate increase. So here in this case, you know when tax rate increase increase the tax rate weight increase, so the government",
+     "ko": "Laffer 소득세율 인상은 어떻게 됩니까? 따라서 이 경우 세율이 증가하면 세율 가중치가 증가할 때 정부가",
+     "raw": "what happens to the labor income tax rate increases. So here in this case, you know when tax rate increases increases the tax rate weight increases, so the government",
+     "src": "parakeet"
+    },
+    {
+     "t": 1446,
+     "page": 5,
+     "en": "So what's the conclusion? The conclusion is",
+     "ko": "그래서 결론은? 결론은",
+     "src": "parakeet"
+    },
+    {
+     "t": 1461,
+     "page": 5,
+     "en": "The relationship between the tax rate and the revenue is not monotonic. In fact, it's non-linear. Okay? So let me",
+     "ko": "세율과 수익의 관계는 단조롭지 않습니다. 사실 비선형입니다. 알았어? 그러니 보자",
+     "src": "parakeet"
+    },
+    {
+     "t": 1476,
+     "page": 5,
+     "en": "Yeah, I always have this feature back for and you don't think it's a good idea.",
+     "ko": "예, 저는 항상 이 기능을 다시 사용하고 있으며 좋은 생각이 아니라고 생각합니다.",
+     "src": "parakeet"
+    },
+    {
+     "t": 1491,
+     "page": 5,
+     "en": "So if the tax revenue and the tax rate the relationship here",
+     "ko": "따라서 세수와 세율이 여기에서 관계라면",
+     "src": "parakeet"
+    },
+    {
+     "t": 1506,
+     "page": 5,
+     "en": "is nonlinear. that the whole idea. Okay. So and the relationship we call the Lava curve. So here we have the x ray lines",
+     "ko": "비선형입니다. 전체 아이디어. 알았어. 그래서 우리가 용암 곡선이라고 부르는 관계. 그래서 여기에 X선 라인이 있습니다",
+     "raw": "is nonlinear. That's the whole idea. Okay. So and this relationship we call the Lava curve. So here we have the x ray lines",
+     "src": "parakeet"
+    },
+    {
+     "t": 1521,
+     "page": 5,
+     "en": "between zero and one. Okay. and the tax revenue is a zero. And the doesn't equal one can be the L.",
+     "ko": "0과 1 사이. 알았어. 그리고 세수는 0입니다. 그리고 하나는 L이 될 수 있습니다.",
+     "raw": "between zero and one. Okay. And this the revenue is a zero. And the doesn't equal one can be the L.",
+     "src": "parakeet"
+    },
+    {
+     "t": 1536,
+     "page": 5,
+     "en": "So we pick the biggest revenue ever and let's say like the location and the TMAX.",
+     "ko": "그래서 우리는 사상 최대의 수익을 선택하고 위치와 Tmax와 같이 말하겠습니다.",
+     "src": "parakeet"
+    },
+    {
+     "t": 1551,
+     "page": 5,
+     "en": "and the is the one that contained say the reviving of the heart like this. Okay? and the I showed you",
+     "ko": "그리고 이와 같은 마음의 소생을 담고 있는 사람입니다. 알았어? 그리고 내가 당신에게 보여주었습니다",
+     "raw": "And this is the one that contained say the reviving of the heart like this. Okay? And uh I showed you",
+     "src": "parakeet"
+    },
+    {
+     "t": 1566,
+     "page": 5,
+     "en": "you on Monday that the government spending is likely smaller that the maximum revenue the tax revenue for the government. So for example, if",
+     "ko": "월요일에 정부 지출이 정부의 최대 수입 세수보다 작을 가능성이 높습니다. 예를 들어, if",
+     "raw": "you on Monday that the government spending is likely smaller than the maximum revenue the tax revenue for the government. So for example, if",
+     "src": "parakeet"
+    },
+    {
+     "t": 1581,
+     "page": 5,
+     "en": "The government expenditure which is exogenous in a given states somewhere between zero and the revenue of a bar. Then uh how many possible x rates the government can choose. Yeah, there are two",
+     "ko": "0과 술집 수익 사이 어딘가에 주어진 주에서 외생적인 정부 지출. 그렇다면 정부가 선택할 수 있는 x 요금이 얼마나 되는지. 네, 두 가지가 있습니다",
+     "src": "parakeet"
+    },
+    {
+     "t": 1596,
+     "page": 5,
+     "en": "Possible tax rate for the government to achieve point A, and let's say this is a tax rate A. And here this is the tax rate A. and the we often call the Ta is small.",
+     "ko": "정부가 A 포인트를 달성할 수 있는 가능한 세율과 이것이 세율 A라고 가정해 보겠습니다. 여기에 세율 A가 있습니다. 그리고 우리가 종종 TA라고 부르는 것은 작습니다.",
+     "raw": "Possible tax rate for the government to achieve point A, and let's say this is a text rate A. And here this is the text rate A. And then we often call the Ta is small.",
+     "src": "parakeet"
+    },
+    {
+     "t": 1611,
+     "page": 5,
+     "en": "than uh T D. So we often call this is the good text phrase and the is bad text phrase.",
+     "ko": "Uh T D. 그래서 우리는 종종 이것을 좋은 텍스트 구이고 나쁜 텍스트 구라고 부릅니다.",
+     "raw": "than uh T D. So we often call this is the good text phrase and this is bad text phrase.",
+     "src": "parakeet"
+    },
+    {
+     "t": 1641,
+     "page": 5,
+     "en": "All right, so",
+     "ko": "좋아, 그래서",
+     "src": "parakeet"
+    },
+    {
+     "t": 1671,
+     "page": 5,
+     "en": "Yeah, PPF is speaker. So let's say it's just PPF.",
+     "ko": "네, PPF는 스피커입니다. 그래서 그냥 PPF라고 합시다.",
+     "src": "parakeet"
+    },
+    {
+     "t": 1686,
+     "page": 5,
+     "en": "And can you describe the perspective loop room of the TA and the T B onograph?",
+     "ko": "그리고 TA와 T B onograph의 Perspective Loop Room을 설명할 수 있습니까?",
+     "src": "parakeet"
+    },
+    {
+     "t": 1701,
+     "page": 5,
+     "en": "So",
+     "ko": "그래서",
+     "src": "parakeet"
+    },
+    {
+     "t": 1716,
+     "page": 5,
+     "en": "I will give you five minutes for trying to figure it out and the uh I will point a student and the he or she can come down and the show it on a book.",
+     "ko": "나는 당신에게 그것을 알아내려고 노력하는 것에 대해 5분을 주고, 어 나는 학생과 그 또는 그녀가 내려와 책에 그것을 보여줄 수 있는 것을 가리킬 것입니다.",
+     "raw": "I will give you five minutes for trying to figure it out and then uh I will point a student and then he or she can come down and then show it on a book.",
+     "src": "parakeet"
+    },
+    {
+     "t": 1731,
+     "page": 5,
+     "en": "Yeah, I would do it. So that's fine. Five minutes.",
+     "ko": "네, 그렇게 하겠습니다. 괜찮습니다. 다섯 분.",
+     "src": "parakeet"
+    },
+    {
+     "t": 1746,
+     "page": 5,
+     "en": "Oh no, I move everything.",
+     "ko": "아니, 나는 모든 것을 움직인다.",
+     "src": "parakeet"
+    },
+    {
+     "t": 1942,
+     "page": 5,
+     "en": "Oh yeah. Hands up.",
+     "ko": "아 그래. 손을 들어.",
+     "src": "parakeet"
+    },
+    {
+     "t": 1957,
+     "page": 5,
+     "en": "Once they have an honor solving the question on the voice. No one. How about I throw uh extra points for that?",
+     "ko": "일단 그들이 목소리에 대한 질문을 해결하는 명예를 갖게 됩니다. 아무도. 내가 그것에 대해 추가 포인트를 던지는 것은 어떻습니까?",
+     "src": "parakeet"
+    },
+    {
+     "t": 1972,
+     "page": 5,
+     "en": "Me solving the problems for you. Can I get the extra credit? All right, so how would you do it? So let me start with that the",
+     "ko": "내가 당신을 위해 문제를 해결합니다. 추가 크레딧을 받을 수 있나요? 좋아, 그럼 어떻게 하시겠습니까? 그럼 시작하겠습니다",
+     "raw": "Me solving the problem for you. Can I get the extra credit? All right, so how would you do it? So let me start with the the",
+     "src": "parakeet"
+    },
+    {
+     "t": 1987,
+     "page": 5,
+     "en": "So let's say the project constraint wanna be like this guy. and the what's the flow of this project constraint when the capture is too late?",
+     "ko": "프로젝트 제약이 이 사람처럼 되고 싶다고 가정해 보겠습니다. 캡처가 너무 늦었을 때 이 프로젝트 제약 조건의 흐름은 무엇입니까?",
+     "raw": "So let's say the project constraints wanna be like this guy. And uh what's the flow of this project constraints when the capture is too late?",
+     "src": "parakeet"
+    },
+    {
+     "t": 2002,
+     "page": 5,
+     "en": "Yes, minus one minus three eight times Z, right? that the slope, right? And what's the slope of the C TR",
+     "ko": "예, 마이너스 1 빼기 3 8번 z 맞죠? 그 경사 맞죠? 그리고 C TR의 기울기는 얼마입니까?",
+     "raw": "Yes, minus one minus three eight times Z, right? That's the slope, right? And what's the slope of the C TR",
+     "src": "parakeet"
+    },
+    {
+     "t": 2018,
+     "page": 5,
+     "en": "That's a so-called PPM. Yeah, it's minus. So how could you show the fluid",
+     "ko": "소위 PPM입니다. 네, 마이너스입니다. 그렇다면 어떻게 유체를 보여줄 수 있습니까?",
+     "src": "parakeet"
+    },
+    {
+     "t": 2032,
+     "page": 5,
+     "en": "for the other constraint with the TA. that the point where the other constraint crosses with the PTF, right? and the the difference curve does one.",
+     "ko": "ta와의 다른 제약 조건에 대해. 다른 제약 조건이 PTF와 교차하는 지점이죠? 그리고 차이 곡선이 하나를 수행합니다.",
+     "raw": "for the other constraint with the TA. That's the point where the other constraint crosses with the PTF, right? And then the difference curve does one.",
+     "src": "parakeet"
+    },
+    {
+     "t": 2047,
+     "page": 5,
+     "en": "Yeah. This is the IA and different screws.",
+     "ko": "네. 이것은 IA와 다른 나사입니다.",
+     "src": "parakeet"
+    },
+    {
+     "t": 2062,
+     "page": 5,
+     "en": "And let's say, you know, let's make the location consistent. Let's say this bad equilibrium point A. Okay. And now at point A here I will get back to this. At point A",
+     "ko": "그리고 위치를 일관되게 만들자. 이 나쁜 평형점 A를 가정해 봅시다. 알겠습니다. 그리고 이제 A 지점에서 나는 이것으로 돌아갈 것입니다. A 지점에서",
+     "raw": "And let's say, you know, let's make the location consistent. Let's say this is equilibrium point A. Okay. And now at point A here I will get back to this. At point A",
+     "src": "parakeet"
+    },
+    {
+     "t": 2077,
+     "page": 5,
+     "en": "Right, so I have LA here and C A start here. So at point A we have uh point C A and L A star.",
+     "ko": "맞습니다. 그래서 저는 여기에 LA가 있고 여기에서 시작합니다. 그래서 A 지점에서 우리는 uh point C A와 L A STAR를 가지고 있습니다.",
+     "src": "parakeet"
+    },
+    {
+     "t": 2092,
+     "page": 5,
+     "en": "What would be bad equilibrium condition? Would be what? Upon a ordinary of substitution of the token.",
+     "ko": "나쁜 평형 상태는 무엇입니까? 무엇이 될까요? 토큰을 대체하는 일반.",
+     "raw": "What would be the equilibrium condition? Would be what? Upon a ordinary of substitution of the token.",
+     "src": "parakeet"
+    },
+    {
+     "t": 2107,
+     "page": 5,
+     "en": "One minus T A times D, right? and the what's the marginal?",
+     "ko": "1 빼기 t 곱하기 d, 맞죠? 그리고 한계는 무엇입니까?",
+     "raw": "One minus T A times D, right? And then what's the marginal?",
+     "src": "parakeet"
+    },
+    {
+     "t": 2122,
+     "page": 5,
+     "en": "product of labor equals marginal transformation of medium of transfunction. Right? and the how do you show",
+     "ko": "노동의 곱은 초능동 매체의 한계 변환과 같습니다. 그렇지? 그리고 당신은 어떻게 보여?",
+     "raw": "product of labor equals marginal transformation of medium of transfunction. Right? And uh how do you show",
+     "src": "parakeet"
+    },
+    {
+     "t": 2137,
+     "page": 5,
+     "en": "The case with the higher tax rate, what happens with the polygon in the slope?",
+     "ko": "세율이 높은 경우 경사면의 다각형은 어떻게 됩니까?",
+     "raw": "The case with the higher text rate, what happens with the polygon in the slope?",
+     "src": "parakeet"
+    },
+    {
+     "t": 2152,
+     "page": 5,
+     "en": "Yeah since P D is greater than P A for the slope gets deeper.",
+     "ko": "네, P D가 P보다 크므로 기울기가 깊어집니다.",
+     "src": "parakeet"
+    },
+    {
+     "t": 2168,
+     "page": 5,
+     "en": "What like the right? So I use the floor. and the right and the it looks like it.",
+     "ko": "권리는 어떻습니까? 그래서 저는 바닥을 사용합니다. 그리고 오른쪽과 그것처럼 보입니다.",
+     "raw": "What like the right? So I use the floor. And this right and uh it looks like it.",
+     "src": "parakeet"
+    },
+    {
+     "t": 2182,
+     "page": 5,
+     "en": "So minus one minus right. And where would be the total metric base? Somewhere here, right?",
+     "ko": "그래서 마이너스 1 마이너스 오른쪽. 그리고 총 메트릭 기반은 어디에 있습니까? 여기 어딘가, 그렇지?",
+     "src": "parakeet"
+    },
+    {
+     "t": 2197,
+     "page": 5,
+     "en": "Let's make consistent the point D and here is the indifference curve touching point B and let's say this is ID. And clearly the utility level at ID is more than IH, right?",
+     "ko": "점 D를 일관되게 합시다. 여기에 무차별곡선 접촉점 B가 있고 이것이 id라고 가정해 봅시다. 그리고 분명히 id의 유틸리티 수준은 IH보다 많습니다. 맞죠?",
+     "src": "parakeet"
+    },
+    {
+     "t": 2212,
+     "page": 5,
+     "en": "That's a C V star and all this star.",
+     "ko": "그것은 C V 스타와 이 모든 별입니다.",
+     "src": "parakeet"
+    },
+    {
+     "t": 2227,
+     "page": 5,
+     "en": "Here, however, bad equilibrium computations are a bit different because now the this economy has a different text right. So kind of V and",
+     "ko": "그러나 여기서는 이 경제가 다른 텍스트 권리를 갖기 때문에 나쁜 평형 계산이 약간 다릅니다. 그래서 종류의 v와",
+     "raw": "Here, however, the equilibrium computations are a bit different because now the this economy has a different text right. So kind of V and",
+     "src": "parakeet"
+    },
+    {
+     "t": 2242,
+     "page": 5,
+     "en": "enforced marginal product of labor, enforced marginal transformation of a LCOLC. Okay? I money supply they are not identical so that you know both all occasions are in a",
+     "ko": "노동의 집행된 한계 곱, LCOLC의 강제 한계 변환. 알았어? i 화폐 공급 그들은 동일하지 않으므로 모든 경우가",
+     "raw": "enforced marginal product of labor, enforced marginal transformation of a LCOLC. Okay? I mean still they are not identical so that you know both all occasions are in a",
+     "src": "parakeet"
+    },
+    {
+     "t": 2257,
+     "page": 5,
+     "en": "But which allocation is preferred to the other? Yeah, point aim, right? Because the indifference curve",
+     "ko": "그러나 어떤 할당이 다른 할당보다 선호됩니까? 예, 포인트 목표, 맞죠? 무차별 곡선 때문입니다",
+     "src": "parakeet"
+    },
+    {
+     "t": 2273,
+     "page": 5,
+     "en": "point A, that's an IA and indifference curve point B. It's an IB. Clearly utility level is you know greater in point I easy difference curve I so point A is clearly",
+     "ko": "점 A, 그것은 IA와 무차별 곡선 점 B입니다. 그것은 IB입니다. 분명히 효용 수준은 점 i 쉬운 차이 곡선 i에서 더 크다는 것을 알고 있으므로 점 A는 분명히",
+     "src": "parakeet"
+    },
+    {
+     "t": 2278,
+     "page": 5,
+     "en": "Prefer to the point B if",
+     "ko": "의 경우 B 지점을 선호합니다",
+     "src": "parakeet"
+    },
+    {
+     "t": 2293,
+     "page": 5,
+     "en": "The government can choose between PA and P E. And a government is kind of voluntary to consume. That's a baseline assumption. I mean it's a government illegal.",
+     "ko": "정부는 PA와 P E 중 하나를 선택할 수 있으며 정부는 일종의 자발적인 소비입니다. 그것이 기본 가정입니다. 정부가 불법이라는 뜻입니다.",
+     "src": "parakeet"
+    },
+    {
+     "t": 2303,
+     "page": 5,
+     "en": "somehow that the C but the government is indifferent, right? Anyway you will get the government standing.",
+     "ko": "C이지만 정부는 무관심하다는 것, 그렇죠? 어쨌든 당신은 정부를 유지하게 될 것입니다.",
+     "raw": "somehow then the C but the government is indifferent, right? Anyway you will get the coverment standing.",
+     "src": "parakeet"
+    },
+    {
+     "t": 2319,
+     "page": 5,
+     "en": "All right. Any questions? Is it good? So now I will show you how to get this value here. I the TA or the LA and the C A by solving the",
+     "ko": "좋아. 질문이 있습니까? 좋은가요? 이제 여기에서 이 값을 얻는 방법을 보여 드리겠습니다. i ta 또는 la 및 c a",
+     "src": "parakeet"
+    },
+    {
+     "t": 2335,
+     "page": 5,
+     "en": "Problems over here, okay? So I mean any questions? Okay.",
+     "ko": "여기 문제, 알았지? 그래서 질문이 있습니까? 알았어.",
+     "src": "parakeet"
+    },
+    {
+     "t": 2364,
+     "page": 5,
+     "en": "So we can",
+     "ko": "그래서 우리는 할 수있다",
+     "src": "parakeet"
+    },
+    {
+     "t": 2393,
+     "page": 5,
+     "en": "Right, so let's get back to the example here. So I specify the utility function.",
+     "ko": "자, 그럼 여기서 예시로 돌아가 보겠습니다. 그래서 나는 유틸리티 기능을 지정합니다.",
+     "src": "parakeet"
+    },
+    {
+     "t": 2408,
+     "page": 5,
+     "en": "Okay. and the this utility function has a V name. We call this is a quasi-linear utility function. So but you don't have to know the technical term, but uh just for your information.",
+     "ko": "알았어. 이 유틸리티 함수에는 V 이름이 있습니다. 우리는 이것을 준선형 유틸리티 함수라고 부릅니다. 따라서 기술 용어를 알 필요는 없지만 정보를 위해.",
+     "raw": "Okay. And then this utility function has a V name. We call this is a quasi-linear utility function. So but you don't have to know the technical term, but uh just for your information.",
+     "src": "parakeet"
+    },
+    {
+     "t": 2424,
+     "page": 5,
+     "en": "we call this is quasi linear. Utility function. So here quasi means like uh almost linear. So if you look at this utility function, right?",
+     "ko": "우리는 이것을 준 선형이라고 부릅니다. 유틸리티 기능. 따라서 여기서 quasi는 uh와 같은 것을 의미합니다. 거의 선형입니다. 이 유틸리티 기능을 보면 맞습니까?",
+     "src": "parakeet"
+    },
+    {
+     "t": 2439,
+     "page": 5,
+     "en": "So we have uh this level utility level here you do have to be to the utility function, right? So between",
+     "ko": "그래서 우리는 uh 이 수준의 유틸리티 수준을 가지고 있습니다. 당신은 유틸리티 기능에 있어야합니다. 맞습니까? 그래서 사이에",
+     "src": "parakeet"
+    },
+    {
+     "t": 2454,
+     "page": 5,
+     "en": "the relationship between the consumption and the utility level and the leisure and the utility level, which value has a linear relationship with the level utility capital group. Yeah.",
+     "ko": "소비와 효용수준과 여가와 효용수준의 관계, 가치는 효용자본집단과 선형관계를 갖는다. 네.",
+     "src": "parakeet"
+    },
+    {
+     "t": 2468,
+     "page": 5,
+     "en": "the laffer is linearly related to capital U, right? However, the C here has a power one half on in the superscript. So this C, the relationship C and U, they are.",
+     "ko": "래퍼는 자본 u와 선형적으로 관련이 있습니다. 맞죠? 그러나 여기의 C는 위 첨자에서 반쪽의 힘을 가지고 있습니다. 그래서 이 c, 관계 c와 u는 그렇습니다.",
+     "raw": "The leisure is linearly related to capital U, right? However, the C here has a power one half on in the superscript. So this C, the relationship C and U, they are.",
+     "src": "parakeet"
+    },
+    {
+     "t": 2483,
+     "page": 5,
+     "en": "non linear. So that's why we call that a silver function and not a linear. So it's quasi linear silver function. So and let me explain you know",
+     "ko": "비선형. 그래서 우리는 그것을 선형이 아닌 은색 함수라고 부릅니다. 그래서 그것은 준 선형 실버 함수입니다. 그래서 내가 당신이 알고 설명하겠습니다",
+     "src": "parakeet"
+    },
+    {
+     "t": 2498,
+     "page": 5,
+     "en": "for the features once we move on. But the thing is when we have this quasi-linear sort of function, the laffer can in fact possibly be zero. But in this case it can make things easier",
+     "ko": "일단 우리가 계속 진행하는 기능. 그러나 문제는 우리가 이러한 준선형 함수를 가질 때 Laffer가 실제로 0일 수 있다는 것입니다. 그러나 이 경우 일을 더 쉽게 만들 수 있습니다",
+     "raw": "for the features once we move on. But the thing is when we have this quasi-linear sort of function, the leisure can in fact possibly be zero. But in this case it can make things easier",
+     "src": "parakeet"
+    },
+    {
+     "t": 2513,
+     "page": 5,
+     "en": "I'm not gonna assume it. So I will start with a strict inequality for me, right? Okay, so that's good. And that the example for the utility function. And here we still have",
+     "ko": "나는 그것을 가정하지 않을 것입니다. 그래서 나는 나를 위한 엄격한 불평등으로 시작할 것입니다. 그렇죠? 좋아요, 그래서 좋습니다. 그리고 유틸리티 함수의 예입니다. 그리고 여기 우리는 여전히 가지고 있습니다",
+     "raw": "I'm not gonna assume it. So I will start with a strict inequality for me, right? Okay, so that's good. And that's the example for the utility function. And here we still have",
+     "src": "parakeet"
+    },
+    {
+     "t": 2528,
+     "page": 5,
+     "en": "linear production function we have seen and the would be the consumer's problems. Okay, and the and the here is here is the forms problems and",
+     "ko": "우리가 본 선형 생산 기능과 소비자의 문제가 될 것입니다. 좋아, 그리고 여기에는 양식 문제와",
+     "raw": "linear reduction function we have seen and this would be the consumer's problem. Okay, and uh and then here is here is the forms problem and",
+     "src": "parakeet"
+    },
+    {
+     "t": 2543,
+     "page": 5,
+     "en": "Number four would be solutions. So let me solve their consumer's problems first. So what do we need to solve their problems? We have to get what?",
+     "ko": "네 번째는 해결책이 될 것입니다. 그래서 먼저 소비자의 문제를 해결하겠습니다. 그렇다면 그들의 문제를 해결하기 위해 무엇이 필요합니까? 우리는 무엇을 얻어야 합니까?",
+     "raw": "Number four would be solutions. So let me solve the consumer's problem first. So what do we need to solve this problem? We have to get what?",
+     "src": "parakeet"
+    },
+    {
+     "t": 2558,
+     "page": 5,
+     "en": "Constraint, we have one here, and the what do we need uh other than but the constraint? So we have to find out that the marginal rate of substitution of",
+     "ko": "제약 조건, 여기에 하나가 있으며 제약 조건 외에 무엇이 필요합니까? 그래서 우리는 대체의 한계 대체율을 알아내야 한다.",
+     "raw": "Constraint, we have one here, and then what do we need uh other than but the constraint? So we have to find out what the marginal rate of substitution of",
+     "src": "parakeet"
+    },
+    {
+     "t": 2573,
+     "page": 5,
+     "en": "function, right? And how do you define larger error substitution of this function? You have this, right? In the first week? Too long ago, yes.",
+     "ko": "기능, 맞죠? 그리고 이 함수의 더 큰 오류 대체를 어떻게 정의합니까? 당신은 이것을 가지고, 그렇지? 첫 주에? 너무 오래전에 그렇습니다.",
+     "src": "parakeet"
+    },
+    {
+     "t": 2588,
+     "page": 5,
+     "en": "Um marginal utility of leisure on marginal utility of leisure. Yeah, very good perfect. and the given our utility function, how do you get marginal utility of leisure? What do you do?",
+     "ko": "음 여가의 한계 효용에 대한 여가의 한계 효용. 네, 아주 좋습니다. 그리고 주어진 우리의 효용 기능, 여가의 한계 효용을 얻는 방법은 무엇입니까? 당신은 무엇을합니까?",
+     "raw": "Um marginal utility of leisure on marginal utility of leisure. Yeah, very good perfect. And then given our utility functions, how do you get marginal utility of leisure? What do you do?",
+     "src": "parakeet"
+    },
+    {
+     "t": 2603,
+     "page": 5,
+     "en": "You take the type of uh level utility with respect to L and not the value. Yeah, it's just in L there, so the value would be one, right?",
+     "ko": "값이 아닌 L에 대해 UH 레벨 유틸리티의 유형을 취합니다. 예, 거기에 L에만 있으므로 값이 하나가 될 것입니다. 맞죠?",
+     "src": "parakeet"
+    },
+    {
+     "t": 2619,
+     "page": 5,
+     "en": "bottom in the denominator how would you find marginal utility of consumption? Yeah you take the derivative of that so you have a number two as a coefficient and the power",
+     "ko": "분모의 맨 아래 소비의 한계 효용을 어떻게 찾을 수 있습니까? 예, 당신은 그 파생물을 취하므로 계수와 거듭제곱으로 숫자 2를 갖습니다.",
+     "src": "parakeet"
+    },
+    {
+     "t": 2633,
+     "page": 5,
+     "en": "comes down as a one half right and the here you have a C and the power one half stays and you take the minus one right yeah and the",
+     "ko": "반쪽 오른쪽으로 내려오고 여기에서 C가 있고 힘이 절반이 유지되고 마이너스를 오른쪽으로 가져갑니다. 예 그리고",
+     "raw": "comes down as a one half right and then here you have a C and the power one half stays and you take the minus one right yeah and then",
+     "src": "parakeet"
+    },
+    {
+     "t": 2648,
+     "page": 5,
+     "en": "And eventually what do you get? You got two cancels out. And what's the value for this? This is minus one half. So you have one.",
+     "ko": "그리고 결국 무엇을 얻습니까? 2개의 취소가 있습니다. 그리고 이것의 가치는 무엇입니까? 이것은 마이너스 반입니다. 그래서 당신은 하나가 있습니다.",
+     "src": "parakeet"
+    },
+    {
+     "t": 2663,
+     "page": 5,
+     "en": "Over C minus one half, correct? Yeah. and the this I can say this is a C one half, the minus sign can swift here.",
+     "ko": "C 빼기 반 이상, 맞습니까? 네. 그리고 이것은 내가 말할 수 있는 이것은 c 1/2이고, 마이너스 기호는 여기에서 빨라질 수 있습니다.",
+     "raw": "Over C minus one half, correct? Yeah. And then this I can say this is a C one half, the minus sign can swift here.",
+     "src": "parakeet"
+    },
+    {
+     "t": 2678,
+     "page": 5,
+     "en": "and the marginal rate of substitution has to equal to that the slope of the budget constraint, which would be 1 minus t times what?",
+     "ko": "그리고 한계 대체율은 예산 제약의 기울기와 같아야 하며, 이는 1에서 1을 뺀 시간입니다.",
+     "raw": "And this marginal rate of substitution has to equal to what? The slope of the budget constraint, which would be 1 minus t times what?",
+     "src": "parakeet"
+    },
+    {
+     "t": 2693,
+     "page": 5,
+     "en": "C omega, right? So we have bad equilibrium condition here. C one half, C to the one half equals one minus t times omega. Okay? and the",
+     "ko": "오메가 맞죠? 그래서 우리는 여기에 나쁜 평형 상태가 있습니다. C 1/2, C에서 1/2은 오메가를 1에서 뺀 것과 같습니다. 알았어? 그리고",
+     "raw": "C omega, right? So we have a equilibrium condition here. C one half, C to the one half equals one minus t times omega. Okay? And that",
+     "src": "parakeet"
+    },
+    {
+     "t": 2707,
+     "page": 5,
+     "en": "and the we have another condition we need. We have another condition for solving C and L in a blue button over there, which is project constraint. And you know, let's label. Let's say this is circle A and the is circle B.",
+     "ko": "그리고 우리에게 필요한 또 다른 조건이 있습니다. 거기에 파란색 버튼으로 C와 L을 풀기 위한 또 다른 조건이 있습니다. 이는 프로젝트 제약입니다. 그리고 알다시피, 라벨을 붙이자. 이것이 원 A이고 IS 원 B라고 가정해 봅시다.",
+     "raw": "And uh we have another condition we need. We have another condition for solving C and L in a blue button over there, which is project constraint. And you know, let's label. Let's say this is circle A and this is circle B.",
+     "src": "parakeet"
+    },
+    {
+     "t": 2723,
+     "page": 5,
+     "en": "Welcome back here, son.",
+     "ko": "다시 오신 것을 환영합니다, 아들.",
+     "src": "parakeet"
+    },
+    {
+     "t": 2737,
+     "page": 5,
+     "en": "And that's consumers problems. N number three. Firm's problems. So the firm maximizes profit, which is just E minus omega.",
+     "ko": "그리고 그것은 소비자 문제입니다. n 세 번째. 기업의 문제. 따라서 회사는 이익을 극대화합니다. 이는 E에서 오메가를 뺀 것입니다.",
+     "raw": "And that's consumers problem. N number three. Firm's problem. So the firm maximizes profit, which is just E minus omega.",
+     "src": "parakeet"
+    },
+    {
+     "t": 2753,
+     "page": 5,
+     "en": "and the the enter the V tried choosing and the the T. and the one would be idea with the nine.",
+     "ko": "그리고 V는 선택을 시도했고 T. 그리고 하나는 9와 함께 아이디어가 될 것입니다.",
+     "raw": "And then the enter the V tried choosing and to the T. And then one would be idea with the nine.",
+     "src": "parakeet"
+    },
+    {
+     "t": 2767,
+     "page": 5,
+     "en": "Multiple transition for the comments. You have to find our marginal power double average event, right? From this.",
+     "ko": "댓글에 대한 다중 전환. 우리의 한계 전력 이중 평균 이벤트를 찾아야 합니다. 그렇죠? 이것에서.",
+     "src": "parakeet"
+    },
+    {
+     "t": 2792,
+     "page": 5,
+     "en": "What's the production function here? That's linear, right? Y equals z times n to the d. So what's the marginal product of labor demand? Yeah, it's a z, right?",
+     "ko": "여기서 생산 기능은 무엇입니까? 선형이죠? y는 z 곱하기 n과 d와 같습니다. 그렇다면 노동 수요의 한계 곱은 무엇입니까? 네, Z입니다. 맞죠?",
+     "src": "parakeet"
+    },
+    {
+     "t": 2806,
+     "page": 5,
+     "en": "Okay. and the G has to be equal to that the marginal cost of labor demand, right? And what's the marginal cost of labor demand?",
+     "ko": "알았어. 그리고 G는 노동 수요의 한계 비용과 같아야 합니다. 그렇죠? 그리고 노동 수요의 한계 비용은 얼마입니까?",
+     "raw": "Okay. And that G has to be equal to what? The marginal cost of labor demand, right? And what's the marginal cost of labor demand?",
+     "src": "parakeet"
+    },
+    {
+     "t": 2821,
+     "page": 5,
+     "en": "that the way so it equals wage. So this would be the equivalent wage. Okay, and let's say this is uh condition circle C.",
+     "ko": "그렇게 해서 임금과 동일합니다. 따라서 이것은 동등한 임금이 될 것입니다. 좋아, 이것이 uh 조건 서클 c라고 가정 해 봅시다.",
+     "raw": "That's the way so it equals wage. So this would be the equivalent wage. Okay, and let's say this is uh condition circle C.",
+     "src": "parakeet"
+    },
+    {
+     "t": 2848,
+     "page": 5,
+     "en": "And move on.",
+     "ko": "그리고 계속 진행합니다.",
+     "src": "parakeet"
+    },
+    {
+     "t": 2863,
+     "page": 5,
+     "en": "Don't ask just to point. Alright, so from circle A, E, and C.",
+     "ko": "지적만 하지 말자. 좋아, 원 A, E, C에서.",
+     "src": "parakeet"
+    },
+    {
+     "t": 2879,
+     "page": 5,
+     "en": "We know that the equilibrium with rate is the Z. So we can replace omega into Z, and the here we know that if waging wage star Z, the profit would be what? Profit",
+     "ko": "우리는 비율과의 평형이 Z라는 것을 알고 있습니다. 그래서 우리는 Omega를 Z로 대체할 수 있으며, 여기서 우리는 임금 별 Z를 수행하면 이익이 어떻게 될까요? 이익",
+     "raw": "We know that the equilibrium wage rate is the Z. So we can replace omega into Z, and then here we know that if waging wage star Z, the profit would be what? Profit",
+     "src": "parakeet"
+    },
+    {
+     "t": 2893,
+     "page": 5,
+     "en": "equilibrium would be zero as well. So we start with EA. The consumers has budget constraint of 1 minus P times omega times H minus L plus pi, but now we know that pi",
+     "ko": "평형도 0이 될 것입니다. 그래서 우리는 EA로 시작합니다. 소비자의 예산 제약은 1에서 P 배 오메가 곱하기 H 빼기 L + PI이지만 이제 우리는 PI를 알고 있습니다.",
+     "raw": "equilibrium would be zero as well. So we start with EA. The consumer has a budget constraint of 1 minus P times omega times H minus L plus pi, but now we know that pi",
+     "src": "parakeet"
+    },
+    {
+     "t": 2908,
+     "page": 5,
+     "en": "Omega is a z so that we have one minus t times a z times h minus m. That's what you have after plugging this value.",
+     "ko": "오메가는 z이므로 1 마이너스 t 곱하기 a z 곱하기 h 빼기 m. 이 값을 연결한 후 가지고 있는 것입니다.",
+     "src": "parakeet"
+    },
+    {
+     "t": 2923,
+     "page": 5,
+     "en": "budget constraint and for a circle B we bad equilibrium condition c one half equals log minus times omega but we can replace it to z okay",
+     "ko": "예산 제약 및 원 B에 대해 우리는 나쁜 평형 상태 C 1 절반은 로그 빼기 시간 오메가와 같지만 z로 바꿀 수 있습니다.",
+     "raw": "budget constraint and for a circle B we have equilibrium condition c one half equals log minus times omega but we can replace it to z okay",
+     "src": "parakeet"
+    },
+    {
+     "t": 2938,
+     "page": 5,
+     "en": "Oh yeah. So we have our two foundations ready over here and over here.",
+     "ko": "아 그래. 그래서 우리는 여기저기서 우리의 두 가지 기초를 준비했습니다.",
+     "src": "parakeet"
+    },
+    {
+     "t": 2953,
+     "page": 5,
+     "en": "Bear with me. You're almost done.",
+     "ko": "나와 함께 참아. 거의 끝났습니다.",
+     "src": "parakeet"
+    },
+    {
+     "t": 2968,
+     "page": 5,
+     "en": "So here, since we have a power one hat hanging around in the laffer hand side, but we are not that much familiar with this.",
+     "ko": "그래서 여기에서 우리는 Laffer 손 쪽에 매달려 있는 Power One 모자가 있기 때문에 그러나 우리는 이것에 대해 그다지 익숙하지 않습니다.",
+     "raw": "So here, since we have a power one hat hanging around in the left hand side, but we are not that much familiar with this.",
+     "src": "parakeet"
+    },
+    {
+     "t": 2983,
+     "page": 5,
+     "en": "So let's, you know, multiply C one half. I mean, you know, square on both sides what you get. That C equals what? One minus P times Z square, right? Can I say this?",
+     "ko": "그래서, 당신도 알다시피, C를 1/2로 곱합시다. 내 말은, 알다시피, 당신이 얻는 것을 양면에서 제곱하십시오. 그 C는 무엇과 같습니까? 원 마이너스 P Times Z Square 맞죠? 내가 이것을 말할 수 있습니까?",
+     "src": "parakeet"
+    },
+    {
+     "t": 2989,
+     "page": 5,
+     "en": "Yeah, and so let's say this is uh",
+     "ko": "예, 이것이 uh라고 가정 해 봅시다",
+     "src": "parakeet"
+    },
+    {
+     "t": 3004,
+     "page": 5,
+     "en": "This is a brand new equation circle D and the is uh circle E, right? And",
+     "ko": "이것은 완전히 새로운 방정식 원 D이고 Uh Circle E입니다. 맞습니까? 과",
+     "raw": "This is a brand new equation circle D and this is uh circle E, right? And",
+     "src": "parakeet"
+    },
+    {
+     "t": 3019,
+     "page": 5,
+     "en": "Remove C in circle B and circle D. Right? Yeah. How do you remove them?",
+     "ko": "원 B와 원 D에서 C를 제거합니다. 맞습니까? 네. 어떻게 제거합니까?",
+     "src": "parakeet"
+    },
+    {
+     "t": 3034,
+     "page": 5,
+     "en": "Yeah, I mean they are identical, so you put here one minus t times the z times h minus l equals t right from circle b which is equal to what? One minus t",
+     "ko": "예, 내 말은 그것들이 동일하다는 것을 의미합니다. 그래서 여기에 z 곱하기 h 빼기 l의 1을 빼기 곱하면 b를 원 b에서 오른쪽과 같습니다. 이것은 무엇과 같습니다. 1 마이너스 t",
+     "src": "parakeet"
+    },
+    {
+     "t": 3050,
+     "page": 5,
+     "en": "Kind of easy where we're going to be able to do",
+     "ko": "우리가 할 수 있는 쉬운 일",
+     "src": "parakeet"
+    },
+    {
+     "t": 3064,
+     "page": 5,
+     "en": "So far, so good. Yeah. No complaints?",
+     "ko": "지금까지는 너무 좋습니다. 네. 불만이 없습니까?",
+     "src": "parakeet"
+    },
+    {
+     "t": 3079,
+     "page": 5,
+     "en": "complain as soon as you find some problems here. Alright, so we have what? We have a common factor in the laffer in both sides, which is one minus t times a v.",
+     "ko": "여기에서 몇 가지 문제를 발견하는 즉시 불평하십시오. 좋아, 그래서 우리는 무엇을 가지고 있습니까? 우리는 양쪽의 Laffer에 공통 요소가 있으며, 이는 V를 1에서 1로 뺀 것입니다.",
+     "raw": "complain as soon as you find some problem here. Alright, so we have what? We have a common factor in the left in both sides, which is one minus t times a v.",
+     "src": "parakeet"
+    },
+    {
+     "t": 3094,
+     "page": 5,
+     "en": "Right. So what can we do? You can yeah. Okay. So eventually we have H minus L equals one minus E times",
+     "ko": "맞아. 그래서 우리는 무엇을 할 수 있습니까? 당신은 할 수 있습니다. 알았어. 그래서 결국 우리는 h 마이너스 l이 1 마이너스 e와 같습니다.",
+     "src": "parakeet"
+    },
+    {
+     "t": 3109,
+     "page": 5,
+     "en": "And what's an L value of L L star? That's H minus 1 minus in times 2",
+     "ko": "그리고 l l star의 l 값은 얼마입니까? 그것은 h에서 1을 빼는 시간 2의 마이너스입니다",
+     "src": "parakeet"
+    },
+    {
+     "t": 3125,
+     "page": 5,
+     "en": "Sorry. and the how can you stand down these starts? No, let's do the easy one because how would you scandal the labor supply? Start with just the one.",
+     "ko": "죄송합니다. 그리고 이러한 시작을 어떻게 참을 수 있습니까? 아니요, 노동 공급을 어떻게 스캔할 것이기 때문에 쉬운 일을 합시다. 하나로 시작하십시오.",
+     "raw": "Sorry. And then how can you stand down these starts? No, let's do the easy one because how would you scandal the label supply? Start with just the one.",
+     "src": "parakeet"
+    },
+    {
+     "t": 3139,
+     "page": 5,
+     "en": "H minus L star so h minus L star means L minus C time will be correct. Then how do you define C star?",
+     "ko": "H 마이너스 L 별 그래서 H 마이너스 L 별은 L 마이너스 C 시간이 정확함을 의미합니다. 그렇다면 C 별을 어떻게 정의합니까?",
+     "src": "parakeet"
+    },
+    {
+     "t": 3154,
+     "page": 5,
+     "en": "This space over here, right? Yeah. So this car is just uh",
+     "ko": "여기 이 공간, 맞죠? 네. 그래서 이 차는 그냥 uh 입니다",
+     "src": "parakeet"
+    },
+    {
+     "t": 3161,
+     "page": 5,
+     "en": "One minus t times the z squared that's your th slot.",
+     "ko": "1 마이너스 t의 z 제곱이 귀하의 슬롯입니다.",
+     "src": "parakeet"
+    },
+    {
+     "t": 3177,
+     "page": 5,
+     "en": "Okay, so and before we moving on, let's assume this is the circle L C F. And we have here a set of solutions so far we get.",
+     "ko": "자, 그리고 계속 진행하기 전에 이것이 Circle L C F라고 가정하고 여기까지 우리가 얻을 수 있는 일련의 솔루션이 있습니다.",
+     "src": "parakeet"
+    },
+    {
+     "t": 3192,
+     "page": 5,
+     "en": "That's uh circle for the first one.",
+     "ko": "첫 번째 UH Circle입니다.",
+     "src": "parakeet"
+    },
+    {
+     "t": 3206,
+     "page": 5,
+     "en": "Oh yeah Now it's a different time. You could I mean many of you think that the why is it",
+     "ko": "오 예, 지금은 다른 시간입니다. 당신은 많은 사람들이 왜 그렇게 생각하는지 말할 수 있습니다",
+     "raw": "Oh yeah Now it's a different time. You could I mean many of you think that uh why is it",
+     "src": "parakeet"
+    },
+    {
+     "t": 3221,
+     "page": 5,
+     "en": "What what is he doing on the board? Covering all the sets for us? Well, we could just uh type in a chat GPT and we can get the answers for you. That's true.",
+     "ko": "그는 게시판에서 무엇을 하고 있습니까? 우리를 위해 모든 세트를 커버? 글쎄, 우리는 채팅 GPT를 입력하고 당신을 위해 답을 얻을 수 있습니다. 사실입니다.",
+     "src": "parakeet"
+    },
+    {
+     "t": 3237,
+     "page": 5,
+     "en": "You can use Chat GPT to calculate this. But you know that the double check whether Chat GPT gives you the correct answer you",
+     "ko": "채팅 GPT를 사용하여 계산할 수 있습니다. 그러나 채팅 GPT가 정답을 제공하는지 다시 확인한다는 것을 알고 있습니다.",
+     "raw": "You can use Chat GPT to calculate this. But you know that to double check whether Chat GPT gives you the correct answer you",
+     "src": "parakeet"
+    },
+    {
+     "t": 3252,
+     "page": 5,
+     "en": "know how it goes. So since you guys are ready or there is the laffer your information.",
+     "ko": "어떻게 되는지 알아요. 그래서 너희들이 준비가 되었거나 거기에 당신의 정보가 있기 때문입니다.",
+     "raw": "know how it goes. So since you guys are ready or there is the for your information.",
+     "src": "parakeet"
+    },
+    {
+     "t": 3266,
+     "page": 5,
+     "en": "Before we keep moving on. So this equilibrium with we do you know calculate bad equilibrium with solve their optimization problems, let's talk about the endogenous variables given the model given exogenous variables.",
+     "ko": "계속 진행하기 전에. 따라서 우리는 최적화 문제를 해결하여 나쁜 평형을 계산한다는 것을 알고 있는 이 평형을 알고 있습니다. 외인성 변수가 주어진 모델에 주어진 내생 변수에 대해 이야기해 보겠습니다.",
+     "raw": "Before we keep moving on. So this equilibrium, when we do you know calculate the equilibrium with solving this optimization problem, let's talk about the endogenous variables of the model and exogenous variables.",
+     "src": "parakeet"
+    },
+    {
+     "t": 3281,
+     "page": 5,
+     "en": "So when we have with proportional taxes, the competitive equation",
+     "ko": "따라서 비례세를 가지고 있을 때 경쟁 방정식은",
+     "raw": "So when we have this proportional taxes, the competitive equation",
+     "src": "parakeet"
     }
    ]
   }
- ],
- "savedAt": "2026-11-04T06:05:43.106Z"
+ ]
 }
