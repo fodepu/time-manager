@@ -1,0 +1,1845 @@
+{
+ "id": "lec_2026-11-04_mw1g93as",
+ "course": "계량경제학",
+ "title": "계량경제학 10주차 · Core_note_iv_2026",
+ "date": "2026-11-04",
+ "week": 10,
+ "module": "1507915",
+ "lang": "en",
+ "mode": "slides",
+ "pdf": "Core_note_iv_2026.pdf",
+ "pages": 11,
+ "duration": 1861,
+ "log": [
+  {
+   "t": 0,
+   "page": 1
+  },
+  {
+   "t": 13,
+   "page": 2
+  },
+  {
+   "t": 18,
+   "page": 6
+  },
+  {
+   "t": 704,
+   "page": 7
+  },
+  {
+   "t": 721,
+   "page": 6
+  },
+  {
+   "t": 924,
+   "page": 7
+  },
+  {
+   "t": 1382,
+   "page": 7,
+   "resumed": true
+  },
+  {
+   "t": 1851,
+   "page": 8
+  }
+ ],
+ "slides": [
+  {
+   "page": 1,
+   "en": "or it defines how we and we do like them. Trans action and how",
+   "ko": "또는 우리가 어떻게 그리고 우리가 어떻게 하는지 정의합니다. 트랜스 액션과 어떻게",
+   "pdf": "Core_note_iv_2026.pdf",
+   "pdfPage": 1,
+   "slideText": "Core Notes on IV Introductory Econometrics Core Notes on Instrumental Variables Wald, 2SLS, and Two Classic Instruments Introductory Econometrics Road map When the regressor of interest is correlated with the error, OLS is biased and more data do not help. An instrument is a variable that moves the regressor but has no other route to the outcome. The note derives the IV estimator in one line, computes it by hand as a ratio of two differences (the Wald estimator), generalizes it to two-stage least squares, and then works through two famous instruments: quarter of birth for schooling (Angrist and Krueger 1991) and settler mortality for institutions (Acemoglu, Johnson and Robinson 2001). It ends with what can go wrong: weak instruments, untestable exclusion, and whose effect IV actually measures. Contents 1 The endogeneity problem 1 2 The instrument 2 2.1 Two conditions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2.2 The estimator in one line . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2.3 A binary instrument: the Wald estimator . . . . . . . . . . . . . . . . . . . . . . . . 2 3 Case 1: Quarter of birth and the return to schooling 3 3.1 The institutional source of variation . . . . . . . . . . . . . . . . . . . . . . . . . . . 3 3.2 The Wald estimate, by hand . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4 3.3 Why is IV above OLS here? . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5 ",
+   "lines": {
+    "w": 612,
+    "h": 792,
+    "lines": [
+     {
+      "i": 0,
+      "text": "Core Notes on IV Introductory Econometrics",
+      "x": 72,
+      "y": 34.111899999999956,
+      "w": 467.99493544999996,
+      "h": 12.545465
+     },
+     {
+      "i": 1,
+      "text": "Core Notes on Instrumental Variables",
+      "x": 144.698,
+      "y": 68.73259999999998,
+      "w": 322.60626676000015,
+      "h": 19.79771
+     },
+     {
+      "i": 2,
+      "text": "Wald, 2SLS, and Two Classic Instruments",
+      "x": 197.67600000000002,
+      "y": 93.51879999999993,
+      "w": 216.64257023999997,
+      "h": 13.748479999999999
+     },
+     {
+      "i": 3,
+      "text": "Introductory Econometrics",
+      "x": 247.46900000000002,
+      "y": 117.03139999999992,
+      "w": 117.05855748000002,
+      "h": 11.45699
+     },
+     {
+      "i": 4,
+      "text": "Road map",
+      "x": 83.403,
+      "y": 149.9519,
+      "w": 56.450228859999996,
+      "h": 12.545465
+     },
+     {
+      "i": 5,
+      "text": "When the regressor of interest is correlated with the error, OLS is biased and more data do",
+      "x": 83.403,
+      "y": 174.2839,
+      "w": 445.1960073599995,
+      "h": 12.545465
+     },
+     {
+      "i": 6,
+      "text": "not help. An instrument is a variable that moves the regressor but has no other route to",
+      "x": 83.403,
+      "y": 187.83289999999997,
+      "w": 445.1949164499995,
+      "h": 12.545465
+     },
+     {
+      "i": 7,
+      "text": "the outcome. The note derives the IV estimator in one line, computes it by hand as a ratio",
+      "x": 83.403,
+      "y": 201.38289999999992,
+      "w": 445.20037099999945,
+      "h": 12.545465
+     },
+     {
+      "i": 8,
+      "text": "of two differences (the Wald estimator), generalizes it to two-stage least squares, and then",
+      "x": 83.403,
+      "y": 214.9318999999999,
+      "w": 445.1970982699995,
+      "h": 12.545465
+     },
+     {
+      "i": 9,
+      "text": "works through two famous instruments: quarter of birth for schooling (Angrist and Krueger",
+      "x": 83.403,
+      "y": 228.48089999999988,
+      "w": 445.19164371999955,
+      "h": 12.545465
+     },
+     {
+      "i": 10,
+      "text": "1991) and settler mortality for institutions (Acemoglu, Johnson and Robinson 2001). It ends",
+      "x": 83.403,
+      "y": 242.02989999999986,
+      "w": 445.19055280999964,
+      "h": 12.545465
+     },
+     {
+      "i": 11,
+      "text": "with what can go wrong: weak instruments, untestable exclusion, and whose effect IV actually",
+      "x": 83.403,
+      "y": 255.57889999999983,
+      "w": 445.19055280999964,
+      "h": 12.545465
+     },
+     {
+      "i": 12,
+      "text": "measures.",
+      "x": 83.403,
+      "y": 269.12889999999976,
+      "w": 46.21094760000001,
+      "h": 12.545465
+     },
+     {
+      "i": 13,
+      "text": "Contents",
+      "x": 72,
+      "y": 311.3868,
+      "w": 63.05298361999999,
+      "h": 16.49813
+     },
+     {
+      "i": 14,
+      "text": "1 The endogeneity problem 1",
+      "x": 72,
+      "y": 345.2589,
+      "w": 467.99711727,
+      "h": 12.545465
+     },
+     {
+      "i": 15,
+      "text": "2 The instrument 2",
+      "x": 72,
+      "y": 375.69489999999996,
+      "w": 467.99973249999994,
+      "h": 12.545465
+     },
+     {
+      "i": 16,
+      "text": "2.1 Two conditions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2",
+      "x": 88.36399999999998,
+      "y": 395.22189999999995,
+      "w": 451.6421945499995,
+      "h": 12.545465
+     },
+     {
+      "i": 17,
+      "text": "2.2 The estimator in one line . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2",
+      "x": 88.36399999999998,
+      "y": 414.74889999999994,
+      "w": 451.6345581799994,
+      "h": 12.545465
+     },
+     {
+      "i": 18,
+      "text": "2.3 A binary instrument: the Wald estimator . . . . . . . . . . . . . . . . . . . . . . . . 2",
+      "x": 88.36399999999998,
+      "y": 434.2758999999999,
+      "w": 451.6367399999994,
+      "h": 12.545465
+     },
+     {
+      "i": 19,
+      "text": "3 Case 1: Quarter of birth and the return to schooling 3",
+      "x": 71.99999999999997,
+      "y": 464.7118999999999,
+      "w": 468.00257182000007,
+      "h": 12.545465
+     },
+     {
+      "i": 20,
+      "text": "3.1 The institutional source of variation . . . . . . . . . . . . . . . . . . . . . . . . . . . 3",
+      "x": 88.36399999999998,
+      "y": 484.2378999999999,
+      "w": 451.64110363999947,
+      "h": 12.545465
+     },
+     {
+      "i": 21,
+      "text": "3.2 The Wald estimate, by hand . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4",
+      "x": 88.36399999999998,
+      "y": 503.76489999999995,
+      "w": 451.6356490899994,
+      "h": 12.545465
+     },
+     {
+      "i": 22,
+      "text": "3.3 Why is IV above OLS here? . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5",
+      "x": 88.36399999999998,
+      "y": 523.2918999999999,
+      "w": 451.64110363999947,
+      "h": 12.545465
+     },
+     {
+      "i": 23,
+      "text": "3.4 Critiques . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6",
+      "x": 88.36399999999998,
+      "y": 542.8188999999999,
+      "w": 451.6367399999995,
+      "h": 12.545465
+     },
+     {
+      "i": 24,
+      "text": "4 Case 2: Settler mortality and institutions 6",
+      "x": 71.99999999999997,
+      "y": 573.2548999999999,
+      "w": 467.99711727,
+      "h": 12.545465
+     },
+     {
+      "i": 25,
+      "text": "4.1 The question and the endogeneity . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6",
+      "x": 88.36399999999998,
+      "y": 592.7809,
+      "w": 451.6421945499995,
+      "h": 12.545465
+     },
+     {
+      "i": 26,
+      "text": "4.2 The instrument . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7",
+      "x": 88.36399999999998,
+      "y": 612.3078999999999,
+      "w": 451.64110363999947,
+      "h": 12.545465
+     },
+     {
+      "i": 27,
+      "text": "4.3 Is the exclusion restriction credible? . . . . . . . . . . . . . . . . . . . . . . . . . . . 8",
+      "x": 88.36399999999998,
+      "y": 631.8349,
+      "w": 451.6378309099994,
+      "h": 12.545465
+     },
+     {
+      "i": 28,
+      "text": "5 Two-stage least squares, and testing what can be tested 9",
+      "x": 71.99999999999997,
+      "y": 662.2709,
+      "w": 468.00257181999984,
+      "h": 12.545465
+     },
+     {
+      "i": 29,
+      "text": "5.1 The two stages . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 9",
+      "x": 88.36399999999998,
+      "y": 681.7978999999999,
+      "w": 451.64110363999947,
+      "h": 12.545465
+     },
+     {
+      "i": 30,
+      "text": "5.2 Relevance: the first-stage F . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 9",
+      "x": 88.36399999999998,
+      "y": 701.3239,
+      "w": 451.6334210599994,
+      "h": 12.545465
+     },
+     {
+      "i": 31,
+      "text": "1",
+      "x": 303.27299999999997,
+      "y": 740.9719,
+      "w": 5.454549999999983,
+      "h": 12.545465
+     }
+    ]
+   },
+   "segs": [
+    {
+     "t": 5,
+     "page": 1,
+     "en": "or it defines how we and we do like them. Trans action and how",
+     "ko": "또는 우리가 어떻게 그리고 우리가 어떻게 하는지 정의합니다. 트랜스 액션과 어떻게",
+     "src": "gemini"
+    }
+   ]
+  },
+  {
+   "page": 2,
+   "en": "our property right is honored and etc. or protected.",
+   "ko": "우리 재산이 권리가 존중받는지 등등입니다. 또는 보호받는지.",
+   "pdf": "Core_note_iv_2026.pdf",
+   "pdfPage": 2,
+   "slideText": "Core Notes on IV Introductory Econometrics 5.3 Exclusion: the overidentification test . . . . . . . . . . . . . . . . . . . . . . . . . . . 10 6 Whose effect? LATE 10 7 Where instruments come from 10 8 Quick self-check 10 1 The endogeneity problem We want β 1 in Y i = β 0 + β 1 X i + u i . OLS needs E ( u i | X i ) = 0. It fails when 1. an omitted variable affects both X and Y (ability in a wage–schooling regression); 2. X is measured with error (reported years of schooling); 3. Y also affects X — simultaneity or reverse causality (richer countries can afford better insti- tutions). In each case Cov( X i , u i ) ̸ = 0 and, by the law of large numbers, b β OLS 1 → β 1 + Cov( X, u ) Var( X ) ̸ = β 1 . The bias does not shrink with the sample size: OLS is inconsistent . 2 The instrument 2.1 Two conditions A valid instrument Z 1. Relevance: Cov( Z, X ) ̸ = 0 — Z moves X . Testable in the first stage. 2. Exogeneity (exclusion): Cov( Z, u ) = 0 — Z affects Y only through X , and is unrelated to the omitted factors. Not testable with one instrument; it must be argued from institutions and economics. Z |{z} instrument relevance − − − − − − − → X |{z} endogenous β 1 − − → Y |{z} outcome , u → X, u → Y, forbidden: Z → Y directly , Z ↔ u. 2.2 The estimator in one line Take the covariance of Y i = β 0 + β 1 X i + u i with Z i : Cov( Z, Y ) = β 1 Cov( Z, X ) + Cov( Z, u ) . 2",
+   "lines": {
+    "w": 612,
+    "h": 792,
+    "lines": [
+     {
+      "i": 0,
+      "text": "Core Notes on IV Introductory Econometrics",
+      "x": 72,
+      "y": 34.111899999999956,
+      "w": 467.99493544999996,
+      "h": 12.545465
+     },
+     {
+      "i": 1,
+      "text": "5.3 Exclusion: the overidentification test . . . . . . . . . . . . . . . . . . . . . . . . . . . 10",
+      "x": 88.364,
+      "y": 74.04190000000003,
+      "w": 451.63673999999924,
+      "h": 12.545465
+     },
+     {
+      "i": 2,
+      "text": "6 Whose effect? LATE 10",
+      "x": 72,
+      "y": 104.47790000000006,
+      "w": 468.0058445500001,
+      "h": 12.545465
+     },
+     {
+      "i": 3,
+      "text": "7 Where instruments come from 10",
+      "x": 72,
+      "y": 134.9139000000001,
+      "w": 468.00148091000005,
+      "h": 12.545465
+     },
+     {
+      "i": 4,
+      "text": "8 Quick self-check 10",
+      "x": 72,
+      "y": 165.34990000000013,
+      "w": 468.00148091000005,
+      "h": 12.545465
+     },
+     {
+      "i": 5,
+      "text": "1 The endogeneity problem",
+      "x": 72,
+      "y": 212.73880000000014,
+      "w": 204.37883444,
+      "h": 16.49813
+     },
+     {
+      "i": 6,
+      "text": "We want β 1 in Y i = β 0 + β 1 X i + u i . OLS needs E ( u i | X i ) = 0. It fails when",
+      "x": 72,
+      "y": 246.5059000000002,
+      "w": 364.3668035900001,
+      "h": 12.545465
+     },
+     {
+      "i": 7,
+      "text": "1. an omitted variable affects both X and Y (ability in a wage–schooling regression);",
+      "x": 75.51499999999999,
+      "y": 268.0249000000002,
+      "w": 421.51206762999993,
+      "h": 12.545465
+     },
+     {
+      "i": 8,
+      "text": "2. X is measured with error (reported years of schooling);",
+      "x": 75.51499999999999,
+      "y": 286.59490000000017,
+      "w": 296.2621163399999,
+      "h": 12.545465
+     },
+     {
+      "i": 9,
+      "text": "3. Y also affects X — simultaneity or reverse causality (richer countries can afford better insti-",
+      "x": 75.51499999999999,
+      "y": 305.1639000000002,
+      "w": 464.4807551099997,
+      "h": 12.545465
+     },
+     {
+      "i": 10,
+      "text": "tutions).",
+      "x": 89.45499999999998,
+      "y": 318.71290000000016,
+      "w": 40.668033890000004,
+      "h": 12.545465
+     },
+     {
+      "i": 11,
+      "text": "In each case Cov( X i , u i ) ̸ = 0 and, by the law of large numbers,",
+      "x": 71.99999999999999,
+      "y": 340.23290000000014,
+      "w": 299.6466053999999,
+      "h": 12.545465
+     },
+     {
+      "i": 12,
+      "text": "β b OLS → β + Cov( X, u ) ̸ = β .",
+      "x": 225.45099999999996,
+      "y": 364.84390000000013,
+      "w": 161.09754798000006,
+      "h": 12.545465
+     },
+     {
+      "i": 13,
+      "text": "1 1 Var( X ) 1",
+      "x": 231.62199999999996,
+      "y": 370.4189000000001,
+      "w": 151.39851413000002,
+      "h": 12.545465
+     },
+     {
+      "i": 14,
+      "text": "The bias does not shrink with the sample size: OLS is inconsistent .",
+      "x": 72.00000000000006,
+      "y": 394.70889999999997,
+      "w": 330.78354798000004,
+      "h": 12.545465
+     },
+     {
+      "i": 15,
+      "text": "2 The instrument",
+      "x": 72.00000000000011,
+      "y": 431.18879999999996,
+      "w": 134.40667856,
+      "h": 16.49813
+     },
+     {
+      "i": 16,
+      "text": "2.1 Two conditions",
+      "x": 72.00000000000011,
+      "y": 464.3078,
+      "w": 120.39125504000003,
+      "h": 13.748479999999999
+     },
+     {
+      "i": 17,
+      "text": "A valid instrument Z",
+      "x": 83.403,
+      "y": 494.3669,
+      "w": 115.56055166,
+      "h": 12.545465
+     },
+     {
+      "i": 18,
+      "text": "1. Relevance: Cov( Z, X ) ̸ = 0 — Z moves X . Testable in the first stage.",
+      "x": 83.403,
+      "y": 517.1839000000001,
+      "w": 358.82243143999995,
+      "h": 12.545465
+     },
+     {
+      "i": 19,
+      "text": "2. Exogeneity (exclusion): Cov( Z, u ) = 0 — Z affects Y only through X , and is unrelated",
+      "x": 83.40299999999996,
+      "y": 530.7329000000001,
+      "w": 445.1909771200001,
+      "h": 12.545465
+     },
+     {
+      "i": 20,
+      "text": "to the omitted factors. Not testable with one instrument; it must be argued from institutions",
+      "x": 83.40300000000002,
+      "y": 544.2819000000001,
+      "w": 445.19268109999985,
+      "h": 12.545465
+     },
+     {
+      "i": 21,
+      "text": "and economics.",
+      "x": 83.40300000000002,
+      "y": 557.8319,
+      "w": 72.17787833,
+      "h": 12.545465
+     },
+     {
+      "i": 22,
+      "text": "relevance β 1",
+      "x": 252.329,
+      "y": 593.8049,
+      "w": 111.63091136000008,
+      "h": 9.165614999999999
+     },
+     {
+      "i": 23,
+      "text": "|{z} Z − − − − − − − → |{z} X − − → |{z} Y ,",
+      "x": 209.48,
+      "y": 597.0499000000001,
+      "w": 203.36054798000006,
+      "h": 12.545465
+     },
+     {
+      "i": 24,
+      "text": "instrument endogenous outcome",
+      "x": 199.159,
+      "y": 614.4389,
+      "w": 210.65171259000005,
+      "h": 9.165614999999999
+     },
+     {
+      "i": 25,
+      "text": "u → X, u → Y, forbidden: Z → Y directly , Z ↔ u.",
+      "x": 161.33700000000005,
+      "y": 628.0009,
+      "w": 289.3260077300001,
+      "h": 12.545465
+     },
+     {
+      "i": 26,
+      "text": "2.2 The estimator in one line",
+      "x": 72.00000000000011,
+      "y": 661.7118,
+      "w": 179.75599616000005,
+      "h": 13.748479999999999
+     },
+     {
+      "i": 27,
+      "text": "Take the covariance of Y i = β 0 + β 1 X i + u i with Z i :",
+      "x": 72.00000000000011,
+      "y": 689.3299000000001,
+      "w": 247.45454797999997,
+      "h": 12.545465
+     },
+     {
+      "i": 28,
+      "text": "Cov( Z, Y ) = β 1 Cov( Z, X ) + Cov( Z, u ) .",
+      "x": 211.89600000000007,
+      "y": 711.0839000000001,
+      "w": 188.20854798,
+      "h": 12.545465
+     },
+     {
+      "i": 29,
+      "text": "2",
+      "x": 303.2730000000001,
+      "y": 740.9719,
+      "w": 5.454549999999983,
+      "h": 12.545465
+     }
+    ]
+   },
+   "segs": [
+    {
+     "t": 14,
+     "page": 2,
+     "en": "our property right is honored and etc. or protected.",
+     "ko": "우리 재산이 권리가 존중받는지 등등입니다. 또는 보호받는지.",
+     "src": "gemini"
+    }
+   ]
+  },
+  {
+   "page": 6,
+   "en": "So the whole notion of an institution is a kind of a abstract concept, but the actually, if you look at how countries have different policies, it's real. Some countries have a very generous social insurance, some countries don't have that. Some countries have a huge informal sector, a lot of corruption, and etc. Some countries are very transparent and that work hard to formalize the sector and have more centralized system to to manage. uh all the transactions. So also very important to property right. Uh the the how much the country protects property right has a huge variance. If you live in like a Latin America, it's a huge informal sector and then there's like a corruption Latin America and some developing countries, corruption is a really serious issue. Once the system is corrupt, how can it protect property rights? Right? Uh so like Korea has a pretty good institution, so Korea and North Korea is a canonically example shows that how different institutions can determine different economic growth or time. So we live in a very different system. And each system has unique way to uh determine what kind of transaction is uh is valid transaction, is protected or yeah, etc. So today is a definition by Douglas North. He's also a Nobel laureate and then he he's he's worked on this institution. Like a history of institution. And the he's definition of institution is a humanly devised constraint and structure, political, economic and social interaction. Oh my rules, like laws, institutions and regulation and informal ones. Social norms and conventions that consists uh that that um that is a part of the institution. So it's kind of abstract. concept, uh but I I just think it's a rule of the game. And the reason why it is so important in economics is that if incentives and transaction costs that shape economic performance. So it actually affects incentives tremendously. Depending on how the system works, the incentive will be very different. Depending on how much your property will be protected, you will different. So uh the Savin yeah, that's why it's very important. And there are different types of institution. Uh we need to talk about political institution, we call like we consider like whether it has a democracy or dictatorship. Democracy is something that we elect our leader based on voting. and it the system has to democracy. Then depending on how the leader will take the result will be different. So distribution changes, the characteristic of media, so we see that even though we think many of us think that this is not the right policy, but politics like the what the politics choose is a bit different from like what other people think because the characteristic of media also changes. But that's political economy which is also very interesting, but our focus is more about property rights. The economic institution uh the most important thing is property rights. And enforcement. The enforcement is really important. If they have a constitution, every country has constitution. Enforcement has a huge variation. It depends on how much the you know, individual have a right to solve by the protection by the the lawyers or the the rules and etc. So enforcement is very different. So function of government and entry barriers. Um so it's a monopoly. So in many countries we that the government and society pay attention to whether certain firm uh benefit from the monopolistic market structure. That is the case, we ask them to pay uh taxes because uh they we don't think that that's a fair uh outcome. So also if they collude, to increase the the price of the food, you know, there's some some issue. recently in Korea, the coms actually secretly collided. And then increase the price. for certain raw material. and that actually worked as a one cause to increase the the cost for bread and etc. So they were penalized. Yeah. So those are kind of economic institutions. So if we think about that, institution is so important and then we have a sense that oh yeah, so different policy will have different incentive, how different impact on the economic growth. But how do we prove that and that is another question. In theory, we can talk about it. Yeah, it seems like plausible idea, but how do you prove that? And empirically, it's very challenging. Of course, the reason why it's challenging is that can we prove that based on RCT? Would you like to do experiment? For the sake of understanding the causal effect of one institution like so to know, and one country. Is it possible? Would you like to change the law for the abolition just to understand the causal effect of preventing abolition. in a country. Is it not possible? So that's so big. We cannot do it based on RCT. Okay? And difference is one way for address this. Uh and the people actually did difference in difference to understand how, you know, introduction of a certain policy in one country uh experience a different outcome afterward. So it's doable, but it's not and this shock and this type of idea instrument instrumental variable analysis done by a so instrumental variable method is one method. So the policy of that research, outcome depends whether that instrument variable is valid or not. Like he chose the instrumental variable for us to believe that oh, his finding actually provide causal evidence of institution on GDP. Okay? So we cannot judge whether IV is better than difference and difference. without the context. We need to understand whether this approach is better than alternative approach uh we need more specific example here. This is a great example how instrumental variable is more convincing than the ID. because the ID as we discussed shortly, last week, There's different policies of course countries. Those policies are very different and then the contexts are very different. It's very hard to define the control group or one country. So we may have some things that control which means that we can you know, we can have some like we we find some hypothetical group um countries that can be the Korea. And then we can apply the difference to understand the impact of institution in Korea. on outcome. But it's not very clear because different countries have a very different history and different trend is hard to defend the parallel trend. Um And moreover, there are some introduction of policies so there are another issue and one policy like a property right is heterogeneous across countries. Uh property right in one country is very different from property right in another country. So it's not comparable. So there's a lot of issues. So let's see how a tackle the this empirical challenge. And then this is so fascinating because he used historical events by 100 years ago. Okay? So this idea is that it's called as a reverse reverse or fortune. I strongly recommend you to watch a YouTube on his work regarding his Nobel prize. It's summarized beautifully what his paper is about. And then the related history. So this indicates the observation that by years ago, the richest country in the world was Inca. Aztec and Mughal. And those area now become India. And Latin America. Right? So 500 years ago, 500 years ago, they were the richest country. Now they are among the poorest country. Yeah, that is called as the reverse or fortune. And back then, Netherlands, New Zealand or Australia, and America, North America were among the poorest. Now they are among the richest. So we observe this great reversal of fortune over 500 years. And then he conjectured that what happened 500 years ago, actually, is explained. The different trend. Okay? Now, what happened 500 years ago, is that Europeans uh migrated to different uh area and in the world. So they have more colonies. And then um there are different types of colonies. And most of America, Australia, and New Zealand, back then they was there was not the was not the but then uh also popular area of colonization is Latin America. They especially Spain, Portugal, they went to Latin America. So they both and etc, right? Um And then huge difference between those two areas. So Latin America, and North America. In Latin America, So, the issue was very young, also the status of the status. So, well, why suddenly look at the status of the status. So mortality rate of Europeans in that area. So we can actually he used the historical data to calculate how many Europeans actually died in the new territory. And there are huge variations. Uh in Latin America, the mortality was very high. And in North America, it was low. Now, the reason why the mortality was high in Latin America is that the disease condition was different. So some Europeans have more uh they they were more vulnerable to yellow fever and that was more prevalent in Latin America. So the reason why the mortality",
+   "ko": "그래서 기관이라는 개념은 일종의 추상적인 개념이지만, 실제로는 만약 어떻게 국가들이 서로 다른 정책을 가지고 있는지 보면, 그건 사실입니다. 어떤 나라는 매우 관대한 사회 보장 제도를 가지고 있고, 어떤 나라는 그렇지 않습니다. 어떤 나라는 엄청난 비공식 부문을 가지고 있고, 부패가 많고, 등등입니다. 어떤 나라는 매우 투명하고 그리고 열심히 일합니다. 그래서 부문을 공식화하려고 노력하고 더 중앙 집중화된 시스템을 갖추려고 합니다. 관리하기 위해서요. 어 모든 거래를요. 그래서 또한 매우 중요한 것은 재산권입니다. 어, 정부가 얼마나 보호하느냐에 따라 재산권이 큰 차이가 있습니다. 만약 당신이 라틴 아메리카와 같은 곳에 산다면, 거기는 비공식 부문이 크고, 그리고 부패가 많고, 라틴 아메리카와 일부 개발도상국에서는 부패가 정말 심각한 문제입니다. 일단 시스템이 부패하면 어떻게 보호할 수 있겠어요? 재산권을? 그렇죠? 어, 그래서 한국은 꽤 좋은 제도를 가지고 있고, 그래서 한국과 북한은 전형적인 예시입니다. 어떻게 다른 제도가 사람들의 삶을 결정할 수 있는지 보여줍니다. 경제 성장이나 시간 말이죠. 그래서 우리는 매우 다른 시스템에 살고 있습니다. 그리고 각 시스템은 고유한 방식을 가지고 있습니다. 어, 결정하는 어떤 종류의 거래가 있는지 그리고 어, 유효한 거래인지 그리고 보호받는지 또는 네, 등등입니다. 그래서 오늘은 더글라스 노스의 정의입니다. 그는 노벨상 수상자이기도 하고, 그는 그는 이 분야에서 일했습니다. 역사와 제도의 역사처럼요. 그리고 그는 제도의 정의는 인간이 고안한 제약입니다. 그리고 구조입니다. 정치적, 경제적, 사회적 상호작용입니다. 오, 규칙, 법, 제도 및 규제와 같은 것들이죠. 그리고 비공식적인 것들. 사회적 규범과 관습 같은 것들이죠. 그것은 어, 그것은 어, 그것은 음 그것은 제도의 일부입니다. 그래서 일종의 추상적인 개념이지만, 어, 하지만 저는 그냥 그게 게임의 규칙이라고 생각해요. 그리고 왜 그게 그렇게 경제학에서 중요한지 하면, 만약 인센티브가 그리고 거래가 비용이 그게 경제적 결과를 형성하기 때문입니다. 그래서 실제로 인센티브에 엄청난 영향을 미칩니다. 어떻게 시스템이 작동하느냐에 따라 인센티브가 달라집니다. 그래서 매우 다를 것입니다. 얼마나 당신의 재산권이 얼마나 보호받느냐에 따라, 당신은 다를 것입니다. 그래서 어, 사빈은 네, 그래서 그게 매우 중요합니다. 그리고 다양한 유형의 제도가 있습니다. 어, 우리는 정치적 제도에 대해 이야기해야 하고, 우리가 고려하는 것은 민주주의인지, 아니면 독재인지입니다. 민주주의는 우리가 선출하는 지도자이고, 투표를 통해 결정합니다. 그리고 그 시스템은 민주주의여야 합니다. 그러면 무엇에 따라 리더가 어떻게 행동할지 결정됩니다. 결과가 다를 것입니다. 그래서 분배가 바뀌고, 리더의 특성이 미디어의 특성이 그래서 우리는 우리가 생각하기에 우리 중 많은 사람이 이것이 올바른 정책이 아니라고 생각하지만, 정치는 마치 무엇이 정치가 선택하는지 조금 다릅니다. 마치 다른 사람들이 생각하는 것과 다른데, 왜냐하면 미디어의 특성이 또한 변하기 때문입니다. 하지만 그것은 정치적 경제학인데, 이것도 매우 흥미롭지만, 우리의 초점은 더 재산권에 있습니다. 경제적 제도는 어, 가장 중요한 것은 재산권입니다. 그리고 집행입니다. 집행은 정말 중요합니다. 만약 그들이 헌법을 가지고 있다면, 모든 나라는 헌법을 가지고 있습니다. 집행은 큰 차이가 있습니다. 그것은 얼마나 그, 그러니까 개인이 권리를 가지고 있는지에 따라 다릅니다. 해결하는 것은 보호에 달려 있습니다. 그 그 변호사나 그, 그 규칙 등에 따라 다릅니다. 그래서 집행은 매우 다릅니다. 그리고 그래서 기능은 정부와 진입 장벽입니다. 음, 그래서 그것은 독점입니다. 그래서 많은 나라에서 우리는 정부가 사회가 주의를 기울이는 것은 특정 기업이 어, 혜택을 받는지입니다. 독점적인 시장 구조에서. 그런 경우, 우리는 그들에게 지불하도록 요청합니다. 어, 세금을요. 왜냐하면 그들이 우리는 그것이 공정하지 않다고 생각합니다. 결과가. 그래서 또한 만약 그들이 담합한다면, 가격을 올리기 위해 가격을 올리기 위해, 아시다시피, 어떤 문제가 있습니다. 최근에 한국에서, 통신사들이 실제로 비밀리에 담합했습니다. 그리고 가격을 올렸습니다. 특정 원자재에 대해. 그리고 그것이 실제로 작용했습니다. 하나의 원인으로 가격을 올리는 데 작용했습니다. 비용을 올리는 데, 빵과 기타 등등. 그래서 그들은 처벌받았습니다. 네. 그래서 그런 것들이 경제 제도입니다. 그래서 우리가 그것에 대해 생각해보면, 제도는 매우 중요하고, 그래서 우리는 아, 그렇구나, 다른 정책은 다른 인센티브를 가지고, 경제 성장에 다른 영향을 미친다는 것을 알게 됩니다. 그리고 그것은 또 다른 질문입니다. 이론적으로, 우리는 그것에 대해 이야기할 수 있습니다. 네, 마치 그럴듯한 생각처럼 보이지만, 어떻게 그것을 증명할 수 있을까요? 그리고 경험적으로는 매우 어렵습니다. 물론, 그것이 어려운 이유는 우리가 그것을 증명할 수 있느냐는 것입니다. 그렇게 하고 싶으신가요? 그것을 이해하기 위해서 인과 관계를 이해하기 위해서 어떤 제도, 예를 들어 알기 위해서, 그리고 한 나라에서. 그게 가능할까요? 법을 바꾸고 싶으신가요? 폐지를 위해서 인과 관계를 이해하기 위해서? 예방하는 것의 인과 관계를. 한 나라에서. 그게 가능하지 않을까요? 그래서 그건 너무 커요. 우리는 RCT를 기반으로 할 수 없어요. 알겠죠? 그리고 차이점은 한 가지 방법은 이것을 해결하는 것입니다. 그리고 사람들은 실제로 차이를 이해하기 위해 어떻게, 아시다시피, 특정 정책의 도입이 한 나라에서 어, 다른 경험을 겪었는지 그 결과에 대해 이야기합니다. 그래서 가능하지만, 그것은 그리고 이것은 충격이고 그리고 이런 종류의 아이디어는 도구입니다. 도구 변수 분석은 한 사람이 한 것이므로 도구 변수는 한 가지 방법입니다. 그래서 그 정책은 그 연구의, 결과는 그 도구가 도구 변수인지 아닌지에 달려 있습니다. 예를 들어, 그는 올바른 도구 변수를 선택했습니다. 우리를 위해 우리가 믿을 수 있도록, 아, 그의 발견이 실제로 인과 증거를 제공한다는 것을요. GDP에 대한. 알겠죠? 그래서 우리는 판단할 수 없어요, 도구 변수가 더 나은지 아니면 차이와 차이인지. 그 맥락 없이는요. 우리는 이해해야 합니다, 그 접근 방식이 대안보다 나은지 아니면 다른 접근 방식인지, 우리는 더 구체적인 예가 필요합니다. 이것은 훌륭한 예입니다, 어떻게 도구 변수가 더 복잡한지. 아니면 다른 ID보다. 왜냐하면 ID는 우리가 논의한 것처럼, 곧바로 물론 국가마다 다른 정책이 있죠. 그런 정책들은 매우 다르고, 상황도 매우 다릅니다. 그래서 정의하기가 매우 어렵습니다. 또는 한 국가를. 그래서 저희는 몇 가지 공통점이 있을 수 있는데, 이는 우리가 할 수 있다는 뜻입니다. 우리는 몇 가지를 가질 수 있습니다. 예를 들어, 우리는 몇 가지 가상의 그룹을 찾습니다. 음, 국가들은 비교할 수 있는 곳이 될 수 있습니다. 한국처럼요. 그리고 우리는 그 차이를 적용할 수 있습니다. 영향을 이해하기 위해 제도의 영향을 이해하기 위해. 결과에 미치는. 하지만 그건 명확하지 않습니다. 왜냐하면 다른 나라들은 매우 다른 역사를 가지고 있고 다른 추세를 보이고 있어서 어떤 평행 추세를 옹호하기 어렵습니다. 그리고 게다가, 어떤 도입이 있습니다. 정책의 그래서 또 다른 문제가 있고, 그리고 한 정책은 재산권과 같은데, 국가마다 다릅니다. 어, 재산권이 한 국가에서는 매우 다릅니다. 다른 국가의 재산권과요. 그래서 비교할 수 없습니다. 그래서 많은 문제가 있습니다. 그럼 어떻게 한 그룹이 문제를 해결하는지 봅시다. 이 실증적 과제를. 그리고 이건 정말 흥미로워요. 왜냐하면 그는 역사적 사건을 사용했거든요. 100년 전의 사건을요. 알겠죠? 그래서 이 아이디어는 리버스 리버스 또는 운명이라고 불립니다. 저는 여러분께 유튜브 영상을 보시기를 강력히 추천합니다. 그의 연구에 관한 노벨상 수상에 대한 것입니다. 요약되어 있는데, 아주 잘 그의 연구가 무엇인지 설명합니다. 그리고 관련된 역사에 대해서요. 그래서 이것은 관찰을 나타냅니다. 즉, 몇 년 전에는 가장 부유한 나라가 세계에서 가장 부유했다는 것입니다. 잉카 제국이요. 아즈텍 그리고 무굴 제국이요. 그리고 그 지역들은 지금은 매우 인도가 되었습니다. 그리고 라틴 아메리카요. 그렇죠? 그래서 500년 전에는 500년 전에는 그들이 가장 부유한 나라였습니다. 지금은 가장 가난한 나라 중 하나입니다. 네, 그게 리버스라고 불리거나 또는 운명이라고 불립니다. 그리고 그때 네덜란드는, 뉴질랜드는 또는 호주는, 그리고 미국은, 북미는 가장 가난한 나라 중 하나였습니다. 지금은 가장 부유한 나라 중 하나입니다. 그래서 우리는 이 거대한 역전을 목격합니다. 500년 동안 그리고 그 다음에는 그가 추측하기를 500년 전에 일어난 일이 사실은, 설명합니다. 그 다른 추세를요. 알겠죠? 자, 500년 전에 무슨 일이 있었냐면, 유럽이 아메리카 대륙을 어 이주했다는 것입니다. 다른 어, 지역으로요. 그리고 세상에서 말이죠. 그래서 그들은 더 많은 식민지를 가지고 있습니다. 그리고 다양한 종류의 식민지가 있습니다. 그리고 대부분의 아메리카는, 호주는, 그리고 뉴질랜드는 그 당시에는 그들이 유일한 것이 아니었습니다. 하지만 어 또한 인기 있는 식민지화 지역은 라틴 아메리카입니다. 그들은 특히 스페인, 포르투갈은 라틴 아메리카로 갔습니다. 그래서 둘 다 등등이죠, 그렇죠? 음, 그리고 큰 차이가 그 두 지역 사이에 있습니다. 그래서 라틴 아메리카는, 그리고 북미는 라틴 아메리카에서는 그래서, 문제는 매우 어렸고, 또한 지위도 지위였습니다. 그래서, 음, 왜 갑자기 지위를 보게 되었을까요? 그래서 사망률이 유럽인의 그 지역에서의 사망률입니다. 그래서 우리는 실제로 그가 역사적 데이터를 사용하여 얼마나 많은 유럽인이 실제로 죽었는지 계산했습니다. 새로운 영토에서. 그리고 큰 차이가 있습니다. 어 라틴 아메리카에서는 그 사망률이 매우 높았습니다. 그리고 북미에서는 낮았습니다. 자, 그 이유가 사망률이 높았던 것은 라틴 아메리카에서 였는데, 그 이유는 질병이 상태였기 때문입니다. 그래서 일부 유럽인들은 더 많은 어 그들은 더 취약했습니다. 황열병에 그리고 그것이 더 라틴 아메리카에서 만연했습니다. 그래서 사망률이",
+   "pdf": "Core_note_iv_2026.pdf",
+   "pdfPage": 6,
+   "slideText": "Core Notes on IV Introductory Econometrics Measurement error. If reported schooling is S obs = S + ν with ν pure noise, b β OLS → β · Var( S ) Var( S ) + Var( ν ) < β. With a reliability ratio of 0 . 9, OLS is attenuated by 10%. Quarter of birth is unrelated to the reporting error, so IV is not attenuated. LATE. QOB changes schooling only for people constrained by the leaving age — students who would drop out if allowed. IV estimates the return for these compliers , which need not equal the population average (Section 6). 3.4 Critiques Two lines of criticism illustrate the two IV conditions. Exclusion : season of birth may affect earnings through other channels — health at birth, parental background (birth timing differs by family type), relative age in class. Relevance : QOB explains very little of the variation in schooling. Specifications that interact QOB with year and state of birth (up to 180 instruments) have weak first stages, and Bound, Jaeger and Baker (1995) showed that IV estimates can then be biased toward OLS and badly mismeasured — the weak-instrument problem of Section 5. 4 Case 2: Settler mortality and institutions 4.1 The question and the endogeneity What are institutions? Douglass North (1990): “the humanly devised constraints that structure political, economic, and social interaction” — formal rules (laws, constitutions, regulation) and informal ones (norms, conventions). They set the incentives and transaction costs that shape economic performance. Politi",
+   "lines": {
+    "w": 612,
+    "h": 792,
+    "lines": [
+     {
+      "i": 0,
+      "text": "Core Notes on IV Introductory Econometrics",
+      "x": 72,
+      "y": 34.111899999999956,
+      "w": 467.99493544999996,
+      "h": 12.545465
+     },
+     {
+      "i": 1,
+      "text": "Measurement error. If reported schooling is S obs = S + ν with ν pure noise,",
+      "x": 72,
+      "y": 74.04190000000003,
+      "w": 378.73031573000003,
+      "h": 12.545465
+     },
+     {
+      "i": 2,
+      "text": "β b OLS → β · Var( S ) < β.",
+      "x": 221.022,
+      "y": 100.80190000000002,
+      "w": 169.96074502000005,
+      "h": 12.545465
+     },
+     {
+      "i": 3,
+      "text": "Var( S ) + Var( ν )",
+      "x": 287.756,
+      "y": 111.16389999999998,
+      "w": 77.70454899000003,
+      "h": 12.545465
+     },
+     {
+      "i": 4,
+      "text": "With a reliability ratio of 0 . 9, OLS is attenuated by 10%. Quarter of birth is unrelated to the",
+      "x": 72.00000000000006,
+      "y": 134.02790000000002,
+      "w": 467.9950018499996,
+      "h": 12.545465
+     },
+     {
+      "i": 5,
+      "text": "reporting error, so IV is not attenuated.",
+      "x": 72.00000000000006,
+      "y": 147.5769,
+      "w": 191.18525023,
+      "h": 12.545465
+     },
+     {
+      "i": 6,
+      "text": "LATE. QOB changes schooling only for people constrained by the leaving age — students who",
+      "x": 72.00000000000006,
+      "y": 167.10390000000004,
+      "w": 468.0021741299997,
+      "h": 12.545465
+     },
+     {
+      "i": 7,
+      "text": "would drop out if allowed. IV estimates the return for these compliers , which need not equal the",
+      "x": 72.00000000000006,
+      "y": 180.65290000000002,
+      "w": 467.9949252400001,
+      "h": 12.545465
+     },
+     {
+      "i": 8,
+      "text": "population average (Section 6).",
+      "x": 72.00000000000006,
+      "y": 194.2019,
+      "w": 149.12194245000003,
+      "h": 12.545465
+     },
+     {
+      "i": 9,
+      "text": "3.4 Critiques",
+      "x": 72.00000000000006,
+      "y": 228.34680000000003,
+      "w": 84.55793408,
+      "h": 13.748479999999999
+     },
+     {
+      "i": 10,
+      "text": "Two lines of criticism illustrate the two IV conditions. Exclusion : season of birth may affect",
+      "x": 72.00000000000006,
+      "y": 255.96490000000003,
+      "w": 467.99684429000007,
+      "h": 12.545465
+     },
+     {
+      "i": 11,
+      "text": "earnings through other channels — health at birth, parental background (birth timing differs by",
+      "x": 72.00000000000006,
+      "y": 269.5139,
+      "w": 467.9971172699997,
+      "h": 12.545465
+     },
+     {
+      "i": 12,
+      "text": "family type), relative age in class. Relevance : QOB explains very little of the variation in schooling.",
+      "x": 72.00000000000006,
+      "y": 283.06289999999996,
+      "w": 468.00530642999996,
+      "h": 12.545465
+     },
+     {
+      "i": 13,
+      "text": "Specifications that interact QOB with year and state of birth (up to 180 instruments) have weak",
+      "x": 72.00000000000006,
+      "y": 296.61289999999997,
+      "w": 467.9960263599996,
+      "h": 12.545465
+     },
+     {
+      "i": 14,
+      "text": "first stages, and Bound, Jaeger and Baker (1995) showed that IV estimates can then be biased",
+      "x": 72.00000000000006,
+      "y": 310.16189999999995,
+      "w": 467.9971172699995,
+      "h": 12.545465
+     },
+     {
+      "i": 15,
+      "text": "toward OLS and badly mismeasured — the weak-instrument problem of Section 5.",
+      "x": 72.00000000000006,
+      "y": 323.7108999999999,
+      "w": 395.3021475999996,
+      "h": 12.545465
+     },
+     {
+      "i": 16,
+      "text": "4 Case 2: Settler mortality and institutions",
+      "x": 72.00000000000006,
+      "y": 360.62379999999996,
+      "w": 317.32072855999996,
+      "h": 16.49813
+     },
+     {
+      "i": 17,
+      "text": "4.1 The question and the endogeneity",
+      "x": 72.00000000000006,
+      "y": 393.7428,
+      "w": 230.9983744,
+      "h": 13.748479999999999
+     },
+     {
+      "i": 18,
+      "text": "What are institutions?",
+      "x": 83.403,
+      "y": 426.1259,
+      "w": 124.39101275,
+      "h": 12.545465
+     },
+     {
+      "i": 19,
+      "text": "Douglass North (1990): “the humanly devised constraints that structure political, economic,",
+      "x": 83.403,
+      "y": 448.94289999999995,
+      "w": 445.1981891799994,
+      "h": 12.545465
+     },
+     {
+      "i": 20,
+      "text": "and social interaction” — formal rules (laws, constitutions, regulation) and informal ones",
+      "x": 83.403,
+      "y": 462.4929,
+      "w": 445.1927346299997,
+      "h": 12.545465
+     },
+     {
+      "i": 21,
+      "text": "(norms, conventions). They set the incentives and transaction costs that shape economic",
+      "x": 83.403,
+      "y": 476.0419,
+      "w": 445.1949164499997,
+      "h": 12.545465
+     },
+     {
+      "i": 22,
+      "text": "performance. Political institutions distribute power; economic institutions (property rights,",
+      "x": 83.403,
+      "y": 489.5909,
+      "w": 445.1922060500001,
+      "h": 12.545465
+     },
+     {
+      "i": 23,
+      "text": "contract enforcement, entry barriers) follow from them and shape incentives to invest and",
+      "x": 83.40300000000002,
+      "y": 503.13989999999995,
+      "w": 445.19055280999964,
+      "h": 12.545465
+     },
+     {
+      "i": 24,
+      "text": "innovate:",
+      "x": 83.40300000000002,
+      "y": 516.6889,
+      "w": 43.03530859,
+      "h": 12.545465
+     },
+     {
+      "i": 25,
+      "text": "political institutions → economic institutions → incentives → investment, innovation, growth .",
+      "x": 83.40300000000002,
+      "y": 541.1979,
+      "w": 445.54554798000004,
+      "h": 12.545465
+     },
+     {
+      "i": 26,
+      "text": "AJR contrast inclusive institutions, which protect broad property rights, with extractive ones,",
+      "x": 83.40300000000002,
+      "y": 565.7059,
+      "w": 445.1947470199999,
+      "h": 12.545465
+     },
+     {
+      "i": 27,
+      "text": "which transfer resources to a narrow elite.",
+      "x": 83.40299999999996,
+      "y": 579.2549,
+      "w": 200.66307631,
+      "h": 12.545465
+     },
+     {
+      "i": 28,
+      "text": "Three explanations compete for why some countries are rich: geography (climate, disease, endow-",
+      "x": 72,
+      "y": 604.9239,
+      "w": 467.99711726999953,
+      "h": 12.545465
+     },
+     {
+      "i": 29,
+      "text": "ments), culture (values, trust), and institutions.",
+      "x": 72,
+      "y": 618.4729000000001,
+      "w": 228.2434629299999,
+      "h": 12.545465
+     },
+     {
+      "i": 30,
+      "text": "Why are some countries rich and others poor? Acemoglu, Johnson and Robinson (AJR, 2001)",
+      "x": 72,
+      "y": 637.9999,
+      "w": 467.99711726999976,
+      "h": 12.545465
+     },
+     {
+      "i": 31,
+      "text": "argue that institutions — secure property rights, constraints on elites — are the fundamental cause.",
+      "x": 72,
+      "y": 651.5489,
+      "w": 467.9958445799997,
+      "h": 12.545465
+     },
+     {
+      "i": 32,
+      "text": "Across countries, log GDP per capita in 1995 rises strongly with protection against expropriation",
+      "x": 71.99999999999999,
+      "y": 665.0979000000001,
+      "w": 467.99602635999963,
+      "h": 12.545465
+     },
+     {
+      "i": 33,
+      "text": "risk (1985–95 average). But the correlation has four readings: institutions raise income; income",
+      "x": 71.99999999999999,
+      "y": 678.6469000000001,
+      "w": 467.99602635999963,
+      "h": 12.545465
+     },
+     {
+      "i": 34,
+      "text": "buys better institutions (reverse causality); both; or a third factor drives both (omitted variable).",
+      "x": 71.99999999999999,
+      "y": 692.1969,
+      "w": 468.00366272999963,
+      "h": 12.545465
+     },
+     {
+      "i": 35,
+      "text": "OLS cannot distinguish them.",
+      "x": 71.99999999999999,
+      "y": 705.7459,
+      "w": 143.30630124000004,
+      "h": 12.545465
+     },
+     {
+      "i": 36,
+      "text": "6",
+      "x": 303.27299999999997,
+      "y": 740.9709,
+      "w": 5.454549999999983,
+      "h": 12.545465
+     }
+    ]
+   },
+   "segs": [
+    {
+     "t": 19,
+     "page": 6,
+     "en": "So the whole notion of an institution is a kind of a abstract concept, but the actually, if you look at how countries have different policies, it's real. Some countries have a very generous social insurance, some countries don't have that. Some countries have a huge informal sector, a lot of corruption, and etc. Some countries are very transparent and that work hard to formalize the sector and have more centralized system to to manage.",
+     "ko": "그래서 기관이라는 개념은 일종의 추상적인 개념이지만, 실제로는 만약 어떻게 국가들이 서로 다른 정책을 가지고 있는지 보면, 그건 사실입니다. 어떤 나라는 매우 관대한 사회 보장 제도를 가지고 있고, 어떤 나라는 그렇지 않습니다. 어떤 나라는 엄청난 비공식 부문을 가지고 있고, 부패가 많고, 등등입니다. 어떤 나라는 매우 투명하고 그리고 열심히 일합니다. 그래서 부문을 공식화하려고 노력하고 더 중앙 집중화된 시스템을 갖추려고 합니다. 관리하기 위해서요.",
+     "src": "gemini"
+    },
+    {
+     "t": 55,
+     "page": 6,
+     "en": "uh all the transactions. So also very important to property right. Uh the the how much the country protects property right has a huge variance. If you live in like a Latin America, it's a huge informal sector and then there's like a corruption Latin America and some developing countries, corruption is a really serious issue.",
+     "ko": "어 모든 거래를요. 그래서 또한 매우 중요한 것은 재산권입니다. 어, 정부가 얼마나 보호하느냐에 따라 재산권이 큰 차이가 있습니다. 만약 당신이 라틴 아메리카와 같은 곳에 산다면, 거기는 비공식 부문이 크고, 그리고 부패가 많고, 라틴 아메리카와 일부 개발도상국에서는 부패가 정말 심각한 문제입니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 79,
+     "page": 6,
+     "en": "Once the system is corrupt, how can it protect property rights? Right? Uh so like Korea has a pretty good institution, so Korea and North Korea is a canonically example shows that how different institutions can determine different economic growth or time. So we live in a very different system.",
+     "ko": "일단 시스템이 부패하면 어떻게 보호할 수 있겠어요? 재산권을? 그렇죠? 어, 그래서 한국은 꽤 좋은 제도를 가지고 있고, 그래서 한국과 북한은 전형적인 예시입니다. 어떻게 다른 제도가 사람들의 삶을 결정할 수 있는지 보여줍니다. 경제 성장이나 시간 말이죠. 그래서 우리는 매우 다른 시스템에 살고",
+     "src": "gemini"
+    },
+    {
+     "t": 103,
+     "page": 6,
+     "en": "And each system has unique way to uh determine what kind of transaction is uh is valid transaction, is protected or yeah, etc. So today is a definition by Douglas North. He's also a Nobel laureate and then he he's he's worked on this institution. Like a history of institution.",
+     "ko": "있습니다. 그리고 각 시스템은 고유한 방식을 가지고 있습니다. 어, 결정하는 어떤 종류의 거래가 있는지 그리고 어, 유효한 거래인지 그리고 보호받는지 또는 네, 등등입니다. 그래서 오늘은 더글라스 노스의 정의입니다. 그는 노벨상 수상자이기도 하고, 그는 그는 이 분야에서 일했습니다. 역사와 제도의 역사처럼요.",
+     "src": "gemini"
+    },
+    {
+     "t": 132,
+     "page": 6,
+     "en": "And the he's definition of institution is a humanly devised constraint and structure, political, economic and social interaction. Oh my rules, like laws, institutions and regulation and informal ones. Social norms and conventions that consists uh that that um that is a part of the institution. So it's kind of abstract.",
+     "ko": "그리고 그는 제도의 정의는 인간이 고안한 제약입니다. 그리고 구조입니다. 정치적, 경제적, 사회적 상호작용입니다. 오, 규칙, 법, 제도 및 규제와 같은 것들이죠. 그리고 비공식적인 것들. 사회적 규범과 관습 같은 것들이죠. 그것은 어, 그것은 어, 그것은 음 그것은 제도의 일부입니다. 그래서 일종의 추상적인",
+     "src": "gemini"
+    },
+    {
+     "t": 159,
+     "page": 6,
+     "en": "concept, uh but I I just think it's a rule of the game. And the reason why it is so important in economics is that if incentives and transaction costs that shape economic performance. So it actually affects incentives tremendously. Depending on how the system works, the incentive will be very different.",
+     "ko": "개념이지만, 어, 하지만 저는 그냥 그게 게임의 규칙이라고 생각해요. 그리고 왜 그게 그렇게 경제학에서 중요한지 하면, 만약 인센티브가 그리고 거래가 비용이 그게 경제적 결과를 형성하기 때문입니다. 그래서 실제로 인센티브에 엄청난 영향을 미칩니다. 어떻게 시스템이 작동하느냐에 따라 인센티브가 달라집니다. 그래서 매우 다를 것입니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 186,
+     "page": 6,
+     "en": "Depending on how much your property will be protected,",
+     "ko": "얼마나 당신의 재산권이 얼마나 보호받느냐에 따라,",
+     "src": "gemini"
+    },
+    {
+     "t": 192,
+     "page": 6,
+     "en": "you will different. So uh the Savin yeah, that's why it's very important. And there are different types of institution. Uh we need to talk about political institution, we call like we consider like whether it has a democracy or dictatorship. Democracy is something that we elect our leader based on voting. and it the system has to democracy.",
+     "ko": "당신은 다를 것입니다. 그래서 어, 사빈은 네, 그래서 그게 매우 중요합니다. 그리고 다양한 유형의 제도가 있습니다. 어, 우리는 정치적 제도에 대해 이야기해야 하고, 우리가 고려하는 것은 민주주의인지, 아니면 독재인지입니다. 민주주의는 우리가 선출하는 지도자이고, 투표를 통해 결정합니다. 그리고 그 시스템은 민주주의여야 합니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 215,
+     "page": 6,
+     "en": "Then depending on how the leader will take the result will be different. So distribution changes, the characteristic of media, so we see that even though we think many of us think that this is not the right policy, but politics like the what the politics choose is a bit different from like what other people think because the characteristic of media also changes.",
+     "ko": "그러면 무엇에 따라 리더가 어떻게 행동할지 결정됩니다. 결과가 다를 것입니다. 그래서 분배가 바뀌고, 리더의 특성이 미디어의 특성이 그래서 우리는 우리가 생각하기에 우리 중 많은 사람이 이것이 올바른 정책이 아니라고 생각하지만, 정치는 마치 무엇이 정치가 선택하는지 조금 다릅니다. 마치 다른 사람들이 생각하는 것과 다른데, 왜냐하면 미디어의 특성이 또한 변하기",
+     "src": "gemini"
+    },
+    {
+     "t": 244,
+     "page": 6,
+     "en": "But that's political economy which is also very interesting, but our focus is more about property rights. The economic institution uh the most important thing is property rights. And enforcement. The enforcement is really important. If they have a constitution, every country has constitution.",
+     "ko": "때문입니다. 하지만 그것은 정치적 경제학인데, 이것도 매우 흥미롭지만, 우리의 초점은 더 재산권에 있습니다. 경제적 제도는 어, 가장 중요한 것은 재산권입니다. 그리고 집행입니다. 집행은 정말 중요합니다. 만약 그들이 헌법을 가지고 있다면, 모든 나라는 헌법을 가지고 있습니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 265,
+     "page": 6,
+     "en": "Enforcement has a huge variation. It depends on how much the you know, individual have a right to solve by the protection by the the lawyers or the the rules and etc. So enforcement is very different. So function of government and entry barriers. Um so it's a monopoly. So in many countries we that the government and society pay attention to whether certain firm uh benefit",
+     "ko": "집행은 큰 차이가 있습니다. 그것은 얼마나 그, 그러니까 개인이 권리를 가지고 있는지에 따라 다릅니다. 해결하는 것은 보호에 달려 있습니다. 그 그 변호사나 그, 그 규칙 등에 따라 다릅니다. 그래서 집행은 매우 다릅니다. 그리고 그래서 기능은 정부와 진입 장벽입니다. 음, 그래서 그것은 독점입니다. 그래서 많은 나라에서 우리는 정부가 사회가 주의를 기울이는 것은 특정 기업이 어, 혜택을",
+     "src": "gemini"
+    },
+    {
+     "t": 304,
+     "page": 6,
+     "en": "from the monopolistic market structure. That is the case, we ask them to pay uh taxes because uh they we don't think that that's a fair uh outcome. So also if they collude, to increase the the price of the food, you know, there's some some issue. recently in Korea, the coms actually secretly collided.",
+     "ko": "받는지입니다. 독점적인 시장 구조에서. 그런 경우, 우리는 그들에게 지불하도록 요청합니다. 어, 세금을요. 왜냐하면 그들이 우리는 그것이 공정하지 않다고 생각합니다. 결과가. 그래서 또한 만약 그들이 담합한다면, 가격을 올리기 위해 가격을 올리기 위해, 아시다시피, 어떤 문제가 있습니다. 최근에 한국에서, 통신사들이 실제로 비밀리에 담합했습니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 330,
+     "page": 6,
+     "en": "And then increase the price. for certain raw material. and that actually worked as a one cause to increase the the cost for bread and etc. So they were penalized. Yeah. So those are kind of economic institutions. So if we think about that, institution is so important and then we have a sense that oh yeah, so different policy will have different incentive, how different impact on the economic growth.",
+     "ko": "그리고 가격을 올렸습니다. 특정 원자재에 대해. 그리고 그것이 실제로 작용했습니다. 하나의 원인으로 가격을 올리는 데 작용했습니다. 비용을 올리는 데, 빵과 기타 등등. 그래서 그들은 처벌받았습니다. 네. 그래서 그런 것들이 경제 제도입니다. 그래서 우리가 그것에 대해 생각해보면, 제도는 매우 중요하고, 그래서 우리는 아, 그렇구나, 다른 정책은 다른 인센티브를 가지고, 경제 성장에",
+     "src": "gemini"
+    },
+    {
+     "t": 359,
+     "page": 6,
+     "en": "But how do we prove that and that is another question. In theory, we can talk about it. Yeah, it seems like plausible idea, but how do you prove that? And empirically, it's very challenging. Of course, the reason why it's challenging is that can we prove that based on RCT?",
+     "ko": "다른 영향을 미친다는 것을 알게 됩니다. 그리고 그것은 또 다른 질문입니다. 이론적으로, 우리는 그것에 대해 이야기할 수 있습니다. 네, 마치 그럴듯한 생각처럼 보이지만, 어떻게 그것을 증명할 수 있을까요? 그리고 경험적으로는 매우 어렵습니다. 물론, 그것이 어려운 이유는 우리가 그것을 증명할 수 있느냐는 것입니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 377,
+     "page": 6,
+     "en": "Would you like to do experiment? For the sake of understanding the causal effect of one institution like so to know, and one country. Is it possible? Would you like to change the law for the abolition just to understand the causal effect of preventing abolition.",
+     "ko": "그렇게 하고 싶으신가요? 그것을 이해하기 위해서 인과 관계를 이해하기 위해서 어떤 제도, 예를 들어 알기 위해서, 그리고 한 나라에서. 그게 가능할까요? 법을 바꾸고 싶으신가요? 폐지를 위해서 인과 관계를 이해하기 위해서? 예방하는 것의 인과 관계를.",
+     "src": "gemini"
+    },
+    {
+     "t": 397,
+     "page": 6,
+     "en": "in a country. Is it not possible? So that's so big. We cannot do it based on RCT. Okay? And difference is one way for address this. Uh and the people actually did difference in difference to understand how, you know, introduction of a certain policy in one country uh experience a different outcome afterward.",
+     "ko": "한 나라에서. 그게 가능하지 않을까요? 그래서 그건 너무 커요. 우리는 RCT를 기반으로 할 수 없어요. 알겠죠? 그리고 차이점은 한 가지 방법은 이것을 해결하는 것입니다. 그리고 사람들은 실제로 차이를 이해하기 위해 어떻게, 아시다시피, 특정 정책의 도입이 한 나라에서 어, 다른 경험을 겪었는지 그 결과에 대해 이야기합니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 423,
+     "page": 6,
+     "en": "So it's doable, but it's not and this shock and this type of idea instrument instrumental variable analysis done by a so instrumental variable method is one method. So the policy of that research, outcome depends whether that instrument variable is valid or not.",
+     "ko": "그래서 가능하지만, 그것은 그리고 이것은 충격이고 그리고 이런 종류의 아이디어는 도구입니다. 도구 변수 분석은 한 사람이 한 것이므로 도구 변수는 한 가지 방법입니다. 그래서 그 정책은 그 연구의, 결과는 그 도구가 도구 변수인지 아닌지에 달려 있습니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 445,
+     "page": 6,
+     "en": "Like he chose the instrumental variable for us to believe that oh, his finding actually provide causal evidence of institution on GDP. Okay? So we cannot judge whether IV is better than difference and difference. without the context. We need to understand whether",
+     "ko": "예를 들어, 그는 올바른 도구 변수를 선택했습니다. 우리를 위해 우리가 믿을 수 있도록, 아, 그의 발견이 실제로 인과 증거를 제공한다는 것을요. GDP에 대한. 알겠죠? 그래서 우리는 판단할 수 없어요, 도구 변수가 더 나은지 아니면 차이와 차이인지. 그 맥락 없이는요. 우리는 이해해야 합니다, 그",
+     "src": "gemini"
+    },
+    {
+     "t": 469,
+     "page": 6,
+     "en": "this approach is better than alternative approach uh we need more specific example here. This is a great example how instrumental variable is more convincing than the ID. because the ID as we discussed shortly, last week,",
+     "ko": "접근 방식이 대안보다 나은지 아니면 다른 접근 방식인지, 우리는 더 구체적인 예가 필요합니다. 이것은 훌륭한 예입니다, 어떻게 도구 변수가 더 복잡한지. 아니면 다른 ID보다. 왜냐하면 ID는 우리가 논의한 것처럼, 곧바로",
+     "src": "gemini"
+    },
+    {
+     "t": 485,
+     "page": 6,
+     "en": "There's different policies of course countries. Those policies are very different and then the",
+     "ko": "물론 국가마다 다른 정책이 있죠. 그런 정책들은 매우 다르고,",
+     "src": "gemini"
+    },
+    {
+     "t": 494,
+     "page": 6,
+     "en": "contexts are very different. It's very hard to define the control group",
+     "ko": "상황도 매우 다릅니다. 그래서 정의하기가 매우 어렵습니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 501,
+     "page": 6,
+     "en": "or one country.",
+     "ko": "또는 한 국가를.",
+     "src": "gemini"
+    },
+    {
+     "t": 505,
+     "page": 6,
+     "en": "So we may",
+     "ko": "그래서",
+     "src": "gemini"
+    },
+    {
+     "t": 508,
+     "page": 6,
+     "en": "have some",
+     "ko": "저희는 몇 가지",
+     "src": "gemini"
+    },
+    {
+     "t": 515,
+     "page": 6,
+     "en": "things that control which means that we can you know, we can have some like we we find some hypothetical group um countries that can be the Korea. And then we can apply the difference to understand the impact of institution in Korea. on outcome. But it's not very clear because different countries have a very different history and different trend is hard to defend the parallel trend.",
+     "ko": "공통점이 있을 수 있는데, 이는 우리가 할 수 있다는 뜻입니다. 우리는 몇 가지를 가질 수 있습니다. 예를 들어, 우리는 몇 가지 가상의 그룹을 찾습니다. 음, 국가들은 비교할 수 있는 곳이 될 수 있습니다. 한국처럼요. 그리고 우리는 그 차이를 적용할 수 있습니다. 영향을 이해하기 위해 제도의 영향을 이해하기 위해. 결과에 미치는. 하지만 그건 명확하지 않습니다. 왜냐하면 다른 나라들은 매우 다른 역사를 가지고 있고 다른 추세를 보이고 있어서 어떤 평행 추세를",
+     "src": "gemini"
+    },
+    {
+     "t": 545,
+     "page": 6,
+     "en": "Um And moreover, there are some introduction of policies so there are another issue and one policy like a property right is heterogeneous across countries. Uh property right in one country is very different from property right in another country. So it's not comparable. So there's a lot of issues.",
+     "ko": "옹호하기 어렵습니다. 그리고 게다가, 어떤 도입이 있습니다. 정책의 그래서 또 다른 문제가 있고, 그리고 한 정책은 재산권과 같은데, 국가마다 다릅니다. 어, 재산권이 한 국가에서는 매우 다릅니다. 다른 국가의 재산권과요. 그래서 비교할 수 없습니다. 그래서 많은 문제가",
+     "src": "gemini"
+    },
+    {
+     "t": 563,
+     "page": 6,
+     "en": "So let's see how a tackle the this empirical challenge. And then this is so fascinating because he used historical events by 100 years ago. Okay? So this idea is that it's called as a reverse reverse or fortune. I strongly recommend you to watch a YouTube on his work regarding his Nobel prize.",
+     "ko": "있습니다. 그럼 어떻게 한 그룹이 문제를 해결하는지 봅시다. 이 실증적 과제를. 그리고 이건 정말 흥미로워요. 왜냐하면 그는 역사적 사건을 사용했거든요. 100년 전의 사건을요. 알겠죠? 그래서 이 아이디어는 리버스 리버스 또는 운명이라고 불립니다. 저는 여러분께 유튜브 영상을 보시기를 강력히 추천합니다. 그의 연구에 관한 노벨상 수상에 대한 것입니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 583,
+     "page": 6,
+     "en": "It's summarized beautifully what his paper is about. And then the related history.",
+     "ko": "요약되어 있는데, 아주 잘 그의 연구가 무엇인지 설명합니다. 그리고 관련된 역사에 대해서요.",
+     "src": "gemini"
+    },
+    {
+     "t": 603,
+     "page": 6,
+     "en": "So this indicates the observation that by years ago, the richest country in the world was Inca. Aztec and Mughal. And those area now become India. And Latin America. Right? So 500 years ago, 500 years ago, they were the richest country. Now they are among the poorest country.",
+     "ko": "그래서 이것은 관찰을 나타냅니다. 즉, 몇 년 전에는 가장 부유한 나라가 세계에서 가장 부유했다는 것입니다. 잉카 제국이요. 아즈텍 그리고 무굴 제국이요. 그리고 그 지역들은 지금은 매우 인도가 되었습니다. 그리고 라틴 아메리카요. 그렇죠? 그래서 500년 전에는 500년 전에는 그들이 가장 부유한 나라였습니다. 지금은 가장 가난한 나라 중 하나입니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 635,
+     "page": 6,
+     "en": "Yeah, that is called as the reverse or fortune. And back then, Netherlands, New Zealand or Australia, and America, North America were among the poorest. Now they are among the richest. So we observe this great reversal of fortune over 500 years. And then he conjectured that what happened 500 years ago, actually, is explained.",
+     "ko": "네, 그게 리버스라고 불리거나 또는 운명이라고 불립니다. 그리고 그때 네덜란드는, 뉴질랜드는 또는 호주는, 그리고 미국은, 북미는 가장 가난한 나라 중 하나였습니다. 지금은 가장 부유한 나라 중 하나입니다. 그래서 우리는 이 거대한 역전을 목격합니다. 500년 동안 그리고 그 다음에는 그가 추측하기를 500년 전에 일어난 일이 사실은, 설명합니다. 그",
+     "src": "gemini"
+    },
+    {
+     "t": 663,
+     "page": 6,
+     "en": "The different trend. Okay? Now, what happened 500 years ago, is that Europeans uh migrated to different uh area and in the world. So they have more colonies. And then um there are different types of colonies. And most of America, Australia, and New",
+     "ko": "다른 추세를요. 알겠죠? 자, 500년 전에 무슨 일이 있었냐면, 유럽이 아메리카 대륙을 어 이주했다는 것입니다. 다른 어, 지역으로요. 그리고 세상에서 말이죠. 그래서 그들은 더 많은 식민지를 가지고 있습니다. 그리고 다양한 종류의 식민지가 있습니다. 그리고 대부분의 아메리카는, 호주는, 그리고 뉴질랜드는",
+     "src": "gemini"
+    },
+    {
+     "t": 692,
+     "page": 6,
+     "en": "Zealand, back then they",
+     "ko": "그 당시에는",
+     "src": "gemini"
+    },
+    {
+     "t": 767,
+     "page": 6,
+     "en": "was there was not the",
+     "ko": "그들이 유일한",
+     "src": "gemini"
+    },
+    {
+     "t": 774,
+     "page": 6,
+     "en": "was not the",
+     "ko": "것이 아니었습니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 779,
+     "page": 6,
+     "en": "but then uh",
+     "ko": "하지만 어",
+     "src": "gemini"
+    },
+    {
+     "t": 786,
+     "page": 6,
+     "en": "also popular area of colonization is Latin America. They especially Spain, Portugal, they went to Latin America. So they both and etc, right? Um",
+     "ko": "또한 인기 있는 식민지화 지역은 라틴 아메리카입니다. 그들은 특히 스페인, 포르투갈은 라틴 아메리카로 갔습니다. 그래서 둘 다 등등이죠, 그렇죠? 음,",
+     "src": "gemini"
+    },
+    {
+     "t": 800,
+     "page": 6,
+     "en": "And then huge difference",
+     "ko": "그리고 큰 차이가",
+     "src": "gemini"
+    },
+    {
+     "t": 805,
+     "page": 6,
+     "en": "between those two areas. So Latin America,",
+     "ko": "그 두 지역 사이에 있습니다. 그래서 라틴 아메리카는,",
+     "src": "gemini"
+    },
+    {
+     "t": 812,
+     "page": 6,
+     "en": "and North America.",
+     "ko": "그리고 북미는",
+     "src": "gemini"
+    },
+    {
+     "t": 818,
+     "page": 6,
+     "en": "In Latin America,",
+     "ko": "라틴 아메리카에서는",
+     "src": "gemini"
+    },
+    {
+     "t": 828,
+     "page": 6,
+     "en": "So, the issue was very young, also the status of",
+     "ko": "그래서, 문제는 매우 어렸고, 또한 지위도",
+     "src": "gemini"
+    },
+    {
+     "t": 839,
+     "page": 6,
+     "en": "the status. So, well, why suddenly look at the status of the status.",
+     "ko": "지위였습니다. 그래서, 음, 왜 갑자기 지위를 보게 되었을까요?",
+     "src": "gemini"
+    },
+    {
+     "t": 847,
+     "page": 6,
+     "en": "So mortality rate of Europeans in that area. So we can actually he used the historical",
+     "ko": "그래서 사망률이 유럽인의 그 지역에서의 사망률입니다. 그래서 우리는 실제로 그가 역사적 데이터를",
+     "src": "gemini"
+    },
+    {
+     "t": 861,
+     "page": 6,
+     "en": "data to calculate how many Europeans actually died in the new territory.",
+     "ko": "사용하여 얼마나 많은 유럽인이 실제로 죽었는지 계산했습니다. 새로운 영토에서.",
+     "src": "gemini"
+    },
+    {
+     "t": 867,
+     "page": 6,
+     "en": "And there are huge variations. Uh",
+     "ko": "그리고 큰 차이가 있습니다. 어",
+     "src": "gemini"
+    },
+    {
+     "t": 875,
+     "page": 6,
+     "en": "in Latin America, the mortality was very high. And in North",
+     "ko": "라틴 아메리카에서는 그 사망률이 매우 높았습니다. 그리고 북미에서는",
+     "src": "gemini"
+    },
+    {
+     "t": 884,
+     "page": 6,
+     "en": "America, it was low. Now, the",
+     "ko": "낮았습니다. 자,",
+     "src": "gemini"
+    },
+    {
+     "t": 891,
+     "page": 6,
+     "en": "reason why the",
+     "ko": "그 이유가",
+     "src": "gemini"
+    },
+    {
+     "t": 894,
+     "page": 6,
+     "en": "mortality",
+     "ko": "사망률이",
+     "src": "gemini"
+    },
+    {
+     "t": 897,
+     "page": 6,
+     "en": "was high in Latin America is that the disease condition was different. So some Europeans have more uh they they were more",
+     "ko": "높았던 것은 라틴 아메리카에서 였는데, 그 이유는 질병이 상태였기 때문입니다. 그래서 일부 유럽인들은 더 많은 어 그들은 더 취약했습니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 912,
+     "page": 6,
+     "en": "vulnerable to yellow fever and that was more prevalent in Latin America. So the reason why the mortality",
+     "ko": "황열병에 그리고 그것이 더 라틴 아메리카에서 만연했습니다. 그래서 사망률이",
+     "src": "gemini"
+    }
+   ]
+  },
+  {
+   "page": 7,
+   "en": "was different back then is kind of independent of the evolution of the institution after. Um but then why he they focus on the mortality it makes sense because in Latin America, what happened is that the Europeans didn't And then actually there's just some impact of having different types of indigenous institutions. So in North America, institutions evolved in a way that it becomes more supportive for the market transaction and incentive and more efficient allocation. In Latin America, the institution did improve that much. So you was until recently a lot of dictatorship and every to oriented institution um that that was prevalent in that area. So centrality is the issue that we have. So the idea is uh so here that is the force state. So our question is whether institution affects GDP. Now, don't care. whether the quality of these like contemporaneous relationship but country, this is contemporaneous. Whether the quality of institution causally affects explain uh causally explain explains higher GDP. So this is our research question. And then uh we were talking about the the the instrumental variable directly. So if this is a question, and We indeed find that some relationship between the average protection against risk of expropriation and and the property is contemporaneous. But GDP is is GDP and the institution. So here we measure the quality of institution like market institution by the average protection against risk of expropriation which means that how much the system protect property rights. So each that we present each country. So here we have a sample of Norway, Singapore, um versus the US, US is one of the top. And let me see. Here. I think it's a model. Uh high T. Nigeria. So we see that if we plot the current quality of institution and current GDP, we see what do we see? countries with higher quality of institution tend to have a higher GDP. So right? So this is a suggestive evidence that institution may be good for economic prosperity. Okay? But what is the problem? of using this? as an evidence of causal effect of institution on GDP. This is a correlation. Right? We see clearly positive correlation between quality of institution and GDP. Right? But can you tell any causal relation though? There are four different relationships that can explain this pattern. Okay? Quality of institution causes GDP. So that is a case. We may have this positive correlation. First, that quality of institution will will increase the GDP. But then mechanism, or we will have this correlation. Right? And that is not the only mechanism that can explain this pattern. The second causal relationship is that this Okay, other way around. Yeah, uh so so uh so so so so so institution between institution and GDP. Right? That can but that is positive correlation. Now, first, competition mechanism that can explain this pattern. But actually there are institution causes GDP. So that if that is that is the case, we can have this positive correlation. The second, country is with higher GDP. can either well, so better institution. So institution uh necessarily and increase the GDP. This is a cross of the data, right? So competition can provide a better incentive that individual will work hard. And then we will have more prosperity. It makes sense. But that is a potential mechanism, but that is not the unique mechanism. that can rationalize this. The second mechanism is a reverse causality is the GDP actually the the reason why we see this correlation is high GDP country can have better institution. Once they have more resources, they can have more budget. And then they can support the better system. It is also possible. So we may have a reverse causality to create the same pattern of correlation. The third or fourth is the quality can work both direction. Not only GDP further increases the quality of institution, But that factor they can generate in the direction of change, then we would have this population. And again, so the most concerning case is the horse one. It's a curious relationship. correlation does not say anything about the direct causal relationship. So like a correlation is very clear, so that motivate the question, institutional quality may have a positive impact on the prosperity, but it does not prove the causality. Okay? Okay. And now, this summarize their paper. So so it's not a relying on correlation, they look at the settlement of as an instrumental variable. And the idea is that the settlement mortality is okay, that settlement explains how the quality of institution of those countries they are different now. So we say the quality of institution quality of institution So is a",
+   "ko": "그 당시 달랐던 것은 어느 정도 독립적이라는 것입니다. 제도의 진화와는 별개로요. 음, 하지만 그렇다면 왜 그들이 사망률에 집중하는 것은 이해가 됩니다. 왜냐하면 라틴 아메리카에서는 무슨 일이 일어났냐면 유럽인들이 그리고 사실 그냥 어떤 영향이 있어요, 다른 종류의 원주민 기관들이 있어서요. 그래서 북미에서는 기관들이 어떤 방식으로 진화해서 더 지원적이게 되었어요. 시장 거래를 위한 것이고 인센티브와 더 효율적인 배분을 위한 것이죠. 라틴 아메리카에서는 기관이 그렇지 않았어요. 그것을 개선하지 않았어요. 그래서 당신은 최근까지 많은 독재자들이 있었고 모든 것이 지향하는 기관이었어요. 음 그게 그게 만연해 있었어요, 그 지역에. 그래서 중앙 집중화가 문제예요. 우리가 가진. 그래서 아이디어는 음, 여기서는 그게 강제 국가예요. 그래서 우리의 질문은 과연 제도가 GDP에 영향을 미치는지입니다. 자, 상관없어요. 과연 이 제도의 품질이 현대적인지 여부는 상관없어요. 하지만 국가, 이 현대적인 것은 현대적입니다. 과연 이 제도의 품질이 어떤지 인과적으로 영향을 미치는지 설명해 보세요. 어 인과적으로 설명해 보세요. 더 높은 GDP를 설명합니다. 그래서 이것이 우리의 연구 질문입니다. 그리고 어 우리가 이야기하고 있었던 것은 그 그 도구 변수 직접적으로요. 그래서 만약 이것이 질문이라면, 그리고 우리는 실제로 어떤 관계가 있다는 것을 발견했습니다. 그 평균적인 위험에 대한 보호와 수용 위험에 대한 그리고 그리고 그 재산권이 현대적인지 여부입니다. 하지만 GDP는 입니다. GDP는 그리고 그 제도는 그래서 여기서 우리는 제도의 품질을 측정합니다. 시장 제도와 같은 것을 그 평균적인 보호를 수용 위험에 대한 그리고 이는 얼마나 그 시스템이 보호하는지 측정합니다. 그래서 각각 우리가 각 국가를 제시합니다. 그래서 여기서는 표본이 있습니다. 노르웨이, 싱가포르, 음 대비 미국, 미국 은 상위권에 있습니다. 그리고 어디 보자. 여기. 제 생각엔 모델인 것 같아요. 어 높은 T. 나이지리아. 그래서 우리가 만약 그래프를 그리면 그 현재의 제도의 품질과 그리고 현재의 GDP를 보면, 무엇이 보이나요? 국가들은 더 높은 제도의 품질을 가진 나라들이 더 높은 GDP를 가집니다. 그래서 맞죠? 그래서 이것은 시사하는 증거입니다. 제도가 그럴 수 있다는 것을요. 경제적 번영에. 알겠죠? 하지만 문제는 무엇일까요? 이것을 사용하는 것의 문제점은? 인과 관계의 증거로서 제도가 미치는 영향에 대한 것 말이죠. 이것은 상관관계입니다. 그렇죠? 우리는 분명히 긍정적인 상관관계를 볼 수 있습니다. 제도의 질과 GDP 사이에서요. 그렇죠? 하지만 인과 관계를 말할 수 있나요? 네 가지 다른 관계가 있을 수 있으니까요. 이 패턴을 설명할 수 있는. 알겠죠? 제도의 질이 GDP를 유발한다. 그래서 그게 한 가지 경우입니다. 우리는 이런 양의 상관관계를 가질 수 있습니다. 첫째, 제도의 질이 증가할 것이고 GDP도 증가할 것입니다. 하지만 그 메커니즘은 또는 우리가 이런 패턴을 가질 것입니다. 그렇죠? 그리고 그것이 유일한 메커니즘은 아닙니다. 이 패턴을 설명할 수 있는. 두 번째 인과 관계는 이것입니다. 네, 반대입니다. 네, 어 그래서 그래서 어 그래서 그래서 그래서 그래서 그래서 제도가 제도와 그리고 GDP 사이에서요. 그렇죠? 그럴 수 있지만 그것은 양의 상관관계입니다. 자, 첫째, 경쟁 메커니즘은 이 패턴을 설명할 수 있는. 하지만 사실은 제도가 유발한다. GDP를. 그래서 그게 만약 그렇다면 우리는 이런 양의 상관관계를 가질 수 있습니다. 두 번째, 국가가 더 높은 GDP를 가지고 있다면 그럴 수 있죠, 음, 그래서 더 나은 제도. 그래서 제도가 어 반드시 그리고 증가할 것입니다. GDP를. 이것은 데이터의 교차점이죠, 그렇죠? 그래서 경쟁 메커니즘은 더 나은 인센티브를 제공할 수 있고, 개인이 열심히 일할 것입니다. 그리고 우리는 더 많은 번영을 누릴 것입니다. 말이 되죠. 하지만 그것은 잠재적인 메커니즘이지만, 그것이 유일한 메커니즘은 아닙니다. 이것을 설명할 수 있는. 두 번째 메커니즘은 역인과 관계입니다. GDP가 사실은 그 우리가 이 상관관계를 보는 이유는 높은 GDP 국가가 더 나은 제도를 가질 수 있기 때문입니다. 일단 그들이 더 많은 자원을 가지면, 그들은 더 많은 예산을 가질 수 있습니다. 그리고 그들은 더 나은 시스템을 지원할 수 있습니다. 이것도 가능합니다. 그래서 우리는 역인과 관계를 통해 같은 패턴의 상관관계를 만들 수 있습니다. 세 번째, 또는 네 번째는 그 품질이 양방향으로 작용할 수 있습니다. GDP뿐만 아니라 GDP가 제도의 하지만 그 요인은 그들이 방향을 잡고 변화를 만들어낼 수 있다면, 우리는 이 인구를 갖게 될 것입니다. 그리고 다시 말해, 가장 우려되는 경우는 말 입니다. 이것은 흥미로운 관계입니다. 상관관계는 아무것도 말해주지 않지만, 직접적인 인과 관계에 대해서는 그렇지 않습니다. 그래서 상관관계는 매우 명확하므로, 그 질문을 제기하게 됩니다. 제도적 품질이 긍정적인 영향을 미칠 수 있습니다, 번영에, 하지만 그것이 인과 관계를 증명하는 것은 아닙니다. 아시겠죠? 네. 그리고 이제, 이것은 그들의 논문을 요약한 것입니다. 그래서 그것은 의존하는 것이 아니라 상관관계에 의존하는 것이 아니라, 그들은 정착지를 도구 변수로 봅니다. 그리고 아이디어는 이것입니다. 정착지는 사망률에 영향을 미치지만 괜찮고, 그 정착지는 설명합니다. 어떻게 제도의 품질이 영향을 미치는지 그 나라들의 그들은 다르고, 이제는 그래서 우리는 제도의 품질이 영향을 미친다고 말합니다. 제도의 품질이 그래서 이것은",
+   "pdf": "Core_note_iv_2026.pdf",
+   "pdfPage": 7,
+   "slideText": "Core Notes on IV Introductory Econometrics 4.2 The instrument Settler mortality. Where early European settlers faced high death rates from malaria and yellow fever (West Africa, much of South and South-East Asia), they did not settle; colonizers set up extractive institutions designed to transfer resources. Where mortality was low (Australia, New Zealand, North America), they settled and built inclusive institutions that protected property — their own. Those institutions persisted. settler mortality ( Z ) −→ settlements −→ early institutions −→ current institutions ( X ) −→ income ( Y ) . AJR (2001), base sample of 64 former colonies estimate (SE) First stage: expropriation protection on log settler mortality − 0 . 61 (0 . 13) OLS: log GDP per capita on expropriation protection 0 . 52 (0 . 06) 2SLS: log GDP per capita on expropriation protection 0 . 94 (0 . 16) The first stage is strong and has the predicted sign: higher mortality, weaker institutions. The implied reduced form is about − 0 . 61 × 0 . 94 ≈ − 0 . 57: a one-log-point increase in settler mortality goes with roughly 57% lower income today. Dividing by the first stage, a one-point improvement in expropriation protection (on a 0–10 scale) raises income by about 0 . 94 log points. AJR conclude that differences in institutions explain most of the income gap between countries such as Nigeria and Chile, and that geography variables (latitude, landlockedness, current disease environment) lose their explanatory power once",
+   "liveNotes": {
+    "notes": [
+     "▶ Figure 4의 상관관계(제도 보호 수준 ↔ 1인당 GDP)를 짚으며 확인 질문",
+     "▶ 상관관계가 매우 뚜렷 → **제도의 질**(institutional quality)이 번영(prosperity)에 양(+)의 영향을 주는지 질문 동기",
+     "▶ 이 **양의 상관관계**(positive correlation)를 설명하는 경쟁 메커니즘 소개",
+     "▶ 제도 → GDP (institutions cause GDP)라면 이 상관관계가 나타남",
+     "▶ 단, 이는 **횡단면 데이터**(cross-section)라서 제도가 GDP를 반드시 높인다고 단정 불가 → 인과 방향 의문",
+     "▶ **역인과관계**(reverse causality): GDP → 제도도 같은 상관 패턴을 만듦"
+    ],
+    "summary": "제도–GDP 상관의 인과 방향 의문",
+    "exam": [],
+    "board": [],
+    "at": 1793758261103
+   },
+   "marks": [],
+   "lines": {
+    "w": 612,
+    "h": 792,
+    "lines": [
+     {
+      "i": 0,
+      "text": "Core Notes on IV Introductory Econometrics",
+      "x": 72,
+      "y": 34.111899999999956,
+      "w": 467.99493544999996,
+      "h": 12.545465
+     },
+     {
+      "i": 1,
+      "text": "4.2 The instrument",
+      "x": 72,
+      "y": 72.99580000000002,
+      "w": 122.46667776000001,
+      "h": 13.748479999999999
+     },
+     {
+      "i": 2,
+      "text": "Settler mortality. Where early European settlers faced high death rates from malaria and yellow",
+      "x": 72,
+      "y": 100.6149,
+      "w": 468.0006714299998,
+      "h": 12.545465
+     },
+     {
+      "i": 3,
+      "text": "fever (West Africa, much of South and South-East Asia), they did not settle; colonizers set up",
+      "x": 72,
+      "y": 114.16389999999998,
+      "w": 468.00038999999947,
+      "h": 12.545465
+     },
+     {
+      "i": 4,
+      "text": "extractive institutions designed to transfer resources. Where mortality was low (Australia, New",
+      "x": 72,
+      "y": 127.71289999999996,
+      "w": 468.0016204699997,
+      "h": 12.545465
+     },
+     {
+      "i": 5,
+      "text": "Zealand, North America), they settled and built inclusive institutions that protected property —",
+      "x": 72,
+      "y": 141.26189999999994,
+      "w": 468.00097357000004,
+      "h": 12.545465
+     },
+     {
+      "i": 6,
+      "text": "their own. Those institutions persisted.",
+      "x": 72,
+      "y": 154.81089999999992,
+      "w": 188.23979322999998,
+      "h": 12.545465
+     },
+     {
+      "i": 7,
+      "text": "settler mortality ( Z ) −→ settlements −→ early institutions",
+      "x": 81.963,
+      "y": 201.83489999999992,
+      "w": 294.67997664000006,
+      "h": 12.545465
+     },
+     {
+      "i": 8,
+      "text": "−→ current institutions ( X ) −→ income ( Y ) .",
+      "x": 303.628,
+      "y": 218.37289999999993,
+      "w": 226.40954798,
+      "h": 12.545465
+     },
+     {
+      "i": 9,
+      "text": "AJR (2001), base sample of 64 former colonies estimate (SE)",
+      "x": 138.074,
+      "y": 254.60740000000004,
+      "w": 335.85219737999995,
+      "h": 11.45699
+     },
+     {
+      "i": 10,
+      "text": "First stage: expropriation protection on log settler mortality − 0 . 61 (0 . 13)",
+      "x": 138.074,
+      "y": 272.0404,
+      "w": 334.64805514,
+      "h": 11.45699
+     },
+     {
+      "i": 11,
+      "text": "OLS: log GDP per capita on expropriation protection 0 . 52 (0 . 06)",
+      "x": 138.074,
+      "y": 283.99539999999996,
+      "w": 330.77405514000003,
+      "h": 11.45699
+     },
+     {
+      "i": 12,
+      "text": "2SLS: log GDP per capita on expropriation protection 0 . 94 (0 . 16)",
+      "x": 138.074,
+      "y": 295.95039999999995,
+      "w": 331.89505513999995,
+      "h": 11.45699
+     },
+     {
+      "i": 13,
+      "text": "The first stage is strong and has the predicted sign: higher mortality, weaker institutions. The",
+      "x": 72,
+      "y": 327.84689999999995,
+      "w": 467.9971172699994,
+      "h": 12.545465
+     },
+     {
+      "i": 14,
+      "text": "implied reduced form is about − 0 . 61 × 0 . 94 ≈ − 0 . 57: a one-log-point increase in settler mortality",
+      "x": 72,
+      "y": 341.3958999999999,
+      "w": 468.0036435899999,
+      "h": 12.545465
+     },
+     {
+      "i": 15,
+      "text": "goes with roughly 57% lower income today. Dividing by the first stage, a one-point improvement",
+      "x": 71.99999999999997,
+      "y": 354.9448999999999,
+      "w": 468.00584454999955,
+      "h": 12.545465
+     },
+     {
+      "i": 16,
+      "text": "in expropriation protection (on a 0–10 scale) raises income by about 0 . 94 log points. AJR conclude",
+      "x": 71.99999999999997,
+      "y": 368.4938999999999,
+      "w": 468.00120287000004,
+      "h": 12.545465
+     },
+     {
+      "i": 17,
+      "text": "that differences in institutions explain most of the income gap between countries such as Nigeria",
+      "x": 71.99999999999989,
+      "y": 382.0438999999999,
+      "w": 468.0014809099994,
+      "h": 12.545465
+     },
+     {
+      "i": 18,
+      "text": "and Chile, and that geography variables (latitude, landlockedness, current disease environment)",
+      "x": 71.99999999999989,
+      "y": 395.5928999999999,
+      "w": 467.9960263599993,
+      "h": 12.545465
+     },
+     {
+      "i": 19,
+      "text": "lose their explanatory power once institutions are instrumented.",
+      "x": 71.99999999999989,
+      "y": 409.14189999999985,
+      "w": 305.8442548699998,
+      "h": 12.545465
+     },
+     {
+      "i": 20,
+      "text": "Figure 4: The correlation to be explained: log GDP per capita in 1995 against average protection against",
+      "x": 72,
+      "y": 613.8094,
+      "w": 467.9973041999997,
+      "h": 11.45699
+     },
+     {
+      "i": 21,
+      "text": "expropriation, 1985–95. Source: Acemoglu, Johnson and Robinson (2001).",
+      "x": 72,
+      "y": 625.7644,
+      "w": 324.25573098,
+      "h": 11.45699
+     },
+     {
+      "i": 22,
+      "text": "7",
+      "x": 303.273,
+      "y": 740.9709,
+      "w": 5.454549999999983,
+      "h": 12.545465
+     }
+    ]
+   },
+   "segs": [
+    {
+     "t": 924,
+     "page": 7,
+     "en": "was different back then is kind of independent of the evolution of the institution after. Um but then why he they focus",
+     "ko": "그 당시 달랐던 것은 어느 정도 독립적이라는 것입니다. 제도의 진화와는 별개로요. 음, 하지만 그렇다면 왜 그들이",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 943,
+     "page": 7,
+     "en": "on the mortality it",
+     "ko": "사망률에 집중하는 것은",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 948,
+     "page": 7,
+     "en": "makes sense because in Latin America, what happened is that the",
+     "ko": "이해가 됩니다. 왜냐하면 라틴 아메리카에서는 무슨 일이 일어났냐면 유럽인들이",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 959,
+     "page": 7,
+     "en": "Europeans didn't And then actually there's just some impact of having different types of indigenous institutions. So in North America, institutions evolved in a way that it becomes more supportive for the market transaction and incentive and more efficient allocation. In Latin America, the institution did improve that much. So you was until recently a lot of dictatorship and every to oriented institution um that that was prevalent in that area.",
+     "ko": "그리고 사실 그냥 어떤 영향이 있어요, 다른 종류의 원주민 기관들이 있어서요. 그래서 북미에서는 기관들이 어떤 방식으로 진화해서 더 지원적이게 되었어요. 시장 거래를 위한 것이고 인센티브와 더 효율적인 배분을 위한 것이죠. 라틴 아메리카에서는 기관이 그렇지 않았어요. 그것을 개선하지 않았어요. 그래서 당신은 최근까지 많은 독재자들이 있었고 모든 것이 지향하는 기관이었어요. 음 그게 그게 만연해 있었어요, 그 지역에.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 997,
+     "page": 7,
+     "en": "So centrality is the issue that we have. So the idea is uh so here that is the force state.",
+     "ko": "그래서 중앙 집중화가 문제예요. 우리가 가진. 그래서 아이디어는 음, 여기서는 그게 강제 국가예요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1011,
+     "page": 7,
+     "en": "So our question is whether institution",
+     "ko": "그래서 우리의 질문은 과연 제도가",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1019,
+     "page": 7,
+     "en": "affects GDP. Now, don't care. whether the quality of these like contemporaneous relationship but country, this is contemporaneous. Whether the quality of institution causally affects explain uh causally explain explains higher GDP. So this is our research question.",
+     "ko": "GDP에 영향을 미치는지입니다. 자, 상관없어요. 과연 이 제도의 품질이 현대적인지 여부는 상관없어요. 하지만 국가, 이 현대적인 것은 현대적입니다. 과연 이 제도의 품질이 어떤지 인과적으로 영향을 미치는지 설명해 보세요. 어 인과적으로 설명해 보세요. 더 높은 GDP를 설명합니다. 그래서 이것이 우리의 연구 질문입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1048,
+     "page": 7,
+     "en": "And then uh we were talking about the the the instrumental variable directly. So if this is a question, and",
+     "ko": "그리고 어 우리가 이야기하고 있었던 것은 그 그 도구 변수 직접적으로요. 그래서 만약 이것이 질문이라면, 그리고",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1063,
+     "page": 7,
+     "en": "We indeed find that some relationship between the average protection against risk of expropriation and and the property is contemporaneous.",
+     "ko": "우리는 실제로 어떤 관계가 있다는 것을 발견했습니다. 그 평균적인 위험에 대한 보호와 수용 위험에 대한 그리고 그리고 그 재산권이 현대적인지 여부입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1084,
+     "page": 7,
+     "en": "But GDP is is GDP and the institution. So here we measure the quality of institution like market institution by the average protection against risk",
+     "ko": "하지만 GDP는 입니다. GDP는 그리고 그 제도는 그래서 여기서 우리는 제도의 품질을 측정합니다. 시장 제도와 같은 것을 그 평균적인 보호를 수용 위험에",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1106,
+     "page": 7,
+     "en": "of expropriation",
+     "ko": "대한 그리고",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1109,
+     "page": 7,
+     "en": "which means that how much the system protect property rights. So each that we",
+     "ko": "이는 얼마나 그 시스템이 보호하는지 측정합니다. 그래서 각각",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1121,
+     "page": 7,
+     "en": "present each",
+     "ko": "우리가 각 국가를",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1124,
+     "page": 7,
+     "en": "country. So here we have a",
+     "ko": "제시합니다. 그래서 여기서는",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1130,
+     "page": 7,
+     "en": "sample of Norway, Singapore, um",
+     "ko": "표본이 있습니다. 노르웨이, 싱가포르, 음",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1135,
+     "page": 7,
+     "en": "versus the US, US is one of the top. And",
+     "ko": "대비 미국, 미국 은 상위권에 있습니다. 그리고",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1143,
+     "page": 7,
+     "en": "let me see. Here. I think it's a model. Uh high T. Nigeria. So we see that if we plot the current quality of institution and current GDP, we see what do we see? countries with higher quality of institution tend to have a higher GDP. So right? So this is a suggestive evidence that institution may be good for economic prosperity.",
+     "ko": "어디 보자. 여기. 제 생각엔 모델인 것 같아요. 어 높은 T. 나이지리아. 그래서 우리가 만약 그래프를 그리면 그 현재의 제도의 품질과 그리고 현재의 GDP를 보면, 무엇이 보이나요? 국가들은 더 높은 제도의 품질을 가진 나라들이 더 높은 GDP를 가집니다. 그래서 맞죠? 그래서 이것은 시사하는 증거입니다. 제도가 그럴 수 있다는 것을요. 경제적 번영에.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1182,
+     "page": 7,
+     "en": "Okay? But what is the problem? of using this? as an",
+     "ko": "알겠죠? 하지만 문제는 무엇일까요? 이것을 사용하는 것의 문제점은?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1190,
+     "page": 7,
+     "en": "evidence of causal effect of institution on GDP.",
+     "ko": "인과 관계의 증거로서 제도가 미치는 영향에 대한 것 말이죠.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1198,
+     "page": 7,
+     "en": "This is a correlation. Right? We see",
+     "ko": "이것은 상관관계입니다. 그렇죠? 우리는",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1208,
+     "page": 7,
+     "en": "clearly positive correlation between quality of institution and GDP. Right? But can you",
+     "ko": "분명히 긍정적인 상관관계를 볼 수 있습니다. 제도의 질과 GDP 사이에서요. 그렇죠? 하지만",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1218,
+     "page": 7,
+     "en": "tell any causal relation though? There are four different relationships that can explain this pattern. Okay? Quality of institution causes GDP. So that is a case. We may have this positive correlation. First, that quality of institution will will increase the GDP.",
+     "ko": "인과 관계를 말할 수 있나요? 네 가지 다른 관계가 있을 수 있으니까요. 이 패턴을 설명할 수 있는. 알겠죠? 제도의 질이 GDP를 유발한다. 그래서 그게 한 가지 경우입니다. 우리는 이런 양의 상관관계를 가질 수 있습니다. 첫째, 제도의 질이 증가할 것이고 GDP도 증가할",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1239,
+     "page": 7,
+     "en": "But then mechanism, or we will have this correlation. Right? And that is not the only mechanism that can explain this pattern. The second causal relationship is that this Okay, other way around. Yeah, uh so so",
+     "ko": "것입니다. 하지만 그 메커니즘은 또는 우리가 이런 패턴을 가질 것입니다. 그렇죠? 그리고 그것이 유일한 메커니즘은 아닙니다. 이 패턴을 설명할 수 있는. 두 번째 인과 관계는 이것입니다. 네, 반대입니다. 네, 어 그래서 그래서",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1264,
+     "page": 7,
+     "en": "uh so so so so so institution",
+     "ko": "어 그래서 그래서 그래서 그래서 그래서 제도가",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1279,
+     "page": 7,
+     "en": "between institution",
+     "ko": "제도와",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1283,
+     "page": 7,
+     "en": "and GDP. Right? That can but that is",
+     "ko": "그리고 GDP 사이에서요. 그렇죠? 그럴 수 있지만 그것은",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1290,
+     "page": 7,
+     "en": "positive correlation.",
+     "ko": "양의 상관관계입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1293,
+     "page": 7,
+     "en": "Now, first, competition mechanism that can explain this pattern. But actually there are institution causes GDP. So that if that is that is the case, we can have this positive correlation. The second, country is with higher GDP. can either well, so better institution.",
+     "ko": "자, 첫째, 경쟁 메커니즘은 이 패턴을 설명할 수 있는. 하지만 사실은 제도가 유발한다. GDP를. 그래서 그게 만약 그렇다면 우리는 이런 양의 상관관계를 가질 수 있습니다. 두 번째, 국가가 더 높은 GDP를 가지고 있다면 그럴 수 있죠, 음, 그래서 더 나은 제도.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1317,
+     "page": 7,
+     "en": "So institution uh necessarily and increase the GDP. This is a cross of the data, right? So competition can provide a better incentive that individual will work hard. And then we will have more prosperity. It makes sense. But that is a potential mechanism, but that is not the unique mechanism.",
+     "ko": "그래서 제도가 어 반드시 그리고 증가할 것입니다. GDP를. 이것은 데이터의 교차점이죠, 그렇죠? 그래서 경쟁 메커니즘은 더 나은 인센티브를 제공할 수 있고, 개인이 열심히 일할 것입니다. 그리고 우리는 더 많은 번영을 누릴 것입니다. 말이 되죠. 하지만 그것은 잠재적인 메커니즘이지만, 그것이 유일한 메커니즘은 아닙니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1338,
+     "page": 7,
+     "en": "that can rationalize this. The second mechanism is a reverse causality is the GDP actually the the reason why we see this correlation is high GDP country can have better institution. Once they have more resources, they can have more budget. And then they can support the better system.",
+     "ko": "이것을 설명할 수 있는. 두 번째 메커니즘은 역인과 관계입니다. GDP가 사실은 그 우리가 이 상관관계를 보는 이유는 높은 GDP 국가가 더 나은 제도를 가질 수 있기 때문입니다. 일단 그들이 더 많은 자원을 가지면, 그들은 더 많은 예산을 가질 수 있습니다. 그리고 그들은 더 나은 시스템을 지원할",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1361,
+     "page": 7,
+     "en": "It is also possible. So we may have a reverse causality to create the",
+     "ko": "수 있습니다. 이것도 가능합니다. 그래서 우리는 역인과 관계를 통해",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1368,
+     "page": 7,
+     "en": "same pattern of correlation. The third or fourth is the quality can work both direction. Not only GDP further increases the quality of institution,",
+     "ko": "같은 패턴의 상관관계를 만들 수 있습니다. 세 번째, 또는 네 번째는 그 품질이 양방향으로 작용할 수 있습니다. GDP뿐만 아니라 GDP가 제도의",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1391,
+     "page": 7,
+     "en": "But that factor they can",
+     "ko": "하지만 그 요인은",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1394,
+     "page": 7,
+     "en": "generate in the direction",
+     "ko": "그들이 방향을",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1398,
+     "page": 7,
+     "en": "of change,",
+     "ko": "잡고 변화를",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1402,
+     "page": 7,
+     "en": "then we",
+     "ko": "만들어낼 수 있다면,",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1429,
+     "page": 7,
+     "en": "would have this",
+     "ko": "우리는",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1440,
+     "page": 7,
+     "en": "population. And again,",
+     "ko": "이 인구를 갖게 될 것입니다. 그리고",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1447,
+     "page": 7,
+     "en": "so the most concerning case is the horse",
+     "ko": "다시 말해, 가장 우려되는 경우는 말",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1454,
+     "page": 7,
+     "en": "one. It's a curious relationship. correlation does not say anything about the direct causal relationship.",
+     "ko": "입니다. 이것은 흥미로운 관계입니다. 상관관계는 아무것도 말해주지 않지만, 직접적인 인과 관계에 대해서는",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1464,
+     "page": 7,
+     "en": "So like a correlation is very clear, so that motivate the question, institutional quality may have a positive impact on the",
+     "ko": "그렇지 않습니다. 그래서 상관관계는 매우 명확하므로, 그 질문을 제기하게 됩니다. 제도적 품질이 긍정적인 영향을 미칠 수",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1478,
+     "page": 7,
+     "en": "prosperity, but it does not prove the causality. Okay? Okay. And now, this summarize their paper. So so it's not a relying on correlation, they look at the settlement of as an instrumental variable. And the idea is that the settlement mortality is okay, that settlement explains how the quality of institution of those",
+     "ko": "있습니다, 번영에, 하지만 그것이 인과 관계를 증명하는 것은 아닙니다. 아시겠죠? 네. 그리고 이제, 이것은 그들의 논문을 요약한 것입니다. 그래서 그것은 의존하는 것이 아니라 상관관계에 의존하는 것이 아니라, 그들은 정착지를 도구 변수로 봅니다. 그리고 아이디어는 이것입니다. 정착지는 사망률에 영향을 미치지만 괜찮고, 그 정착지는 설명합니다. 어떻게 제도의 품질이 영향을 미치는지 그 나라들의",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1516,
+     "page": 7,
+     "en": "countries they are different now. So we",
+     "ko": "그들은 다르고, 이제는 그래서 우리는",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1526,
+     "page": 7,
+     "en": "say the quality of institution quality of institution",
+     "ko": "제도의 품질이 영향을 미친다고 말합니다. 제도의 품질이",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1533,
+     "page": 7,
+     "en": "So",
+     "ko": "그래서",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1828,
+     "page": 7,
+     "en": "is a",
+     "ko": "이것은",
+     "src": "gemini",
+     "ai": true
+    }
+   ]
+  }
+ ],
+ "savedAt": "2026-11-04T02:11:22.315Z"
+}
