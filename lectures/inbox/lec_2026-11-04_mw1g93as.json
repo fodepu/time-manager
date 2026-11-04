@@ -9,7 +9,7 @@
  "mode": "slides",
  "pdf": "Core_note_iv_2026.pdf",
  "pages": 11,
- "duration": 1861,
+ "duration": 3348,
  "log": [
   {
    "t": 0,
@@ -43,6 +43,31 @@
   {
    "t": 1851,
    "page": 8
+  },
+  {
+   "t": 1382,
+   "page": 1,
+   "resumed": true
+  },
+  {
+   "t": 1392,
+   "page": 8
+  },
+  {
+   "t": 1884,
+   "page": 2
+  },
+  {
+   "t": 2089,
+   "page": 8
+  },
+  {
+   "t": 2293,
+   "page": 7
+  },
+  {
+   "t": 2395,
+   "page": 8
   }
  ],
  "slides": [
@@ -53,6 +78,14 @@
    "pdf": "Core_note_iv_2026.pdf",
    "pdfPage": 1,
    "slideText": "Core Notes on IV Introductory Econometrics Core Notes on Instrumental Variables Wald, 2SLS, and Two Classic Instruments Introductory Econometrics Road map When the regressor of interest is correlated with the error, OLS is biased and more data do not help. An instrument is a variable that moves the regressor but has no other route to the outcome. The note derives the IV estimator in one line, computes it by hand as a ratio of two differences (the Wald estimator), generalizes it to two-stage least squares, and then works through two famous instruments: quarter of birth for schooling (Angrist and Krueger 1991) and settler mortality for institutions (Acemoglu, Johnson and Robinson 2001). It ends with what can go wrong: weak instruments, untestable exclusion, and whose effect IV actually measures. Contents 1 The endogeneity problem 1 2 The instrument 2 2.1 Two conditions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2.2 The estimator in one line . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2.3 A binary instrument: the Wald estimator . . . . . . . . . . . . . . . . . . . . . . . . 2 3 Case 1: Quarter of birth and the return to schooling 3 3.1 The institutional source of variation . . . . . . . . . . . . . . . . . . . . . . . . . . . 3 3.2 The Wald estimate, by hand . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4 3.3 Why is IV above OLS here? . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5 ",
+   "liveNotes": {
+    "notes": [],
+    "summary": "IV 핵심 노트 표지·로드맵",
+    "exam": [],
+    "board": [],
+    "at": 1793758287920
+   },
+   "marks": [],
    "lines": {
     "w": 612,
     "h": 792,
@@ -321,17 +354,26 @@
      "page": 1,
      "en": "or it defines how we and we do like them. Trans action and how",
      "ko": "또는 우리가 어떻게 그리고 우리가 어떻게 하는지 정의합니다. 트랜스 액션과 어떻게",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     }
    ]
   },
   {
    "page": 2,
-   "en": "our property right is honored and etc. or protected.",
-   "ko": "우리 재산이 권리가 존중받는지 등등입니다. 또는 보호받는지.",
+   "en": "our property right is honored and etc. or protected. this term should be equal to Then then you have this to be zero. So only then that this has to be condition holds. Okay? So that's the reason why if it satisfies the condition, then we wouldn't have a biased estimator. Also, it will be consistent, meaning that even though we increase the number of observations, it will not converge to the true value. So that is the motivation. And now the instrumental variable is the instrument to be a valid instrumental variable, it has to satisfy two conditions. The first one is relevance. It has to be related to X. We want to construct the causal relationship between X and Y, whether increasing X increase increase Y, right? And then the in order to Z is an instrumental variable, in order this instrumental variable valid, it has to change X. Like a mortality has to change the quality of institutions. So quality of institutions is something we are interested in. It's very hard to to find the instrumental variable that affects the quality of institution. But not but not directly have an impact on the GDP. So relevance, so we verify the condition with two steps. The first one is relevance. So mortality It's nice. And then we equation And the quality of institution across countries. So we countries Now Okay? But that is relevance. The instrumental variable has to explain variation in X. And now previous example X was the quality of institution. So mortality has to explain variation in the quality of institution. Okay? But second condition is is actually very uh important at the same time hard to uh we meant. And that is called the exclusion restriction assumption, which means that this you should instrumental variable cannot affect Y, only through its impact on X. We cannot have direct impact on you. We cannot. We need to pass any and all terms. In the regression directly, so it affects Y directly or mu is actually meaning Y, if it affects Y directly, it cannot be a instrumental variable. It has to change only X. Not directly Y.",
+   "ko": "우리 재산이 권리가 존중받는지 등등입니다. 또는 보호받는지. 이 항과 같아야 해요. 그러면 이제 당신은 이게 0이 되어야 해요. 그래서 오직 그때만 이게 되어야 한다는 조건이 성립해요. 알겠죠? 그래서 그게 이유예요. 만약 그게 조건을 만족한다면, 우리는 편향된 추정치를 갖지 않을 거예요. 또한, 그것은 될 것입니다. 일관성 있게, 즉 우리가 데이터의 수를 늘려도, 그것은 수렴하지 않을 것입니다. 참값에. 그래서 그게 동기예요. 그리고 이제 도구 변수 는 도구는 도구는 도구 변수가 유효하려면, 두 가지 조건을 만족해야 해요. 첫 번째는 관련성입니다. 그것은 관련이 있어야 합니다. X와. 우리는 인과 관계를 구축하고 싶습니다. X와 Y 사이의, 즉 X를 증가시키면 증가하는지 증가하는지 Y가, 그렇죠? 그리고 그 다음은 이를 위해 Z는 도구 변수이며, 이를 위해 이 도구 변수가 유효하려면, 그것은 X를 변화시켜야 합니다. 마치 사망률이 변해야 하는 것처럼요. 그 제도의 질을요. 그래서 제도의 질은 우리가 관심 있는 것입니다. 그것은 매우 어렵습니다. 찾기가 도구 변수를 찾는 것이, 제도의 질에 영향을 미치는. 하지만 그렇지 않아요. 하지만 직접적으로 영향을 미치지 않는 GDP에. 그래서 관련성, 그래서 우리는 두 단계로 조건을 확인합니다. 첫 번째는 관련성입니다. 그래서 사망률은 좋네요. 그리고 나서 우리는 방정식 그리고 제도의 질은 국가별로요. 그래서 우리는 국가별로 이제 알겠죠? 하지만 그건 관련성이에요. 도구 변수는 반드시 변동을 설명해야 합니다. X의 변동을. 그리고 이제 이전 예시에서 X는 제도의 질이었습니다. 그래서 사망률은 변동을 설명해야 합니다. 그 제도의 질의. 알겠죠? 하지만 두 번째 조건은 사실은 매우 어 중요하고 동시에 찾기 어려운 것입니다. 어 우리가 의미한 것입니다. 그리고 그것을 배제 제약 가정이라고 하는데, 이는 이것이 당신은 도구 변수가 영향을 미칠 수 없다는 것을 의미합니다. 오직 X에 미치는 영향을 통해서만. 우리는 직접적인 영향을 미칠 수 없습니다. 당신에게. 우리는 할 수 없습니다. 우리는 통과해야 합니다. 어떤 것이든 모든 조건을. 회귀 분석에서 직접적으로, 그래서 그것이 영향을 미칩니다. Y에 직접적으로 또는 뮤가 실제로 Y를 의미하는 것이라면, 만약 그것이 Y에 직접적으로 영향을 미친다면, 그것은 도구 변수가 될 수 없습니다. 그것은 오직 X만 변화시켜야 합니다. 직접적으로",
    "pdf": "Core_note_iv_2026.pdf",
    "pdfPage": 2,
    "slideText": "Core Notes on IV Introductory Econometrics 5.3 Exclusion: the overidentification test . . . . . . . . . . . . . . . . . . . . . . . . . . . 10 6 Whose effect? LATE 10 7 Where instruments come from 10 8 Quick self-check 10 1 The endogeneity problem We want β 1 in Y i = β 0 + β 1 X i + u i . OLS needs E ( u i | X i ) = 0. It fails when 1. an omitted variable affects both X and Y (ability in a wage–schooling regression); 2. X is measured with error (reported years of schooling); 3. Y also affects X — simultaneity or reverse causality (richer countries can afford better insti- tutions). In each case Cov( X i , u i ) ̸ = 0 and, by the law of large numbers, b β OLS 1 → β 1 + Cov( X, u ) Var( X ) ̸ = β 1 . The bias does not shrink with the sample size: OLS is inconsistent . 2 The instrument 2.1 Two conditions A valid instrument Z 1. Relevance: Cov( Z, X ) ̸ = 0 — Z moves X . Testable in the first stage. 2. Exogeneity (exclusion): Cov( Z, u ) = 0 — Z affects Y only through X , and is unrelated to the omitted factors. Not testable with one instrument; it must be argued from institutions and economics. Z |{z} instrument relevance − − − − − − − → X |{z} endogenous β 1 − − → Y |{z} outcome , u → X, u → Y, forbidden: Z → Y directly , Z ↔ u. 2.2 The estimator in one line Take the covariance of Y i = β 0 + β 1 X i + u i with Z i : Cov( Z, Y ) = β 1 Cov( Z, X ) + Cov( Z, u ) . 2",
+   "liveNotes": {
+    "notes": [],
+    "summary": "내생성 문제와 도구변수 조건",
+    "exam": [],
+    "board": [],
+    "at": 1793758296071
+   },
+   "marks": [],
    "lines": {
     "w": 612,
     "h": 792,
@@ -584,6 +626,77 @@
      "page": 2,
      "en": "our property right is honored and etc. or protected.",
      "ko": "우리 재산이 권리가 존중받는지 등등입니다. 또는 보호받는지.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1885,
+     "page": 2,
+     "en": "this term should be equal to Then then you have this to be zero. So only then that this has to be condition holds. Okay? So that's the reason why if it satisfies the condition, then we wouldn't have a biased estimator. Also, it will be consistent, meaning that even though we increase the number of observations, it will not converge to the true value.",
+     "ko": "이 항과 같아야 해요. 그러면 이제 당신은 이게 0이 되어야 해요. 그래서 오직 그때만 이게 되어야 한다는 조건이 성립해요. 알겠죠? 그래서 그게 이유예요. 만약 그게 조건을 만족한다면, 우리는 편향된 추정치를 갖지 않을 거예요. 또한, 그것은 될 것입니다. 일관성 있게, 즉 우리가 데이터의 수를 늘려도, 그것은 수렴하지 않을 것입니다. 참값에.",
+     "src": "gemini"
+    },
+    {
+     "t": 1918,
+     "page": 2,
+     "en": "So that is the motivation. And now the instrumental variable is the instrument to be a valid instrumental variable, it has to satisfy two conditions. The first one is relevance. It has to be related to X. We want to construct the causal relationship between X and Y, whether increasing X increase increase Y, right? And then the in order to Z is an instrumental variable, in order this instrumental variable valid, it has to change X.",
+     "ko": "그래서 그게 동기예요. 그리고 이제 도구 변수 는 도구는 도구는 도구 변수가 유효하려면, 두 가지 조건을 만족해야 해요. 첫 번째는 관련성입니다. 그것은 관련이 있어야 합니다. X와. 우리는 인과 관계를 구축하고 싶습니다. X와 Y 사이의, 즉 X를 증가시키면 증가하는지 증가하는지 Y가, 그렇죠? 그리고 그 다음은 이를 위해 Z는 도구 변수이며, 이를 위해 이 도구 변수가 유효하려면, 그것은 X를 변화시켜야 합니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 1956,
+     "page": 2,
+     "en": "Like a mortality has to change the quality of institutions. So quality of institutions is something we are interested in. It's very hard to to find the instrumental variable that affects the quality of institution. But not but not directly have an impact on the GDP.",
+     "ko": "마치 사망률이 변해야 하는 것처럼요. 그 제도의 질을요. 그래서 제도의 질은 우리가 관심 있는 것입니다. 그것은 매우 어렵습니다. 찾기가 도구 변수를 찾는 것이, 제도의 질에 영향을 미치는. 하지만 그렇지 않아요. 하지만 직접적으로 영향을 미치지 않는 GDP에.",
+     "src": "gemini"
+    },
+    {
+     "t": 1980,
+     "page": 2,
+     "en": "So relevance, so we verify the condition with two steps. The first one is relevance. So mortality",
+     "ko": "그래서 관련성, 그래서 우리는 두 단계로 조건을 확인합니다. 첫 번째는 관련성입니다. 그래서 사망률은",
+     "src": "gemini"
+    },
+    {
+     "t": 1993,
+     "page": 2,
+     "en": "It's nice.",
+     "ko": "좋네요.",
+     "src": "gemini"
+    },
+    {
+     "t": 1997,
+     "page": 2,
+     "en": "And then we equation And the quality of institution",
+     "ko": "그리고 나서 우리는 방정식 그리고 제도의 질은",
+     "src": "gemini"
+    },
+    {
+     "t": 2009,
+     "page": 2,
+     "en": "across countries. So we countries Now",
+     "ko": "국가별로요. 그래서 우리는 국가별로 이제",
+     "src": "gemini"
+    },
+    {
+     "t": 2018,
+     "page": 2,
+     "en": "Okay? But that is relevance. The instrumental variable has to explain variation in X. And now previous example X was the quality of institution. So mortality has to explain variation in the quality of institution. Okay? But second condition is is actually very uh important at the same time hard to uh we meant.",
+     "ko": "알겠죠? 하지만 그건 관련성이에요. 도구 변수는 반드시 변동을 설명해야 합니다. X의 변동을. 그리고 이제 이전 예시에서 X는 제도의 질이었습니다. 그래서 사망률은 변동을 설명해야 합니다. 그 제도의 질의. 알겠죠? 하지만 두 번째 조건은 사실은 매우 어 중요하고 동시에 찾기 어려운 것입니다. 어 우리가 의미한 것입니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 2049,
+     "page": 2,
+     "en": "And that is called the exclusion restriction assumption, which means that this you should instrumental variable cannot affect Y, only through its impact on X. We cannot have direct impact on you.",
+     "ko": "그리고 그것을 배제 제약 가정이라고 하는데, 이는 이것이 당신은 도구 변수가 영향을 미칠 수 없다는 것을 의미합니다. 오직 X에 미치는 영향을 통해서만. 우리는 직접적인 영향을 미칠 수 없습니다. 당신에게.",
+     "src": "gemini"
+    },
+    {
+     "t": 2068,
+     "page": 2,
+     "en": "We cannot. We need to pass any and all terms. In the regression directly, so it affects Y directly or mu is actually meaning Y, if it affects Y directly, it cannot be a instrumental variable. It has to change only X. Not directly Y.",
+     "ko": "우리는 할 수 없습니다. 우리는 통과해야 합니다. 어떤 것이든 모든 조건을. 회귀 분석에서 직접적으로, 그래서 그것이 영향을 미칩니다. Y에 직접적으로 또는 뮤가 실제로 Y를 의미하는 것이라면, 만약 그것이 Y에 직접적으로 영향을 미친다면, 그것은 도구 변수가 될 수 없습니다. 그것은 오직 X만 변화시켜야 합니다. 직접적으로",
      "src": "gemini"
     }
    ]
@@ -595,6 +708,26 @@
    "pdf": "Core_note_iv_2026.pdf",
    "pdfPage": 6,
    "slideText": "Core Notes on IV Introductory Econometrics Measurement error. If reported schooling is S obs = S + ν with ν pure noise, b β OLS → β · Var( S ) Var( S ) + Var( ν ) < β. With a reliability ratio of 0 . 9, OLS is attenuated by 10%. Quarter of birth is unrelated to the reporting error, so IV is not attenuated. LATE. QOB changes schooling only for people constrained by the leaving age — students who would drop out if allowed. IV estimates the return for these compliers , which need not equal the population average (Section 6). 3.4 Critiques Two lines of criticism illustrate the two IV conditions. Exclusion : season of birth may affect earnings through other channels — health at birth, parental background (birth timing differs by family type), relative age in class. Relevance : QOB explains very little of the variation in schooling. Specifications that interact QOB with year and state of birth (up to 180 instruments) have weak first stages, and Bound, Jaeger and Baker (1995) showed that IV estimates can then be biased toward OLS and badly mismeasured — the weak-instrument problem of Section 5. 4 Case 2: Settler mortality and institutions 4.1 The question and the endogeneity What are institutions? Douglass North (1990): “the humanly devised constraints that structure political, economic, and social interaction” — formal rules (laws, constitutions, regulation) and informal ones (norms, conventions). They set the incentives and transaction costs that shape economic performance. Politi",
+   "liveNotes": {
+    "notes": [
+     "**제도**(institution) = 게임의 규칙; North(1990): 인간이 고안한 제약, 공식(법·헌법·규제)+비공식(규범·관습) → 유인·거래비용 결정",
+     "정치제도(democracy vs dictatorship) < 경제제도: **재산권**(property rights)과 **집행**(enforcement)이 핵심, 집행의 편차가 큼",
+     "▶ 한국 vs 북한 = 제도 차이가 성장 차이를 만드는 대표 예; 라틴아메리카는 비공식 부문·부패 심각",
+     "▶ 제도 효과는 RCT 불가능, DID도 통제집단·평행추세(parallel trend) 정의 어렵고 재산권이 나라마다 이질적 → **IV**가 더 설득력 (타당성이 관건)",
+     "▶ AJR: **운명의 역전**(reversal of fortune) — 500년 전 부유(Inca·Aztec·Mughal) → 현재 빈곤, 반대로 북미·호주·뉴질랜드 부유; 유럽인 **정착자 사망률**(mortality) 높음(라틴아메리카, 황열병) vs 낮음(북미)"
+    ],
+    "summary": "제도의 정의와 AJR의 IV 동기",
+    "exam": [],
+    "board": [],
+    "at": 1793758814296
+   },
+   "marks": [
+    {
+     "line": 34,
+     "type": "",
+     "note": "AJR 노벨상 유튜브 추천"
+    }
+   ],
    "lines": {
     "w": 612,
     "h": 792,
@@ -903,380 +1036,431 @@
      "page": 6,
      "en": "So the whole notion of an institution is a kind of a abstract concept, but the actually, if you look at how countries have different policies, it's real. Some countries have a very generous social insurance, some countries don't have that. Some countries have a huge informal sector, a lot of corruption, and etc. Some countries are very transparent and that work hard to formalize the sector and have more centralized system to to manage.",
      "ko": "그래서 기관이라는 개념은 일종의 추상적인 개념이지만, 실제로는 만약 어떻게 국가들이 서로 다른 정책을 가지고 있는지 보면, 그건 사실입니다. 어떤 나라는 매우 관대한 사회 보장 제도를 가지고 있고, 어떤 나라는 그렇지 않습니다. 어떤 나라는 엄청난 비공식 부문을 가지고 있고, 부패가 많고, 등등입니다. 어떤 나라는 매우 투명하고 그리고 열심히 일합니다. 그래서 부문을 공식화하려고 노력하고 더 중앙 집중화된 시스템을 갖추려고 합니다. 관리하기 위해서요.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 55,
      "page": 6,
      "en": "uh all the transactions. So also very important to property right. Uh the the how much the country protects property right has a huge variance. If you live in like a Latin America, it's a huge informal sector and then there's like a corruption Latin America and some developing countries, corruption is a really serious issue.",
      "ko": "어 모든 거래를요. 그래서 또한 매우 중요한 것은 재산권입니다. 어, 정부가 얼마나 보호하느냐에 따라 재산권이 큰 차이가 있습니다. 만약 당신이 라틴 아메리카와 같은 곳에 산다면, 거기는 비공식 부문이 크고, 그리고 부패가 많고, 라틴 아메리카와 일부 개발도상국에서는 부패가 정말 심각한 문제입니다.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 79,
      "page": 6,
      "en": "Once the system is corrupt, how can it protect property rights? Right? Uh so like Korea has a pretty good institution, so Korea and North Korea is a canonically example shows that how different institutions can determine different economic growth or time. So we live in a very different system.",
      "ko": "일단 시스템이 부패하면 어떻게 보호할 수 있겠어요? 재산권을? 그렇죠? 어, 그래서 한국은 꽤 좋은 제도를 가지고 있고, 그래서 한국과 북한은 전형적인 예시입니다. 어떻게 다른 제도가 사람들의 삶을 결정할 수 있는지 보여줍니다. 경제 성장이나 시간 말이죠. 그래서 우리는 매우 다른 시스템에 살고",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 103,
      "page": 6,
      "en": "And each system has unique way to uh determine what kind of transaction is uh is valid transaction, is protected or yeah, etc. So today is a definition by Douglas North. He's also a Nobel laureate and then he he's he's worked on this institution. Like a history of institution.",
      "ko": "있습니다. 그리고 각 시스템은 고유한 방식을 가지고 있습니다. 어, 결정하는 어떤 종류의 거래가 있는지 그리고 어, 유효한 거래인지 그리고 보호받는지 또는 네, 등등입니다. 그래서 오늘은 더글라스 노스의 정의입니다. 그는 노벨상 수상자이기도 하고, 그는 그는 이 분야에서 일했습니다. 역사와 제도의 역사처럼요.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 132,
      "page": 6,
      "en": "And the he's definition of institution is a humanly devised constraint and structure, political, economic and social interaction. Oh my rules, like laws, institutions and regulation and informal ones. Social norms and conventions that consists uh that that um that is a part of the institution. So it's kind of abstract.",
      "ko": "그리고 그는 제도의 정의는 인간이 고안한 제약입니다. 그리고 구조입니다. 정치적, 경제적, 사회적 상호작용입니다. 오, 규칙, 법, 제도 및 규제와 같은 것들이죠. 그리고 비공식적인 것들. 사회적 규범과 관습 같은 것들이죠. 그것은 어, 그것은 어, 그것은 음 그것은 제도의 일부입니다. 그래서 일종의 추상적인",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 159,
      "page": 6,
      "en": "concept, uh but I I just think it's a rule of the game. And the reason why it is so important in economics is that if incentives and transaction costs that shape economic performance. So it actually affects incentives tremendously. Depending on how the system works, the incentive will be very different.",
      "ko": "개념이지만, 어, 하지만 저는 그냥 그게 게임의 규칙이라고 생각해요. 그리고 왜 그게 그렇게 경제학에서 중요한지 하면, 만약 인센티브가 그리고 거래가 비용이 그게 경제적 결과를 형성하기 때문입니다. 그래서 실제로 인센티브에 엄청난 영향을 미칩니다. 어떻게 시스템이 작동하느냐에 따라 인센티브가 달라집니다. 그래서 매우 다를 것입니다.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 186,
      "page": 6,
      "en": "Depending on how much your property will be protected,",
      "ko": "얼마나 당신의 재산권이 얼마나 보호받느냐에 따라,",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 192,
      "page": 6,
      "en": "you will different. So uh the Savin yeah, that's why it's very important. And there are different types of institution. Uh we need to talk about political institution, we call like we consider like whether it has a democracy or dictatorship. Democracy is something that we elect our leader based on voting. and it the system has to democracy.",
      "ko": "당신은 다를 것입니다. 그래서 어, 사빈은 네, 그래서 그게 매우 중요합니다. 그리고 다양한 유형의 제도가 있습니다. 어, 우리는 정치적 제도에 대해 이야기해야 하고, 우리가 고려하는 것은 민주주의인지, 아니면 독재인지입니다. 민주주의는 우리가 선출하는 지도자이고, 투표를 통해 결정합니다. 그리고 그 시스템은 민주주의여야 합니다.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 215,
      "page": 6,
      "en": "Then depending on how the leader will take the result will be different. So distribution changes, the characteristic of media, so we see that even though we think many of us think that this is not the right policy, but politics like the what the politics choose is a bit different from like what other people think because the characteristic of media also changes.",
      "ko": "그러면 무엇에 따라 리더가 어떻게 행동할지 결정됩니다. 결과가 다를 것입니다. 그래서 분배가 바뀌고, 리더의 특성이 미디어의 특성이 그래서 우리는 우리가 생각하기에 우리 중 많은 사람이 이것이 올바른 정책이 아니라고 생각하지만, 정치는 마치 무엇이 정치가 선택하는지 조금 다릅니다. 마치 다른 사람들이 생각하는 것과 다른데, 왜냐하면 미디어의 특성이 또한 변하기",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 244,
      "page": 6,
      "en": "But that's political economy which is also very interesting, but our focus is more about property rights. The economic institution uh the most important thing is property rights. And enforcement. The enforcement is really important. If they have a constitution, every country has constitution.",
      "ko": "때문입니다. 하지만 그것은 정치적 경제학인데, 이것도 매우 흥미롭지만, 우리의 초점은 더 재산권에 있습니다. 경제적 제도는 어, 가장 중요한 것은 재산권입니다. 그리고 집행입니다. 집행은 정말 중요합니다. 만약 그들이 헌법을 가지고 있다면, 모든 나라는 헌법을 가지고 있습니다.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 265,
      "page": 6,
      "en": "Enforcement has a huge variation. It depends on how much the you know, individual have a right to solve by the protection by the the lawyers or the the rules and etc. So enforcement is very different. So function of government and entry barriers. Um so it's a monopoly. So in many countries we that the government and society pay attention to whether certain firm uh benefit",
      "ko": "집행은 큰 차이가 있습니다. 그것은 얼마나 그, 그러니까 개인이 권리를 가지고 있는지에 따라 다릅니다. 해결하는 것은 보호에 달려 있습니다. 그 그 변호사나 그, 그 규칙 등에 따라 다릅니다. 그래서 집행은 매우 다릅니다. 그리고 그래서 기능은 정부와 진입 장벽입니다. 음, 그래서 그것은 독점입니다. 그래서 많은 나라에서 우리는 정부가 사회가 주의를 기울이는 것은 특정 기업이 어, 혜택을",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 304,
      "page": 6,
      "en": "from the monopolistic market structure. That is the case, we ask them to pay uh taxes because uh they we don't think that that's a fair uh outcome. So also if they collude, to increase the the price of the food, you know, there's some some issue. recently in Korea, the coms actually secretly collided.",
      "ko": "받는지입니다. 독점적인 시장 구조에서. 그런 경우, 우리는 그들에게 지불하도록 요청합니다. 어, 세금을요. 왜냐하면 그들이 우리는 그것이 공정하지 않다고 생각합니다. 결과가. 그래서 또한 만약 그들이 담합한다면, 가격을 올리기 위해 가격을 올리기 위해, 아시다시피, 어떤 문제가 있습니다. 최근에 한국에서, 통신사들이 실제로 비밀리에 담합했습니다.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 330,
      "page": 6,
      "en": "And then increase the price. for certain raw material. and that actually worked as a one cause to increase the the cost for bread and etc. So they were penalized. Yeah. So those are kind of economic institutions. So if we think about that, institution is so important and then we have a sense that oh yeah, so different policy will have different incentive, how different impact on the economic growth.",
      "ko": "그리고 가격을 올렸습니다. 특정 원자재에 대해. 그리고 그것이 실제로 작용했습니다. 하나의 원인으로 가격을 올리는 데 작용했습니다. 비용을 올리는 데, 빵과 기타 등등. 그래서 그들은 처벌받았습니다. 네. 그래서 그런 것들이 경제 제도입니다. 그래서 우리가 그것에 대해 생각해보면, 제도는 매우 중요하고, 그래서 우리는 아, 그렇구나, 다른 정책은 다른 인센티브를 가지고, 경제 성장에",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 359,
      "page": 6,
      "en": "But how do we prove that and that is another question. In theory, we can talk about it. Yeah, it seems like plausible idea, but how do you prove that? And empirically, it's very challenging. Of course, the reason why it's challenging is that can we prove that based on RCT?",
      "ko": "다른 영향을 미친다는 것을 알게 됩니다. 그리고 그것은 또 다른 질문입니다. 이론적으로, 우리는 그것에 대해 이야기할 수 있습니다. 네, 마치 그럴듯한 생각처럼 보이지만, 어떻게 그것을 증명할 수 있을까요? 그리고 경험적으로는 매우 어렵습니다. 물론, 그것이 어려운 이유는 우리가 그것을 증명할 수 있느냐는 것입니다.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 377,
      "page": 6,
      "en": "Would you like to do experiment? For the sake of understanding the causal effect of one institution like so to know, and one country. Is it possible? Would you like to change the law for the abolition just to understand the causal effect of preventing abolition.",
      "ko": "그렇게 하고 싶으신가요? 그것을 이해하기 위해서 인과 관계를 이해하기 위해서 어떤 제도, 예를 들어 알기 위해서, 그리고 한 나라에서. 그게 가능할까요? 법을 바꾸고 싶으신가요? 폐지를 위해서 인과 관계를 이해하기 위해서? 예방하는 것의 인과 관계를.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 397,
      "page": 6,
      "en": "in a country. Is it not possible? So that's so big. We cannot do it based on RCT. Okay? And difference is one way for address this. Uh and the people actually did difference in difference to understand how, you know, introduction of a certain policy in one country uh experience a different outcome afterward.",
      "ko": "한 나라에서. 그게 가능하지 않을까요? 그래서 그건 너무 커요. 우리는 RCT를 기반으로 할 수 없어요. 알겠죠? 그리고 차이점은 한 가지 방법은 이것을 해결하는 것입니다. 그리고 사람들은 실제로 차이를 이해하기 위해 어떻게, 아시다시피, 특정 정책의 도입이 한 나라에서 어, 다른 경험을 겪었는지 그 결과에 대해 이야기합니다.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 423,
      "page": 6,
      "en": "So it's doable, but it's not and this shock and this type of idea instrument instrumental variable analysis done by a so instrumental variable method is one method. So the policy of that research, outcome depends whether that instrument variable is valid or not.",
      "ko": "그래서 가능하지만, 그것은 그리고 이것은 충격이고 그리고 이런 종류의 아이디어는 도구입니다. 도구 변수 분석은 한 사람이 한 것이므로 도구 변수는 한 가지 방법입니다. 그래서 그 정책은 그 연구의, 결과는 그 도구가 도구 변수인지 아닌지에 달려 있습니다.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 445,
      "page": 6,
      "en": "Like he chose the instrumental variable for us to believe that oh, his finding actually provide causal evidence of institution on GDP. Okay? So we cannot judge whether IV is better than difference and difference. without the context. We need to understand whether",
      "ko": "예를 들어, 그는 올바른 도구 변수를 선택했습니다. 우리를 위해 우리가 믿을 수 있도록, 아, 그의 발견이 실제로 인과 증거를 제공한다는 것을요. GDP에 대한. 알겠죠? 그래서 우리는 판단할 수 없어요, 도구 변수가 더 나은지 아니면 차이와 차이인지. 그 맥락 없이는요. 우리는 이해해야 합니다, 그",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 469,
      "page": 6,
      "en": "this approach is better than alternative approach uh we need more specific example here. This is a great example how instrumental variable is more convincing than the ID. because the ID as we discussed shortly, last week,",
      "ko": "접근 방식이 대안보다 나은지 아니면 다른 접근 방식인지, 우리는 더 구체적인 예가 필요합니다. 이것은 훌륭한 예입니다, 어떻게 도구 변수가 더 복잡한지. 아니면 다른 ID보다. 왜냐하면 ID는 우리가 논의한 것처럼, 곧바로",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 485,
      "page": 6,
      "en": "There's different policies of course countries. Those policies are very different and then the",
      "ko": "물론 국가마다 다른 정책이 있죠. 그런 정책들은 매우 다르고,",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 494,
      "page": 6,
      "en": "contexts are very different. It's very hard to define the control group",
      "ko": "상황도 매우 다릅니다. 그래서 정의하기가 매우 어렵습니다.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 501,
      "page": 6,
      "en": "or one country.",
      "ko": "또는 한 국가를.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 505,
      "page": 6,
      "en": "So we may",
      "ko": "그래서",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 508,
      "page": 6,
      "en": "have some",
      "ko": "저희는 몇 가지",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 515,
      "page": 6,
      "en": "things that control which means that we can you know, we can have some like we we find some hypothetical group um countries that can be the Korea. And then we can apply the difference to understand the impact of institution in Korea. on outcome. But it's not very clear because different countries have a very different history and different trend is hard to defend the parallel trend.",
      "ko": "공통점이 있을 수 있는데, 이는 우리가 할 수 있다는 뜻입니다. 우리는 몇 가지를 가질 수 있습니다. 예를 들어, 우리는 몇 가지 가상의 그룹을 찾습니다. 음, 국가들은 비교할 수 있는 곳이 될 수 있습니다. 한국처럼요. 그리고 우리는 그 차이를 적용할 수 있습니다. 영향을 이해하기 위해 제도의 영향을 이해하기 위해. 결과에 미치는. 하지만 그건 명확하지 않습니다. 왜냐하면 다른 나라들은 매우 다른 역사를 가지고 있고 다른 추세를 보이고 있어서 어떤 평행 추세를",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 545,
      "page": 6,
      "en": "Um And moreover, there are some introduction of policies so there are another issue and one policy like a property right is heterogeneous across countries. Uh property right in one country is very different from property right in another country. So it's not comparable. So there's a lot of issues.",
      "ko": "옹호하기 어렵습니다. 그리고 게다가, 어떤 도입이 있습니다. 정책의 그래서 또 다른 문제가 있고, 그리고 한 정책은 재산권과 같은데, 국가마다 다릅니다. 어, 재산권이 한 국가에서는 매우 다릅니다. 다른 국가의 재산권과요. 그래서 비교할 수 없습니다. 그래서 많은 문제가",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 563,
      "page": 6,
      "en": "So let's see how a tackle the this empirical challenge. And then this is so fascinating because he used historical events by 100 years ago. Okay? So this idea is that it's called as a reverse reverse or fortune. I strongly recommend you to watch a YouTube on his work regarding his Nobel prize.",
      "ko": "있습니다. 그럼 어떻게 한 그룹이 문제를 해결하는지 봅시다. 이 실증적 과제를. 그리고 이건 정말 흥미로워요. 왜냐하면 그는 역사적 사건을 사용했거든요. 100년 전의 사건을요. 알겠죠? 그래서 이 아이디어는 리버스 리버스 또는 운명이라고 불립니다. 저는 여러분께 유튜브 영상을 보시기를 강력히 추천합니다. 그의 연구에 관한 노벨상 수상에 대한 것입니다.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 583,
      "page": 6,
      "en": "It's summarized beautifully what his paper is about. And then the related history.",
      "ko": "요약되어 있는데, 아주 잘 그의 연구가 무엇인지 설명합니다. 그리고 관련된 역사에 대해서요.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 603,
      "page": 6,
      "en": "So this indicates the observation that by years ago, the richest country in the world was Inca. Aztec and Mughal. And those area now become India. And Latin America. Right? So 500 years ago, 500 years ago, they were the richest country. Now they are among the poorest country.",
      "ko": "그래서 이것은 관찰을 나타냅니다. 즉, 몇 년 전에는 가장 부유한 나라가 세계에서 가장 부유했다는 것입니다. 잉카 제국이요. 아즈텍 그리고 무굴 제국이요. 그리고 그 지역들은 지금은 매우 인도가 되었습니다. 그리고 라틴 아메리카요. 그렇죠? 그래서 500년 전에는 500년 전에는 그들이 가장 부유한 나라였습니다. 지금은 가장 가난한 나라 중 하나입니다.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 635,
      "page": 6,
      "en": "Yeah, that is called as the reverse or fortune. And back then, Netherlands, New Zealand or Australia, and America, North America were among the poorest. Now they are among the richest. So we observe this great reversal of fortune over 500 years. And then he conjectured that what happened 500 years ago, actually, is explained.",
      "ko": "네, 그게 리버스라고 불리거나 또는 운명이라고 불립니다. 그리고 그때 네덜란드는, 뉴질랜드는 또는 호주는, 그리고 미국은, 북미는 가장 가난한 나라 중 하나였습니다. 지금은 가장 부유한 나라 중 하나입니다. 그래서 우리는 이 거대한 역전을 목격합니다. 500년 동안 그리고 그 다음에는 그가 추측하기를 500년 전에 일어난 일이 사실은, 설명합니다. 그",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 663,
      "page": 6,
      "en": "The different trend. Okay? Now, what happened 500 years ago, is that Europeans uh migrated to different uh area and in the world. So they have more colonies. And then um there are different types of colonies. And most of America, Australia, and New",
      "ko": "다른 추세를요. 알겠죠? 자, 500년 전에 무슨 일이 있었냐면, 유럽이 아메리카 대륙을 어 이주했다는 것입니다. 다른 어, 지역으로요. 그리고 세상에서 말이죠. 그래서 그들은 더 많은 식민지를 가지고 있습니다. 그리고 다양한 종류의 식민지가 있습니다. 그리고 대부분의 아메리카는, 호주는, 그리고 뉴질랜드는",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 692,
      "page": 6,
      "en": "Zealand, back then they",
      "ko": "그 당시에는",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 767,
      "page": 6,
      "en": "was there was not the",
      "ko": "그들이 유일한",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 774,
      "page": 6,
      "en": "was not the",
      "ko": "것이 아니었습니다.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 779,
      "page": 6,
      "en": "but then uh",
      "ko": "하지만 어",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 786,
      "page": 6,
      "en": "also popular area of colonization is Latin America. They especially Spain, Portugal, they went to Latin America. So they both and etc, right? Um",
      "ko": "또한 인기 있는 식민지화 지역은 라틴 아메리카입니다. 그들은 특히 스페인, 포르투갈은 라틴 아메리카로 갔습니다. 그래서 둘 다 등등이죠, 그렇죠? 음,",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 800,
      "page": 6,
      "en": "And then huge difference",
      "ko": "그리고 큰 차이가",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 805,
      "page": 6,
      "en": "between those two areas. So Latin America,",
      "ko": "그 두 지역 사이에 있습니다. 그래서 라틴 아메리카는,",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 812,
      "page": 6,
      "en": "and North America.",
      "ko": "그리고 북미는",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 818,
      "page": 6,
      "en": "In Latin America,",
      "ko": "라틴 아메리카에서는",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 828,
      "page": 6,
      "en": "So, the issue was very young, also the status of",
      "ko": "그래서, 문제는 매우 어렸고, 또한 지위도",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 839,
      "page": 6,
      "en": "the status. So, well, why suddenly look at the status of the status.",
      "ko": "지위였습니다. 그래서, 음, 왜 갑자기 지위를 보게 되었을까요?",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 847,
      "page": 6,
      "en": "So mortality rate of Europeans in that area. So we can actually he used the historical",
      "ko": "그래서 사망률이 유럽인의 그 지역에서의 사망률입니다. 그래서 우리는 실제로 그가 역사적 데이터를",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 861,
      "page": 6,
      "en": "data to calculate how many Europeans actually died in the new territory.",
      "ko": "사용하여 얼마나 많은 유럽인이 실제로 죽었는지 계산했습니다. 새로운 영토에서.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 867,
      "page": 6,
      "en": "And there are huge variations. Uh",
      "ko": "그리고 큰 차이가 있습니다. 어",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 875,
      "page": 6,
      "en": "in Latin America, the mortality was very high. And in North",
      "ko": "라틴 아메리카에서는 그 사망률이 매우 높았습니다. 그리고 북미에서는",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 884,
      "page": 6,
      "en": "America, it was low. Now, the",
      "ko": "낮았습니다. 자,",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 891,
      "page": 6,
      "en": "reason why the",
      "ko": "그 이유가",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 894,
      "page": 6,
      "en": "mortality",
      "ko": "사망률이",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 897,
      "page": 6,
      "en": "was high in Latin America is that the disease condition was different. So some Europeans have more uh they they were more",
      "ko": "높았던 것은 라틴 아메리카에서 였는데, 그 이유는 질병이 상태였기 때문입니다. 그래서 일부 유럽인들은 더 많은 어 그들은 더 취약했습니다.",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     },
     {
      "t": 912,
      "page": 6,
      "en": "vulnerable to yellow fever and that was more prevalent in Latin America. So the reason why the mortality",
      "ko": "황열병에 그리고 그것이 더 라틴 아메리카에서 만연했습니다. 그래서 사망률이",
-     "src": "gemini"
+     "src": "gemini",
+     "ai": true
     }
    ]
   },
   {
    "page": 7,
-   "en": "was different back then is kind of independent of the evolution of the institution after. Um but then why he they focus on the mortality it makes sense because in Latin America, what happened is that the Europeans didn't And then actually there's just some impact of having different types of indigenous institutions. So in North America, institutions evolved in a way that it becomes more supportive for the market transaction and incentive and more efficient allocation. In Latin America, the institution did improve that much. So you was until recently a lot of dictatorship and every to oriented institution um that that was prevalent in that area. So centrality is the issue that we have. So the idea is uh so here that is the force state. So our question is whether institution affects GDP. Now, don't care. whether the quality of these like contemporaneous relationship but country, this is contemporaneous. Whether the quality of institution causally affects explain uh causally explain explains higher GDP. So this is our research question. And then uh we were talking about the the the instrumental variable directly. So if this is a question, and We indeed find that some relationship between the average protection against risk of expropriation and and the property is contemporaneous. But GDP is is GDP and the institution. So here we measure the quality of institution like market institution by the average protection against risk of expropriation which means that how much the system protect property rights. So each that we present each country. So here we have a sample of Norway, Singapore, um versus the US, US is one of the top. And let me see. Here. I think it's a model. Uh high T. Nigeria. So we see that if we plot the current quality of institution and current GDP, we see what do we see? countries with higher quality of institution tend to have a higher GDP. So right? So this is a suggestive evidence that institution may be good for economic prosperity. Okay? But what is the problem? of using this? as an evidence of causal effect of institution on GDP. This is a correlation. Right? We see clearly positive correlation between quality of institution and GDP. Right? But can you tell any causal relation though? There are four different relationships that can explain this pattern. Okay? Quality of institution causes GDP. So that is a case. We may have this positive correlation. First, that quality of institution will will increase the GDP. But then mechanism, or we will have this correlation. Right? And that is not the only mechanism that can explain this pattern. The second causal relationship is that this Okay, other way around. Yeah, uh so so uh so so so so so institution between institution and GDP. Right? That can but that is positive correlation. Now, first, competition mechanism that can explain this pattern. But actually there are institution causes GDP. So that if that is that is the case, we can have this positive correlation. The second, country is with higher GDP. can either well, so better institution. So institution uh necessarily and increase the GDP. This is a cross of the data, right? So competition can provide a better incentive that individual will work hard. And then we will have more prosperity. It makes sense. But that is a potential mechanism, but that is not the unique mechanism. that can rationalize this. The second mechanism is a reverse causality is the GDP actually the the reason why we see this correlation is high GDP country can have better institution. Once they have more resources, they can have more budget. And then they can support the better system. It is also possible. So we may have a reverse causality to create the same pattern of correlation. The third or fourth is the quality can work both direction. Not only GDP further increases the quality of institution, But that factor they can generate in the direction of change, then we would have this population. And again, so the most concerning case is the horse one. It's a curious relationship. correlation does not say anything about the direct causal relationship. So like a correlation is very clear, so that motivate the question, institutional quality may have a positive impact on the prosperity, but it does not prove the causality. Okay? Okay. And now, this summarize their paper. So so it's not a relying on correlation, they look at the settlement of as an instrumental variable. And the idea is that the settlement mortality is okay, that settlement explains how the quality of institution of those countries they are different now. So we say the quality of institution quality of institution So is a",
-   "ko": "그 당시 달랐던 것은 어느 정도 독립적이라는 것입니다. 제도의 진화와는 별개로요. 음, 하지만 그렇다면 왜 그들이 사망률에 집중하는 것은 이해가 됩니다. 왜냐하면 라틴 아메리카에서는 무슨 일이 일어났냐면 유럽인들이 그리고 사실 그냥 어떤 영향이 있어요, 다른 종류의 원주민 기관들이 있어서요. 그래서 북미에서는 기관들이 어떤 방식으로 진화해서 더 지원적이게 되었어요. 시장 거래를 위한 것이고 인센티브와 더 효율적인 배분을 위한 것이죠. 라틴 아메리카에서는 기관이 그렇지 않았어요. 그것을 개선하지 않았어요. 그래서 당신은 최근까지 많은 독재자들이 있었고 모든 것이 지향하는 기관이었어요. 음 그게 그게 만연해 있었어요, 그 지역에. 그래서 중앙 집중화가 문제예요. 우리가 가진. 그래서 아이디어는 음, 여기서는 그게 강제 국가예요. 그래서 우리의 질문은 과연 제도가 GDP에 영향을 미치는지입니다. 자, 상관없어요. 과연 이 제도의 품질이 현대적인지 여부는 상관없어요. 하지만 국가, 이 현대적인 것은 현대적입니다. 과연 이 제도의 품질이 어떤지 인과적으로 영향을 미치는지 설명해 보세요. 어 인과적으로 설명해 보세요. 더 높은 GDP를 설명합니다. 그래서 이것이 우리의 연구 질문입니다. 그리고 어 우리가 이야기하고 있었던 것은 그 그 도구 변수 직접적으로요. 그래서 만약 이것이 질문이라면, 그리고 우리는 실제로 어떤 관계가 있다는 것을 발견했습니다. 그 평균적인 위험에 대한 보호와 수용 위험에 대한 그리고 그리고 그 재산권이 현대적인지 여부입니다. 하지만 GDP는 입니다. GDP는 그리고 그 제도는 그래서 여기서 우리는 제도의 품질을 측정합니다. 시장 제도와 같은 것을 그 평균적인 보호를 수용 위험에 대한 그리고 이는 얼마나 그 시스템이 보호하는지 측정합니다. 그래서 각각 우리가 각 국가를 제시합니다. 그래서 여기서는 표본이 있습니다. 노르웨이, 싱가포르, 음 대비 미국, 미국 은 상위권에 있습니다. 그리고 어디 보자. 여기. 제 생각엔 모델인 것 같아요. 어 높은 T. 나이지리아. 그래서 우리가 만약 그래프를 그리면 그 현재의 제도의 품질과 그리고 현재의 GDP를 보면, 무엇이 보이나요? 국가들은 더 높은 제도의 품질을 가진 나라들이 더 높은 GDP를 가집니다. 그래서 맞죠? 그래서 이것은 시사하는 증거입니다. 제도가 그럴 수 있다는 것을요. 경제적 번영에. 알겠죠? 하지만 문제는 무엇일까요? 이것을 사용하는 것의 문제점은? 인과 관계의 증거로서 제도가 미치는 영향에 대한 것 말이죠. 이것은 상관관계입니다. 그렇죠? 우리는 분명히 긍정적인 상관관계를 볼 수 있습니다. 제도의 질과 GDP 사이에서요. 그렇죠? 하지만 인과 관계를 말할 수 있나요? 네 가지 다른 관계가 있을 수 있으니까요. 이 패턴을 설명할 수 있는. 알겠죠? 제도의 질이 GDP를 유발한다. 그래서 그게 한 가지 경우입니다. 우리는 이런 양의 상관관계를 가질 수 있습니다. 첫째, 제도의 질이 증가할 것이고 GDP도 증가할 것입니다. 하지만 그 메커니즘은 또는 우리가 이런 패턴을 가질 것입니다. 그렇죠? 그리고 그것이 유일한 메커니즘은 아닙니다. 이 패턴을 설명할 수 있는. 두 번째 인과 관계는 이것입니다. 네, 반대입니다. 네, 어 그래서 그래서 어 그래서 그래서 그래서 그래서 그래서 제도가 제도와 그리고 GDP 사이에서요. 그렇죠? 그럴 수 있지만 그것은 양의 상관관계입니다. 자, 첫째, 경쟁 메커니즘은 이 패턴을 설명할 수 있는. 하지만 사실은 제도가 유발한다. GDP를. 그래서 그게 만약 그렇다면 우리는 이런 양의 상관관계를 가질 수 있습니다. 두 번째, 국가가 더 높은 GDP를 가지고 있다면 그럴 수 있죠, 음, 그래서 더 나은 제도. 그래서 제도가 어 반드시 그리고 증가할 것입니다. GDP를. 이것은 데이터의 교차점이죠, 그렇죠? 그래서 경쟁 메커니즘은 더 나은 인센티브를 제공할 수 있고, 개인이 열심히 일할 것입니다. 그리고 우리는 더 많은 번영을 누릴 것입니다. 말이 되죠. 하지만 그것은 잠재적인 메커니즘이지만, 그것이 유일한 메커니즘은 아닙니다. 이것을 설명할 수 있는. 두 번째 메커니즘은 역인과 관계입니다. GDP가 사실은 그 우리가 이 상관관계를 보는 이유는 높은 GDP 국가가 더 나은 제도를 가질 수 있기 때문입니다. 일단 그들이 더 많은 자원을 가지면, 그들은 더 많은 예산을 가질 수 있습니다. 그리고 그들은 더 나은 시스템을 지원할 수 있습니다. 이것도 가능합니다. 그래서 우리는 역인과 관계를 통해 같은 패턴의 상관관계를 만들 수 있습니다. 세 번째, 또는 네 번째는 그 품질이 양방향으로 작용할 수 있습니다. GDP뿐만 아니라 GDP가 제도의 하지만 그 요인은 그들이 방향을 잡고 변화를 만들어낼 수 있다면, 우리는 이 인구를 갖게 될 것입니다. 그리고 다시 말해, 가장 우려되는 경우는 말 입니다. 이것은 흥미로운 관계입니다. 상관관계는 아무것도 말해주지 않지만, 직접적인 인과 관계에 대해서는 그렇지 않습니다. 그래서 상관관계는 매우 명확하므로, 그 질문을 제기하게 됩니다. 제도적 품질이 긍정적인 영향을 미칠 수 있습니다, 번영에, 하지만 그것이 인과 관계를 증명하는 것은 아닙니다. 아시겠죠? 네. 그리고 이제, 이것은 그들의 논문을 요약한 것입니다. 그래서 그것은 의존하는 것이 아니라 상관관계에 의존하는 것이 아니라, 그들은 정착지를 도구 변수로 봅니다. 그리고 아이디어는 이것입니다. 정착지는 사망률에 영향을 미치지만 괜찮고, 그 정착지는 설명합니다. 어떻게 제도의 품질이 영향을 미치는지 그 나라들의 그들은 다르고, 이제는 그래서 우리는 제도의 품질이 영향을 미친다고 말합니다. 제도의 품질이 그래서 이것은",
+   "en": "was different back then is kind of independent of the evolution of the institution after. Um but then why he they focus on the mortality it makes sense because in Latin America, what happened is that the Europeans didn't And then actually there's just some impact of having different types of indigenous institutions. So in North America, institutions evolved in a way that it becomes more supportive for the market transaction and incentive and more efficient allocation. In Latin America, the institution did improve that much. So you was until recently a lot of dictatorship and every to oriented institution um that that was prevalent in that area. So centrality is the issue that we have. So the idea is uh so here that is the force state. So our question is whether institution affects GDP. Now, don't care. whether the quality of these like contemporaneous relationship but country, this is contemporaneous. Whether the quality of institution causally affects explain uh causally explain explains higher GDP. So this is our research question. And then uh we were talking about the the the instrumental variable directly. So if this is a question, and We indeed find that some relationship between the average protection against risk of expropriation and and the property is contemporaneous. But GDP is is GDP and the institution. So here we measure the quality of institution like market institution by the average protection against risk of expropriation which means that how much the system protect property rights. So each that we present each country. So here we have a sample of Norway, Singapore, um versus the US, US is one of the top. And let me see. Here. I think it's a model. Uh high T. Nigeria. So we see that if we plot the current quality of institution and current GDP, we see what do we see? countries with higher quality of institution tend to have a higher GDP. So right? So this is a suggestive evidence that institution may be good for economic prosperity. Okay? But what is the problem? of using this? as an evidence of causal effect of institution on GDP. This is a correlation. Right? We see clearly positive correlation between quality of institution and GDP. Right? But can you tell any causal relation though? There are four different relationships that can explain this pattern. Okay? Quality of institution causes GDP. So that is a case. We may have this positive correlation. First, that quality of institution will will increase the GDP. But then mechanism, or we will have this correlation. Right? And that is not the only mechanism that can explain this pattern. The second causal relationship is that this Okay, other way around. Yeah, uh so so uh so so so so so institution between institution and GDP. Right? That can but that is positive correlation. Now, first, competition mechanism that can explain this pattern. But actually there are institution causes GDP. So that if that is that is the case, we can have this positive correlation. The second, country is with higher GDP. can either well, so better institution. So institution uh necessarily and increase the GDP. This is a cross of the data, right? So competition can provide a better incentive that individual will work hard. And then we will have more prosperity. It makes sense. But that is a potential mechanism, but that is not the unique mechanism. that can rationalize this. The second mechanism is a reverse causality is the GDP actually the the reason why we see this correlation is high GDP country can have better institution. Once they have more resources, they can have more budget. And then they can support the better system. It is also possible. So we may have a reverse causality to create the same pattern of correlation. The third or fourth is the quality can work both direction. Not only GDP further increases the quality of institution, So the experiment here is that suppose that settle mortality indeed is part of the situation. But institution does not have any effect on GDP. Because that is a case which would change. Now, of course, the graph shows that mortality affects institution. The quality of institutions and I say that it is the same as before. So it does not change. But what is So the mortality does not have effect on GDP. So the effect on GDP where this graph change. So the mortality will change the quality of institution, but quality of institution does not change the GDP. If that is the case, the second graph will change. And When it's time to make a change, it's GDP decreases. And the only channel how we can explain this is that productivity changes. This institutional quality and because institutional quality has a positive effect on GDP, we have negative acceleration. But the experiment is very useful. for you to understand. But now, suppose that no further effect of institutional on GDP, how would that change the second graph? So, according to institution, will not have any effects on GDP. And",
+   "ko": "그 당시 달랐던 것은 어느 정도 독립적이라는 것입니다. 제도의 진화와는 별개로요. 음, 하지만 그렇다면 왜 그들이 사망률에 집중하는 것은 이해가 됩니다. 왜냐하면 라틴 아메리카에서는 무슨 일이 일어났냐면 유럽인들이 그리고 사실 그냥 어떤 영향이 있어요, 다른 종류의 원주민 기관들이 있어서요. 그래서 북미에서는 기관들이 어떤 방식으로 진화해서 더 지원적이게 되었어요. 시장 거래를 위한 것이고 인센티브와 더 효율적인 배분을 위한 것이죠. 라틴 아메리카에서는 기관이 그렇지 않았어요. 그것을 개선하지 않았어요. 그래서 당신은 최근까지 많은 독재자들이 있었고 모든 것이 지향하는 기관이었어요. 음 그게 그게 만연해 있었어요, 그 지역에. 그래서 중앙 집중화가 문제예요. 우리가 가진. 그래서 아이디어는 음, 여기서는 그게 강제 국가예요. 그래서 우리의 질문은 과연 제도가 GDP에 영향을 미치는지입니다. 자, 상관없어요. 과연 이 제도의 품질이 현대적인지 여부는 상관없어요. 하지만 국가, 이 현대적인 것은 현대적입니다. 과연 이 제도의 품질이 어떤지 인과적으로 영향을 미치는지 설명해 보세요. 어 인과적으로 설명해 보세요. 더 높은 GDP를 설명합니다. 그래서 이것이 우리의 연구 질문입니다. 그리고 어 우리가 이야기하고 있었던 것은 그 그 도구 변수 직접적으로요. 그래서 만약 이것이 질문이라면, 그리고 우리는 실제로 어떤 관계가 있다는 것을 발견했습니다. 그 평균적인 위험에 대한 보호와 수용 위험에 대한 그리고 그리고 그 재산권이 현대적인지 여부입니다. 하지만 GDP는 입니다. GDP는 그리고 그 제도는 그래서 여기서 우리는 제도의 품질을 측정합니다. 시장 제도와 같은 것을 그 평균적인 보호를 수용 위험에 대한 그리고 이는 얼마나 그 시스템이 보호하는지 측정합니다. 그래서 각각 우리가 각 국가를 제시합니다. 그래서 여기서는 표본이 있습니다. 노르웨이, 싱가포르, 음 대비 미국, 미국 은 상위권에 있습니다. 그리고 어디 보자. 여기. 제 생각엔 모델인 것 같아요. 어 높은 T. 나이지리아. 그래서 우리가 만약 그래프를 그리면 그 현재의 제도의 품질과 그리고 현재의 GDP를 보면, 무엇이 보이나요? 국가들은 더 높은 제도의 품질을 가진 나라들이 더 높은 GDP를 가집니다. 그래서 맞죠? 그래서 이것은 시사하는 증거입니다. 제도가 그럴 수 있다는 것을요. 경제적 번영에. 알겠죠? 하지만 문제는 무엇일까요? 이것을 사용하는 것의 문제점은? 인과 관계의 증거로서 제도가 미치는 영향에 대한 것 말이죠. 이것은 상관관계입니다. 그렇죠? 우리는 분명히 긍정적인 상관관계를 볼 수 있습니다. 제도의 질과 GDP 사이에서요. 그렇죠? 하지만 인과 관계를 말할 수 있나요? 네 가지 다른 관계가 있을 수 있으니까요. 이 패턴을 설명할 수 있는. 알겠죠? 제도의 질이 GDP를 유발한다. 그래서 그게 한 가지 경우입니다. 우리는 이런 양의 상관관계를 가질 수 있습니다. 첫째, 제도의 질이 증가할 것이고 GDP도 증가할 것입니다. 하지만 그 메커니즘은 또는 우리가 이런 패턴을 가질 것입니다. 그렇죠? 그리고 그것이 유일한 메커니즘은 아닙니다. 이 패턴을 설명할 수 있는. 두 번째 인과 관계는 이것입니다. 네, 반대입니다. 네, 어 그래서 그래서 어 그래서 그래서 그래서 그래서 그래서 제도가 제도와 그리고 GDP 사이에서요. 그렇죠? 그럴 수 있지만 그것은 양의 상관관계입니다. 자, 첫째, 경쟁 메커니즘은 이 패턴을 설명할 수 있는. 하지만 사실은 제도가 유발한다. GDP를. 그래서 그게 만약 그렇다면 우리는 이런 양의 상관관계를 가질 수 있습니다. 두 번째, 국가가 더 높은 GDP를 가지고 있다면 그럴 수 있죠, 음, 그래서 더 나은 제도. 그래서 제도가 어 반드시 그리고 증가할 것입니다. GDP를. 이것은 데이터의 교차점이죠, 그렇죠? 그래서 경쟁 메커니즘은 더 나은 인센티브를 제공할 수 있고, 개인이 열심히 일할 것입니다. 그리고 우리는 더 많은 번영을 누릴 것입니다. 말이 되죠. 하지만 그것은 잠재적인 메커니즘이지만, 그것이 유일한 메커니즘은 아닙니다. 이것을 설명할 수 있는. 두 번째 메커니즘은 역인과 관계입니다. GDP가 사실은 그 우리가 이 상관관계를 보는 이유는 높은 GDP 국가가 더 나은 제도를 가질 수 있기 때문입니다. 일단 그들이 더 많은 자원을 가지면, 그들은 더 많은 예산을 가질 수 있습니다. 그리고 그들은 더 나은 시스템을 지원할 수 있습니다. 이것도 가능합니다. 그래서 우리는 역인과 관계를 통해 같은 패턴의 상관관계를 만들 수 있습니다. 세 번째, 또는 네 번째는 그 품질이 양방향으로 작용할 수 있습니다. GDP뿐만 아니라 GDP가 제도의 그래서 여기서의 실험은 가정을 해보자는 건데, 정착 사망률이 실제로 상황의 일부라는 것입니다. 하지만 제도는 어떤 포트도 가지고 있지 않다는 것입니다. GDP에. 왜냐하면 그것은 어떤 변화가 생길 경우이기 때문입니다. 이제, 물론 그래프는 사망률이 영향을 미친다는 것을 보여줍니다. 제도의 질이 그리고 저는 그것이 이전과 같다고 말합니다. 그래서 변하지 않습니다. 하지만 무엇이 그래서 사망률은 영향을 미치지 않습니다. GDP에. 그래서 GDP에 미치는 영향은 이 그래프가 변하는 곳입니다. 그래서 사망률은 변할 것입니다. 제도의 질을 바꾸겠지만, 제도의 질은 변하지 않습니다. GDP를. 만약 그렇다면 그 경우, 두 번째 그래프는 변할 것입니다. 그리고 변화를 줄 때가 되면, GDP가 감소합니다. 그리고 유일한 방법은 우리가 이것을 설명할 수 있는 것은 생산성이 변한다는 것입니다. 이것은 제도적 품질이 그리고 제도적 품질이 GDP에 긍정적인 영향을 미치기 때문에, 우리는 음의 가속도를 갖게 됩니다. 하지만 그 실험은 매우 유용합니다. 여러분이 이해하는 데 도움이 됩니다. 하지만 이제, 더 이상의 효과가 제도적 요인이 GDP에 미치지 않는다면, 두 번째 그래프는 어떻게 변할까요? 그래서 제도에 따르면, 아무런 영향도 미치지 않을 것입니다. 그리고",
    "pdf": "Core_note_iv_2026.pdf",
    "pdfPage": 7,
    "slideText": "Core Notes on IV Introductory Econometrics 4.2 The instrument Settler mortality. Where early European settlers faced high death rates from malaria and yellow fever (West Africa, much of South and South-East Asia), they did not settle; colonizers set up extractive institutions designed to transfer resources. Where mortality was low (Australia, New Zealand, North America), they settled and built inclusive institutions that protected property — their own. Those institutions persisted. settler mortality ( Z ) −→ settlements −→ early institutions −→ current institutions ( X ) −→ income ( Y ) . AJR (2001), base sample of 64 former colonies estimate (SE) First stage: expropriation protection on log settler mortality − 0 . 61 (0 . 13) OLS: log GDP per capita on expropriation protection 0 . 52 (0 . 06) 2SLS: log GDP per capita on expropriation protection 0 . 94 (0 . 16) The first stage is strong and has the predicted sign: higher mortality, weaker institutions. The implied reduced form is about − 0 . 61 × 0 . 94 ≈ − 0 . 57: a one-log-point increase in settler mortality goes with roughly 57% lower income today. Dividing by the first stage, a one-point improvement in expropriation protection (on a 0–10 scale) raises income by about 0 . 94 log points. AJR conclude that differences in institutions explain most of the income gap between countries such as Nigeria and Chile, and that geography variables (latitude, landlockedness, current disease environment) lose their explanatory power once",
    "liveNotes": {
     "notes": [
      "▶ Figure 4의 상관관계(제도 보호 수준 ↔ 1인당 GDP)를 짚으며 확인 질문",
-     "▶ 상관관계가 매우 뚜렷 → **제도의 질**(institutional quality)이 번영(prosperity)에 양(+)의 영향을 주는지 질문 동기",
      "▶ 이 **양의 상관관계**(positive correlation)를 설명하는 경쟁 메커니즘 소개",
      "▶ 제도 → GDP (institutions cause GDP)라면 이 상관관계가 나타남",
      "▶ 단, 이는 **횡단면 데이터**(cross-section)라서 제도가 GDP를 반드시 높인다고 단정 불가 → 인과 방향 의문",
-     "▶ **역인과관계**(reverse causality): GDP → 제도도 같은 상관 패턴을 만듦"
+     "▶ 두 번째 메커니즘: **역인과관계**(reverse causality) — GDP → 제도일 가능성도 있어 이 상관관계를 만들어 낼 수 있음",
+     "▶ 제도의 질 변화가 GDP를 바꾸는 유일한 경로는 **생산성**(productivity) 변화"
     ],
-    "summary": "제도–GDP 상관의 인과 방향 의문",
+    "summary": "제도와 GDP 상관관계의 인과 방향",
     "exam": [],
     "board": [],
-    "at": 1793758261103
+    "at": 1793759297893
    },
    "marks": [],
    "lines": {
@@ -1727,119 +1911,994 @@
      "ai": true
     },
     {
-     "t": 1391,
+     "t": 2296,
      "page": 7,
-     "en": "But that factor they can",
-     "ko": "하지만 그 요인은",
+     "en": "So the experiment here is that suppose that settle mortality indeed is part of the situation. But institution does not have any effect on GDP. Because that is a case which would change. Now, of course, the graph shows that mortality affects institution. The quality of institutions and I say that it is the same as before.",
+     "ko": "그래서 여기서의 실험은 가정을 해보자는 건데, 정착 사망률이 실제로 상황의 일부라는 것입니다. 하지만 제도는 어떤 포트도 가지고 있지 않다는 것입니다. GDP에. 왜냐하면 그것은 어떤 변화가 생길 경우이기 때문입니다. 이제, 물론 그래프는 사망률이 영향을 미친다는 것을 보여줍니다. 제도의 질이 그리고 저는 그것이 이전과 같다고 말합니다.",
      "src": "gemini",
      "ai": true
     },
     {
-     "t": 1394,
+     "t": 2319,
      "page": 7,
-     "en": "generate in the direction",
-     "ko": "그들이 방향을",
+     "en": "So it does not change. But what is So the mortality does not have effect on GDP. So the effect on GDP where this graph change. So the mortality will change the quality of institution, but quality of institution does not change the GDP. If that is the case, the second graph will change.",
+     "ko": "그래서 변하지 않습니다. 하지만 무엇이 그래서 사망률은 영향을 미치지 않습니다. GDP에. 그래서 GDP에 미치는 영향은 이 그래프가 변하는 곳입니다. 그래서 사망률은 변할 것입니다. 제도의 질을 바꾸겠지만, 제도의 질은 변하지 않습니다. GDP를. 만약 그렇다면 그 경우, 두 번째 그래프는 변할 것입니다.",
      "src": "gemini",
      "ai": true
     },
     {
-     "t": 1398,
+     "t": 2346,
      "page": 7,
-     "en": "of change,",
-     "ko": "잡고 변화를",
+     "en": "And",
+     "ko": "그리고",
      "src": "gemini",
      "ai": true
     },
     {
-     "t": 1402,
+     "t": 2352,
      "page": 7,
-     "en": "then we",
-     "ko": "만들어낼 수 있다면,",
+     "en": "When it's time to make a change, it's GDP decreases. And the only channel how we can explain this is that productivity changes. This institutional quality and because institutional quality has a positive effect on GDP, we have negative acceleration.",
+     "ko": "변화를 줄 때가 되면, GDP가 감소합니다. 그리고 유일한 방법은 우리가 이것을 설명할 수 있는 것은 생산성이 변한다는 것입니다. 이것은 제도적 품질이 그리고 제도적 품질이 GDP에 긍정적인 영향을 미치기 때문에, 우리는 음의 가속도를 갖게 됩니다.",
      "src": "gemini",
      "ai": true
     },
     {
-     "t": 1429,
+     "t": 2373,
      "page": 7,
-     "en": "would have this",
-     "ko": "우리는",
+     "en": "But the experiment is very useful. for you to understand. But now, suppose that no further effect of institutional on GDP, how would that change the second graph?",
+     "ko": "하지만 그 실험은 매우 유용합니다. 여러분이 이해하는 데 도움이 됩니다. 하지만 이제, 더 이상의 효과가 제도적 요인이 GDP에 미치지 않는다면, 두 번째 그래프는 어떻게 변할까요?",
      "src": "gemini",
      "ai": true
     },
     {
-     "t": 1440,
+     "t": 2391,
      "page": 7,
-     "en": "population. And again,",
-     "ko": "이 인구를 갖게 될 것입니다. 그리고",
-     "src": "gemini",
-     "ai": true
-    },
-    {
-     "t": 1447,
-     "page": 7,
-     "en": "so the most concerning case is the horse",
-     "ko": "다시 말해, 가장 우려되는 경우는 말",
-     "src": "gemini",
-     "ai": true
-    },
-    {
-     "t": 1454,
-     "page": 7,
-     "en": "one. It's a curious relationship. correlation does not say anything about the direct causal relationship.",
-     "ko": "입니다. 이것은 흥미로운 관계입니다. 상관관계는 아무것도 말해주지 않지만, 직접적인 인과 관계에 대해서는",
-     "src": "gemini",
-     "ai": true
-    },
-    {
-     "t": 1464,
-     "page": 7,
-     "en": "So like a correlation is very clear, so that motivate the question, institutional quality may have a positive impact on the",
-     "ko": "그렇지 않습니다. 그래서 상관관계는 매우 명확하므로, 그 질문을 제기하게 됩니다. 제도적 품질이 긍정적인 영향을 미칠 수",
-     "src": "gemini",
-     "ai": true
-    },
-    {
-     "t": 1478,
-     "page": 7,
-     "en": "prosperity, but it does not prove the causality. Okay? Okay. And now, this summarize their paper. So so it's not a relying on correlation, they look at the settlement of as an instrumental variable. And the idea is that the settlement mortality is okay, that settlement explains how the quality of institution of those",
-     "ko": "있습니다, 번영에, 하지만 그것이 인과 관계를 증명하는 것은 아닙니다. 아시겠죠? 네. 그리고 이제, 이것은 그들의 논문을 요약한 것입니다. 그래서 그것은 의존하는 것이 아니라 상관관계에 의존하는 것이 아니라, 그들은 정착지를 도구 변수로 봅니다. 그리고 아이디어는 이것입니다. 정착지는 사망률에 영향을 미치지만 괜찮고, 그 정착지는 설명합니다. 어떻게 제도의 품질이 영향을 미치는지 그 나라들의",
-     "src": "gemini",
-     "ai": true
-    },
-    {
-     "t": 1516,
-     "page": 7,
-     "en": "countries they are different now. So we",
-     "ko": "그들은 다르고, 이제는 그래서 우리는",
-     "src": "gemini",
-     "ai": true
-    },
-    {
-     "t": 1526,
-     "page": 7,
-     "en": "say the quality of institution quality of institution",
-     "ko": "제도의 품질이 영향을 미친다고 말합니다. 제도의 품질이",
-     "src": "gemini",
-     "ai": true
-    },
-    {
-     "t": 1533,
-     "page": 7,
-     "en": "So",
-     "ko": "그래서",
-     "src": "gemini",
-     "ai": true
-    },
-    {
-     "t": 1828,
-     "page": 7,
-     "en": "is a",
-     "ko": "이것은",
+     "en": "So, according to institution, will not have any effects on GDP. And",
+     "ko": "그래서 제도에 따르면, 아무런 영향도 미치지 않을 것입니다. 그리고",
      "src": "gemini",
      "ai": true
     }
    ]
+  },
+  {
+   "page": 8,
+   "en": "So, I'm going to tell you about only as it packed on by institutions, like X or And this is an example of like to be honest, when I was undergraduate, I didn't know about this kind of examples, when I learned about variable, I said, Z is correlated with X, but that's not correlated with you. And it does not give me any context for me to fully understand the nature of this variable. And then I learned this example when I uh went to uh US to study abroad. And then the the professor gave an example for undergraduate students. And I think it was like I was uh making that if I ever become a professor, I would like to introduce this example to the students because it's such a great example for you to understand many. Okay? And this is a very good example. And then I realized that I found that this like received the movie price for this week. So that's it. Okay. And so this is a good example. And then so that's the reason why uh the first it is really important to pass it. to show the closer to the institution or economic outcome. And this is easy. for people to disregard the quality of institution as an important factor in economic prosperity because they see that, yeah, the rich people already have a good institution, so they advise better institution, so like you know, policy does not explain that much. That is a we cannot prove the because institution and we like the importance of like the property right and etc. But then this issue and empirically that did matter. And according to their analysis, this quality of institution explains almost entire differences in the cross country GDP. Okay? So previously, people had some conjecture that the location of the country matters. For instance, if you look at the you know, location of Latin America is closer to the equator. And people know the warm weather is not good for economic prosperity. It makes sense because the correlation is there. But once we control this quality of institution through the settlement mortality, that correlation disappears. So it's really the quality of institution, not the geographic location. Okay? So another contribution is it actually um eliminated all other explanations. So people had a conjecture that the financial location population etc. But once we control the quality of institution, this is one of the most important factor that explains current GDP per capita. And this big uh research question is, the institution is a bit you know, I don't know how much we can change the institutional in one country. So and as you can see it's very hot. Right? Okay, going back to the intro, the introduction of the instrumental variable, yeah. So the motivation of having instrumental variable is that there there are exogenous condition to make it. Okay? This is the old motivate this is motivation to or empirical analysis that try to identify causal effect. difference in difference, RCT instrumental variable or motivated by this is exogenous condition is hard to satisfy. Okay? So once the the condition on characteristic the expected value is not zero, that means there's some selection bias. Okay? or RCT variable is new that cannot be measured. If we ever have that uh that difficulty, then even though we see the correlation between X and Y, it doesn't imply causality. Right? That is a old motivation. So instrumental variable is uh is one way to establish causal relationship by through this logic. So, when do we have this And then that's and where it is that beta. So here, but we have this front X here. This is from me. No one has uh un bias the estimator. The expected value of If changes Y, it has to only through its impact on X. That is exclusion restriction. Okay? So that means that correlation of Z and instrumental variable and the error term should be zero. Zero. And then it means that Z affects Y only through X. And that is the assumption we discussed. is the multity. Okay. So Um, um, okay. Um, okay. this impact. So um, okay, this is okay. We cannot have a direct impact on GDP. But for the years, but that is exclusion. restriction. So, you know, to be a valid instrument variable, it must satisfy those two conditions. If you write down that, you know, it equation, it's just covariance of Z, X cannot be zero, which means that they have to be correlated. Instrumental variable has to be correlated with the uh exclusion restriction. which is X. And at the same time, it cannot be correlated with the error term. In other words, instrumental variable cannot affect Y directly. So those are two conditions. I only run instrumental variable based on this equation, but I was not aware that I didn't appreciate that clearly what it means. The that's what it means. Uh in an example. Okay. So instrumental variable Z affects X. So if we change Z, it affects X. a little bit, right? So to the extent how it is correlated with X, and then we will affect Y if X changes. Y. Oh, that is a very good thought experiment to clarify. Uh it's on the same thing. Okay. Okay. Okay. productivity is like instrumental variable that shifts the quality of institution. Okay, we live in a world that there's no causal effect of institution on GDP. This but So, the model here essentially changes the quality of institution. If we don't have a causal relationship, of set quality of institution on GDP, even though we change the quality of institution, GDP should not change. change. If there was no causal relationship, of institution on GDP, even though we change the quality of institution, GDP will not change. This is a method. It will be flat. But then Now, so that the and GDP. So it will be flat. Even if this is the case, so the reason why we can say that that institutional quality has a positive effect on GDP, is because it's not flat. So, the mortality is instrument that shifts the quality of institution. And if it does not change the GDP, finally, then we would not see any variation in GDP as well. But we do. And that is evidence that institution changes GDP. Is that clear? So, this is exclusion restriction. So if So I mean that this is like the evidence of causal effect. Without causal effect, we wouldn't see any systematic correlation. So, the fact that we see negative correlation is the evidence. That institution has a positive effect. On the other hand, if we if mortality does not change the quality of institution, the course of graph will be flat. This is when the relevance fails. So, now this is and quality So, institution, then the second experiment which is not as difficult as uh the first one. It would relevance condition fails, then cannot be an instrumental variable. You cannot change X or the no correlation between the and the condition, then we cannot use that. Right? Because the whole point we want to find an instrumental variable is that we need something else that changes only X. But not Y, right? So if we fail this relevance condition, then of course the result will change to a flat graph. There's no relationship the second graph will be So, the data will be final. I always ask the same question. Like I think this is one example you may know. It's useful for you to know that. Right? So you understand? Right? Um, questions? We can ask the questions later, okay? Uh you need time to digest. So here, Okay. So like I said, we have We all understand that the effect of X on Y, that is causal effect. Then there's no omitted variable in you. But that is very difficult, right? But once we have a very instrumental variable, of course the variance of the instrumental variable and outcome variable, ty and GDP, is summation of those two. How how much mortality of effect in institution, and and how correlation is related to outcome through the correlation between institution and GDP. And this one, is you know, mechanically, this is the correlation between Z and U, instrumental variable, and residual term, that is the condition, assume that it has to be zero to be a valid instrumental variable. And this one is just a mechanic. So from this equation, we calculate the covariance of the Z and Y and Y is covariance of the Z and Y is this entire thing. Right? And mechanically, let's mathematically, we see that this is a covariance of Z. It's R. Plus covariance of Z and U, right? That's just we just like algebra or mathematically, relationship. And then this is the condition, condition. So, it's not this exclusion restriction. So it's exclusion restriction. calls this time becomes zero. So, the beta which is our interest, can be calculated by how divide the covariance with E and Y by covariance of X and X. So So our instrumental variable captures the ratio of the covariance between Z and Y and Z and X. And graphically, it's intuitive. So we want to understand how much treatment X affects Y. And then there's so many concerns regarding this condition. So instead of all, we look at the correlation and find some instrument. And then this instrument change the X by this much. Okay? And then we see how this instrument change the Y. And then this is how it changes. Why? And because Z is not a direct cause to Y, this is So can capture how much X changes Y. So that's what this equation says. So Z change X first, right? by this much. And Z change Y, as well. And then that is this much. And it's easy enough to apply, it's impactful and it's direct. So all the change that is explained in the why can be attributed to impact on So we divide the various the why by categories of X to recover the causal effect of X and X on Okay. So we call this as opposed to state, which we check how much our is the variable shifted X to quality. And then the second stage is that we check how much the mortality change GDP but that is how much Z changes Y. You know, to recover beta, we have to divide delta Y by delta X. Okay. Okay. Uh, but another famous example is instrumental variable. And this is the regarding the returns to schooling. So many times that returns to schooling is hard to as estimate the causal effect, right? Because there are just some omitted variable bias. And this paper is really widely discussed the paper methodological how they use instrumental variable to estimate the returns to schooling. And the idea is that policy uh generates some exogenous variations in terms of how long students stay in school. And then I will uh discuss this example again next next next week, but just because we have a bit of time, The idea is that in the US, kids enter the school on January 4th or January uh on the year when they turn six. So they are born in December when they enter the school, they are almost five. You know, the cutoff. is based on the timing of the year, whereas they actual age can be can have variations. Those who are born near January, they are schooling, the years of the schooling is shorter. Then those who are born in December. But they are born in December, they enter the school earlier when they are younger. Okay, so they are finishing age is the same. Then uh those who are born in January has a shorter schooling. But this is not you know, the another piece that can create the meaningful variation is that another policy requires that individual can drop out of school until age 16. Okay. So um Yeah, age 16. Then drop the school when they turn age 16. But there entry uh when they can enter the school was not depend on their birthday. or it depends on the calendar year. So it creates a size variations. Um how much did you know, how many years they have to stay in school? before they reach the the legal uh drop out age. Okay? So this is the pattern actually. And If what what this pattern says is that, okay, there are policy, but not every policy can can can generate this meaningful variation. So the evidence open fails to hope. But in this case, it it holds clearly. That means that this policy create the the variation in years of schooling. by the birth months. So here 1234 is the birth quarter. Those who are born in the first quarter, second quarter, third quarter and fourth quarter. Those who are born in the later in the year they have a longer schooling. because of the policy. So they have to enter when they are younger. So so they they have to stay longer period until they reach the legal drop out age. Okay? And then we see clear postage. The years of schooling conditional on their age, year of birth. Those who are born in later quarter, as a rule, school. So here the birth quarter because the instrumental variable is affects how many years they stay in the school. And then then the exclusion restriction is kind of reasonable. Because the birth month, this is not a political decision. Right? It's very unlikely that birth quarter has a direct impact on wage. So exclusion restriction also holds. And then the stage is very clear. The use of quarter, fourth quarter as a instrumental variable and stay, the policy stage is how how how much they quarter create variation in schooling. And the second stage is how the wage rate also changes by birth quarter. So then the second stage and the reason why the wage changes by birth quarter, the only possible reason is that birth quarter affects schooling. Okay? So they apply that and then this is the clear learning as you can see. Those who are born in the first quarter actually earn higher wage. And it's unlikely that birth quarter has a direct impact. on the productivity. The only plausible channel through which birth also affects outcome like a wage is through schooling. the years of schooling driven by this. So this is like this is a variable and then they found that yeah, the causal effect of schooling, years of schooling on wage rate is substantial. Mr. time. Yeah. Okay. And actually here here is a very good example. So this is a first stage. How the birth quarter like they estimate how the So the average weekly wage those born in the first quarter and the rest. And then there is some difference in the years of schooling. Very tiny. But still it's statistically significant. So those who were born in the later in the year, they have slightly higher years of level of years of schooling. And uh this is no, this is the wage rate. And the years of schooling as well. So these are second stage. This is the first stage. the that estimate is the IV ratio between how much quarter birth quarter between one versus the rest. create the changes in the wage rate that is this much. here. We divide by how quarter explains differences in the schooling. Here. So if you find the second stage by first stage, and it says that additional years of schooling increase the wage rate by 10%. We usually don't weigh it. We because it tells us percentage change. percentage change. So this means that one year increase weight about 10% higher which which is really really big. So the other day I was and I was going to get on and it's a substantial as someone who is All right, so that's I agree. And the rule will help to the next",
+   "ko": "그래서, 제가 여러분께 말씀드릴 건, 그게 어떻게 쌓였는지에 대한 것뿐이에요. 기관들이, 예를 들어 X 같은 것들이죠. 그리고 이건 예시인데, 예를 들어 솔직히 말해서, 제가 학부생이었을 때, 저는 몰랐어요. 이런 종류의 예시에 대해서, 제가 배웠을 때 변수에 대해 얘기하면서, Z 는 뭐와 상관관계가 있지만, 그건 뭐와 상관관계가 없어요. 그리고 저에게 어떤 맥락도 제공하지 않아서 제가 그 변수의 성격을 완전히 이해할 수 없었어요. 그리고 제가 이 예시를 배웠을 때, 음, 갔었어요. 어, 미국에 유학 갔을 때요. 그리고 나서 교수님이 말씀하셨어요. 예시를 들어주셨는데, 학부생들을 위한 거였어요. 그리고 제 생각엔 제가 음, 그걸 만들고 있었는데, 만약 제가 언젠가 교수가 된다면, 이 예시를 소개하고 싶어요, 왜냐하면 이게 정말 좋은 예시라서 여러분이 많은 것을 이해할 수 있거든요. 그렇죠? 그리고 이건 아주 좋은 예시예요. 그리고 나서 제가 발견한 건, 이게 마치 영화를 받은 것 같다는 거였어요. 그래서 그게 다예요. 알겠죠? 그리고 이건 좋은 예시예요. 그리고 그래서 그게 제가 어, 그 첫 번째는 정말 중요한 게 그걸 통과하는 거예요. 그 기관에 더 가까운 것, 혹은 경제적 결과죠. 그리고 이건 쉬워요. 사람들에게 무시하기 쉬운 거죠. 기관의 질을 중요한 요인으로 생각하지 않는 거죠. 왜냐하면 그들은 그걸 보니까요. 네, 부유한 나라들은 이미 좋은 제도를 가지고 있으니까, 그들은 더 나은 제도를 조언하고, 그래서 정책이 그것을 설명하지 않아요. 그건 우리가 증명할 수 없는 거예요. 왜냐하면 기관은 그리고 우리는 그것을 중요하게 생각하지 않아요. 예를 들어 재산권 같은 것들이죠. 그리고 등등이죠. 하지만 이 문제와 경험적으로 그게 중요했어요. 그리고 그들의 분석에 따르면, 이것은 기관의 질이 본질적으로 거의 모든 것을 설명합니다. 국가 간의 차이를요. 알겠죠? 그래서 이전에는, 사람들이 어떤 추측을 했었는데, 그게 국가의 위치가 중요하다는 것이었어요. 예를 들어, 여러분이 위치를 보면, 라틴 아메리카는 적도에 더 가깝죠. 그리고 사람들은 따뜻한 날씨가 좋지 않다는 것을 알고 있어요. 경제적 번영에 말이죠. 일리가 있는 말이에요, 왜냐하면 상관관계가 있으니까요. 하지만 우리가 이 기관의 질을 통제하면, 정착 사망률을 통해, 그 상관관계는 사라집니다. 그래서 정말 기관의 질이 중요한 것이지, 지리적 위치가 중요한 게 아니에요. 알겠죠? 그래서 또 다른 공헌은 그것이 실제로 음, 제거했다는 것입니다. 다른 모든 설명을요. 그래서 사람들은 금융 시장의 위치가 인구에 영향을 미친다는 등의 추측을 했었는데, 하지만 우리가 기관의 질을 통제하면, 이것은 가장 중요한 요인 중 하나로 설명됩니다. 현재의 GDP를요. 그리고 이것은 큰 어, 연구 질문은 이것입니다. 제도는 약간 아시다시피, 얼마나 우리가 바꿀 수 있는지 모르겠지만, 한 나라의 제도를 그래서 그리고 보시다시피 매우 뜨겁습니다. 그렇죠? 자, 다시 돌아가서 소개로 돌아가서, 도구적 변수의 도입은, 네. 그래서 동기는 도구적 변수를 갖는 것은 이것입니다. 거기에 외생적인 조건이 있다는 것입니다. 알겠죠? 이것이 오래된 동기 부여입니다. 이것은 동기 부여입니다. 또는 실증적 분석은 식별하려고 노력하는 것입니다. 인과 효과를요. 차이의 차이, 즉 RCT는 도구적 변수 또는 동기 부여된 이것에 의해 이것은 외생적인 조건이 어렵다는 것입니다. 만족하기가. 알겠죠? 그래서 일단 그 조건이 관찰된 특성에 대한 기대값은 0이 아니므로, 이는 어떤 선택 편향이 있다는 뜻입니다. 알겠죠? 또는 RCT 변수 는 새로운 것이라 측정할 수 없습니다. 만약 우리가 그런 것을 가지고 있다면, 그 어려움이 있다면, 비록 우리가 상관관계를 보더라도 X와 Y 사이의, 그것은 인과 관계를 의미하지 않습니다. 그렇죠? 그것은 오래된 동기 부여입니다. 그래서 도구적 변수는 어, 이것을 확립하는 한 가지 방법입니다. 인과 관계를 통해 이 논리를 통해서요. 그래서, 언제 이런 그리고 나서 그게 어디냐면 바로 그 베타예요. 그래서 여기, 하지만 우리에겐 이 앞쪽 X가 있어요. 이건 제 거예요. 아무도 어, 언 바이어스된 추정치예요. 이것의 기댓값은 Y가 아니라. 만약 Y가 변한다면, 그것은 오직 그것의 X에 대한 영향력을 통해서만이어야 합니다. 그것이 배제 제한입니다. 알겠죠? 그래서 그것은 상관관계가 Z와 도구 변수 사이의 상관관계가 오차항과 0이어야 한다는 것입니다. 0. 그리고 그것은 Z가 Y에 영향을 미치지 않고 오직 X를 통해서만 영향을 미친다는 것을 의미합니다. 그리고 그것이 우리가 논의한 가정입니다. 다중성입니다. 알겠습니다. 그래서 음, 음, 알겠습니다. 음, 알겠습니다. 이 영향. 그래서 음, 알겠습니다, 이건 괜찮아요. 우리는 직접적인 영향을 미칠 수 없습니다. 하지만 몇 년 동안은, 하지만 그것은 배제입니다. 배제. 그래서, 아시다시피, 유효한 도구 변수가 되려면, 그 두 가지 조건을 충족해야 합니다. 만약 그걸 적어두면, 아시다시피, 그 방정식은 그냥 공분산입니다. Z와 X의 공분산은 0이 될 수 없으며, 이는 그들이 상관관계가 있어야 한다는 것을 의미합니다. 도구 변수는 X와 상관관계가 있어야 합니다. 어, 배제 제한은 유효한 도구 변수이며, 그것은 X입니다. 그리고 동시에 그것은 오차항과 상관관계가 없어야 합니다. 다시 말해, 도구 변수는 Y에 영향을 미칠 수 없습니다. 직접적으로. 그래서 그것들은 두 가지 조건입니다. 저는 도구 변수만 이 방정식에 기반하여 실행하지만, 저는 그것이 아니라는 것을 몰랐습니다. 그것이 무엇을 의미하는지 명확하게 알지 못했습니다. 그것이 의미하는 것입니다. 어, 예시에서. 알겠습니다. 그래서 도구 변수 Z는 X에 영향을 미칩니다. 그래서 우리가 Z를 바꾸면, 그것이 X에 영향을 미치죠, 그렇죠? 그래서 그것이 어떻게 X와 상관관계가 있는지에 따라, 그리고 나서 우리는 Y에 영향을 미칠 것입니다. 만약 X가 변한다면. 오, 그건 아주 좋은 사고 실험입니다. 명확히 하기 위해. 어, 그건 같은 것입니다. 알겠습니다. 알겠습니다. 알겠습니다. 생산성은 마치 도구 변수와 같아서 이동합니다. 제도의 품질을요. 알겠습니다, 우리는 세상에 살고 있고, 제도적 요인이 GDP에 인과적 영향을 미치지 않습니다. 이것은 하지만 그래서 이 모델은 본질적으로 제도의 품질을 바꿉니다. 만약 우리가 인과적 관계가 없다면, 설정된 제도의 품질이 GDP에 미치지 않더라도, 우리가 제도의 품질을 바꾸면, GDP는 변하지 않아야 합니다. 변하지 않아요. 만약 인과적 관계가 없다면, 제도의 품질이 GDP에 미치지 않더라도, 우리가 제도의 품질을 바꾸면, GDP는 변하지 않을 것입니다. 이것은 방법입니다. 평평할 것입니다. 하지만 자, 그래서 그 그리고 GDP. 그래서 평평할 것입니다. 이것이 사실이라도, 그래서 그 우리가 이것을 말할 수 있는 이유는 제도적 품질이 GDP에 긍정적인 영향을 미치기 때문에, 그것이 평평하지 않기 때문입니다. 그래서, 사망률은 도구이며, 제도의 품질을 바꿉니다. 그리고 만약 그것이 변하지 않는다면, 결국, 우리는 어떤 변화도 볼 수 없을 것입니다. 하지만 우리는 봅니다. 그리고 그것은 증거입니다. 제도가 GDP를 바꾼다는 것을요. 이해가 되시나요? 그래서, 이것은 배제 제한입니다. 그래서 만약 그래서 제 말은 이것이 증거와 같다는 것입니다. 인과적 효과의. 인과적 효과가 없다면, 우리는 어떤 변화도 볼 수 없을 것입니다. 그래서, 우리가 음의 상관관계를 본다는 것은 증거입니다. 그것은 제도가 긍정적인 영향을 미친다는 것입니다. 반면에, 만약 우리가 만약 사망률이 제도의 품질을 바꾸지 않는다면, 그래프는 평평할 것입니다. 이것은 언제냐면 관련성이 실패할 때입니다. 그래서, 이제 이것은 제도의 품질과 품질입니다. 그래서, 제도, 그러면 두 번째 실험인 그렇지 않은 것은 그렇게 어렵지 않습니다. 첫 번째 것만큼요. 관련성이 실패하면, 그러면 도구 변수가 될 수 없습니다. X를 바꿀 수 없거나 상관관계가 없는 경우, 그리고 조건이, 그러면 우리는 그것을 사용할 수 없습니다. 그렇죠? 왜냐하면 우리가 찾고 싶은 도구 변수는 우리가 X만 바꾸는 다른 것이 필요하기 때문입니다. 하지만 Y는 아니죠? 그래서 만약 이 관련성 조건에 실패하면, 그러면 당연히 결과는 바뀔 것입니다. 평평한 그래프로요. 상관관계가 없으니까요. 두 번째 그래프는 그래서, 데이터가 이렇게 될 것입니다. 저는 항상 같은 질문을 합니다. 제 생각에 이건 여러분이 아실 만한 예시입니다. 여러분에게 유용한 정보입니다. 그렇죠? 그래서 이해하셨나요? 그렇죠? 음, 질문 있으신가요? 질문은 나중에 할 수 있어요, 알겠죠? 어, 소화할 시간이 필요해요. 그래서 여기, 네. 그래서 제가 말했듯이, 우리는 우리 모두는 X의 효과가 Y에 미친다는 것을 이해합니다. 그것이 인과 효과입니다. 그러면 누락된 변수가 없다는 뜻입니다. 하지만 그것은 매우 어렵죠, 그렇죠? 하지만 일단 우리가 매우 도구적인 변수가 있다면, 당연히 도구 변수의 분산과 결과 변수의 분산은 그리고 GDP는 그것들의 합입니다. 얼마나 많은 사망률이 영향을 미치는지 제도에서, 그리고 그리고 얼마나 상관관계가 관련이 있는지 결과 변수와 그 상관관계를 통해 제도와 GDP 사이의 그리고 이것은, 있잖아요, 기계적으로, 이것은 Z와 U 사이의 상관관계, 도구 변수, 그리고 잔차 항, 즉 그것이 조건입니다, 가정하건대 그것은 0이어야 합니다. 유효한 도구 변수가 되려면요. 그리고 이것은 그냥 기계적인 것입니다. 그래서 이 방정식에서, 우리는 Z와 Y의 공분산을 계산하고, Y는 Z의 공분산입니다. 그리고 Y는 이 전체입니다. 그렇죠? 그리고 기계적으로, 수학적으로, 우리는 이것이 공분산이라는 것을 알 수 있습니다. Z의. R입니다. 플러스 공분산 Z와 U의, 그렇죠? 그건 그냥 우리가 그냥 대수학처럼 또는 수학적으로, 관계입니다. 그리고 이것은 조건입니다, 조건. 그래서, 이 배제 제한이 아닙니다. 그래서 배제는 제한입니다. 부릅니다 이번에는 0이 됩니다. 그래서, 베타는 어떤 우리의 관심사인 것은, 계산될 수 있습니다 어떻게 나누는지에 따라 공분산을 나누는 것으로 E와 Y의 공분산을 나누는 것으로 X와 X의 공분산으로. 그래서 우리의 도구 변수 는 포착합니다 그 비율을 공분산의 Z와 Y의 공분산과 Z와 X의 공분산의. 그리고 그래프로 보면 직관적입니다. 그래서 우리는 치료 X가 Y에 얼마나 영향을 미치는지 이해하고 싶습니다. 그리고 이 조건에 대한 많은 우려가 있습니다. 그래서 전체 대신, 상관관계를 살펴보고 도구를 찾습니다. 그리고 이 도구는 X를 변화시키고 이만큼 변화시킵니다. 알겠죠? 그리고 그 다음에는 이 도구가 Y를 어떻게 변화시키는지 봅니다. 그리고 이것이 어떻게 변하는지입니다. 그리고 왜냐하면 Z는 Y에 직접적인 원인이 아니기 때문에, 이것은 입니다. 그래서 얼마나 X가 Y를 변화시키는지 포착할 수 있습니다. 그래서 이 방정식이 말하는 것입니다. 그래서 Z가 먼저 X를 변화시키고, 이만큼이죠. 그리고 Z가 Y를 변화시키고, 또한. 그리고 그게 이만큼입니다. 그리고 그건 적용하기 쉽고, 영향력이 있으며 직접적입니다. 그래서 모든 변화는 설명할 수 있고, 그 이유는 이것에 기인할 수 있습니다. 그래서 우리는 다양한 이유를 카테고리별로 나누어 복구합니다. 그 인과 효과를 그리고 X 에 대해 네. 그래서 우리는 이것을 상태와 대조적으로 부르는데, 이는 우리의 변수가 얼마나 이동했는지 확인하는 것입니다. X가 품질에 미치는 영향입니다. 그리고 두 번째 단계는 우리가 확인하는 것입니다. 얼마나 사망률이 변했는지 GDP에 대해, 하지만 그것은 얼마나 Z가 Y를 변화시키는지입니다. 아시다시피, 베타를 복구하기 위해 우리는 델타 Y를 델타 X로 나눕니다. 네. 네. 어, 하지만 다른 유명한 예로 도구 변수가 있습니다. 그리고 이것은 관련하여 교육 수익에 대한 것입니다. 그래서 교육 수익은 측정하기 어렵습니다. 인과 관계를 추정하기 어렵죠, 그렇죠? 왜냐하면 누락된 변수 편향이 있기 때문입니다. 그리고 이 논문은 정말 널리 논의된 논문의 방법론적 측면에서 어떻게 도구 변수를 사용하여 추정하는지 교육 수익을 추정하는지입니다. 그리고 그 아이디어는 정책이 어 생성한다는 것입니다. 외생적인 변화가 얼마나 오랫동안 학생들이 학교에 머무는지에 대한 것입니다. 그리고 그런 다음 저는 어 이 예에 대해 다음 시간에 다시 논의하겠습니다. 하지만 그냥 시간이 좀 남아서 말씀드리는 거예요. 그 아이디어는 미국에서 아이들이 학교에 입학하는 시기가 1월 1일이라는 것입니다. 1월 4일이나 그 해의 그들이 6살이 되는 해에. 그래서 그들은 12월에 태어나면 학교에 입학할 수 있고, 그들은 거의 5살 반입니다. 아시다시피, 그 기준일이죠. 그것은 그 해의 시기에 기반을 두고 있으며, 반면에 그들의 실제 나이는 다를 수 있습니다. 그래서 12월에 태어난 사람들은 1월에 가까운 사람들은 학교에 다니고, 학교에 다니는 기간은 더 짧습니다. 반면에 12월에 태어난 사람들은 하지만 그들은 12월에 태어났기 때문에 학교에 더 일찍 입학하고, 더 어릴 때입니다. 네, 그래서 그들은 학교를 마칠 때 나이가 같습니다. 그러면 어, 1월에 태어난 사람들은 더 짧은 학교 기간을 가집니다. 하지만 이것은 아시다시피, 또 다른 부분은 이것이 의미 있는 변화를 만들어낼 수 있다는 것입니다. 또 다른 정책은 요구합니다. 개인이 학교를 그만둘 수 있는 나이가 16세까지라는 것입니다. 네. 그래서 음 네, 16세. 그러면 그만둘 수 있는 나이가 되면 학교를 그만둘 수 있어요. 하지만 거기에는 입학 언제 입학할 수 있는지에 대한 것은 그들의 생일에 달려 있지 않거나 카테고리에 따라 달라집니다. 그래서 크기 차이가 발생합니다. 음, 얼마나 몇 년을 더 학교에 다녀야 하나요? 졸업하기 전에요. 법적 자퇴 나이까지요. 알겠죠? 그래서 이 패턴이 실제로 그렇습니다. 그리고 만약 뭐가 이 패턴이 말하는 것은, 그래요, 정책이 있지만, 모든 정책이 다 할 수 있는 것은 아니라는 것입니다. 이것이 의미 있는 변화를 만들어냅니다. 그래서 증거는 희망을 주지 못합니다. 하지만 이 경우, 그것은 분명히 유지됩니다. 즉, 이 정책이 그 변화를 만들어낸다는 것입니다. 그것은 출생 월에 따라 달라집니다. 그래서 여기 1234는 출생 분기입니다. 태어난 사람들은 첫 번째 분기, 두 번째 분기, 세 번째 분기, 그리고 네 번째 분기에 태어난 사람들은 나중에 그 해에 더 오래 학교에 다녀야 합니다. 정책 때문에요. 그래서 그들은 어릴 때 입학해야 합니다. 그래서 그들은 더 오래 학교에 다녀야 합니다. 그들이 법적 자퇴 나이에 도달할 때까지요. 알겠죠? 그리고 우리는 분명한 우편 요금을 봅니다. 학교에 다니는 기간은 조건부 그들의 나이, 출생 연도에 따라. 태어난 사람들은 나중에 분기에 태어난 사람들은 원칙적으로 학교에 다닙니다. 그래서 여기 출생 분기는 왜냐하면 도구 변수가 어쨌든 영향을 미치기 때문에 몇 년을 더 학교에 다녀야 하는지에 대해. 그리고 그 다음에는 배제 제한이 어느 정도 합리적입니다. 왜냐하면 출생 월이, 이것은 정치적인 것이 아닙니다. 그렇죠? 그것은 매우 그럴 가능성이 낮습니다. 출생 분기가 직접적인 영향을 미치지 않습니다. 그래서 배제 제한도 유효합니다. 그리고 단계는 매우 분명합니다. 분기의 사용, 네 번째 분기를 도구 변수로 사용하고 체류하는 것, 정책 단계는 얼마나 그들이 분기별로 학교 교육의 변화를 만들어내는지입니다. 그리고 두 번째 단계는 임금률이 어떻게 변하는지입니다. 출생 분기에 따라. 그래서 두 번째 단계는 그리고 그 이유가 임금이 출생 분기에 따라 변하는 이유, 유일하게 가능한 이유는 출생 분기가 영향을 미친다는 것입니다. 학교 교육에. 알겠죠? 그래서 그들은 그것을 적용하고 이것이 바로 여러분이 보시는 분명한 학습입니다. 태어난 사람들은 첫 번째 분기에 실제로 더 높은 임금을 받습니다. 그리고 그것은 그럴 가능성이 낮습니다. 출생 분기가 직접적인 영향을 미치지는 않습니다. 유일한 그럴듯한 경로는 출생이 또한 영향을 미치는 것입니다. 결과와 같은 임금은 학교 교육을 통해서입니다. 학교에 다닌 기간은 이것에 의해 결정됩니다. 그래서 이것은 마치 이것이 변수이고 그들이 발견한 것은 네, 인과 관계가 학교 교육, 즉 학교에 다닌 기간이 임금에 미치는 영향은 상당하다는 것입니다. 미스터 시간입니다. 네. 알겠습니다. 그리고 사실 여기 아주 좋은 예가 있습니다. 그래서 이것은 첫 번째 단계입니다. 어떻게 출생 분기가 그들이 추정하는지 어떻게 그래서 평균 주간 임금은 그들이 첫 번째 분기에 태어난 사람들은 그리고 나머지는. 그리고 약간의 차이가 있습니다. 학교 교육 기간에. 아주 미미합니다. 하지만 여전히 통계적으로 유의미합니다. 그래서 첫 번째 분기에 태어난 사람들은 나중에 그 해에, 그들은 약간 더 높은 학교 교육 기간을 가지고 있습니다. 그리고 그리고 어, 이것은 아니요, 이것은 임금 수준입니다. 그리고 학교 교육 기간도 마찬가지입니다. 그래서 이것들은 두 번째 단계입니다. 이것은 첫 번째 단계입니다. 그게 추정치입니다. IV 비율은 얼마나 많은 분기가 출생 분기가 얼마나 1대 나머지인지. 만들어냅니다. 임금의 변화를 그리고 이것이 이만큼입니다. 여기에서. 우리는 얼마나 분기가 차이를 설명하는지 학교 교육에서. 여기에서. 그래서 만약 당신이 두 번째 단계를 첫 번째 단계로 나누고, 그리고 그것이 추가적인 학교 교육 기간이 임금을 증가시킨다는 것을 의미합니다. 저희는 보통 무게를 재지 않아요. 왜냐하면 그게 우리에게 변화율을 알려주거든요. 변화율. 그래서 이건 무슨 뜻이냐면 하나가 1년 동안 증가한 무게가 약 10% 더 높다는 뜻이에요. 이건 정말 정말 큰 거예요. 그래서 얼마 전에 제가 타려고 했는데 그게 꽤 상당한 거라서 제가 알겠습니다, 그래서 그건 동의해요. 그리고 그 규칙은 도움이 될 거예요. 다음",
+   "pdf": "Core_note_iv_2026.pdf",
+   "pdfPage": 8,
+   "slideText": "Core Notes on IV Introductory Econometrics Figure 5: Left, first stage: protection against expropriation against log settler mortality. Right, reduced form: log GDP per capita against log settler mortality. The IV estimate is the ratio of the two slopes. Source: Acemoglu, Johnson and Robinson (2001). Reading the figures. The left panel is the first stage: Australia, New Zealand, the United States and Canada sit top-left (low mortality, strong institutions), Mali and Nigeria bottom-right. The right panel is the reduced form, with the same ordering in income. Neither panel alone is the causal effect of institutions; their ratio is. Note that the first figure alone cannot be read causally — it is the correlation the whole exercise is designed to decompose. 4.3 Is the exclusion restriction credible? The instrument is relevant; the debate is about exclusion. Settler mortality reflects the disease environment, and disease may affect income today directly — through health and productivity — not only through institutions. AJR respond by controlling for current malaria, latitude and continent dummies. Others question the mortality data themselves (Albouy 2012): with revised data the first stage weakens. The case shows that a strong first stage does not settle validity: relevance is a statistical question, exclusion an economic one. Why persistence? Colonial-era elites kept de facto power after independence; legal origins shaped property rights and regulation; inclusive institutions en",
+   "liveNotes": {
+    "notes": [
+     "**배제제약**(exclusion restriction): Z가 Y에 영향을 준다면 오직 X를 통해서만 → Cov(Z,u) = 0",
+     "▶ 정착자 사망률 사례: 질병 환경이 건강·생산성을 통해 소득에 직접 영향 가능 → 배제제약이 쟁점",
+     "▶ **관련성**(relevance)은 통계적 문제, 배제제약은 경제적 문제 (강한 첫 단계 ≠ 타당성)",
+     "▶ 사고실험: 제도→GDP 인과효과가 0인 세계를 상정해 모형 점검",
+     "▶ 그림의 패턴(첫 단계·축소형)을 **인과효과의 증거**(evidence of causal effect)로 설명 — 사망률→제도, 제도→GDP 상관관계를 거쳐 결과와 연결",
+     "▶ 누락변수(omitted variable)가 없다면 OLS로 인과효과 식별 가능하나 현실적으로 매우 어려움 → 좋은 **도구변수**(IV)가 대안"
+    ],
+    "summary": "배제제약의 타당성과 첫 단계·축소형",
+    "exam": [],
+    "board": [
+     "Cov(Z,u) = 0"
+    ],
+    "at": 1793759573781
+   },
+   "marks": [],
+   "lines": {
+    "w": 612,
+    "h": 792,
+    "lines": [
+     {
+      "i": 0,
+      "text": "Core Notes on IV Introductory Econometrics",
+      "x": 72,
+      "y": 34.111899999999956,
+      "w": 467.99493544999996,
+      "h": 12.545465
+     },
+     {
+      "i": 1,
+      "text": "Figure 5: Left, first stage: protection against expropriation against log settler mortality. Right, reduced",
+      "x": 71.99999999999994,
+      "y": 232.94839999999994,
+      "w": 467.9960039600001,
+      "h": 11.45699
+     },
+     {
+      "i": 2,
+      "text": "form: log GDP per capita against log settler mortality. The IV estimate is the ratio of the two slopes.",
+      "x": 71.99999999999994,
+      "y": 244.90339999999998,
+      "w": 468.00010881999987,
+      "h": 11.45699
+     },
+     {
+      "i": 3,
+      "text": "Source: Acemoglu, Johnson and Robinson (2001).",
+      "x": 71.99999999999994,
+      "y": 256.8594,
+      "w": 217.66089228000016,
+      "h": 11.45699
+     },
+     {
+      "i": 4,
+      "text": "Reading the figures. The left panel is the first stage: Australia, New Zealand, the United States",
+      "x": 71.99999999999994,
+      "y": 290.98089999999996,
+      "w": 468.0027493799999,
+      "h": 12.545465
+     },
+     {
+      "i": 5,
+      "text": "and Canada sit top-left (low mortality, strong institutions), Mali and Nigeria bottom-right. The",
+      "x": 71.99999999999994,
+      "y": 304.52989999999994,
+      "w": 468.00366272999946,
+      "h": 12.545465
+     },
+     {
+      "i": 6,
+      "text": "right panel is the reduced form, with the same ordering in income. Neither panel alone is the causal",
+      "x": 71.99999999999994,
+      "y": 318.07989999999995,
+      "w": 467.9992990899994,
+      "h": 12.545465
+     },
+     {
+      "i": 7,
+      "text": "effect of institutions; their ratio is. Note that the first figure alone cannot be read causally — it is",
+      "x": 71.99999999999994,
+      "y": 331.62889999999993,
+      "w": 467.99493544999956,
+      "h": 12.545465
+     },
+     {
+      "i": 8,
+      "text": "the correlation the whole exercise is designed to decompose.",
+      "x": 71.99999999999994,
+      "y": 345.1778999999999,
+      "w": 286.39878411999996,
+      "h": 12.545465
+     },
+     {
+      "i": 9,
+      "text": "4.3 Is the exclusion restriction credible?",
+      "x": 71.99999999999994,
+      "y": 379.32179999999994,
+      "w": 244.43004160000004,
+      "h": 13.748479999999999
+     },
+     {
+      "i": 10,
+      "text": "The instrument is relevant; the debate is about exclusion. Settler mortality reflects the disease",
+      "x": 71.99999999999994,
+      "y": 406.9408999999999,
+      "w": 468.0036627299998,
+      "h": 12.545465
+     },
+     {
+      "i": 11,
+      "text": "environment, and disease may affect income today directly — through health and productivity",
+      "x": 71.99999999999994,
+      "y": 420.48989999999986,
+      "w": 468.0017816800001,
+      "h": 12.545465
+     },
+     {
+      "i": 12,
+      "text": "— not only through institutions. AJR respond by controlling for current malaria, latitude and",
+      "x": 71.99999999999989,
+      "y": 434.03889999999984,
+      "w": 468.0014809099997,
+      "h": 12.545465
+     },
+     {
+      "i": 13,
+      "text": "continent dummies. Others question the mortality data themselves (Albouy 2012): with revised",
+      "x": 71.99999999999989,
+      "y": 447.5878999999998,
+      "w": 467.9971172699999,
+      "h": 12.545465
+     },
+     {
+      "i": 14,
+      "text": "data the first stage weakens. The case shows that a strong first stage does not settle validity:",
+      "x": 71.99999999999989,
+      "y": 461.1368999999998,
+      "w": 467.99602636,
+      "h": 12.545465
+     },
+     {
+      "i": 15,
+      "text": "relevance is a statistical question, exclusion an economic one.",
+      "x": 71.99999999999989,
+      "y": 474.6868999999998,
+      "w": 336.5697350200002,
+      "h": 12.545465
+     },
+     {
+      "i": 16,
+      "text": "Why persistence? Colonial-era elites kept de facto power after independence; legal origins shaped",
+      "x": 71.99999999999989,
+      "y": 494.2128999999998,
+      "w": 468.00548824999964,
+      "h": 12.545465
+     },
+     {
+      "i": 17,
+      "text": "property rights and regulation; inclusive institutions encouraged education and innovation, while",
+      "x": 71.99999999999989,
+      "y": 507.7628999999998,
+      "w": 468.0014809099995,
+      "h": 12.545465
+     },
+     {
+      "i": 18,
+      "text": "extractive ones entrenched inequality and blocked entry. The policy lesson AJR draw is that reform",
+      "x": 71.99999999999989,
+      "y": 521.3118999999998,
+      "w": 467.99602635999975,
+      "h": 12.545465
+     },
+     {
+      "i": 19,
+      "text": "must address political constraints, not only technocratic fixes, and that institutional change is slow",
+      "x": 71.99999999999989,
+      "y": 534.8608999999999,
+      "w": 468.00038999999936,
+      "h": 12.545465
+     },
+     {
+      "i": 20,
+      "text": "and path dependent.",
+      "x": 71.99999999999989,
+      "y": 548.4098999999999,
+      "w": 98.78408232000004,
+      "h": 12.545465
+     },
+     {
+      "i": 21,
+      "text": "Discussion. How credible is the exclusion restriction? Can institutional persistence also explain",
+      "x": 71.99999999999989,
+      "y": 567.9368999999998,
+      "w": 468.00551636999955,
+      "h": 12.545465
+     },
+     {
+      "i": 22,
+      "text": "income differences within countries? Do cases such as North and South Korea — one people, one",
+      "x": 71.99999999999989,
+      "y": 581.4858999999999,
+      "w": 467.99901355,
+      "h": 12.545465
+     },
+     {
+      "i": 23,
+      "text": "geography, two sets of institutions — or Botswana fit the framework?",
+      "x": 71.9999999999999,
+      "y": 595.0348999999999,
+      "w": 332.0926403799999,
+      "h": 12.545465
+     },
+     {
+      "i": 24,
+      "text": "Why IV is above OLS here. Measurement error again: “expropriation risk” is a noisy proxy for",
+      "x": 71.9999999999999,
+      "y": 614.5618999999998,
+      "w": 468.00080736999996,
+      "h": 12.545465
+     },
+     {
+      "i": 25,
+      "text": "institutions, which attenuates OLS. Reverse causality alone would bias OLS upward , so attenuation",
+      "x": 71.99999999999989,
+      "y": 628.1108999999999,
+      "w": 468.00324329,
+      "h": 12.545465
+     },
+     {
+      "i": 26,
+      "text": "must dominate.",
+      "x": 71.99999999999989,
+      "y": 641.6598999999999,
+      "w": 74.30842555999999,
+      "h": 12.545465
+     },
+     {
+      "i": 27,
+      "text": "8",
+      "x": 303.27299999999985,
+      "y": 740.9708999999999,
+      "w": 5.454549999999983,
+      "h": 12.545465
+     }
+    ]
+   },
+   "segs": [
+    {
+     "t": 1401,
+     "page": 8,
+     "en": "So, I'm going to tell you about",
+     "ko": "그래서, 제가",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1404,
+     "page": 8,
+     "en": "only",
+     "ko": "여러분께 말씀드릴",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1408,
+     "page": 8,
+     "en": "as it packed on",
+     "ko": "건, 그게 어떻게 쌓였는지에",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1412,
+     "page": 8,
+     "en": "by",
+     "ko": "대한 것뿐이에요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1421,
+     "page": 8,
+     "en": "institutions, like",
+     "ko": "기관들이,",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1431,
+     "page": 8,
+     "en": "X",
+     "ko": "예를 들어 X",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1500,
+     "page": 8,
+     "en": "or",
+     "ko": "같은 것들이죠.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1505,
+     "page": 8,
+     "en": "And this is an example",
+     "ko": "그리고 이건 예시인데,",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1508,
+     "page": 8,
+     "en": "of like to be honest, when I was undergraduate, I didn't know about this kind of examples, when I learned about variable, I said, Z is correlated with X, but that's not correlated with you. And it does not give me any context for me to fully understand the nature of this variable.",
+     "ko": "예를 들어 솔직히 말해서, 제가 학부생이었을 때, 저는 몰랐어요. 이런 종류의 예시에 대해서, 제가 배웠을 때 변수에 대해 얘기하면서, Z 는 뭐와 상관관계가 있지만, 그건 뭐와 상관관계가 없어요. 그리고 저에게 어떤 맥락도 제공하지 않아서 제가 그 변수의 성격을 완전히",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1519,
+     "page": 8,
+     "en": "And then I learned this example when I uh went to uh US to study abroad. And then the the professor gave an example for undergraduate students. And I think it was like I was uh making that if I ever become a professor, I would like to introduce this example to the students because it's such a great example for you to understand many.",
+     "ko": "이해할 수 없었어요. 그리고 제가 이 예시를 배웠을 때, 음, 갔었어요. 어, 미국에 유학 갔을 때요. 그리고 나서 교수님이 말씀하셨어요. 예시를 들어주셨는데, 학부생들을 위한 거였어요. 그리고 제 생각엔 제가 음, 그걸 만들고 있었는데, 만약 제가 언젠가 교수가 된다면, 이 예시를 소개하고 싶어요, 왜냐하면 이게 정말 좋은 예시라서 여러분이 많은 것을 이해할",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1530,
+     "page": 8,
+     "en": "Okay? And this is a very good example. And then I realized that I found that this like received the movie price for this week. So that's it. Okay. And so this is a good example. And then so that's the reason why uh the first it is really important to pass it. to show the closer to the institution or economic outcome.",
+     "ko": "수 있거든요. 그렇죠? 그리고 이건 아주 좋은 예시예요. 그리고 나서 제가 발견한 건, 이게 마치 영화를 받은 것 같다는 거였어요. 그래서 그게 다예요. 알겠죠? 그리고 이건 좋은 예시예요. 그리고 그래서 그게 제가 어, 그 첫 번째는 정말 중요한 게 그걸 통과하는 거예요. 그 기관에 더 가까운 것, 혹은 경제적 결과죠.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1551,
+     "page": 8,
+     "en": "And this is easy. for people to disregard the quality of institution as an important factor in economic prosperity because they see that, yeah, the rich people already have a good institution, so they advise better institution, so like you know, policy does not explain that much.",
+     "ko": "그리고 이건 쉬워요. 사람들에게 무시하기 쉬운 거죠. 기관의 질을 중요한 요인으로 생각하지 않는 거죠. 왜냐하면 그들은 그걸 보니까요. 네, 부유한 나라들은 이미 좋은 제도를 가지고 있으니까, 그들은 더 나은 제도를 조언하고, 그래서 정책이 그것을 설명하지 않아요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1567,
+     "page": 8,
+     "en": "That is a we cannot prove the because institution and we like the importance of like the property right and etc. But then this issue and empirically that did matter. And according to their analysis, this quality of institution explains almost entire differences in the cross country GDP.",
+     "ko": "그건 우리가 증명할 수 없는 거예요. 왜냐하면 기관은 그리고 우리는 그것을 중요하게 생각하지 않아요. 예를 들어 재산권 같은 것들이죠. 그리고 등등이죠. 하지만 이 문제와 경험적으로 그게 중요했어요. 그리고 그들의 분석에 따르면, 이것은 기관의 질이 본질적으로 거의 모든 것을 설명합니다. 국가 간의 차이를요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1585,
+     "page": 8,
+     "en": "Okay? So previously, people had some conjecture that the location of the country matters. For instance, if you look at the you know, location of Latin America is closer to the equator. And people know the warm weather is not good for economic prosperity. It makes sense because the correlation is there.",
+     "ko": "알겠죠? 그래서 이전에는, 사람들이 어떤 추측을 했었는데, 그게 국가의 위치가 중요하다는 것이었어요. 예를 들어, 여러분이 위치를 보면, 라틴 아메리카는 적도에 더 가깝죠. 그리고 사람들은 따뜻한 날씨가 좋지 않다는 것을 알고 있어요. 경제적 번영에 말이죠. 일리가 있는 말이에요, 왜냐하면",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1600,
+     "page": 8,
+     "en": "But once we control this quality of institution through the settlement mortality, that correlation disappears. So it's really the quality of institution, not the geographic location. Okay? So another contribution is it actually um eliminated all other explanations.",
+     "ko": "상관관계가 있으니까요. 하지만 우리가 이 기관의 질을 통제하면, 정착 사망률을 통해, 그 상관관계는 사라집니다. 그래서 정말 기관의 질이 중요한 것이지, 지리적 위치가 중요한 게 아니에요. 알겠죠? 그래서 또 다른 공헌은 그것이 실제로 음, 제거했다는 것입니다. 다른 모든 설명을요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1615,
+     "page": 8,
+     "en": "So people had a conjecture that the financial location population etc. But once we control the quality of institution, this is one of the most important factor that explains current GDP per capita. And this big uh research question is, the institution is a bit you know, I don't know how much we can change the institutional in one country.",
+     "ko": "그래서 사람들은 금융 시장의 위치가 인구에 영향을 미친다는 등의 추측을 했었는데, 하지만 우리가 기관의 질을 통제하면, 이것은 가장 중요한 요인 중 하나로 설명됩니다. 현재의 GDP를요. 그리고 이것은 큰 어, 연구 질문은 이것입니다. 제도는 약간 아시다시피, 얼마나 우리가 바꿀 수 있는지 모르겠지만, 한 나라의 제도를",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1635,
+     "page": 8,
+     "en": "So and as you can see it's very hot. Right? Okay, going back to the intro, the introduction of the instrumental variable, yeah. So the motivation of having instrumental variable is that there there are exogenous condition to make it. Okay? This is the old motivate this is motivation to or empirical analysis that try to identify causal effect.",
+     "ko": "그래서 그리고 보시다시피 매우 뜨겁습니다. 그렇죠? 자, 다시 돌아가서 소개로 돌아가서, 도구적 변수의 도입은, 네. 그래서 동기는 도구적 변수를 갖는 것은 이것입니다. 거기에 외생적인 조건이 있다는 것입니다. 알겠죠? 이것이 오래된 동기 부여입니다. 이것은 동기 부여입니다. 또는 실증적 분석은 식별하려고 노력하는 것입니다. 인과 효과를요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1660,
+     "page": 8,
+     "en": "difference in difference, RCT instrumental variable or motivated by this is exogenous condition is hard to satisfy. Okay?",
+     "ko": "차이의 차이, 즉 RCT는 도구적 변수 또는 동기 부여된 이것에 의해 이것은 외생적인 조건이 어렵다는 것입니다. 만족하기가. 알겠죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1677,
+     "page": 8,
+     "en": "So once",
+     "ko": "그래서 일단",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1686,
+     "page": 8,
+     "en": "the",
+     "ko": "그",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1688,
+     "page": 8,
+     "en": "the condition on characteristic the expected value is not zero,",
+     "ko": "조건이 관찰된 특성에 대한 기대값은 0이 아니므로,",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1697,
+     "page": 8,
+     "en": "that means there's some selection bias. Okay? or RCT variable is new that cannot be measured. If we",
+     "ko": "이는 어떤 선택 편향이 있다는 뜻입니다. 알겠죠? 또는 RCT 변수 는 새로운 것이라 측정할 수 없습니다. 만약",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1708,
+     "page": 8,
+     "en": "ever have that uh that difficulty,",
+     "ko": "우리가 그런 것을 가지고 있다면, 그 어려움이",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1724,
+     "page": 8,
+     "en": "then even",
+     "ko": "있다면,",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1732,
+     "page": 8,
+     "en": "though we see the correlation",
+     "ko": "비록 우리가 상관관계를",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1738,
+     "page": 8,
+     "en": "between X and Y, it doesn't",
+     "ko": "보더라도 X와 Y 사이의, 그것은",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1747,
+     "page": 8,
+     "en": "imply causality. Right?",
+     "ko": "인과 관계를 의미하지 않습니다. 그렇죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1827,
+     "page": 8,
+     "en": "That is a old motivation. So instrumental",
+     "ko": "그것은 오래된 동기 부여입니다. 그래서 도구적",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1833,
+     "page": 8,
+     "en": "variable",
+     "ko": "변수는",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1837,
+     "page": 8,
+     "en": "is uh is",
+     "ko": "어,",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1842,
+     "page": 8,
+     "en": "one way to establish",
+     "ko": "이것을 확립하는 한 가지",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1847,
+     "page": 8,
+     "en": "causal relationship by",
+     "ko": "방법입니다. 인과 관계를 통해",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1857,
+     "page": 8,
+     "en": "through this logic. So, when do we have this",
+     "ko": "이 논리를 통해서요. 그래서, 언제 이런",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 1869,
+     "page": 8,
+     "en": "And then that's and where it is that beta. So here, but we have this front X here. This is from me. No one has uh un bias the estimator. The expected value of",
+     "ko": "그리고 나서 그게 어디냐면 바로 그 베타예요. 그래서 여기, 하지만 우리에겐 이 앞쪽 X가 있어요. 이건 제 거예요. 아무도 어, 언 바이어스된 추정치예요. 이것의 기댓값은",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2090,
+     "page": 8,
+     "en": "If changes Y, it has to only through its impact on X. That is exclusion restriction. Okay? So that means that correlation of Z and instrumental variable and the error term should be zero. Zero. And then it means that Z affects Y only through X. And that is the assumption we discussed.",
+     "ko": "Y가 아니라. 만약 Y가 변한다면, 그것은 오직 그것의 X에 대한 영향력을 통해서만이어야 합니다. 그것이 배제 제한입니다. 알겠죠? 그래서 그것은 상관관계가 Z와 도구 변수 사이의 상관관계가 오차항과 0이어야 한다는 것입니다. 0. 그리고 그것은 Z가 Y에 영향을 미치지 않고 오직 X를 통해서만 영향을 미친다는 것을 의미합니다. 그리고",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2114,
+     "page": 8,
+     "en": "is the multity.",
+     "ko": "그것이 우리가 논의한 가정입니다. 다중성입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2126,
+     "page": 8,
+     "en": "Okay. So Um, um, okay.",
+     "ko": "알겠습니다. 그래서 음, 음, 알겠습니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2136,
+     "page": 8,
+     "en": "Um, okay.",
+     "ko": "음, 알겠습니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2141,
+     "page": 8,
+     "en": "this impact. So um, okay, this is okay.",
+     "ko": "이 영향. 그래서 음, 알겠습니다, 이건 괜찮아요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2149,
+     "page": 8,
+     "en": "We cannot have a direct impact on GDP. But for the years, but that is exclusion. restriction. So, you know, to be a valid instrument variable, it must satisfy those two conditions. If you write down that, you know, it equation, it's just covariance of Z, X cannot be zero, which means that they have to be correlated.",
+     "ko": "우리는 직접적인 영향을 미칠 수 없습니다. 하지만 몇 년 동안은, 하지만 그것은 배제입니다. 배제. 그래서, 아시다시피, 유효한 도구 변수가 되려면, 그 두 가지 조건을 충족해야 합니다. 만약 그걸 적어두면, 아시다시피, 그 방정식은 그냥 공분산입니다. Z와 X의 공분산은 0이 될 수 없으며, 이는 그들이 상관관계가",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2172,
+     "page": 8,
+     "en": "Instrumental variable has to be correlated with the uh exclusion restriction. which is X. And at the same time, it cannot be correlated with the error term. In other words, instrumental variable cannot affect Y directly. So those are two conditions. I only run instrumental variable based on this equation, but I was not aware that I didn't appreciate that clearly what it means.",
+     "ko": "있어야 한다는 것을 의미합니다. 도구 변수는 X와 상관관계가 있어야 합니다. 어, 배제 제한은 유효한 도구 변수이며, 그것은 X입니다. 그리고 동시에 그것은 오차항과 상관관계가 없어야 합니다. 다시 말해, 도구 변수는 Y에 영향을 미칠 수 없습니다. 직접적으로. 그래서 그것들은 두 가지 조건입니다. 저는 도구 변수만 이 방정식에 기반하여 실행하지만, 저는 그것이 아니라는 것을 몰랐습니다. 그것이 무엇을 의미하는지 명확하게",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2202,
+     "page": 8,
+     "en": "The that's what it means. Uh in an example. Okay. So instrumental variable Z",
+     "ko": "알지 못했습니다. 그것이 의미하는 것입니다. 어, 예시에서. 알겠습니다. 그래서 도구 변수 Z는",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2214,
+     "page": 8,
+     "en": "affects X. So if we change Z, it affects X. a little bit, right? So to the extent how it is correlated with X, and then we will affect Y if X changes. Y.",
+     "ko": "X에 영향을 미칩니다. 그래서 우리가 Z를 바꾸면, 그것이 X에 영향을 미치죠, 그렇죠? 그래서 그것이 어떻게 X와 상관관계가 있는지에 따라, 그리고 나서 우리는 Y에 영향을 미칠 것입니다. 만약 X가 변한다면.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2236,
+     "page": 8,
+     "en": "Oh, that is a very good thought experiment to clarify. Uh it's on the same thing. Okay. Okay.",
+     "ko": "오, 그건 아주 좋은 사고 실험입니다. 명확히 하기 위해. 어, 그건 같은 것입니다. 알겠습니다. 알겠습니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2248,
+     "page": 8,
+     "en": "Okay.",
+     "ko": "알겠습니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2396,
+     "page": 8,
+     "en": "productivity is like instrumental variable that shifts the quality of institution. Okay, we live in a world that there's no causal effect of institution on GDP. This but So, the model here essentially changes the quality of institution. If we don't have a causal relationship, of set quality of institution on GDP, even though we change the quality of institution, GDP should not change.",
+     "ko": "생산성은 마치 도구 변수와 같아서 이동합니다. 제도의 품질을요. 알겠습니다, 우리는 세상에 살고 있고, 제도적 요인이 GDP에 인과적 영향을 미치지 않습니다. 이것은 하지만 그래서 이 모델은 본질적으로 제도의 품질을 바꿉니다. 만약 우리가 인과적 관계가 없다면, 설정된 제도의 품질이 GDP에 미치지 않더라도, 우리가 제도의 품질을 바꾸면, GDP는 변하지 않아야 합니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2429,
+     "page": 8,
+     "en": "change. If there was no causal relationship, of institution on GDP, even though we change the quality of institution, GDP will not change. This is a method. It will be flat.",
+     "ko": "변하지 않아요. 만약 인과적 관계가 없다면, 제도의 품질이 GDP에 미치지 않더라도, 우리가 제도의 품질을 바꾸면, GDP는 변하지 않을 것입니다. 이것은 방법입니다. 평평할 것입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2447,
+     "page": 8,
+     "en": "But then",
+     "ko": "하지만",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2451,
+     "page": 8,
+     "en": "Now, so that the and GDP. So it will be flat. Even if this is the case, so the reason why we can say that that institutional quality has a positive effect on GDP, is because it's not flat. So, the mortality is instrument that shifts the quality of institution. And if it does not change the GDP, finally, then we would not see any variation in GDP as well.",
+     "ko": "자, 그래서 그 그리고 GDP. 그래서 평평할 것입니다. 이것이 사실이라도, 그래서 그 우리가 이것을 말할 수 있는 이유는 제도적 품질이 GDP에 긍정적인 영향을 미치기 때문에, 그것이 평평하지 않기 때문입니다. 그래서, 사망률은 도구이며, 제도의 품질을 바꿉니다. 그리고 만약 그것이 변하지 않는다면, 결국, 우리는 어떤 변화도 볼 수 없을 것입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2483,
+     "page": 8,
+     "en": "But we do. And that is evidence that institution changes GDP. Is that clear? So, this is exclusion restriction. So if",
+     "ko": "하지만 우리는 봅니다. 그리고 그것은 증거입니다. 제도가 GDP를 바꾼다는 것을요. 이해가 되시나요? 그래서, 이것은 배제 제한입니다. 그래서 만약",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2497,
+     "page": 8,
+     "en": "So I mean that this is like the evidence of causal effect. Without causal effect, we wouldn't see any systematic correlation. So, the fact that we see negative correlation is the evidence. That institution has a positive effect. On the other hand, if we if mortality does not change the quality of institution, the course of graph will be flat.",
+     "ko": "그래서 제 말은 이것이 증거와 같다는 것입니다. 인과적 효과의. 인과적 효과가 없다면, 우리는 어떤 변화도 볼 수 없을 것입니다. 그래서, 우리가 음의 상관관계를 본다는 것은 증거입니다. 그것은 제도가 긍정적인 영향을 미친다는 것입니다. 반면에, 만약 우리가 만약 사망률이 제도의 품질을 바꾸지 않는다면, 그래프는 평평할",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2522,
+     "page": 8,
+     "en": "This is when the relevance fails. So, now this is and quality So, institution, then the second experiment which is not as difficult as uh the first one. It would relevance condition fails, then cannot be an instrumental variable. You cannot change X or the no correlation between the and the condition, then we cannot use that.",
+     "ko": "것입니다. 이것은 언제냐면 관련성이 실패할 때입니다. 그래서, 이제 이것은 제도의 품질과 품질입니다. 그래서, 제도, 그러면 두 번째 실험인 그렇지 않은 것은 그렇게 어렵지 않습니다. 첫 번째 것만큼요. 관련성이 실패하면, 그러면 도구 변수가 될 수 없습니다. X를 바꿀 수 없거나 상관관계가 없는 경우, 그리고 조건이, 그러면 우리는 그것을 사용할",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2558,
+     "page": 8,
+     "en": "Right? Because the whole point we want to find an instrumental variable is that we need something else that changes only X. But not Y, right? So if we fail this relevance condition, then of course the result will change to a flat graph. There's no relationship the second graph will be",
+     "ko": "수 없습니다. 그렇죠? 왜냐하면 우리가 찾고 싶은 도구 변수는 우리가 X만 바꾸는 다른 것이 필요하기 때문입니다. 하지만 Y는 아니죠? 그래서 만약 이 관련성 조건에 실패하면, 그러면 당연히 결과는 바뀔 것입니다. 평평한 그래프로요. 상관관계가 없으니까요. 두 번째 그래프는",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2584,
+     "page": 8,
+     "en": "So, the data will be final. I always ask the same question. Like I think this is one example you may know. It's useful for you to know that. Right? So you understand? Right?",
+     "ko": "그래서, 데이터가 이렇게 될 것입니다. 저는 항상 같은 질문을 합니다. 제 생각에 이건 여러분이 아실 만한 예시입니다. 여러분에게 유용한 정보입니다. 그렇죠? 그래서 이해하셨나요? 그렇죠?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2604,
+     "page": 8,
+     "en": "Um, questions?",
+     "ko": "음, 질문 있으신가요?",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2611,
+     "page": 8,
+     "en": "We can ask the questions later, okay? Uh you need time to digest.",
+     "ko": "질문은 나중에 할 수 있어요, 알겠죠? 어, 소화할 시간이 필요해요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2618,
+     "page": 8,
+     "en": "So here, Okay. So like I said, we have",
+     "ko": "그래서 여기, 네. 그래서 제가 말했듯이, 우리는",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2628,
+     "page": 8,
+     "en": "We all understand that the effect of X on Y, that is causal effect. Then there's no omitted variable in you. But that is very difficult, right? But once we have a very instrumental variable, of course the variance of the instrumental variable and outcome variable, ty and GDP, is summation of those two.",
+     "ko": "우리 모두는 X의 효과가 Y에 미친다는 것을 이해합니다. 그것이 인과 효과입니다. 그러면 누락된 변수가 없다는 뜻입니다. 하지만 그것은 매우 어렵죠, 그렇죠? 하지만 일단 우리가 매우 도구적인 변수가 있다면, 당연히 도구 변수의 분산과 결과 변수의 분산은 그리고 GDP는 그것들의 합입니다.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2654,
+     "page": 8,
+     "en": "How how much mortality of effect in institution, and and how correlation is related to outcome through the correlation between institution and GDP. And this one, is you know, mechanically, this is the correlation between Z and U, instrumental variable, and residual term, that is the condition, assume that it has to be zero to be a valid instrumental variable.",
+     "ko": "얼마나 많은 사망률이 영향을 미치는지 제도에서, 그리고 그리고 얼마나 상관관계가 관련이 있는지 결과 변수와 그 상관관계를 통해 제도와 GDP 사이의 그리고 이것은, 있잖아요, 기계적으로, 이것은 Z와 U 사이의 상관관계, 도구 변수, 그리고 잔차 항, 즉 그것이 조건입니다, 가정하건대 그것은 0이어야 합니다. 유효한 도구 변수가 되려면요.",
+     "src": "gemini",
+     "ai": true
+    },
+    {
+     "t": 2688,
+     "page": 8,
+     "en": "And this one is just a mechanic. So from this equation, we calculate the covariance of the Z and Y and Y is covariance of the Z and Y is this entire thing. Right? And mechanically, let's mathematically, we see that this is a covariance of Z. It's R. Plus covariance of Z and U, right?",
+     "ko": "그리고 이것은 그냥 기계적인 것입니다. 그래서 이 방정식에서, 우리는 Z와 Y의 공분산을 계산하고, Y는 Z의 공분산입니다. 그리고 Y는 이 전체입니다. 그렇죠? 그리고 기계적으로, 수학적으로, 우리는 이것이 공분산이라는 것을 알 수 있습니다. Z의. R입니다. 플러스 공분산 Z와 U의, 그렇죠?",
+     "src": "gemini"
+    },
+    {
+     "t": 2716,
+     "page": 8,
+     "en": "That's just we just like algebra or mathematically, relationship. And then this is the condition, condition.",
+     "ko": "그건 그냥 우리가 그냥 대수학처럼 또는 수학적으로, 관계입니다. 그리고 이것은 조건입니다, 조건.",
+     "src": "gemini"
+    },
+    {
+     "t": 2729,
+     "page": 8,
+     "en": "So, it's not this exclusion restriction. So it's exclusion",
+     "ko": "그래서, 이 배제 제한이 아닙니다. 그래서 배제는",
+     "src": "gemini"
+    },
+    {
+     "t": 2736,
+     "page": 8,
+     "en": "restriction. calls this time becomes zero. So, the beta which is our interest, can be calculated by how divide the covariance with E and Y by covariance of X and X. So",
+     "ko": "제한입니다. 부릅니다 이번에는 0이 됩니다. 그래서, 베타는 어떤 우리의 관심사인 것은, 계산될 수 있습니다 어떻게 나누는지에 따라 공분산을 나누는 것으로 E와 Y의 공분산을 나누는 것으로 X와 X의 공분산으로.",
+     "src": "gemini"
+    },
+    {
+     "t": 2760,
+     "page": 8,
+     "en": "So our instrumental variable captures the ratio of the covariance between Z and Y and Z and X. And graphically, it's intuitive.",
+     "ko": "그래서 우리의 도구 변수 는 포착합니다 그 비율을 공분산의 Z와 Y의 공분산과 Z와 X의 공분산의. 그리고 그래프로 보면 직관적입니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 2775,
+     "page": 8,
+     "en": "So we want to understand how much treatment X affects Y. And then there's so many concerns regarding this condition. So instead of all, we look at the correlation and find some instrument. And then this instrument change the X by this much. Okay? And then we see how this instrument change the Y.",
+     "ko": "그래서 우리는 치료 X가 Y에 얼마나 영향을 미치는지 이해하고 싶습니다. 그리고 이 조건에 대한 많은 우려가 있습니다. 그래서 전체 대신, 상관관계를 살펴보고 도구를 찾습니다. 그리고 이 도구는 X를 변화시키고 이만큼 변화시킵니다. 알겠죠? 그리고 그 다음에는 이 도구가 Y를 어떻게 변화시키는지",
+     "src": "gemini"
+    },
+    {
+     "t": 2797,
+     "page": 8,
+     "en": "And then this is how it changes. Why? And because Z is not a direct cause to Y, this is So can capture how much X changes Y. So that's what this equation says. So Z change X first, right? by this much. And Z change Y,",
+     "ko": "봅니다. 그리고 이것이 어떻게 변하는지입니다. 그리고 왜냐하면 Z는 Y에 직접적인 원인이 아니기 때문에, 이것은 입니다. 그래서 얼마나 X가 Y를 변화시키는지 포착할 수 있습니다. 그래서 이 방정식이 말하는 것입니다. 그래서 Z가 먼저 X를 변화시키고, 이만큼이죠. 그리고 Z가 Y를 변화시키고,",
+     "src": "gemini"
+    },
+    {
+     "t": 2826,
+     "page": 8,
+     "en": "as well. And then that is this much.",
+     "ko": "또한. 그리고 그게 이만큼입니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 2831,
+     "page": 8,
+     "en": "And it's easy enough to apply, it's impactful and it's direct. So all the change that is explained in the why can be attributed to impact on So we divide the various the why by categories of X to recover the causal effect of X and X on Okay. So we call this as opposed to state, which we check how much our is the variable shifted X to quality.",
+     "ko": "그리고 그건 적용하기 쉽고, 영향력이 있으며 직접적입니다. 그래서 모든 변화는 설명할 수 있고, 그 이유는 이것에 기인할 수 있습니다. 그래서 우리는 다양한 이유를 카테고리별로 나누어 복구합니다. 그 인과 효과를 그리고 X 에 대해 네. 그래서 우리는 이것을 상태와 대조적으로 부르는데, 이는 우리의 변수가 얼마나 이동했는지 확인하는 것입니다. X가 품질에 미치는",
+     "src": "gemini"
+    },
+    {
+     "t": 2866,
+     "page": 8,
+     "en": "And then the second stage is that we check how much the mortality change GDP but that is how much Z changes Y. You know, to recover beta, we have to divide delta Y by delta X. Okay.",
+     "ko": "영향입니다. 그리고 두 번째 단계는 우리가 확인하는 것입니다. 얼마나 사망률이 변했는지 GDP에 대해, 하지만 그것은 얼마나 Z가 Y를 변화시키는지입니다. 아시다시피, 베타를 복구하기 위해 우리는 델타 Y를 델타 X로 나눕니다. 네.",
+     "src": "gemini"
+    },
+    {
+     "t": 2889,
+     "page": 8,
+     "en": "Okay. Uh, but another famous example is instrumental variable. And this is the regarding the returns to schooling. So many times that returns to schooling is hard to as estimate the causal effect, right? Because there are just some omitted variable bias. And this paper is really widely discussed the paper methodological how they use instrumental variable to estimate the returns to schooling.",
+     "ko": "네. 어, 하지만 다른 유명한 예로 도구 변수가 있습니다. 그리고 이것은 관련하여 교육 수익에 대한 것입니다. 그래서 교육 수익은 측정하기 어렵습니다. 인과 관계를 추정하기 어렵죠, 그렇죠? 왜냐하면 누락된 변수 편향이 있기 때문입니다. 그리고 이 논문은 정말 널리 논의된 논문의 방법론적 측면에서 어떻게 도구 변수를 사용하여 추정하는지 교육 수익을 추정하는지입니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 2922,
+     "page": 8,
+     "en": "And the idea is that policy uh generates some exogenous variations in terms of how long students stay in school. And then I will uh discuss this example again next next next week, but just because we have a bit of time, The idea is that in the US, kids enter the school on January 4th or January uh on the year when they turn six. So they are born in December when they enter the school, they are almost five.",
+     "ko": "그리고 그 아이디어는 정책이 어 생성한다는 것입니다. 외생적인 변화가 얼마나 오랫동안 학생들이 학교에 머무는지에 대한 것입니다. 그리고 그런 다음 저는 어 이 예에 대해 다음 시간에 다시 논의하겠습니다. 하지만 그냥 시간이 좀 남아서 말씀드리는 거예요. 그 아이디어는 미국에서 아이들이 학교에 입학하는 시기가 1월 1일이라는 것입니다. 1월 4일이나 그 해의 그들이 6살이 되는 해에. 그래서 그들은 12월에 태어나면 학교에 입학할 수 있고, 그들은 거의 5살 반입니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 2962,
+     "page": 8,
+     "en": "You know, the cutoff. is based on the timing of the year, whereas they actual age can be can have variations. Those who are born near January, they are schooling, the years of the schooling is shorter. Then those who are born in December. But they are born in December, they enter the school earlier when they are younger.",
+     "ko": "아시다시피, 그 기준일이죠. 그것은 그 해의 시기에 기반을 두고 있으며, 반면에 그들의 실제 나이는 다를 수 있습니다. 그래서 12월에 태어난 사람들은 1월에 가까운 사람들은 학교에 다니고, 학교에 다니는 기간은 더 짧습니다. 반면에 12월에 태어난 사람들은 하지만 그들은 12월에 태어났기 때문에 학교에 더 일찍 입학하고, 더 어릴 때입니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 2987,
+     "page": 8,
+     "en": "Okay, so they are finishing age is the same. Then uh those who are born in January has a shorter schooling. But this is not you know, the another piece that can create the meaningful variation is that another policy requires that individual can drop out of school until age 16.",
+     "ko": "네, 그래서 그들은 학교를 마칠 때 나이가 같습니다. 그러면 어, 1월에 태어난 사람들은 더 짧은 학교 기간을 가집니다. 하지만 이것은 아시다시피, 또 다른 부분은 이것이 의미 있는 변화를 만들어낼 수 있다는 것입니다. 또 다른 정책은 요구합니다. 개인이 학교를 그만둘 수 있는 나이가 16세까지라는",
+     "src": "gemini"
+    },
+    {
+     "t": 3011,
+     "page": 8,
+     "en": "Okay. So um",
+     "ko": "것입니다. 네. 그래서 음",
+     "src": "gemini"
+    },
+    {
+     "t": 3017,
+     "page": 8,
+     "en": "Yeah, age 16. Then drop the school when they turn age 16. But there entry uh when they can enter the school was not depend on their birthday. or it depends on the calendar year. So it creates a size variations. Um how much did you know, how many years they have to stay in school?",
+     "ko": "네, 16세. 그러면 그만둘 수 있는 나이가 되면 학교를 그만둘 수 있어요. 하지만 거기에는 입학 언제 입학할 수 있는지에 대한 것은 그들의 생일에 달려 있지 않거나 카테고리에 따라 달라집니다. 그래서 크기 차이가 발생합니다. 음, 얼마나 몇 년을 더 학교에 다녀야 하나요?",
+     "src": "gemini"
+    },
+    {
+     "t": 3040,
+     "page": 8,
+     "en": "before they reach the the legal uh drop out age. Okay? So this is the pattern actually. And",
+     "ko": "졸업하기 전에요. 법적 자퇴 나이까지요. 알겠죠? 그래서 이 패턴이 실제로 그렇습니다. 그리고",
+     "src": "gemini"
+    },
+    {
+     "t": 3053,
+     "page": 8,
+     "en": "If what what this pattern says is that, okay, there are policy, but not every policy can can can generate this meaningful variation. So the evidence open fails to hope. But in this case, it it holds clearly. That means that this policy create the the variation in years of schooling.",
+     "ko": "만약 뭐가 이 패턴이 말하는 것은, 그래요, 정책이 있지만, 모든 정책이 다 할 수 있는 것은 아니라는 것입니다. 이것이 의미 있는 변화를 만들어냅니다. 그래서 증거는 희망을 주지 못합니다. 하지만 이 경우, 그것은 분명히 유지됩니다. 즉, 이 정책이 그 변화를 만들어낸다는 것입니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 3075,
+     "page": 8,
+     "en": "by the birth months. So here 1234 is the birth quarter. Those who are born in the first quarter, second quarter, third quarter and fourth quarter. Those who are born in the later in the year they have a longer schooling. because of the policy. So they have to enter when they are younger. So so they they have to stay longer period until they reach the legal drop out age.",
+     "ko": "그것은 출생 월에 따라 달라집니다. 그래서 여기 1234는 출생 분기입니다. 태어난 사람들은 첫 번째 분기, 두 번째 분기, 세 번째 분기, 그리고 네 번째 분기에 태어난 사람들은 나중에 그 해에 더 오래 학교에 다녀야 합니다. 정책 때문에요. 그래서 그들은 어릴 때 입학해야 합니다. 그래서 그들은 더 오래 학교에 다녀야 합니다. 그들이 법적 자퇴 나이에 도달할 때까지요.",
+     "src": "gemini"
+    },
+    {
+     "t": 3101,
+     "page": 8,
+     "en": "Okay? And then we see clear postage. The years of schooling conditional on their age, year of birth.",
+     "ko": "알겠죠? 그리고 우리는 분명한 우편 요금을 봅니다. 학교에 다니는 기간은 조건부 그들의 나이, 출생 연도에 따라.",
+     "src": "gemini"
+    },
+    {
+     "t": 3114,
+     "page": 8,
+     "en": "Those who are born in later quarter, as a rule, school. So here the birth quarter because the instrumental variable is affects how many years they stay in the school. And then then the exclusion restriction is kind of reasonable. Because the birth month, this is not a political decision.",
+     "ko": "태어난 사람들은 나중에 분기에 태어난 사람들은 원칙적으로 학교에 다닙니다. 그래서 여기 출생 분기는 왜냐하면 도구 변수가 어쨌든 영향을 미치기 때문에 몇 년을 더 학교에 다녀야 하는지에 대해. 그리고 그 다음에는 배제 제한이 어느 정도 합리적입니다. 왜냐하면 출생 월이, 이것은 정치적인 것이 아닙니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 3142,
+     "page": 8,
+     "en": "Right? It's very unlikely that birth quarter has a direct impact on wage. So exclusion restriction also holds. And then the stage is very clear. The use of quarter, fourth quarter as a instrumental variable and stay, the policy stage is how how how much they quarter create variation in schooling.",
+     "ko": "그렇죠? 그것은 매우 그럴 가능성이 낮습니다. 출생 분기가 직접적인 영향을 미치지 않습니다. 그래서 배제 제한도 유효합니다. 그리고 단계는 매우 분명합니다. 분기의 사용, 네 번째 분기를 도구 변수로 사용하고 체류하는 것, 정책 단계는 얼마나 그들이 분기별로 학교 교육의 변화를 만들어내는지입니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 3165,
+     "page": 8,
+     "en": "And the second stage is how the wage rate also changes by birth quarter. So then the second stage and the reason why the wage changes by birth quarter, the only possible reason is that birth quarter affects schooling. Okay? So they apply that and then this is the clear learning as you can see.",
+     "ko": "그리고 두 번째 단계는 임금률이 어떻게 변하는지입니다. 출생 분기에 따라. 그래서 두 번째 단계는 그리고 그 이유가 임금이 출생 분기에 따라 변하는 이유, 유일하게 가능한 이유는 출생 분기가 영향을 미친다는 것입니다. 학교 교육에. 알겠죠? 그래서 그들은 그것을 적용하고 이것이 바로 여러분이 보시는 분명한 학습입니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 3190,
+     "page": 8,
+     "en": "Those who are born in the first quarter actually earn higher wage. And it's unlikely that birth quarter has a direct impact. on the productivity. The only plausible channel through which birth also affects outcome like a wage is through schooling. the years of schooling driven by this.",
+     "ko": "태어난 사람들은 첫 번째 분기에 실제로 더 높은 임금을 받습니다. 그리고 그것은 그럴 가능성이 낮습니다. 출생 분기가 직접적인 영향을 미치지는 않습니다. 유일한 그럴듯한 경로는 출생이 또한 영향을 미치는 것입니다. 결과와 같은 임금은 학교 교육을 통해서입니다. 학교에 다닌 기간은 이것에 의해 결정됩니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 3212,
+     "page": 8,
+     "en": "So this is like this is a variable and then they found that yeah, the causal effect of schooling, years of schooling on wage rate is substantial.",
+     "ko": "그래서 이것은 마치 이것이 변수이고 그들이 발견한 것은 네, 인과 관계가 학교 교육, 즉 학교에 다닌 기간이 임금에 미치는 영향은 상당하다는 것입니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 3225,
+     "page": 8,
+     "en": "Mr. time. Yeah. Okay. And actually here here is a very good example. So this is a first stage. How the birth quarter like they estimate how the So the average weekly wage those born in the first quarter and the rest. And then there is some difference in the years of schooling.",
+     "ko": "미스터 시간입니다. 네. 알겠습니다. 그리고 사실 여기 아주 좋은 예가 있습니다. 그래서 이것은 첫 번째 단계입니다. 어떻게 출생 분기가 그들이 추정하는지 어떻게 그래서 평균 주간 임금은 그들이 첫 번째 분기에 태어난 사람들은 그리고 나머지는. 그리고 약간의 차이가 있습니다. 학교 교육 기간에.",
+     "src": "gemini"
+    },
+    {
+     "t": 3251,
+     "page": 8,
+     "en": "Very tiny. But still it's statistically significant. So those who were born in the later in the year, they have slightly higher years of level of years of schooling. And uh this is no, this is the wage rate. And the years of schooling as well. So these are second stage. This is the first stage.",
+     "ko": "아주 미미합니다. 하지만 여전히 통계적으로 유의미합니다. 그래서 첫 번째 분기에 태어난 사람들은 나중에 그 해에, 그들은 약간 더 높은 학교 교육 기간을 가지고 있습니다. 그리고 그리고 어, 이것은 아니요, 이것은 임금 수준입니다. 그리고 학교 교육 기간도 마찬가지입니다. 그래서 이것들은 두 번째 단계입니다. 이것은 첫 번째",
+     "src": "gemini"
+    },
+    {
+     "t": 3272,
+     "page": 8,
+     "en": "the that estimate is the IV ratio between how much quarter birth quarter between one versus the rest. create the changes in the wage rate that is this much. here. We divide by how quarter explains differences in the schooling. Here. So if you find the second stage by first stage, and it says that additional years of schooling increase the wage rate by 10%.",
+     "ko": "단계입니다. 그게 추정치입니다. IV 비율은 얼마나 많은 분기가 출생 분기가 얼마나 1대 나머지인지. 만들어냅니다. 임금의 변화를 그리고 이것이 이만큼입니다. 여기에서. 우리는 얼마나 분기가 차이를 설명하는지 학교 교육에서. 여기에서. 그래서 만약 당신이 두 번째 단계를 첫 번째 단계로 나누고, 그리고 그것이 추가적인 학교 교육 기간이 임금을 증가시킨다는 것을 의미합니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 3313,
+     "page": 8,
+     "en": "We usually don't weigh it. We because it tells us percentage change. percentage change. So this means that one year increase weight about 10% higher which which is really really big. So the other day I was and I was going to get on and it's a substantial as someone who is All right, so that's I agree.",
+     "ko": "저희는 보통 무게를 재지 않아요. 왜냐하면 그게 우리에게 변화율을 알려주거든요. 변화율. 그래서 이건 무슨 뜻이냐면 하나가 1년 동안 증가한 무게가 약 10% 더 높다는 뜻이에요. 이건 정말 정말 큰 거예요. 그래서 얼마 전에 제가 타려고 했는데 그게 꽤 상당한 거라서 제가 알겠습니다, 그래서 그건 동의해요.",
+     "src": "gemini"
+    },
+    {
+     "t": 3343,
+     "page": 8,
+     "en": "And the rule will help to the next",
+     "ko": "그리고 그 규칙은 도움이 될 거예요. 다음",
+     "src": "gemini"
+    }
+   ]
   }
  ],
- "savedAt": "2026-11-04T02:11:22.315Z"
+ "savedAt": "2026-11-04T02:44:09.482Z"
 }
