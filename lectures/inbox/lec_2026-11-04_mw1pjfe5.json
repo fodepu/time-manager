@@ -1,0 +1,86 @@
+{
+ "id": "lec_2026-11-04_mw1pjfe5",
+ "course": "거시경제학",
+ "title": "거시경제학 10주차 · Ch5_Sum_w_Figures",
+ "date": "2026-11-04",
+ "week": 10,
+ "module": "wk10",
+ "lang": "en",
+ "mode": "slides",
+ "pdf": "Ch5_Sum_w_Figures.pdf",
+ "pages": 25,
+ "duration": 329,
+ "log": [
+  {
+   "t": 0,
+   "page": 5
+  },
+  {
+   "t": 320,
+   "page": 5,
+   "resumed": true
+  }
+ ],
+ "slides": [
+  {
+   "page": 5,
+   "en": "All right, so um I'm going to finish off professional proportional taxes today and maybe well, I'm not going to Oh, before today, I just want to get this thing out. completed. for you so that I will finish off the stock today and then I will give you the math examples. a couple students asked us on Monday So let's start with the comparing the competitive And the slide what does it say about the",
+   "ko": "자, 그럼 음 제가 마무리할게요. 전문적으로 비례하는 세금에 대해 오늘 이야기하고 아마도 음, 저는 아, 오늘 전에, 그냥 이걸 먼저 끝내고 싶어요. 완료했어요. 당신을 위해서요. 그래서 제가 마무리할게요. 오늘 주식을 끝내고 나서 수학 문제를 드릴게요. 몇 가지 학생들이 질문을 했어요, 월요일에. 그래서 컴퓨터부터 시작해 볼까요?  그리고 그 슬라이드는 뭐라고 말하고 있나요?",
+   "pdf": "Ch5_Sum_w_Figures.pdf",
+   "pdfPage": 5,
+   "slideText": "Competitive Equilibrium",
+   "lines": {
+    "w": 720,
+    "h": 540,
+    "lines": [
+     {
+      "i": 0,
+      "text": "Competitive Equilibrium",
+      "x": 217.44,
+      "y": 36.65,
+      "w": 299.33396,
+      "h": 29.945999999999998
+     }
+    ]
+   },
+   "segs": [
+    {
+     "t": 277,
+     "page": 5,
+     "en": "All right, so um I'm going to finish off professional proportional taxes today and maybe well, I'm not going to Oh, before today, I just want to",
+     "ko": "자, 그럼 음 제가 마무리할게요. 전문적으로 비례하는 세금에 대해 오늘 이야기하고 아마도 음, 저는 아, 오늘 전에, 그냥",
+     "src": "gemini"
+    },
+    {
+     "t": 295,
+     "page": 5,
+     "en": "get this thing out. completed. for you so that I will finish off the stock today and then I will give you the math examples. a couple students asked us on Monday So",
+     "ko": "이걸 먼저 끝내고 싶어요. 완료했어요. 당신을 위해서요. 그래서 제가 마무리할게요. 오늘 주식을 끝내고 나서 수학 문제를 드릴게요. 몇 가지 학생들이 질문을 했어요, 월요일에. 그래서",
+     "src": "gemini"
+    },
+    {
+     "t": 315,
+     "page": 5,
+     "en": "let's start with the comparing the",
+     "ko": "컴퓨터부터 시작해 볼까요?",
+     "src": "gemini"
+    },
+    {
+     "t": 320,
+     "page": 5,
+     "en": "competitive",
+     "ko": "",
+     "src": "gemini"
+    },
+    {
+     "t": 325,
+     "page": 5,
+     "en": "And the slide what does it say about the",
+     "ko": "그리고 그 슬라이드는 뭐라고 말하고 있나요?",
+     "src": "gemini"
+    }
+   ]
+  }
+ ],
+ "savedAt": "2026-11-04T06:05:43.106Z"
+}
