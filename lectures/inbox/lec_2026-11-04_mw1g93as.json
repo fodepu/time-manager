@@ -1,4 +1,16 @@
 {
+ "savedAt": "2026-11-04T02:44:14.063Z",
+ "base": 0,
+ "docs": [
+  {
+   "name": "Core_note_iv_2026.pdf",
+   "base": 0,
+   "total": 11,
+   "from": 0
+  }
+ ],
+ "weekId": "1507915",
+ "langCode": "en-US",
  "id": "lec_2026-11-04_mw1g93as",
  "course": "계량경제학",
  "title": "계량경제학 10주차 · Core_note_iv_2026",
@@ -9,7 +21,7 @@
  "mode": "slides",
  "pdf": "Core_note_iv_2026.pdf",
  "pages": 11,
- "duration": 3348,
+ "duration": 3353,
  "log": [
   {
    "t": 0,
@@ -2899,6 +2911,5 @@
     }
    ]
   }
- ],
- "savedAt": "2026-11-04T02:44:09.482Z"
+ ]
 }
