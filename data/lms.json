@@ -2460,5 +2460,8 @@
         }
       ]
     }
-  ]
+  ],
+  "checkedAt": "2026-11-04T21:00:43.293Z",
+  "error": "Canvas /users/self 연결 실패: The operation was aborted due to timeout",
+  "diag": "dns khcanvas.khu.ac.kr → 175.45.212.171"
 }
