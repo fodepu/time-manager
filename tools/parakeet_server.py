@@ -81,7 +81,7 @@ def transcribe(x, rate):
     x = resample(x, rate, sr)
     if len(x) < sr * 0.3:
         return ''
-    mel = get_logmel(mx.array(x).astype(mx.bfloat16), model.preprocessor_config)
+    mel = get_logmel(mx.array(x, dtype=mx.float32), model.preprocessor_config)
     return model.generate(mel)[0].text.strip()
 
 

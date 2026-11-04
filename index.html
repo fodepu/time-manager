@@ -2384,7 +2384,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="196">
+<meta name="tm-version" content="197">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -2742,6 +2742,7 @@ canvas.pg-in-up, canvas.pg-in-down { animation:none; }
   .lec-ai-exam { margin-top:4px; color:#B45309; font-size:12px; }
   .lec-en.fixed::before { content:'✱ '; color:#D97757; }
   .lec-en.gem::before { content:'✦ '; color:#1A73E8; }
+  .lec-en.pk::before { content:'◆ '; color:#2E7D32; }
   .lec-seg { display:flex; gap:8px; align-items:flex-start; }
   .lec-ts { flex-shrink:0; font-size:11px; color: var(--text-muted); font-variant-numeric: tabular-nums; padding-top:3px; min-width:34px; }
   .lec-segbody { flex:1; min-width:0; }
@@ -10212,7 +10213,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     if(!S.online){ var lv=S.live&&S.live[p]; var nts=(lv&&lv.notes)||[], exs=(lv&&lv.exam)||[], bds=(lv&&lv.board)||[]; var bstudy=null; try{ var bb=deckBrief(); var dd=docOf(p); bstudy=bb&&bb.study&&bb.study[p-(dd.base||0)]; }catch(e){} if(bstudy&&bstudy.explain){ h+='<details class="lec-notes-live study"><summary>📖 미리 공부한 이해 · 슬라이드 '+(p-(S.base||0))+'</summary><div class="lec-study-x">'+md(bstudy.explain)+(bstudy.formulas&&bstudy.formulas.length?'<div class="lec-study-f">'+bstudy.formulas.map(function(x){ return '<div>'+escapeHtml(x)+'</div>'; }).join('')+'</div>':'')+'</div></details>'; }
     if(nts.length||exs.length||bds.length){ h+='<details class="lec-notes-live"'+(lsGet(lsKey('lec_notes_open'))===0?'':' open')+'><summary>✱ 요점 · 슬라이드 '+(p-(S.base||0))+(nts.length?' <small>'+nts.length+'줄</small>':'')+'</summary>'+(bds.length?'<div class="lec-board"><span class="lec-board-tag">✎ 판서</span>'+bds.map(function(b,bi){ return '<div class="lec-board-l"><span>'+mdInline(b)+'</span><button type="button" class="lec-board-x" data-bp="'+p+'" data-bi="'+bi+'" title="삭제">✕</button></div>'; }).join('')+'</div>':'')+(nts.length||exs.length?'<ul>'+nts.map(function(n){ return '<li>'+mdInline(n)+'</li>'; }).join('')+exs.map(function(x){ return '<li class="ex">⚠ '+escapeHtml(x)+'</li>'; }).join('')+'</ul>':'')+'</details>'; } }
     var all=allSegs(); var hidden=Math.max(0, all.length-150); if(hidden) h+='<div class="lec-divider">이전 '+hidden+'문장은 접힘 (저장돼 있어요)</div>'; var lastPg=null;
-    all.slice(-150).forEach(function(s){ if(s.page!==lastPg){ lastPg=s.page; h+='<div class="lec-divider">'+escapeHtml(pageLabel(s.page))+'</div>'; } var main=(S.lang==='ko-KR')?(rawMode&&s.raw?s.raw:(s.fix||s.ko)):(s.ko?s.ko:''); h+='<div class="lec-seg"><span class="lec-ts">'+fmtT(s.t||0)+'</span><div class="lec-segbody"><div class="lec-ko">'+(main?sentHtml(main):'<span class="lec-wait">번역 중…</span>')+'</div>'+(S.lang!=='ko-KR'&&showEn?'<div class="lec-en'+(s.src==='gemini'?' gem':(s.fix&&!rawMode?' fixed':''))+'">'+sentHtml(s.src==='gemini'?s.en:(rawMode&&s.raw?s.raw:(s.fix||s.en)))+'</div>':'')+(rawMode&&s.raw&&S.lang==='ko-KR'?'<div class="lec-en">확정: '+escapeHtml(s.ko)+'</div>':'')+'</div></div>'; });
+    all.slice(-150).forEach(function(s){ if(s.page!==lastPg){ lastPg=s.page; h+='<div class="lec-divider">'+escapeHtml(pageLabel(s.page))+'</div>'; } var main=(S.lang==='ko-KR')?(rawMode&&s.raw?s.raw:(s.fix||s.ko)):(s.ko?s.ko:''); h+='<div class="lec-seg"><span class="lec-ts">'+fmtT(s.t||0)+'</span><div class="lec-segbody"><div class="lec-ko">'+(main?sentHtml(main):'<span class="lec-wait">번역 중…</span>')+'</div>'+(S.lang!=='ko-KR'&&showEn?'<div class="lec-en'+(s.src==='gemini'?' gem':(s.src==='parakeet'?' pk':(s.fix&&!rawMode?' fixed':'')))+'">'+sentHtml(s.src==='gemini'?s.en:(rawMode&&s.raw?s.raw:(s.fix||s.en)))+'</div>':'')+(rawMode&&s.raw&&S.lang==='ko-KR'?'<div class="lec-en">확정: '+escapeHtml(s.ko)+'</div>':'')+'</div></div>'; });
     if(S.lastInterim) h+='<div class="lec-seg interim live"><span class="lec-ts">'+fmtT(nowT())+'</span><div class="lec-segbody"><div class="lec-ko">'+escapeHtml((function(){ try{ return fixTerms(S.lastInterim); }catch(e){ return S.lastInterim; } })())+' <span class="lec-cursor">▍</span></div></div></div>';
     var stick=(box.scrollHeight-box.scrollTop-box.clientHeight)<60; box.innerHTML=h; if(stick||!S.userScrolled) box.scrollTop=box.scrollHeight;
   }
@@ -10280,13 +10281,13 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
 
   // ---- Parakeet STT (내 맥, localhost:7378 · tools/parakeet_server.py) — 영어 강의 전용, 무료·오프라인. v196 ----
   // 브라우저가 마이크를 16kHz로 받아 간단 VAD로 문장 단위(무음 0.8초 / 최대 15초)로 끊어 WAV로 보내고, 대본을 받아 기존 addFinal(용어 교정→번역) 흐름에 넣는다.
-  var PK={ ok:false, ready:false, model:'', err:'', on:false, ac:null, node:null, stream:null, rate:16000, buf:[], n:0, voiced:0, silent:0, floor:0.01, q:Promise.resolve(), sent:0, fails:0, ms:0 };
+  var PK={ ok:false, ready:false, model:'', err:'', on:false, ac:null, node:null, stream:null, rate:16000, buf:[], rms:[], n:0, voiced:0, silent:0, floor:0.01, peak:0, q:Promise.resolve(), sent:0, fails:0, ms:0 };
   async function pkPing(){ try{ var r=await fetch('http://localhost:7378/ping',{cache:'no-store'}); if(!r.ok) throw 0; var j=await r.json(); PK.ok=!!j.ok; PK.ready=!!j.ready; PK.model=j.model||''; PK.err=j.error||''; }catch(e){ PK.ok=false; PK.ready=false; } paintSttBtn(); return PK.ready; }
   function sttPref(){ var v=lsGet(lsKey('lec_stt')); return (v==='parakeet'||v==='chrome')?v:'auto'; }
   function sttEngine(){ var p=sttPref(); if(p==='parakeet' && PK.ready && S.lang!=='ko-KR') return 'parakeet'; if(p==='chrome') return 'chrome'; return geminiKey()?'gemini':'chrome'; }
   function paintSttBtn(){ var b=$('lecSttBtn'); if(!b) return; var p=sttPref(); b.textContent='STT: '+(p==='parakeet'?('Parakeet '+(PK.ready?'●':(PK.ok?'…':'○'))):(p==='chrome'?'Chrome':'자동')); b.classList.toggle('on', p!=='auto'); }
   async function pkStart(){
-    PK.on=true; PK.buf=[]; PK.n=0; PK.voiced=0; PK.silent=0; PK.floor=0.01; PK.sent=0; PK.fails=0; PK.ms=0;
+    PK.on=true; PK.buf=[]; PK.rms=[]; PK.n=0; PK.voiced=0; PK.silent=0; PK.floor=0.01; PK.peak=0; PK.sent=0; PK.fails=0; PK.ms=0;
     var st=await navigator.mediaDevices.getUserMedia({ audio:{ channelCount:1, echoCancellation:false, noiseSuppression:true, autoGainControl:true } }); PK.stream=st;
     var AC=window.AudioContext||window.webkitAudioContext; var ac; try{ ac=new AC({sampleRate:16000}); }catch(e){ ac=new AC(); } PK.ac=ac; PK.rate=ac.sampleRate;
     var src=ac.createMediaStreamSource(st); var ok=false;
@@ -10295,16 +10296,20 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     if(ac.state==='suspended'){ try{ ac.resume(); }catch(e){} }
     if(S.running) status(recLabel(),'ok');
   }
-  // 간단 VAD: 프레임 RMS가 소음 바닥×3(최소 0.006) 이상이면 음성. 음성 0.6초 이상 모인 뒤 무음 0.8초가 오거나, 15초가 차면 보냄. 긴 무음은 최근 0.3초만 남기고 버림
+  // VAD(v197): 프레임 RMS. 소음 바닥(floor)은 천천히 오르고 빨리 내려감, 최근 말소리 피크(peak)는 빨리 오르고 천천히 내려감.
+  // 음성 = rms > max(floor×2.5, peak×0.18, 0.005). 말 0.6초 이상 모인 뒤 쉼 0.55초면 보냄. 12초가 차면 뒤쪽 절반에서 가장 조용한 지점을 찾아 거기서 자르고 나머지는 다음 청크로 넘김(문장 중간 절단 완화)
   function pkFeed(f32){ if(!PK.on || !f32 || !f32.length) return; var sum=0; for(var i=0;i<f32.length;i++) sum+=f32[i]*f32[i]; var rms=Math.sqrt(sum/f32.length); var dt=f32.length/PK.rate;
     if(rms<PK.floor) PK.floor=Math.max(0.002, rms*0.8+PK.floor*0.2); else PK.floor=Math.min(0.05, PK.floor+dt*0.0005);
-    var voice=rms>Math.max(PK.floor*3, 0.006);
-    PK.buf.push(f32); PK.n+=f32.length; if(voice){ PK.voiced+=dt; PK.silent=0; } else PK.silent+=dt;
+    if(rms>PK.peak) PK.peak=rms; else PK.peak=Math.max(0, PK.peak-PK.peak*dt*0.5);
+    var voice=rms>Math.max(PK.floor*2.5, PK.peak*0.18, 0.005);
+    PK.buf.push(f32); PK.rms.push(rms); PK.n+=f32.length; if(voice){ PK.voiced+=dt; PK.silent=0; } else PK.silent+=dt;
     var dur=PK.n/PK.rate;
-    if((PK.silent>=0.8 && PK.voiced>=0.6) || (dur>=15 && PK.voiced>=0.6)) pkFlush();
-    else if(PK.silent>=3 && PK.voiced<0.6){ var keep=Math.ceil(0.3*PK.rate), acc=0, out=[]; for(var k=PK.buf.length-1;k>=0&&acc<keep;k--){ out.unshift(PK.buf[k]); acc+=PK.buf[k].length; } PK.buf=out; PK.n=acc; PK.silent=0.3; }
-    else if(dur>=15){ PK.buf=[]; PK.n=0; PK.voiced=0; PK.silent=0; } }
-  function pkFlush(){ if(!PK.n) return; var all=new Float32Array(PK.n), o=0; PK.buf.forEach(function(b){ all.set(b,o); o+=b.length; }); PK.buf=[]; PK.n=0; PK.voiced=0; PK.silent=0; var page=recPage(), rate=PK.rate; S.lastInterim='…'; S.lastResultAt=Date.now();
+    if(PK.silent>=0.55 && PK.voiced>=0.6) pkFlush();
+    else if(dur>=12 && PK.voiced>=0.6){ var from=Math.floor(PK.buf.length*0.5), best=-1, bv=Infinity, w=3; for(var k=from;k<PK.buf.length-w;k++){ var v=0; for(var j=0;j<w;j++) v+=PK.rms[k+j]; if(v<bv){ bv=v; best=k; } } pkFlush(best>0?best:PK.buf.length); }
+    else if(PK.silent>=3 && PK.voiced<0.6){ var keep=Math.ceil(0.3*PK.rate), acc=0, out=[], outR=[]; for(var k2=PK.buf.length-1;k2>=0&&acc<keep;k2--){ out.unshift(PK.buf[k2]); outR.unshift(PK.rms[k2]); acc+=PK.buf[k2].length; } PK.buf=out; PK.rms=outR; PK.n=acc; PK.silent=0.3; }
+    else if(dur>=12){ PK.buf=[]; PK.rms=[]; PK.n=0; PK.voiced=0; PK.silent=0; } }
+  function pkFlush(upto){ if(!PK.n) return; var cut=(upto==null)?PK.buf.length:Math.max(1,Math.min(PK.buf.length,upto)); var head=PK.buf.slice(0,cut), rest=PK.buf.slice(cut), restR=PK.rms.slice(cut); var n=0; head.forEach(function(b){ n+=b.length; }); var all=new Float32Array(n), o=0; head.forEach(function(b){ all.set(b,o); o+=b.length; });
+    PK.buf=rest; PK.rms=restR; PK.n=0; rest.forEach(function(b){ PK.n+=b.length; }); PK.voiced=rest.length?Math.min(PK.voiced, PK.n/PK.rate):0; PK.silent=0; var page=recPage(), rate=PK.rate; S.lastInterim='…'; S.lastResultAt=Date.now();
     PK.q=PK.q.then(function(){ return pkSend(all, rate, page); }).catch(function(){}); }
   function pkWav(f32, rate){ var n=f32.length, b=new ArrayBuffer(44+n*2), v=new DataView(b); function ws(o,t){ for(var i=0;i<t.length;i++) v.setUint8(o+i,t.charCodeAt(i)); } ws(0,'RIFF'); v.setUint32(4,36+n*2,true); ws(8,'WAVE'); ws(12,'fmt '); v.setUint32(16,16,true); v.setUint16(20,1,true); v.setUint16(22,1,true); v.setUint32(24,rate,true); v.setUint32(28,rate*2,true); v.setUint16(32,2,true); v.setUint16(34,16,true); ws(36,'data'); v.setUint32(40,n*2,true); for(var i=0;i<n;i++){ var x=Math.max(-1,Math.min(1,f32[i])); v.setInt16(44+i*2, x<0?x*32768:x*32767, true); } return b; }
   async function pkSend(f32, rate, page){ if(!S.id) return; var t0=Date.now();
@@ -10313,7 +10318,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
       if(t){ var keep=S.recPage; if(!S.online) S.recPage=page; try{ addFinal(t,'','parakeet'); }finally{ S.recPage=keep; } } else renderLive(); }
     catch(e){ PK.fails++; if(S.lastInterim==='…') S.lastInterim=''; console.warn('parakeet', e&&e.message);
       if(PK.fails>=3 && S.running && PK.on){ pkStop(); status('Parakeet 연결 끊김 — '+(geminiKey()?'Gemini':'Chrome 음성인식')+'으로 전환','err'); if(geminiKey()) gemStart(); else startRecognition(); } } }
-  function pkStop(){ if(!PK.on) return; PK.on=false; try{ if(PK.voiced>=0.6) pkFlush(); }catch(e){} try{ if(PK.node) PK.node.disconnect(); }catch(e){} try{ if(PK.ac) PK.ac.close(); }catch(e){} try{ if(PK.stream) PK.stream.getTracks().forEach(function(t){ t.stop(); }); }catch(e){} PK.node=null; PK.ac=null; PK.stream=null; PK.buf=[]; PK.n=0; }
+  function pkStop(){ if(!PK.on) return; PK.on=false; try{ if(PK.voiced>=0.6) pkFlush(); }catch(e){} try{ if(PK.node) PK.node.disconnect(); }catch(e){} try{ if(PK.ac) PK.ac.close(); }catch(e){} try{ if(PK.stream) PK.stream.getTracks().forEach(function(t){ t.stop(); }); }catch(e){} PK.node=null; PK.ac=null; PK.stream=null; PK.buf=[]; PK.rms=[]; PK.n=0; }
   window.tmPK=PK;
 
   // ---- 세션 ----
