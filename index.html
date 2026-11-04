@@ -2384,7 +2384,7 @@
   .tm-refresh-link { margin-top:16px; background:none; border:none; color:var(--text-muted); font-family:inherit; font-size:12px; text-decoration:underline; cursor:pointer; }
 </style>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<meta name="tm-version" content="194">
+<meta name="tm-version" content="195">
 <style id="tt-style">
   /* ===== 에브리타임 스타일 시간표 ===== */
   .tm-gone { display: none !important; }
@@ -10208,7 +10208,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     var rawMode=false;
     // ✱ 요점: PDF 수업에서도 현재 슬라이드의 Claude 요점·시험 언급을 대본 위에 작게 보여줌 (접기 가능)
     if(!S.online){ var lv=S.live&&S.live[p]; var nts=(lv&&lv.notes)||[], exs=(lv&&lv.exam)||[], bds=(lv&&lv.board)||[]; var bstudy=null; try{ var bb=deckBrief(); var dd=docOf(p); bstudy=bb&&bb.study&&bb.study[p-(dd.base||0)]; }catch(e){} if(bstudy&&bstudy.explain){ h+='<details class="lec-notes-live study"><summary>📖 미리 공부한 이해 · 슬라이드 '+(p-(S.base||0))+'</summary><div class="lec-study-x">'+md(bstudy.explain)+(bstudy.formulas&&bstudy.formulas.length?'<div class="lec-study-f">'+bstudy.formulas.map(function(x){ return '<div>'+escapeHtml(x)+'</div>'; }).join('')+'</div>':'')+'</div></details>'; }
-    if(nts.length||exs.length||bds.length||(S.running&&aiEngine())){ h+='<details class="lec-notes-live"'+(lsGet(lsKey('lec_notes_open'))===0?'':' open')+'><summary>✱ 요점 · 슬라이드 '+(p-(S.base||0))+(nts.length?' <small>'+nts.length+'줄</small>':'')+'</summary>'+(bds.length?'<div class="lec-board"><span class="lec-board-tag">✎ 판서</span>'+bds.map(function(b,bi){ return '<div class="lec-board-l"><span>'+mdInline(b)+'</span><button type="button" class="lec-board-x" data-bp="'+p+'" data-bi="'+bi+'" title="삭제">✕</button></div>'; }).join('')+'</div>':'')+(nts.length||exs.length?'<ul>'+nts.map(function(n){ return '<li>'+mdInline(n)+'</li>'; }).join('')+exs.map(function(x){ return '<li class="ex">⚠ '+escapeHtml(x)+'</li>'; }).join('')+'</ul>':'<div class="lec-doc-wait">'+(AI.busy?'Claude 필기 중…':'20초마다 갱신 — 아직 없음')+'</div>')+'</details>'; } }
+    if(nts.length||exs.length||bds.length){ h+='<details class="lec-notes-live"'+(lsGet(lsKey('lec_notes_open'))===0?'':' open')+'><summary>✱ 요점 · 슬라이드 '+(p-(S.base||0))+(nts.length?' <small>'+nts.length+'줄</small>':'')+'</summary>'+(bds.length?'<div class="lec-board"><span class="lec-board-tag">✎ 판서</span>'+bds.map(function(b,bi){ return '<div class="lec-board-l"><span>'+mdInline(b)+'</span><button type="button" class="lec-board-x" data-bp="'+p+'" data-bi="'+bi+'" title="삭제">✕</button></div>'; }).join('')+'</div>':'')+(nts.length||exs.length?'<ul>'+nts.map(function(n){ return '<li>'+mdInline(n)+'</li>'; }).join('')+exs.map(function(x){ return '<li class="ex">⚠ '+escapeHtml(x)+'</li>'; }).join('')+'</ul>':'')+'</details>'; } }
     var all=allSegs(); var hidden=Math.max(0, all.length-150); if(hidden) h+='<div class="lec-divider">이전 '+hidden+'문장은 접힘 (저장돼 있어요)</div>'; var lastPg=null;
     all.slice(-150).forEach(function(s){ if(s.page!==lastPg){ lastPg=s.page; h+='<div class="lec-divider">'+escapeHtml(pageLabel(s.page))+'</div>'; } var main=(S.lang==='ko-KR')?(rawMode&&s.raw?s.raw:(s.fix||s.ko)):(s.ko?s.ko:''); h+='<div class="lec-seg"><span class="lec-ts">'+fmtT(s.t||0)+'</span><div class="lec-segbody"><div class="lec-ko">'+(main?sentHtml(main):'<span class="lec-wait">번역 중…</span>')+'</div>'+(S.lang!=='ko-KR'&&showEn?'<div class="lec-en'+(s.src==='gemini'?' gem':(s.fix&&!rawMode?' fixed':''))+'">'+sentHtml(s.src==='gemini'?s.en:(rawMode&&s.raw?s.raw:(s.fix||s.en)))+'</div>':'')+(rawMode&&s.raw&&S.lang==='ko-KR'?'<div class="lec-en">확정: '+escapeHtml(s.ko)+'</div>':'')+'</div></div>'; });
     if(S.lastInterim) h+='<div class="lec-seg interim live"><span class="lec-ts">'+fmtT(nowT())+'</span><div class="lec-segbody"><div class="lec-ko">'+escapeHtml((function(){ try{ return fixTerms(S.lastInterim); }catch(e){ return S.lastInterim; } })())+' <span class="lec-cursor">▍</span></div></div></div>';
@@ -10220,7 +10220,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   function stopAudio(){ try{ if(S.recorder&&S.recorder.state!=='inactive'){ S.recorder.stop(); S.recorder.stream.getTracks().forEach(function(t){t.stop();}); } }catch(e){} setTimeout(function(){ if(S.chunks.length){ S.audioBlob=new Blob(S.chunks,{type:S.chunks[0].type||'audio/webm'}); var b=$('lecDownloadAudio'); if(b) b.style.display=''; } },600); }
 
   // ---- 실시간 AI 필기 (Claude API, 사용자 키) — 슬라이드 맥락으로 대본 교정 + 번역 + 요점 ----
-  var AI={ busy:false, lastRun:0, fails:0 }; window.tmAI=AI;
+  var AI={ busy:false, lastRun:0, fails:0, liveOn:false }; window.tmAI=AI; // v195: 20초 실시간 요점(aiTick) 제거 — 토큰 대비 효용 없음. 필기는 수업 후 생성만
   // 키는 내 계정 데이터(Firestore users/{uid}, 본인만 읽기 가능)와 함께 동기화 → 기기마다 다시 넣을 필요 없음
   // 로컬 도우미(내 맥의 Claude Code, 구독 → 추가 비용 0) — http://localhost:7377
   var LOCAL={ ok:false, model:'', checkedAt:0 };
@@ -10228,7 +10228,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
   async function localCall(system, user){ var r=await fetch('http://localhost:7377/notes',{ method:'POST', headers:{'content-type':'application/json'}, body:JSON.stringify({system:system,user:user}) }); var j=await r.json().catch(function(){ return {}; }); if(!r.ok) throw new Error(j.error||('helper '+r.status)); return j.text||''; }
   setInterval(function(){ if(typeof currentMode!=='undefined' && currentMode==='lecture') localPing(); }, 15000); setTimeout(localPing, 1500);
   function aiEngine(){ return LOCAL.ok?'local':''; }
-  function paintAiBtn(){ var b=$('lecAiBtn'); if(!b) return; b.textContent=LOCAL.ok?'✱ Claude 필기 (내 맥)':'✱ 도우미 꺼짐'; b.classList.toggle('on',LOCAL.ok); }
+  function paintAiBtn(){ var b=$('lecAiBtn'); if(!b) return; b.textContent=LOCAL.ok?'✱ 도우미 연결됨':'✱ 도우미 꺼짐'; b.classList.toggle('on',LOCAL.ok); }
   async function aiCall(system, user, maxTokens){
     if(aiEngine()==='local') return localCall(system, user);
     throw new Error('도우미가 꺼져 있어요');
@@ -10257,7 +10257,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     'Return ONLY JSON: {"segments":[{"i":<index>,"text":"<corrected original>","ko":"<Korean>"}],"notes":["..."],"summary":"<one line, ≤30 chars Korean>","exam":["..."],"board":["<formula line>"],"marks":[{"line":<slide line index>,"type":"highlight|underline|circle","note":"<optional>"}]}';
   function cleanGemFix(){ try{ if(S.lang==='ko-KR') return; Object.keys(S.slides||{}).forEach(function(p){ (S.slides[p].segs||[]).forEach(function(s){ if(s.src==='gemini' && s.fix && !s.gfix) delete s.fix; }); }); }catch(e){} }
   async function aiTick(force){
-    cleanGemFix(); if(!S.running || AI.busy || !aiEngine()) return; var now=Date.now(); if(!force && now-AI.lastRun<20000) return;
+    if(!AI.liveOn) return; cleanGemFix(); if(!S.running || AI.busy || !aiEngine()) return; var now=Date.now(); if(!force && now-AI.lastRun<20000) return;
     var p=S.page||1, sl=S.slides[p]; if(!sl) return; var pend=sl.segs.map(function(s,i){ return {s:s,i:i}; }).filter(function(x){ return !x.s.ai; });
     if(!pend.length) return;
     AI.busy=true; AI.lastRun=now; var live=S.live=S.live||{}; var cur=live[p]||{notes:[],summary:'',exam:[]};
@@ -10762,7 +10762,7 @@ document.addEventListener('visibilitychange', function(){ if(!document.hidden &&
     paintGemBtn(); paintAiBtn(); try{ $('lecRec').innerHTML=ICO.rec+'녹음 시작'; }catch(e){} try{ var gs=$('lecGain'); var gv=lsGet(lsKey('lec_gain')); if(gs && gv) gs.value=gv; }catch(e){}
     document.addEventListener('dblclick',function(e){ var b=e.target.closest&&e.target.closest('[data-tools="rec"] button[data-tool="eraser"]'); if(!b) return; e.preventDefault(); var n=(S.ann[S.page]||[]).length; if(!n){ showToast('이 쪽엔 표시가 없어요'); return; } if(!confirm('이 쪽의 표시 '+n+'개를 모두 지울까요?')) return; S.ann[S.page]=[]; annPersistPage(S.page); redrawAnn(); saveLocal(); });
     $('lecGemBtn').addEventListener('click',function(){ var cur=geminiKey(); if(S.running && cur && !G.on){ try{ if(S.rec){ S.rec.onend=null; S.rec.stop(); S.rec=null; } }catch(e){} gemStart(); showToast('Gemini 연결 중…'); return; } var v=prompt('Google AI Studio(aistudio.google.com/apikey)에서 만든 Gemini API 키를 붙여넣으세요.\n무료 티어로 대본·번역이 1~2초 만에 나와요. 키는 이 기기에만 저장돼요.\n(비우고 확인하면 해제 → Chrome 음성인식 사용)', cur); if(v===null) return; v=v.trim(); lsSet(lsKey('gemini_key'), v); try{ if(window.tmOnChange) tmOnChange(); }catch(e){} paintGemBtn(); if(v){ status('Gemini 키 확인 중…'); fetch('https://generativelanguage.googleapis.com/v1beta/models?pageSize=1&key='+encodeURIComponent(v)).then(function(r){ return r.json().then(function(j){ return {ok:r.ok, j:j}; }); }).then(function(x){ if(x.ok){ status('Gemini 키 확인됨 ✓ — 녹음 시작하면 실시간 대본·번역','ok'); } else { var m=(x.j&&x.j.error&&x.j.error.message)||('HTTP '+x.j); status('Gemini 키 오류: '+m,'err'); } }).catch(function(e){ status('Gemini 연결 실패: '+e.message,'err'); }); } else showToast('Gemini 해제'); if(S.running){ if(v && !G.on){ try{ if(S.rec){ S.rec.onend=null; S.rec.stop(); S.rec=null; } }catch(e){} gemStart(); } else if(!v && G.on){ gemFallback('Gemini 해제 — Chrome 음성인식으로 전환'); } } });
-    $('lecAiBtn').addEventListener('click',function(){ if(LOCAL.ok){ alert('내 맥의 Claude Code(구독)로 실시간 필기 중 — 추가 비용 없음.\n모델: '+LOCAL.model); } else { alert('실시간 필기 도우미가 꺼져 있어요.\n\n맥에서 "Dayble 도우미 시작.command"를 더블클릭해 켜면 15초 안에 자동 연결돼요. (없이도 대본·번역은 그대로 됩니다. 필기는 수업 후 생성)'); localPing(); } }); paintAiBtn();
+    $('lecAiBtn').addEventListener('click',function(){ if(LOCAL.ok){ alert('내 맥 도우미 연결됨 (모델: '+LOCAL.model+').\n실시간 요점은 v195부터 끔 — 필기는 녹음 중지 후 생성돼요. PDF 학습·Q&A는 그대로 도우미를 써요.'); } else { alert('실시간 필기 도우미가 꺼져 있어요.\n\n맥에서 "Dayble 도우미 시작.command"를 더블클릭해 켜면 15초 안에 자동 연결돼요. (없이도 대본·번역은 그대로 됩니다. 필기는 수업 후 생성)'); localPing(); } }); paintAiBtn();
     $('lecLang').addEventListener('click',function(){ var cur=this.getAttribute('data-lang'); var nx=(cur==='ko-KR')?'en-US':'ko-KR'; paintLang(nx); try{ lsSet(lsKey(langKey()),nx); if(window.tmOnChange) tmOnChange(); }catch(e){} showToast(cname($('lecCourse').value)+' → '+(nx==='ko-KR'?'한국어':'영어')+' 강의로 기억'); if(S.running){ S.lang=nx; S.langSample=''; S.langWarned=false; try{ S.rec.abort(); }catch(e){} showToast('언어 전환: '+(nx==='ko-KR'?'한국어':'영어')+' — 인식기 재시작'); } });
     var _rz=null; window.addEventListener('resize',function(){ if(typeof currentMode!=='undefined' && currentMode==='lecture'){ clearTimeout(_rz); _rz=setTimeout(function(){ renderPage(); renderViewPage(); },150); } });
     window.addEventListener('beforeunload',function(e){ if(S.running){ e.preventDefault(); e.returnValue=''; } });
