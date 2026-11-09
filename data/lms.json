@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-08T20:39:53.430Z",
+  "generatedAt": "2026-11-09T00:17:33.135Z",
   "source": "canvas",
   "user": "김주함(2025####72)",
   "courseFiles": {
@@ -2080,6 +2080,16 @@
       "files": []
     },
     {
+      "id": "a1509355",
+      "course": "계량경제학",
+      "title": "Presentation",
+      "due": null,
+      "submitted": false,
+      "url": "https://khcanvas.khu.ac.kr/courses/95551/assignments/1509355",
+      "body": "",
+      "files": []
+    },
+    {
       "id": "a1492416",
       "course": "모두를위한물리학",
       "title": "1주차 과제",
@@ -2324,7 +2334,7 @@
       "course": "창업과 thinking design",
       "title": "발제 7",
       "due": "2026-11-09T14:59:59Z",
-      "submitted": false,
+      "submitted": true,
       "url": "https://khcanvas.khu.ac.kr/courses/97242/assignments/1497679",
       "body": "제출해 주세요.",
       "files": []
