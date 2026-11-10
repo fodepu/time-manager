@@ -1,0 +1,1068 @@
+{
+ "id": "lec_2026-11-10_mwaaqu07",
+ "course": "계량경제학",
+ "title": "계량경제학 6주차",
+ "date": "2026-11-10",
+ "week": 6,
+ "module": "1507911",
+ "lang": "en",
+ "mode": "online",
+ "pdf": "",
+ "pages": 11,
+ "duration": 3295,
+ "log": [
+  {
+   "t": 0,
+   "page": 1
+  },
+  {
+   "t": 300,
+   "page": 2
+  },
+  {
+   "t": 600,
+   "page": 3
+  },
+  {
+   "t": 900,
+   "page": 4
+  },
+  {
+   "t": 1200,
+   "page": 5
+  },
+  {
+   "t": 1500,
+   "page": 6
+  },
+  {
+   "t": 1800,
+   "page": 7
+  },
+  {
+   "t": 2100,
+   "page": 8
+  },
+  {
+   "t": 2400,
+   "page": 9
+  },
+  {
+   "t": 2700,
+   "page": 10
+  },
+  {
+   "t": 3000,
+   "page": 11
+  }
+ ],
+ "slides": [
+  {
+   "page": 1,
+   "en": "They have a opportunity to show you how to run data. Can you hear me clearly and then can you see the screen? 사람 그냥 손 맞을 때 많았거든. 이게 나 편한 사람 특징인가? 오케이, great. Uh so first of all, I I would you know, the data example I used a is from US data because we have some students who cannot speak and read Korean. So, um that is one example, but actually the majority of students are Korean, so I apologize for you know, two students from other countries, but I will spend a few minutes to talk about Korean dataset, okay? Uh the thing is that this Korean dataset they they don't allow people who don't have, you know, Korean cell phone number to access to the data and download and use the, you know, use the data. So if the the foreign students may find it difficult to get an access to this dataset. Uh so in that case, you can use data from your country and if you have a question about how to get an access to your country's dataset, you can approach me, okay? But I will explain statistics of a Korea. So statistics of a Korea has really nice data set. And then if you just uh type in Kosis, K R U C S page, and there are different types of data you can see. So like you just need to browse. Nobody knows what is the best way, you just need to try to find out different and data set, just browse. And then if you click this, this is a vice, okay, let me see. English. Oh yeah, yeah, yeah. Here we can see a bit of Okay, this is good. So the students from other country also can see this page. Population census. This is the census data. And census data it has a long history. I will show you later. You can even download the census data from 1960. And it is the household survey. Uh conducted in every five years. to learn about the basic characteristic of household in one country. So US as their own census every country, almost every country has their own census. And it's a representative sample. So it's credible. So this is different from whatever you get from the, you know, web, web crawling and etc. because this is designed to represent the, you know, Korean household. Okay? Uh so if you click this, I see what we have. Um, so this shows a summary statistics. from the census data. So the census data, you have individual level response to some questionnaires and this site actually give you some summary statistics. So aggregate outcome uh in terms of number of household across area and um number of males, females, and etc. So And then this actually has a limited information, right? But census has more than that. But it's good that even for students can just take a look at it what kind of variables out there, so you can use it. as needed. Um, yeah. So the first website you have to check is called Kosis. This one. is a statistics of Korea. And it usually provide aggregate data. And um labor. So Um, labor productivity index also sounds interesting. So many times I just hang out with this this dataset so fun to learn the new dataset and then uh you may have some great",
+   "ko": "그들은 기회가 있어요. 어떻게 운영하는지 보여줄게요. 할 수 있나요? 제 목소리가 잘 들리고 화면이 보이나요? 좋아요. 어, 그래서 우선, 저는 그, 뭐랄까, 데이터 예시를 사용했는데 어 미국에서 가져온 데이터예요. 왜냐하면 저희 학생들 중에는 영어를 못하고 읽지 못하는 분들이 있어서요. 그래서, 음 그게 한 가지 예시인데, 사실은 대부분의 사람들이 한국어를 할 줄 아니까, 그래서 저는 죄송하지만 어 두 분이 다른 나라에서 오신 학생분들이지만, 제가 몇 분 동안 한국 데이터에 대해 이야기할게요, 알겠죠? 어, 문제는 이 한국어 데이터 세트가 그들은 허용하지 않아요 한국어를 못하는 사람들이, 그러니까 한국 휴대폰 번호가 없으면 데이터에 접근할 수 없어요. 그리고 다운로드도 할 수 없고 데이터를 사용할 수 없어요. 그래서 만약 외국인 학생이 어렵다고 느낄 수 있는데, 이 데이터 세트에 접근하기가요. 어, 그래서 그런 경우에는 여러분이 할 수 있어요. 이 데이터를 사용하거나 여러분의 나라에서 가져온 데이터를 사용하고, 질문이 있으시면 어떻게 접근할 수 있는지 여러분의 나라의 데이터 세트에 접근할 수 있는지 저에게 물어보세요, 알겠죠? 하지만 한국의 통계에 대해 설명해 드릴게요. 한국의 통계는 정말 좋은 데이터 세트예요. 그리고 만약 여러분이 어, 입력하면 코시스라고, K R U C S 페이지에, 그리고 거기에 다양한 종류의 데이터가 있어서 볼 수 있어요. 그래서 그냥 둘러보시면 돼요. 아무도 뭐가 가장 좋은 방법인지 몰라요, 그냥 찾아보셔야 해요. 다양한 그리고 데이터 세트를 그냥 둘러보세요. 그리고 만약 이걸 클릭하면 이건 바이스예요, 알겠죠? 어디 보자. 영어. 아 네, 네, 네. 여기서 우리는 조금 볼 수 있어요. 좋아요, 이건 좋네요. 그래서 다른 나라에서 온 학생들도 이 페이지를 볼 수 있어요. 인구 조사. 이건 인구 조사 데이터예요. 그리고 인구 조사 데이터는 오랜 역사를 가지고 있어요. 나중에 보여드릴게요. 인구 조사 데이터도 다운로드할 수 있어요, 1960년 부터. 그리고 이건 가구 조사예요. 어, 5년마다 실시돼요. 배우기 위해서 기본적인 가구의 특성을 알기 위해 한 나라에서. 그래서 미국도 자체적인 인구 조사가 있고, 거의 모든 나라가 자체적인 인구 조사가 있어요. 그리고 대표적인 표본이에요. 그래서 신뢰할 수 있어요. 그래서 이건 여러분이 인터넷에서 얻는 것과는 달라요, 웹사이트나 웹 크롤링에서 얻는 것과는요. 왜냐하면 이건 설계된 것이기 때문에 대표성을 띠고 있어요, 그러니까 한국 가구를요. 알겠죠? 어, 그래서 만약 여러분이 이걸 클릭하면 저는 우리가 가진 것을 봅니다. 음, 그래서 이건 요약된 통계를 보여줍니다. 그 인구 조사 데이터에서요. 그래서 인구 조사 데이터에는, 개인별 수준의 응답이 있어요. 몇 가지 설문지에 대한 그리고 이 사이트는 실제로 여러분에게 몇 가지 요약된 통계를 제공합니다. 그래서 집계된 결과는 어, 가구 수에 따라 지역별로 그리고 어, 음 남성 수와 여성 수, 그리고 등등입니다. 그래서 그리고 이 사이트는 실제로 제한된 정보만 가지고 있죠, 맞죠? 하지만 인구 조사에는 그보다 더 많은 정보가 있어요. 하지만 심지어 학생들도 그냥 한번 볼 수 있다는 점이 좋아요. 어떤 변수들이 있는지, 그래서 여러분이 사용할 수 있다는 점이죠. 필요에 따라. 음, 네. 그래서 첫 번째 웹사이트는 확인해야 할 곳은 바로 코시스입니다. 이거예요. 이건 한국 통계입니다. 그리고 보통 제공합니다. 집계된 데이터를요. 그리고 음 노동. 그래서 음, 노동 생산성 지수도 흥미로워 보이네요. 그래서 저는 종종 그냥 이 사이트에서 시간을 보내요. 이 데이터셋은 배우기에 정말 재미있고 새로운 데이터셋을 배우고 나면 어, 여러분이 좋은 아이디어를",
+   "pdf": "",
+   "pdfPage": 1,
+   "slideText": "",
+   "segs": [
+    {
+     "t": 5,
+     "page": 1,
+     "en": "They have a opportunity to show you how to run data. Can you hear me clearly and then can you see the screen?",
+     "ko": "그들은 기회가 있어요. 어떻게 운영하는지 보여줄게요. 할 수 있나요? 제 목소리가 잘 들리고 화면이 보이나요?",
+     "src": "gemini"
+    },
+    {
+     "t": 18,
+     "page": 1,
+     "en": "사람 그냥 손 맞을 때 많았거든. 이게 나 편한 사람 특징인가? 오케이, great. Uh so first of all, I I would you know, the data example I used a is from US data because we have some students who cannot speak and read Korean. So, um that is one example, but actually the majority of students are Korean, so I apologize for you know, two students from other countries, but I will spend a few minutes to talk about Korean dataset, okay?",
+     "ko": "좋아요. 어, 그래서 우선, 저는 그, 뭐랄까, 데이터 예시를 사용했는데 어 미국에서 가져온 데이터예요. 왜냐하면 저희 학생들 중에는 영어를 못하고 읽지 못하는 분들이 있어서요. 그래서, 음 그게 한 가지 예시인데, 사실은 대부분의 사람들이 한국어를 할 줄 아니까, 그래서 저는 죄송하지만 어 두 분이 다른 나라에서 오신 학생분들이지만, 제가 몇 분 동안 한국 데이터에 대해 이야기할게요, 알겠죠?",
+     "src": "gemini"
+    },
+    {
+     "t": 57,
+     "page": 1,
+     "en": "Uh the thing is that this Korean dataset they they don't allow people who don't have, you know, Korean cell phone number to access to the data and download and use the, you know, use the data. So if the the foreign students may find it difficult to get an access to this dataset.",
+     "ko": "어, 문제는 이 한국어 데이터 세트가 그들은 허용하지 않아요 한국어를 못하는 사람들이, 그러니까 한국 휴대폰 번호가 없으면 데이터에 접근할 수 없어요. 그리고 다운로드도 할 수 없고 데이터를 사용할 수 없어요. 그래서 만약 외국인 학생이 어렵다고 느낄 수 있는데, 이 데이터 세트에 접근하기가요.",
+     "src": "gemini"
+    },
+    {
+     "t": 80,
+     "page": 1,
+     "en": "Uh so in that case, you can use data from your country and if you have a question about how to get an access to your country's dataset, you can approach me, okay? But I will explain statistics of a Korea. So statistics of a Korea has really nice data set. And then if you just uh type in Kosis, K R U C S page, and there are different types of data you can see.",
+     "ko": "어, 그래서 그런 경우에는 여러분이 할 수 있어요. 이 데이터를 사용하거나 여러분의 나라에서 가져온 데이터를 사용하고, 질문이 있으시면 어떻게 접근할 수 있는지 여러분의 나라의 데이터 세트에 접근할 수 있는지 저에게 물어보세요, 알겠죠? 하지만 한국의 통계에 대해 설명해 드릴게요. 한국의 통계는 정말 좋은 데이터 세트예요. 그리고 만약 여러분이 어, 입력하면 코시스라고, K R U C S 페이지에, 그리고 거기에 다양한 종류의 데이터가 있어서 볼 수 있어요.",
+     "src": "gemini"
+    },
+    {
+     "t": 117,
+     "page": 1,
+     "en": "So like you just need to browse. Nobody knows what is the best way, you just need to try to find out different and data set, just browse. And then if you click this, this is a vice, okay, let me see. English. Oh yeah, yeah, yeah. Here we can see a bit of",
+     "ko": "그래서 그냥 둘러보시면 돼요. 아무도 뭐가 가장 좋은 방법인지 몰라요, 그냥 찾아보셔야 해요. 다양한 그리고 데이터 세트를 그냥 둘러보세요. 그리고 만약 이걸 클릭하면 이건 바이스예요, 알겠죠? 어디 보자. 영어. 아 네, 네, 네. 여기서 우리는 조금 볼 수 있어요.",
+     "src": "gemini"
+    },
+    {
+     "t": 139,
+     "page": 1,
+     "en": "Okay, this is good. So the students from other country also can see this page. Population census. This is the census data. And census data it has a long history. I will show you later. You can even download the census data from 1960. And it is the household survey.",
+     "ko": "좋아요, 이건 좋네요. 그래서 다른 나라에서 온 학생들도 이 페이지를 볼 수 있어요. 인구 조사. 이건 인구 조사 데이터예요. 그리고 인구 조사 데이터는 오랜 역사를 가지고 있어요. 나중에 보여드릴게요. 인구 조사 데이터도 다운로드할 수 있어요, 1960년 부터. 그리고 이건 가구 조사예요.",
+     "src": "gemini"
+    },
+    {
+     "t": 161,
+     "page": 1,
+     "en": "Uh conducted in every five years. to learn about the basic characteristic of household in one country. So US as their own census every country, almost every country has their own census. And it's a representative sample. So it's credible. So this is different from whatever you get from the, you know, web, web crawling and etc.",
+     "ko": "어, 5년마다 실시돼요. 배우기 위해서 기본적인 가구의 특성을 알기 위해 한 나라에서. 그래서 미국도 자체적인 인구 조사가 있고, 거의 모든 나라가 자체적인 인구 조사가 있어요. 그리고 대표적인 표본이에요. 그래서 신뢰할 수 있어요. 그래서 이건 여러분이 인터넷에서 얻는 것과는 달라요, 웹사이트나 웹 크롤링에서 얻는 것과는요.",
+     "src": "gemini"
+    },
+    {
+     "t": 184,
+     "page": 1,
+     "en": "because this is designed to represent the, you know, Korean household. Okay? Uh so if you click this, I see what we have. Um, so this shows a summary statistics. from the census data. So the census data, you have individual level response to some questionnaires and this site actually give you some summary statistics. So aggregate outcome uh in terms of number of household across area and um number of males, females, and etc.",
+     "ko": "왜냐하면 이건 설계된 것이기 때문에 대표성을 띠고 있어요, 그러니까 한국 가구를요. 알겠죠? 어, 그래서 만약 여러분이 이걸 클릭하면 저는 우리가 가진 것을 봅니다. 음, 그래서 이건 요약된 통계를 보여줍니다. 그 인구 조사 데이터에서요. 그래서 인구 조사 데이터에는, 개인별 수준의 응답이 있어요. 몇 가지 설문지에 대한 그리고 이 사이트는 실제로 여러분에게 몇 가지 요약된 통계를 제공합니다. 그래서 집계된 결과는 어, 가구 수에 따라 지역별로 그리고 어, 음 남성 수와 여성 수, 그리고 등등입니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 233,
+     "page": 1,
+     "en": "So",
+     "ko": "그래서",
+     "src": "gemini"
+    },
+    {
+     "t": 237,
+     "page": 1,
+     "en": "And then this actually has a limited information, right? But census has more than that. But it's good that even for students can just take a look at it what kind of variables out there, so you can use it. as needed. Um, yeah. So the first website you have to check is called Kosis.",
+     "ko": "그리고 이 사이트는 실제로 제한된 정보만 가지고 있죠, 맞죠? 하지만 인구 조사에는 그보다 더 많은 정보가 있어요. 하지만 심지어 학생들도 그냥 한번 볼 수 있다는 점이 좋아요. 어떤 변수들이 있는지, 그래서 여러분이 사용할 수 있다는 점이죠. 필요에 따라. 음, 네. 그래서 첫 번째 웹사이트는 확인해야 할 곳은 바로 코시스입니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 264,
+     "page": 1,
+     "en": "This one. is a statistics of Korea. And it usually provide aggregate data. And um",
+     "ko": "이거예요. 이건 한국 통계입니다. 그리고 보통 제공합니다. 집계된 데이터를요. 그리고 음",
+     "src": "gemini"
+    },
+    {
+     "t": 277,
+     "page": 1,
+     "en": "labor. So",
+     "ko": "노동. 그래서",
+     "src": "gemini"
+    },
+    {
+     "t": 282,
+     "page": 1,
+     "en": "Um,",
+     "ko": "음,",
+     "src": "gemini"
+    },
+    {
+     "t": 286,
+     "page": 1,
+     "en": "labor productivity index also sounds interesting. So many times I just hang out with this this dataset so fun to learn the new dataset and then uh you may have some great",
+     "ko": "노동 생산성 지수도 흥미로워 보이네요. 그래서 저는 종종 그냥 이 사이트에서 시간을 보내요. 이 데이터셋은 배우기에 정말 재미있고 새로운 데이터셋을 배우고 나면 어, 여러분이 좋은 아이디어를",
+     "src": "gemini"
+    }
+   ]
+  },
+  {
+   "page": 2,
+   "en": "idea if you encounter interesting dataset and the trend. So that's how we usually uh find out great motivation to study. So sometimes you have your very clear question and then you can start your research. But sometimes if you browse data and learn about, oh, there's something some data about labor productivity and I can ask certain question and that's another uh you know, possibility. So Kosis is there. And so you um yeah. So so for Korean students, uh census is is census and the is useful when you want to learn about fertility and that death. marriage, and etc. And now because aging population is one of the important social issues in South Korea, so if you want to think about how the uh population structure has changed, and how there's a difference different trend in uh capital region, and non- capital region, capital, non-capital, you can use this information. So for instance, in the population survey, it's very useful because it tells us the cross county trend like which county or province we know how the number of births changes, for instance, and the you can actually click this setting and to change and whether, you know, whether you want to see at the level, county level or whether you want to see at the province level. So if you want to see level, you have to choose level two. Okay? And now we can see that even within Seoul, we see different uh county, Jongno-gu, Jung-gu, Yongsan-gu, Dongdaemun-gu, and click this this is Sijum, which is the you know, uh which time range you want to look at. And here this is depending on the data set you choose on the left side, it can be yearly information or it can be monthly information. What I choose is yearly information. So if you choose the year you want to see, and then search, you can see all this information. The number of birth and uh total fertility rate. over years, so that, you know, you can use this to to learn about the trend. How to proceed you can download. the data and save it in your computer. And then after you save it, you can call the data set when you run the program, okay? So that's how you collect. Uh so for some data set like those polity rate, or marriage rate, and even the you know, the employment rate, across the county, you can actually you know, browse on the left side, and then download the data directly. Even without looking at the micro level data. Okay? Question? You can ask questions in Korean. So once you have some interest in certain topic, you can check what kind of data is available out there. For instance, if you are interested in the maternity leave, there are a bunch of data over here. If you are interested in the uh employment rate, and we see that how the the employment rate among the youth, has changed quarterly over time. So choose the timeline and check check whether you can change the level category or of variables it can be more aggregate, more disaggregate. So you choose it and then you search and download. That's one website. That is very useful. for your project.",
+   "ko": "얻을 수도 있어요. 만약 여러분이 흥미로운 데이터셋을 발견하고 트렌드를 알게 된다면요. 그래서 저희는 보통 어, 알아냅니다. 좋은 동기 가가 생겨서 공부를 해요. 그래서 때로는 여러분이 아주 명확한 질문을 가지고 있고, 그런 다음 연구를 시작할 수 있어요. 하지만 때로는 데이터를 검색하다가 새로운 데이터셋에 대해 알게 되고, 아, 이런 데이터가 있구나 하고 알게 되죠. 노동 생산성에 대해 그리고 제가 질문을 할 수 있고, 그리고 그게 또 다른 어, 가능성이에요. 그래서 코시스는 거기에 있어요. 그리고 그래서 여러분이 음 네. 그래서 그래서 한국 학생들에게는 그리고 어, 인구 조사 는 인구 조사입니다. 그리고 인구 동향 조사는 배우고 싶을 때 유용합니다. 출산율에 대해 그리고 그게 사망입니다. 결혼, 그리고 등등입니다. 그리고 이제 왜냐하면 고령화 인구는 중요한 사회적 문제 중 하나이기 때문에, 한국에서 그래서 만약 여러분이 생각하고 싶다면 어떻게 인구 구조가 변했는지 알고 싶다면, 그리고 어떻게 차이가 있는지 알고 싶다면, 다른 추세가 있는지 알고 싶다면, 수도권에서 그리고 비수도권에서 어떻게 다른지 알고 싶다면, 여러분은 이 정보를 사용할 수 있습니다. 예를 들어, 인구 동향 조사에서, 굉장히 유용한데, 왜냐하면 우리에게 그 교차 카운티 추세를 알려주기 때문입니다. 예를 들어, 어떤 카운티나 도가 어떻게 되는지 알 수 있습니다. 출생아 수가 어떻게 변하는지, 예를 들어, 그리고 여러분은 실제로 이 정보를 클릭할 수 있습니다. 이 설정에서 그리고 변경하려면 그리고 그게, 아시다시피, 보고 싶은지 아니면 시군구 수준에서 보고 싶은지, 아니면 도 수준에서 보고 싶은지. 그래서 만약 여러분이 시군구 수준에서 보고 싶다면, 레벨 2를 선택해야 합니다. 알겠죠? 그리고 이제 심지어 서울 내에서도 다른 추세가 보입니다. 어, 카운티, 종로구, 중구, 용산구, 동대문구, 그리고 이것을 클릭하면 이것은 시점인데, 이것은 아시다시피, 어 어떤 시간인지 알고 싶은지 입니다. 그리고 여기서 이것은 데이터 세트에 따라 왼쪽에서 선택한 것에 따라 매년 정보일 수도 있고, 매월 정보일 수도 있습니다. 제가 선택한 것은 연간 정보입니다. 그래서 만약 여러분이 선택하면 원하는 연도를 볼 수 있고, 그런 다음 검색하면, 이 모든 정보를 볼 수 있습니다. 출생아 수와 어 합계 출산율 수년에 걸쳐서, 그래서, 아시다시피, 이걸 사용해서 그 트렌드를 배울 수 있어요. 어떻게 진행해야 하는지 다운로드할 수 있어요. 데이터를 저장하고 컴퓨터에 저장할 수 있어요. 그리고 저장한 후에는 전화를 걸어서 데이터를 불러올 수 있어요. 프로그램을 실행할 때, 알겠죠? 그렇게 수집하는 거예요. 어, 그래서 어떤 데이터 세트는 그런 것들처럼 정치 체제 비율, 또는 결혼율 같은 것들이요. 그리고 심지어 아시다시피, 고용률 같은 것들도요. 전반적으로 카운티 전체에서, 실제로 할 수 있어요. 아시다시피, 왼쪽에서 찾아볼 수 있고, 그런 다음 데이터를 직접 다운로드할 수 있어요. 보지 않고도 미시적인 수준의 데이터를 볼 수 있어요. 알겠죠? 질문? 여러분은 질문을 할 수 있어요. 한국어로. 그래서 일단 몇 가지 특정 분야에 관심이 생기면, 여러분은 확인할 수 있어요. 어떤 데이터가 있는지 말이죠. 예를 들어, 여러분이 모성 휴가에 관심이 있다면, 많은 데이터가 여기에 있어요. 만약 여러분이 관심이 있다면 그 어, 고용 률에 관심이 있다면, 그리고 우리가 보듯이 어떻게 고용률이 청년들 사이에서, 어떻게 변했는지 분기별로 볼 수 있어요. 그래서 선택하세요. 타임라인을 선택하세요. 그리고 확인하세요. 확인하세요. 어떤지 여러분이 할 수 있는지 변경할 수 있는지 수준을 카테고리별로 또는 변수의 더 집계될 수 있는지, 더 세분화될 수 있는지. 그래서 선택하고 그런 다음 검색하고 다운로드하세요. 그게 하나의 웹사이트예요. 그건 매우 유용해요. 여러분의 프로젝트에.",
+   "pdf": "",
+   "pdfPage": 2,
+   "slideText": "",
+   "segs": [
+    {
+     "t": 300,
+     "page": 2,
+     "en": "idea if you encounter interesting dataset and the trend. So that's how we usually uh find out great motivation to study. So sometimes you have your very clear question and then you can start your research. But sometimes if you browse data and learn about, oh, there's something some data about labor productivity and I can ask certain question and that's another uh you know, possibility.",
+     "ko": "얻을 수도 있어요. 만약 여러분이 흥미로운 데이터셋을 발견하고 트렌드를 알게 된다면요. 그래서 저희는 보통 어, 알아냅니다. 좋은 동기 가가 생겨서 공부를 해요. 그래서 때로는 여러분이 아주 명확한 질문을 가지고 있고, 그런 다음 연구를 시작할 수 있어요. 하지만 때로는 데이터를 검색하다가 새로운 데이터셋에 대해 알게 되고, 아, 이런 데이터가 있구나 하고 알게 되죠. 노동 생산성에 대해 그리고 제가 질문을 할 수 있고, 그리고 그게 또 다른 어, 가능성이에요. 그래서",
+     "src": "gemini"
+    },
+    {
+     "t": 333,
+     "page": 2,
+     "en": "So Kosis is there. And so you um yeah. So so for Korean students, uh census is is census and the is useful when you want to learn about fertility and that death. marriage, and etc. And now because aging population is one of the important social issues in South Korea, so if you want to think about how the uh population structure has changed, and how there's a difference different trend in uh capital region, and non- capital region, capital, non-capital, you can use this information. So for instance, in the population",
+     "ko": "코시스는 거기에 있어요. 그리고 그래서 여러분이 음 네. 그래서 그래서 한국 학생들에게는 그리고 어, 인구 조사 는 인구 조사입니다. 그리고 인구 동향 조사는 배우고 싶을 때 유용합니다. 출산율에 대해 그리고 그게 사망입니다. 결혼, 그리고 등등입니다. 그리고 이제 왜냐하면 고령화 인구는 중요한 사회적 문제 중 하나이기 때문에, 한국에서 그래서 만약 여러분이 생각하고 싶다면 어떻게 인구 구조가 변했는지 알고 싶다면, 그리고 어떻게 차이가 있는지 알고 싶다면, 다른 추세가 있는지 알고 싶다면, 수도권에서 그리고 비수도권에서 어떻게 다른지 알고 싶다면, 여러분은 이 정보를 사용할 수 있습니다. 예를 들어, 인구 동향",
+     "src": "gemini"
+    },
+    {
+     "t": 389,
+     "page": 2,
+     "en": "survey, it's very useful because it tells us the cross county trend like which county or province we know how the number of births changes, for instance, and the you can actually click this setting and",
+     "ko": "조사에서, 굉장히 유용한데, 왜냐하면 우리에게 그 교차 카운티 추세를 알려주기 때문입니다. 예를 들어, 어떤 카운티나 도가 어떻게 되는지 알 수 있습니다. 출생아 수가 어떻게 변하는지, 예를 들어, 그리고 여러분은 실제로 이 정보를 클릭할 수 있습니다. 이 설정에서 그리고",
+     "src": "gemini"
+    },
+    {
+     "t": 415,
+     "page": 2,
+     "en": "to change and whether, you know, whether you want to see at the level, county level or whether you want to see at the province level. So if you want to see level, you have to choose level two. Okay?",
+     "ko": "변경하려면 그리고 그게, 아시다시피, 보고 싶은지 아니면 시군구 수준에서 보고 싶은지, 아니면 도 수준에서 보고 싶은지. 그래서 만약 여러분이 시군구 수준에서 보고 싶다면, 레벨 2를 선택해야 합니다. 알겠죠?",
+     "src": "gemini"
+    },
+    {
+     "t": 435,
+     "page": 2,
+     "en": "And now we can see that even within Seoul, we see different uh county, Jongno-gu, Jung-gu, Yongsan-gu, Dongdaemun-gu, and click this this is Sijum, which is the you know, uh which time range you want to look at.",
+     "ko": "그리고 이제 심지어 서울 내에서도 다른 추세가 보입니다. 어, 카운티, 종로구, 중구, 용산구, 동대문구, 그리고 이것을 클릭하면 이것은 시점인데, 이것은 아시다시피, 어 어떤 시간인지 알고 싶은지 입니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 458,
+     "page": 2,
+     "en": "And here this is depending on the data set you choose on the left side, it can be yearly information or it can be monthly information. What I choose is yearly information. So if you choose the year you want to see, and then search, you can see all this information.",
+     "ko": "그리고 여기서 이것은 데이터 세트에 따라 왼쪽에서 선택한 것에 따라 매년 정보일 수도 있고, 매월 정보일 수도 있습니다. 제가 선택한 것은 연간 정보입니다. 그래서 만약 여러분이 선택하면 원하는 연도를 볼 수 있고, 그런 다음 검색하면, 이 모든 정보를 볼 수 있습니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 477,
+     "page": 2,
+     "en": "The number of birth and uh total fertility rate.",
+     "ko": "출생아 수와 어 합계 출산율",
+     "src": "gemini"
+    },
+    {
+     "t": 485,
+     "page": 2,
+     "en": "over years, so that, you know, you can use this to to learn about the trend. How to proceed you can download. the data and save it in your computer. And then after you save it, you can call the data set when you run the program, okay? So that's how you collect.",
+     "ko": "수년에 걸쳐서, 그래서, 아시다시피, 이걸 사용해서 그 트렌드를 배울 수 있어요. 어떻게 진행해야 하는지 다운로드할 수 있어요. 데이터를 저장하고 컴퓨터에 저장할 수 있어요. 그리고 저장한 후에는 전화를 걸어서 데이터를 불러올 수 있어요. 프로그램을 실행할 때, 알겠죠? 그렇게 수집하는 거예요.",
+     "src": "gemini"
+    },
+    {
+     "t": 506,
+     "page": 2,
+     "en": "Uh so for some data set like those polity rate, or marriage rate, and even the you know, the employment rate, across the county, you can actually you know, browse on the left side, and then download the data directly. Even without looking at the micro level data.",
+     "ko": "어, 그래서 어떤 데이터 세트는 그런 것들처럼 정치 체제 비율, 또는 결혼율 같은 것들이요. 그리고 심지어 아시다시피, 고용률 같은 것들도요. 전반적으로 카운티 전체에서, 실제로 할 수 있어요. 아시다시피, 왼쪽에서 찾아볼 수 있고, 그런 다음 데이터를 직접 다운로드할 수 있어요. 보지 않고도 미시적인 수준의 데이터를 볼 수 있어요.",
+     "src": "gemini"
+    },
+    {
+     "t": 532,
+     "page": 2,
+     "en": "Okay? Question? You can ask questions in Korean.",
+     "ko": "알겠죠? 질문? 여러분은 질문을 할 수 있어요. 한국어로.",
+     "src": "gemini"
+    },
+    {
+     "t": 542,
+     "page": 2,
+     "en": "So once you have some interest in certain topic, you can check what kind of data is available out there. For instance, if you are interested in the maternity leave, there are a bunch of data over here. If you are interested in the uh employment rate, and we see that how the the employment rate among the youth, has changed quarterly over time. So choose the timeline and check check whether you can change the level category or of variables it can be more aggregate, more disaggregate. So you choose it and then you search and",
+     "ko": "그래서 일단 몇 가지 특정 분야에 관심이 생기면, 여러분은 확인할 수 있어요. 어떤 데이터가 있는지 말이죠. 예를 들어, 여러분이 모성 휴가에 관심이 있다면, 많은 데이터가 여기에 있어요. 만약 여러분이 관심이 있다면 그 어, 고용 률에 관심이 있다면, 그리고 우리가 보듯이 어떻게 고용률이 청년들 사이에서, 어떻게 변했는지 분기별로 볼 수 있어요. 그래서 선택하세요. 타임라인을 선택하세요. 그리고 확인하세요. 확인하세요. 어떤지 여러분이 할 수 있는지 변경할 수 있는지 수준을 카테고리별로 또는 변수의 더 집계될 수 있는지, 더 세분화될 수 있는지. 그래서 선택하고 그런 다음 검색하고",
+     "src": "gemini"
+    },
+    {
+     "t": 593,
+     "page": 2,
+     "en": "download. That's one website. That is very useful. for your project.",
+     "ko": "다운로드하세요. 그게 하나의 웹사이트예요. 그건 매우 유용해요. 여러분의 프로젝트에.",
+     "src": "gemini"
+    }
+   ]
+  },
+  {
+   "page": 3,
+   "en": "But if you want to do more about micro level analysis, you have to go to the where is it? micro data center. And here, uh data show you the details about micro data to foreigners. So you know, just apologize. Uh to foreign students, just 10 minutes I will talk about Korean data set, okay? Um so here, again, you can micro data, what is the difference between micro data and the data from Kosis. Micro data is raw data, not raw, but you know, almost raw data. They collected from individual household or individual respondent. Okay? So for each individual, they collect their age, education, location, you know, their labor supply and etc. and that is the, you know, what data set included. So we see at the individual level, uh how their labor supply and education and etc. are, you know, uh their characteristic at the individual level. But the data from Kosis is aggregate level. So we aggregate the characteristic over the population or over the at at the level, county level and etc. So that's the difference. So depending on what you want to do, if you want to understand how the individual level wage rate is determined, you need to use micro data. Aggregate data does not tell you how the, you know, population with different individuals have different outcomes. So it's just, you know, they want to aggregate and then it's useful to document the trend and etc. at the county level or education level. It does not tell you how individuals are different. Within one group. Okay? So here, if you check the the data by subject, we have a bunch of data. Okay? So we know migration, so if you are interested in how you know, the youth migration internal migration, has been changed over time, so people talk about concentration of youth population in capital region, but you know, it's it would be useful if you actually see the data, which you know, how the migration has happened over time and which area is most crowded and etc. Okay? Uh 인구 동향 so this is the population survey and then it has I just talk about the fertility rate in the Kosis website and that aggregate data is based on this micro level data. Okay? If you click this one, you see what kind of information we can have. As you can see, for each individual, we know year, the address of husband, wife, when they got married, when they got divorced, number of kids, uh younger than 20 years old, and their, you know, those kind of information is available at the individual level. And if you are interested in I don't know. uh farms, there are really nice data set. For instance, um 이 기업 생멸 행정 통계 is it has more detailed information of how each firm is established whether they, you know, how long they were in the market and etc. Uh, so this one is can can tell what's going on in the market in a very detailed level. Um, so 전국 사업체 조사 this has a long history. So so this is like a census for firms in South Korea. So we collect data from all the firms and then we know where they are located, when they were established, who is the, you know, um who what is the gender of the founder, and types of organization, and the number of workers, and and like where I think we should know the industry. Yes. This one tells you some information about industry.",
+   "ko": "하지만 만약 여러분이 미시적인 수준의 분석을 하고 싶다면, 그곳으로 가야 합니다. 어디에 있죠? 미시 데이터 센터. 그리고 여기서는, 어, 데이터 보여드릴게요. 자세한 미시 데이터에 대한 외국인용. 그래서 아시다시피, 그냥 사과하세요. 어, 외국인 학생들에게 10분 동안 이야기할게요. 한국어에 대한 데이터 세트, 알겠죠? 음, 그래서 여기서는, 다시, 여러분은 미시 데이터, 미시 데이터와 데이터의 차이점이 무엇인지, 그리고 코시스 데이터의 차이점이 무엇인지. 미시 데이터는 원시 데이터이고, 원시가 아니지만, 거의 원시 데이터입니다. 그들은 수집했고, 에서 개별 가구로부터 또는 개별 응답자로부터 수집했습니다. 그래서 각 개인에 대해, 그들은 나이, 학력, 위치, 그리고 노동 공급 등을 수집합니다. 그리고 그것이 바로 아시다시피, 어떤 데이터 세트가 포함되었는지입니다. 그래서 우리는 개인 수준에서 어, 어떻게 그들의 노동 공급과 교육 등이 어떻게 변했는지 알 수 있습니다. 어, 그들의 특성이 개인 수준에서 어떠한지. 하지만 코시스 데이터는 집계된 수준입니다. 그래서 우리는 개인 수준의 특성을 인구 전체에 걸쳐서 또는 특정 지역에 걸쳐서 집계합니다. 시군구 수준 등등으로요. 그래서 그게 차이점입니다. 그래서 무엇을 하고 싶은지에 따라, 만약 개인이 어떻게 임금 수준이 결정되는지 이해하고 싶다면, 개인 데이터를 사용해야 합니다. 집계 데이터는 어떻게 개인이 인구 전체가 어떻게 되는지 알 수 없습니다. 서로 다른 개인이 서로 다른 결과를 얻는다는 것을요. 그래서 그냥, 그들은 집계하고 싶어 하고, 그것은 기록하는 데 유용합니다. 추세 등을 시군구 수준에서 알 수 있습니다. 또는 교육 수준에서요. 그것은 어떻게 개인이 다른지 말해주지 않습니다. 한 그룹 내에서요. 알겠죠? 그래서 여기서, 만약 여러분이 확인한다면 그 데이터는 과목별로 되어 있고, 우리는 많은 데이터를 가지고 있습니다. 알겠죠? 그래서 우리는 이주 사실을 알고 있고, 그래서 만약 여러분이 어떻게 그, 그러니까 젊은이들이 어떻게 하는지 이주에 관심이 있다면, 국내 이주에 대해, 어떻게 변했는지 알 수 있습니다. 그래서 사람들은 집중화에 대해 이야기합니다. 젊은이 인구가 수도권에 집중되어 있다고 하지만, 그, 그러니까 그건 여러분이 실제로 데이터를 보면 어떤 어떤 그러니까 어떻게 이주가 일어났는지 시간이 지남에 따라 그리고 어떤 지역이 가장 붐비는지 등을 알 수 있습니다. 알겠죠? 어, 그래서 이것은 인구 조사이고 그리고 그것은 제가 방금 말씀드린 출산율에 대한 데이터는 코시스에 웹사이트에 있고, 그리고 그 집계된 데이터는 이 마이크로 레벨 데이터를 기반으로 합니다. 알겠죠? 만약 이것을 클릭하면, 어떤 정보를 얻을 수 있는지 볼 수 있습니다. 보시다시피, 각 개인에 대해 우리는 연도, 그리고 가구의 주소, 남편의 주소, 아내의 주소, 언제 결혼했는지, 그리고 언제 이혼했는지 알 수 있습니다. 자녀 수, 어, 20세 미만 자녀 수, 그리고 그들의, 그러니까 그런 종류의 정보가 개인 수준에서 이용 가능합니다. 그리고 만약 여러분이 관심이 있다면 잘 모르겠네요. 어, 농장, 정말 좋은 데이터 세트가 있어요. 예를 들어, 음 그것은 더 자세한 정보를 가지고 있는데, 각 기업이 어떻게 설립되고 그들이, 그러니까 얼마나 오랫동안 시장에 있었는지 등에 대한 정보입니다. 그래서 이것은 기업이 어떻게 시장에서 무슨 일이 일어나고 있는지 아주 자세하게 알 수 있습니다. 음, 그래서 이것은 오랜 역사를 가지고 있습니다. 그래서 이것은 기업을 위한 인구 조사와 같습니다. 그래서 저희는 수집합니다 데이터를 에서 모든 기업으로부터 그리고 그러면 우리는 그들이 어디에 있는지 알고, 언제 설립되었는지 그리고 누가, 그러니까, 음 누가 무엇이 기업의 창업자의 성별인지, 그리고 조직의 유형은 무엇인지, 그리고 직원 수는 몇 명인지, 그리고 그리고 예를 들어 어디에 있는지 제 생각에는 우리가 알아야 할 것 같아요 그 산업에 대해서요. 네. 이것은 당신에게 어떤 정보를 알려줍니다. 산업에",
+   "pdf": "",
+   "pdfPage": 3,
+   "slideText": "",
+   "segs": [
+    {
+     "t": 600,
+     "page": 3,
+     "en": "But if you want to do more about micro level analysis, you have to go to the where is it? micro data center. And here, uh data show you the details about micro data to foreigners. So you know, just apologize. Uh to foreign students, just 10 minutes I will talk about Korean data set, okay?",
+     "ko": "하지만 만약 여러분이 미시적인 수준의 분석을 하고 싶다면, 그곳으로 가야 합니다. 어디에 있죠? 미시 데이터 센터. 그리고 여기서는, 어, 데이터 보여드릴게요. 자세한 미시 데이터에 대한 외국인용. 그래서 아시다시피, 그냥 사과하세요. 어, 외국인 학생들에게 10분 동안 이야기할게요. 한국어에 대한 데이터 세트, 알겠죠?",
+     "src": "gemini"
+    },
+    {
+     "t": 629,
+     "page": 3,
+     "en": "Um so here, again, you can micro data, what is the difference between micro data and the data from Kosis. Micro data is raw data, not raw, but you know, almost raw data. They collected from individual household or individual respondent. Okay? So for each individual, they collect their age, education, location, you know, their labor supply and etc. and that is the, you know, what data set included. So we see at the individual level, uh how their labor supply and education and etc.",
+     "ko": "음, 그래서 여기서는, 다시, 여러분은 미시 데이터, 미시 데이터와 데이터의 차이점이 무엇인지, 그리고 코시스 데이터의 차이점이 무엇인지. 미시 데이터는 원시 데이터이고, 원시가 아니지만, 거의 원시 데이터입니다. 그들은 수집했고, 에서 개별 가구로부터 또는 개별 응답자로부터 수집했습니다. 그래서 각 개인에 대해, 그들은 나이, 학력, 위치, 그리고 노동 공급 등을 수집합니다. 그리고 그것이 바로 아시다시피, 어떤 데이터 세트가 포함되었는지입니다. 그래서 우리는 개인 수준에서 어, 어떻게 그들의 노동 공급과 교육 등이 어떻게 변했는지",
+     "src": "gemini"
+    },
+    {
+     "t": 669,
+     "page": 3,
+     "en": "are, you know, uh their characteristic at the individual level. But the data from Kosis is aggregate level. So we aggregate the characteristic over the population or over the at at the level, county level and etc. So that's the difference. So depending on what you want to do, if you want to understand how the individual level wage rate is determined, you need to use micro data.",
+     "ko": "알 수 있습니다. 어, 그들의 특성이 개인 수준에서 어떠한지. 하지만 코시스 데이터는 집계된 수준입니다. 그래서 우리는 개인 수준의 특성을 인구 전체에 걸쳐서 또는 특정 지역에 걸쳐서 집계합니다. 시군구 수준 등등으로요. 그래서 그게 차이점입니다. 그래서 무엇을 하고 싶은지에 따라, 만약 개인이 어떻게 임금 수준이 결정되는지 이해하고 싶다면, 개인 데이터를 사용해야 합니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 695,
+     "page": 3,
+     "en": "Aggregate data does not tell you how the, you know, population with different individuals have different outcomes. So it's just, you know, they want to aggregate and then it's useful to document the trend and etc. at the county level or education level. It does not tell you how individuals are different.",
+     "ko": "집계 데이터는 어떻게 개인이 인구 전체가 어떻게 되는지 알 수 없습니다. 서로 다른 개인이 서로 다른 결과를 얻는다는 것을요. 그래서 그냥, 그들은 집계하고 싶어 하고, 그것은 기록하는 데 유용합니다. 추세 등을 시군구 수준에서 알 수 있습니다. 또는 교육 수준에서요. 그것은 어떻게 개인이 다른지 말해주지",
+     "src": "gemini"
+    },
+    {
+     "t": 717,
+     "page": 3,
+     "en": "Within one group. Okay? So here, if you check the the data by subject, we have a bunch of data. Okay? So we know migration, so if you are interested in how you know, the youth migration internal migration, has been changed over time, so people talk about concentration of youth population in capital region, but you know, it's it would be useful if you actually see the data, which you know, how the migration has happened over time and which area is most crowded and etc.",
+     "ko": "않습니다. 한 그룹 내에서요. 알겠죠? 그래서 여기서, 만약 여러분이 확인한다면 그 데이터는 과목별로 되어 있고, 우리는 많은 데이터를 가지고 있습니다. 알겠죠? 그래서 우리는 이주 사실을 알고 있고, 그래서 만약 여러분이 어떻게 그, 그러니까 젊은이들이 어떻게 하는지 이주에 관심이 있다면, 국내 이주에 대해, 어떻게 변했는지 알 수 있습니다. 그래서 사람들은 집중화에 대해 이야기합니다. 젊은이 인구가 수도권에 집중되어 있다고 하지만, 그, 그러니까 그건 여러분이 실제로 데이터를 보면 어떤 어떤 그러니까 어떻게 이주가 일어났는지 시간이 지남에 따라 그리고 어떤 지역이 가장 붐비는지 등을 알 수 있습니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 764,
+     "page": 3,
+     "en": "Okay? Uh 인구 동향 so this is the population survey and then it has I just talk about the fertility rate in the Kosis website and that aggregate data is based on this micro level data. Okay? If you click this one,",
+     "ko": "알겠죠? 어, 그래서 이것은 인구 조사이고 그리고 그것은 제가 방금 말씀드린 출산율에 대한 데이터는 코시스에 웹사이트에 있고, 그리고 그 집계된 데이터는 이 마이크로 레벨 데이터를 기반으로 합니다. 알겠죠? 만약 이것을 클릭하면,",
+     "src": "gemini"
+    },
+    {
+     "t": 786,
+     "page": 3,
+     "en": "you see what kind of information we can have. As you can see, for each individual, we know year, the address of husband, wife, when they got married, when they got divorced, number of kids, uh younger than 20 years old, and their, you know, those kind of information is available at the individual level.",
+     "ko": "어떤 정보를 얻을 수 있는지 볼 수 있습니다. 보시다시피, 각 개인에 대해 우리는 연도, 그리고 가구의 주소, 남편의 주소, 아내의 주소, 언제 결혼했는지, 그리고 언제 이혼했는지 알 수 있습니다. 자녀 수, 어, 20세 미만 자녀 수, 그리고 그들의, 그러니까 그런 종류의 정보가 개인 수준에서 이용 가능합니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 813,
+     "page": 3,
+     "en": "And if you are interested in I don't know. uh farms, there are really nice data set. For instance, um",
+     "ko": "그리고 만약 여러분이 관심이 있다면 잘 모르겠네요. 어, 농장, 정말 좋은 데이터 세트가 있어요. 예를 들어, 음",
+     "src": "gemini"
+    },
+    {
+     "t": 826,
+     "page": 3,
+     "en": "이 기업 생멸 행정 통계 is it has more detailed information of how each firm is established whether they, you know, how long they were in the market and etc. Uh, so this one is can can tell what's going on in the market in a very detailed level. Um, so 전국 사업체 조사 this has a long history.",
+     "ko": "그것은 더 자세한 정보를 가지고 있는데, 각 기업이 어떻게 설립되고 그들이, 그러니까 얼마나 오랫동안 시장에 있었는지 등에 대한 정보입니다. 그래서 이것은 기업이 어떻게 시장에서 무슨 일이 일어나고 있는지 아주 자세하게 알 수 있습니다. 음, 그래서 이것은 오랜 역사를 가지고",
+     "src": "gemini"
+    },
+    {
+     "t": 853,
+     "page": 3,
+     "en": "So so this is like a census for firms in South Korea. So we collect data from all the firms and then we know where they are located, when they were established, who is the, you know, um who what is the gender of the founder, and types of organization, and the number of workers, and and like where I think we should know the industry.",
+     "ko": "있습니다. 그래서 이것은 기업을 위한 인구 조사와 같습니다. 그래서 저희는 수집합니다 데이터를 에서 모든 기업으로부터 그리고 그러면 우리는 그들이 어디에 있는지 알고, 언제 설립되었는지 그리고 누가, 그러니까, 음 누가 무엇이 기업의 창업자의 성별인지, 그리고 조직의 유형은 무엇인지, 그리고 직원 수는 몇 명인지, 그리고 그리고 예를 들어 어디에 있는지 제 생각에는 우리가 알아야 할 것 같아요 그 산업에 대해서요.",
+     "src": "gemini"
+    },
+    {
+     "t": 895,
+     "page": 3,
+     "en": "Yes. This one tells you some information about industry.",
+     "ko": "네. 이것은 당신에게 어떤 정보를 알려줍니다. 산업에",
+     "src": "gemini"
+    }
+   ]
+  },
+  {
+   "page": 4,
+   "en": "Okay? Okay. But if you want to download a microdata, you have to go to download service. Let me check whether I'm recording. This session. Okay, I'm recording. Okay. So for instance, if you want to download the census data, click population and and census that we have a one person sample and two person sample that we have household census. This is about there. Um, house or housing condition. whether they own a house, whether it is an apartment, how old it is and etc. Uh, population tells you about your age, education, marital status, employment status, and some other variables. Okay? And then we For example, 1% is a smaller sample, so 1% of the entire population, 2% is a 2% of the entire population, but the reason why they provide different level of sample size, um, is sometimes if we want to have a bigger sample size to have a better information of the larger sample, but like our population, bigger sample is more precise, but the problem is that if we can identify individuals from the dataset, that's the violation of the law. So if we have for instance 50% of sample, that means that one out of two individuals is a sample, then it will be very easier for us to you know, it has too much information. There's some risk of identifying individual. So that's the reason why usually we restrict the sample size uh to 2%. And then you can actually access to the 10% and then even the full sample if you if you pay extra. Uh okay, I will explain that later. So for instance, I would choose 2% and the 1% 2% sometimes they provide different level of information, 2% may have coarse information. 1% has more detailed information. So let and then census has a long history. You can learn about our population characteristics from 1960s. So let's say that I I choose Oh, very different. years. And then you can see which information is available. So 2020 we have these information. We also know the the country at birth, education, where they lived one year ago, five years ago, their mode of childcare in detail. So sometimes each census uh the like this basic information is repeated in every census. But sometimes as needed, they have extra information about one particular topic. 2020 they collect a lot of information about childcare. And transportation. and commuting. etc. So uh you can browse even 1960, we have basic information. Age, education, etc. So okay. So what do you do? So you just collect what which data set you want to use, if you want to choose everything, that's okay. And uh here also you choose everything. So and you can choose download. And in order to download you can write down something like a census. And any it does not matter. It's just for you. to identify which data set it is. And research. So and because I'm using data, usually download the the script in stata. But it's it's up to you. If you use R, you can download in R format. If you do this, then you can check which data set, whether the data set is available to download. In this page, so here I already downloaded so many data before and this is the data I just downloaded. Uh I just want to download it's not ready yet. You wait a bit, like one two minutes and then you can see that you know, there it is. You can download the data.",
+   "ko": "대해서요. 알겠죠? 네. 하지만 만약 당신이 마이크로데이터를 다운로드하고 싶다면, 다운로드 서비스로 가야 합니다. 잠시만요. 제가 녹음하고 있는지 확인해 볼게요. 이 세션은요. 네, 녹음하고 있어요. 네. 그래서 예를 들어, 만약 당신이 인구 조사 데이터를 다운로드하고 싶다면, 인구와 그리고 인구 조사 우리가 가지고 있는 1인 가구 표본과 2인 가구 표본이 있는데, 우리가 가지고 있는 가구 조사 입니다. 이것은 어 에 대한 것입니다. 음, 주택 또는 주거 조건에 대한 것입니다. 그들이 집을 소유하고 있는지, 아파트인지, 얼마나 오래되었는지 등에 대한 것입니다. 어, 인구는 당신에게 당신의 나이, 교육, 결혼 상태, 그리고 고용 상태에 대해 알려줍니다. 그리고 다른 변수들도요. 알겠죠? 그리고 예를 들어, 1%는 더 작은 표본이므로 전체 인구의 1%는 2%보다 전체 인구의 2%가 더 작습니다. 하지만 그들이 다른 결과를 제공하는 이유는 표본 크기가 다르기 때문입니다. 음, 때로는 우리가 더 큰 표본 크기를 원해서 더 나은 정보를 가지고 싶을 때, 더 큰 표본을 원하지만, 우리 인구처럼 더 큰 표본이 더 많은 정확성을 제공하지만, 문제는 만약 우리가 식별할 수 있다면 개인을 데이터에서 식별할 수 있다면, 그것은 법을 위반하는 것입니다. 그래서 만약 우리가 예를 들어 50%의 표본을 가지고 있다면, 그것은 두 명 중 한 명을 표본으로 삼는다는 뜻이고, 그러면 그것은 매우 식별하기 더 쉬워질 것입니다. 아시다시피, 너무 많은 정보가 있습니다. 식별의 위험이 있습니다. 그래서 그것이 보통 우리가 제한하는 이유입니다. 어, 2%로요. 그리고 실제로 할 수 있습니다. 데이터에 접근할 수 있고, 심지어 전체 표본에도 접근할 수 있습니다. 만약 비용을 지불한다면요. 추가로. 어, 알겠습니다, 나중에 설명해 드릴게요. 예를 들어, 저는 2%를 선택하고 1%는 때때로 다른 결과를 제공합니다. 2%는 더 많은 정보를 제공할 수 있고, 거친 정보일 수 있습니다. 1%는 더 자세한 정보를 가지고 있습니다. 그래서 인구 조사는 오랜 역사를 가지고 있습니다. 여러분은 우리 인구에 대해 배울 수 있습니다. 특성을 1960년대부터 알 수 있습니다. 그래서 제가 만약 선택한다면 오, 매우 다릅니다. 몇 년 동안. 그리고 여러분은 어떤 정보가 제공되는지 볼 수 있습니다. 그래서 2020년 우리는 이런 것들을 가지고 있습니다. 우리는 또한 그 나라의 출생 시의 정보를 알고 있습니다. 교육, 그들이 어디에 살았는지, 1년 전, 5년 전, 그들의 교통수단, 육아 방식에 대해 자세히 알 수 있습니다. 그래서 때때로 각 인구 조사는 어, 이와 같은 기본적인 정보가 반복됩니다. 모든 인구 조사에서요. 하지만 때때로 필요에 따라 그들은 추가적인 정보를 가지고 있습니다. 특정 주제에 대한 정보입니다. 2020년에는 많은 정보를 수집했습니다. 육아에 대한 정보요. 그리고 교통수단에 대한 정보와 통근에 대한 정보요. 등등. 그래서 어, 여러분은 검색할 수 있습니다. 심지어 1960년에도 기본적인 정보가 있습니다. 나이, 교육 등등. 그래서 알겠습니다. 그래서 무엇을 하시나요? 그래서 그냥 수집하는 건가요? 어떤 데이터셋을 사용하고 싶은지, 만약 모든 것을 선택하고 싶다면 괜찮습니다. 그리고 어, 여기 또한 여러분은 모든 것을 선택합니다. 그래서 그리고 다운로드를 선택할 수 있습니다. 그리고 다운로드하려면 무언가를 적어야 합니다. 예를 들어 인구 조사 같은 것요. 그리고 어떤 것이든 상관없습니다. 그냥 당신을 위한 것입니다. 식별하기 위해 어떤 데이터셋을 사용하는지. 그리고 연구. 그래서 그리고 제가 데이터를 사용하고 있기 때문에 보통 다운로드합니다. 그 스크립트를 스테이타에서. 하지만 그건 당신 마음입니다. R을 사용한다면 R에서 다운로드할 수 있습니다. 이렇게 하면, 그러면 확인할 수 있습니다. 어떤 데이터셋인지. 그리고 데이터셋이 다운로드 가능한지. 이 경우, 이 페이지에서, 그래서 여기 저는 이미 너무 많은 데이터셋을 다운로드했고 이것이 제가 방금 다운로드한 데이터입니다. 어, 제가 방금 다운로드하고 싶은데 아직 준비가 안 됐어요. 당신은 조금 기다리세요, 예를 들어 1, 2분 정도 기다리면 볼 수 있습니다, 아시다시피, 거기에 있습니다. 당신은 다운로드할 수 있습니다.",
+   "pdf": "",
+   "pdfPage": 4,
+   "slideText": "",
+   "segs": [
+    {
+     "t": 900,
+     "page": 4,
+     "en": "Okay? Okay. But if you want to download a microdata, you have to go to download service.",
+     "ko": "대해서요. 알겠죠? 네. 하지만 만약 당신이 마이크로데이터를 다운로드하고 싶다면, 다운로드 서비스로 가야 합니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 911,
+     "page": 4,
+     "en": "Let me check whether I'm recording. This session.",
+     "ko": "잠시만요. 제가 녹음하고 있는지 확인해 볼게요. 이 세션은요.",
+     "src": "gemini"
+    },
+    {
+     "t": 919,
+     "page": 4,
+     "en": "Okay, I'm recording. Okay. So for instance, if you want to download the census data, click population and and census that we have a one person sample and two person sample that we have household census. This is about there. Um, house or housing condition. whether they own a house, whether it is an apartment, how old it is and etc.",
+     "ko": "네, 녹음하고 있어요. 네. 그래서 예를 들어, 만약 당신이 인구 조사 데이터를 다운로드하고 싶다면, 인구와 그리고 인구 조사 우리가 가지고 있는 1인 가구 표본과 2인 가구 표본이 있는데, 우리가 가지고 있는 가구 조사 입니다. 이것은 어 에 대한 것입니다. 음, 주택 또는 주거 조건에 대한 것입니다. 그들이 집을 소유하고 있는지, 아파트인지, 얼마나 오래되었는지 등에 대한 것입니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 950,
+     "page": 4,
+     "en": "Uh, population tells you about your age, education, marital status, employment status, and some other variables. Okay? And then we",
+     "ko": "어, 인구는 당신에게 당신의 나이, 교육, 결혼 상태, 그리고 고용 상태에 대해 알려줍니다. 그리고 다른 변수들도요. 알겠죠? 그리고",
+     "src": "gemini"
+    },
+    {
+     "t": 965,
+     "page": 4,
+     "en": "For example, 1% is a smaller sample, so 1% of the entire population, 2% is a 2% of the entire population, but the reason why they provide different level of sample size, um, is sometimes if we want to have a bigger sample size to have a better information of the larger sample, but like our population, bigger sample is more precise, but the problem is that if we can identify individuals from the dataset, that's the violation of the law. So if we have for instance 50% of sample, that means that one out of two individuals is a",
+     "ko": "예를 들어, 1%는 더 작은 표본이므로 전체 인구의 1%는 2%보다 전체 인구의 2%가 더 작습니다. 하지만 그들이 다른 결과를 제공하는 이유는 표본 크기가 다르기 때문입니다. 음, 때로는 우리가 더 큰 표본 크기를 원해서 더 나은 정보를 가지고 싶을 때, 더 큰 표본을 원하지만, 우리 인구처럼 더 큰 표본이 더 많은 정확성을 제공하지만, 문제는 만약 우리가 식별할 수 있다면 개인을 데이터에서 식별할 수 있다면, 그것은 법을 위반하는 것입니다. 그래서 만약 우리가 예를 들어 50%의 표본을 가지고 있다면, 그것은 두 명 중 한 명을 표본으로 삼는다는",
+     "src": "gemini"
+    },
+    {
+     "t": 1006,
+     "page": 4,
+     "en": "sample, then it will be very easier for us to you know, it has too much information. There's some risk of identifying individual. So that's the reason why usually we restrict the sample size uh to 2%. And then you can actually access to the 10% and then even the full sample if you if you pay extra.",
+     "ko": "뜻이고, 그러면 그것은 매우 식별하기 더 쉬워질 것입니다. 아시다시피, 너무 많은 정보가 있습니다. 식별의 위험이 있습니다. 그래서 그것이 보통 우리가 제한하는 이유입니다. 어, 2%로요. 그리고 실제로 할 수 있습니다. 데이터에 접근할 수 있고, 심지어 전체 표본에도 접근할 수 있습니다. 만약 비용을 지불한다면요. 추가로.",
+     "src": "gemini"
+    },
+    {
+     "t": 1031,
+     "page": 4,
+     "en": "Uh okay, I will explain that later. So for instance, I would choose 2% and the 1% 2% sometimes they provide different level of information, 2% may have coarse information. 1% has more detailed information. So let and then census has a long history. You can learn about our population characteristics from 1960s. So let's say that I I choose Oh, very different.",
+     "ko": "어, 알겠습니다, 나중에 설명해 드릴게요. 예를 들어, 저는 2%를 선택하고 1%는 때때로 다른 결과를 제공합니다. 2%는 더 많은 정보를 제공할 수 있고, 거친 정보일 수 있습니다. 1%는 더 자세한 정보를 가지고 있습니다. 그래서 인구 조사는 오랜 역사를 가지고 있습니다. 여러분은 우리 인구에 대해 배울 수 있습니다. 특성을 1960년대부터 알 수 있습니다. 그래서 제가 만약 선택한다면 오, 매우 다릅니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 1062,
+     "page": 4,
+     "en": "years. And then you can see which information is available. So 2020 we have these information. We also know the the country at birth, education, where they lived one year ago, five years ago, their mode of childcare in detail. So sometimes each census uh the like this basic information is repeated in every census.",
+     "ko": "몇 년 동안. 그리고 여러분은 어떤 정보가 제공되는지 볼 수 있습니다. 그래서 2020년 우리는 이런 것들을 가지고 있습니다. 우리는 또한 그 나라의 출생 시의 정보를 알고 있습니다. 교육, 그들이 어디에 살았는지, 1년 전, 5년 전, 그들의 교통수단, 육아 방식에 대해 자세히 알 수 있습니다. 그래서 때때로 각 인구 조사는 어, 이와 같은 기본적인 정보가 반복됩니다. 모든 인구 조사에서요.",
+     "src": "gemini"
+    },
+    {
+     "t": 1091,
+     "page": 4,
+     "en": "But sometimes as needed, they have extra information about one particular topic. 2020 they collect a lot of information about childcare. And transportation. and commuting. etc. So uh you can browse even 1960, we have basic information. Age, education, etc. So okay.",
+     "ko": "하지만 때때로 필요에 따라 그들은 추가적인 정보를 가지고 있습니다. 특정 주제에 대한 정보입니다. 2020년에는 많은 정보를 수집했습니다. 육아에 대한 정보요. 그리고 교통수단에 대한 정보와 통근에 대한 정보요. 등등. 그래서 어, 여러분은 검색할 수 있습니다. 심지어 1960년에도 기본적인 정보가 있습니다. 나이, 교육 등등. 그래서 알겠습니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 1119,
+     "page": 4,
+     "en": "So what do you do? So you just collect what which data set you want to use, if you want to choose everything, that's okay. And uh here also you choose everything. So and you can choose download. And in order to download you can write down something like a census.",
+     "ko": "그래서 무엇을 하시나요? 그래서 그냥 수집하는 건가요? 어떤 데이터셋을 사용하고 싶은지, 만약 모든 것을 선택하고 싶다면 괜찮습니다. 그리고 어, 여기 또한 여러분은 모든 것을 선택합니다. 그래서 그리고 다운로드를 선택할 수 있습니다. 그리고 다운로드하려면 무언가를 적어야 합니다. 예를 들어 인구 조사 같은",
+     "src": "gemini"
+    },
+    {
+     "t": 1141,
+     "page": 4,
+     "en": "And any it does not matter. It's just for you. to identify which data set it is. And research. So and because I'm using data, usually download the the script in stata. But it's it's up to you. If you use R, you can download in R format.",
+     "ko": "것요. 그리고 어떤 것이든 상관없습니다. 그냥 당신을 위한 것입니다. 식별하기 위해 어떤 데이터셋을 사용하는지. 그리고 연구. 그래서 그리고 제가 데이터를 사용하고 있기 때문에 보통 다운로드합니다. 그 스크립트를 스테이타에서. 하지만 그건 당신 마음입니다. R을 사용한다면 R에서 다운로드할 수 있습니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 1167,
+     "page": 4,
+     "en": "If you do this, then you can check which data set, whether the data set is available to download. In this page, so here I already downloaded so many data before and this is the data I just downloaded. Uh I just want to download it's not ready yet. You wait a bit, like one two minutes and then you can see that you know, there it is.",
+     "ko": "이렇게 하면, 그러면 확인할 수 있습니다. 어떤 데이터셋인지. 그리고 데이터셋이 다운로드 가능한지. 이 경우, 이 페이지에서, 그래서 여기 저는 이미 너무 많은 데이터셋을 다운로드했고 이것이 제가 방금 다운로드한 데이터입니다. 어, 제가 방금 다운로드하고 싶은데 아직 준비가 안 됐어요. 당신은 조금 기다리세요, 예를 들어 1, 2분 정도 기다리면 볼 수 있습니다, 아시다시피, 거기에 있습니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 1196,
+     "page": 4,
+     "en": "You can download the data.",
+     "ko": "당신은 다운로드할 수 있습니다.",
+     "src": "gemini"
+    }
+   ]
+  },
+  {
+   "page": 5,
+   "en": "depending on the size of the data, it may take a while. But you just wait and see. Okay? And another thing to mention during while we are waiting is that there are data uh the what kind of data we can use depends on the subscription. So the free, there are a lot of nice public data which is completely free. So that's something you can download every time. But if you want to use the bigger sample, like for instance, Yeah. Even the census, depending on the subscription, this information, Eumyeon-dong is not available. in the public data. As you as I mentioned before, this is for the privacy issue. We we don't want to reveal too much detail of each individual. So, but if you have access to the remote data set, you have even better information of household. And the good news is that Kyunghee University will subscribe this the you know, the most expensive subscription from at institution level. So everybody who is affiliated at Kyunghee University can have an access to remote data and they can even go to the center and then center is located in different location in Seoul like a Sogang University has own center. And the parliament also in Yeouido they have a center so this is this center also provide administrative data. You can go there to to get an access to even more prestigious and restricted data. Okay? That's it. All right, any any questions? Yeah. Okay. Okay. And the NRY data is something I I will use today. The demonstrate data. And this one is the panel data from US and actually collects the data on an individual over the 30 years. Almost 30 years. and NLSY. So this is one of the mostly studied data set in labor economics. So this is why I wanted to show you. So NRY youth 1979 and 1997 they have two data set. So this one is for the older cohort, who were in age 14 and 20 in 1979. This one has even longer panel data. So until now they collect information of those in individuals. They are quite old now, like a 60, but on the new data set, started from 1997 until nowadays, and it collects information of individuals who were in the, you know, high school, middle school in 1997, and then they collect their family background, their uh what happened during their child childhood until their, you know, what their college education, in detail, which major they chose, which, you know, what their transcripts, and their labor supply, at the, you know, occupation level. So we can actually detect whether they had a summer summer uh holiday, part time job, uh in certain year, and in which occupation and industry. So it's a very detailed information individuals, labor, education, marriage, fertility, over a long period. Okay? But you know, to download data, you have to go to investigator here. Here you can choose to search. And NLSY itself has a different dataset. So now we are going to use the 1997. In the data, I actually a already made a nice data set for you guys to use. I already used this for my research, so I share that data set with you. I made a comparable data set for 99 and 97 in terms of their, you know, family background, education, labor market outcome. So we can compare how things have changed over two cohorts. Okay? So, if we choose 97,",
+   "ko": "따라서 데이터의 크기에 따라, 시간이 좀 걸릴 수 있습니다. 하지만 그냥 기다리시면 됩니다. 알겠죠? 그리고 또 다른 점은 언급할 것은 하는 동안 우리가 기다리는 동안 은 거기에 있습니다. 데이터가 어, 어떤 종류의 데이터를 사용할 수 있는지는 구독에 따라 다릅니다. 그래서 무료는, 좋은 공개 데이터가 많은데, 완전히 무료이고 그래서 그건 언제든지 다운로드할 수 있습니다. 하지만 만약 유료 데이터를 사용하고 싶다면, 예를 들어 인구 조사 네. 인구 조사도 마찬가지로, 구독에 따라 다릅니다. 이 정보는, 읍면동 은 제공되지 않습니다. 공개 데이터에는 없습니다. 보시다시피 제가 앞서 말씀드린 것처럼, 이것은 개인 정보 문제 때문입니다. 우리는 너무 많은 것을 공개하고 싶지 않아요. 각 개인의 그래서, 하지만 만약 당신이 접근 권한이 있다면 원격 데이터셋에 접근할 수 있습니다. 더 나은 가구 정보를 얻을 수 있습니다. 그리고 좋은 소식은 경희대학교가 구독할 것이라는 점입니다. 이 그, 그러니까 가장 비싼 구독을 할 것이라는 점입니다. 그곳에서 기관 수준에서 그래서 소속된 모든 분들은 경희대학교에서 이 데이터에 접근할 수 있습니다. 그리고 그들은 심지어 센터에 가서 그리고 그 센터는 다른 위치에 있습니다. 서울에 있는 서강대학교처럼 자체 센터가 있습니다. 그리고 국회 또한 여의도에 그들이 가지고 있는 센터가 있어서 이 센터는 또한 행정 데이터를 제공합니다. 거기에 가서 접근할 수 있습니다. 더 많은 권위 있는 데이터와 제한된 데이터에 접근할 수 있습니다. 그게 다예요. 자, 질문 있으신가요? 네. 알겠습니다. 네. 그리고 NRY는 데이터는 제가 나중에 오늘 사용할 거예요. 시연 데이터는 그리고 이건 패널 데이터인데, 미국과 실제로 수집합니다. 데이터를 개인별로 수집하는데, 그 기간은 30년입니다. 거의 30년이죠. 그리고 NLSY. 그래서 이건 가장 많이 연구된 데이터 세트 중 하나로, 노동 경제학에서 그래서 제가 보여드리고 싶었던 거예요. 그래서 NRY는 청소년 1979년과 1997년 데이터가 있는데, 두 가지 데이터 세트가 있어요. 그래서 이건 나이가 더 많은 코호트용이고, 이들은 14세에서 20세였던 1979년의 데이터입니다. 이건 훨씬 더 긴 기간의 패널 데이터입니다. 그래서 지금까지 그들은 그 사람들의 정보를 개인별로 수집하고 있습니다. 그들은 이제 꽤 나이가 많아요, 60대 정도지만, 새로운 데이터 세트에서는, 1997년부터 지금까지 계속해서, 그리고 그들은 개인의 정보를 수집하는데, 그들은 고등학교 중학교 때인 1997년에 있었던 사람들이에요. 그리고 그들은 그들의 가족 배경을 수집하고, 그들이 어린 시절에 무슨 일이 있었는지 그리고 성인이 될 때까지의 정보를 수집합니다. 그들의 대학 교육과 그리고 자세하게, 어떤 전공을 선택했는지, 어떤 직업을 선택했는지, 어떤 성적을 받았는지, 그리고 노동 공급은 어땠는지 직업 수준은 어땠는지에 대한 정보를 수집합니다. 그래서 그들이 여름에 여름에 휴가를 갔는지, 파트 타임 잡을 했는지, 그리고 특정 연도에 그리고 어떤 직업을 가졌는지 그리고 어떤 산업에 종사했는지 알 수 있습니다. 그래서 매우 개인들, 노동, 교육, 결혼, 출산, 등 오랜 기간 동안. 알겠죠? 하지만 아시다시피, 데이터를 다운로드하려면 NLS 조사관 사이트에 가야 해요. 여기서 검색을 선택할 수 있어요. 그리고 NLSY 자체는 다른 데이터 세트를 가지고 있어요. 그래서 이제 우리는 1997년 데이터를 사용할 거예요. 데이터에서, 저는 사실 어 이미 만들어 놓은 좋은 데이터 세트가 있어서 여러분이 사용할 수 있어요. 저는 이미 제 연구에 이걸 사용했기 때문에 그 데이터 세트를 여러분과 공유할게요. 저는 비교 가능한 데이터 세트를 1997년 과 1999년 에 대해 만들었어요. 그들의, 그러니까 가족 배경에 대해, 교육, 노동 시장 결과에 대해 말이죠. 그래서 우리는 비교할 수 있어요. 상황이 어떻게 변했는지 두 코호트에 걸쳐서요. 알겠죠? 그래서, 만약 우리가 97년을 선택하면,",
+   "pdf": "",
+   "pdfPage": 5,
+   "slideText": "",
+   "segs": [
+    {
+     "t": 1201,
+     "page": 5,
+     "en": "depending on the size of the data, it may take a while. But you just wait and see. Okay? And another thing to mention during while we are waiting is that there are data uh the what kind of data we can use depends on the subscription. So the free, there are a lot of nice public data which is completely free. So that's something you can download every time.",
+     "ko": "따라서 데이터의 크기에 따라, 시간이 좀 걸릴 수 있습니다. 하지만 그냥 기다리시면 됩니다. 알겠죠? 그리고 또 다른 점은 언급할 것은 하는 동안 우리가 기다리는 동안 은 거기에 있습니다. 데이터가 어, 어떤 종류의 데이터를 사용할 수 있는지는 구독에 따라 다릅니다. 그래서 무료는, 좋은 공개 데이터가 많은데, 완전히 무료이고 그래서 그건 언제든지 다운로드할 수 있습니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 1233,
+     "page": 5,
+     "en": "But if you want to use the bigger sample, like for instance,",
+     "ko": "하지만 만약 유료 데이터를 사용하고 싶다면, 예를 들어 인구 조사",
+     "src": "gemini"
+    },
+    {
+     "t": 1241,
+     "page": 5,
+     "en": "Yeah. Even the census, depending on the subscription, this information, Eumyeon-dong is not available. in the public data. As you as I mentioned before, this is for the privacy issue. We we don't want to reveal too much detail of each individual. So, but if you have access to the remote data set, you have even better information of household.",
+     "ko": "네. 인구 조사도 마찬가지로, 구독에 따라 다릅니다. 이 정보는, 읍면동 은 제공되지 않습니다. 공개 데이터에는 없습니다. 보시다시피 제가 앞서 말씀드린 것처럼, 이것은 개인 정보 문제 때문입니다. 우리는 너무 많은 것을 공개하고 싶지 않아요. 각 개인의 그래서, 하지만 만약 당신이 접근 권한이 있다면 원격 데이터셋에 접근할 수 있습니다. 더 나은 가구 정보를 얻을 수 있습니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 1272,
+     "page": 5,
+     "en": "And the good news is that Kyunghee University will subscribe this the you know, the most expensive subscription from at institution level. So everybody who is affiliated at Kyunghee University can have an access to remote data and they can even go to the center and then center is located in different location in Seoul like a Sogang University has own center.",
+     "ko": "그리고 좋은 소식은 경희대학교가 구독할 것이라는 점입니다. 이 그, 그러니까 가장 비싼 구독을 할 것이라는 점입니다. 그곳에서 기관 수준에서 그래서 소속된 모든 분들은 경희대학교에서 이 데이터에 접근할 수 있습니다. 그리고 그들은 심지어 센터에 가서 그리고 그 센터는 다른 위치에 있습니다. 서울에 있는 서강대학교처럼 자체 센터가",
+     "src": "gemini"
+    },
+    {
+     "t": 1300,
+     "page": 5,
+     "en": "And the parliament also in Yeouido they have a center so this is this center also provide administrative data. You can go there to to get an access to even more prestigious and restricted data. Okay? That's it.",
+     "ko": "있습니다. 그리고 국회 또한 여의도에 그들이 가지고 있는 센터가 있어서 이 센터는 또한 행정 데이터를 제공합니다. 거기에 가서 접근할 수 있습니다. 더 많은 권위 있는 데이터와 제한된 데이터에 접근할 수 있습니다. 그게 다예요.",
+     "src": "gemini"
+    },
+    {
+     "t": 1321,
+     "page": 5,
+     "en": "All right, any any questions?",
+     "ko": "자, 질문 있으신가요?",
+     "src": "gemini"
+    },
+    {
+     "t": 1327,
+     "page": 5,
+     "en": "Yeah. Okay. Okay. And the NRY data is something I I will use today. The demonstrate data. And this one is the panel data from US and actually collects the data on an individual over the 30 years. Almost 30 years. and NLSY.",
+     "ko": "네. 알겠습니다. 네. 그리고 NRY는 데이터는 제가 나중에 오늘 사용할 거예요. 시연 데이터는 그리고 이건 패널 데이터인데, 미국과 실제로 수집합니다. 데이터를 개인별로 수집하는데, 그 기간은 30년입니다. 거의 30년이죠. 그리고 NLSY.",
+     "src": "gemini"
+    },
+    {
+     "t": 1357,
+     "page": 5,
+     "en": "So this is one of the mostly studied data set in labor economics. So this is why I wanted to show you. So NRY youth 1979 and 1997 they have two data set. So this one is for the older cohort, who were in age 14 and 20 in 1979. This one has even longer panel data.",
+     "ko": "그래서 이건 가장 많이 연구된 데이터 세트 중 하나로, 노동 경제학에서 그래서 제가 보여드리고 싶었던 거예요. 그래서 NRY는 청소년 1979년과 1997년 데이터가 있는데, 두 가지 데이터 세트가 있어요. 그래서 이건 나이가 더 많은 코호트용이고, 이들은 14세에서 20세였던 1979년의 데이터입니다. 이건 훨씬 더 긴 기간의 패널 데이터입니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 1383,
+     "page": 5,
+     "en": "So until now they collect information of those in individuals. They are quite old now, like a 60, but on the new data set, started from 1997 until nowadays, and it collects information of individuals who were in the, you know, high school, middle school in 1997, and then they collect their family background, their uh what happened during their child childhood until their, you know, what their college education, in detail, which major they chose, which, you know, what their transcripts, and their labor supply, at the, you",
+     "ko": "그래서 지금까지 그들은 그 사람들의 정보를 개인별로 수집하고 있습니다. 그들은 이제 꽤 나이가 많아요, 60대 정도지만, 새로운 데이터 세트에서는, 1997년부터 지금까지 계속해서, 그리고 그들은 개인의 정보를 수집하는데, 그들은 고등학교 중학교 때인 1997년에 있었던 사람들이에요. 그리고 그들은 그들의 가족 배경을 수집하고, 그들이 어린 시절에 무슨 일이 있었는지 그리고 성인이 될 때까지의 정보를 수집합니다. 그들의 대학 교육과 그리고 자세하게, 어떤 전공을 선택했는지, 어떤 직업을 선택했는지, 어떤 성적을 받았는지, 그리고 노동 공급은 어땠는지",
+     "src": "gemini"
+    },
+    {
+     "t": 1426,
+     "page": 5,
+     "en": "know, occupation level. So we can actually detect whether they had a summer summer uh holiday, part time job, uh in certain year, and in which occupation and industry. So it's a very detailed information",
+     "ko": "직업 수준은 어땠는지에 대한 정보를 수집합니다. 그래서 그들이 여름에 여름에 휴가를 갔는지, 파트 타임 잡을 했는지, 그리고 특정 연도에 그리고 어떤 직업을 가졌는지 그리고 어떤 산업에 종사했는지 알 수 있습니다. 그래서 매우",
+     "src": "gemini"
+    },
+    {
+     "t": 1445,
+     "page": 5,
+     "en": "individuals, labor, education, marriage, fertility, over a long period. Okay? But you know, to download data, you have to go to investigator here. Here you can choose to search. And NLSY itself has a different dataset. So now we are going to use the 1997. In the data, I actually a already made a nice data set for you guys to use. I already used this for my research, so I share that data set with you.",
+     "ko": "개인들, 노동, 교육, 결혼, 출산, 등 오랜 기간 동안. 알겠죠? 하지만 아시다시피, 데이터를 다운로드하려면 NLS 조사관 사이트에 가야 해요. 여기서 검색을 선택할 수 있어요. 그리고 NLSY 자체는 다른 데이터 세트를 가지고 있어요. 그래서 이제 우리는 1997년 데이터를 사용할 거예요. 데이터에서, 저는 사실 어 이미 만들어 놓은 좋은 데이터 세트가 있어서 여러분이 사용할 수 있어요. 저는 이미 제 연구에 이걸 사용했기 때문에 그 데이터 세트를 여러분과 공유할게요.",
+     "src": "gemini"
+    },
+    {
+     "t": 1480,
+     "page": 5,
+     "en": "I made a comparable data set for 99 and 97 in terms of their, you know, family background, education, labor market outcome. So we can compare how things have changed over two cohorts. Okay? So, if we choose 97,",
+     "ko": "저는 비교 가능한 데이터 세트를 1997년 과 1999년 에 대해 만들었어요. 그들의, 그러니까 가족 배경에 대해, 교육, 노동 시장 결과에 대해 말이죠. 그래서 우리는 비교할 수 있어요. 상황이 어떻게 변했는지 두 코호트에 걸쳐서요. 알겠죠? 그래서, 만약 우리가 97년을 선택하면,",
+     "src": "gemini"
+    }
+   ]
+  },
+  {
+   "page": 6,
+   "en": "So variable search, here, if you go there, so you can choose different variables, summary statistics, like this, is this a highest grade something like that. There's a tons of variable available there. And then you follow the you know, it's a easy for you to follow the literature to choose which one is mostly used in analysis, but you can check um what kind of variable is available. in detail. Training as well. We have information about training internship, uh um a lot of information, okay? So now, I will talk about data finally. So I shared um I think I shared data with you guys. This one, wage regression, uh code for Python. And this is the data set. Okay? So if you download the the zipped file from our website, I already uploaded that one few weeks ago. Like last week or two weeks ago, and then you find that dataset or that zip file and download and save it on your computer. Okay? This is the data set. in my computer. And final data is a data set from NLSY97 and NLSY97 so that we will run a wage regression. Okay? Uh and this is two file and two file this is the data file. I will show you. So if you open the if you have a stata, installed in your computer, uh you can do it in the lab, okay? Our lab has a stata computer with stata. installed. You can run this um file in the lab computer. Okay? So if you click and this is the do file. Do file, this is the stata window. which shows the result. and the process uh what's going on. is shown in this window. And do file actually is for writing code. So you write everything on the do file and then run the do file to see the outcome in the window. All right? And those who said, I'm really not an expert in programming, coding and etc. Don't worry. This is just do it once and then usually nowadays you don't write code from the scratch. You use uh the code like a template made by others and you can just update the detail. part of what you need. Then you can use chat GPT or cloud to adjust the template so that you can use it for your own purpose, okay? So don't don't be afraid of using like, you know, don't be afraid of doing coding. It's nothing. Nowadays it's really the course is really uh trivial. Okay? So if you open the do file, this is my code to show you the wage regression. And the thing is um If you run the Python, you cannot run everything at once. So you have to run at the cell level which requires, you know, multiple clicking to to reach the conclusion. Um that is transparent and then it's free, that's very good, but Stata, the reason I want to show you Stata is it's I'm more familiar with Stata. That's number one. Second, I can run the entire code at once. So even though the the analysis is very complicated, I can write down everything in a few files and allow others to replicate my result. easily. So I think that's the huge benefit. Uh so here it is. So here I will explain a bit of you know, uh coding here. Clear means we need to clear the memory. So uh alternative way of doing the same thing is you",
+   "ko": "그래서 변수 검색, 여기서, 거기에 가면, 그래서 선택할 수 있어요. 다른 변수들, 요약 통계, 예를 들어, 이게 최고 학년인가요? 그런 식이죠. 수많은 변수가 거기 있어요. 그리고 그 다음에는 아시다시피, 따라가기 쉬워요. 문헌을 따라가서 어떤 게 주로 사용되는지 선택할 수 있어요. 분석에서, 하지만 확인해 볼 수 있어요. 음 어떤 종류의 변수가 있는지요. 자세히요. 훈련 도 마찬가지예요. 저희는 훈련에 대한 정보도 가지고 있어요. 인턴십, 어 음 많은 정보가 있어요, 알겠죠? 그래서 이제, 저는 마지막으로 데이터에 대해 이야기할게요. 그래서 제가 공유한 어 제 생각엔 제가 공유한 것 같아요. 데이터를 여러분과 공유했어요. 이건, 임금 회귀 분석인데, 어 코드는 파이썬용이에요. 그리고 이건 데이터 세트예요. 알겠죠? 그래서 만약 여러분이 다운로드하면 그 압축된 파일을 저희 웹사이트에서 다운로드하면, 제가 이미 그 파일을 업로드했어요. 몇 주 전에요. 지난주 나 2주 전에요. 그리고 그 데이터 세트를 찾거나 그 압축 파일을 다운로드해서 저장하면 컴퓨터에 저장돼요. 알겠죠? 이건 데이터 세트예요. 제 컴퓨터에 있는 거예요. 그리고 마지막 데이터는 데이터 세트인데, NLSY97과 NLSY97 그래서 우리가 임금 회귀 분석을 할 거예요. 알겠죠? 어 그리고 이건 두 개의 파일이고 두 개의 파일이 이건 데이터 파일이에요. 보여드릴게요. 그래서 만약 여러분이 열면 스타타가 있다면, 컴퓨터에 설치되어 있다면, 어 이렇게 할 수 있어요. 실습실에서요, 알겠죠? 저희 실습실에는 스타타 컴퓨터가 있어요. 설치되어 있죠. 여러분은 이걸 실행할 수 있어요. 음 파일을 실습실 컴퓨터에서 실행할 수 있어요. 알겠죠? 그래서 클릭하면 이게 두 파일이에요. 두 파일은 이게 스타타 창이에요. 여기에는 결과가 표시돼요. 그리고 과정이 어 어떻게 진행되는지 보여줘요. 이 창에서요. 그리고 두 파일은 사실 코드를 작성하기 위한 거예요. 그래서 모든 것을 두 파일에 작성하고 실행하면 두 파일이 결과를 보여줘요. 이 창에서요. 알겠죠? 그리고 아, 저는 정말 전문가가 아니에요. 프로그래밍 코딩에 대해서는요. 그리고 등등. 걱정하지 마세요. 이건 그냥 한 번만 실행하고 그 다음에는 보통 요즘에는 처음부터 코드를 작성하지 않아요. 여러분은 어 그 코드를 템플릿처럼 사용해요. 다른 사람들이 만든 것을 사용하고 세부 사항만 업데이트하면 돼요. 필요한 부분만요. 그럼 여러분은 어 챗 GPT나 클라우드를 사용해서 조정할 수 있어요. 템플릿을 조정해서 여러분이 사용할 수 있게 할 수 있어요. 여러분의 목적에 맞게, 알겠죠? 그러니까 두려워하지 마세요. 예를 들어 뭐, 아시다시피 두려워하지 마세요. 코딩하는 것을. 별거 아니에요. 요즘에는 정말 코스가 정말 어 사소해요. 알겠죠? 그래서 두 파일을 열면 두 파일이 이렇게 제 코드예요. 보여드리기 위해 임금을 회귀 분석을요. 그리고 중요한 게 뭐냐면 음 파이썬 코드를 실행하면, 실행할 수 없어요. 한 번에 다요. 그래서 그 단계별로 실행해야 해요. 그게 뭐랄까, 여러 번 클릭해야 하는 거죠. 결론에 도달하려면요. 음 그건 투명하고 그리고 무료라서 아주 좋지만, 스타타는 제가 여러분에게 스타타를 보여주고 싶은 이유는 제가 스타타에 더 익숙하기 때문이에요. 그게 첫 번째고요. 두 번째는, 제가 전체 코드를 한 번에 실행할 수 있어요. 한 번에 클릭으로요. 그래서 비록 그 분석이 매우 복잡하더라도 한 번에 실행할 수 있어요. 모든 것을 한 번에 몇 개의 두 파일에 작성할 수 있고 다른 사람들이 제 연구를 재현할 수 있게 할 수 있어요. 쉽게. 그래서 그게 큰 장점이라고 생각해요. 어 그래서 여기 있어요. 그래서 여기 제가 조금 설명해 드릴게요. 아시다시피, 어 코딩에 대해서요. Clear는 우리가 메모리를 지워야 한다는 뜻이에요. 그래서 대안적인 방법은 같은 일을 하는",
+   "pdf": "",
+   "pdfPage": 6,
+   "slideText": "",
+   "segs": [
+    {
+     "t": 1507,
+     "page": 6,
+     "en": "So variable search, here, if you go there, so you can choose different variables, summary statistics, like this, is this a highest grade something like that. There's a tons of variable available there. And then you follow the you know, it's a easy for you to follow the literature to choose which one is mostly used in analysis, but you can check um what kind of variable is available.",
+     "ko": "그래서 변수 검색, 여기서, 거기에 가면, 그래서 선택할 수 있어요. 다른 변수들, 요약 통계, 예를 들어, 이게 최고 학년인가요? 그런 식이죠. 수많은 변수가 거기 있어요. 그리고 그 다음에는 아시다시피, 따라가기 쉬워요. 문헌을 따라가서 어떤 게 주로 사용되는지 선택할 수 있어요. 분석에서, 하지만 확인해 볼 수 있어요. 음 어떤 종류의 변수가 있는지요.",
+     "src": "gemini"
+    },
+    {
+     "t": 1535,
+     "page": 6,
+     "en": "in detail. Training as well. We have information about training internship, uh um a lot of information, okay? So now, I will talk about data finally. So I shared um I think I shared data with you guys.",
+     "ko": "자세히요. 훈련 도 마찬가지예요. 저희는 훈련에 대한 정보도 가지고 있어요. 인턴십, 어 음 많은 정보가 있어요, 알겠죠? 그래서 이제, 저는 마지막으로 데이터에 대해 이야기할게요. 그래서 제가 공유한 어 제 생각엔 제가 공유한 것 같아요. 데이터를 여러분과 공유했어요.",
+     "src": "gemini"
+    },
+    {
+     "t": 1567,
+     "page": 6,
+     "en": "This one, wage regression, uh code for Python. And this is the data set. Okay? So if you download the the zipped file from our website, I already uploaded that one few weeks ago. Like last week or two weeks ago, and then you find that dataset or that zip file and download and save it on your computer.",
+     "ko": "이건, 임금 회귀 분석인데, 어 코드는 파이썬용이에요. 그리고 이건 데이터 세트예요. 알겠죠? 그래서 만약 여러분이 다운로드하면 그 압축된 파일을 저희 웹사이트에서 다운로드하면, 제가 이미 그 파일을 업로드했어요. 몇 주 전에요. 지난주 나 2주 전에요. 그리고 그 데이터 세트를 찾거나 그 압축 파일을 다운로드해서 저장하면 컴퓨터에 저장돼요.",
+     "src": "gemini"
+    },
+    {
+     "t": 1594,
+     "page": 6,
+     "en": "Okay? This is the data set. in my computer. And final data is a data set from NLSY97 and NLSY97 so that we will run a wage regression. Okay? Uh and this is two file and two file this is the data file. I will show you.",
+     "ko": "알겠죠? 이건 데이터 세트예요. 제 컴퓨터에 있는 거예요. 그리고 마지막 데이터는 데이터 세트인데, NLSY97과 NLSY97 그래서 우리가 임금 회귀 분석을 할 거예요. 알겠죠? 어 그리고 이건 두 개의 파일이고 두 개의 파일이 이건 데이터 파일이에요. 보여드릴게요.",
+     "src": "gemini"
+    },
+    {
+     "t": 1622,
+     "page": 6,
+     "en": "So if you open the if you have a stata, installed in your computer, uh you can do it in the lab, okay? Our lab has a stata computer with stata. installed. You can run this um file in the lab computer. Okay? So if you click and this is the do file. Do file, this is the stata window.",
+     "ko": "그래서 만약 여러분이 열면 스타타가 있다면, 컴퓨터에 설치되어 있다면, 어 이렇게 할 수 있어요. 실습실에서요, 알겠죠? 저희 실습실에는 스타타 컴퓨터가 있어요. 설치되어 있죠. 여러분은 이걸 실행할 수 있어요. 음 파일을 실습실 컴퓨터에서 실행할 수 있어요. 알겠죠? 그래서 클릭하면 이게 두 파일이에요. 두 파일은 이게 스타타 창이에요.",
+     "src": "gemini"
+    },
+    {
+     "t": 1648,
+     "page": 6,
+     "en": "which shows the result. and the process uh what's going on. is shown in this window. And do file actually is for writing code. So you write everything on the do file and then run the do file to see the outcome in the window. All right? And those who said, I'm really not an expert in programming, coding and etc.",
+     "ko": "여기에는 결과가 표시돼요. 그리고 과정이 어 어떻게 진행되는지 보여줘요. 이 창에서요. 그리고 두 파일은 사실 코드를 작성하기 위한 거예요. 그래서 모든 것을 두 파일에 작성하고 실행하면 두 파일이 결과를 보여줘요. 이 창에서요. 알겠죠? 그리고 아, 저는 정말 전문가가 아니에요. 프로그래밍 코딩에 대해서는요. 그리고 등등.",
+     "src": "gemini"
+    },
+    {
+     "t": 1675,
+     "page": 6,
+     "en": "Don't worry. This is just do it once and then usually nowadays you don't write code from the scratch. You use uh the code like a template made by others and you can just update the detail. part of what you need. Then you can use chat GPT or cloud to adjust the template so that you can use it for your own purpose, okay? So don't don't be afraid of using like, you know, don't be afraid of doing coding.",
+     "ko": "걱정하지 마세요. 이건 그냥 한 번만 실행하고 그 다음에는 보통 요즘에는 처음부터 코드를 작성하지 않아요. 여러분은 어 그 코드를 템플릿처럼 사용해요. 다른 사람들이 만든 것을 사용하고 세부 사항만 업데이트하면 돼요. 필요한 부분만요. 그럼 여러분은 어 챗 GPT나 클라우드를 사용해서 조정할 수 있어요. 템플릿을 조정해서 여러분이 사용할 수 있게 할 수 있어요. 여러분의 목적에 맞게, 알겠죠? 그러니까 두려워하지 마세요. 예를 들어 뭐, 아시다시피 두려워하지 마세요. 코딩하는 것을.",
+     "src": "gemini"
+    },
+    {
+     "t": 1711,
+     "page": 6,
+     "en": "It's nothing. Nowadays it's really the course is really uh trivial. Okay? So if you open the do file, this is my code to show you the wage regression. And the thing is um",
+     "ko": "별거 아니에요. 요즘에는 정말 코스가 정말 어 사소해요. 알겠죠? 그래서 두 파일을 열면 두 파일이 이렇게 제 코드예요. 보여드리기 위해 임금을 회귀 분석을요. 그리고 중요한 게 뭐냐면 음",
+     "src": "gemini"
+    },
+    {
+     "t": 1732,
+     "page": 6,
+     "en": "If you run the Python, you cannot run everything at once. So you have to run at the cell level which requires, you know, multiple clicking to to reach the conclusion. Um that is transparent and then it's free, that's very good, but Stata, the reason I want to show you Stata is it's I'm more familiar with Stata. That's number one.",
+     "ko": "파이썬 코드를 실행하면, 실행할 수 없어요. 한 번에 다요. 그래서 그 단계별로 실행해야 해요. 그게 뭐랄까, 여러 번 클릭해야 하는 거죠. 결론에 도달하려면요. 음 그건 투명하고 그리고 무료라서 아주 좋지만, 스타타는 제가 여러분에게 스타타를 보여주고 싶은 이유는 제가 스타타에 더 익숙하기 때문이에요. 그게 첫 번째고요.",
+     "src": "gemini"
+    },
+    {
+     "t": 1758,
+     "page": 6,
+     "en": "Second, I can run the entire code at once. So even though the the analysis is very complicated, I can write down everything in a few files and allow others to replicate my result. easily. So I think that's the huge benefit. Uh so here it is. So here I will explain a bit of you know, uh coding here. Clear means we need to clear the memory. So uh alternative way of doing the same thing is you",
+     "ko": "두 번째는, 제가 전체 코드를 한 번에 실행할 수 있어요. 한 번에 클릭으로요. 그래서 비록 그 분석이 매우 복잡하더라도 한 번에 실행할 수 있어요. 모든 것을 한 번에 몇 개의 두 파일에 작성할 수 있고 다른 사람들이 제 연구를 재현할 수 있게 할 수 있어요. 쉽게. 그래서 그게 큰 장점이라고 생각해요. 어 그래서 여기 있어요. 그래서 여기 제가 조금 설명해 드릴게요. 아시다시피, 어 코딩에 대해서요. Clear는 우리가 메모리를 지워야 한다는 뜻이에요. 그래서 대안적인 방법은 같은 일을 하는",
+     "src": "gemini"
+    }
+   ]
+  },
+  {
+   "page": 7,
+   "en": "just type in the command here. Then in the data there's nothing. So here if you click data, editor, this shows what kind of data is in the memory. So the start data to use, okay? Now we have nothing because I already cleared my memory. And then global this is a bit, okay. Global means I want to use this directory many many times in my analysis, then I can define a path. This path is under the name of path you can change this name as you wish, you know, everything works. But you just need to define the directory of your folder. Here, uh with this mark, okay? So the reason why I use this one is, you know, you go to your folder and this is the the folder in which your data set and your data set resides. Then you have to go there and if you use Mac, you you click option and path name. can be copied. And then you replace this directory So you have to do it once you have your own device, you have to change this directory so that data can correctly locate where the data is. And CD is the defining which directory we are using to run this uh to run this command and here I use this path reg um directory here. Okay? And use means I'm going to use the data set named final data So, the data set is DTA, so diseases something you can see from here. This is a data set. So, if I click the data, you can see how how the data looks like. Okay. See? Here. So these diseases individual ID, and this is the year. Uh the data is collected. What is a reference year? And this is like whether they are in the urban area, they are high the grade of high HGC is highest, the grade of completed of their dad. Mom, and their major, occupation, etc. So this is a panel data, which means that this is this whole row, this this section is the data for one individual and that individual's ID is two. We don't write down their name, we cannot. So we identify individual based on individual some identifier, which is usually a number. And this is a panel data, which we will discuss later. Uh on Wednesday, so we have information for different year. As they grow up, the their education level changes. Okay. And if they are already in the labor market, they are rear hourly pay changes over time. Right? So we can see that information from the data. And instead of opening the data directly, I can run this command. And the nice thing about data is you can just select the part of the command to run only part of the two files. So if I select those part, Then data will read only up to this point. And then now in my memory I have this dataset. Oh, so I defined the sample, this is how I define the variable, gender is generating a variable. So I will define variable named sample selection original. And then default is zero, but the reason why I want to do that is I when I run a regression, I want to run a regression for particular subsets of a population. and that characteristic is that their experience is positive, they are older than 18 years old and younger than 36 years old, and they are real pay is greater than three and less than 100. So I trim the outliers. And their highest degree is between, you know, it's not outliers and etc. So this is something",
+   "ko": "다른 방법은 그냥 명령어를 입력하는 거예요. 여기에요. 그러면 데이터 세트에서 아무것도 없어요. 그래서 여기 만약 여러분이 데이터를 클릭하면 편집기, 이게 어떤 종류의 데이터가 있는지 보여줘요. 그래서 시작 데이터는 사용할 거예요, 알겠죠? 이제 아무것도 없어요, 왜냐하면 제가 이미 제 메모리를 지웠거든요. 그리고 전역 이것은 좀, 알겠어요. 전역은 제가 이것을 사용하고 싶다는 뜻이에요. 여러 번 제 분석에서 그러면 제가 정의할 수 있어요. 경로를 이 경로는 이름 아래에 path라는 이름으로 이 이름을 원하는 대로 바꿀 수 있어요, 아시다시피, 모든 게 작동해요. 하지만 그냥 경로를 정의해야 해요, 여러분의 폴더를요. 여기, 어, 이걸로 표시하면 돼요, 알겠죠? 그래서 제가 이걸 사용하는 이유는, 아시다시피, 여러분의 폴더로 가서 이게 그 폴더예요. 그 안에서 여러분의 데이터 세트와 여러분의 데이터가 있는 곳이죠. 그러면 여러분은 거기로 가서 만약 여러분이 사용한다면 맥을, 여러분은 여러분은 클릭하고 옵션을 그리고 경로 이름을 복사할 수 있어요. 그리고 그런 다음 여러분은 이 디렉토리를 대체합니다. 그래서 여러분은 한 번만 하면 돼요, 여러분이 자신의 기기를 가지고 있다면, 이 디렉토리를 바꿔야 데이터가 올바르게 데이터가 어디에 있는지 찾을 수 있어요. 그리고 CD는 기본 디렉토리를 정의하는 것이에요. 이걸 실행하기 위해 사용하는 어 이 명령어를 실행하기 위해, 그리고 여기서는 이걸 사용해요. 이 경로를 레그 음 여기 디렉토리요. 알겠죠? 그리고 사용은 제가 사용할 것이라는 뜻이에요. 데이터 세트 이름이 final 그래서, 데이터 세트는 DTA, 즉 질병 은 여러분이 여기서 볼 수 있는 것입니다. 이게 데이터 세트입니다. 그래서, 제가 데이터를 클릭하면, 여러분은 어떻게 데이터가 생겼는지 볼 수 있습니다. 네. 보셨죠? 여기요. 그래서 이 질병들은 개별 ID, 그리고 이건 연도입니다. 어 데이터가 수집되었습니다. 무엇이 기준 연도인가요? 그리고 이건 그들이 도시 지역에 있는지 아니면 고소득층인지 학년은 고등학교 HGC 가 가장 높고, 학년은 졸업한 아버지의 학력입니다. 어머니, 그리고 전공, 직업 등입니다. 그래서 이것은 패널 데이터인데, 이는 이것이 이 전체 라는 뜻입니다. 이 행, 이 섹션은 이렇습니다. 이것은 한 개인에 대한 데이터이고, 그 개인의 ID는 2입니다. 우리는 그들의 이름을 적지 않아요, 그럴 수 없거든요. 그래서 우리는 개인을 기준으로 식별합니다. 어떤 식별자, 보통은 숫자입니다. 그리고 이것은 패널 데이터인데, 우리는 이것을 나중에 논의할 것입니다. 어, 수요일에, 그래서 우리는 이 사람에 대한 정보가 다른 연도에 있습니다. 그들이 자라면서, 그 그들의 교육 수준이 변합니다. 네. 그리고 그들이 이미 노동 시장에 있다면, 그들은 후방에 시간당 급여가 변합니다. 시간이 지남에 따라. 그렇죠? 그래서 우리는 그 정보를 데이터에서 볼 수 있습니다. 그리고 데이터를 여는 것 대신에, 저는 실행할 수 있습니다. 이 명령을. 그리고 데이터의 좋은 점은 그냥 선택할 수 있다는 것입니다. 명령의 일부를 선택해서 그 일부만 실행할 수 있습니다. 그래서 제가 그 부분들을 선택하면 그러면 데이터가 모두 읽히지 않고 이 지점까지만 읽힙니다. 그리고 이제 제 메모리에는 이 데이터가 있습니다. 오, 그래서 제가 샘플을 정의했고, 이렇게 변수를 정의합니다. 그리고 성별은 변수를 생성하는 것입니다. 그래서 저는 정의할 것입니다. 변수 이름이 샘플인 원래 선택입니다. 그리고 기본값은 0이지만, 제가 그렇게 하려는 이유는 제가 회귀 분석을 할 때, 회귀 분석을 실행하고 싶은데, 그 특정 모집단에 대해서 하고 싶기 때문입니다. 그리고 그 특징은 그들의 경험이 긍정적이고, 그들이 더 나이가 많고 18세 이상이며 그리고 36세 미만이라는 것입니다. 그리고 그들은 실제 급여가 3보다 크고 100보다 작다는 것입니다. 그래서 저는 이상치를 제거합니다. 그리고 그들의 최고 학위는 그 사이인데, 아시다시피 이상치가 아니고 등등입니다. 그래서 이것은",
+   "pdf": "",
+   "pdfPage": 7,
+   "slideText": "",
+   "segs": [
+    {
+     "t": 1801,
+     "page": 7,
+     "en": "just type in the command here. Then in the data there's nothing. So here if you click data, editor, this shows what kind of data is in the memory. So the start data to use, okay? Now we have nothing because I already cleared my memory. And then global this is a bit, okay.",
+     "ko": "다른 방법은 그냥 명령어를 입력하는 거예요. 여기에요. 그러면 데이터 세트에서 아무것도 없어요. 그래서 여기 만약 여러분이 데이터를 클릭하면 편집기, 이게 어떤 종류의 데이터가 있는지 보여줘요. 그래서 시작 데이터는 사용할 거예요, 알겠죠? 이제 아무것도 없어요, 왜냐하면 제가 이미 제 메모리를 지웠거든요. 그리고 전역 이것은 좀, 알겠어요.",
+     "src": "gemini"
+    },
+    {
+     "t": 1830,
+     "page": 7,
+     "en": "Global means I want to use this directory many many times in my analysis, then I can define a path. This path is under the name of path you can change this name as you wish, you know, everything works. But you just need to define the directory of your folder. Here, uh with this mark, okay?",
+     "ko": "전역은 제가 이것을 사용하고 싶다는 뜻이에요. 여러 번 제 분석에서 그러면 제가 정의할 수 있어요. 경로를 이 경로는 이름 아래에 path라는 이름으로 이 이름을 원하는 대로 바꿀 수 있어요, 아시다시피, 모든 게 작동해요. 하지만 그냥 경로를 정의해야 해요, 여러분의 폴더를요. 여기, 어, 이걸로 표시하면 돼요,",
+     "src": "gemini"
+    },
+    {
+     "t": 1858,
+     "page": 7,
+     "en": "So the reason why I use this one is, you know, you go to your folder and this is the the folder in which your data set and your data set resides. Then you have to go there and if you use Mac, you you click option and path name. can be copied. And then you replace this directory So you have to do it once you have your own device, you have to change this directory so that data can correctly locate where the data is.",
+     "ko": "알겠죠? 그래서 제가 이걸 사용하는 이유는, 아시다시피, 여러분의 폴더로 가서 이게 그 폴더예요. 그 안에서 여러분의 데이터 세트와 여러분의 데이터가 있는 곳이죠. 그러면 여러분은 거기로 가서 만약 여러분이 사용한다면 맥을, 여러분은 여러분은 클릭하고 옵션을 그리고 경로 이름을 복사할 수 있어요. 그리고 그런 다음 여러분은 이 디렉토리를 대체합니다. 그래서 여러분은 한 번만 하면 돼요, 여러분이 자신의 기기를 가지고 있다면, 이 디렉토리를 바꿔야 데이터가 올바르게 데이터가 어디에 있는지 찾을 수 있어요.",
+     "src": "gemini"
+    },
+    {
+     "t": 1900,
+     "page": 7,
+     "en": "And CD is the defining which directory we are using to run this uh to run this command and here I use this path reg um directory here. Okay? And use means I'm going to use the data set named final data",
+     "ko": "그리고 CD는 기본 디렉토리를 정의하는 것이에요. 이걸 실행하기 위해 사용하는 어 이 명령어를 실행하기 위해, 그리고 여기서는 이걸 사용해요. 이 경로를 레그 음 여기 디렉토리요. 알겠죠? 그리고 사용은 제가 사용할 것이라는 뜻이에요. 데이터 세트 이름이 final",
+     "src": "gemini"
+    },
+    {
+     "t": 1926,
+     "page": 7,
+     "en": "So, the data set is DTA, so diseases something you can see from here. This is a data set. So, if I click the data, you can see how how the data looks like.",
+     "ko": "그래서, 데이터 세트는 DTA, 즉 질병 은 여러분이 여기서 볼 수 있는 것입니다. 이게 데이터 세트입니다. 그래서, 제가 데이터를 클릭하면, 여러분은 어떻게 데이터가 생겼는지 볼 수 있습니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 1941,
+     "page": 7,
+     "en": "Okay. See? Here. So these diseases individual ID, and this is the year. Uh the data is collected. What is a reference year? And this is like whether they are in the urban area, they are high the grade of high HGC is highest, the grade of completed of their dad.",
+     "ko": "네. 보셨죠? 여기요. 그래서 이 질병들은 개별 ID, 그리고 이건 연도입니다. 어 데이터가 수집되었습니다. 무엇이 기준 연도인가요? 그리고 이건 그들이 도시 지역에 있는지 아니면 고소득층인지 학년은 고등학교 HGC 가 가장 높고, 학년은 졸업한 아버지의 학력입니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 1966,
+     "page": 7,
+     "en": "Mom, and their major, occupation, etc. So this is a panel data, which means that this is this whole row, this this section is the data for one individual and that individual's ID is two. We don't write down their name, we cannot. So we identify individual based on individual some identifier, which is usually a number.",
+     "ko": "어머니, 그리고 전공, 직업 등입니다. 그래서 이것은 패널 데이터인데, 이는 이것이 이 전체 라는 뜻입니다. 이 행, 이 섹션은 이렇습니다. 이것은 한 개인에 대한 데이터이고, 그 개인의 ID는 2입니다. 우리는 그들의 이름을 적지 않아요, 그럴 수 없거든요. 그래서 우리는 개인을 기준으로 식별합니다. 어떤 식별자, 보통은 숫자입니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 1991,
+     "page": 7,
+     "en": "And this is a panel data, which we will discuss later. Uh on Wednesday, so we have information for different year. As they grow up, the their education level changes. Okay. And if they are already in the labor market, they are rear hourly pay changes over time.",
+     "ko": "그리고 이것은 패널 데이터인데, 우리는 이것을 나중에 논의할 것입니다. 어, 수요일에, 그래서 우리는 이 사람에 대한 정보가 다른 연도에 있습니다. 그들이 자라면서, 그 그들의 교육 수준이 변합니다. 네. 그리고 그들이 이미 노동 시장에 있다면, 그들은 후방에 시간당 급여가 변합니다. 시간이 지남에 따라.",
+     "src": "gemini"
+    },
+    {
+     "t": 2020,
+     "page": 7,
+     "en": "Right? So we can see that information from the data. And instead of opening the data directly, I can run this command. And the nice thing about data is you can just select the part of the command to run only part of the two files. So if I select those part, Then data will read only up to this point.",
+     "ko": "그렇죠? 그래서 우리는 그 정보를 데이터에서 볼 수 있습니다. 그리고 데이터를 여는 것 대신에, 저는 실행할 수 있습니다. 이 명령을. 그리고 데이터의 좋은 점은 그냥 선택할 수 있다는 것입니다. 명령의 일부를 선택해서 그 일부만 실행할 수 있습니다. 그래서 제가 그 부분들을 선택하면 그러면 데이터가 모두 읽히지 않고 이 지점까지만",
+     "src": "gemini"
+    },
+    {
+     "t": 2047,
+     "page": 7,
+     "en": "And then now in my memory I have this dataset. Oh, so I defined the sample, this is how I define the variable, gender is generating a variable. So I will define variable named sample selection original. And then default is zero, but the reason why I want to do that is I when I run a regression, I want to run a regression for particular subsets of a population. and that characteristic is that their experience is positive, they are older than 18 years old and younger than 36 years old, and they are real pay is greater than three",
+     "ko": "읽힙니다. 그리고 이제 제 메모리에는 이 데이터가 있습니다. 오, 그래서 제가 샘플을 정의했고, 이렇게 변수를 정의합니다. 그리고 성별은 변수를 생성하는 것입니다. 그래서 저는 정의할 것입니다. 변수 이름이 샘플인 원래 선택입니다. 그리고 기본값은 0이지만, 제가 그렇게 하려는 이유는 제가 회귀 분석을 할 때, 회귀 분석을 실행하고 싶은데, 그 특정 모집단에 대해서 하고 싶기 때문입니다. 그리고 그 특징은 그들의 경험이 긍정적이고, 그들이 더 나이가 많고 18세 이상이며 그리고 36세 미만이라는 것입니다. 그리고 그들은 실제 급여가 3보다 크고",
+     "src": "gemini"
+    },
+    {
+     "t": 2088,
+     "page": 7,
+     "en": "and less than 100. So I trim the outliers. And their highest degree is between, you know, it's not outliers and etc. So this is something",
+     "ko": "100보다 작다는 것입니다. 그래서 저는 이상치를 제거합니다. 그리고 그들의 최고 학위는 그 사이인데, 아시다시피 이상치가 아니고 등등입니다. 그래서 이것은",
+     "src": "gemini"
+    }
+   ]
+  },
+  {
+   "page": 8,
+   "en": "that I want to remove observation that I don't include in my analysis. Okay, so I just keep individuals who satisfied observation that satisfy this condition. And T10 test is I don't know, so this is not for econometrics class. It shows us the difference in the mean hourly wage, log hourly wage between high school graduate and associate grade. degree, which is like two-year college degree. And then we can see that associate degree, individual with high like two-year college education have on average higher hourly wage. than those with high school graduate. And T test means that we test whether the difference in mean between two groups are statistically significant, if you don't understand this, you can take econometrics, but it says that T value is large enough, so we can you know, confidently say that two groups have a different mean. Oh, I was confused. Uh, this is econometrics class, so you should know. I thought it was labor class, sorry. You should know, statistical difference, right? So it's significant. T test is comparing the mean difference between two groups. And then this is how we do it. T test and this is outcome of interest. And this is two groups. Okay. And then by AA means that if AA equals one, that is considered as one group. AA equals zero is considered as the other group. So this has to be dummy variable. And then this says that T statistics is very large. If this is greater than two in absolute value, it's statistically significant at least 5%, but this is so big. That means that it's it's really significant. The P value is almost zero here. It's very different. So here this is interesting. Bachelor degree four year college degree, um okay, we can do high school uh two year four year. Again, two year, four year have very different mean. hourly wage. So education matters. So we have a very clear correlation between education level and hourly wage. So we may think that oh, education is correlated but yet we don't know whether that is because education is staff make individuals productive or whether it's because um people with higher ability tend to have higher education. We don't know, okay? But that's just a correlation. And the reason why we are being careful but okay, but is that there's you know, and that is why is also really good. It's very unique in terms of because it it has measure for individuals cognitive ability. Like IQ score. So like every individual sample took exam during their teenage years so they collected that information in the data set. So we can we can actually distinguish to a extent they are outcome is attributed by their underlying cognitive ability or to what extent that outcome is driven by their choices. Like education and occupation etc. So this is very nice feature. Uh almost no other data set has such nice um metric. for cognitive ability and NLSY has. And that's the reason why I want to discuss this data set. Um to discuss selection bias. and omitted variable bias. Um as you can see, and imagine this AFQT score by the way is um is a test. to screen uh armies. Okay? So in order to join an army in US, you have to pass certain criteria. So uh and then this test is designed for that purpose and everybody in this sample actually took that exam. So we know their language ability, math ability and you know, many other things that um And you using that information, they provide a single number to be interpreted as a measure for their",
+   "ko": "제가 하고 싶은 제거하고 싶은 관측치입니다. 제가 포함하고 싶지 않은 분석입니다. 네, 그래서 저는 그냥 개인을 유지합니다. 조건을 만족하는 관측치를 만족하는 관측치를 유지합니다. 그리고 T10 테스트는 제가 모르겠는데, 그래서 이건 계량경제학 수업을 위한 게 아니에요. 이건 보여주죠. 차이를 보여줍니다. 평균의 시간당 임금, 로그 시간당 임금의 차이를 보여줍니다. 고등학교 졸업자와 준학사 학위 사이의 차이인데, 이건 2년제 대학 학위 같은 거예요. 그리고 우리는 볼 수 있습니다. 준학사 학위, 고등학교 졸업자 같은 2년제 대학 학위를 가진 사람은 평균적으로 더 높은 시간당 임금을 받습니다. 고등학교 졸업자보다요. 그리고 T 테스트는 우리가 차이가 있는지 확인하는 것입니다. 두 그룹 간의 평균 차이가 통계적으로 유의미한지, 이해가 안 되시면 계량경제학 수업을 들으시면 되는데, T 값이 충분히 크면 우리는 알 수 있습니다, 자신 있게 말할 수 있습니다. 두 그룹 간의 평균이 다르다고요. 아, 저는 헷갈렸어요. 어, 이건 계량경제학 수업이니까 아셔야 해요. 저는 노동 수업인 줄 알았어요, 죄송해요. 아셔야 해요, 통계적 차이, 맞죠? 그래서 유의미해요. T 테스트는 비교하는 것입니다. 평균 차이를 두 그룹 간에. 그리고 이렇게 하는 거예요. T 테스트 그리고 이게 결과입니다. 관심 있는 결과. 그리고 이건 두 그룹입니다. 네. 그리고 그런 다음 AA는 만약 AA가 1과 같다면, 그건 간주됩니다. 하나의 그룹으로. AA가 0이면 그건 다른 그룹으로 간주됩니다. 그래서 이건 더미 변수여야 합니다. 그리고 이건 말합니다. T 통계량이 이렇다고요. 매우 큽니다. 이게 2보다 크면 절댓값으로 2보다 크면, 통계적으로 유의미합니다. 적어도 5% 수준에서, 하지만 이건 너무 커요. 그건 정말 유의미하다는 뜻입니다. P 값은 거의 0입니다. 여기서는. 매우 다릅니다. 그래서 여기서 이건 흥미롭습니다. 학사 학위는 4년제 대학 학위, 음 네, 우리는 고등학교 어 2년제 4년제. 다시, 2년제, 4년제는 매우 다른 평균을 가지고 있습니다. 시간당 임금. 그래서 교육이 중요합니다. 그래서 우리는 매우 명확한 상관관계를 가지고 있습니다. 교육 수준과 시간당 임금 사이에. 그래서 우리는 아, 교육이 상관관계가 있지만, 우리는 그것이 때문인지 교육 자체가 개인을 생산적으로 만드는지 아니면 그것이 음 더 높은 능력을 가진 사람들이 더 높은 교육을 받는 경향이 있는지 모릅니다. 하지만 그건 그냥 상관관계일 뿐입니다. 그리고 그 우리가 조심하는 이유는 하지만 알겠습니다, 하지만 그건 어떤 그러니까, 그래서 그게 또한 정말 좋아요. 매우 독특해요, 왜냐하면 그것은 측정 개인을 위한 인지 능력 입니다. 예를 들어 IQ 점수 같은 거요. 그래서 모든 개인 샘플이 시험을 봤는데 그들이 10대일 때였고 그래서 그들은 그 정보를 수집했고 데이터 세트에 넣었어요. 그래서 우리는 실제로 어느 정도 그들이 결과가 그들의 근본적인 인지 능력이나 어느 정도 그 결과가 그들의 선택에 의한 것인지 알 수 있습니다. 예를 들어 교육이나 직업 등등. 그래서 이것은 매우 좋은 특징입니다. 어 거의 다른 데이터 세트에는 이런 좋은 어 지표가 인지 능력에 대해 없어요. 그리고 NLSY는 가지고 있죠. 그리고 그게 제가 이 주제에 대해 이야기하고 싶은 이유입니다. 음 선택에 대해 이야기하기 위해서요. 그리고 누락된 변수 편향에 대해서요. 음 보시다시피 그리고 상상해 보세요. 이 AFQT 점수는 참고로 어 테스트입니다. 뭐를 선별하기 위한 어 군대입니다. 알겠죠? 그래서 하기 위해서 군대에 입대하려면 미국에서는 시험을 통과해야 해요. 특정 어 기준을요. 그래서 어 그리고 이 테스트는 고안된 것입니다. 그 목적을 위해 그리고 이 샘플에 있는 모든 사람이 실제로 그 시험을 봤어요. 그래서 우리는 그들의 언어 능력, 수학 능력 그리고 뭐, 다른 여러 가지를 알 수 있습니다. 그게 음 그리고 여러분은 그 정보를 사용하여, 그들은 단일 숫자를 제공합니다. 무엇을 해석하기 위해서요. 그게 그들의",
+   "pdf": "",
+   "pdfPage": 8,
+   "slideText": "",
+   "segs": [
+    {
+     "t": 2101,
+     "page": 8,
+     "en": "that I want to remove observation that I don't include in my analysis. Okay, so I just keep individuals who satisfied observation that satisfy this condition. And T10 test is I don't know, so this is not for econometrics class. It shows us the difference in the mean hourly wage, log hourly wage between high school graduate and associate grade.",
+     "ko": "제가 하고 싶은 제거하고 싶은 관측치입니다. 제가 포함하고 싶지 않은 분석입니다. 네, 그래서 저는 그냥 개인을 유지합니다. 조건을 만족하는 관측치를 만족하는 관측치를 유지합니다. 그리고 T10 테스트는 제가 모르겠는데, 그래서 이건 계량경제학 수업을 위한 게 아니에요. 이건 보여주죠. 차이를 보여줍니다. 평균의 시간당 임금, 로그 시간당 임금의 차이를 보여줍니다. 고등학교 졸업자와 준학사",
+     "src": "gemini"
+    },
+    {
+     "t": 2132,
+     "page": 8,
+     "en": "degree, which is like two-year college degree. And then we can see that associate degree, individual with high like two-year college education have on average higher hourly wage. than those with high school graduate. And T test means that we test whether the difference in mean between two groups are statistically significant, if you don't understand this, you can take econometrics, but it says that T value is large enough, so we can you know, confidently say that two groups have a different mean.",
+     "ko": "학위 사이의 차이인데, 이건 2년제 대학 학위 같은 거예요. 그리고 우리는 볼 수 있습니다. 준학사 학위, 고등학교 졸업자 같은 2년제 대학 학위를 가진 사람은 평균적으로 더 높은 시간당 임금을 받습니다. 고등학교 졸업자보다요. 그리고 T 테스트는 우리가 차이가 있는지 확인하는 것입니다. 두 그룹 간의 평균 차이가 통계적으로 유의미한지, 이해가 안 되시면 계량경제학 수업을 들으시면 되는데, T 값이 충분히 크면 우리는 알 수 있습니다, 자신 있게 말할 수 있습니다. 두 그룹 간의 평균이 다르다고요.",
+     "src": "gemini"
+    },
+    {
+     "t": 2168,
+     "page": 8,
+     "en": "Oh, I was confused. Uh, this is econometrics class, so you should know. I thought it was labor class, sorry. You should know, statistical difference, right? So it's significant. T test is comparing the mean difference between two groups. And then this is how we do it. T test and this is outcome of interest.",
+     "ko": "아, 저는 헷갈렸어요. 어, 이건 계량경제학 수업이니까 아셔야 해요. 저는 노동 수업인 줄 알았어요, 죄송해요. 아셔야 해요, 통계적 차이, 맞죠? 그래서 유의미해요. T 테스트는 비교하는 것입니다. 평균 차이를 두 그룹 간에. 그리고 이렇게 하는 거예요. T 테스트 그리고 이게 결과입니다. 관심 있는 결과.",
+     "src": "gemini"
+    },
+    {
+     "t": 2190,
+     "page": 8,
+     "en": "And this is two groups. Okay. And then by AA means that if AA equals one, that is considered as one group. AA equals zero is considered as the other group. So this has to be dummy variable. And then this says that T statistics is very large. If this is greater than two in absolute value, it's statistically significant at least 5%, but this is so big.",
+     "ko": "그리고 이건 두 그룹입니다. 네. 그리고 그런 다음 AA는 만약 AA가 1과 같다면, 그건 간주됩니다. 하나의 그룹으로. AA가 0이면 그건 다른 그룹으로 간주됩니다. 그래서 이건 더미 변수여야 합니다. 그리고 이건 말합니다. T 통계량이 이렇다고요. 매우 큽니다. 이게 2보다 크면 절댓값으로 2보다 크면, 통계적으로 유의미합니다. 적어도 5% 수준에서, 하지만 이건 너무 커요.",
+     "src": "gemini"
+    },
+    {
+     "t": 2223,
+     "page": 8,
+     "en": "That means that it's it's really significant. The P value is almost zero here. It's very different. So here this is interesting. Bachelor degree four year college degree, um okay, we can do high school uh two year four year.",
+     "ko": "그건 정말 유의미하다는 뜻입니다. P 값은 거의 0입니다. 여기서는. 매우 다릅니다. 그래서 여기서 이건 흥미롭습니다. 학사 학위는 4년제 대학 학위, 음 네, 우리는 고등학교 어 2년제 4년제.",
+     "src": "gemini"
+    },
+    {
+     "t": 2245,
+     "page": 8,
+     "en": "Again, two year, four year have very different mean. hourly wage. So education matters. So we have a very clear correlation between education level and hourly wage. So we may think that oh, education is correlated but yet we don't know whether that is because education is staff make individuals productive or whether it's because um people with higher ability tend to have higher education. We don't know, okay? But that's just a correlation.",
+     "ko": "다시, 2년제, 4년제는 매우 다른 평균을 가지고 있습니다. 시간당 임금. 그래서 교육이 중요합니다. 그래서 우리는 매우 명확한 상관관계를 가지고 있습니다. 교육 수준과 시간당 임금 사이에. 그래서 우리는 아, 교육이 상관관계가 있지만, 우리는 그것이 때문인지 교육 자체가 개인을 생산적으로 만드는지 아니면 그것이 음 더 높은 능력을 가진 사람들이 더 높은 교육을 받는 경향이 있는지 모릅니다. 하지만 그건 그냥 상관관계일 뿐입니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 2278,
+     "page": 8,
+     "en": "And the reason why we are being careful but okay, but",
+     "ko": "그리고 그 우리가 조심하는 이유는 하지만 알겠습니다, 하지만",
+     "src": "gemini"
+    },
+    {
+     "t": 2288,
+     "page": 8,
+     "en": "is that there's you know, and that is why is also really good. It's very unique in terms of because it it has measure for individuals cognitive ability. Like IQ score. So like every individual sample took exam during their teenage years so they collected that information in the data set. So we can we can actually distinguish to a extent they are outcome is attributed by their underlying cognitive ability or to what extent that outcome is driven by their choices.",
+     "ko": "그건 어떤 그러니까, 그래서 그게 또한 정말 좋아요. 매우 독특해요, 왜냐하면 그것은 측정 개인을 위한 인지 능력 입니다. 예를 들어 IQ 점수 같은 거요. 그래서 모든 개인 샘플이 시험을 봤는데 그들이 10대일 때였고 그래서 그들은 그 정보를 수집했고 데이터 세트에 넣었어요. 그래서 우리는 실제로 어느 정도 그들이 결과가 그들의 근본적인 인지 능력이나 어느 정도 그 결과가 그들의 선택에 의한 것인지",
+     "src": "gemini"
+    },
+    {
+     "t": 2326,
+     "page": 8,
+     "en": "Like education and occupation etc. So this is very nice feature. Uh almost no other data set has such nice um metric. for cognitive ability and NLSY has. And that's the reason why I want to discuss this data set. Um to discuss selection bias. and omitted variable bias.",
+     "ko": "알 수 있습니다. 예를 들어 교육이나 직업 등등. 그래서 이것은 매우 좋은 특징입니다. 어 거의 다른 데이터 세트에는 이런 좋은 어 지표가 인지 능력에 대해 없어요. 그리고 NLSY는 가지고 있죠. 그리고 그게 제가 이 주제에 대해 이야기하고 싶은 이유입니다. 음 선택에 대해 이야기하기 위해서요. 그리고 누락된 변수 편향에 대해서요.",
+     "src": "gemini"
+    },
+    {
+     "t": 2350,
+     "page": 8,
+     "en": "Um as you can see, and imagine this AFQT score by the way is um is a test. to screen uh armies. Okay? So in order to join an army in US, you have to pass certain criteria. So uh and then this test is designed for that purpose and everybody in this sample actually took that exam. So we know their language ability, math ability and you know, many other things that um And you using that information, they provide a single number to be interpreted as a measure for their",
+     "ko": "음 보시다시피 그리고 상상해 보세요. 이 AFQT 점수는 참고로 어 테스트입니다. 뭐를 선별하기 위한 어 군대입니다. 알겠죠? 그래서 하기 위해서 군대에 입대하려면 미국에서는 시험을 통과해야 해요. 특정 어 기준을요. 그래서 어 그리고 이 테스트는 고안된 것입니다. 그 목적을 위해 그리고 이 샘플에 있는 모든 사람이 실제로 그 시험을 봤어요. 그래서 우리는 그들의 언어 능력, 수학 능력 그리고 뭐, 다른 여러 가지를 알 수 있습니다. 그게 음 그리고 여러분은 그 정보를 사용하여, 그들은 단일 숫자를 제공합니다. 무엇을 해석하기 위해서요. 그게 그들의",
+     "src": "gemini"
+    }
+   ]
+  },
+  {
+   "page": 9,
+   "en": "cognitive ability. That is AFQT And obviously, this underlying ability is positively correlated with their education level, HGC 30 is the highest grade completed at the age of 30. So if it is four year college education, it has it will be 16 years. If it is high school, if the person completed high school but didn't attend any college, it is 12. Something like that. So there's a strong correlation positive correlation between uh education level and AFT score. So if you run a regression of hourly wage rate, hourly wage rate, log hourly wage rate, or on AFQT score ability, their education and experience experience square, their race, and the this is the local characteristics the unemployment rate in their metropolitan area, whether they live in the metropolitan area or not, that is like location specific information which is included in certain paper, I replicated. Uh so that's why it's here. Uh basically this is called as Mincer equation. Like estimating how hourly wage changes by educate education sex, race, so we want to understand how wage changes by individual characteristics. And here, the nice thing is we have also ability. So let's see how our hourly wage changes by ability and other things. So this is OLS regression. In order to run an OLS regression in data, you just write down reg regress. And this is Y variable and real pay and this is a bunch of variables. We have one, two, three, four, five, six, seven characteristic, including including the constant, we have eight. Like a P equals eight in this case. And this one is something is optional. So I want to uh incorporate different weights for each observation in the sample. So this is something you, you know, you can adjust your standard error by adding this weight. And this one, I want to look at only male population. And the sample that I'm interested in the characteristics are those who satisfy this condition. And also sample equals zero means that I'm looking at NLS 79. This is all the cohort. In I do the same thing for NLS 97, this is going to be the new cohort. NLS and then you can write down your comment, but I adding slash, write down anything you want. Uh for your own note. So it's not it will not affect your uh like it's not part of the running code. This is just a comment. The the green color and 99. 97. So if I run this, what do we see? And if this score is self has a significantly positive correlation with log hourly wage, of course, as education increases, log hourly wage right? and then experience, uh and experience square has minus and being black has a lower hourly wage on average and etc. Okay? So experience here is a constructed by age minus schooling minus six. That measures the potential experience. And then we also we often include experience and experience square in the Mincer equation. Mincer equation. Because usually the return to return to experience is concave. So it increases but too many um experience the marginal effect is smaller. So we include both of them. This is like a typical specification you can follow. Um so this is only for male, right? And then this is for all the sample. This is the 97 sample. As you can see, the return to education is similar, but return to AFQT score decreased over time. And that was the",
+   "ko": "인지 능력에 대한 척도입니다. 그게 AFQT 그리고 분명히, 이 근본적인 능력은 긍정적으로 관련이 있습니다. 그들의 교육 수준, HGC 30 은 가장 높은 학력입니다. 만 18세에 마친 학력입니다. 그래서 만약 그것이 4년제 대학 교육이라면, 그것은 16년이 될 것입니다. 만약 고등학교라면, 만약 그 사람이 고등학교를 마쳤지만 대학에 진학하지 않았다면, 12년입니다. 그런 식이죠. 그래서 강한 상관관계가 있습니다. 긍정적인 상관관계가 있습니다. 교육 수준과 그리고 AFK 점수 사이에요. 그래서 회귀 분석을 돌리면 시간당 임금과 시간당 임금, 로그 시간당 임금의 관계를 보면, 또는 AFQT 점수 능력에 대해, 그들의 교육 수준과 그리고 경험을 경험의 제곱을 보면, 그들의 인종, 그리고 그 이것은 지역 특성입니다. 실업률 그들의 지역의 대도시 지역의 실업률, 그들이 대도시에 사는지 아니면 그렇지 않은지, 그것은 위치와 관련된 정보입니다. 이것은 특정 논문에 포함되어 있는데, 제가 재현했습니다. 그래서 여기에 있는 것입니다. 어, 기본적으로 이것은 민서 방정식이라고 합니다. 예를 들어, 얼마나 시간당 임금이 어떻게 변하는지 교육 수준에 따라 성별, 인종, 그래서 우리는 어떻게 임금이 변하는지 개인의 특성에 따라 알고 싶습니다. 그리고 여기서, 좋은 점은 능력도 있다는 것입니다. 그래서 어떻게 우리의 시간당 임금이 어떻게 변하는지 능력과 다른 것들에 따라 그래서 이것은 OLS 회귀 분석입니다. OLS를 실행하기 위해서 데이터에서, 그냥 reg라고 씁니다. 그리고 이것은 Y 변수 그리고 실질 임금 그리고 이것은 여러 가지 변수들입니다. 우리는 하나, 둘, 셋, 넷, 다섯, 여섯, 일곱 개의 특성이 있는데, 그중에는 상수도 포함되어 있습니다. 총 여덟 개입니다. P는 이 경우에 8입니다. 그리고 이것은 선택 사항입니다. 그래서 저는 어 통합하고 다른 가중치를 각 항목에 적용하고 싶습니다. 그래서 이것은 여러분이 아시다시피 할 수 있는 것입니다. 여러분의 표준 오차를 이 가중치를 추가하여 조정할 수 있습니다. 그리고 이것은, 저는 남성 인구만 보고 싶습니다. 그리고 제가 사용한 샘플은 제가 관심 있는 특성은 다음 조건을 충족하는 사람들입니다. 그리고 또한 샘플이 0이라는 것은 제가 NLS 79를 보고 있다는 뜻입니다. 이것은 모든 코호트입니다. 이 저는 같은 것을 NLS 97에 대해서도 하는데, 이것은 새로운 코호트가 될 것입니다. NLS 그리고 여러분의 코멘트를 적을 수 있지만, 저는 슬래시를 추가하고, 아무거나 적으면 됩니다. 어, 여러분의 개인 노트를 위해서요. 그래서 이것은 영향을 미치지 않을 것입니다. 어, 예를 들어, 이것은 진행 중인 코호트의 일부가 아닙니다. 이것은 그냥 코멘트입니다. 그 초록색은 그리고 99입니다. 97입니다. 그래서 제가 이걸 실행하면, 무엇을 볼 수 있을까요? 그리고 만약 이 점수가 자체적으로 유의미하게 양의 상관관계가 로그 시간당 임금과 있다면, 물론 교육 수준이 높아질수록 로그 시간당 임금도 높아지겠죠? 그리고 경험, 그리고 경험의 제곱은 마이너스이고 흑인인 것은 로그 시간당 임금이 평균적으로 낮고 등등입니다. 알겠죠? 그래서 여기서 경험은 구성 개념입니다. 이것은 나이에서 학교 교육을 뺀 것에서 6을 뺀 것입니다. 그것은 잠재적 경험을 측정합니다. 그리고 우리는 또한 종종 경험을 포함합니다. 그리고 경험의 제곱을 민서 방정식에 포함합니다. 민서 방정식. 왜냐하면 보통 수익률은 교육에 대한 수익률은 경험에 따라 오목합니다. 그래서 증가하지만 너무 많으면 음 경험이 그 한계 효과는 더 작습니다. 그래서 둘 다 포함합니다. 이것은 전형적인 사양으로 따라할 수 있습니다. 음, 그래서 이것은 남성 전용이고, 그리고 이것은 모든 사람들을 위한 것입니다. 이것은 97년 샘플입니다. 보시다시피 그 교육에 대한 수익률은 비슷하지만, AFQT에 대한 수익률은 시간이 지남에 따라 감소했습니다. 그리고 그것이",
+   "pdf": "",
+   "pdfPage": 9,
+   "slideText": "",
+   "segs": [
+    {
+     "t": 2401,
+     "page": 9,
+     "en": "cognitive ability. That is AFQT",
+     "ko": "인지 능력에 대한 척도입니다. 그게 AFQT",
+     "src": "gemini"
+    },
+    {
+     "t": 2408,
+     "page": 9,
+     "en": "And obviously, this underlying ability is positively correlated with their education level, HGC 30 is the highest grade completed at the age of 30. So if it is four year college education, it has it will be 16 years. If it is high school, if the person completed high school but didn't attend any college, it is 12.",
+     "ko": "그리고 분명히, 이 근본적인 능력은 긍정적으로 관련이 있습니다. 그들의 교육 수준, HGC 30 은 가장 높은 학력입니다. 만 18세에 마친 학력입니다. 그래서 만약 그것이 4년제 대학 교육이라면, 그것은 16년이 될 것입니다. 만약 고등학교라면, 만약 그 사람이 고등학교를 마쳤지만 대학에 진학하지 않았다면, 12년입니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 2431,
+     "page": 9,
+     "en": "Something like that. So there's a strong correlation positive correlation between uh education level and AFT score.",
+     "ko": "그런 식이죠. 그래서 강한 상관관계가 있습니다. 긍정적인 상관관계가 있습니다. 교육 수준과 그리고 AFK 점수 사이에요.",
+     "src": "gemini"
+    },
+    {
+     "t": 2444,
+     "page": 9,
+     "en": "So if you run a regression of hourly wage rate, hourly wage rate, log hourly wage rate, or on AFQT score ability, their education and experience experience square, their race, and the this is the local characteristics the unemployment rate in their metropolitan area, whether they live in the metropolitan area or not, that is like location specific information which is included in certain paper, I replicated. Uh so that's why it's here.",
+     "ko": "그래서 회귀 분석을 돌리면 시간당 임금과 시간당 임금, 로그 시간당 임금의 관계를 보면, 또는 AFQT 점수 능력에 대해, 그들의 교육 수준과 그리고 경험을 경험의 제곱을 보면, 그들의 인종, 그리고 그 이것은 지역 특성입니다. 실업률 그들의 지역의 대도시 지역의 실업률, 그들이 대도시에 사는지 아니면 그렇지 않은지, 그것은 위치와 관련된 정보입니다. 이것은 특정 논문에 포함되어 있는데, 제가 재현했습니다. 그래서 여기에 있는 것입니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 2485,
+     "page": 9,
+     "en": "Uh basically this is called as Mincer equation. Like estimating how hourly wage changes by educate education sex, race, so we want to understand how wage changes by individual characteristics. And here, the nice thing is we have also ability. So let's see how our hourly wage changes by ability and other things.",
+     "ko": "어, 기본적으로 이것은 민서 방정식이라고 합니다. 예를 들어, 얼마나 시간당 임금이 어떻게 변하는지 교육 수준에 따라 성별, 인종, 그래서 우리는 어떻게 임금이 변하는지 개인의 특성에 따라 알고 싶습니다. 그리고 여기서, 좋은 점은 능력도 있다는 것입니다. 그래서 어떻게 우리의 시간당 임금이 어떻게 변하는지 능력과 다른 것들에 따라",
+     "src": "gemini"
+    },
+    {
+     "t": 2514,
+     "page": 9,
+     "en": "So this is OLS regression. In order to run an OLS regression in data, you just write down reg regress. And this is Y variable and real pay and this is a bunch of variables. We have one, two, three, four, five, six, seven characteristic, including including the constant, we have eight. Like a P equals eight in this case.",
+     "ko": "그래서 이것은 OLS 회귀 분석입니다. OLS를 실행하기 위해서 데이터에서, 그냥 reg라고 씁니다. 그리고 이것은 Y 변수 그리고 실질 임금 그리고 이것은 여러 가지 변수들입니다. 우리는 하나, 둘, 셋, 넷, 다섯, 여섯, 일곱 개의 특성이 있는데, 그중에는 상수도 포함되어 있습니다. 총 여덟 개입니다. P는 이 경우에 8입니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 2542,
+     "page": 9,
+     "en": "And this one is something is optional. So I want to uh incorporate different weights for each observation in the sample. So this is something you, you know, you can adjust your standard error by adding this weight.",
+     "ko": "그리고 이것은 선택 사항입니다. 그래서 저는 어 통합하고 다른 가중치를 각 항목에 적용하고 싶습니다. 그래서 이것은 여러분이 아시다시피 할 수 있는 것입니다. 여러분의 표준 오차를 이 가중치를 추가하여 조정할 수 있습니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 2561,
+     "page": 9,
+     "en": "And this one, I want to look at only male population. And the sample that I'm interested in the characteristics are those who satisfy this condition. And also sample equals zero means that I'm looking at NLS 79. This is all the cohort. In I do the same thing for NLS 97, this is going to be the new cohort.",
+     "ko": "그리고 이것은, 저는 남성 인구만 보고 싶습니다. 그리고 제가 사용한 샘플은 제가 관심 있는 특성은 다음 조건을 충족하는 사람들입니다. 그리고 또한 샘플이 0이라는 것은 제가 NLS 79를 보고 있다는 뜻입니다. 이것은 모든 코호트입니다. 이 저는 같은 것을 NLS 97에 대해서도 하는데, 이것은 새로운 코호트가 될 것입니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 2588,
+     "page": 9,
+     "en": "NLS and then you can write down your comment, but I adding slash, write down anything you want. Uh for your own note. So it's not it will not affect your uh like it's not part of the running code. This is just a comment. The the green color and 99.",
+     "ko": "NLS 그리고 여러분의 코멘트를 적을 수 있지만, 저는 슬래시를 추가하고, 아무거나 적으면 됩니다. 어, 여러분의 개인 노트를 위해서요. 그래서 이것은 영향을 미치지 않을 것입니다. 어, 예를 들어, 이것은 진행 중인 코호트의 일부가 아닙니다. 이것은 그냥 코멘트입니다. 그 초록색은 그리고 99입니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 2615,
+     "page": 9,
+     "en": "97. So if I run this, what do we see? And if this score is self has a significantly positive correlation with log hourly wage, of course, as education increases, log hourly wage right? and then experience, uh and experience square has minus and being black has a lower hourly wage on average and etc.",
+     "ko": "97입니다. 그래서 제가 이걸 실행하면, 무엇을 볼 수 있을까요? 그리고 만약 이 점수가 자체적으로 유의미하게 양의 상관관계가 로그 시간당 임금과 있다면, 물론 교육 수준이 높아질수록 로그 시간당 임금도 높아지겠죠? 그리고 경험, 그리고 경험의 제곱은 마이너스이고 흑인인 것은 로그 시간당 임금이 평균적으로 낮고 등등입니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 2641,
+     "page": 9,
+     "en": "Okay? So experience here is a constructed by age minus schooling minus six. That measures the potential experience. And then we also we often include experience and experience square in the Mincer equation. Mincer equation. Because usually the return to return to experience is concave.",
+     "ko": "알겠죠? 그래서 여기서 경험은 구성 개념입니다. 이것은 나이에서 학교 교육을 뺀 것에서 6을 뺀 것입니다. 그것은 잠재적 경험을 측정합니다. 그리고 우리는 또한 종종 경험을 포함합니다. 그리고 경험의 제곱을 민서 방정식에 포함합니다. 민서 방정식. 왜냐하면 보통 수익률은 교육에 대한 수익률은 경험에 따라 오목합니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 2666,
+     "page": 9,
+     "en": "So it increases but too many um experience the marginal effect is smaller. So we include both of them. This is like a typical specification you can follow. Um so this is only for male, right? And then this is for all the sample. This is the 97 sample. As you can see, the return to education is similar, but return to AFQT score decreased over time. And that was the",
+     "ko": "그래서 증가하지만 너무 많으면 음 경험이 그 한계 효과는 더 작습니다. 그래서 둘 다 포함합니다. 이것은 전형적인 사양으로 따라할 수 있습니다. 음, 그래서 이것은 남성 전용이고, 그리고 이것은 모든 사람들을 위한 것입니다. 이것은 97년 샘플입니다. 보시다시피 그 교육에 대한 수익률은 비슷하지만, AFQT에 대한 수익률은 시간이 지남에 따라 감소했습니다. 그리고 그것이",
+     "src": "gemini"
+    }
+   ]
+  },
+  {
+   "page": 10,
+   "en": "one punch line of one paper. and he said that as the technology become mature, the return to cognitive ability decreased over time. So comparing 79 and 97, like the technology called change was not that drastic in recent years. So the the ability is less valued in the labor market. But I want to say that now it will change. Now we have a new technology, so there's a theory in like theoretical framework that says that cognitive ability matters if there's a new technology. Because education cannot you know, cannot teach everything, you know? So individuals who have a better ability can adapt. quickly to the new technology, innovation and etc. So I think if we have recent data, then we may have a higher return to AFQT score. Anyway, uh but the one thing I want to discuss today is how omitted variable bias affect the OLS estimates, okay? First, suppose that we run the OLS of log hourly wage on education only. And this is the case, So, okay, so suppose that this is the real relationship. This is the real relationship in the population. We don't know so we don't include ability in the regression. We only include education in the regression, OLS regression, and that is the case in the course case. This is the case we omitted is ability. And this is a typical case. In many other data set, we don't know ability measure. In this case, if we run the regression, it seems like additional year of education tend to increase log hourly wage by 0. 08. And then if we have low our with wage, why why variable is log hourly wage. So the interpretation is that oh, it of the coefficient is that additional unit of X increase hourly wage by that percent. And so it says additional year of highest grade completed or schooling increase log hourly wage by 7.5%. So this is what I said in the 8%. On average, as education level increases by one year, uh the hourly wage increase by 8%. But the question is that does better one at without ability as control over state. the cause of effect of education. The answer is yes. Because uh to some extent, the reason why this coefficient is large is because omitted variable ability is positively correlated with education. So the reason why why is higher for those with higher education is because they have higher education first, and they also have higher ability. But because we didn't include ability, that effect is captured by beta one. So beta one will be overstated. I will show you. So once we add aptitude score, in addition to education here. So this two equation here we I include ability measure here, right? And the return to education decreased from 0.0 75 to 0.04 6. Instead, ability increase the hourly wage by that much. So much of this effect will be reflected in the beta one. If we don't include the aptitude score. So that is the bias. We would have if we have omitted variable. Okay? And in other words, if we have omitted variable, if we you college is not it equal to you high school because you",
+   "ko": "한 가지 논문의 핵심이었습니다. 그리고 그는 이렇게 말했습니다. 기술이 발전함에 따라 성숙해지면서, 교육에 대한 인지 능력에 대한 수익률이 감소했다고 했습니다. 그래서 79년과 97년을 비교하면, 기술이 발전함에 따라 소위 말하는 변화가 그렇게 크지 않았다는 것이 최근 몇 년 동안이었습니다. 그래서 그 능력에 대한 중요성이 노동 시장에서 덜 중요해졌습니다. 하지만 저는 이제 그것이 바뀔 것이라고 말하고 싶습니다. 이제 새로운 기술이 있으니까, 이론이 있습니다. 예를 들어 이론적인 틀에서는 인지 능력이 중요하다고 말합니다. 새로운 기술이 있으면요. 왜냐하면 교육은 새로운 기술을 따라잡을 수 없기 때문입니다. 모든 것을 가르칠 수는 없잖아요? 그래서 더 나은 능력을 가진 개인은 적응할 수 있습니다. 새로운 기술에 빠르게 적응할 수 있습니다. 혁신과 등등에 대해서요. 그래서 제 생각에는 우리가 최근에 데이터를 가지고 있다면, 더 높은 AFQT에 대한 수익률을 얻을 수 있을 것입니다. 어쨌든, 어 하지만 제가 한 가지 오늘 논의하고 싶은 것은 얼마나 누락된 변수 편향이 OLS 추정치에 영향을 미치는지입니다, 알겠죠? 첫째, 가정해 봅시다. 우리가 실행한다고 OLS를 로그의 시간당 임금을 교육에 대해서만 실행한다고. 그리고 이것이 경우입니다, 그래서, 알겠죠, 그러니까 가정해 봅시다. 이것이 실제 관계입니다. 이것은 실제 관계입니다. 모집단에서 말이죠. 우리는 모릅니다 그래서 우리는 포함하지 않습니다 회귀 분석에 능력을. 우리는 교육만 포함합니다. OLS 회귀 분석에서, 그리고 그것이 이 수업 사례입니다. 이것이 우리가 누락한 경우입니다. 는 능력입니다. 그리고 이것은 전형적인 사례입니다. 다른 많은 데이터 세트에서는 능력 측정치를 모릅니다. 이 경우, 우리가 회귀 분석을 실행하면, 마치 추가적인 교육 연수가 경향이 있습니다. 로그 시간당 임금을 증가시키는 것이 0. 08입니다. 그리고 만약 우리가 가지고 있다면 낮은 우리의 와 함께 임금, 왜 왜 변수가 로그 시간당 임금입니다. 그래서 해석은 다음과 같습니다. 어 오, 그것은 그 계수의 값은 다음과 같습니다. 추가적인 단위의 X가 증가하면 시간당 임금이 증가합니다. 그만큼 퍼센트. 그래서 그것은 말합니다. 추가적인 최고 학년 수료 또는 학업이 증가하면 로그 시간당 임금이 7.5% 증가합니다. 그래서 제가 8%라고 말한 것입니다. 평균적으로, 교육 수준이 증가하면 1년씩, 어 시간당 임금이 8% 증가합니다. 하지만 문제는 이겁니다. 과연 더 나은 것이 무엇인가? 없이 능력이 없어도 통제할 수 있는가? 원인은 결과의 교육의 영향이다. 정답은 예입니다. 왜냐하면 어 어느 정도는 그 이유가 이 계수가 큰 이유는 어 왜냐하면 누락된 변수 능력은 양의 상관관계가 있습니다. 그래서 왜 왜 높은지 에 대한 이유는 교육 수준이 높은 사람들에게 더 높은 교육을 받았기 때문입니다. 그리고 그들은 더 높은 능력을 가지고 있습니다. 하지만 우리가 능력을 포함하지 않았기 때문에, 그 효과는 베타에 의해 포착됩니다. 그래서 베타는 과대평가될 것입니다. 제가 보여드리겠습니다. 그래서 적성 점수를 추가하면, 교육에 더해서요. 그래서 이 두 방정식은 여기서는 제가 능력을 포함합니다. 맞죠? 그리고 교육에 대한 수익은 감소했습니다. 0.07에서 0.0 75로 0. 04로 감소했습니다. 대신에, 능력은 증가하고 시간당 임금은 그만큼 증가했습니다. 그래서 이 효과의 대부분은 교육의 효과에 반영될 것입니다. 만약 우리가 포함하지 않는다면 적성 점수를 포함하지 않는다면요. 그래서 그것이 편향입니다. 우리는 만약 우리가 변수를 누락했다면 그렇죠? 그리고 다른 말로 하면, 만약 우리가 변수를 누락했다면, 만약 우리가 당신이 대학을 은 아니에요. 그것은 같지 않아요. 당신이 고등학교 졸업장과 왜냐하면 당신이",
+   "pdf": "",
+   "pdfPage": 10,
+   "slideText": "",
+   "segs": [
+    {
+     "t": 2701,
+     "page": 10,
+     "en": "one punch line of one paper. and he said that as the technology become mature, the return to cognitive ability decreased over time. So comparing 79 and 97, like the technology called change was not that drastic in recent years. So the the ability is less valued in the labor market. But I want to say that now it will change. Now we have a new technology, so there's a theory in like theoretical framework that says that cognitive ability matters if there's a new technology.",
+     "ko": "한 가지 논문의 핵심이었습니다. 그리고 그는 이렇게 말했습니다. 기술이 발전함에 따라 성숙해지면서, 교육에 대한 인지 능력에 대한 수익률이 감소했다고 했습니다. 그래서 79년과 97년을 비교하면, 기술이 발전함에 따라 소위 말하는 변화가 그렇게 크지 않았다는 것이 최근 몇 년 동안이었습니다. 그래서 그 능력에 대한 중요성이 노동 시장에서 덜 중요해졌습니다. 하지만 저는 이제 그것이 바뀔 것이라고 말하고 싶습니다. 이제 새로운 기술이 있으니까, 이론이 있습니다. 예를 들어 이론적인 틀에서는 인지 능력이 중요하다고 말합니다. 새로운 기술이 있으면요. 왜냐하면",
+     "src": "gemini"
+    },
+    {
+     "t": 2740,
+     "page": 10,
+     "en": "Because education cannot you know, cannot",
+     "ko": "교육은 새로운 기술을 따라잡을 수 없기 때문입니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 2746,
+     "page": 10,
+     "en": "teach everything, you know? So individuals who have a better ability can adapt. quickly to the new technology, innovation and etc. So I think if we have recent data, then we may have a higher return to AFQT score. Anyway, uh but the one thing I want to discuss today is how omitted variable bias affect the OLS estimates, okay?",
+     "ko": "모든 것을 가르칠 수는 없잖아요? 그래서 더 나은 능력을 가진 개인은 적응할 수 있습니다. 새로운 기술에 빠르게 적응할 수 있습니다. 혁신과 등등에 대해서요. 그래서 제 생각에는 우리가 최근에 데이터를 가지고 있다면, 더 높은 AFQT에 대한 수익률을 얻을 수 있을 것입니다. 어쨌든, 어 하지만 제가 한 가지 오늘 논의하고 싶은 것은 얼마나 누락된 변수 편향이 OLS 추정치에 영향을 미치는지입니다,",
+     "src": "gemini"
+    },
+    {
+     "t": 2770,
+     "page": 10,
+     "en": "First, suppose that we run the OLS of log hourly wage on education only. And this is the case,",
+     "ko": "알겠죠? 첫째, 가정해 봅시다. 우리가 실행한다고 OLS를 로그의 시간당 임금을 교육에 대해서만 실행한다고. 그리고 이것이 경우입니다,",
+     "src": "gemini"
+    },
+    {
+     "t": 2785,
+     "page": 10,
+     "en": "So, okay, so suppose that this is the real relationship.",
+     "ko": "그래서, 알겠죠, 그러니까 가정해 봅시다. 이것이 실제 관계입니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 2797,
+     "page": 10,
+     "en": "This is the real relationship in the population. We don't know so we don't include ability in the regression. We only include education in the regression, OLS regression, and that is the case in the course case. This is the case we omitted",
+     "ko": "이것은 실제 관계입니다. 모집단에서 말이죠. 우리는 모릅니다 그래서 우리는 포함하지 않습니다 회귀 분석에 능력을. 우리는 교육만 포함합니다. OLS 회귀 분석에서, 그리고 그것이 이 수업 사례입니다. 이것이 우리가 누락한 경우입니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 2818,
+     "page": 10,
+     "en": "is ability. And this is a typical case. In many other data set, we don't know ability measure. In this case, if we run the regression, it seems like additional year of education tend to increase log hourly wage by 0. 08. And then if we have low our with wage, why why variable is log hourly wage. So the interpretation is that oh, it of the coefficient is that additional unit of X increase hourly wage by that percent.",
+     "ko": "는 능력입니다. 그리고 이것은 전형적인 사례입니다. 다른 많은 데이터 세트에서는 능력 측정치를 모릅니다. 이 경우, 우리가 회귀 분석을 실행하면, 마치 추가적인 교육 연수가 경향이 있습니다. 로그 시간당 임금을 증가시키는 것이 0. 08입니다. 그리고 만약 우리가 가지고 있다면 낮은 우리의 와 함께 임금, 왜 왜 변수가 로그 시간당 임금입니다. 그래서 해석은 다음과 같습니다. 어 오, 그것은 그 계수의 값은 다음과 같습니다. 추가적인 단위의 X가 증가하면 시간당 임금이 증가합니다. 그만큼 퍼센트.",
+     "src": "gemini"
+    },
+    {
+     "t": 2863,
+     "page": 10,
+     "en": "And so it says additional year of highest grade completed or schooling increase log hourly wage by 7.5%. So this is what I said in the 8%. On average, as education level increases by one year, uh the hourly wage increase by 8%.",
+     "ko": "그래서 그것은 말합니다. 추가적인 최고 학년 수료 또는 학업이 증가하면 로그 시간당 임금이 7.5% 증가합니다. 그래서 제가 8%라고 말한 것입니다. 평균적으로, 교육 수준이 증가하면 1년씩, 어 시간당 임금이 8% 증가합니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 2887,
+     "page": 10,
+     "en": "But the question is that does better one at without ability as control over state. the cause of effect of education.",
+     "ko": "하지만 문제는 이겁니다. 과연 더 나은 것이 무엇인가? 없이 능력이 없어도 통제할 수 있는가? 원인은 결과의 교육의 영향이다.",
+     "src": "gemini"
+    },
+    {
+     "t": 2907,
+     "page": 10,
+     "en": "The answer is yes. Because uh to some extent, the reason why this coefficient is large is because omitted variable ability is positively correlated with education. So the reason why why is higher for those with higher education is because they have higher education first, and they also have higher ability.",
+     "ko": "정답은 예입니다. 왜냐하면 어 어느 정도는 그 이유가 이 계수가 큰 이유는 어 왜냐하면 누락된 변수 능력은 양의 상관관계가 있습니다. 그래서 왜 왜 높은지 에 대한 이유는 교육 수준이 높은 사람들에게 더 높은 교육을 받았기 때문입니다. 그리고 그들은 더 높은",
+     "src": "gemini"
+    },
+    {
+     "t": 2931,
+     "page": 10,
+     "en": "But because we didn't include ability, that effect is captured by beta one. So beta one will be overstated. I will show you. So once we add aptitude score, in addition to education here. So this two equation here we I include ability measure here, right? And the return to education decreased from 0.0 75 to 0.04 6.",
+     "ko": "능력을 가지고 있습니다. 하지만 우리가 능력을 포함하지 않았기 때문에, 그 효과는 베타에 의해 포착됩니다. 그래서 베타는 과대평가될 것입니다. 제가 보여드리겠습니다. 그래서 적성 점수를 추가하면, 교육에 더해서요. 그래서 이 두 방정식은 여기서는 제가 능력을 포함합니다. 맞죠? 그리고 교육에 대한 수익은 감소했습니다. 0.07에서 0.0 75로 0. 04로 감소했습니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 2961,
+     "page": 10,
+     "en": "Instead, ability increase the hourly wage by that much. So much of this effect will be reflected in the beta one. If we don't include the aptitude score. So that is the bias. We would have if we have omitted variable. Okay? And in other words, if we have omitted variable, if we you college is not it equal to you high school because you",
+     "ko": "대신에, 능력은 증가하고 시간당 임금은 그만큼 증가했습니다. 그래서 이 효과의 대부분은 교육의 효과에 반영될 것입니다. 만약 우리가 포함하지 않는다면 적성 점수를 포함하지 않는다면요. 그래서 그것이 편향입니다. 우리는 만약 우리가 변수를 누락했다면 그렇죠? 그리고 다른 말로 하면, 만약 우리가 변수를 누락했다면, 만약 우리가 당신이 대학을 은 아니에요. 그것은 같지 않아요. 당신이 고등학교 졸업장과 왜냐하면 당신이",
+     "src": "gemini"
+    }
+   ]
+  },
+  {
+   "page": 11,
+   "en": "Okay, because you includes ability. ability is higher for college education and college educated individuals on average. So that's why it's not it's not condition does not hold. If uh there exists omitted variable. But once we include ability directly, we can see clearly that the return to education decreased from 7.5% to 4.6%. Okay? So this is biased upward. upward which means that overstate. The effect of education. Actually, that's the main thing I wanted to discuss. Okay, what do we have here? Ah, This one is for panel data. So the thing is here, what we have done is pooled OLS. And the next section, next lecture, we will discuss how we have to adjust the standard error when we have panel data. Uh if you remember heteroscedasticity, and the cluster analysis, the challenge is that uh the assumption that the error error structure is from the exactly same distribution for each observation is very strong. Homoscedasticity is very strong assumption, especially if we have a panel structure, we know that we have information for same individual for like 20 years. And then because it is from the same individual, those 20 observation may have some correlation. So we need to allow cluster by individual level. That's what we have here. So when you have a panel structure, we often add this comment cluster ID to incorporate the cluster structure of the error. Okay? Uh across individuals. So that's something, you know, once we have a cluster, we have a slightly different coefficient, but it's almost the same. Yeah. Uh, I already had a cluster. So let me let me compare cluster and non-cluster. Let's cluster and non- cluster. If I don't adjust the standard error, this is the result. So coefficient is exactly the same, but T statistic is different. Do you understand do you remember? If we have heteroscedasticity or cluster, the coefficient is still OS. So coefficient is exactly the same, but the robust standard error is different depending on whether we allow cluster structure or whether we stick to the homoscedasticity. With the homoscedasticity, here, the standard error is estimated uh much smaller. So T statistic is reported statistic is much larger, but if the true error structure has a cluster, then T statistic should be adjusted or standard error should be adjusted so that statistics is smaller. So less significant. So that's the difference. When, you know, depending on which error structure we are choosing, the estimated standard error will be different and if we want to be conservative, we allow cluster structure and then report smaller T value. Okay? Okay. So that's it. Next session, if time allows, I will talk about how to do in the code lab. And but I already show you I will I will share I already shared the Python code. So for those who can do it, you can do it by yourself. you know, I will introduce briefly how to do it next time. Okay. That's it for today. Any questions? Okay, so okay, I'm done. Thank you for participating. I will share the recorded session with everyone. See you on Wednesday. Okay, bye.",
+   "ko": "네, 왜냐하면 당신이 포함하기 때문이죠. 능력은 더 높아요. 대학 교육을 받은 사람들과 대학 교육을 받은 개인들이 평균적으로요. 그래서 그게 바로 그것이 아니에요. 그것은 아니에요. 조건이 성립하지 않아요. 만약 어 거기에 존재한다면 누락된 변수가. 하지만 우리가 포함하면 능력은 직접적으로, 우리는 분명히 볼 수 있습니다. 교육에 대한 수익이 감소했다는 것을요. 7.5%에서 4. 6%로요. 그렇죠? 그래서 이것은 상향 편향되어 있습니다. 이는 과대평가된다는 뜻입니다. 교육의 효과가요. 사실, 그게 제가 말씀드리고 싶었던 주요 내용입니다. 자, 여기 뭐가 있죠? 아, 이건 패널 데이터용입니다. 그래서 여기서 우리가 한 것은 풀 OLS입니다. 그리고 다음 섹션에서는, 다음 강의에서는, 어떻게 조정해야 하는지 논의할 것입니다. 표준 오차를 조정해야 하는지 논의할 것입니다. 패널 데이터가 있을 때. 어, 만약 기억하신다면 이분산성, 그리고 군집 분석, 그 문제는 어 가정이 오차가 오차 구조가 예제에서 정확히 동일한 분포를 따른다는 것이 각 관측치에 대해 매우 강력하다는 것입니다. 등분산성은 매우 강력한 가정이며, 특히 패널 구조가 있는 경우, 우리는 우리가 정보를 가지고 있다는 것을 알고 있습니다. 예를 들어 20년 동안 같은 개인에 대한 정보가 있고, 같은 개인에서 나온 것이기 때문에, 그 20개의 관측치는 어느 정도 상관관계가 있을 수 있습니다. 그래서 우리는 개별 단위로 군집을 허용해야 합니다. 그것이 우리가 여기서 가진 것입니다. 따라서 패널 구조가 있을 때, 우리는 종종 이것을 추가합니다. 군집 ID 포함하기 위해 군집을 포함하기 위해 데이터의 군집 구조를 포함합니다. 알겠죠? 어, 개인 간에. 그래서 그게 뭐냐면, 아시다시피 일단 군집이 있으면, 우리는 약간 다른 계수를 갖게 되지만, 거의 동일합니다. 네. 어, 이미 군집이 있었어요. 그래서 제가 한번 비교해 볼게요. 군집과 비군집을. 자, 군집과 비군집을 비교해 볼게요. 만약 제가 표준 오차를 조정하지 않으면, 이것이 결과입니다. 그래서 계수는 정확히 동일하지만, T 통계량은 다릅니다. 이해가 되시나요? 기억하시나요? 만약 우리가 이분산성을 가지고 있거나 군집이 있다면, 계수는 여전히 동일하지만, 그래서 계수는 정확히 동일하지만, 하지만 로버스트 표준 오차는 다릅니다. 무엇을 허용하느냐에 따라 군집 구조를 허용하느냐 아니면 등분산성을 고수하느냐에 따라. 등분산성을 가지고는, 여기서, 표준 오차는 추정됩니다. 어, 훨씬 작게. 그래서 T 통계량은 보고된 T 통계량이 훨씬 크지만, 만약 실제 오차 구조가 군집을 가지고 있다면, 그러면 T 통계량은 조정되거나 표준 오차가 조정되어야 합니다. 그래서 T 통계량이 더 작아집니다. 그래서 덜 유의미합니다. 그래서 그게 차이입니다. 아시다시피, 어떤 것을 선택하느냐에 따라 오차 구조가 달라지며, 추정된 표준 오차는 다를 것입니다. 그리고 만약 우리가 보수적이 되려면 군집을 허용해야 합니다. 그것이 여기서 우리가 보고하는 더 작은 T 값입니다. 알겠죠? 네. 그래서 그게 다예요. 다음은 세션에서 시간이 허락한다면 제가 어떻게 하는지 말씀드릴게요. 코드랩에서. 그리고 하지만 저는 이미 여러분에게 보여드릴게요. 제가 공유할게요. 제가 이미 파이썬 코드를 공유했어요. 그래서 할 수 있는 분들은 직접 해보실 수 있어요. 아시다시피, 제가 간단히 어떻게 하는지 다음 시간에 말씀드릴게요. 알겠죠? 오늘 수업은 여기까지입니다. 질문 있으신가요? 네, 그럼 네, 저는 다 했어요. 감사합니다. 참여해 주셔서 감사합니다. 제가 녹화된 세션을 모두와 공유할게요. 다음 주 수요일에 봬요. 네, 안녕히 계세요.",
+   "pdf": "",
+   "pdfPage": 11,
+   "slideText": "",
+   "segs": [
+    {
+     "t": 3004,
+     "page": 11,
+     "en": "Okay, because you includes ability. ability is higher for college education and college educated individuals on average. So that's why it's not it's not condition does not hold. If uh there exists omitted variable. But once we include ability directly, we can see clearly that the return to education decreased from 7.5% to 4.6%.",
+     "ko": "네, 왜냐하면 당신이 포함하기 때문이죠. 능력은 더 높아요. 대학 교육을 받은 사람들과 대학 교육을 받은 개인들이 평균적으로요. 그래서 그게 바로 그것이 아니에요. 그것은 아니에요. 조건이 성립하지 않아요. 만약 어 거기에 존재한다면 누락된 변수가. 하지만 우리가 포함하면 능력은 직접적으로, 우리는 분명히 볼 수 있습니다. 교육에 대한 수익이 감소했다는 것을요. 7.5%에서 4. 6%로요.",
+     "src": "gemini"
+    },
+    {
+     "t": 3038,
+     "page": 11,
+     "en": "Okay? So this is biased upward. upward which means that overstate. The effect of education.",
+     "ko": "그렇죠? 그래서 이것은 상향 편향되어 있습니다. 이는 과대평가된다는 뜻입니다. 교육의 효과가요.",
+     "src": "gemini"
+    },
+    {
+     "t": 3049,
+     "page": 11,
+     "en": "Actually, that's the main thing I wanted to discuss. Okay, what do we have here? Ah, This one is for panel data. So the thing is here, what we have done is pooled OLS. And the next section, next lecture, we will discuss how we have to adjust the standard error when we have panel data.",
+     "ko": "사실, 그게 제가 말씀드리고 싶었던 주요 내용입니다. 자, 여기 뭐가 있죠? 아, 이건 패널 데이터용입니다. 그래서 여기서 우리가 한 것은 풀 OLS입니다. 그리고 다음 섹션에서는, 다음 강의에서는, 어떻게 조정해야 하는지 논의할 것입니다. 표준 오차를 조정해야 하는지 논의할 것입니다. 패널 데이터가 있을 때.",
+     "src": "gemini"
+    },
+    {
+     "t": 3072,
+     "page": 11,
+     "en": "Uh if you remember heteroscedasticity, and the cluster analysis, the challenge is that uh the assumption that the error error structure is from the exactly same distribution for each observation is very strong. Homoscedasticity is very strong assumption, especially if we have a panel structure, we know that we have information for same individual for like 20 years.",
+     "ko": "어, 만약 기억하신다면 이분산성, 그리고 군집 분석, 그 문제는 어 가정이 오차가 오차 구조가 예제에서 정확히 동일한 분포를 따른다는 것이 각 관측치에 대해 매우 강력하다는 것입니다. 등분산성은 매우 강력한 가정이며, 특히 패널 구조가 있는 경우, 우리는 우리가 정보를 가지고 있다는 것을 알고 있습니다. 예를 들어 20년 동안",
+     "src": "gemini"
+    },
+    {
+     "t": 3100,
+     "page": 11,
+     "en": "And then because it is from the same individual, those 20 observation may have some correlation. So we need to allow cluster by individual level. That's what we have here. So when you have a panel structure, we often add this comment cluster ID to incorporate the cluster structure of the error.",
+     "ko": "같은 개인에 대한 정보가 있고, 같은 개인에서 나온 것이기 때문에, 그 20개의 관측치는 어느 정도 상관관계가 있을 수 있습니다. 그래서 우리는 개별 단위로 군집을 허용해야 합니다. 그것이 우리가 여기서 가진 것입니다. 따라서 패널 구조가 있을 때, 우리는 종종 이것을 추가합니다. 군집 ID 포함하기 위해 군집을 포함하기 위해 데이터의 군집 구조를 포함합니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 3126,
+     "page": 11,
+     "en": "Okay? Uh across individuals. So that's something, you know, once we have a cluster, we have a slightly different coefficient, but it's almost the same.",
+     "ko": "알겠죠? 어, 개인 간에. 그래서 그게 뭐냐면, 아시다시피 일단 군집이 있으면, 우리는 약간 다른 계수를 갖게 되지만, 거의 동일합니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 3145,
+     "page": 11,
+     "en": "Yeah. Uh, I already had a cluster. So let me let me compare cluster and non-cluster. Let's cluster and non- cluster. If I don't adjust the standard error, this is the result. So coefficient is exactly the same, but T statistic is different. Do you understand do you remember? If we have heteroscedasticity or cluster, the coefficient is still OS. So coefficient is exactly the same, but the robust standard error is different depending on whether we allow cluster structure or whether we stick to the homoscedasticity.",
+     "ko": "네. 어, 이미 군집이 있었어요. 그래서 제가 한번 비교해 볼게요. 군집과 비군집을. 자, 군집과 비군집을 비교해 볼게요. 만약 제가 표준 오차를 조정하지 않으면, 이것이 결과입니다. 그래서 계수는 정확히 동일하지만, T 통계량은 다릅니다. 이해가 되시나요? 기억하시나요? 만약 우리가 이분산성을 가지고 있거나 군집이 있다면, 계수는 여전히 동일하지만, 그래서 계수는 정확히 동일하지만, 하지만 로버스트 표준 오차는 다릅니다. 무엇을 허용하느냐에 따라 군집 구조를 허용하느냐 아니면 등분산성을 고수하느냐에 따라.",
+     "src": "gemini"
+    },
+    {
+     "t": 3187,
+     "page": 11,
+     "en": "With the homoscedasticity, here, the standard error is estimated uh much smaller. So T statistic is reported statistic is much larger, but if the true error structure has a cluster, then T statistic should be adjusted or standard error should be adjusted so that statistics is smaller. So less significant. So that's the difference.",
+     "ko": "등분산성을 가지고는, 여기서, 표준 오차는 추정됩니다. 어, 훨씬 작게. 그래서 T 통계량은 보고된 T 통계량이 훨씬 크지만, 만약 실제 오차 구조가 군집을 가지고 있다면, 그러면 T 통계량은 조정되거나 표준 오차가 조정되어야 합니다. 그래서 T 통계량이 더 작아집니다. 그래서 덜 유의미합니다. 그래서 그게 차이입니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 3213,
+     "page": 11,
+     "en": "When, you know, depending on which error structure we are choosing, the estimated standard error will be different and if we want to be conservative, we allow cluster structure and then report smaller T value. Okay? Okay. So that's it. Next session, if time allows, I will talk about how to do in the code lab.",
+     "ko": "아시다시피, 어떤 것을 선택하느냐에 따라 오차 구조가 달라지며, 추정된 표준 오차는 다를 것입니다. 그리고 만약 우리가 보수적이 되려면 군집을 허용해야 합니다. 그것이 여기서 우리가 보고하는 더 작은 T 값입니다. 알겠죠? 네. 그래서 그게 다예요. 다음은 세션에서 시간이 허락한다면 제가 어떻게 하는지 말씀드릴게요. 코드랩에서.",
+     "src": "gemini"
+    },
+    {
+     "t": 3239,
+     "page": 11,
+     "en": "And but I already show you I will I will share I already shared the Python code. So for those who can do it, you can do it by yourself. you know, I will introduce briefly how to do it next time. Okay. That's it for today. Any questions?",
+     "ko": "그리고 하지만 저는 이미 여러분에게 보여드릴게요. 제가 공유할게요. 제가 이미 파이썬 코드를 공유했어요. 그래서 할 수 있는 분들은 직접 해보실 수 있어요. 아시다시피, 제가 간단히 어떻게 하는지 다음 시간에 말씀드릴게요. 알겠죠? 오늘 수업은 여기까지입니다. 질문 있으신가요?",
+     "src": "gemini"
+    },
+    {
+     "t": 3276,
+     "page": 11,
+     "en": "Okay, so okay, I'm done. Thank you for participating. I will share the recorded session with everyone. See you on Wednesday. Okay, bye.",
+     "ko": "네, 그럼 네, 저는 다 했어요. 감사합니다. 참여해 주셔서 감사합니다. 제가 녹화된 세션을 모두와 공유할게요. 다음 주 수요일에 봬요. 네, 안녕히 계세요.",
+     "src": "gemini"
+    }
+   ]
+  }
+ ],
+ "savedAt": "2026-11-10T07:10:49.307Z"
+}
