@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-10T00:46:15.192Z",
+  "generatedAt": "2026-11-10T07:53:01.900Z",
   "source": "canvas",
   "user": "김주함(2025####72)",
   "courseFiles": {
@@ -215,7 +215,20 @@
         "name": "11주차",
         "position": 11,
         "unlock": null,
-        "items": []
+        "items": [
+          {
+            "type": "Page",
+            "title": "11주차_강의자료_자연기반해법",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/96922/modules/items/4826098"
+          },
+          {
+            "type": "Assignment",
+            "title": "11주차_모둠토론 기록지 제출",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/96922/modules/items/4826104"
+          }
+        ]
       },
       {
         "id": "1529853",
@@ -2017,6 +2030,16 @@
       "files": []
     },
     {
+      "id": "a1509657",
+      "course": "리질리언스와지속가능한도시",
+      "title": "11주차_모둠토론 기록지 제출",
+      "due": null,
+      "submitted": false,
+      "url": "https://khcanvas.khu.ac.kr/courses/96922/assignments/1509657",
+      "body": "모둠 토론 기록지 제출바랍니다.",
+      "files": []
+    },
+    {
       "id": "a1500667",
       "course": "리질리언스와지속가능한도시",
       "title": "4주차_모둠토론내용 업로드",
@@ -2367,6 +2390,22 @@
     }
   ],
   "notices": [
+    {
+      "id": "n495163",
+      "course": "거시경제학",
+      "title": "[Internship Announcement] 예금보험공사(KDIC) 제28기 동계 대학생인턴 모집 안내",
+      "date": "2026-11-10T05:08:10Z",
+      "summary": "수강생들에게 안녕하세요? 11월6일 게시된 예금보험공사 제28기 동계 대학생인턴 모집 안내를 공지하오니 관심있는 학생들은 확인바랍니다. ( 채용사이트: https://www.kdic.or.kr/di/empm/selectPbcrEmpmPbancList.do ) 최형선. Dear Students, Please check out the following link for the Winter KDIC(Korea Deposit Insur…",
+      "body": "수강생들에게 안녕하세요? 11월6일 게시된 예금보험공사 제28기 동계 대학생인턴 모집 안내를 공지하오니 관심있는 학생들은 확인바랍니다. ( 채용사이트: https://www.kdic.or.kr/di/empm/selectPbcrEmpmPbancList.do ) 최형선. Dear Students, Please check out the following link for the Winter KDIC(Korea Deposit Insurance Corperation) internship announced on November 6, 2006: https://www.kdic.or.kr/di/empm/selectPbcrEmpmPbancList.do Cheers, Sun",
+      "url": "https://khcanvas.khu.ac.kr/courses/95555/discussion_topics/495163",
+      "files": [
+        {
+          "name": "https://www.kdic.or.kr/di/empm/selectPbcrEmpmPbancList.do",
+          "url": "https://www.kdic.or.kr/di/empm/selectPbcrEmpmPbancList.do",
+          "external": true
+        }
+      ]
+    },
     {
       "id": "n494621",
       "course": "거시경제학",
