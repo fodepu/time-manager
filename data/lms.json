@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T20:12:27.719Z",
+  "generatedAt": "2026-11-13T01:16:50.140Z",
   "source": "canvas",
   "user": "김주함(2025####72)",
   "courseFiles": {
@@ -1358,6 +1358,12 @@
         "position": 28,
         "unlock": null,
         "items": [
+          {
+            "type": "ExternalTool",
+            "title": "[모두를 위한 물리학] 온/오프라인 Q&A (18:00~)",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97015/modules/items/4828541"
+          },
           {
             "type": "ExternalTool",
             "title": "12주차 1강",
