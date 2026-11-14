@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-13T22:17:56.817Z",
+  "generatedAt": "2026-11-14T02:32:31.099Z",
   "source": "canvas",
   "user": "김주함(2025####72)",
   "courseFiles": {
@@ -2419,6 +2419,25 @@
     }
   ],
   "notices": [
+    {
+      "id": "n495986",
+      "course": "거시경제학",
+      "title": "Concerning Academic Advising and Counseling on Campus",
+      "date": "2026-11-13T22:25:03Z",
+      "summary": "Dear Students, If you need advising or counseling on campus, please see the attached PDF. Cheers,",
+      "body": "Dear Students, If you need advising or counseling on campus, please see the attached PDF. Cheers,",
+      "url": "https://khcanvas.khu.ac.kr/courses/95555/discussion_topics/495986",
+      "files": [
+        {
+          "id": "10032820",
+          "name": "Advising_Couseling_미래혁신단 상담 유형별 맞춤형 컨설팅 통합 안내문.pdf",
+          "url": "https://khcanvas.khu.ac.kr/files/10032820/download?download_frd=1&verifier=hKs8d0wJ49feIwnICF3XDLJBtWCpe2Ll2MMCd06p",
+          "type": "application/pdf",
+          "size": 2907074,
+          "text": ""
+        }
+      ]
+    },
     {
       "id": "n495163",
       "course": "거시경제학",
