@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-15T20:01:37.340Z",
+  "generatedAt": "2026-11-16T00:04:48.210Z",
   "source": "canvas",
   "user": "김주함(2025####72)",
   "courseFiles": {
@@ -285,7 +285,14 @@
         "name": "Find the EXAM, here !!!!!",
         "position": 1,
         "unlock": null,
-        "items": []
+        "items": [
+          {
+            "type": "ExternalTool",
+            "title": "Exam2_UMacro_2026F_SCD",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4829619"
+          }
+        ]
       },
       {
         "id": "1507971",
