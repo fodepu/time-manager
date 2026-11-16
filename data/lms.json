@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-16T06:55:02.717Z",
+  "generatedAt": "2026-11-16T16:36:20.201Z",
   "source": "canvas",
   "user": "김주함(2025####72)",
   "courseFiles": {
@@ -281,20 +281,6 @@
     ],
     "거시경제학": [
       {
-        "id": "1507970",
-        "name": "Find the EXAM, here !!!!!",
-        "position": 1,
-        "unlock": null,
-        "items": [
-          {
-            "type": "ExternalTool",
-            "title": "Exam2_UMacro_2026F_SCD",
-            "indent": 0,
-            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4829619"
-          }
-        ]
-      },
-      {
         "id": "1507971",
         "name": "(Warning!!) DONOT make UNAUTHORIZED access to this website WITHOUT MY CONSENT!",
         "position": 2,
@@ -380,105 +366,105 @@
         "items": [
           {
             "type": "ExternalTool",
-            "title": "Ch5_Sum_w_Figures",
+            "title": "Ch9_5Edi_wPics",
             "indent": 0,
-            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4761395"
+            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4760025"
           },
           {
             "type": "ExternalTool",
-            "title": "Figurezz_last_SummaryBCycles",
+            "title": "Baseline_TwoPeriod_Model_VOD1",
             "indent": 0,
-            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4761396"
+            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4760026"
           },
           {
             "type": "ExternalTool",
-            "title": "LNCh5_Slides_VODlight1_lumpsum",
+            "title": "Baseline_TwoPeriod_Model_VOD2",
             "indent": 0,
-            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4761397"
+            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4760028"
           },
           {
             "type": "ExternalTool",
-            "title": "LNCh5_Slides_VODlight2_lumpsum",
+            "title": "Ch8_EndGrowth_Lucas_Sum",
             "indent": 0,
-            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4761398"
+            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4761379"
           },
           {
             "type": "ExternalTool",
-            "title": "LNCh5_Slides_VODlight3_lumpsum",
+            "title": "LNCh8Slides",
             "indent": 0,
-            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4761399"
+            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4761378"
           },
           {
             "type": "ExternalTool",
-            "title": "LNCh5_Slides_VODlight4_proptax",
+            "title": "LNCh8Slides_VODlight1",
             "indent": 0,
-            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4761400"
+            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4761380"
           },
           {
             "type": "ExternalTool",
-            "title": "LNCh5_Slides_VODlight5_proptax",
+            "title": "LNCh7Slides",
             "indent": 0,
-            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4761401"
+            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4761381"
           },
           {
             "type": "ExternalTool",
-            "title": "LNCh5_Slides_VODlight6_pubgoods",
+            "title": "Ch7_Malthus_Sum",
             "indent": 0,
-            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4761402"
+            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4761382"
           },
           {
             "type": "ExternalTool",
-            "title": "Ch4_Sum_w_Figures",
+            "title": "Ch7_Solow_Sum",
             "indent": 0,
-            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4761493"
+            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4761383"
           },
           {
             "type": "ExternalTool",
-            "title": "FrenchFamilyValue_KrugmanNytimes",
+            "title": "LNCh7Slides_VODlight1_intro",
             "indent": 0,
-            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4761494"
+            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4761387"
           },
           {
             "type": "ExternalTool",
-            "title": "Factors of Production | Economics Explained",
+            "title": "LNCh7Slides_VODlight2_malthus",
             "indent": 0,
-            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4761545"
+            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4761389"
           },
           {
             "type": "ExternalTool",
-            "title": "SampleQt_Ch4_Producer_Choice",
+            "title": "LNCh7Slides_VODlight3_malthus",
             "indent": 0,
-            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4761551"
+            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4761391"
           },
           {
             "type": "ExternalTool",
-            "title": "SampleQt_Solution_Ch4_Producer_Choice",
+            "title": "LNCh7Slides_VODlight4_solow",
             "indent": 0,
-            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4761553"
+            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4761392"
           },
           {
             "type": "ExternalTool",
-            "title": "LNCh4_Consumers_VODlight1",
+            "title": "LNCh7Slides_VODlight5_solow",
             "indent": 0,
-            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4761560"
+            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4761393"
           },
           {
             "type": "ExternalTool",
-            "title": "LNCh4_Consumers_VODlight2",
+            "title": "LNCh7Slides_VODlight6_solow",
             "indent": 0,
-            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4761561"
+            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4761394"
           },
           {
             "type": "ExternalTool",
-            "title": "LNCh4_Example_Consumers_VODlightconreview",
+            "title": "World population to reach 8 billion on 15 November 2022 | United Nations",
             "indent": 0,
-            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4761565"
+            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4761384"
           },
           {
             "type": "ExternalTool",
-            "title": "LNCh4_Firms_VODlight3",
+            "title": "History through the eyes of the potato - Leo Bear-McGuinness",
             "indent": 0,
-            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4761569"
+            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4761385"
           },
           {
             "type": "ExternalTool",
@@ -526,35 +512,9 @@
         "items": [
           {
             "type": "ExternalTool",
-            "title": "Assign3_UMacro_26F",
+            "title": "Assign4_UMacro_26F",
             "indent": 0,
-            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4807756"
-          },
-          {
-            "type": "ExternalTool",
-            "title": "Assign3Sol_UM_26F",
-            "indent": 0,
-            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4825435"
-          }
-        ]
-      },
-      {
-        "id": "1507977",
-        "name": "Past Test Questions",
-        "position": 8,
-        "unlock": null,
-        "items": [
-          {
-            "type": "ExternalTool",
-            "title": "Exam2_UM1_2024F_SCD",
-            "indent": 0,
-            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4819756"
-          },
-          {
-            "type": "ExternalTool",
-            "title": "Exam2_UM1_2024SP_SCD",
-            "indent": 0,
-            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4819757"
+            "url": "https://khcanvas.khu.ac.kr/courses/95555/modules/items/4830203"
           }
         ]
       }
@@ -2470,24 +2430,6 @@
       "body": "1. The CARBON-NEUTRAL midterm exam 2 will take place from 15:00 to 16:00 (60 minutes) on Monday, November 16, 2026. You may take the test at YOUR PREFERRED LOCATION. 2. The exam will cover Chapter 4 from page 142, Chapter 5 , and all materials on our class website. 3. The exam will be posted on our class website at 14:55. 4. All answers MUST be HANDWRITTEN and clearly LEGIBLE. You should bring your own sheets of paper for the exam if you do not use an electronic device to write your answers. 5. REMEMBER to provide your FULL NAME and STUDENT ID in your answer solution. 6. Once you are ready to submit your answer solution, email it to me ( hyungsunchoi.work@gmail.com ) BY 16:00, following the `Email-Submission Guide'. LATE SUBMISSION will NOT be accepted. 7. It will be an open-book and notebook exam. Also, you may use a calculator or computer software if necessary. 8. [IMPORTANT] NO PLAGIARISM. You must submit your OWN work. DO NOT copy and paste sentences or paragraphs directly from other sources for your answer in the exam. Using them without attribution is PLAGIARISM. If I find one, you will get ZERO points for the exam and an F as a final grade. 9. No solution will be provided for the past exams. If you have further questions or suggestions, please contact me. Sun",
       "url": "https://khcanvas.khu.ac.kr/courses/95555/discussion_topics/494621",
       "files": []
-    },
-    {
-      "id": "n493284",
-      "course": "계량경제학",
-      "title": "Presentation schedule",
-      "date": "2026-11-02T03:17:09Z",
-      "summary": "Presentation_Schedule.docx",
-      "body": "Presentation_Schedule.docx",
-      "url": "https://khcanvas.khu.ac.kr/courses/95551/discussion_topics/493284",
-      "files": [
-        {
-          "id": "9968578",
-          "name": "Presentation_Schedule.docx",
-          "url": "https://khcanvas.khu.ac.kr/files/9968578/download?download_frd=1&verifier=zLdEvfZ5W7h2s7l2c44iA5UtuqLV9haTL5ovioAb",
-          "type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-          "size": 11210
-        }
-      ]
     },
     {
       "id": "n496266",
