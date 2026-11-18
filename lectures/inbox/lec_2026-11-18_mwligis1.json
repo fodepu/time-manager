@@ -1,0 +1,193 @@
+{
+ "id": "lec_2026-11-18_mwligis1",
+ "course": "계량경제학",
+ "title": "계량경제학 12주차",
+ "date": "2026-11-18",
+ "week": 12,
+ "module": "1507917",
+ "lang": "en",
+ "mode": "online",
+ "pdf": "",
+ "pages": 2,
+ "duration": 470,
+ "log": [
+  {
+   "t": 0,
+   "page": 1
+  },
+  {
+   "t": 300,
+   "page": 2
+  }
+ ],
+ "slides": [
+  {
+   "page": 1,
+   "en": "So we chat, they still ways first we divided the 20 years into four periods, um as estimating the medium each one. These are the bars. It was seven point eight then four point eight then 8.4 and 8. 4 again. There is not really increase. Second, we added the point um on the interest between and the trend. This is the equation at the top and column four in the table. The equation shows how much the premium changes each year is minus 0.00 21 and it is at the 9 percent level. This means almost the final about 0.2% per year. per year. The two results do not agree, so we do not conclude that the premium has declined. To sum up, we have three findings. First, interest have higher hourly wages on average, the gap is 7.6% after controlling for gender and year. Second, the gap gets much smaller, we the individual fixed effects that is only one percent. So the average, the evidence on the trend is mixed. So we cannot say the premium is disappeared. We should also say that our model controls only for gender and year, age and education are not included. And one of these results, so a causal regret. The gap gets much smaller after we account for gender and personal differences. This suggests that the proof means may matter more than drinking is. So companies should be careful about treating as necessary for building relationships afterwards. This is only a cautious suggestion, not fact. This is our data and references. The is the outcome of our presentation. Thank you for listening. Yeah. Okay. So um take question. We have one question for professor. You can now we first causal team or other teams that change over time. For example, a promotion may raise wages and drinking. We panel data like this. But what would be the best way to deal with this problem? Do you are asking me? Oh, yeah. Actually, you know, it was a so intriguing. It was so interesting. So, just answering to your question, actually there's a really famous paper that talks about how smoking is beneficial for the workers. and I think there is a one and it is expected as a mechanism to create the gender differences in the labor market. And actually they did, so let that identification is a real challenge. Like the reason why, you know, like those who those who drink a lot, may maybe already have some reason why they have to drink a lot to increase the you know, wage rate or might be in a different occupation, etc. So the selection bias is always there. So what that paper did is they used rotating random rotation of bosses. So if a boss is randomly chosen to non- smoker to smoker, immediately the the male subordinate they among those, you know, who smoke, they have a higher promotion rate after that. So we need to have that kind of a random shift in the environment in the workplace, such as like a rotation or change in the CEO or some culture or some policy. If the drinking frequency is exogenously affected by something else other than the worker, like a random change in the boss or a random change in the CEO and some policy, or like a government policy regarding something or the price of the alcohol, I don't know, that can be used to identify how exogenous shift in the drinking behavior affect their own um wage premium. So like you are right that even though we have individual fixed effect still like over time there is a reason why this year they want to drink more. Yeah, we don't know whether the boss has changed and the boss expected more, like that soldier, you know, interaction and such. So yeah, so valid the question and then",
+   "ko": "그래서 저희는 대화를 나누고, 먼저 20 년을 나눴어요. 4개의 기간으로요, 음, 대략 중간 정도를 추정해서요. 이게 막대 그래프예요. 7점 8이었어요. 그리고 4점 8, 그리고 8.4 그리고 8. 4였어요. 거기서 별로 증가하지 않았어요. 둘째, 저희는 그 점에 대해 이자율에 대해 이야기했어요. 그리고 추세에 대해. 이것은 증가율입니다. 맨 위에 있는 방정식과 표의 네 번째 열입니다. 그 방정식은 얼마나 프리미엄이 매년 변하는지 보여줍니다. 마이너스 0.00 21 그리고 그것은 그 9 퍼센트 수준입니다. 이것은 즉, 거의 마지막 약 0. 2% 매년이라는 뜻입니다. 두 가지 결과가 일치하지 않아서, 저희는 결론을 내리지 않습니다. 프리미엄이 하락했다고. 요약하자면, 저희는 세 가지 결과를 얻었습니다. 첫째, 이자율이 시간당 더 높은 임금을 평균적으로 받고, 그 격차는 7.6% 입니다. 성별을 통제한 후에도요. 둘째, 그 격차는 시간이 지날수록 훨씬 작아지며, 저희는 개인 고정 효과를 사용하는데, 이는 단지 1%입니다. 그래서 평균적으로 그 격차는 증거가 추세에 대해 엇갈립니다. 그래서 저희는 프리미엄이 사라졌다고 말할 수 없습니다. 또한 저희의 모델이 오직 성별과 연도만 통제하고 나이와 교육은 포함되지 않았다고 말씀드려야 합니다. 그리고 이 결과 중 하나는, 그래서 인과 관계에 대한 것입니다. 격차가 훨씬 작아지는데, 성별을 고려한 후에도 성별과 개인적인 차이를 고려하면 그렇습니다. 이는 증거가 의미하는 바가 더 중요할 수 있다는 것을 시사합니다. 그래서 기업들은 주의해야 합니다. 무엇에 대해 주의해야 하냐면, 필요에 따라 관계를 구축하는 것이 필요하다는 점에 대해서요. 이것은 단지 조심스러운 제안일 뿐, 사실이 아닙니다. 이것은 저희 데이터입니다. 그리고 참고 자료입니다. 그 은 결과입니다. 저희 발표의. 들어주셔서 감사합니다. 네. 알겠습니다. 그래서 음, 질문을 받겠습니다. 저희는 한 가지 질문이 있습니다. 교수님께. 교수님, 이제 저희가 첫 번째 인과 팀이나 다른 팀들이 시간이 지남에 따라 변하는 것에 대해 예를 들어, 승진이 임금을 인상하고 술을 마시는 것과 관련이 있을 수 있습니다. 저희는 이런 패널 데이터를 가지고 있습니다. 하지만 가장 좋은 방법은 이 문제를 해결하는 것입니다. 저한테 물어보시는 건가요? 아, 네. 사실 그건 아주 흥미로웠어요. 정말 흥미로웠죠. 그래서, 질문에 답하자면, 사실 정말 유명한 논문이 있는데, 어떻게 흡연이 유익한지 노동자들에게 이야기하는 것입니다. 그리고 제 생각에 그런 게 하나 있고, 그건 메커니즘으로 예상되는데, 성별 차이를 만들어내는 노동 시장에서요. 그리고 실제로 그들은 그렇게 했고, 그 식별은 정말 어려운 일이에요. 예를 들어, 왜 그런지, 그러니까 담배를 많이 마시는 사람들은, 아마도 이미 어떤 이유가 있어서 술을 많이 마셔야 하는 것일 수도 있고, 임금을 높이기 위해서이거나, 다른 직업에 종사하고 있을 수도 있죠. 그래서 선택 편향은 항상 존재해요. 그래서 그 논문이 한 것은 그들이 순환하는 무작위 순환을 사용했다는 것입니다. 그래서 상사가 무작위로 비흡연자로 흡연자로 바뀌면, 즉시 그 남성 부하 직원이 그들이 그들 중에서 그러니까, 담배를 피우는 사람들은, 더 높은 승진율을 보인다는 것입니다. 그래서 그런 종류의 무작위적인 변화가 필요합니다. 노동 시장의 환경에서요. 예를 들어, 순환과 같은 것이죠. 또는 CEO의 다른 변화나 어떤 문화의 변화나 정책의 변화가 필요합니다. 만약 음주 빈도가 외생적이라면, 그것이 다른 것에 의해 영향을 받지 않는다면, 예를 들어 무작위적인 상사의 변화나 또는 무작위적인 CEO의 변화가 있고 어떤 정책이 있다면, 또는 정부 정책이 어떤 것에 관한 것이거나 또는 술 가격이거나, 잘 모르겠지만, 그것을 사용하여 식별할 수 있습니다. 어떻게 외생적인 음주 행동의 변화가 그들의 자신의 음, 임금 프리미엄에 영향을 미치는지. 그래서 당신 말이 맞아요, 우리가 개인별 고정 효과가 있어도 여전히 시간이 지나면서 올해는 왜 그들이 더 많이 마시고 싶어하는지 이유가 있죠. 네, 우리는 상사가 바뀌었는지 아니면 상사가 더 기대했는지, 예를 들어 그 군인처럼, 상호작용과 그런 것들이죠. 그래서 네, 그래서 질문이 타당하고",
+   "pdf": "",
+   "pdfPage": 1,
+   "slideText": "",
+   "segs": [
+    {
+     "t": 4,
+     "page": 1,
+     "en": "So we chat, they still ways first we divided the 20 years into four periods, um as estimating the medium each one. These are the bars. It was seven point eight then four point eight then 8.4 and 8. 4 again. There",
+     "ko": "그래서 저희는 대화를 나누고, 먼저 20 년을 나눴어요. 4개의 기간으로요, 음, 대략 중간 정도를 추정해서요. 이게 막대 그래프예요. 7점 8이었어요. 그리고 4점 8, 그리고 8.4 그리고 8. 4였어요. 거기서",
+     "src": "gemini"
+    },
+    {
+     "t": 28,
+     "page": 1,
+     "en": "is not really increase. Second, we added the point um on the interest between and the trend. This is the equation at the top and column four in the table. The equation shows how much the premium changes each year is minus 0.00 21 and it is at the 9 percent level.",
+     "ko": "별로 증가하지 않았어요. 둘째, 저희는 그 점에 대해 이자율에 대해 이야기했어요. 그리고 추세에 대해. 이것은 증가율입니다. 맨 위에 있는 방정식과 표의 네 번째 열입니다. 그 방정식은 얼마나 프리미엄이 매년 변하는지 보여줍니다. 마이너스 0.00 21 그리고 그것은 그 9 퍼센트 수준입니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 52,
+     "page": 1,
+     "en": "This means almost the final about 0.2% per year. per year. The two results do not agree, so we do not conclude that the premium has declined. To sum up, we have three findings. First, interest have higher hourly wages on average, the gap is 7.6% after controlling for gender and year.",
+     "ko": "이것은 즉, 거의 마지막 약 0. 2% 매년이라는 뜻입니다. 두 가지 결과가 일치하지 않아서, 저희는 결론을 내리지 않습니다. 프리미엄이 하락했다고. 요약하자면, 저희는 세 가지 결과를 얻었습니다. 첫째, 이자율이 시간당 더 높은 임금을 평균적으로 받고, 그 격차는 7.6% 입니다. 성별을 통제한 후에도요. 둘째,",
+     "src": "gemini"
+    },
+    {
+     "t": 80,
+     "page": 1,
+     "en": "Second, the gap gets much smaller, we the individual fixed effects that is only one percent. So the average, the evidence on the trend is mixed. So we cannot say the premium is disappeared. We should also say that our model controls only for gender and year, age and education are not included.",
+     "ko": "그 격차는 시간이 지날수록 훨씬 작아지며, 저희는 개인 고정 효과를 사용하는데, 이는 단지 1%입니다. 그래서 평균적으로 그 격차는 증거가 추세에 대해 엇갈립니다. 그래서 저희는 프리미엄이 사라졌다고 말할 수 없습니다. 또한 저희의 모델이 오직 성별과 연도만 통제하고 나이와 교육은 포함되지 않았다고 말씀드려야 합니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 107,
+     "page": 1,
+     "en": "And one of these results, so a causal regret.",
+     "ko": "그리고 이 결과 중 하나는, 그래서 인과 관계에 대한 것입니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 116,
+     "page": 1,
+     "en": "The gap gets much smaller after we account for gender and personal differences. This suggests that the proof means may matter more than drinking is. So companies should be careful about treating as necessary for building relationships afterwards. This is only a cautious suggestion, not fact.",
+     "ko": "격차가 훨씬 작아지는데, 성별을 고려한 후에도 성별과 개인적인 차이를 고려하면 그렇습니다. 이는 증거가 의미하는 바가 더 중요할 수 있다는 것을 시사합니다. 그래서 기업들은 주의해야 합니다. 무엇에 대해 주의해야 하냐면, 필요에 따라 관계를 구축하는 것이 필요하다는 점에 대해서요. 이것은 단지 조심스러운 제안일 뿐, 사실이 아닙니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 139,
+     "page": 1,
+     "en": "This is our data and references. The is the outcome of our presentation. Thank you for listening. Yeah. Okay. So um take question. We have one question for professor. You can now we first causal team or other teams that change over time. For example, a promotion may raise wages and drinking.",
+     "ko": "이것은 저희 데이터입니다. 그리고 참고 자료입니다. 그 은 결과입니다. 저희 발표의. 들어주셔서 감사합니다. 네. 알겠습니다. 그래서 음, 질문을 받겠습니다. 저희는 한 가지 질문이 있습니다. 교수님께. 교수님, 이제 저희가 첫 번째 인과 팀이나 다른 팀들이 시간이 지남에 따라 변하는 것에 대해 예를 들어, 승진이 임금을 인상하고 술을 마시는 것과",
+     "src": "gemini"
+    },
+    {
+     "t": 168,
+     "page": 1,
+     "en": "We panel data like this. But what would be the best way to deal with this problem?",
+     "ko": "관련이 있을 수 있습니다. 저희는 이런 패널 데이터를 가지고 있습니다. 하지만 가장 좋은 방법은 이 문제를 해결하는 것입니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 179,
+     "page": 1,
+     "en": "Do you are asking me? Oh, yeah. Actually, you know, it was a so intriguing. It was so interesting. So, just answering to your question, actually there's a really famous paper that talks about how smoking is beneficial for the workers. and I think there is a one and it is expected as a mechanism to create the gender differences in the labor market.",
+     "ko": "저한테 물어보시는 건가요? 아, 네. 사실 그건 아주 흥미로웠어요. 정말 흥미로웠죠. 그래서, 질문에 답하자면, 사실 정말 유명한 논문이 있는데, 어떻게 흡연이 유익한지 노동자들에게 이야기하는 것입니다. 그리고 제 생각에 그런 게 하나 있고, 그건 메커니즘으로 예상되는데, 성별 차이를 만들어내는 노동 시장에서요.",
+     "src": "gemini"
+    },
+    {
+     "t": 202,
+     "page": 1,
+     "en": "And actually they did, so let that identification is a real challenge. Like the reason why, you know, like those who those who drink a lot, may maybe already have some reason why they have to drink a lot to increase the you know, wage rate or might be in a different occupation, etc. So the selection bias is always there.",
+     "ko": "그리고 실제로 그들은 그렇게 했고, 그 식별은 정말 어려운 일이에요. 예를 들어, 왜 그런지, 그러니까 담배를 많이 마시는 사람들은, 아마도 이미 어떤 이유가 있어서 술을 많이 마셔야 하는 것일 수도 있고, 임금을 높이기 위해서이거나, 다른 직업에 종사하고 있을 수도 있죠. 그래서 선택 편향은 항상",
+     "src": "gemini"
+    },
+    {
+     "t": 223,
+     "page": 1,
+     "en": "So what that paper did is they used rotating random rotation of bosses. So if a boss is randomly chosen to non- smoker to smoker, immediately the the male subordinate they among those, you know, who smoke, they have a higher promotion rate after that. So we need to have that kind of a random shift in the environment in the workplace, such as like a rotation or change in the CEO or some culture or some policy. If the drinking frequency is exogenously affected by something else other than the worker, like a random change in",
+     "ko": "존재해요. 그래서 그 논문이 한 것은 그들이 순환하는 무작위 순환을 사용했다는 것입니다. 그래서 상사가 무작위로 비흡연자로 흡연자로 바뀌면, 즉시 그 남성 부하 직원이 그들이 그들 중에서 그러니까, 담배를 피우는 사람들은, 더 높은 승진율을 보인다는 것입니다. 그래서 그런 종류의 무작위적인 변화가 필요합니다. 노동 시장의 환경에서요. 예를 들어, 순환과 같은 것이죠. 또는 CEO의 다른 변화나 어떤 문화의 변화나 정책의 변화가 필요합니다. 만약 음주 빈도가 외생적이라면, 그것이 다른 것에 의해 영향을 받지 않는다면, 예를 들어 무작위적인",
+     "src": "gemini"
+    },
+    {
+     "t": 264,
+     "page": 1,
+     "en": "the boss or a random change in the CEO and some policy, or like a government policy regarding something or the price of the alcohol, I don't know, that can be used to identify how exogenous shift in the drinking behavior affect their own um wage premium. So like you are right that even though we have individual fixed effect still like over time there is a reason why this year they want to drink more. Yeah, we don't know whether the boss has changed and the boss expected more, like that soldier, you know, interaction and",
+     "ko": "상사의 변화나 또는 무작위적인 CEO의 변화가 있고 어떤 정책이 있다면, 또는 정부 정책이 어떤 것에 관한 것이거나 또는 술 가격이거나, 잘 모르겠지만, 그것을 사용하여 식별할 수 있습니다. 어떻게 외생적인 음주 행동의 변화가 그들의 자신의 음, 임금 프리미엄에 영향을 미치는지. 그래서 당신 말이 맞아요, 우리가 개인별 고정 효과가 있어도 여전히 시간이 지나면서 올해는 왜 그들이 더 많이 마시고 싶어하는지 이유가 있죠. 네, 우리는 상사가 바뀌었는지 아니면 상사가 더 기대했는지, 예를 들어 그 군인처럼, 상호작용과",
+     "src": "gemini"
+    },
+    {
+     "t": 298,
+     "page": 1,
+     "en": "such. So yeah, so valid the question and then",
+     "ko": "그런 것들이죠. 그래서 네, 그래서 질문이 타당하고",
+     "src": "gemini"
+    }
+   ]
+  },
+  {
+   "page": 2,
+   "en": "presentation. Um yeah, but then I have to I can talk later. Okay. Any questions from the the audience? And I have a question. Why why have you chose chosen this topic? Well, motivated you? Like what was your motivation or what inspired you to look into this market? Cool. Uh so uh 그럼 팀신 주제를 해 보자. 어. 저희 생활과 관련된 주제를 계속 던져봤는데 결정해서 요즘 논란이 되고 있었던 뭐 AI 환경 뭐 그런 것도 있고 또 등등 지금은 대학생이니까 AI 환경도 수 술 관련된 게 저는 생활에 와닿지 않으니까 저는 생각을 해서 주제를 정했죠. 네. But then I really like that you linked that to gender wage gap. Like you generalized how your finding can be interpreted in the context of gender wage gap. But actually that is a really important margin people try to uh tackle to improve productivity. So people talk about ESG. Which means we want to change like workplace culture or whatever that is not fairly but that still affects the workers' motivation and morale and you know, those dynamic relationship like it also affects the attenuation as well, like the retention rate might be affected, especially for female workers. So I think it's a really also I really like that because Korea is known for heavy drinking society, right? Now, not more probably, so the changes in the culture may be good or I don't know. It depends on the what drinking uh does, right? So people believe that drinking is a way to have some social connection. So that may be beneficial. Uh if you know, that can be useful, but you know, like it may be monotonous. So I think that so I I found it very interesting. Okay, we can talk more after the class. So even though find meditation what one more question? I said that it's a very useful for you if you try to think what kind of question you can ask. Any questions? Anything is okay. Korean okay. Right. So, okay, so thank you so much for the",
+   "ko": "발표도 그렇습니다. 음, 네, 하지만 저는 더 이야기할 수 있어요. 네. 질문 있으신가요? 청중분들 중에서요. 그리고 질문이 있어요. 왜 왜 이걸 선택하셨나요? 이 주제를요? 음, 무엇이 동기가 되었나요? 그러니까 동기가 무엇이었나요? 아니면 무엇이 당신에게 이 시장을 조사하도록 영감을 주었나요? 멋지네요. 어 그래서 어 그런데 저는 정말 당신이 그걸 연결한 게 마음에 들어요. 성별 임금 격차요. 당신이 어떻게 당신의 발견이 해석될 수 있는지 일반화한 것처럼요. 성별 임금 격차 맥락에서요. 그런데 사실 그건 정말 중요한 부분이에요. 사람들이 어, 해결하려고 노력하는 부분이죠. 그래서 생산성을 향상시키기 위해. 그래서 사람들은 ESG에 대해 이야기해요. 즉, 우리는 변화하고 싶어요, 예를 들어 직장 문화나 그런 것들이 공정하지 않다는 거죠. 하지만 그게 여전히 근로자들에게 동기 부여와 사기에 영향을 미치고 그런 것들이 역동적인 관계에 영향을 미친다는 거죠. 또한 그것은 감쇠에도 영향을 미치죠, 예를 들어 유지율이 영향을 받을 수 있고, 특히 여성 근로자들에게요. 그래서 저는 이게 정말 또한 마음에 들어요. 왜냐하면 한국은 알려져 있거든요. 과도한 음주로 유명한 사회니까요, 그렇죠? 이제, 더 이상 그렇지 않을 수도 있지만, 그래서 문화의 변화가 좋을 수도 있고 아니면 잘 모르겠어요. 그건 상황에 따라 다르죠. 무엇이 음주를 어, 하는지에 따라 다르죠, 그렇죠? 그래서 사람들은 음주가 어떤 종류의 사회적 연결을 갖는 방법이라고 믿어요. 그래서 그게 유익할 수 있어요. 어, 만약 그게 유용할 수 있다면, 하지만 아시다시피, 그게 단조로울 수도 있죠. 그래서 저는 이게 그래서 저는 이게 매우 흥미로웠어요. 좋아요, 우리는 나중에 더 이야기할 수 있어요. 그래서 비록 명상이 어떤 한 가지 더 질문이 있나요? 제가 말했듯이 그건 매우 유용해요, 만약 당신이 생각하려고 노력한다면요. 어떤 종류의 질문을 할 수 있는지요. 질문 있으신가요? 어떤 것이든 괜찮아요. 한국어든 괜찮아요. 맞아요. 그래서, 알겠습니다,",
+   "pdf": "",
+   "pdfPage": 2,
+   "slideText": "",
+   "segs": [
+    {
+     "t": 301,
+     "page": 2,
+     "en": "presentation. Um yeah, but then I have to I can talk later. Okay. Any questions from the the audience?",
+     "ko": "발표도 그렇습니다. 음, 네, 하지만 저는 더 이야기할 수 있어요. 네. 질문 있으신가요? 청중분들 중에서요.",
+     "src": "gemini"
+    },
+    {
+     "t": 317,
+     "page": 2,
+     "en": "And I have a question. Why why have you chose chosen this topic? Well, motivated you? Like what was your motivation or what inspired you to look into this market?",
+     "ko": "그리고 질문이 있어요. 왜 왜 이걸 선택하셨나요? 이 주제를요? 음, 무엇이 동기가 되었나요? 그러니까 동기가 무엇이었나요? 아니면 무엇이 당신에게 이 시장을 조사하도록 영감을 주었나요?",
+     "src": "gemini"
+    },
+    {
+     "t": 332,
+     "page": 2,
+     "en": "Cool. Uh so uh 그럼 팀신 주제를 해 보자. 어. 저희 생활과 관련된 주제를 계속 던져봤는데 결정해서 요즘 논란이 되고 있었던 뭐 AI 환경 뭐 그런 것도 있고 또 등등 지금은 대학생이니까 AI 환경도 수 술 관련된 게 저는 생활에 와닿지 않으니까 저는 생각을 해서 주제를 정했죠. 네. But then I really like that you linked that to gender wage gap. Like you generalized how your finding can be interpreted in the context of gender wage gap.",
+     "ko": "멋지네요. 어 그래서 어 그런데 저는 정말 당신이 그걸 연결한 게 마음에 들어요. 성별 임금 격차요. 당신이 어떻게 당신의 발견이 해석될 수 있는지 일반화한 것처럼요. 성별 임금 격차",
+     "src": "gemini"
+    },
+    {
+     "t": 372,
+     "page": 2,
+     "en": "But actually that is a really important margin people try to uh tackle to improve productivity. So people talk about ESG. Which means we want to change like workplace culture or whatever that is not fairly but that still affects the workers' motivation and morale and you know, those dynamic relationship like it also affects the attenuation as well, like the retention rate might be affected, especially for female workers.",
+     "ko": "맥락에서요. 그런데 사실 그건 정말 중요한 부분이에요. 사람들이 어, 해결하려고 노력하는 부분이죠. 그래서 생산성을 향상시키기 위해. 그래서 사람들은 ESG에 대해 이야기해요. 즉, 우리는 변화하고 싶어요, 예를 들어 직장 문화나 그런 것들이 공정하지 않다는 거죠. 하지만 그게 여전히 근로자들에게 동기 부여와 사기에 영향을 미치고 그런 것들이 역동적인 관계에 영향을 미친다는 거죠. 또한 그것은 감쇠에도 영향을 미치죠, 예를 들어 유지율이 영향을 받을 수 있고, 특히 여성 근로자들에게요.",
+     "src": "gemini"
+    },
+    {
+     "t": 401,
+     "page": 2,
+     "en": "So I think it's a really also I really like that because Korea is known for heavy drinking society, right? Now, not more probably, so the changes in the culture may be good or I don't know. It depends on the what drinking uh does, right? So people believe that drinking is a way to have some social connection.",
+     "ko": "그래서 저는 이게 정말 또한 마음에 들어요. 왜냐하면 한국은 알려져 있거든요. 과도한 음주로 유명한 사회니까요, 그렇죠? 이제, 더 이상 그렇지 않을 수도 있지만, 그래서 문화의 변화가 좋을 수도 있고 아니면 잘 모르겠어요. 그건 상황에 따라 다르죠. 무엇이 음주를 어, 하는지에 따라 다르죠, 그렇죠? 그래서 사람들은 음주가 어떤 종류의 사회적 연결을 갖는",
+     "src": "gemini"
+    },
+    {
+     "t": 425,
+     "page": 2,
+     "en": "So that may be beneficial. Uh if you know, that can be useful, but you know, like it may be monotonous. So I think that so I I found it very interesting. Okay, we can talk more after the class. So even though find meditation what one more question? I said that it's a very useful for you if you try to think what kind of question you can ask.",
+     "ko": "방법이라고 믿어요. 그래서 그게 유익할 수 있어요. 어, 만약 그게 유용할 수 있다면, 하지만 아시다시피, 그게 단조로울 수도 있죠. 그래서 저는 이게 그래서 저는 이게 매우 흥미로웠어요. 좋아요, 우리는 나중에 더 이야기할 수 있어요. 그래서 비록 명상이 어떤 한 가지 더 질문이 있나요? 제가 말했듯이 그건 매우 유용해요, 만약 당신이 생각하려고 노력한다면요. 어떤 종류의 질문을 할 수 있는지요.",
+     "src": "gemini"
+    },
+    {
+     "t": 454,
+     "page": 2,
+     "en": "Any questions? Anything is okay. Korean okay.",
+     "ko": "질문 있으신가요? 어떤 것이든 괜찮아요. 한국어든 괜찮아요.",
+     "src": "gemini"
+    },
+    {
+     "t": 468,
+     "page": 2,
+     "en": "Right. So, okay, so thank you so much for the",
+     "ko": "맞아요. 그래서, 알겠습니다,",
+     "src": "gemini"
+    }
+   ]
+  }
+ ],
+ "savedAt": "2026-11-18T02:45:08.247Z"
+}
