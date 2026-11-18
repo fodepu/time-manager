@@ -1,5 +1,7 @@
 #!/usr/bin/env node
-// Dayble 로컬 도우미 — 앱의 실시간 필기 요청을 받아 내 맥의 Claude Code(구독)로 처리한다. API 비용 없음.
+// Dayble 로컬 도우미 — 앱의 필기·PDF 학습·번역 요청을 받아 Claude로 처리한다.
+// 엔진: ~/Dayble/.dayble-key 가 있으면 Claude API(Max에 포함된 API 크레딧) 직접 호출, 없거나 API가 실패하면 Claude Code(구독)로 자동 대체.
+// 키는 파일에서 매 요청마다 읽으므로 키를 넣거나 바꿔도 재시작 불필요. 키를 환경변수(ANTHROPIC_API_KEY)로 두지 말 것 — Claude Code까지 API 과금으로 바뀜.
 // 실행: node dayble-helper.mjs   (수업 전에 켜두고, 끝나면 Ctrl+C)
 import http from 'node:http';
 import { spawn } from 'node:child_process';
@@ -14,7 +16,40 @@ function styleText() { try { return fs.readFileSync(STYLE_FILE, 'utf8').trim(); 
 
 const PORT = 7377;
 const ALLOW = new Set(['https://fodepu.github.io', 'http://localhost', 'http://127.0.0.1']);
-const MODEL = process.env.DAYBLE_MODEL || 'sonnet';   // sonnet | haiku | opus
+const MODEL = process.env.DAYBLE_MODEL || 'sonnet';   // Claude Code 대체용: sonnet | haiku | opus
+const API_MODEL = process.env.DAYBLE_API_MODEL || 'claude-sonnet-5-5';
+const PRICE = { in: 2, out: 10, cacheRead: 0.2, cacheWrite: 2.5 };   // Sonnet 5.5, $/MTok (캐시 읽기 0.1×, 쓰기 1.25×)
+const HERE = path.dirname(new URL(import.meta.url).pathname);
+const KEY_FILE = path.join(HERE, '.dayble-key');
+const USAGE_FILE = path.join(HERE, 'usage.json');
+function apiKey() { try { const k = fs.readFileSync(KEY_FILE, 'utf8').trim(); return /^sk-ant-/.test(k) ? k : ''; } catch { return ''; } }
+function month() { return new Date().toISOString().slice(0, 7); }
+function loadUsage() { try { const u = JSON.parse(fs.readFileSync(USAGE_FILE, 'utf8')); return u && u.month === month() ? u : { month: month(), calls: 0, cost: 0, inTok: 0, outTok: 0, cacheRead: 0 }; } catch { return { month: month(), calls: 0, cost: 0, inTok: 0, outTok: 0, cacheRead: 0 }; } }
+let usage = loadUsage(), lastEngine = '', apiErr = '';
+function addUsage(u) { if (usage.month !== month()) usage = loadUsage(); const i = u.input_tokens || 0, o = u.output_tokens || 0, cr = u.cache_read_input_tokens || 0, cw = u.cache_creation_input_tokens || 0;
+  usage.calls++; usage.inTok += i + cr + cw; usage.outTok += o; usage.cacheRead += cr; usage.cost += (i * PRICE.in + o * PRICE.out + cr * PRICE.cacheRead + cw * PRICE.cacheWrite) / 1e6;
+  try { fs.writeFileSync(USAGE_FILE, JSON.stringify(usage, null, 1)); } catch {} }
+async function runAPI(system, user, key) {
+  const ac = new AbortController(); const timer = setTimeout(() => ac.abort(), 150000);
+  try {
+    const r = await fetch('https://api.anthropic.com/v1/messages', { method: 'POST', signal: ac.signal,
+      headers: { 'content-type': 'application/json', 'x-api-key': key, 'anthropic-version': '2023-06-01' },
+      body: JSON.stringify({ model: API_MODEL, max_tokens: 8000, system: [{ type: 'text', text: system, cache_control: { type: 'ephemeral' } }], messages: [{ role: 'user', content: user }] }) });
+    const j = await r.json().catch(() => ({}));
+    if (!r.ok) { const e = new Error('API ' + r.status + ': ' + ((j.error && j.error.message) || '').slice(0, 200)); e.status = r.status; throw e; }
+    if (j.usage) addUsage(j.usage);
+    return (j.content || []).filter(c => c.type === 'text').map(c => c.text).join('').trim();
+  } finally { clearTimeout(timer); }
+}
+// 엔진 선택: 키 있으면 API, 실패하면 Claude Code로 대체(크레딧 소진·키 오류·네트워크 문제에도 필기가 멈추지 않게)
+async function runLLM(system, user) {
+  const key = apiKey();
+  if (key) {
+    try { const t = await runAPI(system, user, key); lastEngine = 'api'; apiErr = ''; return t; }
+    catch (e) { apiErr = e.message; console.log(new Date().toLocaleTimeString('ko-KR'), '⚠ API 실패 → Claude Code로 대체:', e.message); }
+  }
+  lastEngine = 'claude-code'; return runClaude(system, user);
+}
 let busy = 0, done = 0, failed = 0;
 
 function cors(req, res) {
@@ -60,7 +95,7 @@ function runQueued(system, user) {
   });
   function exec(job) {
     running = true;
-    runClaude(job.system, job.user).then(job.resolve, job.reject).finally(() => {
+    runLLM(job.system, job.user).then(job.resolve, job.reject).finally(() => {
       running = false;
       if (waiting) { const w = waiting; waiting = null; exec(w); }
     });
@@ -115,7 +150,7 @@ const server = http.createServer(async (req, res) => {
     });
     return;
   }
-  if (req.url === '/ping') { res.writeHead(200, { 'content-type': 'application/json' }); return res.end(JSON.stringify({ ok: true, engine: 'claude-code', model: MODEL, busy, done, failed })); }
+  if (req.url === '/ping') { res.writeHead(200, { 'content-type': 'application/json' }); const key = !!apiKey(); if (usage.month !== month()) usage = loadUsage(); return res.end(JSON.stringify({ ok: true, engine: key ? 'api' : 'claude-code', model: key ? API_MODEL : MODEL, lastEngine, apiErr: apiErr || undefined, month: usage.month, calls: usage.calls, cost: Math.round(usage.cost * 100) / 100, busy, done, failed })); }
   if (req.method === 'POST' && req.url === '/notes') {
     let body = ''; req.on('data', d => body += d);
     req.on('end', async () => {
@@ -142,7 +177,7 @@ const server = http.createServer(async (req, res) => {
 });
 
 server.listen(PORT, '127.0.0.1', () => {
-  console.log(`\nDayble 도우미 실행 중 — http://localhost:${PORT}  (모델: ${MODEL})`);
+  console.log(`\nDayble 도우미 실행 중 — http://localhost:${PORT}  (엔진: ${apiKey() ? 'Claude API ' + API_MODEL : 'Claude Code ' + MODEL})  이번 달 API $${usage.cost.toFixed(2)} / ${usage.calls}회`);
   { const w = whisperInfo(); console.log(w.ok ? 'Whisper 준비됨: ' + w.model : 'Whisper 없음 — ' + w.error + ' (한국어 인식을 내 맥에서 하려면 설치)'); }
   console.log(styleText() ? '필기법.md 적용 중 (' + styleText().length + '자)' : '필기법.md 없음 — 기본 지침으로 동작');
   console.log('Dayble 녹음 화면의 AI 필기 버튼이 "✱ Claude 필기 (내 맥)"로 바뀌면 연결된 거예요. 끝나면 Ctrl+C\n');
