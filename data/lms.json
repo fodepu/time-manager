@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-24T06:13:06.249Z",
+  "generatedAt": "2026-11-24T18:00:17.908Z",
   "source": "canvas",
   "user": "김주함(2025####72)",
   "courseFiles": {
@@ -827,7 +827,14 @@
         "name": "13주차",
         "position": 13,
         "unlock": null,
-        "items": []
+        "items": [
+          {
+            "type": "ExternalTool",
+            "title": "Core_note_timeseries2_2026",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/95551/modules/items/4836270"
+          }
+        ]
       },
       {
         "id": "1507919",
@@ -2516,22 +2523,6 @@
           "type": "application/pdf",
           "size": 2907074,
           "text": ""
-        }
-      ]
-    },
-    {
-      "id": "n495163",
-      "course": "거시경제학",
-      "title": "[Internship Announcement] 예금보험공사(KDIC) 제28기 동계 대학생인턴 모집 안내",
-      "date": "2026-11-10T05:08:10Z",
-      "summary": "수강생들에게 안녕하세요? 11월6일 게시된 예금보험공사 제28기 동계 대학생인턴 모집 안내를 공지하오니 관심있는 학생들은 확인바랍니다. ( 채용사이트: https://www.kdic.or.kr/di/empm/selectPbcrEmpmPbancList.do ) 최형선. Dear Students, Please check out the following link for the Winter KDIC(Korea Deposit Insur…",
-      "body": "수강생들에게 안녕하세요? 11월6일 게시된 예금보험공사 제28기 동계 대학생인턴 모집 안내를 공지하오니 관심있는 학생들은 확인바랍니다. ( 채용사이트: https://www.kdic.or.kr/di/empm/selectPbcrEmpmPbancList.do ) 최형선. Dear Students, Please check out the following link for the Winter KDIC(Korea Deposit Insurance Corperation) internship announced on November 6, 2006: https://www.kdic.or.kr/di/empm/selectPbcrEmpmPbancList.do Cheers, Sun",
-      "url": "https://khcanvas.khu.ac.kr/courses/95555/discussion_topics/495163",
-      "files": [
-        {
-          "name": "https://www.kdic.or.kr/di/empm/selectPbcrEmpmPbancList.do",
-          "url": "https://www.kdic.or.kr/di/empm/selectPbcrEmpmPbancList.do",
-          "external": true
         }
       ]
     },
