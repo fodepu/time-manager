@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-23T22:27:00.027Z",
+  "generatedAt": "2026-11-24T06:13:06.249Z",
   "source": "canvas",
   "user": "김주함(2025####72)",
   "courseFiles": {
@@ -279,6 +279,18 @@
             "title": "13주차_리딩노트 제출(~11/24, 낮12시까지)_사회연대경제",
             "indent": 0,
             "url": "https://khcanvas.khu.ac.kr/courses/96922/modules/items/4831738"
+          },
+          {
+            "type": "Page",
+            "title": "13주차_강의자료_사회연대경제",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/96922/modules/items/4834686"
+          },
+          {
+            "type": "Assignment",
+            "title": "13주차_모둠토론 기록지",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/96922/modules/items/4835682"
           }
         ]
       },
@@ -2115,6 +2127,16 @@
       "submitted": false,
       "url": "https://khcanvas.khu.ac.kr/courses/96922/assignments/1508672",
       "body": "토론 기록지 제출바랍니다.",
+      "files": []
+    },
+    {
+      "id": "a1512210",
+      "course": "리질리언스와지속가능한도시",
+      "title": "13주차_모둠토론 기록지",
+      "due": null,
+      "submitted": true,
+      "url": "https://khcanvas.khu.ac.kr/courses/96922/assignments/1512210",
+      "body": "",
       "files": []
     },
     {
