@@ -18,6 +18,7 @@ const PORT = 7377;
 const ALLOW = new Set(['https://fodepu.github.io', 'http://localhost', 'http://127.0.0.1']);
 const MODEL = process.env.DAYBLE_MODEL || 'sonnet';   // Claude Code 대체용: sonnet | haiku | opus
 const API_MODEL = process.env.DAYBLE_API_MODEL || 'claude-sonnet-5-5';
+let API_VERSION = process.env.DAYBLE_API_VERSION || '2026-10-21';   // Console 예시와 동일. 거부되면 2023-06-01로 자동 재시도
 const PRICE = { in: 2, out: 10, cacheRead: 0.2, cacheWrite: 2.5 };   // Sonnet 5.5, $/MTok (캐시 읽기 0.1×, 쓰기 1.25×)
 const HERE = path.dirname(new URL(import.meta.url).pathname);
 const KEY_FILE = path.join(HERE, '.dayble-key');
@@ -29,13 +30,14 @@ let usage = loadUsage(), lastEngine = '', apiErr = '';
 function addUsage(u) { if (usage.month !== month()) usage = loadUsage(); const i = u.input_tokens || 0, o = u.output_tokens || 0, cr = u.cache_read_input_tokens || 0, cw = u.cache_creation_input_tokens || 0;
   usage.calls++; usage.inTok += i + cr + cw; usage.outTok += o; usage.cacheRead += cr; usage.cost += (i * PRICE.in + o * PRICE.out + cr * PRICE.cacheRead + cw * PRICE.cacheWrite) / 1e6;
   try { fs.writeFileSync(USAGE_FILE, JSON.stringify(usage, null, 1)); } catch {} }
-async function runAPI(system, user, key) {
+async function runAPI(system, user, key, maxTokens, retried) {
   const ac = new AbortController(); const timer = setTimeout(() => ac.abort(), 150000);
   try {
     const r = await fetch('https://api.anthropic.com/v1/messages', { method: 'POST', signal: ac.signal,
-      headers: { 'content-type': 'application/json', 'x-api-key': key, 'anthropic-version': '2023-06-01' },
-      body: JSON.stringify({ model: API_MODEL, max_tokens: 8000, system: [{ type: 'text', text: system, cache_control: { type: 'ephemeral' } }], messages: [{ role: 'user', content: user }] }) });
+      headers: { 'content-type': 'application/json', 'x-api-key': key, 'anthropic-version': API_VERSION },
+      body: JSON.stringify({ model: API_MODEL, max_tokens: maxTokens || 8000, system: [{ type: 'text', text: system, cache_control: { type: 'ephemeral' } }], messages: [{ role: 'user', content: user }] }) });
     const j = await r.json().catch(() => ({}));
+    if (!r.ok && !retried && r.status === 400 && /version/i.test((j.error && j.error.message) || '') && API_VERSION !== '2023-06-01') { API_VERSION = '2023-06-01'; clearTimeout(timer); return runAPI(system, user, key, maxTokens, true); }
     if (!r.ok) { const e = new Error('API ' + r.status + ': ' + ((j.error && j.error.message) || '').slice(0, 200)); e.status = r.status; throw e; }
     if (j.usage) addUsage(j.usage);
     return (j.content || []).filter(c => c.type === 'text').map(c => c.text).join('').trim();
@@ -182,5 +184,6 @@ server.listen(PORT, '127.0.0.1', () => {
   console.log(styleText() ? '필기법.md 적용 중 (' + styleText().length + '자)' : '필기법.md 없음 — 기본 지침으로 동작');
   console.log('Dayble 녹음 화면의 AI 필기 버튼이 "✱ Claude 필기 (내 맥)"로 바뀌면 연결된 거예요. 끝나면 Ctrl+C\n');
   // 시작 시 Claude Code 로그인 확인
+  { const k = apiKey(); if (k) runAPI('Reply with exactly: ok', 'ping', k, 5).then(t => { lastEngine = 'api'; console.log('Claude API 확인:', t.slice(0, 20), '(' + API_MODEL + ', version ' + API_VERSION + ')'); }).catch(e => { apiErr = e.message; console.log('⚠ Claude API 확인 실패 —', e.message, '→ 요청은 Claude Code로 대체됩니다'); }); }
   runClaude('Reply with exactly: ok', 'ping').then(t => console.log('Claude Code 확인:', t.slice(0, 40))).catch(e => console.log('⚠ Claude Code 호출 실패 —', e.message, '\n  터미널에서 `claude` 를 한 번 실행해 로그인(구독 계정)돼 있는지 확인하세요.'));
 });
