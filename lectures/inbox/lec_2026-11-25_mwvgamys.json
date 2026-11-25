@@ -1,0 +1,1444 @@
+{
+ "id": "lec_2026-11-25_mwvgamys",
+ "course": "계량경제학",
+ "title": "계량경제학 13주차",
+ "date": "2026-11-25",
+ "week": 13,
+ "module": "1507918",
+ "lang": "en",
+ "mode": "online",
+ "pdf": "",
+ "pages": 14,
+ "duration": 4207,
+ "log": [
+  {
+   "t": 0,
+   "page": 1
+  },
+  {
+   "t": 300,
+   "page": 2
+  },
+  {
+   "t": 600,
+   "page": 3
+  },
+  {
+   "t": 897,
+   "page": 3,
+   "resumed": true
+  },
+  {
+   "t": 1197,
+   "page": 4
+  },
+  {
+   "t": 1497,
+   "page": 5
+  },
+  {
+   "t": 1797,
+   "page": 6
+  },
+  {
+   "t": 2097,
+   "page": 7
+  },
+  {
+   "t": 2397,
+   "page": 8
+  },
+  {
+   "t": 2697,
+   "page": 9
+  },
+  {
+   "t": 2997,
+   "page": 10
+  },
+  {
+   "t": 3297,
+   "page": 11
+  },
+  {
+   "t": 3597,
+   "page": 12
+  },
+  {
+   "t": 3897,
+   "page": 13
+  },
+  {
+   "t": 4197,
+   "page": 14
+  }
+ ],
+ "slides": [
+  {
+   "page": 1,
+   "en": "questions about, you know, a lot of the application or, you know, about we can discuss a bit, right? So we can ask me, even now. And specific questions our conversation will have a session. But um because of the contents we discussed a little bit different, like it's more about case studies, like I want you to understand the process. Okay. For instance, I I I almost 100% I will ask about the how institution how how can recruit institution of more on your person. Okay. So surprise me. But then I may ask you why this charity to answer. Why not RC? Tell me. Can we do RCT to understand the the director institution more deeply for example. We have to think, right? We already discussed those kind of things. So uh like the I think I I recommend that you can go over case studies and try to understand the whole story or the question, but as an interview challenge, why they chose this approach and why this particular approach is valid in this sense and how do we check the validity, right? And then if it is valid, then it's very important. Like the research is always, you know, significant because that's the reason why they have a but then why it is valid, is something you really need to understand. Because what I expect from you after this course, this is introductory course. You can have another, you know, great classes uh available later. Uh, but at least I want you to have a bit more sense of what's going on when you are given something. So when you hear something about the relationship between X and Y, I want you to think about hmm, is it like is the claim and credible? Is the claim has evidence and critical evidence. Is the claim is based on the correlation or even though it suggests oh, I use this instrument variable to show the effect and I want you to think about hmm, is that instrument variable valid? Does it satisfy exclusion and exclusion restriction? Something. So, um okay? And then you can have time. So if you have a problem during the process of preparing for the final, you can or please ask me. And my intention uh for the time series is that I I wanted to keep it simple. Right? But I'm prepared to another slide because I think time series uh will be discussed in the macro class, but not actually um discuss a lot in applied micro. Like you may take like other applied applied studies like public economics, labor economics, development mostly based on causal inference, not time series. And time series I think a quantitative economics, I don't know whether we have that class, may teach you, but I will introduce a bit more concepts because this introductory uh let let's let's try. Okay, let's briefly review what AR1 is that kind of the pool of all the time series. You need to understand why we need stationarity. And why we need weak dependence to estimate. Stationarity is required because otherwise there's no metamon. Uh meaningful beta. And then I think this is also helpful. So uh the long run mean is if we are considering a model that a series has some autocorrelation over time and we want to understand how much previous result affect the next period result, this is very useful when it comes to production. And actually L L model is based on AR1. or AR P, whatever it is, but it's about you know, when you type something, what's going to be the probability of choosing the next word. And then it's like a prediction based on the past outcome. You want to predict the next outcome. So it's kind of very important um uh no",
+   "ko": "질문들이 있었는데, 뭐, 지원서에 관한 거나, 아니면 뭐, 우리가 좀 더 논의할 수 있는 것들이죠, 그렇죠? 그래서 저한테 물어보셔도 되고, 지금도요. 그리고 구체적인 질문들도 저희가 대화를 나누면서 세션을 가질 거예요. 하지만 음, 왜냐하면 우리가 논의한 내용 때문에 조금 다를 수 있어요, 예를 들어 사례에 대한 것이라든지, 사례 연구 같은 거요. 저는 여러분이 이해하셨으면 좋겠어요. 그 과정을요. 네. 예를 들어, 저는 저는 거의 100% 저는 그에 대해 물어볼 거예요, 어떻게 기관이 어떻게 할 수 있는지 모집할 수 있는지 기관에 대해 더 자세히 말씀해 주세요. 네. 그러니까 놀라게 해주세요. 하지만 제가 여러분께 왜 이 자선 단체가 대답해야 하는지 물어볼 수도 있어요. 왜 RC 가 아니죠? 말씀해 주세요. 우리 RCT를 해서 이해할 수 있을까요? 감독님, 기관에 대해 더 깊이 알아볼 수 있을까요? 예를 들어, 생각해봐야 하잖아요, 그렇죠? 우리는 이미 그런 것들에 대해 논의했어요. 그래서 음, 예를 들어 저는 저는 여러분이 검토해 보시는 것을 추천해요. 사례 연구를 통해 전체적인 이야기를 이해하거나 질문을 이해하려고 노력해 보세요. 하지만 면접 과제로, 왜 이 접근 방식을 선택했는지, 그리고 왜 이 특정 접근 방식이 이 상황에서 유효한지, 그리고 어떻게 유효성을 확인하는지 말씀해 주세요. 그리고 만약 유효하다면, 그러면 매우 중요해요. 예를 들어 연구가 항상, 아시다시피, 중요해요. 왜냐하면 그게 그들이 연구를 하는 이유니까요. 하지만 왜 그것이 유효한지, 그건 여러분이 정말 이해해야 할 부분이에요. 왜냐하면 제가 여러분에게 이 과정이 끝난 후에 기대하는 것은, 이것은 입문 과정이에요. 여러분은 다른 뭐, 예를 들어 훌륭한 수업을 더 들을 수 있고, 나중에 이용할 수 있어요. 어, 하지만 적어도 저는 여러분이 조금이라도 더 이해하셨으면 좋겠어요, 무슨 일이 일어나고 있는지 여러분이 무언가를 받았을 때요. 그래서 여러분이 무언가를 들었을 때, 그 관계에 대해 X와 Y 사이의 관계에 대해, 저는 여러분이 생각해 보셨으면 좋겠어요, 음, 이게 마치 이게 주장인가요? 그리고 믿을 만한가요? 그 주장이 가지고 있나요? 증거와 결정적인 증거를요. 그 주장이 무엇을 기반으로 하고 있나요? 상관관계인가요, 아니면 오, 저는 이 도구 변수를 사용해서 인과 관계를 보여주려고 하는데, 저는 여러분이 생각해 보셨으면 좋겠어요, 음, 그 도구 변수가 유효한가요? 그게 배제 제한을 만족하고, 그리고 배제 제한을 만족하나요? 뭐 그런 거요. 그래서, 음, 알겠죠? 그리고 여러분은 시간을 가질 수 있어요. 그래서 만약 문제나 질문이 있으면, 준비하는 과정에서, 여러분은 아니면 저한테 물어보셔도 돼요. 네. 그리고 제 의도는 음, 뭐, 시계열에 대해서는 제가 간단하게 하고 싶었어요. 그렇죠? 하지만 저는 다른 슬라이드도 준비했어요. 왜냐하면 제 생각에 시계열은 음, 나중에 다룰 거지만, 사실은 그렇지 않아요. 음, 논의할 게 많아요. 응용 미시에서요. 예를 들어 여러분이 다른 응용 미시를 들을 수도 있고, 예를 들어 공공 경제학 같은 거나, 노동 경제학, 개발 경제학 같은 건 대부분 인과 관계에 기반하지, 시계열이 아니에요. 그리고 시계열은 제 생각에 계량 경제학은 잘 모르겠어요. 저희가 그런 수업이 있는지 모르겠지만, 가르칠 수도 있어요, 하지만 저는 조금 더 개념을 소개할게요. 왜냐하면 이건 입문 과정이라서 음, 그럼 한번 해보죠. 좋아요, 그럼 간단히 AR 1이 무엇인지 복습해 봅시다. 그건 일종의 모든 시계열의 풀입니다. 여러분은 왜 우리가 이 정상성이 필요한지 이해해야 하고, 왜 우리가 약한 의존성이 필요한지 이해해야 합니다. 정상성은 필요합니다. 왜냐하면 그렇지 않으면 메타가 없기 때문입니다. 음, 의미 있는 베타요. 그리고 제 생각에 이것도 도움이 될 거예요. 그래서 음, 장기 평균은 이렇습니다. 만약 우리가 고려하고 있다면 어떤 모델을 고려하고 있다면, 어떤 시계열이 시간이 지남에 따라 자기 상관이 있고 우리가 얼마나 이전의 결과가 다음 기간에 영향을 미치는지 이해하고 싶다면, 이것은 매우 유용합니다. 생산에 있어서는 그리고 사실 L L 모델은 AR1에 기반합니다. 또는 AR P, 무엇이든 간에, 하지만 이건, 아시다시피, 여러분이 무언가를 입력할 때, 무엇이 될 것인가 하는 확률은 다음 단어를 선택할 확률입니다. 그리고 그건 예측과 같고, 이전 결과에 기반합니다. 여러분은 다음 결과를 예측하고 싶습니다. 그래서 이건 일종의 매우 중요한 음, 어 아니요.",
+   "pdf": "",
+   "pdfPage": 1,
+   "slideText": "",
+   "segs": [
+    {
+     "t": 4,
+     "page": 1,
+     "en": "questions about, you know, a lot of the application or, you know, about we can discuss a bit, right? So we can ask me, even now. And specific questions our conversation will have a session. But um because of the contents we discussed a little bit different, like it's more about case studies, like I want you to understand the process.",
+     "ko": "질문들이 있었는데, 뭐, 지원서에 관한 거나, 아니면 뭐, 우리가 좀 더 논의할 수 있는 것들이죠, 그렇죠? 그래서 저한테 물어보셔도 되고, 지금도요. 그리고 구체적인 질문들도 저희가 대화를 나누면서 세션을 가질 거예요. 하지만 음, 왜냐하면 우리가 논의한 내용 때문에 조금 다를 수 있어요, 예를 들어 사례에 대한 것이라든지, 사례 연구 같은 거요. 저는 여러분이 이해하셨으면 좋겠어요. 그 과정을요.",
+     "src": "gemini"
+    },
+    {
+     "t": 30,
+     "page": 1,
+     "en": "Okay. For instance, I I I almost 100% I will ask about the how",
+     "ko": "네. 예를 들어, 저는 저는 거의 100% 저는 그에 대해 물어볼 거예요, 어떻게",
+     "src": "gemini"
+    },
+    {
+     "t": 43,
+     "page": 1,
+     "en": "institution how how can recruit institution of more on your person. Okay. So surprise me. But then I may ask you why this charity to answer. Why not RC? Tell me. Can we do RCT to understand the the director institution more deeply for example. We have to think, right?",
+     "ko": "기관이 어떻게 할 수 있는지 모집할 수 있는지 기관에 대해 더 자세히 말씀해 주세요. 네. 그러니까 놀라게 해주세요. 하지만 제가 여러분께 왜 이 자선 단체가 대답해야 하는지 물어볼 수도 있어요. 왜 RC 가 아니죠? 말씀해 주세요. 우리 RCT를 해서 이해할 수 있을까요? 감독님, 기관에 대해 더 깊이 알아볼 수 있을까요? 예를 들어, 생각해봐야",
+     "src": "gemini"
+    },
+    {
+     "t": 65,
+     "page": 1,
+     "en": "We already discussed those kind of things. So uh like the I think I I recommend that you can go over case studies and try to understand the whole story or the question, but as an interview challenge, why they chose this approach and why this particular approach is valid in this sense and how do we check the validity, right? And then if it is valid, then it's very important. Like the research is always, you know, significant because that's the reason why they have a but then why it is valid, is something you really need to understand.",
+     "ko": "하잖아요, 그렇죠? 우리는 이미 그런 것들에 대해 논의했어요. 그래서 음, 예를 들어 저는 저는 여러분이 검토해 보시는 것을 추천해요. 사례 연구를 통해 전체적인 이야기를 이해하거나 질문을 이해하려고 노력해 보세요. 하지만 면접 과제로, 왜 이 접근 방식을 선택했는지, 그리고 왜 이 특정 접근 방식이 이 상황에서 유효한지, 그리고 어떻게 유효성을 확인하는지 말씀해 주세요. 그리고 만약 유효하다면, 그러면 매우 중요해요. 예를 들어 연구가 항상, 아시다시피, 중요해요. 왜냐하면 그게 그들이 연구를 하는 이유니까요. 하지만 왜 그것이 유효한지, 그건 여러분이 정말 이해해야 할",
+     "src": "gemini"
+    },
+    {
+     "t": 105,
+     "page": 1,
+     "en": "Because what I expect from you after this course, this is introductory course. You can have another, you know, great classes uh available later. Uh, but at least I want you to have a bit more sense of what's going on when you are given something. So when you hear something about the relationship between X and Y, I want you to think about hmm, is it like is the claim and credible?",
+     "ko": "부분이에요. 왜냐하면 제가 여러분에게 이 과정이 끝난 후에 기대하는 것은, 이것은 입문 과정이에요. 여러분은 다른 뭐, 예를 들어 훌륭한 수업을 더 들을 수 있고, 나중에 이용할 수 있어요. 어, 하지만 적어도 저는 여러분이 조금이라도 더 이해하셨으면 좋겠어요, 무슨 일이 일어나고 있는지 여러분이 무언가를 받았을 때요. 그래서 여러분이 무언가를 들었을 때, 그 관계에 대해 X와 Y 사이의 관계에 대해, 저는 여러분이 생각해 보셨으면 좋겠어요, 음, 이게 마치 이게 주장인가요? 그리고 믿을 만한가요?",
+     "src": "gemini"
+    },
+    {
+     "t": 139,
+     "page": 1,
+     "en": "Is the claim has evidence and critical evidence. Is the claim is based on the correlation or even though it suggests oh, I use this instrument variable to show the effect and I want you to think about hmm, is that instrument variable valid? Does it satisfy exclusion and exclusion restriction?",
+     "ko": "그 주장이 가지고 있나요? 증거와 결정적인 증거를요. 그 주장이 무엇을 기반으로 하고 있나요? 상관관계인가요, 아니면 오, 저는 이 도구 변수를 사용해서 인과 관계를 보여주려고 하는데, 저는 여러분이 생각해 보셨으면 좋겠어요, 음, 그 도구 변수가 유효한가요? 그게 배제 제한을 만족하고, 그리고 배제 제한을 만족하나요?",
+     "src": "gemini"
+    },
+    {
+     "t": 160,
+     "page": 1,
+     "en": "Something. So, um okay? And then you can have time. So if you have a problem during the process of preparing for the final, you can or please ask me.",
+     "ko": "뭐 그런 거요. 그래서, 음, 알겠죠? 그리고 여러분은 시간을 가질 수 있어요. 그래서 만약 문제나 질문이 있으면, 준비하는 과정에서, 여러분은 아니면 저한테 물어보셔도 돼요. 네.",
+     "src": "gemini"
+    },
+    {
+     "t": 175,
+     "page": 1,
+     "en": "And my intention uh for the time series is that I I wanted to keep it simple. Right? But I'm prepared to another slide because I think time series uh will be discussed in the macro class, but not actually um discuss a lot in applied micro. Like you may take like other applied applied studies like public economics, labor economics, development mostly based on causal inference, not time series.",
+     "ko": "그리고 제 의도는 음, 뭐, 시계열에 대해서는 제가 간단하게 하고 싶었어요. 그렇죠? 하지만 저는 다른 슬라이드도 준비했어요. 왜냐하면 제 생각에 시계열은 음, 나중에 다룰 거지만, 사실은 그렇지 않아요. 음, 논의할 게 많아요. 응용 미시에서요. 예를 들어 여러분이 다른 응용 미시를 들을 수도 있고, 예를 들어 공공 경제학 같은 거나, 노동 경제학, 개발 경제학 같은 건 대부분 인과 관계에 기반하지, 시계열이",
+     "src": "gemini"
+    },
+    {
+     "t": 213,
+     "page": 1,
+     "en": "And time series I think a quantitative economics, I don't know whether we have that class, may teach you, but I will introduce a bit more concepts because this introductory uh let let's let's try. Okay, let's briefly review what AR1 is that kind of the pool of all the time series. You need to understand why we need stationarity.",
+     "ko": "아니에요. 그리고 시계열은 제 생각에 계량 경제학은 잘 모르겠어요. 저희가 그런 수업이 있는지 모르겠지만, 가르칠 수도 있어요, 하지만 저는 조금 더 개념을 소개할게요. 왜냐하면 이건 입문 과정이라서 음, 그럼 한번 해보죠. 좋아요, 그럼 간단히 AR 1이 무엇인지 복습해 봅시다. 그건 일종의 모든 시계열의 풀입니다. 여러분은 왜 우리가 이 정상성이 필요한지",
+     "src": "gemini"
+    },
+    {
+     "t": 240,
+     "page": 1,
+     "en": "And why we need weak dependence to estimate. Stationarity is required because otherwise there's no metamon. Uh meaningful beta. And then I think this is also helpful. So uh the long run mean is if we are considering a model that a series has some autocorrelation over time and we want to understand how much previous result affect the next period result, this is very useful when it comes to production. And actually L L model is based on AR1.",
+     "ko": "이해해야 하고, 왜 우리가 약한 의존성이 필요한지 이해해야 합니다. 정상성은 필요합니다. 왜냐하면 그렇지 않으면 메타가 없기 때문입니다. 음, 의미 있는 베타요. 그리고 제 생각에 이것도 도움이 될 거예요. 그래서 음, 장기 평균은 이렇습니다. 만약 우리가 고려하고 있다면 어떤 모델을 고려하고 있다면, 어떤 시계열이 시간이 지남에 따라 자기 상관이 있고 우리가 얼마나 이전의 결과가 다음 기간에 영향을 미치는지 이해하고 싶다면, 이것은 매우 유용합니다. 생산에 있어서는 그리고 사실 L L 모델은 AR1에 기반합니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 278,
+     "page": 1,
+     "en": "or AR P, whatever it is, but it's about you know, when you type something, what's going to be the probability of choosing the next word. And then it's like a prediction based on the past outcome. You want to predict the next outcome. So it's kind of very important um uh no",
+     "ko": "또는 AR P, 무엇이든 간에, 하지만 이건, 아시다시피, 여러분이 무언가를 입력할 때, 무엇이 될 것인가 하는 확률은 다음 단어를 선택할 확률입니다. 그리고 그건 예측과 같고, 이전 결과에 기반합니다. 여러분은 다음 결과를 예측하고 싶습니다. 그래서 이건 일종의 매우 중요한 음, 어 아니요.",
+     "src": "gemini"
+    }
+   ]
+  },
+  {
+   "page": 2,
+   "en": "model. Uh in AR. Okay. So then as I mentioned before, it's more about prediction. less about causal. So now, with AR1, one thing I didn't mention is what is the long run mean? I mentioned that you know, does the long run mean exist or not, which is important if the mean changes over time is not stationary, so we are in trouble because we are estimating something that was not exists. And then so theory one, simple way to characterize the long run mean. If the model is correct, then uh if you take expectation, it will look like this. So AR1 process, the we repeat the expectation, and then if there's a long run mean, if under a stationarity, the mean does not depend on the date. So it's the same mean. This is the long run mean. And then if we substitute the expectation, with mu, mu has that relationship. So long run mean can actually characterize by the ratio between the zero, the one minus the one. Okay? And then this is helpful for us to understand why unit root is such a problem. It is unit root if AR1 process has a unit root problem, the denominator becomes zero. So it's not defined. See, if beta equals one, that is the unit root problem, or a random walk problem, then there is no long run mean. We can define. And then it doesn't matter. So the the error, the the surprise in time T, will shift the long run mean immediately. With unit root, so the long run mean does not exist. Uh and then we cannot have a consistent estimate. There's a different way to derive the same thing. This part you can do it. And anyway, this is helpful. to you know, another way to understand why unit root is such a problem. And now we'll move on. So if we have this process, process, which is stationary, then that means that the long run mean is 1.0 over four. So we can actually see simulate how the shock how the how the outcome will change over time. If we start from this number, and then if we um apply this numbers and then the the series will converge to the long run mean. And then that is how that is the whole idea why we do the long run time series and if it is not it is stationary, then we That's the thing, even though it's not. And you need to understand that concept. So, and then I said, well, it's a pure for the unit. So, the the second thing we discussed is how do we detect whether the series has the unit problem or not. Right? Stationary or not. Do we do that based on the test? And the test is just like provide a specific cutoff value like cutoff value for the ratio between the condition and standard error, right? Because the distribution of that outcome from time series AR1 process will be different from typical uh, you know, cutoff value used in the OLS. So we just rely on the new cutoff value and check whether we can reject the unit unit problem or not. Because we can reject And then there is a word one side test so the value different if we cannot reject and then we have to stop there. is nonstationary. And then the point is to try to figure out the long run mean. Okay? And what is the next step? We have to, we can do two tests. Like we can do more than that. The the first one is we take the differences of the series. So we instead of trying to run XT on uh YT on XT, we try to run delta YT on delta XT. So first difference means that if we have GDP, then uh we subtract GDP t minus one from GDP t. As our uh",
+   "ko": "모델입니다. 어, AR에서 요. 좋아요. 그래서 제가 앞서 언급했듯이, 이건 예측에 관한 것이고, 인과 관계에 관한 것은 적습니다. 그래서 이제, AR1으로, 제가 언급하지 않은 한 가지는 장기 평균이 무엇인가요? 제가 말씀드렸듯이, 장기 평균이 존재하는지 아닌지, 이것은 중요합니다. 만약 평균이 시간이 지남에 따라 변하지 않는다면, 우리는 곤란해집니다. 왜냐하면 우리는 존재하지 않는 것을 추정하고 있기 때문입니다. 그리고 그래서 이론은 첫 번째, 간단한 방법은 이것을 특징짓는 것입니다. 만약 모델이 올바르다면, 그러면 어 만약 여러분이 기댓값을 취하면, 이렇게 보일 것입니다. 그래서 AR1은 과정에서, 우리는 이 과정을 반복하고, 그리고 나서 만약 장기 평균이 있다면, 만약 정상 상태라면, 평균은 날짜에 의존하지 않습니다. 그래서 이것은 같은 평균입니다. 이것이 장기 평균입니다. 그리고 만약 우리가 대체하면, 그 기댓값을 뮤로, 뮤는 그 관계를 가지고 있습니다. 그래서 장기 평균은 실제로 비율로 특징지어질 수 있습니다. 0과 1 빼기 1 사이의 비율로요. 알겠죠? 그리고 이것은 우리가 이해하는 데 도움이 됩니다. 왜 단위 근이 그렇게 문제인지. 그것은 단위 근입니다. 만약 AR1 과정이 단위근 문제를 가지고 있다면, 분모가 0이 됩니다. 그래서 정의되지 않습니다. 보세요, 만약 베타가 1이라면, 그것이 단위근 문제이거나, 랜덤 워크 문제라면, 그러면 장기 평균은 없습니다. 우리는 정의할 수 있습니다. 그리고 그것은 중요하지 않습니다. 그래서 오차, 그 놀라움은 시간 T에서, 이동할 것입니다. 장기 평균을 즉시 이동시킵니다. 단위근이 있으면, 그래서 장기 평균은 존재하지 않습니다. 어, 그리고 우리는 가질 수 없습니다. 일관된 추정치를. 다른 방법이 있습니다. 같은 것을 유도하는 방법입니다. 이 부분은 여러분이 할 수 있습니다. 그리고 어쨌든, 이것은 도움이 됩니다. 아시다시피, 다른 방법으로 이해하는 것입니다. 왜 단위근이 그렇게 문제인지. 그리고 이제 우리는 넘어갈 것입니다. 그래서 만약 우리가 이것을 가지고 있다면, 과정, 즉 정상적인 경우, 그러면 그것은 장기 평균이 1.0이라는 것을 의미합니다. 그래서 우리는 실제로 시뮬레이션할 수 있습니다. 어떻게 충격이 어떻게 결과가 시간이 지남에 따라 변할지. 만약 우리가 이 숫자에서 시작한다면, 그리고 만약 우리가 이것을 적용하고 그리고 그 시리즈는 수렴할 것입니다. 장기 평균으로. 그리고 그것은 어떻게 그것이 전체적인 아이디어인지 우리가 왜 장기 시계열을 하는지, 그리고 만약 그것이 정상적이지 않다면 우리는 그게 문제예요, 비록 그렇지 않더라도요. 그리고 당신은 이해해야 해요, 그 개념을. 그래서, 그리고 나서 제가 말했죠, 음, 그건 순전히 그 부대를 위한 거예요. 그래서, 두 번째로 논의한 것은 어떻게 탐지하느냐는 것이었어요. 그 시리즈가 유닛 문제가 있는지 없는지 말이죠. 정지해 있는지 아닌지. 그걸 테스트를 기반으로 하나요? 그리고 그 테스트는 그냥 제공하는 거예요, 특정 차단 값을 예를 들어 차단 값은 비율에 대한 것인데, 조건과 표준 오차 사이의 비율이죠, 그렇죠? 왜냐하면 분포가 그 결과의 분포가 시계열에서 AR1 과정에서 다를 것이기 때문에 전형적인 것과는 다를 거예요, 그러니까 차단 값은 그 과정에서 사용되는 OLS와는 다르죠. 그래서 우리는 그냥 새로운 차단 값에 의존하고 우리가 거부할 수 있는지 확인해요. 그 유닛이 문제가 있는지 없는지. 왜냐하면 우리는 거부할 수 있으니까요. 그리고 또 다른 단어가 있어요, 단측 테스트라서 그 값이 다를 거예요, 만약 우리가 거부할 수 없다면 거기서 멈춰야 해요. 그건 비정상적이에요. 그리고 그 다음 요점은 어떻게든 긴 기간의 평균을 알아내려고 하는 거예요. 알겠죠? 그리고 다음 단계는 무엇인가요? 우리는 해야 해요, 우리는 할 수 있어요, 두 가지 테스트를. 예를 들어 우리는 그 이상을 할 수 있어요. 첫 번째는 우리가 차이를 취하는 거예요, 시리즈의. 그래서 우리는 대신에 실행하려고 하는 것이 아니라 YT를 XT에 실행하는 것이 아니라, 우리는 델타 YT를 실행하려고 하는 거예요, 델타 XT에. 그래서 첫 번째 차이는 만약 우리가 GDP가 있다면, 그러면 어 우리는 GDP에서 GDP를 뺀 값을 GDP에서 뺍니다. 우리의 어",
+   "pdf": "",
+   "pdfPage": 2,
+   "slideText": "",
+   "segs": [
+    {
+     "t": 300,
+     "page": 2,
+     "en": "model. Uh in AR. Okay. So then as I mentioned before, it's more about prediction. less about causal. So now, with AR1, one thing I didn't mention is what is the long run mean? I mentioned that you know, does the long run mean exist or not, which is important if the mean changes over time is not stationary, so we are in trouble because we are estimating something that was not exists.",
+     "ko": "모델입니다. 어, AR에서 요. 좋아요. 그래서 제가 앞서 언급했듯이, 이건 예측에 관한 것이고, 인과 관계에 관한 것은 적습니다. 그래서 이제, AR1으로, 제가 언급하지 않은 한 가지는 장기 평균이 무엇인가요? 제가 말씀드렸듯이, 장기 평균이 존재하는지 아닌지, 이것은 중요합니다. 만약 평균이 시간이 지남에 따라 변하지 않는다면, 우리는 곤란해집니다. 왜냐하면 우리는 존재하지 않는 것을 추정하고 있기 때문입니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 328,
+     "page": 2,
+     "en": "And then so theory one, simple way to characterize the long run mean. If the model is correct, then uh if you take expectation, it will look like this. So AR1 process, the we repeat the expectation, and then if there's a long run mean, if under a stationarity, the mean does not depend on the date.",
+     "ko": "그리고 그래서 이론은 첫 번째, 간단한 방법은 이것을 특징짓는 것입니다. 만약 모델이 올바르다면, 그러면 어 만약 여러분이 기댓값을 취하면, 이렇게 보일 것입니다. 그래서 AR1은 과정에서, 우리는 이 과정을 반복하고, 그리고 나서 만약 장기 평균이 있다면, 만약 정상 상태라면, 평균은 날짜에 의존하지",
+     "src": "gemini"
+    },
+    {
+     "t": 354,
+     "page": 2,
+     "en": "So it's the same mean. This is the long run mean. And then if we substitute the expectation, with mu, mu has that relationship. So long run mean can actually characterize by the ratio between the zero, the one minus the one. Okay? And then this is helpful for us to understand why unit root is such a problem. It is unit root if AR1 process has a unit root problem, the denominator becomes zero.",
+     "ko": "않습니다. 그래서 이것은 같은 평균입니다. 이것이 장기 평균입니다. 그리고 만약 우리가 대체하면, 그 기댓값을 뮤로, 뮤는 그 관계를 가지고 있습니다. 그래서 장기 평균은 실제로 비율로 특징지어질 수 있습니다. 0과 1 빼기 1 사이의 비율로요. 알겠죠? 그리고 이것은 우리가 이해하는 데 도움이 됩니다. 왜 단위 근이 그렇게 문제인지. 그것은 단위 근입니다. 만약 AR1 과정이 단위근 문제를 가지고 있다면, 분모가 0이 됩니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 388,
+     "page": 2,
+     "en": "So it's not defined. See, if beta equals one, that is the unit root problem, or a random walk problem, then there is no long run mean. We can define. And then it doesn't matter. So the the error, the the surprise in time T, will shift the long run mean immediately.",
+     "ko": "그래서 정의되지 않습니다. 보세요, 만약 베타가 1이라면, 그것이 단위근 문제이거나, 랜덤 워크 문제라면, 그러면 장기 평균은 없습니다. 우리는 정의할 수 있습니다. 그리고 그것은 중요하지 않습니다. 그래서 오차, 그 놀라움은 시간 T에서, 이동할 것입니다. 장기 평균을 즉시 이동시킵니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 413,
+     "page": 2,
+     "en": "With unit root, so the long run mean does not exist. Uh and then we cannot have a consistent estimate. There's a different way to derive the same thing. This part you can do it.",
+     "ko": "단위근이 있으면, 그래서 장기 평균은 존재하지 않습니다. 어, 그리고 우리는 가질 수 없습니다. 일관된 추정치를. 다른 방법이 있습니다. 같은 것을 유도하는 방법입니다. 이 부분은 여러분이 할 수 있습니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 429,
+     "page": 2,
+     "en": "And anyway, this is helpful. to you know, another way to understand why unit root is such a problem. And now we'll move on. So if we have this process, process, which is stationary, then that means that the long run mean is 1.0 over four. So we can actually see simulate how the shock how the how the outcome will change over time. If we start from this number, and then if we um apply this numbers and then the the series will converge to the long run mean.",
+     "ko": "그리고 어쨌든, 이것은 도움이 됩니다. 아시다시피, 다른 방법으로 이해하는 것입니다. 왜 단위근이 그렇게 문제인지. 그리고 이제 우리는 넘어갈 것입니다. 그래서 만약 우리가 이것을 가지고 있다면, 과정, 즉 정상적인 경우, 그러면 그것은 장기 평균이 1.0이라는 것을 의미합니다. 그래서 우리는 실제로 시뮬레이션할 수 있습니다. 어떻게 충격이 어떻게 결과가 시간이 지남에 따라 변할지. 만약 우리가 이 숫자에서 시작한다면, 그리고 만약 우리가 이것을 적용하고 그리고 그 시리즈는 수렴할 것입니다. 장기 평균으로.",
+     "src": "gemini"
+    },
+    {
+     "t": 471,
+     "page": 2,
+     "en": "And then that is how that is the whole idea why we do the long run time series and if it is not it is stationary, then we",
+     "ko": "그리고 그것은 어떻게 그것이 전체적인 아이디어인지 우리가 왜 장기 시계열을 하는지, 그리고 만약 그것이 정상적이지 않다면 우리는",
+     "src": "gemini"
+    },
+    {
+     "t": 486,
+     "page": 2,
+     "en": "That's the thing, even though it's not. And you need to understand that concept.",
+     "ko": "그게 문제예요, 비록 그렇지 않더라도요. 그리고 당신은 이해해야 해요, 그 개념을.",
+     "src": "gemini"
+    },
+    {
+     "t": 498,
+     "page": 2,
+     "en": "So, and then I said, well, it's a pure for the unit. So, the the second thing we discussed is how do we detect whether the series has the unit problem or not. Right? Stationary or not. Do we do that based on the test? And the test is just like provide a specific cutoff value like cutoff value for the ratio between the condition and standard error, right? Because the distribution of that outcome from time series AR1 process will be different from typical uh, you know, cutoff value used in the OLS.",
+     "ko": "그래서, 그리고 나서 제가 말했죠, 음, 그건 순전히 그 부대를 위한 거예요. 그래서, 두 번째로 논의한 것은 어떻게 탐지하느냐는 것이었어요. 그 시리즈가 유닛 문제가 있는지 없는지 말이죠. 정지해 있는지 아닌지. 그걸 테스트를 기반으로 하나요? 그리고 그 테스트는 그냥 제공하는 거예요, 특정 차단 값을 예를 들어 차단 값은 비율에 대한 것인데, 조건과 표준 오차 사이의 비율이죠, 그렇죠? 왜냐하면 분포가 그 결과의 분포가 시계열에서 AR1 과정에서 다를 것이기 때문에 전형적인 것과는 다를 거예요, 그러니까 차단 값은 그 과정에서 사용되는 OLS와는",
+     "src": "gemini"
+    },
+    {
+     "t": 539,
+     "page": 2,
+     "en": "So we just rely on the new cutoff value and check whether we can reject the unit unit problem or not. Because we can reject And then there is a word one side test so the value different if we cannot reject and then we have to stop there. is nonstationary. And then the point is to try to figure out the long run mean. Okay?",
+     "ko": "다르죠. 그래서 우리는 그냥 새로운 차단 값에 의존하고 우리가 거부할 수 있는지 확인해요. 그 유닛이 문제가 있는지 없는지. 왜냐하면 우리는 거부할 수 있으니까요. 그리고 또 다른 단어가 있어요, 단측 테스트라서 그 값이 다를 거예요, 만약 우리가 거부할 수 없다면 거기서 멈춰야 해요. 그건 비정상적이에요. 그리고 그 다음 요점은 어떻게든 긴 기간의 평균을 알아내려고 하는 거예요.",
+     "src": "gemini"
+    },
+    {
+     "t": 565,
+     "page": 2,
+     "en": "And what is the next step? We have to, we can do two tests. Like we can do more than that. The the first one is we take the differences of the series. So we instead of trying to run XT on uh YT on XT, we try to run delta YT on delta XT. So first difference means that if we have GDP, then uh we subtract GDP t minus one from GDP t.",
+     "ko": "알겠죠? 그리고 다음 단계는 무엇인가요? 우리는 해야 해요, 우리는 할 수 있어요, 두 가지 테스트를. 예를 들어 우리는 그 이상을 할 수 있어요. 첫 번째는 우리가 차이를 취하는 거예요, 시리즈의. 그래서 우리는 대신에 실행하려고 하는 것이 아니라 YT를 XT에 실행하는 것이 아니라, 우리는 델타 YT를 실행하려고 하는 거예요, 델타 XT에. 그래서 첫 번째 차이는 만약 우리가 GDP가 있다면, 그러면 어 우리는 GDP에서 GDP를 뺀 값을 GDP에서 뺍니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 599,
+     "page": 2,
+     "en": "As our uh",
+     "ko": "우리의 어",
+     "src": "gemini"
+    }
+   ]
+  },
+  {
+   "page": 3,
+   "en": "dependent variable. Okay? And the oil price also the one period difference is our control variable. Once we take first difference, we can technically we can eliminate the unit root problem. Okay? Why here? That is the first approach, the second approach is error correction model which I will discuss later. What why first difference? a unit root series because by Okay. Okay, in order to make the OLS as consistent as made for this beta or AR1 process, we need a stationary, we dependence, but if we have a unit root, it breaks both conditions. First, if we repeatedly run we write YT as a function of YT minus one and UT, and YT can be written as a function of the initial Y0 and the duration of time times beta one. This is drift. Every time there is a jump of beta one. Okay, from the previous here, this is actually has a drift, which means that the previously this is a realization and every time there is an increase by automatically. every time there is a constant increase, it's a drift. And depending on the realization of UT, it will be more than the, you know, the drift plus the the final so this is a martingale component, that is a unit that is that a random process and it is unit root. Uh and this is this applies to all the processes. So here, depending on the sum of all the terms, and this duration. times the duration. Okay? And as you can see, this YT is the expected expected value of this YT is a function of T. And and the change is with T. And then it's not stationary, but this is not the biggest problem. We can add a in the model. The problem is the variance will explode. So this entire thing will process not each error has a persistent effect on YT, right? So all the history of realization will shift the value in the future. So that is the problem. Um Okay? So the variance of YT is explode as we have longer period, we have really huge uh variance in the series. And it's not really dependent because the series will be will be correlated because it's a sum of all the sum of previous realization of random component has a impact on today's series. It will not disappear. Only And then um so this is just a repetition. And this is so this. There is a correlation and we have it's a very easy to have a spurious relationship. If the series X and Y are non stationary and then we just run OLS, we will have a very strong significant coefficient beta, but it means not thing. And then the realize by this paper that he found that in England and Wales, the share of marriage had church of England and the death have a correlation. About 0.9 5. It's serious. Obviously, no reason why it has such a strong correlation. Okay? And that it is not uncommon. Once we got a non-stationarity series with a non-stationary series, with AR investigation, it's very often we have this strong correlation. Another example is the sea level and the price of the price of pizza in Chicago. And rainfall and price is uh is something else, but this is not that obvious, but this is very obvious, right? There is no reason. Why it has to be correlated. But if you draw that, you will find a very significant one. Okay? You should not interpret that as a Agent, what's the situation? What's the report? So you may want to understand how this agent doesn't have anything to do with something brought up at the economic outcome. Okay? economic factors. And oh, so like I choose one of its rates. And the uh population the share of Korean engine 65 and over. Okay? And this is a bold data. Okay? Obviously the share of population 6 65 years old or older increases constantly. And then exchange rate during the same period also overall increased some fluctuation. But if we test whether they are temporary, both stationary, they are not stationary. This is a bit like like increase over time, but you can if you test the difference, both of them fail. And I ran the regression. And this is the correlation between those two. series. And it clearly positive correlation. So right? So we may interpret that correlation as like, oh, exchange rate has something to do with population aging. or population aging has something to do with exchange rate. But we are picking up the random relationship generally generated by nonstationary Okay? And then how do you know that it's more clearly? If we take the first difference, of each series, there is no correlation at all. They are not related. Okay. I think that's the main, I think it's useful to remember. When you run a time series, check whether the each series is stationary, if not, we cannot proceed. And and then it's very it will be very significant whenever you regress, it seems like a they are strongly correlated. But it's just outcome of you know, like some random trend. over time. So differentiating remove exactly the problem. If it is nonstationary, we are talking about the unit root problem, right? And then if we differentiate, it's not going to be zero, so it's and the unit root construction is independent or over time. It's like a surprise at the time. If you accumulate the term on the shock, this is very random. We say that I don't know whether you are following the surprise of Nvidia. So it was very dramatic. Over two days. Right? Like it fell from like almost like a So from 200 like to 100 35 after the earnings. And then the increase 30%. two days ago. So people may have bought it. So then yesterday they also dropped. So new T here is a random component. If you look at it, and then there will be three or four. And then you can find out some correlation over there or some factors. that make it not random, but you know, a certain process that design says that this new category and random component, it cannot tell what's hot, what's not hot, what but but they they are not not stationary, because why is a function of y minus right? So if we differentiate then this is well defined, right? The long one is zero. And we have only the component. So that's of course approach again. So the difference and the coefficient drops from 0.9 to 0.1 uh 29. So this when we run GDP growth rate on the local oil price, if we just run it, as on, we just does not differentiate after without differentiating, but we have this strong correlation basis plus, once the difference, we still have some positive correlation. Uh but this is more reliable. Because now, and this will be we don't know what's up. Okay? And this is just a notation.",
+   "ko": "종속 변수로요. 알겠죠? 그리고 유가는 또한 한 기간 차이입니다. 이것이 우리의 종속 변수입니다. 일단 우리가 첫 번째 차이를 취하면, 우리는 기술적으로 우리는 유닛을 제거할 수 있습니다. 유닛 루트 문제를. 알겠죠? 왜 여기죠? 그게 첫 번째 접근 방식이고, 두 번째 접근 방식은 오차 수정 모델인데, 나중에 설명할게요. 뭐 왜 첫 번째 차이인가요? 유닛 루트 시리즈는 왜냐하면 알겠습니다. 알겠습니다, 그래서 만들기 위해서 OLS를 로서 일관성 있게 이 에 대한 베타를 만들기 위해 또는 AR1 과정에서, 우리는 정지 상태가 필요해요, 우리는 의존성이 필요하지만, 만약 유닛 루트가 있다면, 그것은 두 가지 조건 모두를 깨뜨립니다. 첫째, 만약 우리가 반복적으로 실행하면 우리는 YT를 YT의 함수로 쓰고 YT 마이너스 1과 UT를 쓰고, 그리고 YT는 다음과 같이 쓸 수 있습니다. 초기값의 함수로 Y0 그리고 기간의 함수로 시간 곱하기 베타 1입니다. 이것은 드리프트입니다. 매번 베타의 점프가 있습니다. 알겠죠, 이전 것에서부터 여기서, 이것은 실제로 드리프트가 있는데, 이는 이전에 이것이 실현이고 매번 증가가 있습니다. 자동으로. 매번 일정한 증가가 있습니다, 이것은 드리프트입니다. 그리고 실현에 따라 UT, 그것은 더 많을 것입니다. 그, 아시다시피, 드리프트에 더하기 최종 그래서 이것은 마틴게일 구성 요소이며, 이것은 단위 즉 확률 과정이 그리고 그것은 단위근입니다. 어 그리고 이것은 모든 AR에 적용됩니다. 그래서 여기서, 상황에 따라 합이 모든 항의 합에 따라 그리고 이것은 기간입니다. 시간 곱하기 기간입니다. 알겠죠? 그리고 보시다시피 이것은 YT는 그 기대되는 이 YT의 기대값은 함수의 T입니다. 그리고 그리고 변화는 T와 함께합니다. 그리고 이것은 정상적이지 않지만, 이것이 가장 큰 문제는 아닙니다. 모델에 추가할 수 있습니다. 문제는 분산이 폭발한다는 것입니다. 그래서 이 전체가 결국 현재 과정이 각각이 아니라 오류가 지속적인 영향을 미친다는 것입니다, 맞죠? 그래서 모든 과거의 실현이 이동할 것입니다. 그 미래의 값을 그래서 그것이 문제입니다. 음 알겠죠? 그래서 YT의 분산은 폭발합니다. 우리가 더 긴 기간을 가질수록, 정말 거대한 어 시리즈의 분산이 있습니다. 그리고 그것은 실제로 의존적이지 않습니다. 왜냐하면 시리즈가 될 것이기 때문에 상관관계가 있습니다. 왜냐하면 그것은 모든 합의 합이기 때문입니다. 이전의 랜덤 구성 요소의 합은 영향을 미칩니다. 오늘의 시리즈에. 그것은 사라지지 않을 것입니다. 오직 그리고 그 다음에는 음 그래서 이것은 단지 반복입니다. 그리고 이것은 그렇습니다. 이것은 상관관계가 있고 우리는 그것이 매우 쉽게 가짜 관계를 가질 수 있습니다. 만약 시리즈가 X와 Y가 비정상적이라면 그리고 우리가 그냥 OLS를 실행하면, 우리는 매우 강력한 유의미한 계수를 얻게 됩니다. 하지만 그것은 아무것도 의미하지 않습니다. 그리고 이 논문에서 알 수 있듯이 그는 발견했습니다. 영국과 웨일즈에서, 그 결혼의 비율이 영국의 교회와 사망률이 상관관계가 있다는 것을요. 약 0.9 정도입니다. 그것은 심각합니다. 분명히, 아무런 이유가 없는데 왜 그렇게 강한 상관관계가 있는지 아시겠어요? 그리고 그것은 드문 일이 아닙니다. 일단 우리가 비정상성을 가진 시계열을 얻으면, AR이 있는 조사에서, 그것은 매우 흔하게 이런 강한 상관관계가 있습니다. 또 다른 예는 해수면 상승과 피자 가격입니다. 시카고에서요. 그리고 강수량과 가격은 어 어떤 다른 것이지만, 이것은 그렇지 않지만, 이것은 매우 분명합니다, 그렇죠? 이유가 없어요. 왜 상관관계가 있어야 하는지. 하지만 만약 여러분이 그걸 그린다면, 아주 유의미한 것을 발견할 것입니다. 아시겠어요? 그렇게 해석해서는  요원님, 상황이 어떻게 되나요? 보고 좀 해주세요. 그래서 이 상황이 어떻게 돌아가는지 이해하셔야 할 것 같아요. 이건 경제 회의에서 나온 것과는 관련이 없어요. 아시겠죠? 경제적 요인들. 그리고 아, 그러니까 제가 선택한 것 중 하나가 금리예요. 그리고 그 어, 인구 비율이 한국 엔진의 65 이상이에요. 아시겠죠? 그리고 이건 대담한 데이터예요. 아시겠죠? 분명히 비율이 인구의 6 65 세 이상이 증가하고 있어요. 계속해서. 그리고 환율은 같은 기간 동안 전반적으로 증가했어요. 약간의 변동이 있었지만요. 하지만 그들이 일시적인지 테스트해보면, 둘 다 안정적이에요. 그들은 안정적이지 않아요. 이건 좀 뭐랄까, 시간이 지날수록 증가하지만, 만약 테스트해보면 그 차이가 둘 다 실패해요. 그리고 저는 회귀 분석을 했어요. 그리고 이건 상관관계예요. 그 두 가지 사이의. 그리고 분명히 양의 상관관계예요. 그래서 맞죠? 그래서 우리는 그 상관관계를 이렇게 해석할 수 있어요, 아, 환율이 인구와 관련이 있구나. 또는 인구 고령화가 환율과 관련이 있구나. 하지만 우리는 포착하고 있어요. 무작위적인 관계를 일반적으로 생성된 것을요. 비정상적인 아시겠죠? 그리고 어떻게 이게 진짜인지 더 명확하게 알 수 있을까요? 만약 차분을 취하면, 각 시리즈의 상관관계가 전혀 없어요. 그들은 관련이 없어요. 네. 그게 핵심인 것 같아요, 제 생각엔 기억해 두면 유용할 것 같아요. 회귀 분석을 할 때, 확인해 보세요, 각 시리즈가 정상적인지, 그렇지 않다면, 진행할 수 없어요. 그리고 그건 매우 아주 유의미할 거예요. 언제든 회귀 분석을 하면, 그들이 강하게 상관관계가 있는 것처럼 보이지만, 그건 그냥 뭐랄까, 전반적인 무작위적인 추세예요. 시간이 지남에 따라. 그래서 미분은 정확히 그 문제를 제거합니다. 만약 비정상적이라면, 우리는 단위근 문제에 대해 이야기하는 거죠, 그렇죠? 그리고 미분을 하면, 그건 0이 되지 않을 것이고, 그래서 단위근 구성은 독립적이거나 시간이 지남에 따라. 그 당시의 놀라움과 같아요. 만약 여러분이 그 항을 계속 쌓으면, 이건 매우 무작위적이에요. 우리는 그렇게 말해요. 여러분이 그 통계학적 놀라움을 따라가고 계신지 모르겠네요. 그래서 매우 극적이었어요. 이틀 동안. 그렇죠? 그러니까 뭐랄까, 거의 뭐랄까, 그래서 200에서 뭐랄까, 100으로 35로 그 후에 실적 발표 후에. 그리고 그 증가가 30%였어요. 이틀 전에. 그래서 사람들이 샀을 수도 있어요. 그래서 어제도 떨어졌어요. 그래서 새로운 T가 여기 있는데, 이건 랜덤한 구성 요소예요. 보시면, 그리고 세 가지가 있을 거예요. 그리고 몇 가지를 알아낼 수 있어요. 저기 상관관계가 있거나 어떤 요인들이 있어요. 그게 랜덤이 아니라 뭐랄까, 어떤 과정이 있다는 거죠. 디자인이 이 새로운 카테고리가 그리고 랜덤이 아니라는 걸 말해주고 있어요. 뭐가 인기 있고 뭐가 인기 없는지, 하지만 그들은 그렇지 않아요. 정지해 있지 않고, 왜냐하면 어떤 함수의 y 마이너스 그렇죠? 그래서 만약 우리가 미분하면 그러면 이건 잘 정의되어 있죠, 그렇죠? 긴 것은 0이에요. 그리고 우리는 오직 구성 요소만 있어요. 그래서 그게 물론 접근 방식이에요. 다시. 그래서 차이점은 계수가 0에서 0.9로 떨어지고 0.29로 떨어져요. 그래서 우리가 GDP를 실행하면 성장률을 현지 유가에 적용하면, 만약 우리가 그냥 실행하면, AR 모델에서, 우리는 그냥 미분하지 않아요, 그 후에 미분하지 않고 하지만 우리는 이 강력한 상관관계 기반을 가지고 있고, 일단 차이가 나면, 여전히 양의 상관관계가 있어요. 어 하지만 이게 더 신뢰할 수 있어요. 왜냐하면 이제, 그리고 이건 우리가 모르는 상황이에요. 알겠죠? 그리고 이건 그냥 표기법이에요.",
+   "pdf": "",
+   "pdfPage": 3,
+   "slideText": "",
+   "segs": [
+    {
+     "t": 601,
+     "page": 3,
+     "en": "dependent variable. Okay? And the oil price also the one period difference is our control variable. Once we take first difference, we can technically we can eliminate the unit root problem. Okay? Why here? That is the first approach, the second approach is error correction model which I will discuss later.",
+     "ko": "종속 변수로요. 알겠죠? 그리고 유가는 또한 한 기간 차이입니다. 이것이 우리의 종속 변수입니다. 일단 우리가 첫 번째 차이를 취하면, 우리는 기술적으로 우리는 유닛을 제거할 수 있습니다. 유닛 루트 문제를. 알겠죠? 왜 여기죠? 그게 첫 번째 접근 방식이고, 두 번째 접근 방식은 오차 수정 모델인데, 나중에 설명할게요.",
+     "src": "gemini"
+    },
+    {
+     "t": 626,
+     "page": 3,
+     "en": "What why first difference? a unit root series because by",
+     "ko": "뭐 왜 첫 번째 차이인가요? 유닛 루트 시리즈는 왜냐하면",
+     "src": "gemini"
+    },
+    {
+     "t": 635,
+     "page": 3,
+     "en": "Okay. Okay, in order to make the OLS as consistent as made for this beta or AR1 process, we need a stationary, we dependence, but if we have a unit root, it breaks both conditions. First, if we repeatedly run we write YT as a function of YT minus one and UT, and YT can be written as a function of the initial Y0 and the duration of time times beta one. This is drift.",
+     "ko": "알겠습니다. 알겠습니다, 그래서 만들기 위해서 OLS를 로서 일관성 있게 이 에 대한 베타를 만들기 위해 또는 AR1 과정에서, 우리는 정지 상태가 필요해요, 우리는 의존성이 필요하지만, 만약 유닛 루트가 있다면, 그것은 두 가지 조건 모두를 깨뜨립니다. 첫째, 만약 우리가 반복적으로 실행하면 우리는 YT를 YT의 함수로 쓰고 YT 마이너스 1과 UT를 쓰고, 그리고 YT는 다음과 같이 쓸 수 있습니다. 초기값의 함수로 Y0 그리고 기간의 함수로 시간 곱하기 베타 1입니다. 이것은 드리프트입니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 672,
+     "page": 3,
+     "en": "Every time there is a jump of beta one. Okay, from the previous here, this is actually has a drift, which means that the previously this is a realization and every time there is an increase by automatically. every time there is a constant increase, it's a drift.",
+     "ko": "매번 베타의 점프가 있습니다. 알겠죠, 이전 것에서부터 여기서, 이것은 실제로 드리프트가 있는데, 이는 이전에 이것이 실현이고 매번 증가가 있습니다. 자동으로. 매번 일정한 증가가 있습니다, 이것은",
+     "src": "gemini"
+    },
+    {
+     "t": 692,
+     "page": 3,
+     "en": "And depending on the realization of UT, it will be more than the, you know, the drift plus the the final so this is a martingale component, that is a unit that is that a random process and it is unit root. Uh and this is this applies to all the processes. So here, depending on the sum of all the terms, and this duration.",
+     "ko": "드리프트입니다. 그리고 실현에 따라 UT, 그것은 더 많을 것입니다. 그, 아시다시피, 드리프트에 더하기 최종 그래서 이것은 마틴게일 구성 요소이며, 이것은 단위 즉 확률 과정이 그리고 그것은 단위근입니다. 어 그리고 이것은 모든 AR에 적용됩니다. 그래서 여기서, 상황에 따라 합이 모든 항의 합에 따라 그리고 이것은 기간입니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 720,
+     "page": 3,
+     "en": "times the duration.",
+     "ko": "시간 곱하기 기간입니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 725,
+     "page": 3,
+     "en": "Okay? And as you can see, this YT is the expected expected value of this YT is a function of T. And and the change is with T.",
+     "ko": "알겠죠? 그리고 보시다시피 이것은 YT는 그 기대되는 이 YT의 기대값은 함수의 T입니다. 그리고 그리고 변화는 T와 함께합니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 744,
+     "page": 3,
+     "en": "And then it's not stationary, but this is not the biggest problem. We can add a in the model. The problem is the variance will explode. So this entire thing will process not each error has a persistent effect on YT, right? So all the history of realization will shift the value in the future.",
+     "ko": "그리고 이것은 정상적이지 않지만, 이것이 가장 큰 문제는 아닙니다. 모델에 추가할 수 있습니다. 문제는 분산이 폭발한다는 것입니다. 그래서 이 전체가 결국 현재 과정이 각각이 아니라 오류가 지속적인 영향을 미친다는 것입니다, 맞죠? 그래서 모든 과거의 실현이 이동할 것입니다. 그 미래의 값을 그래서",
+     "src": "gemini"
+    },
+    {
+     "t": 770,
+     "page": 3,
+     "en": "So that is the problem. Um Okay? So the variance of YT is explode as we have longer period, we have really huge uh variance in the series. And it's not really dependent because the series will be will be correlated because it's a sum of all the sum of previous realization of random component has a impact on today's series. It will not disappear.",
+     "ko": "그것이 문제입니다. 음 알겠죠? 그래서 YT의 분산은 폭발합니다. 우리가 더 긴 기간을 가질수록, 정말 거대한 어 시리즈의 분산이 있습니다. 그리고 그것은 실제로 의존적이지 않습니다. 왜냐하면 시리즈가 될 것이기 때문에 상관관계가 있습니다. 왜냐하면 그것은 모든 합의 합이기 때문입니다. 이전의 랜덤 구성 요소의 합은 영향을 미칩니다. 오늘의 시리즈에. 그것은 사라지지 않을 것입니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 804,
+     "page": 3,
+     "en": "Only And then um so this is just a repetition. And this is so this. There is a correlation and we have it's a very easy to have a spurious relationship. If the series X and Y are non stationary and then we just run OLS, we will have a very strong significant coefficient beta, but it means not thing.",
+     "ko": "오직 그리고 그 다음에는 음 그래서 이것은 단지 반복입니다. 그리고 이것은 그렇습니다. 이것은 상관관계가 있고 우리는 그것이 매우 쉽게 가짜 관계를 가질 수 있습니다. 만약 시리즈가 X와 Y가 비정상적이라면 그리고 우리가 그냥 OLS를 실행하면, 우리는 매우 강력한 유의미한 계수를 얻게 됩니다. 하지만 그것은 아무것도",
+     "src": "gemini"
+    },
+    {
+     "t": 833,
+     "page": 3,
+     "en": "And then the realize by this paper that he found that in England and Wales, the share of marriage had church of England and the death have a correlation. About 0.9 5. It's serious. Obviously, no reason why it has such a strong correlation. Okay? And that it is not uncommon.",
+     "ko": "의미하지 않습니다. 그리고 이 논문에서 알 수 있듯이 그는 발견했습니다. 영국과 웨일즈에서, 그 결혼의 비율이 영국의 교회와 사망률이 상관관계가 있다는 것을요. 약 0.9 정도입니다. 그것은 심각합니다. 분명히, 아무런 이유가 없는데 왜 그렇게 강한 상관관계가 있는지 아시겠어요? 그리고 그것은 드문 일이 아닙니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 860,
+     "page": 3,
+     "en": "Once we got a non-stationarity series with a non-stationary series, with AR investigation, it's very often we have this strong correlation. Another example is the sea level and the price of the price of pizza in Chicago. And rainfall and price is uh is something else, but this is not that obvious, but this is very obvious, right? There is no reason.",
+     "ko": "일단 우리가 비정상성을 가진 시계열을 얻으면, AR이 있는 조사에서, 그것은 매우 흔하게 이런 강한 상관관계가 있습니다. 또 다른 예는 해수면 상승과 피자 가격입니다. 시카고에서요. 그리고 강수량과 가격은 어 어떤 다른 것이지만, 이것은 그렇지 않지만, 이것은 매우 분명합니다, 그렇죠? 이유가",
+     "src": "gemini"
+    },
+    {
+     "t": 886,
+     "page": 3,
+     "en": "Why it has to be correlated. But if you draw that, you will find a very significant one. Okay? You should not interpret",
+     "ko": "없어요. 왜 상관관계가 있어야 하는지. 하지만 만약 여러분이 그걸 그린다면, 아주 유의미한 것을 발견할 것입니다. 아시겠어요? 그렇게 해석해서는",
+     "src": "gemini"
+    },
+    {
+     "t": 897,
+     "page": 3,
+     "en": "that as a",
+     "ko": "",
+     "src": "gemini"
+    },
+    {
+     "t": 902,
+     "page": 3,
+     "en": "Agent, what's the situation? What's the report? So you may want to understand how this agent doesn't have anything to do with something brought up at the economic outcome. Okay? economic factors. And oh, so like I choose one of its rates. And the uh population the share of Korean engine 65 and over.",
+     "ko": "요원님, 상황이 어떻게 되나요? 보고 좀 해주세요. 그래서 이 상황이 어떻게 돌아가는지 이해하셔야 할 것 같아요. 이건 경제 회의에서 나온 것과는 관련이 없어요. 아시겠죠? 경제적 요인들. 그리고 아, 그러니까 제가 선택한 것 중 하나가 금리예요. 그리고 그 어, 인구 비율이 한국 엔진의 65 이상이에요.",
+     "src": "gemini"
+    },
+    {
+     "t": 928,
+     "page": 3,
+     "en": "Okay? And this is a bold data. Okay? Obviously the share of population 6 65 years old or older increases constantly. And then exchange rate during the same period also overall increased some fluctuation. But if we test whether they are temporary, both stationary, they are not stationary.",
+     "ko": "아시겠죠? 그리고 이건 대담한 데이터예요. 아시겠죠? 분명히 비율이 인구의 6 65 세 이상이 증가하고 있어요. 계속해서. 그리고 환율은 같은 기간 동안 전반적으로 증가했어요. 약간의 변동이 있었지만요. 하지만 그들이 일시적인지 테스트해보면, 둘 다 안정적이에요. 그들은 안정적이지 않아요.",
+     "src": "gemini"
+    },
+    {
+     "t": 953,
+     "page": 3,
+     "en": "This is a bit like like increase over time, but you can if you test the difference, both of them fail. And I ran the regression. And this is the correlation between those two. series. And it clearly positive correlation. So right? So we may interpret that correlation as like, oh, exchange rate has something to do with population aging.",
+     "ko": "이건 좀 뭐랄까, 시간이 지날수록 증가하지만, 만약 테스트해보면 그 차이가 둘 다 실패해요. 그리고 저는 회귀 분석을 했어요. 그리고 이건 상관관계예요. 그 두 가지 사이의. 그리고 분명히 양의 상관관계예요. 그래서 맞죠? 그래서 우리는 그 상관관계를 이렇게 해석할 수 있어요, 아, 환율이 인구와 관련이 있구나.",
+     "src": "gemini"
+    },
+    {
+     "t": 980,
+     "page": 3,
+     "en": "or population aging has something to do with exchange rate. But we are picking up the random relationship generally generated by nonstationary Okay? And then how do you know that it's more clearly? If we take the first difference, of each series, there is no correlation at all. They are not related.",
+     "ko": "또는 인구 고령화가 환율과 관련이 있구나. 하지만 우리는 포착하고 있어요. 무작위적인 관계를 일반적으로 생성된 것을요. 비정상적인 아시겠죠? 그리고 어떻게 이게 진짜인지 더 명확하게 알 수 있을까요? 만약 차분을 취하면, 각 시리즈의 상관관계가 전혀 없어요. 그들은 관련이 없어요.",
+     "src": "gemini"
+    },
+    {
+     "t": 1005,
+     "page": 3,
+     "en": "Okay. I think that's the main, I think it's useful to remember. When you run a time series,",
+     "ko": "네. 그게 핵심인 것 같아요, 제 생각엔 기억해 두면 유용할 것 같아요. 회귀 분석을 할 때,",
+     "src": "gemini"
+    },
+    {
+     "t": 1015,
+     "page": 3,
+     "en": "check whether the each series is stationary, if not, we cannot proceed. And and then it's very it will be very significant whenever you regress, it seems like a they are strongly correlated. But it's just outcome of you know, like some random trend. over time.",
+     "ko": "확인해 보세요, 각 시리즈가 정상적인지, 그렇지 않다면, 진행할 수 없어요. 그리고 그건 매우 아주 유의미할 거예요. 언제든 회귀 분석을 하면, 그들이 강하게 상관관계가 있는 것처럼 보이지만, 그건 그냥 뭐랄까, 전반적인 무작위적인 추세예요. 시간이 지남에 따라.",
+     "src": "gemini"
+    },
+    {
+     "t": 1040,
+     "page": 3,
+     "en": "So differentiating remove exactly the problem. If it is nonstationary, we are talking about the unit root problem, right? And then if we differentiate, it's not going to be zero, so it's and the unit root construction is independent or over time. It's like a surprise at the time.",
+     "ko": "그래서 미분은 정확히 그 문제를 제거합니다. 만약 비정상적이라면, 우리는 단위근 문제에 대해 이야기하는 거죠, 그렇죠? 그리고 미분을 하면, 그건 0이 되지 않을 것이고, 그래서 단위근 구성은 독립적이거나 시간이 지남에 따라. 그 당시의 놀라움과 같아요.",
+     "src": "gemini"
+    },
+    {
+     "t": 1059,
+     "page": 3,
+     "en": "If you accumulate the term on the shock, this is very random. We say that I don't know whether you are following the surprise of Nvidia.",
+     "ko": "만약 여러분이 그 항을 계속 쌓으면, 이건 매우 무작위적이에요. 우리는 그렇게 말해요. 여러분이 그 통계학적 놀라움을 따라가고 계신지 모르겠네요.",
+     "src": "gemini"
+    },
+    {
+     "t": 1073,
+     "page": 3,
+     "en": "So it was very dramatic. Over two days. Right? Like it fell from like almost like a",
+     "ko": "그래서 매우 극적이었어요. 이틀 동안. 그렇죠? 그러니까 뭐랄까, 거의 뭐랄까,",
+     "src": "gemini"
+    },
+    {
+     "t": 1083,
+     "page": 3,
+     "en": "So from 200 like to 100 35 after the earnings. And then the increase 30%. two days ago. So people may have bought it. So then yesterday they also dropped. So new T here is a random component. If you look at it, and then there will be three or four. And then you can find out some correlation over there or some factors.",
+     "ko": "그래서 200에서 뭐랄까, 100으로 35로 그 후에 실적 발표 후에. 그리고 그 증가가 30%였어요. 이틀 전에. 그래서 사람들이 샀을 수도 있어요. 그래서 어제도 떨어졌어요. 그래서 새로운 T가 여기 있는데, 이건 랜덤한 구성 요소예요. 보시면, 그리고 세 가지가 있을 거예요. 그리고 몇 가지를 알아낼 수 있어요. 저기 상관관계가 있거나 어떤 요인들이",
+     "src": "gemini"
+    },
+    {
+     "t": 1112,
+     "page": 3,
+     "en": "that make it not random, but you know, a certain process that design says that this new category and random component, it cannot tell what's hot, what's not hot, what but but they they are not not stationary, because why is a function of y minus right? So if we differentiate then",
+     "ko": "있어요. 그게 랜덤이 아니라 뭐랄까, 어떤 과정이 있다는 거죠. 디자인이 이 새로운 카테고리가 그리고 랜덤이 아니라는 걸 말해주고 있어요. 뭐가 인기 있고 뭐가 인기 없는지, 하지만 그들은 그렇지 않아요. 정지해 있지 않고, 왜냐하면 어떤 함수의 y 마이너스 그렇죠? 그래서 만약 우리가 미분하면 그러면",
+     "src": "gemini"
+    },
+    {
+     "t": 1140,
+     "page": 3,
+     "en": "this is well defined, right? The long one is zero. And we have only the component. So that's of course approach again.",
+     "ko": "이건 잘 정의되어 있죠, 그렇죠? 긴 것은 0이에요. 그리고 우리는 오직 구성 요소만 있어요. 그래서 그게 물론 접근 방식이에요. 다시.",
+     "src": "gemini"
+    },
+    {
+     "t": 1159,
+     "page": 3,
+     "en": "So the difference and the coefficient drops from 0.9 to 0.1 uh 29. So this when we run GDP growth rate on the local oil price, if we just run it, as on, we just does not differentiate after without differentiating, but we have this strong correlation basis plus, once the difference, we still have some positive correlation.",
+     "ko": "그래서 차이점은 계수가 0에서 0.9로 떨어지고 0.29로 떨어져요. 그래서 우리가 GDP를 실행하면 성장률을 현지 유가에 적용하면, 만약 우리가 그냥 실행하면, AR 모델에서, 우리는 그냥 미분하지 않아요, 그 후에 미분하지 않고 하지만 우리는 이 강력한 상관관계 기반을 가지고 있고, 일단 차이가 나면, 여전히 양의 상관관계가 있어요.",
+     "src": "gemini"
+    },
+    {
+     "t": 1188,
+     "page": 3,
+     "en": "Uh but this is more reliable. Because now, and this will be we don't know what's up. Okay? And this is just a notation.",
+     "ko": "어 하지만 이게 더 신뢰할 수 있어요. 왜냐하면 이제, 그리고 이건 우리가 모르는 상황이에요. 알겠죠? 그리고 이건 그냥 표기법이에요.",
+     "src": "gemini"
+    }
+   ]
+  },
+  {
+   "page": 4,
+   "en": "Uh I zero, I1, I2 is all integration. What does that mean? This is if we if we take a force difference, if we don't take difference, this is zero. This is like how how many times we differentiate the series. So I zero is just the series, the stationary as it is. So if if the certain time series is I is called I zero, that means that we without adjusting, it is already stationary. It passes the test, so we can reject. The unit test. Then that series is I zero. If we have I zero, we can just go with AR without adjustment. But if we find that like in our example, GDP and oil price, it is not I zero, we have to take force difference. And test whether I1, the force difference, is not is is stationary. Then we test if we test, we can identify that stationary, then we can run AR process. If it does not it does not happen, then we can one more time. So the difference is difference in difference, okay? So we say the difference between YT and YT minus one, YT minus one, YT minus two. So overall this is what it is, but then we may have two different times. If certain factors uh have uh intrinsically negative variable. Nice. So, for example, uh like you know, there are some variables it makes sense to differentiate. So this is just a formal notation. You know, we show. So in I1, I2, so talked about, but we still have the time series and then if whether it's stationary after and number of difference. Okay. Um so so that's it? Uh So if we know it is stationary after a certain number of differentiation, then we can rewrite the model with those stationary series, if we want to ever learn about the relationship between X and Y, we have to we can only recover the relationship between the differentiated X and differentiated Y. Uh and then with AR1, and then estimator, will be consistent. Okay. And this is a separate and separate topic. Even though we differentiate the series, so we know that each series is stationary after n number of differentiation, we still have potential problem of serial correlation, you may heard about this terminology many And then when he he said he is about the problem on infrastructure. And infrastructure can be shared uh in need to make the oil value new should be independent. This is like why that that is the case. or is is But we never know beauty maybe like like last year the shop may have a persisting effect on the shop. Okay. It's not through but it may be there. the residue. And I may have long-term effects. You might just scan the by the way, but the the effect of that shop still not you know looming around, right? So it may have effect on the shop today. And the day after tomorrow. So if the shop supports then we have a serious correlation. Is the the nature of problem is different. It's not about the stationarity. It's more about the infrastructure. Okay? It's more about the heteroscedasticity. And know how we can adjust that in the problem, similarly. But then we also have this problem. We because when we write a model, about X and Y, we focus on that relationship, but it's very easy for us to omit relevant variables. But if there is something in the model, then you can actually create serial correlation. So for instance, if the the uh, yeah. If the GDP not only depends on the oil price, but also the export, then if you omit the export, then export has a some effects on GDP, then export is a work process so we would have a persisting effect. Like",
+   "ko": "어 저는 I0, I1, I2는 모두 적분이에요. 그게 무슨 뜻일까요? 이건 만약 우리가 힘의 차이를 구하면, 만약 우리가 하지 않으면 차이를 구하지 않으면, 이건 0이에요. 이건 마치 우리가 몇 번 미분했는지에 대한 거예요. 그래서 I0은 그냥 그 시리즈이고, 정지해 있는 그대로예요. 그래서 만약 어떤 시계열이 I I0이라고 불리면, 그건 우리가 조정하지 않고, 그게 이미 정지해 있다는 뜻이에요. 그건 테스트를 통과하고, 그래서 우리는 기각할 수 있어요. 단위 테스트를. 그러면 그 시리즈는 I0이에요. 만약 우리가 I0을 가지고 있다면, 그냥 조정 없이 AR을 사용할 수 있어요. 하지만 우리가 발견한 것처럼 우리 예시에서 GDP와 유가가, 그건 I0이 아니에요, 우리는 힘의 차이를 구해야 해요. 그리고 I1이, 힘의 차이가, 그렇지 않은지 확인해야 해요. 그러면 우리는 테스트를 해요, 만약 우리가 테스트하면, 우리는 식별할 수 있어요, 그게 정지해 있다면, 우리는 AR 프로세스를 실행할 수 있어요. 만약 그렇지 않다면, 우리는 한 번 더 할 수 있어요. 그래서 차이는 차이의 차이예요. 알겠죠? 그래서 우리는 차이가 YT와 YT 마이너스 1, YT 마이너스 1, YT 마이너스 2라고 말해요. 그래서 전반적으로 이게 뭐냐면, 하지만 우리는 두 가지 다른 시간을 가질 수 있어요. 만약 특정 요인이 어, 어떤 내재적인 것이 있다면, 부정적인 변수예요. 좋네요. 그래서, 예를 들어, 어, 예를 들어 있잖아요, 어떤 변수들이 있는데, 그게 말이 되는 변수예요. 그래서 이건 그냥 형식적인 표기법이에요. 아시다시피, 그래서 I0 I1, I2, 이렇게 얘기했잖아요. 하지만 우리는 여전히 시계열을 가지고 있고, 그리고 그게 정지해 있는지 아니면 그 후에 차이의 수인지 에 따라 달라져요. 네. 음, 그래서 그래서 그게 다예요? 어, 그래서 만약 우리가 안다면 그게 정지해 있는지 특정 횟수의 차이 후에, 그러면 우리는 다시 모델을 다시 쓸 수 있어요. 그 정지된 시계열로, 만약 우리가 언젠가 관계에 대해 배우고 싶다면 X와 Y 사이의 관계에 대해, 우리는 오직 복구할 수 있어요, 그 차이가 나는 X와 차이가 나는 Y 사이의 관계를. 그리고 AR1으로, 그리고 추정기로, 일관성이 있을 거예요. 네. 그리고 이건 별도의 그리고 별도의 주제예요. 비록 우리가 시계열을 차별화하더라도 그래서 우리는 각 시계열이 정지해 있다는 것을 알지만, n번의 차이 후에, 우리는 여전히 잠재적인 직렬 상관 문제가 있을 수 있어요, 이 용어에 대해 들어보셨을 거예요. 그리고 나서 그가 말하길 그는 그 문제에 대해 이야기했어요. 그리고 인프라는 공유될 수 있어요. 어 그 필요성을 석유가 가치 있게 만들어야 해요. 이건 마치 왜 그런지 설명하는 것 같아요. 그게 사실이에요. 아니면 그게 사실이에요. 하지만 우리는 절대 모를 거예요, 아름다움은 마치 작년처럼 가게가 지속될 수도 있어요. 가게에 영향을 미칠 수 있어요. 네. 그건 ~를 통해서가 아니라 그럴 수도 있어요. 거기에 잔여물이요. 그리고 저는 장기적인 효과가 있을 수 있어요. 그냥 스캔할 수도 있어요. 그런데, 하지만 그 효과는 여전히 뭐랄까, 계속 맴돌고 있죠, 그렇죠? 그래서 그게 오늘 가게에 영향을 미칠 수도 있어요. 그리고 모레도요. 그래서 만약 가게가 지원한다면 심각한 상관관계가 있는 거예요. 문제의 성격이 다른 거예요. 그건 정거장에 관한 게 아니에요. 그건 오히려 인프라에 관한 거예요. 알겠죠? 그건 더 이분산성에 관한 거예요. 그리고 우리가 어떻게 그걸 조정할 수 있는지 그게 문제에서 비슷해요. 비슷하게요. 하지만 우리에게도 이 문제가 있어요. 왜냐하면 우리가 모델을 작성할 때, 그게 X와 Y에 관한 것이라면, 우리는 그 관계에 집중하지만, 그건 우리가 쉽게 생략할 수 있는 관련 변수예요. 하지만 만약 어떤 것이 생략되어 있다면, 그 모델에서, 그러면 실제로 시계열 상관관계를 만들 수 있어요. 그래서 예를 들어, 만약 그 어, 네. 만약 GDP가 석유 가격뿐만 아니라 수출에도 의존한다면, 그러면 수출을 생략하면, 그러면 수출은 어떤 효과가 있어요. GDP에, 그러면 수출은 작업 과정이에요. 그래서 우리는 지속적인 효과를 갖게 될 거예요.",
+   "pdf": "",
+   "pdfPage": 4,
+   "slideText": "",
+   "segs": [
+    {
+     "t": 1198,
+     "page": 4,
+     "en": "Uh I zero, I1, I2 is all integration. What does that mean? This is if we if we take a force difference, if we don't take difference, this is zero. This is like how how many times we differentiate the series. So I zero is just the series, the stationary as it is.",
+     "ko": "어 저는 I0, I1, I2는 모두 적분이에요. 그게 무슨 뜻일까요? 이건 만약 우리가 힘의 차이를 구하면, 만약 우리가 하지 않으면 차이를 구하지 않으면, 이건 0이에요. 이건 마치 우리가 몇 번 미분했는지에 대한 거예요. 그래서 I0은 그냥 그 시리즈이고, 정지해 있는 그대로예요.",
+     "src": "gemini"
+    },
+    {
+     "t": 1219,
+     "page": 4,
+     "en": "So if if the certain time series is I is called I zero, that means that we without adjusting, it is already stationary. It passes the test, so we can reject. The unit test. Then that series is I zero. If we have I zero, we can just go with AR without adjustment.",
+     "ko": "그래서 만약 어떤 시계열이 I I0이라고 불리면, 그건 우리가 조정하지 않고, 그게 이미 정지해 있다는 뜻이에요. 그건 테스트를 통과하고, 그래서 우리는 기각할 수 있어요. 단위 테스트를. 그러면 그 시리즈는 I0이에요. 만약 우리가 I0을 가지고 있다면, 그냥 조정 없이 AR을",
+     "src": "gemini"
+    },
+    {
+     "t": 1241,
+     "page": 4,
+     "en": "But if we find that like in our example, GDP and oil price, it is not I zero, we have to take force difference. And test whether I1, the force difference, is not is is stationary. Then we test if we test, we can identify that stationary, then we can run AR process.",
+     "ko": "사용할 수 있어요. 하지만 우리가 발견한 것처럼 우리 예시에서 GDP와 유가가, 그건 I0이 아니에요, 우리는 힘의 차이를 구해야 해요. 그리고 I1이, 힘의 차이가, 그렇지 않은지 확인해야 해요. 그러면 우리는 테스트를 해요, 만약 우리가 테스트하면, 우리는 식별할 수 있어요, 그게 정지해 있다면, 우리는 AR 프로세스를",
+     "src": "gemini"
+    },
+    {
+     "t": 1263,
+     "page": 4,
+     "en": "If it does not it does not happen, then we can one more time. So the difference is difference in difference, okay? So we say the difference between YT and YT minus one, YT minus one, YT minus two. So overall this is what it is, but then we may have two different times.",
+     "ko": "실행할 수 있어요. 만약 그렇지 않다면, 우리는 한 번 더 할 수 있어요. 그래서 차이는 차이의 차이예요. 알겠죠? 그래서 우리는 차이가 YT와 YT 마이너스 1, YT 마이너스 1, YT 마이너스 2라고 말해요. 그래서 전반적으로 이게 뭐냐면, 하지만 우리는 두 가지 다른 시간을 가질 수 있어요.",
+     "src": "gemini"
+    },
+    {
+     "t": 1283,
+     "page": 4,
+     "en": "If certain factors uh have uh intrinsically negative variable. Nice. So, for example, uh like you know, there are some variables it makes sense to differentiate.",
+     "ko": "만약 특정 요인이 어, 어떤 내재적인 것이 있다면, 부정적인 변수예요. 좋네요. 그래서, 예를 들어, 어, 예를 들어 있잖아요, 어떤 변수들이 있는데, 그게 말이 되는 변수예요.",
+     "src": "gemini"
+    },
+    {
+     "t": 1303,
+     "page": 4,
+     "en": "So this is just a formal notation. You know, we show. So in I1, I2, so talked about, but we still have the time series and then if whether it's stationary after and number of difference.",
+     "ko": "그래서 이건 그냥 형식적인 표기법이에요. 아시다시피, 그래서 I0 I1, I2, 이렇게 얘기했잖아요. 하지만 우리는 여전히 시계열을 가지고 있고, 그리고 그게 정지해 있는지 아니면 그 후에 차이의 수인지 에 따라 달라져요.",
+     "src": "gemini"
+    },
+    {
+     "t": 1322,
+     "page": 4,
+     "en": "Okay. Um so so that's it? Uh",
+     "ko": "네. 음, 그래서 그래서 그게 다예요? 어,",
+     "src": "gemini"
+    },
+    {
+     "t": 1331,
+     "page": 4,
+     "en": "So if we know it is stationary after a certain number of differentiation, then we can rewrite the model with those stationary series, if we want to ever learn about the relationship between X and Y, we have to we can only recover the relationship between the differentiated X and differentiated Y.",
+     "ko": "그래서 만약 우리가 안다면 그게 정지해 있는지 특정 횟수의 차이 후에, 그러면 우리는 다시 모델을 다시 쓸 수 있어요. 그 정지된 시계열로, 만약 우리가 언젠가 관계에 대해 배우고 싶다면 X와 Y 사이의 관계에 대해, 우리는 오직 복구할 수 있어요, 그 차이가 나는 X와 차이가 나는 Y 사이의 관계를.",
+     "src": "gemini"
+    },
+    {
+     "t": 1352,
+     "page": 4,
+     "en": "Uh and then with AR1, and then estimator, will be consistent. Okay. And this is a separate and separate topic. Even though we differentiate the series, so we know that each series is stationary after n number of differentiation, we still have potential problem of serial correlation, you may heard about this terminology many",
+     "ko": "그리고 AR1으로, 그리고 추정기로, 일관성이 있을 거예요. 네. 그리고 이건 별도의 그리고 별도의 주제예요. 비록 우리가 시계열을 차별화하더라도 그래서 우리는 각 시계열이 정지해 있다는 것을 알지만, n번의 차이 후에, 우리는 여전히 잠재적인 직렬 상관 문제가 있을 수 있어요, 이 용어에 대해 들어보셨을 거예요.",
+     "src": "gemini"
+    },
+    {
+     "t": 1381,
+     "page": 4,
+     "en": "And then when he he said he is about the problem on infrastructure. And infrastructure can be shared uh in need to make the oil value new should be independent. This is like why that that is the case. or is is But we never know beauty maybe like like last year the shop may have a persisting effect on the shop.",
+     "ko": "그리고 나서 그가 말하길 그는 그 문제에 대해 이야기했어요. 그리고 인프라는 공유될 수 있어요. 어 그 필요성을 석유가 가치 있게 만들어야 해요. 이건 마치 왜 그런지 설명하는 것 같아요. 그게 사실이에요. 아니면 그게 사실이에요. 하지만 우리는 절대 모를 거예요, 아름다움은 마치 작년처럼 가게가 지속될 수도 있어요. 가게에 영향을 미칠",
+     "src": "gemini"
+    },
+    {
+     "t": 1412,
+     "page": 4,
+     "en": "Okay. It's not through but it may be there. the residue. And I may have long-term effects. You might just scan the by the way, but the the effect of that shop still not you know looming around, right? So it may have effect on the shop today. And the day after tomorrow.",
+     "ko": "수 있어요. 네. 그건 ~를 통해서가 아니라 그럴 수도 있어요. 거기에 잔여물이요. 그리고 저는 장기적인 효과가 있을 수 있어요. 그냥 스캔할 수도 있어요. 그런데, 하지만 그 효과는 여전히 뭐랄까, 계속 맴돌고 있죠, 그렇죠? 그래서 그게 오늘 가게에 영향을 미칠 수도 있어요. 그리고 모레도요.",
+     "src": "gemini"
+    },
+    {
+     "t": 1435,
+     "page": 4,
+     "en": "So if the shop supports then we have a serious correlation. Is the the nature of problem is different. It's not about the stationarity. It's more about the infrastructure. Okay? It's more about the heteroscedasticity. And know how we can adjust that in the problem, similarly.",
+     "ko": "그래서 만약 가게가 지원한다면 심각한 상관관계가 있는 거예요. 문제의 성격이 다른 거예요. 그건 정거장에 관한 게 아니에요. 그건 오히려 인프라에 관한 거예요. 알겠죠? 그건 더 이분산성에 관한 거예요. 그리고 우리가 어떻게 그걸 조정할 수 있는지 그게 문제에서 비슷해요. 비슷하게요.",
+     "src": "gemini"
+    },
+    {
+     "t": 1455,
+     "page": 4,
+     "en": "But then we also have this problem. We because when we write a model, about X and Y, we focus on that relationship, but it's very easy for us to omit relevant variables. But if there is something in the model, then you can actually create serial correlation. So for instance, if the the uh, yeah.",
+     "ko": "하지만 우리에게도 이 문제가 있어요. 왜냐하면 우리가 모델을 작성할 때, 그게 X와 Y에 관한 것이라면, 우리는 그 관계에 집중하지만, 그건 우리가 쉽게 생략할 수 있는 관련 변수예요. 하지만 만약 어떤 것이 생략되어 있다면, 그 모델에서, 그러면 실제로 시계열 상관관계를 만들 수 있어요. 그래서 예를 들어, 만약 그 어, 네.",
+     "src": "gemini"
+    },
+    {
+     "t": 1481,
+     "page": 4,
+     "en": "If the GDP not only depends on the oil price, but also the export, then if you omit the export, then export has a some effects on GDP, then export is a work process so we would have a persisting effect. Like",
+     "ko": "만약 GDP가 석유 가격뿐만 아니라 수출에도 의존한다면, 그러면 수출을 생략하면, 그러면 수출은 어떤 효과가 있어요. GDP에, 그러면 수출은 작업 과정이에요. 그래서 우리는 지속적인 효과를 갖게 될 거예요.",
+     "src": "gemini"
+    }
+   ]
+  },
+  {
+   "page": 5,
+   "en": "we did the over time. And the overlying data is a mechanism. Sometimes GDP uh partially GDP growth is a case. by averaging out the neighboring period. So mechanically, they are correlated. So that's something you need to check as well. Um and if we have too few lags, we have this problem. You need root um even unit root are not temporarily, the error is random walk. Um And then need to use T from the same population, then the correlation uh is determined by that. But I think the this is the most intuitive and most important part. Omit effect. is a separate problem. Okay. On top of the uh non stationarity, you may have a persistence on the factors. that create serial correlation. The reason why the GDP is low is because the export decreased, not because the oil price changed. And if we persistently, it is continuously that variable that we may need to relationship. And so now at uh after we discussed the AR1, we then extend the specification. Now, instead of including only one lag period of auto correlation, we can add yt minus 2, yt minus p. to predict yt. Right? So ARp is we include more memory to predict yt. You may think that oh, this is a better idea. What is the cost? This is a kind of, you know, the intuition related to the large data model. So like obviously, a allow us to estimate all kind of potential correlation between Y and millions of characteristics. Okay? It allows us to do that. If we include millions of characteristics, as X variable or control variable, the model wouldn't be better. We if we include millions of characteristics to predict Y, we're not predicting. But which means that the difference between the realization of the prediction that error will be smaller if we add more and more in the estimation. Okay? But then, that is not all. That is not technical. And then if we add more too many control variables, each coefficient to lose power. We don't know which one really matters. We do have millions of X, every beta will have a certain number but it's not statistically significant. We still have a good prediction, but we cannot understand the meaningful relationship. So there's a trade off. So that's a reason in that large model, there's a trade off. Including more variables always increase the fit, but that is at the cost of losing the power and then having more uh understand understanding the underlying relationship. We may you know, pick up the random correlation. without any we can include like a price of Chicago pizza and they may pick up. something. from the data, randomly. Okay? So we need to know the last reason why to adjust how many we have to include in the large model. the model or AI, we have a temptation to include as many control variables as possible, but we have concern that if we do that, we may pick up random relationships as well. So last, panelize too small data. Like if the correlation is not big enough, the last model, that, you know, beta, and then we want to, you know, we we recheck that relationship. So like we want to choose the strong correlation only. And that is the last one. Okay. Um Okay. And the AI too, Yeah, I would agree. So these are so if there's just some shop in period zero and then there's no more shop,",
+   "ko": "우리가 했던 것처럼. 시간이 지나면서. 그리고 중복되는 데이터는 메커니즘이에요. 때때로 GDP는 어 부분적으로 GDP가 성장하는 것은 사실이에요. 예를 들어, 평균을 내면 인접한 기간이 돼요. 그래서 기계적으로, 그것들은 상관관계가 있어요. 그래서 그건 확인해야 할 사항이에요. 또한. 음, 그리고 만약 우리가 너무 적은 시차를 가지고 있다면, 이 문제가 생겨요. 당신은 근본적인 심지어 단위 근도 아니에요. 일시적으로, 오차는 랜덤 워크예요. 음 그리고 나서 T를 사용해야 해요. 같은 모집단에서, 그러면 상관관계가 어 결정돼요. 그것에 의해. 하지만 제 생각에 이게 가장 직관적이고 가장 중요한 부분이에요. 효과를 생략하세요. 이것은 별개의 문제예요. 알겠죠? 게다가 비정상성 외에도, 당신은 지속적인 효과를 요인에 가질 수 있어요. 그게 시계열을 생성해요. 이유는 왜냐하면 GDP가 낮은 이유는 수출이 감소했기 때문이에요. 석유 가격이 변해서가 아니에요. 그리고 우리가 지속적으로, 그것은 계속해서 그 변수가 우리가 필요할 수 있는 관계입니다. 그리고 그래서 이제 어, 우리가 논의한 후에 AR1에 대해, 우리는 그 사양을 확장합니다. 이제, 하나만 포함하는 대신에 한 시차의 자기상관을 포함하는 대신, 우리는 추가할 수 있습니다. yt 마이너스 2, yt 마이너스 p를. yt를 예측하기 위해. 그렇죠? 그래서 ARp는 우리가 포함하는 더 많은 기억입니다. yt를 예측하기 위해. 당신은 이렇게 생각할 수도 있어요, 오, 이게 더 나은 생각이라고. 무엇이 비용인가요? 이건 일종의, 아시다시피, 직관과 관련된 큰 데이터입니다. 그래서 분명히, AR 은 우리가 할 수 있게 해줍니다. 추정할 수 있습니다. 모든 종류의 잠재적 상관관계를 Y와 그리고 수백만 개의 특성 사이에서요. 알겠죠? 그게 가능하게 해줍니다. 만약 우리가 수백만 개의 특성을 포함하면, X 변수로 또는 통제 변수로 모델은 더 나아지지 않을 거예요. 우리는 만약 수백만 개의 특성을 포함하면, 예측하기 위해 Y를, 우리는 예측하지 않습니다. 하지만 이것은 차이가 실현된 예측과 실제 값 사이의 그 오차가 될 것이라는 의미입니다. 더 많은 X를 추가하면 추정치에 더해집니다. 알겠죠? 하지만, 그게 다가 아닙니다. 그건 기술적인 게 아니에요. 그리고 더 많은 관측치를 추가하면 통제 변수를, 각 계수가 힘을 잃게 됩니다. 우리는 어떤 것이 정말 중요한지 모릅니다. 우리는 수백만 개의 X가 있고, 모든 베타는 특정 숫자를 갖게 되지만 통계적으로 유의미하지 않습니다. 우리는 여전히 좋은 예측을 가지고 있지만, 그 의미를 이해할 수 없습니다. 그래서 상충 관계가 있습니다. 그래서 그게 그 대규모 모델에서, 그 상충 관계가 있습니다. 더 많은 변수를 포함하거나 항상 적합도를 높이지만, 하지만 그건 비용이 듭니다. 힘을 잃게 되고 그리고 더 많은 어, 이해할 수 있는 것을 이해하는 것은 근본적인 관계입니다. 우리는, 아시다시피, 무작위 상관관계를 포착할 수 있습니다. 아무런 우리는 포함할 수 있습니다. 예를 들어 시카고 피자 가격과 그들이 포착할 수 있는 것들을요. 데이터에서, 무작위로요. 알겠죠? 그래서 우리는 마지막을 알아야 합니다. 왜냐하면 조정하기 위해서 얼마나 많은 변수를 포함해야 하는지 그 대규모 모델에서요. 그 모델이나 AI에서, 우리는 유혹을 느낍니다. 가능한 한 많은 통제 변수를 포함하고 싶지만, 우리가 그렇게 하면, 우리가 무작위적인 관계를 포착할 수도 있습니다. 그래서 마지막으로, 패널라이즈 너무 작은 데이터. 예를 들어, 상관관계가 크지 않다면 충분히, 마지막으로 모델은, 아시다시피, 베타이고, 그리고 우리는 아시다시피, 우리는 그 관계를 다시 확인합니다. 그래서 우리는 가장 강력한 상관관계를 선택하고 싶습니다. 그리고 그게 마지막입니다. 네. 음 알겠습니다. 그리고 AI는 또한, 네, 저는 동의합니다. 그래서 이것들은 만약 어떤 가게가 기간에 있다면 그리고 그 다음에는 더 이상 가게가 없다면,",
+   "pdf": "",
+   "pdfPage": 5,
+   "slideText": "",
+   "segs": [
+    {
+     "t": 1498,
+     "page": 5,
+     "en": "we did the over time. And the overlying data is a mechanism. Sometimes GDP uh partially GDP growth is a case. by averaging out the neighboring period. So mechanically, they are correlated. So that's something you need to check as well. Um and if we have too few lags, we have this problem. You need root um even unit root are not temporarily, the error is random walk.",
+     "ko": "우리가 했던 것처럼. 시간이 지나면서. 그리고 중복되는 데이터는 메커니즘이에요. 때때로 GDP는 어 부분적으로 GDP가 성장하는 것은 사실이에요. 예를 들어, 평균을 내면 인접한 기간이 돼요. 그래서 기계적으로, 그것들은 상관관계가 있어요. 그래서 그건 확인해야 할 사항이에요. 또한. 음, 그리고 만약 우리가 너무 적은 시차를 가지고 있다면, 이 문제가 생겨요. 당신은 근본적인 심지어 단위 근도 아니에요. 일시적으로, 오차는 랜덤 워크예요.",
+     "src": "gemini"
+    },
+    {
+     "t": 1530,
+     "page": 5,
+     "en": "Um And then need to use T from the same population, then the correlation uh is determined by that.",
+     "ko": "음 그리고 나서 T를 사용해야 해요. 같은 모집단에서, 그러면 상관관계가 어 결정돼요. 그것에 의해.",
+     "src": "gemini"
+    },
+    {
+     "t": 1543,
+     "page": 5,
+     "en": "But I think the this is the most intuitive and most important part. Omit effect. is a separate problem. Okay. On top of the uh non stationarity, you may have a persistence on the factors. that create serial correlation. The reason why the GDP is low is because the export decreased, not because the oil price changed. And if we persistently, it is continuously that variable that we may need to relationship.",
+     "ko": "하지만 제 생각에 이게 가장 직관적이고 가장 중요한 부분이에요. 효과를 생략하세요. 이것은 별개의 문제예요. 알겠죠? 게다가 비정상성 외에도, 당신은 지속적인 효과를 요인에 가질 수 있어요. 그게 시계열을 생성해요. 이유는 왜냐하면 GDP가 낮은 이유는 수출이 감소했기 때문이에요. 석유 가격이 변해서가 아니에요. 그리고 우리가 지속적으로, 그것은 계속해서 그 변수가 우리가 필요할 수 있는 관계입니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 1580,
+     "page": 5,
+     "en": "And so now at uh after we discussed the AR1, we then extend the specification. Now, instead of including only one lag period of auto correlation, we can add yt minus 2, yt minus p. to predict yt. Right? So ARp is we include more memory to predict yt. You may think that oh, this is a better idea.",
+     "ko": "그리고 그래서 이제 어, 우리가 논의한 후에 AR1에 대해, 우리는 그 사양을 확장합니다. 이제, 하나만 포함하는 대신에 한 시차의 자기상관을 포함하는 대신, 우리는 추가할 수 있습니다. yt 마이너스 2, yt 마이너스 p를. yt를 예측하기 위해. 그렇죠? 그래서 ARp는 우리가 포함하는 더 많은 기억입니다. yt를 예측하기 위해. 당신은 이렇게 생각할 수도 있어요, 오, 이게 더 나은 생각이라고.",
+     "src": "gemini"
+    },
+    {
+     "t": 1614,
+     "page": 5,
+     "en": "What is the cost?",
+     "ko": "무엇이 비용인가요?",
+     "src": "gemini"
+    },
+    {
+     "t": 1622,
+     "page": 5,
+     "en": "This is a kind of, you know, the intuition related to the large data model.",
+     "ko": "이건 일종의, 아시다시피, 직관과 관련된 큰 데이터입니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 1631,
+     "page": 5,
+     "en": "So like obviously, a allow us to estimate all kind of potential correlation between Y and millions of characteristics. Okay? It allows us to do that. If we include millions of characteristics, as X variable or control variable, the model wouldn't be better. We if we include millions of characteristics to predict Y, we're not predicting.",
+     "ko": "그래서 분명히, AR 은 우리가 할 수 있게 해줍니다. 추정할 수 있습니다. 모든 종류의 잠재적 상관관계를 Y와 그리고 수백만 개의 특성 사이에서요. 알겠죠? 그게 가능하게 해줍니다. 만약 우리가 수백만 개의 특성을 포함하면, X 변수로 또는 통제 변수로 모델은 더 나아지지 않을 거예요. 우리는 만약 수백만 개의 특성을 포함하면, 예측하기 위해 Y를, 우리는 예측하지 않습니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 1660,
+     "page": 5,
+     "en": "But which means that the difference between the realization of the prediction that error will be smaller if we add more and more in the estimation. Okay?",
+     "ko": "하지만 이것은 차이가 실현된 예측과 실제 값 사이의 그 오차가 될 것이라는 의미입니다. 더 많은 X를 추가하면 추정치에 더해집니다. 알겠죠?",
+     "src": "gemini"
+    },
+    {
+     "t": 1678,
+     "page": 5,
+     "en": "But then, that is not all. That is not technical. And then if we add more too many control variables, each coefficient to lose power. We don't know which one really matters. We do have millions of X, every beta will have a certain number but it's not statistically significant.",
+     "ko": "하지만, 그게 다가 아닙니다. 그건 기술적인 게 아니에요. 그리고 더 많은 관측치를 추가하면 통제 변수를, 각 계수가 힘을 잃게 됩니다. 우리는 어떤 것이 정말 중요한지 모릅니다. 우리는 수백만 개의 X가 있고, 모든 베타는 특정 숫자를 갖게 되지만 통계적으로 유의미하지 않습니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 1698,
+     "page": 5,
+     "en": "We still have a good prediction, but we cannot understand the meaningful relationship. So there's a trade off. So that's a reason in that large model, there's a trade off. Including more variables always increase the fit, but that is at the cost of losing the power and then having more uh understand understanding the underlying relationship. We may you know, pick up the random correlation.",
+     "ko": "우리는 여전히 좋은 예측을 가지고 있지만, 그 의미를 이해할 수 없습니다. 그래서 상충 관계가 있습니다. 그래서 그게 그 대규모 모델에서, 그 상충 관계가 있습니다. 더 많은 변수를 포함하거나 항상 적합도를 높이지만, 하지만 그건 비용이 듭니다. 힘을 잃게 되고 그리고 더 많은 어, 이해할 수 있는 것을 이해하는 것은 근본적인 관계입니다. 우리는, 아시다시피, 무작위 상관관계를 포착할 수 있습니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 1727,
+     "page": 5,
+     "en": "without any we can include like a price of Chicago pizza and they may pick up. something. from the data, randomly. Okay? So we need to know the last reason why to adjust how many we have to include in the large model. the model or AI, we have a temptation to include as many control variables as possible, but we have concern that if we do that, we may pick up random relationships as well. So last, panelize too small data. Like if the correlation is not big enough, the last model, that, you know, beta, and then we want",
+     "ko": "아무런 우리는 포함할 수 있습니다. 예를 들어 시카고 피자 가격과 그들이 포착할 수 있는 것들을요. 데이터에서, 무작위로요. 알겠죠? 그래서 우리는 마지막을 알아야 합니다. 왜냐하면 조정하기 위해서 얼마나 많은 변수를 포함해야 하는지 그 대규모 모델에서요. 그 모델이나 AI에서, 우리는 유혹을 느낍니다. 가능한 한 많은 통제 변수를 포함하고 싶지만, 우리가 그렇게 하면, 우리가 무작위적인 관계를 포착할 수도 있습니다. 그래서 마지막으로, 패널라이즈 너무 작은 데이터. 예를 들어, 상관관계가 크지 않다면 충분히, 마지막으로 모델은, 아시다시피, 베타이고, 그리고 우리는",
+     "src": "gemini"
+    },
+    {
+     "t": 1774,
+     "page": 5,
+     "en": "to, you know, we we recheck that relationship. So like we want to choose the strong correlation only. And that is the last one. Okay. Um Okay. And the AI too, Yeah, I would agree. So these are so if there's just some shop in period zero and then there's no more shop,",
+     "ko": "아시다시피, 우리는 그 관계를 다시 확인합니다. 그래서 우리는 가장 강력한 상관관계를 선택하고 싶습니다. 그리고 그게 마지막입니다. 네. 음 알겠습니다. 그리고 AI는 또한, 네, 저는 동의합니다. 그래서 이것들은 만약 어떤 가게가 기간에 있다면 그리고 그 다음에는 더 이상 가게가 없다면,",
+     "src": "gemini"
+    }
+   ]
+  },
+  {
+   "page": 6,
+   "en": "then this is how the shop will affect the next period or outcome. So if they away, like monotonic. If we have a AR2, it has some component. Yeah, and mechanically. So this is like a typical impulse response, right? So we have a shock and then it it fades away. But but we may have some cycle. You know, in the process. So once we have AR2, or AR 3, then the the way we interpret how error term affects the final output, like the next period outcome, and will be a bit different. So you choose which one is best. How can you choose? Actually, we have some criteria. How many lags is suitable. So adding a lag never worsen the in sample fit. That's what I mean. If you add more control variable, the Higher R square is not only the criteria. We need to think about it. It's mechanically increasing if we add more experiments. So we minimize the sum of squares and the larger model could always reproduce the smaller one by setting new coefficients to zero. In practice, the fit always include the little but extra leg is probably not worth the extra chance. So fit a little bit to pick up the largest model. So information criteria wants to find the balance. So if we have more legs, the sum of squared residual will be smaller. So if But this one increases. If you have more uh more theories, then So we always include it because extra is So they are random. But the square correlation we are picking up. So we want to penalize this like and this criteria is a problem certainly. econometric. So we take it as it is and this is like this increases by this decreases by this decreases by P. So it seems so this is monotonic. So we want to find optimal P. that gives us lowest this measure. Okay? That is the practical approach. How many legs do we have to include? Which this information criteria, there are two types of literature. But it has similar, you know, the formula is a little bit different, but the idea is the same. As P increases, the second term increases, the first term decreases. So this is not monotonic. So we can balance. The fit and uh yeah. We don't want to have unnecessarily long tails. So it really down to understanding or understanding what's going on. We we want some very clear relationship. It helps to really understand the data generating process. Okay? So that's that's the thing. We the larger model, the target is good. But if you don't understand the mechanism underlying data generating process, it's only very in that particular data set. particular context and so on. So we need a very clear what's going to happen in the future. This is very vulnerable. So Okay? But once we understand the relationship, that is valid. Even though the situation so it's more informative. So there are some data. Okay? So large model, so it's good prediction, but it's vulnerable. to any change. in the environment. So you should not believe, oh, large model is always the best, no. It is good at prediction, but it is vulnerable. If you know, AI learn from the past, something happens today, it does not know. But if if we um predict future based on the past, learning, it will be wrong. And that's vulnerable. So black box is not not in this sense is very vulnerable. So that's the reason why we want to keep it simple. as possible. Uh without losing the, you know, without limiting the prediction power. So here, we can check out the information criteria changes.",
+   "ko": "그러면 이것이 가게가 다음에 어떻게 영향을 미칠지 또는 결과입니다. 그래서 만약 그들이 떠나면, 예를 들어 단조로운 경우. 만약 우리가 AR2를 가지고 있다면, 어떤 구성 요소가 있습니다. 네, 그리고 기계적으로요. 그래서 이것은 전형적인 충격 반응과 같습니다, 그렇죠? 그래서 우리는 충격이 있고 그 다음에는 그것이 사라집니다. 하지만 우리는 어떤 주기가 있을 수 있습니다. 아시다시피, 과정에서요. 그래서 일단 AR2가 있거나 AR 3이 있으면, 그러면 우리가 해석하는 방식은 오차항이 최종 결과에 어떻게 영향을 미치는지, 예를 들어 다음 기간의 결과처럼, 그리고 조금 다를 것입니다. 그래서 어떤 것을 선택하는 것이 가장 좋은가요? 어떻게 선택할 수 있나요? 사실, 우리에게는 몇 가지 기준이 있습니다. 얼마나 많은 지연이 적절한가요? 그래서 지연을 추가하는 것은 표본 내 적합도를 절대 악화시키지 않습니다. 그게 제 말입니다. 만약 더 많은 통제 변수를 더 높은 R 제곱은 유일한 기준이 아닙니다. 우리는 그것에 대해 생각해야 합니다. 기계적으로 실험을 더 추가하면 증가합니다. 그래서 우리는 제곱의 합을 최소화하고 더 큰 모델은 항상 더 작은 모델을 재현할 수 있습니다. 새로운 계수를 0으로 설정함으로써요. 실제로, 적합은 항상 작은 것을 포함합니다. 하지만 추가적인 다리는 아마도 추가적인 가치가 없을 것입니다. 그래서 조금 맞춰서 가장 큰 모델을 선택하세요. 그래서 정보 기준은 원합니다 찾기를 균형을. 그래서 만약 우리가 더 많은 다리를 가지고 있다면, 그 제곱의 합은 잔차의 제곱은 더 작아질 것입니다. 그래서 만약 하지만 이것은 증가합니다. 만약 더 많은 것을 가지고 있다면, 어 더 많은 이론이 있다면, 그러면 그래서 우리는 항상 그것을 포함합니다. 왜냐하면 추가적인 것은 그래서 그것들은 무작위입니다. 하지만 제곱은 우리가 선택하고 있는 상관관계입니다. 그래서 우리는 페널티를 주고 싶습니다. 마치 그리고 이 기준은 문제 가 확실합니다. 계량경제학적으로요. 그래서 우리는 있는 그대로 받아들이고 이것은 이렇게 증가합니다. 이것은 이렇게 감소합니다. 그래서 그런 것 같아요. 그래서 이것은 단조롭습니다. 그래서 우리는 찾고 싶습니다. 최적의 P를. 그것은 우리에게 가장 낮은 이것을 줍니다. 알겠죠? 그게 바로 실용적인 접근 방식입니다. 얼마나 많은 다리를 포함해야 할까요? 어떤 것이 이 정보 기준에 맞을까요? 두 가지 문헌이 있습니다. 하지만 비슷한 점이 있습니다. 공식은 조금 다르지만, 아이디어는 같습니다. P가 증가함에 따라 두 번째 항은 증가하고, 첫 번째 항은 감소합니다. 그래서 이것은 단조롭지 않습니다. 그래서 우리는 균형을 맞출 수 있습니다. 적합은 그리고 네. 우리는 원하지 않습니다. 불필요한 것을 갖는 것을요. 긴 꼬리를요. 그래서 정말 중요한 것은 이해하거나 무슨 일이 일어나고 있는지 이해하는 것입니다. 우리는 어느 정도 매우 명확한 관계를 원합니다. 그것은 데이터를 정말 잘 이해하는 데 도움이 됩니다. 알겠죠? 그래서 그게 바로 그거예요. 우리는 더 큰 모델, 더 목표가 좋습니다. 하지만 이해하지 못하면 그 기저에 깔린 데이터 생성 과정을 이해하지 못하면, 그것은 매우 그 특정 상황에서만 그 데이터 세트입니다. 그 특정 상황 등등입니다. 그래서 우리는 매우 명확한 미래에 무슨 일이 일어날지 알아야 합니다. 이것은 매우 취약합니다. 그래서 알겠죠? 하지만 일단 우리가 이해하면 그 관계를, 그것은 유효합니다. 비록 상황이 변하더라도 더 정보가 많습니다. 그래서 몇 가지 데이터가 있습니다. 알겠죠? 그래서 큰 모델, 그래서 좋습니다. 예측은 좋지만, 취약합니다. 어떤 변화에도요. 환경의 변화에. 그래서 여러분은 믿어서는 안 됩니다, 오, 큰 모델이 항상 최고라고, 아니요. 예측은 잘하지만, 취약합니다. 만약 여러분이 AI가 과거로부터 배운다면, 어떤 일이 오늘 일어난다면, 그것은 모릅니다. 하지만 만약 우리가 음, 미래를 예측할 때 과거를 기반으로 한다면, 그것은 틀릴 것입니다. 그리고 그것이 취약한 점입니다. 그래서 블랙박스는 그렇지 않습니다. 그렇지 않습니다. 이 의미에서는 매우 취약합니다. 그래서 그것이 우리가 계속해서 단순하게 유지하려는 이유입니다. 가능한 한. 어, 잃지 않으면서, 아시죠, 아시죠, 예측을 제한하지 않으면서. 그래서 여기서는, 우리는 확인할 수 있습니다. 정보를 기준을 변경합니다.",
+   "pdf": "",
+   "pdfPage": 6,
+   "slideText": "",
+   "segs": [
+    {
+     "t": 1798,
+     "page": 6,
+     "en": "then this is how the shop will affect the next period or outcome. So if they away, like monotonic. If we have a AR2, it has some component. Yeah, and mechanically. So this is like a typical impulse response, right? So we have a shock and then it it fades away. But but we may have some cycle. You know, in the process.",
+     "ko": "그러면 이것이 가게가 다음에 어떻게 영향을 미칠지 또는 결과입니다. 그래서 만약 그들이 떠나면, 예를 들어 단조로운 경우. 만약 우리가 AR2를 가지고 있다면, 어떤 구성 요소가 있습니다. 네, 그리고 기계적으로요. 그래서 이것은 전형적인 충격 반응과 같습니다, 그렇죠? 그래서 우리는 충격이 있고 그 다음에는 그것이 사라집니다. 하지만 우리는 어떤 주기가 있을 수 있습니다. 아시다시피,",
+     "src": "gemini"
+    },
+    {
+     "t": 1827,
+     "page": 6,
+     "en": "So once we have AR2, or AR 3, then the the way we interpret how error term affects the final output, like the next period outcome, and will be a bit different. So you choose which one is best. How can you choose? Actually, we have some criteria. How many lags is suitable.",
+     "ko": "과정에서요. 그래서 일단 AR2가 있거나 AR 3이 있으면, 그러면 우리가 해석하는 방식은 오차항이 최종 결과에 어떻게 영향을 미치는지, 예를 들어 다음 기간의 결과처럼, 그리고 조금 다를 것입니다. 그래서 어떤 것을 선택하는 것이 가장 좋은가요? 어떻게 선택할 수 있나요? 사실, 우리에게는 몇 가지 기준이 있습니다. 얼마나 많은 지연이 적절한가요?",
+     "src": "gemini"
+    },
+    {
+     "t": 1852,
+     "page": 6,
+     "en": "So adding a lag never worsen the in sample fit. That's what I mean. If you add more control variable, the",
+     "ko": "그래서 지연을 추가하는 것은 표본 내 적합도를 절대 악화시키지 않습니다. 그게 제 말입니다. 만약 더 많은 통제 변수를",
+     "src": "gemini"
+    },
+    {
+     "t": 1864,
+     "page": 6,
+     "en": "Higher R square is not only the criteria. We need to think about it. It's mechanically increasing if we add more experiments. So we minimize the sum of squares and the larger model could always reproduce the smaller one by setting new coefficients to zero. In practice, the fit always include the little but extra leg is probably not worth the extra chance. So fit a little bit to pick up the largest model.",
+     "ko": "더 높은 R 제곱은 유일한 기준이 아닙니다. 우리는 그것에 대해 생각해야 합니다. 기계적으로 실험을 더 추가하면 증가합니다. 그래서 우리는 제곱의 합을 최소화하고 더 큰 모델은 항상 더 작은 모델을 재현할 수 있습니다. 새로운 계수를 0으로 설정함으로써요. 실제로, 적합은 항상 작은 것을 포함합니다. 하지만 추가적인 다리는 아마도 추가적인 가치가 없을 것입니다. 그래서 조금 맞춰서 가장 큰 모델을 선택하세요.",
+     "src": "gemini"
+    },
+    {
+     "t": 1892,
+     "page": 6,
+     "en": "So information criteria wants to find the balance. So if we have more legs, the sum of squared residual will be smaller. So if But this one increases. If you have more uh more theories, then",
+     "ko": "그래서 정보 기준은 원합니다 찾기를 균형을. 그래서 만약 우리가 더 많은 다리를 가지고 있다면, 그 제곱의 합은 잔차의 제곱은 더 작아질 것입니다. 그래서 만약 하지만 이것은 증가합니다. 만약 더 많은 것을 가지고 있다면, 어 더 많은 이론이 있다면, 그러면",
+     "src": "gemini"
+    },
+    {
+     "t": 1921,
+     "page": 6,
+     "en": "So we always include it because extra is So they are random. But the square correlation we are picking up. So we want to penalize this like and this criteria is a problem certainly. econometric.",
+     "ko": "그래서 우리는 항상 그것을 포함합니다. 왜냐하면 추가적인 것은 그래서 그것들은 무작위입니다. 하지만 제곱은 우리가 선택하고 있는 상관관계입니다. 그래서 우리는 페널티를 주고 싶습니다. 마치 그리고 이 기준은 문제 가 확실합니다. 계량경제학적으로요.",
+     "src": "gemini"
+    },
+    {
+     "t": 1942,
+     "page": 6,
+     "en": "So we take it as it is and this is like this increases by this decreases by this decreases by P. So it seems so this is monotonic. So we want to find optimal P. that gives us lowest this measure. Okay? That is the practical approach. How many legs do we have to include?",
+     "ko": "그래서 우리는 있는 그대로 받아들이고 이것은 이렇게 증가합니다. 이것은 이렇게 감소합니다. 그래서 그런 것 같아요. 그래서 이것은 단조롭습니다. 그래서 우리는 찾고 싶습니다. 최적의 P를. 그것은 우리에게 가장 낮은 이것을 줍니다. 알겠죠? 그게 바로 실용적인 접근 방식입니다. 얼마나 많은 다리를 포함해야 할까요?",
+     "src": "gemini"
+    },
+    {
+     "t": 1965,
+     "page": 6,
+     "en": "Which this information criteria, there are two types of literature. But it has similar, you know, the formula is a little bit different, but the idea is the same. As P increases, the second term increases, the first term decreases. So this is not monotonic. So we can balance.",
+     "ko": "어떤 것이 이 정보 기준에 맞을까요? 두 가지 문헌이 있습니다. 하지만 비슷한 점이 있습니다. 공식은 조금 다르지만, 아이디어는 같습니다. P가 증가함에 따라 두 번째 항은 증가하고, 첫 번째 항은 감소합니다. 그래서 이것은 단조롭지 않습니다. 그래서 우리는",
+     "src": "gemini"
+    },
+    {
+     "t": 1982,
+     "page": 6,
+     "en": "The fit and uh yeah. We don't want to have unnecessarily long tails. So it really down to understanding or understanding what's going on. We we want some very clear relationship. It helps to really understand the data generating process. Okay? So that's that's the thing. We the larger model, the target is good.",
+     "ko": "균형을 맞출 수 있습니다. 적합은 그리고 네. 우리는 원하지 않습니다. 불필요한 것을 갖는 것을요. 긴 꼬리를요. 그래서 정말 중요한 것은 이해하거나 무슨 일이 일어나고 있는지 이해하는 것입니다. 우리는 어느 정도 매우 명확한 관계를 원합니다. 그것은 데이터를 정말 잘 이해하는 데 도움이 됩니다. 알겠죠? 그래서 그게 바로 그거예요. 우리는 더 큰 모델, 더 목표가 좋습니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 2010,
+     "page": 6,
+     "en": "But if you don't understand the mechanism underlying data generating process, it's only very in that particular data set. particular context and so on. So we need a very clear what's going to happen in the future. This is very vulnerable. So Okay? But once we understand the relationship, that is valid.",
+     "ko": "하지만 이해하지 못하면 그 기저에 깔린 데이터 생성 과정을 이해하지 못하면, 그것은 매우 그 특정 상황에서만 그 데이터 세트입니다. 그 특정 상황 등등입니다. 그래서 우리는 매우 명확한 미래에 무슨 일이 일어날지 알아야 합니다. 이것은 매우 취약합니다. 그래서 알겠죠? 하지만 일단 우리가 이해하면 그 관계를, 그것은 유효합니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 2034,
+     "page": 6,
+     "en": "Even though the situation so it's more informative. So there are some data. Okay? So large model, so it's good prediction, but it's vulnerable. to any change. in the environment.",
+     "ko": "비록 상황이 변하더라도 더 정보가 많습니다. 그래서 몇 가지 데이터가 있습니다. 알겠죠? 그래서 큰 모델, 그래서 좋습니다. 예측은 좋지만, 취약합니다. 어떤 변화에도요. 환경의 변화에.",
+     "src": "gemini"
+    },
+    {
+     "t": 2051,
+     "page": 6,
+     "en": "So you should not believe, oh, large model is always the best, no. It is good at prediction, but it is vulnerable. If you know, AI learn from the past, something happens today, it does not know. But if if we um predict future based on the past, learning, it will be wrong.",
+     "ko": "그래서 여러분은 믿어서는 안 됩니다, 오, 큰 모델이 항상 최고라고, 아니요. 예측은 잘하지만, 취약합니다. 만약 여러분이 AI가 과거로부터 배운다면, 어떤 일이 오늘 일어난다면, 그것은 모릅니다. 하지만 만약 우리가 음, 미래를 예측할 때 과거를 기반으로 한다면, 그것은 틀릴 것입니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 2071,
+     "page": 6,
+     "en": "And that's vulnerable. So black box is not not in this sense is very vulnerable. So that's the reason why we want to keep it simple. as possible. Uh without losing the, you know, without limiting the prediction power. So here, we can check out the information criteria changes.",
+     "ko": "그리고 그것이 취약한 점입니다. 그래서 블랙박스는 그렇지 않습니다. 그렇지 않습니다. 이 의미에서는 매우 취약합니다. 그래서 그것이 우리가 계속해서 단순하게 유지하려는 이유입니다. 가능한 한. 어, 잃지 않으면서, 아시죠, 아시죠, 예측을 제한하지 않으면서. 그래서 여기서는, 우리는 확인할 수 있습니다. 정보를 기준을 변경합니다.",
+     "src": "gemini"
+    }
+   ]
+  },
+  {
+   "page": 7,
+   "en": "by the number of legs in this particular example, for replicate. Uh we this lowest that lab is only one. So we pick R1 in this case. And how do we do that? We calculate the information criteria and see which specification hit the balance. And here we choose one. Now, through the difference specification, we have MA model as well. So MA model is different from AR model. MA model is moving average. So it is there's a long term average. But the error term has a lag effect over time. So it's like it's best to use when you understand the in person response, which is what happens if the government has a this policy in the team. What would it affect the GDP per capita or the inflation rate or time. This model is the best to describe the kind of how one time shock have a persistence at all time. Uh we model like this. Okay? So a time series is a part of the model that how that affects the the production of the price over time, something like that. So it's also very useful. And this is about uh the how the error has effect on the next period error. Uh over time. So again, if this is a unit root, we cannot have a meaningful estimation and has to be decreasing. And the most of the time, the impulse response has this decreasing effect over time. And what is the key difference? Uh even AR one has some like a has effect like even AR1 previous shock has persistence but today's realization through its impact on why T minus one So this is an example. If we plot uh what as a shock period zero and zero keep all the other shocks in the future zero, then this is how the uh the series changes. And how the effect of this shock on the series changes, it monotonically decreases to AR1, right? The MA one specifically model that this effect is valid only for first two period or one period. Okay, we can we can choose MA model if we believe that the shock effect lasts only for period. And then it stops there. Okay. And then we can stand up on that. So the Arma Arma um Arma is you know, we have lagged very uh is previous uh series like up to P, T minus P. Then we also allow that the shock is that the lag shock plus effects on the today's outcome. It's not combination of those two. Uh and we just change Yt by delta Yt. Because we believe that Yt itself is nonstationary. It's not meaningful at all. to to discuss how Yt changes over time in this in the case. We have to So, the model that is and that one thing to to mention is that if we have ARP process, the unit root test is a summation of those coefficients has to be one. So it's a bit we don't have to on like that uh to effort jointly we don't do that, but some of those coefficients uh we test whether the sum of coefficient is one or not. That is the unit root test. So P let uh the series of what So AL and VAR is just, you know, again, it's an introduction. So, uh Ah, this is typical. We AR",
+   "ko": "수에 따라 이 다리의 개수에 따라 이 특정 예시에서, 복제하기 위해. 어, 우리는 이것을 가장 낮은 그 실험실이 하나뿐입니다. 그래서 우리는 선택합니다. 이 경우에 R1을 선택합니다. 그리고 어떻게 하죠? 우리는 계산합니다. 정보 기준을 그리고 봅니다. 어떤 것이 사양인지 균형을 맞추는지. 그리고 여기서 우리는 하나를 선택합니다. 자, 이제 차이점을 통해 사양을 확인하면, MA 모델도 있습니다. 그래서 MA 모델은 AR 모델과 다릅니다. MA 모델은 이동 평균입니다. 그래서 그것은 장기적인 평균입니다. 하지만 오차항은 가지고 있습니다. 지연된 효과를 시간이 지남에 따라. 그래서 그것은 여러분이 이해할 때 가장 좋은 직접적인 반응입니다, 그것은 무엇입니까? 무슨 일이 일어나는지 정부가 이런 정책을 가지고 있다면 팀에. 무엇이 영향을 미칠까요? GDP에 또는 인플레이션율에 또는 시간에. 이 모델은 가장 좋습니다. 설명하기에. 어떤 종류의 어떻게 일회성 충격이 어떻게 지속되는지. 항상. 어, 우리는 모델링합니다. 이렇게. 알겠죠? 그래서 시계열은 모델의 일부입니다. 어떻게 그것이 영향을 미치는지. 그 생산에 가격의 시간이 지남에 따라, 그런 것들입니다. 그래서 이것도 매우 유용합니다. 그리고 이것은 어, 그 어떻게 오차가 가지고 있는지 다음 기간에 영향을 미치는지. 어, 시간이 지남에 따라. 그래서 다시, 만약 이것이 단위근이라면, 우리는 의미 있는 추정을 할 수 없고, 없어야 합니다. 그리고 대부분의 경우, 충격 반응은 이런 감소를 보입니다. 시간이 지남에 따라. 그리고 핵심은 무엇입니까? 어, 심지어 AR 1도 어느 정도 의 가지고 있습니다. 효과를 심지어 AR1도 이전 충격이 지속성을 가지고 있지만 오늘날의 실현은 그것을 통해 미치는 영향에 따라 왜 T가 마이너스 1인지 그래서 이것은 예시입니다. 만약 우리가 어, 무엇을 충격으로 0기라고 하고 0기라고 하면 계속 다른 모든 충격은 미래에 0으로 하고, 그러면 이것이 어떻게 어, 시리즈가 변하는지입니다. 그리고 이 충격의 효과가 시리즈에 어떻게 변하는지, 그것은 단조롭게 AR1로 감소하고, 그렇죠? MA1은 구체적으로 이 모델은 이 효과가 유효하다는 것입니다. 처음 두 기간 또는 한 기간 동안만. 자, 우리는 우리는 MA를 선택할 수 있습니다. 만약 우리가 충격 효과가 처음 두 기간만 지속된다고 믿는다면. 그리고 나서 거기서 멈춥니다. 네. 그리고 그 다음에는 우리는 그 위에 설 수 있습니다. 그래서 아르마 음 아르마는 아시다시피, 우리는 매우 어 는 이전의 어 시리즈가 예를 들어 P까지, T 마이너스 P. 그러면 우리는 또한 허용합니다. 충격이 그것이 지연이 충격 플러스 효과가 오늘날의 결과에 미친다는 것을. 그건 조합이 아니에요. 그 두 가지의. 어, 그리고 우리는 그냥 바꾸는 거예요. Yt를 로 델타 Yt로. 왜냐하면 우리는 Yt가 그 자체로 비정상적이라고 믿기 때문입니다. 그건 전혀 의미가 없어요. 그래서 논의하는 것은 Yt가 시간이 지남에 따라 어떻게 변하는지 이 경우에. 우리는 차이를 그래서, 그 모델은 그리고 한 가지 언급할 점은 만약 우리가 ARP를 가지고 있다면, 단위근 검정은 합계입니다. 그 계수들의 합이 1이어야 합니다. 그래서 좀 우리가 할 필요가 없어요. 그런 식으로 어 노력하기 위해 공동으로 그렇게 하지는 않지만, 그 중 일부는 계수가 어, 우리는 계수의 합이 인지 테스트합니다. 그래서 그게 맞는지 아닌지. 그게 단위근 검정입니다. 그래서 P 가령 어 그 일련의 무엇이 그래서 AL 그리고 VAR 는 그냥, 아시다시피, 소개입니다. 그래서, 어 아, 이건 전형적이에요. 우리는 AR",
+   "pdf": "",
+   "pdfPage": 7,
+   "slideText": "",
+   "segs": [
+    {
+     "t": 2097,
+     "page": 7,
+     "en": "by the number of legs in this particular example, for replicate. Uh we this lowest that lab is only one. So we pick R1 in this case. And how do we do that? We calculate the information criteria and see which specification hit the balance. And here we choose one.",
+     "ko": "수에 따라 이 다리의 개수에 따라 이 특정 예시에서, 복제하기 위해. 어, 우리는 이것을 가장 낮은 그 실험실이 하나뿐입니다. 그래서 우리는 선택합니다. 이 경우에 R1을 선택합니다. 그리고 어떻게 하죠? 우리는 계산합니다. 정보 기준을 그리고 봅니다. 어떤 것이 사양인지 균형을 맞추는지. 그리고 여기서 우리는 하나를 선택합니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 2125,
+     "page": 7,
+     "en": "Now, through the difference specification, we have MA model as well. So MA model is different from AR model. MA model is moving average. So it is there's a long term average. But the error term has a lag effect over time. So it's like it's best to use when you understand the in person response, which is what happens if the government has a this policy in the team.",
+     "ko": "자, 이제 차이점을 통해 사양을 확인하면, MA 모델도 있습니다. 그래서 MA 모델은 AR 모델과 다릅니다. MA 모델은 이동 평균입니다. 그래서 그것은 장기적인 평균입니다. 하지만 오차항은 가지고 있습니다. 지연된 효과를 시간이 지남에 따라. 그래서 그것은 여러분이 이해할 때 가장 좋은 직접적인 반응입니다, 그것은 무엇입니까? 무슨 일이 일어나는지 정부가 이런 정책을 가지고 있다면 팀에.",
+     "src": "gemini"
+    },
+    {
+     "t": 2157,
+     "page": 7,
+     "en": "What would it affect the GDP per capita or the inflation rate or time. This model is the best to describe the kind of how one time shock have a persistence at all time. Uh we model like this. Okay? So a time series is a part of the model that how that affects the the production of the price over time, something like that.",
+     "ko": "무엇이 영향을 미칠까요? GDP에 또는 인플레이션율에 또는 시간에. 이 모델은 가장 좋습니다. 설명하기에. 어떤 종류의 어떻게 일회성 충격이 어떻게 지속되는지. 항상. 어, 우리는 모델링합니다. 이렇게. 알겠죠? 그래서 시계열은 모델의 일부입니다. 어떻게 그것이 영향을 미치는지. 그 생산에 가격의 시간이 지남에 따라, 그런 것들입니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 2187,
+     "page": 7,
+     "en": "So it's also very useful. And this is about uh the how the error has effect on the next period error. Uh over time. So again, if this is a unit root, we cannot have a meaningful estimation and has to be decreasing. And the most of the time, the impulse response has this decreasing effect over time.",
+     "ko": "그래서 이것도 매우 유용합니다. 그리고 이것은 어, 그 어떻게 오차가 가지고 있는지 다음 기간에 영향을 미치는지. 어, 시간이 지남에 따라. 그래서 다시, 만약 이것이 단위근이라면, 우리는 의미 있는 추정을 할 수 없고, 없어야 합니다. 그리고 대부분의 경우, 충격 반응은 이런 감소를 보입니다. 시간이 지남에 따라.",
+     "src": "gemini"
+    },
+    {
+     "t": 2215,
+     "page": 7,
+     "en": "And what is the key difference? Uh even AR one has some like a has effect like even AR1 previous shock has persistence but today's realization through its impact on why T minus one So this is an example. If we plot uh what as a shock period zero and zero keep all the other shocks in the future zero, then this is how the uh the series changes.",
+     "ko": "그리고 핵심은 무엇입니까? 어, 심지어 AR 1도 어느 정도 의 가지고 있습니다. 효과를 심지어 AR1도 이전 충격이 지속성을 가지고 있지만 오늘날의 실현은 그것을 통해 미치는 영향에 따라 왜 T가 마이너스 1인지 그래서 이것은 예시입니다. 만약 우리가 어, 무엇을 충격으로 0기라고 하고 0기라고 하면 계속 다른 모든 충격은 미래에 0으로 하고, 그러면 이것이 어떻게 어, 시리즈가 변하는지입니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 2251,
+     "page": 7,
+     "en": "And how the effect of this shock on the series changes, it monotonically decreases to AR1, right? The MA one specifically model that this effect is valid only for first two period or one period. Okay, we can we can choose MA model if we believe that the shock effect lasts only for period.",
+     "ko": "그리고 이 충격의 효과가 시리즈에 어떻게 변하는지, 그것은 단조롭게 AR1로 감소하고, 그렇죠? MA1은 구체적으로 이 모델은 이 효과가 유효하다는 것입니다. 처음 두 기간 또는 한 기간 동안만. 자, 우리는 우리는 MA를 선택할 수 있습니다. 만약 우리가 충격 효과가 처음 두 기간만 지속된다고 믿는다면.",
+     "src": "gemini"
+    },
+    {
+     "t": 2276,
+     "page": 7,
+     "en": "And then it stops there.",
+     "ko": "그리고 나서 거기서 멈춥니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 2283,
+     "page": 7,
+     "en": "Okay. And then we can stand up on that. So the Arma Arma um Arma is you know, we have lagged very uh is previous uh series like up to P, T minus P. Then we also allow that the shock is that the lag shock plus effects on the today's outcome.",
+     "ko": "네. 그리고 그 다음에는 우리는 그 위에 설 수 있습니다. 그래서 아르마 음 아르마는 아시다시피, 우리는 매우 어 는 이전의 어 시리즈가 예를 들어 P까지, T 마이너스 P. 그러면 우리는 또한 허용합니다. 충격이 그것이 지연이 충격 플러스 효과가 오늘날의 결과에 미친다는 것을.",
+     "src": "gemini"
+    },
+    {
+     "t": 2314,
+     "page": 7,
+     "en": "It's not combination of those two. Uh and we just change Yt by delta Yt. Because we believe that Yt itself is nonstationary. It's not meaningful at all. to to discuss how Yt changes over time in this in the case. We have to",
+     "ko": "그건 조합이 아니에요. 그 두 가지의. 어, 그리고 우리는 그냥 바꾸는 거예요. Yt를 로 델타 Yt로. 왜냐하면 우리는 Yt가 그 자체로 비정상적이라고 믿기 때문입니다. 그건 전혀 의미가 없어요. 그래서 논의하는 것은 Yt가 시간이 지남에 따라 어떻게 변하는지 이 경우에. 우리는 차이를",
+     "src": "gemini"
+    },
+    {
+     "t": 2342,
+     "page": 7,
+     "en": "So, the model that is and that one thing to to mention is that if we have ARP process,",
+     "ko": "그래서, 그 모델은 그리고 한 가지 언급할 점은 만약 우리가 ARP를 가지고 있다면,",
+     "src": "gemini"
+    },
+    {
+     "t": 2352,
+     "page": 7,
+     "en": "the unit root test is a summation of those coefficients has to be one. So it's a bit we don't have to on like that uh to effort jointly we don't do that, but some of those coefficients uh we test whether the sum of coefficient is one or not. That is the unit root test.",
+     "ko": "단위근 검정은 합계입니다. 그 계수들의 합이 1이어야 합니다. 그래서 좀 우리가 할 필요가 없어요. 그런 식으로 어 노력하기 위해 공동으로 그렇게 하지는 않지만, 그 중 일부는 계수가 어, 우리는 계수의 합이 인지 테스트합니다. 그래서 그게 맞는지 아닌지. 그게 단위근 검정입니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 2375,
+     "page": 7,
+     "en": "So P let uh the series of what",
+     "ko": "그래서 P 가령 어 그 일련의 무엇이",
+     "src": "gemini"
+    },
+    {
+     "t": 2386,
+     "page": 7,
+     "en": "So AL and VAR is just, you know, again, it's an introduction. So, uh Ah, this is typical. We AR",
+     "ko": "그래서 AL 그리고 VAR 는 그냥, 아시다시피, 소개입니다. 그래서, 어 아, 이건 전형적이에요. 우리는 AR",
+     "src": "gemini"
+    }
+   ]
+  },
+  {
+   "page": 8,
+   "en": "one or AR P, we want to understand how why this is related over time, right? Well, we know that we will have omitted variable bias. Right? If we only include GDP per capita and then do the auto correlation, uh based on the auto correlation, I think our sense is that something happens. that would affect the evolution of GDP. So this is typical. We include the other variables of Q. Uh t minus 2. Then we may have a less problem on serial correlation of the unit. This is if you write a model, I think probably this is a typical model we use. And VAR is used in macro. You may have heard about that. Bank of Korea uses a lot of VAR. analysis. Okay? It is like for instance, this is the inflation rate and this is unemployment rate and this is a policy interest. Now, what they want to do is they want to understand how they relate each other over time. Or what doing So, here, the today's inflation rate, the function of the today's inflation rate and yesterday's unemployment rate and yesterday's policy rate. And then we do that, we do the same structure. symmetrically. So allow that each will affect the other series. over long period. Okay? And then this is a VAR. And then then So, practice we include like ARQ, right? And then mechanically we recover how previous information rate and that affect the inflation rate. After controlling for, this uh like other relevant component. And other words, the component also have some interaction with the three variables over time. So we take that into account. Okay? So this is a way to represent how three variables will be connected within the same period and over time in a um combined way. So it's very effective when you want to understand the connection, especially it's the most useful when we want to do some purpose of trans uh analysis. For instance, we want to change the policy. Only we want to see how other variables move around. over time. And we see how the stays over time. So this this is you use the Bank of Korea data that it's very important to judge for them. They want to analyze what would happen if they change the interest. etc. So that's how we we change one component and then we use the data to recover what had happened. But this model it sounds good, but still we are for the omitted variables. This model is based on the understanding that, you know, three variables are closely connected and then we still influence each other, but there's no more systematic uh component. So it's very if there are that, then we have the omitted variable bias and then, you know, it will be biased. The prediction is also biased. But uh so there will be some models that has proven to be very in many cases without a serious omitted variable bias. So macro variables uh they seem to have some clear relationship and they but they use VAR to have those prediction and impulse response. analysis. And here, so like old to me it seems like a local phenomenon, we are was very popular. especially macroeconomics. And it seems and um but mainly we have they have heard about. Uh chairman of the Federal Reserve during a very long time. Yeah, they used this model to design and predict the policy. And then to share the 2011 Nobel Prize with the. And the researcher cause and effect analysis. And in the pre this as total effect.",
+   "ko": "하나 또는 AR P, 우리는 어떻게 왜 이게 관련이 있는지 시간이 지나면서, 그렇죠? 음, 우리는 알고 있어요, 우리는 누락된 변수 편향이 있을 거라는 걸. 그렇죠? 만약 우리가 1인당 GDP만 포함하고 자기 상관관계를 수행하면, 어, 자기상관관계에 따르면, 제 생각엔 뭔가 일어나는 것 같아요. 그게 영향을 미칠 것이고, 그게 GDP의 변화에 영향을 미칠 것입니다. 그래서 이건 전형적입니다. 우리는 다른 변수들을 포함합니다. Q의. 어 t 마이너스 2. 그러면 우리는 덜 문제가 될 수 있어요. 직렬 상관관계에 대해서. 이건 만약 여러분이 모델을 작성한다면, 제 생각엔 아마 이게 전형적인 모델일 거예요. 그리고 VAR은 거시 경제에서 사용됩니다. 여러분은 그것에 대해 들어보셨을 거예요. 한국은행은 사용합니다. 많은 VAR을 사용합니다. 분석에. 알겠죠? 그것은 예를 들어, 이것은 인플레이션율이고 이것은 실업률이고 이것은 정책 금리입니다. 이제, 그들이 하고 싶은 것은 그들이 어떻게 서로 관련되어 있는지 이해하는 것입니다. 또는 무엇이 하고 있는지 그래서, 여기서, 오늘 오늘의 인플레이션율, 그 함수의 오늘의 인플레이션율 그리고 어제의 실업률 그리고 어제의 정책 금리. 그리고 우리는 그렇게 하고, 같은 구조를 사용합니다. 대칭적으로. 그래서 각각이 서로에게 영향을 미치도록 허용합니다. 다른 시리즈에. 장기적으로. 알겠죠? 그리고 이것은 VAR입니다. 그리고 그런 다음 그래서, 실습에서는 예를 들어 ARQ를 포함하죠, 그렇죠? 그리고 기계적으로 우리는 이전 정보가 어떻게 인플레이션율에 영향을 미치는지 복구합니다. 그 후 통제한 후 에, 이것은 어 다른 관련 변수들을 포함합니다. 그리고 다른 말로 하면, 그 구성 요소도 어느 정도 상호 작용이 있습니다. 세 가지 변수와 시간이 지나면서. 그래서 우리는 그것을 고려합니다. 알겠죠? 그래서 이것은 어떻게 나타내는지에 대한 방법입니다. 세 가지 변수가 어떻게 연결될지 같은 기간 동안 그리고 시간이 지나면서 어, 결합된 방식으로. 그래서 이것은 매우 효과적이고 이해하고 싶을 때 유용합니다. 특히 가장 중요한 것은 우리가 어떤 것을 하고 싶을 때입니다. 어 분석입니다. 예를 들어, 우리는 정책을 바꾸고 싶습니다. 오직 우리는 어떻게 다른 변수들이 움직이는지 보고 싶습니다. 그리고 우리는 어떻게 머무르는지 봅니다. 그래서 이것은 이 모델을 한국은행이 사용하는 데이터입니다. 이것은 그들에게 매우 중요합니다. 그들은 무엇이 일어날지 분석하고 싶어합니다. 만약 그들이 금리를 바꾼다면. 등등. 그래서 이것이 우리가 어떻게 하나의 구성 요소를 바꾸고 나서 우리가 사용하는 데이터입니다. 복구하기 위해 무슨 일이 있었는지. 하지만 이 모델은 들리기에 좋지만, 여전히 우리는 더 낮은 누락된 변수를 위한 것입니다. 이 모델은 이해를 바탕으로 합니다. 세 가지 변수가 서로 밀접하게 연결되어 있고, 그런 다음에도 서로 영향을 미치지만, 더 이상은 체계적이지 않아요. 구성 요소가. 그래서 매우 만약 있다면 그러면 우리는 누락된 변수 편향이 있고 그러면, 편향될 것입니다. 예측도 편향됩니다. 하지만 어, 그래서 약간의 모델이 있을 것입니다. 그것은 매우 효과적인 것으로 입증되었습니다. 많은 경우에 없이 심각한 누락된 변수 편향이 없이. 그래서 거시 변수들은 어, 그들은 어느 정도 가지고 있는 것 같습니다. 명확한 관계가 있고 그들은 사용합니다. VAR를 사용하여 그런 예측을 하고 충격 반응을 분석합니다. 그리고 여기서, 그래서 옛날 저에게는 마치 지역적인 현상처럼 보입니다. 우리는 매우 인기가 있었습니다. 특히 거시경제학에서요. 그리고 그것은 그리고 하지만 주로 우리는 그들이 들어본 적이 있습니다. 어 회장님은 연방준비제도 의장으로 재직할 때 매우 오랫동안 계셨습니다. 네, 그들은 이 모델을 사용했습니다. 설계하기 위해 그리고 정책을 예측하기 위해. 그리고 그런 다음 두 가지를 공유하기 위해 2011년 노벨상을 수상했습니다. 그리고 그 연구자는 인과 관계를 분석했습니다. 그리고 이전에 이것을 총체적인 효과로 봅니다.",
+   "pdf": "",
+   "pdfPage": 8,
+   "slideText": "",
+   "segs": [
+    {
+     "t": 2398,
+     "page": 8,
+     "en": "one or AR P, we want to understand how why this is related over time, right? Well, we know that we will have omitted variable bias. Right? If we only include GDP per capita and then do the auto correlation, uh based on the auto correlation, I think our sense is that something happens.",
+     "ko": "하나 또는 AR P, 우리는 어떻게 왜 이게 관련이 있는지 시간이 지나면서, 그렇죠? 음, 우리는 알고 있어요, 우리는 누락된 변수 편향이 있을 거라는 걸. 그렇죠? 만약 우리가 1인당 GDP만 포함하고 자기 상관관계를 수행하면, 어, 자기상관관계에 따르면, 제 생각엔 뭔가 일어나는",
+     "src": "gemini"
+    },
+    {
+     "t": 2419,
+     "page": 8,
+     "en": "that would affect the evolution of GDP. So this is typical. We include the other variables of Q. Uh t minus 2. Then we may have a less problem on serial correlation of the unit. This is if you write a model, I think probably this is a typical model we use. And VAR is used in macro.",
+     "ko": "것 같아요. 그게 영향을 미칠 것이고, 그게 GDP의 변화에 영향을 미칠 것입니다. 그래서 이건 전형적입니다. 우리는 다른 변수들을 포함합니다. Q의. 어 t 마이너스 2. 그러면 우리는 덜 문제가 될 수 있어요. 직렬 상관관계에 대해서. 이건 만약 여러분이 모델을 작성한다면, 제 생각엔 아마 이게 전형적인 모델일 거예요. 그리고 VAR은 거시 경제에서 사용됩니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 2448,
+     "page": 8,
+     "en": "You may have heard about that. Bank of Korea uses a lot of VAR. analysis. Okay? It is like for instance, this is the inflation rate and this is unemployment rate and this is a policy interest. Now, what they want to do is they want to understand how they relate each other over time.",
+     "ko": "여러분은 그것에 대해 들어보셨을 거예요. 한국은행은 사용합니다. 많은 VAR을 사용합니다. 분석에. 알겠죠? 그것은 예를 들어, 이것은 인플레이션율이고 이것은 실업률이고 이것은 정책 금리입니다. 이제, 그들이 하고 싶은 것은 그들이 어떻게 서로 관련되어 있는지 이해하는 것입니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 2471,
+     "page": 8,
+     "en": "Or what doing So, here, the today's inflation rate, the function of the today's inflation rate and yesterday's unemployment rate and yesterday's policy rate. And then we do that, we do the same structure. symmetrically. So allow that each will affect the other series.",
+     "ko": "또는 무엇이 하고 있는지 그래서, 여기서, 오늘 오늘의 인플레이션율, 그 함수의 오늘의 인플레이션율 그리고 어제의 실업률 그리고 어제의 정책 금리. 그리고 우리는 그렇게 하고, 같은 구조를 사용합니다. 대칭적으로. 그래서 각각이 서로에게 영향을 미치도록 허용합니다. 다른 시리즈에.",
+     "src": "gemini"
+    },
+    {
+     "t": 2495,
+     "page": 8,
+     "en": "over long period. Okay? And then this is a VAR. And then then",
+     "ko": "장기적으로. 알겠죠? 그리고 이것은 VAR입니다. 그리고 그런 다음",
+     "src": "gemini"
+    },
+    {
+     "t": 2508,
+     "page": 8,
+     "en": "So, practice we include like ARQ, right? And then mechanically we recover how previous information rate and that affect the inflation rate. After controlling for, this uh like other relevant component. And other words, the component also have some interaction with the three variables over time. So we take that into account.",
+     "ko": "그래서, 실습에서는 예를 들어 ARQ를 포함하죠, 그렇죠? 그리고 기계적으로 우리는 이전 정보가 어떻게 인플레이션율에 영향을 미치는지 복구합니다. 그 후 통제한 후 에, 이것은 어 다른 관련 변수들을 포함합니다. 그리고 다른 말로 하면, 그 구성 요소도 어느 정도 상호 작용이 있습니다. 세 가지 변수와 시간이 지나면서. 그래서 우리는 그것을 고려합니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 2538,
+     "page": 8,
+     "en": "Okay? So this is a way to represent how three variables will be connected within the same period and over time in a um combined way.",
+     "ko": "알겠죠? 그래서 이것은 어떻게 나타내는지에 대한 방법입니다. 세 가지 변수가 어떻게 연결될지 같은 기간 동안 그리고 시간이 지나면서 어, 결합된 방식으로.",
+     "src": "gemini"
+    },
+    {
+     "t": 2553,
+     "page": 8,
+     "en": "So it's very effective when you want to understand the connection, especially it's the most useful when we want to do some purpose of trans uh analysis. For instance, we want to change the policy. Only we want to see how other variables move around. over time. And we see how the stays over time. So this this is you use the Bank of Korea data that it's very important to judge for them.",
+     "ko": "그래서 이것은 매우 효과적이고 이해하고 싶을 때 유용합니다. 특히 가장 중요한 것은 우리가 어떤 것을 하고 싶을 때입니다. 어 분석입니다. 예를 들어, 우리는 정책을 바꾸고 싶습니다. 오직 우리는 어떻게 다른 변수들이 움직이는지 보고 싶습니다. 그리고 우리는 어떻게 머무르는지 봅니다. 그래서 이것은 이 모델을 한국은행이 사용하는 데이터입니다. 이것은 그들에게 매우 중요합니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 2584,
+     "page": 8,
+     "en": "They want to analyze what would happen if they change the interest. etc. So that's how we we change one component and then we use the data to recover what had happened. But this model it sounds good, but still we are for the omitted variables. This model is based on the understanding that, you know, three variables are closely connected and then we still influence each other, but there's no more systematic uh component.",
+     "ko": "그들은 무엇이 일어날지 분석하고 싶어합니다. 만약 그들이 금리를 바꾼다면. 등등. 그래서 이것이 우리가 어떻게 하나의 구성 요소를 바꾸고 나서 우리가 사용하는 데이터입니다. 복구하기 위해 무슨 일이 있었는지. 하지만 이 모델은 들리기에 좋지만, 여전히 우리는 더 낮은 누락된 변수를 위한 것입니다. 이 모델은 이해를 바탕으로 합니다. 세 가지 변수가 서로 밀접하게 연결되어 있고, 그런 다음에도 서로 영향을 미치지만, 더 이상은 체계적이지 않아요. 구성 요소가.",
+     "src": "gemini"
+    },
+    {
+     "t": 2620,
+     "page": 8,
+     "en": "So it's very if there are that, then we have the omitted variable bias and then, you know, it will be biased. The prediction is also biased. But uh so there will be some models that has proven to be very in many cases without a serious omitted variable bias. So macro variables uh they seem to have some clear relationship and they but they use VAR to have those prediction and impulse response.",
+     "ko": "그래서 매우 만약 있다면 그러면 우리는 누락된 변수 편향이 있고 그러면, 편향될 것입니다. 예측도 편향됩니다. 하지만 어, 그래서 약간의 모델이 있을 것입니다. 그것은 매우 효과적인 것으로 입증되었습니다. 많은 경우에 없이 심각한 누락된 변수 편향이 없이. 그래서 거시 변수들은 어, 그들은 어느 정도 가지고 있는 것 같습니다. 명확한 관계가 있고 그들은 사용합니다. VAR를 사용하여 그런 예측을 하고 충격 반응을 분석합니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 2651,
+     "page": 8,
+     "en": "analysis. And here, so like old to me it seems like a local phenomenon, we are was very popular. especially macroeconomics. And it seems and um but mainly we have they have heard about. Uh chairman of the Federal Reserve during a very long time. Yeah, they used this model to design and predict the policy.",
+     "ko": "그리고 여기서, 그래서 옛날 저에게는 마치 지역적인 현상처럼 보입니다. 우리는 매우 인기가 있었습니다. 특히 거시경제학에서요. 그리고 그것은 그리고 하지만 주로 우리는 그들이 들어본 적이 있습니다. 어 회장님은 연방준비제도 의장으로 재직할 때 매우 오랫동안 계셨습니다. 네, 그들은 이 모델을 사용했습니다. 설계하기 위해 그리고 정책을 예측하기",
+     "src": "gemini"
+    },
+    {
+     "t": 2684,
+     "page": 8,
+     "en": "And then to share the 2011 Nobel Prize with the. And the researcher cause and effect analysis. And in the pre this as total effect.",
+     "ko": "위해. 그리고 그런 다음 두 가지를 공유하기 위해 2011년 노벨상을 수상했습니다. 그리고 그 연구자는 인과 관계를 분석했습니다. 그리고 이전에 이것을 총체적인 효과로 봅니다.",
+     "src": "gemini"
+    }
+   ]
+  },
+  {
+   "page": 9,
+   "en": "So policy uh but you know, we have to be careful about the omitted variable bias, but to some extent, this is a sense of it's especially relevant in fact, macro analysis, it is very hard to find the cross section variation like IV because it's hard. Right? So like you know, if you want to understand how uh like a certain uh policy, uh behavioral also, we have many many observations within the same period. So we can use panel structure from the same quarter effect of that policy on their output. But we this macro data it only observes for each period. So we have to rely on time series analysis. Okay? So you can trade off but this is quite widely used method. So the thing is a point estimation. Okay, so the point estimation is the second approach. The first approach we do when the series is nonstationary, we take the difference and try to understand the relationship of course to between the differentiated series. The second approach is that if you know that two variable co-vary station and relationship each of them, each series is nonstationary, but it is possible that the difference can be stationary. Right? It's like if we know that the the nominal interest rate is inflation rate plus real interest rate, those relationship is from the construction, right? So that is identity. If you know that kind of sure relationship between two variables or two variables, then we can we can use we can use that relationship to incorporate that they And so if we find out you know, this stationary relationship and we use that, and the analysis so we integrate that, each theory is a stationary, y is a X is a stationary. So So this is called as equilibrium matter. In equilibrium it should be zero, but sometimes there's some deviation from the equilibrium value and we consider that as equilibrium error. And then we want to understand how much this equilibrium error affects the next period and we add we typically add delta with because it is a nonstationary property function. Right? So XT is not used as it is. We differentiate as it is. And then we include the lag of the So the whole point is that we include this in the model. stationary relationship XT and YT. This is not differentiated. This is the contemporary difference between X and Y. So we know that it is stationary because it's something based on the identity. relationship. Right? And it helps us understand the relationship, but I want to stop because I want to have enough time for Of course, So the idea is that we manage more on the time series number we talk about. So not sorry, time series. Because uh time series is related to the AI method. So that's why So the data is not common. Okay. So that's the thing. So that we were our research on how to AI helps code this project and bring into the market. So we focus on the outcome. So we we're going to talk about this. So generally AI can perform open assigned and creative work.",
+   "ko": "그래서 정책은 어, 하지만 우리는 주의해야 합니다. 누락된 변수 편향에 대해, 하지만 어느 정도는 이것이 일종의 것입니다. 특히 그 사실에 관련이 있습니다. 거시 분석에서는 그것을 찾기가 매우 어렵습니다. 횡단면 변동은 마치 IV처럼 왜냐하면 어렵기 때문입니다. 그렇죠? 그래서 아시다시피, 만약 여러분이 어떻게 어, 특정 어 정책을 이해하고 싶다면, 행동적인 것도 마찬가지로, 우리는 많은 관찰을 가지고 있습니다. 관찰은 같은 기간 내에 있습니다. 그래서 우리는 패널 구조를 사용할 수 있습니다. 같은 분기 내의 그 정책의 효과를 그들의 산출물에 대해 볼 수 있습니다. 하지만 우리는 이 거시 데이터를 오직 관찰할 수 있습니다. 각 기간에 대해. 그래서 우리는 시간 계열 분석에 의존해야 합니다. 알겠죠? 그래서 여러분은 맞바꿀 수 있지만 이것은 꽤 널리 사용되는 방법입니다. 그래서 문제는 점 추정입니다. 알겠죠? 그래서 점 추정은 두 번째 접근 방식입니다. 첫 번째 접근 방식은 우리가 시계열이 비정상적일 때 사용하는 것으로, 차분을 취하고 관계를 이해하려고 노력합니다. 물론 그 차분된 것들 사이의 관계를요. 두 번째 접근 방식은 만약 여러분이 알고 있다면 두 변수가 함께 변한다는 것을요. 그리고 관계는 그들 각각은 각 시계열이 비정상적이지만 하지만 그것은 가능합니다. 차이가 정상적일 수 있다는 것이죠. 그렇죠? 마치 우리가 알고 있다면 그 명목 이자율이 인플레이션과 더해진 것이라는 것을, 실질 이자율이, 그 관계는 그로부터 온 것입니다. 그렇죠? 그래서 그것은 항등식입니다. 만약 여러분이 그런 종류의 확신이 있다면 두 변수 사이의 관계에 대해 또는 두 변수에 대해, 그러면 우리는 사용할 수 있습니다. 우리는 사용할 수 있습니다. 그 관계를 통합하기 위해 그들이 그래서 만약 우리가 알아낸다면 그니까, 이게 정지된 관계라면 그리고 우리가 그걸 사용한다면, 그리고 분석이 그래서 우리가 통합하면 그게, 각각의 이론은 정지된 것이고, y 는 X는 정지된 것입니다. 그래서 그래서 이것은 평형 물질이라고 합니다. 평형 상태에서는 0이어야 하지만, 때로는 그로부터의 편차가 있을 수 있고 우리는 그것을 평형 오차로 간주합니다. 그리고 나서 우리는 얼마나 이 평형 오차가 다음 단계에 어떤 영향을 미치는지 이해하고 싶고 우리는 보통 델타 를 더합니다. 왜냐하면 그것은 비정지적이기 때문에 속성 함수입니다. 그렇죠? 그래서 XT는 그대로 사용되지 않습니다. 우리는 XT를 그대로 미분합니다. 그리고 나서 우리는 지연을 포함합니다. 그래서 핵심은 우리가 이것을 모델에 포함한다는 것입니다. 정지된 관계 XT 와 YT. 이것은 미분되지 않습니다. 이것은 현대적인 차이입니다. X와 Y 사이의. 그래서 우리는 그것이 정지되어 있다는 것을 압니다. 왜냐하면 그것은 항등식에 기반한 것이기 때문입니다. 그렇죠? 그리고 그것은 우리가 관계를 이해하는 데 도움이 되지만, 저는 멈추고 싶어요. 왜냐하면 충분한 시간을 갖고 싶거든요. 물론, 그래서 아이디어는 우리가 더 많이 관리한다는 것입니다. 시계열 번호에 대해 이야기하는 것입니다. 그래서 그렇지 않아요. 죄송합니다, 시계열. 왜냐하면 어 시계열은 AI와 관련이 있습니다. 그래서 그게 이유입니다. 그래서 데이터는 흔하지 않습니다. 네. 그래서 그게 핵심입니다. 그래서 우리가 연구를 어떻게 할지에 대해 AI가 이 코드를 작성하는 데 어떻게 도움이 되는지, 그리고 시장에 내놓는지에 대해 연구했습니다. 그래서 우리는 결과에 집중합니다. 그래서 우리는 이야기할 것입니다. 이것에 대해. 그래서 일반적으로 AI는 개방형 과제를 수행하고 창의적인 작업을",
+   "pdf": "",
+   "pdfPage": 9,
+   "slideText": "",
+   "segs": [
+    {
+     "t": 2698,
+     "page": 9,
+     "en": "So policy uh but you know, we have to be careful about the omitted variable bias, but to some extent, this is a sense of it's especially relevant in fact, macro analysis, it is very hard to find the cross section variation like IV because it's hard. Right? So like you know, if you want to understand how uh like a certain uh policy, uh behavioral also, we have many many observations within the same period.",
+     "ko": "그래서 정책은 어, 하지만 우리는 주의해야 합니다. 누락된 변수 편향에 대해, 하지만 어느 정도는 이것이 일종의 것입니다. 특히 그 사실에 관련이 있습니다. 거시 분석에서는 그것을 찾기가 매우 어렵습니다. 횡단면 변동은 마치 IV처럼 왜냐하면 어렵기 때문입니다. 그렇죠? 그래서 아시다시피, 만약 여러분이 어떻게 어, 특정 어 정책을 이해하고 싶다면, 행동적인 것도 마찬가지로, 우리는 많은 관찰을 가지고 있습니다. 관찰은 같은 기간",
+     "src": "gemini"
+    },
+    {
+     "t": 2733,
+     "page": 9,
+     "en": "So we can use panel structure from the same quarter effect of that policy on their output. But we this macro data it only observes for each period. So we have to rely on time series analysis. Okay? So you can trade off but this is quite widely used method.",
+     "ko": "내에 있습니다. 그래서 우리는 패널 구조를 사용할 수 있습니다. 같은 분기 내의 그 정책의 효과를 그들의 산출물에 대해 볼 수 있습니다. 하지만 우리는 이 거시 데이터를 오직 관찰할 수 있습니다. 각 기간에 대해. 그래서 우리는 시간 계열 분석에 의존해야 합니다. 알겠죠? 그래서 여러분은 맞바꿀 수 있지만 이것은 꽤 널리 사용되는 방법입니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 2759,
+     "page": 9,
+     "en": "So the thing is a point estimation. Okay, so the point estimation is the second approach. The first approach we do when the series is nonstationary, we take the difference and try to understand the relationship of course to between the differentiated series. The second approach is that if you know that two variable co-vary station and relationship each of them, each series is nonstationary, but it is possible that the difference can be stationary.",
+     "ko": "그래서 문제는 점 추정입니다. 알겠죠? 그래서 점 추정은 두 번째 접근 방식입니다. 첫 번째 접근 방식은 우리가 시계열이 비정상적일 때 사용하는 것으로, 차분을 취하고 관계를 이해하려고 노력합니다. 물론 그 차분된 것들 사이의 관계를요. 두 번째 접근 방식은 만약 여러분이 알고 있다면 두 변수가 함께 변한다는 것을요. 그리고 관계는 그들 각각은 각 시계열이 비정상적이지만 하지만 그것은 가능합니다. 차이가 정상적일 수 있다는 것이죠.",
+     "src": "gemini"
+    },
+    {
+     "t": 2792,
+     "page": 9,
+     "en": "Right? It's like if we know that the the nominal interest rate is inflation rate plus real interest rate, those relationship is from the construction, right? So that is identity. If you know that kind of sure relationship between two variables or two variables, then we can we can use we can use that relationship to incorporate that they",
+     "ko": "그렇죠? 마치 우리가 알고 있다면 그 명목 이자율이 인플레이션과 더해진 것이라는 것을, 실질 이자율이, 그 관계는 그로부터 온 것입니다. 그렇죠? 그래서 그것은 항등식입니다. 만약 여러분이 그런 종류의 확신이 있다면 두 변수 사이의 관계에 대해 또는 두 변수에 대해, 그러면 우리는 사용할 수 있습니다. 우리는 사용할 수 있습니다. 그 관계를 통합하기 위해 그들이",
+     "src": "gemini"
+    },
+    {
+     "t": 2822,
+     "page": 9,
+     "en": "And so if we find out you know, this stationary relationship and we use that, and the analysis so we integrate that, each theory is a stationary, y is a X is a stationary. So",
+     "ko": "그래서 만약 우리가 알아낸다면 그니까, 이게 정지된 관계라면 그리고 우리가 그걸 사용한다면, 그리고 분석이 그래서 우리가 통합하면 그게, 각각의 이론은 정지된 것이고, y 는 X는 정지된 것입니다. 그래서",
+     "src": "gemini"
+    },
+    {
+     "t": 2844,
+     "page": 9,
+     "en": "So this is called as equilibrium matter. In equilibrium it should be zero, but sometimes there's some deviation from the equilibrium value and we consider that as equilibrium error. And then we want to understand how much this equilibrium error affects the next period and we add we typically add delta with because it is a nonstationary property function.",
+     "ko": "그래서 이것은 평형 물질이라고 합니다. 평형 상태에서는 0이어야 하지만, 때로는 그로부터의 편차가 있을 수 있고 우리는 그것을 평형 오차로 간주합니다. 그리고 나서 우리는 얼마나 이 평형 오차가 다음 단계에 어떤 영향을 미치는지 이해하고 싶고 우리는 보통 델타 를 더합니다. 왜냐하면 그것은 비정지적이기 때문에 속성 함수입니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 2869,
+     "page": 9,
+     "en": "Right? So XT is not used as it is. We differentiate as it is. And then we include the lag of the So the whole point is that we include this in the model. stationary relationship XT and YT. This is not differentiated. This is the contemporary difference between X and Y. So we know that it is stationary because it's something based on the identity.",
+     "ko": "그렇죠? 그래서 XT는 그대로 사용되지 않습니다. 우리는 XT를 그대로 미분합니다. 그리고 나서 우리는 지연을 포함합니다. 그래서 핵심은 우리가 이것을 모델에 포함한다는 것입니다. 정지된 관계 XT 와 YT. 이것은 미분되지 않습니다. 이것은 현대적인 차이입니다. X와 Y 사이의. 그래서 우리는 그것이 정지되어 있다는 것을 압니다. 왜냐하면 그것은 항등식에",
+     "src": "gemini"
+    },
+    {
+     "t": 2896,
+     "page": 9,
+     "en": "relationship. Right? And it helps us understand the relationship, but I want to stop because I want to have enough time for Of course,",
+     "ko": "기반한 것이기 때문입니다. 그렇죠? 그리고 그것은 우리가 관계를 이해하는 데 도움이 되지만, 저는 멈추고 싶어요. 왜냐하면 충분한 시간을 갖고 싶거든요. 물론,",
+     "src": "gemini"
+    },
+    {
+     "t": 2911,
+     "page": 9,
+     "en": "So the idea is that we manage more on the time series number we talk about. So not sorry, time series. Because uh time series is related to the AI method. So that's why So the data is not common. Okay. So that's the thing.",
+     "ko": "그래서 아이디어는 우리가 더 많이 관리한다는 것입니다. 시계열 번호에 대해 이야기하는 것입니다. 그래서 그렇지 않아요. 죄송합니다, 시계열. 왜냐하면 어 시계열은 AI와 관련이 있습니다. 그래서 그게 이유입니다. 그래서 데이터는 흔하지 않습니다. 네. 그래서 그게 핵심입니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 2974,
+     "page": 9,
+     "en": "So that we were our research on how to AI helps code this project and bring into the market. So we focus on the outcome. So we we're going to talk about this.",
+     "ko": "그래서 우리가 연구를 어떻게 할지에 대해 AI가 이 코드를 작성하는 데 어떻게 도움이 되는지, 그리고 시장에 내놓는지에 대해 연구했습니다. 그래서 우리는 결과에 집중합니다. 그래서 우리는 이야기할 것입니다. 이것에 대해.",
+     "src": "gemini"
+    },
+    {
+     "t": 2993,
+     "page": 9,
+     "en": "So generally AI can perform open assigned and creative work.",
+     "ko": "그래서 일반적으로 AI는 개방형 과제를 수행하고 창의적인 작업을",
+     "src": "gemini"
+    }
+   ]
+  },
+  {
+   "page": 10,
+   "en": "Such as writing, coding, data analysis. Instead of liquid employment. So from you hire if it's limited employment opportunities for the graduates. So the example research questions first is how AI exposure of fits with your new hired and is the relationship stronger with the virus? So AI could increase the match. among graduates. Um, of course, the the main work is seniority. Technology trends, junior workers open projects, that AI can automate. While senior workers have experience and organization knowledge that AI may complement. Therefore, AI may reduce demand for junior workers, while the experience in grows. When entry level opportunities decline, graduates may have to strive offset jobs. Below their qualification level or different fields. In this study, we focus on Philippines. International studies show that within the Philippines, co-authors found a relative income decline on third among young workers in highly AI exposed sectors. So the worker might try new graduate jobs. However, main adverse effect conditions. Therefore, AI 우리는 also show conflicting evidence. The Bank of Korea thought that youth employment loses workforce in highly AI exposed industries. However, the national assembly office concluded independent data after controlling for results that was our study on the debate. Now, let's move on to our analytical we use data from the on labor conditions by employment type, covering 2021 to 2020 young graduates are individual and service work with unproductive junior workers have less than one year of tenure. While senior workers have at least five years of experience. We used the Bank of Korea data. AI exposure index and the time to 2020 to three on model. So our main takeaway is that over four years, among the older workers, to test our hypothesis, we use the Bank of Korea data on our 4 question is that which captures the impact of AI exposure and the post period. are negative or larger than during the high and also the we also look at the industry and year fixed effects which for our hypothesis, we reduce the input method or the our key point is that it captures the additional decline or first compared to the in the industry and although also to specifically the economic I finally we conduct on to examine the trends using and as the Let's look at the descriptive statistics. Between 2002 and 2004, graduates hiring decreased by 8.9 percent in high exposure industries. For increase to buy by 4.9 percent. And lower in the Meanwhile, senior employment in high exposure industries decreased by",
+   "ko": "할 수 있습니다. 글쓰기, 코딩, 데이터 분석과 같은 것들이죠. 대신 유동적인 고용이 아니라요. 그래서 당신이 고용하면 만약 그것이 제한적이라면 고용은 기회가 그들에게 졸업생들에게 그래서 예시 연구는 질문입니다. 첫째, AI가 어떻게 노출되는지 에 대한 것입니다. 당신의 새로운 고용인과 그리고 관계는 더 강해지는가? 와 함께 바이러스? 그래서 AI는 증가시킬 수 있습니다. 동료들 사이에서 졸업생들. 음, 물론, 그 주된 업무는 시니어 연공서열입니다. 기술은 트렌드, 주니어 직원들이 프로젝트를 열고, AI가 자동화할 수 있는 것들입니다. 반면에 시니어 직원들은 경험과 조직력을 가지고 있는데, AI가 보완할 수 있습니다. 따라서, AI는 수요를 줄일 수 있습니다. 주니어 직원들의 수요를, 반면에 경험은 더 중요해집니다. 언제 신입 사원이 기회가 줄어들면, 졸업생들은 더 높은 노력을 해야 할 수도 있습니다. 그들의 자격 수준보다 낮거나 다른 분야에서. 이 경우, 우리는 필리핀에 집중합니다. 국제 연구에 따르면 그 안에서 필리핀에서는 공동 저자들이 발견한 바에 따르면 상대 소득이 3분의 1 감소한 젊은이들 사이에서 고용 AI가 높은 분야에서 나타났습니다. 그래서 근로자는 새로운 졸업생을 찾을 수도 있습니다. 하지만, 주된 부정적인 영향은 조건에 따라 다릅니다. 따라서, AI는 또한 갈등이 상충하는 증거를 보여줍니다. 한국은행은 생각했습니다. 청년들이 고용이 줄어들고 인력이 AI가 높은 분야에서 줄어든다고요. 하지만, 그 국회는 사무실은 결론을 내렸습니다. 독립적인 데이터가 그 후에 통제한 결과 결과가 나타났습니다. 그것은 우리의 연구였습니다. 그 논쟁에 대한. 자, 이제 다음 주제로 넘어가겠습니다. 분석적인 우리가 사용하는 데이터는 노동 시장에 관한 것으로 고용 형태별로 분류되며, 2020년 부터 2021년까지 다룹니다. 젊은 졸업생들은 개인적이며 그리고 서비스업에 종사하며 비생산적인 주니어 직원들은 1년 미만의 근속 기간을 가지고 있습니다. 반면에 시니어 직원들은 최소 5년 이상의 경험을 가지고 있습니다. 우리는 한국은행의 데이터를 사용하여 분석했습니다. AI는 노출 지수를 그리고 2020년까지의 3년 동안의 데이터를 사용했습니다. 모델에 따라서 우리의 주요 결론은 다음과 같습니다. 즉, 4년 이상 동안, 그중에서 나이가 많은 근로자들 사이에서 우리의 가설을 검증하기 위해, 우리는 한국은행의 데이터를 사용하여 분석했습니다. 우리의 4년 동안의 질문은 다음과 같습니다. 즉, AI가 미치는 영향입니다. 그리고 그 이후의 기간입니다. 부정적인 영향이 있거나 더 큰가요? 기간 동안 높은 그리고 또한 그 우리는 또한 산업별로 그리고 연도별로 고정 효과를 살펴보는데, 우리의 가설에 따르면, 우리는 입력값을 줄이거나 그 우리의 핵심 포인트는 그것이 추가적인 것을 포착한다는 것입니다. 또는 첫 번째 비교했을 때 그 안에서 산업별로 그리고 비록 또한 그 구체적으로 경제적 저는 마지막으로 우리는 에 대해 조사합니다. 그 추세를 사용하여 그리고 로서 그 그럼 기술 통계를 살펴보겠습니다. 2000년 부터 2002년 사이에, 졸업생들은 채용이 8% 감소했고, 그 중에서도 노출도가 높은 산업에서였습니다. 구매 증가율은 4.9% 였습니다. 그리고 그보다 낮은 한편, 고위직 고용은 노출도가 높은 산업에서 7%",
+   "pdf": "",
+   "pdfPage": 10,
+   "slideText": "",
+   "segs": [
+    {
+     "t": 2997,
+     "page": 10,
+     "en": "Such as writing, coding, data analysis. Instead of liquid employment. So from you hire if it's limited employment opportunities for the graduates.",
+     "ko": "할 수 있습니다. 글쓰기, 코딩, 데이터 분석과 같은 것들이죠. 대신 유동적인 고용이 아니라요. 그래서 당신이 고용하면 만약 그것이 제한적이라면 고용은 기회가 그들에게 졸업생들에게",
+     "src": "gemini"
+    },
+    {
+     "t": 3015,
+     "page": 10,
+     "en": "So the example research questions first is how AI exposure of fits with your new hired and is the relationship stronger with the virus? So AI could increase the match. among graduates.",
+     "ko": "그래서 예시 연구는 질문입니다. 첫째, AI가 어떻게 노출되는지 에 대한 것입니다. 당신의 새로운 고용인과 그리고 관계는 더 강해지는가? 와 함께 바이러스? 그래서 AI는 증가시킬 수 있습니다. 동료들 사이에서 졸업생들.",
+     "src": "gemini"
+    },
+    {
+     "t": 3039,
+     "page": 10,
+     "en": "Um, of course, the the main work is seniority. Technology trends, junior workers open projects, that AI can automate. While senior workers have experience and organization knowledge that AI may complement. Therefore, AI may reduce demand for junior workers, while the experience in grows.",
+     "ko": "음, 물론, 그 주된 업무는 시니어 연공서열입니다. 기술은 트렌드, 주니어 직원들이 프로젝트를 열고, AI가 자동화할 수 있는 것들입니다. 반면에 시니어 직원들은 경험과 조직력을 가지고 있는데, AI가 보완할 수 있습니다. 따라서, AI는 수요를 줄일 수 있습니다. 주니어 직원들의 수요를, 반면에 경험은 더 중요해집니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 3068,
+     "page": 10,
+     "en": "When entry level opportunities decline, graduates may have to strive offset jobs. Below their qualification level or different fields. In this study, we focus on Philippines.",
+     "ko": "언제 신입 사원이 기회가 줄어들면, 졸업생들은 더 높은 노력을 해야 할 수도 있습니다. 그들의 자격 수준보다 낮거나 다른 분야에서. 이 경우, 우리는 필리핀에 집중합니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 3087,
+     "page": 10,
+     "en": "International studies show that within the Philippines, co-authors found a relative income decline on third among young workers in highly AI exposed sectors. So the worker might try new graduate jobs. However, main adverse effect conditions. Therefore, AI",
+     "ko": "국제 연구에 따르면 그 안에서 필리핀에서는 공동 저자들이 발견한 바에 따르면 상대 소득이 3분의 1 감소한 젊은이들 사이에서 고용 AI가 높은 분야에서 나타났습니다. 그래서 근로자는 새로운 졸업생을 찾을 수도 있습니다. 하지만, 주된 부정적인 영향은 조건에 따라 다릅니다. 따라서, AI는",
+     "src": "gemini"
+    },
+    {
+     "t": 3119,
+     "page": 10,
+     "en": "우리는 also show conflicting evidence. The Bank of Korea thought that youth employment loses workforce in highly AI exposed industries. However, the national assembly office concluded independent data after controlling for results that was our study on the debate.",
+     "ko": "또한 갈등이 상충하는 증거를 보여줍니다. 한국은행은 생각했습니다. 청년들이 고용이 줄어들고 인력이 AI가 높은 분야에서 줄어든다고요. 하지만, 그 국회는 사무실은 결론을 내렸습니다. 독립적인 데이터가 그 후에 통제한 결과 결과가 나타났습니다. 그것은 우리의 연구였습니다. 그 논쟁에 대한.",
+     "src": "gemini"
+    },
+    {
+     "t": 3150,
+     "page": 10,
+     "en": "Now, let's move on to our analytical we use data from the on labor conditions by employment type, covering 2021 to 2020 young graduates are individual and service work with unproductive junior workers have less than one year of tenure. While senior workers have at least five years of experience.",
+     "ko": "자, 이제 다음 주제로 넘어가겠습니다. 분석적인 우리가 사용하는 데이터는 노동 시장에 관한 것으로 고용 형태별로 분류되며, 2020년 부터 2021년까지 다룹니다. 젊은 졸업생들은 개인적이며 그리고 서비스업에 종사하며 비생산적인 주니어 직원들은 1년 미만의 근속 기간을 가지고 있습니다. 반면에 시니어 직원들은 최소 5년 이상의 경험을 가지고 있습니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 3178,
+     "page": 10,
+     "en": "We used the Bank of Korea data. AI exposure index and the time to 2020 to three on model. So our main takeaway is that over four years, among the older workers,",
+     "ko": "우리는 한국은행의 데이터를 사용하여 분석했습니다. AI는 노출 지수를 그리고 2020년까지의 3년 동안의 데이터를 사용했습니다. 모델에 따라서 우리의 주요 결론은 다음과 같습니다. 즉, 4년 이상 동안, 그중에서 나이가 많은 근로자들 사이에서",
+     "src": "gemini"
+    },
+    {
+     "t": 3202,
+     "page": 10,
+     "en": "to test our hypothesis, we use the Bank of Korea data on our 4 question is that which captures the impact of AI exposure and the post period. are negative or larger than during the high and also the we also look at the industry and year fixed effects which for our hypothesis, we reduce the input method or the our key point is that it captures the additional decline or first compared to the in the industry and although also to specifically the economic I finally we conduct on to examine the trends using and as the",
+     "ko": "우리의 가설을 검증하기 위해, 우리는 한국은행의 데이터를 사용하여 분석했습니다. 우리의 4년 동안의 질문은 다음과 같습니다. 즉, AI가 미치는 영향입니다. 그리고 그 이후의 기간입니다. 부정적인 영향이 있거나 더 큰가요? 기간 동안 높은 그리고 또한 그 우리는 또한 산업별로 그리고 연도별로 고정 효과를 살펴보는데, 우리의 가설에 따르면, 우리는 입력값을 줄이거나 그 우리의 핵심 포인트는 그것이 추가적인 것을 포착한다는 것입니다. 또는 첫 번째 비교했을 때 그 안에서 산업별로 그리고 비록 또한 그 구체적으로 경제적 저는 마지막으로 우리는 에 대해 조사합니다. 그 추세를 사용하여 그리고 로서 그",
+     "src": "gemini"
+    },
+    {
+     "t": 3272,
+     "page": 10,
+     "en": "Let's look at the descriptive statistics. Between 2002 and 2004, graduates hiring decreased by 8.9 percent in high exposure industries. For increase to buy by 4.9 percent. And lower in the Meanwhile, senior employment in high exposure industries decreased by",
+     "ko": "그럼 기술 통계를 살펴보겠습니다. 2000년 부터 2002년 사이에, 졸업생들은 채용이 8% 감소했고, 그 중에서도 노출도가 높은 산업에서였습니다. 구매 증가율은 4.9% 였습니다. 그리고 그보다 낮은 한편, 고위직 고용은 노출도가 높은 산업에서 7%",
+     "src": "gemini"
+    }
+   ]
+  },
+  {
+   "page": 11,
+   "en": "7.2 percent. We expect And so I was like, you know, I'm going to tell my mom, you know, However, the truth is that I don't know. It's probably because of the thing. ask you know, is going to be like that, you know, like, okay, you know, like, you know, it's it's it's like that. In person, it's oh, one understanding and exposure is like I'm doing 11 percent. You're new hire after AI discussion. So we also negative relationship or new hire share. But this is not change enjoyment. Therefore, however, this the first hypothesis. Next, we examine whether the requirement is on the worker. He estimates that the zero 0.14 with 0. 0. This is significant at the 5% level. So one standard deviation increase in AI exposure is associated with or 10.1 percent reflect the decline for junior workers. compared to senior workers. We also observe that our term hypothesis and case is pretty the technology change. We conduct two robustness checks. First, our event study shows no significant difference. We create a difference the occupational body and However, the shock is 10 years in this test. Second, our occupational level analysis shows the decline of 2.4 percentage points in the entry level. Entry level includes the is significant at the 5% level. And is both of the conditions maintaining Now, let's move on to job displacement. We use the use panel to analyze the the 2021 to 2024 about 10% year of automation. The decline as a result of automation is associated with the but not to the job. But it's major. We estimate a linear probability model with and year fixed effects. In terms of displacement, the decline is the coefficient is 0.14 in the higher exposure in the and about 4.3 percent in the low exposure in the group. There were three observers, no clear increase. in displacement following AS. Our estimates coefficients is about minus 0.03 with a P value of 0.08 7 group. This is not statistically significant. There is no evidence although maybe there is among the radio However, our sample is close on the border. And people have yet found out. Our estimate should be included. This is association. that better things. So to summarize, we have three main findings. First, higher exposure is associated with fewer new graduates. Second, this relationship is stronger for juniors. Third, we find no statistically significant increase in job displacement. Taken together, labor market market outcomes may occur due to and could rather increase job displacement. So on our findings, we further policy implications. First, expand work and training opportunities. Second, we reform curriculum to include data related skills. Third, monitor and",
+   "ko": "감소했고, 그 우리는 그래서 저는 \"있잖아요, 제가 엄마한테 말할게요, 있잖아요,\" 하지만, 사실은 그게 잘 모르겠어요. 아마도 그 때문일 거예요. 물어보세요. 있잖아요, 그게 어떻게 될지 그런 식일 거예요, 있잖아요, 그러니까, 알았어, 있잖아요, 그러니까, 있잖아요, 그게 그게 그게 그러니까 그런 식이에요. 직접 만나면, 그게 아, 하나 이해가 그리고 노출이 어, 그러니까 그런 식이에요. 제가 하고 있는 건 11 퍼센트예요. 당신은 신입 사원이고 AI 이후에 논의가 있었어요. 그래서 저희도 부정적인 관계가 아니면 신입 사원 공유예요. 하지만 이건 그렇지 않아요. 즐거움이 아니에요. 따라서, 하지만, 이건 그 첫 번째 가설이에요. 다음으로, 요구 사항이 충족되는지 살펴봅니다. 그는 추정합니다 그가 그 제로 0.14 로 0. 0. 이것은 유의미한 것입니다. 5% 수준에서요. 그래서 표준 편차는 AI 노출이 증가하면 관련이 있습니다. 또는 10.1 퍼센트입니다. 반영합니다. 감소를 주니어 직원들의. 비교하면 시니어 직원들과. 저희는 또한 관찰합니다 저희의 용어 가설이 그리고 사례가 그렇다는 것을요. 꽤 그 기술 변화입니다. 저희는 두 가지 강건성 검사를 수행합니다. 첫째, 저희의 사건 연구는 유의미한 차이를 보이지 않습니다. 저희는 차이를 만듭니다. 그 직업적 몸체와 그리고 하지만, 그 충격은 10년 동안 지속됩니다. 이 테스트에서. 둘째, 저희의 직업 수준 분석은 감소를 보여줍니다. 2.4 퍼센트 포인트 감소를 신입 수준에서. 신입 수준은 포함합니다. 그 유의미합니다. 5% 수준에서요. 그리고 둘 다 조건이 유지되고 있습니다. 자, 이제 실직에 대해 이야기해 봅시다. 저희는 사용 패널을 사용하여 분석합니다. 그 2021년 부터 2024년까지 약 10% 정도의 자동화입니다. 감소는 그 결과로 자동화로 인해 관련이 있습니다. 그 하지만 그 직업은 아닙니다. 하지만 중요합니다. 저희는 선형 확률 모델을 추정합니다. 그리고 연도 고정 변수입니다. 자, 실직에 대해 이야기하자면, 감소는 입니다. 계수는 0.14 로 상위 노출에서 그리고 약 4.3 퍼센트입니다. 저수준에서는 노출이 그룹에서. 세 가지 관찰자가 있었고, 뚜렷한 증가는 없었습니다. 실직에 대해 이야기하자면, AS입니다. 저희의 추정 계수는 약 마이너스 0.03 이고, P값은 0.08 입니다. 그룹에서. 이것은 통계적으로 유의미하지 않습니다. 그리고 뚜렷한 증거는 없습니다. 비록 아마도 있을 수 있지만 그중에서 는 라디오 하지만, 저희 샘플은 거의 경계에 있습니다. 그리고 사람들은 아직 발견하지 못했습니다. 저희 추정치는 포함되어야 합니다. 이것은 연관성입니다. 그것은 더 나은 것들입니다. 그래서 요약하자면, 세 가지 주요 결과가 있습니다. 첫째, 높은 노출은 관련이 있습니다. 새로운 졸업생이 적습니다. 둘째, 이 관계는 강합니다. 특히 주니어에게 더 강합니다. 셋째, 우리는 통계적으로 유의미한 증가를 발견하지 못했습니다. 종합하면, 노동 시장 결과는 발생할 수 있습니다. 때문에 그리고 오히려 증가할 수 있습니다. 실직이. 그래서 저희의 발견에 따르면, 저희는 추가적인 정책 시사점을 얻었습니다. 첫째, 일자리 및 교육을 확대합니다. 둘째, 저희는 대학 교육을 개편하여 다음을 포함합니다. 데이터 관련 기술. 셋째, 모니터링하고",
+   "pdf": "",
+   "pdfPage": 11,
+   "slideText": "",
+   "segs": [
+    {
+     "t": 3297,
+     "page": 11,
+     "en": "7.2 percent. We expect",
+     "ko": "감소했고, 그 우리는",
+     "src": "gemini"
+    },
+    {
+     "t": 3302,
+     "page": 11,
+     "en": "And so I was like, you know, I'm going to tell my mom, you know, However, the truth is that I don't know. It's probably because of the thing. ask you know, is going to be like that, you know, like, okay, you know, like, you know, it's it's it's like that. In person, it's oh, one understanding and exposure is like I'm doing 11 percent.",
+     "ko": "그래서 저는 \"있잖아요, 제가 엄마한테 말할게요, 있잖아요,\" 하지만, 사실은 그게 잘 모르겠어요. 아마도 그 때문일 거예요. 물어보세요. 있잖아요, 그게 어떻게 될지 그런 식일 거예요, 있잖아요, 그러니까, 알았어, 있잖아요, 그러니까, 있잖아요, 그게 그게 그게 그러니까 그런 식이에요. 직접 만나면, 그게 아, 하나 이해가 그리고 노출이 어, 그러니까 그런 식이에요. 제가 하고 있는 건 11 퍼센트예요.",
+     "src": "gemini"
+    },
+    {
+     "t": 3340,
+     "page": 11,
+     "en": "You're new hire after AI discussion. So we also negative relationship or new hire share. But this is not change enjoyment. Therefore, however, this the first hypothesis.",
+     "ko": "당신은 신입 사원이고 AI 이후에 논의가 있었어요. 그래서 저희도 부정적인 관계가 아니면 신입 사원 공유예요. 하지만 이건 그렇지 않아요. 즐거움이 아니에요. 따라서, 하지만, 이건 그 첫 번째 가설이에요.",
+     "src": "gemini"
+    },
+    {
+     "t": 3362,
+     "page": 11,
+     "en": "Next, we examine whether the requirement is on the worker. He estimates that the zero 0.14 with 0. 0. This is significant at the 5% level. So one standard deviation increase in AI exposure is associated with or 10.1 percent reflect the decline for junior workers.",
+     "ko": "다음으로, 요구 사항이 충족되는지 살펴봅니다. 그는 추정합니다 그가 그 제로 0.14 로 0. 0. 이것은 유의미한 것입니다. 5% 수준에서요. 그래서 표준 편차는 AI 노출이 증가하면 관련이 있습니다. 또는 10.1 퍼센트입니다. 반영합니다. 감소를 주니어 직원들의.",
+     "src": "gemini"
+    },
+    {
+     "t": 3391,
+     "page": 11,
+     "en": "compared to senior workers. We also observe that our term hypothesis and case is pretty the technology change.",
+     "ko": "비교하면 시니어 직원들과. 저희는 또한 관찰합니다 저희의 용어 가설이 그리고 사례가 그렇다는 것을요. 꽤 그 기술 변화입니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 3406,
+     "page": 11,
+     "en": "We conduct two robustness checks. First, our event study shows no significant difference. We create a difference the occupational body and However, the shock is 10 years in this test. Second, our occupational level analysis shows the decline of 2.4 percentage points in the entry level.",
+     "ko": "저희는 두 가지 강건성 검사를 수행합니다. 첫째, 저희의 사건 연구는 유의미한 차이를 보이지 않습니다. 저희는 차이를 만듭니다. 그 직업적 몸체와 그리고 하지만, 그 충격은 10년 동안 지속됩니다. 이 테스트에서. 둘째, 저희의 직업 수준 분석은 감소를 보여줍니다. 2.4 퍼센트 포인트 감소를 신입 수준에서.",
+     "src": "gemini"
+    },
+    {
+     "t": 3435,
+     "page": 11,
+     "en": "Entry level includes the is significant at the 5% level. And is both of the conditions maintaining",
+     "ko": "신입 수준은 포함합니다. 그 유의미합니다. 5% 수준에서요. 그리고 둘 다 조건이 유지되고 있습니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 3449,
+     "page": 11,
+     "en": "Now, let's move on to job displacement. We use the use panel to analyze the the 2021 to 2024 about 10% year of automation. The decline as a result of automation is associated with the but not to the job. But it's major. We estimate a linear probability model with and year fixed effects.",
+     "ko": "자, 이제 실직에 대해 이야기해 봅시다. 저희는 사용 패널을 사용하여 분석합니다. 그 2021년 부터 2024년까지 약 10% 정도의 자동화입니다. 감소는 그 결과로 자동화로 인해 관련이 있습니다. 그 하지만 그 직업은 아닙니다. 하지만 중요합니다. 저희는 선형 확률 모델을 추정합니다. 그리고 연도 고정 변수입니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 3480,
+     "page": 11,
+     "en": "In terms of displacement, the decline is the coefficient is 0.14 in the higher exposure in the and about 4.3 percent in the low exposure in the group. There were three observers, no clear increase. in displacement following AS.",
+     "ko": "자, 실직에 대해 이야기하자면, 감소는 입니다. 계수는 0.14 로 상위 노출에서 그리고 약 4.3 퍼센트입니다. 저수준에서는 노출이 그룹에서. 세 가지 관찰자가 있었고, 뚜렷한 증가는 없었습니다. 실직에 대해 이야기하자면, AS입니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 3506,
+     "page": 11,
+     "en": "Our estimates coefficients is about minus 0.03 with a P value of 0.08 7 group. This is not statistically significant. There is no evidence although maybe there is among the radio However, our sample is close on the border. And people have yet found out. Our estimate should be included.",
+     "ko": "저희의 추정 계수는 약 마이너스 0.03 이고, P값은 0.08 입니다. 그룹에서. 이것은 통계적으로 유의미하지 않습니다. 그리고 뚜렷한 증거는 없습니다. 비록 아마도 있을 수 있지만 그중에서 는 라디오 하지만, 저희 샘플은 거의 경계에 있습니다. 그리고 사람들은 아직 발견하지 못했습니다. 저희 추정치는 포함되어야 합니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 3539,
+     "page": 11,
+     "en": "This is association. that better things. So to summarize, we have three main findings. First, higher exposure is associated with fewer new graduates. Second, this relationship is stronger for juniors. Third, we find no statistically significant increase in job displacement.",
+     "ko": "이것은 연관성입니다. 그것은 더 나은 것들입니다. 그래서 요약하자면, 세 가지 주요 결과가 있습니다. 첫째, 높은 노출은 관련이 있습니다. 새로운 졸업생이 적습니다. 둘째, 이 관계는 강합니다. 특히 주니어에게 더 강합니다. 셋째, 우리는 통계적으로 유의미한 증가를 발견하지 못했습니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 3564,
+     "page": 11,
+     "en": "Taken together, labor market market outcomes may occur due to and could rather increase job displacement.",
+     "ko": "종합하면, 노동 시장 결과는 발생할 수 있습니다. 때문에 그리고 오히려 증가할 수 있습니다. 실직이.",
+     "src": "gemini"
+    },
+    {
+     "t": 3579,
+     "page": 11,
+     "en": "So on our findings, we further policy implications. First, expand work and training opportunities. Second, we reform curriculum to include data related skills. Third, monitor and",
+     "ko": "그래서 저희의 발견에 따르면, 저희는 추가적인 정책 시사점을 얻었습니다. 첫째, 일자리 및 교육을 확대합니다. 둘째, 저희는 대학 교육을 개편하여 다음을 포함합니다. 데이터 관련 기술. 셋째, 모니터링하고",
+     "src": "gemini"
+    }
+   ]
+  },
+  {
+   "page": 12,
+   "en": "labor hiring in the AI exposure. Finally, strengthen employment support for graduates experiencing prolonged job search. So our study has several limitations. First, the observation period is relatively short. Second, AI exposure does not necessarily reflect AI adoption. Third, having only 15 industry cohorts limits the data of statistics inference. Other economic shocks may also affect our Finally, our estimates on the list on the employed graduates and may capture differences in pre-treatment trends. Future research should use more data at AI adoption measures and the information on job search. to do it. Our study highlights the importance of protecting employment opportunities for new graduates in AI Thank you for listening. Okay, excellent presentation. I really appreciate how complete your presentation was. It was a really relevant question. And then you checked the hypothesis and then also I really like that you discussed policy. as well. Um, so yeah, so it's a uh well organized and very timely. issue. And then we are very wondering how much uh the Korean labor market has been affected or there are some analysis, but I really like that you tried to analyze the most uh pressing issue nowadays. We do find that more exposed jobs have a lower entry. But one question, which is more exposed? examples. Which occupation? has higher exposure? Like is it IT sector or is it like banking in industry or is like a manufacturing sector is less exposed something like that. I wanna learn more about the exposure measure you used. Um Okay, so that's manufacturing is exposure is not that um so job education is so so the AI is okay. Ah, you are saying that the manufacturing sector had lower exposure. And then that's good. Yeah, because we have a big manufacturing sector, but education or even the routine labor. Uh is replaced. And I heard that actually routine labor is very affected as well because if we don't much Okay, so check. The roles in the process, both processes, okay? And then another question, you said that the mismatch didn't change over time. I think it really depends on the the measure how you uh how you measure mismatch so can I ask how how did you measure mismatch? 통계상으로. 예. I think mismatch but how uh measuring it. Like very what is the measure for mismatch? Yeah. Probably sometimes people measure mismatch like a scale mismatch, whether they are qualification is higher than the the skill required in that job. where they and so there are different ways. So you can you know, so because you really depends on how we measure the mismatch. So, if you really based on the educational level, uh I think it would be great if we can also think about major or you know, other types of skills because it will be important. So okay, so given that time I will just move on. Uh but it's an interesting paper. But I think mismatch may not be like if we just to look at the majority match, after AI, there there's just some trend that firms try really hard to recruit the best among the pool. So probably the match here may have higher quality or that's the reason why, you know, if we just to look at those who are matched, they are happy. But then if those who cannot be matched, the suitable job, you know, we have some, you know, negative, you",
+   "ko": "노동 채용을 AI 분야에서 모니터링합니다. 마지막으로, 강화합니다. 고용 지원을 졸업생을 위해 제공합니다. 장기적인 구직 활동을. 그래서 저희 연구는 몇 가지 한계가 있습니다. 첫째, 관찰 기간이 비교적 짧습니다. 둘째, AI 노출은 반드시 일치하지는 않습니다. AI 도입을 반영하지 않습니다. 셋째, 15개 산업 분야만 가지고 있어서 제한적입니다. 데이터의 세분화가 통계적으로 제한됩니다. 다른 경제적 충격이 또한 영향을 미칠 수 있습니다. 마지막으로, 저희의 추정치는 목록에 포함된 사람들에 대한 것입니다. 그리고 포착할 수 있습니다. 차이를 사전 치료 추세에서. 향후 연구에서는 더 많은 데이터를 AI 도입 측정치와 정보를 활용해야 합니다. 구직에 대한. 그것을 하기 위해. 저희 연구는 중요성을 강조합니다. 보호하는 것의 중요성을 고용 기회에 대한 신규 졸업생을 위한 AI 분야에서. 들어주셔서 감사합니다. 네, 훌륭한 발표였습니다. 얼마나 완벽한지 정말 감사드립니다. 정말 관련성 있는 질문이었어요. 그리고 당신은 확인했죠 가설을 그리고 그런 다음 또한 저는 당신이 논의한 정책이 정말 마음에 들어요. 또한, 음, 그래서 네, 그래서 이건 음, 잘 정리된 그리고 매우 시기적절해요. 그리고 우리는 매우 궁금해하고 있어요, 얼마나 한국 노동 시장이 영향을 받았는지 아니면 어떤 분석이 있는지, 하지만 당신이 분석하려고 노력한 점이 정말 마음에 들어요. 요즘 가장 시급한 문제죠. 우리는 더 많이 노출된 직업이 진입 장벽이 낮다는 것을 알게 되었어요. 하지만 한 가지 질문, 어떤 것이 더 노출되었나요? 예시를 들어주세요. 어떤 직업인가요? 어떤 직업이 더 높은 노출도를 가지고 있나요? 예를 들어 IT 분야인가요, 아니면 은행업인가요? 아니면 제조업인가요? 제조업이 덜 노출되었나요? 그런 식이죠. 저는 그 노출에 대해 더 알고 싶어요. 당신이 사용한 측정 방법이요. 네, 그래서 그게 제조업이 더 노출이 더 적지 않아요. 음, 그래서 직업이 교육 은 그래서 그래서 AI 가 더 괜찮아요. 아, 당신이 말하는 것은 제조업이 더 많은 낮은 노출도를 가지고 있다는 것이죠. 그리고 그건 좋아요. 네, 왜냐하면 우리는 큰 제조업 부문이 있고, 하지만 교육은 또는 심지어 그 일상적인 노동도요. 음, 대체되죠. 그리고 제가 듣기로는 실제로 일상적인 노동이 매우 영향을 많이 받는다고 해요. 왜냐하면 우리가 그렇게 자, 그럼 확인. 역할은 과정에서, 두 과정 모두, 알겠죠? 그리고 또 다른 질문인데, 불일치가 변하지 않았다고 하셨잖아요. 제 생각엔 그게 정말 어떻게 측정하느냐에 따라 다른 것 같아요. 어떻게 불일치를 측정하느냐에 따라 다르니까, 어떻게 측정하셨는지 여쭤봐도 될까요? 저는 불일치가 하지만 어떻게 어 측정하는지 궁금해요. 예를 들어 아주 무엇이 불일치의 척도인지 궁금해요. 네. 아마도 가끔은 사람들이 불일치를 측정할 때 규모 불일치인지, 아니면 자격이 더 높은지 아니면 필요한 기술보다 더 높은지 그런 걸로요. 그들이 그래서 다른 방법들이 있어요. 그래서 아시다시피, 왜냐하면 정말 어떻게 불일치를 측정하느냐에 따라 다르니까요. 그래서, 정말 그 교육적 수준에 기반한다면, 제 생각엔 만약 우리가 또한 생각할 수 있다면 좋을 것 같아요. 아니면 다른 종류의 기술도 중요할 테니까요. 그래서 알겠습니다, 그럼 시간이 없으니까 그냥 넘어갈게요. 하지만 흥미로운 논문이에요. 하지만 제 생각엔 불일치가 아닐 수도 있어요. 예를 들어 우리가 그냥 대다수를 본다면 일치하겠지만, AI 이후에는 그게 그냥 어떤 추세가 있어서 기업들이 정말 열심히 노력해서 최고의 인재를 뽑으려고 한다는 점이죠. 그래서 아마도 일치가 여기서 더 높은 품질일 수도 있고 그게 바로 우리가, 아시다시피, 만약 일치하는 사람들을 본다면, 그들은 행복해요. 하지만 일치할 수 없는 사람들은, 적합한 일자리를, 아시다시피, 우리는 좀 부정적인",
+   "pdf": "",
+   "pdfPage": 12,
+   "slideText": "",
+   "segs": [
+    {
+     "t": 3597,
+     "page": 12,
+     "en": "labor hiring in the AI exposure. Finally, strengthen employment support for graduates experiencing prolonged job search.",
+     "ko": "노동 채용을 AI 분야에서 모니터링합니다. 마지막으로, 강화합니다. 고용 지원을 졸업생을 위해 제공합니다. 장기적인 구직 활동을.",
+     "src": "gemini"
+    },
+    {
+     "t": 3612,
+     "page": 12,
+     "en": "So our study has several limitations. First, the observation period is relatively short. Second, AI exposure does not necessarily reflect AI adoption. Third, having only 15 industry cohorts limits the data of statistics inference. Other economic shocks may also affect our Finally, our estimates on the list on the employed graduates and may capture differences in pre-treatment trends.",
+     "ko": "그래서 저희 연구는 몇 가지 한계가 있습니다. 첫째, 관찰 기간이 비교적 짧습니다. 둘째, AI 노출은 반드시 일치하지는 않습니다. AI 도입을 반영하지 않습니다. 셋째, 15개 산업 분야만 가지고 있어서 제한적입니다. 데이터의 세분화가 통계적으로 제한됩니다. 다른 경제적 충격이 또한 영향을 미칠 수 있습니다. 마지막으로, 저희의 추정치는 목록에 포함된 사람들에 대한 것입니다. 그리고 포착할 수 있습니다. 차이를 사전 치료 추세에서.",
+     "src": "gemini"
+    },
+    {
+     "t": 3649,
+     "page": 12,
+     "en": "Future research should use more data at AI adoption measures and the information on job search. to do it. Our study highlights the importance of protecting employment opportunities for new graduates in AI Thank you for listening.",
+     "ko": "향후 연구에서는 더 많은 데이터를 AI 도입 측정치와 정보를 활용해야 합니다. 구직에 대한. 그것을 하기 위해. 저희 연구는 중요성을 강조합니다. 보호하는 것의 중요성을 고용 기회에 대한 신규 졸업생을 위한 AI 분야에서. 들어주셔서 감사합니다.",
+     "src": "gemini"
+    },
+    {
+     "t": 3675,
+     "page": 12,
+     "en": "Okay, excellent presentation. I really appreciate how complete your presentation was. It was a really relevant question. And then you checked the hypothesis and then also I really like that you discussed policy. as well. Um, so yeah, so it's a uh well organized and very timely.",
+     "ko": "네, 훌륭한 발표였습니다. 얼마나 완벽한지 정말 감사드립니다. 정말 관련성 있는 질문이었어요. 그리고 당신은 확인했죠 가설을 그리고 그런 다음 또한 저는 당신이 논의한 정책이 정말 마음에 들어요. 또한, 음, 그래서 네, 그래서 이건 음, 잘 정리된 그리고 매우 시기적절해요.",
+     "src": "gemini"
+    },
+    {
+     "t": 3701,
+     "page": 12,
+     "en": "issue. And then we are very wondering how much uh the Korean labor market has been affected or there are some analysis, but I really like that you tried to analyze the most uh pressing issue nowadays. We do find that more exposed jobs have a lower entry. But one question, which is more exposed?",
+     "ko": "그리고 우리는 매우 궁금해하고 있어요, 얼마나 한국 노동 시장이 영향을 받았는지 아니면 어떤 분석이 있는지, 하지만 당신이 분석하려고 노력한 점이 정말 마음에 들어요. 요즘 가장 시급한 문제죠. 우리는 더 많이 노출된 직업이 진입 장벽이 낮다는 것을 알게 되었어요. 하지만 한 가지 질문,",
+     "src": "gemini"
+    },
+    {
+     "t": 3722,
+     "page": 12,
+     "en": "examples. Which occupation? has higher exposure? Like is it IT sector or is it like banking in industry or is like a manufacturing sector is less exposed something like that. I wanna learn more about the exposure measure you used. Um Okay, so that's manufacturing is exposure is not that um so job education is so so the AI is okay.",
+     "ko": "어떤 것이 더 노출되었나요? 예시를 들어주세요. 어떤 직업인가요? 어떤 직업이 더 높은 노출도를 가지고 있나요? 예를 들어 IT 분야인가요, 아니면 은행업인가요? 아니면 제조업인가요? 제조업이 덜 노출되었나요? 그런 식이죠. 저는 그 노출에 대해 더 알고 싶어요. 당신이 사용한 측정 방법이요. 네, 그래서 그게 제조업이 더 노출이 더 적지 않아요. 음, 그래서 직업이 교육 은 그래서 그래서 AI 가 더 괜찮아요.",
+     "src": "gemini"
+    },
+    {
+     "t": 3756,
+     "page": 12,
+     "en": "Ah, you are saying that the manufacturing sector had lower exposure. And then that's good. Yeah, because we have a big manufacturing sector, but education or even the routine labor. Uh is replaced. And I heard that actually routine labor is very affected as well because if we don't much",
+     "ko": "아, 당신이 말하는 것은 제조업이 더 많은 낮은 노출도를 가지고 있다는 것이죠. 그리고 그건 좋아요. 네, 왜냐하면 우리는 큰 제조업 부문이 있고, 하지만 교육은 또는 심지어 그 일상적인 노동도요. 음, 대체되죠. 그리고 제가 듣기로는 실제로 일상적인 노동이 매우 영향을 많이 받는다고 해요. 왜냐하면 우리가 그렇게",
+     "src": "gemini"
+    },
+    {
+     "t": 3784,
+     "page": 12,
+     "en": "Okay, so check. The roles in the process, both processes, okay? And then another question, you said that the mismatch didn't change over time. I think it really depends on the the measure how you uh how you measure mismatch so can I ask how how did you measure mismatch?",
+     "ko": "자, 그럼 확인. 역할은 과정에서, 두 과정 모두, 알겠죠? 그리고 또 다른 질문인데, 불일치가 변하지 않았다고 하셨잖아요. 제 생각엔 그게 정말 어떻게 측정하느냐에 따라 다른 것 같아요. 어떻게 불일치를 측정하느냐에 따라 다르니까, 어떻게 측정하셨는지 여쭤봐도 될까요?",
+     "src": "gemini"
+    },
+    {
+     "t": 3808,
+     "page": 12,
+     "en": "통계상으로. 예. I think mismatch but how uh measuring it. Like very what is the measure for mismatch?",
+     "ko": "저는 불일치가 하지만 어떻게 어 측정하는지 궁금해요. 예를 들어 아주 무엇이 불일치의 척도인지 궁금해요.",
+     "src": "gemini"
+    },
+    {
+     "t": 3823,
+     "page": 12,
+     "en": "Yeah. Probably sometimes people measure mismatch like a scale mismatch, whether they are qualification is higher than the the skill required in that job. where they and so there are different ways. So you can you know, so because you really depends on how we measure the mismatch.",
+     "ko": "네. 아마도 가끔은 사람들이 불일치를 측정할 때 규모 불일치인지, 아니면 자격이 더 높은지 아니면 필요한 기술보다 더 높은지 그런 걸로요. 그들이 그래서 다른 방법들이 있어요. 그래서 아시다시피, 왜냐하면 정말 어떻게 불일치를 측정하느냐에 따라 다르니까요.",
+     "src": "gemini"
+    },
+    {
+     "t": 3845,
+     "page": 12,
+     "en": "So, if you really based on the educational level, uh I think it would be great if we can also think about major or you know, other types of skills because it will be important. So okay, so given that time I will just move on. Uh but it's an interesting paper. But I think mismatch may not be like if we just to look at the majority match, after AI, there there's just some trend that firms try really hard to recruit the best among the pool. So probably the match here may have higher quality or that's the reason why, you know, if we",
+     "ko": "그래서, 정말 그 교육적 수준에 기반한다면, 제 생각엔 만약 우리가 또한 생각할 수 있다면 좋을 것 같아요. 아니면 다른 종류의 기술도 중요할 테니까요. 그래서 알겠습니다, 그럼 시간이 없으니까 그냥 넘어갈게요. 하지만 흥미로운 논문이에요. 하지만 제 생각엔 불일치가 아닐 수도 있어요. 예를 들어 우리가 그냥 대다수를 본다면 일치하겠지만, AI 이후에는 그게 그냥 어떤 추세가 있어서 기업들이 정말 열심히 노력해서 최고의 인재를 뽑으려고 한다는 점이죠. 그래서 아마도 일치가 여기서 더 높은 품질일 수도 있고 그게 바로 우리가, 아시다시피,",
+     "src": "gemini"
+    },
+    {
+     "t": 3887,
+     "page": 12,
+     "en": "just to look at those who are matched, they are happy. But then if those who cannot be matched, the suitable job, you know, we have some, you know, negative, you",
+     "ko": "만약 일치하는 사람들을 본다면, 그들은 행복해요. 하지만 일치할 수 없는 사람들은, 적합한 일자리를, 아시다시피, 우리는 좀 부정적인",
+     "src": "gemini"
+    }
+   ]
+  },
+  {
+   "page": 13,
+   "en": "know, like mismatch. So together, probably offset each other. And then I think it would be interesting, but it's my personal next step that I want to look at how AI affect the search behavior. by youth. Um Okay. Um is it just to Oh, the policy I want to talk about policy. You said that college curriculum should be adjusted. So I want to hear from you and other other students or should we how should we change? College curriculum. What do you think? What kind of class or, you know, learning can be useful for you? 음. I think many many people say that now we need to be more jack of all night, which means entrepreneur skill like we have to be good at everything so that the ask me to do and then they have high expectation. And you and I think more important really people value um how sharp you are and that skill is revealed when you ask questions. So they value your kind of insight more than execution ability. So that's something I think is still has some role in this sense because you need to sharpen your logic. You need to be able to differentiate what's interesting and what's not interesting. And that's developed through when you understand So in my opinion, still the understanding the traditional economic model, how you to sharpen your logic, you can rely on your knowledge that mechanism and also um uh But then still I want to hear about your opinion, what else you want to do like more project based study or what do you think? Do you have any thoughts? Uh right. So that's interesting. So 토론 수업 같은 거 좀 좋지 않나. AI 생각의 방법을 한번 그러니까 AI와 바른 생각을 키워낼 수 있는 그런 어떤 그런 것도 음 토론 수업도 좀 이런 실제적인 자료를 분석하고 발표 하는 과정에서 그런 영향을 키워준다고 생각해요. 그래서 프로젝트 수업이다. 그런 분석 수업들이 좀 많아졌으면 음. Yeah. So that like the project and more discussion in the class will be helpful for us to sharpen our uh the way we communicate and the way to distinguish which is interesting, not interesting, relevant or not relevant. I think that I agree with you. Um Yeah. Hopefully this is experience can help you I I wish I have a longer time to have long discussion. I really like to learn from you guys and then I think that this class the the quality of presentation is overall very high. and I really appreciate that. I think that there can be some peer effect. So the other teams already did a good job. Um yeah, so and any other idea from the the floor? I'd like to have like a debate. If I have a chance later, what do you think? Debate would be helpful? or presentation is better. Raise your hand. Have you ever done any debate before? I don't think so. I haven't had debate session before. Uh it is pretty fun. Sometimes it's not, you know, it's limited because you know, you have to choose that opinion that you don't agree with. But still you need to figure out the logic. And then the challenge is the language as well. But I think I agree with you, the people say that. And then this is you know, what I learn from my friends, now that when you do the interview, they ask a lot of questions. And then you answer and then some form ask you to improve your answer by using AI. So you are supposed to use AI like a template to improve your answer. They will check your prompt. Like what kind of question you asked. And then they will see what kind of improvement you made. And then they will see your judgment. Which, you know, analysis provided by AI was chosen by you. You have to provide the reason. So it's a shifting in that direction. So I think it was I it was a very interesting topic. So",
+   "ko": "불일치가 있죠. 그래서 합치면, 아마도 서로 상쇄될 거예요. 그리고 제 생각엔 흥미로울 것 같지만, 이건 제 개인적인 다음 단계예요. 제가 살펴보고 싶은 것은 AI가 어떻게 검색에 영향을 미치는지예요. 그래서 젊은이들이요. 음, 네. 음, 혹시 그냥 아, 그 정책 제가 이야기하고 싶은 건 정책이에요. 대학 커리큘럼이 조정되어야 한다고 하셨잖아요. 그래서 저는 당신에게 그리고 다른 다른 학생들에게 듣고 싶어요. 아니면 어떻게 바꿔야 할까요? 대학 커리큘럼을. 어떻게 생각하세요? 어떤 종류의 수업이나, 아시다시피, 학습이 당신에게 유용할까요? 제 생각엔 많은 사람들이 말하길 이제 우리는 더 다재다능해져야 한다고 해요, 즉 기업가 정신이 필요하다는 거죠. 우리는 모든 것을 잘해야 해서 그래서 저에게 요청하는 일을 하고, 그 일에 대한 기대가 높아요. 그리고 제 생각엔 더 중요한 건 사람들이 가치를 두는 건 얼마나 날카로운지예요. 그리고 그 기술은 당신이 질문할 때 드러나요. 그래서 그들은 당신의 친절함을 중요하게 생각하고 통찰력을 더 중요하게 생각해요. 실행력보다요. 그래서 그게 제가 생각하기에 여전히 중요한 부분이라고 생각해요. 이런 의미에서요. 왜냐하면 당신의 논리를 날카롭게 해야 하니까요. 당신은 무엇이 흥미롭고 무엇이 흥미롭지 않은지 구별할 수 있어야 해요. 그리고 그건 당신이 이해할 때 발달해요. 그래서 제 생각엔 여전히 그 이해가 전통적인 경제학을 이해하는 방식, 어떻게 논리를 날카롭게 할지, 당신의 지식에 의존할 수 있고 그 메커니즘과 또한 음 어 하지만 그래도 저는 듣고 싶어요. 당신의 의견을, 또 무엇을 하고 싶은지, 더 프로젝트 기반 학습이나 어떻게 생각하세요? 혹시 어떤 생각이 있으신가요? 어 맞아요. 그래서 흥미롭네요. 그래서 토론 수업 같은 거 좀 좋지 않나. AI 생각의 방법을 한번 그러니까 AI와 바른 생각을 키워낼 수 있는 그런 어떤 그런 것도 음 토론 수업도 좀 이런 실제적인 자료를 분석하고 발표 하는 과정에서 그런 영향을 키워준다고 생각해요. 그래서 프로젝트 수업이다. 그런 분석 수업들이 좀 많아졌으면 음. 네. 그래서 그 프로젝트와 더 많은 수업 중 토론이 우리에게 도움이 될 거예요, 우리의 논리를 우리가 소통하는 방식과 우리가 무엇이 흥미롭고 무엇이 흥미롭지 않은지, 무엇이 관련이 있고 없는지 구별하는 데요. 저는 동의해요. 음 네. 부디 이게 도움이 되길 바라요. 저도 더 긴 시간이 있었으면 좋겠어요. 긴 토론을 할 수 있게. 저는 당신에게 배우는 게 정말 좋고, 이 수업이 그 수업의 발표 품질이 전반적으로 매우 높아요. 그리고 정말 감사하게 생각해요. 제 생각엔 동료 효과가 있을 수 있어요. 그래서 다른 팀들은 이미 잘했어요. 음 네, 그래서 그리고 다른 아이디어 있으신가요? 그 다른 분들 중에서요? 저는 이런 걸 하고 싶어요. 토론 같은 거요. 만약 저에게 기회가 생긴다면, 나중에 어떻게 생각하세요? 토론이 도움이 될까요? 아니면 발표가 더 나아요. 손을 들어보세요. 혹시 토론을 해본 적이 있으신가요? 전에? 아마 없을 거예요. 저는 해본 적이 없어요. 토론 세션을. 어, 꽤 재미있을 것 같아요. 가끔은 그렇지 않지만, 아시다시피 제한적이에요. 왜냐하면 선택해야 하니까요. 그 의견을 동의하지 않더라도 선택해야 하니까요. 하지만 그래도 논리를 파악해야 해요. 그리고 그 다음에는 도전은 언어이기도 해요. 어, 하지만 제 생각엔 동의해요, 사람들이 그렇게 말하죠. 그리고 이건 제가 좋아하는 것 중 하나인데, 친구들에게 배운 건데, 이제 당신이 할 때 인터뷰를 하면, 그들은 많은 질문을 해요. 그리고 당신은 대답하고 어떤 형식으로든 당신에게 개선을 요구해요. AI를 사용해서. 그래서 당신은 AI를 사용해야 해요, 마치 템플릿처럼 당신의 답변을 개선하기 위해. 그들은 당신의 프롬프트를 확인할 거예요. 어떤 질문을 했는지. 그리고 그들은 어떤 개선을 했는지 볼 거예요. 그리고 그들은 당신의 판단을 볼 거예요. 그건, 아시다시피 분석이죠. AI가 제공하는. AI가 선택한 거예요. 당신은 그 이유를 제시해야 해요. 그래서 이건 그런 방향으로의 변화예요. 그래서 제 생각엔 그건 아주 흥미로운 이야기였어요. 그래서",
+   "pdf": "",
+   "pdfPage": 13,
+   "slideText": "",
+   "segs": [
+    {
+     "t": 3897,
+     "page": 13,
+     "en": "know, like mismatch. So together, probably offset each other. And then I think it would be interesting, but it's my personal next step that I want to look at how AI affect the search behavior. by youth. Um",
+     "ko": "불일치가 있죠. 그래서 합치면, 아마도 서로 상쇄될 거예요. 그리고 제 생각엔 흥미로울 것 같지만, 이건 제 개인적인 다음 단계예요. 제가 살펴보고 싶은 것은 AI가 어떻게 검색에 영향을 미치는지예요. 그래서 젊은이들이요. 음,",
+     "src": "gemini"
+    },
+    {
+     "t": 3918,
+     "page": 13,
+     "en": "Okay. Um is it just to Oh, the policy I want to talk about policy. You said that college curriculum should be adjusted. So I want to hear from you and other other students or should we how should we change? College curriculum. What do you think? What kind of class or, you know, learning can be useful for you?",
+     "ko": "네. 음, 혹시 그냥 아, 그 정책 제가 이야기하고 싶은 건 정책이에요. 대학 커리큘럼이 조정되어야 한다고 하셨잖아요. 그래서 저는 당신에게 그리고 다른 다른 학생들에게 듣고 싶어요. 아니면 어떻게 바꿔야 할까요? 대학 커리큘럼을. 어떻게 생각하세요? 어떤 종류의 수업이나, 아시다시피, 학습이 당신에게 유용할까요?",
+     "src": "gemini"
+    },
+    {
+     "t": 3948,
+     "page": 13,
+     "en": "음. I think many many people say that now we need to be more jack of all night, which means entrepreneur skill like we have to be good at everything so that the ask me to do and then they have high expectation. And you and I think more important really people value um how sharp you are and that skill is revealed when you ask questions.",
+     "ko": "제 생각엔 많은 사람들이 말하길 이제 우리는 더 다재다능해져야 한다고 해요, 즉 기업가 정신이 필요하다는 거죠. 우리는 모든 것을 잘해야 해서 그래서 저에게 요청하는 일을 하고, 그 일에 대한 기대가 높아요. 그리고 제 생각엔 더 중요한 건 사람들이 가치를 두는 건 얼마나 날카로운지예요. 그리고 그 기술은 당신이 질문할 때 드러나요.",
+     "src": "gemini"
+    },
+    {
+     "t": 3976,
+     "page": 13,
+     "en": "So they value your kind of insight more than execution ability. So that's something I think is still has some role in this sense because you need to sharpen your logic. You need to be able to differentiate what's interesting and what's not interesting. And that's developed through when you understand So in my opinion, still the understanding the traditional economic model, how you to sharpen your logic, you can rely on your knowledge that mechanism and also um uh But then still I want to hear about your opinion, what else",
+     "ko": "그래서 그들은 당신의 친절함을 중요하게 생각하고 통찰력을 더 중요하게 생각해요. 실행력보다요. 그래서 그게 제가 생각하기에 여전히 중요한 부분이라고 생각해요. 이런 의미에서요. 왜냐하면 당신의 논리를 날카롭게 해야 하니까요. 당신은 무엇이 흥미롭고 무엇이 흥미롭지 않은지 구별할 수 있어야 해요. 그리고 그건 당신이 이해할 때 발달해요. 그래서 제 생각엔 여전히 그 이해가 전통적인 경제학을 이해하는 방식, 어떻게 논리를 날카롭게 할지, 당신의 지식에 의존할 수 있고 그 메커니즘과 또한 음 어 하지만 그래도 저는 듣고 싶어요. 당신의 의견을, 또",
+     "src": "gemini"
+    },
+    {
+     "t": 4021,
+     "page": 13,
+     "en": "you want to do like more project based study or what do you think? Do you have any thoughts? Uh right. So that's interesting. So 토론 수업 같은 거 좀 좋지 않나. AI 생각의 방법을 한번 그러니까 AI와 바른 생각을 키워낼 수 있는 그런 어떤 그런 것도 음 토론 수업도 좀 이런 실제적인 자료를 분석하고 발표 하는 과정에서 그런 영향을 키워준다고 생각해요. 그래서 프로젝트 수업이다.",
+     "ko": "무엇을 하고 싶은지, 더 프로젝트 기반 학습이나 어떻게 생각하세요? 혹시 어떤 생각이 있으신가요? 어 맞아요. 그래서 흥미롭네요. 그래서 토론 수업 같은 거 좀 좋지 않나. AI 생각의 방법을 한번 그러니까 AI와 바른 생각을 키워낼 수 있는 그런 어떤 그런 것도 음 토론 수업도 좀 이런 실제적인 자료를 분석하고 발표 하는 과정에서 그런 영향을 키워준다고 생각해요. 그래서 프로젝트 수업이다.",
+     "src": "gemini"
+    },
+    {
+     "t": 4056,
+     "page": 13,
+     "en": "그런 분석 수업들이 좀 많아졌으면 음. Yeah. So that like the project and more discussion in the class will be helpful for us to sharpen our uh the way we communicate and the way to distinguish which is interesting, not interesting, relevant or not relevant. I think that I agree with you.",
+     "ko": "그런 분석 수업들이 좀 많아졌으면 음. 네. 그래서 그 프로젝트와 더 많은 수업 중 토론이 우리에게 도움이 될 거예요, 우리의 논리를 우리가 소통하는 방식과 우리가 무엇이 흥미롭고 무엇이 흥미롭지 않은지, 무엇이 관련이 있고 없는지 구별하는 데요. 저는 동의해요.",
+     "src": "gemini"
+    },
+    {
+     "t": 4077,
+     "page": 13,
+     "en": "Um Yeah. Hopefully this is experience can help you I I wish I have a longer time to have long discussion. I really like to learn from you guys and then I think that this class the the quality of presentation is overall very high. and I really appreciate that. I think that there can be some peer effect.",
+     "ko": "음 네. 부디 이게 도움이 되길 바라요. 저도 더 긴 시간이 있었으면 좋겠어요. 긴 토론을 할 수 있게. 저는 당신에게 배우는 게 정말 좋고, 이 수업이 그 수업의 발표 품질이 전반적으로 매우 높아요. 그리고 정말 감사하게 생각해요. 제 생각엔 동료 효과가 있을 수 있어요.",
+     "src": "gemini"
+    },
+    {
+     "t": 4098,
+     "page": 13,
+     "en": "So the other teams already did a good job. Um yeah, so and any other idea from the the floor?",
+     "ko": "그래서 다른 팀들은 이미 잘했어요. 음 네, 그래서 그리고 다른 아이디어 있으신가요? 그 다른 분들 중에서요?",
+     "src": "gemini"
+    },
+    {
+     "t": 4111,
+     "page": 13,
+     "en": "I'd like to have like a debate. If I have a chance later, what do you think? Debate would be helpful?",
+     "ko": "저는 이런 걸 하고 싶어요. 토론 같은 거요. 만약 저에게 기회가 생긴다면, 나중에 어떻게 생각하세요? 토론이 도움이 될까요?",
+     "src": "gemini"
+    },
+    {
+     "t": 4121,
+     "page": 13,
+     "en": "or presentation is better. Raise your hand. Have you ever done any debate before? I don't think so. I haven't had debate session before. Uh it is pretty fun. Sometimes it's not, you know, it's limited because you know, you have to choose that opinion that you don't agree with.",
+     "ko": "아니면 발표가 더 나아요. 손을 들어보세요. 혹시 토론을 해본 적이 있으신가요? 전에? 아마 없을 거예요. 저는 해본 적이 없어요. 토론 세션을. 어, 꽤 재미있을 것 같아요. 가끔은 그렇지 않지만, 아시다시피 제한적이에요. 왜냐하면 선택해야 하니까요. 그 의견을 동의하지 않더라도 선택해야 하니까요.",
+     "src": "gemini"
+    },
+    {
+     "t": 4143,
+     "page": 13,
+     "en": "But still you need to figure out the logic. And then the challenge is the language as well. But I think I agree with you, the people say that. And then this is you know, what I learn from my friends, now that when you do the interview, they ask a lot of questions.",
+     "ko": "하지만 그래도 논리를 파악해야 해요. 그리고 그 다음에는 도전은 언어이기도 해요. 어, 하지만 제 생각엔 동의해요, 사람들이 그렇게 말하죠. 그리고 이건 제가 좋아하는 것 중 하나인데, 친구들에게 배운 건데, 이제 당신이 할 때 인터뷰를 하면, 그들은 많은 질문을 해요.",
+     "src": "gemini"
+    },
+    {
+     "t": 4163,
+     "page": 13,
+     "en": "And then you answer and then some form ask you to improve your answer by using AI. So you are supposed to use AI like a template to improve your answer. They will check your prompt. Like what kind of question you asked. And then they will see what kind of improvement you made. And then they will see your judgment.",
+     "ko": "그리고 당신은 대답하고 어떤 형식으로든 당신에게 개선을 요구해요. AI를 사용해서. 그래서 당신은 AI를 사용해야 해요, 마치 템플릿처럼 당신의 답변을 개선하기 위해. 그들은 당신의 프롬프트를 확인할 거예요. 어떤 질문을 했는지. 그리고 그들은 어떤 개선을 했는지 볼 거예요. 그리고 그들은 당신의 판단을 볼 거예요.",
+     "src": "gemini"
+    },
+    {
+     "t": 4184,
+     "page": 13,
+     "en": "Which, you know, analysis provided by AI was chosen by you. You have to provide the reason. So it's a shifting in that direction. So I think it was I it was a very interesting topic. So",
+     "ko": "그건, 아시다시피 분석이죠. AI가 제공하는. AI가 선택한 거예요. 당신은 그 이유를 제시해야 해요. 그래서 이건 그런 방향으로의 변화예요. 그래서 제 생각엔 그건 아주 흥미로운 이야기였어요. 그래서",
+     "src": "gemini"
+    }
+   ]
+  },
+  {
+   "page": 14,
+   "en": "yeah, hope other other students also enjoyed the presentation. Thank you very much.",
+   "ko": "네, 다른 학생들도 즐기셨으면 좋겠어요. 발표를 즐겨주셔서 감사합니다. 정말 감사합니다.",
+   "pdf": "",
+   "pdfPage": 14,
+   "slideText": "",
+   "segs": [
+    {
+     "t": 4198,
+     "page": 14,
+     "en": "yeah, hope other other students also enjoyed the presentation. Thank you very much.",
+     "ko": "네, 다른 학생들도 즐기셨으면 좋겠어요. 발표를 즐겨주셔서 감사합니다. 정말 감사합니다.",
+     "src": "gemini"
+    }
+   ]
+  }
+ ],
+ "savedAt": "2026-11-25T02:44:37.152Z"
+}
