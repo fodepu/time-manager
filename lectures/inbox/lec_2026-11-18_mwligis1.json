@@ -1,4 +1,9 @@
 {
+ "savedAt": "2026-11-18T02:45:13.899Z",
+ "base": 0,
+ "docs": [],
+ "weekId": "1507917",
+ "langCode": "en-US",
  "id": "lec_2026-11-18_mwligis1",
  "course": "계량경제학",
  "title": "계량경제학 12주차",
@@ -9,7 +14,7 @@
  "mode": "online",
  "pdf": "",
  "pages": 2,
- "duration": 470,
+ "duration": 475,
  "log": [
   {
    "t": 0,
@@ -188,6 +193,5 @@
     }
    ]
   }
- ],
- "savedAt": "2026-11-18T02:45:08.247Z"
+ ]
 }
