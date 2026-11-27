@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T03:22:22.468Z",
+  "generatedAt": "2026-11-27T12:52:27.310Z",
   "source": "canvas",
   "user": "김주함(2025####72)",
   "courseFiles": {
@@ -2021,7 +2021,14 @@
         "name": "15주차",
         "position": 15,
         "unlock": null,
-        "items": []
+        "items": [
+          {
+            "type": "Assignment",
+            "title": "기말 프로젝트 제출",
+            "indent": 0,
+            "url": "https://khcanvas.khu.ac.kr/courses/97242/modules/items/4778689"
+          }
+        ]
       },
       {
         "id": "1534977",
@@ -2509,6 +2516,16 @@
       "submitted": false,
       "url": "https://khcanvas.khu.ac.kr/courses/97242/assignments/1509968",
       "body": "두 권 다 완독하셨나요? 도움되는 독서였길 바랍니다!",
+      "files": []
+    },
+    {
+      "id": "a1497656",
+      "course": "창업과 thinking design",
+      "title": "기말 프로젝트 제출",
+      "due": "2026-12-14T14:59:59Z",
+      "submitted": false,
+      "url": "https://khcanvas.khu.ac.kr/courses/97242/assignments/1497656",
+      "body": "기말 과제 제출란입니다. 한 학기 동안 모두 고생하셨습니다. 감사합니다.",
       "files": []
     }
   ],
